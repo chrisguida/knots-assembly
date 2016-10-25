@@ -1,0 +1,786 @@
+diff --git a/doc/files.md b/doc/files.md
+index f7eca57..aebbe5b 100644
+--- a/doc/files.md
++++ b/doc/files.md
+@@ -1,6 +1,7 @@
+ 
+ * banlist.dat: stores the IPs/Subnets of banned nodes
+ * bitcoin.conf: contains configuration settings for bitcoind or bitcoin-qt
++* bitcoin_rw.conf: contains configuration settings modified by bitcoind or bitcoin-qt: since Knots 0.12.0
+ * bitcoind.pid: stores the process id of bitcoind while running
+ * blocks/blk000??.dat: block data (custom, 128 MiB per file); since 0.8.0
+ * blocks/rev000??.dat; block undo data (custom); since 0.8.0 (format changed since pre-0.8)
+diff --git a/src/bitcoin-cli.cpp b/src/bitcoin-cli.cpp
+index a04101d..69ebaf2 100644
+--- a/src/bitcoin-cli.cpp
++++ b/src/bitcoin-cli.cpp
+@@ -35,6 +35,7 @@ std::string HelpMessageCli()
+     strUsage += HelpMessageGroup(_("Options:"));
+     strUsage += HelpMessageOpt("-?", _("This help message"));
+     strUsage += HelpMessageOpt("-conf=<file>", strprintf(_("Specify configuration file (default: %s)"), BITCOIN_CONF_FILENAME));
++    strUsage += HelpMessageOpt("-confrw=<file>", strprintf(_("Specify read/write configuration file (default: %s)"), BITCOIN_RW_CONF_FILENAME));
+     strUsage += HelpMessageOpt("-datadir=<dir>", _("Specify data directory"));
+     AppendParamsHelpMessages(strUsage);
+     strUsage += HelpMessageOpt("-rpcconnect=<ip>", strprintf(_("Send commands to node running on <ip> (default: %s)"), DEFAULT_RPCCONNECT));
+@@ -104,6 +105,11 @@ static bool AppInitRPC(int argc, char* argv[])
+         fprintf(stderr, "Error: %s\n", e.what());
+         return false;
+     }
++    try {
++        ReadRWConfigFile(mapArgs, mapMultiArgs);
++    } catch (const std::exception& e) {
++        // Ignore problems here, since we are responsible for this file
++    }
+     if (GetBoolArg("-rpcssl", false))
+     {
+         fprintf(stderr, "Error: SSL mode for RPC (-rpcssl) is no longer supported.\n");
+diff --git a/src/bitcoind.cpp b/src/bitcoind.cpp
+index 28bc374..9ed7033 100644
+--- a/src/bitcoind.cpp
++++ b/src/bitcoind.cpp
+@@ -118,6 +118,12 @@ bool AppInit(int argc, char* argv[])
+             return false;
+         }
+ 
++        try {
++            ReadRWConfigFile(mapArgs, mapMultiArgs);
++        } catch (const std::exception& e) {
++            // Ignore problems here, since we are responsible for this file
++        }
++
+         // Command-line RPC
+         bool fCommandLine = false;
+         for (int i = 1; i < argc; i++)
+diff --git a/src/init.cpp b/src/init.cpp
+index 89bf8a8..2f38a72 100644
+--- a/src/init.cpp
++++ b/src/init.cpp
+@@ -317,6 +317,7 @@ std::string HelpMessage(HelpMessageMode mode)
+     strUsage += HelpMessageOpt("-checkblocks=<n>", strprintf(_("How many blocks to check at startup (default: %u, 0 = all)"), DEFAULT_CHECKBLOCKS));
+     strUsage += HelpMessageOpt("-checklevel=<n>", strprintf(_("How thorough the block verification of -checkblocks is (0-4, default: %u)"), DEFAULT_CHECKLEVEL));
+     strUsage += HelpMessageOpt("-conf=<file>", strprintf(_("Specify configuration file (default: %s)"), BITCOIN_CONF_FILENAME));
++    strUsage += HelpMessageOpt("-confrw=<file>", strprintf(_("Specify read/write configuration file (default: %s)"), BITCOIN_RW_CONF_FILENAME));
+     if (mode == HMM_BITCOIND)
+     {
+ #ifndef WIN32
+@@ -1082,6 +1083,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
+     LogPrintf("Default data directory %s\n", GetDefaultDataDir().string());
+     LogPrintf("Using data directory %s\n", strDataDir);
+     LogPrintf("Using config file %s\n", GetConfigFile().string());
++    LogPrintf("Using rw config file %s\n", GetRWConfigFile().string());
+     LogPrintf("Using at most %i connections (%i file descriptors available)\n", nMaxConnections, nFD);
+     std::ostringstream strErrors;
+ 
+diff --git a/src/qt/bitcoin.cpp b/src/qt/bitcoin.cpp
+index 430e6dd..7099c79 100644
+--- a/src/qt/bitcoin.cpp
++++ b/src/qt/bitcoin.cpp
+@@ -615,6 +615,12 @@ int main(int argc, char *argv[])
+     PaymentServer::ipcParseCommandLine(argc, argv);
+ #endif
+ 
++    try {
++        ReadRWConfigFile(mapArgs, mapMultiArgs);
++    } catch (const std::exception& e) {
++        // Ignore problems here, since we are responsible for this file
++    }
++
+     QScopedPointer<const NetworkStyle> networkStyle(NetworkStyle::instantiate(QString::fromStdString(Params().NetworkIDString())));
+     assert(!networkStyle.isNull());
+     // Allow for separate UI settings for testnets
+diff --git a/src/qt/forms/optionsdialog.ui b/src/qt/forms/optionsdialog.ui
+index 2050018..1c60e68 100644
+--- a/src/qt/forms/optionsdialog.ui
++++ b/src/qt/forms/optionsdialog.ui
+@@ -534,6 +534,56 @@
+         </layout>
+        </item>
+        <item>
++        <layout class="QHBoxLayout" name="horizontalLayout_maxuploadtarget">
++         <item>
++          <widget class="QCheckBox" name="maxuploadtargetCheckbox">
++           <property name="text">
++            <string>Try to keep upload traffic under</string>
++           </property>
++          </widget>
++         </item>
++         <item>
++          <widget class="QSpinBox" name="maxuploadtarget"/>
++         </item>
++         <item>
++          <widget class="QLabel" name="maxuploadtargetUnitLabel">
++           <property name="text">
++            <string>MB per day</string>
++           </property>
++           <property name="textFormat">
++            <enum>Qt::PlainText</enum>
++           </property>
++           <property name="buddy">
++            <cstring>maxuploadtargetCheckbox</cstring>
++           </property>
++          </widget>
++         </item>
++         <item>
++          <spacer name="horizontalSpacer_maxuploadtarget">
++           <property name="orientation">
++            <enum>Qt::Horizontal</enum>
++           </property>
++           <property name="sizeHint" stdset="0">
++            <size>
++             <width>40</width>
++             <height>20</height>
++            </size>
++           </property>
++          </spacer>
++         </item>
++        </layout>
++       </item>
++       <item>
++        <widget class="QCheckBox" name="peerbloomfilters">
++         <property name="toolTip">
++          <string>Support filtering of blocks and transaction with bloom filters</string>
++         </property>
++         <property name="text">
++          <string>Provide search services for light clients</string>
++         </property>
++        </widget>
++       </item>
++       <item>
+         <spacer name="verticalSpacer_Network">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+diff --git a/src/qt/optionsdialog.cpp b/src/qt/optionsdialog.cpp
+index 3fad8e8..9c4d995 100644
+--- a/src/qt/optionsdialog.cpp
++++ b/src/qt/optionsdialog.cpp
+@@ -68,6 +68,10 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
+     connect(ui->connectSocksTor, SIGNAL(toggled(bool)), ui->proxyPortTor, SLOT(setEnabled(bool)));
+     connect(ui->connectSocksTor, SIGNAL(toggled(bool)), this, SLOT(updateProxyValidationState()));
+ 
++    ui->maxuploadtarget->setMinimum(1);
++    ui->maxuploadtarget->setMaximum(std::numeric_limits<int>::max());
++    connect(ui->maxuploadtargetCheckbox, SIGNAL(stateChanged(int)), this, SLOT(maxuploadtargetCheckboxStateChanged(int)));
++
+     /* Window elements init */
+ #ifdef Q_OS_MAC
+     /* remove Window tab on Mac */
+@@ -172,6 +176,7 @@ void OptionsDialog::setModel(OptionsModel *model)
+     connect(ui->allowIncoming, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+     connect(ui->connectSocks, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+     connect(ui->connectSocksTor, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
++    connect(ui->peerbloomfilters, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+     /* Display */
+     connect(ui->lang, SIGNAL(valueChanged()), this, SLOT(showRestartWarning()));
+     connect(ui->thirdPartyTxUrls, SIGNAL(textChanged(const QString &)), this, SLOT(showRestartWarning()));
+@@ -201,6 +206,22 @@ void OptionsDialog::setMapper()
+     mapper->addMapping(ui->proxyIpTor, OptionsModel::ProxyIPTor);
+     mapper->addMapping(ui->proxyPortTor, OptionsModel::ProxyPortTor);
+ 
++    int current_maxuploadtarget = model->data(model->index(OptionsModel::maxuploadtarget, 0), Qt::EditRole).toInt();
++    if (current_maxuploadtarget == 0) {
++        ui->maxuploadtargetCheckbox->setChecked(false);
++        ui->maxuploadtarget->setEnabled(false);
++        ui->maxuploadtarget->setValue(ui->maxuploadtarget->minimum());
++    } else {
++        if (current_maxuploadtarget < ui->maxuploadtarget->minimum()) {
++            ui->maxuploadtarget->setMinimum(current_maxuploadtarget);
++        }
++        ui->maxuploadtargetCheckbox->setChecked(true);
++        ui->maxuploadtarget->setEnabled(true);
++        ui->maxuploadtarget->setValue(current_maxuploadtarget);
++    }
++
++    mapper->addMapping(ui->peerbloomfilters, OptionsModel::peerbloomfilters);
++
+     /* Window */
+ #ifndef Q_OS_MAC
+     mapper->addMapping(ui->hideTrayIcon, OptionsModel::HideTrayIcon);
+@@ -230,6 +251,11 @@ void OptionsDialog::setOkButtonState(bool fState)
+     ui->okButton->setEnabled(fState);
+ }
+ 
++void OptionsDialog::maxuploadtargetCheckboxStateChanged(const int state)
++{
++    ui->maxuploadtarget->setEnabled(state);
++}
++
+ void OptionsDialog::on_resetButton_clicked()
+ {
+     if(model)
+@@ -268,6 +294,13 @@ void OptionsDialog::on_okButton_clicked()
+             }
+         }
+     }
++
++    if (ui->maxuploadtargetCheckbox->isChecked()) {
++        model->setData(model->index(OptionsModel::maxuploadtarget, 0), ui->maxuploadtarget->value());
++    } else {
++        model->setData(model->index(OptionsModel::maxuploadtarget, 0), 0);
++    }
++
+     mapper->submit();
+     accept();
+     updateDefaultProxyNets();
+diff --git a/src/qt/optionsdialog.h b/src/qt/optionsdialog.h
+index 45b129b..2a67e48 100644
+--- a/src/qt/optionsdialog.h
++++ b/src/qt/optionsdialog.h
+@@ -58,6 +58,7 @@ private Q_SLOTS:
+     /* query the networks, for which the default proxy is used */
+     void updateDefaultProxyNets();
+     void checkLineEdit();
++    void maxuploadtargetCheckboxStateChanged(int);
+ 
+ Q_SIGNALS:
+     void proxyIpChecks(QValidatedLineEdit *pUiProxyIp, int nProxyPort);
+diff --git a/src/qt/optionsmodel.cpp b/src/qt/optionsmodel.cpp
+index c5610be..b6e721b 100644
+--- a/src/qt/optionsmodel.cpp
++++ b/src/qt/optionsmodel.cpp
+@@ -151,6 +151,9 @@ void OptionsModel::Init(bool resetSettings)
+     else if(!settings.value("fUseSeparateProxyTor").toBool() && !GetArg("-onion", "").empty())
+         addOverriddenOption("-onion");
+ 
++    // rwconf settings that require a restart
++    f_peerbloomfilters = GetBoolArg("-peerbloomfilters", DEFAULT_PEERBLOOMFILTERS);
++
+     // Display
+     if (!settings.contains("language"))
+         settings.setValue("language", "");
+@@ -168,6 +171,9 @@ void OptionsModel::Reset()
+     QString dataDir = Intro::getDefaultDataDirectory();
+     dataDir = settings.value("strDataDir", dataDir).toString();
+ 
++    // Remove rw config file
++    EraseRWConfigFile();
++
+     // Remove all entries from our QSettings object
+     settings.clear();
+ 
+@@ -260,6 +266,10 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
+             return settings.value("nThreadsScriptVerif");
+         case Listen:
+             return settings.value("fListen");
++        case maxuploadtarget:
++            return qlonglong(CNode::GetMaxOutboundTarget() / 1024 / 1024);
++        case peerbloomfilters:
++            return f_peerbloomfilters;
+         default:
+             return QVariant();
+         }
+@@ -424,6 +434,21 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
+                 setRestartRequired(true);
+             }
+             break;
++        case maxuploadtarget:
++        {
++            qlonglong nv = value.toLongLong() * 1024 * 1024;
++            if (qlonglong(CNode::GetMaxOutboundTarget()) != nv) {
++                ModifyRWConfigFile("maxuploadtarget", value.toString().toStdString());
++                CNode::SetMaxOutboundTarget(nv);
++            }
++            break;
++        }
++        case peerbloomfilters:
++            if (f_peerbloomfilters != value) {
++                ModifyRWConfigFile("peerbloomfilters", strprintf("%d", value.toBool()));
++                f_peerbloomfilters = value.toBool();
++            }
++            break;
+         default:
+             break;
+         }
+diff --git a/src/qt/optionsmodel.h b/src/qt/optionsmodel.h
+index 7f06b3e..3838d95 100644
+--- a/src/qt/optionsmodel.h
++++ b/src/qt/optionsmodel.h
+@@ -48,6 +48,8 @@ public:
+         DatabaseCache,          // int
+         SpendZeroConfChange,    // bool
+         Listen,                 // bool
++        maxuploadtarget,
++        peerbloomfilters,       // bool
+         OptionIDRowCount,
+     };
+ 
+@@ -88,6 +90,9 @@ private:
+     /* settings that were overriden by command-line */
+     QString strOverriddenByCommandLine;
+ 
++    /* rwconf settings that require a restart */
++    bool f_peerbloomfilters;
++
+     // Add option to list of GUI options overridden through command line/config file
+     void addOverriddenOption(const std::string &option);
+ 
+diff --git a/src/test/util_tests.cpp b/src/test/util_tests.cpp
+index e467a41..cb7a955 100644
+--- a/src/test/util_tests.cpp
++++ b/src/test/util_tests.cpp
+@@ -571,4 +571,157 @@ BOOST_AUTO_TEST_CASE(test_ParseFixedPoint)
+     BOOST_CHECK(!ParseFixedPoint("1.", 8, &amount));
+ }
+ 
++static std::string CheckModifyRWConfigFile(std::map<std::string, std::string>& mapChangeSettings, const std::string& strIn)
++{
++    std::istringstream streamIn(strIn);
++    std::ostringstream streamOut;
++    try {
++        ModifyRWConfigFile(streamIn, streamOut, mapChangeSettings);
++    } catch (...) {
++        mapChangeSettings.clear();
++        throw;
++    }
++    mapChangeSettings.clear();
++    return streamOut.str();
++}
++
++BOOST_AUTO_TEST_CASE(test_ModifyRWConfigFile)
++{
++    std::map<std::string, std::string> cs;
++
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b"), "a=b");
++
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b"), "a=c");
++    BOOST_CHECK(cs.empty());
++
++    // Multi-char name/value
++    cs["ab"] = "cd";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "ab=bc"), "ab=cd");
++
++    // Preserved final newline
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\n"), "a=b\n");
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\n"), "a=c\n");
++
++    // Preserved final tab
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\t"), "a=b\t");
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\t"), "a=c\t");
++
++    // Preserved final space
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b "), "a=b ");
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b "), "a=c ");
++
++    // Preserved final crnl
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\r\n"), "a=b\r\n");
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\r\n"), "a=c\r\n");
++
++    // Empty file
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, ""), "a=c\n");
++
++    // Ignore k=v in comment
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "#a=b"), "#a=b\na=c\n");
++
++    // Preserved comment
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\t# c"), "a=b\t# c");
++
++    // Commented out commented value
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\t# c"), "a=c\n#a=b\t# c");
++
++    // Preserved whitespace before name
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, " \t \ta=b"), " \t \ta=b");
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, " \t \ta=b"), " \t \ta=c");
++
++    // Preserved whitespace after name
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a \t \t=b"), "a \t \t=b");
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a \t \t=b"), "a \t \t=c");
++
++    // Preserved whitespace before value
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a= \t \tb"), "a= \t \tb");
++    cs["a"] = "c";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a= \t \tb"), "a= \t \tc");
++
++    // Modifying value between others
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=bc\nd=e"), "a=b\nab=bc\nd=e");
++    cs["ab"] = "x";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=bc\nd=e"), "a=b\nab=x\nd=e");
++
++    // Blank key/value
++    cs["ab"] = "";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=bc\nd=e"), "a=b\nab=\nd=e");
++    cs[""] = "x";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=bc\nd=e"), "a=b\nab=bc\nd=e\n=x\n");
++
++    // Blank line in source
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\n\nab=bc\n\nd=e"), "a=b\n\nab=bc\n\nd=e");
++    cs["ab"] = "x";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\n\nab=bc\n\nd=e"), "a=b\n\nab=x\n\nd=e");
++
++    // Duplicate keys in the source
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=bc\nf=x\nab=zx\nd=e"), "a=b\nab=bc\nf=x\nab=zx\nd=e");
++    cs["ab"] = "x";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=bc\nf=x\nab=zx\nd=e"), "a=b\nab=x\nf=x\nab=zx\nd=e");
++
++    // Comment out entire file if invalid input line
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=bc\nGARBAGE\nd=e"), "[INVALID]\n# Error parsing line 3: GARBAGE\n#a=b\n#ab=bc\n#GARBAGE\n#d=e");
++    cs["ab"] = "x";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=bc\nGARBAGE\nd=e"), "ab=x\n[INVALID]\n# Error parsing line 3: GARBAGE\n#a=b\n#ab=bc\n#GARBAGE\n#d=e");
++    cs["ab"] = "x";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=bc\nGARBAGE\nd=e\n"), "ab=x\n[INVALID]\n# Error parsing line 3: GARBAGE\n#a=b\n#ab=bc\n#GARBAGE\n#d=e\n");
++
++    // Whitespace inside values
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=b\t \t c\nd=e"), "a=b\nab=b\t \t c\nd=e");
++    cs["ab"] = "x \t \tx";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\nab=b\t \t c\nd=e"), "a=b\nab=x \t \tx\nd=e");
++
++    // Newline inside name/value
++    cs["a"] = "x\nx";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++    cs["a"] = "x\rx";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++    cs["a\nb"] = "x";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++    cs["a\rb"] = "x";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++
++    // Whitespace leading/trailing name/value
++    cs["a"] = " x";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++    cs["a"] = "\tx";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++    cs[" a"] = "x";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++    cs["\ta"] = "x";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++    cs["a"] = "x ";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++    cs["a"] = "x\t";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++    cs["a "] = "x";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++    cs["a\t"] = "x";
++    BOOST_REQUIRE_THROW(CheckModifyRWConfigFile(cs, ""), std::invalid_argument);
++
++    // Ignore groups
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\n[group]\nab=bc\nd=e"), "a=b\n[group]\nab=bc\nd=e");
++    cs["ab"] = "x";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\n[group]\nab=bc\nd=e"), "a=b\nab=x\n[group]\nab=bc\nd=e");
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\n\t [group] \t#c\nab=bc\nd=e"), "a=b\n\t [group] \t#c\nab=bc\nd=e");
++    cs["ab"] = "x";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\n\t [group] \t#c\nab=bc\nd=e"), "a=b\nab=x\n\t [group] \t#c\nab=bc\nd=e");
++
++    // Comment out entire file if invalid input line, even after a group
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\n[group]\nab=bc\nGARBAGE\nd=e"), "[INVALID]\n# Error parsing line 4: GARBAGE\n#a=b\n#[group]\n#ab=bc\n#GARBAGE\n#d=e");
++    cs["ab"] = "x";
++    BOOST_CHECK_EQUAL(CheckModifyRWConfigFile(cs, "a=b\n[group]\nab=bc\nGARBAGE\nd=e"), "ab=x\n[INVALID]\n# Error parsing line 4: GARBAGE\n#a=b\n#[group]\n#ab=bc\n#GARBAGE\n#d=e");
++}
++
+ BOOST_AUTO_TEST_SUITE_END()
+diff --git a/src/util.cpp b/src/util.cpp
+index 8d62bf5..d05c80a 100644
+--- a/src/util.cpp
++++ b/src/util.cpp
+@@ -100,6 +100,7 @@ namespace boost {
+ using namespace std;
+ 
+ const char * const BITCOIN_CONF_FILENAME = "bitcoin.conf";
++const char * const BITCOIN_RW_CONF_FILENAME = "bitcoin_rw.conf";
+ const char * const BITCOIN_PID_FILENAME = "bitcoind.pid";
+ 
+ map<string, string> mapArgs;
+@@ -546,10 +547,17 @@ boost::filesystem::path GetConfigFile()
+     return pathConfigFile;
+ }
+ 
+-void ReadConfigFile(map<string, string>& mapSettingsRet,
+-                    map<string, vector<string> >& mapMultiSettingsRet)
++boost::filesystem::path GetRWConfigFile()
++{
++    boost::filesystem::path pathConfigFile(GetArg("-confrw", BITCOIN_RW_CONF_FILENAME));
++    if (!pathConfigFile.is_complete())
++        pathConfigFile = GetDataDir() / pathConfigFile;
++
++    return pathConfigFile;
++}
++
++static void ReadConfigFile(boost::filesystem::ifstream& streamConfig, std::map<std::string, std::string>& mapSettingsRet, std::map<std::string, std::vector<std::string> >& mapMultiSettingsRet, std::set<std::string>* setAllowOverride, std::set<std::string>* setInitiallyAssigned)
+ {
+-    boost::filesystem::ifstream streamConfig(GetConfigFile());
+     if (!streamConfig.good())
+         return; // No bitcoin.conf file is OK
+ 
+@@ -562,14 +570,244 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
+         string strKey = string("-") + it->string_key;
+         string strValue = it->value[0];
+         InterpretNegativeSetting(strKey, strValue);
+-        if (mapSettingsRet.count(strKey) == 0)
++        if (mapSettingsRet.count(strKey) == 0 || (setAllowOverride && setAllowOverride->find(strKey) != setAllowOverride->end())) {
+             mapSettingsRet[strKey] = strValue;
++            if (setAllowOverride) {
++                setAllowOverride->erase(strKey);
++            }
++            if (setInitiallyAssigned) {
++                setInitiallyAssigned->insert(strKey);
++            }
++        }
+         mapMultiSettingsRet[strKey].push_back(strValue);
+     }
+     // If datadir is changed in .conf file:
+     ClearDatadirCache();
+ }
+ 
++static std::set<std::string> setConfigAssigned;
++
++void ReadConfigFile(map<string, string>& mapSettingsRet,
++                    map<string, vector<string> >& mapMultiSettingsRet)
++{
++    boost::filesystem::ifstream streamConfig(GetConfigFile());
++    ReadConfigFile(streamConfig, mapSettingsRet, mapMultiSettingsRet, NULL, &setConfigAssigned);
++}
++
++void ReadRWConfigFile(std::map<std::string, std::string>& mapSettingsRet, std::map<std::string, std::vector<std::string> >& mapMultiSettingsRet)
++{
++    boost::filesystem::ifstream streamRWConfig(GetRWConfigFile());
++    ReadConfigFile(streamRWConfig, mapSettingsRet, mapMultiSettingsRet, &setConfigAssigned, NULL);
++    setConfigAssigned.clear();
++}
++
++// Like std::getline, but includes the EOL character in the result
++static bool getline_with_eol(std::istream& streamIn, std::string& s)
++{
++    int i;
++    i = streamIn.get();
++    if (i == char_traits<char>::eof()) {
++        return false;
++    }
++    s.clear();
++    s.push_back(char(i));
++    while (i != '\n') {
++        i = streamIn.get();
++        if (i == char_traits<char>::eof()) {
++            break;
++        }
++        s.push_back(char(i));
++    }
++    return true;
++}
++
++static const char * const ModifyRWConfigFile_ws_chars = " \t\r\n";
++
++static void ModifyRWConfigFile_SanityCheck(const std::string& s)
++{
++    if (s.empty()) {
++        // Dereferencing .begin or .rbegin below is invalid unless the string has at least one character.
++        return;
++    }
++
++    static const char * const newline_chars = "\r\n";
++    static std::string ws_chars(ModifyRWConfigFile_ws_chars);
++    if (s.find_first_of(newline_chars) != std::string::npos) {
++        throw std::invalid_argument("New-line in config name/value");
++    }
++    if (ws_chars.find(*s.begin()) != std::string::npos || ws_chars.find(*s.rbegin()) != std::string::npos) {
++        throw std::invalid_argument("Config name/value has leading/trailing whitespace");
++    }
++}
++
++static void ModifyRWConfigFile_WriteRemaining(std::ostream& streamOut, const std::map<std::string, std::string>& mapChangeSettings, std::set<std::string>& setFound)
++{
++    typedef std::map<std::string, std::string>::value_type mapChangeSettings_value_type;
++    BOOST_FOREACH(const mapChangeSettings_value_type& pairSetting, mapChangeSettings) {
++        const std::string& key = pairSetting.first;
++        const std::string& val = pairSetting.second;
++        if (setFound.find(key) != setFound.end()) {
++            continue;
++        }
++        setFound.insert(key);
++        ModifyRWConfigFile_SanityCheck(key);
++        ModifyRWConfigFile_SanityCheck(val);
++        streamOut << key << "=" << val << "\n";
++    }
++}
++
++void ModifyRWConfigFile(std::istream& streamIn, std::ostream& streamOut, const std::map<std::string, std::string>& mapChangeSettings)
++{
++    static const char * const ws_chars = ModifyRWConfigFile_ws_chars;
++    std::set<std::string> setFound;
++    std::string s, lineend, linebegin, key;
++    std::string::size_type n, n2;
++    bool inside_group = false, have_eof_nl = true, has_comment;
++    std::map<std::string, std::string>::const_iterator iterCS;
++    size_t lineno = 0;
++    while (getline_with_eol(streamIn, s)) {
++        ++lineno;
++
++        have_eof_nl = (!s.empty()) && (*s.rbegin() == '\n');
++        n = s.find('#');
++        has_comment = (n != std::string::npos);
++        if (!has_comment) {
++            n = s.size();
++        }
++        n2 = s.find_last_not_of(ws_chars, n - 1);
++        if (n2 != std::string::npos) {
++            n = n2 + 1;
++        }
++        n2 = s.find_first_not_of(ws_chars);
++        if (n2 == std::string::npos || n2 >= n) {
++            // Blank or comment-only line
++            streamOut << s;
++            continue;
++        }
++        lineend = s.substr(n);
++        linebegin = s.substr(0, n2);
++        s = s.substr(n2, n - n2);
++
++        // It is impossible for s to be empty here, due to the blank line check above
++        if (*s.begin() == '[' && *s.rbegin() == ']') {
++            // We don't use sections, so we could possibly just write out the rest of the file - but we need to check for unparsable lines, so we just set a flag to ignore settings from here on
++            ModifyRWConfigFile_WriteRemaining(streamOut, mapChangeSettings, setFound);
++            inside_group = true;
++            key.clear();
++
++            streamOut << linebegin << s << lineend;
++            continue;
++        }
++
++        n = s.find('=');
++        if (n == std::string::npos) {
++            // Bad line; this causes boost to throw an exception when parsing, so we comment out the entire file
++            streamIn.seekg(0, ios_base::beg);
++            streamOut.seekp(0, ios_base::beg);
++            if (!(streamIn.good() && streamOut.good())) {
++                throw std::ios_base::failure("Failed to rewind (to comment out existing file)");
++            }
++            // First, write out all the settings we intend to set
++            setFound.clear();
++            ModifyRWConfigFile_WriteRemaining(streamOut, mapChangeSettings, setFound);
++            // We then define a category to ensure new settings get added before the invalid stuff
++            streamOut << "[INVALID]\n";
++            // Then, describe the problem in a comment
++            streamOut << "# Error parsing line " << lineno << ": " << s << "\n";
++            // Finally, dump the rest of the file commented out
++            while (getline_with_eol(streamIn, s)) {
++                streamOut << "#" << s;
++            }
++            return;
++        }
++
++        if (!inside_group) {
++            // We don't support/use groups, so once we're inside key is always null to avoid setting anything
++            n2 = s.find_last_not_of(ws_chars, n - 1);
++            if (n2 == std::string::npos) {
++                n2 = n - 1;
++            } else {
++                ++n2;
++            }
++            key = s.substr(0, n2);
++        }
++        if ((!key.empty()) && (iterCS = mapChangeSettings.find(key)) != mapChangeSettings.end() && setFound.find(key) == setFound.end()) {
++            // This is the key we want to change
++            const std::string& val = iterCS->second;
++            setFound.insert(key);
++            ModifyRWConfigFile_SanityCheck(val);
++            if (has_comment) {
++                // Rather than change a commented line, comment it out entirely (the existing comment may relate to the value) and replace it
++                streamOut << key << "=" << val << "\n";
++                linebegin.insert(linebegin.begin(), '#');
++            } else {
++                // Just modify the value in-line otherwise
++                n2 = s.find_first_not_of(ws_chars, n + 1);
++                if (n2 == std::string::npos) {
++                    n2 = n + 1;
++                }
++                s = s.substr(0, n2) + val;
++            }
++        }
++        streamOut << linebegin << s << lineend;
++    }
++    if (setFound.size() < mapChangeSettings.size()) {
++        if (!have_eof_nl) {
++            streamOut << "\n";
++        }
++        ModifyRWConfigFile_WriteRemaining(streamOut, mapChangeSettings, setFound);
++    }
++}
++
++void ModifyRWConfigFile(const std::map<std::string, std::string>& mapChangeSettings)
++{
++    const boost::filesystem::path rwconf_path = GetRWConfigFile();
++    boost::filesystem::path rwconf_new_path = rwconf_path;
++    rwconf_new_path += ".new";
++    const std::string new_path_str = rwconf_new_path.string();
++    try {
++        std::remove(new_path_str.c_str());
++        boost::filesystem::ofstream streamRWConfigOut(rwconf_new_path, ios_base::out | ios_base::trunc);
++        if (boost::filesystem::exists(rwconf_path)) {
++            boost::filesystem::ifstream streamRWConfig(rwconf_path);
++            ModifyRWConfigFile(streamRWConfig, streamRWConfigOut, mapChangeSettings);
++        } else {
++            std::istringstream streamIn;
++            ModifyRWConfigFile(streamIn, streamRWConfigOut, mapChangeSettings);
++        }
++    } catch (...) {
++        std::remove(new_path_str.c_str());
++        throw;
++    }
++    if (!RenameOver(rwconf_new_path, rwconf_path)) {
++        std::remove(new_path_str.c_str());
++        throw std::ios_base::failure(strprintf("Failed to replace %s", new_path_str));
++    }
++}
++
++void ModifyRWConfigFile(const std::string& strArg, const std::string& strNewValue)
++{
++    std::map<std::string, std::string> mapChangeSettings;
++    mapChangeSettings[strArg] = strNewValue;
++    ModifyRWConfigFile(mapChangeSettings);
++}
++
++void EraseRWConfigFile()
++{
++    const boost::filesystem::path rwconf_path = GetRWConfigFile();
++    if (!boost::filesystem::exists(rwconf_path)) {
++        return;
++    }
++    boost::filesystem::path rwconf_reset_path = rwconf_path;
++    rwconf_reset_path += ".reset";
++    if (!RenameOver(rwconf_path, rwconf_reset_path)) {
++        const std::string path_str = rwconf_path.string();
++        if (std::remove(path_str.c_str())) {
++            throw std::ios_base::failure(strprintf("Failed to remove %s", path_str));
++        }
++    }
++}
++
+ #ifndef WIN32
+ boost::filesystem::path GetPidFile()
+ {
+diff --git a/src/util.h b/src/util.h
+index 23297d6..ef514f2 100644
+--- a/src/util.h
++++ b/src/util.h
+@@ -55,6 +55,7 @@ extern std::atomic<bool> fReopenDebugLog;
+ extern CTranslationInterface translationInterface;
+ 
+ extern const char * const BITCOIN_CONF_FILENAME;
++extern const char * const BITCOIN_RW_CONF_FILENAME;
+ extern const char * const BITCOIN_PID_FILENAME;
+ 
+ /**
+@@ -119,11 +120,17 @@ boost::filesystem::path GetDefaultDataDir();
+ const boost::filesystem::path &GetDataDir(bool fNetSpecific = true);
+ void ClearDatadirCache();
+ boost::filesystem::path GetConfigFile();
++boost::filesystem::path GetRWConfigFile();
+ #ifndef WIN32
+ boost::filesystem::path GetPidFile();
+ void CreatePidFile(const boost::filesystem::path &path, pid_t pid);
+ #endif
+ void ReadConfigFile(std::map<std::string, std::string>& mapSettingsRet, std::map<std::string, std::vector<std::string> >& mapMultiSettingsRet);
++void ReadRWConfigFile(std::map<std::string, std::string>& mapSettingsRet, std::map<std::string, std::vector<std::string> >& mapMultiSettingsRet);
++void ModifyRWConfigFile(std::istream& streamIn, std::ostream& streamOut, const std::map<std::string, std::string>& mapChangeSettings);
++void ModifyRWConfigFile(const std::map<std::string, std::string>& mapChangeSettings);
++void ModifyRWConfigFile(const std::string& strArg, const std::string& strNewValue);
++void EraseRWConfigFile();
+ #ifdef WIN32
+ boost::filesystem::path GetSpecialFolderPath(int nFolder, bool fCreate = true);
+ #endif

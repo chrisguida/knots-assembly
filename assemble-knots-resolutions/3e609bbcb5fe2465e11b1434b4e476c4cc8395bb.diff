@@ -1,0 +1,265 @@
+diff --git a/src/qt/forms/optionsdialog.ui b/src/qt/forms/optionsdialog.ui
+index 6416fb3..2050018 100644
+--- a/src/qt/forms/optionsdialog.ui
++++ b/src/qt/forms/optionsdialog.ui
+@@ -187,6 +187,55 @@
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_Network">
+        <item>
++        <layout class="QHBoxLayout" name="horizontalLayout_Network_Port">
++         <item>
++          <widget class="QLabel" name="networkPortLabel">
++           <property name="text">
++            <string>Network &amp;port</string>
++           </property>
++           <property name="textFormat">
++            <enum>Qt::PlainText</enum>
++           </property>
++           <property name="buddy">
++            <cstring>networkPort</cstring>
++           </property>
++          </widget>
++         </item>
++         <item>
++          <widget class="QLineEdit" name="networkPort">
++           <property name="minimumSize">
++            <size>
++             <width>55</width>
++             <height>0</height>
++            </size>
++           </property>
++           <property name="maximumSize">
++            <size>
++             <width>55</width>
++             <height>16777215</height>
++            </size>
++           </property>
++           <property name="toolTip">
++            <string>Network port (e.g. 8333)</string>
++           </property>
++          </widget>
++         </item>
++         <item>
++          <spacer name="horizontalSpacer_Network_Port">
++           <property name="orientation">
++            <enum>Qt::Horizontal</enum>
++           </property>
++           <property name="sizeHint" stdset="0">
++            <size>
++             <width>40</width>
++             <height>20</height>
++            </size>
++           </property>
++          </spacer>
++         </item>
++        </layout>
++       </item>
++       <item>
+         <widget class="QCheckBox" name="mapPortUpnp">
+          <property name="toolTip">
+           <string>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</string>
+diff --git a/src/qt/guiconstants.h b/src/qt/guiconstants.h
+index bab9923..a87b575 100644
+--- a/src/qt/guiconstants.h
++++ b/src/qt/guiconstants.h
+@@ -51,6 +51,5 @@ static const int MAX_URI_LENGTH = 255;
+ #define QAPP_ORG_NAME "Bitcoin"
+ #define QAPP_ORG_DOMAIN "bitcoin.org"
+ #define QAPP_APP_NAME_DEFAULT "Bitcoin-Qt"
+-#define QAPP_APP_NAME_TESTNET "Bitcoin-Qt-testnet"
+ 
+ #endif // BITCOIN_QT_GUICONSTANTS_H
+diff --git a/src/qt/networkstyle.cpp b/src/qt/networkstyle.cpp
+index 5f31f49..0a19f49 100644
+--- a/src/qt/networkstyle.cpp
++++ b/src/qt/networkstyle.cpp
+@@ -10,14 +10,14 @@
+ 
+ static const struct {
+     const char *networkId;
+-    const char *appName;
++    const char *appNameSuffix;
+     const int iconColorHueShift;
+     const int iconColorSaturationReduction;
+     const char *titleAddText;
+ } network_styles[] = {
+-    {"main", QAPP_APP_NAME_DEFAULT, 0, 0, ""},
+-    {"test", QAPP_APP_NAME_TESTNET, 70, 30, QT_TRANSLATE_NOOP("SplashScreen", "[testnet]")},
+-    {"regtest", QAPP_APP_NAME_TESTNET, 160, 30, "[regtest]"}
++    {"main", "", 0, 0, ""},
++    {"test", "-testnet", 70, 30, QT_TRANSLATE_NOOP("SplashScreen", "[testnet]")},
++    {"regtest", NULL, 160, 30, "[regtest]"}
+ };
+ static const unsigned network_styles_count = sizeof(network_styles)/sizeof(*network_styles);
+ 
+@@ -85,8 +85,14 @@ const NetworkStyle *NetworkStyle::instantiate(const QString &networkId)
+     {
+         if (networkId == network_styles[x].networkId)
+         {
++            QString appName = QAPP_APP_NAME_DEFAULT;
++            if (network_styles[x].appNameSuffix) {
++                appName += network_styles[x].appNameSuffix;
++            } else {
++                appName += QString("-") + networkId;
++            }
+             return new NetworkStyle(
+-                    network_styles[x].appName,
++                    appName,
+                     network_styles[x].iconColorHueShift,
+                     network_styles[x].iconColorSaturationReduction,
+                     network_styles[x].titleAddText);
+diff --git a/src/qt/optionsdialog.cpp b/src/qt/optionsdialog.cpp
+index 914ba0f..3fad8e8 100644
+--- a/src/qt/optionsdialog.cpp
++++ b/src/qt/optionsdialog.cpp
+@@ -44,6 +44,9 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
+     ui->threadsScriptVerif->setMinimum(-GetNumCores());
+     ui->threadsScriptVerif->setMaximum(MAX_SCRIPTCHECK_THREADS);
+ 
++    ui->networkPort->setValidator(new QIntValidator(1024, 65535, this));
++    connect(ui->networkPort, SIGNAL(textChanged(const QString&)), this, SLOT(checkLineEdit()));
++
+     /* Network elements init */
+ #ifndef USE_UPNP
+     ui->mapPortUpnp->setEnabled(false);
+@@ -165,6 +168,7 @@ void OptionsDialog::setModel(OptionsModel *model)
+     /* Wallet */
+     connect(ui->spendZeroConfChange, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+     /* Network */
++    connect(ui->networkPort, SIGNAL(textChanged(const QString &)), this, SLOT(showRestartWarning()));
+     connect(ui->allowIncoming, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+     connect(ui->connectSocks, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+     connect(ui->connectSocksTor, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+@@ -185,6 +189,7 @@ void OptionsDialog::setMapper()
+     mapper->addMapping(ui->coinControlFeatures, OptionsModel::CoinControlFeatures);
+ 
+     /* Network */
++    mapper->addMapping(ui->networkPort, OptionsModel::NetworkPort);
+     mapper->addMapping(ui->mapPortUpnp, OptionsModel::MapPortUPnP);
+     mapper->addMapping(ui->allowIncoming, OptionsModel::Listen);
+ 
+@@ -210,6 +215,16 @@ void OptionsDialog::setMapper()
+     mapper->addMapping(ui->thirdPartyTxUrls, OptionsModel::ThirdPartyTxUrls);
+ }
+ 
++void OptionsDialog::checkLineEdit()
++{
++    QLineEdit * const lineedit = qobject_cast<QLineEdit*>(QObject::sender());
++    if (lineedit->hasAcceptableInput()) {
++        lineedit->setStyleSheet("");
++    } else {
++        lineedit->setStyleSheet("color: red;");
++    }
++}
++
+ void OptionsDialog::setOkButtonState(bool fState)
+ {
+     ui->okButton->setEnabled(fState);
+@@ -235,6 +250,24 @@ void OptionsDialog::on_resetButton_clicked()
+ 
+ void OptionsDialog::on_okButton_clicked()
+ {
++    for (int i = 0; i < ui->tabWidget->count(); ++i) {
++        QWidget * const tab = ui->tabWidget->widget(i);
++        Q_FOREACH(QObject* o, tab->children()) {
++            QLineEdit * const lineedit = qobject_cast<QLineEdit*>(o);
++            if (lineedit && !lineedit->hasAcceptableInput()) {
++                int row = mapper->mappedSection(lineedit);
++                if (model->data(model->index(row, 0), Qt::EditRole) == lineedit->text()) {
++                    // Allow unchanged fields through
++                    continue;
++                }
++                ui->tabWidget->setCurrentWidget(tab);
++                lineedit->setFocus(Qt::OtherFocusReason);
++                lineedit->selectAll();
++                QMessageBox::critical(this, tr("Invalid setting"), tr("The value entered is invalid."));
++                return;
++            }
++        }
++    }
+     mapper->submit();
+     accept();
+     updateDefaultProxyNets();
+diff --git a/src/qt/optionsdialog.h b/src/qt/optionsdialog.h
+index 41b56d1..45b129b 100644
+--- a/src/qt/optionsdialog.h
++++ b/src/qt/optionsdialog.h
+@@ -57,6 +57,7 @@ private Q_SLOTS:
+     void updateProxyValidationState();
+     /* query the networks, for which the default proxy is used */
+     void updateDefaultProxyNets();
++    void checkLineEdit();
+ 
+ Q_SIGNALS:
+     void proxyIpChecks(QValidatedLineEdit *pUiProxyIp, int nProxyPort);
+diff --git a/src/qt/optionsmodel.cpp b/src/qt/optionsmodel.cpp
+index 3e9fb27..c5610be 100644
+--- a/src/qt/optionsmodel.cpp
++++ b/src/qt/optionsmodel.cpp
+@@ -16,6 +16,7 @@
+ #include "main.h" // For DEFAULT_SCRIPTCHECK_THREADS
+ #include "net.h"
+ #include "txdb.h" // for -dbcache defaults
++#include "chainparams.h"
+ #include "intro.h" 
+ 
+ #ifdef ENABLE_WALLET
+@@ -115,6 +116,11 @@ void OptionsModel::Init(bool resetSettings)
+ #endif
+ 
+     // Network
++    if (!settings.contains("nNetworkPort"))
++        settings.setValue("nNetworkPort", (quint16)Params().GetDefaultPort());
++    if (!SoftSetArg("-port", settings.value("nNetworkPort").toString().toStdString()))
++        addOverriddenOption("-port");
++
+     if (!settings.contains("fUseUPnP"))
+         settings.setValue("fUseUPnP", DEFAULT_UPNP);
+     if (!SoftSetBoolArg("-upnp", settings.value("fUseUPnP").toBool()))
+@@ -195,6 +201,8 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
+             return fHideTrayIcon;
+         case MinimizeToTray:
+             return fMinimizeToTray;
++        case NetworkPort:
++            return settings.value("nNetworkPort");
+         case MapPortUPnP:
+ #ifdef USE_UPNP
+             return settings.value("fUseUPnP");
+@@ -280,6 +288,18 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
+             fMinimizeToTray = value.toBool();
+             settings.setValue("fMinimizeToTray", fMinimizeToTray);
+             break;
++        case NetworkPort:
++            if (settings.value("nNetworkPort") != value) {
++                // If the port input box is empty, set to default port
++                if (value.toString().isEmpty()) {
++                    settings.setValue("nNetworkPort", (quint16)Params().GetDefaultPort());
++                }
++                else {
++                    settings.setValue("nNetworkPort", (quint16)value.toInt());
++                }
++                setRestartRequired(true);
++            }
++            break;
+         case MapPortUPnP: // core option - can be changed on-the-fly
+             settings.setValue("fUseUPnP", value.toBool());
+             MapPort(value.toBool());
+@@ -473,4 +493,4 @@ void OptionsModel::checkAndMigrate()
+ 
+         settings.setValue(strSettingsVersionKey, CLIENT_VERSION);
+     }
+-}
+\ No newline at end of file
++}
+diff --git a/src/qt/optionsmodel.h b/src/qt/optionsmodel.h
+index a416e42..7f06b3e 100644
+--- a/src/qt/optionsmodel.h
++++ b/src/qt/optionsmodel.h
+@@ -30,6 +30,7 @@ public:
+         StartAtStartup,         // bool
+         HideTrayIcon,           // bool
+         MinimizeToTray,         // bool
++        NetworkPort,            // int
+         MapPortUPnP,            // bool
+         MinimizeOnClose,        // bool
+         ProxyUse,               // bool

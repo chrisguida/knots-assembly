@@ -1,0 +1,259 @@
+diff --git a/contrib/debian/copyright b/contrib/debian/copyright
+index b44244a..dc9c913 100644
+--- a/contrib/debian/copyright
++++ b/contrib/debian/copyright
+@@ -62,9 +62,7 @@ Files: src/qt/res/icons/tx_mined.png
+        src/qt/res/src/mine.svg
+        src/qt/res/icons/fontbigger.png
+        src/qt/res/icons/fontsmaller.png
+-       src/qt/res/icons/hd_disabled.png
+        src/qt/res/src/hd_disabled.svg
+-       src/qt/res/icons/hd_enabled.png
+        src/qt/res/src/hd_enabled.svg
+ Copyright: Jonas Schnelli
+ License: Expat
+diff --git a/src/Makefile.am b/src/Makefile.am
+index 2ff7be2..0b82c80 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -497,9 +497,16 @@ endif
+ 
+ # Rendered icons must be here, not in Makefile.qt.include, since they are distributed with the source tarball
+ 
+-RES_RENDERED_ICON_SOURCES = qt/res/src/bitcoin.svg
++RES_RENDERED_ICON_SOURCES = \
++  qt/res/src/hd_disabled.svg \
++  qt/res/src/hd_enabled.svg \
++  qt/res/src/network_disabled.svg \
++  qt/res/src/bitcoin.svg
+ 
+ RES_RENDERED_ICONS = \
++  qt/res/rendered_icons/hd_disabled.png \
++  qt/res/rendered_icons/hd_enabled.png \
++  qt/res/rendered_icons/network_disabled.png \
+   qt/res/rendered_icons/about.png \
+   qt/res/rendered_icons/bitcoin.ico \
+   qt/res/rendered_icons/bitcoin_testnet.ico \
+@@ -515,6 +522,14 @@ EXTRA_DIST += $(RES_RENDERED_ICON_SOURCES) $(RES_ALL_RENDERED_ICONS)
+ 
+ if CAN_RENDER_ICONS
+ 
++qt/res/rendered_icons/hd_%.png: qt/res/src/hd_%.svg
++	@$(MKDIR_P) $(@D)
++	$(RSVG_CONVERT) -f png < $< > $@
++
++qt/res/rendered_icons/network_disabled.png: qt/res/src/network_disabled.svg
++	@$(MKDIR_P) $(@D)
++	$(RSVG_CONVERT) -f png < $< > $@
++
+ qt/res/rendered_icons/about.png: qt/res/rendered_icons/about.svg
+ 	$(RSVG_CONVERT) -f png -d 142 -p 142 < $< | $(IMAGEMAGICK_CONVERT) - -crop 128x128+7+7 -colorspace Gray -strip $@
+ 
+diff --git a/src/Makefile.qt.include b/src/Makefile.qt.include
+index 380bf3e..68ecca6 100644
+--- a/src/Makefile.qt.include
++++ b/src/Makefile.qt.include
+@@ -263,14 +263,11 @@ RES_ICONS = $(RES_RENDERED_ICONS) \
+   qt/res/icons/filesave.png \
+   qt/res/icons/fontbigger.png \
+   qt/res/icons/fontsmaller.png \
+-  qt/res/icons/hd_disabled.png \
+-  qt/res/icons/hd_enabled.png \
+   qt/res/icons/history.png \
+   qt/res/icons/info.png \
+   qt/res/icons/key.png \
+   qt/res/icons/lock_closed.png \
+   qt/res/icons/lock_open.png \
+-  qt/res/icons/network_disabled.png \
+   qt/res/icons/open.png \
+   qt/res/icons/overview.png \
+   qt/res/icons/quit.png \
+diff --git a/src/qt/bitcoin.qrc b/src/qt/bitcoin.qrc
+index 1815d65..c5574d3 100644
+--- a/src/qt/bitcoin.qrc
++++ b/src/qt/bitcoin.qrc
+@@ -50,9 +50,9 @@
+         <file alias="fontsmaller">res/icons/fontsmaller.png</file>
+         <file alias="prompticon">res/icons/chevron.png</file>
+         <file alias="transaction_abandoned">res/icons/transaction_abandoned.png</file>
+-        <file alias="hd_enabled">res/icons/hd_enabled.png</file>
+-        <file alias="hd_disabled">res/icons/hd_disabled.png</file>
+-        <file alias="network_disabled">res/icons/network_disabled.png</file>
++        <file alias="hd_enabled">res/rendered_icons/hd_enabled.png</file>
++        <file alias="hd_disabled">res/rendered_icons/hd_disabled.png</file>
++        <file alias="network_disabled">res/rendered_icons/network_disabled.png</file>
+     </qresource>
+     <qresource prefix="/movies">
+         <file alias="spinner-000">res/movies/spinner-000.png</file>
+diff --git a/src/qt/res/icons/hd_disabled.png b/src/qt/res/icons/hd_disabled.png
+deleted file mode 100644
+index 687b6d2e38e9e3f8955072574ce644735a249982..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 4328
+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
+HpS|$k8tbb^
+
+diff --git a/src/qt/res/icons/hd_enabled.png b/src/qt/res/icons/hd_enabled.png
+deleted file mode 100644
+index 568dde1cd1c1dba2dc1d575365ecd89aa7e55f68..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 1889
+zcmb_dYfuwc6kZ@AP*Lea<sn@{si+~F4FpI8Nk|BfAs9j|QKAr&1yV^i>@Frmh+xa8
+zbwEae`r;v0d=zN4ty6q}jt?jxR%DP@E!N3cD+mQgu~6&=0sEu$PrG+_&pmg}_nmX^
+z`F3`XI40cD!Nmap0LRD(frPX<mdDPPd|z9uXd#U=5hf$z&}2fdzz~3^Lbo7bq(+f~
+zNDzf8GyMl72mow6)lwND6Gd~BsD`ev#Lx{I9f<~jpb&#jq1=iP;1(oBtqrCQU2LF&
+zYE>{bo+V<4bbKUL9bv?fIAe@dY22!0tEeGs!5{;NB+wv)0yJpSv^d8QOr7H8kaNp2
+zL<Ofph^@iY*G0)hVvvtw2*{$de3T3(3<j|2Fw2h(!!(e|fPEpD0WsM=FwF4_;K2Ui
+z^hG7JVX9<~L?E2bMS8*1RD#fPAV{y*)Ahb|6ib0%Hk%DGm=KfcLq_=EnOZ_&@X_L)
+zGYkR*S7K@%p+>c!g;B8u%^-rQWTmgSpwZ3JYVqk~A`c8QD0C1^XIQp06DSh>d#FY;
+z8;uhZ<W0T*NQ_G}bqFLua5Mu`l8sCDw4~B;_!y!fP)v%VX)~uNPDKe6PepYgpAUMA
+z6iT($;;)<nh(w%7Elw!3N+ePcOeHDkYPE{vCkPD?@R?yOKAQ!@Vg7-EJboC{PZ&zB
+z@!0-hGgtwt%+MfOVg{>vgB8w+wP-=3BQpySOuY?J2{BXyPVJeap1T(QoP5(*)!elR
+z=EOo|F_5LRf9v$j5-A_cbXK>dGpl?=OUfN1b$#9b#5no6bVLexQbW%`X~OP>u|VVP
+zbM%^){RXf`PIYRpl1GL1Q1b%XF9d-;nI4e4*Ne*MJgqr*zI*ld58Ackp--;b)TL4P
+z4<mccqan9~4823GS)<v$DW--$LI(UFwLZIrCbu1B<5g8MnoASJvdaM`9PEJqI!@nk
+z=yyqI^;q{#&$EXGy=T9_Zq&0oUA^X+FOSITmet~A%!>B$Z%X(Ts}|V%ezc*YdeN&_
+z>+5RelBeD~4%{y^4eXV|lJ1H=>1OZVqK%ZM6>&v(qdq_9W;N2{XFiWbJAVqiyy5@u
+z&}z@cU_)!X`^w`^q!srRaVSkte)CIADhT0b8H*CLX>sLOjQ3XEYTiIOMei-fy(T-)
+zKRn4h^d(Jlxaca}nH^epBCG%HLX)vrukdW!ru@p@6~9=#&*_O<m0N{l;U<S;3*w4>
+zot|`6M+<Y(MmKd=ek<_qP3+zSm~@hE*JE<rz~%yr0>9|X|8a>d4={-r4ACY7OA_*d
+z$ze%dzbrYdsMkn|fNBa_7O{8%u(cs{SNou>>Q07N@vrvP`;6JYeG<toyy9;gz@~+)
+z&bN*h*J9l8%Db^Swsb4g15Twe$a?I?>PB;;M^0jve|E^nljXT~{qHBbl`Jm+Chr_j
+zne7TqCXid7?hJSA1zs+x=--&>#o0NKv}?Y7$C|i92W_n6_pQc?gjSo6s4nar6rWjg
+zTVJ2Op#zy{80{C+tsW;|csTNtUH{VBbuY?1a}sH|y#6h#iL3SVE?qwxy~29zny@k9
+zO3H_ZZ8<<$-}q2E4TqXPTMU+V>22iYgNZyKM0RRGPg90F=|S%EL&xR5PnQ!lvGKcs
+z$BNPsv9nqB)YV#br29eaj&8yBhN0bies4NxPyHn>C91rx#a*Y2X3VcBbveH>XfWKI
+zj|H~f^yFs6<ej!%6W!{>ms_7}i8TxRq85Wky6in)6d$Kjn%tk8cAQ9er56BYNhkLw
+zo|&M<=h+oH4(M$b9!^rNKX&vzd?~3Uz0H6dcQ8`g<_uo$dax-$#2EW7_;j((HezXm
+zXjlWRNl8i=(^rDrjIZyd_vVgvQc$4x?xjC-Iu2m|!%?}nZ<^gGT!6g)j}hVVin0uN
+XRMO0!1b*IZ`RPT5#RzIclXm_E9we}T
+
+diff --git a/src/qt/res/icons/network_disabled.png b/src/qt/res/icons/network_disabled.png
+deleted file mode 100644
+index 49f728693d8c0fc5d63c4911b84f431961631434..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 591
+zcmV-V0<iswP)<h;3K|Lk000e1NJLTq000;O000;W1^@s6;CDUv00006VoOIv0RI60
+z0RN!9r;`8x0t87!K~zYIz1F{PO<@=Z@XxJ8N}_%xm7;#6W`m7E{0~;0gtS7cDi(vX
+zH8F@mt9~^%L1>W}3`_<w7(|G{K;sI<K#(iaf#E$TdA&X7-quZglQZ1&KF{-g-tY6{
+zT>cX(*poe#fAC*~6L^bnc#QS2K`(x1&n2`ikYEJ2aWjhZ3CoHI8j)0R0Ix6`+0S4i
+ziSY=Ba>uqTXfu*?!u5AxaTDKujHcO*CWe<IlI?hdF5Jbh#5VP*VjvH`0h9QQ?<Eey
+zIE_Kv67)?Ix`EX=o+Z;!!E!vu*-XckxQ|WI?XKV}-eDcyV+;Bsn`c;qc09lkYH$P>
+z{f(ulC)xePJ&XwjER%8$#<8#9eNjysX<mvUTu9!v3$533aDwJF9L5T4#FQ{R1kK9`
+z)@C;GB!9%U=nQPe9elwDoXngEZP|=qMChy@bY^6)MUz~H`PN}ZkTu3t(ImGLysQp=
+zl1XkB`~^-4Et<A)9ZQlJRSe{-xd&&kQ&<5tY>SNNGicM;C9Lay?8jDEl{p?1rn*`n
+zL1&ivZd}LSl3Uh=Mwvu+&U_T-OC0j&hp-{Lgo5@okaA8<#<S}*TG#EFd{2cIj?r}0
+z58`2BFd+;~{(BZLg^x|qC$)&AH$UtU)^vU_CG7j*f<TRslJv%h-FPBw%xN4e$+Q_-
+d{qwMJ`~lly?nsk6D((OP002ovPDHLkV1m114h;YR
+
+diff --git a/src/qt/res/src/hd_disabled.svg b/src/qt/res/src/hd_disabled.svg
+index 035f443..0b9f826 100644
+--- a/src/qt/res/src/hd_disabled.svg
++++ b/src/qt/res/src/hd_disabled.svg
+@@ -2,7 +2,7 @@
+ <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+ <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+ <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+-	 viewBox="0 0 595.3 841.9" enable-background="new 0 0 595.3 841.9" xml:space="preserve">
++	 viewBox="0 220 415 415" width="128" height="128" enable-background="new 0 0 595.3 841.9" xml:space="preserve">
+ <g>
+ 	<path d="M81.3,336.5v66.8h70.4v-66.8H190v174h-38.3v-75.1H81.3v75.1H43v-174H81.3z"/>
+ 	<path d="M298.7,336.5c11.2,0,21.6,1.8,31.3,5.4c9.7,3.6,18,8.9,25.1,16.1c7.1,7.2,12.6,16.1,16.6,26.8c4,10.7,6,23.3,6,37.8
+diff --git a/src/qt/res/src/hd_enabled.svg b/src/qt/res/src/hd_enabled.svg
+index cbaa16f..2c37189 100644
+--- a/src/qt/res/src/hd_enabled.svg
++++ b/src/qt/res/src/hd_enabled.svg
+@@ -2,7 +2,7 @@
+ <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+ <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+ <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+-	 viewBox="0 0 595.3 841.9" enable-background="new 0 0 595.3 841.9" xml:space="preserve">
++	 viewBox="0 220 415 415" width="128" height="128" enable-background="new 0 0 595.3 841.9" xml:space="preserve">
+ <g>
+ 	<path d="M81.3,336.5v66.8h70.4v-66.8H190v174h-38.3v-75.1H81.3v75.1H43v-174H81.3z"/>
+ 	<path d="M298.7,336.5c11.2,0,21.6,1.8,31.3,5.4c9.7,3.6,18,8.9,25.1,16.1c7.1,7.2,12.6,16.1,16.6,26.8c4,10.7,6,23.3,6,37.8

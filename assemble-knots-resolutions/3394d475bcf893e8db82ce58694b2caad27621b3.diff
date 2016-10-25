@@ -1,0 +1,97 @@
+diff --git a/src/init.cpp b/src/init.cpp
+index 2122b07..82ff9e8 100644
+--- a/src/init.cpp
++++ b/src/init.cpp
+@@ -457,6 +457,7 @@ std::string HelpMessage(HelpMessageMode mode)
+     strUsage += HelpMessageGroup(_("Node relay options:"));
+     strUsage += HelpMessageOpt("-acceptnonstdtxn", strprintf(_("Relay and mine \"non-standard\" transactions (%sdefault: %u)"), "", strprintf(_("%u or testnet: %u"), !Params(CBaseChainParams::MAIN).RequireStandardDefault(), !Params(CBaseChainParams::TESTNET).RequireStandardDefault())));
+     strUsage += HelpMessageOpt("-bytespersigop", strprintf(_("Equivalent bytes per sigop in transactions for relay and mining (default: %u)"), DEFAULT_BYTES_PER_SIGOP));
++    strUsage += HelpMessageOpt("-bytespersigopstrict", strprintf(_("Minimum bytes per sigop in transactions we relay and mine (default: %u)"), DEFAULT_BYTES_PER_SIGOP_STRICT));
+     strUsage += HelpMessageOpt("-datacarrier", strprintf(_("Relay and mine data carrier transactions (default: %u)"), DEFAULT_ACCEPT_DATACARRIER));
+     strUsage += HelpMessageOpt("-datacarriersize", strprintf(_("Maximum size of data in data carrier transactions we relay and mine (default: %u)"), MAX_OP_RETURN_RELAY));
+     strUsage += HelpMessageOpt("-mempoolreplacement", strprintf(_("Enable transaction replacement in the memory pool (default: %u)"), DEFAULT_ENABLE_REPLACEMENT));
+diff --git a/src/main.cpp b/src/main.cpp
+index 2a0839e..bc9decf 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -1068,6 +1068,34 @@ int64_t GetTransactionSigOpCost(const CTransaction& tx, const CCoinsViewCache& i
+     return nSigOps;
+ }
+ 
++/** Compute accurate total signature operation cost of a transaction.
++ *  Not consensus-critical, since legacy sigops counting is always used in the protocol.
++ */
++int64_t GetAccurateTransactionSigOpCost(const CTransaction& tx, const CCoinsViewCache& inputs, int flags)
++{
++    if (tx.IsCoinBase())
++        return 0;
++
++    unsigned int nSigOps = 0;
++    BOOST_FOREACH(const CTxIn& txin, tx.vin) {
++        nSigOps += txin.scriptSig.GetSigOpCount(false);
++    }
++
++    if (flags & SCRIPT_VERIFY_P2SH) {
++        nSigOps += GetP2SHSigOpCount(tx, inputs);
++    }
++
++    nSigOps *= WITNESS_SCALE_FACTOR;
++
++    if (flags & SCRIPT_VERIFY_WITNESS) {
++        for (unsigned int i = 0; i < tx.vin.size(); i++) {
++            const CTxOut &prevout = inputs.GetOutputFor(tx.vin[i]);
++            nSigOps += CountWitnessSigOps(tx.vin[i].scriptSig, prevout.scriptPubKey, i < tx.wit.vtxinwit.size() ? &tx.wit.vtxinwit[i].scriptWitness : NULL, flags);
++        }
++    }
++
++    return nSigOps;
++}
+ 
+ 
+ 
+@@ -1332,8 +1360,11 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
+         // itself can contain sigops MAX_STANDARD_TX_SIGOPS is less than
+         // MAX_BLOCK_SIGOPS; we still consider this an invalid rather than
+         // merely non-standard transaction.
++        // To avoid rejecting low-sigop bare-multisig transactions, the sigops
++        // are counted a second time more accurately.
+         if (setIgnoreRejects.find("bad-txns-too-many-sigops") == setIgnoreRejects.end()) {
+-            if (nSigOpsCost > MAX_STANDARD_TX_SIGOPS_COST)
++            int64_t nAccurateSigOpsCost = GetAccurateTransactionSigOpCost(tx, view, STANDARD_SCRIPT_VERIFY_FLAGS);
++            if ((nSigOpsCost > MAX_STANDARD_TX_SIGOPS_COST) || (nBytesPerSigOpStrict && nAccurateSigOpsCost > nSize * WITNESS_SCALE_FACTOR / nBytesPerSigOpStrict))
+                 return state.DoS(0, false, REJECT_NONSTANDARD, "bad-txns-too-many-sigops", false,
+                     strprintf("%d", nSigOpsCost));
+         }
+diff --git a/src/policy/policy.cpp b/src/policy/policy.cpp
+index 75964c2..6f96afc 100644
+--- a/src/policy/policy.cpp
++++ b/src/policy/policy.cpp
+@@ -262,6 +262,7 @@ bool IsWitnessStandard(const CTransaction& tx, const CCoinsViewCache& mapInputs,
+ }
+ 
+ unsigned int nBytesPerSigOp = DEFAULT_BYTES_PER_SIGOP;
++unsigned int nBytesPerSigOpStrict = DEFAULT_BYTES_PER_SIGOP_STRICT;
+ 
+ int64_t GetVirtualTransactionSize(int64_t nWeight, int64_t nSigOpCost)
+ {
+diff --git a/src/policy/policy.h b/src/policy/policy.h
+index 184e46e..cfbcca7 100644
+--- a/src/policy/policy.h
++++ b/src/policy/policy.h
+@@ -30,6 +30,8 @@ static const unsigned int MAX_STANDARD_TX_SIGOPS_COST = MAX_BLOCK_SIGOPS_COST/5;
+ static const unsigned int DEFAULT_MAX_MEMPOOL_SIZE = 300;
+ /** Default for -bytespersigop */
+ static const unsigned int DEFAULT_BYTES_PER_SIGOP = 20;
++/** Default for -bytespersigopstrict */
++static const unsigned int DEFAULT_BYTES_PER_SIGOP_STRICT = 20;
+ /** The maximum number of witness stack items in a standard P2WSH script */
+ static const unsigned int MAX_STANDARD_P2WSH_STACK_ITEMS = 100;
+ /** The maximum size of each witness stack item in a standard P2WSH script */
+@@ -84,6 +86,7 @@ bool AreInputsStandard(const CTransaction& tx, const CCoinsViewCache& mapInputs,
+ bool IsWitnessStandard(const CTransaction& tx, const CCoinsViewCache& mapInputs, std::string& reason, const std::set<std::string>& setIgnoreRejects=std::set<std::string>());
+ 
+ extern unsigned int nBytesPerSigOp;
++extern unsigned int nBytesPerSigOpStrict;
+ 
+ /** Compute the virtual transaction size (weight reinterpreted as bytes). */
+ int64_t GetVirtualTransactionSize(int64_t nWeight, int64_t nSigOpCost);

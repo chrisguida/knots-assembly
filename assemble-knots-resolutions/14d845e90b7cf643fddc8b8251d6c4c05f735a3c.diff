@@ -1,0 +1,946 @@
+diff --git a/src/init.cpp b/src/init.cpp
+index dbb516e..d6474fb 100644
+--- a/src/init.cpp
++++ b/src/init.cpp
+@@ -64,6 +64,7 @@
+ using namespace std;
+ 
+ bool fFeeEstimatesInitialized = false;
++static const bool DEFAULT_COREPOLICY = false;
+ static const bool DEFAULT_PROXYRANDOMIZE = true;
+ static const bool DEFAULT_REST_ENABLE = false;
+ static const bool DEFAULT_DISABLE_SAFEMODE = false;
+@@ -319,6 +320,7 @@ std::string HelpMessage(HelpMessageMode mode)
+     strUsage += HelpMessageOpt("-checklevel=<n>", strprintf(_("How thorough the block verification of -checkblocks is (0-4, default: %u)"), DEFAULT_CHECKLEVEL));
+     strUsage += HelpMessageOpt("-conf=<file>", strprintf(_("Specify configuration file (default: %s)"), BITCOIN_CONF_FILENAME));
+     strUsage += HelpMessageOpt("-confrw=<file>", strprintf(_("Specify read/write configuration file (default: %s)"), BITCOIN_RW_CONF_FILENAME));
++    strUsage += HelpMessageOpt("-corepolicy", strprintf(_("Use Bitcoin Core policy defaults (default: %s)"), DEFAULT_COREPOLICY));
+     if (mode == HMM_BITCOIND)
+     {
+ #ifndef WIN32
+@@ -469,6 +471,7 @@ std::string HelpMessage(HelpMessageMode mode)
+     strUsage += HelpMessageOpt("-blockprioritysize=<n>", strprintf(_("Set maximum size of high-priority/low-fee transactions in bytes (default: %d)"), DEFAULT_BLOCK_PRIORITY_SIZE));
+     if (showDebug)
+         strUsage += HelpMessageOpt("-blockversion=<n>", "Override block version to test forking scenarios");
++    strUsage += HelpMessageOpt("-priorityaccurate", strprintf(_("Update coin-age priority accurately when parent transactions are confirmed (default: %d)"), fPriorityAccurate));
+ 
+     strUsage += HelpMessageGroup(_("RPC server options:"));
+ #ifdef USE_LIBEVENT
+@@ -698,6 +701,17 @@ bool AppInitServers(boost::thread_group& threadGroup)
+ // Parameter interaction based on rules
+ void InitParameterInteraction()
+ {
++    if (GetBoolArg("-corepolicy", DEFAULT_COREPOLICY)) {
++        SoftSetArg("-bytespersigopstrict", "0");
++        SoftSetArg("-spamfilter", "0");
++        SoftSetArg("-permitbaremultisig", "1");
++        SoftSetArg("-datacarriersize", "83");
++
++        SoftSetArg("-blockprioritysize", "0");
++        SoftSetArg("-priorityaccurate", "0");
++        SoftSetArg("-blockmaxsize", "750000");
++    }
++
+     // when specifying an explicit binding address, you want to listen on it
+     // even when -connect or -proxy is specified
+     if (mapArgs.count("-bind")) {
+@@ -891,6 +905,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
+     if (GetBoolArg("-nodebug", false) || find(categories.begin(), categories.end(), string("0")) != categories.end())
+         fDebug = false;
+ 
++    fPriorityAccurate = GetBoolArg("-priorityaccurate", fPriorityAccurate);
++
+     // Check for -debugnet
+     if (GetBoolArg("-debugnet", false))
+         InitWarning(_("Unsupported argument -debugnet ignored, use -debug=net."));
+@@ -919,10 +935,10 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
+     fCheckpointsEnabled = GetBoolArg("-checkpoints", DEFAULT_CHECKPOINTS_ENABLED);
+ 
+     // mempool limits
+-    int64_t nMempoolSizeMax = GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE) * 1000000;
+-    int64_t nMempoolSizeMin = GetArg("-limitdescendantsize", DEFAULT_DESCENDANT_SIZE_LIMIT) * 1000 * 40;
+-    if (nMempoolSizeMax < 0 || nMempoolSizeMax < nMempoolSizeMin)
+-        return InitError(strprintf(_("-maxmempool must be at least %d MB"), std::ceil(nMempoolSizeMin / 1000000.0)));
++    int64_t nMempoolSizeMaxMB = GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE);
++    int64_t nMempoolSizeMinMB = maxmempoolMinimum(GetArg("-limitdescendantsize", DEFAULT_DESCENDANT_SIZE_LIMIT));
++    if (nMempoolSizeMaxMB < 0 || nMempoolSizeMaxMB < nMempoolSizeMinMB)
++        return InitError(strprintf(_("-maxmempool must be at least %d MB"), nMempoolSizeMinMB));
+ 
+     // -par=0 means autodetect, but nScriptCheckThreads==0 means no concurrency
+     nScriptCheckThreads = GetArg("-par", DEFAULT_SCRIPTCHECK_THREADS);
+diff --git a/src/main.cpp b/src/main.cpp
+index d726b5f..f94afbc 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -1159,6 +1159,10 @@ void LimitMempoolSize(CTxMemPool& pool, size_t limit, unsigned long age) {
+         pcoinsTip->Uncache(removed);
+ }
+ 
++void LimitMempoolSize() {
++    LimitMempoolSize(mempool, GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE) * 1000000, GetArg("-mempoolexpiry", DEFAULT_MEMPOOL_EXPIRY) * 60 * 60);
++}
++
+ struct NotoriousFilterEntry {
+     uint32_t begin;
+     uint32_t end;
+@@ -1421,7 +1425,7 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
+ 
+         CAmount inChainInputValue;
+         // Since entries arrive *after* the tip's height, their priority is for the height+1
+-        double dPriority = view.GetPriority(tx, chainActive.Height() + 1, inChainInputValue);
++        double dPriority = view.GetPriority(tx, chainActive.Height() + (fPriorityAccurate ? 1 : 0), inChainInputValue);
+ 
+         // Keep track of transactions that spend a coinbase, which we re-scan
+         // during reorgs to ensure COINBASE_MATURITY is still met.
+diff --git a/src/main.h b/src/main.h
+index de624b4..ffc5156 100644
+--- a/src/main.h
++++ b/src/main.h
+@@ -126,7 +126,7 @@ static const bool DEFAULT_RELAYPRIORITY = true;
+ static const int64_t DEFAULT_MAX_TIP_AGE = 24 * 60 * 60;
+ 
+ /** Default for -permitbaremultisig */
+-static const bool DEFAULT_PERMIT_BAREMULTISIG = true;
++static const bool DEFAULT_PERMIT_BAREMULTISIG = false;
+ static const bool DEFAULT_CHECKPOINTS_ENABLED = true;
+ static const bool DEFAULT_TXINDEX = false;
+ static const unsigned int DEFAULT_BANSCORE_THRESHOLD = 100;
+@@ -302,6 +302,8 @@ void FlushStateToDisk();
+ /** Prune block files and flush state to disk. */
+ void PruneAndFlush();
+ 
++void LimitMempoolSize();
++
+ /** (try to) add transaction to memory pool **/
+ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState &state, const CTransaction &tx, bool fLimitFree,
+                         bool* pfMissingInputs, const CAmount nAbsurdFee, const std::set<std::string>& setIgnoreRejects);
+@@ -378,6 +380,8 @@ void UpdateCoins(const CTransaction& tx, CCoinsViewCache& inputs, int nHeight);
+ /** Context-independent validity checks */
+ bool CheckTransaction(const CTransaction& tx, CValidationState& state);
+ 
++unsigned int LimitOrphanTxSize(unsigned int nMaxOrphans) EXCLUSIVE_LOCKS_REQUIRED(cs_main);
++
+ /**
+  * Check if transaction is final and can be included in a block with the
+  * specified height and time. Consensus critical.
+diff --git a/src/policy/policy.h b/src/policy/policy.h
+index cfbcca7..36d6ea5 100644
+--- a/src/policy/policy.h
++++ b/src/policy/policy.h
+@@ -15,9 +15,9 @@
+ class CCoinsViewCache;
+ 
+ /** Default for -blockmaxsize, which controls the maximum size of block the mining code will create **/
+-static const unsigned int DEFAULT_BLOCK_MAX_SIZE = 750000;
++static const unsigned int DEFAULT_BLOCK_MAX_SIZE = 500000;
+ /** Default for -blockprioritysize, maximum space for zero/low-fee transactions **/
+-static const unsigned int DEFAULT_BLOCK_PRIORITY_SIZE = 0;
++static const unsigned int DEFAULT_BLOCK_PRIORITY_SIZE = 100000;
+ /** Default for -blockmaxweight, which controls the range of block weights the mining code will create **/
+ static const unsigned int DEFAULT_BLOCK_MAX_WEIGHT = 3000000;
+ /** The maximum weight for transactions we're willing to relay/mine */
+diff --git a/src/qt/optionsdialog.cpp b/src/qt/optionsdialog.cpp
+index 9c4d995..533d56a 100644
+--- a/src/qt/optionsdialog.cpp
++++ b/src/qt/optionsdialog.cpp
+@@ -13,9 +13,12 @@
+ #include "guiutil.h"
+ #include "optionsmodel.h"
+ 
++#include "consensus/consensus.h" // for MAX_BLOCK_SERIALIZED_SIZE
+ #include "main.h" // for DEFAULT_SCRIPTCHECK_THREADS and MAX_SCRIPTCHECK_THREADS
+ #include "netbase.h"
++#include "primitives/transaction.h" // for WITNESS_SCALE_FACTOR
+ #include "txdb.h" // for -dbcache defaults
++#include "txmempool.h" // for maxmempoolMinimum
+ 
+ #ifdef ENABLE_WALLET
+ #include "wallet/wallet.h" // for CWallet::GetRequiredFee()
+@@ -23,13 +26,54 @@
+ 
+ #include <boost/thread.hpp>
+ 
++#include <QBoxLayout>
+ #include <QDataWidgetMapper>
+ #include <QDir>
+ #include <QIntValidator>
+ #include <QLocale>
+-#include <QMessageBox>
++#include <QInputDialog>
++#include <QSpinBox>
+ #include <QTimer>
+ 
++void OptionsDialog::FixTabOrder(QWidget * const o)
++{
++    setTabOrder(prevwidget, o);
++    prevwidget = o;
++}
++
++void OptionsDialog::CreateOptionUI(QBoxLayout * const layout, QWidget * const o, const QString& text)
++{
++    QWidget * const parent = o->parentWidget();
++    const QStringList text_parts = text.split("%s");
++
++    QHBoxLayout * const horizontalLayout = new QHBoxLayout();
++
++    QLabel * const labelBefore = new QLabel(parent);
++    labelBefore->setText(text_parts[0]);
++    labelBefore->setTextFormat(Qt::PlainText);
++    labelBefore->setBuddy(o);
++    labelBefore->setToolTip(o->toolTip());
++
++    horizontalLayout->addWidget(labelBefore);
++    horizontalLayout->addWidget(o);
++
++    QLabel * const labelAfter = new QLabel(parent);
++    labelAfter->setText(text_parts[1]);
++    labelAfter->setTextFormat(Qt::PlainText);
++    labelAfter->setBuddy(o);
++    labelAfter->setToolTip(o->toolTip());
++
++    horizontalLayout->addWidget(labelAfter);
++
++    QSpacerItem * const horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
++
++    horizontalLayout->addItem(horizontalSpacer);
++
++    layout->addLayout(horizontalLayout);
++
++    FixTabOrder(o);
++}
++
+ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
+     QDialog(parent),
+     ui(new Ui::OptionsDialog),
+@@ -72,6 +116,132 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
+     ui->maxuploadtarget->setMaximum(std::numeric_limits<int>::max());
+     connect(ui->maxuploadtargetCheckbox, SIGNAL(stateChanged(int)), this, SLOT(maxuploadtargetCheckboxStateChanged(int)));
+ 
++    prevwidget = ui->peerbloomfilters;
++
++    /* Mempool tab */
++
++    QWidget * const tabMempool = new QWidget();
++    QVBoxLayout * const verticalLayout_Mempool = new QVBoxLayout(tabMempool);
++    ui->tabWidget->insertTab(ui->tabWidget->indexOf(ui->tabWindow), tabMempool, tr("Mem&pool"));
++
++    mempoolreplacement = new QValueComboBox(tabMempool);
++    mempoolreplacement->addItem(QString("never"), QVariant("never"));
++    mempoolreplacement->addItem(QString("with a higher mining fee, and opt-in"), QVariant("fee,optin"));
++    mempoolreplacement->addItem(QString("with a higher mining fee (no opt-out)"), QVariant("fee,-optin"));
++    CreateOptionUI(verticalLayout_Mempool, mempoolreplacement, tr("Transaction &replacement: %s"));
++
++    maxorphantx = new QSpinBox(tabMempool);
++    maxorphantx->setMinimum(0);
++    maxorphantx->setMaximum(std::numeric_limits<int>::max());
++    CreateOptionUI(verticalLayout_Mempool, maxorphantx, tr("Keep at most %s unconnected transactions in memory"));
++
++    maxmempool = new QSpinBox(tabMempool);
++    const int64_t nMempoolSizeMinMB = maxmempoolMinimum(GetArg("-limitdescendantsize", DEFAULT_DESCENDANT_SIZE_LIMIT));
++    maxmempool->setMinimum(nMempoolSizeMinMB);
++    maxmempool->setMaximum(std::numeric_limits<int>::max());
++    CreateOptionUI(verticalLayout_Mempool, maxmempool, tr("Keep the transaction memory pool below %s MB"));
++
++    mempoolexpiry = new QSpinBox(tabMempool);
++    mempoolexpiry->setMinimum(1);
++    mempoolexpiry->setMaximum(std::numeric_limits<int>::max());
++    CreateOptionUI(verticalLayout_Mempool, mempoolexpiry, tr("Do not keep transactions in memory more than %s hours"));
++
++    QGroupBox * const groupBox_Spamfiltering = new QGroupBox(tabMempool);
++    groupBox_Spamfiltering->setTitle(tr("Spam filtering"));
++    QVBoxLayout * const verticalLayout_Spamfiltering = new QVBoxLayout(groupBox_Spamfiltering);
++
++    rejectunknownscripts = new QCheckBox(groupBox_Spamfiltering);
++    rejectunknownscripts->setText(tr("Ignore unrecognised receiver scripts"));
++    rejectunknownscripts->setToolTip(tr("With this option enabled, unrecognised receiver (\"pubkey\") scripts will be ignored. Unrecognisable scripts could be used to bypass further spam filters. If your software is outdated, they may also be used to trick you into thinking you were sent bitcoins that will never confirm."));
++    verticalLayout_Spamfiltering->addWidget(rejectunknownscripts);
++    FixTabOrder(rejectunknownscripts);
++
++    bytespersigop = new QSpinBox(groupBox_Spamfiltering);
++    bytespersigop->setMinimum(1);
++    bytespersigop->setMaximum(std::numeric_limits<int>::max());
++    CreateOptionUI(verticalLayout_Spamfiltering, bytespersigop, tr("Treat each consensus-counted sigop as at least %s bytes."));
++
++    bytespersigopstrict = new QSpinBox(groupBox_Spamfiltering);
++    bytespersigopstrict->setMinimum(1);
++    bytespersigopstrict->setMaximum(std::numeric_limits<int>::max());
++    CreateOptionUI(verticalLayout_Spamfiltering, bytespersigopstrict, tr("Ignore transactions with fewer than %s bytes per potentially-executed sigop."));
++
++    limitancestorcount = new QSpinBox(groupBox_Spamfiltering);
++    limitancestorcount->setMinimum(1);
++    limitancestorcount->setMaximum(std::numeric_limits<int>::max());
++    CreateOptionUI(verticalLayout_Spamfiltering, limitancestorcount, tr("Ignore transactions with %s or more unconfirmed ancestors."));
++
++    limitancestorsize = new QSpinBox(groupBox_Spamfiltering);
++    limitancestorsize->setMinimum(1);
++    limitancestorsize->setMaximum(std::numeric_limits<int>::max());
++    CreateOptionUI(verticalLayout_Spamfiltering, limitancestorsize, tr("Ignore transactions whose size with all unconfirmed ancestors exceeds %s kilobytes."));
++
++    limitdescendantcount = new QSpinBox(groupBox_Spamfiltering);
++    limitdescendantcount->setMinimum(1);
++    limitdescendantcount->setMaximum(std::numeric_limits<int>::max());
++    CreateOptionUI(verticalLayout_Spamfiltering, limitdescendantcount, tr("Ignore transactions if any ancestor would have %s or more unconfirmed descendants."));
++
++    limitdescendantsize = new QSpinBox(groupBox_Spamfiltering);
++    limitdescendantsize->setMinimum(1);
++    limitdescendantsize->setMaximum(std::numeric_limits<int>::max());
++    CreateOptionUI(verticalLayout_Spamfiltering, limitdescendantsize, tr("Ignore transactions if any ancestor would have more than %s kilobytes of unconfirmed descendants."));
++
++    spamfilter = new QCheckBox(groupBox_Spamfiltering);
++    spamfilter->setText(tr("Ignore known spam using pattern matching"));
++    spamfilter->setToolTip(tr("Some spam uses identifiable patterns in scripts. This filter looks for identified spam patterns."));
++    verticalLayout_Spamfiltering->addWidget(spamfilter);
++    FixTabOrder(spamfilter);
++
++    rejectbaremultisig = new QCheckBox(groupBox_Spamfiltering);
++    rejectbaremultisig->setText(tr("Ignore bare/exposed \"multisig\" scripts"));
++    rejectbaremultisig->setToolTip(tr("Spam is sometimes disguised to appear as if it is an old-style N-of-M multi-party transaction, where most of the keys are really bogus. At the same time, legitimate multi-party transactions typically have always used P2SH format (which is not filtered by this option), which is more secure."));
++    verticalLayout_Spamfiltering->addWidget(rejectbaremultisig);
++    FixTabOrder(rejectbaremultisig);
++
++    datacarriersize = new QSpinBox(groupBox_Spamfiltering);
++    datacarriersize->setMinimum(0);
++    datacarriersize->setMaximum(std::numeric_limits<int>::max());
++    datacarriersize->setToolTip(tr("Since 2014, a specific method for attaching arbitrary data to transactions has been recognised as not requiring space in the coin database. Since it is sometimes impractical to detect small spam disguised as ordinary transactions, it is sometimes considered beneficial to treat these less harmful data attachments as equals to legitimate usage."));
++    CreateOptionUI(verticalLayout_Spamfiltering, datacarriersize, tr("Ignore additional data when its size is greater than %s bytes."));
++
++    verticalLayout_Mempool->addWidget(groupBox_Spamfiltering);
++
++    verticalLayout_Mempool->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
++
++    /* Mining tab */
++
++    QWidget * const tabMining = new QWidget();
++    QVBoxLayout * const verticalLayout_Mining = new QVBoxLayout(tabMining);
++    ui->tabWidget->insertTab(ui->tabWidget->indexOf(ui->tabWindow), tabMining, tr("M&ining"));
++
++    verticalLayout_Mining->addWidget(new QLabel(tr("<strong>Note that mining is heavily influenced by the settings on the Mempool tab.</strong>")));
++
++    blockmaxsize = new QSpinBox(tabMining);
++    blockmaxsize->setMinimum(1);
++    blockmaxsize->setMaximum((MAX_BLOCK_SERIALIZED_SIZE - 1000) / 1000);
++    connect(blockmaxsize, SIGNAL(valueChanged(int)), this, SLOT(blockmaxsize_changed(int)));
++    CreateOptionUI(verticalLayout_Mining, blockmaxsize, tr("Never mine a block larger than %s kB."));
++
++    blockprioritysize = new QSpinBox(tabMining);
++    blockprioritysize->setMinimum(0);
++    blockprioritysize->setMaximum(blockmaxsize->maximum());
++    connect(blockprioritysize, SIGNAL(valueChanged(int)), this, SLOT(blockmaxsize_increase(int)));
++    CreateOptionUI(verticalLayout_Mining, blockprioritysize, tr("Mine first %s kB of transactions sorted by coin-age priority."));
++
++    priorityaccurate = new QCheckBox(tabMining);
++    priorityaccurate->setText(tr("Update coin-age priority accurately when parent transactions are confirmed."));
++    priorityaccurate->setToolTip(tr("Bitcoin Core 0.12.0 approximates coin-age priority rather than updating it accurately. This option is provided to allow the user choice over whether to use this approximation or to use accurate updates."));
++    verticalLayout_Mining->addWidget(priorityaccurate);
++    FixTabOrder(priorityaccurate);
++
++    blockmaxweight = new QSpinBox(tabMining);
++    blockmaxweight->setMinimum(1);
++    blockmaxweight->setMaximum((MAX_BLOCK_WEIGHT-4000) / 1000);
++    connect(blockmaxweight, SIGNAL(valueChanged(int)), this, SLOT(blockmaxweight_changed(int)));
++    CreateOptionUI(verticalLayout_Mining, blockmaxweight, tr("Never mine a block weighing more than %s,000."));
++
++    verticalLayout_Mining->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
++
+     /* Window elements init */
+ #ifdef Q_OS_MAC
+     /* remove Window tab on Mac */
+@@ -222,6 +392,38 @@ void OptionsDialog::setMapper()
+ 
+     mapper->addMapping(ui->peerbloomfilters, OptionsModel::peerbloomfilters);
+ 
++    /* Mempool tab */
++
++    QVariant current_mempoolreplacement = model->data(model->index(OptionsModel::mempoolreplacement, 0), Qt::EditRole);
++    int current_mempoolreplacement_index = mempoolreplacement->findData(current_mempoolreplacement);
++    if (current_mempoolreplacement_index == -1) {
++        mempoolreplacement->addItem(current_mempoolreplacement.toString(), current_mempoolreplacement);
++        current_mempoolreplacement_index = mempoolreplacement->count() - 1;
++    }
++    mempoolreplacement->setCurrentIndex(current_mempoolreplacement_index);
++
++    mapper->addMapping(maxorphantx, OptionsModel::maxorphantx);
++    mapper->addMapping(maxmempool, OptionsModel::maxmempool);
++    mapper->addMapping(mempoolexpiry, OptionsModel::mempoolexpiry);
++
++    mapper->addMapping(rejectunknownscripts, OptionsModel::rejectunknownscripts);
++    mapper->addMapping(bytespersigop, OptionsModel::bytespersigop);
++    mapper->addMapping(bytespersigopstrict, OptionsModel::bytespersigopstrict);
++    mapper->addMapping(limitancestorcount, OptionsModel::limitancestorcount);
++    mapper->addMapping(limitancestorsize, OptionsModel::limitancestorsize);
++    mapper->addMapping(limitdescendantcount, OptionsModel::limitdescendantcount);
++    mapper->addMapping(limitdescendantsize, OptionsModel::limitdescendantsize);
++    mapper->addMapping(spamfilter, OptionsModel::spamfilter);
++    mapper->addMapping(rejectbaremultisig, OptionsModel::rejectbaremultisig);
++    mapper->addMapping(datacarriersize, OptionsModel::datacarriersize);
++
++    /* Mining tab */
++
++    mapper->addMapping(blockmaxsize, OptionsModel::blockmaxsize);
++    mapper->addMapping(blockprioritysize, OptionsModel::blockprioritysize);
++    mapper->addMapping(priorityaccurate, OptionsModel::priorityaccurate);
++    mapper->addMapping(blockmaxweight, OptionsModel::blockmaxweight);
++
+     /* Window */
+ #ifndef Q_OS_MAC
+     mapper->addMapping(ui->hideTrayIcon, OptionsModel::HideTrayIcon);
+@@ -256,20 +458,59 @@ void OptionsDialog::maxuploadtargetCheckboxStateChanged(const int state)
+     ui->maxuploadtarget->setEnabled(state);
+ }
+ 
++void OptionsDialog::blockmaxsize_changed(int i)
++{
++    if (blockprioritysize->value() > i) {
++        blockprioritysize->setValue(i);
++    }
++
++    if (blockmaxweight->value() < i) {
++        blockmaxweight->setValue(i);
++    } else if (blockmaxweight->value() > i * WITNESS_SCALE_FACTOR) {
++        blockmaxweight->setValue(i * WITNESS_SCALE_FACTOR);
++    }
++}
++
++void OptionsDialog::blockmaxsize_increase(int i)
++{
++    if (blockmaxsize->value() < i) {
++        blockmaxsize->setValue(i);
++    }
++}
++
++void OptionsDialog::blockmaxweight_changed(int i)
++{
++    if (blockmaxsize->value() < i / WITNESS_SCALE_FACTOR) {
++        blockmaxsize->setValue(i / WITNESS_SCALE_FACTOR);
++    } else if (blockmaxsize->value() > i) {
++        blockmaxsize->setValue(i);
++    }
++}
++
+ void OptionsDialog::on_resetButton_clicked()
+ {
+     if(model)
+     {
+         // confirmation dialog
+-        QMessageBox::StandardButton btnRetVal = QMessageBox::question(this, tr("Confirm options reset"),
+-            tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shut down. Do you want to proceed?"),
+-            QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
+-
+-        if(btnRetVal == QMessageBox::Cancel)
++        QStringList items;
++        QString strPrefix = tr("Use policy defaults for %1");
++        items << strPrefix.arg(tr(PACKAGE_NAME));
++        items << strPrefix.arg(tr("Bitcoin Core")+" ");
++
++        QInputDialog dialog(this);
++        dialog.setWindowTitle(tr("Confirm options reset"));
++        dialog.setLabelText(tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shut down. Do you want to proceed?"));
++        dialog.setComboBoxItems(items);
++        dialog.setTextValue(items[0]);
++        dialog.setComboBoxEditable(false);
++
++        if (!dialog.exec()) {
+             return;
++        }
+ 
+         /* reset all options and close GUI */
+         model->Reset();
++        model->setData(model->index(OptionsModel::corepolicy, 0), items.indexOf(dialog.textValue()));
+         QApplication::quit();
+     }
+ }
+@@ -301,6 +542,8 @@ void OptionsDialog::on_okButton_clicked()
+         model->setData(model->index(OptionsModel::maxuploadtarget, 0), 0);
+     }
+ 
++    model->setData(model->index(OptionsModel::mempoolreplacement, 0), mempoolreplacement->itemData(mempoolreplacement->currentIndex()));
++
+     mapper->submit();
+     accept();
+     updateDefaultProxyNets();
+diff --git a/src/qt/optionsdialog.h b/src/qt/optionsdialog.h
+index 2a67e48..235fe02 100644
+--- a/src/qt/optionsdialog.h
++++ b/src/qt/optionsdialog.h
+@@ -12,7 +12,13 @@ class OptionsModel;
+ class QValidatedLineEdit;
+ 
+ QT_BEGIN_NAMESPACE
++class QBoxLayout;
++class QCheckBox;
++class QValueComboBox;
+ class QDataWidgetMapper;
++class QSpinBox;
++class QString;
++class QWidget;
+ QT_END_NAMESPACE
+ 
+ namespace Ui {
+@@ -60,6 +66,10 @@ private Q_SLOTS:
+     void checkLineEdit();
+     void maxuploadtargetCheckboxStateChanged(int);
+ 
++    void blockmaxsize_changed(int);
++    void blockmaxsize_increase(int);
++    void blockmaxweight_changed(int);
++
+ Q_SIGNALS:
+     void proxyIpChecks(QValidatedLineEdit *pUiProxyIp, int nProxyPort);
+ 
+@@ -67,6 +77,28 @@ private:
+     Ui::OptionsDialog *ui;
+     OptionsModel *model;
+     QDataWidgetMapper *mapper;
++
++    QWidget *prevwidget;
++    void FixTabOrder(QWidget *);
++    void CreateOptionUI(QBoxLayout *, QWidget *, const QString& text);
++
++    QValueComboBox *mempoolreplacement;
++    QSpinBox *maxorphantx;
++    QSpinBox *maxmempool;
++    QSpinBox *mempoolexpiry;
++
++    QCheckBox *rejectunknownscripts;
++    QSpinBox *bytespersigop, *bytespersigopstrict;
++    QSpinBox *limitancestorcount;
++    QSpinBox *limitancestorsize;
++    QSpinBox *limitdescendantcount;
++    QSpinBox *limitdescendantsize;
++    QCheckBox *spamfilter;
++    QCheckBox *rejectbaremultisig;
++    QSpinBox *datacarriersize;
++
++    QSpinBox *blockmaxsize, *blockprioritysize, *blockmaxweight;
++    QCheckBox *priorityaccurate;
+ };
+ 
+ #endif // BITCOIN_QT_OPTIONSDIALOG_H
+diff --git a/src/qt/optionsmodel.cpp b/src/qt/optionsmodel.cpp
+index b6e721b..1bdfb9e 100644
+--- a/src/qt/optionsmodel.cpp
++++ b/src/qt/optionsmodel.cpp
+@@ -18,6 +18,8 @@
+ #include "txdb.h" // for -dbcache defaults
+ #include "chainparams.h"
+ #include "intro.h" 
++#include "policy/policy.h"
++#include "txmempool.h" // for fPriorityAccurate
+ 
+ #ifdef ENABLE_WALLET
+ #include "wallet/wallet.h"
+@@ -28,6 +30,17 @@
+ #include <QSettings>
+ #include <QStringList>
+ 
++static QString CanonicalMempoolReplacement()
++{
++    if (!fEnableReplacement) {
++        return "never";
++    } else if (fReplacementHonourOptOut) {
++        return "fee,optin";
++    } else {
++        return "fee,-optin";
++    }
++}
++
+ OptionsModel::OptionsModel(QObject *parent, bool resetSettings) :
+     QAbstractListModel(parent)
+ {
+@@ -270,6 +283,42 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
+             return qlonglong(CNode::GetMaxOutboundTarget() / 1024 / 1024);
+         case peerbloomfilters:
+             return f_peerbloomfilters;
++        case mempoolreplacement:
++            return CanonicalMempoolReplacement();
++        case maxorphantx:
++            return qlonglong(GetArg("-maxorphantx", DEFAULT_MAX_ORPHAN_TRANSACTIONS));
++        case maxmempool:
++            return qlonglong(GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE));
++        case mempoolexpiry:
++            return qlonglong(GetArg("-mempoolexpiry", DEFAULT_MEMPOOL_EXPIRY));
++        case rejectunknownscripts:
++            return fRequireStandard;
++        case bytespersigop:
++            return nBytesPerSigOp;
++        case bytespersigopstrict:
++            return nBytesPerSigOpStrict;
++        case limitancestorcount:
++            return qlonglong(GetArg("-limitancestorcount", DEFAULT_ANCESTOR_LIMIT));
++        case limitancestorsize:
++            return qlonglong(GetArg("-limitancestorsize", DEFAULT_ANCESTOR_SIZE_LIMIT));
++        case limitdescendantcount:
++            return qlonglong(GetArg("-limitdescendantcount", DEFAULT_DESCENDANT_LIMIT));
++        case limitdescendantsize:
++            return qlonglong(GetArg("-limitdescendantsize", DEFAULT_DESCENDANT_SIZE_LIMIT));
++        case spamfilter:
++            return bool(GetArg("-spamfilter", DEFAULT_SPAMFILTER));
++        case rejectbaremultisig:
++            return !fIsBareMultisigStd;
++        case datacarriersize:
++            return fAcceptDatacarrier ? qlonglong(nMaxDatacarrierBytes) : qlonglong(0);
++        case blockmaxsize:
++            return qlonglong(GetArg("-blockmaxsize", DEFAULT_BLOCK_MAX_SIZE) / 1000);
++        case blockprioritysize:
++            return qlonglong(GetArg("-blockprioritysize", DEFAULT_BLOCK_PRIORITY_SIZE) / 1000);
++        case blockmaxweight:
++            return qlonglong(GetArg("-blockmaxweight", DEFAULT_BLOCK_MAX_WEIGHT) / 1000);
++        case priorityaccurate:
++            return fPriorityAccurate;
+         default:
+             return QVariant();
+         }
+@@ -449,6 +498,214 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
+                 f_peerbloomfilters = value.toBool();
+             }
+             break;
++        case mempoolreplacement:
++        {
++            QString nv = value.toString();
++            if (nv != CanonicalMempoolReplacement()) {
++                if (nv == "never") {
++                    fEnableReplacement = false;
++                    fReplacementHonourOptOut = true;
++                } else if (nv == "fee,optin") {
++                    fEnableReplacement = true;
++                    fReplacementHonourOptOut = true;
++                } else {  // "fee,-optin"
++                    fEnableReplacement = true;
++                    fReplacementHonourOptOut = false;
++                }
++                ModifyRWConfigFile("mempoolreplacement", nv.toStdString());
++            }
++            break;
++        }
++        case maxorphantx:
++        {
++            unsigned int nMaxOrphanTx = GetArg("-maxorphantx", DEFAULT_MAX_ORPHAN_TRANSACTIONS);
++            unsigned int nNv = value.toLongLong();
++            if (nNv != nMaxOrphanTx) {
++                std::string strNv = value.toString().toStdString();
++                mapArgs["-maxorphantx"] = strNv;
++                ModifyRWConfigFile("maxorphantx", strNv);
++                if (nNv < nMaxOrphanTx) {
++                    LOCK(cs_main);
++                    unsigned int nEvicted = LimitOrphanTxSize(nNv);
++                    if (nEvicted > 0) {
++                        LogPrint("mempool", "maxorphantx reduced from %d to %d, removed %u tx\n", nMaxOrphanTx, nNv, nEvicted);
++                    }
++                }
++            }
++            break;
++        }
++        case maxmempool:
++        {
++            long long nOldValue = GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE);
++            long long nNv = value.toLongLong();
++            if (nNv != nOldValue) {
++                std::string strNv = value.toString().toStdString();
++                mapArgs["-maxmempool"] = strNv;
++                ModifyRWConfigFile("maxmempool", strNv);
++                if (nNv < nOldValue) {
++                    LimitMempoolSize();
++                }
++            }
++            break;
++        }
++        case mempoolexpiry:
++        {
++            long long nOldValue = GetArg("-mempoolexpiry", DEFAULT_MEMPOOL_EXPIRY);
++            long long nNv = value.toLongLong();
++            if (nNv != nOldValue) {
++                std::string strNv = value.toString().toStdString();
++                mapArgs["-mempoolexpiry"] = strNv;
++                ModifyRWConfigFile("mempoolexpiry", strNv);
++                if (nNv < nOldValue) {
++                    LimitMempoolSize();
++                }
++            }
++            break;
++        }
++        case rejectunknownscripts:
++        {
++            const bool fNewValue = value.toBool();
++            if (fNewValue != fRequireStandard) {
++                fRequireStandard = fNewValue;
++                // This option is inverted in the config:
++                ModifyRWConfigFile("acceptnonstdtxn", strprintf("%d", ! fNewValue));
++            }
++            break;
++        }
++        case bytespersigop:
++        {
++            unsigned int nNv = value.toLongLong();
++            if (nNv != nBytesPerSigOp) {
++                ModifyRWConfigFile("bytespersigop", value.toString().toStdString());
++                nBytesPerSigOp = nNv;
++            }
++            break;
++        }
++        case bytespersigopstrict:
++        {
++            unsigned int nNv = value.toLongLong();
++            if (nNv != nBytesPerSigOpStrict) {
++                ModifyRWConfigFile("bytespersigopstrict", value.toString().toStdString());
++                nBytesPerSigOpStrict = nNv;
++            }
++            break;
++        }
++        case limitancestorcount:
++        {
++            long long nOldValue = GetArg("-limitancestorcount", DEFAULT_ANCESTOR_LIMIT);
++            long long nNv = value.toLongLong();
++            if (nNv != nOldValue) {
++                std::string strNv = value.toString().toStdString();
++                mapArgs["-limitancestorcount"] = strNv;
++                ModifyRWConfigFile("limitancestorcount", strNv);
++            }
++            break;
++        }
++        case limitancestorsize:
++        {
++            long long nOldValue = GetArg("-limitancestorsize", DEFAULT_ANCESTOR_SIZE_LIMIT);
++            long long nNv = value.toLongLong();
++            if (nNv != nOldValue) {
++                std::string strNv = value.toString().toStdString();
++                mapArgs["-limitancestorsize"] = strNv;
++                ModifyRWConfigFile("limitancestorsize", strNv);
++            }
++            break;
++        }
++        case limitdescendantcount:
++        {
++            long long nOldValue = GetArg("-limitdescendantcount", DEFAULT_DESCENDANT_LIMIT);
++            long long nNv = value.toLongLong();
++            if (nNv != nOldValue) {
++                std::string strNv = value.toString().toStdString();
++                mapArgs["-limitdescendantcount"] = strNv;
++                ModifyRWConfigFile("limitdescendantcount", strNv);
++            }
++            break;
++        }
++        case limitdescendantsize:
++        {
++            long long nOldValue = GetArg("-limitdescendantsize", DEFAULT_DESCENDANT_SIZE_LIMIT);
++            long long nNv = value.toLongLong();
++            if (nNv != nOldValue) {
++                std::string strNv = value.toString().toStdString();
++                mapArgs["-limitdescendantsize"] = strNv;
++                ModifyRWConfigFile("limitdescendantsize", strNv);
++            }
++            break;
++        }
++        case spamfilter:
++        {
++            bool fOldValue = GetArg("-spamfilter", DEFAULT_SPAMFILTER);
++            bool fNewValue = value.toBool();
++            if (fOldValue != fNewValue) {
++                std::string strNv = strprintf("%d", fNewValue);
++                mapArgs["-spamfilter"] = strNv;
++                ModifyRWConfigFile("spamfilter", strNv);
++            }
++            break;
++        }
++        case rejectbaremultisig:
++        {
++            // The config and internal option is inverted
++            const bool fNewValue = ! value.toBool();
++            if (fNewValue != fIsBareMultisigStd) {
++                fIsBareMultisigStd = fNewValue;
++                ModifyRWConfigFile("permitbaremultisig", strprintf("%d", fNewValue));
++            }
++            break;
++        }
++        case datacarriersize:
++        {
++            const int nNewSize = value.toInt();
++            const bool fNewEn = (nNewSize > 0);
++            if (fNewEn && unsigned(nNewSize) != nMaxDatacarrierBytes) {
++                ModifyRWConfigFile("datacarriersize", value.toString().toStdString());
++                nMaxDatacarrierBytes = nNewSize;
++            }
++            if (fNewEn != fAcceptDatacarrier) {
++                ModifyRWConfigFile("datacarrier", strprintf("%d", fNewEn));
++                fAcceptDatacarrier = fNewEn;
++            }
++            break;
++        }
++        case blockmaxsize:
++        case blockprioritysize:
++        case blockmaxweight:
++        {
++            const int nNewValue_kB = value.toInt();
++            const int nOldValue_kB = data(index, role).toInt();
++            if (nNewValue_kB != nOldValue_kB) {
++                std::string strNv = strprintf("%d000", nNewValue_kB);
++                std::string strKey;
++                switch(index.row()) {
++                    case blockmaxsize:
++                        strKey = "blockmaxsize";
++                        break;
++                    case blockprioritysize:
++                        strKey = "blockprioritysize";
++                        break;
++                    case blockmaxweight:
++                        strKey = "blockmaxweight";
++                        break;
++                }
++                mapArgs["-" + strKey] = strNv;
++                ModifyRWConfigFile(strKey, strNv);
++            }
++            break;
++        }
++        case priorityaccurate:
++        {
++            const bool fNewValue = value.toBool();
++            if (fNewValue != fPriorityAccurate) {
++                fPriorityAccurate = fNewValue;
++                ModifyRWConfigFile("priorityaccurate", strprintf("%d", fNewValue));
++            }
++            break;
++        }
++        case corepolicy:
++            ModifyRWConfigFile("corepolicy", value.toString().toStdString());
++            break;
+         default:
+             break;
+         }
+diff --git a/src/qt/optionsmodel.h b/src/qt/optionsmodel.h
+index 3838d95..a35fd96 100644
+--- a/src/qt/optionsmodel.h
++++ b/src/qt/optionsmodel.h
+@@ -50,6 +50,25 @@ public:
+         Listen,                 // bool
+         maxuploadtarget,
+         peerbloomfilters,       // bool
++        mempoolreplacement,
++        maxorphantx,
++        maxmempool,
++        mempoolexpiry,
++        rejectunknownscripts,   // bool
++        bytespersigop,
++        bytespersigopstrict,
++        limitancestorcount,
++        limitancestorsize,
++        limitdescendantcount,
++        limitdescendantsize,
++        spamfilter,             // bool
++        rejectbaremultisig,     // bool
++        datacarriersize,
++        blockmaxsize,
++        blockprioritysize,
++        blockmaxweight,
++        priorityaccurate,       // bool
++        corepolicy,
+         OptionIDRowCount,
+     };
+ 
+diff --git a/src/script/standard.h b/src/script/standard.h
+index 72aaea0..75dcdae 100644
+--- a/src/script/standard.h
++++ b/src/script/standard.h
+@@ -27,7 +27,7 @@ public:
+     CScriptID(const uint160& in) : uint160(in) {}
+ };
+ 
+-static const unsigned int MAX_OP_RETURN_RELAY = 83; //!< bytes (+1 for OP_RETURN, +2 for the pushdata opcodes)
++static const unsigned int MAX_OP_RETURN_RELAY = 42; //!< bytes (+1 for OP_RETURN, +1 for the pushdata opcode)
+ extern bool fAcceptDatacarrier;
+ extern unsigned nMaxDatacarrierBytes;
+ 
+diff --git a/src/test/miner_tests.cpp b/src/test/miner_tests.cpp
+index 15fceb9..821e347 100644
+--- a/src/test/miner_tests.cpp
++++ b/src/test/miner_tests.cpp
+@@ -182,6 +182,8 @@ void TestPackageSelection(const CChainParams& chainparams, CScript scriptPubKey,
+ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
+ {
+     // Note that by default, these tests run with size accounting enabled.
++    mapArgs["-blockprioritysize"] = "0";
++
+     const CChainParams& chainparams = Params(CBaseChainParams::MAIN);
+     CScript scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
+     CBlockTemplate *pblocktemplate;
+diff --git a/src/test/script_P2SH_tests.cpp b/src/test/script_P2SH_tests.cpp
+index 1a01593..9867c9a 100644
+--- a/src/test/script_P2SH_tests.cpp
++++ b/src/test/script_P2SH_tests.cpp
+@@ -195,7 +195,7 @@ BOOST_AUTO_TEST_CASE(set)
+         txTo[i].vin[0].prevout.n = i;
+         txTo[i].vin[0].prevout.hash = txFrom.GetHash();
+         txTo[i].vout[0].nValue = 1*CENT;
+-        txTo[i].vout[0].scriptPubKey = inner[i];
++        txTo[i].vout[0].scriptPubKey = outer[i];
+         BOOST_CHECK_MESSAGE(IsMine(keystore, txFrom.vout[i].scriptPubKey), strprintf("IsMine %d", i));
+     }
+     for (int i = 0; i < 4; i++)
+diff --git a/src/test/transaction_tests.cpp b/src/test/transaction_tests.cpp
+index 34d9547..c993173 100644
+--- a/src/test/transaction_tests.cpp
++++ b/src/test/transaction_tests.cpp
+@@ -727,12 +727,15 @@ BOOST_AUTO_TEST_CASE(test_IsStandard)
+     BOOST_CHECK(!IsStandardTx(t, reason));
+ 
+     // MAX_OP_RETURN_RELAY-byte TX_NULL_DATA (standard)
+-    t.vout[0].scriptPubKey = CScript() << OP_RETURN << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef3804678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38");
++    t.vout[0].scriptPubKey = CScript() << OP_RETURN;
++    while (t.vout[0].scriptPubKey.size() < MAX_OP_RETURN_RELAY) {
++        t.vout[0].scriptPubKey += CScript(OP_0);
++    }
+     BOOST_CHECK_EQUAL(MAX_OP_RETURN_RELAY, t.vout[0].scriptPubKey.size());
+     BOOST_CHECK(IsStandardTx(t, reason));
+ 
+     // MAX_OP_RETURN_RELAY+1-byte TX_NULL_DATA (non-standard)
+-    t.vout[0].scriptPubKey = CScript() << OP_RETURN << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef3804678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef3800");
++    t.vout[0].scriptPubKey += CScript(OP_0);
+     BOOST_CHECK_EQUAL(MAX_OP_RETURN_RELAY + 1, t.vout[0].scriptPubKey.size());
+     BOOST_CHECK(!IsStandardTx(t, reason));
+ 
+diff --git a/src/txmempool.cpp b/src/txmempool.cpp
+index c67f0eb..0dd0b55 100644
+--- a/src/txmempool.cpp
++++ b/src/txmempool.cpp
+@@ -20,6 +20,8 @@
+ 
+ using namespace std;
+ 
++bool fPriorityAccurate = DEFAULT_PRIORITY_ACCURATE;
++
+ CTxMemPoolEntry::CTxMemPoolEntry(const CTransaction& _tx, const CAmount& _nFee,
+                                  int64_t _nTime, double _entryPriority, unsigned int _entryHeight,
+                                  bool poolHasNoInputsOf, CAmount _inChainInputValue,
+@@ -362,8 +364,10 @@ void CTxMemPoolEntry::UpdateCachedPriority(unsigned int currentHeight, CAmount v
+     double deltaPriority = ((double)heightDiff*inChainInputValue)/nModSize;
+     cachedPriority += deltaPriority;
+     cachedHeight = currentHeight;
+-    inChainInputValue += valueInCurrentBlock;
+-    assert(MoneyRange(inChainInputValue));
++    if (fPriorityAccurate) {
++        inChainInputValue += valueInCurrentBlock;
++        assert(MoneyRange(inChainInputValue));
++    }
+ }
+ 
+ CTxMemPool::CTxMemPool(const CFeeRate& _minReasonableRelayFee) :
+diff --git a/src/txmempool.h b/src/txmempool.h
+index 6d515df..a01688a 100644
+--- a/src/txmempool.h
++++ b/src/txmempool.h
+@@ -21,9 +21,17 @@
+ #include "boost/multi_index/ordered_index.hpp"
+ #include "boost/multi_index/hashed_index.hpp"
+ 
++static const bool DEFAULT_PRIORITY_ACCURATE = true;
++extern bool fPriorityAccurate;
++
+ class CAutoFile;
+ class CBlockIndex;
+ 
++inline int64_t maxmempoolMinimum(const int64_t nLimitDescendantSize) {
++    int64_t nMempoolSizeMin = nLimitDescendantSize * 1000 * 40;
++    return std::max(int64_t(0), int64_t(std::ceil(nMempoolSizeMin / 1000000.0)));
++}
++
+ inline double AllowFreeThreshold()
+ {
+     return COIN * 144 / 250;

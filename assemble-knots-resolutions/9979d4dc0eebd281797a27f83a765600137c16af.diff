@@ -1,0 +1,817 @@
+diff --git a/src/httprpc.cpp b/src/httprpc.cpp
+index 04d3386..1c002d7 100644
+--- a/src/httprpc.cpp
++++ b/src/httprpc.cpp
+@@ -17,6 +17,9 @@
+ #include "crypto/hmac_sha256.h"
+ #include <stdio.h>
+ #include "utilstrencodings.h"
++#ifdef ENABLE_WALLET
++#include "wallet/wallet.h"
++#endif
+ 
+ #include <boost/algorithm/string.hpp> // boost::trim
+ #include <boost/foreach.hpp> //BOOST_FOREACH
+@@ -85,7 +88,7 @@ static void JSONErrorReply(HTTPRequest* req, const UniValue& objError, const Uni
+ 
+ //This function checks username and password against -rpcauth
+ //entries from config file.
+-static bool multiUserAuthorized(std::string strUserPass)
++static bool multiUserAuthorized(std::string strUserPass, std::string& walletName)
+ {    
+     if (strUserPass.find(":") == std::string::npos) {
+         return false;
+@@ -99,7 +102,7 @@ static bool multiUserAuthorized(std::string strUserPass)
+         {
+             std::vector<std::string> vFields;
+             boost::split(vFields, strRPCAuth, boost::is_any_of(":$"));
+-            if (vFields.size() != 3) {
++            if (vFields.size() < 3 || vFields.size() > 4) {
+                 //Incorrect formatting in config file
+                 continue;
+             }
+@@ -120,6 +123,9 @@ static bool multiUserAuthorized(std::string strUserPass)
+             std::string strHashFromPass = HexStr(hexvec);
+ 
+             if (TimingResistantEqual(strHashFromPass, strHash)) {
++                if (vFields.size() > 3) {
++                    walletName = vFields[3];
++                }
+                 return true;
+             }
+         }
+@@ -127,7 +133,7 @@ static bool multiUserAuthorized(std::string strUserPass)
+     return false;
+ }
+ 
+-static bool RPCAuthorized(const std::string& strAuth)
++static bool RPCAuthorized(const std::string& strAuth, std::string& walletName)
+ {
+     if (strRPCUserColonPass.empty()) // Belt-and-suspenders measure if InitRPCAuthentication was not called
+         return false;
+@@ -141,7 +147,7 @@ static bool RPCAuthorized(const std::string& strAuth)
+     if (TimingResistantEqual(strUserPass, strRPCUserColonPass)) {
+         return true;
+     }
+-    return multiUserAuthorized(strUserPass);
++    return multiUserAuthorized(strUserPass, walletName);
+ }
+ 
+ static bool HTTPReq_JSONRPC(HTTPRequest* req, const std::string &)
+@@ -159,7 +165,8 @@ static bool HTTPReq_JSONRPC(HTTPRequest* req, const std::string &)
+         return false;
+     }
+ 
+-    if (!RPCAuthorized(authHeader.second)) {
++    std::string walletName;
++    if (!RPCAuthorized(authHeader.second, walletName)) {
+         LogPrintf("ThreadRPCServer incorrect password attempt from %s\n", req->GetPeer().ToString());
+ 
+         /* Deter brute-forcing
+@@ -179,19 +186,38 @@ static bool HTTPReq_JSONRPC(HTTPRequest* req, const std::string &)
+         if (!valRequest.read(req->ReadBody()))
+             throw JSONRPCError(RPC_PARSE_ERROR, "Parse error");
+ 
++        CRPCRequestInfo reqinfo;
++
++#ifdef ENABLE_WALLET
++        if (walletName.empty()) {
++            // Any wallet is permitted, so just use the first
++            reqinfo.wallet = vpwallets.empty() ? NULL : vpwallets[0];
++        } else if (walletName == "-") {
++            // Block wallet access always
++            reqinfo.wallet = NULL;
++        } else {
++            // Select specifically a named wallet
++            for (CWallet_ptr pwallet : vpwallets) {
++                if (walletName == pwallet->strWalletFile) {
++                    reqinfo.wallet = pwallet;
++                }
++            }
++        }
++#endif
++
+         std::string strReply;
+         // singleton request
+         if (valRequest.isObject()) {
+             jreq.parse(valRequest);
+ 
+-            UniValue result = tableRPC.execute(jreq.strMethod, jreq.params);
++            UniValue result = tableRPC.execute(jreq.strMethod, jreq.params, reqinfo);
+ 
+             // Send reply
+             strReply = JSONRPCReply(result, NullUniValue, jreq.id);
+ 
+         // array of requests
+         } else if (valRequest.isArray())
+-            strReply = JSONRPCExecBatch(valRequest.get_array());
++            strReply = JSONRPCExecBatch(valRequest.get_array(), reqinfo);
+         else
+             throw JSONRPCError(RPC_PARSE_ERROR, "Top-level object parse error");
+ 
+diff --git a/src/init.cpp b/src/init.cpp
+index 320225d..2122b07 100644
+--- a/src/init.cpp
++++ b/src/init.cpp
+@@ -197,8 +197,9 @@ void Shutdown()
+ #endif
+     StopRPC();
+ #ifdef ENABLE_WALLET
+-    if (pwalletMain)
+-        pwalletMain->Flush(false);
++    for (CWallet_ptr pwallet : vpwallets) {
++        pwallet->Flush(false);
++    }
+ #endif
+     StopNode();
+ #ifdef USE_LIBEVENT
+@@ -232,8 +233,9 @@ void Shutdown()
+         pblocktree = NULL;
+     }
+ #ifdef ENABLE_WALLET
+-    if (pwalletMain)
+-        pwalletMain->Flush(true);
++    for (CWallet_ptr pwallet : vpwallets) {
++        pwallet->Flush(true);
++    }
+ #endif
+ 
+ #if ENABLE_ZMQ
+@@ -253,8 +255,7 @@ void Shutdown()
+ #endif
+     UnregisterAllValidationInterfaces();
+ #ifdef ENABLE_WALLET
+-    delete pwalletMain;
+-    pwalletMain = NULL;
++    vpwallets.clear();
+ #endif
+     globalVerifyHandle.reset();
+     ECC_Stop();
+@@ -1459,11 +1460,10 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
+     // ********************************************************* Step 8: load wallet
+ #ifdef ENABLE_WALLET
+     if (fDisableWallet) {
+-        pwalletMain = NULL;
+         LogPrintf("Wallet disabled!\n");
+     } else {
+         CWallet::InitLoadWallet();
+-        if (!pwalletMain)
++        if (vpwallets.empty())
+             return false;
+     }
+ #else // ENABLE_WALLET
+@@ -1538,9 +1538,11 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
+     LogPrintf("mapBlockIndex.size() = %u\n",   mapBlockIndex.size());
+     LogPrintf("nBestHeight = %d\n",                   chainActive.Height());
+ #ifdef ENABLE_WALLET
+-    LogPrintf("setKeyPool.size() = %u\n",      pwalletMain ? pwalletMain->setKeyPool.size() : 0);
+-    LogPrintf("mapWallet.size() = %u\n",       pwalletMain ? pwalletMain->mapWallet.size() : 0);
+-    LogPrintf("mapAddressBook.size() = %u\n",  pwalletMain ? pwalletMain->mapAddressBook.size() : 0);
++    for (CWallet_ptr pwallet : vpwallets) {
++        LogPrintf("setKeyPool.size() = %u\n",      pwallet->setKeyPool.size());
++        LogPrintf("mapWallet.size() = %u\n",       pwallet->mapWallet.size());
++        LogPrintf("mapAddressBook.size() = %u\n",  pwallet->mapAddressBook.size());
++    }
+ #endif
+ 
+ #ifdef USE_LIBEVENT
+@@ -1556,9 +1558,11 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
+     uiInterface.InitMessage(_("Done loading"));
+ 
+ #ifdef ENABLE_WALLET
+-    if (pwalletMain) {
++    if (!vpwallets.empty()) {
+         // Add wallet transactions that aren't already in a block to mapTransactions
+-        pwalletMain->ReacceptWalletTransactions();
++        for (CWallet_ptr pwallet : vpwallets) {
++            pwallet->ReacceptWalletTransactions();
++        }
+ 
+         // Run a thread to flush wallet periodically
+         threadGroup.create_thread(ThreadFlushWalletDB);
+diff --git a/src/qt/bitcoin.cpp b/src/qt/bitcoin.cpp
+index 7099c79..bd96bfb 100644
+--- a/src/qt/bitcoin.cpp
++++ b/src/qt/bitcoin.cpp
+@@ -241,7 +241,7 @@ private:
+     QTimer *pollShutdownTimer;
+ #ifdef ENABLE_WALLET
+     PaymentServer* paymentServer;
+-    WalletModel *walletModel;
++    std::vector<WalletModel*> walletModels;
+ #endif
+     int returnValue;
+     const PlatformStyle *platformStyle;
+@@ -302,7 +302,7 @@ BitcoinApplication::BitcoinApplication(int &argc, char **argv):
+     pollShutdownTimer(0),
+ #ifdef ENABLE_WALLET
+     paymentServer(0),
+-    walletModel(0),
++    walletModels(),
+ #endif
+     returnValue(0)
+ {
+@@ -417,8 +417,10 @@ void BitcoinApplication::requestShutdown()
+ 
+ #ifdef ENABLE_WALLET
+     window->removeAllWallets();
+-    delete walletModel;
+-    walletModel = 0;
++    for (WalletModel *walletModel : walletModels) {
++        delete walletModel;
++    }
++    walletModels.clear();
+ #endif
+     delete clientModel;
+     clientModel = 0;
+@@ -448,15 +450,25 @@ void BitcoinApplication::initializeResult(int retval)
+         window->setClientModel(clientModel);
+ 
+ #ifdef ENABLE_WALLET
+-        if(pwalletMain)
+-        {
+-            walletModel = new WalletModel(platformStyle, pwalletMain, optionsModel);
++        bool fFirstWallet = true;
++        for (CWallet_ptr pwallet : vpwallets) {
++            WalletModel * const walletModel = new WalletModel(platformStyle, pwallet, optionsModel);
+ 
+-            window->addWallet(BitcoinGUI::DEFAULT_WALLET, walletModel);
+-            window->setCurrentWallet(BitcoinGUI::DEFAULT_WALLET);
++            QString WalletName = QString::fromStdString(pwallet->strWalletFile);
++            if (WalletName.endsWith(".dat")) {
++                WalletName.truncate(WalletName.size() - 4);
++            }
++
++            window->addWallet(WalletName, walletModel);
++            if (fFirstWallet) {
++                window->setCurrentWallet(WalletName);
++                fFirstWallet = false;
++            }
+ 
+             connect(walletModel, SIGNAL(coinsSent(CWallet*,SendCoinsRecipient,QByteArray)),
+                              paymentServer, SLOT(fetchPaymentACK(CWallet*,const SendCoinsRecipient&,QByteArray)));
++
++            walletModels.push_back(walletModel);
+         }
+ #endif
+ 
+diff --git a/src/qt/bitcoingui.cpp b/src/qt/bitcoingui.cpp
+index 2a9afc5..8963e67 100644
+--- a/src/qt/bitcoingui.cpp
++++ b/src/qt/bitcoingui.cpp
+@@ -25,6 +25,7 @@
+ #ifdef ENABLE_WALLET
+ #include "walletframe.h"
+ #include "walletmodel.h"
++#include "walletview.h"
+ #endif // ENABLE_WALLET
+ 
+ #ifdef Q_OS_MAC
+@@ -39,6 +40,7 @@
+ 
+ #include <QAction>
+ #include <QApplication>
++#include <QComboBox>
+ #include <QDateTime>
+ #include <QDesktopWidget>
+ #include <QDragEnterEvent>
+@@ -74,8 +76,6 @@ const std::string BitcoinGUI::DEFAULT_UIPLATFORM =
+ #endif
+         ;
+ 
+-const QString BitcoinGUI::DEFAULT_WALLET = "~Default";
+-
+ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent) :
+     QMainWindow(parent),
+     clientModel(0),
+@@ -456,6 +456,23 @@ void BitcoinGUI::createToolBars()
+         toolbar->addAction(receiveCoinsAction);
+         toolbar->addAction(historyAction);
+         overviewAction->setChecked(true);
++
++#ifdef ENABLE_WALLET
++        QWidget *spacer = new QWidget();
++        spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
++        toolbar->addWidget(spacer);
++
++        WalletSelectorLabel = new QLabel();
++        WalletSelectorLabel->setText(tr("Wallet:") + " ");
++        toolbar->addWidget(WalletSelectorLabel);
++        WalletSelectorLabel->setVisible(false);
++        WalletSelector = new QComboBox();
++        toolbar->addWidget(WalletSelector);
++        WalletSelector->setVisible(false);
++        WalletSelectorLabel->setBuddy(WalletSelector);
++
++        connect(WalletSelector, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(setCurrentWallet(const QString&)));
++#endif
+     }
+ }
+ 
+@@ -518,6 +535,12 @@ bool BitcoinGUI::addWallet(const QString& name, WalletModel *walletModel)
+     if(!walletFrame)
+         return false;
+     setWalletActionsEnabled(true);
++    WalletSelector->addItem(name);
++    if (WalletSelector->count() == 2) {
++        WalletSelectorLabel->setVisible(true);
++        WalletSelector->setVisible(true);
++    }
++    rpcConsole->addWallet(name, walletModel);
+     return walletFrame->addWallet(name, walletModel);
+ }
+ 
+@@ -1031,6 +1054,20 @@ void BitcoinGUI::setEncryptionStatus(int status)
+         break;
+     }
+ }
++
++void BitcoinGUI::updateWalletStatus()
++{
++    if (!walletFrame) {
++        return;
++    }
++    WalletView * const walletView = walletFrame->currentWalletView();
++    if (!walletView) {
++        return;
++    }
++    WalletModel * const walletModel = walletView->getWalletModel();
++    setEncryptionStatus(walletModel->getEncryptionStatus());
++    setHDStatus(walletModel->hdEnabled());
++}
+ #endif // ENABLE_WALLET
+ 
+ void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)
+diff --git a/src/qt/bitcoingui.h b/src/qt/bitcoingui.h
+index 0eaa44b..554780e 100644
+--- a/src/qt/bitcoingui.h
++++ b/src/qt/bitcoingui.h
+@@ -35,6 +35,7 @@ class CWallet;
+ 
+ QT_BEGIN_NAMESPACE
+ class QAction;
++class QComboBox;
+ class QProgressBar;
+ class QProgressDialog;
+ QT_END_NAMESPACE
+@@ -48,7 +49,6 @@ class BitcoinGUI : public QMainWindow
+     Q_OBJECT
+ 
+ public:
+-    static const QString DEFAULT_WALLET;
+     static const std::string DEFAULT_UIPLATFORM;
+ 
+     explicit BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent = 0);
+@@ -65,7 +65,6 @@ public:
+         functionality.
+     */
+     bool addWallet(const QString& name, WalletModel *walletModel);
+-    bool setCurrentWallet(const QString& name);
+     void removeAllWallets();
+ #endif // ENABLE_WALLET
+     bool enableWallet;
+@@ -114,6 +113,9 @@ private:
+     QAction *openAction;
+     QAction *showHelpMessageAction;
+ 
++    QLabel *WalletSelectorLabel;
++    QComboBox *WalletSelector;
++
+     QSystemTrayIcon *trayIcon;
+     QMenu *trayIconMenu;
+     Notificator *notificator;
+@@ -166,6 +168,13 @@ public Q_SLOTS:
+     void message(const QString &title, const QString &message, unsigned int style, bool *ret = NULL);
+ 
+ #ifdef ENABLE_WALLET
++    bool setCurrentWallet(const QString& name);
++
++    /** Set the UI status indicators based on the currently selected wallet.
++    */
++    void updateWalletStatus();
++
++private:
+     /** Set the encryption status as shown in the UI.
+        @param[in] status            current encryption status
+        @see WalletModel::EncryptionStatus
+@@ -178,6 +187,7 @@ public Q_SLOTS:
+      */
+     void setHDStatus(int hdEnabled);
+ 
++public Q_SLOTS:
+     bool handlePaymentRequest(const SendCoinsRecipient& recipient);
+ 
+     /** Show incoming transaction notification for new transactions. */
+diff --git a/src/qt/forms/debugwindow.ui b/src/qt/forms/debugwindow.ui
+index 9dc6419..997c3db 100644
+--- a/src/qt/forms/debugwindow.ui
++++ b/src/qt/forms/debugwindow.ui
+@@ -413,6 +413,22 @@
+           <number>4</number>
+          </property>
+          <item>
++          <widget class="QLabel" name="WalletSelectorLabel">
++           <property name="text">
++            <string>Wallet: </string>
++           </property>
++          </widget>
++         </item>
++         <item>
++          <widget class="QComboBox" name="WalletSelector">
++           <item>
++            <property name="text">
++             <string>(none)</string>
++            </property>
++           </item>
++          </widget>
++         </item>
++         <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+diff --git a/src/qt/rpcconsole.cpp b/src/qt/rpcconsole.cpp
+index 848eb00..2423ff2 100644
+--- a/src/qt/rpcconsole.cpp
++++ b/src/qt/rpcconsole.cpp
+@@ -14,11 +14,15 @@
+ #include "guiutil.h"
+ #include "platformstyle.h"
+ #include "bantablemodel.h"
++#include "walletmodel.h"
+ 
+ #include "chainparams.h"
+ #include "rpc/server.h"
+ #include "rpc/client.h"
+ #include "util.h"
++#ifdef ENABLE_WALLET
++#include "wallet/wallet.h"
++#endif
+ 
+ #include <openssl/crypto.h>
+ 
+@@ -92,7 +96,7 @@ class RPCExecutor : public QObject
+     Q_OBJECT
+ 
+ public Q_SLOTS:
+-    void request(const QString &command);
++    void request(const QString &command, void *ppwallet);
+ 
+ Q_SIGNALS:
+     void reply(int category, const QString &command);
+@@ -218,7 +222,7 @@ bool parseCommandLine(std::vector<std::string> &args, const std::string &strComm
+     }
+ }
+ 
+-void RPCExecutor::request(const QString &command)
++void RPCExecutor::request(const QString &command, void * const ppwallet_v)
+ {
+     std::vector<std::string> args;
+     if(!parseCommandLine(args, command.toStdString()))
+@@ -233,9 +237,17 @@ void RPCExecutor::request(const QString &command)
+         std::string strPrint;
+         // Convert argument list to JSON objects in method-dependent way,
+         // and pass it along with the method name to the dispatcher.
++        CRPCRequestInfo reqinfo;
++#ifdef ENABLE_WALLET
++        CWallet_ptr * const ppwallet = (CWallet_ptr*)ppwallet_v;
++        if (ppwallet) {
++            reqinfo.wallet = *ppwallet;
++            delete ppwallet;
++        }
++#endif
+         UniValue result = tableRPC.execute(
+             args[0],
+-            RPCConvertValues(args[0], std::vector<std::string>(args.begin() + 1, args.end())));
++            RPCConvertValues(args[0], std::vector<std::string>(args.begin() + 1, args.end())), reqinfo);
+ 
+         // Format result reply
+         if (result.isNull())
+@@ -362,6 +374,12 @@ void RPCConsole::WriteCommandHistory()
+ 
+ RPCConsole::~RPCConsole()
+ {
++#ifdef ENABLE_WALLET
++    for (int i = ui->WalletSelector->count(); --i >= 1; ) {
++        CWallet_ptr * const ppwallet = (CWallet_ptr*)ui->WalletSelector->itemData(i).value<void*>();
++        delete ppwallet;
++    }
++#endif
+     GUIUtil::saveWindowGeometry("nRPCConsoleWindow", this);
+     
+     WriteCommandHistory();
+@@ -533,6 +551,18 @@ void RPCConsole::setClientModel(ClientModel *model)
+     }
+ }
+ 
++#ifdef ENABLE_WALLET
++void RPCConsole::addWallet(const QString name, WalletModel * const walletModel)
++{
++    CWallet_ptr * const ppwallet = new CWallet_ptr(walletModel->getWallet());
++    ui->WalletSelector->addItem(name, QVariant::fromValue((void*)(ppwallet)));
++    if (ui->WalletSelector->count() == 2 && !isVisible()) {
++        // First wallet added, set to default so long as the window isn't presently visible (and potentially in use)
++        ui->WalletSelector->setCurrentIndex(1);
++    }
++}
++#endif
++
+ static QString categoryClass(int category)
+ {
+     switch(category)
+@@ -681,8 +711,18 @@ void RPCConsole::on_lineEdit_returnPressed()
+     {
+         cmdBeforeBrowsing = QString();
+ 
++        void *ppwallet_v = NULL;
++#ifdef ENABLE_WALLET
++        const int wallet_index = ui->WalletSelector->currentIndex();
++        if (wallet_index > 0) {
++            CWallet_ptr *ppwallet = (CWallet_ptr*)ui->WalletSelector->itemData(wallet_index).value<void*>();
++            ppwallet = new CWallet_ptr(*ppwallet);  // Refcount
++            ppwallet_v = (void*)ppwallet;
++        }
++#endif
++
+         message(CMD_REQUEST, cmd);
+-        Q_EMIT cmdRequest(cmd);
++        Q_EMIT cmdRequest(cmd, ppwallet_v);
+ 
+         cmd = command_filter_sensitive_data(cmd);
+ 
+@@ -731,7 +771,7 @@ void RPCConsole::startExecutor()
+     // Replies from executor object must go to this object
+     connect(executor, SIGNAL(reply(int,QString)), this, SLOT(message(int,QString)));
+     // Requests from this object must go to executor
+-    connect(this, SIGNAL(cmdRequest(QString)), executor, SLOT(request(QString)));
++    connect(this, SIGNAL(cmdRequest(QString, void*)), executor, SLOT(request(QString, void*)));
+ 
+     // On stopExecutor signal
+     // - queue executor for deletion (in execution thread)
+diff --git a/src/qt/rpcconsole.h b/src/qt/rpcconsole.h
+index af70144..0e4b5eb 100644
+--- a/src/qt/rpcconsole.h
++++ b/src/qt/rpcconsole.h
+@@ -16,6 +16,7 @@
+ class ClientModel;
+ class PlatformStyle;
+ class RPCTimerInterface;
++class WalletModel;
+ 
+ namespace Ui {
+     class RPCConsole;
+@@ -36,6 +37,7 @@ public:
+     ~RPCConsole();
+ 
+     void setClientModel(ClientModel *model);
++    void addWallet(const QString name, WalletModel * const walletModel);
+ 
+     enum MessageClass {
+         MC_ERROR,
+@@ -110,7 +112,7 @@ public Q_SLOTS:
+ Q_SIGNALS:
+     // For RPC command executor
+     void stopExecutor();
+-    void cmdRequest(const QString &command);
++    void cmdRequest(const QString &command, void *ppwallet);
+ 
+ private:
+     static QString FormatBytes(quint64 bytes);
+diff --git a/src/qt/walletframe.h b/src/qt/walletframe.h
+index 00c2f56..044bfff 100644
+--- a/src/qt/walletframe.h
++++ b/src/qt/walletframe.h
+@@ -52,6 +52,7 @@ private:
+ 
+     const PlatformStyle *platformStyle;
+ 
++public:
+     WalletView *currentWalletView();
+ 
+ public Q_SLOTS:
+diff --git a/src/qt/walletmodel.h b/src/qt/walletmodel.h
+index 45bdb04..c5a76e7 100644
+--- a/src/qt/walletmodel.h
++++ b/src/qt/walletmodel.h
+@@ -130,6 +130,8 @@ public:
+     TransactionTableModel *getTransactionTableModel();
+     RecentRequestsTableModel *getRecentRequestsTableModel();
+ 
++    CWallet *getWallet() const { return wallet; };
++
+     CAmount getBalance(const CCoinControl *coinControl = NULL) const;
+     CAmount getUnconfirmedBalance() const;
+     CAmount getImmatureBalance() const;
+diff --git a/src/qt/walletview.cpp b/src/qt/walletview.cpp
+index b163ce3..87583c4 100644
+--- a/src/qt/walletview.cpp
++++ b/src/qt/walletview.cpp
+@@ -95,13 +95,13 @@ void WalletView::setBitcoinGUI(BitcoinGUI *gui)
+         connect(this, SIGNAL(message(QString,QString,unsigned int)), gui, SLOT(message(QString,QString,unsigned int)));
+ 
+         // Pass through encryption status changed signals
+-        connect(this, SIGNAL(encryptionStatusChanged(int)), gui, SLOT(setEncryptionStatus(int)));
++        connect(this, SIGNAL(encryptionStatusChanged(int)), gui, SLOT(updateWalletStatus()));
+ 
+         // Pass through transaction notifications
+         connect(this, SIGNAL(incomingTransaction(QString,int,CAmount,QString,QString,QString)), gui, SLOT(incomingTransaction(QString,int,CAmount,QString,QString,QString)));
+ 
+         // Connect HD enabled state signal 
+-        connect(this, SIGNAL(hdEnabledStatusChanged(int)), gui, SLOT(setHDStatus(int)));
++        connect(this, SIGNAL(hdEnabledStatusChanged(int)), gui, SLOT(updateWalletStatus()));
+     }
+ }
+ 
+diff --git a/src/qt/walletview.h b/src/qt/walletview.h
+index aaa6aac..635c475 100644
+--- a/src/qt/walletview.h
++++ b/src/qt/walletview.h
+@@ -44,6 +44,7 @@ public:
+         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
+     */
+     void setClientModel(ClientModel *clientModel);
++    WalletModel *getWalletModel() { return walletModel; }
+     /** Set the wallet model.
+         The wallet model represents a bitcoin wallet, and offers access to the list of transactions, address book and sending
+         functionality.
+diff --git a/src/rpc/server.cpp b/src/rpc/server.cpp
+index ec5e973..c3cf114 100644
+--- a/src/rpc/server.cpp
++++ b/src/rpc/server.cpp
+@@ -388,7 +388,7 @@ void JSONRequest::parse(const UniValue& valRequest)
+         throw JSONRPCError(RPC_INVALID_REQUEST, "Params must be an array");
+ }
+ 
+-static UniValue JSONRPCExecOne(const UniValue& req)
++static UniValue JSONRPCExecOne(const UniValue& req, CRPCRequestInfo& reqinfo)
+ {
+     UniValue rpc_result(UniValue::VOBJ);
+ 
+@@ -396,7 +396,7 @@ static UniValue JSONRPCExecOne(const UniValue& req)
+     try {
+         jreq.parse(req);
+ 
+-        UniValue result = tableRPC.execute(jreq.strMethod, jreq.params);
++        UniValue result = tableRPC.execute(jreq.strMethod, jreq.params, reqinfo);
+         rpc_result = JSONRPCReplyObj(result, NullUniValue, jreq.id);
+     }
+     catch (const UniValue& objError)
+@@ -412,11 +412,11 @@ static UniValue JSONRPCExecOne(const UniValue& req)
+     return rpc_result;
+ }
+ 
+-std::string JSONRPCExecBatch(const UniValue& vReq)
++std::string JSONRPCExecBatch(const UniValue& vReq, CRPCRequestInfo& reqinfo)
+ {
+     UniValue ret(UniValue::VARR);
+     for (unsigned int reqIdx = 0; reqIdx < vReq.size(); reqIdx++)
+-        ret.push_back(JSONRPCExecOne(vReq[reqIdx]));
++        ret.push_back(JSONRPCExecOne(vReq[reqIdx], reqinfo));
+ 
+     return ret.write() + "\n";
+ }
+@@ -431,7 +431,7 @@ UniValue rpcfn_type::operator()(const UniValue& params, bool fHelp, CRPCRequestI
+     }
+ }
+ 
+-UniValue CRPCTable::execute(const std::string &strMethod, const UniValue &params) const
++UniValue CRPCTable::execute(const std::string &strMethod, const UniValue &params, CRPCRequestInfo& reqinfo) const
+ {
+     // Return immediately if in warmup
+     {
+@@ -450,10 +450,6 @@ UniValue CRPCTable::execute(const std::string &strMethod, const UniValue &params
+     try
+     {
+         // Execute
+-        CRPCRequestInfo reqinfo;
+-#ifdef ENABLE_WALLET
+-        reqinfo.wallet = pwalletMain;
+-#endif
+         return pcmd->actor(params, false, reqinfo);
+     }
+     catch (const std::exception& e)
+diff --git a/src/rpc/server.h b/src/rpc/server.h
+index 16ed58d..f26d8bb 100644
+--- a/src/rpc/server.h
++++ b/src/rpc/server.h
+@@ -180,7 +180,7 @@ public:
+      * @returns Result of the call.
+      * @throws an exception (UniValue) when an error happens.
+      */
+-    UniValue execute(const std::string &method, const UniValue &params) const;
++    UniValue execute(const std::string &method, const UniValue &params, CRPCRequestInfo& reqinfo) const;
+ 
+     /**
+     * Returns a list of registered commands
+@@ -220,6 +220,6 @@ extern void EnsureWalletIsUnlocked(CWallet*);
+ bool StartRPC();
+ void InterruptRPC();
+ void StopRPC();
+-std::string JSONRPCExecBatch(const UniValue& vReq);
++std::string JSONRPCExecBatch(const UniValue& vReq, CRPCRequestInfo& reqinfo);
+ 
+ #endif // BITCOIN_RPCSERVER_H
+diff --git a/src/wallet/test/wallet_test_fixture.cpp b/src/wallet/test/wallet_test_fixture.cpp
+index a76db37..03972cc 100644
+--- a/src/wallet/test/wallet_test_fixture.cpp
++++ b/src/wallet/test/wallet_test_fixture.cpp
+@@ -8,6 +8,8 @@
+ #include "wallet/db.h"
+ #include "wallet/wallet.h"
+ 
++CWallet *pwalletMain;
++
+ WalletTestingSetup::WalletTestingSetup(const std::string& chainName):
+     TestingSetup(chainName)
+ {
+diff --git a/src/wallet/wallet.cpp b/src/wallet/wallet.cpp
+index 2734e86..c64dcd6 100644
+--- a/src/wallet/wallet.cpp
++++ b/src/wallet/wallet.cpp
+@@ -34,7 +34,7 @@
+ 
+ using namespace std;
+ 
+-CWallet* pwalletMain = NULL;
++std::vector<CWallet_ptr> vpwallets;
+ /** Transaction fee set by the user */
+ CFeeRate payTxFee(DEFAULT_TRANSACTION_FEE);
+ unsigned int nTxConfirmTarget = DEFAULT_TX_CONFIRM_TARGET;
+@@ -3463,13 +3463,17 @@ CWallet* CWallet::CreateWalletFromFile(const std::string walletFile)
+ 
+ bool CWallet::InitLoadWallet()
+ {
+-    std::string walletFile = GetArg("-wallet", DEFAULT_WALLET_DAT);
++    if (mapMultiArgs["-wallet"].empty()) {
++        mapMultiArgs["-wallet"].push_back(DEFAULT_WALLET_DAT);
++    }
+ 
+-    CWallet * const pwallet = CreateWalletFromFile(walletFile);
+-    if (!pwallet) {
+-        return false;
++    for (const std::string& walletFile : mapMultiArgs["-wallet"]) {
++        CWallet * const pwallet = CreateWalletFromFile(walletFile);
++        if (!pwallet) {
++            return false;
++        }
++        vpwallets.push_back(pwallet);
+     }
+-    pwalletMain = pwallet;
+ 
+     return true;
+ }
+diff --git a/src/wallet/wallet.h b/src/wallet/wallet.h
+index aad0a15..18f144b 100644
+--- a/src/wallet/wallet.h
++++ b/src/wallet/wallet.h
+@@ -28,7 +28,8 @@
+ 
+ #include <boost/shared_ptr.hpp>
+ 
+-extern CWallet* pwalletMain;
++typedef CWallet* CWallet_ptr;
++extern std::vector<CWallet_ptr> vpwallets;
+ 
+ /**
+  * Settings
+diff --git a/src/wallet/walletdb.cpp b/src/wallet/walletdb.cpp
+index 4cbdb31..f26fb73 100644
+--- a/src/wallet/walletdb.cpp
++++ b/src/wallet/walletdb.cpp
+@@ -893,21 +893,23 @@ void ThreadFlushWalletDB()
+                 if (nRefCount == 0)
+                 {
+                     boost::this_thread::interruption_point();
+-                    const std::string& strFile = pwalletMain->strWalletFile;
+-                    map<string, int>::iterator mi = bitdb.mapFileUseCount.find(strFile);
+-                    if (mi != bitdb.mapFileUseCount.end())
+-                    {
+-                        LogPrint("db", "Flushing %s\n", strFile);
+-                        nLastFlushed = nWalletDBUpdated;
+-                        int64_t nStart = GetTimeMillis();
+-
+-                        // Flush wallet file so it's self contained
+-                        bitdb.CloseDb(strFile);
+-                        bitdb.CheckpointLSN(strFile);
+-
+-                        bitdb.mapFileUseCount.erase(mi++);
+-                        LogPrint("db", "Flushed %s %dms\n", strFile, GetTimeMillis() - nStart);
++                    for (CWallet_ptr pwallet : vpwallets) {
++                        const std::string& strFile = pwallet->strWalletFile;
++                        map<string, int>::iterator mi = bitdb.mapFileUseCount.find(strFile);
++                        if (mi != bitdb.mapFileUseCount.end())
++                        {
++                            LogPrint("db", "Flushing %s\n", strFile);
++                            int64_t nStart = GetTimeMillis();
++
++                            // Flush wallet file so it's self contained
++                            bitdb.CloseDb(strFile);
++                            bitdb.CheckpointLSN(strFile);
++
++                            bitdb.mapFileUseCount.erase(mi++);
++                            LogPrint("db", "Flushed %s %dms\n", strFile, GetTimeMillis() - nStart);
++                        }
+                     }
++                    nLastFlushed = nWalletDBUpdated;
+                 }
+             }
+         }

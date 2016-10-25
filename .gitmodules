@@ -1,0 +1,3 @@
+[submodule "assemble-knots"]
+	path = assemble-knots
+	url = https://github.com/bitcoinknots/assemble-deriv.git
