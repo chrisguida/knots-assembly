@@ -1,14 +1,14 @@
-timestamp 2016-10-20 00:00
+timestamp 2016-10-27 08:26:07
 
-checkout v0.13.1rc2
+checkout v0.13.1
 @0.13.x-syslibs
 	5872 subdir_incl_compat						dbbf960
 	2241 sys_leveldb							1af238f
 	5416 sys_libsecp256k1						6c8932f
-	8293 sys_univalue_opt						b96f99f
+TM	8293 sys_univalue_opt						b96f99f
 	7485 sys_univalue_def						0caaddb
 	7522 bugfix_gitdir							e27eec3
-	8492 conf_only_bench						f532bf1
+TM	8492 conf_only_bench						f532bf1
 	5618 separate_utils							a438aaf
 	7339 opt_libevent							ac98ecd
 @0.13.x-knots
@@ -82,11 +82,11 @@ m	-	 bytespersigopstrict-0.13.x-knots		fa08c39
 # BRANDING:
 	7483 svg_icon								f8bf558
 	n/a  knots_branding							2cbf3a7
-	n/a  (bump_version=Knots:20161018)			2056654
+	n/a  (bump_version=Knots:20161027)			2056654
 	n/a  knots_historical_relnotes				7bfd301
-	n/a  (cherrypick=29331b770b)				548c39d  # translation update
+	n/a  (cherrypick=f206cd3bc8)				548c39d  # translation update
 NM	8459 0.13_relnotes_remove_bad_advice		ac229eb
 TM	8490 relnotes_013_misc						033988b
-	n/a  (cherrypick=6d72b40673)				c372395  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=c081e487c6)				c372395  # release notes: write/update, including change log and credits
 		# remove asterisk in changelog for what's been merged last-minute
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
