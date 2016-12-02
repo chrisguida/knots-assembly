@@ -28,6 +28,7 @@ NM	1918 mempool_req							3a08a55
 m	5891 qt_console_history_persist				a2b2278	last=d8a8f1b jonas/2015/03/qt_console_update
 	5916 keyorigin-0.13							35b635a
 	6996 preciousblock							6038b90	last=5805ac8
+FX		+9097a
 	7061 jonas_rpc_rescan						2cc569b last=d1aa8a9 jonas/2015/11/wallet_rescan_rpc
 	7107 qtnetworkport							8045526	last=1f37c87 origin-pull/7107/head
 	7159 rpc_rbf-0.13.x							eabea64	last=b64ebaf
@@ -36,6 +37,7 @@ m	5891 qt_console_history_persist				a2b2278	last=d8a8f1b jonas/2015/03/qt_conso
 m	7533 sendraw_force-0.13.x					f4c521f last=4b32b8b
 NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because upstream has been entirely redesigned
 	7551 importmulti-0.13-knots					2d97bf2 last=215caba
+FX		# +9108
 	#+8980 Avoid using boost::variant::operator!=
 	7510 rwconf-0.13.x-knots					c7027be
 	8583 recog_node_xthin+txrepl_fullrbf		fb8c93d
@@ -45,6 +47,7 @@ NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because
 	8371 UI-out-of-sync-0.13					9c177ab
 	#+8805
 	#+8821 marco/Mf1609-qtSyncReindex
+FX	+8985 ???? +9218+8906
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	8384 pr8384-0.13							f9c4385	last=464c826
 	8517 hd_gui-0.13							80bdbb3
@@ -55,8 +58,10 @@ NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because
 	8774 multiwallet_prefactor_qt				687899f
 	8775 multiwallet_prefactor_rpc-0.13			3ea02b5	last=d6bc295
 	8776 multiwallet_prefactor_wallet-0.13		1a05c5b	last=5394b39
+FX		+8928?
 	8694 multiwallet+hd_gui-0.13				1df9a5f	last=e54fc75
 FX	8996 networkactive-0.13						0913a2b  # upstream bugfixes
+FX		#+9130+9131+9145
 	7785 qt_console_nested-0.13
 	# not ready? 7871 origin-pull/7871/head		         # Manual block file pruning.
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -69,7 +74,19 @@ FX	8996 networkactive-0.13						0913a2b  # upstream bugfixes
 	8817 # update bitcoin-tx to output witness data
 	8874 peer-multiselect-0.13							last=db74962  # Multiple Selection for peer and ban tables
 		#+ part of 8085 531214f
+		#+9255
 	8448 sipa/dumpmempool
+		#+9133?
+FX	8925 rebroad/DebugWindowMinPing  # JUST ADD min ping
+	8936 rebroad/NodeIdWhenMisbehaving
+	8992 instagibbs/validatep2pkh
+	8952	# Add query options to listunspent RPC call
+	9025 jnewbery/getrawtransbool
+	9087 jtimon/0.13-errors-rpc-mining
+	9152 sweepprivkeys
+	9194 instagibbs/nonswserialrpc
+	9222 dooglus/subtractFeeFromAmount-in-fundraw
+	9245 ionice
 	8501 stats_rpc-0.13									last=5722e27
 	# needs de-blobbing: 8550 jonas/2016/08/stats_qt
 FX	n/a  checkpoint_update						8f2e624
@@ -81,12 +98,13 @@ m	-	 bytespersigopstrict-0.13.x-knots		b6613a0	#last=6ae2e2d
 # BRANDING:
 	7483 svg_icon								236fca5
 	n/a  knots_branding							5909fb6
+FX			needs update for 8908,9178
 	n/a  (bump_version=Knots:20161027)			21e12b2
 	n/a  knots_historical_relnotes				42bb8ed
 	n/a  (cherrypick=f206cd3bc8)				f4772d6  # translation update
 NM	8459 0.13_relnotes_remove_bad_advice		10f5f57
 TM	8490 relnotes_013_misc						ce34853
 	n/a  (cherrypick=c081e487c6)				45f61ea  # release notes: write/update, including change log and credits
-		# UPDATE doc/files.md versions!
-		# remove asterisk in changelog for what's been merged last-minute
+		# UPDATE doc/files.md versions! and 9263
+		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
