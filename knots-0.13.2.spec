@@ -1,6 +1,6 @@
 timestamp 2016-10-27 08:26:07
 
-checkout origin/0.13
+checkout v0.13.1
 @0.13.x-syslibs
 	5872 subdir_incl_compat						f0c1de4
 	2241 sys_leveldb							496990c
@@ -12,6 +12,7 @@ TM	8492 conf_only_bench						453630d
 	5618 separate_utils							f903865
 	7339 opt_libevent							f1a8ca8
 @0.13.x-knots
+	9264 laanwj/2016_12_backports_0_13
 TM	8784 license_build-0.13.x					d1e737f
 TM	8357 origin-pull/8357/head					07f2180  # Fix relaypriority calculation error
 TM	8845 pr8845-0.13							8bb0fe0  # Don't return the address of a P2SH of a P2SH
@@ -25,10 +26,10 @@ TM	8845 pr8845-0.13							8bb0fe0  # Don't return the address of a P2SH of a P2S
 NM	1918 mempool_req							3a08a55
 	5861 gui_restore_addresses					35cde1a
 	8877 qt_console_history_filter-0.13knots	fa0bf1e	last=5c7fc22
-m	5891 qt_console_history_persist				a2b2278	last=d8a8f1b jonas/2015/03/qt_console_update
+	5891 qt_console_history_persist				a2b2278	last=d8a8f1b jonas/2015/03/qt_console_update
 	5916 keyorigin-0.13							35b635a
 	6996 preciousblock							6038b90	last=5805ac8
-FX		+9097a
+	#+9097a
 	7061 jonas_rpc_rescan						2cc569b last=d1aa8a9 jonas/2015/11/wallet_rescan_rpc
 	7107 qtnetworkport							8045526	last=1f37c87 origin-pull/7107/head
 	7159 rpc_rbf-0.13.x							eabea64	last=b64ebaf
@@ -37,17 +38,20 @@ FX		+9097a
 m	7533 sendraw_force-0.13.x					f4c521f last=4b32b8b
 NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because upstream has been entirely redesigned
 	7551 importmulti-0.13-knots					2d97bf2 last=215caba
-FX		# +9108
 	#+8980 Avoid using boost::variant::operator!=
+		# not currently including 9108, but perhaps consider...
 	7510 rwconf-0.13.x-knots					c7027be
 	8583 recog_node_xthin+txrepl_fullrbf		fb8c93d
 			# grab merged one by rebroad
-	8456 bumpfee-0.13							af3d812	last=a0b7e34  # [RPC] Simplified bumpfee command.
+	8456 bumpfee-0.13-knots						af3d812	last=2443193  # [RPC] Simplified bumpfee command. SEE ALSO bumpfee-0.13
+	#+9168
 	7948 bip9_softforks_since-0.13				1c2fb91  # RPC: augment getblockchaininfo bip9_softforks data
 	8371 UI-out-of-sync-0.13					9c177ab
 	#+8805
 	#+8821 marco/Mf1609-qtSyncReindex
-FX	+8985 ???? +9218+8906
+	#+8985
+	#+8906
+	# TODO: +9218 (but needs networkactive first..)
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	8384 pr8384-0.13							f9c4385	last=464c826
 	8517 hd_gui-0.13							80bdbb3
@@ -58,48 +62,47 @@ FX	+8985 ???? +9218+8906
 	8774 multiwallet_prefactor_qt				687899f
 	8775 multiwallet_prefactor_rpc-0.13			3ea02b5	last=d6bc295
 	8776 multiwallet_prefactor_wallet-0.13		1a05c5b	last=5394b39
-FX		+8928?
 	8694 multiwallet+hd_gui-0.13				1df9a5f	last=e54fc75
-FX	8996 networkactive-0.13						0913a2b  # upstream bugfixes
-FX		#+9130+9131+9145
+	8996 networkactive-0.13						0913a2b
+	#+9130+9131+9145
 	7785 qt_console_nested-0.13
+	#+9329
 	# not ready? 7871 origin-pull/7871/head		         # Manual block file pruning.
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8704 getblock-extraverbose-0.13						last=ad8fc81
-	8751 afk11/sort-multisigs
-	8813 laanwj/2016_09_daemonize
-	8817 # update bitcoin-tx to output witness data
-	8874 peer-multiselect-0.13							last=db74962  # Multiple Selection for peer and ban tables
-		#+ part of 8085 531214f
-		#+9255
-	8448 sipa/dumpmempool
+	8704 getblock-extraverbose-0.13						last=82a491f
+	8450 rpctest_wallet_accts-0.13
+	8751 pr8751-sort-multisigs-0.13						last=7439562
+	8813 daemonize-0.13									last=a92bf4a
+	8874 peer-multiselect-0.13							last=1077577  # Multiple Selection for peer and ban tables
+	#+ part of 8085 531214f
+	#+9255
+	8448 dumpmempool-0.13								last=582068a
 		#+9133?
-FX	8925 rebroad/DebugWindowMinPing  # JUST ADD min ping
-	8936 rebroad/NodeIdWhenMisbehaving
-	8992 instagibbs/validatep2pkh
-	8952	# Add query options to listunspent RPC call
-	9025 jnewbery/getrawtransbool
-	9087 jtimon/0.13-errors-rpc-mining
-	9152 sweepprivkeys
-	9194 instagibbs/nonswserialrpc
-	9222 dooglus/subtractFeeFromAmount-in-fundraw
+	8925 dbg_minping-0.13	# JUST adding min ping
+	8936 misbehaving_nodeid-0.13
+	8992 validatep2pkh-0.13 (C:930f3888a82)				last=981af93
+	8952 listunspent_query-0.13							last=98d0a6f
+	9025 getrawtx_bool-0.13											# getrawtransaction should take a bool for verbose
+	9152 sweepprivkeys-0.13								last=fdc6778
+	9194 nonswserialrpc-0.13							last=412bab2
+	9222 fundrawtx_subfeefromamt-0.13					last=56ea974
 	9245 ionice
-	8501 stats_rpc-0.13									last=5722e27
+	8501 stats_rpc-0.13									last=b7c021d
 	# needs de-blobbing: 8550 jonas/2016/08/stats_qt
-FX	n/a  checkpoint_update						8f2e624
+	n/a  checkpoint_update						8f2e624
 # POLICY:
-	7149 bugfix_priority-0.13.x					e040cc5	last=887fc24  # TODO: check updates in morcos/dynamicPriority
+	7149 bugfix_priority-0.13.x					e040cc5	last=ae93a95  # TODO: check updates in morcos/dynamicPriority
 m	-	 bytespersigopstrict-0.13.x-knots		b6613a0	#last=6ae2e2d
 	-    spamfilter+sendraw_force				438aee1
 	-    rwconf_policy							d7ea73c
+fx		# add minrelaytxfee
 # BRANDING:
 	7483 svg_icon								236fca5
 	n/a  knots_branding							5909fb6
-FX			needs update for 8908,9178
-	n/a  (bump_version=Knots:20161027)			21e12b2
+	n/a  (bump_version=Knots:20161212)			21e12b2
 	n/a  knots_historical_relnotes				42bb8ed
 	n/a  (cherrypick=f206cd3bc8)				f4772d6  # translation update
 NM	8459 0.13_relnotes_remove_bad_advice		10f5f57
