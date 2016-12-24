@@ -1,0 +1,962 @@
+diff --git a/qa/pull-tester/rpc-tests.py b/qa/pull-tester/rpc-tests.py
+index 09ee1cb..fc96791 100755
+--- a/qa/pull-tester/rpc-tests.py
++++ b/qa/pull-tester/rpc-tests.py
+@@ -146,6 +146,7 @@ testScripts = [
+     'p2p-compactblocks.py',
+     'nulldummy.py',
+     'importmulti.py',
++    'bumpfee.py',
+ ]
+ if ENABLE_ZMQ:
+     testScripts.append('zmq_test.py')
+diff --git a/qa/rpc-tests/bumpfee.py b/qa/rpc-tests/bumpfee.py
+index 313999a..c5294fc 100755
+--- a/qa/rpc-tests/bumpfee.py
++++ b/qa/rpc-tests/bumpfee.py
+@@ -4,9 +4,17 @@
+ # file COPYING or http://www.opensource.org/licenses/mit-license.php.
+ 
+ from test_framework.test_framework import BitcoinTestFramework
++from test_framework import blocktools
++from test_framework.mininode import CTransaction
+ from test_framework.util import *
++from test_framework.util import *
++
++import io
+ import time
+ 
++# Sequence number that is BIP 125 opt-in and BIP 68-compliant
++BIP125_SEQUENCE_NUMBER = 0xfffffffd
++
+ class BumpFeeTest (BitcoinTestFramework):
+ 
+     def __init__(self):
+@@ -16,253 +24,179 @@ class BumpFeeTest (BitcoinTestFramework):
+ 
+     def setup_network(self, split=False):
+         self.nodes = []
+-        self.nodes.append(start_node(0, self.options.tmpdir, ["-debug"]))
++        self.nodes.append(start_node(0, self.options.tmpdir, ["-debug", "-walletrbf"]))
+         self.nodes.append(start_node(1, self.options.tmpdir, ["-debug"]))
+         connect_nodes_bi(self.nodes,0,1)
+         self.is_network_split=False
+         self.sync_all()
+ 
+-    # find the output that has amount=value
+-    def find_output(self, tx, value):
+-        outputs = tx['vout']
+-        for i in range(len(outputs)):
+-            if (outputs[i]['value'] == value):
+-                return outputs[i]['n']
+-        return -1
+-
+-    def create_sign_send(self, node, inputs, outputs):
+-        rawtx = node.createrawtransaction(inputs, outputs)
+-        signedtx = node.signrawtransaction(rawtx)
+-        txid = node.sendrawtransaction(signedtx['hex'])
+-        return txid
+-
+-    # sleep until a specified node has a certain tx
+-    def sync_mempool_tx(self, node, txid, timeout=10):
+-        while timeout > 0:
+-            if txid in node.getrawmempool():
+-                return True
+-            time.sleep(1)
+-            timeout-= 1
+-        return False
+-
+-    def run_test (self):
+-        print("Mining blocks...")
+-
+-        self.nodes[0].generate(5)
+-        self.sync_all()
+-        self.nodes[1].generate(2)
+-        self.sync_all()
+-        self.nodes[1].generate(100)
+-        self.sync_all()
+-        assert_equal(self.nodes[0].getbalance(), 250)
+-        assert_equal(self.nodes[1].getbalance(), 100)
+-        a0 = self.nodes[0].getnewaddress()
+-        a1 = self.nodes[0].getnewaddress()
+-
+-        # create a send-to-self opt-in RBF transaction
+-        # this has a "payment" of 49, change of 0.999 and fee of 0.001
+-        coinbases = self.nodes[0].listunspent()
+-        assert_equal(len(coinbases), 5)
+-        utxo = coinbases.pop()
+-        inputs=[]
+-        inputs.append({"txid":utxo["txid"],"vout":utxo["vout"],"address":utxo["address"],"sequence":1000})
+-        outputs = {a0:49, a1:0.999}
+-        rbfid = self.create_sign_send(self.nodes[0], inputs, outputs)
++    def test_simple_bumpfee_succeeds(self):
++        rbfid = create_fund_sign_send(self.nodes[0], {self.a1:0.00090000})
+         rbftx = self.nodes[0].gettransaction(rbfid)
+-        fulltx = self.nodes[0].getrawtransaction(rbfid, 1)
+-
+-        # bump fee using the change output (will bump by relay fee)
+         sync_mempools(self.nodes)
+-        assert(rbfid in self.nodes[0].getrawmempool())
+-        assert(rbfid in self.nodes[1].getrawmempool())
+-        change_output = self.find_output(fulltx, Decimal('0.999'))
+-        bumped_tx = self.nodes[0].bumpfee(rbfid, change_output)
++        assert(rbfid in self.nodes[0].getrawmempool() and rbfid in self.nodes[1].getrawmempool())
++        bumped_tx = self.nodes[0].bumpfee(rbfid)
+         assert(bumped_tx['fee'] - abs(rbftx['fee']) > 0)
+-
+-        # check that bumped_tx propogates and parent tx was evicted from both mempools
++        # check that bumped_tx propogates, original tx was evicted and has a wallet conflict
+         sync_mempools(self.nodes)
+         assert(bumped_tx['txid'] in self.nodes[0].getrawmempool())
+         assert(bumped_tx['txid'] in self.nodes[1].getrawmempool())
+         assert(rbfid not in self.nodes[0].getrawmempool())
+         assert(rbfid not in self.nodes[1].getrawmempool())
+-
+-        # check that the wallet tx for the original tx has a conflict
+         oldwtx = self.nodes[0].gettransaction(rbfid)
+         assert(len(oldwtx['walletconflicts']) > 0)
+-
+-        # check that we cannot replace a non RBF transaction
+-        utxo = coinbases.pop()
+-        inputs=[]
+-        inputs.append({"txid":utxo["txid"],"vout":utxo["vout"],"address":utxo["address"]})
+-        outputs = {a0:49, a1:0.999}
+-        txid = self.create_sign_send(self.nodes[0], inputs, outputs)
+-        assert_raises(JSONRPCException, self.nodes[0].bumpfee, txid, 0)
+-
+-        # check that we cannot bump fee with a too-small output (100 satoshis won't cover the delta)
+-        utxo = coinbases.pop()
+-        inputs=[]
+-        inputs.append({"txid":utxo["txid"],"vout":utxo["vout"],"address":utxo["address"],"sequence":1000})
+-        outputs = {a0:49.99, a1:0.00000100}
+-        rbfid = self.create_sign_send(self.nodes[0], inputs, outputs)
++        # check wallet transaction replaces and replaced_by values
++        bumpedwtx = self.nodes[0].gettransaction(bumped_tx['txid'])
++        assert_equal(oldwtx['replaced_by_txid'], bumped_tx['txid'])
++        assert_equal(bumpedwtx['replaces_txid'], rbfid)
++
++    def test_nonrbf_bumpfee_fails(self):
++        # cannot replace a non RBF transaction (use node1, which did not enable RBF)
++        not_rbfid = create_fund_sign_send(self.nodes[1], {self.a1:0.00090000})
++        assert_raises_message(JSONRPCException, "not BIP 125 replaceable", self.nodes[1].bumpfee, not_rbfid)
++
++    def test_notmine_bumpfee_fails(self):
++        # cannot bump fee unless the tx has only inputs that we own.
++        # here, the rbftx has a node1 coin and then adds a node0 input
++        # Note that this test depends upon the RPC code checking input ownership prior to change outputs
++        # (since it can't use fundrawtransaction, it lacks a proper change output)
++        utxo = self.nodes[0].listunspent().pop()
++        utxo1 = self.nodes[1].listunspent().pop()
++        inputs = [{"txid":utxo["txid"],"vout":utxo["vout"],"address":utxo["address"],"sequence":BIP125_SEQUENCE_NUMBER}]
++        inputs.append({"txid":utxo1["txid"],"vout":utxo1["vout"],"address":utxo1["address"],"sequence":BIP125_SEQUENCE_NUMBER})
++        output_val = utxo['amount'] + utxo1['amount'] - Decimal('0.001')
++        rawtx = self.nodes[0].createrawtransaction(inputs, {self.a0:output_val})
++        signedtx = self.nodes[0].signrawtransaction(rawtx)
++        signedtx = self.nodes[1].signrawtransaction(signedtx['hex'])
++        rbfid = self.nodes[0].sendrawtransaction(signedtx['hex'])
++        assert_raises_message(JSONRPCException, "Transaction contains inputs that don't belong to this wallet", self.nodes[0].bumpfee, rbfid)
++
++    def test_bumpfee_with_descendant_fails(self):
++        # cannot bump fee if the transaction has a descendant
++        # parent is send-to-self, so we don't have to check which output is change when creating the child tx
++        parent_id = create_fund_sign_send(self.nodes[0], {self.a0:0.00050000})
++        tx = self.nodes[0].createrawtransaction([{'txid':parent_id, 'vout':0}], {self.a1:0.00020000})
++        tx = self.nodes[0].signrawtransaction(tx)
++        txid = self.nodes[0].sendrawtransaction(tx['hex'])
++        assert_raises_message(JSONRPCException, "Transaction has descendants in the wallet", self.nodes[0].bumpfee, parent_id)
++
++    def test_small_output_fails(self):
++        # cannot bump fee with a too-small output
++        rbfid = create_fund_sign_send(self.nodes[0], {self.a1:0.00090000})
++        self.nodes[0].bumpfee(rbfid, {"totalFee":10000})
++        rbfid = create_fund_sign_send(self.nodes[0], {self.a1:0.00090000})
++        assert_raises_message(JSONRPCException, "Change output is too small", self.nodes[0].bumpfee, rbfid, {"totalFee":10001})
++
++    def test_dust_to_fee(self):
++        # check that if output is reduced to dust, it will be converted to fee
++        # the bumped tx sets fee=9900, but it converts to 10,000
++        rbfid = create_fund_sign_send(self.nodes[0], {self.a1:0.00090000})
+         fulltx = self.nodes[0].getrawtransaction(rbfid, 1)
+-        change_output = self.find_output(fulltx, Decimal('0.000001'))
+-        assert_raises(JSONRPCException, self.nodes[0].bumpfee, rbfid, change_output)
+-
+-        # test a tx with descendants (bumped fee must cover all of the descendants fees)
+-        #   - create a send-to-self RBF tx with child with large fee
+-        #   - parent tx fee is .02 btc = 2,000,000 satoshis
+-        #   - child tx fee is .07 btc = 7,000,000 satoshis
+-        utxo = coinbases.pop()
+-        inputs = []
+-        inputs.append({"txid":utxo["txid"],"vout":utxo["vout"],"address":utxo["address"],"sequence":1000})
+-        outputs = {a0:24.99, a1:24.99}
+-        parent_id = self.create_sign_send(self.nodes[0], inputs, outputs)
+-
+-        # child tx fee: 24.99 - 24.92 = .07 btc = 7,000,000 satoshis
+-        inputs = [ {'txid':parent_id, 'vout':0} ]
+-        outputs = {a0:24.92}
+-        child_id = self.create_sign_send(self.nodes[0], inputs, outputs)
+-
+-        # try bumpfee on parent - this fails b/c cannot pay for child
+-        assert_raises(JSONRPCException, self.nodes[0].bumpfee, parent_id, 0)
+-
+-        # try again, setting totalFee
+-        # total fee required = parent(2,000,000) + child(7,000,000) + the relay fee (should be about 190 satoshis)
+-        # note that totalFee must be < 10,000,000 satoshis unless you modify the node's maxTxFee
+-        # first attempt fails due to low fee, second attempt succeeds
+-        assert_raises(JSONRPCException, self.nodes[0].bumpfee, parent_id, 0, {"totalFee":9000180})
+-        bumped_tx = self.nodes[0].bumpfee(parent_id, 0, {"totalFee":9000200})
+-
+-        # check propogation of bumped_tx, eviction of original parent
++        bumped_tx = self.nodes[0].bumpfee(rbfid, {"totalFee":9900})
++        full_bumped_tx = self.nodes[0].getrawtransaction(bumped_tx['txid'], 1)
++        assert_equal(bumped_tx['fee'], Decimal('0.00010000'))
++        assert_equal(len(fulltx['vout']), 2)
++        assert_equal(len(full_bumped_tx['vout']), 1) #change output is eliminated
++
++    def test_settxfee(self):
++        # check that bumpfee reacts correctly to the use of settxfee (paytxfee)
++        # increase feerate by 2.5x, test that fee increased at least 2x
++        self.nodes[0].settxfee(Decimal('0.00001000'))
++        rbfid = create_fund_sign_send(self.nodes[0], {self.a1:0.00090000})
++        rbftx = self.nodes[0].gettransaction(rbfid)
++        self.nodes[0].settxfee(Decimal('0.00002500'))
++        bumped_tx = self.nodes[0].bumpfee(rbfid)
++        assert(bumped_tx['fee'] > 2*abs(rbftx['fee']))
++        self.nodes[0].settxfee(Decimal('0.00000000')) # unset paytxfee
++
++    def test_rebumping(self):
++        # check that re-bumping the original tx fails, but bumping the bumper succeeds
++        rbfid = create_fund_sign_send(self.nodes[0], {self.a1:0.00090000}, Decimal('0.00001000'))
+         sync_mempools(self.nodes)
+-        assert(bumped_tx['txid'] in self.nodes[0].getrawmempool())
+-        assert(bumped_tx['txid'] in self.nodes[1].getrawmempool())
+-        assert(parent_id not in self.nodes[0].getrawmempool())
+-        assert(parent_id not in self.nodes[1].getrawmempool())
+-
+-
+-        # check that calling bumpfee twice on the original txid throws an error (original tx now has a wallet
+-        # conflict with a later transaction, so the second bumpfee call must be on the bumped txid)
+-        # original tx: fee of .01
+-        # bumped tx: fee of .02
+-        # second bump: fee of .03
+-        utxo = coinbases.pop()
+-        inputs=[]
+-        inputs.append({"txid":utxo["txid"],"vout":utxo["vout"],"address":utxo["address"],"sequence":1000})
+-        outputs = {a0:49.99}
+-        rbfid = self.create_sign_send(self.nodes[0], inputs, outputs)
+-        #rbftx = self.nodes[0].gettransaction(rbfid)
+-        #fulltx = self.nodes[0].getrawtransaction(rbfid, 1)
+-
+-        # bump fee to .02
+-        # we sleep 1 second before bumping so that the bumped wallet tx timestamp will be different,
+-        # as it would in any real-world scenario
+-        time.sleep(1)
+-        bumped_tx = self.nodes[0].bumpfee(rbfid, 0, {"totalFee":2000000})
+-        bumped_id = bumped_tx['txid']
++        bumped = self.nodes[0].bumpfee(rbfid, {"totalFee":1000})
+         sync_mempools(self.nodes)
+-        assert(bumped_id in self.nodes[1].getrawmempool())
+-
+-        # bumpfee to 0.3 fails on the original tx, but succeeds on bumped_id
+-        assert_raises(JSONRPCException, self.nodes[0].bumpfee, rbfid, 0, {"totalFee":3000000})
+-        succeed_tx = self.nodes[0].bumpfee(bumped_id, 0, {"totalFee":3000000})
+-        self.sync_all()
+-
++        assert_raises_message(JSONRPCException, "already bumped", self.nodes[0].bumpfee, rbfid, {"totalFee":2000})
++        self.nodes[0].bumpfee(bumped['txid'], {"totalFee":2000})
++
++    def test_unconfirmed_not_spendable(self):
++        # check that unconfirmed outputs from bumped transactions are not spendable
++        node = self.nodes[0]
++        a0 = node.getnewaddress()
++        rbfid = create_fund_sign_send(node, {a0: 0.00090000})
++        rbftx = node.gettransaction(rbfid)['hex']
++        assert rbfid in node.getrawmempool()
++        bumpid = node.bumpfee(rbfid)['txid']
++        assert bumpid in node.getrawmempool()
++        assert rbfid not in node.getrawmempool()
++        assert_equal([t for t in node.listunspent(0) if t['txid'] == bumpid], [])
++        # submit a block with the rbf transaction to clear the bump transaction out
++        # of the mempool, then invalidate the block so the rbf transaction will be
++        # put back in the mempool. this makes it possible to check whether the rbf
++        # transaction outputs are spendable before the rbf tx is confirmed.
++        block = submit_block_with_tx(node, rbftx)
++        node.invalidateblock(block.hash)
++        assert bumpid not in node.getrawmempool()
++        assert rbfid in node.getrawmempool()
++        # check that outputs from the rbf tx are not spendable until confirmed
++        assert_equal([t for t in node.listunspent(0) if t['txid'] == rbfid], [])
++        # check that the main output from the rbf tx is spendable after confirmed
++        self.nodes[0].generate(1)
++        assert_equal(
++            sum(1 for t in node.listunspent(0)
++                if t['txid'] == rbfid and t['address'] == a0 and t['spendable']), 1)
+ 
+-        # Test bumpfee on tx's that are not in the mempool
+-        #
+-        # First, test a bare tx (no children), this should work as advertised.
+-        #
+-        # Then test a tx with a high-fee child with various fees:
+-        #   1) too low to get into the local mempool (bumpfee fails)
+-        #   2) high enough to get into mempool, but does not pay for child so will not propogate to
+-        #   peers that still have the child_tx in their mempool
+-        #   3) high enough to pay for child.  To do this call bumpfee on the result in (2) with a
+-        #   higher fee, this will propogate to peers
++    def run_test (self):
++        self.a0 = self.nodes[0].getnewaddress()
++        self.a1 = self.nodes[1].getnewaddress()
+ 
+-        # create two inputs, one with 100,000 satoshis, one with 200,000 satoshis, both with low priority
+-        a0 = self.nodes[1].getnewaddress()
+-        a1 = self.nodes[1].getnewaddress()
+-        a2 = self.nodes[1].getnewaddress()
+-        coinbases = self.nodes[1].listunspent()
+-        assert_equal(len(coinbases), 2)
+-        utxo = coinbases.pop()
+-        inputs=[{"txid":utxo["txid"],"vout":utxo["vout"],"address":utxo["address"],"sequence":1000}]
+-        outputs = {a0:49.996, a1:0.001, a2:0.002}
+-        bigtx_id = self.create_sign_send(self.nodes[1], inputs, outputs)
+-        bigtx_full = self.nodes[1].getrawtransaction(bigtx_id, 1)
+-        change_1 = self.find_output(bigtx_full, Decimal('0.001'))
+-        change_2 = self.find_output(bigtx_full, Decimal('0.002'))
+-        self.nodes[1].generate(1)  # mine bigtx to clear it from the mempool
+-        assert(len(self.nodes[1].getrawmempool()) == 0)
++        # fund node0 with 10 coins of 0.001 btc (100,000 satoshis)
++        print("Mining blocks...")
++        self.nodes[1].generate(110)
+         self.sync_all()
+-
+-        # create "bare" (no children) rbf tx with 1,000 satoshi fee
+-        inputs=[{"txid":bigtx_id,"vout":change_1,"sequence":1000}]
+-        outputs = {a0:0.00099}
+-        bare_id = self.create_sign_send(self.nodes[1], inputs, outputs)
+-        sync_mempools(self.nodes)
+-
+-        # create a parent rbf tx with low fee but child tx with high fee
+-        # parent tx:  200,000 satoshis in, 100,000 to child, 99,000 to change, 1,000 to fee
+-        inputs=[{"txid":bigtx_id,"vout":change_2,"sequence":1000}]
+-        outputs = {a0:0.001, a1:0.00099}
+-        parent_id = self.create_sign_send(self.nodes[1], inputs, outputs)
+-        parent_full = self.nodes[1].getrawtransaction(parent_id, 1)
+-        child_output = self.find_output(parent_full, Decimal('0.001'))
+-        change_output = self.find_output(parent_full, Decimal('0.00099'))
+-        sync_mempools(self.nodes)
+-
+-        # child: 60,000 satoshis to self, 40,000 satoshi fee
+-        inputs=[{"txid":parent_id,"vout":child_output,"sequence":1000}]
+-        outputs = {a2:0.00060}
+-        child_id = self.create_sign_send(self.nodes[1], inputs, outputs)
+-        sync_mempools(self.nodes)
+-
+-        # The easiest way to remove a tx from mempool is to stop the node and re-start with a
+-        # higher mempool min fee (so the wallet will not add it to the mempool). Note that the 
+-        # removed tx must not pass the AllowFree test (priority), so must use a low-value tx.
+-        #
+-        # Here, we restart node1 with min fee = 10,000 satoshis
+-        # No tx's should make it back into the mempool: bare tx and parent_tx are low-fee, 
+-        # and child_tx is an orphan
+-        #
+-        stop_node(self.nodes[1],1)
+-        self.nodes[1]=start_node(1, self.options.tmpdir, ["-debug", "-minrelaytxfee=0.0001"])
+-        connect_nodes_bi(self.nodes,0,1)
+-        assert_equal(0, len(self.nodes[1].getrawmempool()))
+-        assert_equal(3, len(self.nodes[0].getrawmempool()))
+-
+-        # now call bumpfee
+-        # bumpfee on bare_tx using smartfees succeeds and propogates
+-        bumped_tx = self.nodes[1].bumpfee(bare_id, 0)
+-        assert(bumped_tx['txid'] in self.nodes[1].getrawmempool())
+-        self.sync_mempool_tx(self.nodes[0], bumped_tx['txid'])
+-
+-        # bumpfee on parent with 2,000 satoshis fails, because parent_fee was 1,000 and the
+-        # current relay fee is about 1,900 satoshis
+-        assert_raises(JSONRPCException, self.nodes[1].bumpfee, parent_id, change_output, {"totalFee":2000})
+-
+-        # bumpfee on parent with 20,000 satoshis will "succeed" in the sense that it gets into the local mempool,
+-        # but will be rejected by peers because it does not pay enough fee to cover the child
+-        # note that the bumpfee command will warn the user that if the tx has children, it may be rejected by peers
+-        # if the fee does not pay for the children
+-        #
+-        bumped_1 = self.nodes[1].bumpfee(parent_id, change_output, {"totalFee":20000})
+-        assert(bumped_1["txid"] in self.nodes[1].getrawmempool())
+-        result = self.sync_mempool_tx(self.nodes[0], bumped_1['txid'], 5)
+-        assert_equal(result, False)
+-
+-        # here, the user figured out that the bumped tx didn't propogate, so he/she calls bumpfee again on the bumped_tx
+-        # this should succeed and propogate
+-        bumped_2 = self.nodes[1].bumpfee(bumped_1['txid'], 0, {"totalFee":50000})
+-        assert(bumped_1["txid"] not in self.nodes[1].getrawmempool())
+-        assert(bumped_2["txid"] in self.nodes[1].getrawmempool())
+-        result = self.sync_mempool_tx(self.nodes[0], bumped_2['txid'])
+-        assert_equal(result, True)
+-
++        for i in range(10):
++            self.nodes[1].sendtoaddress(self.a0, 0.001)
++        self.sync_all()
++        self.nodes[1].generate(1)
++        self.sync_all()
++        assert_equal(self.nodes[0].getbalance(), Decimal('0.01'))
++
++        print("Running tests")
++        self.test_simple_bumpfee_succeeds()
++        self.test_nonrbf_bumpfee_fails()
++        self.test_notmine_bumpfee_fails()
++        self.test_bumpfee_with_descendant_fails()
++        self.test_small_output_fails()
++        self.test_dust_to_fee()
++        self.test_settxfee()
++        self.test_rebumping()
++        self.test_unconfirmed_not_spendable()
+         print("Success")
+ 
++def create_fund_sign_send(node, outputs, feerate=0):
++    if feerate != 0:
++        node.settxfee(feerate)
++    rawtx = node.createrawtransaction([], outputs)
++    fundtx = node.fundrawtransaction(rawtx)
++    signedtx = node.signrawtransaction(fundtx['hex'])
++    txid = node.sendrawtransaction(signedtx['hex'])
++    return txid
++
++def submit_block_with_tx(node, tx):
++    ctx = CTransaction()
++    ctx.deserialize(io.BytesIO(hex_str_to_bytes(tx)))
++
++    tip = node.getbestblockhash()
++    height = node.getblockcount() + 1
++    block_time = node.getblockheader(tip)["mediantime"] + 1
++    block = blocktools.create_block(int(tip, 16), blocktools.create_coinbase(height), block_time)
++    block.vtx.append(ctx)
++    block.rehash()
++    block.hashMerkleRoot = block.calc_merkle_root()
++    block.solve()
++    error = node.submitblock(bytes_to_hex_str(block.serialize(True)))
++    if error is not None:
++        raise Exception(error)
++    return block
+ 
+ if __name__ == '__main__':
+     BumpFeeTest ().main ()
+diff --git a/src/rpc/client.cpp b/src/rpc/client.cpp
+index 2321e23..219109b 100644
+--- a/src/rpc/client.cpp
++++ b/src/rpc/client.cpp
+@@ -110,6 +110,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
+     { "getmempooldescendants", 1 },
+     { "rescanblockchain", 0 },
+     { "rescanblockchain", 1 },
++    { "bumpfee", 1 },
+ };
+ 
+ class CRPCConvertTable
+diff --git a/src/wallet/rpcwallet.cpp b/src/wallet/rpcwallet.cpp
+index e6af534..5881f06 100644
+--- a/src/wallet/rpcwallet.cpp
++++ b/src/wallet/rpcwallet.cpp
+@@ -16,6 +16,7 @@
+ #include "rpc/server.h"
+ #include "script/sign.h"
+ #include "timedata.h"
++#include "ui_interface.h"
+ #include "util.h"
+ #include "utilmoneystr.h"
+ #include "wallet.h"
+@@ -2603,76 +2604,101 @@ UniValue bumpfee(const UniValue& params, bool fHelp)
+     if (!EnsureWalletIsAvailable(fHelp))
+         return NullUniValue;
+ 
+-    if (fHelp || params.size() < 2 || params.size() > 3)
++    if (fHelp || params.size() < 1 || params.size() > 3 || (params.size() > 2 && !params[1].isNum()))
+         throw runtime_error(
+-                            "bumpfee \"txid\"\n"
+-                            "\nBumps the fee of a opt-in-RBF transaction.\n"
+-                            "\nThis command requires that the txid is in the wallet.\n"
+-                            "\nUser specifies which output (e.g., a change output) will be used to bump the fee.\n"
+-                            "\nThis command will NOT add new inputs.\n"
+-                            "\nFee must be high enough to pay a new relay fee.\n"
+-                            "\nIf tx has child transactions in mempool, the new fee must pay for them as well.\n"
+-                            "\nThis command will fail if fee is not high enough or output is not large enough.\n"
+-                            "\nUser can specify totalFee, or use RPC setpaytxfee to set a higher fee rate.\n"
++                            "bumpfee \"txid\" ( options ) \n"
++                            "\nBumps the fee of an opt-in-RBF transaction T, replacing it with a new transaction B.\n"
++                            "An opt-in RBF transaction with the given txid must be in the wallet.\n"
++                            "The command will not add new inputs or alter existing inputs.\n"
++                            "The command will pay the additional fee by decreasing (or perhaps removing) its change output.\n"
++                            "The command will fail if the wallet or mempool contains a transaction that spends one of T's outputs.\n"
++                            "By default, the new fee will be calculated automatically using estimatefee/fallbackfee.\n"
++                            "The user can specify a confirmation target for estimatefee.\n"
++                            "Alternatively, the user can specify totalFee, or use RPC setpaytxfee to set a higher fee rate.\n"
++                            "At a minimum, the new fee rate must be high enough to pay a new relay fee and to enter the node's mempool.\n"
+                             "\nArguments:\n"
+-                            "1. \"transactionid\"     (string, required) The txid to be bumped\n"
+-                            "2. \"output\"            (int, required) The output to be decremented\n"
+-                            "3. options               (object, optional)\n"
++                            "1. \"txid\"              (string, required) The txid to be bumped\n"
++                            "2. options               (object, optional)\n"
+                             "   {\n"
+-                            "     \"confTarget\"      (int, optional) Confirmation target (in blocks)\n"
+-                            "     \"totalFee\"        (numeric, optional) Total fee to pay, in satoshis (not btc)\n"
++                            "     \"confTarget\":       \"n\",          (numeric, optional) Confirmation target (in blocks)\n"
++                            "     \"totalFee\":         \"n\",          (numeric, optional) Total fee (NOT feerate) to pay, in satoshis\n"
+                             "   }\n"
+                             "\nResult:\n"
+                             "{\n"
+-                            "  \"txid\":    \"value\", (string)  The id of the new transaction\n"
++                            "  \"txid\":    \"value\",   (string)  The id of the new transaction\n"
+                             "  \"oldfee\":    n,         (numeric) Fee of the replaced transaction\n"
+                             "  \"fee\":       n,         (numeric) Fee of the new transaction\n"
+                             "}\n"
+                             "\nExamples:\n"
+-                            "\nBump the fee, get the new transactions txid\n"
+-                            + HelpExampleCli("bumpfee", "<txid> <output>")
++                            "\nBump the fee, get the new transaction\'s txid\n"
++                            + HelpExampleCli("bumpfee", "<txid>")
+                             );
+ 
+-    RPCTypeCheck(params, boost::assign::list_of(UniValue::VSTR)(UniValue::VNUM));
++    RPCTypeCheck(params, boost::assign::list_of(UniValue::VSTR));
+     uint256 hash;
+     hash.SetHex(params[0].get_str());
+-    std::string strError;
+ 
+     // retrieve the original tx from the wallet
++    assert(pwalletMain != NULL);
++    LOCK2(cs_main, pwalletMain->cs_wallet);
+     if (!pwalletMain->mapWallet.count(hash))
+         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid or non-wallet transaction id");
+-    const CWalletTx& wtx = pwalletMain->mapWallet[hash];
++    CWalletTx& wtx = pwalletMain->mapWallet[hash];
++
++    if (wtx.GetDepthInMainChain() != 0)
++        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Transaction has been mined, or is conflicted with a mined transaction");
+ 
+-    // check that original tx signals opt-in-RBF
+     if (!SignalsOptInRBF(wtx))
+-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Transaction is not bip-125 replaceable");
+-
+-    // Check that if the original tx has wallet conflicts (meaning there is at least one other tx
+-    // in the wallet that spends at least one of the same outputs) that it is the most recent one.
+-    // This prevents us from trying to bump fee on a tx that has already been bumped.  So if the
+-    // user created txid1, bumped the fee which resulted in txid2, and now wishes to bump the fee
+-    // again, the user must call bumpfee on txid2.
+-    const CWalletTx *conflictTx;
+-    BOOST_FOREACH(const uint256& conflict, wtx.GetConflicts()) {
+-        conflictTx = pwalletMain->GetWalletTx(conflict);
+-        LogPrint("rpc", "bumpfee wallet conflict, conflicted tx has time: %d\n", conflictTx->GetTxTime());
+-        if (conflictTx->GetTxTime() > wtx.GetTxTime()) {
+-            strError = strprintf("Transaction conflicts with later wallet tx: %s", conflict.GetHex());
+-            throw JSONRPCError(RPC_INVALID_PARAMETER, strError);
++        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Transaction is not BIP 125 replaceable");
++
++    if (wtx.mapValue.count("replaced_by_txid"))
++      throw JSONRPCError(RPC_INVALID_REQUEST, strprintf("Cannot bump transaction %s which was already bumped by transaction %s", hash.ToString(), wtx.mapValue.at("replaced_by_txid")));
++
++    // check that original tx consists entirely of our inputs
++    // if not, we can't bump the fee, because the wallet has no way of knowing the value of the other inputs (thus the fee)
++    if (!pwalletMain->IsAllFromMe(wtx, ISMINE_SPENDABLE))
++        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Transaction contains inputs that don't belong to this wallet");
++
++    int nOutput = -1;
++    if (params.size() > 1 && params[1].isNum()) {
++        // Backwards compatibility with Knots 0.13.1, which required specifying the change output as second param
++        nOutput = params[1].get_int();
++        if (nOutput < 0 || (unsigned int) nOutput > wtx.vout.size()) {
++            throw JSONRPCError(RPC_INVALID_PARAMETER, "Output out of bounds");
++        }
++        if (!pwalletMain->IsChange(wtx.vout[nOutput])) {
++            throw JSONRPCError(RPC_INVALID_PARAMETER, "Selected output is not change");
++        }
++    } else {
++
++    // figure out which output was change
++    // if there was no change output or multiple change outputs, fail
++    for (size_t i=0; i < wtx.vout.size(); ++i) {
++        if (pwalletMain->IsChange(wtx.vout[i])) {
++            if (nOutput != -1)
++                throw JSONRPCError(RPC_MISC_ERROR, "Transaction has multiple change outputs");
++            nOutput = i;
+         }
+     }
++    if (nOutput == -1)
++        throw JSONRPCError(RPC_MISC_ERROR, "Transaction does not have a change output");
+ 
+-    // bounds-check the output to decrement
+-    int nOutput = params[1].get_int();
+-    if (nOutput < 0 || (unsigned int) nOutput > wtx.vout.size())
+-        throw JSONRPCError(RPC_INVALID_PARAMETER, "Output out of bounds");
++    }
+ 
+     // optional parameters
+     int newConfirmTarget = nTxConfirmTarget;
+     CAmount totalFee = 0;
+-    if (params.size() > 2) {
+-        RPCTypeCheck(params, boost::assign::list_of(UniValue::VSTR)(UniValue::VNUM)(UniValue::VOBJ));
+-        UniValue options = params[2];
++    if (params.size() > 1 && ((!params[1].isNum()) || params.size() > 2)) {
++        UniValue options;
++        if (params[1].isNum()) {
++            RPCTypeCheck(params, boost::assign::list_of(UniValue::VSTR)(UniValue::VNUM)(UniValue::VOBJ));
++            options = params[2];
++        } else {
++        RPCTypeCheck(params, boost::assign::list_of(UniValue::VSTR)(UniValue::VOBJ));
++            options = params[1];
++        }
++        if (options.size() > 2)
++                throw JSONRPCError(RPC_INVALID_PARAMETER, "Too many optional parameters");
+         RPCTypeCheckObj(options,
+             {
+                 {"confTarget", UniValueType(UniValue::VNUM)},
+@@ -2690,120 +2716,86 @@ UniValue bumpfee(const UniValue& params, bool fHelp)
+             if (totalFee <= 0)
+                 throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid totalFee (cannot be <= 0)");
+             else if (totalFee > maxTxFee)
+-                throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid totalFee (higher than maxTxFee)");
++                throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid totalFee (cannot be higher than maxTxFee)");
+         }
+     }
+ 
+-    // calculate the old fee and fee-rate
+-    CAmount nDebit = wtx.GetDebit(ISMINE_SPENDABLE);
+-    CAmount nOldFee = (wtx.IsFromMe(ISMINE_SPENDABLE) ? nDebit - wtx.GetValueOut() : 0);
+-    int txSize = (int)GetVirtualTransactionSize((CTransaction)wtx);
+-    CFeeRate nOldFeeRate(nOldFee, txSize);
+-
+-    // use the user-defined payTxFee if possible, otherwise use smartfee / fallbackfee
+-    CAmount nNewFee = 0;
+-    CFeeRate nNewFeeRate;
+-    if (payTxFee.GetFeePerK() > 0) {
+-        nNewFeeRate = CFeeRate(payTxFee.GetFeePerK());
+-    }
+-    else {
+-        int estimateFoundTarget = newConfirmTarget;
+-        nNewFeeRate = mempool.estimateSmartFee(newConfirmTarget, &estimateFoundTarget);
+-        if (nNewFeeRate.GetFeePerK() == 0) nNewFeeRate = CWallet::fallbackFee;
+-    }
+-
+-    // new fee rate must be at least old rate + minimum relay rate
+-    if (nNewFeeRate.GetFeePerK() < nOldFeeRate.GetFeePerK() + ::minRelayTxFee.GetFeePerK()) {
+-        nNewFeeRate = CFeeRate(nOldFeeRate.GetFeePerK() + ::minRelayTxFee.GetFeePerK());
++    // Fail if the tx has any descendants - check both the wallet and the mempool
++    if (pwalletMain->HasWalletSpend(hash))
++        throw JSONRPCError(RPC_MISC_ERROR, "Transaction has descendants in the wallet");
++    {
++        LOCK(mempool.cs);
++        auto it = mempool.mapTx.find(hash);
++        if (it != mempool.mapTx.end() && it->GetCountWithDescendants() > 1)
++            throw JSONRPCError(RPC_MISC_ERROR, "Transaction has descendants in the mempool");
+     }
+ 
+     // signature sizes can vary by a byte, so add 1 for each input when calculating the new fee
+-    nNewFee = nNewFeeRate.GetFee(txSize + wtx.vin.size());
++    int64_t txSize = GetVirtualTransactionSize((CTransaction)wtx);
++    const int64_t maxNewTxSize = txSize + wtx.vin.size();
++
++    // calculate the old fee and fee-rate
++    CAmount nOldFee = wtx.GetDebit(ISMINE_SPENDABLE) - wtx.GetValueOut();
++    CFeeRate nOldFeeRate(nOldFee, txSize);
++    CAmount nNewFee;
++    CFeeRate nNewFeeRate;
+ 
+-    // if user set totalFee, use that instead
+     if (totalFee > 0) {
+-        CAmount minTotalFee = nOldFeeRate.GetFee(txSize) + minRelayTxFee.GetFee(txSize);
+-        if (totalFee < minTotalFee) {
+-            strError = strprintf("Invalid totalFee, must be at least oldFee + relayFee: %s", FormatMoney(minTotalFee));
+-            throw JSONRPCError(RPC_INVALID_PARAMETER, strError);
+-        }
++        CAmount minTotalFee = nOldFeeRate.GetFee(maxNewTxSize) + minRelayTxFee.GetFee(maxNewTxSize);
++        if (totalFee < minTotalFee)
++            throw JSONRPCError(RPC_INVALID_PARAMETER, strprintf("Invalid totalFee, must be at least oldFee + relayFee: %s", FormatMoney(minTotalFee)));
+         nNewFee = totalFee;
+         nNewFeeRate = CFeeRate(totalFee, txSize);
+     }
++    else {
++        // use the user-defined payTxFee if possible, otherwise use smartfee / fallbackfee
++        nNewFeeRate = payTxFee;
++        if (nNewFeeRate.GetFeePerK() == 0)
++            nNewFeeRate = mempool.estimateSmartFee(newConfirmTarget);
++        if (nNewFeeRate.GetFeePerK() == 0)
++            nNewFeeRate = CWallet::fallbackFee;
++
++        // new fee rate must be at least old rate + minimum relay rate
++        if (nNewFeeRate.GetFeePerK() < nOldFeeRate.GetFeePerK() + ::minRelayTxFee.GetFeePerK())
++            nNewFeeRate = CFeeRate(nOldFeeRate.GetFeePerK() + ::minRelayTxFee.GetFeePerK());
++
++        nNewFee = nNewFeeRate.GetFee(maxNewTxSize);
++    }
+ 
+-    // check that fee rate is higher than mempool's mininum fee
++    // check that fee rate is higher than mempool's minimum fee
+     // (no point in bumping fee if we know that the new tx won't be accepted to the mempool)
+     // This may occur if the user set TotalFee or paytxfee too low, if fallbackfee is too low, or, perhaps,
+     // in a rare situation where the mempool minimum fee increased significantly since the fee estimation just a
+     // moment earlier. In this case, we report an error to the user, who may use totalFee to make an adjustment.
+     CFeeRate minMempoolFeeRate = mempool.GetMinFee(GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE) * 1000000);
+-    if (nNewFeeRate.GetFeePerK() < minMempoolFeeRate.GetFeePerK()) {
+-        strError = strprintf("New fee rate (%s) is too low to get into the mempool (min rate: %s)", FormatMoney(nNewFeeRate.GetFeePerK()), FormatMoney(minMempoolFeeRate.GetFeePerK()));
+-        throw JSONRPCError(RPC_MISC_ERROR, strError);
+-    }
+-
+-    CAmount nDelta = nNewFee - nOldFee;
+-
+-    {
+-        LOCK(mempool.cs);
+-        auto it = mempool.mapTx.find(hash);
+-        if (it != mempool.mapTx.end()) {
+-
+-            // Tx with descendants
+-            // --------------------
+-            // Idea:  When a tx is bumped, its descendants (if any) are evicted from the mempool.
+-            // Policy is that when you replace a tx, the total fees in the mempool cannot go down.
+-            // So when you bump a tx that has children, you have to bump your fee by the sum of all of the
+-            // descendants, plus the new bumped tx's relay fee.
+-            //
+-            // If the bumped fee is less than what's required because of children, we fail.  This is a different
+-            // situation than bumping the fee to pay the minimum relay fee. Here, we can't be sure whether the user
+-            // really wants to pay full price for all of the child transactions.  If so, the user can set payTxFee
+-            // and run the command again.
+-            //
+-            CAmount nFeesWithDescendantsPlusRelay = it->GetModFeesWithDescendants() + ::minRelayTxFee.GetFee(txSize);
+-            if (nNewFee < nFeesWithDescendantsPlusRelay) {
+-                std::string strError = strprintf("Insufficent fee due to child transactions, the bumped fee must be at least: %s", FormatMoney(nFeesWithDescendantsPlusRelay));
+-                throw JSONRPCError(RPC_INVALID_PARAMETER, strError);
+-            }
+-        }
+-        else
+-        {
+-            // Tx not in mempool
+-            // -----------------
+-            // If the tx is in the wallet but not the mempool, we cannot check its descendants' fees.
+-            //
+-            // Not being in the mempool likely means that it was evicted for having a low fee.
+-            // In this situation, we may not need RBF for this node (if the tx is not in the mempool,
+-            // then it doesn't need to be replaced), but it may still be in the mempol of peers
+-            // (perhaps a peer has allocated more space for the mempool).
+-            //
+-            // Our approach is to go ahead and bump/commit/relay the transaction.  In the event that
+-            // the tx does have children and the fee is insufficient to cover, the peer(s) will reject
+-            // the tx on that basis, so we warn the user of this possibility.
+-            //
+-            LogPrint("rpc", "Warning: bumping fee on tx that is not in the mempool; if it has child transactions, it may be rejected by peers\n");
+-        }
+-    }
++    if (nNewFeeRate.GetFeePerK() < minMempoolFeeRate.GetFeePerK())
++        throw JSONRPCError(RPC_MISC_ERROR, strprintf("New fee rate (%s) is too low to get into the mempool (min rate: %s)", \
++                                                     FormatMoney(nNewFeeRate.GetFeePerK()), FormatMoney(minMempoolFeeRate.GetFeePerK())));
+ 
+     // Now modify the output to increase the fee.
+-    // Output must be able to pay the increased fee, without being reduced to dust
++    // If the output is not large enough to pay the fee, fail.
++    CAmount nDelta = nNewFee - nOldFee;
++    assert(nDelta > 0);
+     CMutableTransaction tx(wtx);
+     CTxOut* poutput = &(tx.vout[nOutput]);
+-    if (poutput->nValue >= nDelta + poutput->GetDustThreshold(::minRelayTxFee)) {
+-        poutput->nValue = poutput->nValue - nDelta;
+-    }
+-    else {
+-        throw JSONRPCError(RPC_MISC_ERROR, "Output does not have enough money to bump the fee");
++    if (poutput->nValue < nDelta)
++        throw JSONRPCError(RPC_MISC_ERROR, "Change output is too small to bump the fee");
++
++    // If the output would become dust, discard it (converting the dust to fee)
++    poutput->nValue -= nDelta;
++    if (poutput->nValue <= poutput->GetDustThreshold(::minRelayTxFee)) {
++        LogPrint("rpc", "Bumping fee and discarding dust output\n");
++        nNewFee += poutput->nValue;
++        tx.vout.erase(tx.vout.begin() + nOutput);
+     }
+ 
+     // sign the new tx
+     CTransaction txNewConst(tx);
+     int nIn = 0;
+-    for (auto &it : tx.vin) {
+-        std::map<uint256, CWalletTx>::const_iterator mi = pwalletMain->mapWallet.find(it.prevout.hash);
+-        if (mi != pwalletMain->mapWallet.end() && it.prevout.n < (*mi).second.vout.size()) {
+-            const CScript& scriptPubKey = (*mi).second.vout[it.prevout.n].scriptPubKey;
++    for (auto &input : tx.vin) {
++        std::map<uint256, CWalletTx>::const_iterator mi = pwalletMain->mapWallet.find(input.prevout.hash);
++        if (mi != pwalletMain->mapWallet.end() && input.prevout.n < mi->second.vout.size()) {
++            const CScript& scriptPubKey = mi->second.vout[input.prevout.n].scriptPubKey;
+             SignatureData sigdata;
+             if (!ProduceSignature(TransactionSignatureCreator(pwalletMain, &txNewConst, nIn, SIGHASH_ALL), scriptPubKey, sigdata))
+                 throw JSONRPCError(RPC_WALLET_ERROR, "Can't sign transaction.");
+@@ -2815,8 +2807,13 @@ UniValue bumpfee(const UniValue& params, bool fHelp)
+     // commit/broadcast the tx
+     CReserveKey reservekey(pwalletMain);
+     CWalletTx wtxBumped(pwalletMain, tx);
++    wtxBumped.mapValue["replaces_txid"] = hash.ToString();
+     if (!pwalletMain->CommitTransaction(wtxBumped, reservekey))
+-        throw JSONRPCError(RPC_WALLET_ERROR, "Error: The transaction was rejected");
++        throw JSONRPCError(RPC_WALLET_ERROR, "Error: The transaction was rejected!");
++
++    // mark the original tx as bumped
++    if (!pwalletMain->MarkReplaced(wtx.GetHash(), wtxBumped.GetHash()))
++        throw JSONRPCError(RPC_WALLET_ERROR, "Unable to mark the original transaction as replaced.");
+ 
+     UniValue result(UniValue::VOBJ);
+     result.push_back(Pair("txid", wtxBumped.GetHash().GetHex()));
+diff --git a/src/wallet/wallet.cpp b/src/wallet/wallet.cpp
+index 0879fd6..14ef399 100644
+--- a/src/wallet/wallet.cpp
++++ b/src/wallet/wallet.cpp
+@@ -414,6 +414,13 @@ set<uint256> CWallet::GetConflicts(const uint256& txid) const
+     return result;
+ }
+ 
++bool CWallet::HasWalletSpend(const uint256& txid) const
++{
++    AssertLockHeld(cs_wallet);
++    auto iter = mapTxSpends.lower_bound(COutPoint(txid, 0));
++    return (iter != mapTxSpends.end() && iter->first.hash == txid);
++}
++
+ void CWallet::Flush(bool shutdown)
+ {
+     bitdb.Flush(shutdown);
+@@ -749,6 +756,29 @@ void CWallet::MarkDirty()
+     }
+ }
+ 
++bool CWallet::MarkReplaced(const uint256& originalHash, const uint256& newHash)
++{
++    LOCK(cs_wallet);
++
++    auto mi = mapWallet.find(originalHash);
++    if (mi == mapWallet.end())
++        return false;
++
++    CWalletTx& wtx = (*mi).second;
++
++    // Ensure for now that we're not overwriting data
++    assert(wtx.mapValue.count("replaced_by_txid") == 0);
++
++    wtx.mapValue["replaced_by_txid"] = newHash.ToString();
++
++    CWalletDB walletdb(strWalletFile, "r+");
++    walletdb.WriteTx(wtx);
++
++    NotifyTransactionChanged(this, originalHash, CT_UPDATED);
++
++    return true;
++}
++
+ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFromLoadWallet, CWalletDB* pwalletdb)
+ {
+     uint256 hash = wtxIn.GetHash();
+@@ -1077,6 +1107,8 @@ isminetype CWallet::IsMine(const CTxIn &txin) const
+     return ISMINE_NO;
+ }
+ 
++// Note that this function doesn't distinguish between a 0-valued input,
++// and a not-"is mine" (according to the filter) input.
+ CAmount CWallet::GetDebit(const CTxIn &txin, const isminefilter& filter) const
+ {
+     {
+@@ -1159,6 +1191,27 @@ CAmount CWallet::GetDebit(const CTransaction& tx, const isminefilter& filter) co
+     return nDebit;
+ }
+ 
++bool CWallet::IsAllFromMe(const CTransaction& tx, const isminefilter& filter) const
++{
++    LOCK(cs_wallet);
++
++    BOOST_FOREACH(const CTxIn& txin, tx.vin)
++    {
++        auto mi = mapWallet.find(txin.prevout.hash);
++        if (mi == mapWallet.end())
++            return false; // any unknown inputs can't be from us
++
++        const CWalletTx& prev = (*mi).second;
++
++        if (txin.prevout.n >= prev.vout.size())
++            return false; // invalid input!
++
++        if (!(IsMine(prev.vout[txin.prevout.n]) & filter))
++            return false;
++    }
++    return true;
++}
++
+ CAmount CWallet::GetCredit(const CTransaction& tx, const isminefilter& filter) const
+ {
+     CAmount nCredit = 0;
+@@ -1874,6 +1927,35 @@ void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const
+             if (nDepth == 0 && !pcoin->InMempool())
+                 continue;
+ 
++            // We should not consider coins from transactions that are replacing
++            // other transactions.
++            //
++            // Example: There is a transaction A which is replaced by bumpfee
++            // transaction B. In this case, we want to prevent creation of
++            // a transaction B' which spends an output of B.
++            //
++            // Reason: If transaction A were initially confirmed, transactions B
++            // and B' would no longer be valid, so the user would have to create
++            // a new transaction C to replace B'. However, in the case of a
++            // one-block reorg, transactions B' and C might BOTH be accepted,
++            // when the user only wanted one of them. Specifically, there could
++            // be a 1-block reorg away from the chain where transactions A and C
++            // were accepted to another chain where B, B', and C were all
++            // accepted.
++            if (nDepth == 0 && pcoin->mapValue.count("replaces_txid"))
++                continue;
++
++            // Similarly, we should not consider coins from transactions that
++            // have been replaced. In the example above, we would want to prevent
++            // creation of a transaction A' spending an output of A, because if
++            // transaction B were initially confirmed, conflicting with A and
++            // A', we wouldn't want to the user to create a transaction D
++            // intending to replace A', but potentially resulting in a scenario
++            // where A, A', and D could all be accepted (instead of just B and
++            // D, or just A and A' like the user would want).
++            if (nDepth == 0 && pcoin->mapValue.count("replaced_by_txid"))
++                continue;
++
+             for (unsigned int i = 0; i < pcoin->vout.size(); i++) {
+                 isminetype mine = IsMine(pcoin->vout[i]);
+                 if (!(IsSpent(wtxid, i)) && mine != ISMINE_NO &&
+diff --git a/src/wallet/wallet.h b/src/wallet/wallet.h
+index 1b536e2..6b6d086 100644
+--- a/src/wallet/wallet.h
++++ b/src/wallet/wallet.h
+@@ -807,6 +807,10 @@ public:
+     std::set<CTxDestination> GetAccountAddresses(const std::string& strAccount) const;
+ 
+     isminetype IsMine(const CTxIn& txin) const;
++    /**
++     * Returns amount of debit if the input matches the
++     * filter, otherwise returns 0
++     */
+     CAmount GetDebit(const CTxIn& txin, const isminefilter& filter) const;
+     isminetype IsMine(const CTxOut& txout) const;
+     CAmount GetCredit(const CTxOut& txout, const isminefilter& filter) const;
+@@ -816,6 +820,8 @@ public:
+     /** should probably be renamed to IsRelevantToMe */
+     bool IsFromMe(const CTransaction& tx) const;
+     CAmount GetDebit(const CTransaction& tx, const isminefilter& filter) const;
++    /** Returns whether all of the inputs match the filter */
++    bool IsAllFromMe(const CTransaction& tx, const isminefilter& filter) const;
+     CAmount GetCredit(const CTransaction& tx, const isminefilter& filter) const;
+     CAmount GetChange(const CTransaction& tx) const;
+     void SetBestChain(const CBlockLocator& loc);
+@@ -867,6 +873,9 @@ public:
+     //! Get wallet transactions that conflict with given transaction (spend same outputs)
+     std::set<uint256> GetConflicts(const uint256& txid) const;
+ 
++    //! Check if a given transaction has any of its outputs spent by another transaction in the wallet
++    bool HasWalletSpend(const uint256& txid) const;
++
+     //! Flush wallet (bitdb flush)
+     void Flush(bool shutdown=false);
+ 
+@@ -903,6 +912,9 @@ public:
+     /* Mark a transaction (and it in-wallet descendants) as abandoned so its inputs may be respent. */
+     bool AbandonTransaction(const uint256& hashTx);
+ 
++    /* Mark a transaction as replaced by another transaction (e.g., BIP 125)  */
++    bool MarkReplaced(const uint256& originalHash, const uint256& newHash);
++
+     /* Returns the wallets help message */
+     static std::string GetWalletHelpString(bool showDebug);
+ 

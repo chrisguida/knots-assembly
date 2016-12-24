@@ -1,6 +1,6 @@
-timestamp 2016-10-27 08:26:07
+timestamp 2016-12-21 09:16:38
 
-checkout v0.13.1
+checkout v0.13.2rc1
 @0.13.x-syslibs
 	5872 subdir_incl_compat						f0c1de4
 	2241 sys_leveldb							496990c
@@ -12,7 +12,6 @@ TM	8492 conf_only_bench						453630d
 	5618 separate_utils							f903865
 	7339 opt_libevent							f1a8ca8
 @0.13.x-knots
-	9264 laanwj/2016_12_backports_0_13
 TM	8784 license_build-0.13.x					d1e737f
 TM	8357 origin-pull/8357/head					07f2180  # Fix relaypriority calculation error
 TM	8845 pr8845-0.13							8bb0fe0  # Don't return the address of a P2SH of a P2SH
@@ -55,7 +54,7 @@ NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	8384 pr8384-0.13							f9c4385	last=464c826
 	8517 hd_gui-0.13							80bdbb3
-	8610 sharemem-0.13							c461df2	last=27562ef
+	8610 sharemem-0.13							c461df2	last=ba3cecf
 	8672 gui_tx_details_size-0.13				03f7673	last=c015634  # Qt: Show transaction size in transaction details window
 	-    trivial_blockmaxsize_mainnet_0.13		81ad58d
 	8918 gui_req_copy_uri						c371b42
@@ -65,7 +64,7 @@ NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because
 	8694 multiwallet+hd_gui-0.13				1df9a5f	last=e54fc75
 	8996 networkactive-0.13						0913a2b
 	#+9130+9131+9145
-	7785 qt_console_nested-0.13
+	7785 qt_console_nested-0.13-knots
 	#+9329
 	# not ready? 7871 origin-pull/7871/head		         # Manual block file pruning.
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -87,27 +86,27 @@ NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because
 	8952 listunspent_query-0.13							last=98d0a6f
 	9025 getrawtx_bool-0.13											# getrawtransaction should take a bool for verbose
 	9152 sweepprivkeys-0.13								last=fdc6778
-	9194 nonswserialrpc-0.13							last=412bab2
-	9222 fundrawtx_subfeefromamt-0.13					last=56ea974
+	9222 fundrawtx_subfeefromamt-0.13					last=453bda6
 	9245 ionice
 	8501 stats_rpc-0.13									last=b7c021d
-	# needs de-blobbing: 8550 jonas/2016/08/stats_qt
+	8550 stats_qt-0.13									last=251ee28
 	n/a  checkpoint_update						8f2e624
 # POLICY:
 	7149 bugfix_priority-0.13.x					e040cc5	last=ae93a95  # TODO: check updates in morcos/dynamicPriority
 m	-	 bytespersigopstrict-0.13.x-knots		b6613a0	#last=6ae2e2d
 	-    spamfilter+sendraw_force				438aee1
-	-    rwconf_policy							d7ea73c
-fx		# add minrelaytxfee
+a	-    rwconf_policy							d7ea73c
 # BRANDING:
-	7483 svg_icon								236fca5
+m	7483 svg_icon								236fca5
 	n/a  knots_branding							5909fb6
-	n/a  (bump_version=Knots:20161212)			21e12b2
+	n/a  (bump_version=Knots:20161221)			21e12b2
 	n/a  knots_historical_relnotes				42bb8ed
-	n/a  (cherrypick=f206cd3bc8)				f4772d6  # translation update
+	n/a  (cherrypick=409d2a68c6)				f4772d6  # translation update (move after relnotes for 0.14?)
 NM	8459 0.13_relnotes_remove_bad_advice		10f5f57
 TM	8490 relnotes_013_misc						ce34853
-	n/a  (cherrypick=c081e487c6)				45f61ea  # release notes: write/update, including change log and credits
-		# UPDATE doc/files.md versions! and 9263
+	n/a  (cherrypick=57bfd35458)				45f61ea  # release notes: write/update, including change log and credits
+		# UPDATE doc/files.md versions! and 9263 in 0.14
+		# Make sure no binary files added!
+		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
