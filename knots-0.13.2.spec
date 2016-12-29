@@ -24,7 +24,7 @@ TM	8845 pr8845-0.13							8bb0fe0  # Don't return the address of a P2SH of a P2S
 	 553 bugfix_qt_uri_amount_parser			2f73e59
 NM	1918 mempool_req							3a08a55
 	5861 gui_restore_addresses					35cde1a
-	8877 qt_console_history_filter-0.13knots	fa0bf1e	last=5c7fc22
+	8877 qt_console_history_filter-0.13knots	fa0bf1e	last=8562792
 	5891 qt_console_history_persist				a2b2278	last=d8a8f1b jonas/2015/03/qt_console_update
 	5916 keyorigin-0.13							35b635a
 	6996 preciousblock							6038b90	last=5805ac8
@@ -34,7 +34,7 @@ NM	1918 mempool_req							3a08a55
 	7159 rpc_rbf-0.13.x							eabea64	last=b64ebaf
 	8601 walletrbf-knots-0.13.x					52f96e7
 	7219 txrepl_fullrbf							ba9acd8
-m	7533 sendraw_force-0.13.x					f4c521f last=4b32b8b
+m	7533 sendraw_force-0.13.x					f4c521f last=9eee2df
 NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because upstream has been entirely redesigned
 	7551 importmulti-0.13-knots					2d97bf2 last=215caba
 	#+8980 Avoid using boost::variant::operator!=
@@ -59,9 +59,9 @@ NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because
 	-    trivial_blockmaxsize_mainnet_0.13		81ad58d
 	8918 gui_req_copy_uri						c371b42
 	8774 multiwallet_prefactor_qt				687899f
-	8775 multiwallet_prefactor_rpc-0.13			3ea02b5	last=d6bc295
+	8775 multiwallet_prefactor_rpc-0.13			3ea02b5	last=7de5573
 	8776 multiwallet_prefactor_wallet-0.13		1a05c5b	last=5394b39
-	8694 multiwallet+hd_gui-0.13				1df9a5f	last=e54fc75
+	8694 multiwallet+hd_gui-0.13				1df9a5f	last=d8da183
 	8996 networkactive-0.13						0913a2b
 	#+9130+9131+9145
 	7785 qt_console_nested-0.13-knots
@@ -85,7 +85,7 @@ NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because
 	8992 validatep2pkh-0.13 (C:930f3888a82)				last=981af93
 	8952 listunspent_query-0.13							last=98d0a6f
 	9025 getrawtx_bool-0.13											# getrawtransaction should take a bool for verbose
-	9152 sweepprivkeys-0.13								last=fdc6778
+	9152 sweepprivkeys-0.13-knots						last=ed60474
 	9222 fundrawtx_subfeefromamt-0.13					last=453bda6
 	9245 ionice
 	8501 stats_rpc-0.13									last=b7c021d
@@ -104,7 +104,7 @@ m	7483 svg_icon								236fca5
 	n/a  (cherrypick=409d2a68c6)				f4772d6  # translation update (move after relnotes for 0.14?)
 NM	8459 0.13_relnotes_remove_bad_advice		10f5f57
 TM	8490 relnotes_013_misc						ce34853
-	n/a  (cherrypick=57bfd35458)				45f61ea  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=343cc15c09)				45f61ea  # release notes: write/update, including change log and credits
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
