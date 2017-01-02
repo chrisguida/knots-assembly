@@ -1286,7 +1286,7 @@ index dd42085..e445d95 100644
  
  # Included files
 diff --git a/src/Makefile.am b/src/Makefile.am
-index bb89448..94dd6b8 100644
+index bb89448..b1e658d 100644
 --- a/src/Makefile.am
 +++ b/src/Makefile.am
 @@ -2,6 +2,8 @@
@@ -1304,7 +1304,7 @@ index bb89448..94dd6b8 100644
  
 +# Rendered icons must be here, not in Makefile.qt.include, since they are distributed with the source tarball
 +
-+RES_RENDERED_ICON_SOURCES = \
++RES_RENDERED_ICON_SRC = \
 +  qt/res/src/chart.svg \
 +  qt/res/src/hd_disabled.svg \
 +  qt/res/src/hd_enabled.svg \
@@ -1327,7 +1327,7 @@ index bb89448..94dd6b8 100644
 +  qt/res/rendered_icons/bitcoin.icns \
 +  qt/res/rendered_icons/nsis-wizard.bmp
 +
-+EXTRA_DIST += $(RES_RENDERED_ICON_SOURCES) $(RES_ALL_RENDERED_ICONS)
++EXTRA_DIST += $(RES_RENDERED_ICON_SRC) $(RES_ALL_RENDERED_ICONS)
 +
 +if CAN_RENDER_ICONS
 +

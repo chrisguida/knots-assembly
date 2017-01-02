@@ -1,6 +1,6 @@
-timestamp 2016-12-21 09:16:38
+timestamp 2017-01-02 11:34:42
 
-checkout v0.13.2rc1
+checkout v0.13.2
 @0.13.x-syslibs
 	5872 subdir_incl_compat						f0c1de4
 	2241 sys_leveldb							496990c
@@ -99,12 +99,12 @@ a	-    rwconf_policy							d7ea73c
 # BRANDING:
 m	7483 svg_icon								236fca5
 	n/a  knots_branding							5909fb6
-	n/a  (bump_version=Knots:20161221)			21e12b2
+	n/a  (bump_version=Knots:20170102)			21e12b2
 	n/a  knots_historical_relnotes				42bb8ed
-	n/a  (cherrypick=409d2a68c6)				f4772d6  # translation update (move after relnotes for 0.14?)
+	n/a  (cherrypick=c912455f3f)				f4772d6  # translation update (move after relnotes for 0.14?)
 NM	8459 0.13_relnotes_remove_bad_advice		10f5f57
 TM	8490 relnotes_013_misc						ce34853
-	n/a  (cherrypick=343cc15c09)				45f61ea  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=4666564cb0)				45f61ea  # release notes: write/update, including change log and credits
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
