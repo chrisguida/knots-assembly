@@ -71,25 +71,25 @@ NM	7551 importmulti-old-0.13.x-knots			12d38d9	# holding back PR updates because
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8704 getblock-extraverbose-0.13				27fe8d3						last=82a491f
+	8704 getblock-extraverbose-0.13				27fe8d3	last=82a491f
 	8450 rpctest_wallet_accts-0.13				9203c96
-	8751 pr8751-sort-multisigs-0.13				4554fe2						last=7439562
-	8813 daemonize-0.13							4a27b9d									last=a92bf4a
-	8874 peer-multiselect-0.13					f465233							last=1077577  # Multiple Selection for peer and ban tables
+	8751 pr8751-sort-multisigs-0.13				4554fe2	last=7439562
+	8813 daemonize-0.13							4a27b9d	last=a92bf4a
+	8874 peer-multiselect-0.13					f465233	last=1077577  # Multiple Selection for peer and ban tables
 	#+ part of 8085 531214f
 	#+9255
-	8448 dumpmempool-0.13						b91b5e1								last=582068a
+	8448 dumpmempool-0.13						b91b5e1	last=582068a
 		#+9133?
 	8925 dbg_minping-0.13						698e5e0	# JUST adding min ping
 	8936 misbehaving_nodeid-0.13				b1ed013
-	8992 validatep2pkh-0.13 (C:930f3888a82)		3e0497d				last=981af93
-	8952 listunspent_query-0.13					291f4f5							last=98d0a6f
-	9025 getrawtx_bool-0.13						aa87308											# getrawtransaction should take a bool for verbose
-	9152 sweepprivkeys-0.13-knots				55f1168						last=ed60474
-	9222 fundrawtx_subfeefromamt-0.13			5b8e4c0					last=453bda6
+	8992 validatep2pkh-0.13						3e0497d	last=981af93
+	8952 listunspent_query-0.13					291f4f5	last=98d0a6f
+	9025 getrawtx_bool-0.13						aa87308	# getrawtransaction should take a bool for verbose
+	9152 sweepprivkeys-0.13-knots				55f1168	last=ed60474
+	9222 fundrawtx_subfeefromamt-0.13			5b8e4c0	last=453bda6
 	9245 ionice									30fefc9
-	8501 stats_rpc-0.13							81634f7									last=b7c021d
-	8550 stats_qt-0.13							d060966									last=251ee28
+	8501 stats_rpc-0.13							81634f7	last=b7c021d
+	8550 stats_qt-0.13							d060966	last=251ee28
 	n/a  checkpoint_update						219ac9b
 # POLICY:
 	7149 bugfix_priority-0.13.x					9883962	last=ae93a95  # TODO: check updates in morcos/dynamicPriority
