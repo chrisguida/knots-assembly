@@ -1,20 +1,15 @@
 timestamp 2017-01-02 11:34:42
 
-checkout v0.13.2
-@0.13.x-syslibs
+checkout master
+@0.14.x-syslibs
 	5872 subdir_incl_compat						1ac82ae
 	2241 sys_leveldb							4e19700
 	5416 sys_libsecp256k1						411cb7d
-TM	8293 sys_univalue_opt						46effe2
 	7485 sys_univalue_def						3432902
 	7522 bugfix_gitdir							5960300
-TM	8492 conf_only_bench						d456ee1
 	5618 separate_utils							4a38db7
 	7339 opt_libevent							a4b3d8a
-@0.13.x-knots
-TM	8784 license_build-0.13.x					7197b89
-TM	8357 origin-pull/8357/head					b3e113b  # Fix relaypriority calculation error
-TM	8845 pr8845-0.13							26543e2  # Don't return the address of a P2SH of a P2SH
+@0.14.x-knots
 # TESTS:
 	-    travis_qt4_nolibevent					dc5d245
 	7728 jtimon/0.12.99-feerate-precision-test	12f5496
@@ -22,7 +17,6 @@ TM	8845 pr8845-0.13							26543e2  # Don't return the address of a P2SH of a P2S
 	 559 accept_nonstdtxn-0.13.x				ef78424
 	 929 tbc									71afd77
 	 553 bugfix_qt_uri_amount_parser			9372089
-NM	1918 mempool_req							7b97686
 	5861 gui_restore_addresses					beb0845
 	8877 qt_console_history_filter-0.13knots	270bfd6	last=8562792
 	5891 qt_console_history_persist				4c61f10	last=d8a8f1b jonas/2015/03/qt_console_update
@@ -35,7 +29,6 @@ NM	1918 mempool_req							7b97686
 	8601 walletrbf-knots-0.13.x					6b13c65
 	7219 txrepl_fullrbf							c63acf8
 m	7533 sendraw_force-0.13.x					b6519dd last=9eee2df
-NM	7551 importmulti-old-0.13.x-knots			12d38d9	# holding back PR updates because upstream has been entirely redesigned
 	7551 importmulti-0.13-knots					8557f0d last=215caba
 	#+8980 Avoid using boost::variant::operator!=
 		# not currently including 9108, but perhaps consider...
@@ -101,12 +94,10 @@ m	7483 svg_icon								ac19e0b
 	n/a  knots_branding							c30e154
 	n/a  (bump_version=Knots:20170102)			5ad6763
 	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=c912455f3f)				dd33592  # translation update (move after relnotes for 0.14?)
-NM	8459 0.13_relnotes_remove_bad_advice		c2e2f38
-TM	8490 relnotes_013_misc						f867fb5
 	n/a  (cherrypick=4666564cb0)				ef9c66d  # release notes: write/update, including change log and credits
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
+	n/a  (cherrypick=c912455f3f)				dd33592  # translation update (move after relnotes for 0.14?)
