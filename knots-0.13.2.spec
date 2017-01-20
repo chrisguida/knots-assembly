@@ -64,7 +64,7 @@ NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because
 	8694 multiwallet+hd_gui-0.13				1df9a5f	last=d8da183
 	8996 networkactive-0.13						0913a2b
 	#+9130+9131+9145
-	7785 qt_console_nested-0.13-knots
+	7783 qt_console_nested-0.13-knots
 	#+9329
 	# not ready? 7871 origin-pull/7871/head		         # Manual block file pruning.
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals

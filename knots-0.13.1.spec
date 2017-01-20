@@ -40,7 +40,7 @@ NM	7551 importmulti-old-0.13.x-knots			e74933f	# holding back PR updates because
 	7510 rwconf-0.13.x-knots					a087e2e
 	8583 recog_node_xthin+txrepl_fullrbf		0747907
 			# grab merged one by rebroad
-	# breaks history filter: 7785 qt_console_nested-0.13
+	# breaks history filter: 7783 qt_console_nested-0.13
 	8456 bumpfee-0.13									last=8e969e3  # [RPC] Simplified bumpfee command.
 	# needs string cleanup: 8182 jonas/2016/04/qt_rbf_set_new
 	7948 bip9_softforks_since-0.13						# RPC: augment getblockchaininfo bip9_softforks data
