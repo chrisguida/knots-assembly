@@ -1,7 +1,7 @@
 timestamp 2017-01-20 18:22:35
 lastapply no-merge
 
-#.. checked up to PR #9607
+#.. checked up to PR #9671
 
 checkout master
 @0.14.x-syslibs
@@ -30,6 +30,8 @@ checkout master
 	9555 practicalswift:avoid-ub-in-tx_invalid-test	# maybe?
 	9578 TheBlueMatt:2017-01-fix-missing-wallet-mempool-lock
 	9583 TheBlueMatt:2017-01-revert-7946
+	9619 bugfix_gbt_presw
+	9622 kallewoof:listsinceblock-include-lost-txs
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn-0.13.x				ef78424
 	 929 tbc									71afd77
@@ -71,6 +73,7 @@ m	7533 sendraw_force-0.13.x					b6519dd last=9eee2df
 fx	9592 ryanofsky:pr/grbf  # FIXME: Could use some work
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
+	# not ready: 9662 Add `-disablehot` mode: a sane mode for watchonly-wallets
 	n/a  checkpoint_update						219ac9b
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
