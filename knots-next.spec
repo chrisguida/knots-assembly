@@ -16,22 +16,17 @@ checkout master
 @0.14.x-knots
 # TESTS:
 	-    travis_qt4_nolibevent					dc5d245
-	9459  # Improvements to copyright_header.py and some minor copyright header tweaks.
-	9452  # Use TravisCI to enforce copyright header rules for source files
 	9359	# Add test for CWalletTx::GetImmatureCredit() returning stale values.
 # FIXES:
-	9481 jonasschnelli/2017/01/fee_warning
-	# 9495 & 9497 CCheckQueue fix/test?
-	9516 kallewoof:listsinceblock-reorg-fix
-	9522 achow101:fix-decoderawtx
-	9524 MarcoFalke:Mf1701-qaPruning
-	9549 practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
-	9554 practicalswift:avoid-null-pointer-dereference-in-addrman_tests
-	9555 practicalswift:avoid-ub-in-tx_invalid-test	# maybe?
-	9578 TheBlueMatt:2017-01-fix-missing-wallet-mempool-lock
-	9583 TheBlueMatt:2017-01-revert-7946
+	9481 jonas/2017/01/fee_warning
+	9495 #JeremyRubin:checkqueue-control-lock
+	9497 #JeremyRubin:checkqueue-tests
+	9522 achow101/fix-decoderawtx
+	9524 marco/Mf1701-qaPruning
+	9549 #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
+	9578 matt/2017-01-fix-missing-wallet-mempool-lock
 	9619 bugfix_gbt_presw
-	9622 kallewoof:listsinceblock-include-lost-txs
+	9622 #kallewoof:listsinceblock-include-lost-txs
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn-0.13.x				ef78424
 	 929 tbc									71afd77
@@ -44,7 +39,6 @@ checkout master
 	7159 rpc_rbf-0.13.x							0cafb83	last=b64ebaf
 	7219 txrepl_fullrbf							c63acf8
 m	7533 sendraw_force-0.13.x					b6519dd last=9eee2df
-	# FIXME: consider including 9108
 	7510 rwconf-0.13.x-knots					b3bcfbc
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	8384 pr8384-0.13							9f0194a	last=464c826
@@ -63,14 +57,15 @@ m	7533 sendraw_force-0.13.x					b6519dd last=9eee2df
 	9245 ionice									30fefc9
 	8501 stats_rpc-0.13							81634f7	last=b7c021d
 	8550 stats_qt-0.13							d060966	last=251ee28
+	9108 #ryanofsky:watchtime
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	# useless? 9402  # Allow per network configuration file
 	9422 mempool_dat_extensible
-	9500 achow101:help-rpc-autocomplete
-	9503 JeremyRubin:listreceivedbyaddress-filtered
-	9504 achow101:dumpmasterprivkey
+	9500 achow101/help-rpc-autocomplete
+	9503 #JeremyRubin:listreceivedbyaddress-filtered
+	9504 achow101/dumpmasterprivkey
 	9571  # RPC: getblockchaininfo returns BIP signaling statistics
-fx	9592 ryanofsky:pr/grbf  # FIXME: Could use some work
+	9592 #ryanofsky:pr/grbf
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready: 9662 Add `-disablehot` mode: a sane mode for watchonly-wallets
@@ -80,7 +75,8 @@ fx	9592 ryanofsky:pr/grbf  # FIXME: Could use some work
 	7149 bugfix_priority-0.13.x					9883962	last=ae93a95  # TODO: check updates in morcos/dynamicPriority
 m	-	 bytespersigopstrict-0.13.x-knots		b11e706	#last=6ae2e2d
 	-    spamfilter+sendraw_force				c5d3284
-a	-    rwconf_policy							8e2cfb0
+fx,a	-    rwconf_policy							8e2cfb0
+		# FIXME: add walletrbf & maybe others?
 # BRANDING:
 m	7483 svg_icon								ac19e0b
 	n/a  knots_branding							c30e154
