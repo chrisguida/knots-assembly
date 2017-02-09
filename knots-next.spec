@@ -24,15 +24,15 @@ checkout master
 	9522 achow101/fix-decoderawtx
 	9524 marco/Mf1701-qaPruning
 	9549 #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
-	9578 matt/2017-01-fix-missing-wallet-mempool-lock
 	9619 bugfix_gbt_presw
 	9622 #kallewoof:listsinceblock-include-lost-txs
+	9718 intro_fixes
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						ef78424
 	 929 tbc									71afd77
 	 553 bugfix_qt_uri_amount_parser			9372089
 	5861 gui_restore_addresses					beb0845
-	5891 qt_console_history_persist				4c61f10	last=d8a8f1b jonas/2015/03/qt_console_update
+	5891 qt_console_history_persist				4c61f10
 	5916 keyorigin-0.14							96b7b0c
 	7061 jonas_rpc_rescan						7d87b7b last=d1aa8a9 jonas/2015/11/wallet_rescan_rpc
 	7107 qtnetworkport							92af35b	last=1f37c87 origin-pull/7107/head
@@ -40,25 +40,21 @@ checkout master
 	9672 rpc_rbf								0cafb83	# WAS 7159 with last=b64ebaf
 	7219 txrepl_fullrbf							c63acf8
 	7533 sendraw_force							b6519dd
-	7510 rwconf									b3bcfbc
+	7510 rwconf+knots							b3bcfbc
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	8384 										9f0194a
+	8384 -										9f0194a
 	-    trivial_blockmaxsize_mainnet			4079db4 # FIXME: remove?
-	8775 multiwallet_prefactor_rpc				436abe5
-	8694 multiwallet							9c10f29
-	- multiwallet_rpc
-	- multiwallet_qt
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8704 										27fe8d3  # getblock extraverbose
-	8751 										4554fe2  # multisig sorting
-	9017 instagibbs/p2shp2wpkhstuff		# replacing 8992; maybe remove sign/verify message?
-	8952 										291f4f5  # Add query options to listunspent RPC call
-	9152 sweepprivkeys							55f1168
+	8704 -										27fe8d3  # getblock extraverbose
+	8751 sort-multisigs							4554fe2 last=7439562  # multisig sorting
+	9017 instagibbs_p2shp2wpkhstuff_partial		        last=6a67000  # replacing 8992; removed sign/verify message stuff
+	8952 -										291f4f5  # Add query options to listunspent RPC call
+	9152 sweepprivkeys+sendraw_force			55f1168
 	9245 ionice									30fefc9
-	8501 stats_rpc								81634f7
+	8501 stats_rpc-0.14							81634f7
 	8550 stats_qt-0.14							d060966	last=251ee28
 	9108 #ryanofsky:watchtime
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
@@ -71,19 +67,25 @@ checkout master
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready: 9662 Add `-disablehot` mode: a sane mode for watchonly-wallets
+	8775 multiwallet_prefactor_rpc				436abe5
+	8694 multiwallet							9c10f29
+	- multiwallet_rpc
+	- multiwallet_gui
+	9724 intro_explain
 	n/a  checkpoint_update						219ac9b
+		# FIXME: add assumevalid update
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
 	7149 bugfix_priority						9883962
-	-	 bytespersigopstrict					b11e706
+	-	 bytespersigopstrict+sendraw_force		b11e706
 	-    spamfilter+sendraw_force				c5d3284
-fx,a	-    rwconf_policy							8e2cfb0
-		# FIXME: add walletrbf & maybe others?
+	-    rwconf_policy							8e2cfb0
+		# TODO: final rebase
 # BRANDING:
 	7483 svg_icon								ac19e0b
 	n/a  knots_branding							c30e154
-	n/a  (bump_version=Knots:20170120)			5ad6763
-	n/a  knots_historical_relnotes				61100a2
+	n/a  (bump_version=Knots:20170208)			5ad6763
+#	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=4666564cb0)				ef9c66d  # release notes: write/update, including change log and credits
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
