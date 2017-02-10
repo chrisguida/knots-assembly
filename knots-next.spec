@@ -1,7 +1,7 @@
 timestamp 2017-01-20 18:22:35
 lastapply no-merge
 
-#.. checked up to PR #9671
+#.. checked up to PR #9732
 
 checkout master
 @0.14.x-syslibs
@@ -12,7 +12,6 @@ checkout master
 	7522 bugfix_gitdir							5960300
 	5618 separate_utils							4a38db7
 	7339 opt_libevent							a4b3d8a
-	# FIXME: can 7339 be done for 0.14?
 @0.14.x-knots
 # TESTS:
 	-    travis_qt4_nolibevent					dc5d245
@@ -26,7 +25,7 @@ checkout master
 	9549 #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
 	9619 bugfix_gbt_presw
 	9622 #kallewoof:listsinceblock-include-lost-txs
-	9718 intro_fixes
+		# FIXME: Check if key name has changed for release notes..
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						ef78424
 	 929 tbc									71afd77
@@ -56,7 +55,7 @@ checkout master
 	9245 ionice									30fefc9
 	8501 stats_rpc-0.14							81634f7
 	8550 stats_qt-0.14							d060966	last=251ee28
-	9108 #ryanofsky:watchtime
+	# changes wallet format! 9108 #ryanofsky:watchtime
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	# useless? 9402  # Allow per network configuration file
 	9422 mempool_dat_extensible
@@ -67,6 +66,9 @@ checkout master
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready: 9662 Add `-disablehot` mode: a sane mode for watchonly-wallets
+	# not ready: 9697 [Qt] simple fee bumper with user verification
+	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
+	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	8775 multiwallet_prefactor_rpc				436abe5
 	8694 multiwallet							9c10f29
 	- multiwallet_rpc
@@ -76,6 +78,7 @@ checkout master
 		# FIXME: add assumevalid update
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
+	# maybe? change default confirmation target to 25
 	7149 bugfix_priority						9883962
 	-	 bytespersigopstrict+sendraw_force		b11e706
 	-    spamfilter+sendraw_force				c5d3284
@@ -86,7 +89,7 @@ checkout master
 	n/a  knots_branding							c30e154
 	n/a  (bump_version=Knots:20170208)			5ad6763
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=4666564cb0)				ef9c66d  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=9723f7a2da)				ef9c66d  # release notes: write/update, including change log and credits
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
