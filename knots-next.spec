@@ -24,7 +24,6 @@ checkout master
 	9549 #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
 	9619 bugfix_gbt_presw
 	9622 #kallewoof:listsinceblock-include-lost-txs
-		# FIXME: Check if key name has changed for release notes..
 	9481 fee_warning									last=404a9c5
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						ef78424
@@ -42,7 +41,7 @@ checkout master
 	7510 rwconf+knots							b3bcfbc
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	8384 -										9f0194a
-	-    trivial_blockmaxsize_mainnet			4079db4 # FIXME: remove?
+	-    trivial_blockmaxsize_mainnet			4079db4
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
@@ -55,7 +54,6 @@ checkout master
 	9245 ionice									30fefc9
 	8501 stats_rpc-0.14							81634f7
 	8550 stats_qt-0.14							d060966	last=251ee28
-	# changes wallet format! 9108 #ryanofsky:watchtime
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	# useless? 9402  # Allow per network configuration file
 	9422 mempool_dat_extensible
@@ -76,7 +74,6 @@ checkout master
 	- multiwallet_gui
 	9724 intro_explain
 	n/a  checkpoint_update						219ac9b
-		# FIXME: add assumevalid update
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
 	# maybe? change default confirmation target to 25
@@ -85,7 +82,6 @@ checkout master
 	-    spamfilter+sendraw_force				c5d3284
 	-    rwconf_policy							8e2cfb0
 		# TODO: final rebase
-		# TODO: add unique_spk_mempool
 # BRANDING:
 	7483 svg_icon								ac19e0b
 	n/a  knots_branding							c30e154
