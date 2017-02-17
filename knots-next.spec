@@ -17,7 +17,6 @@ checkout master
 	-    travis_qt4_nolibevent					dc5d245
 	9359	# Add test for CWalletTx::GetImmatureCredit() returning stale values.
 # FIXES:
-	9481 jonas/2017/01/fee_warning
 	9495 #JeremyRubin:checkqueue-control-lock
 	9497 #JeremyRubin:checkqueue-tests
 	9522 achow101/fix-decoderawtx
@@ -26,6 +25,7 @@ checkout master
 	9619 bugfix_gbt_presw
 	9622 #kallewoof:listsinceblock-include-lost-txs
 		# FIXME: Check if key name has changed for release notes..
+	9481 fee_warning									last=404a9c5
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						ef78424
 	 929 tbc									71afd77
@@ -69,6 +69,7 @@ checkout master
 	# not ready: 9697 [Qt] simple fee bumper with user verification
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
+	9749 unique_spk_mempool+sendraw_force
 	8775 multiwallet_prefactor_rpc				436abe5
 	8694 multiwallet							9c10f29
 	- multiwallet_rpc
@@ -84,6 +85,7 @@ checkout master
 	-    spamfilter+sendraw_force				c5d3284
 	-    rwconf_policy							8e2cfb0
 		# TODO: final rebase
+		# TODO: add unique_spk_mempool
 # BRANDING:
 	7483 svg_icon								ac19e0b
 	n/a  knots_branding							c30e154
