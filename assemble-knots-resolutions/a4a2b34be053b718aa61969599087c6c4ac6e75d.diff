@@ -1,0 +1,179 @@
+diff --git a/src/rpc/client.cpp b/src/rpc/client.cpp
+index 42046d1..d3b2226 100644
+--- a/src/rpc/client.cpp
++++ b/src/rpc/client.cpp
+@@ -81,6 +81,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
+     { "listunspent", 0, "minconf" },
+     { "listunspent", 1, "maxconf" },
+     { "listunspent", 2, "addresses" },
++    { "listunspent", 4, "options" },
+     { "getblock", 1, "verbosity" },
+     { "getblockheader", 1, "verbose" },
+     { "gettransaction", 1, "include_watchonly" },
+diff --git a/src/wallet/rpcwallet.cpp b/src/wallet/rpcwallet.cpp
+index c206c5c..7e188b8 100644
+--- a/src/wallet/rpcwallet.cpp
++++ b/src/wallet/rpcwallet.cpp
+@@ -2495,15 +2495,22 @@ UniValue listunspent(const JSONRPCRequest& request)
+             "\nArguments:\n"
+             "1. minconf          (numeric, optional, default=1) The minimum confirmations to filter\n"
+             "2. maxconf          (numeric, optional, default=9999999) The maximum confirmations to filter\n"
+-            "3. \"addresses\"    (string) A json array of bitcoin addresses to filter\n"
++            "3. \"addresses\"      (string) A json array of bitcoin addresses to filter\n"
+             "    [\n"
+-            "      \"address\"   (string) bitcoin address\n"
++            "      \"address\"     (string) bitcoin address\n"
+             "      ,...\n"
+             "    ]\n"
+             "4. include_unsafe (bool, optional, default=true) Include outputs that are not safe to spend\n"
+             "                  because they come from unconfirmed untrusted transactions or unconfirmed\n"
+             "                  replacement transactions (cases where we are less sure that a conflicting\n"
+             "                  transaction won't be mined).\n"
++            "5. query options    (json, optional) JSON with query options\n"
++            "    {\n"
++            "      \"minimumAmount\"    (numeric or string, default=0) Minimum value of each UTXO in " + CURRENCY_UNIT + "\n"
++            "      \"maximumAmount\"    (numeric or string, default=unlimited) Maximum value of each UTXO in " + CURRENCY_UNIT + "\n"
++            "      \"maximumCount\"     (numeric or string, default=unlimited) Maximum number of UTXOs\n"
++            "      \"minimumSumAmount\" (numeric or string, default=unlimited) Minimum sum value all UTXOs in " + CURRENCY_UNIT + "\n"
++            "    }\n"
+             "\nResult\n"
+             "[                   (array of json object)\n"
+             "  {\n"
+@@ -2525,6 +2532,8 @@ UniValue listunspent(const JSONRPCRequest& request)
+             + HelpExampleCli("listunspent", "")
+             + HelpExampleCli("listunspent", "6 9999999 \"[\\\"1PGFqEzfmQch1gKD3ra4k18PNj3tTUUSqg\\\",\\\"1LtvqCaApEdUGFkpKMM4MstjcaL4dKg8SP\\\"]\"")
+             + HelpExampleRpc("listunspent", "6, 9999999 \"[\\\"1PGFqEzfmQch1gKD3ra4k18PNj3tTUUSqg\\\",\\\"1LtvqCaApEdUGFkpKMM4MstjcaL4dKg8SP\\\"]\"")
++            + HelpExampleCli("listunspent", "6 9999999 '[]' true '{ \"minimumAmount\": 0.005 }'")
++            + HelpExampleRpc("listunspent", "6, 9999999, [] , true, { \"minimumAmount\": 0.005 } ")
+         );
+ 
+     int nMinDepth = 1;
+@@ -2560,15 +2569,36 @@ UniValue listunspent(const JSONRPCRequest& request)
+         include_unsafe = request.params[3].get_bool();
+     }
+ 
++    CAmount nMinimumAmount = 0;
++    CAmount nMaximumAmount = MAX_MONEY;
++    CAmount nMinimumSumAmount = MAX_MONEY;
++    uint64_t nMaximumCount = 0;
++
++
++    if (request.params.size() > 4) {
++        const UniValue& options = request.params[4].get_obj();
++
++        if (options.exists("minimumAmount"))
++            nMinimumAmount = AmountFromValue(options["minimumAmount"]);
++
++        if (options.exists("maximumAmount"))
++            nMaximumAmount = AmountFromValue(options["maximumAmount"]);
++
++        if (options.exists("minimumSumAmount"))
++            nMinimumSumAmount = AmountFromValue(options["minimumSumAmount"]);
++
++        if (options.exists("maximumCount"))
++            nMaximumCount = options["maximumCount"].get_int64();
++    }
++
+     UniValue results(UniValue::VARR);
+     vector<COutput> vecOutputs;
+     assert(pwalletMain != NULL);
+     LOCK2(cs_main, pwalletMain->cs_wallet);
+-    pwalletMain->AvailableCoins(vecOutputs, !include_unsafe, NULL, true);
+-    BOOST_FOREACH(const COutput& out, vecOutputs) {
+-        if (out.nDepth < nMinDepth || out.nDepth > nMaxDepth)
+-            continue;
+ 
++    pwalletMain->AvailableCoins(vecOutputs, !include_unsafe, NULL, nMinimumAmount, nMaximumAmount, nMinimumSumAmount, nMaximumCount, nMinDepth, nMaxDepth);
++
++    BOOST_FOREACH(const COutput& out, vecOutputs) {
+         CTxDestination address;
+         const CScript& scriptPubKey = out.tx->tx->vout[out.i].scriptPubKey;
+         bool fValidAddress = ExtractDestination(scriptPubKey, address);
+diff --git a/src/wallet/wallet.cpp b/src/wallet/wallet.cpp
+index 26ab814..d7b4c5f 100644
+--- a/src/wallet/wallet.cpp
++++ b/src/wallet/wallet.cpp
+@@ -2009,12 +2009,15 @@ CAmount CWallet::GetImmatureWatchOnlyBalance() const
+     return nTotal;
+ }
+ 
+-void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const CCoinControl *coinControl, bool fIncludeZeroValue) const
++void CWallet::AvailableCoins(std::vector<COutput> &vCoins, bool fOnlyConfirmed, const CCoinControl *coinControl, const CAmount &nMinimumAmount, const CAmount &nMaximumAmount, const CAmount &nMinimumSumAmount, const uint64_t &nMaximumCount, const int &nMinDepth, const int &nMaxDepth) const
+ {
+     vCoins.clear();
+ 
+     {
+         LOCK2(cs_main, cs_wallet);
++
++        CAmount nTotal = 0;
++
+         for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it)
+         {
+             const uint256& wtxid = it->first;
+@@ -2069,15 +2072,46 @@ void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const
+                 continue;
+             }
+ 
++            if (nDepth < nMinDepth || nDepth > nMaxDepth)
++                continue;
++
+             for (unsigned int i = 0; i < pcoin->tx->vout.size(); i++) {
++                if (pcoin->tx->vout[i].nValue < nMinimumAmount || pcoin->tx->vout[i].nValue > nMaximumAmount)
++                    continue;
++
++                if (coinControl && coinControl->HasSelected() && !coinControl->fAllowOtherInputs && !coinControl->IsSelected(COutPoint((*it).first, i)))
++                    continue;
++
++                if (IsLockedCoin((*it).first, i))
++                    continue;
++
++                if (IsSpent(wtxid, i))
++                    continue;
++
+                 isminetype mine = IsMine(pcoin->tx->vout[i]);
+-                if (!(IsSpent(wtxid, i)) && mine != ISMINE_NO &&
+-                    !IsLockedCoin((*it).first, i) && (pcoin->tx->vout[i].nValue > 0 || fIncludeZeroValue) &&
+-                    (!coinControl || !coinControl->HasSelected() || coinControl->fAllowOtherInputs || coinControl->IsSelected(COutPoint((*it).first, i))))
+-                        vCoins.push_back(COutput(pcoin, i, nDepth,
+-                                                 ((mine & ISMINE_SPENDABLE) != ISMINE_NO) ||
+-                                                  (coinControl && coinControl->fAllowWatchOnly && (mine & ISMINE_WATCH_SOLVABLE) != ISMINE_NO),
+-                                                 (mine & (ISMINE_SPENDABLE | ISMINE_WATCH_SOLVABLE)) != ISMINE_NO));
++
++                if (mine == ISMINE_NO) {
++                    continue;
++                }
++
++                bool fSpendableIn = ((mine & ISMINE_SPENDABLE) != ISMINE_NO) || (coinControl && coinControl->fAllowWatchOnly && (mine & ISMINE_WATCH_SOLVABLE) != ISMINE_NO);
++                bool fSolvableIn = (mine & (ISMINE_SPENDABLE | ISMINE_WATCH_SOLVABLE)) != ISMINE_NO;
++
++                vCoins.push_back(COutput(pcoin, i, nDepth, fSpendableIn, fSolvableIn));
++
++                // Checks the sum amount of all UTXO's.
++                if (nMinimumSumAmount != MAX_MONEY) {
++                    nTotal += pcoin->tx->vout[i].nValue;
++
++                    if (nTotal >= nMinimumSumAmount) {
++                        return;
++                    }
++                }
++
++                // Checks the maximum number of UTXO's.
++                if (nMaximumCount > 0 && vCoins.size() >= nMaximumCount) {
++                    return;
++                }
+             }
+         }
+     }
+diff --git a/src/wallet/wallet.h b/src/wallet/wallet.h
+index 69f913f..20c42d9 100644
+--- a/src/wallet/wallet.h
++++ b/src/wallet/wallet.h
+@@ -701,7 +701,7 @@ public:
+     /**
+      * populate vCoins with vector of available COutputs.
+      */
+-    void AvailableCoins(std::vector<COutput>& vCoins, bool fOnlyConfirmed=true, const CCoinControl *coinControl = NULL, bool fIncludeZeroValue=false) const;
++    void AvailableCoins(std::vector<COutput>& vCoins, bool fOnlyConfirmed=true, const CCoinControl *coinControl = NULL, const CAmount& nMinimumAmount = 1, const CAmount& nMaximumAmount = MAX_MONEY, const CAmount& nMinimumSumAmount = MAX_MONEY, const uint64_t& nMaximumCount = 0, const int& nMinDepth = 0, const int& nMaxDepth = 9999999) const;
+ 
+     /**
+      * Shuffle and select coins until nTargetValue is reached while avoiding
