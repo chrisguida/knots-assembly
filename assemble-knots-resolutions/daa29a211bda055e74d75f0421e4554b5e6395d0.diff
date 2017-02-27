@@ -1,0 +1,569 @@
+diff --git a/qa/pull-tester/rpc-tests.py b/qa/pull-tester/rpc-tests.py
+index f179c0b..5dcd166 100755
+--- a/qa/pull-tester/rpc-tests.py
++++ b/qa/pull-tester/rpc-tests.py
+@@ -128,6 +128,8 @@ testScripts = [
+     'mempool_resurrect_test.py',
+     'txn_doublespend.py --mineblock',
+     'txn_clone.py',
++    'txn_priority.py',
++    'txn_priority.py --gbt',
+     'getchaintips.py',
+     'rest.py',
+     'mempool_spendcoinbase.py',
+diff --git a/qa/rpc-tests/test_framework/blocktools.py b/qa/rpc-tests/test_framework/blocktools.py
+index f699588..a993537 100644
+--- a/qa/rpc-tests/test_framework/blocktools.py
++++ b/qa/rpc-tests/test_framework/blocktools.py
+@@ -4,20 +4,42 @@
+ # Distributed under the MIT software license, see the accompanying
+ # file COPYING or http://www.opensource.org/licenses/mit-license.php.
+ 
++from binascii import a2b_hex, b2a_hex
++import io
++import struct
++
+ from .mininode import *
+ from .script import CScript, OP_TRUE, OP_CHECKSIG, OP_RETURN
+ 
+ # Create a block (with regtest difficulty)
+-def create_block(hashprev, coinbase, nTime=None):
++def create_block(hashprev=None, coinbase=None, nTime=None, tmpl=None, txlist=None):
+     block = CBlock()
+-    if nTime is None:
++    if tmpl:
++        block.nVersion = tmpl.get('version', block.nVersion)
++    if not nTime is None:
++        block.nTime = nTime
++    elif tmpl and not tmpl.get('curtime') is None:
++        block.nTime = tmpl['curtime']
++    else:
+         import time
+         block.nTime = int(time.time()+600)
++    if not hashprev is None:
++        block.hashPrevBlock = hashprev
+     else:
+-        block.nTime = nTime
+-    block.hashPrevBlock = hashprev
+-    block.nBits = 0x207fffff # Will break after a difficulty adjustment...
+-    block.vtx.append(coinbase)
++        block.hashPrevBlock = int(tmpl['previousblockhash'], 0x10)
++    if tmpl and not tmpl.get('bits') is None:
++        block.nBits = struct.unpack('>I', a2b_hex(tmpl['bits']))[0]
++    else:
++        block.nBits = 0x207fffff # Will break after a difficulty adjustment...
++    if not coinbase is None:
++        block.vtx.append(coinbase)
++    if txlist:
++        for tx in txlist:
++            if not hasattr(tx, 'calc_sha256'):
++                txo = CTransaction()
++                txo.deserialize(io.BytesIO(tx))
++                tx = txo
++            block.vtx.append(tx)
+     block.hashMerkleRoot = block.calc_merkle_root()
+     block.calc_sha256()
+     return block
+diff --git a/qa/rpc-tests/txn_priority.py b/qa/rpc-tests/txn_priority.py
+new file mode 100755
+index 0000000..1072266
+--- /dev/null
++++ b/qa/rpc-tests/txn_priority.py
+@@ -0,0 +1,198 @@
++#!/usr/bin/env python3
++# Copyright (c) 2016 The Bitcoin Core developers
++# Distributed under the MIT/X11 software license, see the accompanying
++# file COPYING or http://www.opensource.org/licenses/mit-license.php.
++#
++
++from test_framework.blocktools import create_block, create_coinbase
++from test_framework.test_framework import BitcoinTestFramework
++from test_framework.util import *
++
++from binascii import a2b_hex, b2a_hex
++from decimal import Decimal
++
++def find_unspent(node, txid, amount):
++    for utxo in node.listunspent(0):
++        if utxo['txid'] != txid: continue
++        if utxo['amount'] != amount: continue
++        return {'txid': utxo['txid'], 'vout': utxo['vout']}
++
++def solve_template_hex(tmpl, txlist):
++    block = create_block(tmpl=tmpl, txlist=txlist)
++    block.solve()
++    b = block.serialize()
++    x = b2a_hex(b).decode('ascii')
++    return x
++
++def get_modified_size(node, txdata):
++    decoded = node.decoderawtransaction(txdata)
++    size = len(txdata) // 2
++    for inp in decoded['vin']:
++        offset = 41 + min(len(inp['scriptSig']['hex']) // 2, 110)
++        if offset <= size:
++            size -= offset
++    return size
++
++def assert_approximate(a, b):
++    assert_equal(int(a), int(b))
++
++BTC = Decimal('100000000')
++
++class PriorityTest(BitcoinTestFramework):
++
++    def __init__(self):
++        super().__init__()
++        self.num_nodes = 4
++        self.testmsg_num = 0
++
++    def add_options(self, parser):
++        parser.add_option("--gbt", dest="test_gbt", default=False, action="store_true",
++                          help="Test priorities used by GBT")
++
++    def setup_nodes(self):
++        ppopt = []
++        if self.options.test_gbt:
++            ppopt.append('-printpriority')
++
++        nodes = []
++        nodes.append(start_node(0, self.options.tmpdir, ['-blockmaxsize=0']))
++        nodes.append(start_node(1, self.options.tmpdir, ['-blockprioritysize=1000000', '-blockmaxsize=1000000'] + ppopt))
++        nodes.append(start_node(2, self.options.tmpdir, ['-blockmaxsize=0']))
++        nodes.append(start_node(3, self.options.tmpdir, ['-blockmaxsize=0']))
++        return nodes
++
++    def assert_prio(self, txid, starting, current):
++        node = self.nodes[1]
++
++        if self.options.test_gbt:
++            tmpl = node.getblocktemplate({})
++            tmplentry = None
++            for tx in tmpl['transactions']:
++                if tx['hash'] == txid:
++                    tmplentry = tx
++                    break
++            # GBT does not expose starting priority, so we don't check that
++            assert_approximate(tmplentry['priority'], current)
++        else:
++            mempoolentry = node.getrawmempool(True)[txid]
++            assert_approximate(mempoolentry['startingpriority'], starting)
++            assert_approximate(mempoolentry['currentpriority'], current)
++
++    def testmsg(self, msg):
++        self.testmsg_num += 1
++        print('Test %d: %s' % (self.testmsg_num, msg))
++
++    def run_test(self):
++        node = self.nodes[0]
++        miner = self.nodes[1]
++
++        node.generate(50)
++        self.sync_all()
++        miner.generate(101)
++        self.sync_all()
++
++        fee = Decimal('0.01')
++        amt = Decimal('11')
++
++        txid_a = node.sendtoaddress(node.getnewaddress(), amt)
++        txdata_b = node.createrawtransaction([find_unspent(node, txid_a, amt)], {node.getnewaddress(): amt - fee})
++        txdata_b = node.signrawtransaction(txdata_b)['hex']
++        txmodsize_b = get_modified_size(node, txdata_b)
++        txid_b = node.sendrawtransaction(txdata_b)
++        self.sync_all()
++
++        self.testmsg('priority starts at 0 with all unconfirmed inputs')
++        self.assert_prio(txid_b, 0, 0)
++
++        self.testmsg('priority increases correctly when that input is mined')
++
++        # Mine only the sendtoaddress transaction
++        tmpl = node.getblocktemplate()
++        rawblock = solve_template_hex(tmpl, [create_coinbase(tmpl['height']), a2b_hex(node.getrawtransaction(txid_a))])
++        assert_equal(node.submitblock(rawblock), None)
++        self.sync_all()
++
++        self.assert_prio(txid_b, 0, amt * BTC / txmodsize_b)
++
++        self.testmsg('priority continues to increase the deeper the block confirming its inputs gets buried')
++
++        node.generate(2)
++        self.sync_all()
++
++        self.assert_prio(txid_b, 0, amt * BTC * 3 / txmodsize_b)
++
++        self.testmsg('with a confirmed input, the initial priority is calculated correctly')
++
++        miner.generate(4)
++        self.sync_all()
++
++        amt_c = (amt - fee) / 2
++        amt_c2 = amt_c - (fee * 2)  # could be just amt_c-fee, but then it'd be undiscernable later on
++        txdata_c = node.createrawtransaction([find_unspent(node, txid_b, amt - fee)], {node.getnewaddress(): amt_c, node.getnewaddress(): amt_c2})
++        txdata_c = node.signrawtransaction(txdata_c)['hex']
++        txmodsize_c = get_modified_size(node, txdata_c)
++        txid_c = node.sendrawtransaction(txdata_c)
++        self.sync_all()
++
++        txid_c_starting_prio = (amt - fee) * BTC * 4 / txmodsize_c
++        self.assert_prio(txid_c, txid_c_starting_prio, txid_c_starting_prio)
++
++        self.testmsg('with an input confirmed prior to the transaction, the priority gets incremented correctly as it gets buried deeper')
++
++        node.generate(1)
++        self.sync_all()
++
++        self.assert_prio(txid_c, txid_c_starting_prio, (amt - fee) * BTC * 5 / txmodsize_c)
++
++        self.testmsg('with an input confirmed prior to the transaction, the priority gets incremented correctly as it gets buried deeper and deeper')
++
++        node.generate(2)
++        self.sync_all()
++
++        self.assert_prio(txid_c, txid_c_starting_prio, (amt - fee) * BTC * 7 / txmodsize_c)
++
++        print('(preparing for reorg test)')
++
++        miner.generate(1)
++        self.sync_all()
++
++        self.split_network()
++        node = self.nodes[0]
++        miner = self.nodes[1]
++        competing_miner = self.nodes[2]
++
++        txdata_d = node.createrawtransaction([find_unspent(node, txid_c, amt_c)], {node.getnewaddress(): amt_c - fee})
++        txdata_d = node.signrawtransaction(txdata_d)['hex']
++        txmodsize_d = get_modified_size(node, txdata_d)
++        txid_d = node.sendrawtransaction(txdata_d)
++        self.sync_all()
++
++        miner.generate(1)
++        self.sync_all()
++
++        txdata_e = node.createrawtransaction([find_unspent(node, txid_d, amt_c - fee), find_unspent(node, txid_c, amt_c2)], {node.getnewaddress(): (amt_c - fee) + amt_c2 - fee})
++        txdata_e = node.signrawtransaction(txdata_e)['hex']
++        txmodsize_e = get_modified_size(node, txdata_e)
++        txid_e = node.sendrawtransaction(txdata_e)
++        self.sync_all()
++
++        txid_e_starting_prio = (((amt_c - fee) * BTC) + (amt_c2 * BTC * 2)) / txmodsize_e
++        self.assert_prio(txid_e, txid_e_starting_prio, txid_e_starting_prio)  # Sanity check 1
++
++        competing_miner.generate(5)
++        self.sync_all()
++
++        self.assert_prio(txid_e, txid_e_starting_prio, txid_e_starting_prio)  # Sanity check 2
++
++        self.testmsg('priority is updated correctly when input-confirming block is reorganised out')
++
++        # NOTE: We cannot use join_network because it restarts the nodes (thus losing the mempool)
++        connect_nodes_bi(self.nodes, 1, 2)
++        self.is_network_split = False
++        sync_blocks(self.nodes)
++
++        txid_e_reorg_prio = (amt_c2 * BTC * 6) / txmodsize_e
++        self.assert_prio(txid_e, txid_e_starting_prio, txid_e_reorg_prio)
++
++if __name__ == '__main__':
++    PriorityTest().main()
+diff --git a/src/miner.cpp b/src/miner.cpp
+index 22a63ba..6a4f508 100644
+--- a/src/miner.cpp
++++ b/src/miner.cpp
+@@ -141,6 +141,10 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
+     pblock->vtx.emplace_back();
+     pblocktemplate->vTxFees.push_back(-1); // updated at end
+     pblocktemplate->vTxSigOpsCost.push_back(-1); // updated at end
++    bool fPrintPriority = GetBoolArg("-printpriority", DEFAULT_PRINTPRIORITY);
++    if (fPrintPriority) {
++        pblocktemplate->vTxPriorities.push_back(-1);  // n/a
++    }
+ 
+     LOCK2(cs_main, mempool.cs);
+     CBlockIndex* pindexPrev = chainActive.Tip();
+@@ -344,6 +348,7 @@ void BlockAssembler::AddToBlock(CTxMemPool::txiter iter)
+                   dPriority,
+                   CFeeRate(iter->GetModifiedFee(), iter->GetTxSize()).ToString(),
+                   iter->GetTx().GetHash().ToString());
++        pblocktemplate->vTxPriorities.push_back(dPriority);
+     }
+ }
+ 
+diff --git a/src/miner.h b/src/miner.h
+index 3ba92b1..2f13c32 100644
+--- a/src/miner.h
++++ b/src/miner.h
+@@ -29,6 +29,7 @@ struct CBlockTemplate
+     CBlock block;
+     std::vector<CAmount> vTxFees;
+     std::vector<int64_t> vTxSigOpsCost;
++    std::vector<double> vTxPriorities;
+     std::vector<unsigned char> vchCoinbaseCommitment;
+ };
+ 
+diff --git a/src/net_processing.cpp b/src/net_processing.cpp
+index 5edeaf4..80a2064 100644
+--- a/src/net_processing.cpp
++++ b/src/net_processing.cpp
+@@ -1800,7 +1800,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
+ 
+         if (!AlreadyHave(inv) && AcceptToMemoryPool(mempool, state, ptx, true, &fMissingInputs, &lRemovedTxn)) {
+             GetMainSignals().AcceptedTransaction(ptx);
+-            mempool.check(pcoinsTip);
++            mempool.check(pcoinsTip, chainActive.Height());
+             RelayTransaction(tx, connman);
+             for (unsigned int i = 0; i < tx.vout.size(); i++) {
+                 vWorkQueue.emplace_back(inv.hash, i);
+@@ -1867,7 +1867,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
+                             recentRejects->insert(orphanHash);
+                         }
+                     }
+-                    mempool.check(pcoinsTip);
++                    mempool.check(pcoinsTip, chainActive.Height());
+                 }
+             }
+ 
+diff --git a/src/rpc/blockchain.cpp b/src/rpc/blockchain.cpp
+index 9b36333..615446a 100644
+--- a/src/rpc/blockchain.cpp
++++ b/src/rpc/blockchain.cpp
+@@ -358,8 +358,8 @@ void entryToJSON(UniValue &info, const CTxMemPoolEntry &e)
+     info.push_back(Pair("modifiedfee", ValueFromAmount(e.GetModifiedFee())));
+     info.push_back(Pair("time", e.GetTime()));
+     info.push_back(Pair("height", (int)e.GetHeight()));
+-    info.push_back(Pair("startingpriority", e.GetPriority(e.GetHeight())));
+-    info.push_back(Pair("currentpriority", e.GetPriority(chainActive.Height())));
++    info.push_back(Pair("startingpriority", e.GetStartingPriority()));
++    info.push_back(Pair("currentpriority", e.GetPriority(chainActive.Height() + 1)));
+     info.push_back(Pair("descendantcount", e.GetCountWithDescendants()));
+     info.push_back(Pair("descendantsize", e.GetSizeWithDescendants()));
+     info.push_back(Pair("descendantfees", e.GetModFeesWithDescendants()));
+diff --git a/src/rpc/mining.cpp b/src/rpc/mining.cpp
+index 77cd282..c232376 100644
+--- a/src/rpc/mining.cpp
++++ b/src/rpc/mining.cpp
+@@ -589,6 +589,9 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
+         }
+         entry.push_back(Pair("sigops", nTxSigOps));
+         entry.push_back(Pair("weight", GetTransactionWeight(tx)));
++        if (index_in_template && !pblocktemplate->vTxPriorities.empty()) {
++            entry.push_back(Pair("priority", pblocktemplate->vTxPriorities[index_in_template]));
++        }
+ 
+         transactions.push_back(entry);
+     }
+diff --git a/src/txmempool.cpp b/src/txmempool.cpp
+index 4770acd..4267db6 100644
+--- a/src/txmempool.cpp
++++ b/src/txmempool.cpp
+@@ -39,6 +39,10 @@ CTxMemPoolEntry::CTxMemPoolEntry(const CTransactionRef& _tx, const CAmount& _nFe
+ 
+     feeDelta = 0;
+ 
++    // Since entries arrive *after* the tip's height, their entry priority is for the height+1
++    cachedHeight = entryHeight + 1;
++    cachedPriority = entryPriority;
++
+     nCountWithAncestors = 1;
+     nSizeWithAncestors = GetTxSize();
+     nModFeesWithAncestors = nFee;
+@@ -53,9 +57,13 @@ CTxMemPoolEntry::CTxMemPoolEntry(const CTxMemPoolEntry& other)
+ double
+ CTxMemPoolEntry::GetPriority(unsigned int currentHeight) const
+ {
+-    double deltaPriority = ((double)(currentHeight-entryHeight)*inChainInputValue)/nModSize;
+-    double dResult = entryPriority + deltaPriority;
+-    if (dResult < 0) // This should only happen if it was called with a height below entry height
++    // This will only return accurate results when currentHeight >= the heights
++    // at which all the in-chain inputs of the tx were included in blocks.
++    // Typical usage of GetPriority with chainActive.Height() will ensure this.
++    int heightDiff = currentHeight - cachedHeight;
++    double deltaPriority = ((double)heightDiff*inChainInputValue)/nModSize;
++    double dResult = cachedPriority + deltaPriority;
++    if (dResult < 0) // This should only happen if it was called with an invalid height
+         dResult = 0;
+     return dResult;
+ }
+@@ -356,6 +364,16 @@ void CTxMemPoolEntry::UpdateAncestorState(int64_t modifySize, CAmount modifyFee,
+     assert(int(nSigOpCostWithAncestors) >= 0);
+ }
+ 
++void CTxMemPoolEntry::UpdateCachedPriority(unsigned int currentHeight, CAmount valueInCurrentBlock)
++{
++    int heightDiff = currentHeight - cachedHeight;
++    double deltaPriority = ((double)heightDiff*inChainInputValue)/nModSize;
++    cachedPriority += deltaPriority;
++    cachedHeight = currentHeight;
++    inChainInputValue += valueInCurrentBlock;
++    assert(MoneyRange(inChainInputValue));
++}
++
+ CTxMemPool::CTxMemPool(const CFeeRate& _minReasonableRelayFee) :
+     nTransactionsUpdated(0)
+ {
+@@ -624,6 +642,19 @@ void CTxMemPool::removeConflicts(const CTransaction &tx)
+     }
+ }
+ 
++void CTxMemPool::UpdateDependentPriorities(const CTransaction &tx, unsigned int nBlockHeight, bool addToChain)
++{
++    LOCK(cs);
++    for (unsigned int i = 0; i < tx.vout.size(); i++) {
++        auto it = mapNextTx.find(COutPoint(tx.GetHash(), i));
++        if (it == mapNextTx.end())
++            continue;
++        uint256 hash = it->second->GetHash();
++        txiter iter = mapTx.find(hash);
++        mapTx.modify(iter, update_priority(nBlockHeight, addToChain ? tx.vout[i].nValue : -tx.vout[i].nValue));
++    }
++}
++
+ /**
+  * Called when a block is connected. Removes from mempool and updates the miner fee estimator.
+  */
+@@ -643,6 +674,7 @@ void CTxMemPool::removeForBlock(const std::vector<CTransactionRef>& vtx, unsigne
+     minerPolicyEstimator->processBlock(nBlockHeight, entries);
+     for (const auto& tx : vtx)
+     {
++        UpdateDependentPriorities(*tx, nBlockHeight, true);
+         txiter it = mapTx.find(tx->GetHash());
+         if (it != mapTx.end()) {
+             setEntries stage;
+@@ -676,7 +708,7 @@ void CTxMemPool::clear()
+     _clear();
+ }
+ 
+-void CTxMemPool::check(const CCoinsViewCache *pcoins) const
++void CTxMemPool::check(const CCoinsViewCache *pcoins, unsigned int nBlockHeight) const
+ {
+     if (nCheckFrequency == 0)
+         return;
+@@ -693,10 +725,19 @@ void CTxMemPool::check(const CCoinsViewCache *pcoins) const
+     const int64_t nSpendHeight = GetSpendHeight(mempoolDuplicate);
+ 
+     LOCK(cs);
++    CCoinsViewMemPool viewMemPool(pcoinsTip, *this);
++    CCoinsViewCache view(&viewMemPool);
+     std::list<const CTxMemPoolEntry*> waitingOnDependants;
+     for (indexed_transaction_set::const_iterator it = mapTx.begin(); it != mapTx.end(); it++) {
+         unsigned int i = 0;
+         checkTotal += it->GetTxSize();
++        CAmount dummyValue;
++        double freshPriority = view.GetPriority(it->GetTx(), nBlockHeight + 1, dummyValue);
++        double cachePriority = it->GetPriority(nBlockHeight + 1);
++        double priDiff = cachePriority > freshPriority ? cachePriority - freshPriority : freshPriority - cachePriority;
++        // Verify that the difference between the on the fly calculation and a fresh calculation
++        // is small enough to be a result of double imprecision.
++        assert(priDiff < .0001 * freshPriority + 1);
+         innerUsage += it->DynamicMemoryUsage();
+         const CTransaction& tx = it->GetTx();
+         txlinksMap::const_iterator linksiter = mapLinks.find(it);
+diff --git a/src/txmempool.h b/src/txmempool.h
+index eaaf773..c7f78e0 100644
+--- a/src/txmempool.h
++++ b/src/txmempool.h
+@@ -102,6 +102,8 @@ private:
+     int64_t nTime;             //!< Local time when entering the mempool
+     double entryPriority;      //!< Priority when entering the mempool
+     unsigned int entryHeight;  //!< Chain height when entering the mempool
++    double cachedPriority;     //!< Last calculated priority
++    unsigned int cachedHeight; //!< Height at which priority was last calculated
+     CAmount inChainInputValue; //!< Sum of all txin values that are already in blockchain
+     bool spendsCoinbase;       //!< keep track of transactions that spend a coinbase
+     int64_t sigOpCost;         //!< Total sigop cost
+@@ -133,11 +135,17 @@ public:
+ 
+     const CTransaction& GetTx() const { return *this->tx; }
+     CTransactionRef GetSharedTx() const { return this->tx; }
++    double GetStartingPriority() const {return entryPriority; }
+     /**
+-     * Fast calculation of lower bound of current priority as update
+-     * from entry priority. Only inputs that were originally in-chain will age.
++     * Fast calculation of priority as update from cached value, but only valid if
++     * currentHeight is greater than last height it was recalculated.
+      */
+     double GetPriority(unsigned int currentHeight) const;
++    /**
++     * Recalculate the cached priority as of currentHeight and adjust inChainInputValue by
++     * valueInCurrentBlock which represents input that was just added to or removed from the blockchain.
++     */
++    void UpdateCachedPriority(unsigned int currentHeight, CAmount valueInCurrentBlock);
+     const CAmount& GetFee() const { return nFee; }
+     size_t GetTxSize() const;
+     size_t GetTxWeight() const { return nTxWeight; }
+@@ -216,6 +224,20 @@ private:
+     int64_t feeDelta;
+ };
+ 
++struct update_priority
++{
++    update_priority(unsigned int _height, CAmount _value) :
++        height(_height), value(_value)
++    {}
++
++    void operator() (CTxMemPoolEntry &e)
++    { e.UpdateCachedPriority(height, value); }
++
++    private:
++        unsigned int height;
++        CAmount value;
++};
++
+ struct update_lock_points
+ {
+     update_lock_points(const LockPoints& _lp) : lp(_lp) { }
+@@ -545,7 +567,7 @@ public:
+      * all inputs are in the mapNextTx array). If sanity-checking is turned off,
+      * check does nothing.
+      */
+-    void check(const CCoinsViewCache *pcoins) const;
++    void check(const CCoinsViewCache *pcoins, unsigned int nBlockHeight) const;
+     void setSanityCheck(double dFrequency = 1.0) { nCheckFrequency = dFrequency * 4294967295.0; }
+ 
+     // addUnchecked must updated state for all ancestors of a given transaction,
+@@ -572,6 +594,12 @@ public:
+      * the tx is not dependent on other mempool transactions to be included in a block.
+      */
+     bool HasNoInputsOf(const CTransaction& tx) const;
++    /**
++     * Update all transactions in the mempool which depend on tx to recalculate their priority
++     * and adjust the input value that will age to reflect that the inputs from this transaction have
++     * either just been added to the chain or just been removed.
++     */
++    void UpdateDependentPriorities(const CTransaction &tx, unsigned int nBlockHeight, bool addToChain);
+ 
+     /** Affect CreateNewBlock prioritisation of transactions */
+     void PrioritiseTransaction(const uint256 hash, const std::string strHash, double dPriorityDelta, const CAmount& nFeeDelta);
+diff --git a/src/validation.cpp b/src/validation.cpp
+index 91a1312..75cc6af 100644
+--- a/src/validation.cpp
++++ b/src/validation.cpp
+@@ -783,7 +783,8 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
+         pool.ApplyDeltas(hash, nPriorityDummy, nModifiedFees);
+ 
+         CAmount inChainInputValue;
+-        double dPriority = view.GetPriority(tx, chainActive.Height(), inChainInputValue);
++        // Since entries arrive *after* the tip's height, their priority is for the height+1
++        double dPriority = view.GetPriority(tx, chainActive.Height() + 1, inChainInputValue);
+ 
+         // Keep track of transactions that spend a coinbase, which we re-scan
+         // during reorgs to ensure COINBASE_MATURITY is still met.
+@@ -2276,6 +2277,7 @@ bool static DisconnectTip(CValidationState& state, const CChainParams& chainpara
+         std::vector<uint256> vHashUpdate;
+         for (const auto& it : block.vtx) {
+             const CTransaction& tx = *it;
++            mempool.UpdateDependentPriorities(tx, pindexDelete->nHeight, false);
+             // ignore validation errors in resurrected transactions
+             CValidationState stateDummy;
+             if (tx.IsCoinBase() || !AcceptToMemoryPool(mempool, stateDummy, it, false, NULL, NULL, 0, setIgnoreRejects_mempool_full)) {
+@@ -2516,7 +2518,7 @@ static bool ActivateBestChainStep(CValidationState& state, const CChainParams& c
+         mempool.removeForReorg(pcoinsTip, chainActive.Tip()->nHeight + 1, STANDARD_LOCKTIME_VERIFY_FLAGS);
+         LimitMempoolSize(mempool, GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE) * 1000000, GetArg("-mempoolexpiry", DEFAULT_MEMPOOL_EXPIRY) * 60 * 60);
+     }
+-    mempool.check(pcoinsTip);
++    mempool.check(pcoinsTip, chainActive.Height());
+ 
+     // Callbacks/notifications for a new best chain.
+     if (fInvalidFound)

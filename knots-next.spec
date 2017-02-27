@@ -1,9 +1,9 @@
-timestamp 2017-02-18 09:20:46
+timestamp 2017-02-26 19:06:59
 lastapply no-merge
 
-#.. checked up to PR #9786
+#.. checked up to PR #9849
 
-checkout v0.14.0rc1
+checkout v0.14.0rc2
 @0.14.x-syslibs
 	5872 subdir_incl_compat						1ac82ae
 	2241 sys_leveldb							4e19700
@@ -15,15 +15,15 @@ checkout v0.14.0rc1
 @0.14.x-knots
 # TESTS:
 	-    travis_qt4_nolibevent					dc5d245
-	9359	# Add test for CWalletTx::GetImmatureCredit() returning stale values.
+	9359 test_wallet_immature-0.14						last=52045d1	# Add test for CWalletTx::GetImmatureCredit() returning stale values.
 # FIXES:
-	9495 #JeremyRubin:checkqueue-control-lock
-	9497 #JeremyRubin:checkqueue-tests
+	9495 - #JeremyRubin:checkqueue-control-lock
+	9497 - #JeremyRubin:checkqueue-tests
 	# broken: 9522 achow101/fix-decoderawtx
 	9524 marco/Mf1701-qaPruning
-	9549 #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
-	9619 bugfix_gbt_presw
-	9622 #kallewoof:listsinceblock-include-lost-txs
+	9549 - #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
+	9622 listsinceblock_removedtxs-0.14					last=f962073
+		# Holding back 44be568..d453b37 "allow_partial" ugliness
 	9481 jonas/2017/01/fee_warning
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						ef78424
@@ -32,9 +32,9 @@ checkout v0.14.0rc1
 	5861 gui_restore_addresses					beb0845
 	5891 qt_console_history_persist				4c61f10
 	5916 keyorigin-0.14							96b7b0c
-	7061 jonas_rpc_rescan						7d87b7b last=d1aa8a9 jonas/2015/11/wallet_rescan_rpc
+	7061 jonas_rpc_rescan-0.14					7d87b7b last=d1aa8a9 jonas/2015/11/wallet_rescan_rpc
 	7107 qtnetworkport							92af35b	last=1f37c87 origin-pull/7107/head
-	9592 #ryanofsky:pr/grbf
+	9592 - #ryanofsky:pr/grbf
 	9672 rpc_rbf								0cafb83	# WAS 7159 with last=b64ebaf
 	7219 txrepl_fullrbf							c63acf8
 	7533 sendraw_force							b6519dd
@@ -56,25 +56,28 @@ checkout v0.14.0rc1
 	8550 stats_qt-0.14							d060966	last=251ee28
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	# useless? 9402  # Allow per network configuration file
-	9422 mempool_dat_extensible
+	9422 mempool_dat_extensible-0.14
 	9500 achow101/help-rpc-autocomplete
-	9503 #JeremyRubin:listreceivedbyaddress-filtered
+	9503 - #JeremyRubin:listreceivedbyaddress-filtered
 	9504 achow101/dumpmasterprivkey
-	9571  # RPC: getblockchaininfo returns BIP signaling statistics
+	9571 - # RPC: getblockchaininfo returns BIP signaling statistics
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready: 9662 Add `-disablehot` mode: a sane mode for watchonly-wallets
 	# not ready: 9697 [Qt] simple fee bumper with user verification
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
-	9740 #Add friendly output to dumpwallet
+	9740 - #Add friendly output to dumpwallet
 	# not ready: 9745 [RPC] Getting confirmations command
 	9749 unique_spk_mempool+sendraw_force
 	# not ready? 9774 Enable host lookups for -proxy and -onion parameters
-	8775 multiwallet_prefactor_rpc				436abe5
-	8694 multiwallet							9c10f29
-	- multiwallet_rpc
-	- multiwallet_gui
+	# not ready: 9830 - # Add trusted flag to listunspent result
+		# check for unnecessary refactoring; orig fe6cbed
+	9849 gui_netwatch+knots-0.14
+	8775 multiwallet_prefactor_rpc-0.14			436abe5 last=5c0e22c
+	8694 multiwallet-0.14						9c10f29 last=74bb8e7
+	- multiwallet_rpc-0.14
+	- multiwallet_gui-0.14
 	9724 intro_explain
 	n/a  checkpoint_update						219ac9b
 # POLICY:
@@ -88,14 +91,15 @@ checkout v0.14.0rc1
 # BRANDING:
 	7483 svg_icon								ac19e0b
 	n/a  knots_branding							c30e154
-	n/a  (bump_version=Knots:20170218)			5ad6763
+	n/a  (bump_version=Knots:20170226)			5ad6763
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=12ec61e165)				ef9c66d  # release notes: write/update, including change log and credits
-		# FIXME: updates since 12ec61e165
+	n/a  (cherrypick=7e8f23a537)				ef9c66d  # release notes: write/update, including change log and credits
+		# FIXME: updates since 7e8f23a537
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=9e53c986a3)				dd33592  # translation update (move after relnotes for 0.14?)
+	n/a  (cherrypick=0538098a0a)				dd33592  # translation update (move after relnotes for 0.14?)
+# NOTE: use git diff --minimal for patches!
