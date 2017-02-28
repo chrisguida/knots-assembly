@@ -1,4 +1,4 @@
-timestamp 2017-02-26 19:06:59
+timestamp 2017-02-27 01:21:15
 lastapply no-merge
 
 #.. checked up to PR #9849
@@ -22,6 +22,7 @@ checkout v0.14.0rc2
 	# broken: 9522 achow101/fix-decoderawtx
 	9524 marco/Mf1701-qaPruning
 	9549 - #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
+	9875 2017_02_wallet_test_dangle-0.14				last=75a1093	#tests: Fix dangling pwalletMain pointer in wallet tests
 	9622 listsinceblock_removedtxs-0.14					last=f962073
 		# Holding back 44be568..d453b37 "allow_partial" ugliness
 	9481 jonas/2017/01/fee_warning
@@ -74,8 +75,8 @@ checkout v0.14.0rc2
 	# not ready: 9830 - # Add trusted flag to listunspent result
 		# check for unnecessary refactoring; orig fe6cbed
 	9849 gui_netwatch+knots-0.14
-	8775 multiwallet_prefactor_rpc-0.14			436abe5 last=5c0e22c
-	8694 multiwallet-0.14						9c10f29 last=74bb8e7
+	8775 multiwallet_prefactor_rpc-0.14			436abe5 last=d678771
+	8694 multiwallet-0.14						9c10f29 last=4b37b66
 	- multiwallet_rpc-0.14
 	- multiwallet_gui-0.14
 	9724 intro_explain
@@ -91,10 +92,10 @@ checkout v0.14.0rc2
 # BRANDING:
 	7483 svg_icon								ac19e0b
 	n/a  knots_branding							c30e154
-	n/a  (bump_version=Knots:20170226)			5ad6763
+	n/a  (bump_version=Knots:20170227)			5ad6763
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=7e8f23a537)				ef9c66d  # release notes: write/update, including change log and credits
-		# FIXME: updates since 7e8f23a537
+	n/a  (cherrypick=fdcfb1ef44)				ef9c66d  # release notes: write/update, including change log and credits
+		# FIXME: updates since fdcfb1ef44
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
