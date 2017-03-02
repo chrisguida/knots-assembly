@@ -10,7 +10,9 @@ checkout v0.14.0rc2
 	5416 sys_libsecp256k1						411cb7d
 	7485 sys_univalue_def						3432902
 	7522 bugfix_gitdir							5960300
+	9892 bugfix_man_onlybuilt
 	5618 separate_utils							4a38db7
+		# FIXME: needs to merge 9892
 	7339 opt_libevent							a4b3d8a
 @0.14.x-knots
 # TESTS:
@@ -89,12 +91,14 @@ checkout v0.14.0rc2
 	-    spamfilter+sendraw_force				c5d3284
 	-    rwconf_policy							8e2cfb0
 		# TODO: final rebase
-# BRANDING:
+# Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon								ac19e0b
+# BRANDING:
 	n/a  knots_branding							c30e154
 	n/a  (bump_version=Knots:20170227)			5ad6763
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=fdcfb1ef44)				ef9c66d  # release notes: write/update, including change log and credits
+		# TODO: NetWatch summary
 		# FIXME: updates since fdcfb1ef44
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# UPDATE doc/files.md versions! and 9263 in 0.14
