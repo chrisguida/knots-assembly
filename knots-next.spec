@@ -3,29 +3,26 @@ lastapply no-merge
 
 #.. checked up to PR #9849
 
-checkout v0.14.0rc2
+checkout origin/0.14
 @0.14.x-syslibs
 	5872 subdir_incl_compat						1ac82ae
 	2241 sys_leveldb							4e19700
 	5416 sys_libsecp256k1						411cb7d
 	7485 sys_univalue_def						3432902
 	7522 bugfix_gitdir							5960300
-	9892 bugfix_man_onlybuilt
-	5618 separate_utils							4a38db7
-		# FIXME: needs to merge 9892
-	7339 opt_libevent							a4b3d8a
+	5618 separate_utils-0.14.x					4a38db7	last=6d5b247 separate_utils
+	7339 opt_libevent-0.14						a4b3d8a	last=3cc7b69 opt_libevent
 @0.14.x-knots
 # TESTS:
 	-    travis_qt4_nolibevent					dc5d245
-	9359 test_wallet_immature-0.14						last=52045d1	# Add test for CWalletTx::GetImmatureCredit() returning stale values.
+	9359 test_wallet_immature-0.14						last=7ed143c	# Add test for CWalletTx::GetImmatureCredit() returning stale values.
 # FIXES:
 	9495 - #JeremyRubin:checkqueue-control-lock
 	9497 - #JeremyRubin:checkqueue-tests
 	# broken: 9522 achow101/fix-decoderawtx
 	9524 marco/Mf1701-qaPruning
 	9549 - #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
-	9875 2017_02_wallet_test_dangle-0.14				last=75a1093	#tests: Fix dangling pwalletMain pointer in wallet tests
-	9622 listsinceblock_removedtxs-0.14					last=f962073
+	9622 listsinceblock_removedtxs-0.14					last=561b2cf
 		# Holding back 44be568..d453b37 "allow_partial" ugliness
 	9481 jonas/2017/01/fee_warning
 # FUNCTIONALITY:
@@ -72,13 +69,13 @@ checkout v0.14.0rc2
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	9740 - #Add friendly output to dumpwallet
 	# not ready: 9745 [RPC] Getting confirmations command
-	9749 unique_spk_mempool+sendraw_force
+	9749 unique_spk_mempool+sendraw_force				last=fe4be7b
 	# not ready? 9774 Enable host lookups for -proxy and -onion parameters
 	# not ready: 9830 - # Add trusted flag to listunspent result
 		# check for unnecessary refactoring; orig fe6cbed
 	9849 gui_netwatch+knots-0.14
 	8775 multiwallet_prefactor_rpc-0.14			436abe5 last=d678771
-	8694 multiwallet-0.14						9c10f29 last=4b37b66
+	8694 multiwallet-0.14						9c10f29 last=2147835
 	- multiwallet_rpc-0.14
 	- multiwallet_gui-0.14
 	9724 intro_explain
@@ -97,9 +94,7 @@ checkout v0.14.0rc2
 	n/a  knots_branding							c30e154
 	n/a  (bump_version=Knots:20170227)			5ad6763
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=fdcfb1ef44)				ef9c66d  # release notes: write/update, including change log and credits
-		# TODO: NetWatch summary
-		# FIXME: updates since fdcfb1ef44
+	n/a  (cherrypick=e47123905c)				ef9c66d  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
