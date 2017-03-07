@@ -1,9 +1,9 @@
-timestamp 2017-02-27 01:21:15
+timestamp 2017-03-07 10:29:56
 lastapply no-merge
 
 #.. checked up to PR #9849
 
-checkout origin/0.14
+checkout v0.14.0
 @0.14.x-syslibs
 	5872 subdir_incl_compat						1ac82ae
 	2241 sys_leveldb							4e19700
@@ -92,14 +92,14 @@ checkout origin/0.14
 	7483 svg_icon								ac19e0b
 # BRANDING:
 	n/a  knots_branding							c30e154
-	n/a  (bump_version=Knots:20170227)			5ad6763
+	n/a  (bump_version=Knots:20170307)			5ad6763
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=e47123905c)				ef9c66d  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=276d134961)				ef9c66d  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=0538098a0a)				dd33592  # translation update (move after relnotes for 0.14?)
+	n/a  (cherrypick=f3b6d8592d)				dd33592  # translation update (move after relnotes for 0.14?)
 # NOTE: use git diff --minimal for patches!
