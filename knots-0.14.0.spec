@@ -94,7 +94,7 @@ checkout v0.14.0
 	n/a  knots_branding							c30e154
 	n/a  (bump_version=Knots:20170307)			5ad6763
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=276d134961)				ef9c66d  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=c7aabb5746)				ef9c66d  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!

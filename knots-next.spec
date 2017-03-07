@@ -94,12 +94,12 @@ checkout v0.14.0
 	n/a  knots_branding							711e641
 	n/a  (bump_version=Knots:20170307)			5db9c66
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=276d134961)				69144d6  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=c7aabb5746)				c5b9a97  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=f3b6d8592d)				1c13c04  # translation update (move after relnotes for 0.14?)
+	n/a  (cherrypick=f3b6d8592d)				46952c8  # translation update (move after relnotes for 0.14?)
 # NOTE: use git diff --minimal for patches!
