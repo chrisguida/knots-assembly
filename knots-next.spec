@@ -1,10 +1,10 @@
 timestamp 2017-03-07 10:29:56
 
-#.. checked up to PR #9849
+#.. checked up to PR #10171
 
 # FIXME: undeprecate priority
 
-checkout v0.14.0
+checkout v0.14.1rc1
 @0.14.x-syslibs
 	5872 subdir_incl_compat						c5cab7e
 	2241 sys_leveldb							18a4863
@@ -26,6 +26,7 @@ checkout v0.14.0
 	9622 listsinceblock_removedtxs-0.14			9e7ad7b	last=561b2cf
 		# Holding back 44be568..d453b37 "allow_partial" ugliness
 	9481 jonas/2017/01/fee_warning				4980c9c
+	10156 - # Fix for issues with startup and multiple monitors on windows.
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						22e9aa5
 	 929 tbc									fae1ad4
@@ -59,7 +60,7 @@ checkout v0.14.0
 	# useless? 9402  # Allow per network configuration file
 	9422 mempool_dat_extensible-0.14			c1ca01b
 	9500 achow101/help-rpc-autocomplete			ecd7b96
-	9503 -										eab5119 #JeremyRubin:listreceivedbyaddress-filtered
+	9991 -										eab5119 # listreceivedbyaddress Filter Address; was #9503
 	9504 achow101/dumpmasterprivkey				3c14f76
 	9571 -										cc3b8bb # RPC: getblockchaininfo returns BIP signaling statistics
 	# not ready yet: SPV
@@ -80,6 +81,9 @@ checkout v0.14.0
 	- multiwallet_rpc-0.14						f582ed6
 	- multiwallet_gui-0.14						c0f1fbe
 	9724 intro_explain							cd9d813
+	9890 - # Add a button to open the config file in a text editor
+	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
+	10143 - # [net] Allow disconnectnode RPC to be called with node id
 	n/a  checkpoint_update						667e4d6
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
