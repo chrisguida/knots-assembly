@@ -1,7 +1,8 @@
 timestamp 2017-03-07 10:29:56
-lastapply no-merge
 
 #.. checked up to PR #9849
+
+# FIXME: undeprecate priority
 
 checkout v0.14.0
 @0.14.x-syslibs
@@ -15,14 +16,14 @@ checkout v0.14.0
 @0.14.x-knots
 # TESTS:
 	-    travis_qt4_nolibevent					1ed6c96
-	9359 test_wallet_immature-0.14				a471c48						last=7ed143c	# Add test for CWalletTx::GetImmatureCredit() returning stale values.
+	9359 test_wallet_immature-0.14				a471c48	last=7ed143c	# Add test for CWalletTx::GetImmatureCredit() returning stale values.
 # FIXES:
 	9495 -										0765be7 #JeremyRubin:checkqueue-control-lock
 	9497 -										2c02ce5 #JeremyRubin:checkqueue-tests
 	# broken: 9522 achow101/fix-decoderawtx
 	9524 marco/Mf1701-qaPruning					023c03b
 	9549 -										a5779d5 #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
-	9622 listsinceblock_removedtxs-0.14			9e7ad7b					last=561b2cf
+	9622 listsinceblock_removedtxs-0.14			9e7ad7b	last=561b2cf
 		# Holding back 44be568..d453b37 "allow_partial" ugliness
 	9481 jonas/2017/01/fee_warning				4980c9c
 # FUNCTIONALITY:
@@ -48,7 +49,7 @@ checkout v0.14.0
 			# check if issue mentioned in 7753 still exists
 	8704 -										5c2eebf  # getblock extraverbose
 	8751 sort-multisigs							f0cceca last=7439562  # multisig sorting
-	9017 instagibbs_p2shp2wpkhstuff_partial		bc45206		        last=6a67000  # replacing 8992; removed sign/verify message stuff
+	9017 instagibbs_p2shp2wpkhstuff_partial		bc45206	last=6a67000  # replacing 8992; removed sign/verify message stuff
 	8952 -										f94be47  # Add query options to listunspent RPC call
 	9152 sweepprivkeys+sendraw_force			42828b6
 	9245 ionice									7421787
@@ -69,7 +70,7 @@ checkout v0.14.0
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	9740 -										1fa60ba #Add friendly output to dumpwallet
 	# not ready: 9745 [RPC] Getting confirmations command
-	9749 unique_spk_mempool+sendraw_force		dbabbb1				last=fe4be7b
+	9749 unique_spk_mempool+sendraw_force		dbabbb1	last=fe4be7b
 	# not ready? 9774 Enable host lookups for -proxy and -onion parameters
 	# not ready: 9830 - # Add trusted flag to listunspent result
 		# check for unnecessary refactoring; orig fe6cbed
