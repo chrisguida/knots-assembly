@@ -1,10 +1,8 @@
-timestamp 2017-03-07 10:29:56
+timestamp 2017-04-19 16:28:52
 
-#.. checked up to PR #10171
+#.. checked up to PR #10234
 
-# FIXME: undeprecate priority
-
-checkout v0.14.1rc1
+checkout v0.14.1rc2
 @0.14.x-syslibs
 	5872 subdir_incl_compat						c5cab7e
 	2241 sys_leveldb							18a4863
@@ -23,10 +21,13 @@ checkout v0.14.1rc1
 	# broken: 9522 achow101/fix-decoderawtx
 	9524 marco/Mf1701-qaPruning					023c03b
 	9549 -										a5779d5 #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
-	9622 listsinceblock_removedtxs-0.14			9e7ad7b	last=561b2cf
-		# Holding back 44be568..d453b37 "allow_partial" ugliness
+	9622 listsinceblock_removedtxs-0.14			9e7ad7b	last=a8c56bf
+		# Hold back (eg 44be568..d453b37) any new "allow_partial" ugliness
 	9481 jonas/2017/01/fee_warning				4980c9c
-	10156 - # Fix for issues with startup and multiple monitors on windows.
+	10156 bugfix_restore_onscreen-0.14					last=b0c302b
+	10196 prioritisetx_gbtcache-0.14					last=6a61424
+	10234 list_banned_correctly-0.14					last=ea2c925
+	-    undeprecate_prioritymining
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						22e9aa5
 	 929 tbc									fae1ad4
@@ -48,10 +49,11 @@ checkout v0.14.1rc1
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8704 -										5c2eebf  # getblock extraverbose
-	8751 sort-multisigs							f0cceca last=7439562  # multisig sorting
+	8704 getblock-extraverbose-0.14				5c2eebf	last=b779f30  # getblock extraverbose
+	8751 sort-multisigs							f0cceca last=30f2ac9  # multisig sorting
 	9017 instagibbs_p2shp2wpkhstuff_partial		bc45206	last=6a67000  # replacing 8992; removed sign/verify message stuff
-	8952 -										f94be47  # Add query options to listunspent RPC call
+m	8952 listunspent_query_options-0.14+knots	f94be47	last=11ee5ec  # Add query options to listunspent RPC call
+	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys+sendraw_force			42828b6
 	9245 ionice									7421787
 	8501 stats_rpc-0.14							b67bf61
@@ -60,16 +62,16 @@ checkout v0.14.1rc1
 	# useless? 9402  # Allow per network configuration file
 	9422 mempool_dat_extensible-0.14			c1ca01b
 	9500 achow101/help-rpc-autocomplete			ecd7b96
-	9991 -										eab5119 # listreceivedbyaddress Filter Address; was #9503
+m	9991 listreceivedbyaddress-filtered-0.14+k	eab5119 last=c262be5  # listreceivedbyaddress Filter Address; was #9503
 	9504 achow101/dumpmasterprivkey				3c14f76
-	9571 -										cc3b8bb # RPC: getblockchaininfo returns BIP signaling statistics
+	9571 getblockchaininfo_statistics-0.14		cc3b8bb last=557c9a6  # RPC: getblockchaininfo returns BIP signaling statistics
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready: 9662 Add `-disablehot` mode: a sane mode for watchonly-wallets
 	# not ready: 9697 [Qt] simple fee bumper with user verification
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
-	9740 -										1fa60ba #Add friendly output to dumpwallet
+	9740 dumpwallet-friendly-0.14				1fa60ba last=164019d  # Add friendly output to dumpwallet
 	# not ready: 9745 [RPC] Getting confirmations command
 	9749 unique_spk_mempool+sendraw_force		dbabbb1	last=fe4be7b
 	# not ready? 9774 Enable host lookups for -proxy and -onion parameters
@@ -77,13 +79,18 @@ checkout v0.14.1rc1
 		# check for unnecessary refactoring; orig fe6cbed
 	9849 gui_netwatch+knots-0.14				d8809c6
 	8775 multiwallet_prefactor_rpc-0.14			14257db last=d678771
-	8694 multiwallet-0.14						f080323 last=2147835
-	- multiwallet_rpc-0.14						f582ed6
+		# TODO: use pairWtx per 104095b^
+	8694 multiwallet-0.14						f080323 last=06b431c
+m	- multiwallet_rpc-0.14						f582ed6
 	- multiwallet_gui-0.14						c0f1fbe
 	9724 intro_explain							cd9d813
-	9890 - # Add a button to open the config file in a text editor
+	9890 gui_openconfig-0.14							last=9ab9e7d  # Add a button to open the config file in a text editor
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
-	10143 - # [net] Allow disconnectnode RPC to be called with node id
+	10143 rpc_disconnect_node_by_id-0.14+k				last=d54297f  # [net] Allow disconnectnode RPC to be called with node id
+	# Needs review: 10199 morcos:smarterfee
+	# needs review: 10200 sdaftuar:2017-04-dont-mine-recent-tx
+	10231 qt_freeze-0.14+knots							last=4082fb0
+	# needs review/concept ack: 10233
 	n/a  checkpoint_update						667e4d6
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
@@ -97,14 +104,14 @@ checkout v0.14.1rc1
 	7483 svg_icon								5e8cdae
 # BRANDING:
 	n/a  knots_branding							711e641
-	n/a  (bump_version=Knots:20170307)			5db9c66
+	n/a  (bump_version=Knots:20170419)			5db9c66
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=c7aabb5746)				c5b9a97  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=e4f5afd17c)				c5b9a97  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=f3b6d8592d)				46952c8  # translation update (move after relnotes for 0.14?)
+	n/a  (cherrypick=16eb4950d5)				46952c8  # translation update (move after relnotes for 0.14?)
 # NOTE: use git diff --minimal for patches!
