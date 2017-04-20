@@ -1,8 +1,8 @@
-timestamp 2017-04-19 16:28:52
+timestamp 2017-04-20 20:24:22
 
 #.. checked up to PR #10234
 
-checkout v0.14.1rc2
+checkout v0.14.1
 @0.14.x-syslibs
 	5872 subdir_incl_compat						c5cab7e
 	2241 sys_leveldb							18a4863
@@ -104,9 +104,9 @@ m	- multiwallet_rpc-0.14						f582ed6
 	7483 svg_icon								5e8cdae
 # BRANDING:
 	n/a  knots_branding							711e641
-	n/a  (bump_version=Knots:20170419)			5db9c66
+	n/a  (bump_version=Knots:20170420)			5db9c66
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=e4f5afd17c)				c5b9a97  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=4fa4b0e078)				c5b9a97  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
