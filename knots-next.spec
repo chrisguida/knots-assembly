@@ -24,9 +24,9 @@ checkout v0.14.1
 	9622 listsinceblock_removedtxs-0.14			913fd86	last=a8c56bf
 		# Hold back (eg 44be568..d453b37) any new "allow_partial" ugliness
 	9481 jonas/2017/01/fee_warning				be69a9d
-	10156 bugfix_restore_onscreen-0.14			6757870					last=b0c302b
-	10196 prioritisetx_gbtcache-0.14			321992e					last=6a61424
-	10234 list_banned_correctly-0.14			408c686					last=ea2c925
+	10156 bugfix_restore_onscreen-0.14			6757870	last=b0c302b
+	10196 prioritisetx_gbtcache-0.14			321992e	last=6a61424
+	10234 list_banned_correctly-0.14			408c686	last=ea2c925
 	-    undeprecate_prioritymining				4b88b6f
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						a3e14aa
@@ -84,12 +84,12 @@ m	9991 listreceivedbyaddress-filtered-0.14+k	e52444d last=c262be5  # listreceive
 m	- multiwallet_rpc-0.14						2425e6f
 	- multiwallet_gui-0.14						f692523
 	9724 intro_explain							3c5f457
-	9890 gui_openconfig-0.14					4dfa671							last=9ab9e7d  # Add a button to open the config file in a text editor
+	9890 gui_openconfig-0.14					4dfa671	last=9ab9e7d  # Add a button to open the config file in a text editor
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
-	10143 rpc_disconnect_node_by_id-0.14+k		3a8ae05				last=d54297f  # [net] Allow disconnectnode RPC to be called with node id
+	10143 rpc_disconnect_node_by_id-0.14+k		3a8ae05	last=d54297f  # [net] Allow disconnectnode RPC to be called with node id
 	# Needs review: 10199 morcos:smarterfee
 	# needs review: 10200 sdaftuar:2017-04-dont-mine-recent-tx
-	10231 qt_freeze-0.14+knots					0e4a1ef							last=4082fb0
+	10231 qt_freeze-0.14+knots					0e4a1ef	last=4082fb0
 	# needs review/concept ack: 10233
 	n/a  checkpoint_update						87cd92c
 # POLICY:
