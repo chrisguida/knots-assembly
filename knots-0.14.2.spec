@@ -1,8 +1,8 @@
-timestamp 2017-06-14 21:56:01
+timestamp 2017-06-18 17:25:52
 
 #.. checked up to PR #10495
 
-checkout v0.14.2rc2
+checkout v0.14.2
 @0.14.x-syslibs
 	5872 subdir_incl_compat						4f8cf7a
 	2241 sys_leveldb							10cc85d
@@ -64,7 +64,7 @@ m	9672 rpc_rbf-0.14+k							b1a0e12	last=9a5a1d7d45  # WAS 7159 with last=b64eba
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
 	8704 getblock-extraverbose-0.14				631e007	last=e3c9f2ddb1  # getblock extraverbose
-	8751 sort-multisigs-0.14					47cf78e last=69a90ec573  # multisig sorting
+	8751 sort-multisigs-0.14+knots				47cf78e last=69a90ec573  # multisig sorting
 	9017 instagibbs_p2shp2wpkhstuff_partial		b65c705	last=6a67000  # replacing 8992; removed sign/verify message stuff
 	8952 listunspent_query_options-0.14+knots	281e97b	last=11ee5ec  # Add query options to listunspent RPC call
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
@@ -96,7 +96,7 @@ m	8775 multiwallet_prefactor_rpc-0.14			86a70f6 last=d678771
 		# TODO: use pairWtx per 104095b^
 	8694 multiwallet-0.14						b887294 last=c237bd750e
 		# TODO: postponed 06b431cf11..8284a27b9a waiting for translations
-	- multiwallet_rpc-0.14						2425e6f
+	10615 multiwallet_rpc-0.14					2425e6f last=dbbdef9942
 	- multiwallet_gui-0.14						f692523
 	9724 intro_explain							3c5f457
 	9890 gui_openconfig-0.14					4dfa671	last=9ab9e7d  # Add a button to open the config file in a text editor
@@ -113,9 +113,9 @@ TM	10231 qt_freeze-0.14+knots					0e4a1ef
 	10290 stopatheight-0.14
 		#+10305+10569
 	# TODO 10426 if bytes_serialized is left alone
-	10593 relax_invblk_punishment-0.14					last=35433a2cd2
+	10593 relax_invblk_punishment-0.14					last=ba51652610
 	10594 whitelist_outgoing
-	10532 bip148-0.14+knots								last=eda3af6c13
+	10532 bip148-0.14+knots								last=1115b02c67
 	n/a  checkpoint_update						87cd92c
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
@@ -128,15 +128,15 @@ TM	10231 qt_freeze-0.14+knots					0e4a1ef
 	7483 svg_icon								f20c50b
 # BRANDING:
 	n/a  knots_branding							8b684e5
-	n/a  (bump_version=Knots:20170614)			79e8ebd
+	n/a  (bump_version=Knots:20170618)			79e8ebd
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=b29042afb8)				e8ca4e6  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=72645b3f33)				e8ca4e6  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# UPDATE doc/files.md versions! and 9263 in 0.14
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=123ff9949a)				d3a038f  # translation update (move after relnotes for 0.14?)
-		FIXME: Also update manpages?
+	n/a  (cherrypick=438ecc5957)				d3a038f  # translation update (move after relnotes for 0.14?)
+	n/a  (cherrypick=3156567268)						# update manpages
 # NOTE: use git diff --minimal for patches!

@@ -1,0 +1,213 @@
+diff --git a/src/wallet/db.cpp b/src/wallet/db.cpp
+index 7d1b429b30..836a5de26e 100644
+--- a/src/wallet/db.cpp
++++ b/src/wallet/db.cpp
+@@ -145,7 +145,7 @@ void CDBEnv::MakeMock()
+     fMockDb = true;
+ }
+ 
+-CDBEnv::VerifyResult CDBEnv::Verify(const std::string& strFile, bool (*recoverFunc)(CDBEnv& dbenv, const std::string& strFile))
++CDBEnv::VerifyResult CDBEnv::Verify(const std::string& strFile, recoverFunc_type recoverFunc, std::string& out_backup_filename)
+ {
+     LOCK(cs_db);
+     assert(mapFileUseCount.count(strFile) == 0);
+@@ -158,7 +158,7 @@ CDBEnv::VerifyResult CDBEnv::Verify(const std::string& strFile, bool (*recoverFu
+         return RECOVER_FAIL;
+ 
+     // Try to recover:
+-    bool fRecovered = (*recoverFunc)(*this, strFile);
++    bool fRecovered = (*recoverFunc)(*this, strFile, out_backup_filename);
+     return (fRecovered ? RECOVER_OK : RECOVER_FAIL);
+ }
+ 
+diff --git a/src/wallet/db.h b/src/wallet/db.h
+index ea56200323..305146b8af 100644
+--- a/src/wallet/db.h
++++ b/src/wallet/db.h
+@@ -56,7 +56,8 @@ public:
+     enum VerifyResult { VERIFY_OK,
+                         RECOVER_OK,
+                         RECOVER_FAIL };
+-    VerifyResult Verify(const std::string& strFile, bool (*recoverFunc)(CDBEnv& dbenv, const std::string& strFile));
++    typedef bool (*recoverFunc_type)(CDBEnv& dbenv, const std::string& strFile, std::string& out_backup_filename);
++    VerifyResult Verify(const std::string& strFile, recoverFunc_type recoverFunc, std::string& out_backup_filename);
+     /**
+      * Salvage data from a file that Verify says is bad.
+      * fAggressive sets the DB_AGGRESSIVE flag (see berkeley DB->verify() method documentation).
+diff --git a/src/wallet/test/wallet_tests.cpp b/src/wallet/test/wallet_tests.cpp
+index b2b87d3010..42dd18e200 100644
+--- a/src/wallet/test/wallet_tests.cpp
++++ b/src/wallet/test/wallet_tests.cpp
+@@ -18,6 +18,8 @@
+ #include <boost/test/unit_test.hpp>
+ #include <univalue.h>
+ 
++extern CWallet* pwalletMain;
++
+ extern UniValue importmulti(const JSONRPCRequest& request);
+ extern UniValue dumpwallet(const JSONRPCRequest& request);
+ extern UniValue importwallet(const JSONRPCRequest& request);
+@@ -435,7 +437,6 @@ BOOST_FIXTURE_TEST_CASE(rescan, TestChain100Setup)
+ // than or equal to key birthday.
+ BOOST_FIXTURE_TEST_CASE(importwallet_rescan, TestChain100Setup)
+ {
+-    CWallet *pwalletMainBackup = ::pwalletMain;
+     LOCK(cs_main);
+ 
+     // Create two blocks with same timestamp to verify that importwallet rescan
+@@ -461,7 +462,7 @@ BOOST_FIXTURE_TEST_CASE(importwallet_rescan, TestChain100Setup)
+         JSONRPCRequest request;
+         request.params.setArray();
+         request.params.push_back("wallet.backup");
+-        ::pwalletMain = &wallet;
++        vpwallets.insert(vpwallets.begin(), &wallet);
+         ::dumpwallet(request);
+     }
+ 
+@@ -473,7 +474,7 @@ BOOST_FIXTURE_TEST_CASE(importwallet_rescan, TestChain100Setup)
+         JSONRPCRequest request;
+         request.params.setArray();
+         request.params.push_back("wallet.backup");
+-        ::pwalletMain = &wallet;
++        vpwallets[0] = &wallet;
+         ::importwallet(request);
+ 
+         BOOST_CHECK_EQUAL(wallet.mapWallet.size(), 3);
+@@ -486,7 +487,7 @@ BOOST_FIXTURE_TEST_CASE(importwallet_rescan, TestChain100Setup)
+     }
+ 
+     SetMockTime(0);
+-    ::pwalletMain = pwalletMainBackup;
++    vpwallets.erase(vpwallets.begin());
+ }
+ 
+ // Check that GetImmatureCredit() returns a newly calculated value instead of
+diff --git a/src/wallet/wallet.cpp b/src/wallet/wallet.cpp
+index 69bd696b28..8f30b377e6 100644
+--- a/src/wallet/wallet.cpp
++++ b/src/wallet/wallet.cpp
+@@ -455,8 +455,6 @@ bool CWallet::Verify()
+ 
+     LogPrintf("Using BerkeleyDB version %s\n", DbEnv::version(0, 0, 0));
+ 
+-    SoftSetArg("-wallet", DEFAULT_WALLET_DAT);
+-
+     uiInterface.InitMessage(_("Verifying wallet..."));
+ 
+     for (const std::string& walletFile : mapMultiArgs.at("-wallet")) {
+@@ -494,20 +492,22 @@ bool CWallet::Verify()
+     if (GetBoolArg("-salvagewallet", false))
+     {
+         // Recover readable keypairs:
+-        if (!CWalletDB::Recover(bitdb, walletFile, true))
++        std::string backup_filename;
++        if (!CWalletDB::Recover(bitdb, walletFile, true, backup_filename))
+             return false;
+     }
+     
+     if (boost::filesystem::exists(GetDataDir() / walletFile))
+     {
+-        CDBEnv::VerifyResult r = bitdb.Verify(walletFile, CWalletDB::Recover);
++        std::string backup_filename;
++        CDBEnv::VerifyResult r = bitdb.Verify(walletFile, CWalletDB::Recover, backup_filename);
+         if (r == CDBEnv::RECOVER_OK)
+         {
+             InitWarning(strprintf(_("Warning: Wallet file corrupt, data salvaged!"
+                                          " Original %s saved as %s in %s; if"
+                                          " your balance or transactions are incorrect you should"
+                                          " restore from a backup."),
+-                walletFile, "wallet.{timestamp}.bak", GetDataDir()));
++                walletFile, backup_filename, GetDataDir()));
+         }
+         if (r == CDBEnv::RECOVER_FAIL)
+             return InitError(strprintf(_("%s corrupt, salvage failed"), walletFile));
+@@ -3851,6 +3851,9 @@ void CWallet::postInitProcess(boost::thread_group& threadGroup)
+ 
+ bool CWallet::ParameterInteraction()
+ {
++    SoftSetArg("-wallet", DEFAULT_WALLET_DAT);
++    const bool is_multiwallet = mapMultiArgs.at("-wallet").size() > 1;
++
+     if (GetBoolArg("-disablewallet", DEFAULT_DISABLE_WALLET))
+         return true;
+ 
+@@ -3859,15 +3862,27 @@ bool CWallet::ParameterInteraction()
+     }
+ 
+     if (GetBoolArg("-salvagewallet", false) && SoftSetBoolArg("-rescan", true)) {
++        if (is_multiwallet) {
++            return InitError(strprintf("%s is only allowed with a single wallet file", "-salvagewallet"));
++        }
+         // Rewrite just private keys: rescan to find transactions
+         LogPrintf("%s: parameter interaction: -salvagewallet=1 -> setting -rescan=1\n", __func__);
+     }
+ 
+     // -zapwallettx implies a rescan
+     if (GetBoolArg("-zapwallettxes", false) && SoftSetBoolArg("-rescan", true)) {
++        if (is_multiwallet) {
++            return InitError(strprintf("%s is only allowed with a single wallet file", "-zapwallettxes"));
++        }
+         LogPrintf("%s: parameter interaction: -zapwallettxes=<mode> -> setting -rescan=1\n", __func__);
+     }
+ 
++    if (is_multiwallet) {
++        if (GetBoolArg("-upgradewallet", false)) {
++            return InitError(strprintf("%s is only allowed with a single wallet file", "-upgradewallet"));
++        }
++    }
++
+     if (GetBoolArg("-sysperms", false))
+         return InitError("-sysperms is not allowed in combination with enabled wallet functionality");
+     if (GetArg("-prune", 0) && GetBoolArg("-rescan", false))
+diff --git a/src/wallet/walletdb.cpp b/src/wallet/walletdb.cpp
+index 339299855a..c28c7e3a75 100644
+--- a/src/wallet/walletdb.cpp
++++ b/src/wallet/walletdb.cpp
+@@ -842,17 +842,17 @@ void ThreadFlushWalletDB()
+ //
+ // Try to (very carefully!) recover wallet file if there is a problem.
+ //
+-bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKeys)
++bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKeys, std::string& newFilename)
+ {
+     // Recovery procedure:
+-    // move wallet file to wallet.timestamp.bak
++    // move wallet file to walletfilename.timestamp.bak
+     // Call Salvage with fAggressive=true to
+     // get as much data as possible.
+     // Rewrite salvaged data to fresh wallet file
+     // Set -rescan so any missing transactions will be
+     // found.
+     int64_t now = GetTime();
+-    std::string newFilename = strprintf("wallet.%d.bak", now);
++    newFilename = strprintf("%s.%d.bak", filename, now);
+ 
+     int result = dbenv.dbenv->dbrename(NULL, filename.c_str(), NULL,
+                                        newFilename.c_str(), DB_AUTO_COMMIT);
+@@ -923,9 +923,9 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
+     return fSuccess;
+ }
+ 
+-bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename)
++bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, std::string& out_backup_filename)
+ {
+-    return CWalletDB::Recover(dbenv, filename, false);
++    return CWalletDB::Recover(dbenv, filename, false, out_backup_filename);
+ }
+ 
+ bool CWalletDB::WriteDestData(const std::string &address, const std::string &key, const std::string &value)
+diff --git a/src/wallet/walletdb.h b/src/wallet/walletdb.h
+index e3a53188cf..b1a6821b87 100644
+--- a/src/wallet/walletdb.h
++++ b/src/wallet/walletdb.h
+@@ -204,8 +204,8 @@ public:
+     DBErrors FindWalletTx(CWallet* pwallet, std::vector<uint256>& vTxHash, std::vector<CWalletTx>& vWtx);
+     DBErrors ZapWalletTx(CWallet* pwallet, std::vector<CWalletTx>& vWtx);
+     DBErrors ZapSelectTx(CWallet* pwallet, std::vector<uint256>& vHashIn, std::vector<uint256>& vHashOut);
+-    static bool Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKeys);
+-    static bool Recover(CDBEnv& dbenv, const std::string& filename);
++    static bool Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKeys, std::string& out_backup_filename);
++    static bool Recover(CDBEnv& dbenv, const std::string& filename, std::string& out_backup_filename);
+ 
+     //! write the hdchain model (external chain child index counter)
+     bool WriteHDChain(const CHDChain& chain);
