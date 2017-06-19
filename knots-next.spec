@@ -38,7 +38,7 @@ NM	10234 list_banned_correctly-0.14			8b790db953
 	10265 0.14.2_fixes_subst^^					995f3b22cd
 	10308 0.14.2_fixes_subst^					96b092ecba
 	10445 0.14.2_fixes_subst					b0b7ea09a9
-	10595 gbt_nosegwit_fix-0.14					b356af91e7							last=4292a752c7
+	10595 gbt_nosegwit_fix-0.14					b356af91e7	last=4292a752c7
 	-    undeprecate_prioritymining				b943c70880
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						0411d10872
@@ -102,20 +102,20 @@ m	8775 multiwallet_prefactor_rpc-0.14			848ca2fe1c last=d678771
 	9890 gui_openconfig-0.14					4d829b692a	last=9ab9e7d  # Add a button to open the config file in a text editor
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 NM	10143 rpc_disconnect_node_by_id-0.14+k		7a79534eb1
-	10143 rpc_disconnect_node_by_id-0.14		74e37424dd				last=d54297f1a8
+	10143 rpc_disconnect_node_by_id-0.14		74e37424dd	last=d54297f1a8
 	# Needs review: 10199 morcos:smarterfee
 	# needs review: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 TM	10231 qt_freeze-0.14+knots					ee956e18a9
 	# needs review/concept ack: 10233 and/or 10386
 	# TODO 10267 (conflicts with rwconf?)
-	10275 gettx-with-blockhash-0.14				f5910114d6						last=8f2ce52c92
-	10282 timebomb_knots-0.14					57b5104150							last=21f123db98
+	10275 gettx-with-blockhash-0.14				f5910114d6	last=8f2ce52c92
+	10282 timebomb_knots-0.14					57b5104150	last=21f123db98
 	10290 stopatheight-0.14						26dac5841a
 		#+10305+10569
 	# TODO 10426 if bytes_serialized is left alone
-	10593 relax_invblk_punishment-0.14			47b17f1421					last=ba51652610
+	10593 relax_invblk_punishment-0.14			47b17f1421	last=ba51652610
 	10594 whitelist_outgoing					c4bd7ca174
-	10532 bip148-0.14+knots						b7496c800c								last=1115b02c67
+	10532 bip148-0.14+knots						b7496c800c	last=1115b02c67
 	n/a  checkpoint_update						4254fd40a2
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
@@ -138,5 +138,5 @@ TM	10231 qt_freeze-0.14+knots					ee956e18a9
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=438ecc5957)				c00f805f48  # translation update (move after relnotes for 0.14?)
-	n/a  (cherrypick=3156567268)				e7a3c1cba8						# update manpages
+	n/a  (cherrypick=3156567268)				e7a3c1cba8	# update manpages
 # NOTE: use git diff --minimal for patches!
