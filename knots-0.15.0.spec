@@ -13,15 +13,17 @@ checkout origin/master
 	7339 opt_libevent							318935fbac
 @0.15.x-knots
 # TESTS:
-	-    travis_qt4_nolibevent					52982f061b
+	7142 travis_qt4								52982f061b
+	-    travis_nolibevent
 # FIXES:
 	9524 marco/Mf1701-qaPruning					ac18ebe9fa
 	10595 gbt_nosegwit_fix						b356af91e7
-	-    undeprecate_prioritymining				b943c70880
+	11026 bugfix_acceptnonstd_def
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						0411d10872
 	 929 tbc									7d9ece422b
 	 553 bugfix_qt_uri_amount_parser			bdf5e63f09
+	-    mining_priority
 	5861 gui_restore_addresses					48b98180e6
 	5891 qt_console_history_persist				40f1e383fe
 	5916 keyorigin-0.14							714bf57365
