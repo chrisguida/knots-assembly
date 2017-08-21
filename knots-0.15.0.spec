@@ -1,13 +1,13 @@
-timestamp 2017-08-08 08:02:42
+timestamp 2017-08-21 20:24:25
 lastapply no-merge
 
 #.. checked up to PR #10495
 
-checkout origin/master
+checkout v0.15.0rc2
 @0.15.x-syslibs
 	5872 subdir_incl_compat						cbde6af708
 	2241 sys_leveldb							e5befdbe89
-	5416 sys_libsecp256k1						7d26bf48ba
+	5416 sys_libsecp256k1-0.15					7d26bf48ba
 	7485 sys_univalue_def						97fc42318e
 	5618 separate_utils							cdf705c9c6
 	7339 opt_libevent							318935fbac
@@ -31,8 +31,8 @@ checkout origin/master
 	7107 qtnetworkport							fa87fd57b9	last=1f37c87 origin-pull/7107/head
 	7219 txrepl_fullrbf							67980e9ad0
 	7533 sendraw_force							4b4d7b379a
-	11082 rwconf
-	7510 rwconf_gui								6d2afb424d
+	11082 rwconf-0.15
+	7510 rwconf_gui-0.15						6d2afb424d
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
