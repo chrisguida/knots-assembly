@@ -26,27 +26,29 @@ checkout origin/master
 	-    mining_priority
 	5861 gui_restore_addresses					48b98180e6
 	5891 qt_console_history_persist				40f1e383fe
-	5916 keyorigin-0.14							714bf57365
-	7061 jonas_rpc_rescan-0.14					edf97337e6 last=0092c0662c jonas/2015/11/wallet_rescan_rpc
-		# Skipping 0092c0662c which removes -rescan functionality
+	5916 keyorigin								714bf57365
+	7061 jonas/2015/11/wallet_rescan_rpc		edf97337e6
 	7107 qtnetworkport							fa87fd57b9	last=1f37c87 origin-pull/7107/head
 	7219 txrepl_fullrbf							67980e9ad0
 	7533 sendraw_force							4b4d7b379a
-	7510 rwconf+knots							6d2afb424d
+	11082 rwconf
+	7510 rwconf_gui								6d2afb424d
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs-0.14+knots				8a21f38186 last=69a90ec573  # multisig sorting
-	9017 instagibbs_p2shp2wpkhstuff_partial		e7955d907f	last=6a67000  # replacing 8992; removed sign/verify message stuff
+	8751 -										8a21f38186 last=69a90ec573  # multisig sorting
+	11089 p2shp2wpkhstuff						e7955d907f	last=6a67000  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
-	9152 sweepprivkeys+sendraw_force			3c1f05194e
+	9152 sweepprivkeys							3c1f05194e
 	9245 ionice									5093c918bf
-	8501 stats_rpc-0.14							028fb4b2da
-m	8550 stats_qt-0.14							273230b072	last=251ee28
+	-    ionice_win
+	8501 -										028fb4b2da
+	8550 -										273230b072	last=251ee28
+	-    stats_qt_style
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
-	9422 mempool_dat_extensible-0.14			234ccb0dd3
+	9422 mempool_dat_extensible					234ccb0dd3
 	9991 listreceivedbyaddress-filtered-0.14+k	5cb3754370 last=c262be5  # listreceivedbyaddress Filter Address; was #9503
 	9504 achow101/dumpmasterprivkey				3a3bb63b93
 	# not ready yet: SPV
@@ -68,6 +70,7 @@ m	8550 stats_qt-0.14							273230b072	last=251ee28
 	10593 relax_invblk_punishment-0.14			47b17f1421	last=ba51652610
 	10594 whitelist_outgoing					c4bd7ca174
 	10532 bip148-0.14+knots						b7496c800c	last=1115b02c67
+	10350 codeshark/MFWB_no_bump							# Added support for MSG_FILTERED_WITNESS_BLOCK messages
 	# FIXME: Can we drop BIP148?
 	n/a  checkpoint_update						4254fd40a2
 # POLICY:
@@ -77,10 +80,13 @@ m	8550 stats_qt-0.14							273230b072	last=251ee28
 	-	 bytespersigopstrict+sendraw_force		d332058883
 	-    spamfilter+sendraw_force				bbbcd274b6
 	-    rwconf_policy							28174b4138
+# Backward compat?
+	10745
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon								b593bdb523
 # BRANDING:
 	n/a  knots_branding							022e2c04cf
+		FIXME: Add doc/bips updates (gcp sort-multisigs-0.14+knots)
 	n/a  (bump_version=Knots:20170618)			4046352891
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=72645b3f33)				21fcedf33b  # release notes: write/update, including change log and credits
