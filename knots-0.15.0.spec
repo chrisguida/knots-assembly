@@ -20,19 +20,7 @@ checkout v0.15.0rc2
 	10595 gbt_nosegwit_fix						b356af91e7
 	11026 bugfix_acceptnonstd_def
 # FUNCTIONALITY:
-	 559 accept_nonstdtxn						0411d10872
-	 929 tbc									7d9ece422b
-	 553 bugfix_qt_uri_amount_parser			bdf5e63f09
-	-    mining_priority
-	5861 gui_restore_addresses					48b98180e6
-	5891 qt_console_history_persist				40f1e383fe
-	5916 keyorigin								714bf57365
 	7061 jonas/2015/11/wallet_rescan_rpc		edf97337e6
-	7107 qtnetworkport							fa87fd57b9	last=1f37c87 origin-pull/7107/head
-	7219 txrepl_fullrbf							67980e9ad0
-	7533 sendraw_force							4b4d7b379a
-	11082 rwconf-0.15
-	7510 rwconf_gui-0.15						6d2afb424d
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
@@ -57,7 +45,6 @@ checkout v0.15.0rc2
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	# not ready: 9745 [RPC] Getting confirmations command
-	9749 unique_spk_mempool+sendraw_force		15d37c3210	last=fe4be7b
 	9849 gui_netwatch+knots-0.14				03a1773aa0
 	10615 multiwallet_rpc-0.14					103657281f last=dbbdef9942
 	- multiwallet_gui-0.14						5427fe36fd
@@ -69,9 +56,20 @@ checkout v0.15.0rc2
 	10282 timebomb_knots-0.14					57b5104150	last=21f123db98
 	10593 relax_invblk_punishment-0.14			47b17f1421	last=ba51652610
 	10594 whitelist_outgoing					c4bd7ca174
-	10532 bip148-0.14+knots						b7496c800c	last=1115b02c67
 	10350 codeshark/MFWB_no_bump							# Added support for MSG_FILTERED_WITNESS_BLOCK messages
-	# FIXME: Can we drop BIP148?
+# Non-upstreamed functionality:
+	 559 accept_nonstdtxn						0411d10872
+	 929 tbc									7d9ece422b
+	 553 bugfix_qt_uri_amount_parser			bdf5e63f09
+	-    mining_priority
+	5861 gui_restore_addresses					48b98180e6
+	5891 qt_console_history_persist				40f1e383fe
+	5916 keyorigin								714bf57365
+	7107 qtnetworkport							fa87fd57b9	last=1f37c87 origin-pull/7107/head
+	7219 txrepl_fullrbf							67980e9ad0
+	7533 sendraw_force							4b4d7b379a
+	11082 rwconf-0.15
+	7510 rwconf_gui-0.15						6d2afb424d
 	n/a  checkpoint_update						4254fd40a2
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
@@ -79,6 +77,7 @@ checkout v0.15.0rc2
 	7149 bugfix_priority						96b8318528
 	-	 bytespersigopstrict+sendraw_force		d332058883
 	-    spamfilter+sendraw_force				bbbcd274b6
+	9749 unique_spk_mempool+sendraw_force		15d37c3210	last=fe4be7b
 	-    rwconf_policy							28174b4138
 # Backward compat?
 	10745
