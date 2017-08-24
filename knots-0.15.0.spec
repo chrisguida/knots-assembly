@@ -26,15 +26,15 @@ checkout v0.15.0rc2
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 -										8a21f38186 last=69a90ec573  # multisig sorting
-	11089 p2shp2wpkhstuff						e7955d907f	last=6a67000  # replacing 8992, 9017; removed sign/verify message stuff
+	8751 sort-multisigs							8a21f38186 last=69a90ec573  # multisig sorting
+	11089 p2shp2wpkhstuff						e7955d907f  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							3c1f05194e
 	9245 ionice									5093c918bf
 	-    ionice_win
-	8501 -										028fb4b2da
-	8550 -										273230b072	last=251ee28
-	-    stats_qt_style
+	8501 old_stats_rpc							028fb4b2da	last=c412d0a66e
+		# Held back on old version due to lack of GUI updates
+	8550 old_stats_qt							273230b072	last=251ee28
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	9422 mempool_dat_extensible					234ccb0dd3
 	9991 listreceivedbyaddress-filtered-0.14+k	5cb3754370 last=c262be5  # listreceivedbyaddress Filter Address; was #9503
