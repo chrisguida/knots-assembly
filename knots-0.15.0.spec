@@ -37,7 +37,7 @@ checkout v0.15.0rc2
 	8550 old_stats_qt							273230b072	last=251ee28
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	9422 mempool_dat_extensible					234ccb0dd3
-	9991 listreceivedbyaddress-filtered-0.14+k	5cb3754370 last=c262be5  # listreceivedbyaddress Filter Address; was #9503
+	9991 listreceivedbyaddress-filtered			5cb3754370 last=c262be5  # listreceivedbyaddress Filter Address; was #9503
 	9504 achow101/dumpmasterprivkey				3a3bb63b93
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
@@ -45,16 +45,15 @@ checkout v0.15.0rc2
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	# not ready: 9745 [RPC] Getting confirmations command
-	9849 gui_netwatch+knots-0.14				03a1773aa0
-	10615 multiwallet_rpc-0.14					103657281f last=dbbdef9942
-	- multiwallet_gui-0.14						5427fe36fd
+	9849 gui_netwatch							03a1773aa0
+	10615 multiwallet_rpc						103657281f last=dbbdef9942
+	- multiwallet_gui							5427fe36fd
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs review? CONSIDER FOR 0.15.0 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
 	# TODO 10267 (conflicts with rwconf?)
-	10275 gettx-with-blockhash-0.14				f5910114d6	last=8f2ce52c92
-	10282 timebomb_knots-0.14					57b5104150	last=21f123db98
-	10593 relax_invblk_punishment-0.14			47b17f1421	last=ba51652610
+	10275 -										f5910114d6	last=8f2ce52c92	# [rpc] Allow fetching tx directly from specified block in getrawtransaction
+	10593 relax_invblk_punishment				47b17f1421	last=ba51652610
 	10594 whitelist_outgoing					c4bd7ca174
 	10350 codeshark/MFWB_no_bump							# Added support for MSG_FILTERED_WITNESS_BLOCK messages
 # Non-upstreamed functionality:
@@ -70,6 +69,7 @@ checkout v0.15.0rc2
 	7533 sendraw_force							4b4d7b379a
 	11082 rwconf-0.15
 	7510 rwconf_gui-0.15						6d2afb424d
+	10282 timebomb_knots-0.14					57b5104150	last=21f123db98
 	n/a  checkpoint_update						4254fd40a2
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
