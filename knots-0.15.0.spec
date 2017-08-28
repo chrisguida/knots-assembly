@@ -26,7 +26,7 @@ checkout v0.15.0rc2
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs							8a21f38186 last=69a90ec573  # multisig sorting
+	8751 sort-multisigs							8a21f38186 last=464827af1e  # multisig sorting
 	11089 p2shp2wpkhstuff						e7955d907f  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							3c1f05194e
@@ -38,7 +38,7 @@ checkout v0.15.0rc2
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	9422 mempool_dat_extensible					234ccb0dd3
 	9991 listreceivedbyaddress-filtered			5cb3754370 last=c262be5  # listreceivedbyaddress Filter Address; was #9503
-	9504 achow101/dumpmasterprivkey				3a3bb63b93
+	9504 dumpmasterprivkey						3a3bb63b93	last=07fc81109a
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready: 9662 Add `-disablehot` mode: a sane mode for watchonly-wallets
@@ -46,37 +46,36 @@ checkout v0.15.0rc2
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	# not ready: 9745 [RPC] Getting confirmations command
 	9849 gui_netwatch							03a1773aa0
-	10615 multiwallet_rpc						103657281f last=dbbdef9942
+	10615 multiwallet_rpc+opt_libevent			103657281f	last=6a20988a39
 	- multiwallet_gui							5427fe36fd
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs review? CONSIDER FOR 0.15.0 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
 	# TODO 10267 (conflicts with rwconf?)
-	10275 -										f5910114d6	last=8f2ce52c92	# [rpc] Allow fetching tx directly from specified block in getrawtransaction
-	10593 relax_invblk_punishment				47b17f1421	last=ba51652610
+	10275 gettx-with-blockhash-0.15				f5910114d6	last=440123fb8c	# [rpc] Allow fetching tx directly from specified block in getrawtransaction
+	10593 relax_invblk_punishment				47b17f1421
 	10594 whitelist_outgoing					c4bd7ca174
-	10350 codeshark/MFWB_no_bump							# Added support for MSG_FILTERED_WITNESS_BLOCK messages
+	10350 codeshark/MFWB_no_bump_2							# Added support for MSG_FILTERED_WITNESS_BLOCK messages
 # Non-upstreamed functionality:
+	7107 qtnetworkport							fa87fd57b9	last=1f37c87 origin-pull/7107/head
+	7533 sendraw_force+mempool_dat_extensible	4b4d7b379a	last=89e516ffcb sendraw_force
+	11082 rwconf-0.15
+	7510 rwconf_gui-0.15+qtnetworkport			6d2afb424d	last=6db89054ff rwconf_gui-0.15
+	5916 keyorigin								714bf57365
 	 559 accept_nonstdtxn						0411d10872
 	 929 tbc									7d9ece422b
 	 553 bugfix_qt_uri_amount_parser			bdf5e63f09
 	-    mining_priority
 	5861 gui_restore_addresses					48b98180e6
 	5891 qt_console_history_persist				40f1e383fe
-	5916 keyorigin								714bf57365
-	7107 qtnetworkport							fa87fd57b9	last=1f37c87 origin-pull/7107/head
 	7219 txrepl_fullrbf							67980e9ad0
-	7533 sendraw_force							4b4d7b379a
-	11082 rwconf-0.15
-	7510 rwconf_gui-0.15						6d2afb424d
-	10282 timebomb_knots-0.14					57b5104150	last=21f123db98
+	10282 timebomb_knots-0.15					57b5104150	last=21f123db98
 	n/a  checkpoint_update						4254fd40a2
 # POLICY:
 	# maybe? 9527 ryanofsky:pr/walletrbf
 	# maybe? change default confirmation target to 25+
-	7149 bugfix_priority						96b8318528
 	-	 bytespersigopstrict+sendraw_force		d332058883
-	-    spamfilter+sendraw_force				bbbcd274b6
+	#dropping? -    spamfilter+sendraw_force				bbbcd274b6
 	9749 unique_spk_mempool+sendraw_force		15d37c3210	last=fe4be7b
 	-    rwconf_policy							28174b4138
 # Backward compat?
