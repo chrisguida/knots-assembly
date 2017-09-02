@@ -1,7 +1,7 @@
 timestamp 2017-08-29 04:09:24
 lastapply no-merge
 
-#.. checked up to PR #10495
+#.. checked up to PR #11209
 
 checkout v0.15.0rc3
 @0.15.x-syslibs
@@ -17,10 +17,17 @@ checkout v0.15.0rc3
 	-    travis_nolibevent
 # FIXES:
 	9524 marco/Mf1701-qaPruning					ac18ebe9fa
+	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						b356af91e7
 	11026 bugfix_acceptnonstd_def
+	10731 log_more_uacomment
+	10957 -													# Avoid BIP9Stats object w/ uninitialized values
+	11169 -													# Make tabs toolbar no longer have a context menu
+	11198 -													# [Qt] Fix pkg name on 'open config file' tooltip
+	FIXME: 11206											# Fix accelerator key for Hide tray icon
+	11208 -													# Fixing offscreen GUI issue
 # FUNCTIONALITY:
-	TODO: enable experimental asm (update rel notes)
+	n/a  def_sse4_sha256
 	7061 jonas/2015/11/wallet_rescan_rpc		edf97337e6
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -48,15 +55,32 @@ checkout v0.15.0rc3
 	# not ready: 9745 [RPC] Getting confirmations command
 	9849 gui_netwatch							03a1773aa0
 	10615 multiwallet_rpc+opt_libevent			103657281f	last=6a20988a39
+		TODO: maybe fix var names (see PR)
 	- multiwallet_gui							5427fe36fd
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs review? CONSIDER FOR 0.15.0 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
 	# TODO 10267 (conflicts with rwconf?)
 	10275 gettx-with-blockhash-0.15				f5910114d6	last=440123fb8c	# [rpc] Allow fetching tx directly from specified block in getrawtransaction
+	10554 -													# ZMQ: add publishers for wallet transactions.
 	10593 relax_invblk_punishment				47b17f1421
 	10594 whitelist_outgoing					c4bd7ca174
 	10350 codeshark/MFWB_no_bump_2							# Added support for MSG_FILTERED_WITNESS_BLOCK messages
+	10729 scriptex
+	10730 scriptflag_strings-mini							last=97cae3915f
+	n/a   script_debugger-mini								last=8d1ff9f035 script_debugger
+	10871 achow101/cli-getinfo
+	10997 -													# Add option -stdinrpcpass to bitcoin-cli
+	11125 promag:2017-08-stdinrpcpass-functional-test
+		FIXME: CHeck deps
+	11099 greenaddress/dump_mempool_rpc
+	# TODO: 11117 sipa:201708_nocbitcoinaddress
+	# TODO: 11167 sipa:201708_bech32
+	# TODO: 11177 rawodb:pr/rpc_getsegwitaddresses
+	# TODO: 11178 MeshCollider:201708_rawtx_bool
+	# TODO: 11200 achow101:gui-recan-abort
+	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
+	FIXME: 11203 sdaftuar:2017-08-add-wtxid-to-mempool-entry
 # Non-upstreamed functionality:
 	7107 qtnetworkport							fa87fd57b9	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force+knots					4b4d7b379a	last=89e516ffcb sendraw_force
@@ -74,6 +98,7 @@ checkout v0.15.0rc3
 	10282 timebomb_knots-0.15					57b5104150	last=21f123db98
 	n/a  checkpoint_update						4254fd40a2
 # POLICY:
+	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	# maybe? 9527 ryanofsky:pr/walletrbf
 	# maybe? change default confirmation target to 25+
 	-	 bytespersigopstrict+sendraw_force		d332058883
