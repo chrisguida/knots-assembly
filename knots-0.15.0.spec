@@ -22,10 +22,10 @@ checkout v0.15.0rc3
 	11026 bugfix_acceptnonstd_def
 	10731 log_more_uacomment
 	10957 -													# Avoid BIP9Stats object w/ uninitialized values
-	11169 -													# Make tabs toolbar no longer have a context menu
+	11169 rm_hide_tabs-0.15									# Make tabs toolbar no longer have a context menu
 	11198 -													# [Qt] Fix pkg name on 'open config file' tooltip
-	FIXME: 11206											# Fix accelerator key for Hide tray icon
-	11208 -													# Fixing offscreen GUI issue
+	11206 fix_hidetrayicon_accel							# Fix accelerator key for Hide tray icon
+	11208 fix_offscreen-0.15								last=6067244698	# Fixing offscreen GUI issue
 # FUNCTIONALITY:
 	n/a  def_sse4_sha256
 	7061 jonas/2015/11/wallet_rescan_rpc		edf97337e6
@@ -54,26 +54,24 @@ checkout v0.15.0rc3
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	# not ready: 9745 [RPC] Getting confirmations command
 	9849 gui_netwatch							03a1773aa0
-	10615 multiwallet_rpc+opt_libevent			103657281f	last=6a20988a39
-		TODO: maybe fix var names (see PR)
-	- multiwallet_gui							5427fe36fd
+	10615 multiwallet_rpc+opt_libevent			103657281f	last=370d3361e8
+	- multiwallet_gui+rm_hide_tabs				5427fe36fd	last=7790bcdbf2 multiwallet_gui
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs review? CONSIDER FOR 0.15.0 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
 	# TODO 10267 (conflicts with rwconf?)
 	10275 gettx-with-blockhash-0.15				f5910114d6	last=440123fb8c	# [rpc] Allow fetching tx directly from specified block in getrawtransaction
-	10554 -													# ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx											last=d358230d10	# ZMQ: add publishers for wallet transactions.
 	10593 relax_invblk_punishment				47b17f1421
 	10594 whitelist_outgoing					c4bd7ca174
 	10350 codeshark/MFWB_no_bump_2							# Added support for MSG_FILTERED_WITNESS_BLOCK messages
 	10729 scriptex
 	10730 scriptflag_strings-mini							last=97cae3915f
 	n/a   script_debugger-mini								last=8d1ff9f035 script_debugger
-	10871 achow101/cli-getinfo
-	10997 -													# Add option -stdinrpcpass to bitcoin-cli
-	11125 promag:2017-08-stdinrpcpass-functional-test
-		FIXME: CHeck deps
-	11099 greenaddress/dump_mempool_rpc
+	10871 cli_getinfo-0.15									last=e697d546c2 achow101/cli-getinfo
+	10997 stdinrpcpass+cli_getinfo-0.15						# Add option -stdinrpcpass to bitcoin-cli
+	# Requires new QA stuff? 11125 promag/2017-08-stdinrpcpass-functional-test
+	11099 rpc_dumpmempool+mempool_dat_ext-0.15				last=67d307f606
 	# TODO: 11117 sipa:201708_nocbitcoinaddress
 	# TODO: 11167 sipa:201708_bech32
 	# TODO: 11177 rawodb:pr/rpc_getsegwitaddresses
