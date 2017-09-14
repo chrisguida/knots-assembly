@@ -1,9 +1,9 @@
-timestamp 2017-08-29 04:09:24
+timestamp 2017-09-14 21:11:40
 lastapply no-merge
 
 #.. checked up to PR #11209
 
-checkout v0.15.0rc3
+checkout v0.15.0
 @0.15.x-syslibs
 	5872 subdir_incl_compat						cbde6af708
 	2241 sys_leveldb							e5befdbe89
@@ -26,15 +26,16 @@ checkout v0.15.0rc3
 	11198 -													# [Qt] Fix pkg name on 'open config file' tooltip
 	11206 fix_hidetrayicon_accel							# Fix accelerator key for Hide tray icon
 	11208 fix_offscreen-0.15								last=6067244698	# Fixing offscreen GUI issue
+	11332 bugfix_customfeeradio-0.15						last=cdaf3a1f9e
 # FUNCTIONALITY:
 	n/a  def_sse4_sha256
-	7061 jonas/2015/11/wallet_rescan_rpc		edf97337e6
+	7061 wallet_rescan_rpc-0.15					edf97337e6	last=bf6f25373a
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs							8a21f38186 last=464827af1e  # multisig sorting
+	8751 sort-multisigs							8a21f38186 last=222cfb940d  # multisig sorting
 	11089 p2shp2wpkhstuff						e7955d907f  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							3c1f05194e
@@ -60,7 +61,7 @@ checkout v0.15.0rc3
 	# needs review? CONSIDER FOR 0.15.0 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
 	# TODO 10267 (conflicts with rwconf?)
-	10275 gettx-with-blockhash-0.15				f5910114d6	last=440123fb8c	# [rpc] Allow fetching tx directly from specified block in getrawtransaction
+	10275 gettx-with-blockhash-0.15				f5910114d6	last=300a5f15d5	# [rpc] Allow fetching tx directly from specified block in getrawtransaction
 	10554 zmq_wtx											last=d358230d10	# ZMQ: add publishers for wallet transactions.
 	10593 relax_invblk_punishment				47b17f1421
 	10594 whitelist_outgoing					c4bd7ca174
@@ -68,17 +69,18 @@ checkout v0.15.0rc3
 	10729 scriptex
 	10730 scriptflag_strings-mini							last=97cae3915f
 	n/a   script_debugger-mini								last=8d1ff9f035 script_debugger
-	10871 cli_getinfo-0.15									last=e697d546c2 achow101/cli-getinfo
+	10871 cli_getinfo-0.15									last=f2fde56bc6 achow101/cli-getinfo
+		# test not backported, since it relies on very new frameworks
 	10997 stdinrpcpass+cli_getinfo-0.15						# Add option -stdinrpcpass to bitcoin-cli
 	# Requires new QA stuff? 11125 promag/2017-08-stdinrpcpass-functional-test
-	11099 rpc_dumpmempool+mempool_dat_ext-0.15				last=67d307f606
+	11099 rpc_savemempool+mempool_dat_ext-0.15				last=1aa97ee088
 	# TODO: 11117 sipa:201708_nocbitcoinaddress
 	# TODO: 11167 sipa:201708_bech32
 	# TODO: 11177 rawodb:pr/rpc_getsegwitaddresses
 	# TODO: 11178 MeshCollider:201708_rawtx_bool
 	# TODO: 11200 achow101:gui-recan-abort
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
-	FIXME: 11203 sdaftuar:2017-08-add-wtxid-to-mempool-entry
+	11203 rpc_mempoolentry_txhash							last=617c459c6c
 # Non-upstreamed functionality:
 	7107 qtnetworkport							fa87fd57b9	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force+knots					4b4d7b379a	last=89e516ffcb sendraw_force
@@ -103,20 +105,20 @@ checkout v0.15.0rc3
 	#dropping? -    spamfilter+sendraw_force				bbbcd274b6
 	9749 unique_spk_mempool+sendraw_force		15d37c3210	last=9b75ab5b39
 	-    rwconf_policy							28174b4138
-		TODO: final rebase
+		#TODO: final rebase
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon								b593bdb523
 # BRANDING:
 	n/a  knots_branding							022e2c04cf
 	n/a  (cherrypick=af9c353c0dd6012e91)					# doc/{bips,files}
-	n/a  (bump_version=Knots:20170902)			4046352891
+	n/a  (bump_version=Knots:20170914)			4046352891
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=0333426103)				21fcedf33b  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=32f41a825e)				21fcedf33b  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=438ecc5957)				c00f805f48  # translation update (move after relnotes for 0.14?)
-	n/a  (cherrypick=3156567268)				e7a3c1cba8	# update manpages
+	n/a  (cherrypick=703daed7c9)				c00f805f48  # translation update
+	n/a  (cherrypick=e6478ff3f4)				e7a3c1cba8	# update manpages
 # NOTE: use git diff --minimal for patches!
