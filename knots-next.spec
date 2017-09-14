@@ -1,5 +1,4 @@
 timestamp 2017-09-14 21:11:40
-lastapply no-merge
 
 #.. checked up to PR #11209
 
@@ -21,12 +20,12 @@ checkout v0.15.0
 	10595 gbt_nosegwit_fix						6af558251f
 	11026 bugfix_acceptnonstd_def				a5ebe4f877
 	10731 log_more_uacomment					b3e0e3f170
-	10957 -										28c612d087													# Avoid BIP9Stats object w/ uninitialized values
-	11169 rm_hide_tabs-0.15						93f5ee585e									# Make tabs toolbar no longer have a context menu
-	11198 -										2bb0ac1cb9													# [Qt] Fix pkg name on 'open config file' tooltip
-	11206 fix_hidetrayicon_accel				eed9a49c41							# Fix accelerator key for Hide tray icon
-	11208 fix_offscreen-0.15					518d05399e								last=6067244698	# Fixing offscreen GUI issue
-	11332 bugfix_customfeeradio-0.15			10e3cd04b2						last=cdaf3a1f9e
+	10957 -										28c612d087	# Avoid BIP9Stats object w/ uninitialized values
+	11169 rm_hide_tabs-0.15						93f5ee585e	# Make tabs toolbar no longer have a context menu
+	11198 -										2bb0ac1cb9	# [Qt] Fix pkg name on 'open config file' tooltip
+	11206 fix_hidetrayicon_accel				eed9a49c41	# Fix accelerator key for Hide tray icon
+	11208 fix_offscreen-0.15					518d05399e	last=6067244698	# Fixing offscreen GUI issue
+	11332 bugfix_customfeeradio-0.15			10e3cd04b2	last=cdaf3a1f9e
 # FUNCTIONALITY:
 	n/a  def_sse4_sha256						bf9540b1f4
 	7061 wallet_rescan_rpc-0.15					a2a32be9a9	last=bf6f25373a
@@ -35,7 +34,7 @@ checkout v0.15.0
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs							95cf8a9936 last=222cfb940d  # multisig sorting
+	8751 sort-multisigs							95cf8a9936	last=222cfb940d  # multisig sorting
 	11089 p2shp2wpkhstuff						eaceeb3ec0  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							9bf4a397ff
@@ -46,7 +45,7 @@ checkout v0.15.0
 	8550 old_stats_qt							961efb8653	last=251ee28
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	9422 mempool_dat_extensible					f84754560e
-	9991 listreceivedbyaddress-filtered			4cae0a2cd0 last=c262be5  # listreceivedbyaddress Filter Address; was #9503
+	9991 listreceivedbyaddress-filtered			4cae0a2cd0	last=c262be5  # listreceivedbyaddress Filter Address; was #9503
 	9504 dumpmasterprivkey						50d85ee436	last=07fc81109a
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
@@ -62,29 +61,29 @@ checkout v0.15.0
 	# needs review/concept ack: 10233 and/or 10386
 	# TODO 10267 (conflicts with rwconf?)
 	10275 gettx-with-blockhash-0.15				8f338e0578	last=300a5f15d5	# [rpc] Allow fetching tx directly from specified block in getrawtransaction
-	10554 zmq_wtx								e700ad2d22											last=d358230d10	# ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx								e700ad2d22	last=d358230d10	# ZMQ: add publishers for wallet transactions.
 	10593 relax_invblk_punishment				b8f7d06a62
 	10594 whitelist_outgoing					82b021688b
-	10350 codeshark/MFWB_no_bump_2				a493278023							# Added support for MSG_FILTERED_WITNESS_BLOCK messages
+	10350 codeshark/MFWB_no_bump_2				a493278023	# Added support for MSG_FILTERED_WITNESS_BLOCK messages
 	10729 scriptex								8e6403dde7
-	10730 scriptflag_strings-mini				1e4295e36e							last=97cae3915f
-	n/a   script_debugger-mini					0afed0460e								last=8d1ff9f035 script_debugger
-	10871 cli_getinfo-0.15						977d461711									last=f2fde56bc6 achow101/cli-getinfo
+	10730 scriptflag_strings-mini				1e4295e36e	last=97cae3915f
+	n/a   script_debugger-mini					0afed0460e	last=8d1ff9f035 script_debugger
+	10871 cli_getinfo-0.15						977d461711	last=f2fde56bc6 achow101/cli-getinfo
 		# test not backported, since it relies on very new frameworks
-	10997 stdinrpcpass+cli_getinfo-0.15			d6f667ebb8						# Add option -stdinrpcpass to bitcoin-cli
+	10997 stdinrpcpass+cli_getinfo-0.15			d6f667ebb8	# Add option -stdinrpcpass to bitcoin-cli
 	# Requires new QA stuff? 11125 promag/2017-08-stdinrpcpass-functional-test
-	11099 rpc_savemempool+mempool_dat_ext-0.15	941c2f6363				last=1aa97ee088
+	11099 rpc_savemempool+mempool_dat_ext-0.15	941c2f6363	last=1aa97ee088
 	# TODO: 11117 sipa:201708_nocbitcoinaddress
 	# TODO: 11167 sipa:201708_bech32
 	# TODO: 11177 rawodb:pr/rpc_getsegwitaddresses
 	# TODO: 11178 MeshCollider:201708_rawtx_bool
 	# TODO: 11200 achow101:gui-recan-abort
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
-	11203 rpc_mempoolentry_txhash				e731a14670							last=617c459c6c
+	11203 rpc_mempoolentry_txhash				e731a14670	last=617c459c6c
 # Non-upstreamed functionality:
 	7107 qtnetworkport							7f9a041b82	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force+knots					2e39a01eba	last=89e516ffcb sendraw_force
-	11082 rwconf-0.15							ed1db5c2ff										last=59d78f9fc1 rwconf
+	11082 rwconf-0.15							ed1db5c2ff	last=59d78f9fc1 rwconf
 	7510 rwconf_gui-0.15+qtnetworkport			8cd547a79b	last=87f7d1f455 rwconf_gui-0.15
 	5916 keyorigin								1538fa0865
 	 559 accept_nonstdtxn						b4dacf415a
@@ -110,7 +109,7 @@ checkout v0.15.0
 	7483 svg_icon								9769b4d222
 # BRANDING:
 	n/a  knots_branding							11cd47d0c4
-	n/a  (cherrypick=af9c353c0dd6012e91)		2ddc6eb90e					# doc/{bips,files}
+	n/a  (cherrypick=af9c353c0dd6012e91)		2ddc6eb90e	# doc/{bips,files}
 	n/a  (bump_version=Knots:20170914)			046850d23d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=32f41a825e)				10c01d90e4  # release notes: write/update, including change log and credits
