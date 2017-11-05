@@ -55,7 +55,7 @@ checkout v0.15.0
 	# not ready: 9745 [RPC] Getting confirmations command
 	9849 gui_netwatch							57541053e3
 	10615 multiwallet_rpc+opt_libevent			a1db2f517d	last=370d3361e8
-	- multiwallet_gui+rm_hide_tabs				eb8203dbb3	last=7790bcdbf2 multiwallet_gui
+	11383 multiwallet_gui+rm_hide_tabs			eb8203dbb3	last=7790bcdbf2 multiwallet_gui
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs review? CONSIDER FOR 0.15.0 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
