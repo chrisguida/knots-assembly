@@ -1,8 +1,8 @@
-timestamp 2017-09-14 21:11:40
+timestamp 2017-11-05 11:05:21
 
 #.. checked up to PR #11209
 
-checkout v0.15.0
+checkout v0.15.1rc1
 @0.15.x-syslibs
 	5872 subdir_incl_compat						f45c042844
 	2241 sys_leveldb							1640e1c33d
@@ -27,6 +27,7 @@ checkout v0.15.0
 	11208 fix_offscreen-0.15					518d05399e	last=6067244698	# Fixing offscreen GUI issue
 	11332 bugfix_customfeeradio-0.15			10e3cd04b2	last=cdaf3a1f9e
 # FUNCTIONALITY:
+	-     restore_blockmaxsize
 	n/a  def_sse4_sha256						bf9540b1f4
 	7061 wallet_rescan_rpc-0.15					a2a32be9a9	last=bf6f25373a
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
@@ -104,7 +105,7 @@ checkout v0.15.0
 	#dropping? -    spamfilter+sendraw_force				bbbcd274b6
 	9749 unique_spk_mempool+sendraw_force		34c0aaacee	last=9b75ab5b39
 	-    rwconf_policy							087352a73a
-		#TODO: final rebase
+		TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon								9769b4d222
 # BRANDING:
