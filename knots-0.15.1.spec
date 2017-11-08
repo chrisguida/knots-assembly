@@ -35,10 +35,10 @@ m	7061 wallet_rescan_rpc-0.15+knots			a2a32be9a9	last=7a91ceb5e0
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-m	8751 sort-multisigs							95cf8a9936	last=50e2ff58f2  # multisig sorting
+m	8751 sort-multisigs-0.15					95cf8a9936	last=50e2ff58f2  # multisig sorting
 	11089 p2shp2wpkhstuff						eaceeb3ec0  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
-	9152 sweepprivkeys							9bf4a397ff
+	9152 sweepprivkeys-0.15						9bf4a397ff	last=d109d58e2e
 	9245 ionice									6a8229f3b6
 	-    ionice_win								c590dfa43d
 	8501 old_stats_rpc							86b9b56a46	last=7af0ea43b2
@@ -47,7 +47,7 @@ m	8751 sort-multisigs							95cf8a9936	last=50e2ff58f2  # multisig sorting
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	9422 mempool_dat_extensible					f84754560e
 	9991 listreceivedbyaddress-filtered			4cae0a2cd0	last=c262be5  # listreceivedbyaddress Filter Address; was #9503
-	9504 dumpmasterprivkey						50d85ee436	last=07fc81109a
+	9504 dumpmasterprivkey-0.15					50d85ee436	last=07fc81109a
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready: 9662 Add `-disablehot` mode: a sane mode for watchonly-wallets
@@ -106,7 +106,7 @@ m	5891 qt_console_history_persist-0.15		243acc6420	last=d5046701e0 qt_console_hi
 	#dropping? -    spamfilter+sendraw_force				bbbcd274b6
 	9749 unique_spk_mempool+sendraw_force		34c0aaacee	last=9b75ab5b39
 m	-    rwconf_policy							087352a73a
-		TODO: final rebase (fix blockmax{size,weight})
+		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon								9769b4d222
 # BRANDING:
