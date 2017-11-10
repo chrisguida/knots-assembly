@@ -1,6 +1,6 @@
 timestamp 2017-11-05 11:05:21
 
-#.. checked up to PR #11209
+#.. checked up to PR #11655
 
 checkout v0.15.1rc1
 @0.15.x-syslibs
@@ -14,6 +14,8 @@ m	7339 opt_libevent-0.15						c151287c2f
 # TESTS:
 	7142 travis_qt4								2aa48dfe11
 	-    travis_nolibevent						f7502f2cba
+	11310 -													# [tests] Test listwallets RPC
+	11365 -													# [Tests] Add Qt GUI tests to Overview and ReceiveCoin Page
 # FIXES:
 	9524 marco/Mf1701-qaPruning					f3cbbc60c6
 	#10529? systemd stuff
@@ -26,7 +28,12 @@ TM	11198 -										2bb0ac1cb9	# [Qt] Fix pkg name on 'open config file' tooltip
 	11206 fix_hidetrayicon_accel				eed9a49c41	# Fix accelerator key for Hide tray icon
 NM	11208 fix_offscreen-0.15					518d05399e	# Fixing offscreen GUI issue
 TM	11332 bugfix_customfeeradio-0.15			10e3cd04b2
+?	11418 maaku/cleanstack-error-code
+	11554 matt/2017-10-bitcoin-tx-script-sizes
+	# Needs changes: 11596 practicalswift/chainActive
+?	11634 practicalswift/missing-wallet-locks
 # FUNCTIONALITY:
+	11529 promag/2017-10-txindex-get-transaction
 	-     restore_blockmaxsize
 	n/a  def_sse4_sha256						bf9540b1f4
 m	7061 wallet_rescan_rpc-0.15+knots			a2a32be9a9	last=7a91ceb5e0
@@ -44,6 +51,7 @@ m	8751 sort-multisigs-0.15					95cf8a9936	last=50e2ff58f2  # multisig sorting
 	8501 old_stats_rpc							86b9b56a46	last=7af0ea43b2
 		# Held back on old version due to lack of GUI updates
 	8550 old_stats_qt							961efb8653	last=251ee28
+		# NOTE: partial rebase at https://github.com/jonasschnelli/bitcoin/pull/9
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	9422 mempool_dat_extensible					f84754560e
 	9991 listreceivedbyaddress-filtered			4cae0a2cd0	last=c262be5  # listreceivedbyaddress Filter Address; was #9503
@@ -82,6 +90,25 @@ m	10350 filtered_witblock-0.15				a493278023	last=3f388ddcd3 codeshark/MFWB_no_b
 	# TODO: 11200 achow101:gui-recan-abort
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	11203 rpc_mempoolentry_txhash				e731a14670	last=617c459c6c
+	11256 -													# RPC: add weight to mempool entry output
+	11258 jnewbery/expose_ibd
+	# Needs review: 11281 jonasschnelli/2017/09/rescan_locks
+	11316 promag/2017-09-add-use-available-balance
+	# Needs changes: 11359 -								# pruning 'high water mark'
+		# TODO: maybe do this for him
+	11367 -													# [rpc] getblockchaininfo: add size_on_disk, prune_target_size
+	11370 promag/2017-09-add-getblockchaininfo-functional-test	# depends on 11367
+	11395 gui_search_txid-0.14								last=eac2abca02
+	# Needs changes: 11413 kallewoof/explicit-fee							# [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
+		# TODO: maybe do it myself
+?	11441 or equivalent
+*	11466 w/o default changes
+	11471 jonasschnelli/2017/10/qt_sendtoself
+	11491 -													# [gui] Add proxy icon in statusbar
+	11499 -													# [Qt] Add upload and download info to the peerlist
+	# TODO, Needs work: 11622 laanwj/2017_11_bip70_disable
+	11626 laanwj/2017_11_logging_rpc_public_release
+	11653 NicolasDorier/getsignaturehash
 # Non-upstreamed functionality:
 	7107 qtnetworkport							7f9a041b82	last=1f37c87 origin-pull/7107/head
 m	7533 sendraw_force+knots					2e39a01eba	last=89e516ffcb sendraw_force
