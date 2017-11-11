@@ -10,6 +10,7 @@ m	5416 sys_libsecp256k1-0.15					2aa4352aa0	last=37109ccc1d sys_libsecp256k1
 	7485 sys_univalue_def						49018af089
 	5618 separate_utils							92f93108dd
 m	7339 opt_libevent-0.15						c151287c2f
+	11622 bip70_disable-0.15								last=72b11fe859
 @0.15.x-knots
 # TESTS:
 	7142 travis_qt4								2aa48dfe11
@@ -28,10 +29,10 @@ TM	11198 -										2bb0ac1cb9	# [Qt] Fix pkg name on 'open config file' tooltip
 	11206 fix_hidetrayicon_accel				eed9a49c41	# Fix accelerator key for Hide tray icon
 NM	11208 fix_offscreen-0.15					518d05399e	# Fixing offscreen GUI issue
 TM	11332 bugfix_customfeeradio-0.15			10e3cd04b2
-?	11418 maaku/cleanstack-error-code
+	11418 maaku/cleanstack-error-code
 	11554 matt/2017-10-bitcoin-tx-script-sizes
-	# Needs changes: 11596 practicalswift/chainActive
-?	11634 practicalswift/missing-wallet-locks
+	11596 practicalswift/chainActive
+	11634 practicalswift/missing-wallet-locks
 # FUNCTIONALITY:
 	11529 promag/2017-10-txindex-get-transaction
 	-     restore_blockmaxsize
@@ -94,21 +95,18 @@ m	10350 filtered_witblock-0.15				a493278023	last=3f388ddcd3 codeshark/MFWB_no_b
 	11258 jnewbery/expose_ibd
 	# Needs review: 11281 jonasschnelli/2017/09/rescan_locks
 	11316 promag/2017-09-add-use-available-balance
-	# Needs changes: 11359 -								# pruning 'high water mark'
-		# TODO: maybe do this for him
 	11367 -													# [rpc] getblockchaininfo: add size_on_disk, prune_target_size
 	11370 promag/2017-09-add-getblockchaininfo-functional-test	# depends on 11367
 	11395 gui_search_txid-0.14								last=eac2abca02
 	# Needs changes: 11413 kallewoof/explicit-fee							# [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
 		# TODO: maybe do it myself
-?	11441 or equivalent
-*	11466 w/o default changes
+	# Needs consideration: 11466 w/o default changes
 	11471 jonasschnelli/2017/10/qt_sendtoself
 	11491 -													# [gui] Add proxy icon in statusbar
 	11499 -													# [Qt] Add upload and download info to the peerlist
-	# TODO, Needs work: 11622 laanwj/2017_11_bip70_disable
 	11626 laanwj/2017_11_logging_rpc_public_release
 	11653 NicolasDorier/getsignaturehash
+	11658 ibd_prune_extra
 # Non-upstreamed functionality:
 	7107 qtnetworkport							7f9a041b82	last=1f37c87 origin-pull/7107/head
 m	7533 sendraw_force+knots					2e39a01eba	last=89e516ffcb sendraw_force
