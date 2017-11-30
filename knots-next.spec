@@ -44,7 +44,7 @@ m	7061 wallet_rescan_rpc-0.15+knots			81860049bb	last=7a91ceb5e0
 m	8751 sort-multisigs-0.15					df6cffed47	last=50e2ff58f2  # multisig sorting
 	11089 p2shp2wpkhstuff						f36a9fcfab  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
-	9152 sweepprivkeys-0.15						435a063f0e	last=d109d58e2e
+	9152 sweepprivkeys-0.15						435a063f0e	last=a397deb247
 	9245 ionice									63041adffd
 	-    ionice_win								9df27e8828
 	8501 old_stats_rpc							828af4e879	last=7af0ea43b2
