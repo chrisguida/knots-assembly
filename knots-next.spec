@@ -10,7 +10,7 @@ m	5416 sys_libsecp256k1-0.15					1d38d78d4f	last=37109ccc1d sys_libsecp256k1
 	7485 sys_univalue_def						027bc28176
 	5618 separate_utils							9d3b7993ba
 m	7339 opt_libevent-0.15						e7e2488213
-	11622 bip70_disable-0.15					5dbcd1a73d								last=72b11fe859
+	11622 bip70_disable-0.15					5dbcd1a73d	last=72b11fe859
 @0.15.x-knots
 # TESTS:
 	7142 travis_qt4								43159367a0
@@ -27,12 +27,12 @@ TM	11198 -										7b50ee94ec	# [Qt] Fix pkg name on 'open config file' tooltip
 	11206 fix_hidetrayicon_accel				ea60ee1c69	# Fix accelerator key for Hide tray icon
 NM	11208 fix_offscreen-0.15					bcbd921a1b	# Fixing offscreen GUI issue
 TM	11332 bugfix_customfeeradio-0.15			42f95a2490
-	11418 cleanstack_errorcode-0.13				b8ec1a9ef4							last=cee28fbc3f
-	11554 bitcoin-tx-script-sizes-0.14			474a81f3cb						last=a6f33ea77d
-	11596 chainactive_locking-0.14				c949b13d71							last=9b3d094894
-	11634 walletlocks-0.15						7914050bdb									last=007fcbff2f
+	11418 cleanstack_errorcode-0.13				b8ec1a9ef4	last=cee28fbc3f
+	11554 bitcoin-tx-script-sizes-0.14			474a81f3cb	last=a6f33ea77d
+	11596 chainactive_locking-0.14				c949b13d71	last=9b3d094894
+	11634 walletlocks-0.15						7914050bdb	last=007fcbff2f
 # FUNCTIONALITY:
-	11529 txindex_skip_slow-0.14				f167960f04							last=7a5f9303a9
+	11529 txindex_skip_slow-0.14				f167960f04	last=7a5f9303a9
 	-     restore_blockmaxsize					64a04dbf61
 	n/a  def_sse4_sha256						4a4cf895b9
 m	7061 wallet_rescan_rpc-0.15+knots			81860049bb	last=7a91ceb5e0
@@ -89,23 +89,23 @@ m	10350 filtered_witblock-0.15				ee55b7d144	last=3f388ddcd3 codeshark/MFWB_no_b
 	# TODO: 11200 achow101:gui-recan-abort
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				a2c58f6cb9
-	11203 rpc_mempoolentry_wtxid-0.15+knots		5e8ce60a93					last=617c459c6c
-	11256 rpc_mempoolentry_weight-0.15+knots	0ae7920df4				last=d4b0d81b58
+	11203 rpc_mempoolentry_wtxid-0.15+knots		5e8ce60a93	last=617c459c6c
+	11256 rpc_mempoolentry_weight-0.15+knots	0ae7920df4	last=d4b0d81b58
 	# Needs review: 11281 jonas/2017/09/rescan_locks
 	11316 gui_sendbalance-0.11					11e14dd419
-	11370 qa_getblkchaininfo-0.15				7fb96bc51c							last=f6ffb14367
-	11367 rpc_blkchaininfo_disksize-0.15+knots	a74f987659				last=b7dfc6c4b8
+	11370 qa_getblkchaininfo-0.15				7fb96bc51c	last=f6ffb14367
+	11367 rpc_blkchaininfo_disksize-0.15+knots	a74f987659	last=b7dfc6c4b8
 	11258 rpc_blkchaininfo_ibd-0.15+knots		0354c6f7a7
-	11395 gui_search_txid-0.15					a5142fc37a								last=eac2abca02
+	11395 gui_search_txid-0.15					a5142fc37a	last=eac2abca02
 	# Needs changes: 11413 kallewoof/explicit-fee							# [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
 		# TODO: maybe do it myself
 	# Needs consideration: 11466 w/o default changes
-	11471 gui_sendtoself_label-0.10				7c64ef38db							last=a0102314df
+	11471 gui_sendtoself_label-0.10				7c64ef38db	last=a0102314df
 	# Needs work: 11491 -													# [gui] Add proxy icon in statusbar
 		# Without Tor indicator, shows Proxy for normal+Tor users
-	11499 gui_peerlist_dataxfer-0.14			314a25d694						last=6b1891e2c0	# [Qt] Add upload and download info to the peerlist
-	11626 rpc_logging-0.15						82905e2bc5									last=cabff75880
-	11653 rpc_getsignaturehash-0.15+knots		6bc34f035c					last=0a688c4f61
+	11499 gui_peerlist_dataxfer-0.14			314a25d694	last=6b1891e2c0	# [Qt] Add upload and download info to the peerlist
+	11626 rpc_logging-0.15						82905e2bc5	last=cabff75880
+	11653 rpc_getsignaturehash-0.15+knots		6bc34f035c	last=0a688c4f61
 	11658 ibd_prune_extra						f7eb8d892c
 # Non-upstreamed functionality:
 	7107 qtnetworkport							c94d8a6dd7	last=1f37c87 origin-pull/7107/head
