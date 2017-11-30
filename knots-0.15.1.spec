@@ -1,8 +1,8 @@
-timestamp 2017-11-05 11:05:21
+timestamp 2017-11-11 17:49:30
 
 #.. checked up to PR #11655
 
-checkout v0.15.1rc1
+checkout v0.15.1
 @0.15.x-syslibs
 	5872 subdir_incl_compat						f45c042844
 	2241 sys_leveldb							1640e1c33d
@@ -15,8 +15,6 @@ m	7339 opt_libevent-0.15						c151287c2f
 # TESTS:
 	7142 travis_qt4								2aa48dfe11
 	-    travis_nolibevent						f7502f2cba
-	11310 -													# [tests] Test listwallets RPC
-	11365 -													# [Tests] Add Qt GUI tests to Overview and ReceiveCoin Page
 # FIXES:
 	9524 marco/Mf1701-qaPruning					f3cbbc60c6
 	#10529? systemd stuff
@@ -29,12 +27,12 @@ TM	11198 -										2bb0ac1cb9	# [Qt] Fix pkg name on 'open config file' tooltip
 	11206 fix_hidetrayicon_accel				eed9a49c41	# Fix accelerator key for Hide tray icon
 NM	11208 fix_offscreen-0.15					518d05399e	# Fixing offscreen GUI issue
 TM	11332 bugfix_customfeeradio-0.15			10e3cd04b2
-	11418 maaku/cleanstack-error-code
-	11554 matt/2017-10-bitcoin-tx-script-sizes
-	11596 practicalswift/chainActive
-	11634 practicalswift/missing-wallet-locks
+	11418 cleanstack_errorcode-0.13							last=cee28fbc3f
+	11554 bitcoin-tx-script-sizes-0.14						last=a6f33ea77d
+	11596 chainactive_locking-0.14							last=9b3d094894
+	11634 walletlocks-0.15									last=007fcbff2f
 # FUNCTIONALITY:
-	11529 promag/2017-10-txindex-get-transaction
+	11529 txindex_skip_slow-0.14							last=7a5f9303a9
 	-     restore_blockmaxsize
 	n/a  def_sse4_sha256						bf9540b1f4
 m	7061 wallet_rescan_rpc-0.15+knots			a2a32be9a9	last=7a91ceb5e0
@@ -65,13 +63,13 @@ m	8751 sort-multisigs-0.15					95cf8a9936	last=50e2ff58f2  # multisig sorting
 	# not ready: 9745 [RPC] Getting confirmations command
 	9849 gui_netwatch							57541053e3
 	10615 multiwallet_rpc+opt_libevent			a1db2f517d	last=370d3361e8
-m	11383 multiwallet_gui-0.15+rm_hide_tabs		eb8203dbb3	last=6445a935e6 multiwallet_gui
+m	11383 multiwallet_gui-0.15+knots			eb8203dbb3	last=6445a935e6 multiwallet_gui
 		# holding back from 7790bcdbf2..6445a935e6: callback refactor (stash 2116665f95), wallet selector comment
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs review? CONSIDER FOR 0.15.0 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
 	# TODO 10267 (conflicts with rwconf?)
-m	10275 gettx-with-blockhash-0.15				8f338e0578	last=4d15dce560	# [rpc] Allow fetching tx directly from specified block in getrawtransaction
+m	10275 gettx-with-blockhash-0.15+knots		8f338e0578	last=4d15dce560	# [rpc] Allow fetching tx directly from specified block in getrawtransaction
 m	10554 zmq_wtx								e700ad2d22	last=ed4fd266f7	# ZMQ: add publishers for wallet transactions.
 m	10593 relax_invblk_punishment-0.15			b8f7d06a62	last=c36864368a relax_invblk_punishment
 m	10594 whitelist_outgoing-0.15				82b021688b	last=416f9b9541 whitelist_outgoing
@@ -90,22 +88,24 @@ m	10350 filtered_witblock-0.15				a493278023	last=3f388ddcd3 codeshark/MFWB_no_b
 	# TODO: 11178 MeshCollider:201708_rawtx_bool
 	# TODO: 11200 achow101:gui-recan-abort
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
-	11203 rpc_mempoolentry_txhash				e731a14670	last=617c459c6c
-	11256 -													# RPC: add weight to mempool entry output
-	11258 jnewbery/expose_ibd
-	# Needs review: 11281 jonasschnelli/2017/09/rescan_locks
-	11316 promag/2017-09-add-use-available-balance
-	11367 -													# [rpc] getblockchaininfo: add size_on_disk, prune_target_size
-	11370 promag/2017-09-add-getblockchaininfo-functional-test	# depends on 11367
-	11395 gui_search_txid-0.14								last=eac2abca02
+	-     rpc_mempoolentry_txhash				e731a14670
+	11203 rpc_mempoolentry_wtxid-0.15+knots					last=617c459c6c
+	11256 rpc_mempoolentry_weight-0.15+knots				last=d4b0d81b58
+	# Needs review: 11281 jonas/2017/09/rescan_locks
+	11316 gui_sendbalance-0.11
+	11370 qa_getblkchaininfo-0.15							last=f6ffb14367
+	11367 rpc_blkchaininfo_disksize-0.15+knots				last=b7dfc6c4b8
+	11258 rpc_blkchaininfo_ibd-0.15+knots
+	11395 gui_search_txid-0.15								last=eac2abca02
 	# Needs changes: 11413 kallewoof/explicit-fee							# [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
 		# TODO: maybe do it myself
 	# Needs consideration: 11466 w/o default changes
-	11471 jonasschnelli/2017/10/qt_sendtoself
-	11491 -													# [gui] Add proxy icon in statusbar
-	11499 -													# [Qt] Add upload and download info to the peerlist
-	11626 laanwj/2017_11_logging_rpc_public_release
-	11653 NicolasDorier/getsignaturehash
+	11471 gui_sendtoself_label-0.10							last=a0102314df
+	# Needs work: 11491 -													# [gui] Add proxy icon in statusbar
+		# Without Tor indicator, shows Proxy for normal+Tor users
+	11499 gui_peerlist_dataxfer-0.14						last=6b1891e2c0	# [Qt] Add upload and download info to the peerlist
+	11626 rpc_logging-0.15									last=cabff75880
+	11653 rpc_getsignaturehash-0.15+knots					last=0a688c4f61
 	11658 ibd_prune_extra
 # Non-upstreamed functionality:
 	7107 qtnetworkport							7f9a041b82	last=1f37c87 origin-pull/7107/head
@@ -137,14 +137,14 @@ m	-    rwconf_policy							087352a73a
 # BRANDING:
 	n/a  knots_branding							11cd47d0c4
 	n/a  (cherrypick=af9c353c0dd6012e91)		2ddc6eb90e	# doc/{bips,files}
-	n/a  (bump_version=Knots:20171105)			046850d23d
+	n/a  (bump_version=Knots:20171111)			046850d23d
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=32f41a825e)				10c01d90e4  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=38ee93d976)				10c01d90e4  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=703daed7c9)				431cf19a91  # translation update
-	n/a  (cherrypick=e6478ff3f4)				3ae5fe9a5b	# update manpages
+	n/a  (cherrypick=e82aca5f8c)				431cf19a91  # translation update
+	n/a  (cherrypick=8d8e7db1ab)				3ae5fe9a5b	# update manpages
 # NOTE: use git diff --minimal for patches!
