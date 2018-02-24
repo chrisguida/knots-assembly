@@ -9,6 +9,8 @@ checkout v0.15.1
 m	5416 sys_libsecp256k1-0.15					1d38d78d4f	last=37109ccc1d sys_libsecp256k1
 	7485 sys_univalue_def						027bc28176
 	5618 separate_utils							9d3b7993ba
+	12246 separate_utils
+		FIXME: split the branches?
 m	7339 opt_libevent-0.15						e7e2488213
 	11622 bip70_disable-0.15					5dbcd1a73d	last=72b11fe859
 @0.15.x-knots
@@ -77,6 +79,7 @@ m	10350 filtered_witblock-0.15				ee55b7d144	last=3f388ddcd3 codeshark/MFWB_no_b
 	10729 scriptex								7ece29590e
 	10730 scriptflag_strings-mini				b828bc08be	last=97cae3915f
 	n/a   script_debugger-mini					b13b502e4e	last=8d1ff9f035 script_debugger
+		FIXME: [detached HEAD 91976ef251] Bugfix: script_tests: Only define debugger_cbs if HAVE_CONSENSUS_LIB
 	10871 cli_getinfo-0.15						9df59c3522	last=5e69a430ee achow101/cli-getinfo
 		# test not backported, since it relies on very new frameworks
 	10997 stdinrpcpass+cli_getinfo-0.15			c87497cf0b	# Add option -stdinrpcpass to bitcoin-cli
@@ -122,6 +125,7 @@ m	5891 qt_console_history_persist-0.15		c5df60c17f	last=d5046701e0 qt_console_hi
 	7219 txrepl_fullrbf							333528ea38
 	# TODO: some way to add UA comments via rwconf
 	10282 timebomb_knots-0.15					647f952869	last=21f123db98
+	TODO 12146 opt_wallet_segwit2
 	n/a  checkpoint_update						106849c664
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
@@ -131,6 +135,7 @@ m	5891 qt_console_history_persist-0.15		c5df60c17f	last=d5046701e0 qt_console_hi
 	#dropping? -    spamfilter+sendraw_force				bbbcd274b6
 	9749 unique_spk_mempool+sendraw_force		c2cabb6288	last=9b75ab5b39
 m	-    rwconf_policy							c45bdb9b2a
+		FIXME: dustminfee needs to forbid 0 or allow 0
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon								d4266f2cc2
