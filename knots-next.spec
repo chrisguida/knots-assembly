@@ -1,8 +1,8 @@
-timestamp 2017-11-11 17:49:30
+timestamp 2018-02-24 20:14:58
 
-#.. checked up to PR #11655
+#.. checked up to PR #12558
 
-checkout v0.15.1
+checkout v0.16.0
 @0.15.x-syslibs
 	5872 subdir_incl_compat						fc9f50d046
 	2241 sys_leveldb							e3ab3ceb16
@@ -33,6 +33,12 @@ TM	11332 bugfix_customfeeradio-0.15			42f95a2490
 	11554 bitcoin-tx-script-sizes-0.14			474a81f3cb	last=a6f33ea77d
 	11596 chainactive_locking-0.14				c949b13d71	last=9b3d094894
 	11634 walletlocks-0.15						7914050bdb	last=007fcbff2f
+	# Needs review? 12172 jtimon/b16-bugfix-savemempool
+	12432 Sjors/2018/02/qt-send-clear-all-coin-control
+	12479 - # RPC: Add child transactions to getrawmempool verbose output
+	12491 - # Try to use posix_fadvise with CBufferedFile
+	12495 - # Increase LevelDB max_open_files on 64-bit POSIX systems
+	12501 - # [qt] Improved "custom fee" explanation in tooltip
 # FUNCTIONALITY:
 	11529 txindex_skip_slow-0.14				f167960f04	last=7a5f9303a9
 	-     restore_blockmaxsize					64a04dbf61
@@ -47,6 +53,8 @@ m	8751 sort-multisigs-0.15					df6cffed47	last=50e2ff58f2  # multisig sorting
 	11089 p2shp2wpkhstuff						f36a9fcfab  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys-0.15						435a063f0e	last=a397deb247
+	12196 jonas/2017/12/utxo_sweep
+		FIXME: combine with 9152? get rid of address garbage...
 	9245 ionice									63041adffd
 	-    ionice_win								9df27e8828
 	8501 old_stats_rpc							828af4e879	last=7af0ea43b2
@@ -110,6 +118,26 @@ m	10350 filtered_witblock-0.15				ee55b7d144	last=3f388ddcd3 codeshark/MFWB_no_b
 	11626 rpc_logging-0.15						82905e2bc5	last=cabff75880
 	11653 rpc_getsignaturehash-0.15+knots		6bc34f035c	last=0a688c4f61
 	11658 ibd_prune_extra						f7eb8d892c
+		# Consider replacing with 12404...
+	11666 NicolasDorier/signinput
+	11708?
+	11742 MarcoFalke/Mf1711-rpcMempoolAcceptOne
+	11750 - # Multiselect in coincontrol treewidget and display selected count
+	11765 - # [REST] added blockhash api, tests and documentation
+	11770 - # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11803 bugfix_dumpwallet_hdkeypath
+	# 11872? MarcoFalke:Mf1712-rpcCreateRawSortedOuts (what's the use case?)
+	11937? - # Qt: Setting for deciding address type (legacy, p2sh or bech32)
+	12080 promag/2018-01-searchaddressbook
+	12096 kallewoof/better-bumpfee
+	12136 achow101/psbt
+	12208 gui_legacy_bech32
+	12240 - # [rpc] Introduced a new `fees` structure that aggregates all sub-field fee types denominated in BTC
+	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters
+	12257 kallewoof/feature-addrgrouped-coinselect
+		FIXME: minimize/safety-ify patch
+	12321 - # p2wsh and p2sh-p2wsh address in decodescript
+	12421 Sjors/2018/02/qt-goto-transactions-after-send
 # Non-upstreamed functionality:
 	7107 qtnetworkport							c94d8a6dd7	last=1f37c87 origin-pull/7107/head
 m	7533 sendraw_force+knots					12cfec6d9d	last=89e516ffcb sendraw_force
@@ -142,7 +170,7 @@ m	-    rwconf_policy							c45bdb9b2a
 # BRANDING:
 	n/a  knots_branding							b31017ae44
 	n/a  (cherrypick=af9c353c0dd6012e91)		3921a4b3cc	# doc/{bips,files}
-	n/a  (bump_version=Knots:20171111)			3e23b17b68
+	n/a  (bump_version=Knots:20180224)			3e23b17b68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=38ee93d976)				b0dc9e2e3e  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
