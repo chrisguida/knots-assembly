@@ -8,9 +8,8 @@ checkout v0.16.0
 	2241 sys_leveldb							e3ab3ceb16
 m	5416 sys_libsecp256k1-0.15					1d38d78d4f	last=37109ccc1d sys_libsecp256k1
 	7485 sys_univalue_def						027bc28176
-	5618 separate_utils							9d3b7993ba
+	5618 separate_utils_only					9d3b7993ba
 	12246 separate_utils
-		FIXME: split the branches?
 m	7339 opt_libevent-0.15						e7e2488213
 	11622 bip70_disable-0.15					5dbcd1a73d	last=72b11fe859
 @0.15.x-knots
@@ -53,8 +52,7 @@ m	8751 sort-multisigs-0.15					df6cffed47	last=50e2ff58f2  # multisig sorting
 	11089 p2shp2wpkhstuff						f36a9fcfab  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys-0.15						435a063f0e	last=a397deb247
-	12196 jonas/2017/12/utxo_sweep
-		FIXME: combine with 9152? get rid of address garbage...
+	12196 sweepprivkeys+scantxoutset						last=2c006f558b jonas/2017/12/utxo_sweep
 	9245 ionice									63041adffd
 	-    ionice_win								9df27e8828
 	8501 old_stats_rpc							828af4e879	last=7af0ea43b2
@@ -86,8 +84,7 @@ m	10594 whitelist_outgoing-0.15				ede93391aa	last=416f9b9541 whitelist_outgoing
 m	10350 filtered_witblock-0.15				ee55b7d144	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 	10729 scriptex								7ece29590e
 	10730 scriptflag_strings-mini				b828bc08be	last=97cae3915f
-	n/a   script_debugger-mini					b13b502e4e	last=8d1ff9f035 script_debugger
-		FIXME: [detached HEAD 91976ef251] Bugfix: script_tests: Only define debugger_cbs if HAVE_CONSENSUS_LIB
+	n/a   script_debugger-mini					b13b502e4e	last=1d3ed0c48a script_debugger
 	10871 cli_getinfo-0.15						9df59c3522	last=5e69a430ee achow101/cli-getinfo
 		# test not backported, since it relies on very new frameworks
 	10997 stdinrpcpass+cli_getinfo-0.15			c87497cf0b	# Add option -stdinrpcpass to bitcoin-cli
@@ -134,8 +131,7 @@ m	10350 filtered_witblock-0.15				ee55b7d144	last=3f388ddcd3 codeshark/MFWB_no_b
 	12208 gui_legacy_bech32
 	12240 - # [rpc] Introduced a new `fees` structure that aggregates all sub-field fee types denominated in BTC
 	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters
-	12257 kallewoof/feature-addrgrouped-coinselect
-		FIXME: minimize/safety-ify patch
+	12257 avoidpartialspends-0.16						last=cf9df64071 kallewoof/feature-addrgrouped-coinselect
 	12321 - # p2wsh and p2sh-p2wsh address in decodescript
 	12421 Sjors/2018/02/qt-goto-transactions-after-send
 # Non-upstreamed functionality:
