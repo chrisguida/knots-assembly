@@ -1,4 +1,5 @@
 timestamp 2018-02-24 20:14:58
+lastapply no-merge
 
 #.. checked up to PR #12558
 
@@ -134,6 +135,7 @@ m	10350 filtered_witblock-0.15				ee55b7d144	last=3f388ddcd3 codeshark/MFWB_no_b
 	12257 avoidpartialspends-0.16						last=cf9df64071 kallewoof/feature-addrgrouped-coinselect
 	12321 - # p2wsh and p2sh-p2wsh address in decodescript
 	12421 Sjors/2018/02/qt-goto-transactions-after-send
+	12568 zero_dustrelayfee_opt
 # Non-upstreamed functionality:
 	7107 qtnetworkport							c94d8a6dd7	last=1f37c87 origin-pull/7107/head
 m	7533 sendraw_force+knots					12cfec6d9d	last=89e516ffcb sendraw_force
@@ -149,7 +151,7 @@ m	5891 qt_console_history_persist-0.15		c5df60c17f	last=d5046701e0 qt_console_hi
 	7219 txrepl_fullrbf							333528ea38
 	# TODO: some way to add UA comments via rwconf
 	10282 timebomb_knots-0.15					647f952869	last=21f123db98
-	TODO 12146 opt_wallet_segwit2
+	12146 opt_wallet_segwit2
 	n/a  checkpoint_update						106849c664
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
@@ -159,7 +161,6 @@ m	5891 qt_console_history_persist-0.15		c5df60c17f	last=d5046701e0 qt_console_hi
 	#dropping? -    spamfilter+sendraw_force				bbbcd274b6
 	9749 unique_spk_mempool+sendraw_force		c2cabb6288	last=9b75ab5b39
 m	-    rwconf_policy							c45bdb9b2a
-		FIXME: dustminfee needs to forbid 0 or allow 0
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon								d4266f2cc2
