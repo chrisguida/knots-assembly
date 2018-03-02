@@ -38,7 +38,6 @@ checkout v0.16.0
 			# check if issue mentioned in 7753 still exists
 	8751 sort-multisigs-0.16					df6cffed47	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
-	# FIXME REGRESSION: 11089 p2shp2wpkhstuff						f36a9fcfab  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys-0.15						435a063f0e	last=a397deb247
 	12196 sweepprivkeys+scantxoutset						last=2c006f558b jonas/2017/12/utxo_sweep
