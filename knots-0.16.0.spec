@@ -31,15 +31,14 @@ checkout v0.16.0
 	12501 text_customfee-0.16								last=0bc095efd8  # [qt] Improved "custom fee" explanation in tooltip
 # FUNCTIONALITY:
 	-     restore_blockmaxsize					64a04dbf61
-	n/a  def_sse4_sha256						4a4cf895b9
-	7061 wallet_rescan_rpc-0.15+knots			81860049bb	last=7a91ceb5e0
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs-0.15					df6cffed47	last=50e2ff58f2  # multisig sorting
-	11089 p2shp2wpkhstuff						f36a9fcfab  # replacing 8992, 9017; removed sign/verify message stuff
+	8751 sort-multisigs-0.16					df6cffed47	last=e11cb50a09  # multisig sorting
+		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
+	# FIXME REGRESSION: 11089 p2shp2wpkhstuff						f36a9fcfab  # replacing 8992, 9017; removed sign/verify message stuff
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys-0.15						435a063f0e	last=a397deb247
 	12196 sweepprivkeys+scantxoutset						last=2c006f558b jonas/2017/12/utxo_sweep
@@ -103,6 +102,7 @@ checkout v0.16.0
 	12321 - # p2wsh and p2sh-p2wsh address in decodescript
 	12421 Sjors/2018/02/qt-goto-transactions-after-send
 	12568 zero_dustrelayfee_opt
+	12580 -
 # Non-upstreamed functionality:
 	7107 qtnetworkport							c94d8a6dd7	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force+knots					12cfec6d9d	last=89e516ffcb sendraw_force
