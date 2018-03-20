@@ -21,9 +21,11 @@ checkout v0.16.0
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						b62c04406f
 	10731 log_more_uacomment					9104b40f1d
-	11596 chainactive_locking-0.16				c949b13d71	last=8ce8e75cd7
-		# held back 8ce8e75cd7 which is just a comment change, to minimise diff
-	11634 walletlocks-0.16						7914050bdb	last=491ec75b9f
+	# Too much churn/risk: 11596 chainactive_locking-0.16				c949b13d71	last=617c3188d5
+		# held back 8ce8e75cd7-358dfc51e0 which is just a comment change and annotations, to minimise diff
+		# held back a496a43699->ef997d66cc removal of double locking cs_main
+	# too much churn/bugs, probably irrelevant:
+	# ^ 11634 walletlocks-0.16						7914050bdb	last=491ec75b9f
 		# held back annotations, and minimised patch
 	# Needs review? 12172 jtimon/b16-bugfix-savemempool
 	12432 clear_all_coinctl-0.16							last=f506c0a7f8
@@ -67,7 +69,8 @@ checkout v0.16.0
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
 	# TODO 10267 (conflicts with rwconf?)
-	10554 -										5316e0003c  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-0.16							5316e0003c	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	12674 rpc_onetry_nonpriv
 	10593 relax_invblk_punishment				ee052bf276
 	10594 whitelist_outgoing					ede93391aa
 	10350 filtered_witblock-0.16				ee55b7d144	last=3f388ddcd3 codeshark/MFWB_no_bump_2
@@ -80,13 +83,13 @@ checkout v0.16.0
 	-     rpc_mempoolentry_txhash				a2c58f6cb9
 	11256 rpc_mempoolentry_weight-0.16+knots	0ae7920df4	last=d4b0d81b58
 	11413 explicit_fee-0.16									last=ff9f32eeac kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
-	11471 gui_sendtoself_label-0.16				7c64ef38db	last=a0102314df
+	11471 gui_sendtoself_label-0.16				7c64ef38db	last=c23bd2892b
 	11491 -													# [gui] Add proxy icon in statusbar
 	11653 rpc_getsignaturehash+knots			6bc34f035c	last=0a688c4f61 NicolasDorier/getsignaturehash
 	11658 ibd_prune_extra						f7eb8d892c
 		# Consider replacing with 12404...
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
-	11708 signrawtx_wsh-0.16								last=576624ce95
+	# Needs thought/Concept ACK: 11708 signrawtx_wsh-0.16								last=576624ce95
 	# Not ready: 11742 testmempoolaccept-0.16							last=faa03a6dad
 		# test fails, RPC includes int instead of bool, etc
 	11750 - # Multiselect in coincontrol treewidget and display selected count
@@ -95,45 +98,45 @@ checkout v0.16.0
 	11803 bugfix_dumpwallet_hdkeypath
 	# 11872? MarcoFalke:Mf1712-rpcCreateRawSortedOuts (what's the use case?)
 	12080 promag/2018-01-searchaddressbook
-	12096 bumpfee_reduce_output-0.16						last=765162c22f kallewoof/better-bumpfee
+	12096 bumpfee_reduce_output-0.16						last=8430032df2 kallewoof/better-bumpfee
 	12136 psbt-0.16											last=85fbed49e6 achow101/psbt
 	12208 gui_legacy_bech32
 	12240 rpc_mempool_fees-0.16								last=450ec6eed9  # [rpc] Introduced a new `fees` structure that aggregates all sub-field fee types denominated in BTC
 	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters
-	12257 avoidpartialspends-0.16							last=50c894b115 kallewoof/feature-addrgrouped-coinselect
+	12257 avoidpartialspends-0.16							last=a011e8bfdb kallewoof/feature-addrgrouped-coinselect
 	12321 decodescript-p2wsh-0.16							last=4f933b3d23  # p2wsh and p2sh-p2wsh address in decodescript
 	12421 send_to_txhistory-0.16
 	12568 zero_dustrelayfee_opt
 	12580 gui_vsize-0.16
-	# TODO: https://twitter.com/AdrianHuma/status/970766004832923650?s=19
+	12677 listunspent_ancestorinfo-0.16						last=daeb431011 listunspent_ancestorinfo
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					64a04dbf61
 	7107 qtnetworkport							c94d8a6dd7	last=1f37c87 origin-pull/7107/head
-	7533 sendraw_force+knots					12cfec6d9d	last=89e516ffcb sendraw_force
-	11082 rwconf-0.15							e91bf830e6	last=59d78f9fc1 rwconf
-	7510 rwconf_gui-0.15+qtnetworkport			2f5d4369d0	last=87f7d1f455 rwconf_gui-0.15
-		TODO: Reimplement 11937 Qt: Setting for deciding address type (legacy, p2sh or bech32)
+	7533 sendraw_force+knots					12cfec6d9d  # Latest code now
+	11082 rwconf-0.16							e91bf830e6	last=148c4ec24e rwconf
+	7510 rwconf_gui-0.16+knots					2f5d4369d0	# Latest code now
 	5916 keyorigin								c5f583dfdc
 	 559 accept_nonstdtxn						1243d2838c
 	 929 tbc									d84d257f1c
 	 553 bugfix_qt_uri_amount_parser			d7f460d856
 	-    mining_priority-0.16					5db805e1ee  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					f63829b67c
-	5891 qt_console_history_persist-0.15		c5df60c17f	last=d5046701e0 qt_console_history_persist
+	5891 qt_console_history_persist				c5df60c17f
 	7219 txrepl_fullrbf							333528ea38
 	# TODO: some way to add UA comments via rwconf
-	10282 timebomb_knots-0.15					647f952869	last=21f123db98
+	10282 timebomb_knots						647f952869
 	12146 opt_wallet_segwit2
 	n/a  checkpoint_update						106849c664
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget
-	-	 bytespersigopstrict+sendraw_force		0b671f305d
-	9749 unique_spk_mempool+sendraw_force		c2cabb6288	last=9b75ab5b39
-	-    rwconf_policy							c45bdb9b2a
+	-	 bytespersigopstrict+knots				0b671f305d
+	9749 unique_spk_mempool+knots				c2cabb6288
+	-    rwconf_policy-0.16+knots				c45bdb9b2a
+		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
-	7483 svg_icon								d4266f2cc2
+	7483 svg_icon-0.16+knots					d4266f2cc2
 # BRANDING:
 	n/a  knots_branding							b31017ae44
 FIXME: Check includes use <>
