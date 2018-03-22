@@ -1,4 +1,4 @@
-timestamp 2018-02-24 20:14:58
+timestamp 2018-03-21 17:41:05
 lastapply no-merge
 
 #.. checked up to PR #12558
@@ -84,7 +84,8 @@ checkout v0.16.0
 	11256 rpc_mempoolentry_weight-0.16+knots	0ae7920df4	last=d4b0d81b58
 	11413 explicit_fee-0.16									last=ff9f32eeac kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
 	11471 gui_sendtoself_label-0.16				7c64ef38db	last=c23bd2892b
-	11491 -													# [gui] Add proxy icon in statusbar
+	11491 proxy_icon-0.16+knots								last=d4b6d92f53  # [gui] Add proxy icon in statusbar
+		# NOTE: uses manual merge to avoid crazy conflict in svg_icon later
 	11653 rpc_getsignaturehash+knots			6bc34f035c	last=0a688c4f61 NicolasDorier/getsignaturehash
 	11658 ibd_prune_extra						f7eb8d892c
 		# Consider replacing with 12404...
@@ -135,25 +136,22 @@ checkout v0.16.0
 	-    rwconf_policy-0.16+knots				c45bdb9b2a
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
+	-    txrepl_fullrbf_default+knots						last=61fae13df1 txrepl_fullrbf_default
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.16+knots					d4266f2cc2
 # BRANDING:
-	n/a  knots_branding							b31017ae44
-FIXME: Check includes use <>
-TODO: Check if any pushKV do booleans
-+    bool pushKV(const std::string& key, bool val_) __attribute__((deprecated)) {
-         UniValue tmpVal((bool)val_);
-         return pushKV(key, tmpVal);
-     }
-	n/a  (cherrypick=af9c353c0dd6012e91)		3921a4b3cc	# doc/{bips,files}
-	n/a  (bump_version=Knots:20180224)			3e23b17b68
+	n/a  knots_branding-0.16					b31017ae44
+#FIXME: Check includes use <>
+#TODO: Check if any pushKV do booleans
+	n/a  (cherrypick=ff00b54211c29afc99)		3921a4b3cc	# doc/{bips,files}
+	n/a  (bump_version=Knots:20180321)			3e23b17b68
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=38ee93d976)				b0dc9e2e3e  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=b264b31c28)				b0dc9e2e3e  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=e82aca5f8c)				89aa6c3923  # translation update
-	n/a  (cherrypick=8d8e7db1ab)				4c3f4e6fed	# update manpages
+	n/a  (cherrypick=d5e5bdbe2a)				89aa6c3923  # translation update
+	n/a  (cherrypick=477382f413)				4c3f4e6fed	# update manpages
 # NOTE: use git diff --minimal for patches!
