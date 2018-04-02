@@ -1,5 +1,5 @@
 timestamp 2018-03-21 17:41:05
-lastapply no-merge
+#lastapply no-merge
 
 #.. checked up to PR #12558
 
@@ -28,12 +28,12 @@ checkout v0.16.0
 	# ^ 11634 walletlocks-0.16						7914050bdb	last=491ec75b9f
 		# held back annotations, and minimised patch
 	# Needs review? 12172 jtimon/b16-bugfix-savemempool
-	12432 clear_all_coinctl-0.16				0c022c9a50							last=f506c0a7f8
-	12479 rawmempool_spentby-0.16				052cf41f16							last=1dfb4e7d75  # RPC: Add child transactions to getrawmempool verbose output
-	12491 fadvise-0.16							81e6159537										last=5259c72a76  # Try to use posix_fadvise with CBufferedFile
-	12495 leveldb_max_open_files-0.16			1bb2e4277e						last=21e2144a31  # Increase LevelDB max_open_files on 64-bit POSIX systems
+	12432 clear_all_coinctl-0.16				0c022c9a50	last=f506c0a7f8
+	12479 rawmempool_spentby-0.16				052cf41f16	last=1dfb4e7d75  # RPC: Add child transactions to getrawmempool verbose output
+	12491 fadvise-0.16							81e6159537	last=5259c72a76  # Try to use posix_fadvise with CBufferedFile
+	12495 leveldb_max_open_files-0.16			1bb2e4277e	last=21e2144a31  # Increase LevelDB max_open_files on 64-bit POSIX systems
 		# held back changes to developer doc file
-	12501 text_customfee-0.16					31dc91ef25								last=0bc095efd8  # [qt] Improved "custom fee" explanation in tooltip
+	12501 text_customfee-0.16					31dc91ef25	last=0bc095efd8  # [qt] Improved "custom fee" explanation in tooltip
 	12573 bugfix_no_clz-0.16					f22512d576  # Fix compilation when compiler do not support __builtin_clz*
 # FUNCTIONALITY:
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
@@ -45,7 +45,7 @@ checkout v0.16.0
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys+sort_multisigs			b7cfb4f153	last=127ec180bd sweepprivkeys
-	12196 sweepprivkeys+scantxoutset			0bb54a08ab						last=3835de0da4 jonas/2017/12/utxo_sweep
+	12196 sweepprivkeys+scantxoutset			0bb54a08ab	last=3835de0da4 jonas/2017/12/utxo_sweep
 	9245 ionice									ee401959ec
 	-    ionice_win								1773e4c91c
 	8501 old_stats_rpc-0.16						f1433a2ba2	last=7af0ea43b2
@@ -82,9 +82,9 @@ checkout v0.16.0
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				103772d8b9
 	11256 rpc_mempoolentry_weight-0.16+knots	5c160d5a58	last=d4b0d81b58
-	11413 explicit_fee-0.16						2176d12bd2									last=ff9f32eeac kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
+	11413 explicit_fee-0.16						2176d12bd2	last=ff9f32eeac kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
 	11471 gui_sendtoself_label-0.16				908d7e8dbe	last=c23bd2892b
-	11491 proxy_icon-0.16+knots					536d878e03								last=d4b6d92f53  # [gui] Add proxy icon in statusbar
+	11491 proxy_icon-0.16+knots					536d878e03	last=d4b6d92f53  # [gui] Add proxy icon in statusbar
 		# NOTE: uses manual merge to avoid crazy conflict in svg_icon later
 	11653 rpc_getsignaturehash+knots			cb1f212066	last=0a688c4f61 NicolasDorier/getsignaturehash
 	11658 ibd_prune_extra						b344103db7
@@ -95,21 +95,21 @@ checkout v0.16.0
 		# test fails, RPC includes int instead of bool, etc
 	11750 -										b95268b9b5 # Multiselect in coincontrol treewidget and display selected count
 	11765 -										ca0e508d5b # [REST] added blockhash api, tests and documentation
-	11770 rest_fee-0.16							3aeca1daea										last=935b364978  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11770 rest_fee-0.16							3aeca1daea	last=935b364978  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			2b60c654de
 	# 11872? MarcoFalke:Mf1712-rpcCreateRawSortedOuts (what's the use case?)
 	12080 promag/2018-01-searchaddressbook		0b5a3f21dc
-	12096 bumpfee_reduce_output-0.16			1a34df91aa						last=8430032df2 kallewoof/better-bumpfee
-	12136 psbt-0.16								3b0ff8c589											last=85fbed49e6 achow101/psbt
+	12096 bumpfee_reduce_output-0.16			1a34df91aa	last=8430032df2 kallewoof/better-bumpfee
+	12136 psbt-0.16								3b0ff8c589	last=85fbed49e6 achow101/psbt
 	12208 gui_legacy_bech32						c43ed38811
-	12240 rpc_mempool_fees-0.16					d33e09676c								last=450ec6eed9  # [rpc] Introduced a new `fees` structure that aggregates all sub-field fee types denominated in BTC
+	12240 rpc_mempool_fees-0.16					d33e09676c	last=450ec6eed9  # [rpc] Introduced a new `fees` structure that aggregates all sub-field fee types denominated in BTC
 	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters
-	12257 avoidpartialspends-0.16				3dd27638f6							last=a011e8bfdb kallewoof/feature-addrgrouped-coinselect
-	12321 decodescript-p2wsh-0.16				2a90a5c300							last=4f933b3d23  # p2wsh and p2sh-p2wsh address in decodescript
+	12257 avoidpartialspends-0.16				3dd27638f6	last=a011e8bfdb kallewoof/feature-addrgrouped-coinselect
+	12321 decodescript-p2wsh-0.16				2a90a5c300	last=4f933b3d23  # p2wsh and p2sh-p2wsh address in decodescript
 	12421 send_to_txhistory-0.16				2987bef6f3
 	12568 zero_dustrelayfee_opt					4382e57d64
 	12580 gui_vsize-0.16						2bec130bb0
-	12677 listunspent_ancestorinfo-0.16			7b9bcb392a						last=daeb431011 listunspent_ancestorinfo
+	12677 listunspent_ancestorinfo-0.16			7b9bcb392a	last=daeb431011 listunspent_ancestorinfo
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					5498f1f3ee
 	7107 qtnetworkport							645688ac3d	last=1f37c87 origin-pull/7107/head
@@ -136,7 +136,7 @@ checkout v0.16.0
 	-    rwconf_policy-0.16+knots				f1d39ca5a2
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
-	-    txrepl_fullrbf_default+knots			e044d3c789						last=61fae13df1 txrepl_fullrbf_default
+	-    txrepl_fullrbf_default+knots			e044d3c789	last=61fae13df1 txrepl_fullrbf_default
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.16+knots					c22208def9
 # BRANDING:
