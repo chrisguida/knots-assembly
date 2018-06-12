@@ -1,9 +1,9 @@
-timestamp 2018-03-21 17:41:05
+timestamp 2018-06-12 14:47:03
 #lastapply no-merge
 
-#.. checked up to PR #12558
+#.. checked up to PR #13452
 
-checkout v0.16.0
+checkout v0.16.1rc2
 @0.16.x-syslibs
 	5872 subdir_incl_compat						9ded41c3f3
 	2241 sys_leveldb							5d340f9cc8
@@ -13,8 +13,10 @@ checkout v0.16.0
 	12246 separate_utils						9435351ece
 	7339 opt_libevent-0.16						1f6a4c1b16
 	11622 bip70_disable-0.16					7cbbf97899	last=7ecca66062
+	? 13355 practicalswift:openbsd-gmake-check
 @0.16.x-knots
 # TESTS:
+	13105 jamesob/2018-04-testrunner-failfast
 	-    travis_nolibevent						b1459695b2
 # FIXES:
 	9524 marco/Mf1701-qaPruning					98b97a8e8a
@@ -35,6 +37,20 @@ checkout v0.16.0
 		# held back changes to developer doc file
 	12501 text_customfee-0.16					31dc91ef25	last=0bc095efd8  # [qt] Improved "custom fee" explanation in tooltip
 	12573 bugfix_no_clz-0.16					f22512d576  # Fix compilation when compiler do not support __builtin_clz*
+	12617 laanwj/2018_03_gui_textbox
+	12622 laanwj/2018_03_addrman_log_fixup
+	12696 -													# Fix possible data race when committing block files
+	# For 0.17: Revert #12723?
+	PARTIAL: 12743 sipa:201803_waitblockchange
+	12784 practicalswift/calc-error
+	12793 MarcoFalke/Mf1803-qtReset0
+	12859 incl_memory
+		FIXME: maybe include this one in syslibs?
+	13084 sipa/201804_keepnegone
+	minimized 13120 MarcoFalke:Mf1805-segwitGenesisPolicy
+	13149 practicalswift/fseek
+	min-diff 13159 practicalswift/handle-reopen-failed
+	13452 instagibbs/actuallyverifytxoutproof
 # FUNCTIONALITY:
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -102,6 +118,7 @@ checkout v0.16.0
 	12096 bumpfee_reduce_output-0.16			1a34df91aa	last=8430032df2 kallewoof/better-bumpfee
 	12136 psbt-0.16								3b0ff8c589	last=85fbed49e6 achow101/psbt
 	12208 gui_legacy_bech32						c43ed38811
+		# merged as 13251
 	12240 rpc_mempool_fees-0.16					d33e09676c	last=450ec6eed9  # [rpc] Introduced a new `fees` structure that aggregates all sub-field fee types denominated in BTC
 	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters
 	12257 avoidpartialspends-0.16				3dd27638f6	last=a011e8bfdb kallewoof/feature-addrgrouped-coinselect
@@ -110,12 +127,48 @@ checkout v0.16.0
 	12568 zero_dustrelayfee_opt					4382e57d64
 	12580 gui_vsize-0.16						2bec130bb0
 	12677 listunspent_ancestorinfo-0.16			7b9bcb392a	last=daeb431011 listunspent_ancestorinfo
+	12559 promag/2018-02-avoid-cs_main-lock
+	PART OF 12560 achow101:sethdseed
+	MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
+	12616 promag/2018-03-modaloverlay
+	12621 promag/2018-03-transaction-filter-avoid-querying
+	12653 jonasschnelli/2018/03/blocksdir
+	12676 dexX7/rpc-raw-replaceable-flag
+	12705 kallewoof/importmulti-wif-support
+	12763 JeremyRubin/whitelistrpc
+	12769 ???
+	12778 -													# RPC: Add username and ip logging for RPC method requests
+	? 12783
+	12791 TheBlueMatt/2018-03-weight
+	? 12792 w/ renamed param
+	12818 Sjors/2018/03/bump-fee-focus
+	12854 desktop_categories
+	12911 kallewoof/sign-show-fees
+	12965 jonasschnelli/2018/04/svt
+	ADD ONLY 13008 # rpc: Rename size to vsize in mempool related calls
+	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
+	13072 ajtowns/signmultisig
+		FIXME: rename legacy to bip16
+	13134 laanwj/2018_05_optional_bip61
+	13151 laanwj/2018_05_direct_from_disk
+	13152 chris-belcher/2018-04-rpc-getaddress
+	13158 -													# [Qt]: Improve sendcoinsdialog readability
+	13191 sipa/201709_dsha256_64
+	13203 TheBlueMatt/2018-05-asm
+	FIXME 13386 sipa/201806_shani
+	13393 sipa/201806_dsha256_i386
+	13442 sipa/201806_sse4intrin
+	13310 promag/2018-05-replayblocks-progress
+	13339 promag/2018-05-walletnotify
+	minimised 13399 MarcoFalke/Mf1806-rpcBlockHeader
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					5498f1f3ee
+		FIXME: revert 12756
 	7107 qtnetworkport							645688ac3d	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force+knots					fd19c84489  # Latest code now
 	11082 rwconf-0.16							ca7aa3dd0e	last=148c4ec24e rwconf
 	7510 rwconf_gui-0.16+knots					908a4ef45a	# Latest code now
+	13043 -													# [qt] OptionsDialog: add prune setting
 	5916 keyorigin								fda5d449a6
 	 559 accept_nonstdtxn						9e19784420
 	 929 tbc									5110d02ef0
@@ -128,6 +181,7 @@ checkout v0.16.0
 	10282 timebomb_knots						ab29a63d68
 	12146 opt_wallet_segwit2					e8acde8cf8
 	n/a  checkpoint_update						5e7956fbf6
+	# 0.17: Revert 12795
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				a7ebee1c57
@@ -141,6 +195,8 @@ checkout v0.16.0
 	7483 svg_icon-0.16+knots					c22208def9
 # BRANDING:
 	n/a  knots_branding-0.16					df804fb452
+FIXME: ADD Icon=bitcoinknots to desktop file
+FIXME: Check Univalue 1.0.3 is sufficient to build
 #FIXME: Check includes use <>
 #TODO: Check if any pushKV do booleans
 	n/a  (cherrypick=ff00b54211c29afc99)		a652129367	# doc/{bips,files}
