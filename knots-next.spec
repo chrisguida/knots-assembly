@@ -40,17 +40,17 @@ checkout v0.16.1
 	12501 text_customfee-0.16					04bfba481a	last=0bc095efd8  # [qt] Improved "custom fee" explanation in tooltip
 	12573 bugfix_no_clz-0.16					d71bd11d76  # Fix compilation when compiler do not support __builtin_clz*
 	12617 2018_03_gui_textbox-0.16				41fd6d14c1
-	12696 eklitzke_fsync-0.16					1cfc3aeddc								last=4894e368fa  # Fix possible data race when committing block files
+	12696 eklitzke_fsync-0.16					1cfc3aeddc	last=4894e368fa  # Fix possible data race when committing block files
 	# For 0.17: Revert #12723?
 	12743 201803_waitblockchange-0.16			e59a996089
 		# NOTE: held back variable renaming
 	12793 fix_resetgui0-0.16					9d49645994
-	13084 fix_1neg-0.16							7ffec1c189										last=5af7625079 sipa/201804_keepnegone
+	13084 fix_1neg-0.16							7ffec1c189	last=5af7625079 sipa/201804_keepnegone
 	# Requires 11739, which touches too much consensus logic: minimized 13120 MarcoFalke:Mf1805-segwitGenesisPolicy
 	13149 check_fseek-0.16						4d62acbe06
-	13159 handle-reopen-failed-0.16				ade70fc69a							last=37efe5b7ea practicalswift/handle-reopen-failed
+	13159 handle-reopen-failed-0.16				ade70fc69a	last=37efe5b7ea practicalswift/handle-reopen-failed
 		# minimised diff
-	13452 actuallyverifytxoutproof-0.16			f4a7b09cd5						last=d280617bf5 instagibbs/actuallyverifytxoutproof
+	13452 actuallyverifytxoutproof-0.16			f4a7b09cd5	last=d280617bf5 instagibbs/actuallyverifytxoutproof
 	-     optimise_wallet_inv-0.16				74c9c1b11f
 	13437 walletPrunedFundsSegfault-0.16		d7e2a677a2
 	13545 bugfix_streams_test-0.16				b5b94d985a
@@ -144,19 +144,19 @@ m	12240 rpc_mempool_fees-0.16					20e64d6b07	last=7de1de7da4  # [rpc] Introduced
 	12616 modaloverlay-hide-default-0.16		3b6c1f15a7
 	12621 gui_txfilter_optimise-0.16			0963d6a9af
 	12653 blocksdir-0.16						be136cf8df
-	12676 rawmempool_bip125-0.16+knots			09d5c52f39						last=870bd4c73d
+	12676 rawmempool_bip125-0.16+knots			09d5c52f39	last=870bd4c73d
 		# NOTE: rewritten
 	# TODO: 12705 kallewoof/importmulti-wif-support
-	12763 rpcwhitelist-0.16						7d793131db									last=8c45d93b0e
+	12763 rpcwhitelist-0.16						7d793131db	last=8c45d93b0e
 	# 12769 ???
 	12778 rpc_loguser-0.16+knots				bc9ef3a4ab
-	12783 disable_appnap-0.16					04125efb41								last=33a25f1e02
+	12783 disable_appnap-0.16					04125efb41	last=33a25f1e02
 		# Retained older inhibitor too
 	12791 rpc_tx_weight-0.16					ef02484afe
 	# TODO ? 12792 w/ renamed param
-	12818 gui_feebump_select-0.16				63745c7be5							last=90c614cb8b
-	12911 signrawtx_showfees-0.16				1bf2a1ee4f							last=b7159aa585 kallewoof/sign-show-fees
-	12965 scriptthreads-0.16+knots				00c2ae90f5							last=dfab6c6866 jonas/2018/04/svt
+	12818 gui_feebump_select-0.16				63745c7be5	last=90c614cb8b
+	12911 signrawtx_showfees-0.16				1bf2a1ee4f	last=b7159aa585 kallewoof/sign-show-fees
+	12965 scriptthreads-0.16+knots				00c2ae90f5	last=dfab6c6866 jonas/2018/04/svt
 	# TODO ADD ONLY 13008 # rpc: Rename size to vsize in mempool related calls
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	# Needs fixes: 13072 ajtowns/signmultisig
@@ -171,11 +171,11 @@ m	12240 rpc_mempool_fees-0.16					20e64d6b07	last=7de1de7da4  # [rpc] Introduced
 	13471 avxossupport-0.16						ca8dca3a9f
 	13408 dsha256_cleanup-0.16+knots			e9c541e8a5
 	13438 dsha256_selftest-0.16					b5fe11969b
-	13386 dsha256_shani-0.16					0f5ea68849								last=66b2cf1ccf sipa/201806_shani
+	13386 dsha256_shani-0.16					0f5ea68849	last=66b2cf1ccf sipa/201806_shani
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.16					eef4629013								last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.16					eef4629013	last=3b402e0738 matt/2018-05-asm
 	# TODO: Possible performance concern 13310 promag/2018-05-replayblocks-progress
-	13339 walletnotify_w-0.16					de556050f8								last=cef0327afd promag/2018-05-walletnotify
+	13339 walletnotify_w-0.16					de556050f8	last=cef0327afd promag/2018-05-walletnotify
 	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c marco/Mf1806-rpcBlockHeader
 		# held back removal of duplicate-header submission check
 # Non-upstreamed functionality:
