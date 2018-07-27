@@ -13,7 +13,7 @@ checkout v0.16.2
 	12246 separate_utils						3101ffbc0d
 	7339 opt_libevent-0.16						e748672088
 	11622 bip70_disable-0.16					2df1371ff1	last=7ecca66062
-	12859 incl_memory							7a8558fdd5
+TM	12859 incl_memory							7a8558fdd5
 	12854 desktop_categories					08f6cceb4f
 	-     ppa_updates-0.16						7810c2d1d3
 @0.16.x-knots
@@ -32,32 +32,32 @@ checkout v0.16.2
 	# ^ 11634 walletlocks-0.16						7914050bdb	last=491ec75b9f
 		# held back annotations, and minimised patch
 	# Needs review? 12172 jtimon/b16-bugfix-savemempool
-	12432 clear_all_coinctl-0.16				42f0d7e7da	last=f506c0a7f8
+TM	12432 clear_all_coinctl-0.16				42f0d7e7da
 	12479 rawmempool_spentby-0.16				ff31f0fed3	last=1dfb4e7d75  # RPC: Add child transactions to getrawmempool verbose output
 	12491 fadvise-0.16							cec7997900	last=5259c72a76  # Try to use posix_fadvise with CBufferedFile
 	12495 leveldb_max_open_files-0.16			fb33260e1e	last=ccedbafd73  # Increase LevelDB max_open_files on 64-bit POSIX systems
 		# held back changes to developer doc file
 	12501 text_customfee-0.16					04bfba481a	last=0bc095efd8  # [qt] Improved "custom fee" explanation in tooltip
-	12573 bugfix_no_clz-0.16					d71bd11d76  # Fix compilation when compiler do not support __builtin_clz*
-	12617 2018_03_gui_textbox-0.16				41fd6d14c1
+TM	12573 bugfix_no_clz-0.16					d71bd11d76
+TM	12617 2018_03_gui_textbox-0.16				41fd6d14c1
 	12696 eklitzke_fsync-0.16					1cfc3aeddc	last=4894e368fa  # Fix possible data race when committing block files
 	# For 0.17: Revert #12723?
-	12743 201803_waitblockchange-0.16			e59a996089
+TM	12743 201803_waitblockchange-0.16			e59a996089
 		# NOTE: held back variable renaming
-	12793 fix_resetgui0-0.16					9d49645994
+TM	12793 fix_resetgui0-0.16					9d49645994
 	13084 fix_1neg-0.16							7ffec1c189	last=5af7625079 sipa/201804_keepnegone
 	# Requires 11739, which touches too much consensus logic: minimized 13120 MarcoFalke:Mf1805-segwitGenesisPolicy
 	13149 check_fseek-0.16						4d62acbe06
 	13159 handle-reopen-failed-0.16				ade70fc69a	last=37efe5b7ea practicalswift/handle-reopen-failed
 		# minimised diff
-	13452 actuallyverifytxoutproof-0.16			f4a7b09cd5	last=d280617bf5 instagibbs/actuallyverifytxoutproof
-	-     optimise_wallet_inv-0.16				74c9c1b11f
-	13437 walletPrunedFundsSegfault-0.16		d7e2a677a2
-	13545 bugfix_streams_test-0.16				b5b94d985a
-	13300 bugfix_qa_lockstack-0.16				9a30600318
-	12887 bugfix_log_newlines-0.16				fd469899df
-	13304 bugfix_wallet_listreceivedby_test-0.16	ca63969f98
-	13192 bugfix_p2p_sendheaders-0.16			fa7f49cca1
+TM	13452 actuallyverifytxoutproof-0.16			f4a7b09cd5
+NM	-     optimise_wallet_inv-0.16				74c9c1b11f
+TM	13437 walletPrunedFundsSegfault-0.16		d7e2a677a2
+TM	13545 bugfix_streams_test-0.16				b5b94d985a
+TM	13300 bugfix_qa_lockstack-0.16				9a30600318
+TM	12887 bugfix_log_newlines-0.16				fd469899df
+TM	13304 bugfix_wallet_listreceivedby_test-0.16	ca63969f98
+TM	13192 bugfix_p2p_sendheaders-0.16			fa7f49cca1
 # FUNCTIONALITY:
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
