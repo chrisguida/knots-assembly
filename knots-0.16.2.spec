@@ -3,7 +3,7 @@ timestamp 2018-07-21 02:05:23
 
 #.. checked up to PR #13452
 
-checkout v0.16.1
+checkout v0.16.2
 @0.16.x-syslibs
 	5872 subdir_incl_compat						0dc6410709
 	2241 sys_leveldb-0.16						303e7fb17b
@@ -174,6 +174,7 @@ m	12240 rpc_mempool_fees-0.16					20e64d6b07	last=7de1de7da4  # [rpc] Introduced
 	13386 dsha256_shani-0.16					0f5ea68849	last=66b2cf1ccf sipa/201806_shani
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
 	13203 dsha256_power8-0.16					eef4629013	last=3b402e0738 matt/2018-05-asm
+FIXME: CXXFLAGS conflict; --disable-asm
 	# TODO: Possible performance concern 13310 promag/2018-05-replayblocks-progress
 	13339 walletnotify_w-0.16					de556050f8	last=cef0327afd promag/2018-05-walletnotify
 	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c marco/Mf1806-rpcBlockHeader
