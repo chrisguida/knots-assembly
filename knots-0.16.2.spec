@@ -1,7 +1,7 @@
 timestamp 2018-07-21 02:05:23
 #lastapply no-merge
 
-#.. checked up to PR #13452
+#.. checked up to PR #13797
 
 checkout v0.16.2
 @0.16.x-syslibs
@@ -16,6 +16,9 @@ checkout v0.16.2
 TM	12859 incl_memory							7a8558fdd5
 	12854 desktop_categories					08f6cceb4f
 	-     ppa_updates-0.16						7810c2d1d3
+	13788 bugfix_asm_opt-0.16								last=4207c1b35c bugfix_asm_opt
+	13789 bugfix_asm_pragmas-0.16							last=8bca9cd7ba bugfix_asm_pragmas
+	-     bugfix_asm_leveldb_pragma-0.16
 @0.16.x-knots
 # TESTS:
 	13105 test_failfast-0.16					14caa2b18f
@@ -58,6 +61,10 @@ TM	13300 bugfix_qa_lockstack-0.16				9a30600318
 TM	12887 bugfix_log_newlines-0.16				fd469899df
 TM	13304 bugfix_wallet_listreceivedby_test-0.16	ca63969f98
 TM	13192 bugfix_p2p_sendheaders-0.16			fa7f49cca1
+	13547 bugfix_signraw_amountcheck-0.16
+	13608 bugfix_b-tx_amountcheck-0.15						last=876f49c6cd
+	13655 bugfix_libcon_verify_invflags-0.16
+	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 # FUNCTIONALITY:
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -165,20 +172,27 @@ m	12240 rpc_mempool_fees-0.16					20e64d6b07	last=7de1de7da4  # [rpc] Introduced
 	13151 direct_from_disk-0.16+knots			2829679e32
 	# Test fails: 13152 rpc_getnodeaddress-0.16							last=f10e380630
 	13158 gui_send_readability-0.16				055bb837f8
-	13191 dsha256_64-0.16						816e2f1228
+m	13191 dsha256_64-0.16+knots					816e2f1228
 		# Includes 13611
 	13393 dsha256_i386-0.16						93be77a787
 	13471 avxossupport-0.16						ca8dca3a9f
 	13408 dsha256_cleanup-0.16+knots			e9c541e8a5
 	13438 dsha256_selftest-0.16					b5fe11969b
-	13386 dsha256_shani-0.16					0f5ea68849	last=66b2cf1ccf sipa/201806_shani
+m	13386 dsha256_shani-0.16+knots				0f5ea68849	last=66b2cf1ccf sipa/201806_shani
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.16					eef4629013	last=3b402e0738 matt/2018-05-asm
-FIXME: CXXFLAGS conflict; --disable-asm
+m	13203 dsha256_power8-0.16+knots				eef4629013	last=3b402e0738 matt/2018-05-asm
+	-     bugfix_asm_opt_and_pragmas-0.16+knots
 	# TODO: Possible performance concern 13310 promag/2018-05-replayblocks-progress
 	13339 walletnotify_w-0.16					de556050f8	last=cef0327afd promag/2018-05-walletnotify
 	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c marco/Mf1806-rpcBlockHeader
 		# held back removal of duplicate-header submission check
+	13537 gui_peertable_inout-0.10
+	# Needs work: 13541 wallet/rpc: sendrawtransaction maxfeerate
+	13570 rpc_getzmqnotifications-0.16
+	# Needs review: 13666 Always create signatures with Low R values
+	# Needs work: 13697 Support output descriptors in scantxoutset
+	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
+	# Needs review: 13791 gui: Reject EditAddressDialog on ESC key
 # Non-upstreamed functionality:
 m	-     restore_blockmaxsize					a7ec6a7fe8
 	7107 qtnetworkport							49b1a942eb	last=1f37c87 origin-pull/7107/head
@@ -221,6 +235,7 @@ m	-    rwconf_policy-0.16+knots				e4d1059638
 	n/a  (bump_version=Knots:20180721)			ce9c0d36f4
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=b4fac14a1f)				e003de4b07  # release notes: write/update, including change log and credits
+#ADD: https://github.com/bitcoin/bitcoin/pull/13570/files
 #ADD:  origin-pull/13043/head
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
