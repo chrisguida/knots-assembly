@@ -1,4 +1,4 @@
-timestamp 2018-07-21 02:05:23
+timestamp 2018-07-30 03:49:09
 #lastapply no-merge
 
 #.. checked up to PR #13797
@@ -188,7 +188,7 @@ m	13203 dsha256_power8-0.16+knots				eef4629013	last=3b402e0738 matt/2018-05-asm
 		# held back removal of duplicate-header submission check
 	13537 gui_peertable_inout-0.10
 	# Needs work: 13541 wallet/rpc: sendrawtransaction maxfeerate
-	13570 rpc_getzmqnotifications-0.16
+	13570 rpc_getzmqnotifications-0.16+knots
 	# Needs review: 13666 Always create signatures with Low R values
 	# Needs work: 13697 Support output descriptors in scantxoutset
 	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
@@ -232,10 +232,9 @@ m	-    rwconf_policy-0.16+knots				e4d1059638
 #FIXME: allow building without libmemenv if the necessary code is in libleveldb
 #FIXME: check libleveldb .20 ABI issues; runtime check we're linked to same version?
 	n/a  (cherrypick=1a7c7b4b97ee6bd79c)		c1ca0105eb	# doc/{bips,files}
-	n/a  (bump_version=Knots:20180721)			ce9c0d36f4
+	n/a  (bump_version=Knots:20180730)			ce9c0d36f4
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=b4fac14a1f)				e003de4b07  # release notes: write/update, including change log and credits
-#ADD: https://github.com/bitcoin/bitcoin/pull/13570/files
+	n/a  (cherrypick=b43fe4d2aa)				e003de4b07  # release notes: write/update, including change log and credits
 #ADD:  origin-pull/13043/head
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
