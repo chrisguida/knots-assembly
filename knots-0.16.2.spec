@@ -18,7 +18,7 @@ TM	12859 incl_memory							7a8558fdd5
 	-     ppa_updates-0.16						7810c2d1d3
 	13788 bugfix_asm_opt-0.16								last=4207c1b35c bugfix_asm_opt
 	13789 bugfix_asm_pragmas-0.16							last=8bca9cd7ba bugfix_asm_pragmas
-	-     bugfix_asm_leveldb_pragma-0.16
+	-     bugfix_asm_leveldb_check-0.16
 @0.16.x-knots
 # TESTS:
 	13105 test_failfast-0.16					14caa2b18f
@@ -241,6 +241,6 @@ m	-    rwconf_policy-0.16+knots				e4d1059638
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=1b6733d786)				d3b82c426a  # translation update
-	n/a  (cherrypick=a3224a3ee9)				2c2cce54e3	# update manpages (build first)
+	n/a  (cherrypick=6c11f79434)				d3b82c426a  # translation update
+	n/a  (cherrypick=fa03d8db65)				2c2cce54e3	# update manpages (build first)
 # NOTE: use git diff --minimal for patches!
