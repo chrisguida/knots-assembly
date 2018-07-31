@@ -16,8 +16,8 @@ checkout v0.16.2
 TM	12859 incl_memory							f7346c5426
 	12854 desktop_categories					dad0af3d2f
 	-     ppa_updates-0.16						c29eb66382
-	13788 bugfix_asm_opt-0.16					4324338adf								last=4207c1b35c bugfix_asm_opt
-	13789 bugfix_asm_pragmas-0.16				b8d31df2f8							last=8bca9cd7ba bugfix_asm_pragmas
+	13788 bugfix_asm_opt-0.16					4324338adf	last=4207c1b35c bugfix_asm_opt
+	13789 bugfix_asm_pragmas-0.16				b8d31df2f8	last=8bca9cd7ba bugfix_asm_pragmas
 	-     bugfix_asm_leveldb_check-0.16			54a0d3a45b
 @0.16.x-knots
 # TESTS:
@@ -62,7 +62,7 @@ TM	12887 bugfix_log_newlines-0.16				82fb7c056b
 TM	13304 bugfix_wallet_listreceivedby_test-0.16	0af7dfc16f
 TM	13192 bugfix_p2p_sendheaders-0.16			269c19f3fc
 	13547 bugfix_signraw_amountcheck-0.16		a7a8f4cecb
-	13608 bugfix_b-tx_amountcheck-0.15			6fc500c51d						last=876f49c6cd
+	13608 bugfix_b-tx_amountcheck-0.15			6fc500c51d	last=876f49c6cd
 	13655 bugfix_libcon_verify_invflags-0.16	d927793ede
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 # FUNCTIONALITY:
@@ -76,7 +76,7 @@ TM	13192 bugfix_p2p_sendheaders-0.16			269c19f3fc
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys+sort_multisigs			ed43377924	last=127ec180bd sweepprivkeys
 NM	12196 sweepprivkeys+scantxoutset			47140cb7a7
-	12196 sweepprivkeys+scantxoutset			52dfb4735e						last=be98b2d9a8 jonas/2017/12/utxo_sweep
+	12196 sweepprivkeys+scantxoutset			52dfb4735e	last=be98b2d9a8 jonas/2017/12/utxo_sweep
 		# modified to remove scan-by-address garbage
 		# held back feature removals
 	9245 ionice									3400eeb80d
@@ -128,7 +128,7 @@ m	11256 rpc_mempoolentry_weight-0.16+knots	3e005b804a	last=d4b0d81b58
 	# Not ready: 11742 testmempoolaccept-0.16							last=faa03a6dad
 		# test fails, RPC includes int instead of bool, etc
 	11750 -										3b3fbcbb3e # Multiselect in coincontrol treewidget and display selected count
-	11765 rest-blockhash-endpoint-0.16			7fca723689 last=1323df9ff1 # [REST] added blockhash api, tests and documentation
+	11765 rest-blockhash-endpoint-0.16			7fca723689	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
 	11770 rest_fee-0.16							7ba67d2910	last=935b364978  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath-0.16		51d373acca	last=393511cb22 bugfix_dumpwallet_hdkeypath
 	# 11872? MarcoFalke:Mf1712-rpcCreateRawSortedOuts (what's the use case?)
