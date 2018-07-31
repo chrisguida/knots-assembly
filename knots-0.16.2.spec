@@ -234,7 +234,7 @@ m	-    rwconf_policy-0.16+knots				e4d1059638
 	n/a  (cherrypick=1a7c7b4b97ee6bd79c)		c1ca0105eb	# doc/{bips,files}
 	n/a  (bump_version=Knots:20180730)			ce9c0d36f4
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=b43fe4d2aa)				e003de4b07  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=08de50437e)				e003de4b07  # release notes: write/update, including change log and credits
 #ADD:  origin-pull/13043/head
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
