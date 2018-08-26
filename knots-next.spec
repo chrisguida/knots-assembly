@@ -20,7 +20,9 @@ TM	12859 incl_memory							f7346c5426
 	13789 bugfix_asm_pragmas-0.16				b8d31df2f8	last=8bca9cd7ba bugfix_asm_pragmas
 	-     bugfix_asm_leveldb_check-0.16			54a0d3a45b
 @0.16.x-knots
-# TESTS:
+# PLATFORM & TESTS:
+	14065 symbol_check-0.17									last=8b03a40e6c symbol_check
+	14066 gitian_power64-0.17								last=05cd16bf29 gitian_power64
 	13105 test_failfast-0.16					d98301f6e3
 	-    travis_nolibevent						bcd1f77c04
 # FIXES:
