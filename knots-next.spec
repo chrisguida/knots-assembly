@@ -20,9 +20,8 @@ TM	12859 incl_memory							f7346c5426
 	13789 bugfix_asm_pragmas-0.16				b8d31df2f8	last=8bca9cd7ba bugfix_asm_pragmas
 	-     bugfix_asm_leveldb_check-0.16			54a0d3a45b
 @0.16.x-knots
-# PLATFORM & TESTS:
+# TESTS:
 	14065 symbol_check-0.17									last=8b03a40e6c symbol_check
-	14066 gitian_power64-0.17								last=05cd16bf29 gitian_power64
 	13105 test_failfast-0.16					d98301f6e3
 	-    travis_nolibevent						bcd1f77c04
 # FIXES:
@@ -68,6 +67,7 @@ TM	13192 bugfix_p2p_sendheaders-0.16			269c19f3fc
 	13655 bugfix_libcon_verify_invflags-0.16	d927793ede
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 # FUNCTIONALITY:
+	14066 gitian_power64-0.17								last=05cd16bf29 gitian_power64
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
