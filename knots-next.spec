@@ -41,6 +41,10 @@ TM	12432 clear_all_coinctl-0.16				3732182a3b
 	12491 fadvise-0.16							1c929547a4	last=5259c72a76  # Try to use posix_fadvise with CBufferedFile
 	12495 leveldb_max_open_files-0.16			0328b51161	last=ccedbafd73  # Increase LevelDB max_open_files on 64-bit POSIX systems
 		# held back changes to developer doc file
+		FIXME: can only do 1000+normal limit since leveldb has 1000 mmap limit! ???
+		ACTUAL PROBLEM: all dbs share same 1000 mmap limit, but have their own file limit
+		NOTE: new files opened before old one closed, so effectively only 999 mmaps
+		SOLUTION: split 999 file limit between dbs
 	12501 text_customfee-0.16					6aa2f93d86	last=0bc095efd8  # [qt] Improved "custom fee" explanation in tooltip
 TM	12573 bugfix_no_clz-0.16					83a4ba110a
 TM	12617 2018_03_gui_textbox-0.16				4cc88de920
@@ -68,6 +72,7 @@ TM	13192 bugfix_p2p_sendheaders-0.16			269c19f3fc
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 # FUNCTIONALITY:
 	14066 gitian_power64-0.17								last=05cd16bf29 gitian_power64
+	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
@@ -195,6 +200,7 @@ m	13203 dsha256_power8-0.16+knots				6a93a81e3e	last=3b402e0738 matt/2018-05-asm
 	# Needs work: 13697 Support output descriptors in scantxoutset
 	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
 	# Needs review: 13791 gui: Reject EditAddressDialog on ESC key
+	# Needs work: 13836 clearmempool RPC
 # Non-upstreamed functionality:
 m	-     restore_blockmaxsize					7b4ef75162
 	7107 qtnetworkport							86a22ede93	last=1f37c87 origin-pull/7107/head
