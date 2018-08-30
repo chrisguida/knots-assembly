@@ -13,7 +13,6 @@ checkout v0.17.0rc2
 	12246 separate_utils						c09d510d89
 	7339 opt_libevent-0.16						07da87df90
 	11622 bip70_disable-0.16					af740adc4f	last=7ecca66062
-	12854 desktop_categories					dad0af3d2f
 	-     ppa_updates-0.16						c29eb66382
 	13788 bugfix_asm_opt-0.16					4324338adf	last=4207c1b35c bugfix_asm_opt
 	13789 bugfix_asm_pragmas-0.16				b8d31df2f8	last=8bca9cd7ba bugfix_asm_pragmas
@@ -21,7 +20,6 @@ checkout v0.17.0rc2
 @0.17.x-knots
 # TESTS:
 	14065 symbol_check-0.17									last=8b03a40e6c symbol_check
-	13105 test_failfast-0.16					d98301f6e3
 	-    travis_nolibevent						bcd1f77c04
 	14036 -	# travis: Run unit tests --with-sanitizers=undefined
 	14080 MarcoFalke/Mf1808-travisSanThread
@@ -37,19 +35,14 @@ checkout v0.17.0rc2
 	# ^ 11634 walletlocks-0.16						7914050bdb	last=491ec75b9f
 		# held back annotations, and minimised patch
 	# Needs review? 12172 jtimon/b16-bugfix-savemempool
-	12479 rawmempool_spentby-0.16				6e52c0d544	last=1dfb4e7d75  # RPC: Add child transactions to getrawmempool verbose output
 	12491 fadvise-0.16							1c929547a4	last=5259c72a76  # Try to use posix_fadvise with CBufferedFile
-	12501 text_customfee-0.16					6aa2f93d86	last=0bc095efd8  # [qt] Improved "custom fee" explanation in tooltip
 	12696 eklitzke_fsync-0.16					b22514b73f	last=4894e368fa  # Fix possible data race when committing block files
 	# For 0.17: Revert #12723?
 	13084 fix_1neg-0.16							80751fee66	last=5af7625079 sipa/201804_keepnegone
 	# Requires 11739, which touches too much consensus logic: minimized 13120 MarcoFalke:Mf1805-segwitGenesisPolicy
-	13149 check_fseek-0.16						5d73d9e9df
 	13159 handle-reopen-failed-0.16				56be2f61a6	last=37efe5b7ea practicalswift/handle-reopen-failed
 		# minimised diff
-	13547 bugfix_signraw_amountcheck-0.16		a7a8f4cecb
 	13608 bugfix_b-tx_amountcheck-0.15			6fc500c51d	last=876f49c6cd
-	13655 bugfix_libcon_verify_invflags-0.16	d927793ede
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 	13910 domob1812/progress
 # FUNCTIONALITY:
@@ -64,7 +57,7 @@ checkout v0.17.0rc2
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys+sort_multisigs			ed43377924	last=127ec180bd sweepprivkeys
-	12196 sweepprivkeys+scantxoutset			52dfb4735e	last=be98b2d9a8 jonas/2017/12/utxo_sweep
+	MISSING PARTS 12196 sweepprivkeys+scantxoutset			52dfb4735e	last=be98b2d9a8 jonas/2017/12/utxo_sweep
 		# modified to remove scan-by-address garbage
 		# held back feature removals
 	9245 ionice									3400eeb80d
@@ -75,7 +68,6 @@ checkout v0.17.0rc2
 		# NOTE: partial rebase at https://github.com/jonasschnelli/bitcoin/pull/9 ??? OLDER THAN CURRENT NOW
 	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	9422 mempool_dat_extensible					d787eb624d
-	9991 listreceivedbyaddress-filtered+knots	c9f486bc59	last=f087613719  # listreceivedbyaddress Filter Address; was #9503
 	9504 dumpmasterprivkey-0.16					4c84494958	last=07fc81109a
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
