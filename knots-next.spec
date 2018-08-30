@@ -1,10 +1,10 @@
 timestamp 2018-07-30 03:49:09
-#lastapply no-merge
+lastapply no-merge
 
 #.. checked up to PR #14101
 
-checkout v0.16.2
-@0.16.x-syslibs
+checkout v0.17.0rc2
+@0.17.x-syslibs
 	5872 subdir_incl_compat						c134703e62
 	2241 sys_leveldb-0.17						3510c4e6eb
 	5416 sys_libsecp256k1						f79618bee8
@@ -13,13 +13,12 @@ checkout v0.16.2
 	12246 separate_utils						c09d510d89
 	7339 opt_libevent-0.16						07da87df90
 	11622 bip70_disable-0.16					af740adc4f	last=7ecca66062
-TM	12859 incl_memory							f7346c5426
 	12854 desktop_categories					dad0af3d2f
 	-     ppa_updates-0.16						c29eb66382
 	13788 bugfix_asm_opt-0.16					4324338adf	last=4207c1b35c bugfix_asm_opt
 	13789 bugfix_asm_pragmas-0.16				b8d31df2f8	last=8bca9cd7ba bugfix_asm_pragmas
 	-     bugfix_asm_leveldb_check-0.16			54a0d3a45b
-@0.16.x-knots
+@0.17.x-knots
 # TESTS:
 	14065 symbol_check-0.17									last=8b03a40e6c symbol_check
 	13105 test_failfast-0.16					d98301f6e3
@@ -38,30 +37,16 @@ TM	12859 incl_memory							f7346c5426
 	# ^ 11634 walletlocks-0.16						7914050bdb	last=491ec75b9f
 		# held back annotations, and minimised patch
 	# Needs review? 12172 jtimon/b16-bugfix-savemempool
-TM	12432 clear_all_coinctl-0.16				3732182a3b
 	12479 rawmempool_spentby-0.16				6e52c0d544	last=1dfb4e7d75  # RPC: Add child transactions to getrawmempool verbose output
 	12491 fadvise-0.16							1c929547a4	last=5259c72a76  # Try to use posix_fadvise with CBufferedFile
 	12501 text_customfee-0.16					6aa2f93d86	last=0bc095efd8  # [qt] Improved "custom fee" explanation in tooltip
-TM	12573 bugfix_no_clz-0.16					83a4ba110a
-TM	12617 2018_03_gui_textbox-0.16				4cc88de920
 	12696 eklitzke_fsync-0.16					b22514b73f	last=4894e368fa  # Fix possible data race when committing block files
 	# For 0.17: Revert #12723?
-TM	12743 201803_waitblockchange-0.16			7a03359c52
-		# NOTE: held back variable renaming
-TM	12793 fix_resetgui0-0.16					7a6cc930bb
 	13084 fix_1neg-0.16							80751fee66	last=5af7625079 sipa/201804_keepnegone
 	# Requires 11739, which touches too much consensus logic: minimized 13120 MarcoFalke:Mf1805-segwitGenesisPolicy
 	13149 check_fseek-0.16						5d73d9e9df
 	13159 handle-reopen-failed-0.16				56be2f61a6	last=37efe5b7ea practicalswift/handle-reopen-failed
 		# minimised diff
-TM	13452 actuallyverifytxoutproof-0.16			b4eabf3e5c
-NM	-     optimise_wallet_inv-0.16				9a5db540e8
-TM	13437 walletPrunedFundsSegfault-0.16		bbbf62d227
-TM	13545 bugfix_streams_test-0.16				911e57c0c9
-TM	13300 bugfix_qa_lockstack-0.16				43d11b057c
-TM	12887 bugfix_log_newlines-0.16				82fb7c056b
-TM	13304 bugfix_wallet_listreceivedby_test-0.16	0af7dfc16f
-TM	13192 bugfix_p2p_sendheaders-0.16			269c19f3fc
 	13547 bugfix_signraw_amountcheck-0.16		a7a8f4cecb
 	13608 bugfix_b-tx_amountcheck-0.15			6fc500c51d	last=876f49c6cd
 	13655 bugfix_libcon_verify_invflags-0.16	d927793ede
@@ -79,13 +64,12 @@ TM	13192 bugfix_p2p_sendheaders-0.16			269c19f3fc
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys+sort_multisigs			ed43377924	last=127ec180bd sweepprivkeys
-NM	12196 sweepprivkeys+scantxoutset			47140cb7a7
 	12196 sweepprivkeys+scantxoutset			52dfb4735e	last=be98b2d9a8 jonas/2017/12/utxo_sweep
 		# modified to remove scan-by-address garbage
 		# held back feature removals
 	9245 ionice									3400eeb80d
 	-    ionice_win								3303deb376
-m	8501 old_stats_rpc-0.16						e8fc393fa6	last=7af0ea43b2
+	8501 old_stats_rpc-0.16						e8fc393fa6	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
 	8550 stats_qt-0.16							74347db52f	last=63fb11652f
 		# NOTE: partial rebase at https://github.com/jonasschnelli/bitcoin/pull/9 ??? OLDER THAN CURRENT NOW
@@ -113,12 +97,12 @@ m	8501 old_stats_rpc-0.16						e8fc393fa6	last=7af0ea43b2
 	10350 filtered_witblock-0.16				e3c0fcef0a	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	10729 scriptex								a6d4274f12
-m	10730 scriptflag_strings-mini-0.16			98813105ab	last=e2e183bc1f
+	10730 scriptflag_strings-mini-0.16			98813105ab	last=e2e183bc1f
 	n/a   script_debugger-mini					019bcb76b8	last=1d3ed0c48a script_debugger
 	# Needs work: 11200 achow101/gui-recan-abort
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				e79db541a0
-m	11256 rpc_mempoolentry_weight-0.16+knots	3e005b804a	last=d4b0d81b58
+	11256 rpc_mempoolentry_weight-0.16+knots	3e005b804a	last=d4b0d81b58
 	11413 explicit_fee-0.16						472b79c25e	last=628f6e971a kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
 	11471 gui_sendtoself_label-0.16				4bfb75be0c	last=c23bd2892b
 	11491 proxy_icon-0.16+knots					038b222878	last=73cd5b25b9  # [gui] Add proxy icon in statusbar
@@ -138,9 +122,7 @@ m	11256 rpc_mempoolentry_weight-0.16+knots	3e005b804a	last=d4b0d81b58
 	# 11872? MarcoFalke:Mf1712-rpcCreateRawSortedOuts (what's the use case?)
 	12080 promag/2018-01-searchaddressbook		71e6e7a83a
 	12096 bumpfee_reduce_output-0.16			5d92f4453b	last=51826d4de0 kallewoof/better-bumpfee
-NM	12136 psbt-0.16								1bf1bcfd03	#last=950746725a achow101/psbt
-TM	13251 gui_legacy_bech32-0.16				f56a687e43
-m	12240 rpc_mempool_fees-0.16					65e2eabc85	last=7de1de7da4  # [rpc] Introduced a new `fees` structure that aggregates all sub-field fee types denominated in BTC
+	12240 rpc_mempool_fees-0.16					65e2eabc85	last=7de1de7da4  # [rpc] Introduced a new `fees` structure that aggregates all sub-field fee types denominated in BTC
 	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters
 	12257 avoidpartialspends-0.16				d9919d8447	last=452485e1b7 kallewoof/feature-addrgrouped-coinselect
 		# NOTE: held back af586af9f0..452485e1b7
@@ -176,15 +158,15 @@ m	12240 rpc_mempool_fees-0.16					65e2eabc85	last=7de1de7da4  # [rpc] Introduced
 	13151 direct_from_disk-0.16+knots			4aec0b6f0e
 	# Test fails: 13152 rpc_getnodeaddress-0.16							last=f10e380630
 	13158 gui_send_readability-0.16				12d70ffbda
-m	13191 dsha256_64-0.16+knots					feda959492
+	13191 dsha256_64-0.16+knots					feda959492
 		# Includes 13611
 	13393 dsha256_i386-0.16						389b4be12d
 	13471 avxossupport-0.16						3e56e69282
 	13408 dsha256_cleanup-0.16+knots			0b48acc326
 	13438 dsha256_selftest-0.16					0967e3cd5e
-m	13386 dsha256_shani-0.16+knots				6d1c2bccbc	last=66b2cf1ccf sipa/201806_shani
+	13386 dsha256_shani-0.16+knots				6d1c2bccbc	last=66b2cf1ccf sipa/201806_shani
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-m	13203 dsha256_power8-0.16+knots				6a93a81e3e	last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.16+knots				6a93a81e3e	last=3b402e0738 matt/2018-05-asm
 	-     bugfix_asm_opt_and_pragmas-0.16+knots	7d916e293f
 	# TODO: Possible performance concern 13310 promag/2018-05-replayblocks-progress
 	13339 walletnotify_w-0.16					10c0ad0430	last=cef0327afd promag/2018-05-walletnotify
@@ -214,7 +196,7 @@ m	13203 dsha256_power8-0.16+knots				6a93a81e3e	last=3b402e0738 matt/2018-05-asm
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	# Needs work: 14090 [windows] progress bar in task bar
 # Non-upstreamed functionality:
-m	-     restore_blockmaxsize					7b4ef75162
+	-     restore_blockmaxsize					7b4ef75162
 	7107 qtnetworkport							86a22ede93	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force+knots					821e79eca8  # Latest code now
 	11082 rwconf-0.16							7ac8e5584d	last=aac0501148 rwconf
@@ -230,7 +212,7 @@ m	-     restore_blockmaxsize					7b4ef75162
 	7219 txrepl_fullrbf							a9fd5b6577
 	# TODO: some way to add UA comments via rwconf
 	10282 timebomb_knots						db079c9033
-m	12146 opt_wallet_segwit2-0.16+knots			d855625b12	last=f5f5a922ba opt_wallet_segwit2
+	12146 opt_wallet_segwit2-0.16+knots			d855625b12	last=f5f5a922ba opt_wallet_segwit2
 	n/a  checkpoint_update						a9c8a9ef4c
 	# 0.17: Revert 12795
 # POLICY:
@@ -238,7 +220,7 @@ m	12146 opt_wallet_segwit2-0.16+knots			d855625b12	last=f5f5a922ba opt_wallet_se
 	-    1day_default_conftarget				82becc9391
 	-	 bytespersigopstrict+knots				fa99fdb901
 	9749 unique_spk_mempool+knots				df8e9047db
-m	-    rwconf_policy-0.16+knots				2786f6f8d6
+	-    rwconf_policy-0.16+knots				2786f6f8d6
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 	-    txrepl_fullrbf_default+knots			f5c7ca2cd9	last=61fae13df1 txrepl_fullrbf_default
