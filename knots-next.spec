@@ -1,12 +1,12 @@
 timestamp 2018-07-30 03:49:09
 #lastapply no-merge
 
-#.. checked up to PR #13797
+#.. checked up to PR #14101
 
 checkout v0.16.2
 @0.16.x-syslibs
 	5872 subdir_incl_compat						c134703e62
-	2241 sys_leveldb-0.16						3510c4e6eb
+	2241 sys_leveldb-0.17						3510c4e6eb
 	5416 sys_libsecp256k1						f79618bee8
 	7485 sys_univalue_def						79f1d9208d
 	5618 separate_utils_only					0c45680e8e
@@ -24,6 +24,8 @@ TM	12859 incl_memory							f7346c5426
 	14065 symbol_check-0.17									last=8b03a40e6c symbol_check
 	13105 test_failfast-0.16					d98301f6e3
 	-    travis_nolibevent						bcd1f77c04
+	14036 -	# travis: Run unit tests --with-sanitizers=undefined
+	14080 MarcoFalke/Mf1808-travisSanThread
 # FIXES:
 	9524 marco/Mf1701-qaPruning					891509bbdf
 	#10529? systemd stuff
@@ -39,12 +41,6 @@ TM	12859 incl_memory							f7346c5426
 TM	12432 clear_all_coinctl-0.16				3732182a3b
 	12479 rawmempool_spentby-0.16				6e52c0d544	last=1dfb4e7d75  # RPC: Add child transactions to getrawmempool verbose output
 	12491 fadvise-0.16							1c929547a4	last=5259c72a76  # Try to use posix_fadvise with CBufferedFile
-	12495 leveldb_max_open_files-0.16			0328b51161	last=ccedbafd73  # Increase LevelDB max_open_files on 64-bit POSIX systems
-		# held back changes to developer doc file
-		FIXME: can only do 1000+normal limit since leveldb has 1000 mmap limit! ???
-		ACTUAL PROBLEM: all dbs share same 1000 mmap limit, but have their own file limit
-		NOTE: new files opened before old one closed, so effectively only 999 mmaps
-		SOLUTION: split 999 file limit between dbs
 	12501 text_customfee-0.16					6aa2f93d86	last=0bc095efd8  # [qt] Improved "custom fee" explanation in tooltip
 TM	12573 bugfix_no_clz-0.16					83a4ba110a
 TM	12617 2018_03_gui_textbox-0.16				4cc88de920
@@ -70,6 +66,7 @@ TM	13192 bugfix_p2p_sendheaders-0.16			269c19f3fc
 	13608 bugfix_b-tx_amountcheck-0.15			6fc500c51d	last=876f49c6cd
 	13655 bugfix_libcon_verify_invflags-0.16	d927793ede
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
+	13910 domob1812/progress
 # FUNCTIONALITY:
 	14066 gitian_power64-0.17								last=05cd16bf29 gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -201,6 +198,21 @@ m	13203 dsha256_power8-0.16+knots				6a93a81e3e	last=3b402e0738 matt/2018-05-asm
 	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
 	# Needs review: 13791 gui: Reject EditAddressDialog on ESC key
 	# Needs work: 13836 clearmempool RPC
+	# Needs review: 13903 Significantly reduce GetTransaction cs_main locking
+	# TBD (part of) 13926 [WIP] [Tools] bitcoin-wallet-tool
+	13932 achow101/psbt-util-rpcs
+	# Needs work: 13947 Dandelion transaction relay (BIP 156)
+	13987 ajtowns/201808-peerinfo-minfee
+	# Needs review: 13989 add avx512 instrinsic
+	# Needs work: 13990 WIP: allow fee estimation to work with lower fees
+	# Needs rationale: 14019 Import pubkeys when importing p2sh with importmulti
+	# Changes wallet? 14021 Import key origin data through importmulti
+	# Needs review: 14032 Add p2p layer encryption with ECDH/ChaCha20Poly1305
+	# Needs review: 14035 Utxoscriptindex
+	# Needs work: 14053 Add address-based index (attempt 4?)
+	PARTIAL 14060 mruddy:zmqhwm
+	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
+	# Needs work: 14090 [windows] progress bar in task bar
 # Non-upstreamed functionality:
 m	-     restore_blockmaxsize					7b4ef75162
 	7107 qtnetworkport							86a22ede93	last=1f37c87 origin-pull/7107/head
