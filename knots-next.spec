@@ -71,7 +71,6 @@ checkout v0.17.0rc2
 	9504 dumpmasterprivkey-0.16					4c84494958	last=07fc81109a
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
-	# not ready: 9662 Add `-disablehot` mode: a sane mode for watchonly-wallets
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	# not ready: 9745 [RPC] Getting confirmations command
@@ -81,7 +80,6 @@ checkout v0.17.0rc2
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
-	# TODO 10267 (conflicts with rwconf?)
 	10554 zmq_wtx-0.16							5f5cc19ac3	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	12674 rpc_onetry_nonpriv					dd2a168c2a
 	10593 relax_invblk_punishment				e7398a9b8d
@@ -91,72 +89,39 @@ checkout v0.17.0rc2
 	10729 scriptex								a6d4274f12
 	10730 scriptflag_strings-mini-0.16			98813105ab	last=e2e183bc1f
 	n/a   script_debugger-mini					019bcb76b8	last=1d3ed0c48a script_debugger
-	# Needs work: 11200 achow101/gui-recan-abort
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				e79db541a0
 	11256 rpc_mempoolentry_weight-0.16+knots	3e005b804a	last=d4b0d81b58
 	11413 explicit_fee-0.16						472b79c25e	last=628f6e971a kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
 	11471 gui_sendtoself_label-0.16				4bfb75be0c	last=c23bd2892b
-	11491 proxy_icon-0.16+knots					038b222878	last=73cd5b25b9  # [gui] Add proxy icon in statusbar
-		# NOTE: uses manual merge to avoid crazy conflict in svg_icon later
-		# NOTE: held back meaningless changes to pixmap/icon init
 	11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
-	11658 ibd_prune_extra						4aa1453899
-		# Consider replacing with 12404...
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
 	# Needs thought/Concept ACK: 11708 signrawtx_wsh-0.16								last=576624ce95
-	# Not ready: 11742 testmempoolaccept-0.16							last=faa03a6dad
-		# test fails, RPC includes int instead of bool, etc
 	11750 -										3b3fbcbb3e # Multiselect in coincontrol treewidget and display selected count
 	11765 rest-blockhash-endpoint-0.16			7fca723689	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
 	11770 rest_fee-0.16							7ba67d2910	last=935b364978  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath-0.16		51d373acca	last=393511cb22 bugfix_dumpwallet_hdkeypath
-	# 11872? MarcoFalke:Mf1712-rpcCreateRawSortedOuts (what's the use case?)
-	12080 promag/2018-01-searchaddressbook		71e6e7a83a
 	12096 bumpfee_reduce_output-0.16			5d92f4453b	last=51826d4de0 kallewoof/better-bumpfee
-	12240 rpc_mempool_fees-0.16					65e2eabc85	last=7de1de7da4  # [rpc] Introduced a new `fees` structure that aggregates all sub-field fee types denominated in BTC
 	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters
-	12257 avoidpartialspends-0.16				d9919d8447	last=452485e1b7 kallewoof/feature-addrgrouped-coinselect
+	CHECK HOLD BACK 12257 avoidpartialspends-0.16				d9919d8447	last=452485e1b7 kallewoof/feature-addrgrouped-coinselect
 		# NOTE: held back af586af9f0..452485e1b7
-	12321 decodescript-p2wsh-0.16				8835a9c0b2	last=41ff9675a9  # p2wsh and p2sh-p2wsh address in decodescript
-	12421 send_to_txhistory-0.16				5d48df825e
-	12568 zero_dustrelayfee_opt					358af6cf21
-	12580 gui_vsize-0.16						d53b7c886f
 	12677 listunspent_ancestorinfo-0.16			2642343fb6	last=daeb431011 listunspent_ancestorinfo
 	# Not sure if safe with 0.16: 12559 promag/2018-02-avoid-cs_main-lock
-	# Too dangerous. PART OF 12560 achow101:sethdseed
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
-	12616 modaloverlay-hide-default-0.16		92e3c302a0
-	12621 gui_txfilter_optimise-0.16			407b301d71
-	12653 blocksdir-0.16						1418b1d840
 	12676 rawmempool_bip125-0.16+knots			d0871f6a99	last=870bd4c73d
 		# NOTE: rewritten
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	12763 rpcwhitelist-0.16						3a58144b6c	last=8c45d93b0e
-	# 12769 ???
-	12778 rpc_loguser-0.16+knots				988f12cd37
+	# 12769 ??? GOT REVERTED???
 	12783 disable_appnap-0.16					389dc7a96f	last=33a25f1e02
 		# Retained older inhibitor too
-	12791 rpc_tx_weight-0.16					f8f75e79f7
 	# TODO ? 12792 w/ renamed param
 	12818 gui_feebump_select-0.16				a1c7d44271	last=90c614cb8b
 	12911 signrawtx_showfees-0.16				613381e9c4	last=b7159aa585 kallewoof/sign-show-fees
 	12965 scriptthreads-0.16+knots				ec38b2650d	last=dfab6c6866 jonas/2018/04/svt
 	# TODO ADD ONLY 13008 # rpc: Rename size to vsize in mempool related calls
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
-	# Needs fixes: 13072 ajtowns/signmultisig
-		#FIXME: rename legacy to bip16
-	13134 optional_bip61-0.16					b3cecd612b
-	13151 direct_from_disk-0.16+knots			4aec0b6f0e
 	# Test fails: 13152 rpc_getnodeaddress-0.16							last=f10e380630
-	13158 gui_send_readability-0.16				12d70ffbda
-	13191 dsha256_64-0.16+knots					feda959492
-		# Includes 13611
-	13393 dsha256_i386-0.16						389b4be12d
-	13471 avxossupport-0.16						3e56e69282
-	13408 dsha256_cleanup-0.16+knots			0b48acc326
-	13438 dsha256_selftest-0.16					0967e3cd5e
-	13386 dsha256_shani-0.16+knots				6d1c2bccbc	last=66b2cf1ccf sipa/201806_shani
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
 	13203 dsha256_power8-0.16+knots				6a93a81e3e	last=3b402e0738 matt/2018-05-asm
 	-     bugfix_asm_opt_and_pragmas-0.16+knots	7d916e293f
@@ -164,13 +129,8 @@ checkout v0.17.0rc2
 	13339 walletnotify_w-0.16					10c0ad0430	last=cef0327afd promag/2018-05-walletnotify
 	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c marco/Mf1806-rpcBlockHeader
 		# held back removal of duplicate-header submission check
-	13537 gui_peertable_inout-0.10				53249d4842
 	# Needs work: 13541 wallet/rpc: sendrawtransaction maxfeerate
-	13570 rpc_getzmqnotifications-0.16+knots	01c650d509
-	# Needs review: 13666 Always create signatures with Low R values
-	# Needs work: 13697 Support output descriptors in scantxoutset
 	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
-	# Needs review: 13791 gui: Reject EditAddressDialog on ESC key
 	# Needs work: 13836 clearmempool RPC
 	# Needs review: 13903 Significantly reduce GetTransaction cs_main locking
 	# TBD (part of) 13926 [WIP] [Tools] bitcoin-wallet-tool
@@ -193,7 +153,7 @@ checkout v0.17.0rc2
 	7533 sendraw_force+knots					821e79eca8  # Latest code now
 	11082 rwconf-0.16							7ac8e5584d	last=aac0501148 rwconf
 	7510 rwconf_gui-0.16+knots					f5d2f52fba	# Latest code now
-	# Seems buggy: 13043 -													# [qt] OptionsDialog: add prune setting
+		FIXME: prune setting
 	5916 keyorigin								6e769279fa
 	 559 accept_nonstdtxn						f07335d45f
 	 929 tbc									065b18ab4a
@@ -206,7 +166,7 @@ checkout v0.17.0rc2
 	10282 timebomb_knots						db079c9033
 	12146 opt_wallet_segwit2-0.16+knots			d855625b12	last=f5f5a922ba opt_wallet_segwit2
 	n/a  checkpoint_update						a9c8a9ef4c
-	# 0.17: Revert 12795
+	TODO: 0.17: Revert 12795
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				82becc9391
@@ -220,16 +180,11 @@ checkout v0.17.0rc2
 	7483 svg_icon-0.16+knots					2a4168de17
 # BRANDING:
 	n/a  knots_branding-0.16					ef04113ea1
-#FIXME: Check Univalue 1.0.3 is sufficient to build
-#	TODO: Check if any pushKV do booleans
 #FIXME: Check includes use <>
-#FIXME: allow building without libmemenv if the necessary code is in libleveldb
-#FIXME: check libleveldb .20 ABI issues; runtime check we're linked to same version?
 	n/a  (cherrypick=1a7c7b4b97ee6bd79c)		17c327ad76	# doc/{bips,files}
 	n/a  (bump_version=Knots:20180730)			2f197b2b7b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=08de50437e)				0a1f46883d  # release notes: write/update, including change log and credits
-#ADD:  origin-pull/13043/head
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
