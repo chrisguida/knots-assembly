@@ -8,10 +8,10 @@ checkout v0.16.3
 @0.16.x-syslibs
 	5872 subdir_incl_compat						c134703e62
 	2241 sys_leveldb-0.16						3510c4e6eb
-	5416 sys_libsecp256k1						f79618bee8
+	5416 sys_libsecp256k1-0.16					f79618bee8	last=c0abf31e2a sys_libsecp256k1
 	7485 sys_univalue_def						79f1d9208d
-	5618 separate_utils_only					0c45680e8e
-	12246 separate_utils						c09d510d89
+	5618 separate_utils_only-0.16				0c45680e8e	last=68ec15e746 separate_utils_only
+	12246 separate_utils-0.16					c09d510d89	last=a2a04a5abb separate_utils
 	7339 opt_libevent-0.16						07da87df90
 	11622 bip70_disable-0.16					af740adc4f	last=7ecca66062
 TM	12859 incl_memory							f7346c5426
@@ -62,9 +62,9 @@ TM	13300 bugfix_qa_lockstack-0.16				43d11b057c
 TM	12887 bugfix_log_newlines-0.16				82fb7c056b
 TM	13304 bugfix_wallet_listreceivedby_test-0.16	0af7dfc16f
 TM	13192 bugfix_p2p_sendheaders-0.16			269c19f3fc
-	13547 bugfix_signraw_amountcheck-0.16		a7a8f4cecb
+TM	13547 bugfix_signraw_amountcheck-0.16		a7a8f4cecb
 	13608 bugfix_b-tx_amountcheck-0.15			6fc500c51d	last=876f49c6cd
-	13655 bugfix_libcon_verify_invflags-0.16	d927793ede
+TM	13655 bugfix_libcon_verify_invflags-0.16	d927793ede
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 # FUNCTIONALITY:
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
@@ -158,11 +158,11 @@ m	12240 rpc_mempool_fees-0.16					65e2eabc85	last=7de1de7da4  # [rpc] Introduced
 	12763 rpcwhitelist-0.16						3a58144b6c	last=8c45d93b0e
 	# 12769 ???
 	12778 rpc_loguser-0.16+knots				988f12cd37
-	12783 disable_appnap-0.16					389dc7a96f	last=33a25f1e02
+	12783 disable_appnap-0.16					389dc7a96f	#HACK last=33a25f1e02
 		# Retained older inhibitor too
 	12791 rpc_tx_weight-0.16					f8f75e79f7
 	# TODO ? 12792 w/ renamed param
-	12818 gui_feebump_select-0.16				a1c7d44271	last=90c614cb8b
+	12818 gui_feebump_select-0.16				a1c7d44271	last=d795c610d3
 	12911 signrawtx_showfees-0.16				613381e9c4	last=b7159aa585 kallewoof/sign-show-fees
 	12965 scriptthreads-0.16+knots				ec38b2650d	last=dfab6c6866 jonas/2018/04/svt
 	# TODO ADD ONLY 13008 # rpc: Rename size to vsize in mempool related calls
@@ -235,13 +235,13 @@ m	-    rwconf_policy-0.16+knots				2786f6f8d6
 	n/a  (cherrypick=1a7c7b4b97ee6bd79c)		17c327ad76	# doc/{bips,files}
 	n/a  (bump_version=Knots:20180730)			2f197b2b7b
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=08de50437e)				0a1f46883d  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=e1a7851f53)				0a1f46883d  # release notes: write/update, including change log and credits
 #ADD:  origin-pull/13043/head
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=6c11f79434)				11d53f8eb1  # translation update
-	n/a  (cherrypick=fa03d8db65)				427450894c	# update manpages (build first)
+	n/a  (cherrypick=7c52ff6a4e)				11d53f8eb1  # translation update
+	n/a  (cherrypick=5d87f5b380)				427450894c	# update manpages (build first)
 # NOTE: use git diff --minimal for patches!
