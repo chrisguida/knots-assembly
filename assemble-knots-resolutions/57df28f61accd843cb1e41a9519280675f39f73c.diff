@@ -1,0 +1,334 @@
+diff --git a/qa/pull-tester/rpc-tests.py b/qa/pull-tester/rpc-tests.py
+index f7b72ed..78f4202 100755
+--- a/qa/pull-tester/rpc-tests.py
++++ b/qa/pull-tester/rpc-tests.py
+@@ -142,6 +142,7 @@ testScripts = [
+     'p2p-segwit.py',
+     'preciousblock.py',
+     'segwit.py',
++    'sort_multisig.py',
+     'importprunedfunds.py',
+     'signmessages.py',
+     'p2p-compactblocks.py',
+diff --git a/qa/rpc-tests/sort_multisig.py b/qa/rpc-tests/sort_multisig.py
+new file mode 100755
+index 0000000..d1c3d60
+--- /dev/null
++++ b/qa/rpc-tests/sort_multisig.py
+@@ -0,0 +1,41 @@
++#!/usr/bin/env python3
++# Copyright (c) 2014-2016 The Bitcoin Core developers
++# Distributed under the MIT software license, see the accompanying
++# file COPYING or http://www.opensource.org/licenses/mit-license.php.
++
++# Exercise the createmultisig API
++
++from test_framework.test_framework import BitcoinTestFramework
++from test_framework.util import *
++
++class SortMultisigTest(BitcoinTestFramework):
++    def __init__(self):
++        super().__init__()
++        self.num_nodes = 4
++        self.setup_clean_chain = False
++
++    def setup_nodes(self):
++        return start_nodes(self.num_nodes, self.options.tmpdir)
++
++    def run_test(self):
++        pub1 = "022df8750480ad5b26950b25c7ba79d3e37d75f640f8e5d9bcd5b150a0f85014da"
++        pub2 = "03e3818b65bcc73a7d64064106a859cc1a5a728c4345ff0b641209fba0d90de6e9"
++        pub3 = "021f2f6e1e50cb6a953935c3601284925decd3fd21bc445712576873fb8c6ebc18"
++
++        pubs = [pub1,pub2,pub3]
++
++        default = self.nodes[0].createmultisig(2, pubs)
++        unsorted = self.nodes[0].createmultisig(2, pubs, False)
++
++        assert_equal("2N2BchzwfyuqJep7sKmFfBucfopHZQuPnpt", unsorted["address"])
++        assert_equal("5221022df8750480ad5b26950b25c7ba79d3e37d75f640f8e5d9bcd5b150a0f85014da2103e3818b65bcc73a7d64064106a859cc1a5a728c4345ff0b641209fba0d90de6e921021f2f6e1e50cb6a953935c3601284925decd3fd21bc445712576873fb8c6ebc1853ae", unsorted["redeemScript"])
++        assert_equal(default["address"], unsorted["address"])
++        assert_equal(default["redeemScript"], unsorted["redeemScript"])
++
++        sorted = self.nodes[0].createmultisig(2, pubs, True)
++        assert_equal("2NFd5JqpwmQNz3gevZJ3rz9ofuHvqaP9Cye", sorted["address"])
++        assert_equal("5221021f2f6e1e50cb6a953935c3601284925decd3fd21bc445712576873fb8c6ebc1821022df8750480ad5b26950b25c7ba79d3e37d75f640f8e5d9bcd5b150a0f85014da2103e3818b65bcc73a7d64064106a859cc1a5a728c4345ff0b641209fba0d90de6e953ae", sorted["redeemScript"])
++
++if __name__ == '__main__':
++    SortMultisigTest().main()
++
+diff --git a/qa/rpc-tests/wallet-accounts.py b/qa/rpc-tests/wallet-accounts.py
+index c51181e..ceddd12 100755
+--- a/qa/rpc-tests/wallet-accounts.py
++++ b/qa/rpc-tests/wallet-accounts.py
+@@ -24,6 +24,25 @@ class WalletAccountsTest(BitcoinTestFramework):
+         self.nodes = start_nodes(self.num_nodes, self.options.tmpdir, self.node_args)
+         self.is_network_split = False
+ 
++    def test_sort_multisig(self, node):
++        node.importprivkey("cSJUMwramrFYHKPfY77FH94bv4Q5rwUCyfD6zX3kLro4ZcWsXFEM")
++        node.importprivkey("cSpQbSsdKRmxaSWJ3TckCFTrksXNPbh8tfeZESGNQekkVxMbQ77H")
++        node.importprivkey("cRNbfcJgnvk2QJEVbMsxzoprotm1cy3kVA2HoyjSs3ss5NY5mQqr")
++
++        addresses = [
++            "muRmfCwue81ZT9oc3NaepefPscUHtP5kyC",
++            "n12RzKwqWPPA4cWGzkiebiM7Gu6NXUnDW8",
++            "n2yWMtx8jVbo8wv9BK2eN1LdbaakgKL3Mt",
++        ]
++
++        sorted_default = node.addmultisigaddress(2, addresses, "sort-test")
++        sorted_false = node.addmultisigaddress(2, addresses, "sort-test", False)
++        sorted_true = node.addmultisigaddress(2, addresses, "sort-test", True)
++
++        assert_equal(sorted_default, sorted_false)
++        assert_equal("2N6dne8yzh13wsRJxCcMgCYNeN9fxKWNHt8", sorted_default)
++        assert_equal("2MsJ2YhGewgDPGEQk4vahGs4wRikJXpRRtU", sorted_true)
++
+     def run_test (self):
+         node = self.nodes[0]
+         # Check that there's no UTXO on any of the nodes
+@@ -89,6 +108,7 @@ class WalletAccountsTest(BitcoinTestFramework):
+         
+         for account in accounts:
+             assert_equal(node.getbalance(account), 50)
++        self.test_sort_multisig(node)
+ 
+ if __name__ == '__main__':
+     WalletAccountsTest().main ()
+diff --git a/src/rpc/client.cpp b/src/rpc/client.cpp
+index 690513b..a8ffe13 100644
+--- a/src/rpc/client.cpp
++++ b/src/rpc/client.cpp
+@@ -67,8 +67,10 @@ static const CRPCConvertParam vRPCConvertParams[] =
+     { "bumpfee", 2 },
+     { "addmultisigaddress", 0 },
+     { "addmultisigaddress", 1 },
++    { "addmultisigaddress", 3 },
+     { "createmultisig", 0 },
+     { "createmultisig", 1 },
++    { "createmultisig", 2 },
+     { "listunspent", 0 },
+     { "listunspent", 1 },
+     { "listunspent", 2 },
+diff --git a/src/rpc/misc.cpp b/src/rpc/misc.cpp
+index 84741cc..ef71c50 100644
+--- a/src/rpc/misc.cpp
++++ b/src/rpc/misc.cpp
+@@ -225,7 +225,7 @@ UniValue validateaddress(const UniValue& params, bool fHelp, CRPCRequestInfo& re
+ /**
+  * Used by addmultisigaddress / createmultisig:
+  */
+-CScript _createmultisig_redeemScript(const UniValue& params, CRPCRequestInfo& reqinfo)
++CScript _createmultisig_redeemScript(const UniValue& params, CRPCRequestInfo& reqinfo, bool fSorted)
+ {
+     int nRequired = params[0].get_int();
+     const UniValue& keys = params[1].get_array();
+@@ -279,7 +279,7 @@ CScript _createmultisig_redeemScript(const UniValue& params, CRPCRequestInfo& re
+             throw runtime_error(" Invalid public key: "+ks);
+         }
+     }
+-    CScript result = GetScriptForMultisig(nRequired, pubkeys);
++    CScript result = GetScriptForMultisig(nRequired, pubkeys, fSorted);
+ 
+     if (result.size() > MAX_SCRIPT_ELEMENT_SIZE)
+         throw runtime_error(
+@@ -290,19 +290,21 @@ CScript _createmultisig_redeemScript(const UniValue& params, CRPCRequestInfo& re
+ 
+ UniValue createmultisig(const UniValue& params, bool fHelp, CRPCRequestInfo& reqinfo)
+ {
+-    if (fHelp || params.size() < 2 || params.size() > 2)
++    if (fHelp || params.size() < 2 || params.size() > 3)
+     {
+-        string msg = "createmultisig nrequired [\"key\",...]\n"
++        string msg = "createmultisig nrequired [\"key\",...] ( fSort )\n"
+             "\nCreates a multi-signature address with n signature of m keys required.\n"
+             "It returns a json object with the address and redeemScript.\n"
++            "Public keys can be sorted according to BIP67 during the request if required.\n"
+ 
+             "\nArguments:\n"
+-            "1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.\n"
++            "1. nrequired    (numeric, required) The number of required signatures out of the n keys or addresses.\n"
+             "2. \"keys\"       (string, required) A json array of keys which are bitcoin addresses or hex-encoded public keys\n"
+             "     [\n"
+             "       \"key\"    (string) bitcoin address or hex-encoded public key\n"
+             "       ,...\n"
+             "     ]\n"
++            "3. fSort        (bool, optional) Whether to sort public keys according to BIP67. Default setting is false.\n"
+ 
+             "\nResult:\n"
+             "{\n"
+@@ -319,8 +321,10 @@ UniValue createmultisig(const UniValue& params, bool fHelp, CRPCRequestInfo& req
+         throw runtime_error(msg);
+     }
+ 
++    bool fSorted = params.size() > 2 && params[2].get_bool();
++
+     // Construct using pay-to-script-hash:
+-    CScript inner = _createmultisig_redeemScript(params, reqinfo);
++    CScript inner = _createmultisig_redeemScript(params, reqinfo, fSorted);
+     CScriptID innerID(inner);
+     CBitcoinAddress address(innerID);
+ 
+diff --git a/src/script/standard.cpp b/src/script/standard.cpp
+index bb178f4..72c301a 100644
+--- a/src/script/standard.cpp
++++ b/src/script/standard.cpp
+@@ -290,13 +290,24 @@ CScript GetScriptForRawPubKey(const CPubKey& pubKey)
+     return CScript() << std::vector<unsigned char>(pubKey.begin(), pubKey.end()) << OP_CHECKSIG;
+ }
+ 
+-CScript GetScriptForMultisig(int nRequired, const std::vector<CPubKey>& keys)
++CScript GetScriptForMultisig(int nRequired, const std::vector<CPubKey>& keys, bool fSorted)
+ {
+-    CScript script;
++    int nEncoded = 0;
++    std::vector<std::vector<unsigned char>> vEncoded;
++    vEncoded.resize(keys.size());
++    BOOST_FOREACH(const CPubKey& key, keys) {
++        vEncoded[nEncoded++] = ToByteVector(key);
++    }
++
++    if (fSorted) {
++        std::sort(vEncoded.begin(), vEncoded.end());
++    }
+ 
++    CScript script;
+     script << CScript::EncodeOP_N(nRequired);
+-    BOOST_FOREACH(const CPubKey& key, keys)
+-        script << ToByteVector(key);
++    BOOST_FOREACH(vector<unsigned char> bytes, vEncoded) {
++        script << bytes;
++    }
+     script << CScript::EncodeOP_N(keys.size()) << OP_CHECKMULTISIG;
+     return script;
+ }
+diff --git a/src/script/standard.h b/src/script/standard.h
+index 72aaea0..b3849f8 100644
+--- a/src/script/standard.h
++++ b/src/script/standard.h
+@@ -78,7 +78,7 @@ bool ExtractDestinations(const CScript& scriptPubKey, txnouttype& typeRet, std::
+ 
+ CScript GetScriptForDestination(const CTxDestination& dest);
+ CScript GetScriptForRawPubKey(const CPubKey& pubkey);
+-CScript GetScriptForMultisig(int nRequired, const std::vector<CPubKey>& keys);
++CScript GetScriptForMultisig(int nRequired, const std::vector<CPubKey>& keys, bool fSorted);
+ CScript GetScriptForWitness(const CScript& redeemscript);
+ 
+ #endif // BITCOIN_SCRIPT_STANDARD_H
+diff --git a/src/test/script_P2SH_tests.cpp b/src/test/script_P2SH_tests.cpp
+index 1a01593..5e5f4a5 100644
+--- a/src/test/script_P2SH_tests.cpp
++++ b/src/test/script_P2SH_tests.cpp
+@@ -166,9 +166,9 @@ BOOST_AUTO_TEST_CASE(set)
+ 
+     CScript inner[4];
+     inner[0] = GetScriptForDestination(key[0].GetPubKey().GetID());
+-    inner[1] = GetScriptForMultisig(2, std::vector<CPubKey>(keys.begin(), keys.begin()+2));
+-    inner[2] = GetScriptForMultisig(1, std::vector<CPubKey>(keys.begin(), keys.begin()+2));
+-    inner[3] = GetScriptForMultisig(2, std::vector<CPubKey>(keys.begin(), keys.begin()+3));
++    inner[1] = GetScriptForMultisig(2, std::vector<CPubKey>(keys.begin(), keys.begin()+2), false);
++    inner[2] = GetScriptForMultisig(1, std::vector<CPubKey>(keys.begin(), keys.begin()+2), false);
++    inner[3] = GetScriptForMultisig(2, std::vector<CPubKey>(keys.begin(), keys.begin()+3), false);
+ 
+     CScript outer[4];
+     for (int i = 0; i < 4; i++)
+@@ -278,7 +278,7 @@ BOOST_AUTO_TEST_CASE(AreInputsStandard)
+     // First three are standard:
+     CScript pay1 = GetScriptForDestination(key[0].GetPubKey().GetID());
+     keystore.AddCScript(pay1);
+-    CScript pay1of3 = GetScriptForMultisig(1, keys);
++    CScript pay1of3 = GetScriptForMultisig(1, keys, false);
+ 
+     txFrom.vout[0].scriptPubKey = GetScriptForDestination(CScriptID(pay1)); // P2SH (OP_CHECKSIG)
+     txFrom.vout[0].nValue = 1000;
+diff --git a/src/test/script_tests.cpp b/src/test/script_tests.cpp
+index 532921a..8139bb7 100644
+--- a/src/test/script_tests.cpp
++++ b/src/test/script_tests.cpp
+@@ -1212,7 +1212,7 @@ BOOST_AUTO_TEST_CASE(script_combineSigs)
+     BOOST_CHECK(combined.scriptSig == scriptSig);
+ 
+     // Hardest case:  Multisig 2-of-3
+-    scriptPubKey = GetScriptForMultisig(2, pubkeys);
++    scriptPubKey = GetScriptForMultisig(2, pubkeys, false);
+     keystore.AddCScript(scriptPubKey);
+     SignSignature(keystore, txFrom, txTo, 0, SIGHASH_ALL);
+     combined = CombineSignatures(scriptPubKey, MutableTransactionSignatureChecker(&txTo, 0, amount), SignatureData(scriptSig), empty);
+diff --git a/src/test/sigopcount_tests.cpp b/src/test/sigopcount_tests.cpp
+index e8a63ae..5bd866d 100644
+--- a/src/test/sigopcount_tests.cpp
++++ b/src/test/sigopcount_tests.cpp
+@@ -53,7 +53,7 @@ BOOST_AUTO_TEST_CASE(GetSigOpCount)
+         k.MakeNewKey(true);
+         keys.push_back(k.GetPubKey());
+     }
+-    CScript s2 = GetScriptForMultisig(1, keys);
++    CScript s2 = GetScriptForMultisig(1, keys, false);
+     BOOST_CHECK_EQUAL(s2.GetSigOpCount(true), 3U);
+     BOOST_CHECK_EQUAL(s2.GetSigOpCount(false), 20U);
+ 
+diff --git a/src/test/transaction_tests.cpp b/src/test/transaction_tests.cpp
+index 34d9547..a35d1b8 100644
+--- a/src/test/transaction_tests.cpp
++++ b/src/test/transaction_tests.cpp
+@@ -532,7 +532,7 @@ BOOST_AUTO_TEST_CASE(test_witness)
+     std::vector<CPubKey> oneandthree;
+     oneandthree.push_back(pubkey1);
+     oneandthree.push_back(pubkey3);
+-    scriptMulti = GetScriptForMultisig(2, oneandthree);
++    scriptMulti = GetScriptForMultisig(2, oneandthree, false);
+     keystore.AddCScript(scriptPubkey1);
+     keystore.AddCScript(scriptPubkey2);
+     keystore.AddCScript(scriptPubkey1L);
+diff --git a/src/wallet/rpcwallet.cpp b/src/wallet/rpcwallet.cpp
+index 8115464..e67ec94 100644
+--- a/src/wallet/rpcwallet.cpp
++++ b/src/wallet/rpcwallet.cpp
+@@ -1002,7 +1002,7 @@ UniValue sendmany(const UniValue& params, bool fHelp, CRPCRequestInfo& reqinfo)
+ }
+ 
+ // Defined in rpc/misc.cpp
+-extern CScript _createmultisig_redeemScript(const UniValue& params, CRPCRequestInfo&);
++extern CScript _createmultisig_redeemScript(const UniValue& params, CRPCRequestInfo&, bool fSorted);
+ 
+ UniValue addmultisigaddress(const UniValue& params, bool fHelp, CRPCRequestInfo& reqinfo)
+ {
+@@ -1011,21 +1011,23 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp, CRPCRequestInfo&
+     if (!EnsureWalletIsAvailable(pwallet, fHelp))
+         return NullUniValue;
+ 
+-    if (fHelp || params.size() < 2 || params.size() > 3)
++    if (fHelp || params.size() < 2 || params.size() > 4)
+     {
+-        string msg = "addmultisigaddress nrequired [\"key\",...] ( \"account\" )\n"
++        string msg = "addmultisigaddress nrequired [\"key\",...] ( \"account\" ) ( fSort )\n"
+             "\nAdd a nrequired-to-sign multisignature address to the wallet.\n"
+             "Each key is a Bitcoin address or hex-encoded public key.\n"
+             "If 'account' is specified (DEPRECATED), assign address to that account.\n"
++            "Public keys can be sorted according to BIP67 during the request if required.\n"
+ 
+             "\nArguments:\n"
+-            "1. nrequired        (numeric, required) The number of required signatures out of the n keys or addresses.\n"
++            "1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.\n"
+             "2. \"keysobject\"   (string, required) A json array of bitcoin addresses or hex-encoded public keys\n"
+             "     [\n"
+             "       \"address\"  (string) bitcoin address or hex-encoded public key\n"
+             "       ...,\n"
+             "     ]\n"
+             "3. \"account\"      (string, optional) DEPRECATED. An account to assign the addresses to.\n"
++            "4. fSort          (bool, optional) Whether to sort public keys according to BIP67. Default setting is false.\n"
+ 
+             "\nResult:\n"
+             "\"bitcoinaddress\"  (string) A bitcoin address associated with the keys.\n"
+@@ -1045,8 +1047,10 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp, CRPCRequestInfo&
+     if (params.size() > 2)
+         strAccount = AccountFromValue(params[2]);
+ 
++    bool fSorted = params.size() > 3 && params[3].get_bool();
++
+     // Construct using pay-to-script-hash:
+-    CScript inner = _createmultisig_redeemScript(params, reqinfo);
++    CScript inner = _createmultisig_redeemScript(params, reqinfo, fSorted);
+     CScriptID innerID(inner);
+     pwallet->AddCScript(inner);
+ 

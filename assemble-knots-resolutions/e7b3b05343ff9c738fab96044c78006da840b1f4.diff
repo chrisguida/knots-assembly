@@ -1,0 +1,365 @@
+diff --git a/qa/rpc-tests/fundrawtransaction.py b/qa/rpc-tests/fundrawtransaction.py
+index 8c45578..4d1bd32 100755
+--- a/qa/rpc-tests/fundrawtransaction.py
++++ b/qa/rpc-tests/fundrawtransaction.py
+@@ -643,5 +643,86 @@ class RawTransactionsTest(BitcoinTestFramework):
+         assert_fee_amount(result2['fee'], count_bytes(result2['hex']), 2 * result_fee_rate)
+         assert_fee_amount(result3['fee'], count_bytes(result3['hex']), 10 * result_fee_rate)
+ 
++        ######################################
++        # Test subtractFeeFromOutputs option #
++        ######################################
++
++        # Make sure there is exactly one input so coin selection can't skew the result
++        assert_equal(len(self.nodes[3].listunspent(1)), 1)
++
++        inputs = []
++        outputs = {self.nodes[2].getnewaddress(): 1}
++        rawtx = self.nodes[3].createrawtransaction(inputs, outputs)
++
++        result = [self.nodes[3].fundrawtransaction(rawtx), # uses min_relay_tx_fee (set by settxfee)
++                  self.nodes[3].fundrawtransaction(rawtx, {"subtractFeeFromOutputs": []}), # empty subtraction list
++                  self.nodes[3].fundrawtransaction(rawtx, {"subtractFeeFromOutputs": [0]}), # uses min_relay_tx_fee (set by settxfee)
++                  self.nodes[3].fundrawtransaction(rawtx, {"feeRate": 2*min_relay_tx_fee}),
++                  self.nodes[3].fundrawtransaction(rawtx, {"feeRate": 2*min_relay_tx_fee, "subtractFeeFromOutputs": [0]})]
++
++        dec_tx = [self.nodes[3].decoderawtransaction(tx['hex']) for tx in result]
++        output = [d['vout'][1 - r['changepos']]['value'] for d, r in zip(dec_tx, result)]
++        change = [d['vout'][r['changepos']]['value'] for d, r in zip(dec_tx, result)]
++
++        # total fee isn't affected by the subtractFeeFromOutputs option
++        assert_equal(result[0]['fee'], result[1]['fee'], result[2]['fee'])
++        assert_equal(result[3]['fee'], result[4]['fee'])
++
++        # change amounts in result 0 and 1 are the same
++        assert_equal(change[0], change[1])
++
++        # outputs in result 0 and 1 are the same
++        assert_equal(output[0], output[1])
++
++        # 0's output should be equal to 2's (output plus fee)
++        assert_equal(output[0], output[2] + result[2]['fee'])
++
++        # 0's (change plus fee) should be equal to 2's change
++        assert_equal(change[0] + result[0]['fee'], change[2])
++
++        # 3's output should be equal to 4's (output plus fee)
++        assert_equal(output[3], output[4] + result[4]['fee'])
++
++        # 3's (change plus fee) should be equal to 4's change
++        assert_equal(change[3] + result[3]['fee'], change[4])
++
++        inputs = []
++        outputs = {self.nodes[2].getnewaddress(): value for value in (1.0, 1.1, 1.2, 1.3)}
++        keys = list(outputs.keys())
++        rawtx = self.nodes[3].createrawtransaction(inputs, outputs)
++
++        result = [self.nodes[3].fundrawtransaction(rawtx),
++                  # split the fee between outputs 0, 2, and 3, but not output 1
++                  self.nodes[3].fundrawtransaction(rawtx, {"subtractFeeFromOutputs": [0, 2, 3]})]
++
++        dec_tx = [self.nodes[3].decoderawtransaction(result[0]['hex']),
++                  self.nodes[3].decoderawtransaction(result[1]['hex'])]
++
++        output = [[out['value'] for i, out in enumerate(d['vout']) if i != r['changepos']]
++                  for d, r in zip(dec_tx, result)]
++
++        share = [o0 - o1 for o0, o1 in zip(output[0], output[1])]
++
++        # output 1 is the same in both transactions
++        assert_equal(share[1], 0)
++
++        # the other 3 outputs are smaller as a result of subtractFeeFromOutputs
++        assert_greater_than(share[0], 0)
++        assert_greater_than(share[2], 0)
++        assert_greater_than(share[3], 0)
++
++        # outputs 2 and 3 take the same share of the fee
++        assert_equal(share[2], share[3])
++
++        # output 0 takes at least as much share of the fee, and no more than 2 satoshis more, than outputs 2 and 3
++        assert_greater_than_or_equal(share[0], share[2])
++        assert_greater_than_or_equal(share[2] + Decimal(2e-8), share[0])
++
++        # the fee is the same in both transactions
++        assert_equal(result[0]['fee'], result[1]['fee'])
++
++        # the total subtracted from the outputs is equal to the fee
++        assert_equal(share[0] + share[2] + share[3], result[0]['fee'])
++
+ if __name__ == '__main__':
+     RawTransactionsTest().main()
+diff --git a/qa/rpc-tests/test_framework/util.py b/qa/rpc-tests/test_framework/util.py
+index 48e94e3..d50ff1b 100644
+--- a/qa/rpc-tests/test_framework/util.py
++++ b/qa/rpc-tests/test_framework/util.py
+@@ -509,14 +509,18 @@ def assert_fee_amount(fee, tx_size, fee_per_kB):
+     if fee > (tx_size + 2) * fee_per_kB / 1000:
+         raise AssertionError("Fee of %s BTC too high! (Should be %s BTC)"%(str(fee), str(target_fee)))
+ 
+-def assert_equal(thing1, thing2):
+-    if thing1 != thing2:
+-        raise AssertionError("%s != %s"%(str(thing1),str(thing2)))
++def assert_equal(thing1, thing2, *args):
++    if thing1 != thing2 or any(thing1 != arg for arg in args):
++        raise AssertionError("!(%s)" % " == ".join(str(arg) for arg in (thing1, thing2) + args))
+ 
+ def assert_greater_than(thing1, thing2):
+     if thing1 <= thing2:
+         raise AssertionError("%s <= %s"%(str(thing1),str(thing2)))
+ 
++def assert_greater_than_or_equal(thing1, thing2):
++    if thing1 < thing2:
++        raise AssertionError("%s < %s"%(str(thing1),str(thing2)))
++
+ def assert_raises(exc, fun, *args, **kwds):
+     assert_raises_message(exc, None, fun, *args, **kwds)
+ 
+diff --git a/src/policy/fees.cpp b/src/policy/fees.cpp
+index 7b0e8b7..453b4a5 100644
+--- a/src/policy/fees.cpp
++++ b/src/policy/fees.cpp
+@@ -495,7 +495,8 @@ void CBlockPolicyEstimator::processBlock(unsigned int nBlockHeight,
+ CFeeRate CBlockPolicyEstimator::estimateFee(int confTarget)
+ {
+     // Return failure if trying to analyze a target we're not tracking
+-    if (confTarget <= 0 || (unsigned int)confTarget > feeStats.GetMaxConfirms())
++    // It's not possible to get reasonable estimates for confTarget of 1
++    if (confTarget <= 1 || (unsigned int)confTarget > feeStats.GetMaxConfirms())
+         return CFeeRate(0);
+ 
+     double median = feeStats.EstimateMedianVal(confTarget, SUFFICIENT_FEETXS, MIN_SUCCESS_PCT, true, nBestSeenHeight);
+@@ -514,6 +515,10 @@ CFeeRate CBlockPolicyEstimator::estimateSmartFee(int confTarget, int *answerFoun
+     if (confTarget <= 0 || (unsigned int)confTarget > feeStats.GetMaxConfirms())
+         return CFeeRate(0);
+ 
++    // It's not possible to get reasonable estimates for confTarget of 1
++    if (confTarget == 1)
++        confTarget = 2;
++
+     double median = -1;
+     while (median < 0 && (unsigned int)confTarget <= feeStats.GetMaxConfirms()) {
+         median = feeStats.EstimateMedianVal(confTarget++, SUFFICIENT_FEETXS, MIN_SUCCESS_PCT, true, nBestSeenHeight);
+diff --git a/src/rpc/mining.cpp b/src/rpc/mining.cpp
+index e5eb4b8..30c495f 100644
+--- a/src/rpc/mining.cpp
++++ b/src/rpc/mining.cpp
+@@ -793,6 +793,8 @@ UniValue estimatefee(const UniValue& params, bool fHelp)
+             "\n"
+             "A negative value is returned if not enough transactions and blocks\n"
+             "have been observed to make an estimate.\n"
++            "-1 is always returned for nblocks == 1 as it is impossible to calculate\n"
++            "a fee that is high enough to get reliably included in the next block.\n"
+             "\nExample:\n"
+             + HelpExampleCli("estimatefee", "6")
+             );
+diff --git a/src/test/policyestimator_tests.cpp b/src/test/policyestimator_tests.cpp
+index 5c90238..fa00a1c 100644
+--- a/src/test/policyestimator_tests.cpp
++++ b/src/test/policyestimator_tests.cpp
+@@ -105,19 +105,26 @@ BOOST_AUTO_TEST_CASE(BlockPolicyEstimates)
+     // Highest feerate is 10*baseRate and gets in all blocks,
+     // second highest feerate is 9*baseRate and gets in 9/10 blocks = 90%,
+     // third highest feerate is 8*base rate, and gets in 8/10 blocks = 80%,
+-    // so estimateFee(1) should return 10*baseRate.
++    // so estimateFee(1) would return 10*baseRate but is hardcoded to return failure
+     // Second highest feerate has 100% chance of being included by 2 blocks,
+     // so estimateFee(2) should return 9*baseRate etc...
+     for (int i = 1; i < 10;i++) {
+         origFeeEst.push_back(mpool.estimateFee(i).GetFeePerK());
+         origPriEst.push_back(mpool.estimatePriority(i));
+         if (i > 1) { // Fee estimates should be monotonically decreasing
+-            BOOST_CHECK(origFeeEst[i-1] <= origFeeEst[i-2]);
++            if (i > 2) {
++                BOOST_CHECK(origFeeEst[i-1] <= origFeeEst[i-2]);
++            }
+             BOOST_CHECK(origPriEst[i-1] <= origPriEst[i-2]);
+         }
+         int mult = 11-i;
+-        BOOST_CHECK(origFeeEst[i-1] < mult*baseRate.GetFeePerK() + deltaFee);
+-        BOOST_CHECK(origFeeEst[i-1] > mult*baseRate.GetFeePerK() - deltaFee);
++        if (i > 1) {
++            BOOST_CHECK(origFeeEst[i-1] < mult*baseRate.GetFeePerK() + deltaFee);
++            BOOST_CHECK(origFeeEst[i-1] > mult*baseRate.GetFeePerK() - deltaFee);
++        }
++        else {
++            BOOST_CHECK(origFeeEst[i-1] == CFeeRate(0).GetFeePerK());
++        }
+         BOOST_CHECK(origPriEst[i-1] < pow(10,mult) * basepri + deltaPri);
+         BOOST_CHECK(origPriEst[i-1] > pow(10,mult) * basepri - deltaPri);
+     }
+@@ -127,9 +134,12 @@ BOOST_AUTO_TEST_CASE(BlockPolicyEstimates)
+     while (blocknum < 250)
+         mpool.removeForBlock(block, ++blocknum, dummyConflicted);
+ 
++    BOOST_CHECK(mpool.estimateFee(1) == CFeeRate(0));
+     for (int i = 1; i < 10;i++) {
+-        BOOST_CHECK(mpool.estimateFee(i).GetFeePerK() < origFeeEst[i-1] + deltaFee);
+-        BOOST_CHECK(mpool.estimateFee(i).GetFeePerK() > origFeeEst[i-1] - deltaFee);
++        if (i > 1) {
++            BOOST_CHECK(mpool.estimateFee(i).GetFeePerK() < origFeeEst[i-1] + deltaFee);
++            BOOST_CHECK(mpool.estimateFee(i).GetFeePerK() > origFeeEst[i-1] - deltaFee);
++        }
+         BOOST_CHECK(mpool.estimatePriority(i) < origPriEst[i-1] + deltaPri);
+         BOOST_CHECK(mpool.estimatePriority(i) > origPriEst[i-1] - deltaPri);
+     }
+@@ -169,8 +179,10 @@ BOOST_AUTO_TEST_CASE(BlockPolicyEstimates)
+     }
+     mpool.removeForBlock(block, 265, dummyConflicted);
+     block.clear();
++    BOOST_CHECK(mpool.estimateFee(1) == CFeeRate(0));
+     for (int i = 1; i < 10;i++) {
+-        BOOST_CHECK(mpool.estimateFee(i).GetFeePerK() > origFeeEst[i-1] - deltaFee);
++        if (i > 1)
++            BOOST_CHECK(mpool.estimateFee(i).GetFeePerK() > origFeeEst[i-1] - deltaFee);
+         BOOST_CHECK(mpool.estimatePriority(i) > origPriEst[i-1] - deltaPri);
+     }
+ 
+@@ -190,8 +202,10 @@ BOOST_AUTO_TEST_CASE(BlockPolicyEstimates)
+         mpool.removeForBlock(block, ++blocknum, dummyConflicted);
+         block.clear();
+     }
++    BOOST_CHECK(mpool.estimateFee(1) == CFeeRate(0));
+     for (int i = 1; i < 10; i++) {
+-        BOOST_CHECK(mpool.estimateFee(i).GetFeePerK() < origFeeEst[i-1] - deltaFee);
++        if (i > 1)
++            BOOST_CHECK(mpool.estimateFee(i).GetFeePerK() < origFeeEst[i-1] - deltaFee);
+         BOOST_CHECK(mpool.estimatePriority(i) < origPriEst[i-1] - deltaPri);
+     }
+ 
+diff --git a/src/wallet/rpcwallet.cpp b/src/wallet/rpcwallet.cpp
+index 2653595..165bfa5 100644
+--- a/src/wallet/rpcwallet.cpp
++++ b/src/wallet/rpcwallet.cpp
+@@ -2768,7 +2768,8 @@ UniValue fundrawtransaction(const UniValue& params, bool fHelp, CRPCRequestInfo&
+         throw runtime_error(
+                             "fundrawtransaction \"hexstring\" ( options )\n"
+                             "\nAdd inputs to a transaction until it has enough in value to meet its out value.\n"
+-                            "This will not modify existing inputs, and will add one change output to the outputs.\n"
++                            "This will not modify existing inputs, and will add at most one change output to the outputs.\n"
++                            "No existing outputs will be modified unless \"subtractFeeFromOutputs\" is specified.\n"
+                             "Note that inputs which were signed may need to be resigned after completion since in/outputs have been added.\n"
+                             "The inputs added will not be signed, use signrawtransaction for that.\n"
+                             "Note that all existing inputs must have their previous output transaction be in the wallet.\n"
+@@ -2780,12 +2781,18 @@ UniValue fundrawtransaction(const UniValue& params, bool fHelp, CRPCRequestInfo&
+                             "1. \"hexstring\"           (string, required) The hex string of the raw transaction\n"
+                             "2. options               (object, optional)\n"
+                             "   {\n"
+-                            "     \"changeAddress\"     (string, optional, default=pool address) The bitcoin address to receive the change\n"
+-                            "     \"changePosition\"    (numeric, optional, default=random) The index of the change output\n"
+-                            "     \"includeWatching\"   (boolean, optional, default=false) Also select inputs which are watch only\n"
+-                            "     \"lockUnspents\"      (boolean, optional, default=false) Lock selected unspent outputs\n"
++                            "     \"changeAddress\"          (string, optional, default=pool address) The bitcoin address to receive the change\n"
++                            "     \"changePosition\"         (numeric, optional, default=random) The index of the change output\n"
++                            "     \"includeWatching\"        (boolean, optional, default=false) Also select inputs which are watch only\n"
++                            "     \"lockUnspents\"           (boolean, optional, default=false) Lock selected unspent outputs\n"
+                             "     \"optIntoRbf\"        (boolean, optional, default=false) Allow this transaction to be replaced by a transaction with heigher fees\n"
+-                            "     \"feeRate\"           (numeric, optional, default=auto) Set a specific feerate (" + CURRENCY_UNIT + " per KB)\n"
++                            "     \"feeRate\"                (numeric, optional, default=auto) Set a specific feerate (" + CURRENCY_UNIT + " per KB)\n"
++                            "     \"subtractFeeFromOutputs\" (array, optional) A json array of integers.\n"
++                            "                              The fee will be equally deducted from the amount of each specified output.\n"
++                            "                              The outputs are specified by their zero-based index, before any change output is added.\n"
++                            "                              Those recipients will receive less bitcoins than you enter in their corresponding amount field.\n"
++                            "                              If no outputs are specified here, the sender pays the fee.\n"
++                            "                                  [vout_index,...]\n"
+                             "   }\n"
+                             "                         for backward compatibility: passing in a true instead of an object will result in {\"includeWatching\":true}\n"
+                             "\nResult:\n"
+@@ -2815,6 +2822,8 @@ UniValue fundrawtransaction(const UniValue& params, bool fHelp, CRPCRequestInfo&
+     unsigned int flags = CREATE_TX_DONT_SIGN;
+     CFeeRate feeRate = CFeeRate(0);
+     bool overrideEstimatedFeerate = false;
++    UniValue subtractFeeFromOutputs;
++    set<int> setSubtractFeeFromOutputs;
+ 
+     if (params.size() > 1) {
+       if (params[1].type() == UniValue::VBOOL) {
+@@ -2834,6 +2843,7 @@ UniValue fundrawtransaction(const UniValue& params, bool fHelp, CRPCRequestInfo&
+                 {"lockUnspents", UniValueType(UniValue::VBOOL)},
+                 {"optIntoRbf", UniValueType(UniValue::VBOOL)},
+                 {"feeRate", UniValueType()}, // will be checked below
++                {"subtractFeeFromOutputs", UniValueType(UniValue::VARR)},
+             },
+             true, true);
+ 
+@@ -2869,6 +2879,9 @@ UniValue fundrawtransaction(const UniValue& params, bool fHelp, CRPCRequestInfo&
+             feeRate = CFeeRate(AmountFromValue(options["feeRate"]));
+             overrideEstimatedFeerate = true;
+         }
++
++        if (options.exists("subtractFeeFromOutputs"))
++            subtractFeeFromOutputs = options["subtractFeeFromOutputs"].get_array();
+       }
+     }
+ 
+@@ -2883,11 +2896,22 @@ UniValue fundrawtransaction(const UniValue& params, bool fHelp, CRPCRequestInfo&
+     if (changePosition != -1 && (changePosition < 0 || (unsigned int)changePosition > origTx.vout.size()))
+         throw JSONRPCError(RPC_INVALID_PARAMETER, "changePosition out of bounds");
+ 
++    for (unsigned int idx = 0; idx < subtractFeeFromOutputs.size(); idx++) {
++        int pos = subtractFeeFromOutputs[idx].get_int();
++        if (setSubtractFeeFromOutputs.count(pos))
++            throw JSONRPCError(RPC_INVALID_PARAMETER, strprintf("%s%d", "Invalid parameter, duplicated position: ", pos));
++        if (pos < 0)
++            throw JSONRPCError(RPC_INVALID_PARAMETER, strprintf("%s%d", "Invalid parameter, negative position: ", pos));
++        if (pos >= int(origTx.vout.size()))
++            throw JSONRPCError(RPC_INVALID_PARAMETER, strprintf("%s%d", "Invalid parameter, position too large: ", pos));
++        setSubtractFeeFromOutputs.insert(pos);
++    }
++
+     CMutableTransaction tx(origTx);
+     CAmount nFeeOut;
+     string strFailReason;
+ 
+-    if(!pwallet->FundTransaction(tx, nFeeOut, overrideEstimatedFeerate, feeRate, changePosition, strFailReason, includeWatching, lockUnspents, changeAddress, flags)) {
++    if(!pwallet->FundTransaction(tx, nFeeOut, overrideEstimatedFeerate, feeRate, changePosition, strFailReason, includeWatching, lockUnspents, setSubtractFeeFromOutputs, changeAddress, flags)) {
+         throw JSONRPCError(RPC_INTERNAL_ERROR, strFailReason);
+     }
+ 
+diff --git a/src/wallet/wallet.cpp b/src/wallet/wallet.cpp
+index e8f81e7..0d808cb 100644
+--- a/src/wallet/wallet.cpp
++++ b/src/wallet/wallet.cpp
+@@ -2177,14 +2177,15 @@ bool CWallet::SelectCoins(const vector<COutput>& vAvailableCoins, const CAmount&
+     return res;
+ }
+ 
+-bool CWallet::FundTransaction(CMutableTransaction& tx, CAmount& nFeeRet, bool overrideEstimatedFeeRate, const CFeeRate& specificFeeRate, int& nChangePosInOut, std::string& strFailReason, bool includeWatching, bool lockUnspents, const CTxDestination& destChange, unsigned int flags)
++bool CWallet::FundTransaction(CMutableTransaction& tx, CAmount& nFeeRet, bool overrideEstimatedFeeRate, const CFeeRate& specificFeeRate, int& nChangePosInOut, std::string& strFailReason, bool includeWatching, bool lockUnspents, std::set<int>& setSubtractFeeFromOutputs, const CTxDestination& destChange, unsigned int flags)
+ {
+     vector<CRecipient> vecSend;
+ 
+     // Turn the txout set into a CRecipient vector
+-    BOOST_FOREACH(const CTxOut& txOut, tx.vout)
++    for (unsigned int idx = 0; idx < tx.vout.size(); idx++)
+     {
+-        CRecipient recipient = {txOut.scriptPubKey, txOut.nValue, false};
++        const CTxOut& txOut = tx.vout[idx];
++        CRecipient recipient = {txOut.scriptPubKey, txOut.nValue, setSubtractFeeFromOutputs.count(idx) == 1};
+         vecSend.push_back(recipient);
+     }
+ 
+@@ -2206,6 +2207,10 @@ bool CWallet::FundTransaction(CMutableTransaction& tx, CAmount& nFeeRet, bool ov
+     if (nChangePosInOut != -1)
+         tx.vout.insert(tx.vout.begin() + nChangePosInOut, wtx.vout[nChangePosInOut]);
+ 
++    // Copy output sizes from new transaction; they may have had the fee subtracted from them
++    for (unsigned int idx = 0; idx < tx.vout.size(); idx++)
++        tx.vout[idx].nValue = wtx.vout[idx].nValue;
++
+     // Add new txins (keeping original txin scriptSig/order)
+     BOOST_FOREACH(const CTxIn& txin, wtx.vin)
+     {
+diff --git a/src/wallet/wallet.h b/src/wallet/wallet.h
+index 141235a..30138fb 100644
+--- a/src/wallet/wallet.h
++++ b/src/wallet/wallet.h
+@@ -768,7 +768,7 @@ public:
+      * Insert additional inputs into the transaction by
+      * calling CreateTransaction();
+      */
+-    bool FundTransaction(CMutableTransaction& tx, CAmount& nFeeRet, bool overrideEstimatedFeeRate, const CFeeRate& specificFeeRate, int& nChangePosInOut, std::string& strFailReason, bool includeWatching, bool lockUnspents, const CTxDestination& destChange = CNoDestination(), unsigned int flags = CREATE_TX_DONT_SIGN);
++    bool FundTransaction(CMutableTransaction& tx, CAmount& nFeeRet, bool overrideEstimatedFeeRate, const CFeeRate& specificFeeRate, int& nChangePosInOut, std::string& strFailReason, bool includeWatching, bool lockUnspents, std::set<int>& setSubtractFeeFromOutputs, const CTxDestination& destChange = CNoDestination(), unsigned int flags = CREATE_TX_DONT_SIGN);
+ 
+     /**
+      * Create a new transaction paying the recipients with a set of coins

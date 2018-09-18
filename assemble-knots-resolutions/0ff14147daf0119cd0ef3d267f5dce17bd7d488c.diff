@@ -1,0 +1,829 @@
+diff --git a/contrib/debian/copyright b/contrib/debian/copyright
+index b44244a..1639e2c 100644
+--- a/contrib/debian/copyright
++++ b/contrib/debian/copyright
+@@ -21,6 +21,7 @@ License: GPL-3+
+ 
+ Files: src/qt/res/icons/add.png
+        src/qt/res/icons/address-book.png
++       src/qt/res/icons/chart.png
+        src/qt/res/icons/chevron.png
+        src/qt/res/icons/configure.png
+        src/qt/res/icons/debugwindow.png
+diff --git a/src/Makefile.qt.include b/src/Makefile.qt.include
+index a264a8c..50a4dad 100644
+--- a/src/Makefile.qt.include
++++ b/src/Makefile.qt.include
+@@ -132,6 +132,7 @@ QT_MOC_CPP = \
+   qt/moc_macdockiconhandler.cpp \
+   qt/moc_macnotificationhandler.cpp \
+   qt/moc_modaloverlay.cpp \
++  qt/moc_mempoolstats.cpp \
+   qt/moc_notificator.cpp \
+   qt/moc_openuridialog.cpp \
+   qt/moc_optionsdialog.cpp \
+@@ -200,6 +201,7 @@ BITCOIN_QT_H = \
+   qt/macdockiconhandler.h \
+   qt/macnotificationhandler.h \
+   qt/modaloverlay.h \
++  qt/mempoolstats.h \
+   qt/networkstyle.h \
+   qt/notificator.h \
+   qt/openuridialog.h \
+@@ -243,6 +245,7 @@ RES_ICONS = \
+   qt/res/icons/bitcoin.ico \
+   qt/res/icons/bitcoin_testnet.ico \
+   qt/res/icons/bitcoin.png \
++  qt/res/icons/chart.png \
+   qt/res/icons/chevron.png \
+   qt/res/icons/clock1.png \
+   qt/res/icons/clock2.png \
+@@ -303,6 +306,7 @@ BITCOIN_QT_BASE_CPP = \
+   qt/guiutil.cpp \
+   qt/intro.cpp \
+   qt/modaloverlay.cpp \
++  qt/mempoolstats.cpp \
+   qt/networkstyle.cpp \
+   qt/notificator.cpp \
+   qt/optionsdialog.cpp \
+diff --git a/src/qt/bitcoin.qrc b/src/qt/bitcoin.qrc
+index 451d391..db6be05 100644
+--- a/src/qt/bitcoin.qrc
++++ b/src/qt/bitcoin.qrc
+@@ -53,6 +53,7 @@
+         <file alias="hd_enabled">res/icons/hd_enabled.png</file>
+         <file alias="hd_disabled">res/icons/hd_disabled.png</file>
+         <file alias="network_disabled">res/icons/network_disabled.png</file>
++        <file alias="chart">res/icons/chart.png</file>
+     </qresource>
+     <qresource prefix="/movies">
+         <file alias="spinner-000">res/movies/spinner-000.png</file>
+diff --git a/src/qt/bitcoingui.cpp b/src/qt/bitcoingui.cpp
+index ba4c346..c9a90cc 100644
+--- a/src/qt/bitcoingui.cpp
++++ b/src/qt/bitcoingui.cpp
+@@ -13,6 +13,7 @@
+ #include "guiconstants.h"
+ #include "guiutil.h"
+ #include "modaloverlay.h"
++#include "mempoolstats.h"
+ #include "networkstyle.h"
+ #include "notificator.h"
+ #include "openuridialog.h"
+@@ -110,12 +111,14 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
+     openRPCConsoleAction(0),
+     openAction(0),
+     showHelpMessageAction(0),
++    showMempoolStatsAction(0),
+     trayIcon(0),
+     trayIconMenu(0),
+     notificator(0),
+     rpcConsole(0),
+     helpMessageDialog(0),
+     modalOverlay(0),
++    mempoolStats(0),
+     prevBlocks(0),
+     spinnerFrame(0),
+     platformStyle(platformStyle)
+@@ -359,6 +362,11 @@ void BitcoinGUI::createActions()
+     // initially disable the debug window menu item
+     openRPCConsoleAction->setEnabled(false);
+ 
++    showMempoolStatsAction = new QAction(platformStyle->TextColorIcon(":/icons/chart"), tr("&Mempool Statistics"), this);
++    showMempoolStatsAction->setStatusTip(tr("Mempool Statistics"));
++    // initially disable the mempool stats menu item
++    showMempoolStatsAction->setEnabled(false);
++
+     usedSendingAddressesAction = new QAction(platformStyle->TextColorIcon(":/icons/address-book"), tr("&Sending addresses..."), this);
+     usedSendingAddressesAction->setStatusTip(tr("Show the list of used sending addresses and labels"));
+     usedReceivingAddressesAction = new QAction(platformStyle->TextColorIcon(":/icons/address-book"), tr("&Receiving addresses..."), this);
+@@ -378,6 +386,8 @@ void BitcoinGUI::createActions()
+     connect(toggleHideAction, SIGNAL(triggered()), this, SLOT(toggleHidden()));
+     connect(showHelpMessageAction, SIGNAL(triggered()), this, SLOT(showHelpMessageClicked()));
+     connect(openRPCConsoleAction, SIGNAL(triggered()), this, SLOT(showDebugWindow()));
++    connect(showMempoolStatsAction, SIGNAL(triggered()), this, SLOT(showMempoolStatsWindow()));
++
+     // prevents an open debug window from becoming stuck/unusable on client shutdown
+     connect(quitAction, SIGNAL(triggered()), rpcConsole, SLOT(hide()));
+ 
+@@ -438,6 +448,7 @@ void BitcoinGUI::createMenuBar()
+     {
+         help->addAction(openRPCConsoleAction);
+     }
++    help->addAction(showMempoolStatsAction);
+     help->addAction(showHelpMessageAction);
+     help->addSeparator();
+     help->addAction(aboutAction);
+@@ -629,6 +640,7 @@ void BitcoinGUI::createTrayIconMenu()
+     trayIconMenu->addSeparator();
+     trayIconMenu->addAction(optionsAction);
+     trayIconMenu->addAction(openRPCConsoleAction);
++    trayIconMenu->addAction(showMempoolStatsAction);
+ #ifndef Q_OS_MAC // This is built-in on Mac
+     trayIconMenu->addSeparator();
+     trayIconMenu->addAction(quitAction);
+@@ -684,6 +696,19 @@ void BitcoinGUI::showHelpMessageClicked()
+     helpMessageDialog->show();
+ }
+ 
++void BitcoinGUI::showMempoolStatsWindow()
++{
++    // only build the mempool stats window if its requested
++    if (!mempoolStats)
++        mempoolStats = new MempoolStats(this);
++    if (clientModel)
++        mempoolStats->setClientModel(clientModel);
++    mempoolStats->showNormal();
++    mempoolStats->show();
++    mempoolStats->raise();
++    mempoolStats->activateWindow();
++}
++
+ #ifdef ENABLE_WALLET
+ void BitcoinGUI::openClicked()
+ {
+@@ -982,6 +1007,7 @@ void BitcoinGUI::showEvent(QShowEvent *event)
+ {
+     // enable the debug window when the main window shows up
+     openRPCConsoleAction->setEnabled(true);
++    showMempoolStatsAction->setEnabled(true);
+     aboutAction->setEnabled(true);
+     optionsAction->setEnabled(true);
+ }
+diff --git a/src/qt/bitcoingui.h b/src/qt/bitcoingui.h
+index e6f5fce..d38651f 100644
+--- a/src/qt/bitcoingui.h
++++ b/src/qt/bitcoingui.h
+@@ -31,6 +31,7 @@ class WalletFrame;
+ class WalletModel;
+ class HelpMessageDialog;
+ class ModalOverlay;
++class MempoolStats;
+ 
+ class CWallet;
+ 
+@@ -113,6 +114,7 @@ private:
+     QAction *openRPCConsoleAction;
+     QAction *openAction;
+     QAction *showHelpMessageAction;
++    QAction *showMempoolStatsAction;
+ 
+     QLabel *WalletSelectorLabel;
+     QComboBox *WalletSelector;
+@@ -123,6 +125,7 @@ private:
+     RPCConsole *rpcConsole;
+     HelpMessageDialog *helpMessageDialog;
+     ModalOverlay *modalOverlay;
++    MempoolStats *mempoolStats;
+ 
+     /** Keep track of previous number of blocks, to detect progress */
+     int prevBlocks;
+@@ -229,6 +232,8 @@ private Q_SLOTS:
+     void showDebugWindowActivateConsole();
+     /** Show help message dialog */
+     void showHelpMessageClicked();
++    /** Show mempool stats window */
++    void showMempoolStatsWindow();
+ #ifndef Q_OS_MAC
+     /** Handle tray icon clicked */
+     void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
+diff --git a/src/qt/clientmodel.cpp b/src/qt/clientmodel.cpp
+index 1568f8c..71fadf5 100644
+--- a/src/qt/clientmodel.cpp
++++ b/src/qt/clientmodel.cpp
+@@ -13,6 +13,7 @@
+ #include "checkpoints.h"
+ #include "clientversion.h"
+ #include "net.h"
++#include "stats/stats.h"
+ #include "txmempool.h"
+ #include "ui_interface.h"
+ #include "util.h"
+@@ -226,6 +227,23 @@ void ClientModel::updateBanlist()
+     banTableModel->refresh();
+ }
+ 
++void ClientModel::updateMempoolStats()
++{
++    Q_EMIT mempoolStatsDidUpdate();
++}
++
++mempoolSamples_t ClientModel::getMempoolStatsInRange(QDateTime &from, QDateTime &to)
++{
++    // get stats from the core stats model
++    uint64_t timeFrom = from.toTime_t();
++    uint64_t timeTo = to.toTime_t();
++
++    mempoolSamples_t samples = CStats::DefaultStats()->mempoolGetValuesInRange(timeFrom,timeTo);
++    from.setTime_t(timeFrom);
++    to.setTime_t(timeTo);
++    return samples;
++}
++
+ // Handlers for core signals
+ static void ShowProgress(ClientModel *clientmodel, const std::string &title, int nProgress)
+ {
+@@ -283,6 +301,11 @@ static void BlockTipChanged(ClientModel *clientmodel, bool initialSync, const CB
+     }
+ }
+ 
++static void MempoolStatsDidChange(ClientModel *clientmodel)
++{
++    QMetaObject::invokeMethod(clientmodel, "updateMempoolStats", Qt::QueuedConnection);
++}
++
+ void ClientModel::subscribeToCoreSignals()
+ {
+     // Connect signals to client
+@@ -293,6 +316,8 @@ void ClientModel::subscribeToCoreSignals()
+     uiInterface.BannedListChanged.connect(boost::bind(BannedListChanged, this));
+     uiInterface.NotifyBlockTip.connect(boost::bind(BlockTipChanged, this, _1, _2, false));
+     uiInterface.NotifyHeaderTip.connect(boost::bind(BlockTipChanged, this, _1, _2, true));
++
++    CStats::DefaultStats()->MempoolStatsDidChange.connect(boost::bind(MempoolStatsDidChange, this));
+ }
+ 
+ void ClientModel::unsubscribeFromCoreSignals()
+@@ -305,4 +330,6 @@ void ClientModel::unsubscribeFromCoreSignals()
+     uiInterface.BannedListChanged.disconnect(boost::bind(BannedListChanged, this));
+     uiInterface.NotifyBlockTip.disconnect(boost::bind(BlockTipChanged, this, _1, _2, false));
+     uiInterface.NotifyHeaderTip.disconnect(boost::bind(BlockTipChanged, this, _1, _2, true));
++
++    CStats::DefaultStats()->MempoolStatsDidChange.disconnect(boost::bind(MempoolStatsDidChange, this));
+ }
+diff --git a/src/qt/clientmodel.h b/src/qt/clientmodel.h
+index a641401..d244ae1 100644
+--- a/src/qt/clientmodel.h
++++ b/src/qt/clientmodel.h
+@@ -8,6 +8,8 @@
+ #include <QObject>
+ #include <QDateTime>
+ 
++#include "stats/stats.h"
++
+ class AddressTableModel;
+ class BanTableModel;
+ class OptionsModel;
+@@ -81,6 +83,8 @@ public:
+     QString formatClientStartupTime() const;
+     QString dataDir() const;
+ 
++    mempoolSamples_t getMempoolStatsInRange(QDateTime &from, QDateTime &to);
++
+ private:
+     OptionsModel *optionsModel;
+     PeerTableModel *peerTableModel;
+@@ -105,12 +109,17 @@ Q_SIGNALS:
+     // Show progress dialog e.g. for verifychain
+     void showProgress(const QString &title, int nProgress);
+ 
++    void mempoolStatsDidUpdate();
++
+ public Q_SLOTS:
+     void updateTimer();
+     void updateNumConnections(int numConnections);
+     void updateNetworkActive(bool networkActive);
+     void updateAlert();
+     void updateBanlist();
++
++    /* stats stack */
++    void updateMempoolStats();
+ };
+ 
+ #endif // BITCOIN_QT_CLIENTMODEL_H
+diff --git a/src/qt/guiutil.cpp b/src/qt/guiutil.cpp
+index c8bfb1a..a6752fa 100644
+--- a/src/qt/guiutil.cpp
++++ b/src/qt/guiutil.cpp
+@@ -1031,4 +1031,19 @@ QString formateNiceTimeOffset(qint64 secs)
+     }
+     return timeBehindText;
+ }
++
++QString formatBytes(size_t nBytes)
++{
++    static float kilobyte = 1000.0;
++    if (nBytes >= kilobyte*kilobyte*kilobyte)
++        return QString::number(nBytes/kilobyte/kilobyte/kilobyte, 'f', 2)+" GB";
++    if (nBytes >= kilobyte*kilobyte)
++        return QString::number(nBytes/kilobyte/kilobyte, 'f', 2)+" MB";
++    if (nBytes >= kilobyte)
++        return QString::number(nBytes/kilobyte, 'f', 2)+" KB";
++
++    return QString::number(nBytes)+" Bytes";
++
++}
++
+ } // namespace GUIUtil
+diff --git a/src/qt/guiutil.h b/src/qt/guiutil.h
+index 8f1f3fb..d556723 100644
+--- a/src/qt/guiutil.h
++++ b/src/qt/guiutil.h
+@@ -201,6 +201,8 @@ namespace GUIUtil
+ 
+     QString formateNiceTimeOffset(qint64 secs);
+ 
++    /* Format bytes into GB/MB/KB */
++    QString formatBytes(size_t nBytes);
+ #if defined(Q_OS_MAC) && QT_VERSION >= 0x050000
+     // workaround for Qt OSX Bug:
+     // https://bugreports.qt-project.org/browse/QTBUG-15631
+diff --git a/src/qt/mempoolstats.cpp b/src/qt/mempoolstats.cpp
+new file mode 100644
+index 0000000..4a83139
+--- /dev/null
++++ b/src/qt/mempoolstats.cpp
+@@ -0,0 +1,377 @@
++// Copyright (c) 2016 The Bitcoin Core developers
++// Distributed under the MIT software license, see the accompanying
++// file COPYING or http://www.opensource.org/licenses/mit-license.php.
++
++#include "mempoolstats.h"
++
++#include "clientmodel.h"
++#include "guiutil.h"
++#include "stats/stats.h"
++
++#include <QCheckBox>
++#include <QDialog>
++#include <QGraphicsScene>
++#include <QGraphicsView>
++#include <QGridLayout>
++#include <QHBoxLayout>
++#include <QLabel>
++#include <QVBoxLayout>
++
++static const char *LABEL_FONT = "Arial";
++static int LABEL_TITLE_SIZE = 22;
++
++static const int LABEL_LEFT_SIZE = 30;
++static const int LABEL_RIGHT_SIZE = 30;
++static const int GRAPH_PADDING_LEFT = 30+LABEL_LEFT_SIZE;
++static const int GRAPH_PADDING_RIGHT = 30+LABEL_RIGHT_SIZE;
++static const int GRAPH_PADDING_TOP = 10;
++static const int GRAPH_PADDING_BOTTOM = 50;
++
++namespace {
++
++void setCenterPos(QGraphicsTextItem * const item, const QSizeF &pos) {
++    const QRectF boundingRect = item->boundingRect();
++    item->setPos(pos.width() - (boundingRect.width() / 2.0), pos.height() - (boundingRect.height() / 2.0));
++}
++
++}
++
++MempoolStats::MempoolStats(QWidget *parent) :
++QDialog(parent),
++clientModel(0)
++{
++    this->setWindowTitle(tr("Memory pool statistics"));
++
++    QVBoxLayout * const mainlayout = new QVBoxLayout(this);
++    this->setLayout(mainlayout);
++
++    QHBoxLayout * const toplayout = new QHBoxLayout(this);
++    mainlayout->addLayout(toplayout);
++
++    {
++        QLabel * const secondTitle = new QLabel(this->windowTitle(), this);
++        int secondTitleFontSize = secondTitle->font().pointSize() * 2;
++        secondTitle->setStyleSheet(
++            "QLabel {"
++                "font-size: " + QString::number(secondTitleFontSize) + "pt;"
++            "}"
++        );
++        toplayout->addWidget(secondTitle, 0, Qt::AlignBottom);
++    }
++
++    opts_grid = new QGridLayout(this);
++    toplayout->addLayout(opts_grid);
++
++    cbShowMemUsage = new QCheckBox(tr("Dynamic &memory usage"), this);
++    cbShowMemUsage->setChecked(true);
++    lblMemUsage = new QLabel(this);
++    setupValueUI(cbShowMemUsage, lblMemUsage, "blue");
++
++    cbShowNumTxns = new QCheckBox(tr("Number of &transactions"), this);
++    cbShowNumTxns->setChecked(true);
++    lblNumTxns = new QLabel(this);
++    setupValueUI(cbShowNumTxns, lblNumTxns, "red");
++
++    cbShowMinFeerate = new QCheckBox(tr("Minimum &fee-rate per kB"), this);
++    cbShowMinFeerate->setChecked(false);
++    lblMinFeerate = new QLabel(this);
++    setupValueUI(cbShowMinFeerate, lblMinFeerate, "green");
++
++    scene = new QGraphicsScene();
++    gvChart = new QGraphicsView(scene, this);
++    gvChart->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
++    mainlayout->addWidget(gvChart);
++
++    noDataItem = scene->addText(tr("No data available"));
++    noDataItem->setDefaultTextColor(QColor(100,100,100, 200));
++
++    QHBoxLayout * const bottomlayout = new QHBoxLayout(this);
++    mainlayout->addLayout(bottomlayout);
++
++    sliderScale = new QSlider(Qt::Horizontal, this);
++    bottomlayout->addWidget(sliderScale);
++    sliderScale->setMinimum(1);
++    sliderScale->setMaximum(288);
++    sliderScale->setPageStep(12);
++    sliderScale->setValue(6);
++    connect(sliderScale, SIGNAL(valueChanged(int)), this, SLOT(drawChart()));
++
++    lblGraphRange = new QLabel(this);
++    bottomlayout->addWidget(lblGraphRange);
++    lblGraphRange->setFixedWidth(100);
++    lblGraphRange->setAlignment(Qt::AlignCenter);
++
++    if (parent) {
++        parent->installEventFilter(this);
++        raise();
++    }
++
++    if (clientModel)
++        drawChart();
++}
++
++QSize MempoolStats::sizeHint() const
++{
++    QSize sz = QDialog::sizeHint();
++    if (sz.width() < 640) {
++        sz.setWidth(640);
++    }
++    sz.setHeight(sz.height() * 2);
++    if (sz.height() < 400) {
++        sz.setHeight(400);
++    }
++    return sz;
++}
++
++void MempoolStats::setupValueUI(QWidget * const checkbox, QWidget * const label, const QString &color)
++{
++    const int row = opts_grid->rowCount();
++
++    connect(checkbox, SIGNAL(stateChanged(int)), this, SLOT(drawChart()));
++    opts_grid->addWidget(checkbox, row, 0, Qt::AlignLeft);
++    checkbox->setStyleSheet(
++        "QCheckBox {"
++            "border-bottom: 2px solid transparent;"
++        "}"
++        "QCheckBox::checked {"
++            "border-bottom: 2px solid " + color + ";"
++        "}"
++    );
++
++    label->setStyleSheet(
++        "QLabel {"
++            "font-weight: bold;"
++        "}"
++    );
++//     label->setAlignment(Qt::AlignRight);
++    opts_grid->addWidget(label, row, 1, Qt::AlignRight);
++}
++
++void MempoolStats::setClientModel(ClientModel *model)
++{
++    clientModel = model;
++
++    if (model)
++        connect(model, SIGNAL(mempoolStatsDidUpdate()), this, SLOT(drawChart()));
++}
++
++void MempoolStats::drawChart()
++{
++    if (!isVisible())
++        return;
++
++    const bool drawTxCount = cbShowNumTxns->isChecked();
++    const bool drawMinFee = cbShowMinFeerate->isChecked();
++    const bool drawDynMemUsage = cbShowMemUsage->isChecked();
++
++    // remove the items which needs to be redrawn
++    for (QGraphicsItem * item : redrawItems)
++    {
++        scene->removeItem(item);
++        delete item;
++    }
++    redrawItems.clear();
++
++    const int64_t timeFilter = sliderScale->value() * 5 * 60;
++    lblGraphRange->setText(GUIUtil::formatDurationStr(timeFilter));
++
++    // get the samples
++    QDateTime toDateTime = QDateTime::currentDateTime();
++    QDateTime fromDateTime = toDateTime.addSecs(-timeFilter); //-1h
++
++    mempoolSamples_t vSamples = clientModel->getMempoolStatsInRange(fromDateTime, toDateTime);
++
++    // set the values into the overview labels
++    if (vSamples.size())
++    {
++        lblMemUsage->setText(GUIUtil::formatBytes(vSamples.back().dynMemUsage));
++        lblNumTxns->setText(QString::number(vSamples.back().txCount));
++        lblMinFeerate->setText(QString::number(vSamples.back().minFeePerK));
++    }
++
++    QSizeF chartsize = gvChart->sceneRect().size();
++
++    // don't paint the grind/graph if there are no or only a signle sample
++    if (vSamples.size() < 2)
++    {
++        QFont font = lblMinFeerate->font();
++        font.setPointSize(font.pointSize() * 2);
++        noDataItem->setFont(QFont(LABEL_FONT, LABEL_TITLE_SIZE, QFont::Light));
++        setCenterPos(noDataItem, chartsize / 2);
++        noDataItem->setVisible(true);
++        return;
++    }
++    noDataItem->setVisible(false);
++
++    int bottom = gvChart->size().height()-GRAPH_PADDING_BOTTOM;
++    qreal maxwidth = gvChart->size().width()-GRAPH_PADDING_LEFT-GRAPH_PADDING_RIGHT;
++    qreal maxheightG = gvChart->size().height()-GRAPH_PADDING_TOP-GRAPH_PADDING_BOTTOM;
++    float paddingTopSizeFactor = 1.2;
++    qreal step = maxwidth/(double)vSamples.size();
++
++    // make sure we skip samples that would be drawn narrower then 1px
++    // larger window can result in drawing more samples
++    int samplesStep = 1;
++    if (step < 1)
++        samplesStep = ceil(1/samplesStep);
++
++    // find maximum values
++    int64_t maxDynMemUsage = 0;
++    int64_t minDynMemUsage = std::numeric_limits<int64_t>::max();
++    int64_t maxTxCount = 0;
++    int64_t minTxCount = std::numeric_limits<int64_t>::max();
++    int64_t maxMinFee = 0;
++    uint32_t maxTimeDetla = vSamples.back().timeDelta-vSamples.front().timeDelta;
++    for(const struct CStatsMempoolSample &sample : vSamples)
++    {
++        if (sample.dynMemUsage > maxDynMemUsage)
++            maxDynMemUsage = sample.dynMemUsage;
++
++        if (sample.dynMemUsage < minDynMemUsage)
++            minDynMemUsage = sample.dynMemUsage;
++
++        if (sample.txCount > maxTxCount)
++            maxTxCount = sample.txCount;
++
++        if (sample.txCount < minTxCount)
++            minTxCount = sample.txCount;
++
++        if (sample.minFeePerK > maxMinFee)
++            maxMinFee = sample.minFeePerK;
++    }
++
++    int64_t dynMemUsagelog10Val = pow(10.0f, floor(log10(maxDynMemUsage*paddingTopSizeFactor-minDynMemUsage)));
++    int64_t topDynMemUsage = ceil((double)maxDynMemUsage*paddingTopSizeFactor/dynMemUsagelog10Val)*dynMemUsagelog10Val;
++    int64_t bottomDynMemUsage = floor((double)minDynMemUsage/dynMemUsagelog10Val)*dynMemUsagelog10Val;
++
++    int64_t txCountLog10Val = pow(10.0f, floor(log10(maxTxCount*paddingTopSizeFactor-minTxCount)));
++    int64_t topTxCount = ceil((double)maxTxCount*paddingTopSizeFactor/txCountLog10Val)*txCountLog10Val;
++    int64_t bottomTxCount = floor((double)minTxCount/txCountLog10Val)*txCountLog10Val;
++    
++    qreal currentX = GRAPH_PADDING_LEFT;
++    QPainterPath dynMemUsagePath(QPointF(currentX, bottom));
++    QPainterPath txCountPath(QPointF(currentX, bottom));
++    QPainterPath minFeePath(QPointF(currentX, bottom));
++
++    // draw the three possible paths
++    for (mempoolSamples_t::iterator it = vSamples.begin(); it != vSamples.end(); it+=samplesStep)
++    {
++        const struct CStatsMempoolSample &sample = (*it);
++        qreal xPos = maxTimeDetla > 0 ? maxwidth/maxTimeDetla*(sample.timeDelta-vSamples.front().timeDelta) : maxwidth/(double)vSamples.size();
++        if (sample.timeDelta == vSamples.front().timeDelta)
++        {
++            dynMemUsagePath.moveTo(GRAPH_PADDING_LEFT+xPos, bottom-maxheightG/(topDynMemUsage-bottomDynMemUsage)*(sample.dynMemUsage-bottomDynMemUsage));
++            txCountPath.moveTo(GRAPH_PADDING_LEFT+xPos, bottom-maxheightG/(topTxCount-bottomTxCount)*(sample.txCount-bottomTxCount));
++            minFeePath.moveTo(GRAPH_PADDING_LEFT+xPos, bottom-maxheightG/maxMinFee*sample.minFeePerK);
++        }
++        else
++        {
++            dynMemUsagePath.lineTo(GRAPH_PADDING_LEFT+xPos, bottom-maxheightG/(topDynMemUsage-bottomDynMemUsage)*(sample.dynMemUsage-bottomDynMemUsage));
++            txCountPath.lineTo(GRAPH_PADDING_LEFT+xPos, bottom-maxheightG/(topTxCount-bottomTxCount)*(sample.txCount-bottomTxCount));
++            minFeePath.lineTo(GRAPH_PADDING_LEFT+xPos, bottom-maxheightG/maxMinFee*sample.minFeePerK);
++        }
++    }
++
++    // copy the path for the fill
++    QPainterPath dynMemUsagePathFill(dynMemUsagePath);
++
++    // close the path for the fill
++    dynMemUsagePathFill.lineTo(GRAPH_PADDING_LEFT+maxwidth, bottom);
++    dynMemUsagePathFill.lineTo(GRAPH_PADDING_LEFT, bottom);
++
++    QPainterPath dynMemUsageGridPath(QPointF(currentX, bottom));
++
++    // draw horizontal grid
++    int amountOfLinesH = 5;
++    QFont gridFont;
++    gridFont.setPointSize(8);
++    for (int i=0; i < amountOfLinesH; i++)
++    {
++        qreal lY = bottom-i*(maxheightG/(amountOfLinesH-1));
++        dynMemUsageGridPath.moveTo(GRAPH_PADDING_LEFT, lY);
++        dynMemUsageGridPath.lineTo(GRAPH_PADDING_LEFT+maxwidth, lY);
++
++        size_t gridDynSize = (float)i*(topDynMemUsage-bottomDynMemUsage)/(amountOfLinesH-1) + bottomDynMemUsage;
++        size_t gridTxCount = (float)i*(topTxCount-bottomTxCount)/(amountOfLinesH-1) + bottomTxCount;
++
++        QGraphicsTextItem *itemDynSize = scene->addText(GUIUtil::formatBytes(gridDynSize), gridFont);
++        QGraphicsTextItem *itemTxCount = scene->addText(QString::number(gridTxCount), gridFont);
++
++        itemDynSize->setPos(GRAPH_PADDING_LEFT-itemDynSize->boundingRect().width(), lY-(itemDynSize->boundingRect().height()/2));
++        itemTxCount->setPos(GRAPH_PADDING_LEFT+maxwidth, lY-(itemDynSize->boundingRect().height()/2));
++        redrawItems.append(itemDynSize);
++        redrawItems.append(itemTxCount);
++    }
++
++    // draw vertical grid
++    int amountOfLinesV = 4;
++    QDateTime drawTime(fromDateTime);
++    std::string fromS = fromDateTime.toString().toStdString();
++    std::string toS = toDateTime.toString().toStdString();
++    qint64 secsTotal = fromDateTime.secsTo(toDateTime);
++    for (int i=0; i <= amountOfLinesV; i++)
++    {
++        qreal lX = i*(maxwidth/(amountOfLinesV));
++        dynMemUsageGridPath.moveTo(GRAPH_PADDING_LEFT+lX, bottom);
++        dynMemUsageGridPath.lineTo(GRAPH_PADDING_LEFT+lX, bottom-maxheightG);
++
++        QGraphicsTextItem *item = scene->addText(drawTime.toString("HH:mm"), gridFont);
++        item->setPos(GRAPH_PADDING_LEFT+lX-(item->boundingRect().width()/2), bottom);
++        redrawItems.append(item);
++        qint64 step = secsTotal/amountOfLinesV;
++        drawTime = drawTime.addSecs(step);
++    }
++
++    // materialize path
++    QPen gridPen(QColor(100,100,100, 200), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
++    redrawItems.append(scene->addPath(dynMemUsageGridPath, gridPen));
++
++    // draw semi-transparent gradient for the dynamic memory size fill
++    QLinearGradient gradient(currentX, bottom, currentX, 0);
++    gradient.setColorAt(1.0,	QColor(15,68,113, 250));
++    gradient.setColorAt(0,QColor(255,255,255,0));
++    QBrush graBru(gradient);
++
++    QPen linePenBlue(QColor(15,68,113, 250), 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
++    QPen linePenRed(QColor(188,49,62, 250), 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
++    QPen linePenGreen(QColor(49,188,62, 250), 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
++
++    if (drawTxCount)
++        redrawItems.append(scene->addPath(txCountPath, linePenRed));
++    if (drawMinFee)
++        redrawItems.append(scene->addPath(minFeePath, linePenGreen));
++    if (drawDynMemUsage)
++    {
++        redrawItems.append(scene->addPath(dynMemUsagePath, linePenBlue));
++        redrawItems.append(scene->addPath(dynMemUsagePathFill, QPen(Qt::NoPen), graBru));
++    }
++}
++
++// We override the virtual resizeEvent of the QWidget to adjust tables column
++// sizes as the tables width is proportional to the dialogs width.
++void MempoolStats::resizeEvent(QResizeEvent *event)
++{
++    QWidget::resizeEvent(event);
++    scene->setSceneRect(QRect(QPoint(0, 0), gvChart->contentsRect().size()));
++    drawChart();
++}
++
++void MempoolStats::showEvent(QShowEvent *event)
++{
++    QWidget::showEvent(event);
++    if (clientModel)
++        drawChart();
++}
++
++MempoolStats::~MempoolStats()
++{
++    for (QGraphicsItem * item : redrawItems)
++    {
++        scene->removeItem(item);
++        delete item;
++    }
++    redrawItems.clear();
++
++    delete noDataItem;
++    delete scene;
++}
+diff --git a/src/qt/mempoolstats.h b/src/qt/mempoolstats.h
+new file mode 100644
+index 0000000..ff71627
+--- /dev/null
++++ b/src/qt/mempoolstats.h
+@@ -0,0 +1,69 @@
++// Copyright (c) 2016 The Bitcoin Core developers
++// Distributed under the MIT software license, see the accompanying
++// file COPYING or http://www.opensource.org/licenses/mit-license.php.
++
++#ifndef BITCOIN_QT_MEMPOOLSTATS_H
++#define BITCOIN_QT_MEMPOOLSTATS_H
++
++#include <QWidget>
++#include <QGraphicsLineItem>
++#include <QGraphicsPixmapItem>
++
++#include <QCheckBox>
++#include <QDialog>
++#include <QGraphicsProxyWidget>
++#include <QGraphicsView>
++#include <QGridLayout>
++#include <QLabel>
++#include <QSlider>
++
++#include <QEvent>
++
++class ClientModel;
++
++
++class MempoolStats : public QDialog
++{
++    Q_OBJECT
++
++public:
++    MempoolStats(QWidget *parent = 0);
++    ~MempoolStats();
++
++    void setClientModel(ClientModel *model);
++
++    virtual QSize sizeHint() const;
++
++public Q_SLOTS:
++    void drawChart();
++
++private:
++    ClientModel *clientModel;
++
++    void setupValueUI(QWidget *checkbox, QWidget *label, const QString&);
++    virtual void resizeEvent(QResizeEvent *event);
++    virtual void showEvent(QShowEvent *event);
++
++    QGridLayout *opts_grid;
++
++    QCheckBox *cbShowMemUsage;
++    QLabel *lblMemUsage;
++
++    QCheckBox *cbShowNumTxns;
++    QLabel *lblNumTxns;
++
++    QCheckBox *cbShowMinFeerate;
++    QLabel *lblMinFeerate;
++
++    QGraphicsView *gvChart;
++
++    QGraphicsTextItem *noDataItem;
++
++    QSlider *sliderScale;
++    QLabel *lblGraphRange;
++
++    QGraphicsScene *scene;
++    QVector<QGraphicsItem*> redrawItems;
++};
++
++#endif // BITCOIN_QT_MEMPOOLSTATS_H
+diff --git a/src/qt/optionsmodel.cpp b/src/qt/optionsmodel.cpp
+index b6e721b..7c78a80 100644
+--- a/src/qt/optionsmodel.cpp
++++ b/src/qt/optionsmodel.cpp
+@@ -160,6 +160,9 @@ void OptionsModel::Init(bool resetSettings)
+     if (!SoftSetArg("-lang", settings.value("language").toString().toStdString()))
+         addOverriddenOption("-lang");
+ 
++    // Enable statistics by default
++    SoftSetBoolArg("-statsenable", true);
++
+     language = settings.value("language").toString();
+ }
+ 
+diff --git a/src/qt/res/icons/chart.png b/src/qt/res/icons/chart.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..10eb71c27c3354d73a43575d187558e849541c97
+GIT binary patch
+literal 896
+zcmV-`1AqL9P)<h;3K|Lk000e1NJLTq004Oa004Oi1ONa4xAR8A0009=Nkl<Zc-rmU
+zO-NKx6bJDCXiRC?lxRciVIYb!5Qc0si!cZziV!3!TnGlW5OPs2s#UZI+=YvYK?)Nx
+z1A}5BNf2rgMU*ZoGO!N_iHvb9`+6;MGrswF_v4N4+<V^H4rk7fnRnm0hsT8j+rm09
+zlPx0?ytd#pGWY}s4zhTHek4kLoI1G?1NdFwCwz<+Gs*k$rNlq?5~@ujAH$zAx9d%W
+zO(M6I1v_wX)f{pR-#jkNoo0~N;hE=W(N}CVfjl7e06s^b+#%R=e9T|D>5;c0E8J+c
+zP$t*lr9^LehB7%N)lLu6C3i~hAnsO@T!q~@i)+YW3~BUYmqM=X$VrkXDn$<C6lPps
+zKZWC{lE}6m)6)CI3Xz*IRkVahhzaMruCO((2>AdOOBOMYHlci7O4EP}koVzd*)sm(
+zJVGAx?Zo$BlVh0oSjreSc*s|WH;OYKpUG?SRG^sG*j6^<u=1G8XYv)na<VvFGT%uJ
+zlRaO_9a1G-EIhIS(2S*Elj9OC|NqFKzCgYR-fEfO`bMt73x%>~(6l072)8wjtbHS=
+z6boC#k-U68n!vu1k7_BdA8VHLB|JRaSCuT^@~@1CXarD?S#4ln$SN(rJKiIKI~w!(
+zLLSswpyO#my{hCc%?0WY&Ey@5Ek8MO9bN?<teHGa0IZdKf&^G2xfws~BI|1T36V$0
+zfHjeO2!XYbb+-H@$eZwv6j+%Y(%kYBAor33E0Xu%mtEurd>{x`Act^|Bv^smM-(hg
+zPHLZ31f0Bi`Q=}0$klj27%WA;KpHGT-b?r{mLf;-nK)ROe2Y9-keoCCEJ&ueYf>aP
+zkYBij$%l*p3z09|N4{Yn`M!PR2_`d{$xLQ4lbOt9CNr7IOlC5ZnapG++d)p@xe<|4
+zc_YYxi^)u8GLxCiWF|A2$xLQ4lbOt9CNr7I`Q!+aIA}~H5h+cMBCX}nsUXD?(ufu#
+z$F&|-6Qr0$ybw98_3)dZ#Wccha<{=?2M)U3<VnNHlWua(aB|K~HXH1~ag*l^C(pUb
+zqlS}5-Q-ro$*pcOFk~=zsBrgHOX@Hjkr+X3@ohyr#<5@!b^+sPFS4z$Cz#A+BjX?B
+Wte+O4WxkF80000<MNUMnLSTYB;h4(+
+
+literal 0
+HcmV?d00001
+

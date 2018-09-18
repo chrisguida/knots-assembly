@@ -1,0 +1,751 @@
+diff --git a/qa/rpc-tests/importmulti.py b/qa/rpc-tests/importmulti.py
+index e100a3a..9369c6c 100755
+--- a/qa/rpc-tests/importmulti.py
++++ b/qa/rpc-tests/importmulti.py
+@@ -26,6 +26,7 @@ class ImportMultiTest (BitcoinTestFramework):
+         PUB_KEY = 'pubkey'
+         ADDRESS_KEY = 'address'
+         SCRIPT_KEY = 'script'
++        TIMESTAMP = 1478736000
+ 
+ 
+         node0_address1 = self.nodes[0].validateaddress(self.nodes[0].getnewaddress())
+@@ -52,12 +53,15 @@ class ImportMultiTest (BitcoinTestFramework):
+         result = self.nodes[1].importmulti([{
+             "scriptPubKey": {
+                 "address": address['address']
+-            }
++            },
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], True)
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], True)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal(address_assert['timestamp'], TIMESTAMP)
++        watchonly_address = address['address']
+ 
+ 
+         # ScriptPubKey + internal
+@@ -65,18 +69,21 @@ class ImportMultiTest (BitcoinTestFramework):
+         address = self.nodes[0].validateaddress(self.nodes[0].getnewaddress())
+         result = self.nodes[1].importmulti([{
+             "scriptPubKey": address['scriptPubKey'],
+-            "internal": True
++            "internal": True,
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], True)
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], True)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal(address_assert['timestamp'], TIMESTAMP)
+ 
+         # ScriptPubKey + !internal
+         print("Should not import a scriptPubKey without internal flag")
+         address = self.nodes[0].validateaddress(self.nodes[0].getnewaddress())
+         result = self.nodes[1].importmulti([{
+-            "scriptPubKey": address['scriptPubKey']
++            "scriptPubKey": address['scriptPubKey'],
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], False)
+         assert_equal(result[0]['error']['code'], -8)
+@@ -84,6 +91,7 @@ class ImportMultiTest (BitcoinTestFramework):
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], False)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal('timestamp' in address_assert, False)
+ 
+ 
+         # Address + Public key + !Internal
+@@ -93,12 +101,14 @@ class ImportMultiTest (BitcoinTestFramework):
+             "scriptPubKey": {
+                 "address": address['address']
+             },
+-            "pubkeys": [ address['pubkey'] ]
++            "pubkeys": [ address['pubkey'] ],
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], True)
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], True)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal(address_assert['timestamp'], TIMESTAMP)
+ 
+ 
+         # ScriptPubKey + Public key + internal
+@@ -107,20 +117,23 @@ class ImportMultiTest (BitcoinTestFramework):
+         request = [{
+             "scriptPubKey": address['scriptPubKey'],
+             "pubkeys": [ address['pubkey'] ],
+-            "internal": True
++            "internal": True,
++            "timestamp": TIMESTAMP,
+         }]
+         result = self.nodes[1].importmulti(request)
+         assert_equal(result[0]['success'], True)
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], True)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal(address_assert['timestamp'], TIMESTAMP)
+ 
+         # ScriptPubKey + Public key + !internal
+         print("Should not import a scriptPubKey without internal and with public key")
+         address = self.nodes[0].validateaddress(self.nodes[0].getnewaddress())
+         request = [{
+             "scriptPubKey": address['scriptPubKey'],
+-            "pubkeys": [ address['pubkey'] ]
++            "pubkeys": [ address['pubkey'] ],
++            "timestamp": TIMESTAMP,
+         }]
+         result = self.nodes[1].importmulti(request)
+         assert_equal(result[0]['success'], False)
+@@ -129,6 +142,7 @@ class ImportMultiTest (BitcoinTestFramework):
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], False)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal('timestamp' in address_assert, False)
+ 
+         # Address + Private key + !watchonly
+         print("Should import an address with private key")
+@@ -137,12 +151,14 @@ class ImportMultiTest (BitcoinTestFramework):
+             "scriptPubKey": {
+                 "address": address['address']
+             },
+-            "keys": [ self.nodes[0].dumpprivkey(address['address']) ]
++            "keys": [ self.nodes[0].dumpprivkey(address['address']) ],
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], True)
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], False)
+         assert_equal(address_assert['ismine'], True)
++        assert_equal(address_assert['timestamp'], TIMESTAMP)
+ 
+         # Address + Private key + watchonly
+         print("Should not import an address with private key and with watchonly")
+@@ -152,7 +168,8 @@ class ImportMultiTest (BitcoinTestFramework):
+                 "address": address['address']
+             },
+             "keys": [ self.nodes[0].dumpprivkey(address['address']) ],
+-            "watchonly": True
++            "watchonly": True,
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], False)
+         assert_equal(result[0]['error']['code'], -8)
+@@ -160,6 +177,7 @@ class ImportMultiTest (BitcoinTestFramework):
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], False)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal('timestamp' in address_assert, False)
+ 
+         # ScriptPubKey + Private key + internal
+         print("Should import a scriptPubKey with internal and with private key")
+@@ -167,19 +185,22 @@ class ImportMultiTest (BitcoinTestFramework):
+         result = self.nodes[1].importmulti([{
+             "scriptPubKey": address['scriptPubKey'],
+             "keys": [ self.nodes[0].dumpprivkey(address['address']) ],
+-            "internal": True
++            "internal": True,
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], True)
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], False)
+         assert_equal(address_assert['ismine'], True)
++        assert_equal(address_assert['timestamp'], TIMESTAMP)
+ 
+         # ScriptPubKey + Private key + !internal
+         print("Should not import a scriptPubKey without internal and with private key")
+         address = self.nodes[0].validateaddress(self.nodes[0].getnewaddress())
+         result = self.nodes[1].importmulti([{
+             "scriptPubKey": address['scriptPubKey'],
+-            "keys": [ self.nodes[0].dumpprivkey(address['address']) ]
++            "keys": [ self.nodes[0].dumpprivkey(address['address']) ],
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], False)
+         assert_equal(result[0]['error']['code'], -8)
+@@ -187,6 +208,7 @@ class ImportMultiTest (BitcoinTestFramework):
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], False)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal('timestamp' in address_assert, False)
+ 
+ 
+         # P2SH address
+@@ -203,12 +225,14 @@ class ImportMultiTest (BitcoinTestFramework):
+         result = self.nodes[1].importmulti([{
+             "scriptPubKey": {
+                 "address": multi_sig_script['address']
+-            }
++            },
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], True)
+         address_assert = self.nodes[1].validateaddress(multi_sig_script['address'])
+         assert_equal(address_assert['isscript'], True)
+         assert_equal(address_assert['iswatchonly'], True)
++        assert_equal(address_assert['timestamp'], TIMESTAMP)
+         p2shunspent = self.nodes[1].listunspent(0,999999, [multi_sig_script['address']])[0]
+         assert_equal(p2shunspent['spendable'], False)
+         assert_equal(p2shunspent['solvable'], False)
+@@ -229,9 +253,12 @@ class ImportMultiTest (BitcoinTestFramework):
+             "scriptPubKey": {
+                 "address": multi_sig_script['address']
+             },
+-            "redeemscript": multi_sig_script['redeemScript']
++            "redeemscript": multi_sig_script['redeemScript'],
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], True)
++        address_assert = self.nodes[1].validateaddress(multi_sig_script['address'])
++        assert_equal(address_assert['timestamp'], TIMESTAMP)
+ 
+         p2shunspent = self.nodes[1].listunspent(0,999999, [multi_sig_script['address']])[0]
+         assert_equal(p2shunspent['spendable'], False)
+@@ -254,9 +281,12 @@ class ImportMultiTest (BitcoinTestFramework):
+                 "address": multi_sig_script['address']
+             },
+             "redeemscript": multi_sig_script['redeemScript'],
+-            "keys": [ self.nodes[0].dumpprivkey(sig_address_1['address']), self.nodes[0].dumpprivkey(sig_address_2['address'])]
++            "keys": [ self.nodes[0].dumpprivkey(sig_address_1['address']), self.nodes[0].dumpprivkey(sig_address_2['address'])],
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], True)
++        address_assert = self.nodes[1].validateaddress(multi_sig_script['address'])
++        assert_equal(address_assert['timestamp'], TIMESTAMP)
+ 
+         p2shunspent = self.nodes[1].listunspent(0,999999, [multi_sig_script['address']])[0]
+         assert_equal(p2shunspent['spendable'], False)
+@@ -279,7 +309,8 @@ class ImportMultiTest (BitcoinTestFramework):
+             },
+             "redeemscript": multi_sig_script['redeemScript'],
+             "keys": [ self.nodes[0].dumpprivkey(sig_address_1['address']), self.nodes[0].dumpprivkey(sig_address_2['address'])],
+-            "watchonly": True
++            "watchonly": True,
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], False)
+         assert_equal(result[0]['error']['code'], -8)
+@@ -294,7 +325,8 @@ class ImportMultiTest (BitcoinTestFramework):
+             "scriptPubKey": {
+                 "address": address['address']
+             },
+-            "pubkeys": [ address2['pubkey'] ]
++            "pubkeys": [ address2['pubkey'] ],
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], False)
+         assert_equal(result[0]['error']['code'], -5)
+@@ -302,6 +334,7 @@ class ImportMultiTest (BitcoinTestFramework):
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], False)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal('timestamp' in address_assert, False)
+ 
+ 
+         # ScriptPubKey + Public key + internal + Wrong pubkey
+@@ -311,7 +344,8 @@ class ImportMultiTest (BitcoinTestFramework):
+         request = [{
+             "scriptPubKey": address['scriptPubKey'],
+             "pubkeys": [ address2['pubkey'] ],
+-            "internal": True
++            "internal": True,
++            "timestamp": TIMESTAMP,
+         }]
+         result = self.nodes[1].importmulti(request)
+         assert_equal(result[0]['success'], False)
+@@ -320,6 +354,7 @@ class ImportMultiTest (BitcoinTestFramework):
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], False)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal('timestamp' in address_assert, False)
+ 
+ 
+         # Address + Private key + !watchonly + Wrong private key
+@@ -330,7 +365,8 @@ class ImportMultiTest (BitcoinTestFramework):
+             "scriptPubKey": {
+                 "address": address['address']
+             },
+-            "keys": [ self.nodes[0].dumpprivkey(address2['address']) ]
++            "keys": [ self.nodes[0].dumpprivkey(address2['address']) ],
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], False)
+         assert_equal(result[0]['error']['code'], -5)
+@@ -338,6 +374,7 @@ class ImportMultiTest (BitcoinTestFramework):
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], False)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal('timestamp' in address_assert, False)
+ 
+ 
+         # ScriptPubKey + Private key + internal + Wrong private key
+@@ -347,7 +384,8 @@ class ImportMultiTest (BitcoinTestFramework):
+         result = self.nodes[1].importmulti([{
+             "scriptPubKey": address['scriptPubKey'],
+             "keys": [ self.nodes[0].dumpprivkey(address2['address']) ],
+-            "internal": True
++            "internal": True,
++            "timestamp": TIMESTAMP,
+         }])
+         assert_equal(result[0]['success'], False)
+         assert_equal(result[0]['error']['code'], -5)
+@@ -355,6 +393,15 @@ class ImportMultiTest (BitcoinTestFramework):
+         address_assert = self.nodes[1].validateaddress(address['address'])
+         assert_equal(address_assert['iswatchonly'], False)
+         assert_equal(address_assert['ismine'], False)
++        assert_equal('timestamp' in address_assert, False)
++
++        # restart nodes to check for proper serialization/deserialization of watch only address
++        stop_nodes(self.nodes)
++        self.nodes = start_nodes(2, self.options.tmpdir)
++        address_assert = self.nodes[1].validateaddress(watchonly_address)
++        assert_equal(address_assert['iswatchonly'], True)
++        assert_equal(address_assert['ismine'], False)
++        assert_equal(address_assert['timestamp'], TIMESTAMP);
+ 
+ if __name__ == '__main__':
+     ImportMultiTest ().main ()
+diff --git a/src/rpc/misc.cpp b/src/rpc/misc.cpp
+index 9becb70..4576265 100644
+--- a/src/rpc/misc.cpp
++++ b/src/rpc/misc.cpp
+@@ -175,6 +175,7 @@ UniValue validateaddress(const JSONRPCRequest& request)
+             "  \"pubkey\" : \"publickeyhex\",    (string) The hex value of the raw public key\n"
+             "  \"iscompressed\" : true|false,  (boolean) If the address is compressed\n"
+             "  \"account\" : \"account\"         (string) DEPRECATED. The account associated with the address, \"\" is the default account\n"
++            "  \"timestamp\" : \"int64\"         (number, optional) The creation time of the key if available\n"
+             "  \"hdkeypath\" : \"keypath\"       (string, optional) The HD keypath if the key is HD and available\n"
+             "  \"hdmasterkeyid\" : \"<hash160>\" (string, optional) The Hash160 of the HD master pubkey\n"
+             "}\n"
+@@ -212,11 +213,20 @@ UniValue validateaddress(const JSONRPCRequest& request)
+         if (pwalletMain && pwalletMain->mapAddressBook.count(dest))
+             ret.push_back(Pair("account", pwalletMain->mapAddressBook[dest].name));
+         CKeyID keyID;
+-        CScriptID scriptID;
+-        if (pwalletMain && (address.GetKeyID(keyID) || (address.GetScriptID(scriptID) && GetWitnessKeyID(pwalletMain, scriptID, keyID))) && pwalletMain->mapKeyMetadata.count(keyID) && !pwalletMain->mapKeyMetadata[keyID].hdKeypath.empty())
+-        {
+-            ret.push_back(Pair("hdkeypath", pwalletMain->mapKeyMetadata[keyID].hdKeypath));
+-            ret.push_back(Pair("hdmasterkeyid", pwalletMain->mapKeyMetadata[keyID].hdMasterKeyID.GetHex()));
++        if (pwalletMain) {
++            const auto& meta = pwalletMain->mapKeyMetadata;
++            CScriptID scriptID;
++            auto it = (address.GetKeyID(keyID) || (address.GetScriptID(scriptID) && GetWitnessKeyID(pwalletMain, scriptID, keyID))) ? meta.find(keyID) : meta.end();
++            if (it == meta.end()) {
++                it = meta.find(CScriptID(scriptPubKey));
++            }
++            if (it != meta.end()) {
++                ret.push_back(Pair("timestamp", it->second.nCreateTime));
++                if (!it->second.hdKeypath.empty()) {
++                    ret.push_back(Pair("hdkeypath", it->second.hdKeypath));
++                    ret.push_back(Pair("hdmasterkeyid", it->second.hdMasterKeyID.GetHex()));
++                }
++            }
+         }
+ #endif
+     }
+diff --git a/src/wallet/rpcdump.cpp b/src/wallet/rpcdump.cpp
+index bbb50ea..45b27ae 100644
+--- a/src/wallet/rpcdump.cpp
++++ b/src/wallet/rpcdump.cpp
+@@ -139,7 +139,7 @@ UniValue importprivkey(const JSONRPCRequest& request)
+             throw JSONRPCError(RPC_WALLET_ERROR, "Error adding key to wallet");
+ 
+         // whenever a key is imported, we need to scan the whole chain
+-        pwalletMain->nTimeFirstKey = 1; // 0 would be considered 'no value'
++        pwalletMain->UpdateTimeFirstKey(1);
+ 
+         if (fRescan) {
+             pwalletMain->ScanForWalletTransactions(chainActive.Genesis(), NULL, true);
+@@ -157,7 +157,7 @@ void ImportScript(const CScript& script, const string& strLabel, bool isRedeemSc
+ 
+     pwalletMain->MarkDirty();
+ 
+-    if (!pwalletMain->HaveWatchOnly(script) && !pwalletMain->AddWatchOnly(script))
++    if (!pwalletMain->HaveWatchOnly(script) && !pwalletMain->AddWatchOnly(script, 0 /* nCreateTime */))
+         throw JSONRPCError(RPC_WALLET_ERROR, "Error adding address to wallet");
+ 
+     if (isRedeemScript) {
+@@ -496,8 +496,7 @@ UniValue importwallet(const JSONRPCRequest& request)
+     while (pindex && pindex->pprev && pindex->GetBlockTime() > nTimeBegin - 7200)
+         pindex = pindex->pprev;
+ 
+-    if (!pwalletMain->nTimeFirstKey || nTimeBegin < pwalletMain->nTimeFirstKey)
+-        pwalletMain->nTimeFirstKey = nTimeBegin;
++    pwalletMain->UpdateTimeFirstKey(nTimeBegin);
+ 
+     LogPrintf("Rescanning last %i blocks\n", chainActive.Height() - pindex->nHeight + 1);
+     pwalletMain->ScanForWalletTransactions(pindex, NULL);
+@@ -575,15 +574,17 @@ UniValue dumpwallet(const JSONRPCRequest& request)
+     if (!file.is_open())
+         throw JSONRPCError(RPC_INVALID_PARAMETER, "Cannot open wallet dump file");
+ 
+-    std::map<CKeyID, int64_t> mapKeyBirth;
++    std::map<CTxDestination, int64_t> mapKeyBirth;
+     std::set<CKeyID> setKeyPool;
+     pwalletMain->GetKeyBirthTimes(mapKeyBirth);
+     pwalletMain->GetAllReserveKeys(setKeyPool);
+ 
+     // sort time/key pairs
+     std::vector<std::pair<int64_t, CKeyID> > vKeyBirth;
+-    for (std::map<CKeyID, int64_t>::const_iterator it = mapKeyBirth.begin(); it != mapKeyBirth.end(); it++) {
+-        vKeyBirth.push_back(std::make_pair(it->second, it->first));
++    for (auto it = mapKeyBirth.begin(); it != mapKeyBirth.end(); it++) {
++        if (const CKeyID* keyID = boost::get<CKeyID>(&it->first)) {
++            vKeyBirth.push_back(std::make_pair(it->second, *keyID));
++        }
+     }
+     mapKeyBirth.clear();
+     std::sort(vKeyBirth.begin(), vKeyBirth.end());
+@@ -720,7 +721,7 @@ UniValue processImport(const UniValue& data) {
+ 
+             pwalletMain->MarkDirty();
+ 
+-            if (!pwalletMain->HaveWatchOnly(redeemScript) && !pwalletMain->AddWatchOnly(redeemScript)) {
++            if (!pwalletMain->HaveWatchOnly(redeemScript) && !pwalletMain->AddWatchOnly(redeemScript, timestamp)) {
+                 throw JSONRPCError(RPC_WALLET_ERROR, "Error adding address to wallet");
+             }
+ 
+@@ -737,7 +738,7 @@ UniValue processImport(const UniValue& data) {
+ 
+             pwalletMain->MarkDirty();
+ 
+-            if (!pwalletMain->HaveWatchOnly(redeemDestination) && !pwalletMain->AddWatchOnly(redeemDestination)) {
++            if (!pwalletMain->HaveWatchOnly(redeemDestination) && !pwalletMain->AddWatchOnly(redeemDestination, timestamp)) {
+                 throw JSONRPCError(RPC_WALLET_ERROR, "Error adding address to wallet");
+             }
+ 
+@@ -769,9 +770,7 @@ UniValue processImport(const UniValue& data) {
+                         throw JSONRPCError(RPC_WALLET_ERROR, "Error adding key to wallet");
+                     }
+ 
+-                    if (timestamp < pwalletMain->nTimeFirstKey) {
+-                        pwalletMain->nTimeFirstKey = timestamp;
+-                    }
++                    pwalletMain->UpdateTimeFirstKey(timestamp);
+                 }
+             }
+ 
+@@ -820,7 +819,7 @@ UniValue processImport(const UniValue& data) {
+ 
+                 pwalletMain->MarkDirty();
+ 
+-                if (!pwalletMain->HaveWatchOnly(pubKeyScript) && !pwalletMain->AddWatchOnly(pubKeyScript)) {
++                if (!pwalletMain->HaveWatchOnly(pubKeyScript) && !pwalletMain->AddWatchOnly(pubKeyScript, timestamp)) {
+                     throw JSONRPCError(RPC_WALLET_ERROR, "Error adding address to wallet");
+                 }
+ 
+@@ -838,7 +837,7 @@ UniValue processImport(const UniValue& data) {
+ 
+                 pwalletMain->MarkDirty();
+ 
+-                if (!pwalletMain->HaveWatchOnly(scriptRawPubKey) && !pwalletMain->AddWatchOnly(scriptRawPubKey)) {
++                if (!pwalletMain->HaveWatchOnly(scriptRawPubKey) && !pwalletMain->AddWatchOnly(scriptRawPubKey, timestamp)) {
+                     throw JSONRPCError(RPC_WALLET_ERROR, "Error adding address to wallet");
+                 }
+ 
+@@ -887,9 +886,7 @@ UniValue processImport(const UniValue& data) {
+                     throw JSONRPCError(RPC_WALLET_ERROR, "Error adding key to wallet");
+                 }
+ 
+-                if (timestamp < pwalletMain->nTimeFirstKey) {
+-                    pwalletMain->nTimeFirstKey = timestamp;
+-                }
++                pwalletMain->UpdateTimeFirstKey(timestamp);
+ 
+                 success = true;
+             }
+@@ -902,7 +899,7 @@ UniValue processImport(const UniValue& data) {
+ 
+                 pwalletMain->MarkDirty();
+ 
+-                if (!pwalletMain->HaveWatchOnly(script) && !pwalletMain->AddWatchOnly(script)) {
++                if (!pwalletMain->HaveWatchOnly(script) && !pwalletMain->AddWatchOnly(script, timestamp)) {
+                     throw JSONRPCError(RPC_WALLET_ERROR, "Error adding address to wallet");
+                 }
+ 
+diff --git a/src/wallet/wallet.cpp b/src/wallet/wallet.cpp
+index 83a47cc..4241903 100644
+--- a/src/wallet/wallet.cpp
++++ b/src/wallet/wallet.cpp
+@@ -121,8 +121,7 @@ CPubKey CWallet::GenerateNewKey()
+     assert(secret.VerifyPubKey(pubkey));
+ 
+     mapKeyMetadata[pubkey.GetID()] = metadata;
+-    if (!nTimeFirstKey || nCreationTime < nTimeFirstKey)
+-        nTimeFirstKey = nCreationTime;
++    UpdateTimeFirstKey(nCreationTime);
+ 
+     if (!AddKeyPubKey(secret, pubkey))
+         throw std::runtime_error(std::string(__func__) + ": AddKey failed");
+@@ -215,13 +214,11 @@ bool CWallet::AddCryptedKey(const CPubKey &vchPubKey,
+     return false;
+ }
+ 
+-bool CWallet::LoadKeyMetadata(const CPubKey &pubkey, const CKeyMetadata &meta)
++bool CWallet::LoadKeyMetadata(const CTxDestination& keyID, const CKeyMetadata &meta)
+ {
+     AssertLockHeld(cs_wallet); // mapKeyMetadata
+-    if (meta.nCreateTime && (!nTimeFirstKey || meta.nCreateTime < nTimeFirstKey))
+-        nTimeFirstKey = meta.nCreateTime;
+-
+-    mapKeyMetadata[pubkey.GetID()] = meta;
++    UpdateTimeFirstKey(meta.nCreateTime);
++    mapKeyMetadata[keyID] = meta;
+     return true;
+ }
+ 
+@@ -230,6 +227,17 @@ bool CWallet::LoadCryptedKey(const CPubKey &vchPubKey, const std::vector<unsigne
+     return CCryptoKeyStore::AddCryptedKey(vchPubKey, vchCryptedSecret);
+ }
+ 
++void CWallet::UpdateTimeFirstKey(int64_t nCreateTime)
++{
++    AssertLockHeld(cs_wallet);
++    // Cannot determine birthday information, so set the wallet birthday to the
++    // beginning of time.
++    if (nCreateTime <= 1)
++        nTimeFirstKey = 1;
++    else if (!nTimeFirstKey || nCreateTime < nTimeFirstKey)
++        nTimeFirstKey = nCreateTime;
++}
++
+ bool CWallet::AddCScript(const CScript& redeemScript)
+ {
+     if (!CCryptoKeyStore::AddCScript(redeemScript))
+@@ -259,11 +267,18 @@ bool CWallet::AddWatchOnly(const CScript &dest)
+ {
+     if (!CCryptoKeyStore::AddWatchOnly(dest))
+         return false;
+-    nTimeFirstKey = 1; // No birthday information for watch-only keys.
++    const CKeyMetadata& meta = mapKeyMetadata[CScriptID(dest)];
++    UpdateTimeFirstKey(meta.nCreateTime);
+     NotifyWatchonlyChanged(true);
+     if (!fFileBacked)
+         return true;
+-    return CWalletDB(strWalletFile).WriteWatchOnly(dest);
++    return CWalletDB(strWalletFile).WriteWatchOnly(dest, meta);
++}
++
++bool CWallet::AddWatchOnly(const CScript &dest, int64_t nCreateTime)
++{
++    mapKeyMetadata[CScriptID(dest)].nCreateTime = nCreateTime;
++    return AddWatchOnly(dest);
+ }
+ 
+ bool CWallet::RemoveWatchOnly(const CScript &dest)
+@@ -3460,12 +3475,12 @@ public:
+     void operator()(const CNoDestination &none) {}
+ };
+ 
+-void CWallet::GetKeyBirthTimes(std::map<CKeyID, int64_t> &mapKeyBirth) const {
++void CWallet::GetKeyBirthTimes(std::map<CTxDestination, int64_t> &mapKeyBirth) const {
+     AssertLockHeld(cs_wallet); // mapKeyMetadata
+     mapKeyBirth.clear();
+ 
+     // get birth times for keys with metadata
+-    for (std::map<CKeyID, CKeyMetadata>::const_iterator it = mapKeyMetadata.begin(); it != mapKeyMetadata.end(); it++)
++    for (auto it = mapKeyMetadata.begin(); it != mapKeyMetadata.end(); it++)
+         if (it->second.nCreateTime)
+             mapKeyBirth[it->first] = it->second.nCreateTime;
+ 
+diff --git a/src/wallet/wallet.h b/src/wallet/wallet.h
+index 8daf7b4..f4a677a 100644
+--- a/src/wallet/wallet.h
++++ b/src/wallet/wallet.h
+@@ -612,6 +612,20 @@ private:
+     bool fFileBacked;
+ 
+     std::set<int64_t> setKeyPool;
++
++    int64_t nTimeFirstKey;
++
++    /**
++     * Private version of AddWatchOnly method which does not accept a
++     * timestamp, and which will reset the wallet's nTimeFirstKey value to 1 if
++     * the watch key did not previously have a timestamp associated with it.
++     * Because this is an inherited virtual method, it is accessible despite
++     * being marked private, but it is marked private anyway to encourage use
++     * of the other AddWatchOnly which accepts a timestamp and sets
++     * nTimeFirstKey more intelligently for more efficient rescans.
++     */
++    bool AddWatchOnly(const CScript &dest) override;
++
+ public:
+     /*
+      * Main wallet lock.
+@@ -636,7 +650,9 @@ public:
+             mapKeyMetadata[keyid] = CKeyMetadata(keypool.nTime);
+     }
+ 
+-    std::map<CKeyID, CKeyMetadata> mapKeyMetadata;
++    // Map from Key ID (for regular keys) or Script ID (for watch-only keys) to
++    // key metadata.
++    std::map<CTxDestination, CKeyMetadata> mapKeyMetadata;
+ 
+     typedef std::map<unsigned int, CMasterKey> MasterKeyMap;
+     MasterKeyMap mapMasterKeys;
+@@ -689,8 +705,6 @@ public:
+ 
+     std::set<COutPoint> setLockedCoins;
+ 
+-    int64_t nTimeFirstKey;
+-
+     const CWalletTx* GetWalletTx(const uint256& hash) const;
+ 
+     //! check whether we are allowed to upgrade (or already support) to the named feature
+@@ -735,9 +749,10 @@ public:
+     //! Adds a key to the store, without saving it to disk (used by LoadWallet)
+     bool LoadKey(const CKey& key, const CPubKey &pubkey) { return CCryptoKeyStore::AddKeyPubKey(key, pubkey); }
+     //! Load metadata (used by LoadWallet)
+-    bool LoadKeyMetadata(const CPubKey &pubkey, const CKeyMetadata &metadata);
++    bool LoadKeyMetadata(const CTxDestination& pubKey, const CKeyMetadata &metadata);
+ 
+     bool LoadMinVersion(int nVersion) { AssertLockHeld(cs_wallet); nWalletVersion = nVersion; nWalletMaxVersion = std::max(nWalletMaxVersion, nVersion); return true; }
++    void UpdateTimeFirstKey(int64_t nCreateTime);
+ 
+     //! Adds an encrypted key to the store, and saves it to disk.
+     bool AddCryptedKey(const CPubKey &vchPubKey, const std::vector<unsigned char> &vchCryptedSecret);
+@@ -756,7 +771,7 @@ public:
+     bool GetDestData(const CTxDestination &dest, const std::string &key, std::string *value) const;
+ 
+     //! Adds a watch-only address to the store, and saves it to disk.
+-    bool AddWatchOnly(const CScript &dest);
++    bool AddWatchOnly(const CScript &dest, int64_t nCreateTime);
+     bool RemoveWatchOnly(const CScript &dest);
+     //! Adds a watch-only address to the store, without saving it to disk (used by LoadWallet)
+     bool LoadWatchOnly(const CScript &dest);
+@@ -765,7 +780,7 @@ public:
+     bool ChangeWalletPassphrase(const SecureString& strOldWalletPassphrase, const SecureString& strNewWalletPassphrase);
+     bool EncryptWallet(const SecureString& strWalletPassphrase);
+ 
+-    void GetKeyBirthTimes(std::map<CKeyID, int64_t> &mapKeyBirth) const;
++    void GetKeyBirthTimes(std::map<CTxDestination, int64_t> &mapKeyBirth) const;
+ 
+     /** 
+      * Increment the next transaction order id
+diff --git a/src/wallet/walletdb.cpp b/src/wallet/walletdb.cpp
+index b00ce36..106a59d 100644
+--- a/src/wallet/walletdb.cpp
++++ b/src/wallet/walletdb.cpp
+@@ -120,15 +120,19 @@ bool CWalletDB::WriteCScript(const uint160& hash, const CScript& redeemScript)
+     return Write(std::make_pair(std::string("cscript"), hash), *(const CScriptBase*)(&redeemScript), false);
+ }
+ 
+-bool CWalletDB::WriteWatchOnly(const CScript &dest)
++bool CWalletDB::WriteWatchOnly(const CScript &dest, const CKeyMetadata& keyMeta)
+ {
+     nWalletDBUpdateCounter++;
++    if (!Write(std::make_pair(std::string("watchmeta"), *(const CScriptBase*)(&dest)), keyMeta))
++        return false;
+     return Write(std::make_pair(std::string("watchs"), *(const CScriptBase*)(&dest)), '1');
+ }
+ 
+ bool CWalletDB::EraseWatchOnly(const CScript &dest)
+ {
+     nWalletDBUpdateCounter++;
++    if (!Erase(std::make_pair(std::string("watchmeta"), *(const CScriptBase*)(&dest))))
++        return false;
+     return Erase(std::make_pair(std::string("watchs"), *(const CScriptBase*)(&dest)));
+ }
+ 
+@@ -259,6 +263,7 @@ class CWalletScanState {
+ public:
+     unsigned int nKeys;
+     unsigned int nCKeys;
++    unsigned int nWatchKeys;
+     unsigned int nKeyMeta;
+     bool fIsEncrypted;
+     bool fAnyUnordered;
+@@ -266,7 +271,7 @@ public:
+     vector<uint256> vWalletUpgrade;
+ 
+     CWalletScanState() {
+-        nKeys = nCKeys = nKeyMeta = 0;
++        nKeys = nCKeys = nWatchKeys = nKeyMeta = 0;
+         fIsEncrypted = false;
+         fAnyUnordered = false;
+         nFileVersion = 0;
+@@ -348,16 +353,13 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
+         }
+         else if (strType == "watchs")
+         {
++            wss.nWatchKeys++;
+             CScript script;
+             ssKey >> *(CScriptBase*)(&script);
+             char fYes;
+             ssValue >> fYes;
+             if (fYes == '1')
+                 pwallet->LoadWatchOnly(script);
+-
+-            // Watch-only addresses have no birthday information for now,
+-            // so set the wallet birthday to the beginning of time.
+-            pwallet->nTimeFirstKey = 1;
+         }
+         else if (strType == "key" || strType == "wkey")
+         {
+@@ -458,20 +460,27 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
+             }
+             wss.fIsEncrypted = true;
+         }
+-        else if (strType == "keymeta")
++        else if (strType == "keymeta" || strType == "watchmeta")
+         {
+-            CPubKey vchPubKey;
+-            ssKey >> vchPubKey;
++            CTxDestination keyID;
++            if (strType == "keymeta")
++            {
++              CPubKey vchPubKey;
++              ssKey >> vchPubKey;
++              keyID = vchPubKey.GetID();
++            }
++            else if (strType == "watchmeta")
++            {
++              CScript script;
++              ssKey >> *(CScriptBase*)(&script);
++              keyID = CScriptID(script);
++            }
++
+             CKeyMetadata keyMeta;
+             ssValue >> keyMeta;
+             wss.nKeyMeta++;
+ 
+-            pwallet->LoadKeyMetadata(vchPubKey, keyMeta);
+-
+-            // find earliest key creation time, as wallet birthday
+-            if (!pwallet->nTimeFirstKey ||
+-                (keyMeta.nCreateTime < pwallet->nTimeFirstKey))
+-                pwallet->nTimeFirstKey = keyMeta.nCreateTime;
++            pwallet->LoadKeyMetadata(keyID, keyMeta);
+         }
+         else if (strType == "defaultkey")
+         {
+@@ -625,8 +634,8 @@ DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
+            wss.nKeys, wss.nCKeys, wss.nKeyMeta, wss.nKeys + wss.nCKeys);
+ 
+     // nTimeFirstKey is only reliable if all keys have metadata
+-    if ((wss.nKeys + wss.nCKeys) != wss.nKeyMeta)
+-        pwallet->nTimeFirstKey = 1; // 0 would be considered 'no value'
++    if ((wss.nKeys + wss.nCKeys + wss.nWatchKeys) != wss.nKeyMeta)
++        pwallet->UpdateTimeFirstKey(1);
+ 
+     BOOST_FOREACH(uint256 hash, wss.vWalletUpgrade)
+         WriteTx(pwallet->mapWallet[hash]);
+diff --git a/src/wallet/walletdb.h b/src/wallet/walletdb.h
+index f275939..e311e01 100644
+--- a/src/wallet/walletdb.h
++++ b/src/wallet/walletdb.h
+@@ -149,7 +149,7 @@ public:
+ 
+     bool WriteCScript(const uint160& hash, const CScript& redeemScript);
+ 
+-    bool WriteWatchOnly(const CScript &script);
++    bool WriteWatchOnly(const CScript &script, const CKeyMetadata &keymeta);
+     bool EraseWatchOnly(const CScript &script);
+ 
+     bool WriteBestBlock(const CBlockLocator& locator);

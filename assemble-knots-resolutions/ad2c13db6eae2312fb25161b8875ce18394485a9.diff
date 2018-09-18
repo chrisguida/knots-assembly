@@ -1,0 +1,548 @@
+diff --git a/src/Makefile.am b/src/Makefile.am
+index b6c9cae..8eb19a7 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -138,6 +138,7 @@ BITCOIN_CORE_H = \
+   script/sign.h \
+   script/standard.h \
+   script/ismine.h \
++  stats/stats.h \
+   streams.h \
+   support/allocators/secure.h \
+   support/allocators/zeroafterfree.h \
+@@ -207,6 +208,8 @@ libbitcoin_server_a_SOURCES = \
+   rpc/server.cpp \
+   script/sigcache.cpp \
+   script/ismine.cpp \
++  stats/rpc_stats.cpp \
++  stats/stats.cpp \
+   timedata.cpp \
+   txdb.cpp \
+   txmempool.cpp \
+diff --git a/src/Makefile.test.include b/src/Makefile.test.include
+index edd3f0b..0f206db 100644
+--- a/src/Makefile.test.include
++++ b/src/Makefile.test.include
+@@ -134,7 +134,8 @@ BITCOIN_TESTS =\
+   test/versionbits_tests.cpp \
+   test/uint256_tests.cpp \
+   test/univalue_tests.cpp \
+-  test/util_tests.cpp
++  test/util_tests.cpp \
++  stats/test/stats_tests.cpp
+ 
+ if USE_LIBEVENT
+ BITCOIN_TESTS += \
+diff --git a/src/init.cpp b/src/init.cpp
+index 7978bcb..88d96f1 100644
+--- a/src/init.cpp
++++ b/src/init.cpp
+@@ -30,6 +30,7 @@
+ #include "script/standard.h"
+ #include "script/sigcache.h"
+ #include "scheduler.h"
++#include "stats/stats.h"
+ #include "timedata.h"
+ #include "txdb.h"
+ #include "txmempool.h"
+@@ -516,6 +517,7 @@ std::string HelpMessage(HelpMessageMode mode)
+     }
+ #endif
+ 
++    strUsage += CStats::getHelpString(showDebug);
+     return strUsage;
+ }
+ 
+@@ -1144,6 +1146,9 @@ bool AppInitSanityChecks()
+ {
+     // ********************************************************* Step 4: sanity checks
+ 
++    if (!CStats::parameterInteraction())
++        return false;
++
+     // Initialize elliptic curve code
+     ECC_Start();
+     globalVerifyHandle.reset(new ECCVerifyHandle());
+diff --git a/src/memusage.h b/src/memusage.h
+index 81e8702..7b75331 100644
+--- a/src/memusage.h
++++ b/src/memusage.h
+@@ -6,6 +6,7 @@
+ #define BITCOIN_MEMUSAGE_H
+ 
+ #include "indirectmap.h"
++#include "prevector.h"
+ 
+ #include <stdlib.h>
+ 
+diff --git a/src/rpc/register.h b/src/rpc/register.h
+index 49aee23..55b0eed 100644
+--- a/src/rpc/register.h
++++ b/src/rpc/register.h
+@@ -19,6 +19,8 @@ void RegisterMiscRPCCommands(CRPCTable &tableRPC);
+ void RegisterMiningRPCCommands(CRPCTable &tableRPC);
+ /** Register raw transaction RPC commands */
+ void RegisterRawTransactionRPCCommands(CRPCTable &tableRPC);
++/** Register stats RPC commands */
++void RegisterStatsRPCCommands(CRPCTable &tableRPC);
+ 
+ static inline void RegisterAllCoreRPCCommands(CRPCTable &t)
+ {
+@@ -27,6 +29,7 @@ static inline void RegisterAllCoreRPCCommands(CRPCTable &t)
+     RegisterMiscRPCCommands(t);
+     RegisterMiningRPCCommands(t);
+     RegisterRawTransactionRPCCommands(t);
++    RegisterStatsRPCCommands(t);
+ }
+ 
+ #endif
+diff --git a/src/stats/rpc_stats.cpp b/src/stats/rpc_stats.cpp
+new file mode 100644
+index 0000000..a72b92b
+--- /dev/null
++++ b/src/stats/rpc_stats.cpp
+@@ -0,0 +1,69 @@
++// Copyright (c) 2016 The Bitcoin Core developers
++// Distributed under the MIT software license, see the accompanying
++// file COPYING or http://www.opensource.org/licenses/mit-license.php.
++
++#include "rpc/server.h"
++#include "stats/stats.h"
++#include "util.h"
++#include "utilstrencodings.h"
++
++#include <stdint.h>
++
++#include <univalue.h>
++
++UniValue getmempoolstats(const JSONRPCRequest& request)
++{
++    if (request.fHelp || request.params.size() != 0)
++        throw std::runtime_error(
++            "getmempoolstats\n"
++            "\nReturns the collected mempool statictics (non-linear non-interpolated samples).\n"
++            "\nResult:\n"
++            "  {\n"
++            "    \"time_from\" : \"timestamp\",     (numeric) Timestamp, first sample\n"
++            "    \"time_to\"   : \"timestamp\",     (numeric) Timestamp, last sample\n"
++            "    \"samples\"   : [\n"
++            "                    [<delta_in_secs>,<tx_count>,<dynamic_mem_usage>,<min_fee_per_k>],\n"
++            "                    [<delta_in_secs>,<tx_count>,<dynamic_mem_usage>,<min_fee_per_k>],\n"
++            "                    ...\n"
++            "                  ]\n"
++            "  }\n"
++            "\nExamples:\n" +
++            HelpExampleCli("getmempoolstats", "") + HelpExampleRpc("getmempoolstats", ""));
++
++    // get stats from the core stats model
++    uint64_t timeFrom = 0;
++    uint64_t timeTo = 0;
++    mempoolSamples_t samples = CStats::DefaultStats()->mempoolGetValuesInRange(timeFrom, timeTo);
++
++    // use "flat" json encoding for performance reasons
++    UniValue samplesObj(UniValue::VARR);
++    for (struct CStatsMempoolSample& sample : samples) {
++        UniValue singleSample(UniValue::VARR);
++        singleSample.push_back(UniValue((uint64_t)sample.timeDelta));
++        singleSample.push_back(UniValue(sample.txCount));
++        singleSample.push_back(UniValue(sample.dynMemUsage));
++        singleSample.push_back(UniValue(sample.minFeePerK));
++        samplesObj.push_back(singleSample);
++    }
++
++    UniValue result(UniValue::VOBJ);
++    result.push_back(Pair("time_from", timeFrom));
++    result.push_back(Pair("time_to", timeTo));
++    result.push_back(Pair("samples", samplesObj));
++
++    return result;
++}
++
++static const CRPCCommand commands[] =
++{
++    //  category              name                      actor (function)         okSafeMode
++    //  --------------------- ------------------------  -----------------------  ----------
++        {"stats",             "getmempoolstats",        &getmempoolstats,        true},
++
++};
++
++void RegisterStatsRPCCommands(CRPCTable& tableRPC)
++{
++    for (unsigned int vcidx = 0; vcidx < ARRAYLEN(commands); vcidx++)
++        tableRPC.appendCommand(commands[vcidx].name, &commands[vcidx]);
++}
+diff --git a/src/stats/stats.cpp b/src/stats/stats.cpp
+new file mode 100644
+index 0000000..82c4110
+--- /dev/null
++++ b/src/stats/stats.cpp
+@@ -0,0 +1,144 @@
++// Copyright (c) 2016 The Bitcoin Core developers
++// Distributed under the MIT software license, see the accompanying
++// file COPYING or http://www.opensource.org/licenses/mit-license.php.
++
++#include "stats/stats.h"
++
++#include "memusage.h"
++#include "utiltime.h"
++
++#include "util.h"
++
++const uint32_t CStats::SAMPLE_MIN_DELTA_IN_SEC = 2;
++const int CStats::CLEANUP_SAMPLES_THRESHOLD = 100;
++size_t CStats::maxStatsMemory = 0;
++const size_t CStats::DEFAULT_MAX_STATS_MEMORY = 10 * 1024 * 1024; //10 MB
++const bool CStats::DEFAULT_STATISTICS_ENABLED = false;
++std::atomic<bool> CStats::statsEnabled(false); //disable stats by default
++
++CStats* CStats::sharedInstance = NULL;
++
++CStats* CStats::DefaultStats()
++{
++    if (!sharedInstance)
++        sharedInstance = new CStats();
++
++    return sharedInstance;
++}
++
++void CStats::addMempoolSample(int64_t txcount, int64_t dynUsage, int64_t currentMinRelayFee)
++{
++    if (!statsEnabled)
++        return;
++
++    uint64_t now = GetTime();
++    {
++        LOCK(cs_stats);
++
++        // set the mempool stats start time if this is the first sample
++        if (mempoolStats.startTime == 0)
++            mempoolStats.startTime = now;
++
++        // ensure the minimum time delta between samples
++        if (mempoolStats.vSamples.size() && mempoolStats.vSamples.back().timeDelta + SAMPLE_MIN_DELTA_IN_SEC >= now - mempoolStats.startTime)
++            return;
++
++        // calculate the current time delta and add a sample
++        uint32_t timeDelta = now - mempoolStats.startTime; //truncate to uint32_t should be sufficient
++        mempoolStats.vSamples.push_back({timeDelta, txcount, dynUsage, currentMinRelayFee});
++        mempoolStats.cleanupCounter++;
++
++        // check if we should cleanup the container
++        if (mempoolStats.cleanupCounter >= CLEANUP_SAMPLES_THRESHOLD) {
++            //check memory usage
++            int32_t memDelta = memusage::DynamicUsage(mempoolStats.vSamples) - maxStatsMemory;
++            if (memDelta > 0 && mempoolStats.vSamples.size()) {
++                // only shrink if the vector.capacity() is > the target for performance reasons
++                mempoolStats.vSamples.shrink_to_fit();
++                int32_t memUsage = memusage::DynamicUsage(mempoolStats.vSamples);
++                // calculate the amount of samples we need to remove
++                size_t itemsToRemove = ceil((memUsage - maxStatsMemory) / sizeof(mempoolStats.vSamples[0]));
++
++                // make sure the vector contains more items then we'd like to remove
++                if (mempoolStats.vSamples.size() > itemsToRemove)
++                    mempoolStats.vSamples.erase(mempoolStats.vSamples.begin(), mempoolStats.vSamples.begin() + itemsToRemove);
++            }
++            // shrink vector
++            mempoolStats.vSamples.shrink_to_fit();
++            mempoolStats.cleanupCounter = 0;
++        }
++
++        // fire signal
++        MempoolStatsDidChange();
++    }
++}
++
++mempoolSamples_t CStats::mempoolGetValuesInRange(uint64_t& fromTime, uint64_t& toTime)
++{
++    if (!statsEnabled)
++        return mempoolSamples_t();
++
++    LOCK(cs_stats);
++
++    // if empty, return directly
++    if (!mempoolStats.vSamples.size())
++        return mempoolStats.vSamples;
++
++
++    if (!(fromTime == 0 && toTime == 0) && (fromTime > mempoolStats.startTime + mempoolStats.vSamples.front().timeDelta || toTime < mempoolStats.startTime + mempoolStats.vSamples.back().timeDelta)) {
++        mempoolSamples_t::iterator fromSample = mempoolStats.vSamples.begin();
++        mempoolSamples_t::iterator toSample = std::prev(mempoolStats.vSamples.end());
++
++        // create subset of samples
++        bool fromSet = false;
++        for (mempoolSamples_t::iterator it = mempoolStats.vSamples.begin(); it != mempoolStats.vSamples.end(); ++it) {
++            if (mempoolStats.startTime + (*it).timeDelta >= fromTime && !fromSet) {
++                fromSample = it;
++                fromSet = true;
++            }
++            else if (mempoolStats.startTime + (*it).timeDelta > toTime) {
++                toSample = std::prev(it);
++                break;
++            }
++        }
++
++        mempoolSamples_t subset(fromSample, toSample + 1);
++
++        // set the fromTime and toTime pass-by-ref parameters
++        fromTime = mempoolStats.startTime + (*fromSample).timeDelta;
++        toTime = mempoolStats.startTime + (*toSample).timeDelta;
++
++        // return subset
++        return subset;
++    }
++
++    // return all available samples
++    fromTime = mempoolStats.startTime + mempoolStats.vSamples.front().timeDelta;
++    toTime = mempoolStats.startTime + mempoolStats.vSamples.back().timeDelta;
++    return mempoolStats.vSamples;
++}
++
++void CStats::setMaxMemoryUsageTarget(size_t maxMem)
++{
++    statsEnabled = (maxMem > 0);
++
++    LOCK(cs_stats);
++    maxStatsMemory = maxMem;
++}
++
++std::string CStats::getHelpString(bool showDebug)
++{
++    std::string strUsage = HelpMessageGroup(_("Statistic options:"));
++    strUsage += HelpMessageOpt("-statsenable=", strprintf("Enable statistics (default: %u)", DEFAULT_STATISTICS_ENABLED));
++    strUsage += HelpMessageOpt("-statsmaxmemorytarget=<n>", strprintf(_("Set the memory limit target for statictics in bytes (default: %u)"), DEFAULT_MAX_STATS_MEMORY));
++
++    return strUsage;
++}
++
++bool CStats::parameterInteraction()
++{
++    if (GetBoolArg("-statsenable", DEFAULT_STATISTICS_ENABLED))
++        DefaultStats()->setMaxMemoryUsageTarget(GetArg("-statsmaxmemorytarget", DEFAULT_MAX_STATS_MEMORY));
++
++    return true;
++}
+diff --git a/src/stats/stats.h b/src/stats/stats.h
+new file mode 100644
+index 0000000..9266c46
+--- /dev/null
++++ b/src/stats/stats.h
+@@ -0,0 +1,79 @@
++// Copyright (c) 2016 The Bitcoin Core developers
++// Distributed under the MIT software license, see the accompanying
++// file COPYING or http://www.opensource.org/licenses/mit-license.php.
++
++#ifndef BITCOIN_STATS_H
++#define BITCOIN_STATS_H
++
++#include <sync.h>
++
++#include <atomic>
++#include <stdlib.h>
++#include <vector>
++
++#include <boost/signals2/signal.hpp>
++
++struct CStatsMempoolSample {
++    uint32_t timeDelta;  //use 32bit time delta to save memory
++    int64_t txCount;     //transaction count
++    int64_t dynMemUsage; //dynamic mempool usage
++    int64_t minFeePerK;  //min fee per K
++};
++
++typedef std::vector<struct CStatsMempoolSample> mempoolSamples_t;
++
++// simple mempool stats container
++class CStatsMempool
++{
++public:
++    uint64_t startTime; //start time
++    mempoolSamples_t vSamples;
++    uint64_t cleanupCounter; //internal counter for cleanups
++
++    CStatsMempool()
++    {
++        startTime = 0;
++        cleanupCounter = 0;
++    }
++};
++
++// Class that manages various types of statistics and its memory consumption
++class CStats
++{
++private:
++    static const uint32_t SAMPLE_MIN_DELTA_IN_SEC; //minimum delta in seconds between samples
++    static const int CLEANUP_SAMPLES_THRESHOLD;    //amount of samples until we perform a cleanup (remove old samples)
++    static size_t maxStatsMemory;                  //maximum amount of memory to use for the stats
++
++    static CStats* sharedInstance;
++    mutable CCriticalSection cs_stats;
++
++    CStatsMempool mempoolStats; //mempool stats container
++
++public:
++    static const size_t DEFAULT_MAX_STATS_MEMORY; //default maximum of memory to use
++    static const bool DEFAULT_STATISTICS_ENABLED; //default value for enabling statistics
++
++    static std::atomic<bool> statsEnabled;
++    static CStats* DefaultStats(); //shared instance
++
++    /* signals */
++    boost::signals2::signal<void(void)> MempoolStatsDidChange; //mempool signal
++
++    /* add a mempool stats sample */
++    void addMempoolSample(int64_t txcount, int64_t dynUsage, int64_t currentMinRelayFee);
++
++    /* get all mempool samples (non interpolated) */
++    mempoolSamples_t mempoolGetValuesInRange(uint64_t& fromTime, uint64_t& toTime);
++
++    /* set the target for the maximum memory consumption (in bytes) */
++    void setMaxMemoryUsageTarget(size_t maxMem);
++
++    /* get the statistics module help strings */
++    static std::string getHelpString(bool showDebug);
++
++    /* access the parameters and map it to the internal model */
++    static bool parameterInteraction();
++};
++
++#endif // BITCOIN_STATS_H
+diff --git a/src/stats/test/stats_tests.cpp b/src/stats/test/stats_tests.cpp
+new file mode 100644
+index 0000000..d9925b9
+--- /dev/null
++++ b/src/stats/test/stats_tests.cpp
+@@ -0,0 +1,76 @@
++// Copyright (c) 2016 The Bitcoin Core developers
++// Distributed under the MIT software license, see the accompanying
++// file COPYING or http://www.opensource.org/licenses/mit-license.php.
++
++#include "stats/stats.h"
++
++#include "test/test_bitcoin.h"
++#include "util.h"
++
++#include <boost/test/unit_test.hpp>
++
++BOOST_FIXTURE_TEST_SUITE(stats_tests, BasicTestingSetup)
++
++BOOST_AUTO_TEST_CASE(stats)
++{
++    CStats::DefaultStats()->setMaxMemoryUsageTarget(CStats::DEFAULT_MAX_STATS_MEMORY);
++
++    uint64_t start = GetTime();
++    SetMockTime(start);
++
++    CStats::DefaultStats()->addMempoolSample(0, 1, 1);
++    SetMockTime(start + 1);
++    CStats::DefaultStats()->addMempoolSample(0, 2, 2); //1second should be to short
++    SetMockTime(start + 5);
++    CStats::DefaultStats()->addMempoolSample(3, 4, 3);
++
++    uint64_t queryFromTime = start;
++    uint64_t queryToTime = start + 3600;
++    mempoolSamples_t samples = CStats::DefaultStats()->mempoolGetValuesInRange(queryFromTime, queryToTime);
++
++    BOOST_CHECK_EQUAL(samples[0].timeDelta, 0);
++    BOOST_CHECK_EQUAL(samples[1].timeDelta, 5);
++    BOOST_CHECK_EQUAL(samples[1].txCount, 3);
++    BOOST_CHECK_EQUAL(samples[1].dynMemUsage, 4);
++
++    // check retriving a subset of the available samples
++    queryFromTime = start;
++    queryToTime = start;
++    samples = CStats::DefaultStats()->mempoolGetValuesInRange(queryFromTime, queryToTime);
++    BOOST_CHECK_EQUAL(samples.size(), 1);
++
++    // add some samples
++    for (int i = 0; i < 10000; i++) {
++        SetMockTime(start + 10 + i * 5);
++        CStats::DefaultStats()->addMempoolSample(i, i + 1, i + 2);
++    }
++
++    queryFromTime = start + 3600;
++    queryToTime = start + 3600;
++    samples = CStats::DefaultStats()->mempoolGetValuesInRange(queryFromTime, queryToTime);
++    BOOST_CHECK_EQUAL(samples.size(), 1); //get a single sample
++
++    queryFromTime = start;
++    queryToTime = start + 3600;
++    samples = CStats::DefaultStats()->mempoolGetValuesInRange(queryFromTime, queryToTime);
++    BOOST_CHECK(samples.size() >= 3600 / 5);
++
++    // reduce max memory and add 100 samples to ensure it triggers the cleanup
++    CStats::DefaultStats()->setMaxMemoryUsageTarget(10 * 1024);
++    for (int i = 10000; i < 10100; i++) {
++        SetMockTime(start + 10 + i * 5);
++        CStats::DefaultStats()->addMempoolSample(i, i + 1, i + 2);
++    }
++
++    queryFromTime = start;
++    queryToTime = start + 100;
++    samples = CStats::DefaultStats()->mempoolGetValuesInRange(queryFromTime, queryToTime);
++    BOOST_CHECK_EQUAL(samples.size(), 1);
++
++    queryFromTime = 0; // no range limits
++    queryToTime = 0;   // no range  limits
++    samples = CStats::DefaultStats()->mempoolGetValuesInRange(queryFromTime, queryToTime);
++    BOOST_CHECK_EQUAL(samples.size() < 1000, true);
++}
++
++BOOST_AUTO_TEST_SUITE_END()
+diff --git a/src/validation.cpp b/src/validation.cpp
+index 10032b7..f54795b 100644
+--- a/src/validation.cpp
++++ b/src/validation.cpp
+@@ -23,6 +23,7 @@
+ #include "script/script.h"
+ #include "script/sigcache.h"
+ #include "script/standard.h"
++#include "stats/stats.h"
+ #include "timedata.h"
+ #include "tinyformat.h"
+ #include "txdb.h"
+@@ -579,6 +580,7 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
+ {
+     const CTransaction& tx = *ptx;
+     const uint256 hash = tx.GetHash();
++    CFeeRate poolMinFeeRate;
+     AssertLockHeld(cs_main);
+     if (pfMissingInputs)
+         *pfMissingInputs = false;
+@@ -764,7 +766,8 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
+                     strprintf("%d", nSigOpsCost));
+         }
+ 
+-        CAmount mempoolRejectFee = pool.GetMinFee(GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE) * 1000000).GetFee(nSize);
++        poolMinFeeRate = pool.GetMinFee(GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE) * 1000000);
++        CAmount mempoolRejectFee = poolMinFeeRate.GetFee(nSize);
+         if (mempoolRejectFee > 0 && nModifiedFees < mempoolRejectFee && setIgnoreRejects.find("mempool min fee not met") == setIgnoreRejects.end()) {
+             return state.DoS(0, false, REJECT_INSUFFICIENTFEE, "mempool min fee not met", false, strprintf("%d < %d", nFees, mempoolRejectFee));
+         } else if (GetBoolArg("-relaypriority", DEFAULT_RELAYPRIORITY) && nModifiedFees < ::minRelayTxFee.GetFee(nSize) && !AllowFree(entry.GetPriority(chainActive.Height() + 1)) && setIgnoreRejects.find("insufficient priority") == setIgnoreRejects.end()) {
+@@ -1027,6 +1030,8 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
+     }
+ 
+     GetMainSignals().SyncTransaction(tx, NULL, CMainSignals::SYNC_TRANSACTION_NOT_IN_BLOCK);
++    // update mempool stats
++    CStats::DefaultStats()->addMempoolSample(pool.size(), pool.DynamicMemoryUsage(), poolMinFeeRate.GetFeePerK());
+ 
+     return true;
+ }
+@@ -2243,6 +2248,8 @@ bool static DisconnectTip(CValidationState& state, const CChainParams& chainpara
+     for (const auto& tx : block.vtx) {
+         GetMainSignals().SyncTransaction(*tx, pindexDelete->pprev, CMainSignals::SYNC_TRANSACTION_NOT_IN_BLOCK);
+     }
++    // update mempool stats
++    CStats::DefaultStats()->addMempoolSample(mempool.size(), mempool.DynamicMemoryUsage(), mempool.GetMinFee(GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE) * 1000000).GetFeePerK());
+     return true;
+ }
+ 
+@@ -2312,6 +2319,9 @@ bool static ConnectTip(CValidationState& state, const CChainParams& chainparams,
+     // Update chainActive & related variables.
+     UpdateTip(pindexNew, chainparams);
+ 
++    // update mempool stats
++    CStats::DefaultStats()->addMempoolSample(mempool.size(), mempool.DynamicMemoryUsage(), mempool.GetMinFee(GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE) * 1000000).GetFeePerK());
++
+     int64_t nTime6 = GetTimeMicros(); nTimePostConnect += nTime6 - nTime5; nTimeTotal += nTime6 - nTime1;
+     LogPrint("bench", "  - Connect postprocess: %.2fms [%.2fs]\n", (nTime6 - nTime5) * 0.001, nTimePostConnect * 0.000001);
+     LogPrint("bench", "- Connect block: %.2fms [%.2fs]\n", (nTime6 - nTime1) * 0.001, nTimeTotal * 0.000001);
