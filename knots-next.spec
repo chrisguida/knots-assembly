@@ -10,17 +10,13 @@ checkout v0.17.0rc2
 	5416 sys_libsecp256k1						f79618bee8
 	7485 sys_univalue_def						79f1d9208d
 	5618 separate_utils_only					0c45680e8e
-	12246 separate_utils						c09d510d89
-	7339 opt_libevent-0.16						07da87df90
-	11622 bip70_disable-0.16					af740adc4f	last=7ecca66062
-	-     ppa_updates-0.16						c29eb66382
-	13788 bugfix_asm_opt-0.16					4324338adf	last=4207c1b35c bugfix_asm_opt
-	13789 bugfix_asm_pragmas-0.16				b8d31df2f8	last=8bca9cd7ba bugfix_asm_pragmas
-	-     bugfix_asm_leveldb_check-0.16			54a0d3a45b
+	12246 separate_utils-0.17					c09d510d89	last=a2a04a5abb separate_utils
+	13788 bugfix_asm_opt						4324338adf
+	13789 bugfix_asm_pragmas					b8d31df2f8
+	-     bugfix_asm_leveldb_check				54a0d3a45b
 @0.17.x-knots
 # TESTS:
 	14065 symbol_check-0.17									last=8b03a40e6c symbol_check
-	-    travis_nolibevent						bcd1f77c04
 	14036 -	# travis: Run unit tests --with-sanitizers=undefined
 	14080 MarcoFalke/Mf1808-travisSanThread
 # FIXES:
@@ -116,7 +112,7 @@ checkout v0.17.0rc2
 	12783 disable_appnap-0.16					389dc7a96f	last=33a25f1e02
 		# Retained older inhibitor too
 	# TODO ? 12792 w/ renamed param
-	12818 gui_feebump_select-0.16				a1c7d44271	last=90c614cb8b
+	12818 gui_feebump_select-0.16				a1c7d44271	last=d795c610d3
 	12911 signrawtx_showfees-0.16				613381e9c4	last=b7159aa585 kallewoof/sign-show-fees
 	12965 scriptthreads-0.16+knots				ec38b2650d	last=dfab6c6866 jonas/2018/04/svt
 	# TODO ADD ONLY 13008 # rpc: Rename size to vsize in mempool related calls
@@ -180,11 +176,13 @@ checkout v0.17.0rc2
 	7483 svg_icon-0.16+knots					2a4168de17
 # BRANDING:
 	n/a  knots_branding-0.16					ef04113ea1
-#FIXME: Check includes use <>
+FIXME: Check includes use <>
+FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=1a7c7b4b97ee6bd79c)		17c327ad76	# doc/{bips,files}
 	n/a  (bump_version=Knots:20180730)			2f197b2b7b
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=08de50437e)				0a1f46883d  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=950bd75f29)				0a1f46883d  # release notes: write/update, including change log and credits
+DOCUMENT libevent now required ? and protobuf/bip70 too
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
