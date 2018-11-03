@@ -1,9 +1,9 @@
-timestamp 2018-07-30 03:49:09
+timestamp 2018-10-15 09:39:42
 lastapply no-merge
 
 #.. checked up to PR #14101
 
-checkout v0.17.0rc2
+checkout v0.17.0.1
 @0.17.x-syslibs
 	5872 subdir_incl_compat						c134703e62
 	2241 sys_leveldb-0.17						3510c4e6eb
@@ -16,9 +16,9 @@ checkout v0.17.0rc2
 	-     bugfix_asm_leveldb_check				54a0d3a45b
 @0.17.x-knots
 # TESTS:
-	14065 symbol_check-0.17									last=8b03a40e6c symbol_check
-	14036 -	# travis: Run unit tests --with-sanitizers=undefined
-	14080 MarcoFalke/Mf1808-travisSanThread
+	13724 symbol_check-0.17
+	14036 travis_sanitizers-0.17
+	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 # FIXES:
 	9524 marco/Mf1701-qaPruning					891509bbdf
 	#10529? systemd stuff
@@ -31,66 +31,69 @@ checkout v0.17.0rc2
 	# ^ 11634 walletlocks-0.16						7914050bdb	last=491ec75b9f
 		# held back annotations, and minimised patch
 	# Needs review? 12172 jtimon/b16-bugfix-savemempool
-	12491 fadvise-0.16							1c929547a4	last=5259c72a76  # Try to use posix_fadvise with CBufferedFile
-	12696 eklitzke_fsync-0.16					b22514b73f	last=4894e368fa  # Fix possible data race when committing block files
-	# For 0.17: Revert #12723?
-	13084 fix_1neg-0.16							80751fee66	last=5af7625079 sipa/201804_keepnegone
+	14485 fadvise								1c929547a4
+		# Was #12491
+	14501 fsync_dir								b22514b73f
+		# Was #12696
+	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
+	13084 sipa/201804_keepnegone				80751fee66
 	# Requires 11739, which touches too much consensus logic: minimized 13120 MarcoFalke:Mf1805-segwitGenesisPolicy
-	13159 handle-reopen-failed-0.16				56be2f61a6	last=37efe5b7ea practicalswift/handle-reopen-failed
+	13159 handle-reopen-failed-0.17				56be2f61a6
 		# minimised diff
-	13608 bugfix_b-tx_amountcheck-0.15			6fc500c51d	last=876f49c6cd
+	13608 -										6fc500c51d  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
-	13910 domob1812/progress
+	13910 -
+	14596 bugfix_createMS_named_addresstype0.17				last=d8bf1071cf bugfix_createMS_named_addresstype
+	14602 bugfix_rpc_getbalance_untrusted-0.17				last=5505437e8b bugfix_rpc_getbalance_untrusted
+	14618 http_debug_rejects-0.15							last=b301fecb83
+		# Held back b301fecb83 (allowing more URI chars) pending review
 # FUNCTIONALITY:
-	14066 gitian_power64-0.17								last=05cd16bf29 gitian_power64
+	14066 gitian_power64-0.17								last=02ba4890bb gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs-0.16					1d3cc741e6	last=e11cb50a09  # multisig sorting
+	8751 sort-multisigs-0.17					1d3cc741e6	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
-	9152 sweepprivkeys+sort_multisigs			ed43377924	last=127ec180bd sweepprivkeys
-	MISSING PARTS 12196 sweepprivkeys+scantxoutset			52dfb4735e	last=be98b2d9a8 jonas/2017/12/utxo_sweep
-		# modified to remove scan-by-address garbage
-		# held back feature removals
+	9152 sweepprivkeys-0.17						ed43377924	last=e341211bf7 sweepprivkeys
 	9245 ionice									3400eeb80d
 	-    ionice_win								3303deb376
-	8501 old_stats_rpc-0.16						e8fc393fa6	last=7af0ea43b2
+	8501 old_stats_rpc-0.17						e8fc393fa6	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
-	8550 stats_qt-0.16							74347db52f	last=63fb11652f
-		# NOTE: partial rebase at https://github.com/jonasschnelli/bitcoin/pull/9 ??? OLDER THAN CURRENT NOW
-	# needs review: 9332 Let wallet importmulti RPC accept labels for standard scriptPubKeys
+	8550 old_stats_qt-0.17						74347db52f	last=63fb11652f
+		# Held back on old version due to conflict with RPC updates...
+	9332 -	# Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	9422 mempool_dat_extensible					d787eb624d
-	9504 dumpmasterprivkey-0.16					4c84494958	last=07fc81109a
+	9504 dumpmasterprivkey-0.17					4c84494958	last=07fc81109a
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	# not ready: 9745 [RPC] Getting confirmations command
-	9849 gui_netwatch							ded9e72741
-	11383 multiwallet_gui-0.16+knots			d101176535	last=f5aa574c37 multiwallet_gui
+	9849 gui_netwatch-0.17						ded9e72741	last=654f66d9e0 gui_netwatch
 	10615 multiwallet_rpc						e646c77988
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
-	10554 zmq_wtx-0.16							5f5cc19ac3	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-0.17							5f5cc19ac3	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	12674 rpc_onetry_nonpriv					dd2a168c2a
 	10593 relax_invblk_punishment				e7398a9b8d
 	10594 whitelist_outgoing					20d5c10ce0
-	10350 filtered_witblock-0.16				e3c0fcef0a	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.17				e3c0fcef0a	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	10729 scriptex								a6d4274f12
-	10730 scriptflag_strings-mini-0.16			98813105ab	last=e2e183bc1f
+	10730 scriptflag_strings-mini-0.17			98813105ab	last=e2e183bc1f
 	n/a   script_debugger-mini					019bcb76b8	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
+	11256 rpc_mempoolentry_weight				3e005b804a	last=d4b0d81b58
+		# rebased to #14649 rpc_mempoolentry_weight
 	-     rpc_mempoolentry_txhash				e79db541a0
-	11256 rpc_mempoolentry_weight-0.16+knots	3e005b804a	last=d4b0d81b58
-	11413 explicit_fee-0.16						472b79c25e	last=628f6e971a kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
-	11471 gui_sendtoself_label-0.16				4bfb75be0c	last=c23bd2892b
-	11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
+	11413 explicit_fee-0.17						472b79c25e	last=d9b1c42848 kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
+	11471 gui_sendtoself_label-0.17				4bfb75be0c	last=c23bd2892b
+	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
 	# Needs thought/Concept ACK: 11708 signrawtx_wsh-0.16								last=576624ce95
 	11750 -										3b3fbcbb3e # Multiselect in coincontrol treewidget and display selected count
@@ -183,6 +186,10 @@ FIXME: Check hidden_args has anything removed (possibly conditional)
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=950bd75f29)				0a1f46883d  # release notes: write/update, including change log and credits
 DOCUMENT libevent now required ? and protobuf/bip70 too
+DOCUMENT 	MISSING PARTS 12196 sweepprivkeys+scantxoutset			52dfb4735e	last=be98b2d9a8 jonas/2017/12/utxo_sweep
+			# modified to remove scan-by-address garbage
+			# held back feature removals
+DOCUMENT dropped #11653
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
