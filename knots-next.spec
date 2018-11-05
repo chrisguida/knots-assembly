@@ -98,32 +98,30 @@ checkout v0.17.0.1
 	# Needs thought/Concept ACK: 11708 signrawtx_wsh-0.16								last=576624ce95
 	11750 -										3b3fbcbb3e # Multiselect in coincontrol treewidget and display selected count
 	11765 rest-blockhash-endpoint-0.16			7fca723689	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
-	11770 rest_fee-0.16							7ba67d2910	last=935b364978  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
-	11803 bugfix_dumpwallet_hdkeypath-0.16		51d373acca	last=393511cb22 bugfix_dumpwallet_hdkeypath
-	12096 bumpfee_reduce_output-0.16			5d92f4453b	last=51826d4de0 kallewoof/better-bumpfee
+	11770 rest_fee-0.17							7ba67d2910	last=935b364978  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11803 bugfix_dumpwallet_hdkeypath-0.17		51d373acca	last=17d609ce26 bugfix_dumpwallet_hdkeypath
+	12096 kallewoof/better-bumpfee				5d92f4453b
 	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters
-	CHECK HOLD BACK 12257 avoidpartialspends-0.16				d9919d8447	last=452485e1b7 kallewoof/feature-addrgrouped-coinselect
-		# NOTE: held back af586af9f0..452485e1b7
-	12677 listunspent_ancestorinfo-0.16			2642343fb6	last=daeb431011 listunspent_ancestorinfo
+	12677 listunspent_ancestorinfo				2642343fb6
 	# Not sure if safe with 0.16: 12559 promag/2018-02-avoid-cs_main-lock
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
-	12676 rawmempool_bip125-0.16+knots			d0871f6a99	last=870bd4c73d
-		# NOTE: rewritten
+	12676 -										d0871f6a99  # Show "bip125-replaceable" flag, when retrieving mempool entries
 	# TODO: 12705 kallewoof/importmulti-wif-support
-	12763 rpcwhitelist-0.16						3a58144b6c	last=8c45d93b0e
-	# 12769 ??? GOT REVERTED???
-	12783 disable_appnap-0.16					389dc7a96f	last=33a25f1e02
+	12763 rpcwhitelist-0.17						3a58144b6c	last=8c45d93b0e
+	12783 disable_appnap-0.17					389dc7a96f	last=1e0f3c4499
 		# Retained older inhibitor too
 	# TODO ? 12792 w/ renamed param
-	12818 gui_feebump_select-0.16				a1c7d44271	last=d795c610d3
-	12911 signrawtx_showfees-0.16				613381e9c4	last=b7159aa585 kallewoof/sign-show-fees
-	12965 scriptthreads-0.16+knots				ec38b2650d	last=dfab6c6866 jonas/2018/04/svt
-	# TODO ADD ONLY 13008 # rpc: Rename size to vsize in mempool related calls
+	12818 -										a1c7d44271  # [qt] TransactionView: highlight replacement tx after fee bump
+	12911 signrawtx_showfees-0.17				613381e9c4	last=bb8dde2a9a kallewoof/sign-show-fees
+	12965 scriptthreads-0.17					ec38b2650d	last=dfab6c6866 jonas/2018/04/svt
+	13008 rpc_mempool_vsize-0.17+knots						last=9271166a8a  # rpc: Rename size to vsize in mempool related calls
+		# NOTE: Minified & made deprecation softer
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
-	# Test fails: 13152 rpc_getnodeaddress-0.16							last=f10e380630
+	13152 rpc_getnodeaddress-0.17							last=a2eb6f5405
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.16+knots				6a93a81e3e	last=3b402e0738 matt/2018-05-asm
-	-     bugfix_asm_opt_and_pragmas-0.16+knots	7d916e293f
+	13203 dsha256_power8-0.17					6a93a81e3e	last=3b402e0738 matt/2018-05-asm
+		# NOTE: Stripped out benchmark change
+	-     dsha256_power8-0.17_asm_pragmas		7d916e293f
 	# TODO: Possible performance concern 13310 promag/2018-05-replayblocks-progress
 	13339 walletnotify_w-0.16					10c0ad0430	last=cef0327afd promag/2018-05-walletnotify
 	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c marco/Mf1806-rpcBlockHeader
@@ -190,6 +188,10 @@ DOCUMENT 	MISSING PARTS 12196 sweepprivkeys+scantxoutset			52dfb4735e	last=be98b
 			# modified to remove scan-by-address garbage
 			# held back feature removals
 DOCUMENT dropped #11653
+DOCUMENT dumpwallet hdmasterkeyid replaced by hdseedid
+NOTE: avoidpartialspends=false now has behaviour change
+MERGE 9271166a8a relnotes
+MERGE doc/release-notes-*.md
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
