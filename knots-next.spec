@@ -20,10 +20,11 @@ checkout v0.17.0.1
 	14036 travis_sanitizers-0.17
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 # FIXES:
+	14618 http_debug_rejects-0.15							last=ab8c6f24d2
 	9524 marco/Mf1701-qaPruning					891509bbdf
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						938ce42c1a
-	10731 log_more_uacomment					71ccec6290
+	10731 log_more_uacomment-0.17				71ccec6290	last=aaba5976bd log_more_uacomment
 	# Too much churn/risk: 11596 chainactive_locking-0.16				c949b13d71	last=617c3188d5
 		# held back 8ce8e75cd7-358dfc51e0 which is just a comment change and annotations, to minimise diff
 		# held back a496a43699->ef997d66cc removal of double locking cs_main
@@ -45,8 +46,7 @@ checkout v0.17.0.1
 	13910 -
 	14596 bugfix_createMS_named_addresstype0.17				last=d8bf1071cf bugfix_createMS_named_addresstype
 	14602 bugfix_rpc_getbalance_untrusted-0.17				last=5505437e8b bugfix_rpc_getbalance_untrusted
-	14618 http_debug_rejects-0.15							last=b301fecb83
-		# Held back b301fecb83 (allowing more URI chars) pending review
+	14403 revert_qt_poodle
 # FUNCTIONALITY:
 	14066 gitian_power64-0.17								last=02ba4890bb gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -123,7 +123,7 @@ checkout v0.17.0.1
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		7d916e293f
 	# TODO: Possible performance concern 13310 promag/2018-05-replayblocks-progress
-	13339 walletnotify_w-0.16					10c0ad0430	last=cef0327afd promag/2018-05-walletnotify
+	13339 walletnotify_w-0.17					10c0ad0430	last=cef0327afd promag/2018-05-walletnotify
 	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c marco/Mf1806-rpcBlockHeader
 		# held back removal of duplicate-header submission check
 	# Needs work: 13541 wallet/rpc: sendrawtransaction maxfeerate
@@ -131,9 +131,10 @@ checkout v0.17.0.1
 	# Needs work: 13836 clearmempool RPC
 	# Needs review: 13903 Significantly reduce GetTransaction cs_main locking
 	# TBD (part of) 13926 [WIP] [Tools] bitcoin-wallet-tool
-	13932 achow101/psbt-util-rpcs
+	# TESTS FAIL: 13932 achow101/psbt-util-rpcs
+		# Rebased ba5f9058f6 as c75ca1a28c
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
-	13987 ajtowns/201808-peerinfo-minfee
+	13987 rpc_getpeerinfo_minfeefilter-0.17					last=5778bf95d9 ajtowns/201808-peerinfo-minfee
 	# Needs review: 13989 add avx512 instrinsic
 	# Needs work: 13990 WIP: allow fee estimation to work with lower fees
 	# Needs rationale: 14019 Import pubkeys when importing p2sh with importmulti
@@ -141,14 +142,15 @@ checkout v0.17.0.1
 	# Needs review: 14032 Add p2p layer encryption with ECDH/ChaCha20Poly1305
 	# Needs review: 14035 Utxoscriptindex
 	# Needs work: 14053 Add address-based index (attempt 4?)
-	PARTIAL 14060 mruddy:zmqhwm
+	14060 zmqhwm-0.17+knots
+		# NOTE: Needs explicit args added for wallettx merge
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	# Needs work: 14090 [windows] progress bar in task bar
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					7b4ef75162
 	7107 qtnetworkport							86a22ede93	last=1f37c87 origin-pull/7107/head
-	7533 sendraw_force+knots					821e79eca8  # Latest code now
-	11082 rwconf-0.16							7ac8e5584d	last=aac0501148 rwconf
+	7533 sendraw_force-0.17+knots				821e79eca8  # Latest code now
+	11082 rwconf-0.17							7ac8e5584d	last=9f370a5539 rwconf
 	7510 rwconf_gui-0.16+knots					f5d2f52fba	# Latest code now
 		FIXME: prune setting
 	5916 keyorigin								6e769279fa
