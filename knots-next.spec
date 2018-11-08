@@ -150,9 +150,8 @@ checkout v0.17.0.1
 	-     restore_blockmaxsize					7b4ef75162
 	7107 qtnetworkport							86a22ede93	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.17+knots				821e79eca8  # Latest code now
-	11082 rwconf-0.17							7ac8e5584d	last=9f370a5539 rwconf
-	7510 rwconf_gui-0.16+knots					f5d2f52fba	# Latest code now
-		FIXME: prune setting
+	11082 rwconf-0.17							7ac8e5584d	last=4f5794f776 rwconf
+	7510 rwconf_gui-0.17+knots					f5d2f52fba	# Latest code now
 	5916 keyorigin								6e769279fa
 	 559 accept_nonstdtxn						f07335d45f
 	 929 tbc									065b18ab4a
@@ -172,6 +171,7 @@ checkout v0.17.0.1
 	-	 bytespersigopstrict+knots				fa99fdb901
 	9749 unique_spk_mempool+knots				df8e9047db
 	-    rwconf_policy-0.16+knots				2786f6f8d6
+		NOTE: prune moved to rwconf_gui
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 	-    txrepl_fullrbf_default+knots			f5c7ca2cd9	last=61fae13df1 txrepl_fullrbf_default
