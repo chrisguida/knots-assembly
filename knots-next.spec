@@ -19,6 +19,7 @@ checkout v0.17.0.1
 	13724 symbol_check-0.17
 	14036 travis_sanitizers-0.17
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
+	-     lint_relaxer
 # FIXES:
 	14618 http_debug_rejects-0.15							last=ab8c6f24d2
 	9524 marco/Mf1701-qaPruning					891509bbdf
@@ -45,8 +46,14 @@ checkout v0.17.0.1
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 	13910 -
 	14596 bugfix_createMS_named_addresstype0.17				last=d8bf1071cf bugfix_createMS_named_addresstype
-	14602 bugfix_rpc_getbalance_untrusted-0.17				last=5505437e8b bugfix_rpc_getbalance_untrusted
+	-     bugfix_rpc_getbalance_hacky-0.17
+	# FIX THE BELOW:
+	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
+	#-     bugfix_rpc_getbalance_acctstar-0.17
+	#	FIXME: jnewbery found a bug :<
 	14403 revert_qt_poodle
+	14818 bugfix_test_rpc_psbt-0.17							last=c87fc71f7e bugfix_test_rpc_psbt
+	14819 bugfix_test_mempool_accept
 # FUNCTIONALITY:
 	14066 gitian_power64-0.17								last=02ba4890bb gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -65,7 +72,7 @@ checkout v0.17.0.1
 		# Held back on old version due to conflict with GUI updates...
 	8550 old_stats_qt-0.17						74347db52f	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
-	9332 -	# Let wallet importmulti RPC accept labels for standard scriptPubKeys
+	9332 pr9332-0.17										last=98ea64cf23  # Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	9422 mempool_dat_extensible					d787eb624d
 	9504 dumpmasterprivkey-0.17					4c84494958	last=07fc81109a
 	# not ready yet: SPV
@@ -91,16 +98,16 @@ checkout v0.17.0.1
 	11256 rpc_mempoolentry_weight				3e005b804a	last=d4b0d81b58
 		# rebased to #14649 rpc_mempoolentry_weight
 	-     rpc_mempoolentry_txhash				e79db541a0
-	11413 explicit_fee-0.17						472b79c25e	last=d9b1c42848 kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
+	11413 explicit_fee-0.17						472b79c25e	last=8cd3ffefbe kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
 	11471 gui_sendtoself_label-0.17				4bfb75be0c	last=c23bd2892b
 	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
 	# Needs thought/Concept ACK: 11708 signrawtx_wsh-0.16								last=576624ce95
 	11750 -										3b3fbcbb3e # Multiselect in coincontrol treewidget and display selected count
-	11765 rest-blockhash-endpoint-0.16			7fca723689	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
-	11770 rest_fee-0.17							7ba67d2910	last=935b364978  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11765 rest-blockhash-endpoint-0.17			7fca723689	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
+	11770 rest_fee-0.17							7ba67d2910	last=d074e0b8ca  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath-0.17		51d373acca	last=17d609ce26 bugfix_dumpwallet_hdkeypath
-	12096 kallewoof/better-bumpfee				5d92f4453b
+	12096 bumpfee_reduce_output-0.17			5d92f4453b	last=5b37cc17b4 kallewoof/better-bumpfee
 	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters
 	12677 listunspent_ancestorinfo				2642343fb6
 	# Not sure if safe with 0.16: 12559 promag/2018-02-avoid-cs_main-lock
@@ -112,9 +119,9 @@ checkout v0.17.0.1
 		# Retained older inhibitor too
 	# TODO ? 12792 w/ renamed param
 	12818 -										a1c7d44271  # [qt] TransactionView: highlight replacement tx after fee bump
-	12911 signrawtx_showfees-0.17				613381e9c4	last=bb8dde2a9a kallewoof/sign-show-fees
+	12911 signrawtx_showfees-0.17				613381e9c4	last=4cd8db17d5 kallewoof/sign-show-fees
 	12965 scriptthreads-0.17					ec38b2650d	last=dfab6c6866 jonas/2018/04/svt
-	13008 rpc_mempool_vsize-0.17+knots						last=9271166a8a  # rpc: Rename size to vsize in mempool related calls
+	13008 rpc_mempool_vsize-0.17+knots						last=3bc922d79c  # rpc: Rename size to vsize in mempool related calls
 		# NOTE: Minified & made deprecation softer
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	13152 rpc_getnodeaddress-0.17							last=a2eb6f5405
@@ -123,7 +130,8 @@ checkout v0.17.0.1
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		7d916e293f
 	# TODO: Possible performance concern 13310 promag/2018-05-replayblocks-progress
-	13339 walletnotify_w-0.17					10c0ad0430	last=cef0327afd promag/2018-05-walletnotify
+	13339 walletnotify_w-0.17					10c0ad0430	last=71d70632ee promag/2018-05-walletnotify
+		# held back cef0327afd..71d70632ee Windows porting due to copyright issues (and bugs?)
 	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c marco/Mf1806-rpcBlockHeader
 		# held back removal of duplicate-header submission check
 	# Needs work: 13541 wallet/rpc: sendrawtransaction maxfeerate
@@ -150,26 +158,26 @@ checkout v0.17.0.1
 	-     restore_blockmaxsize					7b4ef75162
 	7107 qtnetworkport							86a22ede93	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.17+knots				821e79eca8  # Latest code now
-	11082 rwconf-0.17							7ac8e5584d	last=4f5794f776 rwconf
+	11082 rwconf-0.17							7ac8e5584d	last=31edb2c940 rwconf
 	7510 rwconf_gui-0.17+knots					f5d2f52fba	# Latest code now
-	5916 keyorigin								6e769279fa
+	5916 legacy_keyorigin						6e769279fa
 	 559 accept_nonstdtxn						f07335d45f
 	 929 tbc									065b18ab4a
 	 553 bugfix_qt_uri_amount_parser			99f0b1f4ca
-	-    mining_priority-0.16					9a90dc34e7  # NOTE: now the latest code, rebased
+	-    mining_priority-0.17					9a90dc34e7  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					525633a9d5
 	5891 qt_console_history_persist				90c6f0a538
 	7219 txrepl_fullrbf							a9fd5b6577
 	# TODO: some way to add UA comments via rwconf
 	10282 timebomb_knots						db079c9033
-	12146 opt_wallet_segwit2-0.16+knots			d855625b12	last=f5f5a922ba opt_wallet_segwit2
-	n/a  checkpoint_update						a9c8a9ef4c
-	TODO: 0.17: Revert 12795
+	12146 opt_wallet_segwit2					d855625b12
+	-     gui_wallet_displayname
+	n/a  checkpoint_update-0.17					a9c8a9ef4c
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				82becc9391
-	-	 bytespersigopstrict+knots				fa99fdb901
-	9749 unique_spk_mempool+knots				df8e9047db
+	-	 bytespersigopstrict-0.17+knots			fa99fdb901
+	9749 unique_spk_mempool-0.17+knots			df8e9047db
 	-    rwconf_policy-0.16+knots				2786f6f8d6
 		NOTE: prune moved to rwconf_gui
 		#TODO: Add segwit wallet stuff?
@@ -191,6 +199,8 @@ DOCUMENT 	MISSING PARTS 12196 sweepprivkeys+scantxoutset			52dfb4735e	last=be98b
 			# held back feature removals
 DOCUMENT dropped #11653
 DOCUMENT dumpwallet hdmasterkeyid replaced by hdseedid
+DOCUMENT listreceivedby* key_origin deprecation
+DOCUMENT #11413 changed from sat/kB to BTC/kB
 NOTE: avoidpartialspends=false now has behaviour change
 MERGE 9271166a8a relnotes
 MERGE doc/release-notes-*.md
