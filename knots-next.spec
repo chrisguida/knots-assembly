@@ -187,7 +187,7 @@ checkout v0.17.0.1
 	n/a  knots_branding-0.17					ef04113ea1
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
-	n/a  (cherrypick=1a7c7b4b97ee6bd79c)		17c327ad76	# doc/{bips,files}
+	n/a  (cherrypick=8358b599adc18aba52)		17c327ad76	# doc/{bips,files}
 	n/a  (bump_version=Knots:20180730)			2f197b2b7b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=950bd75f29)				0a1f46883d  # release notes: write/update, including change log and credits
