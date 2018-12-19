@@ -178,17 +178,15 @@ checkout v0.17.0.1
 	-    1day_default_conftarget				82becc9391
 	-	 bytespersigopstrict-0.17+knots			fa99fdb901
 	9749 unique_spk_mempool-0.17+knots			df8e9047db
-	-    rwconf_policy-0.16+knots				2786f6f8d6
-		NOTE: prune moved to rwconf_gui
+	-    rwconf_policy-0.17+knots				2786f6f8d6
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
-	-    txrepl_fullrbf_default+knots			f5c7ca2cd9	last=61fae13df1 txrepl_fullrbf_default
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
-	7483 svg_icon-0.16+knots					2a4168de17
+	7483 svg_icon-0.17+knots					2a4168de17
 # BRANDING:
-	n/a  knots_branding-0.16					ef04113ea1
-FIXME: Check includes use <>
-FIXME: Check hidden_args has anything removed (possibly conditional)
+	n/a  knots_branding-0.17					ef04113ea1
+#FIXME: Check includes use <>
+#FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=1a7c7b4b97ee6bd79c)		17c327ad76	# doc/{bips,files}
 	n/a  (bump_version=Knots:20180730)			2f197b2b7b
 #	n/a  knots_historical_relnotes				61100a2
