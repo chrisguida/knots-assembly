@@ -1,7 +1,7 @@
-timestamp 2018-10-15 09:39:42
+timestamp 2018-12-20 06:09:32
 lastapply no-merge
 
-#.. checked up to PR #14101
+#.. checked up to PR #15006
 
 checkout v0.17.0.1
 @0.17.x-syslibs
@@ -11,6 +11,8 @@ checkout v0.17.0.1
 	7485 sys_univalue_def						79f1d9208d
 	5618 separate_utils_only					0c45680e8e
 	12246 separate_utils-0.17					c09d510d89	last=a2a04a5abb separate_utils
+	11622 bip70_disable-0.16					af740adc4f	last=7ecca66062
+		# pull rebase from 11622 + 14564 + 14686?
 	13788 bugfix_asm_opt						4324338adf
 	13789 bugfix_asm_pragmas					b8d31df2f8
 	-     bugfix_asm_leveldb_check				54a0d3a45b
@@ -21,6 +23,7 @@ checkout v0.17.0.1
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer
 # FIXES:
+	TODO: 0.17.1 backports
 	14618 http_debug_rejects-0.15							last=ab8c6f24d2
 	9524 marco/Mf1701-qaPruning					891509bbdf
 	#10529? systemd stuff
@@ -54,6 +57,11 @@ checkout v0.17.0.1
 	14403 revert_qt_poodle
 	14818 bugfix_test_rpc_psbt-0.17							last=c87fc71f7e bugfix_test_rpc_psbt
 	14819 bugfix_test_mempool_accept
+	14228 -	# Qt: Enable system tray icon by default if available
+		TODO: make sure it doesn't change settings
+	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
+	14517 -	# qt: Fix start with the `-min` option
+	# Needs review? 14594 qt: Fix minimized window bug on Linux
 # FUNCTIONALITY:
 	14066 gitian_power64-0.17								last=02ba4890bb gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -105,10 +113,11 @@ checkout v0.17.0.1
 	# Needs thought/Concept ACK: 11708 signrawtx_wsh-0.16								last=576624ce95
 	11750 -										3b3fbcbb3e # Multiselect in coincontrol treewidget and display selected count
 	11765 rest-blockhash-endpoint-0.17			7fca723689	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
+		# FIXME: replace with 14353 if it gets merged?
 	11770 rest_fee-0.17							7ba67d2910	last=d074e0b8ca  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath-0.17		51d373acca	last=17d609ce26 bugfix_dumpwallet_hdkeypath
 	12096 bumpfee_reduce_output-0.17			5d92f4453b	last=5b37cc17b4 kallewoof/better-bumpfee
-	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters
+	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters, 14121
 	12677 listunspent_ancestorinfo				2642343fb6
 	# Not sure if safe with 0.16: 12559 promag/2018-02-avoid-cs_main-lock
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
@@ -153,7 +162,24 @@ checkout v0.17.0.1
 	14060 zmqhwm-0.17+knots
 		# NOTE: Needs explicit args added for wallettx merge
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
-	# Needs work: 14090 [windows] progress bar in task bar
+	14137 -	# gui: Add Windows taskbar progress
+	14133 mac_systray_showhide-0.17
+	14383 disablewallet_systray-0.17
+	TODO: Window menu
+	TODO: restore rpcconsole to systray menu
+	14410 getaddressinfo_ischange-0.17
+	maybe 14454 Add SegWit support to importmulti
+	maybe 14481 Add P2SH-P2WSH support to listunspent RPC (with changes?)
+	# Needs review: 14491 Allow descriptor imports with importmulti
+	14573+14979
+	14641 promag:2018-11-fundrawtransaction
+	maybe 14687 zmq: enable tcp keepalive
+	14698 ken2812221:win-bitcoin-tx
+	evaluate 14707
+	# Needs review: 14929 net: Allow connections from misbehavior banned peers (as alternative to relaxed banning?)
+	# needs completion: 14912 external signers WIP
+	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
+	maybe 15006?
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					7b4ef75162
 	7107 qtnetworkport							86a22ede93	last=1f37c87 origin-pull/7107/head
@@ -172,7 +198,9 @@ checkout v0.17.0.1
 	10282 timebomb_knots						db079c9033
 	12146 opt_wallet_segwit2					d855625b12
 	-     gui_wallet_displayname
+	CHECK with admin: 14970 [net] add dnsseed.emzy.de to DNS seeds
 	n/a  checkpoint_update-0.17					a9c8a9ef4c
+	# for 0.18: revert 14608 qt: Remove the "Pay only required fee..." checkbox
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				82becc9391
@@ -188,7 +216,7 @@ checkout v0.17.0.1
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=8358b599adc18aba52)		17c327ad76	# doc/{bips,files}
-	n/a  (bump_version=Knots:20180730)			2f197b2b7b
+	n/a  (bump_version=Knots:20181220)			2f197b2b7b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=950bd75f29)				0a1f46883d  # release notes: write/update, including change log and credits
 DOCUMENT libevent now required ? and protobuf/bip70 too
@@ -199,6 +227,7 @@ DOCUMENT dropped #11653
 DOCUMENT dumpwallet hdmasterkeyid replaced by hdseedid
 DOCUMENT listreceivedby* key_origin deprecation
 DOCUMENT #11413 changed from sat/kB to BTC/kB
+gs 93d1aa9abc doc/release-notes-14282.md
 NOTE: avoidpartialspends=false now has behaviour change
 MERGE 9271166a8a relnotes
 MERGE doc/release-notes-*.md
