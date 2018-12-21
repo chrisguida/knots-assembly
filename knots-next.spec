@@ -11,19 +11,21 @@ checkout v0.17.0.1
 	7485 sys_univalue_def						79f1d9208d
 	5618 separate_utils_only					0c45680e8e
 	12246 separate_utils-0.17					c09d510d89	last=a2a04a5abb separate_utils
-	11622 bip70_disable-0.16					af740adc4f	last=7ecca66062
-		# pull rebase from 11622 + 14564 + 14686?
+	11622 bip70_disable-0.17					af740adc4f	last=7ecca66062
+		# pulled rebase from 11622 + 14564
 	13788 bugfix_asm_opt						4324338adf
 	13789 bugfix_asm_pragmas					b8d31df2f8
 	-     bugfix_asm_leveldb_check				54a0d3a45b
 @0.17.x-knots
 # TESTS:
+	14700 fix_test_p2pinvblk-0.17
 	13724 symbol_check-0.17
 	14036 travis_sanitizers-0.17
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer
+	14845 test_wallet_balance-0.17
 # FIXES:
-	TODO: 0.17.1 backports
+	14685 cmpctblock_overflow-0.14
 	14618 http_debug_rejects-0.15							last=ab8c6f24d2
 	9524 marco/Mf1701-qaPruning					891509bbdf
 	#10529? systemd stuff
@@ -57,11 +59,18 @@ checkout v0.17.0.1
 	14403 revert_qt_poodle
 	14818 bugfix_test_rpc_psbt-0.17							last=c87fc71f7e bugfix_test_rpc_psbt
 	14819 bugfix_test_mempool_accept
-	14228 -	# Qt: Enable system tray icon by default if available
-		TODO: make sure it doesn't change settings
+	14228 disable_systray_if_not_avail-0.13
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
-	14517 -	# qt: Fix start with the `-min` option
+	14517 fix_param_min_to_systray-0.15
 	# Needs review? 14594 qt: Fix minimized window bug on Linux
+	14411 jnewbery/restore_listtransactions_label
+	13546 fix_uninitd_bnb_used-0.17
+	14417 fix_lrba_addrfilter-0.17
+	14593 no_mac_darkmode-0.10
+	14728 uninit_scopeid-0.14
+	14380 fix_unknown_change_size-0.17
+	14453 fix_unload_during_timeout-0.17
+	14424 pr14424_fix-0.17	# Stop requiring imported pubkey to sign non-PKH schemes
 # FUNCTIONALITY:
 	14066 gitian_power64-0.17								last=02ba4890bb gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -162,16 +171,16 @@ checkout v0.17.0.1
 	14060 zmqhwm-0.17+knots
 		# NOTE: Needs explicit args added for wallettx merge
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
-	14137 -	# gui: Add Windows taskbar progress
+	14137 win_taskbar_progress-0.17+knots
 	14133 mac_systray_showhide-0.17
 	14383 disablewallet_systray-0.17
-	TODO: Window menu
-	TODO: restore rpcconsole to systray menu
+	14573 window_menu-0.17+knots
+		#+14979
+	15023 gui_node_rpcconsole-0.17
 	14410 getaddressinfo_ischange-0.17
 	maybe 14454 Add SegWit support to importmulti
 	maybe 14481 Add P2SH-P2WSH support to listunspent RPC (with changes?)
 	# Needs review: 14491 Allow descriptor imports with importmulti
-	14573+14979
 	14641 promag:2018-11-fundrawtransaction
 	maybe 14687 zmq: enable tcp keepalive
 	14698 ken2812221:win-bitcoin-tx
