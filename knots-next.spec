@@ -24,6 +24,7 @@ checkout v0.17.0.1
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer
 	14845 test_wallet_balance-0.17
+		# NOTE: Modified to leave existing tests alone
 # FIXES:
 	14685 cmpctblock_overflow-0.14
 	14618 http_debug_rejects-0.15							last=ab8c6f24d2
@@ -63,7 +64,7 @@ checkout v0.17.0.1
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
 	14517 fix_param_min_to_systray-0.15
 	# Needs review? 14594 qt: Fix minimized window bug on Linux
-	14411 jnewbery/restore_listtransactions_label
+	14411 restore_listtransactions_label-0.17
 	13546 fix_uninitd_bnb_used-0.17
 	14417 fix_lrba_addrfilter-0.17
 	14593 no_mac_darkmode-0.10
@@ -173,17 +174,19 @@ checkout v0.17.0.1
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	14137 win_taskbar_progress-0.17+knots
 	14133 mac_systray_showhide-0.17
-	14383 disablewallet_systray-0.17
+	14383 disablewallet_systray-0.17+knots
+		#+15023 gui_node_rpcconsole-0.17
 	14573 window_menu-0.17+knots
 		#+14979
-	15023 gui_node_rpcconsole-0.17
 	14410 getaddressinfo_ischange-0.17
-	maybe 14454 Add SegWit support to importmulti
-	maybe 14481 Add P2SH-P2WSH support to listunspent RPC (with changes?)
+	# too complex? 14454 Add SegWit support to importmulti
+	# needs review: 14481 Add P2SH-P2WSH support to listunspent RPC (with changes?)
 	# Needs review: 14491 Allow descriptor imports with importmulti
-	14641 promag:2018-11-fundrawtransaction
-	maybe 14687 zmq: enable tcp keepalive
-	14698 ken2812221:win-bitcoin-tx
+	14641 fundraw_minconf-0.17								last=78c9eef211 promag/2018-11-fundrawtransaction
+	14687 zmqkeepalive-0.17+knots							last=c276df7759
+		# NOTE: modified to soft-fail only
+	14698 win_bitcointx-0.13
+	CHECK IF ANY NEW PRS NEED last= ADDED
 	evaluate 14707
 	# Needs review: 14929 net: Allow connections from misbehavior banned peers (as alternative to relaxed banning?)
 	# needs completion: 14912 external signers WIP
@@ -237,6 +240,7 @@ DOCUMENT dumpwallet hdmasterkeyid replaced by hdseedid
 DOCUMENT listreceivedby* key_origin deprecation
 DOCUMENT #11413 changed from sat/kB to BTC/kB
 gs 93d1aa9abc doc/release-notes-14282.md
+gs 17f96bc057
 NOTE: avoidpartialspends=false now has behaviour change
 MERGE 9271166a8a relnotes
 MERGE doc/release-notes-*.md
