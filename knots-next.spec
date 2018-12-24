@@ -9,8 +9,8 @@ checkout v0.17.1
 	2241 sys_leveldb-0.17						3510c4e6eb
 	5416 sys_libsecp256k1						f79618bee8
 	7485 sys_univalue_def						79f1d9208d
-	5618 separate_utils_only					0c45680e8e
-	12246 separate_utils-0.17					c09d510d89	last=a2a04a5abb separate_utils
+	5618 separate_utils_only-0.17.1				0c45680e8e
+	12246 separate_utils-0.17.1					c09d510d89	last=a2a04a5abb separate_utils
 	11622 bip70_disable-0.17					af740adc4f	last=7ecca66062
 		# pulled rebase from 11622 + 14564
 	13788 bugfix_asm_opt						4324338adf
@@ -26,7 +26,7 @@ checkout v0.17.1
 	9524 marco/Mf1701-qaPruning					891509bbdf
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						938ce42c1a
-	10731 log_more_uacomment-0.17				71ccec6290	last=aaba5976bd log_more_uacomment
+	10731 log_more_uacomment-0.17.1				71ccec6290	last=aaba5976bd log_more_uacomment
 	# Too much churn/risk: 11596 chainactive_locking-0.16				c949b13d71	last=617c3188d5
 		# held back 8ce8e75cd7-358dfc51e0 which is just a comment change and annotations, to minimise diff
 		# held back a496a43699->ef997d66cc removal of double locking cs_main
@@ -46,18 +46,17 @@ checkout v0.17.1
 	13608 -										6fc500c51d  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 	13910 -
-	-     bugfix_rpc_getbalance_hacky-0.17
+	-     bugfix_rpc_getbalance_hacky-0.17.1
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
 	#	FIXME: jnewbery found a bug :<
-	14818 bugfix_test_rpc_psbt-0.17							last=c87fc71f7e bugfix_test_rpc_psbt
+	14818 bugfix_test_rpc_psbt-0.17.1						last=c87fc71f7e bugfix_test_rpc_psbt
 	14819 bugfix_test_mempool_accept
 	14228 disable_systray_if_not_avail-0.13
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
-	14517 fix_param_min_to_systray-0.15
+	14517 fix_param_min_to_systray-0.15						last=93009618b6
 	# Needs review? 14594 qt: Fix minimized window bug on Linux
-	14411 restore_listtransactions_label-0.17
 	14380 fix_unknown_change_size-0.17
 # FUNCTIONALITY:
 	14066 gitian_power64-0.17								last=02ba4890bb gitian_power64
@@ -67,7 +66,7 @@ checkout v0.17.1
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs-0.17					1d3cc741e6	last=e11cb50a09  # multisig sorting
+	8751 sort-multisigs-0.17.1					1d3cc741e6	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys-0.17						ed43377924	last=e341211bf7 sweepprivkeys
@@ -90,7 +89,7 @@ checkout v0.17.1
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
-	10554 zmq_wtx-0.17							5f5cc19ac3	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-0.17.1						5f5cc19ac3	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	12674 rpc_onetry_nonpriv					dd2a168c2a
 	10593 relax_invblk_punishment				e7398a9b8d
 	10594 whitelist_outgoing					20d5c10ce0
@@ -112,7 +111,7 @@ checkout v0.17.1
 	11765 rest-blockhash-endpoint-0.17			7fca723689	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
 		# FIXME: replace with 14353 if it gets merged?
 	11770 rest_fee-0.17							7ba67d2910	last=d074e0b8ca  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
-	11803 bugfix_dumpwallet_hdkeypath-0.17		51d373acca	last=17d609ce26 bugfix_dumpwallet_hdkeypath
+	11803 bugfix_dumpwallet_hdkeypath-0.17.1	51d373acca	last=17d609ce26 bugfix_dumpwallet_hdkeypath
 	12096 bumpfee_reduce_output-0.17			5d92f4453b	last=5b37cc17b4 kallewoof/better-bumpfee
 	# When ready & has a way to use it: 12254 BIP 158 Compact Block Filters, 14121
 	12677 listunspent_ancestorinfo				2642343fb6
@@ -156,10 +155,10 @@ checkout v0.17.1
 	# Needs review: 14032 Add p2p layer encryption with ECDH/ChaCha20Poly1305
 	# Needs review: 14035 Utxoscriptindex
 	# Needs work: 14053 Add address-based index (attempt 4?)
-	14060 zmqhwm-0.17+knots
+	14060 zmqhwm-0.17.1+knots
 		# NOTE: Needs explicit args added for wallettx merge
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
-	14137 win_taskbar_progress-0.17+knots
+	14137 win_taskbar_progress-0.17+knots					last=18eb4dbb8a
 	14133 mac_systray_showhide-0.17
 	14383 disablewallet_systray-0.17+knots
 		#+15023 gui_node_rpcconsole-0.17
@@ -170,9 +169,8 @@ checkout v0.17.1
 	# needs review: 14481 Add P2SH-P2WSH support to listunspent RPC (with changes?)
 	# Needs review: 14491 Allow descriptor imports with importmulti
 	14641 fundraw_minconf-0.17								last=78c9eef211 promag/2018-11-fundrawtransaction
-	14687 zmqkeepalive-0.17+knots							last=c276df7759
+	14687 zmqkeepalive-0.17.1+knots							last=c276df7759
 		# NOTE: modified to soft-fail only
-	CHECK IF ANY NEW PRS NEED last= ADDED
 	evaluate 14707
 	# Needs review: 14929 net: Allow connections from misbehavior banned peers (as alternative to relaxed banning?)
 	# needs completion: 14912 external signers WIP
