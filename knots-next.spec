@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #15006
 
-checkout v0.17.0.1
+checkout v0.17.1
 @0.17.x-syslibs
 	5872 subdir_incl_compat						c134703e62
 	2241 sys_leveldb-0.17						3510c4e6eb
@@ -18,16 +18,11 @@ checkout v0.17.0.1
 	-     bugfix_asm_leveldb_check				54a0d3a45b
 @0.17.x-knots
 # TESTS:
-	14700 fix_test_p2pinvblk-0.17
 	13724 symbol_check-0.17
 	14036 travis_sanitizers-0.17
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer
-	14845 test_wallet_balance-0.17
-		# NOTE: Modified to leave existing tests alone
 # FIXES:
-	14685 cmpctblock_overflow-0.14
-	14618 http_debug_rejects-0.15							last=ab8c6f24d2
 	9524 marco/Mf1701-qaPruning					891509bbdf
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						938ce42c1a
@@ -51,13 +46,11 @@ checkout v0.17.0.1
 	13608 -										6fc500c51d  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 	13910 -
-	14596 bugfix_createMS_named_addresstype0.17				last=d8bf1071cf bugfix_createMS_named_addresstype
 	-     bugfix_rpc_getbalance_hacky-0.17
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
 	#	FIXME: jnewbery found a bug :<
-	14403 revert_qt_poodle
 	14818 bugfix_test_rpc_psbt-0.17							last=c87fc71f7e bugfix_test_rpc_psbt
 	14819 bugfix_test_mempool_accept
 	14228 disable_systray_if_not_avail-0.13
@@ -65,13 +58,7 @@ checkout v0.17.0.1
 	14517 fix_param_min_to_systray-0.15
 	# Needs review? 14594 qt: Fix minimized window bug on Linux
 	14411 restore_listtransactions_label-0.17
-	13546 fix_uninitd_bnb_used-0.17
-	14417 fix_lrba_addrfilter-0.17
-	14593 no_mac_darkmode-0.10
-	14728 uninit_scopeid-0.14
 	14380 fix_unknown_change_size-0.17
-	14453 fix_unload_during_timeout-0.17
-	14424 pr14424_fix-0.17	# Stop requiring imported pubkey to sign non-PKH schemes
 # FUNCTIONALITY:
 	14066 gitian_power64-0.17								last=02ba4890bb gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -185,7 +172,6 @@ checkout v0.17.0.1
 	14641 fundraw_minconf-0.17								last=78c9eef211 promag/2018-11-fundrawtransaction
 	14687 zmqkeepalive-0.17+knots							last=c276df7759
 		# NOTE: modified to soft-fail only
-	14698 win_bitcointx-0.13
 	CHECK IF ANY NEW PRS NEED last= ADDED
 	evaluate 14707
 	# Needs review: 14929 net: Allow connections from misbehavior banned peers (as alternative to relaxed banning?)
