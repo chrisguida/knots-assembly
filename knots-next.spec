@@ -171,15 +171,15 @@ checkout v0.17.1
 	14641 fundraw_minconf-0.17								last=78c9eef211 promag/2018-11-fundrawtransaction
 	14687 zmqkeepalive-0.17.1+knots							last=c276df7759
 		# NOTE: modified to soft-fail only
-	evaluate 14707
+	# wait for Core?: 14707
 	# Needs review: 14929 net: Allow connections from misbehavior banned peers (as alternative to relaxed banning?)
 	# needs completion: 14912 external signers WIP
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
-	maybe 15006?
+	# CHANGES WALLET FORMAT, wait for Core: 15006
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					7b4ef75162
 	7107 qtnetworkport							86a22ede93	last=1f37c87 origin-pull/7107/head
-	7533 sendraw_force-0.17+knots				821e79eca8  # Latest code now
+	7533 sendraw_force-0.17.1+knots				821e79eca8  # Latest code now
 	11082 rwconf-0.17							7ac8e5584d	last=31edb2c940 rwconf
 	7510 rwconf_gui-0.17+knots					f5d2f52fba	# Latest code now
 	5916 legacy_keyorigin						6e769279fa
@@ -194,14 +194,16 @@ checkout v0.17.1
 	10282 timebomb_knots						db079c9033
 	12146 opt_wallet_segwit2					d855625b12
 	-     gui_wallet_displayname
-	CHECK with admin: 14970 [net] add dnsseed.emzy.de to DNS seeds
 	n/a  checkpoint_update-0.17					a9c8a9ef4c
 	# for 0.18: revert 14608 qt: Remove the "Pay only required fee..." checkbox
 # POLICY:
+	14970 dnsseed_emzy
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				82becc9391
-	-	 bytespersigopstrict-0.17+knots			fa99fdb901
-	9749 unique_spk_mempool-0.17+knots			df8e9047db
+	-	 bytespersigopstrict-0.17.1+knots		fa99fdb901
+	9749 unique_spk_mempool-0.17.1+knots		df8e9047db
+	git grep 'connect.*\(\[.*\]\|, \&\)' knots/tmp src/qt 
+	rebase time
 	-    rwconf_policy-0.17+knots				2786f6f8d6
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
