@@ -69,10 +69,10 @@ checkout v0.17.1
 	8751 sort-multisigs-0.17.1					1d3cc741e6	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
-	9152 sweepprivkeys-0.17						ed43377924	last=e341211bf7 sweepprivkeys
+	9152 sweepprivkeys-0.17.1					ed43377924	last=e341211bf7 sweepprivkeys
 	9245 ionice									3400eeb80d
 	-    ionice_win								3303deb376
-	8501 old_stats_rpc-0.17						e8fc393fa6	last=7af0ea43b2
+	8501 old_stats_rpc-0.17.1					e8fc393fa6	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
 	8550 old_stats_qt-0.17						74347db52f	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
@@ -186,7 +186,7 @@ checkout v0.17.1
 	 559 accept_nonstdtxn						f07335d45f
 	 929 tbc									065b18ab4a
 	 553 bugfix_qt_uri_amount_parser			99f0b1f4ca
-	-    mining_priority-0.17					9a90dc34e7  # NOTE: now the latest code, rebased
+	-    mining_priority-0.17.1					9a90dc34e7  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					525633a9d5
 	5891 qt_console_history_persist				90c6f0a538
 	7219 txrepl_fullrbf							a9fd5b6577
@@ -202,8 +202,6 @@ checkout v0.17.1
 	-    1day_default_conftarget				82becc9391
 	-	 bytespersigopstrict-0.17.1+knots		fa99fdb901
 	9749 unique_spk_mempool-0.17.1+knots		df8e9047db
-	git grep 'connect.*\(\[.*\]\|, \&\)' knots/tmp src/qt 
-	rebase time
 	-    rwconf_policy-0.17+knots				2786f6f8d6
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
@@ -216,20 +214,7 @@ checkout v0.17.1
 	n/a  (cherrypick=8358b599adc18aba52)		17c327ad76	# doc/{bips,files}
 	n/a  (bump_version=Knots:20181220)			2f197b2b7b
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=950bd75f29)				0a1f46883d  # release notes: write/update, including change log and credits
-DOCUMENT libevent now required ? and protobuf/bip70 too
-DOCUMENT 	MISSING PARTS 12196 sweepprivkeys+scantxoutset			52dfb4735e	last=be98b2d9a8 jonas/2017/12/utxo_sweep
-			# modified to remove scan-by-address garbage
-			# held back feature removals
-DOCUMENT dropped #11653
-DOCUMENT dumpwallet hdmasterkeyid replaced by hdseedid
-DOCUMENT listreceivedby* key_origin deprecation
-DOCUMENT #11413 changed from sat/kB to BTC/kB
-gs 93d1aa9abc doc/release-notes-14282.md
-gs 17f96bc057
-NOTE: avoidpartialspends=false now has behaviour change
-MERGE 9271166a8a relnotes
-MERGE doc/release-notes-*.md
+	n/a  (cherrypick=c2c88d7a71)				0a1f46883d  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
