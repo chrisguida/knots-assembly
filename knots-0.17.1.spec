@@ -12,7 +12,7 @@ checkout v0.17.1
 	5618 separate_utils_only-0.17.1				0c45680e8e
 	12246 separate_utils-0.17.1					c09d510d89	last=a2a04a5abb separate_utils
 	11622 bip70_disable-0.17					af740adc4f	last=7ecca66062
-		# pulled rebase from 11622 + 14564
+		# pulled rebase from ??? + 14564
 	13788 bugfix_asm_opt						4324338adf
 	13789 bugfix_asm_pragmas					b8d31df2f8
 	-     bugfix_asm_leveldb_check				54a0d3a45b
