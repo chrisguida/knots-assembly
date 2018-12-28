@@ -1,7 +1,7 @@
-timestamp 2018-12-20 06:09:32
+timestamp 2018-12-28 03:02:11
 lastapply no-merge
 
-#.. checked up to PR #15006
+#.. checked up to PR #15045
 
 checkout v0.17.1
 @0.17.x-syslibs
@@ -23,6 +23,8 @@ checkout v0.17.1
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer
 # FIXES:
+	14968 http_bind_error-0.17								last=7b5e4001f9 laanwj/2018_12_http_bind_error
+	-     http_bind_error+extra-0.17
 	9524 marco/Mf1701-qaPruning					891509bbdf
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						938ce42c1a
@@ -212,14 +214,14 @@ checkout v0.17.1
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=8358b599adc18aba52)		17c327ad76	# doc/{bips,files}
-	n/a  (bump_version=Knots:20181220)			2f197b2b7b
+	n/a  (bump_version=Knots:20181228)			2f197b2b7b
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=c2c88d7a71)				0a1f46883d  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=9b2958cf99)				0a1f46883d  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=6c11f79434)				11d53f8eb1  # translation update
-	n/a  (cherrypick=fa03d8db65)				427450894c	# update manpages (build first)
+	n/a  (cherrypick=8068b12971)				11d53f8eb1  # translation update
+	n/a  (cherrypick=8f5b2aca94)				427450894c	# update manpages (build first)
 # NOTE: use git diff --minimal for patches!
