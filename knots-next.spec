@@ -23,7 +23,7 @@ checkout v0.17.1
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							e05acaeb4c
 # FIXES:
-	14968 http_bind_error-0.17					a557a2af18								last=7b5e4001f9 laanwj/2018_12_http_bind_error
+	14968 http_bind_error-0.17					a557a2af18	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra-0.17			8261704f7f
 	9524 marco/Mf1701-qaPruning					0482515b41
 	#10529? systemd stuff
@@ -53,15 +53,15 @@ checkout v0.17.1
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
 	#	FIXME: jnewbery found a bug :<
-	14818 bugfix_test_rpc_psbt-0.17.1			c149f71838						last=c87fc71f7e bugfix_test_rpc_psbt
+	14818 bugfix_test_rpc_psbt-0.17.1			c149f71838	last=c87fc71f7e bugfix_test_rpc_psbt
 	14819 bugfix_test_mempool_accept			e00689429f
 	14228 disable_systray_if_not_avail-0.13		27936d2d91
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
-	14517 fix_param_min_to_systray-0.15			130407b190						last=93009618b6
+	14517 fix_param_min_to_systray-0.15			130407b190	last=93009618b6
 	# Needs review? 14594 qt: Fix minimized window bug on Linux
 	14380 fix_unknown_change_size-0.17			311b28064b
 # FUNCTIONALITY:
-	14066 gitian_power64-0.17					177d8f6828								last=02ba4890bb gitian_power64
+	14066 gitian_power64-0.17					177d8f6828	last=02ba4890bb gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -78,7 +78,7 @@ checkout v0.17.1
 		# Held back on old version due to conflict with GUI updates...
 	8550 old_stats_qt-0.17						a66d251bd3	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
-	9332 pr9332-0.17							fd54246835										last=98ea64cf23  # Let wallet importmulti RPC accept labels for standard scriptPubKeys
+	9332 pr9332-0.17							fd54246835	last=98ea64cf23  # Let wallet importmulti RPC accept labels for standard scriptPubKeys
 	9422 mempool_dat_extensible					a3a5333707
 	9504 dumpmasterprivkey-0.17					bcc1eb350a	last=07fc81109a
 	# not ready yet: SPV
@@ -128,10 +128,10 @@ checkout v0.17.1
 	12818 -										7bff82e6ca  # [qt] TransactionView: highlight replacement tx after fee bump
 	12911 signrawtx_showfees-0.17				c244e05b04	last=4cd8db17d5 kallewoof/sign-show-fees
 	12965 scriptthreads-0.17					ae31010942	last=dfab6c6866 jonas/2018/04/svt
-	13008 rpc_mempool_vsize-0.17+knots			c38dd8b58e						last=3bc922d79c  # rpc: Rename size to vsize in mempool related calls
+	13008 rpc_mempool_vsize-0.17+knots			c38dd8b58e	last=3bc922d79c  # rpc: Rename size to vsize in mempool related calls
 		# NOTE: Minified & made deprecation softer
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
-	13152 rpc_getnodeaddress-0.17				5ce0797b9c							last=a2eb6f5405
+	13152 rpc_getnodeaddress-0.17				5ce0797b9c	last=a2eb6f5405
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
 	13203 dsha256_power8-0.17					93c1f69e72	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
@@ -149,7 +149,7 @@ checkout v0.17.1
 	# TESTS FAIL: 13932 achow101/psbt-util-rpcs
 		# Rebased ba5f9058f6 as c75ca1a28c
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
-	13987 rpc_getpeerinfo_minfeefilter-0.17		6bd340e5d0					last=5778bf95d9 ajtowns/201808-peerinfo-minfee
+	13987 rpc_getpeerinfo_minfeefilter-0.17		6bd340e5d0	last=5778bf95d9 ajtowns/201808-peerinfo-minfee
 	# Needs review: 13989 add avx512 instrinsic
 	# Needs work: 13990 WIP: allow fee estimation to work with lower fees
 	# Needs rationale: 14019 Import pubkeys when importing p2sh with importmulti
@@ -160,7 +160,7 @@ checkout v0.17.1
 	14060 zmqhwm-0.17.1+knots					77f6dc381f
 		# NOTE: Needs explicit args added for wallettx merge
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
-	14137 win_taskbar_progress-0.17+knots		89f6f8f532					last=18eb4dbb8a
+	14137 win_taskbar_progress-0.17+knots		89f6f8f532	last=18eb4dbb8a
 	14133 mac_systray_showhide-0.17				9d8a041e61
 	14383 disablewallet_systray-0.17+knots		c52c82eb6f
 		#+15023 gui_node_rpcconsole-0.17
@@ -170,8 +170,8 @@ checkout v0.17.1
 	# too complex? 14454 Add SegWit support to importmulti
 	# needs review: 14481 Add P2SH-P2WSH support to listunspent RPC (with changes?)
 	# Needs review: 14491 Allow descriptor imports with importmulti
-	14641 fundraw_minconf-0.17					a01f4e2dfc								last=78c9eef211 promag/2018-11-fundrawtransaction
-	14687 zmqkeepalive-0.17.1+knots				106e00a4df							last=c276df7759
+	14641 fundraw_minconf-0.17					a01f4e2dfc	last=78c9eef211 promag/2018-11-fundrawtransaction
+	14687 zmqkeepalive-0.17.1+knots				106e00a4df	last=c276df7759
 		# NOTE: modified to soft-fail only
 	# wait for Core?: 14707
 	# Needs review: 14929 net: Allow connections from misbehavior banned peers (as alternative to relaxed banning?)
