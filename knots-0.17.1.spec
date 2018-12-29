@@ -1,4 +1,4 @@
-timestamp 2018-12-28 03:02:11
+timestamp 2018-12-29 11:50:14
 lastapply no-merge
 
 #.. checked up to PR #15045
@@ -214,9 +214,9 @@ checkout v0.17.1
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=8358b599adc18aba52)		17c327ad76	# doc/{bips,files}
-	n/a  (bump_version=Knots:20181228)			2f197b2b7b
+	n/a  (bump_version=Knots:20181229)			2f197b2b7b
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=9b2958cf99)				0a1f46883d  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=edf2c1ee88)				0a1f46883d  # release notes: write/update, including change log and credits
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
