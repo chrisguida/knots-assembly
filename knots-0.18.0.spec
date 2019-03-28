@@ -1,22 +1,24 @@
-timestamp 2018-12-29 11:50:14
+timestamp 2019-03-28 06:10:04
 lastapply no-merge
 
 #.. checked up to PR #15045
 
-checkout v0.17.1
-@0.17.x-syslibs
+checkout v0.18.0rc2
+@0.18.x-syslibs
 	5872 subdir_incl_compat						8d02952dc5
 	2241 sys_leveldb-0.17						ad8b47a71f
 	5416 sys_libsecp256k1						9431f6a346
 	7485 sys_univalue_def						68d5c1afea
 	5618 separate_utils_only-0.17.1				6b706eb8c8
+		# +15155
 	12246 separate_utils-0.17.1					2077d55f94	last=a2a04a5abb separate_utils
 	11622 bip70_disable-0.17					ac7aaff8b7	last=7ecca66062
 		# pulled rebase from ??? + 14564
 	13788 bugfix_asm_opt						a89a982730
 	13789 bugfix_asm_pragmas					417bbb2b56
 	-     bugfix_asm_leveldb_check				d6fa287448
-@0.17.x-knots
+	15154 btx_wo_libevent
+@0.18.x-knots
 # TESTS:
 	13724 symbol_check-0.17						a3ab727925
 	14036 travis_sanitizers-0.17				0c0a4caf5d
