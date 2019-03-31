@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #15045
 
-checkout v0.18.0rc2
+checkout 7bcf90cb01
 @0.18.x-syslibs
 	5872 subdir_incl_compat						8d02952dc5
 	2241 sys_leveldb-0.17						ad8b47a71f
@@ -17,11 +17,10 @@ checkout v0.18.0rc2
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							e05acaeb4c
 # FIXES:
-	14968 http_bind_error-0.17					a557a2af18	last=7b5e4001f9 laanwj/2018_12_http_bind_error
-	-     http_bind_error+extra-0.17			8261704f7f
+	14968 laanwj/2018_12_http_bind_error		a557a2af18
+	-     http_bind_error+extra					8261704f7f
 	9524 marco/Mf1701-qaPruning					0482515b41
-	10595 gbt_nosegwit_fix						c6252f3ad2
-	10731 log_more_uacomment-0.17.1				d5d543625c	last=aaba5976bd log_more_uacomment
+	10731 log_more_uacomment					d5d543625c
 	# Too much churn/risk: 11596 chainactive_locking-0.16				c949b13d71	last=617c3188d5
 		# held back 8ce8e75cd7-358dfc51e0 which is just a comment change and annotations, to minimise diff
 		# held back a496a43699->ef997d66cc removal of double locking cs_main
@@ -34,44 +33,45 @@ checkout v0.18.0rc2
 	13084 sipa/201804_keepnegone				e0d0819607
 	13608 -										bd04861325  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
-	-     bugfix_rpc_getbalance_hacky-0.17.1	0c15734378
+	-     bugfix_rpc_getbalance_hacky			0c15734378
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
 	#	FIXME: jnewbery found a bug :<
-	14818 bugfix_test_rpc_psbt-0.17.1			c149f71838	last=c87fc71f7e bugfix_test_rpc_psbt
+	14818 bugfix_test_rpc_psbt					c149f71838
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
 # FUNCTIONALITY:
-	14066 gitian_power64-0.17					177d8f6828	last=02ba4890bb gitian_power64
+	14066 gitian_power64						177d8f6828
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs-0.17.1					fec67ba0a7	last=e11cb50a09  # multisig sorting
+	8751 sort-multisigs-0.18					fec67ba0a7	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
-	9152 sweepprivkeys-0.17.1					54cf2c6aa2	last=e341211bf7 sweepprivkeys
+	9152 sweepprivkeys							54cf2c6aa2
+	15704 win32_defines_globally
 	9245 ionice									3cc8f13484
 	-    ionice_win								3f14b2ea93
-	8501 old_stats_rpc-0.17.1					22eee1203a	last=7af0ea43b2
+	8501 old_stats_rpc-0.18						22eee1203a	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
-	8550 old_stats_qt-0.17						a66d251bd3	last=63fb11652f
+	8550 old_stats_qt-0.18						a66d251bd3	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9422 mempool_dat_extensible					a3a5333707
-	9504 dumpmasterprivkey-0.17					bcc1eb350a	last=07fc81109a
+	9504 dumpmasterprivkey-0.18					bcc1eb350a	last=07fc81109a
 	# not ready yet: SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	# not ready: 9745 [RPC] Getting confirmations command
-	9849 gui_netwatch-0.17						efe3f14ed1	last=654f66d9e0 gui_netwatch
+	9849 gui_netwatch							efe3f14ed1
 	10615 multiwallet_rpc						0f022f1844
 	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
-	10554 zmq_wtx-0.17.1						45d6115d31	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-0.18							45d6115d31	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	12674 rpc_onetry_nonpriv					ea03333e2d
 	10593 relax_invblk_punishment				0ff280e5a8
 	10594 whitelist_outgoing					2de5c391b3
