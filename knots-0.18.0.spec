@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #15045
 
-checkout 7bcf90cb01
+checkout v0.18.0rc3
 @0.18.x-syslibs
 	5872 subdir_incl_compat						8d02952dc5
 	2241 sys_leveldb-0.17						ad8b47a71f
@@ -84,32 +84,32 @@ checkout 7bcf90cb01
 	11256 rpc_mempoolentry_weight				9016c44308	last=d4b0d81b58
 		# rebased to #14649 rpc_mempoolentry_weight
 	-     rpc_mempoolentry_txhash				4ac64860bb
-	11413 explicit_fee-0.17						9ee958e460	last=8cd3ffefbe kallewoof/explicit-fee  # [wallet] [rpc] sendtoaddress: Add explicit feerate option to sendtoaddress
+	11413 explicit_fee-0.18						9ee958e460	last=1bc42d025a kallewoof/explicit-fee
 	11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
 	# Needs thought/Concept ACK: 11708 signrawtx_wsh-0.16								last=576624ce95
-	11750 -										22b0c49593 # Multiselect in coincontrol treewidget and display selected count
-	11765 rest-blockhash-endpoint-0.17			1e74ec6462	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
-		# TODO: ^ needs to be a backward compatibility layer for 14353, and document deprecation
-	11770 rest_fee-0.17							2fcfb53e3e	last=d074e0b8ca  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
-	11803 bugfix_dumpwallet_hdkeypath-0.17.1	cc8a46f65f	last=17d609ce26 bugfix_dumpwallet_hdkeypath
-	12096 bumpfee_reduce_output-0.17			2c9f95670b	last=5b37cc17b4 kallewoof/better-bumpfee
+	11750 coincontrol_multiselect				22b0c49593	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
+	11765 rest_blockhash_compat-0.18			1e74ec6462	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
+		# Superceded by blockhashbyheight, so now just a backward compatibility hack
+	11770 -										2fcfb53e3e  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11803 bugfix_dumpwallet_hdkeypath			cc8a46f65f
+	12096 bumpfee_reduce_output-0.18			2c9f95670b	last=7c4555e730 kallewoof/better-bumpfee
 	12677 listunspent_ancestorinfo				e94e840cb5
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	12763 rpcwhitelist-0.17						6f33a8130a	last=8c45d93b0e
 	# TODO ? 12792 w/ renamed param
-	12911 signrawtx_showfees-0.17				c244e05b04	last=4cd8db17d5 kallewoof/sign-show-fees
-	12965 scriptthreads-0.17					ae31010942	last=dfab6c6866 jonas/2018/04/svt
-	13008 rpc_mempool_vsize-0.17+knots			c38dd8b58e	last=3bc922d79c  # rpc: Rename size to vsize in mempool related calls
+	12911 signrawtx_showfees-0.18				c244e05b04	last=57676cc875 kallewoof/sign-show-fees
+	12965 scriptthreads-0.18					ae31010942	last=dfab6c6866 jonas/2018/04/svt
+	13008 rpc_mempool_vsize-0.18+knots			c38dd8b58e	last=3bc922d79c  # rpc: Rename size to vsize in mempool related calls
 		# NOTE: Minified & made deprecation softer
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
 	13203 dsha256_power8-0.17					93c1f69e72	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		c93d46a320
-	13339 walletnotify_w-0.17					835d6f86c2	last=71d70632ee promag/2018-05-walletnotify
+	13339 walletnotify_w-0.18					835d6f86c2	last=71d70632ee promag/2018-05-walletnotify
 		# held back cef0327afd..71d70632ee Windows porting due to copyright issues (and bugs?)
 	# Needs work: 13541 wallet/rpc: sendrawtransaction maxfeerate
 	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
@@ -123,10 +123,10 @@ checkout 7bcf90cb01
 	# Needs review: 14035 Utxoscriptindex
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
-	14137 win_taskbar_progress-0.17+knots		89f6f8f532	last=18eb4dbb8a
-	15023 gui_node_rpcconsole-0.17				c52c82eb6f  # PART OF c52c82eb6f
-	14641 fundraw_minconf-0.17					a01f4e2dfc	last=78c9eef211 promag/2018-11-fundrawtransaction
-	14687 zmqkeepalive-0.17.1+knots				106e00a4df	last=c276df7759
+	14137 win_taskbar_progress-0.18+knots		89f6f8f532	last=18eb4dbb8a
+	15023 gui_node_rpcconsole-0.18+knots		c52c82eb6f	last=f33efa8ec5 gui_node_rpcconsole  # PART OF c52c82eb6f
+	14641 fundraw_minconf-0.18					a01f4e2dfc	last=5bb1356e57 promag/2018-11-fundrawtransaction
+	14687 zmqkeepalive-0.18+knots				106e00a4df	last=c276df7759
 		# NOTE: modified to soft-fail only
 	# wait for Core?: 14707
 	# needs completion: 14912 external signers WIP
@@ -138,6 +138,7 @@ checkout 7bcf90cb01
 	7533 sendraw_force-0.17.1+knots				c2d1db0fa4  # Latest code now
 	11082 rwconf-0.17							f327d3d64a	last=31edb2c940 rwconf
 	7510 rwconf_gui-0.17+knots					de57a85c36	# Latest code now
+		FIXME: test pruning values https://twitter.com/thbitcoinbuddha/status/1107325510726488064
 	5916 legacy_keyorigin						9f0fa134b4
 	 559 accept_nonstdtxn						c75b8f41dc
 	 929 tbc									8a786470c7
@@ -170,6 +171,11 @@ checkout 7bcf90cb01
 	n/a  (bump_version=Knots:20181229)			d7d0aa3311
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=edf2c1ee88)				1abe270eeb  # release notes: write/update, including change log and credits
+			# Document #11765 being superceded:
+			#	HTTP_BAD_REQUEST -> HTTP_NOT_FOUND
+			#	English errors more or less detailed
+			#	hash -> blockhash in JSON reply
+			#	Hex result is reversed
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
