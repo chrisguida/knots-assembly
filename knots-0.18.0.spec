@@ -77,9 +77,9 @@ checkout v0.18.0rc3
 	10594 whitelist_outgoing					2de5c391b3
 	10350 filtered_witblock-0.17				1ec90f1975	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
-	10729 scriptex								43b88be136
-	10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
-	n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
+	# script debugger needs major reworking: 10729 scriptex								43b88be136
+	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
+	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	11256 rpc_mempoolentry_weight				9016c44308	last=d4b0d81b58
 		# rebased to #14649 rpc_mempoolentry_weight
@@ -135,8 +135,8 @@ checkout v0.18.0rc3
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60
 	7107 qtnetworkport							e2c10b2bc4	last=1f37c87 origin-pull/7107/head
-	7533 sendraw_force-0.17.1+knots				c2d1db0fa4  # Latest code now
-	11082 rwconf-0.17							f327d3d64a	last=31edb2c940 rwconf
+	7533 sendraw_force-0.18+knots				c2d1db0fa4  # Latest code now
+	11082 rwconf								f327d3d64a
 	7510 rwconf_gui-0.17+knots					de57a85c36	# Latest code now
 		FIXME: test pruning values https://twitter.com/thbitcoinbuddha/status/1107325510726488064
 	5916 legacy_keyorigin						9f0fa134b4
@@ -176,6 +176,7 @@ checkout v0.18.0rc3
 			#	English errors more or less detailed
 			#	hash -> blockhash in JSON reply
 			#	Hex result is reversed
+			# Document removal of script debugger again
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
