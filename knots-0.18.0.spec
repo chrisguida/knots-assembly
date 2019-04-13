@@ -40,6 +40,7 @@ checkout v0.18.0rc3
 	#	FIXME: jnewbery found a bug :<
 	14818 bugfix_test_rpc_psbt					c149f71838
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
+	15801 bugfix_gui_prune_range
 # FUNCTIONALITY:
 	14066 gitian_power64						177d8f6828
 	# not ready/deterministic: 13827 NSIS depends build
@@ -84,7 +85,7 @@ checkout v0.18.0rc3
 	11256 rpc_mempoolentry_weight				9016c44308	last=d4b0d81b58
 		# rebased to #14649 rpc_mempoolentry_weight
 	-     rpc_mempoolentry_txhash				4ac64860bb
-	11413 explicit_fee-0.18						9ee958e460	last=1bc42d025a kallewoof/explicit-fee
+	11413 explicit_fee-0.18						9ee958e460	last=b91af41525 kallewoof/explicit-fee
 	11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
@@ -100,7 +101,7 @@ checkout v0.18.0rc3
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	12763 rpcwhitelist-0.17						6f33a8130a	last=8c45d93b0e
 	# TODO ? 12792 w/ renamed param
-	12911 signrawtx_showfees-0.18				c244e05b04	last=57676cc875 kallewoof/sign-show-fees
+	12911 signrawtx_showfees-0.18				c244e05b04	last=bba2e57c76 kallewoof/sign-show-fees
 	12965 scriptthreads-0.18					ae31010942	last=dfab6c6866 jonas/2018/04/svt
 	13008 rpc_mempool_vsize-0.18+knots			c38dd8b58e	last=3bc922d79c  # rpc: Rename size to vsize in mempool related calls
 		# NOTE: Minified & made deprecation softer
@@ -137,13 +138,12 @@ checkout v0.18.0rc3
 	7107 qtnetworkport							e2c10b2bc4	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.18+knots				c2d1db0fa4  # Latest code now
 	11082 rwconf								f327d3d64a
-	7510 rwconf_gui-0.17+knots					de57a85c36	# Latest code now
-		FIXME: test pruning values https://twitter.com/thbitcoinbuddha/status/1107325510726488064
+	7510 rwconf_gui-0.18+knots					de57a85c36	# Latest code now
 	5916 legacy_keyorigin						9f0fa134b4
 	 559 accept_nonstdtxn						c75b8f41dc
 	 929 tbc									8a786470c7
 	 553 bugfix_qt_uri_amount_parser			b7591fd219
-	-    mining_priority-0.17.1					ff0b793b92  # NOTE: now the latest code, rebased
+	-    mining_priority						ff0b793b92  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					7501a70af8
 	5891 qt_console_history_persist				acfbf6559d
 	7219 txrepl_fullrbf							cd85811a08
@@ -151,8 +151,7 @@ checkout v0.18.0rc3
 	10282 timebomb_knots						6a405895cc
 	12146 opt_wallet_segwit2					871a84fd1f
 	-     gui_wallet_displayname				0b683f45dd
-	n/a  checkpoint_update-0.17					79b61387b0
-	# for 0.18: revert 14608 qt: Remove the "Pay only required fee..." checkbox
+	n/a  checkpoint_update-0.18					79b61387b0
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				1d2b9dc385
