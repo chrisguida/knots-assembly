@@ -21,10 +21,6 @@ checkout v0.18.0rc3
 	-     http_bind_error+extra					8261704f7f
 	9524 marco/Mf1701-qaPruning					0482515b41
 	10731 log_more_uacomment					d5d543625c
-	# Too much churn/risk: 11596 chainactive_locking-0.16				c949b13d71	last=617c3188d5
-		# held back 8ce8e75cd7-358dfc51e0 which is just a comment change and annotations, to minimise diff
-		# held back a496a43699->ef997d66cc removal of double locking cs_main
-	# too much churn/bugs, probably irrelevant:
 	14485 fadvise								ff6b7f3165
 		# Was #12491
 	14501 fsync_dir								f9011e0e3a
@@ -32,7 +28,7 @@ checkout v0.18.0rc3
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
 	13084 sipa/201804_keepnegone				e0d0819607
 	13608 -										bd04861325  # bitcoin-tx: Require that input amount is provided for witness transactions
-	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
+	13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 	-     bugfix_rpc_getbalance_hacky			0c15734378
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
@@ -62,14 +58,13 @@ checkout v0.18.0rc3
 		# Held back on old version due to conflict with RPC updates...
 	9422 mempool_dat_extensible					a3a5333707
 	9504 dumpmasterprivkey-0.18					bcc1eb350a	last=07fc81109a
-	# not ready yet: SPV
+	# not ready yet: 9483 SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	# not ready: 9745 [RPC] Getting confirmations command
 	9849 gui_netwatch							efe3f14ed1
 	10615 multiwallet_rpc						0f022f1844
-	# needs review: 10040 - #wallet: use headers chain for anti fee sniping
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
 	10554 zmq_wtx-0.18							45d6115d31	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
@@ -89,8 +84,8 @@ checkout v0.18.0rc3
 	11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
-	# Needs thought/Concept ACK: 11708 signrawtx_wsh-0.16								last=576624ce95
 	11750 coincontrol_multiselect				22b0c49593	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
+		# NOTE: deviated from PR
 	11765 rest_blockhash_compat-0.18			1e74ec6462	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
 		# Superceded by blockhashbyheight, so now just a backward compatibility hack
 	11770 -										2fcfb53e3e  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
@@ -113,7 +108,7 @@ checkout v0.18.0rc3
 	-     dsha256_power8-0.17_asm_pragmas		c93d46a320
 	13339 walletnotify_w-0.18					835d6f86c2	last=71d70632ee promag/2018-05-walletnotify
 		# held back cef0327afd..71d70632ee Windows porting due to copyright issues (and bugs?)
-	# Needs work: 13541 wallet/rpc: sendrawtransaction maxfeerate
+	13541 kallewoof/sendrawtransaction-maxfeerate
 	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
 	# Needs work: 13836 clearmempool RPC
 	# Needs review: 13903 Significantly reduce GetTransaction cs_main locking
@@ -135,7 +130,8 @@ checkout v0.18.0rc3
 	# wait for Core?: 14707
 	# needs completion: 14912 external signers WIP
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
-	# CHANGES WALLET FORMAT, wait for Core: 15006
+	# CHANGES WALLET FORMAT, wait for Core: 15006 achow101:create-encrypted-wallet
+	# Needs review, changes wallet format: 15064 bip70_merchant_to_to
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60
 	7107 qtnetworkport							e2c10b2bc4	last=1f37c87 origin-pull/7107/head
