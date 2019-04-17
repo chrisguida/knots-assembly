@@ -95,7 +95,8 @@ checkout v0.18.0rc3
 		# Superceded by blockhashbyheight, so now just a backward compatibility hack
 	11770 -										2fcfb53e3e  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			cc8a46f65f
-	12096 bumpfee_reduce_output-0.18			2c9f95670b	last=7c4555e730 kallewoof/better-bumpfee
+	12096 bumpfee_reduce_output-0.18			2c9f95670b	last=e82c8ff85e kallewoof/better-bumpfee
+		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	12677 listunspent_ancestorinfo				e94e840cb5
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
@@ -126,7 +127,9 @@ checkout v0.18.0rc3
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	14137 win_taskbar_progress-0.18+knots		89f6f8f532	last=18eb4dbb8a
 	15023 gui_node_rpcconsole-0.18+knots		c52c82eb6f	last=f33efa8ec5 gui_node_rpcconsole  # PART OF c52c82eb6f
-	14641 fundraw_minconf-0.18					a01f4e2dfc	last=5bb1356e57 promag/2018-11-fundrawtransaction
+	14641 fundraw_minconf-0.18					a01f4e2dfc	last=a3991b7c0b promag/2018-11-fundrawtransaction
+		# NOTE: backported 2 lines from #15557's 0ea47ba7b3 as 76cd3c48e2
+		# NOTE: held back .gitignore nonsense change & relnotes
 	14687 zmqkeepalive-0.18+knots				106e00a4df	last=c276df7759
 		# NOTE: modified to soft-fail only
 	# wait for Core?: 14707
@@ -155,15 +158,15 @@ checkout v0.18.0rc3
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				1d2b9dc385
-	-	 bytespersigopstrict-0.17.1+knots		42b966de58
-	9749 unique_spk_mempool-0.17.1+knots		a7f738f776
-	-    rwconf_policy-0.17+knots				9e791a87ba
+	-	 bytespersigopstrict-0.18+knots			42b966de58
+	9749 unique_spk_mempool-0.18+knots			a7f738f776
+	-    rwconf_policy-0.18+knots				9e791a87ba
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
-	7483 svg_icon-0.17+knots					acafbba7f0
+	7483 svg_icon-0.18+knots					acafbba7f0
 # BRANDING:
-	n/a  knots_branding-0.17					bc8d7f2785
+	n/a  knots_branding-0.18					bc8d7f2785
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=8358b599adc18aba52)		ef1c8847d7	# doc/{bips,files}
