@@ -1,7 +1,7 @@
 timestamp 2019-03-28 06:10:04
 lastapply no-merge
 
-#.. checked up to PR #15045
+#.. checked up to PR #15546
 
 checkout v0.18.0rc3
 @0.18.x-syslibs
@@ -12,10 +12,12 @@ checkout v0.18.0rc3
 	13788 bugfix_asm_opt						a89a982730
 	13789 bugfix_asm_pragmas					417bbb2b56
 	-     bugfix_asm_leveldb_check				d6fa287448
+	15155 test_external_bcli
 @0.18.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							e05acaeb4c
+	# Needs review: 15134 practicalswift:unsigned-char
 # FIXES:
 	14968 laanwj/2018_12_http_bind_error		a557a2af18
 	-     http_bind_error+extra					8261704f7f
@@ -36,7 +38,11 @@ checkout v0.18.0rc3
 	#	FIXME: jnewbery found a bug :<
 	14818 bugfix_test_rpc_psbt					c149f71838
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
+	15103 jameshilliard/getentropy-weak
 	15801 bugfix_gui_prune_range
+	# Needs review: 15191 practicalswift:cs_LastBlockFile
+	# Needs review: 15192 practicalswift:validation-cs_main
+	# Needs review: 15363 promag:2019-01-loopexit
 # FUNCTIONALITY:
 	14066 gitian_power64						177d8f6828
 	# not ready/deterministic: 13827 NSIS depends build
@@ -92,6 +98,7 @@ checkout v0.18.0rc3
 	11803 bugfix_dumpwallet_hdkeypath			cc8a46f65f
 	12096 bumpfee_reduce_output-0.18			2c9f95670b	last=e82c8ff85e kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
+		# NOTE: Competing with #15341
 	12677 listunspent_ancestorinfo				e94e840cb5
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
@@ -115,7 +122,6 @@ checkout v0.18.0rc3
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs review: 13989 add avx512 instrinsic
 	# Needs work: 13990 WIP: allow fee estimation to work with lower fees
-	# Needs rationale: 14019 Import pubkeys when importing p2sh with importmulti
 	# Needs review: 14032 Add p2p layer encryption with ECDH/ChaCha20Poly1305
 	# Needs review: 14035 Utxoscriptindex
 	# Needs work: 14053 Add address-based index (attempt 4?)
@@ -132,6 +138,38 @@ checkout v0.18.0rc3
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
 	# CHANGES WALLET FORMAT, wait for Core: 15006 achow101:create-encrypted-wallet
 	# Needs review, changes wallet format: 15064 bip70_merchant_to_to
+	# unsure: 15084 gui: don't disable the sync overlay when wallet is disabled
+	# Needs review: 15093 rpc: Change importwallet to return additional errors
+	FIXME: diff-minimise 15115 rm_send2self
+	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
+	# Not ready: 15150 promag:2019-01-consolewalletselector
+	# Not ready: 15157 rpc: Bumpfee units change, satoshis to BTC
+	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
+	# Needs review/revision: 15202 promag:2019-01-closeallwallets
+	# Needs review: 15204 promag:2019-01-openexternalwallet
+	# Needs work: 15218 validation: Flush state after initial sync
+	FIXME: MAYBE ^ IS EASY FIX?
+	# Let Core go first? 15224 sipa:201901_rand_strengthen
+	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
+	15323 getmempoolinfo_loaded-0.18						last=effe81f750
+		# Held back refactoring
+	15367 -													# feature: Added ability for users to add a startup command
+	15371 -													# gui: Uppercase bech32 addresses in qr codes
+	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
+	TODO: Tor suite...
+		15421 tor_subprocess
+		15423 tor_socks_port
+		15428 tor_gui_pairing
+		TODO: tor gitian bundle!
+	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
+	# Needs review: 15427 sipa:201902_utxoupdatepsbtdesc
+	# Needs review: 15450 achow101:gui-create-wallet
+	TODO: restore vbits warnings removed
+	# Exposes too much info to RPC? 15483 rpc: Adding a 'logpath' entry to getrpcinfo
+	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
+	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
+	# Needs review: 15505 sdaftuar:2019-02-notfound-requests
+	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60
 	7107 qtnetworkport							e2c10b2bc4	last=1f37c87 origin-pull/7107/head
@@ -183,3 +221,5 @@ checkout v0.18.0rc3
 	n/a  (cherrypick=8068b12971)				bf06a386cc  # translation update
 	n/a  (cherrypick=8f5b2aca94)				ab05daa871	# update manpages (build first)
 # NOTE: use git diff --minimal for patches!
+
+TODO: Try Snap package stuff documented in doc/release-process.md
