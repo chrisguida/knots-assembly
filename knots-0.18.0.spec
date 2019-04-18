@@ -1,7 +1,7 @@
 timestamp 2019-03-28 06:10:04
 lastapply no-merge
 
-#.. checked up to PR #15546
+#.. checked up to PR #15658
 
 checkout v0.18.0rc3
 @0.18.x-syslibs
@@ -30,7 +30,7 @@ checkout v0.18.0rc3
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
 	13084 sipa/201804_keepnegone				e0d0819607
 	13608 -										bd04861325  # bitcoin-tx: Require that input amount is provided for witness transactions
-	13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
+	# Needs fix?? 13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 	-     bugfix_rpc_getbalance_hacky			0c15734378
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
@@ -43,6 +43,10 @@ checkout v0.18.0rc3
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
+	15558 sipa/201903_dnsoneatatime
+	15600 lockedpool_dontdump
+	15651 tor_standard_port
+	15650 -													# Handle the result of posix_fallocate system call
 # FUNCTIONALITY:
 	14066 gitian_power64						177d8f6828
 	# not ready/deterministic: 13827 NSIS depends build
@@ -96,6 +100,7 @@ checkout v0.18.0rc3
 		# Superceded by blockhashbyheight, so now just a backward compatibility hack
 	11770 -										2fcfb53e3e  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			cc8a46f65f
+	# Complicated, needs maturity in git and careful rebasing: 15557 instagibbs:bumpall
 	12096 bumpfee_reduce_output-0.18			2c9f95670b	last=e82c8ff85e kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 		# NOTE: Competing with #15341
@@ -106,8 +111,9 @@ checkout v0.18.0rc3
 	# TODO ? 12792 w/ renamed param
 	12911 signrawtx_showfees-0.18				c244e05b04	last=bba2e57c76 kallewoof/sign-show-fees
 	12965 scriptthreads-0.18					ae31010942	last=dfab6c6866 jonas/2018/04/svt
-	13008 rpc_mempool_vsize-0.18+knots			c38dd8b58e	last=3bc922d79c  # rpc: Rename size to vsize in mempool related calls
+	15637 rpc_mempool_vsize-0.18+knots			c38dd8b58e	last=3bc922d79c  # rpc: Rename size to vsize in mempool related calls
 		# NOTE: Minified & made deprecation softer
+		# NOTE: was #13008
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
 	13203 dsha256_power8-0.17					93c1f69e72	last=3b402e0738 matt/2018-05-asm
@@ -170,6 +176,9 @@ checkout v0.18.0rc3
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15505 sdaftuar:2019-02-notfound-requests
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
+	RETAIN "testnet": 15566 fanquake/cli-testnet-to-network
+	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
+	15633 give 1849aa9b4a a branch							last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60
 	7107 qtnetworkport							e2c10b2bc4	last=1f37c87 origin-pull/7107/head
