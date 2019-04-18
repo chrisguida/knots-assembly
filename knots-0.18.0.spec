@@ -1,7 +1,7 @@
 timestamp 2019-03-28 06:10:04
 lastapply no-merge
 
-#.. checked up to PR #15658
+#.. checked up to PR #15740
 
 checkout v0.18.0rc3
 @0.18.x-syslibs
@@ -179,6 +179,9 @@ checkout v0.18.0rc3
 	RETAIN "testnet": 15566 fanquake/cli-testnet-to-network
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	15633 give 1849aa9b4a a branch							last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
+	# Needs review and use case? 15703 sipa:201903_secp256k1
+	Shared-lib 15717 Changes to support NAT-PMP
+	15730 promag/2019-04-getwalletinfo-scanning
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60
 	7107 qtnetworkport							e2c10b2bc4	last=1f37c87 origin-pull/7107/head
