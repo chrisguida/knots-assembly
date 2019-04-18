@@ -1,9 +1,9 @@
 timestamp 2019-03-28 06:10:04
 lastapply no-merge
 
-#.. checked up to PR #15740
+#.. checked up to PR #15846
 
-checkout v0.18.0rc3
+checkout origin/0.18
 @0.18.x-syslibs
 	5872 subdir_incl_compat						8d02952dc5
 	2241 sys_leveldb-0.17						ad8b47a71f
@@ -39,7 +39,6 @@ checkout v0.18.0rc3
 	14818 bugfix_test_rpc_psbt					c149f71838
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
 	15103 jameshilliard/getentropy-weak
-	15801 bugfix_gui_prune_range
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
@@ -182,6 +181,12 @@ checkout v0.18.0rc3
 	# Needs review and use case? 15703 sipa:201903_secp256k1
 	Shared-lib 15717 Changes to support NAT-PMP
 	15730 promag/2019-04-getwalletinfo-scanning
+	# Needs concept ack: 15756 promag:2019-04-tools-shortcuts
+	# Needs concept ack: 15759 sdaftuar:2019-03-blocksonly-edges
+	make platform-independent 15768 -													# gui: Add CMD+W shortcut in macOS
+	careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
+	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
+	15836 jonas/2019/04/feeinfo
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60
 	7107 qtnetworkport							e2c10b2bc4	last=1f37c87 origin-pull/7107/head
@@ -200,12 +205,15 @@ checkout v0.18.0rc3
 	10282 timebomb_knots						6a405895cc
 	12146 opt_wallet_segwit2					871a84fd1f
 	-     gui_wallet_displayname				0b683f45dd
+	-     partial 15829
 	n/a  checkpoint_update-0.18					79b61387b0
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				1d2b9dc385
 	-	 bytespersigopstrict-0.18+knots			42b966de58
 	9749 unique_spk_mempool-0.18+knots			a7f738f776
+	15846 sipa/201904_futuresegwitstandard
+		FIXME: make optional, add to GUI and corepolicy
 	-    rwconf_policy-0.18+knots				9e791a87ba
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
