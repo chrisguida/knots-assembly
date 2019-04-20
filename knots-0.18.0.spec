@@ -38,16 +38,17 @@ checkout origin/0.18
 	#	FIXME: jnewbery found a bug :<
 	14818 bugfix_test_rpc_psbt					c149f71838
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
-	15103 jameshilliard/getentropy-weak
+	15103 lightsword/getentropy-weak
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
-	15558 sipa/201903_dnsoneatatime
+	15558 dnsoneatatime-0.18								last=9f36b04fa0 sipa/201903_dnsoneatatime
+		# NOTE: Diff-minimised
 	15600 lockedpool_dontdump
 	15651 tor_standard_port
-	15650 -													# Handle the result of posix_fallocate system call
+	15650 fallocate_check-0.18+knots						last=5d35ae3326
 # FUNCTIONALITY:
-	14066 gitian_power64						177d8f6828
+	14066 gitian_power64-0.18					177d8f6828	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -90,7 +91,7 @@ checkout origin/0.18
 		# rebased to #14649 rpc_mempoolentry_weight
 	-     rpc_mempoolentry_txhash				4ac64860bb
 	11413 explicit_fee-0.18						9ee958e460	last=b91af41525 kallewoof/explicit-fee
-	11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
+	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
 	11750 coincontrol_multiselect				22b0c49593	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
@@ -110,7 +111,7 @@ checkout origin/0.18
 	# TODO ? 12792 w/ renamed param
 	12911 signrawtx_showfees-0.18				c244e05b04	last=bba2e57c76 kallewoof/sign-show-fees
 	12965 scriptthreads-0.18					ae31010942	last=dfab6c6866 jonas/2018/04/svt
-	15637 rpc_mempool_vsize-0.18+knots			c38dd8b58e	last=3bc922d79c  # rpc: Rename size to vsize in mempool related calls
+	15637 rpc_mempool_vsize-0.18+knots			c38dd8b58e	last=e16b6a7188  # rpc: Rename size to vsize in mempool related calls
 		# NOTE: Minified & made deprecation softer
 		# NOTE: was #13008
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
@@ -120,7 +121,7 @@ checkout origin/0.18
 	-     dsha256_power8-0.17_asm_pragmas		c93d46a320
 	13339 walletnotify_w-0.18					835d6f86c2	last=71d70632ee promag/2018-05-walletnotify
 		# held back cef0327afd..71d70632ee Windows porting due to copyright issues (and bugs?)
-	13541 kallewoof/sendrawtransaction-maxfeerate
+	13541 sendraw_maxfeerate-0.18							last=4c4aee7a4c kallewoof/sendrawtransaction-maxfeerate
 	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
 	# Needs work: 13836 clearmempool RPC
 	# Needs review: 13903 Significantly reduce GetTransaction cs_main locking
@@ -145,15 +146,15 @@ checkout origin/0.18
 	# Needs review, changes wallet format: 15064 bip70_merchant_to_to
 	# unsure: 15084 gui: don't disable the sync overlay when wallet is disabled
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
-	FIXME: diff-minimise 15115 rm_send2self
+	15115 rm_send2self-mini									last=ecf3d5323e rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
 	# Not ready: 15150 promag:2019-01-consolewalletselector
 	# Not ready: 15157 rpc: Bumpfee units change, satoshis to BTC
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review/revision: 15202 promag:2019-01-closeallwallets
 	# Needs review: 15204 promag:2019-01-openexternalwallet
-	# Needs work: 15218 validation: Flush state after initial sync
-	FIXME: MAYBE ^ IS EASY FIX?
+	15218 postibd_flush-0.18								last=5d9aa4c643  # validation: Flush state after initial sync
+		# Moved init around to avoid conflict w/ 15367
 	# Let Core go first? 15224 sipa:201901_rand_strengthen
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
 	15323 getmempoolinfo_loaded-0.18						last=effe81f750
@@ -161,32 +162,37 @@ checkout origin/0.18
 	15367 -													# feature: Added ability for users to add a startup command
 	15371 -													# gui: Uppercase bech32 addresses in qr codes
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
-	TODO: Tor suite...
-		15421 tor_subprocess
-		15423 tor_socks_port
-		15428 tor_gui_pairing
-		TODO: tor gitian bundle!
+	# TODO: 15421 tor_subprocess
+	#	Needs boost::process check
+	15423 tor_socks_port
+	# TODO: 15428 tor_gui_pairing
+	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review: 15427 sipa:201902_utxoupdatepsbtdesc
 	# Needs review: 15450 achow101:gui-create-wallet
-	TODO: restore vbits warnings removed
 	# Exposes too much info to RPC? 15483 rpc: Adding a 'logpath' entry to getrpcinfo
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15505 sdaftuar:2019-02-notfound-requests
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
-	RETAIN "testnet": 15566 fanquake/cli-testnet-to-network
+	15566 bcli_chain-0.18
+		# NOTE: Retained "testnet" key
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
-	15633 give 1849aa9b4a a branch							last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
+	15633 nohbcbfornonwit-0.18								last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
+		# NOTE: added test fix
 	# Needs review and use case? 15703 sipa:201903_secp256k1
-	Shared-lib 15717 Changes to support NAT-PMP
-	15730 promag/2019-04-getwalletinfo-scanning
+	# USELESS Shared-lib 15717 Changes to support NAT-PMP
+	15730 getwalletinfo_scanning-0.18						last=1bf158e422 promag/2019-04-getwalletinfo-scanning
+		# NOTE: Modified to omit key if no scan in progress
 	# Needs concept ack: 15756 promag:2019-04-tools-shortcuts
 	# Needs concept ack: 15759 sdaftuar:2019-03-blocksonly-edges
-	make platform-independent 15768 -													# gui: Add CMD+W shortcut in macOS
+	# Needs review: 15768 -													# gui: Add CMD+W shortcut in macOS
+		# NOTE: Cannot make platform-independent w/o considering non-systray main window hiding
+		# NOTE: Probably dialogs should be closed, not simply hidden
 	careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
 	15836 jonas/2019/04/feeinfo
+	15861 restore_vbits_warning
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60
 	7107 qtnetworkport							e2c10b2bc4	last=1f37c87 origin-pull/7107/head
