@@ -1,9 +1,9 @@
-timestamp 2019-04-22 05:39:11
+timestamp 2019-05-01 06:44:15
 lastapply no-merge
 
-#.. checked up to PR #15846
+#.. checked up to PR #15928
 
-checkout origin/0.18
+checkout v0.18.0
 @0.18.x-syslibs
 	5872 subdir_incl_compat						8d02952dc5
 	2241 sys_leveldb-0.17						ad8b47a71f
@@ -52,6 +52,8 @@ checkout origin/0.18
 	15650 fallocate_check-0.18+knots						last=5d35ae3326
 	15896 qa_pkgname-0.18									last=fcc443b636 qa_pkgname
 	15897 qa_mininode_headers
+	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
+	15911 Sjors:2019/04/walletcreatefundedpsbt
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					177d8f6828	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -148,7 +150,7 @@ checkout origin/0.18
 	14687 zmqkeepalive-0.18+knots				106e00a4df	last=c276df7759
 		# NOTE: modified to soft-fail only
 	# wait for Core?: 14707
-	# needs completion: 14912 external signers WIP
+	# needs completion: 14912 external signers WIP + 15876
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
 	# CHANGES WALLET FORMAT, wait for Core: 15006 achow101:create-encrypted-wallet
 	# Needs review, changes wallet format: 15064 bip70_merchant_to_to
@@ -201,6 +203,9 @@ checkout origin/0.18
 	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
 	15836 mempoolinfo_feehistogram-0.18						last=80fbf80099 jonas/2019/04/feeinfo
 	15861 restore_vbits_warning
+	15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
+	# Needs concept ACK and review: 15873 Rpc removemempoolentry
+	# Needs concept ACK and review: 15886 hebasto:20190424-send-confirmation-dialog
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60
 	7107 qtnetworkport							e2c10b2bc4	last=1f37c87 origin-pull/7107/head
