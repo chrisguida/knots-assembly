@@ -53,7 +53,7 @@ checkout v0.18.0
 	15896 qa_pkgname-0.18									last=fcc443b636 qa_pkgname
 	15897 qa_mininode_headers
 	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
-	15911 Sjors:2019/04/walletcreatefundedpsbt
+	15911 wcreatefundedpsbt_rbf_fix-0.18					last=609685107b
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					177d8f6828	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -203,7 +203,7 @@ checkout v0.18.0
 	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
 	15836 mempoolinfo_feehistogram-0.18						last=80fbf80099 jonas/2019/04/feeinfo
 	15861 restore_vbits_warning
-	15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
+	# Complex rebase: 15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
 	# Needs concept ACK and review: 15873 Rpc removemempoolentry
 	# Needs concept ACK and review: 15886 hebasto:20190424-send-confirmation-dialog
 # Non-upstreamed functionality:
