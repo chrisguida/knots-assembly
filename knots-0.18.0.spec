@@ -1,4 +1,4 @@
-timestamp 2019-03-28 06:10:04
+timestamp 2019-04-22 05:39:11
 lastapply no-merge
 
 #.. checked up to PR #15846
@@ -18,7 +18,10 @@ checkout origin/0.18
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							e05acaeb4c
 	# Needs review: 15134 practicalswift:unsigned-char
+	15888 test_wallet_implicitsegwit
+	15920 nowallet_hiddenargs_linter-0.18
 # FIXES:
+	15913 bugfix_nowallet_avoidpspends-0.18
 	14968 laanwj/2018_12_http_bind_error		a557a2af18
 	-     http_bind_error+extra					8261704f7f
 	9524 marco/Mf1701-qaPruning					0482515b41
@@ -47,6 +50,8 @@ checkout origin/0.18
 	15600 lockedpool_dontdump
 	15651 tor_standard_port
 	15650 fallocate_check-0.18+knots						last=5d35ae3326
+	15896 qa_pkgname-0.18									last=fcc443b636 qa_pkgname
+	15897 qa_mininode_headers
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					177d8f6828	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -121,7 +126,10 @@ checkout origin/0.18
 	-     dsha256_power8-0.17_asm_pragmas		c93d46a320
 	13339 walletnotify_w-0.18					835d6f86c2	last=71d70632ee promag/2018-05-walletnotify
 		# held back cef0327afd..71d70632ee Windows porting due to copyright issues (and bugs?)
-	13541 sendraw_maxfeerate-0.18							last=4c4aee7a4c kallewoof/sendrawtransaction-maxfeerate
+	13541 sendraw_maxfeerate-0.18							last=7abd2e697c kallewoof/sendrawtransaction-maxfeerate
+		# MODIFIED
+		#+15618 removal of accidentally-merged code
+		#+15770 rpc: Validate maxfeerate with AmountFromValue
 	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
 	# Needs work: 13836 clearmempool RPC
 	# Needs review: 13903 Significantly reduce GetTransaction cs_main locking
@@ -165,7 +173,7 @@ checkout origin/0.18
 	# TODO: 15421 tor_subprocess
 	#	Needs boost::process check
 	15423 tor_socks_port
-	# TODO: 15428 tor_gui_pairing
+	15428 tor_gui_pairing-0.18								# latest code now
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review: 15427 sipa:201902_utxoupdatepsbtdesc
@@ -189,9 +197,9 @@ checkout origin/0.18
 	# Needs review: 15768 -													# gui: Add CMD+W shortcut in macOS
 		# NOTE: Cannot make platform-independent w/o considering non-systray main window hiding
 		# NOTE: Probably dialogs should be closed, not simply hidden
-	careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
+	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
-	15836 jonas/2019/04/feeinfo
+	15836 mempoolinfo_feehistogram-0.18						last=80fbf80099 jonas/2019/04/feeinfo
 	15861 restore_vbits_warning
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60
@@ -208,19 +216,20 @@ checkout origin/0.18
 	5891 qt_console_history_persist				acfbf6559d
 	7219 txrepl_fullrbf							cd85811a08
 	# TODO: some way to add UA comments via rwconf
-	10282 timebomb_knots						6a405895cc
 	12146 opt_wallet_segwit2					871a84fd1f
+	10282 timebomb_knots						6a405895cc
 	-     gui_wallet_displayname				0b683f45dd
-	-     partial 15829
+	-     recv_addrbook_refer_button-0.9
 	n/a  checkpoint_update-0.18					79b61387b0
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				1d2b9dc385
 	-	 bytespersigopstrict-0.18+knots			42b966de58
 	9749 unique_spk_mempool-0.18+knots			a7f738f776
-	15846 sipa/201904_futuresegwitstandard
-		FIXME: make optional, add to GUI and corepolicy
+	15846 sendtofuture-0.18+knots							last=c634b1e207 sipa/201904_futuresegwitstandard
+		# NOTE: made optional, and added to rwconf_policy
 	-    rwconf_policy-0.18+knots				9e791a87ba
+	TODO: blockmaxsize 300k
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
@@ -230,7 +239,7 @@ checkout origin/0.18
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=8358b599adc18aba52)		ef1c8847d7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20181229)			d7d0aa3311
+	n/a  (bump_version=Knots:20190422)			d7d0aa3311
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=edf2c1ee88)				1abe270eeb  # release notes: write/update, including change log and credits
 			# Document #11765 being superceded:
@@ -239,6 +248,8 @@ checkout origin/0.18
 			#	hash -> blockhash in JSON reply
 			#	Hex result is reversed
 			# Document removal of script debugger again
+			# Document update 158c6ea2c0f1ab39e6843ab49e54d31f32cdc3dd
+			# check travis for misspellings
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
