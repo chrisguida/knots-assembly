@@ -108,7 +108,7 @@ checkout v0.18.0
 	11770 -										2fcfb53e3e  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			cc8a46f65f
 	# Complicated, needs maturity in git and careful rebasing: 15557 instagibbs:bumpall
-	12096 bumpfee_reduce_output-0.18			2c9f95670b	last=e82c8ff85e kallewoof/better-bumpfee
+	12096 bumpfee_reduce_output-0.18			2c9f95670b	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 		# NOTE: Competing with #15341
 	12677 listunspent_ancestorinfo				e94e840cb5
@@ -163,7 +163,7 @@ checkout v0.18.0
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review/revision: 15202 promag:2019-01-closeallwallets
 	# Needs review: 15204 promag:2019-01-openexternalwallet
-	15218 postibd_flush-0.18								last=5d9aa4c643  # validation: Flush state after initial sync
+	15218 postibd_flush-0.18								last=b32fca5c21  # validation: Flush state after initial sync
 		# Moved init around to avoid conflict w/ 15367
 	# Let Core go first? 15224 sipa:201901_rand_strengthen
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
@@ -175,7 +175,7 @@ checkout v0.18.0
 	# TODO: 15421 tor_subprocess
 	#	Needs boost::process check
 	15423 tor_socks_port
-	15428 tor_gui_pairing-0.18								# latest code now
+	15428 tor_gui_pairing-0.18+knots						# latest code now
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review: 15427 sipa:201902_utxoupdatepsbtdesc
@@ -192,8 +192,7 @@ checkout v0.18.0
 		# NOTE: added test fix
 	# Needs review and use case? 15703 sipa:201903_secp256k1
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
-	15730 getwalletinfo_scanning-0.18						last=1bf158e422 promag/2019-04-getwalletinfo-scanning
-		# NOTE: Modified to omit key if no scan in progress
+	15730 getwalletinfo_scanning-0.18						last=008896693c promag/2019-04-getwalletinfo-scanning
 	# Needs concept ack: 15756 promag:2019-04-tools-shortcuts
 	# Needs concept ack: 15759 sdaftuar:2019-03-blocksonly-edges
 	# Needs review: 15768 -													# gui: Add CMD+W shortcut in macOS
@@ -201,7 +200,7 @@ checkout v0.18.0
 		# NOTE: Probably dialogs should be closed, not simply hidden
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
-	15836 mempoolinfo_feehistogram-0.18						last=80fbf80099 jonas/2019/04/feeinfo
+	15836 mempoolinfo_feehistogram-0.18						last=c97a9ddd4a jonas/2019/04/feeinfo
 	15861 restore_vbits_warning
 	# Complex rebase: 15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
 	# Needs concept ACK and review: 15873 Rpc removemempoolentry
