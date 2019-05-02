@@ -1,7 +1,7 @@
-timestamp 2019-05-01 06:44:15
+timestamp 2019-05-02 18:09:05
 lastapply no-merge
 
-#.. checked up to PR #15928
+#.. checked up to PR #15937
 
 checkout v0.18.0
 @0.18.x-syslibs
@@ -192,7 +192,7 @@ checkout v0.18.0
 		# NOTE: added test fix
 	# Needs review and use case? 15703 sipa:201903_secp256k1
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
-	15730 getwalletinfo_scanning-0.18						last=008896693c promag/2019-04-getwalletinfo-scanning
+	15730 getwalletinfo_scanning-0.18						last=b6c748f849 promag/2019-04-getwalletinfo-scanning
 	# Needs concept ack: 15756 promag:2019-04-tools-shortcuts
 	# Needs concept ack: 15759 sdaftuar:2019-03-blocksonly-edges
 	# Needs review: 15768 -													# gui: Add CMD+W shortcut in macOS
@@ -205,6 +205,10 @@ checkout v0.18.0
 	# Complex rebase: 15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
 	# Needs concept ACK and review: 15873 Rpc removemempoolentry
 	# Needs concept ACK and review: 15886 hebasto:20190424-send-confirmation-dialog
+	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
+	15932 rpc_getblock_relax_lock-0.18						last=fab00a5cb9 marco/1905-rpcBlockNoLock
+	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac marco/1904-rpcWalletBalances
+		# NOTE: excluded various refactoring and deprecation
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60
 	7107 qtnetworkport							e2c10b2bc4	last=1f37c87 origin-pull/7107/head
@@ -242,9 +246,9 @@ checkout v0.18.0
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=15b62fa32bd3eaced3)		ef1c8847d7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20190501)			d7d0aa3311
+	n/a  (bump_version=Knots:20190502)			d7d0aa3311
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=f01a43acea)				1abe270eeb  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=abba613227)				1abe270eeb  # release notes: write/update, including change log and credits
 			# Document #11765 being superceded:
 			#	HTTP_BAD_REQUEST -> HTTP_NOT_FOUND
 			#	English errors more or less detailed
