@@ -45,15 +45,15 @@ checkout v0.18.0
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
-	15558 dnsoneatatime-0.18					df2729525b								last=9f36b04fa0 sipa/201903_dnsoneatatime
+	15558 dnsoneatatime-0.18					df2729525b	last=9f36b04fa0 sipa/201903_dnsoneatatime
 		# NOTE: Diff-minimised
 	15600 lockedpool_dontdump					616c756d2e
 	15651 tor_standard_port						b038090435
-	15650 fallocate_check-0.18+knots			dc381477b7						last=5d35ae3326
-	15896 qa_pkgname-0.18						60b37a9fb7									last=fcc443b636 qa_pkgname
+	15650 fallocate_check-0.18+knots			dc381477b7	last=5d35ae3326
+	15896 qa_pkgname-0.18						60b37a9fb7	last=fcc443b636 qa_pkgname
 	15897 qa_mininode_headers					e4e7278854
 	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
-	15911 wcreatefundedpsbt_rbf_fix-0.18		0361c96384					last=609685107b
+	15911 wcreatefundedpsbt_rbf_fix-0.18		0361c96384	last=609685107b
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					2cffda4afd	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -128,7 +128,7 @@ checkout v0.18.0
 	-     dsha256_power8-0.17_asm_pragmas		9e09a78f24
 	13339 walletnotify_w-0.18					11f3777ed3	last=71d70632ee promag/2018-05-walletnotify
 		# held back cef0327afd..71d70632ee Windows porting due to copyright issues (and bugs?)
-	13541 sendraw_maxfeerate-0.18				4bd6c3b990							last=7abd2e697c kallewoof/sendrawtransaction-maxfeerate
+	13541 sendraw_maxfeerate-0.18				4bd6c3b990	last=7abd2e697c kallewoof/sendrawtransaction-maxfeerate
 		# MODIFIED
 		#+15618 removal of accidentally-merged code
 		#+15770 rpc: Validate maxfeerate with AmountFromValue
@@ -156,26 +156,26 @@ checkout v0.18.0
 	# Needs review, changes wallet format: 15064 bip70_merchant_to_to
 	# unsure: 15084 gui: don't disable the sync overlay when wallet is disabled
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
-	15115 rm_send2self-mini						890be96ed6									last=ecf3d5323e rm_send2self
+	15115 rm_send2self-mini						890be96ed6	last=ecf3d5323e rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
 	# Not ready: 15150 promag:2019-01-consolewalletselector
 	# Not ready: 15157 rpc: Bumpfee units change, satoshis to BTC
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review/revision: 15202 promag:2019-01-closeallwallets
 	# Needs review: 15204 promag:2019-01-openexternalwallet
-	15218 postibd_flush-0.18					b5fc890bc5								last=b32fca5c21  # validation: Flush state after initial sync
+	15218 postibd_flush-0.18					b5fc890bc5	last=b32fca5c21  # validation: Flush state after initial sync
 		# Moved init around to avoid conflict w/ 15367
 	# Let Core go first? 15224 sipa:201901_rand_strengthen
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
-	15323 getmempoolinfo_loaded-0.18			7589250729						last=effe81f750
+	15323 getmempoolinfo_loaded-0.18			7589250729	last=effe81f750
 		# Held back refactoring
-	15367 -										57c3fe8f9a													# feature: Added ability for users to add a startup command
-	15371 -										6686923d4a													# gui: Uppercase bech32 addresses in qr codes
+	15367 -										57c3fe8f9a	# feature: Added ability for users to add a startup command
+	15371 -										6686923d4a	# gui: Uppercase bech32 addresses in qr codes
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	# TODO: 15421 tor_subprocess
 	#	Needs boost::process check
 	15423 tor_socks_port						98ec95d386
-	15428 tor_gui_pairing-0.18+knots			c61ac82b66						# latest code now
+	15428 tor_gui_pairing-0.18+knots			c61ac82b66	# latest code now
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review: 15427 sipa:201902_utxoupdatepsbtdesc
@@ -188,11 +188,11 @@ checkout v0.18.0
 	15566 bcli_chain-0.18						594467ed65
 		# NOTE: Retained "testnet" key
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
-	15633 nohbcbfornonwit-0.18					73fba0e037								last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
+	15633 nohbcbfornonwit-0.18					73fba0e037	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
 		# NOTE: added test fix
 	# Needs review and use case? 15703 sipa:201903_secp256k1
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
-	15730 getwalletinfo_scanning-0.18			72a702efb2						last=b6c748f849 promag/2019-04-getwalletinfo-scanning
+	15730 getwalletinfo_scanning-0.18			72a702efb2	last=b6c748f849 promag/2019-04-getwalletinfo-scanning
 	# Needs concept ack: 15756 promag:2019-04-tools-shortcuts
 	# Needs concept ack: 15759 sdaftuar:2019-03-blocksonly-edges
 	# Needs review: 15768 -													# gui: Add CMD+W shortcut in macOS
@@ -200,13 +200,13 @@ checkout v0.18.0
 		# NOTE: Probably dialogs should be closed, not simply hidden
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
-	15836 mempoolinfo_feehistogram-0.18			e9eccaafe7						last=c97a9ddd4a jonas/2019/04/feeinfo
+	15836 mempoolinfo_feehistogram-0.18			e9eccaafe7	last=c97a9ddd4a jonas/2019/04/feeinfo
 	15861 restore_vbits_warning					1e8243e594
 	# Complex rebase: 15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
 	# Needs concept ACK and review: 15873 Rpc removemempoolentry
 	# Needs concept ACK and review: 15886 hebasto:20190424-send-confirmation-dialog
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
-	15932 rpc_getblock_relax_lock-0.18			8e5a518c6f						last=fab00a5cb9 marco/1905-rpcBlockNoLock
+	15932 rpc_getblock_relax_lock-0.18			8e5a518c6f	last=fab00a5cb9 marco/1905-rpcBlockNoLock
 	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac marco/1904-rpcWalletBalances
 		# NOTE: excluded various refactoring and deprecation
 # Non-upstreamed functionality:
@@ -234,7 +234,7 @@ checkout v0.18.0
 	-    1day_default_conftarget				42ac1def4e
 	-	 bytespersigopstrict-0.18+knots			cc7dd07c7d
 	9749 unique_spk_mempool-0.18+knots			405e820d5b
-	15846 sendtofuture-0.18+knots				42874aa95b							last=c634b1e207 sipa/201904_futuresegwitstandard
+	15846 sendtofuture-0.18+knots				42874aa95b	last=c634b1e207 sipa/201904_futuresegwitstandard
 		# NOTE: made optional, and added to rwconf_policy
 	-    rwconf_policy-0.18+knots				971541b989
 		#TODO: Add segwit wallet stuff?
