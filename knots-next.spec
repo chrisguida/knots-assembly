@@ -1,9 +1,9 @@
-timestamp 2019-05-02 18:09:05
-lastapply no-merge
+timestamp 2019-08-06 23:04:12
+#lastapply no-merge
 
 #.. checked up to PR #15937
 
-checkout v0.18.0
+checkout v0.18.1
 @0.18.x-syslibs
 	5872 subdir_incl_compat						139bbb90fc
 	2241 sys_leveldb-0.17						b70901dd30
@@ -39,21 +39,23 @@ checkout v0.18.0
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
 	#	FIXME: jnewbery found a bug :<
-	14818 bugfix_test_rpc_psbt					1854893c5c
+TM	14818 bugfix_test_rpc_psbt					1854893c5c
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
 	15103 lightsword/getentropy-weak			262f205c83
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
-	15558 dnsoneatatime-0.18					df2729525b	last=9f36b04fa0 sipa/201903_dnsoneatatime
+	15558 dnsoneatatime-0.18					df2729525b	last=6170ec5d3a sipa/201903_dnsoneatatime
 		# NOTE: Diff-minimised
-	15600 lockedpool_dontdump					616c756d2e
+NM	15600 lockedpool_dontdump					616c756d2e
 	15651 tor_standard_port						b038090435
 	15650 fallocate_check-0.18+knots			dc381477b7	last=5d35ae3326
 	15896 qa_pkgname-0.18						60b37a9fb7	last=fcc443b636 qa_pkgname
 	15897 qa_mininode_headers					e4e7278854
 	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
-	15911 wcreatefundedpsbt_rbf_fix-0.18		0361c96384	last=609685107b
+	15911 wcreatefundedpsbt_rbf_fix-0.18		0361c96384	last=d6b3640ac7
+		# NOTE: Held back removal of "fallback to" since that's not really part of this fix
+	16646 test_without_upnp-0.17
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					2cffda4afd	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -62,7 +64,7 @@ checkout v0.18.0
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs-0.18					423894f629	last=e11cb50a09  # multisig sorting
+m	8751 sort-multisigs-0.18					423894f629	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							7516c660b5
@@ -87,7 +89,7 @@ checkout v0.18.0
 	10554 zmq_wtx-0.18							56286d74a6	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	12674 rpc_onetry_nonpriv					5878f860d4
 	10593 relax_invblk_punishment				ff31141b72
-	10594 whitelist_outgoing					9ed15cac6c
+m	10594 whitelist_outgoing-0.18				9ed15cac6c
 	10350 filtered_witblock-0.17				461d614dbc	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
@@ -97,7 +99,11 @@ checkout v0.18.0
 	11256 rpc_mempoolentry_weight				a2eebb9211	last=d4b0d81b58
 		# rebased to #14649 rpc_mempoolentry_weight
 	-     rpc_mempoolentry_txhash				cdbd81c59c
-	11413 explicit_fee-0.18						a7c5575359	last=b91af41525 kallewoof/explicit-fee
+	16566 tolowerupper_string-0.18
+		# NOTE: Only added, didn't remove/change stuff
+	11413 explicit_fee-0.18						a7c5575359	last=c0df066dc8 kallewoof/explicit-fee
+		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
+		# TODO: Relnotes changes - case insensitivity, (is RBF default new??)
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
@@ -108,7 +114,7 @@ checkout v0.18.0
 	11770 -										c1c594490a  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			115ef72659
 	# Complicated, needs maturity in git and careful rebasing: 15557 instagibbs:bumpall
-	12096 bumpfee_reduce_output-0.18			848577505c	last=086313c8b1 kallewoof/better-bumpfee
+m	12096 bumpfee_reduce_output-0.18+knots		848577505c	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 		# NOTE: Competing with #15341
 	12677 listunspent_ancestorinfo				d758005bf1
@@ -126,8 +132,8 @@ checkout v0.18.0
 	13203 dsha256_power8-0.17					db181f3987	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		9e09a78f24
-	13339 walletnotify_w-0.18					11f3777ed3	last=71d70632ee promag/2018-05-walletnotify
-		# held back cef0327afd..71d70632ee Windows porting due to copyright issues (and bugs?)
+	13339 walletnotify_w-0.18					11f3777ed3	last=15a0ad0bb4 promag/2018-05-walletnotify
+		# held back cef0327afd..15a0ad0bb4 Windows porting due to copyright issues (and bugs?)
 	13541 sendraw_maxfeerate-0.18				4bd6c3b990	last=7abd2e697c kallewoof/sendrawtransaction-maxfeerate
 		# MODIFIED
 		#+15618 removal of accidentally-merged code
@@ -144,7 +150,7 @@ checkout v0.18.0
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	14137 win_taskbar_progress-0.18+knots		98aa8e66f9	last=18eb4dbb8a
 	15023 gui_node_rpcconsole-0.18+knots		f86f92b5ef	last=f33efa8ec5 gui_node_rpcconsole  # PART OF c52c82eb6f
-	14641 fundraw_minconf-0.18					0bea20be04	last=a3991b7c0b promag/2018-11-fundrawtransaction
+m	14641 fundraw_minconf-0.18+knots			0bea20be04	last=a3991b7c0b promag/2018-11-fundrawtransaction
 		# NOTE: backported 2 lines from #15557's 0ea47ba7b3 as 76cd3c48e2
 		# NOTE: held back .gitignore nonsense change & relnotes
 	14687 zmqkeepalive-0.18+knots				8b22e36ac2	last=c276df7759
@@ -163,7 +169,7 @@ checkout v0.18.0
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review/revision: 15202 promag:2019-01-closeallwallets
 	# Needs review: 15204 promag:2019-01-openexternalwallet
-	15218 postibd_flush-0.18					b5fc890bc5	last=b32fca5c21  # validation: Flush state after initial sync
+	15218 postibd_flush-0.18					b5fc890bc5	last=d2ecb70d64  # validation: Flush state after initial sync
 		# Moved init around to avoid conflict w/ 15367
 	# Let Core go first? 15224 sipa:201901_rand_strengthen
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
@@ -200,20 +206,21 @@ checkout v0.18.0
 		# NOTE: Probably dialogs should be closed, not simply hidden
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
-	15836 mempoolinfo_feehistogram-0.18			e9eccaafe7	last=c97a9ddd4a jonas/2019/04/feeinfo
+	15836 mempoolinfo_feehistogram-0.18			e9eccaafe7	last=b94292a7cb jonas/2019/04/feeinfo
 	15861 restore_vbits_warning					1e8243e594
 	# Complex rebase: 15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
 	# Needs concept ACK and review: 15873 Rpc removemempoolentry
 	# Needs concept ACK and review: 15886 hebasto:20190424-send-confirmation-dialog
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
-	15932 rpc_getblock_relax_lock-0.18			8e5a518c6f	last=fab00a5cb9 marco/1905-rpcBlockNoLock
+	15932 rpc_getblock_relax_lock-0.18			8e5a518c6f	last=faea56400d marco/1905-rpcBlockNoLock
+		# NOTE: Held back lock annotations/asserts in case other callers don't respect the expectations
 	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac marco/1904-rpcWalletBalances
 		# NOTE: excluded various refactoring and deprecation
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					1dbbc0ec2c
 	7107 qtnetworkport							37c2c835eb	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.18+knots				a2d7d286b6  # Latest code now
-	11082 rwconf								25849bae73
+m	11082 rwconf-0.18							25849bae73	# Latest code now
 	7510 rwconf_gui-0.18+knots					3d8e677c0f	# Latest code now
 	5916 legacy_keyorigin						900a0a4ba4
 	 559 accept_nonstdtxn						6290ba420f
@@ -226,9 +233,10 @@ checkout v0.18.0
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					30484295d7
 	10282 timebomb_knots						b1ebfba56c
-	-     gui_wallet_displayname				11c8ba9186
+m	-     gui_wallet_displayname-0.18			11c8ba9186	# Latest code now
 	-     recv_addrbook_refer_button-0.9		c867e094f2
 	n/a  checkpoint_update-0.18					0a993c9993
+	TODO: revert "Request payment" rename
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				42ac1def4e
