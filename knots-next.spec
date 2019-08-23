@@ -1,7 +1,7 @@
-timestamp 2019-08-06 23:04:12
+timestamp 2019-08-23 19:59:31
 #lastapply no-merge
 
-#.. checked up to PR #15937
+#.. checked up to PR #16696
 
 checkout v0.18.1
 @0.18.x-syslibs
@@ -13,6 +13,9 @@ checkout v0.18.1
 	13789 bugfix_asm_pragmas					c7a18326b3
 	-     bugfix_asm_leveldb_check				e0cdc298d7
 	15155 test_external_bcli					65f35c7f7d
+	15968 -  # Fix portability issue with pthreads
+	15970 -
+	16228 bugfix_raii_check_fail
 @0.18.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
@@ -21,7 +24,7 @@ checkout v0.18.1
 	15888 test_wallet_implicitsegwit			4d67b75415
 	15920 nowallet_hiddenargs_linter-0.18		9d8657290b
 # FIXES:
-	15913 bugfix_nowallet_avoidpspends-0.18		e4d1fde05d
+NM	15913 bugfix_nowallet_avoidpspends-0.18		e4d1fde05d
 	14968 laanwj/2018_12_http_bind_error		547767d717
 	-     http_bind_error+extra					ecd0e8da29
 	9524 marco/Mf1701-qaPruning					178af41a49
@@ -55,7 +58,17 @@ NM	15600 lockedpool_dontdump					616c756d2e
 	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
 	15911 wcreatefundedpsbt_rbf_fix-0.18		0361c96384	last=d6b3640ac7
 		# NOTE: Held back removal of "fallback to" since that's not really part of this fix
+	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
 	16646 test_without_upnp-0.17
+	# Needs review: 16050 promag:2019-05-importmulti-update
+	16090 -  # Qt: Add vertical spacer to peer detail widget
+	# Needs review: 16161 util: Fix compilation errors in support/lockedpool.cpp
+	# Likely impossible: 16199 fix coinjoin sends in RPC
+	16212 practicalswift/SerializeFileDB-non-determinism
+	16394 achow101/fix-born-enc
+	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
+	16525 matt/2019-07-unsigned-tx-ver
+	# 0.9 TODO: revert 16578
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					2cffda4afd	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -75,6 +88,7 @@ m	8751 sort-multisigs-0.18					423894f629	last=e11cb50a09  # multisig sorting
 		# Held back on old version due to conflict with GUI updates...
 	8550 old_stats_qt-0.18						98cabb0a3f	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
+		TODO: port #16153
 	9422 mempool_dat_extensible					211580c192
 	9504 dumpmasterprivkey-0.18					516d0f9fb3	last=07fc81109a
 	# not ready yet: 9483 SPV
@@ -90,6 +104,7 @@ m	8751 sort-multisigs-0.18					423894f629	last=e11cb50a09  # multisig sorting
 	12674 rpc_onetry_nonpriv					5878f860d4
 	10593 relax_invblk_punishment				ff31141b72
 m	10594 whitelist_outgoing-0.18				9ed15cac6c
+		# 0.9 TODO: Revert 16555
 	10350 filtered_witblock-0.17				461d614dbc	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
@@ -98,6 +113,7 @@ m	10594 whitelist_outgoing-0.18				9ed15cac6c
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	11256 rpc_mempoolentry_weight				a2eebb9211	last=d4b0d81b58
 		# rebased to #14649 rpc_mempoolentry_weight
+		Rebased to 16647
 	-     rpc_mempoolentry_txhash				cdbd81c59c
 	16566 tolowerupper_string-0.18
 		# NOTE: Only added, didn't remove/change stuff
@@ -214,8 +230,32 @@ m	14641 fundraw_minconf-0.18+knots			0bea20be04	last=a3991b7c0b promag/2018-11-f
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
 	15932 rpc_getblock_relax_lock-0.18			8e5a518c6f	last=faea56400d marco/1905-rpcBlockNoLock
 		# NOTE: Held back lock annotations/asserts in case other callers don't respect the expectations
+	14802 -  # rpc: faster getblockstats using BlockUndo data
 	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac marco/1904-rpcWalletBalances
 		# NOTE: excluded various refactoring and deprecation
+	# Needs QA/reivew: 15946 jonasschnelli:2019/05/prune_blockfilter
+	15986 sipa/201905_justchecksum
+	15987 wallet_no_reuse
+		FIXME: Split & fix bugs
+	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
+	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
+	FIXME: Minor changes? 16083 [WIP] transaction fees in getblock
+	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
+	16171 -  # gettransaction: add an argument to decode the transaction
+	16248 NicolasDorier/feature/permissions
+		TODO: add bugfix 16618 NicolasDorier:fix/noban-banned
+		TODO: add bugfix 16631 NicolasDorier:fix/default-whiterelay
+		TODO: maybe add 16629?
+	Minor revision needed? 16373 instagibbs:bump_psbt
+	# Needs review: 16377 Sjors:2019/07/walletcreatefundedpsbt_addinputs
+	# Needs review: 16378 Sjors:2019/07/send
+	# Needs review maybe: 16512 achow101:joinpsbt-rand
+	16523 -  # Add removemempoolentry RPC to evict transactions from the mempool
+	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
+	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
+	CHECK CAREFULLY 16554 fanquake/test_openssl_include
+	16682 jnewbery/2019-08-disconnect-blocksonly-violators
+	16695 -  # rpc: Add window final block height to getchaintxstats
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					1dbbc0ec2c
 	7107 qtnetworkport							37c2c835eb	last=1f37c87 origin-pull/7107/head
@@ -229,6 +269,7 @@ m	11082 rwconf-0.18							25849bae73	# Latest code now
 	-    mining_priority						7441128513  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					a0f3b362d6
 	5891 qt_console_history_persist				de26fdf0ec
+	# 0.19 TODO: Revert 16171 to restore opt-in RBF option
 	7219 txrepl_fullrbf							3775514e83
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					30484295d7
@@ -236,25 +277,35 @@ m	11082 rwconf-0.18							25849bae73	# Latest code now
 m	-     gui_wallet_displayname-0.18			11c8ba9186	# Latest code now
 	-     recv_addrbook_refer_button-0.9		c867e094f2
 	n/a  checkpoint_update-0.18					0a993c9993
-	TODO: revert "Request payment" rename
+	# 0.19 TODO: revert "Request payment" rename
+	16153 -  # Qt: Add antialiasing to traffic graph widget
+	NEEDS FIXUP/REPLACE 16432 qt: Add privacy to the Overview page
+	Parts of? 16442 Neutrino
+	# Needs review: 16463 achow101:bip174-xpub
+	Minimised 16490 MarcoFalke:1907-rpcMempoolWhyReplacable
+	Needs work? 16492 rpc: Add feeRate argument to bumpFee RPC
+	# 0.19 TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				42ac1def4e
 	-	 bytespersigopstrict-0.18+knots			cc7dd07c7d
-	9749 unique_spk_mempool-0.18+knots			405e820d5b
+m	9749 unique_spk_mempool-0.18+knots			405e820d5b
 	15846 sendtofuture-0.18+knots				42874aa95b	last=c634b1e207 sipa/201904_futuresegwitstandard
 		# NOTE: made optional, and added to rwconf_policy
 	-    rwconf_policy-0.18+knots				971541b989
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
+	# 0.19 TODO: Revert #16152 (disable bloom by default)
+	# Needs review/optionality: 16421 TheBlueMatt:2019-07-lightning-policy-bump
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.18+knots					f895baf6fa
 # BRANDING:
 	n/a  knots_branding-0.18					bf23ad4632
+	FIXME: do we need 16595?
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=15b62fa32bd3eaced3)		2ff17d1019	# doc/{bips,files}
-	n/a  (bump_version=Knots:20190502)			f9d6f03e9f
+	n/a  (bump_version=Knots:20190823)			f9d6f03e9f
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=abba613227)				f80967ffb4  # release notes: write/update, including change log and credits
 			# Document #11765 being superceded:
