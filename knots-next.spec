@@ -13,8 +13,7 @@ checkout v0.18.1
 	13789 bugfix_asm_pragmas					c7a18326b3
 	-     bugfix_asm_leveldb_check				e0cdc298d7
 	15155 test_external_bcli					65f35c7f7d
-	15968 -  # Fix portability issue with pthreads
-	15970 -
+	15970 bugfix_threadlocal_check-0.16
 	16228 bugfix_raii_check_fail
 @0.18.x-knots
 # TESTS:
@@ -61,14 +60,13 @@ NM	15600 lockedpool_dontdump					616c756d2e
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
 	16646 test_without_upnp-0.17
 	# Needs review: 16050 promag:2019-05-importmulti-update
-	16090 -  # Qt: Add vertical spacer to peer detail widget
+	16090 peerdetail_vertspacer-0.18  # Qt: Add vertical spacer to peer detail widget
 	# Needs review: 16161 util: Fix compilation errors in support/lockedpool.cpp
 	# Likely impossible: 16199 fix coinjoin sends in RPC
-	16212 practicalswift/SerializeFileDB-non-determinism
-	16394 achow101/fix-born-enc
+	16212 bugfix_rm_addrdb_tmpfile-0.17
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
-	16525 matt/2019-07-unsigned-tx-ver
-	# 0.9 TODO: revert 16578
+	16525 rpc_unsigned_txver-0.18							last=970de70bdd matt/2019-07-unsigned-tx-ver
+	16578 qapp_dummy_argv-0.18.1
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					2cffda4afd	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -88,7 +86,6 @@ m	8751 sort-multisigs-0.18					423894f629	last=e11cb50a09  # multisig sorting
 		# Held back on old version due to conflict with GUI updates...
 	8550 old_stats_qt-0.18						98cabb0a3f	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
-		TODO: port #16153
 	9422 mempool_dat_extensible					211580c192
 	9504 dumpmasterprivkey-0.18					516d0f9fb3	last=07fc81109a
 	# not ready yet: 9483 SPV
@@ -175,6 +172,7 @@ m	14641 fundraw_minconf-0.18+knots			0bea20be04	last=a3991b7c0b promag/2018-11-f
 	# needs completion: 14912 external signers WIP + 15876
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
 	# CHANGES WALLET FORMAT, wait for Core: 15006 achow101:create-encrypted-wallet
+		# +16394 achow101/fix-born-enc
 	# Needs review, changes wallet format: 15064 bip70_merchant_to_to
 	# unsure: 15084 gui: don't disable the sync overlay when wallet is disabled
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
