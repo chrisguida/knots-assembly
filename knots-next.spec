@@ -110,11 +110,8 @@ m	10594 whitelist_outgoing-0.18				9ed15cac6c
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	11256 rpc_mempoolentry_weight-0.17			a2eebb9211	last=d4b0d81b58
 	-     rpc_mempoolentry_txhash				cdbd81c59c
-	16566 tolowerupper_string-0.18
-		# NOTE: Only added, didn't remove/change stuff
-	11413 explicit_fee-0.18						a7c5575359	last=c109001c9b kallewoof/explicit-fee
-		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
-		# TODO: Relnotes changes - case insensitivity, (is RBF default new??)
+NM	11413 explicit_fee							a7c5575359
+		# NOTE: Moved below...
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
@@ -125,7 +122,7 @@ m	10594 whitelist_outgoing-0.18				9ed15cac6c
 	11770 -										c1c594490a  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			115ef72659
 	# Complicated, needs maturity in git and careful rebasing: 15557 instagibbs:bumpall
-m	12096 bumpfee_reduce_output-0.18+knots		848577505c	last=086313c8b1 kallewoof/better-bumpfee
+m	12096 bumpfee_reduce_output-0.18			848577505c	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 		# NOTE: Competing with #15341
 	12677 listunspent_ancestorinfo				d758005bf1
@@ -161,7 +158,7 @@ m	12096 bumpfee_reduce_output-0.18+knots		848577505c	last=086313c8b1 kallewoof/b
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	14137 win_taskbar_progress-0.18+knots		98aa8e66f9	last=18eb4dbb8a
 	15023 gui_node_rpcconsole-0.18+knots		f86f92b5ef	last=f33efa8ec5 gui_node_rpcconsole  # PART OF c52c82eb6f
-m	14641 fundraw_minconf-0.18+knots			0bea20be04	last=a3991b7c0b promag/2018-11-fundrawtransaction
+m	14641 fundraw_minconf-0.18					0bea20be04	last=a3991b7c0b promag/2018-11-fundrawtransaction
 		# NOTE: backported 2 lines from #15557's 0ea47ba7b3 as 76cd3c48e2
 		# NOTE: held back .gitignore nonsense change & relnotes
 	14687 zmqkeepalive-0.18+knots				8b22e36ac2	last=c276df7759
@@ -232,11 +229,16 @@ m	14641 fundraw_minconf-0.18+knots			0bea20be04	last=a3991b7c0b promag/2018-11-f
 		# NOTE: excluded various refactoring and deprecation
 	# Needs QA/reivew: 15946 jonasschnelli:2019/05/prune_blockfilter
 	15986 gdi_checksum-0.18
-	15987 wallet_no_reuse
-		FIXME: Split & fix bugs
+	15987 wallet_no_reuse-0.18+knots						last=545af217ae wallet_no_reuse
+	-	  rpc_gai_txids-0.18								last=621796da61 rpc_gai_txids
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	FIXME: Minor changes? 16083 [WIP] transaction fees in getblock
+	16083 rpc_getblock_prevouts_fees-0.18					last=dd83c4c925
+		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
+		# Renamed "coinbase" field to "generated"
+		# Renamed "fees" field to "fee"
+		# Silenced warnings
+		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	16171 -  # gettransaction: add an argument to decode the transaction
 	16248 NicolasDorier/feature/permissions
@@ -253,6 +255,13 @@ m	14641 fundraw_minconf-0.18+knots			0bea20be04	last=a3991b7c0b promag/2018-11-f
 	CHECK CAREFULLY 16554 fanquake/test_openssl_include
 	16682 jnewbery/2019-08-disconnect-blocksonly-violators
 	16695 -  # rpc: Add window final block height to getchaintxstats
+	# Kept last to avoid rebase conflicts
+	16566 tolowerupper_string-0.18
+		# NOTE: Only added, didn't remove/change stuff
+	11413 explicit_fee-0.18									last=c109001c9b kallewoof/explicit-fee
+		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
+		# TODO: Relnotes changes - case insensitivity, (is RBF default new??)
+		# 0.19 TODO: Rebase/squash fixups (keep compat with "EXPLICIT"!)
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					1dbbc0ec2c
 	7107 qtnetworkport							37c2c835eb	last=1f37c87 origin-pull/7107/head
