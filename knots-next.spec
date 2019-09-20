@@ -1,7 +1,7 @@
 timestamp 2019-08-23 19:59:31
 #lastapply no-merge
 
-#.. checked up to PR #16696
+#.. checked up to PR #16922
 
 checkout v0.18.1
 @0.18.x-syslibs
@@ -67,6 +67,8 @@ NM	15600 lockedpool_dontdump					616c756d2e
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
 	16525 rpc_unsigned_txver-0.18							last=e80259f197 matt/2019-07-unsigned-tx-ver
 	16578 qapp_dummy_argv-0.18.1
+	TODO: Check if 16796 is needed
+	TODO: Check if 16826 is needed
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					2cffda4afd	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -246,6 +248,7 @@ m	14641 fundraw_minconf-0.18					0bea20be04	last=a3991b7c0b promag/2018-11-fundr
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	16185 rpc_gettx_decode-0.18								last=9965940e35  # gettransaction: add an argument to decode the transaction
+TODO: 16866+16873
 	16248 whitelist_permissions-0.18.1+knots
 		# Minimised diff/API change
 		# includes bugfix 16618 NicolasDorier/fix/noban-banned
@@ -261,7 +264,18 @@ m	14641 fundraw_minconf-0.18					0bea20be04	last=a3991b7c0b promag/2018-11-fundr
 	# Probably requires 0.19? CHECK CAREFULLY 16554 fanquake/test_openssl_include
 	# FIXME: Needs rebase on HasPermission etc FIXME: Breaks p2p_blocksonly ; 16682 blocksonly_violators-0.18.1						last=5ff415d9af jnewbery/2019-08-disconnect-blocksonly-violators
 	16695 getctxstats_final_height-0.18  # rpc: Add window final block height to getchaintxstats
-	# Kept last to avoid rebase conflicts
+	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
+	# Needs intense review: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
+		# NOTE: deps on 16730
+	# TODO: Needs diff-minimisation at least: 16727 instagibbs:feerate_bumpfee
+	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
+	16760 -
+	16787 -
+	 16850 -
+	16795 instagibbs:decode_descriptor
+	# TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
+	16852 achow101/bip70-merchant-decode
+	16858 lightsword/bip70-message
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					1dbbc0ec2c
 	7107 qtnetworkport							37c2c835eb	last=1f37c87 origin-pull/7107/head
