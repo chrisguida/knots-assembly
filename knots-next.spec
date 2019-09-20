@@ -14,7 +14,7 @@ checkout v0.18.1
 	-     bugfix_asm_leveldb_check				e0cdc298d7
 	15155 test_external_bcli					65f35c7f7d
 	15970 bugfix_threadlocal_check-0.16
-	16228 bugfix_raii_check_fail
+	16564 raii_event_test_fix-0.14							last=b2c8450e6c
 @0.18.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
@@ -65,7 +65,7 @@ NM	15600 lockedpool_dontdump					616c756d2e
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	16212 bugfix_rm_addrdb_tmpfile-0.17
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
-	16525 rpc_unsigned_txver-0.18							last=970de70bdd matt/2019-07-unsigned-tx-ver
+	16525 rpc_unsigned_txver-0.18							last=e80259f197 matt/2019-07-unsigned-tx-ver
 	16578 qapp_dummy_argv-0.18.1
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					2cffda4afd	last=0c0550a01f gitian_power64
@@ -110,8 +110,13 @@ m	10594 whitelist_outgoing-0.18				9ed15cac6c
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	11256 rpc_mempoolentry_weight-0.17			a2eebb9211	last=d4b0d81b58
 	-     rpc_mempoolentry_txhash				cdbd81c59c
-NM	11413 explicit_fee							a7c5575359
-		# NOTE: Moved below...
+	# Only if needed: 16566 tolowerupper_string-0.18
+		# NOTE: Only added new functions, didn't remove/change old ones
+	11413 explicit_fee-0.18						a7c5575359	last=f54e33dc81 kallewoof/explicit-fee
+		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
+		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
+		# TODO: Relnotes changes - case insensitivity, (is RBF default new??)
+		# 0.19 TODO: Rebase/squash fixups (keep compat with "EXPLICIT"!)
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
@@ -233,35 +238,30 @@ m	14641 fundraw_minconf-0.18					0bea20be04	last=a3991b7c0b promag/2018-11-fundr
 	-	  rpc_gai_txids-0.18								last=621796da61 rpc_gai_txids
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	16083 rpc_getblock_prevouts_fees-0.18					last=dd83c4c925
+	16083 rpc_getblock_prevouts_fees-0.18+knots				last=dd83c4c925
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
 		# Renamed "coinbase" field to "generated"
 		# Renamed "fees" field to "fee"
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	16171 -  # gettransaction: add an argument to decode the transaction
-	16248 NicolasDorier/feature/permissions
-		TODO: add bugfix 16618 NicolasDorier:fix/noban-banned
-		TODO: add bugfix 16631 NicolasDorier:fix/default-whiterelay
-		TODO: maybe add 16629?
-	Minor revision needed? 16373 instagibbs:bump_psbt
+	16185 rpc_gettx_decode-0.18								last=9965940e35  # gettransaction: add an argument to decode the transaction
+	16248 whitelist_permissions-0.18.1+knots
+		# Minimised diff/API change
+		# includes bugfix 16618 NicolasDorier/fix/noban-banned
+		# includes bugfix 16631 NicolasDorier/fix/default-whiterelay
+		# TODO: maybe add 16629?
+	# FIXME: Minor revision needed? 16373 instagibbs:bump_psbt
 	# Needs review: 16377 Sjors:2019/07/walletcreatefundedpsbt_addinputs
 	# Needs review: 16378 Sjors:2019/07/send
 	# Needs review maybe: 16512 achow101:joinpsbt-rand
-	16523 -  # Add removemempoolentry RPC to evict transactions from the mempool
+	# Needs concept ACK and review: 16523 -  # Add removemempoolentry RPC to evict transactions from the mempool
 	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
-	CHECK CAREFULLY 16554 fanquake/test_openssl_include
-	16682 jnewbery/2019-08-disconnect-blocksonly-violators
-	16695 -  # rpc: Add window final block height to getchaintxstats
+	# Probably requires 0.19? CHECK CAREFULLY 16554 fanquake/test_openssl_include
+	# FIXME: Needs rebase on HasPermission etc FIXME: Breaks p2p_blocksonly ; 16682 blocksonly_violators-0.18.1						last=5ff415d9af jnewbery/2019-08-disconnect-blocksonly-violators
+	16695 getctxstats_final_height-0.18  # rpc: Add window final block height to getchaintxstats
 	# Kept last to avoid rebase conflicts
-	16566 tolowerupper_string-0.18
-		# NOTE: Only added, didn't remove/change stuff
-	11413 explicit_fee-0.18									last=c109001c9b kallewoof/explicit-fee
-		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
-		# TODO: Relnotes changes - case insensitivity, (is RBF default new??)
-		# 0.19 TODO: Rebase/squash fixups (keep compat with "EXPLICIT"!)
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					1dbbc0ec2c
 	7107 qtnetworkport							37c2c835eb	last=1f37c87 origin-pull/7107/head
@@ -278,18 +278,18 @@ m	11082 rwconf-0.18							25849bae73	# Latest code now
 	# 0.19 TODO: Revert 16171 to restore opt-in RBF option
 	7219 txrepl_fullrbf							3775514e83
 	# TODO: some way to add UA comments via rwconf
-	12146 opt_wallet_segwit2					30484295d7
+m	12146 opt_wallet_segwit2					30484295d7
 	10282 timebomb_knots						b1ebfba56c
 m	-     gui_wallet_displayname-0.18			11c8ba9186	# Latest code now
 	-     recv_addrbook_refer_button-0.9		c867e094f2
 	n/a  checkpoint_update-0.18					0a993c9993
 	# 0.19 TODO: revert "Request payment" rename
-	16153 -  # Qt: Add antialiasing to traffic graph widget
-	NEEDS FIXUP/REPLACE 16432 qt: Add privacy to the Overview page
-	Parts of? 16442 Neutrino
+	16153 traffic_antialias-0.18  # Qt: Add antialiasing to traffic graph widget
+	# NEEDS FIXUP/REPLACE 16432 qt: Add privacy to the Overview page
+	# Requires complex FlatFile refactoring: Parts of? 14121+16442 Neutrino
 	# Needs review: 16463 achow101:bip174-xpub
-	Minimised 16490 MarcoFalke:1907-rpcMempoolWhyReplacable
-	Needs work? 16492 rpc: Add feeRate argument to bumpFee RPC
+	# Needs to be rational: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
+	# TODO: Needs work? 16492 rpc: Add feeRate argument to bumpFee RPC
 	# 0.19 TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
@@ -309,12 +309,16 @@ m	9749 unique_spk_mempool-0.18+knots			405e820d5b
 	n/a  knots_branding-0.18					bf23ad4632
 	FIXME: do we need 16595?
 #FIXME: Check includes use <>
+CHECK: Ensure that all new RPC params increment the param count checks (since that's automagic on master)
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=15b62fa32bd3eaced3)		2ff17d1019	# doc/{bips,files}
 	n/a  (bump_version=Knots:20190823)			f9d6f03e9f
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=abba613227)				f80967ffb4  # release notes: write/update, including change log and credits
 			# b/doc/release-notes-14802.md
+			# origin-pull/16525/head doc/release-notes-16525.md
+			# doc/release-notes-16695.md
+			# origin-pull/16185/head
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
