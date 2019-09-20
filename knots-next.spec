@@ -307,12 +307,11 @@ m	9749 unique_spk_mempool-0.18+knots			405e820d5b
 	7483 svg_icon-0.18+knots					f895baf6fa
 # BRANDING:
 	n/a  knots_branding-0.18					bf23ad4632
-	FIXME: do we need 16595?
 #FIXME: Check includes use <>
-CHECK: Ensure that all new RPC params increment the param count checks (since that's automagic on master)
+#<0.19 CHECK: Ensure that all new RPC params increment the param count checks (since that's automagic on master)
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=15b62fa32bd3eaced3)		2ff17d1019	# doc/{bips,files}
-	n/a  (bump_version=Knots:20190823)			f9d6f03e9f
+	n/a  (bump_version=Knots:20190920)			f9d6f03e9f
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=abba613227)				f80967ffb4  # release notes: write/update, including change log and credits
 			# b/doc/release-notes-14802.md
