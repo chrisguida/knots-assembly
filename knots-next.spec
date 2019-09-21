@@ -67,8 +67,7 @@ NM	15600 lockedpool_dontdump					616c756d2e
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
 	16525 rpc_unsigned_txver-0.18							last=e80259f197 matt/2019-07-unsigned-tx-ver
 	16578 qapp_dummy_argv-0.18.1
-	TODO: Check if 16796 is needed
-	TODO: Check if 16826 is needed
+	16826 escape_wallet_name-0.18.1
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					2cffda4afd	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -227,6 +226,7 @@ m	14641 fundraw_minconf-0.18					0bea20be04	last=a3991b7c0b promag/2018-11-fundr
 	# Complex rebase: 15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
 	# Needs concept ACK and review: 15873 Rpc removemempoolentry
 	# Needs concept ACK and review: 15886 hebasto:20190424-send-confirmation-dialog
+		# NOTE: +16826 fix
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
 	15932 rpc_getblock_relax_lock-0.18			8e5a518c6f	last=faea56400d marco/1905-rpcBlockNoLock
 		# NOTE: Held back lock annotations/asserts in case other callers don't respect the expectations
@@ -248,7 +248,7 @@ m	14641 fundraw_minconf-0.18					0bea20be04	last=a3991b7c0b promag/2018-11-fundr
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	16185 rpc_gettx_decode-0.18								last=9965940e35  # gettransaction: add an argument to decode the transaction
-TODO: 16866+16873
+		#+16866+16873 fixes
 	16248 whitelist_permissions-0.18.1+knots
 		# Minimised diff/API change
 		# includes bugfix 16618 NicolasDorier/fix/noban-banned
@@ -269,13 +269,14 @@ TODO: 16866+16873
 		# NOTE: deps on 16730
 	# TODO: Needs diff-minimisation at least: 16727 instagibbs:feerate_bumpfee
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
-	16760 -
-	16787 -
-	 16850 -
-	16795 instagibbs:decode_descriptor
+	16760 uninstall_icon-0.9
+	16787 servicesnames-0.18.1
+		# +16850 test
+	16795 rpc_spk_decode_desc-0.18							last=9b9459640d instagibbs/decode_descriptor
 	# TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
-	16852 achow101/bip70-merchant-decode
-	16858 lightsword/bip70-message
+	16852 bip70_merchant_decode-0.17						last=fc295e4207 achow101/bip70-merchant-decode
+		# NOTE: Patched with fix 90840e907c
+	16858 bip70_message-0.18
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					1dbbc0ec2c
 	7107 qtnetworkport							37c2c835eb	last=1f37c87 origin-pull/7107/head
@@ -329,9 +330,10 @@ m	9749 unique_spk_mempool-0.18+knots			405e820d5b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=abba613227)				f80967ffb4  # release notes: write/update, including change log and credits
 			# b/doc/release-notes-14802.md
+			# origin-pull/16787/head b/doc/release-notes-16787.md
+			# origin-pull/16873/head doc/release-notes-16185.md
 			# origin-pull/16525/head doc/release-notes-16525.md
 			# doc/release-notes-16695.md
-			# origin-pull/16185/head
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
