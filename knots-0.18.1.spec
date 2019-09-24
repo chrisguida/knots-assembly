@@ -14,7 +14,7 @@ checkout v0.18.1
 	-     bugfix_asm_leveldb_check				e0cdc298d7
 	15155 test_external_bcli					65f35c7f7d
 	15970 bugfix_threadlocal_check-0.16
-	16564 raii_event_test_fix-0.14							last=b2c8450e6c
+	16564 raii_event_test_fix-0.14							last=9a19c9ada5
 @0.18.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
@@ -271,7 +271,7 @@ m	14641 fundraw_minconf-0.18					0bea20be04	last=a3991b7c0b promag/2018-11-fundr
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16760 uninstall_icon-0.9
 	16787 servicesnames-0.18.1
-		# +16850 test
+		# +16850 test +16936 test fix
 	16795 rpc_spk_decode_desc-0.18							last=9b9459640d instagibbs/decode_descriptor
 	# TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
 	16852 bip70_merchant_decode-0.17						last=fc295e4207 achow101/bip70-merchant-decode
@@ -295,7 +295,7 @@ m	11082 rwconf-0.18							25849bae73	# Latest code now
 	# TODO: some way to add UA comments via rwconf
 m	12146 opt_wallet_segwit2					30484295d7
 	10282 timebomb_knots						b1ebfba56c
-m	-     gui_wallet_displayname-0.18			11c8ba9186	# Latest code now
+m	-     gui_wallet_displayname-0.18+knots		11c8ba9186	# Latest code now
 	-     recv_addrbook_refer_button-0.9		c867e094f2
 	n/a  checkpoint_update-0.18					0a993c9993
 	# 0.19 TODO: revert "Request payment" rename
@@ -328,7 +328,7 @@ m	9749 unique_spk_mempool-0.18+knots			405e820d5b
 	n/a  (cherrypick=15b62fa32bd3eaced3)		2ff17d1019	# doc/{bips,files}
 	n/a  (bump_version=Knots:20190920)			f9d6f03e9f
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=abba613227)				f80967ffb4  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=e807f2558a)				f80967ffb4  # release notes: write/update, including change log and credits
 			# b/doc/release-notes-14802.md
 			# origin-pull/16787/head b/doc/release-notes-16787.md
 			# origin-pull/16873/head doc/release-notes-16185.md
@@ -341,8 +341,8 @@ m	9749 unique_spk_mempool-0.18+knots			405e820d5b
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=943d2bd98d)				bdbe9f59e5  # translation update
-	n/a  (cherrypick=a31010bd73)				5e1c2d13f5	# update manpages (build first)
+	n/a  (cherrypick=1f3359bfec)				bdbe9f59e5  # translation update
+	n/a  (cherrypick=de8a068d8e)				5e1c2d13f5	# update manpages (build first)
 # NOTE: use git diff --minimal for patches!
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
