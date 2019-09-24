@@ -14,7 +14,7 @@ checkout v0.18.1
 	-     bugfix_asm_leveldb_check				d3529cd537
 	15155 test_external_bcli					05ac01eb15
 	15970 bugfix_threadlocal_check-0.16			e78b17c11b
-	16564 raii_event_test_fix-0.14				6358a0d1c9							last=9a19c9ada5
+	16564 raii_event_test_fix-0.14				6358a0d1c9	last=9a19c9ada5
 @0.18.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
@@ -65,7 +65,7 @@ NM	15600 lockedpool_dontdump					3cfe7675a7
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	16212 bugfix_rm_addrdb_tmpfile-0.17			65f279d5d6
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
-	16525 rpc_unsigned_txver-0.18				363d2b8910							last=e80259f197 matt/2019-07-unsigned-tx-ver
+	16525 rpc_unsigned_txver-0.18				363d2b8910	last=e80259f197 matt/2019-07-unsigned-tx-ver
 	16578 qapp_dummy_argv-0.18.1				0fa9cd7216
 	16826 escape_wallet_name-0.18.1				15ef2a3b45
 # FUNCTIONALITY:
@@ -102,7 +102,7 @@ m	8751 sort-multisigs-0.18					40af219ca8	last=e11cb50a09  # multisig sorting
 	12674 rpc_onetry_nonpriv					e990290011
 	10593 relax_invblk_punishment				e37459ded9
 m	10594 whitelist_outgoing-0.18				f886df3bd1
-		# 0.9 TODO: Revert 16555
+		# 0.19 TODO: Revert 16555
 	10350 filtered_witblock-0.17				7cb073403f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
@@ -236,18 +236,18 @@ m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundr
 		# NOTE: excluded various refactoring and deprecation
 	# Needs QA/reivew: 15946 jonasschnelli:2019/05/prune_blockfilter
 	15986 gdi_checksum-0.18						c5f16303de
-	15987 wallet_no_reuse-0.18+knots			aca83094ee						last=545af217ae wallet_no_reuse
-	-	  rpc_gai_txids-0.18						4ea59f5b23								last=621796da61 rpc_gai_txids
+	15987 wallet_no_reuse-0.18+knots			aca83094ee	last=545af217ae wallet_no_reuse
+	-     rpc_gai_txids-0.18					4ea59f5b23	last=621796da61 rpc_gai_txids
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	16083 rpc_getblock_prevouts_fees-0.18+knots	9bffa80d67				last=dd83c4c925
+	16083 rpc_getblock_prevouts_fees-0.18+knots	9bffa80d67	last=dd83c4c925
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
 		# Renamed "coinbase" field to "generated"
 		# Renamed "fees" field to "fee"
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	16185 rpc_gettx_decode-0.18					7ff8000a87								last=9965940e35  # gettransaction: add an argument to decode the transaction
+	16185 rpc_gettx_decode-0.18					7ff8000a87	last=9965940e35  # gettransaction: add an argument to decode the transaction
 		#+16866+16873 fixes
 	16248 whitelist_permissions-0.18.1+knots	434f20eee4
 		# Minimised diff/API change
@@ -272,9 +272,9 @@ m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundr
 	16760 uninstall_icon-0.9					666c139f13
 	16787 servicesnames-0.18.1					f831f4d0a0
 		# +16850 test +16936 test fix
-	16795 rpc_spk_decode_desc-0.18				0e03fd739b							last=9b9459640d instagibbs/decode_descriptor
+	16795 rpc_spk_decode_desc-0.18				0e03fd739b	last=9b9459640d instagibbs/decode_descriptor
 	# TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
-	16852 bip70_merchant_decode-0.17			27bda22c4f						last=fc295e4207 achow101/bip70-merchant-decode
+	16852 bip70_merchant_decode-0.17			27bda22c4f	last=fc295e4207 achow101/bip70-merchant-decode
 		# NOTE: Patched with fix 90840e907c
 	16858 bip70_message-0.18					afa033e424
 # Non-upstreamed functionality:

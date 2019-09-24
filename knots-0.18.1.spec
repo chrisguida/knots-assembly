@@ -102,7 +102,7 @@ m	8751 sort-multisigs-0.18					423894f629	last=e11cb50a09  # multisig sorting
 	12674 rpc_onetry_nonpriv					5878f860d4
 	10593 relax_invblk_punishment				ff31141b72
 m	10594 whitelist_outgoing-0.18				9ed15cac6c
-		# 0.9 TODO: Revert 16555
+		# 0.19 TODO: Revert 16555
 	10350 filtered_witblock-0.17				461d614dbc	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
