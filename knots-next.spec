@@ -3,6 +3,8 @@ timestamp 2019-08-23 19:59:31
 
 #.. checked up to PR #16922
 
+TODO: add last= to upstream-direct PRs to enforce review of changes
+
 checkout v0.18.1
 @0.18.x-syslibs
 	5872 subdir_incl_compat						434600ecad
@@ -68,6 +70,11 @@ NM	15600 lockedpool_dontdump					3cfe7675a7
 	16525 rpc_unsigned_txver-0.18				363d2b8910	last=e80259f197 matt/2019-07-unsigned-tx-ver
 	16578 qapp_dummy_argv-0.18.1				0fa9cd7216
 	16826 escape_wallet_name-0.18.1				15ef2a3b45
+
+[19:29:09] <wumpus> #16817 is just a simple argument casing change so no worries it can go in
+[19:29:10] <gribble> https://github.com/bitcoin/bitcoin/issues/16817 | rpc: Fix casing in getblockchaininfo to be inline with other fields by dangershony · Pull Request #16817 · bitcoin/bitcoin · GitHub
+[19:29:47] <wumpus> (but it's critical that it gets into 0.19, because otherwise there will be version incompatiblity)
+
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					6d990c68b6	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
@@ -281,7 +288,7 @@ m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundr
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.18+knots				19d9a62fee  # Latest code now
-m	11082 rwconf-0.18							f5d5d15cfa	# Latest code now
+m	11082 rwconf-0.18							f5d5d15cfa	last=aa30cb79cd rwconf
 	7510 rwconf_gui-0.18+knots					74d4579901	# Latest code now
 	5916 legacy_keyorigin						4e26398609
 	 559 accept_nonstdtxn						dd0f34238f
