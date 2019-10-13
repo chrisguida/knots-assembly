@@ -3,8 +3,6 @@ timestamp 2019-08-23 19:59:31
 
 #.. checked up to PR #16922
 
-TODO: add last= to upstream-direct PRs to enforce review of changes
-
 checkout v0.18.1
 @0.18.x-syslibs
 	5872 subdir_incl_compat						434600ecad
@@ -26,17 +24,17 @@ checkout v0.18.1
 	15920 nowallet_hiddenargs_linter-0.18		43c36879b2
 # FIXES:
 NM	15913 bugfix_nowallet_avoidpspends-0.18		ccc2fa8076
-	14968 laanwj/2018_12_http_bind_error		9d197f0974
+	14968 laanwj/2018_12_http_bind_error		9d197f0974	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					af253f6c66
-	9524 marco/Mf1701-qaPruning					1be48502ae
+	9524 marco/Mf1701-qaPruning					1be48502ae	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					ee1783a25a
 	14485 fadvise								a4db9bcd5b
 		# Was #12491
 	14501 fsync_dir								6ede1fd5bb
 		# Was #12696
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
-	13084 sipa/201804_keepnegone				fd7f1de223
-	13608 -										b34192bdae  # bitcoin-tx: Require that input amount is provided for witness transactions
+	13084 sipa/201804_keepnegone				fd7f1de223	last=5af7625079 sipa/201804_keepnegone
+	13608 -										b34192bdae	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs fix?? 13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 	-     bugfix_rpc_getbalance_hacky			58b6b3f646
 	# FIX THE BELOW:
@@ -45,7 +43,7 @@ NM	15913 bugfix_nowallet_avoidpspends-0.18		ccc2fa8076
 	#	FIXME: jnewbery found a bug :<
 TM	14818 bugfix_test_rpc_psbt					b978c7bc04
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
-	15103 lightsword/getentropy-weak			f985848660
+	15103 lightsword/getentropy-weak			f985848660	last=a7c7fee2e4 lightsword/getentropy-weak
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
@@ -132,7 +130,7 @@ m	10594 whitelist_outgoing-0.18				f886df3bd1
 		# NOTE: deviated from PR
 	11765 rest_blockhash_compat-0.18			4b9b23078e	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
 		# Superceded by blockhashbyheight, so now just a backward compatibility hack
-	11770 -										83746da5d2  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11770 -										83746da5d2	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			2d9fd86ada
 	# Complicated, needs maturity in git and careful rebasing: 15557 instagibbs:bumpall
 m	12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
@@ -197,8 +195,8 @@ m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundr
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
 	15323 getmempoolinfo_loaded-0.18			744a6b4ff7	last=effe81f750
 		# Held back refactoring
-	15367 -										4078797ded	# feature: Added ability for users to add a startup command
-	15371 -										7ae0970823	# gui: Uppercase bech32 addresses in qr codes
+	15367 -										4078797ded	last=b515ccfba6	# feature: Added ability for users to add a startup command
+	15371 -										7ae0970823	last=3407b446cc	# gui: Uppercase bech32 addresses in qr codes
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	# TODO: 15421 tor_subprocess
 	#	Needs boost::process check
