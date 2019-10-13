@@ -1,19 +1,17 @@
 timestamp 2019-08-23 19:59:31
-#lastapply no-merge
+lastapply no-merge
 
 #.. checked up to PR #16922
 
-checkout v0.18.1
+checkout 0.19
 @0.18.x-syslibs
 	5872 subdir_incl_compat						434600ecad
 	2241 sys_leveldb-0.17						b3b13f6369
 	5416 sys_libsecp256k1						2b14d06dcf
 	7485 sys_univalue_def						250baa60da
-	13788 bugfix_asm_opt						103786212b
 	13789 bugfix_asm_pragmas					6404ba7d9e
 	-     bugfix_asm_leveldb_check				d3529cd537
 	15155 test_external_bcli					05ac01eb15
-	15970 bugfix_threadlocal_check-0.16			e78b17c11b
 	16564 raii_event_test_fix-0.14				6358a0d1c9	last=9a19c9ada5
 @0.18.x-knots
 # TESTS:
@@ -21,7 +19,6 @@ checkout v0.18.1
 	-     lint_relaxer							72bfd12414
 	# Needs review: 15134 practicalswift:unsigned-char
 	15888 test_wallet_implicitsegwit			e5db67d94a
-	15920 nowallet_hiddenargs_linter-0.18		43c36879b2
 # FIXES:
 NM	15913 bugfix_nowallet_avoidpspends-0.18		ccc2fa8076
 	14968 laanwj/2018_12_http_bind_error		9d197f0974	last=7b5e4001f9 laanwj/2018_12_http_bind_error
@@ -47,27 +44,15 @@ TM	14818 bugfix_test_rpc_psbt					b978c7bc04
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
-	15558 dnsoneatatime-0.18					ae2bd0a72c	last=6170ec5d3a sipa/201903_dnsoneatatime
-		# NOTE: Diff-minimised
 NM	15600 lockedpool_dontdump					3cfe7675a7
-	15651 tor_standard_port						9d84aae469
-	15650 fallocate_check-0.18+knots			338f53c813	last=5d35ae3326
-	15896 qa_pkgname-0.18						c598779b16	last=fcc443b636 qa_pkgname
-	15897 qa_mininode_headers					9c26b719b3
 	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
 	15911 wcreatefundedpsbt_rbf_fix-0.18		dcaab287bb	last=d6b3640ac7
 		# NOTE: Held back removal of "fallback to" since that's not really part of this fix
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
-	16646 test_without_upnp-0.17				c8d2644d66
 	# Needs review: 16050 promag:2019-05-importmulti-update
-	16090 peerdetail_vertspacer-0.18			0d4e26b5af  # Qt: Add vertical spacer to peer detail widget
 	# Needs review: 16161 util: Fix compilation errors in support/lockedpool.cpp
 	# Likely impossible: 16199 fix coinjoin sends in RPC
-	16212 bugfix_rm_addrdb_tmpfile-0.17			65f279d5d6
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
-	16525 rpc_unsigned_txver-0.18				363d2b8910	last=e80259f197 matt/2019-07-unsigned-tx-ver
-	16578 qapp_dummy_argv-0.18.1				0fa9cd7216
-	16826 escape_wallet_name-0.18.1				15ef2a3b45
 
 [19:29:09] <wumpus> #16817 is just a simple argument casing change so no worries it can go in
 [19:29:10] <gribble> https://github.com/bitcoin/bitcoin/issues/16817 | rpc: Fix casing in getblockchaininfo to be inline with other fields by dangershony · Pull Request #16817 · bitcoin/bitcoin · GitHub
@@ -114,7 +99,6 @@ m	10594 whitelist_outgoing-0.18				f886df3bd1
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
-	11256 rpc_mempoolentry_weight-0.17			1c47134d81	last=d4b0d81b58
 	-     rpc_mempoolentry_txhash				c29eeb585f
 	# Only if needed: 16566 tolowerupper_string-0.18
 		# NOTE: Only added new functions, didn't remove/change old ones
@@ -193,10 +177,7 @@ m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundr
 		# Moved init around to avoid conflict w/ 15367
 	# Let Core go first? 15224 sipa:201901_rand_strengthen
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
-	15323 getmempoolinfo_loaded-0.18			744a6b4ff7	last=effe81f750
-		# Held back refactoring
 	15367 -										4078797ded	last=b515ccfba6	# feature: Added ability for users to add a startup command
-	15371 -										7ae0970823	last=3407b446cc	# gui: Uppercase bech32 addresses in qr codes
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	# TODO: 15421 tor_subprocess
 	#	Needs boost::process check
@@ -218,7 +199,6 @@ m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundr
 		# NOTE: added test fix
 	# Needs review and use case? 15703 sipa:201903_secp256k1
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
-	15730 getwalletinfo_scanning-0.18			3247a55474	last=b6c748f849 promag/2019-04-getwalletinfo-scanning
 	# Needs concept ack: 15756 promag:2019-04-tools-shortcuts
 	# Needs concept ack: 15759 sdaftuar:2019-03-blocksonly-edges
 	# Needs review: 15768 -													# gui: Add CMD+W shortcut in macOS
@@ -233,14 +213,9 @@ m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundr
 	# Needs concept ACK and review: 15886 hebasto:20190424-send-confirmation-dialog
 		# NOTE: +16826 fix
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
-	15932 rpc_getblock_relax_lock-0.18			08d43e8439	last=faea56400d marco/1905-rpcBlockNoLock
-		# NOTE: Held back lock annotations/asserts in case other callers don't respect the expectations
-	15623 expose_readundo-0.18					c1e2ca425f
-	14802 getblockstats_wo_txindex-0.18			5d36ad64b9  # rpc: faster getblockstats using BlockUndo data
 	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac marco/1904-rpcWalletBalances
 		# NOTE: excluded various refactoring and deprecation
 	# Needs QA/reivew: 15946 jonasschnelli:2019/05/prune_blockfilter
-	15986 gdi_checksum-0.18						c5f16303de
 	15987 wallet_no_reuse-0.18+knots			aca83094ee	last=545af217ae wallet_no_reuse
 	-     rpc_gai_txids-0.18					4ea59f5b23	last=621796da61 rpc_gai_txids
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
@@ -252,13 +227,6 @@ m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundr
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	16185 rpc_gettx_decode-0.18					7ff8000a87	last=9965940e35  # gettransaction: add an argument to decode the transaction
-		#+16866+16873 fixes
-	16248 whitelist_permissions-0.18.1+knots	434f20eee4
-		# Minimised diff/API change
-		# includes bugfix 16618 NicolasDorier/fix/noban-banned
-		# includes bugfix 16631 NicolasDorier/fix/default-whiterelay
-		# TODO: maybe add 16629?
 	# FIXME: Minor revision needed? 16373 instagibbs:bump_psbt
 	# Needs review: 16377 Sjors:2019/07/walletcreatefundedpsbt_addinputs
 	# Needs review: 16378 Sjors:2019/07/send
@@ -268,20 +236,15 @@ m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundr
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# Probably requires 0.19? CHECK CAREFULLY 16554 fanquake/test_openssl_include
 	# FIXME: Needs rebase on HasPermission etc FIXME: Breaks p2p_blocksonly ; 16682 blocksonly_violators-0.18.1						last=5ff415d9af jnewbery/2019-08-disconnect-blocksonly-violators
-	16695 getctxstats_final_height-0.18			d36d817245  # rpc: Add window final block height to getchaintxstats
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs intense review: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
 		# NOTE: deps on 16730
 	# TODO: Needs diff-minimisation at least: 16727 instagibbs:feerate_bumpfee
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
-	16760 uninstall_icon-0.9					666c139f13
-	16787 servicesnames-0.18.1					f831f4d0a0
-		# +16850 test +16936 test fix
 	16795 rpc_spk_decode_desc-0.18				0e03fd739b	last=9b9459640d instagibbs/decode_descriptor
 	# TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
 	16852 bip70_merchant_decode-0.17			27bda22c4f	last=fc295e4207 achow101/bip70-merchant-decode
 		# NOTE: Patched with fix 90840e907c
-	16858 bip70_message-0.18					afa033e424
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
@@ -304,7 +267,6 @@ m	-     gui_wallet_displayname-0.18+knots		9d8ff1e11d	# Latest code now
 	-     recv_addrbook_refer_button-0.9		ccb7f4d528
 	n/a  checkpoint_update-0.18					b6067d8662
 	# 0.19 TODO: revert "Request payment" rename
-	16153 traffic_antialias-0.18				68133654de  # Qt: Add antialiasing to traffic graph widget
 	# NEEDS FIXUP/REPLACE 16432 qt: Add privacy to the Overview page
 	# Requires complex FlatFile refactoring: Parts of? 14121+16442 Neutrino
 	# Needs review: 16463 achow101:bip174-xpub
@@ -328,17 +290,11 @@ m	9749 unique_spk_mempool-0.18+knots			3a8aafc37e
 # BRANDING:
 	n/a  knots_branding-0.18					8510f8d367
 #FIXME: Check includes use <>
-#<0.19 CHECK: Ensure that all new RPC params increment the param count checks (since that's automagic on master)
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=15b62fa32bd3eaced3)		7048a6755f	# doc/{bips,files}
 	n/a  (bump_version=Knots:20190920)			ec3e4d8ce6
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=0595ac1bf8)				f4af8df41d  # release notes: write/update, including change log and credits
-			# b/doc/release-notes-14802.md
-			# origin-pull/16787/head b/doc/release-notes-16787.md
-			# origin-pull/16873/head doc/release-notes-16185.md
-			# origin-pull/16525/head doc/release-notes-16525.md
-			# doc/release-notes-16695.md
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
