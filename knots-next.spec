@@ -6,7 +6,7 @@ lastapply no-merge
 checkout 0.19
 @0.18.x-syslibs
 	5872 subdir_incl_compat						434600ecad
-	2241 sys_leveldb-0.17						b3b13f6369
+	2241 sys_leveldb							b3b13f6369
 	5416 sys_libsecp256k1						2b14d06dcf
 	7485 sys_univalue_def						250baa60da
 	13789 bugfix_asm_pragmas					6404ba7d9e
@@ -20,7 +20,6 @@ checkout 0.19
 	# Needs review: 15134 practicalswift:unsigned-char
 	15888 test_wallet_implicitsegwit			e5db67d94a
 # FIXES:
-NM	15913 bugfix_nowallet_avoidpspends-0.18		ccc2fa8076
 	14968 laanwj/2018_12_http_bind_error		9d197f0974	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					af253f6c66
 	9524 marco/Mf1701-qaPruning					1be48502ae	last=88883ae13d marco/Mf1701-qaPruning
@@ -38,13 +37,11 @@ NM	15913 bugfix_nowallet_avoidpspends-0.18		ccc2fa8076
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
 	#	FIXME: jnewbery found a bug :<
-TM	14818 bugfix_test_rpc_psbt					b978c7bc04
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
 	15103 lightsword/getentropy-weak			f985848660	last=a7c7fee2e4 lightsword/getentropy-weak
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
-NM	15600 lockedpool_dontdump					3cfe7675a7
 	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
 	15911 wcreatefundedpsbt_rbf_fix-0.18		dcaab287bb	last=d6b3640ac7
 		# NOTE: Held back removal of "fallback to" since that's not really part of this fix
