@@ -43,27 +43,20 @@ checkout 0.19
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
 	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
-	15911 wcreatefundedpsbt_rbf_fix-0.18		dcaab287bb	last=d6b3640ac7
-		# NOTE: Held back removal of "fallback to" since that's not really part of this fix
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Needs review: 16161 util: Fix compilation errors in support/lockedpool.cpp
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
-
-[19:29:09] <wumpus> #16817 is just a simple argument casing change so no worries it can go in
-[19:29:10] <gribble> https://github.com/bitcoin/bitcoin/issues/16817 | rpc: Fix casing in getblockchaininfo to be inline with other fields by dangershony · Pull Request #16817 · bitcoin/bitcoin · GitHub
-[19:29:47] <wumpus> (but it's critical that it gets into 0.19, because otherwise there will be version incompatiblity)
-
 # FUNCTIONALITY:
-	14066 gitian_power64-0.18					6d990c68b6	last=0c0550a01f gitian_power64
+	14066 gitian_power64						6d990c68b6
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-m	8751 sort-multisigs-0.18					40af219ca8	last=e11cb50a09  # multisig sorting
+m	8751 sort-multisigs							40af219ca8	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							97cd6e86fb
