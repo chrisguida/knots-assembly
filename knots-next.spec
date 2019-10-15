@@ -61,11 +61,11 @@ m	8751 sort-multisigs							40af219ca8	last=e11cb50a09  # multisig sorting
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							97cd6e86fb
 	15704 win32_defines_globally				0a83c3994e
-	9245 ionice									b0568326a4
-	-    ionice_win								060cf0ad7c
-	8501 old_stats_rpc-0.18						6e84daee87	last=7af0ea43b2
+	9245 ionice-0.19							b0568326a4	last=e1276957ed2 ionice
+	-    ionice_win-0.19						060cf0ad7c
+	8501 old_stats_rpc-0.19						6e84daee87	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
-	8550 old_stats_qt-0.18						406317cf3e	last=63fb11652f
+	8550 old_stats_qt-0.19						406317cf3e	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9422 mempool_dat_extensible					16f1a3cb13
 	9504 dumpmasterprivkey-0.18					c1f213cf46	last=07fc81109a
@@ -279,6 +279,7 @@ m	9749 unique_spk_mempool-0.18+knots			3a8aafc37e
 	7483 svg_icon-0.18+knots					8f7b63e470
 # BRANDING:
 	n/a  knots_branding-0.18					8510f8d367
+FIXME: Check there are no menu icons
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=15b62fa32bd3eaced3)		7048a6755f	# doc/{bips,files}
