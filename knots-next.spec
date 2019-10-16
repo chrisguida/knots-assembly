@@ -56,7 +56,7 @@ checkout 0.19
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-m	8751 sort-multisigs							40af219ca8	last=e11cb50a09  # multisig sorting
+	8751 sort-multisigs							40af219ca8	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							97cd6e86fb
@@ -78,10 +78,11 @@ m	8751 sort-multisigs							40af219ca8	last=e11cb50a09  # multisig sorting
 	10615 multiwallet_rpc						16c4cd90dd
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
-	10554 zmq_wtx-0.18							af3259e141	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-0.19							af3259e141	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	12674 rpc_onetry_nonpriv					e990290011
 	10593 relax_invblk_punishment				e37459ded9
-m	10594 whitelist_outgoing-0.18				f886df3bd1
+#TODO: Split this up
+	10594 whitelist_outgoing-0.18				f886df3bd1
 		# 0.19 TODO: Revert 16555
 	10350 filtered_witblock-0.17				7cb073403f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
@@ -107,7 +108,7 @@ m	10594 whitelist_outgoing-0.18				f886df3bd1
 	11770 -										83746da5d2	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			2d9fd86ada
 	# Complicated, needs maturity in git and careful rebasing: 15557 instagibbs:bumpall
-m	12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
+	12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 		# NOTE: Competing with #15341
 	12677 listunspent_ancestorinfo				37da54f98e
@@ -143,7 +144,7 @@ m	12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	14137 win_taskbar_progress-0.18+knots		99de8ff722	last=18eb4dbb8a
 	15023 gui_node_rpcconsole-0.18+knots		75def5db94	last=f33efa8ec5 gui_node_rpcconsole  # PART OF c52c82eb6f
-m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundrawtransaction
+	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundrawtransaction
 		# NOTE: backported 2 lines from #15557's 0ea47ba7b3 as 76cd3c48e2
 		# NOTE: held back .gitignore nonsense change & relnotes
 	14687 zmqkeepalive-0.18+knots				36c11d18bb	last=c276df7759
@@ -239,7 +240,7 @@ m	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundr
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.18+knots				19d9a62fee  # Latest code now
-m	11082 rwconf-0.18							f5d5d15cfa	last=aa30cb79cd rwconf
+	11082 rwconf-0.18							f5d5d15cfa	last=aa30cb79cd rwconf
 	7510 rwconf_gui-0.18+knots					74d4579901	# Latest code now
 	5916 legacy_keyorigin						4e26398609
 	 559 accept_nonstdtxn						dd0f34238f
@@ -251,9 +252,9 @@ m	11082 rwconf-0.18							f5d5d15cfa	last=aa30cb79cd rwconf
 	# 0.19 TODO: Revert 16171 to restore opt-in RBF option
 	7219 txrepl_fullrbf							e6803520a3
 	# TODO: some way to add UA comments via rwconf
-m	12146 opt_wallet_segwit2					15f192dfb5
+	12146 opt_wallet_segwit2					15f192dfb5
 	10282 timebomb_knots						aca5337519
-m	-     gui_wallet_displayname-0.18+knots		9d8ff1e11d	# Latest code now
+	-     gui_wallet_displayname-0.18+knots		9d8ff1e11d	# Latest code now
 	-     recv_addrbook_refer_button-0.9		ccb7f4d528
 	n/a  checkpoint_update-0.18					b6067d8662
 	# 0.19 TODO: revert "Request payment" rename
@@ -267,7 +268,7 @@ m	-     gui_wallet_displayname-0.18+knots		9d8ff1e11d	# Latest code now
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				6cd540a25f
 	-	 bytespersigopstrict-0.18+knots			95d95fa3e3
-m	9749 unique_spk_mempool-0.18+knots			3a8aafc37e
+	9749 unique_spk_mempool-0.18+knots			3a8aafc37e
 	15846 sendtofuture-0.18+knots				4b92379ff1	last=c634b1e207 sipa/201904_futuresegwitstandard
 		# NOTE: made optional, and added to rwconf_policy
 	-    rwconf_policy-0.18+knots				eb81c91962
