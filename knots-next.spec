@@ -82,8 +82,8 @@ checkout 0.19
 	12674 rpc_onetry_nonpriv					e990290011
 	10593 relax_invblk_punishment				e37459ded9
 #TODO: Split this up
-	10594 whitelist_outgoing-0.18				f886df3bd1
-		# 0.19 TODO: Revert 16555
+	10594 whitelist_outgoing-mini-0.19+knots	f886df3bd1	last=17bf6da923d whitelist_outgoing  # via whitelist_outgoing-mini
+FIXME: Minify, and adapt default to in+out for Knots
 	10350 filtered_witblock-0.17				7cb073403f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
