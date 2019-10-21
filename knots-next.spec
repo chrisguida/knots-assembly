@@ -112,22 +112,18 @@ checkout 0.19
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	12763 rpcwhitelist-0.19						68d8b186de	last=8c45d93b0e
 	# TODO ? 12792 w/ renamed param
-	12911 signrawtx_showfees-0.18				7035643906	last=bba2e57c76 kallewoof/sign-show-fees
-	12965 scriptthreads-0.18					874c6e06f8	last=dfab6c6866 jonas/2018/04/svt
-	15637 rpc_mempool_vsize-0.18+knots			107e4810ee	last=e16b6a7188  # rpc: Rename size to vsize in mempool related calls
-		# NOTE: Minified & made deprecation softer
-		# NOTE: was #13008
+	12911 signrawtx_showfees-0.19				7035643906	last=bba2e57c76 kallewoof/sign-show-fees
+	12965 scriptthreads-0.19					874c6e06f8	last=dfab6c6866 jonas/2018/04/svt
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
 	13203 dsha256_power8-0.17					9e854a5fe2	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		8b4a5fb58f
-	13339 walletnotify_w-0.18					98d4181322	last=15a0ad0bb4 promag/2018-05-walletnotify
-		# held back cef0327afd..15a0ad0bb4 Windows porting due to copyright issues (and bugs?)
-	13541 sendraw_maxfeerate-0.18				8d9973752d	last=7abd2e697c kallewoof/sendrawtransaction-maxfeerate
-		# MODIFIED
-		#+15618 removal of accidentally-merged code
-		#+15770 rpc: Validate maxfeerate with AmountFromValue
+	13339 walletnotify_w-0.19					98d4181322	last=826718490fb promag/2018-05-walletnotify
+		# held back cef0327afd..15a0ad0bb4 Windows porting due to copyright issues (and bugs?) - No longer applicable?
+		# Removed WIN32 conditional
+		# Changed '"'"' to '\''
+		# Test improvements: eaeb6fb7efd
 	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
 	# Needs work: 13836 clearmempool RPC
 	# Needs review: 13903 Significantly reduce GetTransaction cs_main locking
@@ -232,6 +228,7 @@ checkout 0.19
 	# TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
 	16852 bip70_merchant_decode-0.17			27bda22c4f	last=fc295e4207 achow101/bip70-merchant-decode
 		# NOTE: Patched with fix 90840e907c
+	17135 promag/2019-10-fix-gui-freeze						last=8cf1c67717b
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
