@@ -82,18 +82,16 @@ checkout 0.19
 	12674 rpc_onetry_nonpriv					e990290011
 	10593 relax_invblk_punishment				e37459ded9
 #TODO: Split this up
-	10594 whitelist_outgoing-mini-0.19+knots	f886df3bd1	last=17bf6da923d whitelist_outgoing  # via whitelist_outgoing-mini
-FIXME: Minify, and adapt default to in+out for Knots
-	10350 filtered_witblock-0.17				7cb073403f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10594 whitelist_outgoing-mini-0.19+knots	f886df3bd1	last=dce108076d7 whitelist_outgoing  # via whitelist_outgoing-mini
+	10350 filtered_witblock-0.19				7cb073403f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				c29eeb585f
-	# Only if needed: 16566 tolowerupper_string-0.18
-		# NOTE: Only added new functions, didn't remove/change old ones
-	11413 explicit_fee-0.18						3714c6806c	last=f54e33dc81 kallewoof/explicit-fee
+	11413 explicit_fee-0.19						3714c6806c	last=8a7882a91f1 kallewoof/explicit-fee
+		# NOTE: Held back 97636cd371c..8a7882a91f1
 		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
 		# TODO: Relnotes changes - case insensitivity, (is RBF default new??)
@@ -103,18 +101,16 @@ FIXME: Minify, and adapt default to in+out for Knots
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
 	11750 coincontrol_multiselect				f3be4da827	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
-	11765 rest_blockhash_compat-0.18			4b9b23078e	last=1323df9ff1 # [REST] added blockhash api, tests and documentation
-		# Superceded by blockhashbyheight, so now just a backward compatibility hack
 	11770 -										83746da5d2	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			2d9fd86ada
 	# Complicated, needs maturity in git and careful rebasing: 15557 instagibbs:bumpall
-	12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
+	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 		# NOTE: Competing with #15341
 	12677 listunspent_ancestorinfo				37da54f98e
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
-	12763 rpcwhitelist-0.17						68d8b186de	last=8c45d93b0e
+	12763 rpcwhitelist-0.19						68d8b186de	last=8c45d93b0e
 	# TODO ? 12792 w/ renamed param
 	12911 signrawtx_showfees-0.18				7035643906	last=bba2e57c76 kallewoof/sign-show-fees
 	12965 scriptthreads-0.18					874c6e06f8	last=dfab6c6866 jonas/2018/04/svt
@@ -288,6 +284,8 @@ FIXME: Check there are no menu icons
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=0595ac1bf8)				f4af8df41d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
+		TODO: Dropping 11765 rest_blockhash_compat-0.18
+		TODO: Dropping 12096 bumpfee_reduce_output-0.18
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
