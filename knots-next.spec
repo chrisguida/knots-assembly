@@ -134,12 +134,11 @@ checkout 0.19
 	# Needs review: 14035 Utxoscriptindex
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
-	14137 win_taskbar_progress-0.18+knots		99de8ff722	last=18eb4dbb8a
-	15023 gui_node_rpcconsole-0.18+knots		75def5db94	last=f33efa8ec5 gui_node_rpcconsole  # PART OF c52c82eb6f
-	14641 fundraw_minconf-0.18					486411af85	last=a3991b7c0b promag/2018-11-fundrawtransaction
-		# NOTE: backported 2 lines from #15557's 0ea47ba7b3 as 76cd3c48e2
+	14137 win_taskbar_progress					99de8ff722	last=18eb4dbb8a
+	15023 gui_node_rpcconsole-0.19+knots		75def5db94	last=f33efa8ec5 gui_node_rpcconsole
+	14641 fundraw_minconf-0.19					486411af85	last=a3991b7c0b promag/2018-11-fundrawtransaction
 		# NOTE: held back .gitignore nonsense change & relnotes
-	14687 zmqkeepalive-0.18+knots				36c11d18bb	last=c276df7759
+	14687 zmqkeepalive-0.19+knots				36c11d18bb	last=c276df7759
 		# NOTE: modified to soft-fail only
 	# wait for Core?: 14707
 	# needs completion: 14912 external signers WIP + 15876
