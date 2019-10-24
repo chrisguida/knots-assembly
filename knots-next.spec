@@ -155,16 +155,16 @@ checkout 0.19
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review/revision: 15202 promag:2019-01-closeallwallets
 	# Needs review: 15204 promag:2019-01-openexternalwallet
-	15218 postibd_flush-0.18					ceb964d7db	last=d2ecb70d64  # validation: Flush state after initial sync
+	15218 -										ceb964d7db	last=d2ecb70d64  # validation: Flush state after initial sync
 		# Moved init around to avoid conflict w/ 15367
 	# Let Core go first? 15224 sipa:201901_rand_strengthen
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
-	15367 -										4078797ded	last=b515ccfba6	# feature: Added ability for users to add a startup command
+	15367 startupnotify-0.19+knots				4078797ded	last=4b6987c85d8	# feature: Added ability for users to add a startup command
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	# TODO: 15421 tor_subprocess
 	#	Needs boost::process check
 	15423 tor_socks_port						e366a8e9f0
-	15428 tor_gui_pairing-0.18+knots			053f9f08c2	# latest code now
+	15428 tor_gui_pairing-0.19+knots			053f9f08c2	# latest code now
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review: 15427 sipa:201902_utxoupdatepsbtdesc
@@ -174,10 +174,8 @@ checkout 0.19
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15505 sdaftuar:2019-02-notfound-requests
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
-	15566 bcli_chain-0.18						cae481b1b5
-		# NOTE: Retained "testnet" key
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
-	15633 nohbcbfornonwit-0.18					6e6b51a203	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
+	15633 nohbcbfornonwit						6e6b51a203	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
 		# NOTE: added test fix
 	# Needs review and use case? 15703 sipa:201903_secp256k1
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
