@@ -90,8 +90,8 @@ checkout 0.19
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				c29eeb585f
-	11413 explicit_fee-0.19						3714c6806c	last=8a7882a91f1 kallewoof/explicit-fee
-		# NOTE: Held back 97636cd371c..8a7882a91f1
+	11413 explicit_fee-0.19						3714c6806c	last=473ce2dcfdf kallewoof/explicit-fee
+		# NOTE: Held back 97636cd371c..473ce2dcfdf -  see 670a101e362db0e3a346719e905fd6ab1cfd4fc4 branch for min feerate error
 		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
 		# TODO: Relnotes changes - case insensitivity, (is RBF default new??)
@@ -176,7 +176,7 @@ checkout 0.19
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	15633 nohbcbfornonwit						6e6b51a203	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
-		# NOTE: added test fix
+		# NOTE: added test fix from sdaftuar/test-15633-2
 	# Needs review and use case? 15703 sipa:201903_secp256k1
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
 	# Needs concept ack: 15756 promag:2019-04-tools-shortcuts
@@ -186,7 +186,7 @@ checkout 0.19
 		# NOTE: Probably dialogs should be closed, not simply hidden
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
-	15836 mempoolinfo_feehistogram-0.18			a3f20f5696	last=b94292a7cb jonas/2019/04/feeinfo
+	15836 jonas/2019/04/feeinfo					a3f20f5696	last=b94292a7cb jonas/2019/04/feeinfo
 	15861 restore_vbits_warning					37a59ac37c
 	# Complex rebase: 15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
 	# Needs concept ACK and review: 15873 Rpc removemempoolentry
@@ -196,11 +196,11 @@ checkout 0.19
 	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac marco/1904-rpcWalletBalances
 		# NOTE: excluded various refactoring and deprecation
 	# Needs QA/reivew: 15946 jonasschnelli:2019/05/prune_blockfilter
-	15987 wallet_no_reuse-0.18+knots			aca83094ee	last=545af217ae wallet_no_reuse
-	-     rpc_gai_txids-0.18					4ea59f5b23	last=621796da61 rpc_gai_txids
+	15987 wallet_no_reuse-0.19+knots			aca83094ee	last=391c5d9a972 wallet_no_reuse
+	-     rpc_gai_txids-0.19					4ea59f5b23	last=621796da61 rpc_gai_txids
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	16083 rpc_getblock_prevouts_fees-0.18+knots	9bffa80d67	last=dd83c4c925
+	16083 rpc_getblock_prevouts_fees-0.19		9bffa80d67	last=dd83c4c925
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
 		# Renamed "coinbase" field to "generated"
 		# Renamed "fees" field to "fee"
@@ -223,9 +223,7 @@ checkout 0.19
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				0e03fd739b	last=9b9459640d instagibbs/decode_descriptor
 	# TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
-	16852 bip70_merchant_decode-0.17			27bda22c4f	last=fc295e4207 achow101/bip70-merchant-decode
-		# NOTE: Patched with fix 90840e907c
-	17135 promag/2019-10-fix-gui-freeze						last=8cf1c67717b
+	17135 gui_polling_thread-0.18							last=6b6be41c36e promag/2019-10-fix-gui-freeze
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
