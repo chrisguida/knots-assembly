@@ -4,7 +4,7 @@ lastapply no-merge
 #.. checked up to PR #16922
 
 checkout origin/0.19
-@0.18.x-syslibs
+@0.19.x-syslibs
 	5872 subdir_incl_compat						434600ecad
 	2241 sys_leveldb							b3b13f6369
 	5416 sys_libsecp256k1						2b14d06dcf
@@ -13,7 +13,7 @@ checkout origin/0.19
 	-     bugfix_asm_leveldb_check				d3529cd537
 	15155 test_external_bcli					05ac01eb15
 	16564 raii_event_test_fix-0.14				6358a0d1c9	last=9a19c9ada5
-@0.18.x-knots
+@0.19.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							72bfd12414
@@ -229,7 +229,7 @@ checkout origin/0.19
 	7533 sendraw_force-0.19+knots				19d9a62fee  # Latest code now
 	11082 rwconf-0.19							f5d5d15cfa	last=956a76cc852 rwconf
 	7510 rwconf_gui-0.19+knots					74d4579901	last=8ff7132eef3 rwconf_gui  # accidentally rebased on master :)
-	5916 legacy_keyorigin						4e26398609
+	-    preserve_unsupported_keyflags
 	 559 accept_nonstdtxn						dd0f34238f
 	 929 tbc									27b3ac8389
 	 553 bugfix_qt_uri_amount_parser			e74e075536
@@ -277,6 +277,7 @@ FIXME: Check there are no menu icons
 			# check travis for misspellings
 		TODO: Dropping 11765 rest_blockhash_compat-0.18
 		TODO: Dropping 12096 bumpfee_reduce_output-0.18
+		TODO: Dropping 5916 legacy_keyorigin
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
