@@ -228,7 +228,7 @@ checkout origin/0.19
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.19+knots				19d9a62fee  # Latest code now
 	11082 rwconf-0.19							f5d5d15cfa	last=956a76cc852 rwconf
-	7510 rwconf_gui-0.19+knots					74d4579901	# Latest code now
+	7510 rwconf_gui-0.19+knots					74d4579901	last=8ff7132eef3 rwconf_gui  # accidentally rebased on master :)
 	5916 legacy_keyorigin						4e26398609
 	 559 accept_nonstdtxn						dd0f34238f
 	 929 tbc									27b3ac8389
