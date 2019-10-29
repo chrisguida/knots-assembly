@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #16922
 
-checkout 0.19
+checkout origin/0.19
 @0.18.x-syslibs
 	5872 subdir_incl_compat						434600ecad
 	2241 sys_leveldb							b3b13f6369
@@ -56,7 +56,7 @@ checkout 0.19
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs							40af219ca8	last=e11cb50a09  # multisig sorting
+	8751 sort-multisigs-0.19					40af219ca8	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							97cd6e86fb
@@ -90,7 +90,7 @@ checkout 0.19
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				c29eeb585f
-	11413 explicit_fee-0.19						3714c6806c	last=473ce2dcfdf kallewoof/explicit-fee
+	11413 explicit_fee-0.19						3714c6806c	last=09b5155ecdb kallewoof/explicit-fee
 		# NOTE: Held back 97636cd371c..473ce2dcfdf -  see 670a101e362db0e3a346719e905fd6ab1cfd4fc4 branch for min feerate error
 		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
@@ -223,13 +223,12 @@ checkout 0.19
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				0e03fd739b	last=9b9459640d instagibbs/decode_descriptor
 	# TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
-	17135 gui_polling_thread-0.18							last=6b6be41c36e promag/2019-10-fix-gui-freeze
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
-	7533 sendraw_force-0.18+knots				19d9a62fee  # Latest code now
-	11082 rwconf-0.18							f5d5d15cfa	last=aa30cb79cd rwconf
-	7510 rwconf_gui-0.18+knots					74d4579901	# Latest code now
+	7533 sendraw_force-0.19+knots				19d9a62fee  # Latest code now
+	11082 rwconf-0.19							f5d5d15cfa	last=956a76cc852 rwconf
+	7510 rwconf_gui-0.19+knots					74d4579901	# Latest code now
 	5916 legacy_keyorigin						4e26398609
 	 559 accept_nonstdtxn						dd0f34238f
 	 929 tbc									27b3ac8389
