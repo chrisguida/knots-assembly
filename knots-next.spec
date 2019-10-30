@@ -236,8 +236,7 @@ checkout origin/0.19
 	-    mining_priority						c7999022e4  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					4faaa5ad5a
 	5891 qt_console_history_persist				7f5f2c835a
-	# 0.19 TODO: Revert 16171 to restore opt-in RBF option
-	7219 txrepl_fullrbf							e6803520a3
+	7219 rbf_opts								e6803520a3
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					15f192dfb5
 	10282 timebomb_knots						aca5337519
@@ -278,6 +277,7 @@ FIXME: Check there are no menu icons
 		TODO: Dropping 11765 rest_blockhash_compat-0.18
 		TODO: Dropping 12096 bumpfee_reduce_output-0.18
 		TODO: Dropping 5916 legacy_keyorigin
+		TODO: 7219 txrepl_fullrbf -> 7219 rbf_opts
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
