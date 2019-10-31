@@ -236,14 +236,13 @@ checkout origin/0.19
 	-    mining_priority						c7999022e4  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					4faaa5ad5a
 	5891 qt_console_history_persist				7f5f2c835a
-	7219 rbf_opts								e6803520a3
+	7219 rbf_opts-0.19+knots					e6803520a3
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					15f192dfb5
 	10282 timebomb_knots						aca5337519
-	-     gui_wallet_displayname-0.18+knots		9d8ff1e11d	# Latest code now
-	-     recv_addrbook_refer_button-0.9		ccb7f4d528
-	n/a  checkpoint_update-0.18					b6067d8662
-	# 0.19 TODO: revert "Request payment" rename
+	-     gui_wallet_displayname-0.19			9d8ff1e11d	# Latest code now
+	-     gui_request_payment_label-0.19		ccb7f4d528
+	n/a  checkpoint_update-0.19					b6067d8662
 	# NEEDS FIXUP/REPLACE 16432 qt: Add privacy to the Overview page
 	# Requires complex FlatFile refactoring: Parts of? 14121+16442 Neutrino
 	# Needs review: 16463 achow101:bip174-xpub
