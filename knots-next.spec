@@ -252,11 +252,10 @@ checkout origin/0.19
 # POLICY:
 	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				6cd540a25f
-	-	 bytespersigopstrict-0.18+knots			95d95fa3e3
+	-	 bytespersigopstrict-0.19+knots			95d95fa3e3
 	9749 unique_spk_mempool-0.18+knots			3a8aafc37e
-	15846 sendtofuture-0.18+knots				4b92379ff1	last=c634b1e207 sipa/201904_futuresegwitstandard
-		# NOTE: made optional, and added to rwconf_policy
 	-    rwconf_policy-0.18+knots				eb81c91962
+			TODO: Remove sendtofuture
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 	# 0.19 TODO: Revert #16152 (disable bloom by default)
