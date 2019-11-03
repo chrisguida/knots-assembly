@@ -17,7 +17,6 @@ checkout origin/0.19
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							72bfd12414
-	# Needs review: 15134 practicalswift:unsigned-char
 	15888 test_wallet_implicitsegwit			e5db67d94a
 # FIXES:
 	14968 laanwj/2018_12_http_bind_error		9d197f0974	last=7b5e4001f9 laanwj/2018_12_http_bind_error
@@ -48,6 +47,7 @@ checkout origin/0.19
 	# Needs review: 16161 util: Fix compilation errors in support/lockedpool.cpp
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
+	# Worth the diff? 16963 promag:2019-09-fix-loadwallet-signal-uniqueptr
 # FUNCTIONALITY:
 	14066 gitian_power64						6d990c68b6
 	# not ready/deterministic: 13827 NSIS depends build
@@ -223,6 +223,8 @@ checkout origin/0.19
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				0e03fd739b	last=9b9459640d instagibbs/decode_descriptor
 	# TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
+	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
+	Check for safety: 16944 Sjors:2019/08/gui-send-psbt
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
