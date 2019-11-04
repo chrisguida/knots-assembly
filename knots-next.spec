@@ -1,7 +1,7 @@
 timestamp 2019-08-23 19:59:31
 lastapply no-merge
 
-#.. checked up to PR #16922
+#.. checked up to PR #16982
 
 checkout origin/0.19
 @0.19.x-syslibs
@@ -205,6 +205,8 @@ checkout origin/0.19
 	TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
 	Check for safety: 16944 Sjors:2019/08/gui-send-psbt
+	16964 instagibbs:sendcoins_yes
+	# Needs concept ack: 16981 LarryRuane:reindex-speedup
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
