@@ -103,7 +103,6 @@ checkout origin/0.19
 		# NOTE: deviated from PR
 	11770 -										83746da5d2	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			2d9fd86ada
-	# Complicated, needs maturity in git and careful rebasing: 15557 instagibbs:bumpall
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 		# NOTE: Competing with #15341
@@ -124,12 +123,11 @@ checkout origin/0.19
 		# Removed WIN32 conditional
 		# Changed '"'"' to '\''
 		# Test improvements: eaeb6fb7efd
-	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy
 	# Needs work: 13836 clearmempool RPC
 	# Needs review: 13903 Significantly reduce GetTransaction cs_main locking
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs review: 13989 add avx512 instrinsic
-	# Needs work: 13990 WIP: allow fee estimation to work with lower fees
+	# Needs review: 13990 WIP: allow fee estimation to work with lower fees
 	# Needs review: 14032 Add p2p layer encryption with ECDH/ChaCha20Poly1305
 	# Needs review: 14035 Utxoscriptindex
 	# Needs work: 14053 Add address-based index (attempt 4?)
@@ -145,19 +143,16 @@ checkout origin/0.19
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
 	# CHANGES WALLET FORMAT, wait for Core: 15006 achow101:create-encrypted-wallet
 		# +16394 achow101/fix-born-enc
-	# Needs review, changes wallet format: 15064 bip70_merchant_to_to
-	# unsure: 15084 gui: don't disable the sync overlay when wallet is disabled
+	15084 -  #gui: don't disable the sync overlay when wallet is disabled
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	15115 rm_send2self-mini						e3663bbc4e	last=ecf3d5323e rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
 	# Not ready: 15150 promag:2019-01-consolewalletselector
-	# Not ready: 15157 rpc: Bumpfee units change, satoshis to BTC
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review/revision: 15202 promag:2019-01-closeallwallets
 	# Needs review: 15204 promag:2019-01-openexternalwallet
 	15218 -										ceb964d7db	last=d2ecb70d64  # validation: Flush state after initial sync
 		# Moved init around to avoid conflict w/ 15367
-	# Let Core go first? 15224 sipa:201901_rand_strengthen
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
 	15367 startupnotify-0.19+knots				4078797ded	last=4b6987c85d8	# feature: Added ability for users to add a startup command
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
@@ -167,9 +162,6 @@ checkout origin/0.19
 	15428 tor_gui_pairing-0.19+knots			053f9f08c2	# latest code now
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
-	# Needs review: 15427 sipa:201902_utxoupdatepsbtdesc
-	# Needs review: 15450 achow101:gui-create-wallet
-	# Exposes too much info to RPC? 15483 rpc: Adding a 'logpath' entry to getrpcinfo
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15505 sdaftuar:2019-02-notfound-requests
@@ -177,24 +169,17 @@ checkout origin/0.19
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	15633 nohbcbfornonwit						6e6b51a203	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
-	# Needs review and use case? 15703 sipa:201903_secp256k1
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
-	# Needs concept ack: 15756 promag:2019-04-tools-shortcuts
-	# Needs concept ack: 15759 sdaftuar:2019-03-blocksonly-edges
-	# Needs review: 15768 -													# gui: Add CMD+W shortcut in macOS
+	15756 promag:2019-04-tools-shortcuts
+	15768 -													# gui: Add CMD+W shortcut in macOS
 		# NOTE: Cannot make platform-independent w/o considering non-systray main window hiding
 		# NOTE: Probably dialogs should be closed, not simply hidden
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
-	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
+	Minify and test well: 15845 MarcoFalke:1904-walletFastRescan
 	15836 jonas/2019/04/feeinfo					a3f20f5696	last=b94292a7cb jonas/2019/04/feeinfo
 	15861 restore_vbits_warning					37a59ac37c
-	# Complex rebase: 15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
-	# Needs concept ACK and review: 15873 Rpc removemempoolentry
-	# Needs concept ACK and review: 15886 hebasto:20190424-send-confirmation-dialog
-		# NOTE: +16826 fix
+	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
-	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac marco/1904-rpcWalletBalances
-		# NOTE: excluded various refactoring and deprecation
 	# Needs QA/reivew: 15946 jonasschnelli:2019/05/prune_blockfilter
 	15987 wallet_no_reuse-0.19+knots			aca83094ee	last=391c5d9a972 wallet_no_reuse
 	-     rpc_gai_txids-0.19					4ea59f5b23	last=621796da61 rpc_gai_txids
@@ -207,22 +192,17 @@ checkout origin/0.19
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	# FIXME: Minor revision needed? 16373 instagibbs:bump_psbt
+	16373 instagibbs:bump_psbt
 	# Needs review: 16377 Sjors:2019/07/walletcreatefundedpsbt_addinputs
 	# Needs review: 16378 Sjors:2019/07/send
-	# Needs review maybe: 16512 achow101:joinpsbt-rand
-	# Needs concept ACK and review: 16523 -  # Add removemempoolentry RPC to evict transactions from the mempool
 	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
-	# Probably requires 0.19? CHECK CAREFULLY 16554 fanquake/test_openssl_include
 	# FIXME: Needs rebase on HasPermission etc FIXME: Breaks p2p_blocksonly ; 16682 blocksonly_violators-0.18.1						last=5ff415d9af jnewbery/2019-08-disconnect-blocksonly-violators
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs intense review: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
-		# NOTE: deps on 16730
-	# TODO: Needs diff-minimisation at least: 16727 instagibbs:feerate_bumpfee
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				0e03fd739b	last=9b9459640d instagibbs/decode_descriptor
-	# TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
+	TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
 	Check for safety: 16944 Sjors:2019/08/gui-send-psbt
 # Non-upstreamed functionality:
@@ -245,14 +225,13 @@ checkout origin/0.19
 	-     gui_wallet_displayname-0.19			9d8ff1e11d	# Latest code now
 	-     gui_request_payment_label-0.19		ccb7f4d528
 	n/a  checkpoint_update-0.19					b6067d8662
-	# NEEDS FIXUP/REPLACE 16432 qt: Add privacy to the Overview page
-	# Requires complex FlatFile refactoring: Parts of? 14121+16442 Neutrino
-	# Needs review: 16463 achow101:bip174-xpub
-	# Needs to be rational: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
-	# TODO: Needs work? 16492 rpc: Add feeRate argument to bumpFee RPC
-	# 0.19 TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
+	16432 qt: Add privacy to the Overview page
+	Parts of? 14121+16442 Neutrino
+	Diff-minimise: 16463 achow101:bip174-xpub
+	Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
+	TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
 # POLICY:
-	# TODO: 10823 greenaddress/replace-by-fee-old-transactions
+	TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				6cd540a25f
 	-	 bytespersigopstrict-0.19+knots			95d95fa3e3
 	9749 unique_spk_mempool-0.18+knots			3a8aafc37e
@@ -260,8 +239,7 @@ checkout origin/0.19
 			TODO: Remove sendtofuture
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
-	# 0.19 TODO: Revert #16152 (disable bloom by default)
-	# Needs review/optionality: 16421 TheBlueMatt:2019-07-lightning-policy-bump
+	TODO: Revert #16152 (disable bloom by default)
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.18+knots					8f7b63e470
 # BRANDING:
