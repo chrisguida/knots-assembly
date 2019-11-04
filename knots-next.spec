@@ -1,7 +1,7 @@
 timestamp 2019-08-23 19:59:31
 lastapply no-merge
 
-#.. checked up to PR #17154
+#.. checked up to PR #17366
 
 checkout origin/0.19
 @0.19.x-syslibs
@@ -28,7 +28,8 @@ checkout origin/0.19
 	14501 fsync_dir								6ede1fd5bb
 		# Was #12696
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
-	13084 sipa/201804_keepnegone				fd7f1de223	last=5af7625079 sipa/201804_keepnegone
+	17204 meshcollider:201910_1negate_rebase	fd7f1de223	last=5af7625079 meshcollider:201910_1negate_rebase
+		# based on 5af7625079 sipa/201804_keepnegone
 	13608 -										b34192bdae	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs fix?? 13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 	-     bugfix_rpc_getbalance_hacky			58b6b3f646
@@ -48,6 +49,10 @@ checkout origin/0.19
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
 	# Worth the diff? 16963 promag:2019-09-fix-loadwallet-signal-uniqueptr
+	# Needs reivew: 17156 achow101:psbt-fuzz-fix
+	17180 JeremyCrookshank:sendamounttooltip
+		+ 17226 promag:2019-10-payamount-tooltip
+	17258 adamjonas:listsinceblock-filter-conflicts
 # FUNCTIONALITY:
 	14066 gitian_power64						6d990c68b6
 	# not ready/deterministic: 13827 NSIS depends build
@@ -81,8 +86,11 @@ checkout origin/0.19
 	10554 zmq_wtx-0.19							af3259e141	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	12674 rpc_onetry_nonpriv					e990290011
 	10593 relax_invblk_punishment				e37459ded9
+	Check copyright: 17311 RandyMcMillan:fix-background-svg
+	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
+	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 #TODO: Split this up
-	10594 whitelist_outgoing-mini-0.19+knots	f886df3bd1	last=dce108076d7 whitelist_outgoing  # via whitelist_outgoing-mini
+	10594 whitelist_outgoing-mini-0.19+knots	f886df3bd1	last=911d1ac0e89 whitelist_outgoing  # via whitelist_outgoing-mini
 	10350 filtered_witblock-0.19				7cb073403f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
@@ -212,7 +220,16 @@ checkout origin/0.19
 	17056 achow101:sortedmulti-desc
 		Do we want a multi67 too? (Can descriptors deviate from Core?)
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
-	17125 -  # gui: Add toolTip and placeholderText to sign message fields
+	17125 -  # gui: Add toolTip and placeholderText to --sign--verify message fields
+	17186 -  # gui: Add placeholder text to the sign message field
+	17195 -  # gui: send amount placeholder value
+	17211 achow101:fundtx-external-inputs
+		TODO: Move new param to options?
+	# Needs review: 17219 Sjors:2019/10/change-without-keypool
+	Android packaging? #16110 + #17227
+	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
+	Check if fixed: 17355 za-kk:oct-19-17174
+	17360 Danny-Scott:nov-2019-hide-button-tool-tip
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
