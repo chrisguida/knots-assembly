@@ -1,7 +1,7 @@
 timestamp 2019-08-23 19:59:31
 lastapply no-merge
 
-#.. checked up to PR #16982
+#.. checked up to PR #17154
 
 checkout origin/0.19
 @0.19.x-syslibs
@@ -207,6 +207,12 @@ checkout origin/0.19
 	Check for safety: 16944 Sjors:2019/08/gui-send-psbt
 	16964 instagibbs:sendcoins_yes
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
+	17034 achow101:bip174-extensions
+	Does this conflict with Knots? 17035 emilengler:2019-10-qt-intro-prune-text-update-fix
+	17056 achow101:sortedmulti-desc
+		Do we want a multi67 too? (Can descriptors deviate from Core?)
+	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
+	17125 -  # gui: Add toolTip and placeholderText to sign message fields
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
@@ -232,6 +238,7 @@ checkout origin/0.19
 	Diff-minimise: 16463 achow101:bip174-xpub
 	Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
+	TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
 # POLICY:
 	TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				6cd540a25f
