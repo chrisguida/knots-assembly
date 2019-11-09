@@ -1,9 +1,9 @@
 timestamp 2019-08-23 19:59:31
 lastapply no-merge
 
-#.. checked up to PR #17366
+#.. checked up to PR #17427
 
-checkout origin/0.19
+checkout v0.19.0
 @0.19.x-syslibs
 	5872 subdir_incl_compat						434600ecad
 	2241 sys_leveldb							b3b13f6369
@@ -18,6 +18,7 @@ checkout origin/0.19
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							72bfd12414
 	15888 test_wallet_implicitsegwit			e5db67d94a
+	17402 elichai:2019-11-powerpc64
 # FIXES:
 	14968 laanwj/2018_12_http_bind_error		9d197f0974	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					af253f6c66
@@ -53,6 +54,7 @@ checkout origin/0.19
 	17180 JeremyCrookshank:sendamounttooltip
 		+ 17226 promag:2019-10-payamount-tooltip
 	17258 adamjonas:listsinceblock-filter-conflicts
+	17427 hebasto:20191109-fix-signal-argument-type
 # FUNCTIONALITY:
 	14066 gitian_power64						6d990c68b6
 	# not ready/deterministic: 13827 NSIS depends build
@@ -226,7 +228,7 @@ checkout origin/0.19
 	17211 achow101:fundtx-external-inputs
 		TODO: Move new param to options?
 	# Needs review: 17219 Sjors:2019/10/change-without-keypool
-	Android packaging? #16110 + #17227
+	Android packaging? #16110 + #17227 + #17396?
 	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
 	Check if fixed: 17355 za-kk:oct-19-17174
 	17360 Danny-Scott:nov-2019-hide-button-tool-tip
