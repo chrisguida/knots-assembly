@@ -1,4 +1,4 @@
-timestamp 2019-08-23 19:59:31
+timestamp 2019-11-09 19:18:19
 lastapply no-merge
 
 #.. checked up to PR #17427
@@ -18,7 +18,7 @@ checkout v0.19.0
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							72bfd12414
 	15888 test_wallet_implicitsegwit			e5db67d94a
-	17402 elichai:2019-11-powerpc64
+	17402 travis_ppc64-0.18									last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
 	14968 laanwj/2018_12_http_bind_error		9d197f0974	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					af253f6c66
@@ -29,7 +29,7 @@ checkout v0.19.0
 	14501 fsync_dir								6ede1fd5bb
 		# Was #12696
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
-	17204 meshcollider:201910_1negate_rebase	fd7f1de223	last=5af7625079 meshcollider:201910_1negate_rebase
+	17204 bugfix_keepnegone-0.13				fd7f1de223	last=9ddc07f6820 meshcollider/201910_1negate_rebase
 		# based on 5af7625079 sipa/201804_keepnegone
 	13608 -										b34192bdae	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs fix?? 13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
@@ -51,10 +51,13 @@ checkout v0.19.0
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
 	# Worth the diff? 16963 promag:2019-09-fix-loadwallet-signal-uniqueptr
 	# Needs reivew: 17156 achow101:psbt-fuzz-fix
-	17180 JeremyCrookshank:sendamounttooltip
-		+ 17226 promag:2019-10-payamount-tooltip
-	17258 adamjonas:listsinceblock-filter-conflicts
-	17427 hebasto:20191109-fix-signal-argument-type
+	17180 sendamount_tooltip-0.11
+		# JeremyCrookshank:sendamounttooltip
+		# + 17226 promag:2019-10-payamount-tooltip
+	17258 fix_rpc_listsinceblock_conflicts-0.19	# adamjonas:listsinceblock-filter-conflicts
+	# Not needed?: 17366 qa_reset_segwitheight-0.19
+	17427 fix_qmeta_size_t-0.18								last=1828c6f05fc
+		# Held back comment/formatting changes
 # FUNCTIONALITY:
 	14066 gitian_power64						6d990c68b6
 	# not ready/deterministic: 13827 NSIS depends build
@@ -88,7 +91,7 @@ checkout v0.19.0
 	10554 zmq_wtx-0.19							af3259e141	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	12674 rpc_onetry_nonpriv					e990290011
 	10593 relax_invblk_punishment				e37459ded9
-	Check copyright: 17311 RandyMcMillan:fix-background-svg
+	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 #TODO: Split this up
@@ -100,7 +103,7 @@ checkout v0.19.0
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				c29eeb585f
-	11413 explicit_fee-0.19						3714c6806c	last=09b5155ecdb kallewoof/explicit-fee
+	11413 explicit_fee-0.19						3714c6806c	last=398be1c0f37 kallewoof/explicit-fee
 		# NOTE: Held back 97636cd371c..473ce2dcfdf -  see 670a101e362db0e3a346719e905fd6ab1cfd4fc4 branch for min feerate error
 		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
@@ -153,7 +156,7 @@ checkout v0.19.0
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
 	# CHANGES WALLET FORMAT, wait for Core: 15006 achow101:create-encrypted-wallet
 		# +16394 achow101/fix-born-enc
-	15084 -  #gui: don't disable the sync overlay when wallet is disabled
+	15084 -													last=b3b6b6f62fc  #gui: don't disable the sync overlay when wallet is disabled
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	15115 rm_send2self-mini						e3663bbc4e	last=ecf3d5323e rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
@@ -180,12 +183,12 @@ checkout v0.19.0
 	15633 nohbcbfornonwit						6e6b51a203	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
-	15756 promag:2019-04-tools-shortcuts
-	15768 -													# gui: Add CMD+W shortcut in macOS
-		# NOTE: Cannot make platform-independent w/o considering non-systray main window hiding
-		# NOTE: Probably dialogs should be closed, not simply hidden
+	15756 -													last=091747b46ec promag/2019-04-tools-shortcuts
+	15768 gui_ctrl_w-0.19									last=fa166a995e4	# gui: Add close window shortcut
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
-	Minify and test well: 15845 MarcoFalke:1904-walletFastRescan
+	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
+		# TODO: Minify and test well
+		# NOTE: Needs #17366
 	15836 jonas/2019/04/feeinfo					a3f20f5696	last=b94292a7cb jonas/2019/04/feeinfo
 	15861 restore_vbits_warning					37a59ac37c
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
@@ -276,7 +279,7 @@ FIXME: Check there are no menu icons
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 	n/a  (cherrypick=15b62fa32bd3eaced3)		7048a6755f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20190920)			ec3e4d8ce6
+	n/a  (bump_version=Knots:20191109)			ec3e4d8ce6
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=0595ac1bf8)				f4af8df41d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
