@@ -205,7 +205,8 @@ checkout v0.19.0
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	16373 instagibbs:bump_psbt
+	16373 bump_psbt-0.19+knots								last=9bdf420ecc3 instagibbs/bump_psbt
+		# NOTE: Moved `add_to_wallet` param into `options`
 	# Needs review: 16377 Sjors:2019/07/walletcreatefundedpsbt_addinputs
 	# Needs review: 16378 Sjors:2019/07/send
 	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
@@ -235,6 +236,7 @@ checkout v0.19.0
 	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
 	Check if fixed: 17355 za-kk:oct-19-17174
 	17360 Danny-Scott:nov-2019-hide-button-tool-tip
+	17437 promag/2019-11-rpc-blockheight
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
