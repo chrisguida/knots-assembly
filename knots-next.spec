@@ -216,7 +216,9 @@ checkout v0.19.0
 	# Needs intense review: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				0e03fd739b	last=9b9459640d instagibbs/decode_descriptor
-	TODO: 16807 meshcollider:201909_bech32_error_detection  (plus GUI?)
+	16807 bech32_error_detection-0.19+knots					last=19e9def6902 meshcollider/201909_bech32_error_detection
+		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
+# TODO: Add bech32 error detect GUI
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
 	Check for safety: 16944 Sjors:2019/08/gui-send-psbt
 	16964 instagibbs:sendcoins_yes
@@ -289,6 +291,7 @@ FIXME: Check there are no menu icons
 		TODO: Dropping 12096 bumpfee_reduce_output-0.18
 		TODO: Dropping 5916 legacy_keyorigin
 		TODO: 7219 txrepl_fullrbf -> 7219 rbf_opts
+		TODO: b/doc/release-notes-16807.md w/ autodetect added
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
