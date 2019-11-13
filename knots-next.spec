@@ -220,12 +220,13 @@ checkout v0.19.0
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 # TODO: Add bech32 error detect GUI
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
-	Check for safety: 16944 Sjors:2019/08/gui-send-psbt
-	16964 instagibbs:sendcoins_yes
+	16964 gui_sendcoins_yes-0.19+knots						last=a649cc6a17b instagibbs/sendcoins_yes
+		# + #17463 implicitly
+	16944 gui_send_psbt-0.19+knots							last=e0053c40e60 Sjors/2019/08/gui-send-psbt
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
-	17034 achow101:bip174-extensions
+	17034 bip174_versions-0.18								last=674e6382ab1 achow101/bip174-extensions
 	Does this conflict with Knots? 17035 emilengler:2019-10-qt-intro-prune-text-update-fix
-	17056 achow101:sortedmulti-desc
+	17056 achow101/sortedmulti-desc
 		Do we want a multi67 too? (Can descriptors deviate from Core?)
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
 	17125 -  # gui: Add toolTip and placeholderText to --sign--verify message fields
