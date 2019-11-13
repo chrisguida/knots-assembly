@@ -222,23 +222,25 @@ checkout v0.19.0
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
 	16964 gui_sendcoins_yes-0.19+knots						last=a649cc6a17b instagibbs/sendcoins_yes
 		# + #17463 implicitly
-	16944 gui_send_psbt-0.19+knots							last=e0053c40e60 Sjors/2019/08/gui-send-psbt
+	16944 gui_send_psbt-0.19+knots							last=c6dd565c882 Sjors/2019/08/gui-send-psbt
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
 	17034 bip174_versions-0.18								last=674e6382ab1 achow101/bip174-extensions
-	Does this conflict with Knots? 17035 emilengler:2019-10-qt-intro-prune-text-update-fix
-	17056 achow101/sortedmulti-desc
-		Do we want a multi67 too? (Can descriptors deviate from Core?)
+	17056 desc_sortedmulti-0.19								last=4bb660be90a achow101/sortedmulti-desc
+		# Held back doc/relnotes
+# TODO: Do we want a multi67 too? (Can descriptors deviate from Core?)
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
-	17125 -  # gui: Add toolTip and placeholderText to --sign--verify message fields
-	17186 -  # gui: Add placeholder text to the sign message field
-	17195 -  # gui: send amount placeholder value
-	17211 achow101:fundtx-external-inputs
-		TODO: Move new param to options?
+	17125 gui_verifymsg_tips-0.7  # gui: Add toolTip and placeholderText to --sign--verify message fields
+	17186 gui_signmsg_tip-0.7  # gui: Add placeholder text to the sign message field
+	17195 gui_sendamt_placeholder-0.10  # gui: send amount placeholder value
+	#TODO: 17211 achow101/fundtx-external-inputs
+		# TODO: Move new param to options?
+		# TODO: Diff-minimise
+		# Partial rebase at f2fefb51511 (on v0.19.0 tag!)
 	# Needs review: 17219 Sjors:2019/10/change-without-keypool
-	Android packaging? #16110 + #17227 + #17396?
+	#TODO: Android packaging? #16110 + #17227 + #17396?
 	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
-	Check if fixed: 17355 za-kk:oct-19-17174
-	17360 Danny-Scott:nov-2019-hide-button-tool-tip
+	# Needs fix: 17355 za-kk:oct-19-17174
+	17360 gui_fee_hide_tooltip-0.11
 	17437 promag/2019-11-rpc-blockheight
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
@@ -293,6 +295,7 @@ FIXME: Check there are no menu icons
 		TODO: Dropping 5916 legacy_keyorigin
 		TODO: 7219 txrepl_fullrbf -> 7219 rbf_opts
 		TODO: b/doc/release-notes-16807.md w/ autodetect added
+		TODO: 4bb660be90a doc/release-notes-17056.md
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
