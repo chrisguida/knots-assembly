@@ -243,6 +243,14 @@ checkout v0.19.0
 	# Needs fix: 17355 za-kk:oct-19-17174
 	17360 gui_fee_hide_tooltip-0.11
 	17437 rpc_wtx_blockheight-0.19
+	# Needs work: 16432   # qt: Add privacy to the Overview page
+		# Makes copying balances annoying
+		# Should balances be forced monospace normally just for masking??
+	16442 neutrino-0.19+knots								last=459aead0e66
+	Diff-minimise: 16463 achow101:bip174-xpub
+	Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
+	TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
+	TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
@@ -263,14 +271,6 @@ m	5891 qt_console_history_persist-0.19+knots	7f5f2c835a	last=ea852deea35 qt_cons
 	-     gui_wallet_displayname-0.19			9d8ff1e11d	# Latest code now
 	-     gui_request_payment_label-0.19		ccb7f4d528
 	n/a  checkpoint_update-0.19					b6067d8662
-	# Needs word: 16432   # qt: Add privacy to the Overview page
-		# Makes copying balances annoying
-		# Should balances be forced monospace normally just for masking??
-	16442 neutrino-0.19+knots								last=459aead0e66
-	Diff-minimise: 16463 achow101:bip174-xpub
-	Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
-	TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
-	TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
 # POLICY:
 	TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				6cd540a25f
