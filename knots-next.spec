@@ -58,6 +58,7 @@ checkout v0.19.0
 	# Not needed?: 17366 qa_reset_segwitheight-0.19
 	17427 fix_qmeta_size_t-0.18								last=1828c6f05fc
 		# Held back comment/formatting changes
+	17474 bugfix_gui_netlimited_svcbit						last=4341bffb6ef bugfix_gui_netlimited_svcbit+refactor
 # FUNCTIONALITY:
 	14066 gitian_power64						6d990c68b6
 	# not ready/deterministic: 13827 NSIS depends build
@@ -95,7 +96,7 @@ checkout v0.19.0
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 #TODO: Split this up
-	10594 whitelist_outgoing-mini-0.19+knots	f886df3bd1	last=911d1ac0e89 whitelist_outgoing  # via whitelist_outgoing-mini
+	10594 whitelist_outgoing-mini-0.19+knots	f886df3bd1	last=b7463a900cd whitelist_outgoing
 	10350 filtered_witblock-0.19				7cb073403f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
@@ -241,7 +242,7 @@ checkout v0.19.0
 	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
 	# Needs fix: 17355 za-kk:oct-19-17174
 	17360 gui_fee_hide_tooltip-0.11
-	17437 promag/2019-11-rpc-blockheight
+	17437 rpc_wtx_blockheight-0.19
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
@@ -254,7 +255,7 @@ checkout v0.19.0
 	 553 bugfix_qt_uri_amount_parser			e74e075536
 	-    mining_priority						c7999022e4  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					4faaa5ad5a
-	5891 qt_console_history_persist				7f5f2c835a
+m	5891 qt_console_history_persist-0.19+knots	7f5f2c835a	last=ea852deea35 qt_console_history_persist
 	7219 rbf_opts-0.19+knots					e6803520a3
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					15f192dfb5
@@ -262,8 +263,10 @@ checkout v0.19.0
 	-     gui_wallet_displayname-0.19			9d8ff1e11d	# Latest code now
 	-     gui_request_payment_label-0.19		ccb7f4d528
 	n/a  checkpoint_update-0.19					b6067d8662
-	16432 qt: Add privacy to the Overview page
-	Parts of? 14121+16442 Neutrino
+	# Needs word: 16432   # qt: Add privacy to the Overview page
+		# Makes copying balances annoying
+		# Should balances be forced monospace normally just for masking??
+	16442 neutrino-0.19+knots								last=459aead0e66
 	Diff-minimise: 16463 achow101:bip174-xpub
 	Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
@@ -275,6 +278,7 @@ checkout v0.19.0
 	9749 unique_spk_mempool-0.18+knots			3a8aafc37e
 	-    rwconf_policy-0.18+knots				eb81c91962
 			TODO: Remove sendtofuture
+			TODO: Add -peercfilters (restart required to ensure caches fill/flush and peers reconnect)
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 	TODO: Revert #16152 (disable bloom by default)
