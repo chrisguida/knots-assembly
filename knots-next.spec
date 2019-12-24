@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #17427
 
-checkout v0.19.0
+checkout v0.19.0.1
 @0.19.x-syslibs
 	5872 subdir_incl_compat						434600ecad
 	2241 sys_leveldb							b3b13f6369
@@ -68,6 +68,7 @@ checkout v0.19.0
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
 	8751 sort-multisigs-0.19					40af219ca8	last=e11cb50a09  # multisig sorting
+FIXME: fSorted rename is broken in some commits
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							97cd6e86fb
@@ -243,7 +244,7 @@ checkout v0.19.0
 	# Needs fix: 17355 za-kk:oct-19-17174
 	17360 gui_fee_hide_tooltip-0.11
 	17437 rpc_wtx_blockheight-0.19
-	# Needs work: 16432   # qt: Add privacy to the Overview page
+	CHECK: 16432   # qt: Add privacy to the Overview page
 		# Makes copying balances annoying
 		# Should balances be forced monospace normally just for masking??
 	16442 neutrino-0.19+knots								last=459aead0e66
@@ -294,6 +295,7 @@ FIXME: Check there are no menu icons
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=0595ac1bf8)				f4af8df41d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
+		TODO: new announcement ML
 		TODO: Dropping 11765 rest_blockhash_compat-0.18
 		TODO: Dropping 12096 bumpfee_reduce_output-0.18
 		TODO: Dropping 5916 legacy_keyorigin
