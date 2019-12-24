@@ -68,7 +68,6 @@ checkout v0.19.0.1
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
 	8751 sort-multisigs-0.19					40af219ca8	last=e11cb50a09  # multisig sorting
-FIXME: fSorted rename is broken in some commits
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							97cd6e86fb
@@ -244,8 +243,9 @@ FIXME: fSorted rename is broken in some commits
 	# Needs fix: 17355 za-kk:oct-19-17174
 	17360 gui_fee_hide_tooltip-0.11
 	17437 rpc_wtx_blockheight-0.19
-	CHECK: 16432   # qt: Add privacy to the Overview page
-		# Makes copying balances annoying
+	16432 gui_overview_privacy-0.19+knots					last=7a6766bed6c
+		# NOTE: Includes overhaul
+		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
 	16442 neutrino-0.19+knots								last=459aead0e66
 	Diff-minimise: 16463 achow101:bip174-xpub
