@@ -29,7 +29,7 @@ checkout v0.19.0.1
 	14501 fsync_dir								6ede1fd5bb
 		# Was #12696
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
-	17204 bugfix_keepnegone-0.13				fd7f1de223	last=9ddc07f6820 meshcollider/201910_1negate_rebase
+	17204 bugfix_keepnegone-0.13				fd7f1de223	last=0946a703273 meshcollider/201910_1negate_rebase
 		# based on 5af7625079 sipa/201804_keepnegone
 	13608 -										b34192bdae	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs fix?? 13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
@@ -123,7 +123,7 @@ checkout v0.19.0.1
 	12677 listunspent_ancestorinfo				37da54f98e
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
-	12763 rpcwhitelist-0.19						68d8b186de	last=8c45d93b0e
+	12763 rpcwhitelist-0.19						68d8b186de
 	# TODO ? 12792 w/ renamed param
 	12911 signrawtx_showfees-0.19				7035643906	last=bba2e57c76 kallewoof/sign-show-fees
 	12965 scriptthreads-0.19					874c6e06f8	last=dfab6c6866 jonas/2018/04/svt
@@ -185,7 +185,7 @@ checkout v0.19.0.1
 		# NOTE: added test fix from sdaftuar/test-15633-2
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
 	15756 -													last=091747b46ec promag/2019-04-tools-shortcuts
-	15768 gui_ctrl_w-0.19									last=fa166a995e4	# gui: Add close window shortcut
+	15768 gui_ctrl_w-0.19									last=77b0232fcb0	# gui: Add close window shortcut
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
 		# TODO: Minify and test well
@@ -194,7 +194,7 @@ checkout v0.19.0.1
 	15861 restore_vbits_warning					37a59ac37c
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
-	# Needs QA/reivew: 15946 jonasschnelli:2019/05/prune_blockfilter
+	# Needs QA/review: 15946 jonasschnelli:2019/05/prune_blockfilter
 	15987 wallet_no_reuse-0.19+knots			aca83094ee	last=391c5d9a972 wallet_no_reuse
 	-     rpc_gai_txids-0.19					4ea59f5b23	last=621796da61 rpc_gai_txids
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
@@ -206,8 +206,9 @@ checkout v0.19.0.1
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	16373 bump_psbt-0.19+knots								last=9bdf420ecc3 instagibbs/bump_psbt
+	# TODO: 16373 bump_psbt-0.19+knots								last=9bdf420ecc3 instagibbs/bump_psbt
 		# NOTE: Moved `add_to_wallet` param into `options`
+		# CURRENT BRANCH STATUS UNKNOWN
 	# Needs review: 16377 Sjors:2019/07/walletcreatefundedpsbt_addinputs
 	# Needs review: 16378 Sjors:2019/07/send
 	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
@@ -216,7 +217,7 @@ checkout v0.19.0.1
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs intense review: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
-	16795 rpc_spk_decode_desc-0.18				0e03fd739b	last=9b9459640d instagibbs/decode_descriptor
+	16795 rpc_spk_decode_desc-0.18				0e03fd739b	last=dcd5c4a5773 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.19+knots					last=19e9def6902 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 # TODO: Add bech32 error detect GUI
