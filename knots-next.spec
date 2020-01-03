@@ -1,7 +1,7 @@
 timestamp 2019-11-09 19:18:19
 lastapply no-merge
 
-#.. checked up to PR #17427
+#.. checked up to PR #17860
 
 checkout v0.19.0.1
 @0.19.x-syslibs
@@ -13,6 +13,8 @@ checkout v0.19.0.1
 	-     bugfix_asm_leveldb_check				d3529cd537
 	15155 test_external_bcli					05ac01eb15
 	16564 raii_event_test_fix-0.14				6358a0d1c9	last=9a19c9ada5
+	17450 bugfix_pr17450-0.19
+	17654 boost_1_72_compat-0.19
 @0.19.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
@@ -59,6 +61,14 @@ checkout v0.19.0.1
 	17427 fix_qmeta_size_t-0.18								last=1828c6f05fc
 		# Held back comment/formatting changes
 	17474 bugfix_gui_netlimited_svcbit						last=4341bffb6ef bugfix_gui_netlimited_svcbit+refactor
+	# Needs review: 17457 bugfix_multiwallet_coincontrol
+	17524 fix_unspendable_psbt-0.19
+	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
+	# Needs to be just a bugfix: 17597 qt: Fix height of QR-less ReceiveRequestDialog
+	17621 instagibbs/actually_no_reuse
+	17643 fix_bumpfee_uninitread-0.19
+	17728 achow101/fix-scantxoutset-args
+	# Needs reivew: 17843 wallet: Reset reused transactions cache
 # FUNCTIONALITY:
 	14066 gitian_power64						6d990c68b6
 	# not ready/deterministic: 13827 NSIS depends build
@@ -186,6 +196,8 @@ checkout v0.19.0.1
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
 	15756 -													last=091747b46ec promag/2019-04-tools-shortcuts
 	15768 gui_ctrl_w-0.19									last=77b0232fcb0	# gui: Add close window shortcut
+	17795 emilengler:2019-12-gui-close-rpcconsole-shortcut
+		TODO: Always support both keys
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
 		# TODO: Minify and test well
@@ -225,6 +237,8 @@ checkout v0.19.0.1
 	16964 gui_sendcoins_yes-0.19+knots						last=a649cc6a17b instagibbs/sendcoins_yes
 		# + #17463 implicitly
 	16944 gui_send_psbt-0.19+knots							last=c6dd565c882 Sjors/2019/08/gui-send-psbt
+		# NOTE: If removing, also drop #17587
+	17587 gui_watchonly_balance-0.19+knots
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
 	17034 bip174_versions-0.18								last=674e6382ab1 achow101/bip174-extensions
 	17056 desc_sortedmulti-0.19								last=4bb660be90a achow101/sortedmulti-desc
@@ -253,6 +267,13 @@ checkout v0.19.0.1
 	Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
 	TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
+	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
+	17492 instagibbs/gui_bump_psbt
+	# Needs review/undraft: 17509 gui: save and load PSBT
+	# TODO 17529 rpc: Faster getblock using PureBlock
+	Minify: 17631 TheBlueMatt:2019-11-filter-rest
+	17636 emilengler/2019-11-guisettings
+	# Needs work: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
 	7107 qtnetworkport							0fae275651	last=1f37c87 origin-pull/7107/head
@@ -281,6 +302,7 @@ m	5891 qt_console_history_persist-0.19+knots	7f5f2c835a	last=ea852deea35 qt_cons
 	-    rwconf_policy-0.18+knots				eb81c91962
 			TODO: Remove sendtofuture
 			TODO: Add -peercfilters (restart required to ensure caches fill/flush and peers reconnect)
+			TODO: Check pruning works 100% (https://github.com/bitcoin/bitcoin/pull/17696)
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 	TODO: Revert #16152 (disable bloom by default)
