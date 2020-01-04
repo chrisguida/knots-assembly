@@ -1,4 +1,4 @@
-timestamp 2019-11-09 19:18:19
+timestamp 2020-01-04 02:05:41
 lastapply no-merge
 
 #.. checked up to PR #17860
@@ -65,9 +65,9 @@ checkout v0.19.0.1
 	17524 fix_unspendable_psbt-0.19
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 	# Needs to be just a bugfix: 17597 qt: Fix height of QR-less ReceiveRequestDialog
-	17621 instagibbs/actually_no_reuse
+	17621 fix_iud_keywide-0.19								last=09502452bbb instagibbs/actually_no_reuse
 	17643 fix_bumpfee_uninitread-0.19
-	17728 achow101/fix-scantxoutset-args
+	17728 fix_scantxoutset_args-0.19
 	# Needs reivew: 17843 wallet: Reset reused transactions cache
 # FUNCTIONALITY:
 	14066 gitian_power64						6d990c68b6
@@ -135,7 +135,7 @@ checkout v0.19.0.1
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	12763 rpcwhitelist-0.19						68d8b186de
 	# TODO ? 12792 w/ renamed param
-	12911 signrawtx_showfees-0.19				7035643906	last=bba2e57c76 kallewoof/sign-show-fees
+	12911 signrawtx_showfees-0.19				7035643906	last=345f8f9d1b1 kallewoof/sign-show-fees
 	12965 scriptthreads-0.19					874c6e06f8	last=dfab6c6866 jonas/2018/04/svt
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
@@ -196,8 +196,8 @@ checkout v0.19.0.1
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
 	15756 -													last=091747b46ec promag/2019-04-tools-shortcuts
 	15768 gui_ctrl_w-0.19									last=77b0232fcb0	# gui: Add close window shortcut
-	17795 emilengler:2019-12-gui-close-rpcconsole-shortcut
-		TODO: Always support both keys
+	17795 gui_console_ctrl_d-0.19+knots
+		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
 		# TODO: Minify and test well
@@ -258,21 +258,21 @@ checkout v0.19.0.1
 	# Needs fix: 17355 za-kk:oct-19-17174
 	17360 gui_fee_hide_tooltip-0.11
 	17437 rpc_wtx_blockheight-0.19
-	16432 gui_overview_privacy-0.19+knots					last=7a6766bed6c
-		# NOTE: Includes overhaul
+	16432 gui_overview_privacy-0.19+knots					last=3935bce9c28
+		# NOTE: Dropped monospace font / justify hack in privacy mode
 		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
 	16442 neutrino-0.19+knots								last=459aead0e66
-	Diff-minimise: 16463 achow101:bip174-xpub
-	Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
-	TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
-	TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
+	# TODO: Diff-minimise: 16463 achow101:bip174-xpub
+	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
+	# TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
-	17492 instagibbs/gui_bump_psbt
+	# TODO: 17492 instagibbs/gui_bump_psbt
 	# Needs review/undraft: 17509 gui: save and load PSBT
 	# TODO 17529 rpc: Faster getblock using PureBlock
-	Minify: 17631 TheBlueMatt:2019-11-filter-rest
-	17636 emilengler/2019-11-guisettings
+	17631 rest_blockfilter-0.19								last=3ab6abcc4dd matt/2019-11-filter-rest
+		# NOTE: Dropped unrelated extra commits
+	17636 guisettings_opt-0.19								last=5266efa964b emilengler/2019-11-guisettings
 	# Needs work: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					e6d0e514cf
@@ -286,19 +286,20 @@ checkout v0.19.0.1
 	 553 bugfix_qt_uri_amount_parser			e74e075536
 	-    mining_priority						c7999022e4  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					4faaa5ad5a
-m	5891 qt_console_history_persist-0.19+knots	7f5f2c835a	last=ea852deea35 qt_console_history_persist
+	5891 qt_console_history_persist-0.19+knots	7f5f2c835a	last=ea852deea35 qt_console_history_persist
 	7219 rbf_opts-0.19+knots					e6803520a3
 	# TODO: some way to add UA comments via rwconf
+	#MAYBETODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
 	12146 opt_wallet_segwit2					15f192dfb5
 	10282 timebomb_knots						aca5337519
 	-     gui_wallet_displayname-0.19			9d8ff1e11d	# Latest code now
 	-     gui_request_payment_label-0.19		ccb7f4d528
 	n/a  checkpoint_update-0.19					b6067d8662
 # POLICY:
-	TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
+	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				6cd540a25f
 	-	 bytespersigopstrict-0.19+knots			95d95fa3e3
-	9749 unique_spk_mempool-0.18+knots			3a8aafc37e
+	9749 unique_spk_mempool-0.19+knots			3a8aafc37e
 	-    rwconf_policy-0.18+knots				eb81c91962
 			TODO: Remove sendtofuture
 			TODO: Add -peercfilters (restart required to ensure caches fill/flush and peers reconnect)
@@ -313,8 +314,9 @@ m	5891 qt_console_history_persist-0.19+knots	7f5f2c835a	last=ea852deea35 qt_cons
 FIXME: Check there are no menu icons
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
+FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges)
 	n/a  (cherrypick=15b62fa32bd3eaced3)		7048a6755f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20191109)			ec3e4d8ce6
+	n/a  (bump_version=Knots:20200104)			ec3e4d8ce6
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=0595ac1bf8)				f4af8df41d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
@@ -324,6 +326,7 @@ FIXME: Check there are no menu icons
 		TODO: Dropping 5916 legacy_keyorigin
 		TODO: 7219 txrepl_fullrbf -> 7219 rbf_opts
 		TODO: b/doc/release-notes-16807.md w/ autodetect added
+		TODO: emilengler/2019-11-guisettings relnotes
 		TODO: 4bb660be90a doc/release-notes-17056.md
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
