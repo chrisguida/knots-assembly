@@ -22,6 +22,9 @@ checkout v0.19.0.1
 	15888 test_wallet_implicitsegwit			e5db67d94a
 	17402 travis_ppc64-0.18									last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
+	17762 net_log_category_exc-0.19
+		# Completely rewrote to minimise impact on 0.19
+	17828 log_categories_validation-0.19+knots				last=e1481262465 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		9d197f0974	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					af253f6c66
 	9524 marco/Mf1701-qaPruning					1be48502ae	last=88883ae13d marco/Mf1701-qaPruning
@@ -125,7 +128,7 @@ checkout v0.19.0.1
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
 	11750 coincontrol_multiselect				f3be4da827	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
-	11770 -										83746da5d2	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11770 rest_fee-0.19							83746da5d2	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			2d9fd86ada
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
@@ -258,7 +261,7 @@ checkout v0.19.0.1
 	# Needs fix: 17355 za-kk:oct-19-17174
 	17360 gui_fee_hide_tooltip-0.11
 	17437 rpc_wtx_blockheight-0.19
-	16432 gui_overview_privacy-0.19+knots					last=3935bce9c28
+	16432 gui_overview_privacy-0.19+knots					last=ea1fb691c9c
 		# NOTE: Dropped monospace font / justify hack in privacy mode
 		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
