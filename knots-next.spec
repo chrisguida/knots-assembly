@@ -186,7 +186,9 @@ checkout v0.19.0.1
 	# TODO: 15421 tor_subprocess
 	#	Needs boost::process check
 	15423 tor_socks_port						e366a8e9f0
+	15756 -													last=091747b46ec promag/2019-04-tools-shortcuts
 	15428 tor_gui_pairing-0.19+knots			053f9f08c2	# latest code now
+TODO: rpcconsole.cpp enumeration?
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
@@ -197,7 +199,6 @@ checkout v0.19.0.1
 	15633 nohbcbfornonwit						6e6b51a203	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
-	15756 -													last=091747b46ec promag/2019-04-tools-shortcuts
 	15768 gui_ctrl_w-0.19									last=77b0232fcb0	# gui: Add close window shortcut
 	17795 gui_console_ctrl_d-0.19+knots
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
@@ -298,11 +299,13 @@ checkout v0.19.0.1
 	-     gui_wallet_displayname-0.19			9d8ff1e11d	# Latest code now
 	-     gui_request_payment_label-0.19		ccb7f4d528
 	n/a  checkpoint_update-0.19					b6067d8662
+TODO: Revert Bech32 checkbox thing?
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				6cd540a25f
 	-	 bytespersigopstrict-0.19+knots			95d95fa3e3
 	9749 unique_spk_mempool-0.19+knots			3a8aafc37e
+STOP
 	-    rwconf_policy-0.18+knots				eb81c91962
 			TODO: Remove sendtofuture
 			TODO: Add -peercfilters (restart required to ensure caches fill/flush and peers reconnect)
@@ -318,6 +321,7 @@ FIXME: Check there are no menu icons
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges)
+TODO: check for 'false' instead of ALLOW_ANY in addArgs
 	n/a  (cherrypick=15b62fa32bd3eaced3)		7048a6755f	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200104)			ec3e4d8ce6
 #	n/a  knots_historical_relnotes				61100a2
