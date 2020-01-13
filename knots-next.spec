@@ -24,7 +24,7 @@ checkout v0.19.0.1
 # FIXES:
 	17762 net_log_category_exc-0.19
 		# Completely rewrote to minimise impact on 0.19
-	17828 log_categories_validation-0.19+knots				last=e1481262465 practicalswift/log-categories
+	17828 log_categories_validation-0.19+knots				last=443e105f7ae practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		9d197f0974	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					af253f6c66
 	9524 marco/Mf1701-qaPruning					1be48502ae	last=88883ae13d marco/Mf1701-qaPruning
@@ -145,7 +145,8 @@ checkout v0.19.0.1
 	13203 dsha256_power8-0.17					9e854a5fe2	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		8b4a5fb58f
-	13339 walletnotify_w-0.19					98d4181322	last=826718490fb promag/2018-05-walletnotify
+	13339 walletnotify_w-0.19					98d4181322	last=1c335d5828e promag/2018-05-walletnotify
+		# held back 826718490fb..1c335d5828e disabling on Windows
 		# held back cef0327afd..15a0ad0bb4 Windows porting due to copyright issues (and bugs?) - No longer applicable?
 		# Removed WIN32 conditional
 		# Changed '"'"' to '\''
@@ -188,7 +189,6 @@ checkout v0.19.0.1
 	15423 tor_socks_port						e366a8e9f0
 	15756 -													last=091747b46ec promag/2019-04-tools-shortcuts
 	15428 tor_gui_pairing-0.19+knots			053f9f08c2	# latest code now
-TODO: rpcconsole.cpp enumeration?
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
@@ -244,7 +244,7 @@ TODO: rpcconsole.cpp enumeration?
 		# NOTE: If removing, also drop #17587
 	17587 gui_watchonly_balance-0.19+knots
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
-	17034 bip174_versions-0.18								last=674e6382ab1 achow101/bip174-extensions
+	17034 bip174_versions-0.18								last=dd1a5cac06e achow101/bip174-extensions
 	17056 desc_sortedmulti-0.19								last=4bb660be90a achow101/sortedmulti-desc
 		# Held back doc/relnotes
 # TODO: Do we want a multi67 too? (Can descriptors deviate from Core?)
@@ -284,6 +284,9 @@ TODO: rpcconsole.cpp enumeration?
 	7533 sendraw_force-0.19+knots				19d9a62fee  # Latest code now
 	11082 rwconf-0.19							f5d5d15cfa	last=956a76cc852 rwconf
 	7510 rwconf_gui-0.19+knots					74d4579901	last=8ff7132eef3 rwconf_gui  # accidentally rebased on master :)
+			TODO: Check pruning works 100% (https://github.com/bitcoin/bitcoin/pull/17696)
+TODO: rwconf_neutrino
+			TODO: Add -peercfilters (restart required to ensure caches fill/flush and peers reconnect) - and blockfilterindex for intro?
 	-    preserve_unsupported_keyflags
 	 559 accept_nonstdtxn						dd0f34238f
 	 929 tbc									27b3ac8389
@@ -299,17 +302,13 @@ TODO: rpcconsole.cpp enumeration?
 	-     gui_wallet_displayname-0.19			9d8ff1e11d	# Latest code now
 	-     gui_request_payment_label-0.19		ccb7f4d528
 	n/a  checkpoint_update-0.19					b6067d8662
-TODO: Revert Bech32 checkbox thing?
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				6cd540a25f
 	-	 bytespersigopstrict-0.19+knots			95d95fa3e3
 	9749 unique_spk_mempool-0.19+knots			3a8aafc37e
 STOP
-	-    rwconf_policy-0.18+knots				eb81c91962
-			TODO: Remove sendtofuture
-			TODO: Add -peercfilters (restart required to ensure caches fill/flush and peers reconnect)
-			TODO: Check pruning works 100% (https://github.com/bitcoin/bitcoin/pull/17696)
+	-    rwconf_policy-0.19+knots				eb81c91962
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 	TODO: Revert #16152 (disable bloom by default)
