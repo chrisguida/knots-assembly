@@ -284,9 +284,7 @@ checkout v0.19.0.1
 	7533 sendraw_force-0.19+knots				19d9a62fee  # Latest code now
 	11082 rwconf-0.19							f5d5d15cfa	last=956a76cc852 rwconf
 	7510 rwconf_gui-0.19+knots					74d4579901	last=8ff7132eef3 rwconf_gui  # accidentally rebased on master :)
-			TODO: Check pruning works 100% (https://github.com/bitcoin/bitcoin/pull/17696)
-TODO: rwconf_neutrino
-			TODO: Add -peercfilters (restart required to ensure caches fill/flush and peers reconnect) - and blockfilterindex for intro?
+	-    rwconf_gui_plus-0.19+knots
 	-    preserve_unsupported_keyflags
 	 559 accept_nonstdtxn						dd0f34238f
 	 929 tbc									27b3ac8389
@@ -305,13 +303,13 @@ TODO: rwconf_neutrino
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				6cd540a25f
-	-	 bytespersigopstrict-0.19+knots			95d95fa3e3
+	-    bytespersigopstrict-0.19+knots			95d95fa3e3
 	9749 unique_spk_mempool-0.19+knots			3a8aafc37e
+	-    bloom_default-0.19+knots
 STOP
 	-    rwconf_policy-0.19+knots				eb81c91962
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
-	TODO: Revert #16152 (disable bloom by default)
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.18+knots					8f7b63e470
 # BRANDING:
