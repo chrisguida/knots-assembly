@@ -171,7 +171,7 @@ checkout v0.19.0.1
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
 	# CHANGES WALLET FORMAT, wait for Core: 15006 achow101:create-encrypted-wallet
 		# +16394 achow101/fix-born-enc
-	15084 -													last=b3b6b6f62fc  #gui: don't disable the sync overlay when wallet is disabled
+	15084 gui_nowallet_modaloverlay-0.19					last=b3b6b6f62fc  #gui: don't disable the sync overlay when wallet is disabled
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	15115 rm_send2self-mini						e3663bbc4e	last=ecf3d5323e rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
