@@ -294,7 +294,6 @@ checkout v0.19.0.1
 	5891 qt_console_history_persist-0.19+knots	7f5f2c835a	last=ea852deea35 qt_console_history_persist
 	7219 rbf_opts-0.19+knots					e6803520a3
 	# TODO: some way to add UA comments via rwconf
-	#MAYBETODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
 	12146 opt_wallet_segwit2					15f192dfb5
 	10282 timebomb_knots						aca5337519
 	-     gui_wallet_displayname-0.19			9d8ff1e11d	# Latest code now
@@ -306,20 +305,19 @@ checkout v0.19.0.1
 	-    bytespersigopstrict-0.19+knots			95d95fa3e3
 	9749 unique_spk_mempool-0.19+knots			3a8aafc37e
 	-    bloom_default-0.19+knots
-STOP
 	-    rwconf_policy-0.19+knots				eb81c91962
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
-	7483 svg_icon-0.18+knots					8f7b63e470
+	7483 svg_icon-0.19							8f7b63e470
 # BRANDING:
-	n/a  knots_branding-0.18					8510f8d367
-FIXME: Check there are no menu icons
+	n/a  knots_branding-0.19					8510f8d367
+#FIXME: Check there are no menu icons
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
-FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges)
-TODO: check for 'false' instead of ALLOW_ANY in addArgs
-	n/a  (cherrypick=15b62fa32bd3eaced3)		7048a6755f	# doc/{bips,files}
+#FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges)
+#TODO: check for 'false' instead of ALLOW_ANY in addArgs
+	n/a  (cherrypick=9600fe90fb2e446cac)		7048a6755f	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200104)			ec3e4d8ce6
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=0595ac1bf8)				f4af8df41d  # release notes: write/update, including change log and credits
