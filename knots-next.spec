@@ -117,7 +117,7 @@ checkout v0.19.0.1
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				c29eeb585f
-	11413 explicit_fee-0.19						3714c6806c	last=398be1c0f37 kallewoof/explicit-fee
+	11413 explicit_fee-0.19						3714c6806c	last=9721534f1c9 kallewoof/explicit-fee
 		# NOTE: Held back 97636cd371c..473ce2dcfdf -  see 670a101e362db0e3a346719e905fd6ab1cfd4fc4 branch for min feerate error
 		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
@@ -145,7 +145,7 @@ checkout v0.19.0.1
 	13203 dsha256_power8-0.17					9e854a5fe2	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		8b4a5fb58f
-	13339 walletnotify_w-0.19					98d4181322	last=1c335d5828e promag/2018-05-walletnotify
+	13339 walletnotify_w-0.19					98d4181322	last=56d2307446b promag/2018-05-walletnotify
 		# held back 826718490fb..1c335d5828e disabling on Windows
 		# held back cef0327afd..15a0ad0bb4 Windows porting due to copyright issues (and bugs?) - No longer applicable?
 		# Removed WIN32 conditional
