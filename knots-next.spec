@@ -54,6 +54,7 @@ checkout v0.19.0.1
 	# Needs review: 16161 util: Fix compilation errors in support/lockedpool.cpp
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
+	16525 rpc_unsigned_txver-0.18                           363d2b8910      last=e80259f197 matt/2019-07-unsigned-tx-ver
 	# Worth the diff? 16963 promag:2019-09-fix-loadwallet-signal-uniqueptr
 	# Needs reivew: 17156 achow101:psbt-fuzz-fix
 	17180 sendamount_tooltip-0.11
@@ -72,6 +73,7 @@ checkout v0.19.0.1
 	17643 fix_bumpfee_uninitread-0.19
 	17728 fix_scantxoutset_args-0.19
 	# Needs reivew: 17843 wallet: Reset reused transactions cache
+	17946 fix_gbt_buried
 # FUNCTIONALITY:
 	14066 gitian_power64						6d990c68b6
 	# not ready/deterministic: 13827 NSIS depends build
@@ -315,21 +317,13 @@ checkout v0.19.0.1
 #FIXME: Check there are no menu icons
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
-#FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges)
+#FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
 	n/a  (cherrypick=9600fe90fb2e446cac)		7048a6755f	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200104)			ec3e4d8ce6
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=0595ac1bf8)				f4af8df41d  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=9fc3c810bff)				f4af8df41d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
-		TODO: new announcement ML
-		TODO: Dropping 11765 rest_blockhash_compat-0.18
-		TODO: Dropping 12096 bumpfee_reduce_output-0.18
-		TODO: Dropping 5916 legacy_keyorigin
-		TODO: 7219 txrepl_fullrbf -> 7219 rbf_opts
-		TODO: b/doc/release-notes-16807.md w/ autodetect added
-		TODO: emilengler/2019-11-guisettings relnotes
-		TODO: 4bb660be90a doc/release-notes-17056.md
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
