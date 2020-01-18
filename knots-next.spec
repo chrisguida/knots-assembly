@@ -330,8 +330,8 @@ checkout v0.19.0.1
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=1f3359bfec)				c1de3c6279  # translation update
-	n/a  (cherrypick=de8a068d8e)				c1182c9863	# update manpages (build first)
+	n/a  (cherrypick=44c11925250)				c1de3c6279  # translation update
+	n/a  (cherrypick=f3a34217c00)				c1182c9863	# update manpages (build first)
 # NOTE: use git diff --minimal for patches!
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
