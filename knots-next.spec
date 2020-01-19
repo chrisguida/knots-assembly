@@ -1,9 +1,9 @@
 timestamp 2020-01-04 02:05:41
-lastapply no-merge
+#lastapply no-merge
 
 #.. checked up to PR #17860
 
-checkout v0.19.0.1
+checkout origin/0.19
 @0.19.x-syslibs
 	5872 subdir_incl_compat						29544b57e27
 	2241 sys_leveldb							c94b5102231
@@ -13,8 +13,8 @@ checkout v0.19.0.1
 	-     bugfix_asm_leveldb_check				ebda9cb965d
 	15155 test_external_bcli					cb6e480140f
 	16564 raii_event_test_fix-0.14				b815cdf468b	last=9a19c9ada5
-	17450 bugfix_pr17450-0.19					9042cd5b937
-	17654 boost_1_72_compat-0.19				a3dca843b30
+TM	17450 bugfix_pr17450-0.19					9042cd5b937
+TM	17654 boost_1_72_compat-0.19				a3dca843b30
 @0.19.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
@@ -75,6 +75,7 @@ checkout v0.19.0.1
 	# Needs reivew: 17843 wallet: Reset reused transactions cache
 	17946 fix_gbt_buried						72e19972b4e
 # FUNCTIONALITY:
+	FIXME: Restore win32 gitian builds! revert faf666f8148eeb305a9c4f78459aff2c7268016b
 	14066 gitian_power64						ec80f3746ff
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
@@ -209,6 +210,7 @@ checkout v0.19.0.1
 		# TODO: Minify and test well
 		# NOTE: Needs #17366
 	15836 jonas/2019/04/feeinfo					24c56bc2676	last=b94292a7cb jonas/2019/04/feeinfo
+		FIXME: git rm Bitcoin-Qt.*
 	15861 restore_vbits_warning					63d1f20f662
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
