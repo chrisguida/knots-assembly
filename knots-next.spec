@@ -20,11 +20,11 @@ checkout v0.19.0.1
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							e13ddc3a1fd
 	15888 test_wallet_implicitsegwit			957748c8dd9
-	17402 travis_ppc64-0.18						efca75db899									last=1d684f05341 elichai/2019-11-powerpc64
+	17402 travis_ppc64-0.18						efca75db899	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
 	17762 net_log_category_exc-0.19				625b5fafbab
 		# Completely rewrote to minimise impact on 0.19
-	17828 log_categories_validation-0.19+knots	062f5b03c1e				last=443e105f7ae practicalswift/log-categories
+	17828 log_categories_validation-0.19+knots	062f5b03c1e	last=443e105f7ae practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		efc4cc2d518	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					99a135b79a6
 	9524 marco/Mf1701-qaPruning					4d044e0fc41	last=88883ae13d marco/Mf1701-qaPruning
@@ -54,7 +54,7 @@ checkout v0.19.0.1
 	# Needs review: 16161 util: Fix compilation errors in support/lockedpool.cpp
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
-	16525 rpc_unsigned_txver-0.18                           913ca0a80b6      last=e80259f197 matt/2019-07-unsigned-tx-ver
+	16525 rpc_unsigned_txver-0.18				913ca0a80b6	last=e80259f197 matt/2019-07-unsigned-tx-ver
 	# Worth the diff? 16963 promag:2019-09-fix-loadwallet-signal-uniqueptr
 	# Needs reivew: 17156 achow101:psbt-fuzz-fix
 	17180 sendamount_tooltip-0.11				394636c0e15
@@ -62,14 +62,14 @@ checkout v0.19.0.1
 		# + 17226 promag:2019-10-payamount-tooltip
 	17258 fix_rpc_listsinceblock_conflicts-0.19	5db9297d771	# adamjonas:listsinceblock-filter-conflicts
 	# Not needed?: 17366 qa_reset_segwitheight-0.19
-	17427 fix_qmeta_size_t-0.18					2e75c1b60b8								last=1828c6f05fc
+	17427 fix_qmeta_size_t-0.18					2e75c1b60b8	last=1828c6f05fc
 		# Held back comment/formatting changes
-	17474 bugfix_gui_netlimited_svcbit			65ef34b78a7						last=4341bffb6ef bugfix_gui_netlimited_svcbit+refactor
+	17474 bugfix_gui_netlimited_svcbit			65ef34b78a7	last=4341bffb6ef bugfix_gui_netlimited_svcbit+refactor
 	# Needs review: 17457 bugfix_multiwallet_coincontrol
 	17524 fix_unspendable_psbt-0.19				99fdc1305c1
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 	# Needs to be just a bugfix: 17597 qt: Fix height of QR-less ReceiveRequestDialog
-	17621 fix_iud_keywide-0.19					dc95386a7fa								last=09502452bbb instagibbs/actually_no_reuse
+	17621 fix_iud_keywide-0.19					dc95386a7fa	last=09502452bbb instagibbs/actually_no_reuse
 	17643 fix_bumpfee_uninitread-0.19			b8280a7f2cd
 	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs reivew: 17843 wallet: Reset reused transactions cache
@@ -173,7 +173,7 @@ checkout v0.19.0.1
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
 	# CHANGES WALLET FORMAT, wait for Core: 15006 achow101:create-encrypted-wallet
 		# +16394 achow101/fix-born-enc
-	15084 gui_nowallet_modaloverlay-0.19		37a0bb40c8d					last=b3b6b6f62fc  #gui: don't disable the sync overlay when wallet is disabled
+	15084 gui_nowallet_modaloverlay-0.19		37a0bb40c8d	last=b3b6b6f62fc  #gui: don't disable the sync overlay when wallet is disabled
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	15115 rm_send2self-mini						66d458d0ed0	last=ecf3d5323e rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
@@ -189,7 +189,7 @@ checkout v0.19.0.1
 	# TODO: 15421 tor_subprocess
 	#	Needs boost::process check
 	15423 tor_socks_port						cb310eb6e9b
-	15756 -										d213dafeb47													last=091747b46ec promag/2019-04-tools-shortcuts
+	15756 -										d213dafeb47	last=091747b46ec promag/2019-04-tools-shortcuts
 	15428 tor_gui_pairing-0.19+knots			5b8d09c0e6f	# latest code now
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
@@ -201,7 +201,7 @@ checkout v0.19.0.1
 	15633 nohbcbfornonwit						eb0dd0e21b9	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
-	15768 gui_ctrl_w-0.19						58cdb26c0cc									last=77b0232fcb0	# gui: Add close window shortcut
+	15768 gui_ctrl_w-0.19						58cdb26c0cc	last=77b0232fcb0	# gui: Add close window shortcut
 	17795 gui_console_ctrl_d-0.19+knots			90ae0210bd5
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
@@ -236,18 +236,18 @@ checkout v0.19.0.1
 	# Needs intense review: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				a439ac6e97d	last=dcd5c4a5773 instagibbs/decode_descriptor
-	16807 bech32_error_detection-0.19+knots		aab3d39d958					last=19e9def6902 meshcollider/201909_bech32_error_detection
+	16807 bech32_error_detection-0.19+knots		aab3d39d958	last=19e9def6902 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 # TODO: Add bech32 error detect GUI
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
-	16964 gui_sendcoins_yes-0.19+knots			d791163d315						last=a649cc6a17b instagibbs/sendcoins_yes
+	16964 gui_sendcoins_yes-0.19+knots			d791163d315	last=a649cc6a17b instagibbs/sendcoins_yes
 		# + #17463 implicitly
-	16944 gui_send_psbt-0.19+knots				ed6b0d01ac1							last=c6dd565c882 Sjors/2019/08/gui-send-psbt
+	16944 gui_send_psbt-0.19+knots				ed6b0d01ac1	last=c6dd565c882 Sjors/2019/08/gui-send-psbt
 		# NOTE: If removing, also drop #17587
 	17587 gui_watchonly_balance-0.19+knots		31ed2f437b1
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
-	17034 bip174_versions-0.18					5e9c2b5314c								last=dd1a5cac06e achow101/bip174-extensions
-	17056 desc_sortedmulti-0.19					add48f7dbed								last=4bb660be90a achow101/sortedmulti-desc
+	17034 bip174_versions-0.18					5e9c2b5314c	last=dd1a5cac06e achow101/bip174-extensions
+	17056 desc_sortedmulti-0.19					add48f7dbed	last=4bb660be90a achow101/sortedmulti-desc
 		# Held back doc/relnotes
 # TODO: Do we want a multi67 too? (Can descriptors deviate from Core?)
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
@@ -264,11 +264,11 @@ checkout v0.19.0.1
 	# Needs fix: 17355 za-kk:oct-19-17174
 	17360 gui_fee_hide_tooltip-0.11				803b3477573
 	17437 rpc_wtx_blockheight-0.19				3074b807e41
-	16432 gui_overview_privacy-0.19+knots		87fc6470bb6					last=ea1fb691c9c
+	16432 gui_overview_privacy-0.19+knots		87fc6470bb6	last=ea1fb691c9c
 		# NOTE: Dropped monospace font / justify hack in privacy mode
 		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
-	16442 neutrino-0.19+knots					61be9bd759d								last=459aead0e66
+	16442 neutrino-0.19+knots					61be9bd759d	last=459aead0e66
 	# TODO: Diff-minimise: 16463 achow101:bip174-xpub
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	# TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
@@ -276,9 +276,9 @@ checkout v0.19.0.1
 	# TODO: 17492 instagibbs/gui_bump_psbt
 	# Needs review/undraft: 17509 gui: save and load PSBT
 	# TODO 17529 rpc: Faster getblock using PureBlock
-	17631 rest_blockfilter-0.19					e8d30213c37								last=3ab6abcc4dd matt/2019-11-filter-rest
+	17631 rest_blockfilter-0.19					e8d30213c37	last=3ab6abcc4dd matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
-	17636 guisettings_opt-0.19					59a6abab328								last=5266efa964b emilengler/2019-11-guisettings
+	17636 guisettings_opt-0.19					59a6abab328	last=5266efa964b emilengler/2019-11-guisettings
 	# Needs work: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					cd1524fce7e
