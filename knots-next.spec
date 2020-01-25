@@ -3,7 +3,7 @@ timestamp 2020-01-04 02:05:41
 
 #.. checked up to PR #17860
 
-checkout origin/0.19
+checkout v0.19.1rc1
 @0.19.x-syslibs
 	5872 subdir_incl_compat						29544b57e27
 	2241 sys_leveldb							c94b5102231
@@ -22,9 +22,10 @@ TM	17654 boost_1_72_compat-0.19				a3dca843b30
 	15888 test_wallet_implicitsegwit			957748c8dd9
 	17402 travis_ppc64-0.18						efca75db899	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
-	17762 net_log_category_exc-0.19				625b5fafbab
+TM	17762 net_log_category_exc-0.19				625b5fafbab
 		# Completely rewrote to minimise impact on 0.19
-	17828 log_categories_validation-0.19+knots	062f5b03c1e	last=443e105f7ae practicalswift/log-categories
+NM	17828 log_categories_validation-0.19+knots	062f5b03c1e
+	17828 log_categories_validation-0.19+knots				last=443e105f7ae practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		efc4cc2d518	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					99a135b79a6
 	9524 marco/Mf1701-qaPruning					4d044e0fc41	last=88883ae13d marco/Mf1701-qaPruning
@@ -55,23 +56,22 @@ TM	17654 boost_1_72_compat-0.19				a3dca843b30
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
 	16525 rpc_unsigned_txver-0.18				913ca0a80b6	last=e80259f197 matt/2019-07-unsigned-tx-ver
-	# Worth the diff? 16963 promag:2019-09-fix-loadwallet-signal-uniqueptr
 	# Needs reivew: 17156 achow101:psbt-fuzz-fix
 	17180 sendamount_tooltip-0.11				394636c0e15
 		# JeremyCrookshank:sendamounttooltip
 		# + 17226 promag:2019-10-payamount-tooltip
-	17258 fix_rpc_listsinceblock_conflicts-0.19	5db9297d771	# adamjonas:listsinceblock-filter-conflicts
+TM	17258 fix_rpc_listsinceblock_conflicts-0.19	5db9297d771	# adamjonas:listsinceblock-filter-conflicts
 	# Not needed?: 17366 qa_reset_segwitheight-0.19
-	17427 fix_qmeta_size_t-0.18					2e75c1b60b8	last=1828c6f05fc
+TM	17427 fix_qmeta_size_t-0.18					2e75c1b60b8
 		# Held back comment/formatting changes
 	17474 bugfix_gui_netlimited_svcbit			65ef34b78a7	last=4341bffb6ef bugfix_gui_netlimited_svcbit+refactor
 	# Needs review: 17457 bugfix_multiwallet_coincontrol
-	17524 fix_unspendable_psbt-0.19				99fdc1305c1
+TM	17524 fix_unspendable_psbt-0.19				99fdc1305c1
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 	# Needs to be just a bugfix: 17597 qt: Fix height of QR-less ReceiveRequestDialog
-	17621 fix_iud_keywide-0.19					dc95386a7fa	last=09502452bbb instagibbs/actually_no_reuse
-	17643 fix_bumpfee_uninitread-0.19			b8280a7f2cd
-	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
+TM	17621 fix_iud_keywide-0.19					dc95386a7fa
+TM	17643 fix_bumpfee_uninitread-0.19			b8280a7f2cd
+TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs reivew: 17843 wallet: Reset reused transactions cache
 	17946 fix_gbt_buried						72e19972b4e
 # FUNCTIONALITY:
