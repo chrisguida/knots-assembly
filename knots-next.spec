@@ -75,7 +75,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs reivew: 17843 wallet: Reset reused transactions cache
 	17946 fix_gbt_buried						72e19972b4e
 # FUNCTIONALITY:
-	FIXME: Restore win32 gitian builds! revert faf666f8148eeb305a9c4f78459aff2c7268016b
+	-     restore_win32-0.19+knots
 	14066 gitian_power64						ec80f3746ff
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
@@ -209,8 +209,8 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
 		# TODO: Minify and test well
 		# NOTE: Needs #17366
-	15836 jonas/2019/04/feeinfo					24c56bc2676	last=b94292a7cb jonas/2019/04/feeinfo
-		FIXME: git rm Bitcoin-Qt.*
+	15836 fee_histogram-0.19					24c56bc2676	last=b94292a7cb jonas/2019/04/feeinfo
+		# NOTE: removed extraneous Bitcoin-Qt.* files
 	15861 restore_vbits_warning					63d1f20f662
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
