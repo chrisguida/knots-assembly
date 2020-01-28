@@ -1,7 +1,7 @@
-timestamp 2020-01-04 02:05:41
+timestamp 2020-01-28 04:54:27
 #lastapply no-merge
 
-#.. checked up to PR #17860
+#.. checked up to PR #18011
 
 checkout v0.19.1rc1
 @0.19.x-syslibs
@@ -74,8 +74,12 @@ TM	17643 fix_bumpfee_uninitread-0.19			b8280a7f2cd
 TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs reivew: 17843 wallet: Reset reused transactions cache
 	17946 fix_gbt_buried						72e19972b4e
+	# Needs review: 17985 MarcoFalke:2001-p2pNoDeadCode
 # FUNCTIONALITY:
+	17916 win_check_heap_corruption-0.18
+		# NOTE: Skipped Win32 removal stuff
 	-     restore_win32-0.19+knots
+		# TODO 0.20: revert #17756, part of #17916, #18003
 	14066 gitian_power64						ec80f3746ff
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
@@ -106,6 +110,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# needs review/concept ack: 10233 and/or 10386
 	10554 zmq_wtx-0.19							512f2e96f63	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	# needs concept merge/review: 17878 promag:2019-01-zmqpubwallettx
 	12674 rpc_onetry_nonpriv					3f1beb11bbb
 	10593 relax_invblk_punishment				4888324ad5f
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
@@ -282,6 +287,13 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 		# NOTE: Dropped unrelated extra commits
 	17636 guisettings_opt-0.19					59a6abab328	last=5266efa964b emilengler/2019-11-guisettings
 	# Needs work: rpc: Make __cookie__ user immune to rpcwhitelist #17815
+	# Needs work/review: 17918 emilengler:2020-01-hide-non-pkhash-addresses
+	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
+	17955 emilengler/2020-01-paste-bitcoin-uri-button
+	17958 -  # getgeneralinfo RPC
+	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
+	17998 emilengler/2020-01-escape-modaloverlay
+	# Needs review: 18000 -  # Coin Statistics Index
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					cd1524fce7e
 	7107 qtnetworkport							7c4f5374b38	last=1f37c87 origin-pull/7107/head
