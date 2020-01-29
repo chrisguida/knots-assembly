@@ -259,7 +259,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	17125 gui_verifymsg_tips-0.7				9863af566c1  # gui: Add toolTip and placeholderText to --sign--verify message fields
 	17186 gui_signmsg_tip-0.7					d2aa3213ace  # gui: Add placeholder text to the sign message field
 	17195 gui_sendamt_placeholder-0.10			1d890822db4  # gui: send amount placeholder value
-	#TODO: 17211 achow101/fundtx-external-inputs
+	TODO: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options?
 		# TODO: Diff-minimise
 		# Partial rebase at f2fefb51511 (on v0.19.0 tag!)
@@ -274,13 +274,13 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
 	16442 neutrino-0.19+knots					61be9bd759d	last=459aead0e66
-	# TODO: Diff-minimise: 16463 achow101:bip174-xpub
+	TODO: Diff-minimise: 16463 achow101:bip174-xpub
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	# TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
-	# TODO: 17492 instagibbs/gui_bump_psbt
+	17492 instagibbs/gui_bump_psbt
 	Evaluate & minify # Needs review/undraft: 17509 gui: save and load PSBT
-	# TODO 17529 rpc: Faster getblock using PureBlock
+	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.19					e8d30213c37	last=3ab6abcc4dd matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	17636 guisettings_opt-0.19					59a6abab328	last=5266efa964b emilengler/2019-11-guisettings
