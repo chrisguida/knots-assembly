@@ -52,11 +52,10 @@ NM	17828 log_categories_validation-0.19+knots	062f5b03c1e
 	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
 	# Needs review: 16050 promag:2019-05-importmulti-update
-	# Needs review: 16161 util: Fix compilation errors in support/lockedpool.cpp
 	# Likely impossible: 16199 fix coinjoin sends in RPC
-	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
+	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool (only affects nodes with a min fee %1000!=0)
 	16525 rpc_unsigned_txver-0.18				913ca0a80b6	last=e80259f197 matt/2019-07-unsigned-tx-ver
-	# Needs reivew: 17156 achow101:psbt-fuzz-fix
+	17156 achow101/psbt-fuzz-fix
 	17180 sendamount_tooltip-0.11				394636c0e15
 		# JeremyCrookshank:sendamounttooltip
 		# + 17226 promag:2019-10-payamount-tooltip
@@ -72,9 +71,9 @@ TM	17524 fix_unspendable_psbt-0.19				99fdc1305c1
 TM	17621 fix_iud_keywide-0.19					dc95386a7fa
 TM	17643 fix_bumpfee_uninitread-0.19			b8280a7f2cd
 TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
-	# Needs reivew: 17843 wallet: Reset reused transactions cache
+	FOLLOW UP # Needs reivew: 17843 wallet: Reset reused transactions cache
 	17946 fix_gbt_buried						72e19972b4e
-	# Needs review: 17985 MarcoFalke:2001-p2pNoDeadCode
+	CHECK AGAIN # Needs review: 17985 MarcoFalke:2001-p2pNoDeadCode
 # FUNCTIONALITY:
 	17916 win_check_heap_corruption-0.18
 		# NOTE: Skipped Win32 removal stuff
@@ -108,16 +107,15 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	9849 gui_netwatch							f4b7244f807
 	10615 multiwallet_rpc						882ed06729d
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
-	# needs review/concept ack: 10233 and/or 10386
 	10554 zmq_wtx-0.19							512f2e96f63	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
-	# needs concept merge/review: 17878 promag:2019-01-zmqpubwallettx
+	CHECK AGAIN # needs concept merge/review: 17878 promag:2019-01-zmqpubwallettx
 	12674 rpc_onetry_nonpriv					3f1beb11bbb
 	10593 relax_invblk_punishment				4888324ad5f
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-#TODO: Split this up
 	10594 whitelist_outgoing-mini-0.19+knots	accd958dccb	last=b7463a900cd whitelist_outgoing
+		#TODO: Split this up?
 	10350 filtered_witblock-0.19				7aefa53696c	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
@@ -148,7 +146,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# TODO ? 12792 w/ renamed param
 	12911 signrawtx_showfees-0.19				1f3ed3a36fe	last=345f8f9d1b1 kallewoof/sign-show-fees
 	12965 scriptthreads-0.19					8c5b5701f54	last=dfab6c6866 jonas/2018/04/svt
-	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
+	# Needs review are care (new index): 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
 	13203 dsha256_power8-0.17					31bd050ce45	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
@@ -175,7 +173,6 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	14687 zmqkeepalive-0.19+knots				be8c60c06c0	last=c276df7759
 		# NOTE: modified to soft-fail only
 	# wait for Core?: 14707
-	# needs completion: 14912 external signers WIP + 15876
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
 	# CHANGES WALLET FORMAT, wait for Core: 15006 achow101:create-encrypted-wallet
 		# +16394 achow101/fix-born-enc
@@ -193,7 +190,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	15367 startupnotify-0.19+knots				ca5156ce105	last=4b6987c85d8	# feature: Added ability for users to add a startup command
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	# TODO: 15421 tor_subprocess
-	#	Needs boost::process check
+	#	Needs boost::process check (see #14912)
 	15423 tor_socks_port						cb310eb6e9b
 	15756 -										d213dafeb47	last=091747b46ec promag/2019-04-tools-shortcuts
 	15428 tor_gui_pairing-0.19+knots			5b8d09c0e6f	# latest code now
@@ -220,6 +217,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
 	# Needs QA/review: 15946 jonasschnelli:2019/05/prune_blockfilter
+		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
 	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reuse
 	-     rpc_gai_txids-0.19					f78432716ec	last=621796da61 rpc_gai_txids
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
@@ -236,9 +234,9 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 		# CURRENT BRANCH STATUS UNKNOWN
 	# Needs review: 16377 Sjors:2019/07/walletcreatefundedpsbt_addinputs
 	# Needs review: 16378 Sjors:2019/07/send
-	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
+	EVALUATE # Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
+	# needs completion: 15876
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
-	# FIXME: Needs rebase on HasPermission etc FIXME: Breaks p2p_blocksonly ; 16682 blocksonly_violators-0.18.1						last=5ff415d9af jnewbery/2019-08-disconnect-blocksonly-violators
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs intense review: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
@@ -281,12 +279,12 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
 	# TODO: 17492 instagibbs/gui_bump_psbt
-	# Needs review/undraft: 17509 gui: save and load PSBT
+	Evaluate & minify # Needs review/undraft: 17509 gui: save and load PSBT
 	# TODO 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.19					e8d30213c37	last=3ab6abcc4dd matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	17636 guisettings_opt-0.19					59a6abab328	last=5266efa964b emilengler/2019-11-guisettings
-	# Needs work: rpc: Make __cookie__ user immune to rpcwhitelist #17815
+	# Needs work & concept ACK: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 	# Needs work/review: 17918 emilengler:2020-01-hide-non-pkhash-addresses
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	17955 emilengler/2020-01-paste-bitcoin-uri-button
@@ -324,7 +322,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	-    rwconf_policy-0.19+knots				291bc8d0326
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
-# Pre-BRANDING: (needs to be part of F patch to eliminate binary files)
+# Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.19							bed51c71669
 # BRANDING:
 	n/a  knots_branding-0.19					88bb449295d
