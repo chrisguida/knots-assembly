@@ -238,7 +238,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# needs completion: 15876
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	# Needs intense review: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
+	# Needs intense review & handling of binary file: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				a439ac6e97d	last=dcd5c4a5773 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.19+knots		aab3d39d958	last=19e9def6902 meshcollider/201909_bech32_error_detection
