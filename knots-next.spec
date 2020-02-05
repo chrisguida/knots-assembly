@@ -1,9 +1,9 @@
-timestamp 2020-01-28 04:54:27
+timestamp 2020-02-05 20:02:32
 #lastapply no-merge
 
-#.. checked up to PR #18011
+#.. checked up to PR #18064
 
-checkout v0.19.1rc1
+checkout 755b0734bb50febcdf2ceeb5865793735eea36e8
 @0.19.x-syslibs
 	5872 subdir_incl_compat						29544b57e27
 	2241 sys_leveldb							c94b5102231
@@ -239,6 +239,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs intense review & handling of binary file: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
+		# +18023
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				a439ac6e97d	last=dcd5c4a5773 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.19+knots		aab3d39d958	last=19e9def6902 meshcollider/201909_bech32_error_detection
@@ -280,6 +281,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
 	17492 instagibbs/gui_bump_psbt
 	Evaluate & minify # Needs review/undraft: 17509 gui: save and load PSBT
+	18027 gwillen/feature-psbt-ops-dialog
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.19					e8d30213c37	last=3ab6abcc4dd matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
@@ -292,6 +294,10 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	17998 emilengler/2020-01-escape-modaloverlay
 	# Needs review: 18000 -  # Coin Statistics Index
+	18014 elichai/2020-01-siphash
+	18032 achow101/createms-descriptor
+	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
+	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					cd1524fce7e
 	7107 qtnetworkport							7c4f5374b38	last=1f37c87 origin-pull/7107/head
