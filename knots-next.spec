@@ -55,7 +55,7 @@ NM	17828 log_categories_validation-0.19+knots	062f5b03c1e
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool (only affects nodes with a min fee %1000!=0)
 	16525 rpc_unsigned_txver-0.18				913ca0a80b6	last=e80259f197 matt/2019-07-unsigned-tx-ver
-	17156 achow101/psbt-fuzz-fix
+	17156 psbt_fix_pr17156-0.19.1
 	17180 sendamount_tooltip-0.11				394636c0e15
 		# JeremyCrookshank:sendamounttooltip
 		# + 17226 promag:2019-10-payamount-tooltip
@@ -71,9 +71,9 @@ TM	17524 fix_unspendable_psbt-0.19				99fdc1305c1
 TM	17621 fix_iud_keywide-0.19					dc95386a7fa
 TM	17643 fix_bumpfee_uninitread-0.19			b8280a7f2cd
 TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
-	FOLLOW UP # Needs reivew: 17843 wallet: Reset reused transactions cache
+	17843 bugfix_reused_tx_cache-0.19.1
 	17946 fix_gbt_buried						72e19972b4e
-	CHECK AGAIN # Needs review: 17985 MarcoFalke:2001-p2pNoDeadCode
+	# Needs review: 17985 MarcoFalke:2001-p2pNoDeadCode
 # FUNCTIONALITY:
 	17916 win_check_heap_corruption-0.18
 		# NOTE: Skipped Win32 removal stuff
@@ -108,7 +108,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	10615 multiwallet_rpc						882ed06729d
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	10554 zmq_wtx-0.19							512f2e96f63	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
-	CHECK AGAIN # needs concept merge/review: 17878 promag:2019-01-zmqpubwallettx
+	# needs concept merge/review: 17878 promag:2019-01-zmqpubwallettx
 	12674 rpc_onetry_nonpriv					3f1beb11bbb
 	10593 relax_invblk_punishment				4888324ad5f
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
@@ -204,6 +204,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	15633 nohbcbfornonwit						eb0dd0e21b9	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
+	# Needs minor work: 18077 hebasto:20200130-natpmp
 	15768 gui_ctrl_w-0.19						58cdb26c0cc	last=77b0232fcb0	# gui: Add close window shortcut
 	17795 gui_console_ctrl_d-0.19+knots			90ae0210bd5
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
@@ -234,12 +235,13 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 		# CURRENT BRANCH STATUS UNKNOWN
 	# Needs review: 16377 Sjors:2019/07/walletcreatefundedpsbt_addinputs
 	# Needs review: 16378 Sjors:2019/07/send
-	EVALUATE # Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
+	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
+		# NOTE: Bumps boost version!
 	# needs completion: 15876
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs intense review & handling of binary file: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
-		# +18023
+		# +18023 + 17812?
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				a439ac6e97d	last=dcd5c4a5773 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.19+knots		aab3d39d958	last=19e9def6902 meshcollider/201909_bech32_error_detection
@@ -280,8 +282,10 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
 	17492 instagibbs/gui_bump_psbt
-	Evaluate & minify # Needs review/undraft: 17509 gui: save and load PSBT
-	18027 gwillen/feature-psbt-ops-dialog
+	17509 gui_saveload_psbt-0.19+knots						last=e6ea593f510 Sjors/2019/11/gui-psbt-save
+		# NOTE: Minified
+	18027 gui_psbt_opts_dialog-0.19+knots					last=078e3ca649e gwillen/feature-psbt-ops-dialog
+		# NOTE: Dropped changes to error strings
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.19					e8d30213c37	last=3ab6abcc4dd matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
