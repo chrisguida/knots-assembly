@@ -272,16 +272,18 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs fix: 17355 za-kk:oct-19-17174
 	17360 gui_fee_hide_tooltip-0.11				803b3477573
 	17437 rpc_wtx_blockheight-0.19				3074b807e41
-	16432 gui_overview_privacy-0.19+knots		87fc6470bb6	last=ea1fb691c9c
+	16432 gui_overview_privacy-0.19+knots		87fc6470bb6	last=08a3048dd70
+		# NOTE: Held back ea1fb691c9c..08a3048dd70
 		# NOTE: Dropped monospace font / justify hack in privacy mode
 		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
 	16442 neutrino-0.19+knots					61be9bd759d	last=459aead0e66
-	TODO: Diff-minimise: 16463 achow101:bip174-xpub
+	16463 bip174_xpub-0.19+knots							last=951f5ee75a2 achow101/bip174-xpub
+		# NOTE: Diff-minimised
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	# TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
-	17492 instagibbs/gui_bump_psbt
+	17492 gui_bump_psbt-0.19								last=3c30d7118a5 instagibbs/gui_bump_psbt
 	17509 gui_saveload_psbt-0.19+knots						last=e6ea593f510 Sjors/2019/11/gui-psbt-save
 		# NOTE: Minified
 	18027 gui_psbt_opts_dialog-0.19+knots					last=078e3ca649e gwillen/feature-psbt-ops-dialog
