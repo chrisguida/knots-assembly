@@ -205,7 +205,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 		# NOTE: added test fix from sdaftuar/test-15633-2
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
 	# Needs minor work: 18077 hebasto:20200130-natpmp
-	15768 gui_ctrl_w-0.19						58cdb26c0cc	last=77b0232fcb0	# gui: Add close window shortcut
+	15768 gui_ctrl_w-0.19						58cdb26c0cc	last=f5a3a5b9ab3	# gui: Add close window shortcut
 	17795 gui_console_ctrl_d-0.19+knots			90ae0210bd5
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
@@ -246,7 +246,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	16795 rpc_spk_decode_desc-0.18				a439ac6e97d	last=dcd5c4a5773 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.19+knots		aab3d39d958	last=19e9def6902 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
-# TODO: Add bech32 error detect GUI
+		# TODO: Add bech32 error detect GUI
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
 	16964 gui_sendcoins_yes-0.19+knots			d791163d315	last=a649cc6a17b instagibbs/sendcoins_yes
 		# + #17463 implicitly
@@ -257,12 +257,12 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	17034 bip174_versions-0.18					5e9c2b5314c	last=dd1a5cac06e achow101/bip174-extensions
 	17056 desc_sortedmulti-0.19					add48f7dbed	last=4bb660be90a achow101/sortedmulti-desc
 		# Held back doc/relnotes
-# TODO: Do we want a multi67 too? (Can descriptors deviate from Core?)
+		# TODO: Do we want a multi67 too? (Can descriptors deviate from Core?)
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
 	17125 gui_verifymsg_tips-0.7				9863af566c1  # gui: Add toolTip and placeholderText to --sign--verify message fields
 	17186 gui_signmsg_tip-0.7					d2aa3213ace  # gui: Add placeholder text to the sign message field
 	17195 gui_sendamt_placeholder-0.10			1d890822db4  # gui: send amount placeholder value
-	TODO: 17211 achow101/fundtx-external-inputs
+	# Needs signing provider stuff - 0.20?: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options?
 		# TODO: Diff-minimise
 		# Partial rebase at f2fefb51511 (on v0.19.0 tag!)
