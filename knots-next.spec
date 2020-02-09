@@ -286,7 +286,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	17492 gui_bump_psbt-0.19								last=3c30d7118a5 instagibbs/gui_bump_psbt
 	17509 gui_saveload_psbt-0.19+knots						last=e6ea593f510 Sjors/2019/11/gui-psbt-save
 		# NOTE: Minified
-	18027 gui_psbt_opts_dialog-0.19+knots					last=078e3ca649e gwillen/feature-psbt-ops-dialog
+	18027 gui_psbt_opts_dialog-0.19+knots					last=3e7ca1e8577 gwillen/feature-psbt-ops-dialog
 		# NOTE: Dropped changes to error strings
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.19					e8d30213c37	last=3ab6abcc4dd matt/2019-11-filter-rest
@@ -295,13 +295,14 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs work & concept ACK: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 	# Needs work/review: 17918 emilengler:2020-01-hide-non-pkhash-addresses
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	17955 emilengler/2020-01-paste-bitcoin-uri-button
-	17958 -  # getgeneralinfo RPC
+	17955 gui_uri_paste-0.19+knots							last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
+	17958 rpc_getgeneralinfo-0.19							last=cdbd38df131  # getgeneralinfo RPC
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
-	17998 emilengler/2020-01-escape-modaloverlay
+	17998 gui_modaloverlay_esc-0.19							last=1a638e11055 emilengler/2020-01-escape-modaloverlay
 	# Needs review: 18000 -  # Coin Statistics Index
-	18014 elichai/2020-01-siphash
-	18032 achow101/createms-descriptor
+	18014 siphash_optimise_pr18014-0.19						last=81e0f144216 elichai/2020-01-siphash
+		# NOTE: Dropped benchmarks
+	18032 rpc_createms_descriptor-0.19+knots				last=19a354b11f8 achow101/createms-descriptor
 	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
 	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
 # Non-upstreamed functionality:
