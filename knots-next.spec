@@ -3,7 +3,7 @@ timestamp 2020-02-05 20:02:32
 
 #.. checked up to PR #18064
 
-checkout 755b0734bb50febcdf2ceeb5865793735eea36e8
+checkout v0.19.1rc2
 @0.19.x-syslibs
 	5872 subdir_incl_compat						29544b57e27
 	2241 sys_leveldb							c94b5102231
@@ -55,7 +55,6 @@ NM	17828 log_categories_validation-0.19+knots	062f5b03c1e
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool (only affects nodes with a min fee %1000!=0)
 	16525 rpc_unsigned_txver-0.18				913ca0a80b6	last=e80259f197 matt/2019-07-unsigned-tx-ver
-	17156 psbt_fix_pr17156-0.19.1
 	17180 sendamount_tooltip-0.11				394636c0e15
 		# JeremyCrookshank:sendamounttooltip
 		# + 17226 promag:2019-10-payamount-tooltip
@@ -71,7 +70,6 @@ TM	17524 fix_unspendable_psbt-0.19				99fdc1305c1
 TM	17621 fix_iud_keywide-0.19					dc95386a7fa
 TM	17643 fix_bumpfee_uninitread-0.19			b8280a7f2cd
 TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
-	17843 bugfix_reused_tx_cache-0.19.1
 	17946 fix_gbt_buried						72e19972b4e
 	# Needs review: 17985 MarcoFalke:2001-p2pNoDeadCode
 # FUNCTIONALITY:
@@ -345,7 +343,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200104)			58e82d1e2b4
+	n/a  (bump_version=Knots:20200205)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=9fc3c810bff)				bb56b215bd8  # release notes: write/update, including change log and credits
 			# check travis for misspellings
