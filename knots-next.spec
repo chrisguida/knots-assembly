@@ -20,7 +20,7 @@ TM	17654 boost_1_72_compat-0.19				a3dca843b30
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							e13ddc3a1fd
 	15888 test_wallet_implicitsegwit			957748c8dd9
-	17402 travis_ppc64-0.18						efca75db899	last=1d684f05341 elichai/2019-11-powerpc64
+	17402 travis_ppc64-0.19						efca75db899	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
 TM	17762 net_log_category_exc-0.19				625b5fafbab
 		# Completely rewrote to minimise impact on 0.19
@@ -350,7 +350,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200212)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=9fc3c810bff)				bb56b215bd8  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=c76760e9acc)				bb56b215bd8  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
@@ -358,8 +358,8 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=44c11925250)				101af2f7133  # translation update
-	n/a  (cherrypick=f3a34217c00)				c94cedc20e1	# update manpages (build first)
+	n/a  (cherrypick=dcb9e729c6f)				101af2f7133  # translation update
+	n/a  (cherrypick=446cd228c3f)				c94cedc20e1	# update manpages (build first)
 # NOTE: use git diff --minimal for patches!
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
