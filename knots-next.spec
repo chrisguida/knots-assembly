@@ -73,7 +73,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	17946 fix_gbt_buried						72e19972b4e
 	# Needs review: 17985 MarcoFalke:2001-p2pNoDeadCode
 	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
-	18123 ryanofsky/pr/pollbug
+	18123 gui_fix_poll_pr18123-0.19							last=37d27bc0705 ryanofsky/pr/pollbug
 # FUNCTIONALITY:
 	17916 win_check_heap_corruption-0.18
 		# NOTE: Skipped Win32 removal stuff
@@ -205,7 +205,8 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	15633 nohbcbfornonwit						eb0dd0e21b9	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
-	18077 hebasto/20200130-natpmp
+	# Needs work: 18077 hebasto/20200130-natpmp
+		# NOTE: Diff-minimised rebase of 992c3e13d2d is at a94a4e7c281
 	15768 gui_ctrl_w-0.19						58cdb26c0cc	last=f5a3a5b9ab3	# gui: Add close window shortcut
 	17795 gui_console_ctrl_d-0.19+knots			90ae0210bd5
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
@@ -306,7 +307,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	18032 rpc_createms_descriptor-0.19+knots				last=19a354b11f8 achow101/createms-descriptor
 	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
 	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
-	18121 hebasto/20200211-reindex-gui
+	18121 gui_reindex_throttle_updates-0.19					last=56bf4251672 hebasto/20200211-reindex-gui
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					cd1524fce7e
 	7107 qtnetworkport							7c4f5374b38	last=1f37c87 origin-pull/7107/head
