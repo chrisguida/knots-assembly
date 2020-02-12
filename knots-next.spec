@@ -1,7 +1,7 @@
-timestamp 2020-02-05 20:02:32
+timestamp 2020-02-12 01:37:41
 #lastapply no-merge
 
-#.. checked up to PR #18064
+#.. checked up to PR #18124
 
 checkout v0.19.1rc2
 @0.19.x-syslibs
@@ -72,11 +72,14 @@ TM	17643 fix_bumpfee_uninitread-0.19			b8280a7f2cd
 TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	17946 fix_gbt_buried						72e19972b4e
 	# Needs review: 17985 MarcoFalke:2001-p2pNoDeadCode
+	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
+	18123 ryanofsky/pr/pollbug
 # FUNCTIONALITY:
 	17916 win_check_heap_corruption-0.18
 		# NOTE: Skipped Win32 removal stuff
 	-     restore_win32-0.19+knots
 		# TODO 0.20: revert #17756, part of #17916, #18003
+	# TODO 0.20: revert #18104 (x86_32 Linux binaries)
 	14066 gitian_power64						ec80f3746ff
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
@@ -202,7 +205,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	15633 nohbcbfornonwit						eb0dd0e21b9	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
-	# Needs minor work: 18077 hebasto:20200130-natpmp
+	18077 hebasto/20200130-natpmp
 	15768 gui_ctrl_w-0.19						58cdb26c0cc	last=f5a3a5b9ab3	# gui: Add close window shortcut
 	17795 gui_console_ctrl_d-0.19+knots			90ae0210bd5
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
@@ -303,6 +306,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	18032 rpc_createms_descriptor-0.19+knots				last=19a354b11f8 achow101/createms-descriptor
 	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
 	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
+	18121 hebasto/20200211-reindex-gui
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					cd1524fce7e
 	7107 qtnetworkport							7c4f5374b38	last=1f37c87 origin-pull/7107/head
@@ -343,7 +347,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200205)			58e82d1e2b4
+	n/a  (bump_version=Knots:20200212)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=9fc3c810bff)				bb56b215bd8  # release notes: write/update, including change log and credits
 			# check travis for misspellings
