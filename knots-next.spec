@@ -73,7 +73,8 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	17946 fix_gbt_buried						72e19972b4e
 	# Needs review: 17985 MarcoFalke:2001-p2pNoDeadCode
 	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
-	18123 gui_fix_poll_pr18123-0.19							last=37d27bc0705 ryanofsky/pr/pollbug
+	18123 gui_fix_poll_pr18123-0.19							last=bf36a3ccc21 ryanofsky/pr/pollbug
+	18133 bugfix_qvalidlineedit
 # FUNCTIONALITY:
 	17916 win_check_heap_corruption-0.18
 		# NOTE: Skipped Win32 removal stuff
@@ -221,7 +222,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
 	# Needs QA/review: 15946 jonasschnelli:2019/05/prune_blockfilter
 		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
-	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reuse
+m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reuse
 	-     rpc_gai_txids-0.19					f78432716ec	last=621796da61 rpc_gai_txids
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
@@ -248,7 +249,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	16795 rpc_spk_decode_desc-0.18				a439ac6e97d	last=dcd5c4a5773 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.19+knots		aab3d39d958	last=19e9def6902 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
-		# TODO: Add bech32 error detect GUI
+	-     gui_bech32_errpos-0.19+knots  # Latest code
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
 	16964 gui_sendcoins_yes-0.19+knots			d791163d315	last=a649cc6a17b instagibbs/sendcoins_yes
 		# + #17463 implicitly
@@ -307,7 +308,8 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	18032 rpc_createms_descriptor-0.19+knots				last=19a354b11f8 achow101/createms-descriptor
 	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
 	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
-	18121 gui_reindex_throttle_updates-0.19					last=56bf4251672 hebasto/20200211-reindex-gui
+	18121 gui_reindex_throttle_updates-0.19					last=c9fe61291e9 hebasto/20200211-reindex-gui
+		# NOTE: Held back 56bf4251672..c9fe61291e9 due to confusing comment change
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					cd1524fce7e
 	7107 qtnetworkport							7c4f5374b38	last=1f37c87 origin-pull/7107/head
@@ -350,7 +352,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200212)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=c76760e9acc)				bb56b215bd8  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=525255e48ce)				bb56b215bd8  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
