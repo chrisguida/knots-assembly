@@ -129,7 +129,6 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 		# NOTE: Held back 97636cd371c..473ce2dcfdf -  see 670a101e362db0e3a346719e905fd6ab1cfd4fc4 branch for min feerate error
 		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
-		# TODO: Relnotes changes - case insensitivity, (is RBF default new??)
 		# 0.19 TODO: Rebase/squash fixups (keep compat with "EXPLICIT"!)
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
@@ -284,7 +283,6 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	16463 bip174_xpub-0.19+knots							last=951f5ee75a2 achow101/bip174-xpub
 		# NOTE: Diff-minimised
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
-	# TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
 	17492 gui_bump_psbt-0.19								last=3c30d7118a5 instagibbs/gui_bump_psbt
 	17509 gui_saveload_psbt-0.19+knots						last=e6ea593f510 Sjors/2019/11/gui-psbt-save
@@ -327,6 +325,8 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	7219 rbf_opts-0.19+knots					0f84b26124e
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					43946395be7
+	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
+	# TODO: Consider KUserFeedback telemetry?
 	10282 timebomb_knots						112f35a113f
 	-     gui_wallet_displayname-0.19			081249b7274	# Latest code now
 	-     gui_request_payment_label-0.19		4b2b8876f21
