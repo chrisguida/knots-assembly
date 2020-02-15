@@ -3,7 +3,7 @@ timestamp 2020-02-12 01:37:41
 
 #.. checked up to PR #18124
 
-checkout v0.19.1rc2
+checkout origin/0.19
 @0.19.x-syslibs
 	5872 subdir_incl_compat						29544b57e27
 	2241 sys_leveldb							c94b5102231
@@ -110,7 +110,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	10615 multiwallet_rpc						882ed06729d
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	10554 zmq_wtx-0.19							512f2e96f63	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
-	# needs concept merge/review: 17878 promag:2019-01-zmqpubwallettx
+	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	12674 rpc_onetry_nonpriv					3f1beb11bbb
 	10593 relax_invblk_punishment				4888324ad5f
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
@@ -242,8 +242,8 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	# needs completion: 15876
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	# Needs intense review & handling of binary file: 16702 p2p: supplying and using asmap to improve IP bucketing in addrman
-		# +18023 + 17812?
+	16702 asmap-0.19										last=dccc6bfc04e origin-pull/17812/head
+		# +18023 + 17812
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				a439ac6e97d	last=dcd5c4a5773 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.19+knots		aab3d39d958	last=19e9def6902 meshcollider/201909_bech32_error_detection
@@ -352,7 +352,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200212)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=525255e48ce)				bb56b215bd8  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=bca4492ea80)				bb56b215bd8  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
@@ -362,6 +362,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=dcb9e729c6f)				101af2f7133  # translation update
 	n/a  (cherrypick=446cd228c3f)				c94cedc20e1	# update manpages (build first)
+UPDATE MANPAGES
 # NOTE: use git diff --minimal for patches!
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
