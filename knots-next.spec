@@ -1,7 +1,7 @@
-timestamp 2020-02-12 01:37:41
+timestamp 2020-02-15 17:16:59
 #lastapply no-merge
 
-#.. checked up to PR #18124
+#.. checked up to PR #18152
 
 checkout origin/0.19
 @0.19.x-syslibs
@@ -179,7 +179,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 		# +16394 achow101/fix-born-enc
 	15084 gui_nowallet_modaloverlay-0.19		37a0bb40c8d	last=b3b6b6f62fc  #gui: don't disable the sync overlay when wallet is disabled
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
-	15115 rm_send2self-mini						66d458d0ed0	last=ecf3d5323e rm_send2self
+	15115 rm_send2self-mini						66d458d0ed0	last=14bb8db698d rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
 	# Not ready: 15150 promag:2019-01-consolewalletselector
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
@@ -190,11 +190,10 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
 	15367 startupnotify-0.19+knots				ca5156ce105	last=4b6987c85d8	# feature: Added ability for users to add a startup command
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
-	# TODO: 15421 tor_subprocess
-	#	Needs boost::process check (see #14912)
 	15423 tor_socks_port						cb310eb6e9b
 	15756 -										d213dafeb47	last=091747b46ec promag/2019-04-tools-shortcuts
 	15428 tor_gui_pairing-0.19+knots			5b8d09c0e6f	# latest code now
+	15421 tor_subprocess-0.19+knots							last=5aef05139dd tor_subprocess
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
@@ -350,9 +349,9 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200212)			58e82d1e2b4
+	n/a  (bump_version=Knots:20200215)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=bca4492ea80)				bb56b215bd8  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=4ecc18ae228)				bb56b215bd8  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
