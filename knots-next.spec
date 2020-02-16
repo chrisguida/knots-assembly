@@ -193,7 +193,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	15423 tor_socks_port						cb310eb6e9b
 	15756 -										d213dafeb47	last=091747b46ec promag/2019-04-tools-shortcuts
 	15428 tor_gui_pairing-0.19+knots			5b8d09c0e6f	# latest code now
-	15421 tor_subprocess-0.19+knots							last=5aef05139dd tor_subprocess
+	15421 tor_subprocess-0.19+knots							last=6b8d283a60a tor_subprocess
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
@@ -360,8 +360,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=dcb9e729c6f)				101af2f7133  # translation update
-	n/a  (cherrypick=446cd228c3f)				c94cedc20e1	# update manpages (build first)
-UPDATE MANPAGES
+	n/a  (cherrypick=5b7d4c0ffee)				c94cedc20e1	# update manpages (build first)
 # NOTE: use git diff --minimal for patches!
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
