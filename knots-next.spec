@@ -67,6 +67,7 @@ TM	17427 fix_qmeta_size_t-0.18					2e75c1b60b8
 TM	17524 fix_unspendable_psbt-0.19				99fdc1305c1
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 	# Needs to be just a bugfix: 17597 qt: Fix height of QR-less ReceiveRequestDialog
+	17569 pr17569-0.18
 TM	17621 fix_iud_keywide-0.19					dc95386a7fa
 TM	17643 fix_bumpfee_uninitread-0.19			b8280a7f2cd
 TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
@@ -152,8 +153,8 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	13203 dsha256_power8-0.17					31bd050ce45	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		8b1f3eaf99b
-	13339 walletnotify_w-0.19					fc814dc1301	last=56d2307446b promag/2018-05-walletnotify
-		# held back 826718490fb..1c335d5828e disabling on Windows
+	13339 walletnotify_w-0.19					fc814dc1301	last=4e9efac678a promag/2018-05-walletnotify
+		# held back 826718490fb..4e9efac678a disabling on Windows
 		# held back cef0327afd..15a0ad0bb4 Windows porting due to copyright issues (and bugs?) - No longer applicable?
 		# Removed WIN32 conditional
 		# Changed '"'"' to '\''
@@ -205,7 +206,8 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 		# NOTE: added test fix from sdaftuar/test-15633-2
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
 	# Needs work: 18077 hebasto/20200130-natpmp
-		# NOTE: Diff-minimised rebase of 992c3e13d2d is at a94a4e7c281
+		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
+		# TODO: Switch to rwconf?
 	15768 gui_ctrl_w-0.19						58cdb26c0cc	last=f5a3a5b9ab3	# gui: Add close window shortcut
 	17795 gui_console_ctrl_d-0.19+knots			90ae0210bd5
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
@@ -241,7 +243,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	# needs completion: 15876
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	16702 asmap-0.19										last=dccc6bfc04e origin-pull/17812/head
+	16702 asmap-0.19										last=d3ec323d151 origin-pull/17812/head
 		# +18023 + 17812
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				a439ac6e97d	last=dcd5c4a5773 instagibbs/decode_descriptor
@@ -351,7 +353,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200215)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=4ecc18ae228)				bb56b215bd8  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=c0c25947443)				bb56b215bd8  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
