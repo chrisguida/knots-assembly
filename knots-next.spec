@@ -1,7 +1,7 @@
-timestamp 2020-02-15 17:16:59
+timestamp 2020-02-22 17:32:50
 #lastapply no-merge
 
-#.. checked up to PR #18152
+#.. checked up to PR #18197
 
 checkout origin/0.19
 @0.19.x-syslibs
@@ -72,10 +72,14 @@ TM	17621 fix_iud_keywide-0.19					dc95386a7fa
 TM	17643 fix_bumpfee_uninitread-0.19			b8280a7f2cd
 TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	17946 fix_gbt_buried						72e19972b4e
-	# Needs review: 17985 MarcoFalke:2001-p2pNoDeadCode
+	# Not worth it: 17985 MarcoFalke:2001-p2pNoDeadCode
 	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
 	18123 gui_fix_poll_pr18123-0.19							last=bf36a3ccc21 ryanofsky/pr/pollbug
 	18133 bugfix_qvalidlineedit
+	# Needs careful review: 18192 bugfix_addressbook_change
+	18194 bugfix_gui_edit_sendaddr-mini						last=79703057c4f bugfix_gui_edit_sendaddr
+		# NOTE: -mini is just missing the last commit :)
+	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 # FUNCTIONALITY:
 	17916 win_check_heap_corruption-0.18
 		# NOTE: Skipped Win32 removal stuff
@@ -351,9 +355,10 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200215)			58e82d1e2b4
+	n/a  (bump_version=Knots:20200219)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=c0c25947443)				bb56b215bd8  # release notes: write/update, including change log and credits
+UPDATE DATE & changelog
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
