@@ -77,7 +77,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	18123 gui_fix_poll_pr18123-0.19							last=bf36a3ccc21 ryanofsky/pr/pollbug
 	18133 bugfix_qvalidlineedit
 	# Needs careful review: 18192 bugfix_addressbook_change
-	18194 bugfix_gui_edit_sendaddr-mini						last=79703057c4f bugfix_gui_edit_sendaddr
+	18194 bugfix_gui_edit_sendaddr-mini						last=2667478697b bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 # FUNCTIONALITY:
@@ -251,7 +251,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 		# +18023 + 17812
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				a439ac6e97d	last=dcd5c4a5773 instagibbs/decode_descriptor
-	16807 bech32_error_detection-0.19+knots		aab3d39d958	last=19e9def6902 meshcollider/201909_bech32_error_detection
+	16807 bech32_error_detection-0.19+knots		aab3d39d958	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 	-     gui_bech32_errpos-0.19+knots  # Latest code
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
