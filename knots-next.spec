@@ -1,9 +1,9 @@
-timestamp 2020-02-22 17:32:50
+timestamp 2020-03-04 15:52:18
 #lastapply no-merge
 
-#.. checked up to PR #18197
+#.. checked up to PR #18259
 
-checkout origin/0.19
+checkout v0.19.1
 @0.19.x-syslibs
 	5872 subdir_incl_compat						29544b57e27
 	2241 sys_leveldb							c94b5102231
@@ -74,12 +74,17 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	17946 fix_gbt_buried						72e19972b4e
 	# Not worth it: 17985 MarcoFalke:2001-p2pNoDeadCode
 	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
-	18123 gui_fix_poll_pr18123-0.19							last=bf36a3ccc21 ryanofsky/pr/pollbug
+	18004 fanquake/futher-0-19-backports^					last=1964561a3a5 fanquake/futher-0-19-backports^  # build: don't embed a build-id when building libdmg-hfsplus
+	18123 fanquake/futher-0-19-backports					last=48fef5ebae5 fanquake/futher-0-19-backports  # gui: Fix race in WalletModel::pollBalanceChanged
 	18133 bugfix_qvalidlineedit
 	# Needs careful review: 18192 bugfix_addressbook_change
 	18194 bugfix_gui_edit_sendaddr-mini						last=2667478697b bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
+	18224 instagibbs/analyze_psbt_role_simple
+	TODO: 18225 (Minify)
+	TODO? 18228 (minify)
+	Workaround 18232?
 # FUNCTIONALITY:
 	17916 win_check_heap_corruption-0.18
 		# NOTE: Skipped Win32 removal stuff
@@ -313,6 +318,13 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
 	18121 gui_reindex_throttle_updates-0.19					last=c9fe61291e9 hebasto/20200211-reindex-gui
 		# NOTE: Held back 56bf4251672..c9fe61291e9 due to confusing comment change
+	TODO: 18223 -  # blockfilterindex=v0
+		# TODO: Don't enable with -blockfilterindex=1
+		# TODO: Don't fix apparent bug in basic filter until it's confirmed a bugfix
+		# TODO: Ensure neutrino GUI stuff doesn't enable this
+	18238 ajtowns/202002-bump-notfound
+	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
+	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					cd1524fce7e
 	7107 qtnetworkport							7c4f5374b38	last=1f37c87 origin-pull/7107/head
