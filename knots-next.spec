@@ -49,6 +49,7 @@ NM	17828 log_categories_validation-0.19+knots	062f5b03c1e
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
+	15600 lockedpool_dontdump
 	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
 	# Needs review: 16050 promag:2019-05-importmulti-update
@@ -81,10 +82,11 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	18194 bugfix_gui_edit_sendaddr-mini						last=2667478697b bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
-	18224 instagibbs/analyze_psbt_role_simple
-	TODO: 18225 (Minify)
-	TODO? 18228 (minify)
-	Workaround 18232?
+	18224 pr18224-0.19.1  # Make AnalyzePSBT next role calculation simple, correct
+	18225 fix_empty_parsemoney-0.15
+		# NOTE: Dropped refactor/first commit
+	18228 pr18228-0.19										last=faf6f156ffd MarcoFalke/2002-testFixRace
+	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 # FUNCTIONALITY:
 	17916 win_check_heap_corruption-0.18
 		# NOTE: Skipped Win32 removal stuff
@@ -318,11 +320,11 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
 	18121 gui_reindex_throttle_updates-0.19					last=c9fe61291e9 hebasto/20200211-reindex-gui
 		# NOTE: Held back 56bf4251672..c9fe61291e9 due to confusing comment change
-	TODO: 18223 -  # blockfilterindex=v0
-		# TODO: Don't enable with -blockfilterindex=1
-		# TODO: Don't fix apparent bug in basic filter until it's confirmed a bugfix
-		# TODO: Ensure neutrino GUI stuff doesn't enable this
-	18238 ajtowns/202002-bump-notfound
+	18223 blockfilter_v0-0.19								last=dc1fe756fc5
+		# NOTE: Don't enable with -blockfilterindex=1
+		# NOTE: Diff-minimised
+		# NOTE: Avoid OP_RETURN check in basic filter code, even though probably no-op https://github.com/bitcoin/bitcoin/pull/18223#discussion_r387874789
+	18238 notfound_retry-0.19								last=a204d1586ca ajtowns/202002-bump-notfound
 	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
 	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
 # Non-upstreamed functionality:
