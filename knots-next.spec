@@ -85,7 +85,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	18224 pr18224-0.19.1  # Make AnalyzePSBT next role calculation simple, correct
 	18225 fix_empty_parsemoney-0.15
 		# NOTE: Dropped refactor/first commit
-	18228 pr18228-0.19										last=faf6f156ffd MarcoFalke/2002-testFixRace
+	18228 pr18228-0.19										last=faf6f156ffd marco/2002-testFixRace
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 # FUNCTIONALITY:
 	17916 win_check_heap_corruption-0.18
@@ -137,8 +137,9 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				d1763cc493d
-	11413 explicit_fee-0.19						2bebb4eeb31	last=9721534f1c9 kallewoof/explicit-fee
+	11413 explicit_fee-0.19						2bebb4eeb31	last=5febd8a183e kallewoof/explicit-fee
 		# NOTE: Held back 97636cd371c..473ce2dcfdf -  see 670a101e362db0e3a346719e905fd6ab1cfd4fc4 branch for min feerate error
+		# NOTE: Held back a8e36d98c2b to avoid refactor (and because it's totally unnecessary with "EXPLICIT" only)
 		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
 		# 0.19 TODO: Rebase/squash fixups (keep compat with "EXPLICIT"!)
@@ -254,7 +255,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	# needs completion: 15876
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	16702 asmap-0.19										last=d3ec323d151 origin-pull/17812/head
+	16702 asmap-0.19										last=1ba3e1cc211 origin-pull/17812/head
 		# +18023 + 17812
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				a439ac6e97d	last=dcd5c4a5773 instagibbs/decode_descriptor
@@ -268,7 +269,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 		# NOTE: If removing, also drop #17587
 	17587 gui_watchonly_balance-0.19+knots		31ed2f437b1
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
-	17034 bip174_versions-0.18					5e9c2b5314c	last=dd1a5cac06e achow101/bip174-extensions
+	17034 bip174_versions-0.18					5e9c2b5314c	last=7fbaf8b8581 achow101/bip174-extensions
 	17056 desc_sortedmulti-0.19					add48f7dbed	last=4bb660be90a achow101/sortedmulti-desc
 		# Held back doc/relnotes
 		# TODO: Do we want a multi67 too? (Can descriptors deviate from Core?)
@@ -369,7 +370,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200219)			58e82d1e2b4
+	n/a  (bump_version=Knots:20200304)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=c0c25947443)				bb56b215bd8  # release notes: write/update, including change log and credits
 UPDATE DATE & changelog
