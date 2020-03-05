@@ -137,7 +137,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				d1763cc493d
-	11413 explicit_fee-0.19						2bebb4eeb31	last=5febd8a183e kallewoof/explicit-fee
+	11413 explicit_fee-0.19						2bebb4eeb31	last=021c253961d kallewoof/explicit-fee
 		# NOTE: Held back 97636cd371c..473ce2dcfdf -  see 670a101e362db0e3a346719e905fd6ab1cfd4fc4 branch for min feerate error
 		# NOTE: Held back a8e36d98c2b to avoid refactor (and because it's totally unnecessary with "EXPLICIT" only)
 		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
@@ -292,13 +292,14 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 		# NOTE: Dropped monospace font / justify hack in privacy mode
 		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
-	16442 neutrino-0.19+knots					61be9bd759d	last=459aead0e66
-	16463 bip174_xpub-0.19+knots							last=951f5ee75a2 achow101/bip174-xpub
+	16442 neutrino-0.19+knots					61be9bd759d	last=250d56ae226
+		# NOTE: Held back 250d56ae226 itself since it demands users actively involved in index state
+	16463 bip174_xpub-0.19+knots							last=63f705bb9d2 achow101/bip174-xpub
 		# NOTE: Diff-minimised
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
 	17492 gui_bump_psbt-0.19								last=3c30d7118a5 instagibbs/gui_bump_psbt
-	17509 gui_saveload_psbt-0.19+knots						last=e6ea593f510 Sjors/2019/11/gui-psbt-save
+	17509 gui_saveload_psbt-0.19+knots						last=f48130c331c Sjors/2019/11/gui-psbt-save
 		# NOTE: Minified
 	18027 gui_psbt_opts_dialog-0.19+knots					last=3e7ca1e8577 gwillen/feature-psbt-ops-dialog
 		# NOTE: Dropped changes to error strings
@@ -314,14 +315,14 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	17998 gui_modaloverlay_esc-0.19							last=1a638e11055 emilengler/2020-01-escape-modaloverlay
 	# Needs review: 18000 -  # Coin Statistics Index
-	18014 siphash_optimise_pr18014-0.19						last=81e0f144216 elichai/2020-01-siphash
+	18014 siphash_optimise_pr18014-0.19						last=de0c7fccb4b elichai/2020-01-siphash
 		# NOTE: Dropped benchmarks
 	18032 rpc_createms_descriptor-0.19+knots				last=19a354b11f8 achow101/createms-descriptor
 	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
 	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
 	18121 gui_reindex_throttle_updates-0.19					last=c9fe61291e9 hebasto/20200211-reindex-gui
 		# NOTE: Held back 56bf4251672..c9fe61291e9 due to confusing comment change
-	18223 blockfilter_v0-0.19								last=dc1fe756fc5
+	18223 blockfilter_v0-0.19								last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 		# NOTE: Avoid OP_RETURN check in basic filter code, even though probably no-op https://github.com/bitcoin/bitcoin/pull/18223#discussion_r387874789
@@ -372,8 +373,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200304)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=c0c25947443)				bb56b215bd8  # release notes: write/update, including change log and credits
-UPDATE DATE & changelog
+	n/a  (cherrypick=36bf5ff0f23)				bb56b215bd8  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
@@ -381,8 +381,8 @@ UPDATE DATE & changelog
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=dcb9e729c6f)				101af2f7133  # translation update
-	n/a  (cherrypick=5b7d4c0ffee)				c94cedc20e1	# update manpages (build first)
+	n/a  (cherrypick=f33596fe405)				101af2f7133  # translation update
+	n/a  (cherrypick=39c23bfb7cb)				c94cedc20e1	# update manpages (build first)
 # NOTE: use git diff --minimal for patches!
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
