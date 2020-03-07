@@ -25,10 +25,10 @@ TM	17654 boost_1_72_compat-0.19				614ade49492
 TM	17762 net_log_category_exc-0.19				a15bcea31d1
 		# Completely rewrote to minimise impact on 0.19
 NM	17828 log_categories_validation-0.19+knots	c1b7665b1ee
-	17828 log_categories_validation-0.19+knots	506d59c2b8a				last=04960621582 practicalswift/log-categories
+	17828 log_categories_validation-0.19+knots	506d59c2b8a	last=04960621582 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		0afbbc1b23c	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					c1facf98c54
-	18287 fix_libevent_win_ipv6-0.15			162bac47c59						last=e918138fd5b fix_libevent_win_ipv6
+	18287 fix_libevent_win_ipv6-0.15			162bac47c59	last=e918138fd5b fix_libevent_win_ipv6
 	9524 marco/Mf1701-qaPruning					2617c80565b	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					b91935a2f33
 	14485 fadvise								c196c18b9c4
@@ -76,17 +76,17 @@ TM	17728 fix_scantxoutset_args-0.19			730c2f6219b
 	17946 fix_gbt_buried						247f7bf9191
 	# Not worth it: 17985 MarcoFalke:2001-p2pNoDeadCode
 	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
-	18004 fanquake/futher-0-19-backports^		9651ec4a1ba					last=1964561a3a5 fanquake/futher-0-19-backports^  # build: don't embed a build-id when building libdmg-hfsplus
-	18123 fanquake/futher-0-19-backports		ed71d8bde86					last=48fef5ebae5 fanquake/futher-0-19-backports  # gui: Fix race in WalletModel::pollBalanceChanged
+	18004 fanquake/futher-0-19-backports^		9651ec4a1ba	last=1964561a3a5 fanquake/futher-0-19-backports^  # build: don't embed a build-id when building libdmg-hfsplus
+	18123 fanquake/futher-0-19-backports		ed71d8bde86	last=48fef5ebae5 fanquake/futher-0-19-backports  # gui: Fix race in WalletModel::pollBalanceChanged
 	18133 bugfix_qvalidlineedit					adad02360a6
 	# Needs careful review: 18192 bugfix_addressbook_change
-	18194 bugfix_gui_edit_sendaddr-mini			a54995ed86f						last=2667478697b bugfix_gui_edit_sendaddr
+	18194 bugfix_gui_edit_sendaddr-mini			a54995ed86f	last=2667478697b bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	18224 pr18224-0.19.1						61e2ebb4da2  # Make AnalyzePSBT next role calculation simple, correct
 	18225 fix_empty_parsemoney-0.15				7565fc91f8b
 		# NOTE: Dropped refactor/first commit
-	18228 pr18228-0.19							1bf5fbb3341										last=faf6f156ffd marco/2002-testFixRace
+	18228 pr18228-0.19							1bf5fbb3341	last=faf6f156ffd marco/2002-testFixRace
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18271 wrkarnd_boost_wait_until				bd9ae6bf15d
 # FUNCTIONALITY:
@@ -208,7 +208,7 @@ TM	17728 fix_scantxoutset_args-0.19			730c2f6219b
 	15423 tor_socks_port						1fcfd051da3
 	15756 -										325213ee785	last=091747b46ec promag/2019-04-tools-shortcuts
 	15428 tor_gui_pairing-0.19+knots			0bfc25eab88	# latest code now
-	15421 tor_subprocess-0.19+knots				e7ddfa8a4d3							last=85faf3ef421 tor_subprocess
+	15421 tor_subprocess-0.19+knots				e7ddfa8a4d3	last=85faf3ef421 tor_subprocess
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
@@ -257,7 +257,7 @@ m	15987 wallet_no_reuse-0.19+knots			864b8322e3d	last=391c5d9a972 wallet_no_reus
 	# needs completion: 15876
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	16702 asmap-0.19							0d3efb880c5										last=1ba3e1cc211 origin-pull/17812/head
+	16702 asmap-0.19							0d3efb880c5	last=1ba3e1cc211 origin-pull/17812/head
 		# +18023 + 17812
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				fb5b42b8478	last=dcd5c4a5773 instagibbs/decode_descriptor
@@ -296,14 +296,14 @@ m	15987 wallet_no_reuse-0.19+knots			864b8322e3d	last=391c5d9a972 wallet_no_reus
 		# Should balances be forced monospace normally just for masking??
 	16442 neutrino-0.19+knots					012949c76ce	last=250d56ae226
 		# NOTE: Held back 250d56ae226 itself since it demands users actively involved in index state
-	16463 bip174_xpub-0.19+knots				c2962442602							last=63f705bb9d2 achow101/bip174-xpub
+	16463 bip174_xpub-0.19+knots				c2962442602	last=63f705bb9d2 achow101/bip174-xpub
 		# NOTE: Diff-minimised
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
-	17492 gui_bump_psbt-0.19					536ca65effe								last=3c30d7118a5 instagibbs/gui_bump_psbt
-	17509 gui_saveload_psbt-0.19+knots			10e48579513						last=f48130c331c Sjors/2019/11/gui-psbt-save
+	17492 gui_bump_psbt-0.19					536ca65effe	last=3c30d7118a5 instagibbs/gui_bump_psbt
+	17509 gui_saveload_psbt-0.19+knots			10e48579513	last=f48130c331c Sjors/2019/11/gui-psbt-save
 		# NOTE: Minified
-	18027 gui_psbt_opts_dialog-0.19+knots		6719aab1141					last=3e7ca1e8577 gwillen/feature-psbt-ops-dialog
+	18027 gui_psbt_opts_dialog-0.19+knots		6719aab1141	last=3e7ca1e8577 gwillen/feature-psbt-ops-dialog
 		# NOTE: Dropped changes to error strings
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.19					98dbf80046a	last=3ab6abcc4dd matt/2019-11-filter-rest
@@ -312,22 +312,22 @@ m	15987 wallet_no_reuse-0.19+knots			864b8322e3d	last=391c5d9a972 wallet_no_reus
 	# Needs work & concept ACK: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 	# Needs work/review: 17918 emilengler:2020-01-hide-non-pkhash-addresses
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	17955 gui_uri_paste-0.19+knots				e584afcc743							last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
-	17958 rpc_getgeneralinfo-0.19				9df4b5ec9f7							last=cdbd38df131  # getgeneralinfo RPC
+	17955 gui_uri_paste-0.19+knots				e584afcc743	last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
+	17958 rpc_getgeneralinfo-0.19				9df4b5ec9f7	last=cdbd38df131  # getgeneralinfo RPC
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
-	17998 gui_modaloverlay_esc-0.19				3bd0c705422							last=1a638e11055 emilengler/2020-01-escape-modaloverlay
+	17998 gui_modaloverlay_esc-0.19				3bd0c705422	last=1a638e11055 emilengler/2020-01-escape-modaloverlay
 	# Needs review: 18000 -  # Coin Statistics Index
-	18014 siphash_optimise_pr18014-0.19			fae5dafc31f						last=de0c7fccb4b elichai/2020-01-siphash
+	18014 siphash_optimise_pr18014-0.19			fae5dafc31f	last=de0c7fccb4b elichai/2020-01-siphash
 		# NOTE: Dropped benchmarks
-	18032 rpc_createms_descriptor-0.19+knots	0e56a0a92dd				last=19a354b11f8 achow101/createms-descriptor
+	18032 rpc_createms_descriptor-0.19+knots	0e56a0a92dd	last=19a354b11f8 achow101/createms-descriptor
 	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
 	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
-	18121 gui_reindex_throttle_updates-0.19		9a4c80e68af					last=c9fe61291e9 hebasto/20200211-reindex-gui
+	18121 gui_reindex_throttle_updates-0.19		9a4c80e68af	last=c9fe61291e9 hebasto/20200211-reindex-gui
 		# NOTE: Held back 56bf4251672..c9fe61291e9 due to confusing comment change
-	18223 blockfilter_v0-0.19					af5409ac311								last=5561e7a0c79
+	18223 blockfilter_v0-0.19					af5409ac311	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
-	18238 notfound_retry-0.19					e48828fbabb								last=a204d1586ca ajtowns/202002-bump-notfound
+	18238 notfound_retry-0.19					e48828fbabb	last=a204d1586ca ajtowns/202002-bump-notfound
 	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
 	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
 # Non-upstreamed functionality:
