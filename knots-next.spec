@@ -25,9 +25,10 @@ TM	17654 boost_1_72_compat-0.19				a3dca843b30
 TM	17762 net_log_category_exc-0.19				625b5fafbab
 		# Completely rewrote to minimise impact on 0.19
 NM	17828 log_categories_validation-0.19+knots	062f5b03c1e
-	17828 log_categories_validation-0.19+knots				last=443e105f7ae practicalswift/log-categories
+	17828 log_categories_validation-0.19+knots				last=04960621582 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		efc4cc2d518	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					99a135b79a6
+	18287 fix_libevent_win_ipv6-0.15						last=e918138fd5b fix_libevent_win_ipv6
 	9524 marco/Mf1701-qaPruning					4d044e0fc41	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					b3ed643d9f8
 	14485 fadvise								bd7a97d3112
@@ -87,6 +88,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 		# NOTE: Dropped refactor/first commit
 	18228 pr18228-0.19										last=faf6f156ffd marco/2002-testFixRace
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
+	18271 wrkarnd_boost_wait_until
 # FUNCTIONALITY:
 	17916 win_check_heap_corruption-0.18
 		# NOTE: Skipped Win32 removal stuff
@@ -137,7 +139,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				d1763cc493d
-	11413 explicit_fee-0.19						2bebb4eeb31	last=021c253961d kallewoof/explicit-fee
+	11413 explicit_fee-0.19						2bebb4eeb31	last=85c406a70d7 kallewoof/explicit-fee
 		# NOTE: Held back 97636cd371c..473ce2dcfdf -  see 670a101e362db0e3a346719e905fd6ab1cfd4fc4 branch for min feerate error
 		# NOTE: Held back a8e36d98c2b to avoid refactor (and because it's totally unnecessary with "EXPLICIT" only)
 		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
@@ -158,7 +160,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	12763 rpcwhitelist-0.19						aa69598d0ec
 	# TODO ? 12792 w/ renamed param
-	12911 signrawtx_showfees-0.19				1f3ed3a36fe	last=345f8f9d1b1 kallewoof/sign-show-fees
+	12911 signrawtx_showfees-0.19				1f3ed3a36fe	last=47b2ba29df2 kallewoof/sign-show-fees
 	12965 scriptthreads-0.19					8c5b5701f54	last=dfab6c6866 jonas/2018/04/svt
 	# Needs review are care (new index): 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
@@ -206,7 +208,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	15423 tor_socks_port						cb310eb6e9b
 	15756 -										d213dafeb47	last=091747b46ec promag/2019-04-tools-shortcuts
 	15428 tor_gui_pairing-0.19+knots			5b8d09c0e6f	# latest code now
-	15421 tor_subprocess-0.19+knots							last=6b8d283a60a tor_subprocess
+	15421 tor_subprocess-0.19+knots							last=85faf3ef421 tor_subprocess
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
@@ -325,7 +327,6 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	18223 blockfilter_v0-0.19								last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
-		# NOTE: Avoid OP_RETURN check in basic filter code, even though probably no-op https://github.com/bitcoin/bitcoin/pull/18223#discussion_r387874789
 	18238 notfound_retry-0.19								last=a204d1586ca ajtowns/202002-bump-notfound
 	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
 	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
@@ -373,7 +374,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	n/a  (cherrypick=9600fe90fb2e446cac)		03e2845c453	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200304)			58e82d1e2b4
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=36bf5ff0f23)				bb56b215bd8  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=49c5b0fdd44)				bb56b215bd8  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
