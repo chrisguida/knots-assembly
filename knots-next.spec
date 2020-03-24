@@ -17,7 +17,6 @@ checkout origin/master
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							931ebfa1f80
-	15888 test_wallet_implicitsegwit			b43b3120ae3
 	17402 travis_ppc64-0.19						228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
 	17828 log_categories_validation-0.19+knots	506d59c2b8a	last=04960621582 practicalswift/log-categories
@@ -50,36 +49,20 @@ checkout origin/master
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
-	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool (only affects nodes with a min fee %1000!=0)
 	16525 rpc_unsigned_txver-0.18				f45e6d4aa2a	last=e80259f197 matt/2019-07-unsigned-tx-ver
-	17180 sendamount_tooltip-0.11				12d45377b12
-		# JeremyCrookshank:sendamounttooltip
-		# + 17226 promag:2019-10-payamount-tooltip
-	# Not needed?: 17366 qa_reset_segwitheight-0.19
-	17474 bugfix_gui_netlimited_svcbit			239b69a15f6	last=4341bffb6ef bugfix_gui_netlimited_svcbit+refactor
 	# Needs review: 17457 bugfix_multiwallet_coincontrol
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 	# Needs to be just a bugfix: 17597 qt: Fix height of QR-less ReceiveRequestDialog
-	17569 pr17569-0.18							4337ffee8fe
 	17946 fix_gbt_buried						247f7bf9191
-	# Not worth it: 17985 MarcoFalke:2001-p2pNoDeadCode
 	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
-	18004 fanquake/futher-0-19-backports^		9651ec4a1ba	last=1964561a3a5 fanquake/futher-0-19-backports^  # build: don't embed a build-id when building libdmg-hfsplus
-	18123 fanquake/futher-0-19-backports		ed71d8bde86	last=48fef5ebae5 fanquake/futher-0-19-backports  # gui: Fix race in WalletModel::pollBalanceChanged
 	18133 bugfix_qvalidlineedit					adad02360a6
 	# Needs careful review: 18192 bugfix_addressbook_change
 	18194 bugfix_gui_edit_sendaddr-mini			a54995ed86f	last=2667478697b bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
-	18224 pr18224-0.19.1						61e2ebb4da2  # Make AnalyzePSBT next role calculation simple, correct
-	18225 fix_empty_parsemoney-0.15				7565fc91f8b
-		# NOTE: Dropped refactor/first commit
-	18228 pr18228-0.19							1bf5fbb3341	last=faf6f156ffd marco/2002-testFixRace
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18271 wrkarnd_boost_wait_until				bd9ae6bf15d
 # FUNCTIONALITY:
-	17916 win_check_heap_corruption-0.18		fe1b6287a6c
-		# NOTE: Skipped Win32 removal stuff
 	-     restore_win32-0.19+knots				f7147699d7d
 		TODO 0.20: revert #17756, part of #17916, #18003
 	TODO 0.20: revert #18104 (x86_32 Linux binaries)
@@ -146,7 +129,6 @@ checkout origin/master
 	12677 listunspent_ancestorinfo				e3760b3b80f
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
-	12763 rpcwhitelist-0.19						1ceeb773492
 	# TODO ? 12792 w/ renamed param
 	12911 signrawtx_showfees-0.19				05ebb9adbe7	last=47b2ba29df2 kallewoof/sign-show-fees
 	12965 scriptthreads-0.19					fe21944c5b4	last=dfab6c6866 jonas/2018/04/svt
@@ -155,7 +137,7 @@ checkout origin/master
 	13203 dsha256_power8-0.17					9bf2c8c00b4	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		f636f29dd67
-	13339 walletnotify_w-0.19					49811bcf170	last=4e9efac678a promag/2018-05-walletnotify
+	TODO: Merged partly! 13339 walletnotify_w-0.19					49811bcf170	last=4e9efac678a promag/2018-05-walletnotify
 		# held back 826718490fb..4e9efac678a disabling on Windows
 		# held back cef0327afd..15a0ad0bb4 Windows porting due to copyright issues (and bugs?) - No longer applicable?
 		# Removed WIN32 conditional
@@ -171,16 +153,14 @@ checkout origin/master
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	14137 win_taskbar_progress					b610a34da31	last=18eb4dbb8a
-	15023 gui_node_rpcconsole-0.19+knots		4f8afd787c3	last=f33efa8ec5 gui_node_rpcconsole
 	14641 fundraw_minconf-0.19					58d9c58687f	last=a3991b7c0b promag/2018-11-fundrawtransaction
 		# NOTE: held back .gitignore nonsense change & relnotes
 	14687 zmqkeepalive-0.19+knots				cac95fd51b5	last=c276df7759
 		# NOTE: modified to soft-fail only
 	# wait for Core?: 14707
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
-	# CHANGES WALLET FORMAT, wait for Core: 15006 achow101:create-encrypted-wallet
+	TODO: This is merged, check next spec line out.. 15006 achow101:create-encrypted-wallet
 		# +16394 achow101/fix-born-enc
-	15084 gui_nowallet_modaloverlay-0.19		d564b54de51	last=b3b6b6f62fc  #gui: don't disable the sync overlay when wallet is disabled
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	15115 rm_send2self-mini						94ec464a399	last=14bb8db698d rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
@@ -194,7 +174,6 @@ checkout origin/master
 	15367 startupnotify-0.19+knots				3567de0e582	last=4b6987c85d8	# feature: Added ability for users to add a startup command
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	15423 tor_socks_port						1fcfd051da3
-	15756 -										325213ee785	last=091747b46ec promag/2019-04-tools-shortcuts
 	15428 tor_gui_pairing-0.19+knots			0bfc25eab88	# latest code now
 	15421 tor_subprocess-0.19+knots				e7ddfa8a4d3	last=85faf3ef421 tor_subprocess
 	# TODO: tor gitian bundle!
@@ -216,7 +195,6 @@ checkout origin/master
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
 		# TODO: Minify and test well
-		# NOTE: Needs #17366
 	15836 fee_histogram-0.19					1fe42b9c815	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 	15861 restore_vbits_warning					6f1c5b1da81
@@ -235,9 +213,6 @@ checkout origin/master
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	# TODO: 16373 bump_psbt-0.19+knots								last=9bdf420ecc3 instagibbs/bump_psbt
-		# NOTE: Moved `add_to_wallet` param into `options`
-		# CURRENT BRANCH STATUS UNKNOWN
 	# Needs review: 16377 Sjors:2019/07/walletcreatefundedpsbt_addinputs
 	# Needs review: 16378 Sjors:2019/07/send
 	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
@@ -245,7 +220,7 @@ checkout origin/master
 	# needs completion: 15876
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	16702 asmap-0.19							0d3efb880c5	last=1ba3e1cc211 origin-pull/17812/head
+	TODO: Merged w/o fixes: 16702 asmap-0.19							0d3efb880c5	last=1ba3e1cc211 origin-pull/17812/head
 		# +18023 + 17812
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 	16795 rpc_spk_decode_desc-0.18				fb5b42b8478	last=dcd5c4a5773 instagibbs/decode_descriptor
@@ -253,30 +228,19 @@ checkout origin/master
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 	-     gui_bech32_errpos-0.19+knots			547af169965  # Latest code
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
-	16964 gui_sendcoins_yes-0.19+knots			13495853b10	last=a649cc6a17b instagibbs/sendcoins_yes
+	TODO: Already merged without fix?? 16964 gui_sendcoins_yes-0.19+knots			13495853b10	last=a649cc6a17b instagibbs/sendcoins_yes
 		# + #17463 implicitly
-	16944 gui_send_psbt-0.19+knots				60cfe7d5dba	last=c6dd565c882 Sjors/2019/08/gui-send-psbt
-		# NOTE: If removing, also drop #17587
-	17587 gui_watchonly_balance-0.19+knots		db662d892ca
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
 	17034 bip174_versions-0.18					fbeea35914e	last=7fbaf8b8581 achow101/bip174-extensions
-	17056 desc_sortedmulti-0.19					683148f4ac7	last=4bb660be90a achow101/sortedmulti-desc
-		# Held back doc/relnotes
-		# TODO: Do we want a multi67 too? (Can descriptors deviate from Core?)
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
-	17125 gui_verifymsg_tips-0.7				c0c497c1307  # gui: Add toolTip and placeholderText to --sign--verify message fields
-	17186 gui_signmsg_tip-0.7					22c1be9a8a0  # gui: Add placeholder text to the sign message field
-	17195 gui_sendamt_placeholder-0.10			949d48ec85a  # gui: send amount placeholder value
 	# Needs signing provider stuff - 0.20?: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options?
 		# TODO: Diff-minimise
 		# Partial rebase at f2fefb51511 (on v0.19.0 tag!)
 	# Needs review: 17219 Sjors:2019/10/change-without-keypool
-	#TODO: Android packaging? #16110 + #17227 + #17396?
+	#TODO: Android packaging? #17227 + #17396?
 	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
 	# Needs fix: 17355 za-kk:oct-19-17174
-	17360 gui_fee_hide_tooltip-0.11				3488d1c2418
-	17437 rpc_wtx_blockheight-0.19				d35ad57aea9
 	16432 gui_overview_privacy-0.19+knots		01a221dac9d	last=08a3048dd70
 		# NOTE: Held back ea1fb691c9c..08a3048dd70
 		# NOTE: Dropped monospace font / justify hack in privacy mode
@@ -288,7 +252,6 @@ checkout origin/master
 		# NOTE: Diff-minimised
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
-	17492 gui_bump_psbt-0.19					536ca65effe	last=3c30d7118a5 instagibbs/gui_bump_psbt
 	17509 gui_saveload_psbt-0.19+knots			10e48579513	last=f48130c331c Sjors/2019/11/gui-psbt-save
 		# NOTE: Minified
 	18027 gui_psbt_opts_dialog-0.19+knots		6719aab1141	last=3e7ca1e8577 gwillen/feature-psbt-ops-dialog
@@ -303,15 +266,11 @@ checkout origin/master
 	17955 gui_uri_paste-0.19+knots				e584afcc743	last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
 	17958 rpc_getgeneralinfo-0.19				9df4b5ec9f7	last=cdbd38df131  # getgeneralinfo RPC
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
-	17998 gui_modaloverlay_esc-0.19				3bd0c705422	last=1a638e11055 emilengler/2020-01-escape-modaloverlay
 	# Needs review: 18000 -  # Coin Statistics Index
 	18014 siphash_optimise_pr18014-0.19			fae5dafc31f	last=de0c7fccb4b elichai/2020-01-siphash
 		# NOTE: Dropped benchmarks
-	18032 rpc_createms_descriptor-0.19+knots	0e56a0a92dd	last=19a354b11f8 achow101/createms-descriptor
 	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
 	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
-	18121 gui_reindex_throttle_updates-0.19		9a4c80e68af	last=c9fe61291e9 hebasto/20200211-reindex-gui
-		# NOTE: Held back 56bf4251672..c9fe61291e9 due to confusing comment change
 	18223 blockfilter_v0-0.19					af5409ac311	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
