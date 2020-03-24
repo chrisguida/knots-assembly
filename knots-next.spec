@@ -12,17 +12,17 @@ checkout origin/master
 	13789 bugfix_asm_pragmas					42302b9b565
 	-     bugfix_asm_leveldb_check				7343cea2d59
 	15155 test_external_bcli					e5ee5cbd543
-	16564 raii_event_test_fix-0.14				32f49042fd2	last=9a19c9ada5
+	16564 -										32f49042fd2	last=9a19c9ada5  # Always define the raii_event_tests test suite
 @0.19.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							931ebfa1f80
-	17402 travis_ppc64-0.19						228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
+	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
-	17828 log_categories_validation-0.19+knots	506d59c2b8a	last=04960621582 practicalswift/log-categories
+	17828 practicalswift/log-categories			506d59c2b8a	last=04960621582 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		0afbbc1b23c	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					c1facf98c54
-	18287 fix_libevent_win_ipv6-0.15			162bac47c59	last=e918138fd5b fix_libevent_win_ipv6
+	18287 fix_libevent_win_ipv6					162bac47c59
 	9524 marco/Mf1701-qaPruning					2617c80565b	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					b91935a2f33
 	14485 fadvise								c196c18b9c4
@@ -30,7 +30,7 @@ checkout origin/master
 	14501 fsync_dir								4b2d9b4aafe
 		# Was #12696
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
-	17204 bugfix_keepnegone-0.13				d64ab583d72	last=0946a703273 meshcollider/201910_1negate_rebase
+	17204 meshcollider/201910_1negate_rebase	d64ab583d72	last=0946a703273 meshcollider/201910_1negate_rebase
 		# based on 5af7625079 sipa/201804_keepnegone
 	13608 -										3f9f71a66a3	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs fix?? 13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
@@ -63,7 +63,7 @@ checkout origin/master
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18271 wrkarnd_boost_wait_until				bd9ae6bf15d
 # FUNCTIONALITY:
-	-     restore_win32-0.19+knots				f7147699d7d
+	-     restore_win32							f7147699d7d
 		TODO 0.20: revert #17756, part of #17916, #18003
 	TODO 0.20: revert #18104 (x86_32 Linux binaries)
 	14066 gitian_power64						a0682b1c6d9
@@ -78,7 +78,7 @@ checkout origin/master
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							69942579878
 	15704 win32_defines_globally				651c437399e
-	9245 ionice-0.19							a835a4f3a7b	last=e1276957ed2 ionice
+	9245 ionice									a835a4f3a7b
 	-    ionice_win-0.19						1eb8a97cb8b
 	8501 old_stats_rpc-0.19						7849380be7a	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
@@ -130,7 +130,7 @@ checkout origin/master
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	# TODO ? 12792 w/ renamed param
-	12911 signrawtx_showfees-0.19				05ebb9adbe7	last=47b2ba29df2 kallewoof/sign-show-fees
+	12911 kallewoof/sign-show-fees				05ebb9adbe7	last=47b2ba29df2 kallewoof/sign-show-fees
 	12965 scriptthreads-0.19					fe21944c5b4	last=dfab6c6866 jonas/2018/04/svt
 	# Needs review are care (new index): 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
@@ -175,7 +175,7 @@ checkout origin/master
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	15423 tor_socks_port						1fcfd051da3
 	15428 tor_gui_pairing-0.19+knots			0bfc25eab88	# latest code now
-	15421 tor_subprocess-0.19+knots				e7ddfa8a4d3	last=85faf3ef421 tor_subprocess
+	15421 tor_subprocess						e7ddfa8a4d3
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
@@ -189,7 +189,7 @@ checkout origin/master
 	# Needs work: 18077 hebasto/20200130-natpmp
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
 		# TODO: Switch to rwconf?
-	15768 gui_ctrl_w-0.19						9c52fd0a4c1	last=f5a3a5b9ab3	# gui: Add close window shortcut
+	15768 -										9c52fd0a4c1  # gui: Add close window shortcut
 	17795 gui_console_ctrl_d-0.19+knots			299a1cf9c83
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
@@ -202,8 +202,8 @@ checkout origin/master
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
 	# Needs QA/review: 15946 jonasschnelli:2019/05/prune_blockfilter
 		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
-	15987 wallet_no_reuse-0.19+knots			864b8322e3d	last=391c5d9a972 wallet_no_reuse
-	-     rpc_gai_txids-0.19					81ecb2e1120	last=621796da61 rpc_gai_txids
+	15987 wallet_no_reuse						864b8322e3d
+	-     rpc_gai_txids							81ecb2e1120
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	16083 rpc_getblock_prevouts_fees-0.19		2cf8730b711	last=dd83c4c925
@@ -223,7 +223,7 @@ checkout origin/master
 	TODO: Merged w/o fixes: 16702 asmap-0.19							0d3efb880c5	last=1ba3e1cc211 origin-pull/17812/head
 		# +18023 + 17812
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
-	16795 rpc_spk_decode_desc-0.18				fb5b42b8478	last=dcd5c4a5773 instagibbs/decode_descriptor
+	16795 instagibbs/decode_descriptor			fb5b42b8478	last=dcd5c4a5773 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.19+knots		f94326eb003	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 	-     gui_bech32_errpos-0.19+knots			547af169965  # Latest code
@@ -231,7 +231,7 @@ checkout origin/master
 	TODO: Already merged without fix?? 16964 gui_sendcoins_yes-0.19+knots			13495853b10	last=a649cc6a17b instagibbs/sendcoins_yes
 		# + #17463 implicitly
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
-	17034 bip174_versions-0.18					fbeea35914e	last=7fbaf8b8581 achow101/bip174-extensions
+	17034 achow101/bip174-extensions			fbeea35914e	last=7fbaf8b8581 achow101/bip174-extensions
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
 	# Needs signing provider stuff - 0.20?: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options?
@@ -259,12 +259,12 @@ checkout origin/master
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.19					98dbf80046a	last=3ab6abcc4dd matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
-	17636 guisettings_opt-0.19					c0f3baf5cda	last=5266efa964b emilengler/2019-11-guisettings
+	17636 emilengler/2019-11-guisettings		c0f3baf5cda	last=5266efa964b emilengler/2019-11-guisettings
 	# Needs work & concept ACK: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 	# Needs work/review: 17918 emilengler:2020-01-hide-non-pkhash-addresses
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	17955 gui_uri_paste-0.19+knots				e584afcc743	last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
-	17958 rpc_getgeneralinfo-0.19				9df4b5ec9f7	last=cdbd38df131  # getgeneralinfo RPC
+	17955 emilengler/2020-01-paste-bitcoin-uri-button	e584afcc743	last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
+	17958 -										9df4b5ec9f7	last=cdbd38df131  # getgeneralinfo RPC
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	# Needs review: 18000 -  # Coin Statistics Index
 	18014 siphash_optimise_pr18014-0.19			fae5dafc31f	last=de0c7fccb4b elichai/2020-01-siphash
@@ -274,7 +274,7 @@ checkout origin/master
 	18223 blockfilter_v0-0.19					af5409ac311	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
-	18238 notfound_retry-0.19					e48828fbabb	last=a204d1586ca ajtowns/202002-bump-notfound
+	18238 ajtowns/202002-bump-notfound			e48828fbabb	last=a204d1586ca ajtowns/202002-bump-notfound
 	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
 	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
 # Non-upstreamed functionality:
