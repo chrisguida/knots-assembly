@@ -1,9 +1,9 @@
 timestamp 2020-03-04 15:52:18
-#lastapply no-merge
+lastapply no-merge
 
 #.. checked up to PR #18259
 
-checkout v0.19.1
+checkout origin/master
 @0.19.x-syslibs
 	5872 subdir_incl_compat						3dce4412b12
 	2241 sys_leveldb							5ef0d062931
@@ -13,8 +13,6 @@ checkout v0.19.1
 	-     bugfix_asm_leveldb_check				7343cea2d59
 	15155 test_external_bcli					e5ee5cbd543
 	16564 raii_event_test_fix-0.14				32f49042fd2	last=9a19c9ada5
-TM	17450 bugfix_pr17450-0.19					a355706e013
-TM	17654 boost_1_72_compat-0.19				614ade49492
 @0.19.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
@@ -22,9 +20,6 @@ TM	17654 boost_1_72_compat-0.19				614ade49492
 	15888 test_wallet_implicitsegwit			b43b3120ae3
 	17402 travis_ppc64-0.19						228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
-TM	17762 net_log_category_exc-0.19				a15bcea31d1
-		# Completely rewrote to minimise impact on 0.19
-NM	17828 log_categories_validation-0.19+knots	c1b7665b1ee
 	17828 log_categories_validation-0.19+knots	506d59c2b8a	last=04960621582 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		0afbbc1b23c	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					c1facf98c54
@@ -60,19 +55,12 @@ NM	17828 log_categories_validation-0.19+knots	c1b7665b1ee
 	17180 sendamount_tooltip-0.11				12d45377b12
 		# JeremyCrookshank:sendamounttooltip
 		# + 17226 promag:2019-10-payamount-tooltip
-TM	17258 fix_rpc_listsinceblock_conflicts-0.19	83594e0fef0	# adamjonas:listsinceblock-filter-conflicts
 	# Not needed?: 17366 qa_reset_segwitheight-0.19
-TM	17427 fix_qmeta_size_t-0.18					3f3ef9ca890
-		# Held back comment/formatting changes
 	17474 bugfix_gui_netlimited_svcbit			239b69a15f6	last=4341bffb6ef bugfix_gui_netlimited_svcbit+refactor
 	# Needs review: 17457 bugfix_multiwallet_coincontrol
-TM	17524 fix_unspendable_psbt-0.19				dfb89ee1b3d
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 	# Needs to be just a bugfix: 17597 qt: Fix height of QR-less ReceiveRequestDialog
 	17569 pr17569-0.18							4337ffee8fe
-TM	17621 fix_iud_keywide-0.19					03496dc436b
-TM	17643 fix_bumpfee_uninitread-0.19			4a67a67b0cc
-TM	17728 fix_scantxoutset_args-0.19			730c2f6219b
 	17946 fix_gbt_buried						247f7bf9191
 	# Not worth it: 17985 MarcoFalke:2001-p2pNoDeadCode
 	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
@@ -93,10 +81,9 @@ TM	17728 fix_scantxoutset_args-0.19			730c2f6219b
 	17916 win_check_heap_corruption-0.18		fe1b6287a6c
 		# NOTE: Skipped Win32 removal stuff
 	-     restore_win32-0.19+knots				f7147699d7d
-		# TODO 0.20: revert #17756, part of #17916, #18003
-	# TODO 0.20: revert #18104 (x86_32 Linux binaries)
+		TODO 0.20: revert #17756, part of #17916, #18003
+	TODO 0.20: revert #18104 (x86_32 Linux binaries)
 	14066 gitian_power64						a0682b1c6d9
-FIXME: -mcpu=power8 since 970 produces broken code!
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -237,7 +224,7 @@ FIXME: -mcpu=power8 since 970 produces broken code!
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
 	# Needs QA/review: 15946 jonasschnelli:2019/05/prune_blockfilter
 		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
-m	15987 wallet_no_reuse-0.19+knots			864b8322e3d	last=391c5d9a972 wallet_no_reuse
+	15987 wallet_no_reuse-0.19+knots			864b8322e3d	last=391c5d9a972 wallet_no_reuse
 	-     rpc_gai_txids-0.19					81ecb2e1120	last=621796da61 rpc_gai_txids
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
