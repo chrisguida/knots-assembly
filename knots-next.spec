@@ -96,6 +96,7 @@ TM	17728 fix_scantxoutset_args-0.19			730c2f6219b
 		# TODO 0.20: revert #17756, part of #17916, #18003
 	# TODO 0.20: revert #18104 (x86_32 Linux binaries)
 	14066 gitian_power64						a0682b1c6d9
+FIXME: -mcpu=power8 since 970 produces broken code!
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
