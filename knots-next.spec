@@ -19,6 +19,7 @@ checkout origin/master
 	-     lint_relaxer							931ebfa1f80
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
+	18427 2020mingwthrd
 	17828 practicalswift/log-categories			506d59c2b8a	last=04960621582 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		0afbbc1b23c	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					c1facf98c54
@@ -61,12 +62,10 @@ checkout origin/master
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
-	18271 wrkarnd_boost_wait_until				bd9ae6bf15d
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
-		TODO 0.20: revert #17756, part of #17916, #18003
-	TODO 0.20: revert #18104 (x86_32 Linux binaries)
-	14066 gitian_power64						a0682b1c6d9
+	-     restore_linux32
+	14066 gitian_power64+knots					a0682b1c6d9	last=c5cf0fa4866 gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
