@@ -19,7 +19,7 @@ checkout origin/master
 	-     lint_relaxer							931ebfa1f80
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
-	18427 2020mingwthrd
+	18427 2020mingwthrd-mini								last=7fe49671dd4 2020mingwthrd
 	17828 practicalswift/log-categories			506d59c2b8a	last=04960621582 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		0afbbc1b23c	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					c1facf98c54
@@ -62,6 +62,7 @@ checkout origin/master
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
+	18444 bugfix_rr_arrfixed_comma
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -72,16 +73,16 @@ checkout origin/master
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs-0.19					71fa5983da9	last=e11cb50a09  # multisig sorting
+	8751 sort-multisigs-0.20					71fa5983da9	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys							69942579878
 	15704 win32_defines_globally				651c437399e
 	9245 ionice									a835a4f3a7b
-	-    ionice_win-0.19						1eb8a97cb8b
-	8501 old_stats_rpc-0.19						7849380be7a	last=7af0ea43b2
+	-    ionice_win								1eb8a97cb8b
+	8501 old_stats_rpc-0.20						7849380be7a	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
-	8550 old_stats_qt-0.19						23537cb5322	last=63fb11652f
+	8550 old_stats_qt-0.20						23537cb5322	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9422 mempool_dat_extensible					5eb5fb7bf25
 	9504 dumpmasterprivkey-0.18					b2f9fe8cc74	last=07fc81109a
@@ -93,7 +94,7 @@ checkout origin/master
 	9849 gui_netwatch							bfb9857e5ec
 	10615 multiwallet_rpc						e2bd3bdd652
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
-	10554 zmq_wtx-0.19							6f452db941a	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-0.20							6f452db941a	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	12674 rpc_onetry_nonpriv					548ed42c93e
 	10593 relax_invblk_punishment				0c990aa1bae
