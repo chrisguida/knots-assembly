@@ -45,7 +45,6 @@ checkout origin/master
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 promag:2019-01-loopexit
-	15600 lockedpool_dontdump					b2ba56ab0f9
 	# Needs review: 15909 Use 'CreateProcess' instead of 'wsystem' in 'runCommand' for Windows.
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
 	# Needs review: 16050 promag:2019-05-importmulti-update
@@ -62,7 +61,6 @@ checkout origin/master
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
-	18444 bugfix_rr_arrfixed_comma
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
