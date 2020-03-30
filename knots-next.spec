@@ -99,7 +99,7 @@ checkout origin/master
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	10594 whitelist_outgoing-mini-0.19+knots	95b7e4c506a	last=b7463a900cd whitelist_outgoing
+	10594 whitelist_outgoing-mini-0.20+knots	95b7e4c506a	last=d465ea1e057 whitelist_outgoing
 		#TODO: Split this up?
 	10350 filtered_witblock-0.19				ee4bf72196f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
@@ -108,12 +108,9 @@ checkout origin/master
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				8d801bd6ade
-	11413 explicit_fee-0.19						80ba6c30043	last=85c406a70d7 kallewoof/explicit-fee
-		# NOTE: Held back 97636cd371c..473ce2dcfdf -  see 670a101e362db0e3a346719e905fd6ab1cfd4fc4 branch for min feerate error
-		# NOTE: Held back a8e36d98c2b to avoid refactor (and because it's totally unnecessary with "EXPLICIT" only)
-		# NOTE: Updated to c109001c9b with ac046e805c (HELD BACK)
+	11413 explicit_fee-0.20+knots				80ba6c30043	last=a29b9939b65 kallewoof/explicit-fee
+		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
-		# 0.19 TODO: Rebase/squash fixups (keep compat with "EXPLICIT"!)
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# dropped: 11653 rpc_getsignaturehash+knots			b4736e599f	last=0a688c4f61 NicolasDorier/getsignaturehash
 	# Closed before released in Knots... 11666 rpc_signinput / NicolasDorier/signinput
@@ -321,6 +318,7 @@ checkout origin/master
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=49c5b0fdd44)				176adbc13c5  # release notes: write/update, including change log and credits
 			# check travis for misspellings
+			gs a29b9939b65:doc/release-notes-11413.md
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
