@@ -125,19 +125,15 @@ checkout origin/master
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	# TODO ? 12792 w/ renamed param
-	12911 kallewoof/sign-show-fees				05ebb9adbe7	last=47b2ba29df2 kallewoof/sign-show-fees
-	12965 scriptthreads-0.19					fe21944c5b4	last=dfab6c6866 jonas/2018/04/svt
+	12911 rpc_sign_show_fees					05ebb9adbe7	last=47b2ba29df2 kallewoof/sign-show-fees
+		# NOTE: Rebased as #18479
+	12965 scriptthreads-0.20					fe21944c5b4	last=dfab6c6866 jonas/2018/04/svt
 	# Needs review are care (new index): 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.17					9bf2c8c00b4	last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.20					9bf2c8c00b4	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
-	-     dsha256_power8-0.17_asm_pragmas		f636f29dd67
-	TODO: Merged partly! 13339 walletnotify_w-0.19					49811bcf170	last=4e9efac678a promag/2018-05-walletnotify
-		# held back 826718490fb..4e9efac678a disabling on Windows
-		# held back cef0327afd..15a0ad0bb4 Windows porting due to copyright issues (and bugs?) - No longer applicable?
-		# Removed WIN32 conditional
-		# Changed '"'"' to '\''
-		# Test improvements: eaeb6fb7efd
+	-     dsha256_power8-0.20_asm_pragmas		f636f29dd67
+	-     walletnotify_w_win
 	# Needs work: 13836 clearmempool RPC
 	# Needs review: 13903 Significantly reduce GetTransaction cs_main locking
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
