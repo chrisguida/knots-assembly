@@ -20,6 +20,7 @@ checkout origin/master
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
 	18427 2020mingwthrd-mini								last=7fe49671dd4 2020mingwthrd
+	18490 bugfix_symcheck_pe_case
 	17828 practicalswift/log-categories			506d59c2b8a	last=04960621582 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		0afbbc1b23c	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					c1facf98c54
@@ -144,14 +145,12 @@ checkout origin/master
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	14137 win_taskbar_progress					b610a34da31	last=18eb4dbb8a
-	14641 fundraw_minconf-0.19					58d9c58687f	last=a3991b7c0b promag/2018-11-fundrawtransaction
+	14641 fundraw_minconf-0.20+knots			58d9c58687f	last=a3991b7c0b promag/2018-11-fundrawtransaction
 		# NOTE: held back .gitignore nonsense change & relnotes
 	14687 zmqkeepalive-0.19+knots				cac95fd51b5	last=c276df7759
 		# NOTE: modified to soft-fail only
 	# wait for Core?: 14707
 	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
-	TODO: This is merged, check next spec line out.. 15006 achow101:create-encrypted-wallet
-		# +16394 achow101/fix-born-enc
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	15115 rm_send2self-mini						94ec464a399	last=14bb8db698d rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
