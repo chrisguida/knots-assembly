@@ -145,7 +145,7 @@ checkout origin/master
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	14137 win_taskbar_progress					b610a34da31	last=18eb4dbb8a
-	14641 fundraw_minconf-0.20+knots			58d9c58687f	last=a3991b7c0b promag/2018-11-fundrawtransaction
+	14641 fundraw_minconf-0.20+knots			58d9c58687f	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 		# NOTE: held back .gitignore nonsense change & relnotes
 	14687 zmqkeepalive-0.19+knots				cac95fd51b5	last=c276df7759
 		# NOTE: modified to soft-fail only
@@ -158,10 +158,11 @@ checkout origin/master
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review/revision: 15202 promag:2019-01-closeallwallets
 	# Needs review: 15204 promag:2019-01-openexternalwallet
-	15218 -										6aefc9da6e4	last=d2ecb70d64  # validation: Flush state after initial sync
+	15218 postibd_flush							6aefc9da6e4	last=d2ecb70d64  # validation: Flush state after initial sync
 		# Moved init around to avoid conflict w/ 15367
+		# TODO: Rewrite after #17487 is ready/safe to merge
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
-	15367 startupnotify-0.19+knots				3567de0e582	last=4b6987c85d8	# feature: Added ability for users to add a startup command
+	15367 -										3567de0e582	last=4b6987c85d8	# feature: Added ability for users to add a startup command
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	15423 tor_socks_port						1fcfd051da3
 	15428 tor_gui_pairing-0.19+knots			0bfc25eab88	# latest code now
