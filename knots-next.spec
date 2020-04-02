@@ -62,6 +62,7 @@ checkout origin/master
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
+	18508 rpcdoc_format_20200402
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -165,8 +166,8 @@ checkout origin/master
 	15367 -										3567de0e582	last=4b6987c85d8	# feature: Added ability for users to add a startup command
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	15423 tor_socks_port						1fcfd051da3
-	15428 tor_gui_pairing-0.19+knots			0bfc25eab88	# latest code now
-	15421 tor_subprocess						e7ddfa8a4d3
+	15428 tor_gui_pairing-0.20+knots			0bfc25eab88	# latest code now
+	15421 tor_subprocess-0.20+knots				e7ddfa8a4d3	last=f2add182487 tor_subprocess
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
@@ -180,13 +181,13 @@ checkout origin/master
 	# Needs work: 18077 hebasto/20200130-natpmp
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
 		# TODO: Switch to rwconf?
-	15768 -										9c52fd0a4c1  # gui: Add close window shortcut
-	17795 gui_console_ctrl_d-0.19+knots			299a1cf9c83
+	15768 -										9c52fd0a4c1	last=f5a3a5b9ab3  # gui: Add close window shortcut
+	17795 gui_console_ctrl_d-0.20+knots			299a1cf9c83
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
 		# TODO: Minify and test well
-	15836 fee_histogram-0.19					1fe42b9c815	last=b94292a7cb jonas/2019/04/feeinfo
+	15836 fee_histogram-0.20					1fe42b9c815	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 	15861 restore_vbits_warning					6f1c5b1da81
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
