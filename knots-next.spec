@@ -220,7 +220,7 @@ checkout origin/master
 	-     gui_bech32_errpos-0.20+knots			547af169965  # Latest code
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
-	17034 achow101/bip174-extensions			fbeea35914e	last=7fbaf8b8581 achow101/bip174-extensions
+	17034 achow101/bip174-extensions			fbeea35914e	last=7795804b4c1 achow101/bip174-extensions
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
 	# Needs signing provider stuff - 0.20?: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options?
@@ -230,13 +230,13 @@ checkout origin/master
 	#TODO: Android packaging? #17227 + #17396?
 	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
 	# Needs fix: 17355 za-kk:oct-19-17174
-	16432 gui_overview_privacy-0.19+knots		01a221dac9d	last=08a3048dd70
-		# NOTE: Held back ea1fb691c9c..08a3048dd70
+	16432 gui_overview_privacy-0.20+knots		01a221dac9d	last=dba83b9dab9
+		# NOTE: Held back ea1fb691c9c..dba83b9dab9
 		# NOTE: Dropped monospace font / justify hack in privacy mode
 		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
-	16442 neutrino-0.19+knots					012949c76ce	last=250d56ae226
-		# NOTE: Held back 250d56ae226 itself since it demands users actively involved in index state
+	16442 neutrino-0.20+knots					012949c76ce	last=7608b32fc27
+		# NOTE: Held back cdf12ea6a5b itself since it demands users actively involved in index state
 	16463 bip174_xpub-0.19+knots				c2962442602	last=63f705bb9d2 achow101/bip174-xpub
 		# NOTE: Diff-minimised
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
