@@ -194,7 +194,8 @@ checkout origin/master
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
 	# Needs QA/review: 15946 jonasschnelli:2019/05/prune_blockfilter
 		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
-	15987 wallet_no_reuse						864b8322e3d
+	17463 gui_custom_sendyes
+	15987 wallet_no_reuse-0.20+knots			864b8322e3d
 	-     rpc_gai_txids							81ecb2e1120
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
@@ -212,16 +213,12 @@ checkout origin/master
 	# needs completion: 15876
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	TODO: Merged w/o fixes: 16702 asmap-0.19							0d3efb880c5	last=1ba3e1cc211 origin-pull/17812/head
-		# +18023 + 17812
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
-	16795 instagibbs/decode_descriptor			fb5b42b8478	last=dcd5c4a5773 instagibbs/decode_descriptor
-	16807 bech32_error_detection-0.19+knots		f94326eb003	last=54e107add41 meshcollider/201909_bech32_error_detection
+	16795 rpc_inferred_output_descriptors-0.20	fb5b42b8478	last=dcd5c4a5773 instagibbs/decode_descriptor
+	16807 bech32_error_detection-0.20+knots		f94326eb003	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
-	-     gui_bech32_errpos-0.19+knots			547af169965  # Latest code
+	-     gui_bech32_errpos-0.20+knots			547af169965  # Latest code
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
-	TODO: Already merged without fix?? 16964 gui_sendcoins_yes-0.19+knots			13495853b10	last=a649cc6a17b instagibbs/sendcoins_yes
-		# + #17463 implicitly
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
 	17034 achow101/bip174-extensions			fbeea35914e	last=7fbaf8b8581 achow101/bip174-extensions
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
