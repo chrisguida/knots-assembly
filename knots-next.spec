@@ -237,13 +237,13 @@ checkout origin/master
 		# Should balances be forced monospace normally just for masking??
 	16442 neutrino-0.20+knots					012949c76ce	last=7608b32fc27
 		# NOTE: Held back cdf12ea6a5b itself since it demands users actively involved in index state
-	16463 bip174_xpub-0.19+knots				c2962442602	last=63f705bb9d2 achow101/bip174-xpub
-		# NOTE: Diff-minimised
+	16463 bip174_xpub-0.20+knots				c2962442602	last=ef3b959fded achow101/bip174-xpub
+		# NOTE: Diff-minimised by excluding moveonly
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
-	17509 gui_saveload_psbt-0.19+knots			10e48579513	last=f48130c331c Sjors/2019/11/gui-psbt-save
+	17509 gui_saveload_psbt-0.20+knots			10e48579513	last=764bfe4cba3 Sjors/2019/11/gui-psbt-save
 		# NOTE: Minified
-	18027 gui_psbt_opts_dialog-0.19+knots		6719aab1141	last=3e7ca1e8577 gwillen/feature-psbt-ops-dialog
+	18027 gui_psbt_opts_dialog-0.20+knots		6719aab1141	last=562800b8155 gwillen/feature-psbt-ops-dialog
 		# NOTE: Dropped changes to error strings
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.19					98dbf80046a	last=3ab6abcc4dd matt/2019-11-filter-rest
