@@ -62,7 +62,6 @@ checkout origin/master
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
-	18508 rpcdoc_format_20200402
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -246,14 +245,16 @@ checkout origin/master
 	18027 gui_psbt_opts_dialog-0.20+knots		6719aab1141	last=562800b8155 gwillen/feature-psbt-ops-dialog
 		# NOTE: Dropped changes to error strings
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
-	17631 rest_blockfilter-0.19					98dbf80046a	last=3ab6abcc4dd matt/2019-11-filter-rest
+	17631 rest_blockfilter-0.20					98dbf80046a	last=3ab6abcc4dd matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
-	17636 emilengler/2019-11-guisettings		c0f3baf5cda	last=5266efa964b emilengler/2019-11-guisettings
+	17636 guisettings-0.20						c0f3baf5cda	last=187f9684e03 emilengler/2019-11-guisettings
+		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
+		# (and removed release notes)
 	# Needs work & concept ACK: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 	# Needs work/review: 17918 emilengler:2020-01-hide-non-pkhash-addresses
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	17955 emilengler/2020-01-paste-bitcoin-uri-button	e584afcc743	last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
-	17958 -										9df4b5ec9f7	last=cdbd38df131  # getgeneralinfo RPC
+	17955 gui_uri_paste-0.20+knots				e584afcc743	last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
+	17958 rpc_getgeneralinfo-0.20+knots			9df4b5ec9f7	last=cdbd38df131  # getgeneralinfo RPC
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	# Needs review: 18000 -  # Coin Statistics Index
 	18014 siphash_optimise_pr18014-0.19			fae5dafc31f	last=de0c7fccb4b elichai/2020-01-siphash
