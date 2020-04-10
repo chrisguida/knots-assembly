@@ -3,8 +3,8 @@ lastapply no-merge
 
 #.. checked up to PR #18259
 
-checkout origin/master
-@0.19.x-syslibs
+checkout origin/0.20
+@0.20.x-syslibs
 	5872 subdir_incl_compat						3dce4412b12
 	2241 sys_leveldb							5ef0d062931
 	5416 sys_libsecp256k1						3a75e059dd3
@@ -13,7 +13,7 @@ checkout origin/master
 	-     bugfix_asm_leveldb_check				7343cea2d59
 	15155 test_external_bcli					e5ee5cbd543
 	16564 -										32f49042fd2	last=9a19c9ada5  # Always define the raii_event_tests test suite
-@0.19.x-knots
+@0.20.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							931ebfa1f80
@@ -270,7 +270,7 @@ checkout origin/master
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
-	7533 sendraw_force-0.19+knots				9c9ea7f80bd  # Latest code now
+	7533 sendraw_force-0.20+knots				9c9ea7f80bd  # Latest code now
 	11082 rwconf-0.19							41b9f119bb7	last=956a76cc852 rwconf
 	7510 rwconf_gui-0.19+knots					4cddb2d955c	last=8ff7132eef3 rwconf_gui  # accidentally rebased on master :)
 	-    rwconf_gui_plus-0.19+knots				5463b9e08fd
