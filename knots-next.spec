@@ -62,6 +62,7 @@ checkout origin/0.20
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
+	18729 intro_dont_change_user_prune
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -267,11 +268,12 @@ checkout origin/0.20
 	18238 ajtowns/202002-bump-notfound			e48828fbabb	last=a204d1586ca ajtowns/202002-bump-notfound
 	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
 	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
+	18728 intro_prune_size
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.20+knots				9c9ea7f80bd  # Latest code now
-	11082 rwconf-0.19							41b9f119bb7	last=956a76cc852 rwconf
+	11082 rwconf								41b9f119bb7
 	7510 rwconf_gui-0.19+knots					4cddb2d955c	last=8ff7132eef3 rwconf_gui  # accidentally rebased on master :)
 	-    rwconf_gui_plus-0.19+knots				5463b9e08fd
 	-    preserve_unsupported_keyflags			907d9c37864
