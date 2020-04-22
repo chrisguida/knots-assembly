@@ -274,7 +274,7 @@ checkout origin/0.20
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.20+knots				9c9ea7f80bd  # Latest code now
 	11082 rwconf								41b9f119bb7
-	7510 rwconf_gui-0.19+knots					4cddb2d955c	last=8ff7132eef3 rwconf_gui  # accidentally rebased on master :)
+	7510 rwconf_gui								4cddb2d955c
 	-    rwconf_gui_plus-0.19+knots				5463b9e08fd
 	-    preserve_unsupported_keyflags			907d9c37864
 	 559 accept_nonstdtxn						cba789cceb1
