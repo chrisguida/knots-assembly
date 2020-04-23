@@ -1,7 +1,7 @@
 timestamp 2020-03-04 15:52:18
 lastapply no-merge
 
-#.. checked up to PR #18489
+#.. checked up to PR #18599
 
 checkout origin/0.20
 @0.20.x-syslibs
@@ -68,6 +68,8 @@ checkout origin/0.20
 	18452 hebasto/20200327-waitfor
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18467 fjahr:txfee0  # rpc: Improve documentation and return value of settxfee
+	18578 promag/2020-fix-coincontroldialog-leak
+		TODO: check it
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -279,6 +281,8 @@ checkout origin/0.20
 	18728 intro_prune_size
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
+	18594 jonatack:cli-getinfo-multiwallet-balances
+	18570 -  # rpc: return block hash & height in getbalances, gettransaction & getwalletinfo JSONs
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
@@ -313,6 +317,7 @@ checkout origin/0.20
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.19							bc35ebccb7e
+		FIXME: using `git archive` to make source tarball means we need to append generated files!
 # BRANDING:
 	n/a  knots_branding-0.19					77761a69811
 #FIXME: Check there are no menu icons
