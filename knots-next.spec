@@ -1,7 +1,7 @@
 timestamp 2020-03-04 15:52:18
 lastapply no-merge
 
-#.. checked up to PR #18259
+#.. checked up to PR #18489
 
 checkout origin/0.20
 @0.20.x-syslibs
@@ -27,6 +27,7 @@ checkout origin/0.20
 	18287 fix_libevent_win_ipv6					162bac47c59
 	9524 marco/Mf1701-qaPruning					2617c80565b	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					b91935a2f33
+	18437 -  # util: Detect posix_fallocate() instead of assuming
 	14485 fadvise								c196c18b9c4
 		# Was #12491
 	14501 fsync_dir								4b2d9b4aafe
@@ -62,7 +63,11 @@ checkout origin/0.20
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
+	18335 -  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18729 intro_dont_change_user_prune
+	18452 hebasto/20200327-waitfor
+	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
+	18467 fjahr:txfee0  # rpc: Improve documentation and return value of settxfee
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -110,7 +115,9 @@ checkout origin/0.20
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				8d801bd6ade
+	18275 kallewoof/2003-wallet-error-on-feechange
 	11413 explicit_fee-0.20+knots				80ba6c30043	last=a29b9939b65 kallewoof/explicit-fee
+		TODO: remove 18275 from this
 		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
@@ -268,7 +275,10 @@ checkout origin/0.20
 	18238 ajtowns/202002-bump-notfound			e48828fbabb	last=a204d1586ca ajtowns/202002-bump-notfound
 	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
 	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
+	18309 -  # zmq: Add support to listen on multiple interfaces
 	18728 intro_prune_size
+	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
+	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
