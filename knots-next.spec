@@ -1,7 +1,7 @@
-timestamp 2020-03-04 15:52:18
+timestamp 2020-04-24 21:18:50
 lastapply no-merge
 
-#.. checked up to PR #18599
+#.. checked up to PR #18759
 
 checkout origin/0.20
 @0.20.x-syslibs
@@ -70,6 +70,8 @@ checkout origin/0.20
 	18467 fjahr:txfee0  # rpc: Improve documentation and return value of settxfee
 	18578 promag/2020-fix-coincontroldialog-leak
 		TODO: check it
+	18671 MarcoFalke:2004-walletDumpChain
+	18729 intro_dont_change_user_prune
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -284,6 +286,13 @@ checkout origin/0.20
 	18594 jonatack:cli-getinfo-multiwallet-balances
 	18570 -  # rpc: return block hash & height in getbalances, gettransaction & getwalletinfo JSONs
 	18611 -  # cli: show default values in config args log
+	diff-minimised 18654 achow101:psbtbumpfee
+	18655 achow101:split-bumpfeeaction
+	18656 achow101:make-unsigned-button
+	18689 -  # rpc: allow dumptxoutset to dump human-readable data
+	18722 -  # addrman: improve performance by using more suitable containers
+		TODO: exclude benchmark
+	18728 intro_prune_size
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
