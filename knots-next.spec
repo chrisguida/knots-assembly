@@ -283,6 +283,7 @@ checkout origin/0.20
 	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
 	18594 jonatack:cli-getinfo-multiwallet-balances
 	18570 -  # rpc: return block hash & height in getbalances, gettransaction & getwalletinfo JSONs
+	18611 -  # cli: show default values in config args log
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
