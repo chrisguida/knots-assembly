@@ -72,6 +72,7 @@ checkout origin/0.20
 		TODO: check it
 	18671 MarcoFalke:2004-walletDumpChain
 	18729 intro_dont_change_user_prune
+	diff-minimised 18766 -  # Disable fee estimation in blocksonly mode
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -210,6 +211,7 @@ checkout origin/0.20
 	-     rpc_gai_txids							81ecb2e1120
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
+	look into 18772 (part of 16083)
 	16083 rpc_getblock_prevouts_fees-0.19		2cf8730b711	last=dd83c4c925
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
 		# Renamed "coinbase" field to "generated"
@@ -287,6 +289,7 @@ checkout origin/0.20
 	18570 -  # rpc: return block hash & height in getbalances, gettransaction & getwalletinfo JSONs
 	18611 -  # cli: show default values in config args log
 	diff-minimised 18654 achow101:psbtbumpfee
+	18789 achow101:create-unsigned-sendconfdialog OR these two:
 	18655 achow101:split-bumpfeeaction
 	18656 achow101:make-unsigned-button
 	18689 -  # rpc: allow dumptxoutset to dump human-readable data
