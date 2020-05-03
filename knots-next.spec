@@ -19,6 +19,7 @@ checkout origin/0.20
 	-     lint_relaxer							931ebfa1f80
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
+	18818 fix_gitian_src_202004
 	18427 2020mingwthrd-mini								last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case
 	17828 practicalswift/log-categories			506d59c2b8a	last=04960621582 practicalswift/log-categories
@@ -73,6 +74,7 @@ checkout origin/0.20
 	18671 MarcoFalke:2004-walletDumpChain
 	18729 intro_dont_change_user_prune
 	diff-minimised 18766 -  # Disable fee estimation in blocksonly mode
+	check 18808 jnewbery:2020-04-getdata
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -274,6 +276,7 @@ checkout origin/0.20
 	18014 siphash_optimise_pr18014-0.19			fae5dafc31f	last=de0c7fccb4b elichai/2020-01-siphash
 		# NOTE: Dropped benchmarks
 	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
+		# +18807 (WIP)
 	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
 	18223 blockfilter_v0-0.19					af5409ac311	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
