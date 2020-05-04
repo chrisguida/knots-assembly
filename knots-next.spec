@@ -1,7 +1,7 @@
-timestamp 2020-04-24 21:18:50
+timestamp 2020-04-30 17:53:12
 lastapply no-merge
 
-#.. checked up to PR #18759
+#.. checked up to PR #18830
 
 checkout origin/0.20
 @0.20.x-syslibs
@@ -299,6 +299,8 @@ checkout origin/0.20
 	18722 -  # addrman: improve performance by using more suitable containers
 		TODO: exclude benchmark
 	18728 intro_prune_size
+	18827 brakmic:getrpcwhitelist
+	18830 brakmic:getrpcinfo
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
