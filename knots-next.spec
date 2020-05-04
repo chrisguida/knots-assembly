@@ -1,7 +1,7 @@
-timestamp 2020-04-30 17:53:12
+timestamp 2020-05-04 20:11:06
 lastapply no-merge
 
-#.. checked up to PR #18830
+#.. checked up to PR #18867
 
 checkout origin/0.20
 @0.20.x-syslibs
@@ -75,6 +75,8 @@ checkout origin/0.20
 	18729 intro_dont_change_user_prune
 	diff-minimised 18766 -  # Disable fee estimation in blocksonly mode
 	check 18808 jnewbery:2020-04-getdata
+	# Needs review: 18850 -  # Fix ZapSelectTx to sync wallet spends
+	# Needs fixes: 18861 sipa:202004_private_getdata
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -301,6 +303,7 @@ checkout origin/0.20
 	18728 intro_prune_size
 	18827 brakmic:getrpcwhitelist
 	18830 brakmic:getrpcinfo
+	# Needs review: 18849 jb55:zeroalloc
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
