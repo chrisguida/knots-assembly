@@ -70,7 +70,6 @@ checkout origin/0.20
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18467 -													last=38677274f93  # rpc: Improve documentation and return value of settxfee
 	18578 promag/2020-fix-coincontroldialog-leak			last=a3a02ddea93
-	18671 pr18671-0.20										last=fa60afc4fb9
 	18729 intro_dont_change_user_prune
 	diff-minimised 18766 -  # Disable fee estimation in blocksonly mode
 	check 18808 jnewbery:2020-04-getdata
