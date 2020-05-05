@@ -28,7 +28,7 @@ checkout origin/0.20
 	18287 fix_libevent_win_ipv6					162bac47c59
 	9524 marco/Mf1701-qaPruning					2617c80565b	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					b91935a2f33
-	18437 -  # util: Detect posix_fallocate() instead of assuming
+	18437 -													last=182dbdf0f4b  # util: Detect posix_fallocate() instead of assuming
 	14485 fadvise								c196c18b9c4
 		# Was #12491
 	14501 fsync_dir								4b2d9b4aafe
@@ -64,14 +64,13 @@ checkout origin/0.20
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
-	18335 -  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
+	18335 -													last=4bb892cec23  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18729 intro_dont_change_user_prune
-	18452 hebasto/20200327-waitfor
+	18452 hebasto/20200327-waitfor							last=2d7b6bc6c9c
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
-	18467 fjahr:txfee0  # rpc: Improve documentation and return value of settxfee
-	18578 promag/2020-fix-coincontroldialog-leak
-		TODO: check it
-	18671 MarcoFalke:2004-walletDumpChain
+	18467 -													last=38677274f93  # rpc: Improve documentation and return value of settxfee
+	18578 promag/2020-fix-coincontroldialog-leak			last=a3a02ddea93
+	18671 pr18671-0.20										last=fa60afc4fb9
 	18729 intro_dont_change_user_prune
 	diff-minimised 18766 -  # Disable fee estimation in blocksonly mode
 	check 18808 jnewbery:2020-04-getdata
