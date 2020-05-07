@@ -19,7 +19,10 @@ checkout origin/0.20
 	-     lint_relaxer							931ebfa1f80
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
-	18818 fix_gitian_src_202004
+	18556 drop_dist-0.20
+	18818 fix_gitian_src_202004-0.20
+		# +part of #18741
+	18902 fix_release_tarball-0.20
 	18427 2020mingwthrd-mini								last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case
 	17828 practicalswift/log-categories			506d59c2b8a	last=04960621582 practicalswift/log-categories
@@ -71,8 +74,10 @@ checkout origin/0.20
 	18467 -													last=38677274f93  # rpc: Improve documentation and return value of settxfee
 	18578 promag/2020-fix-coincontroldialog-leak			last=a3a02ddea93
 	18729 intro_dont_change_user_prune
-	diff-minimised 18766 -  # Disable fee estimation in blocksonly mode
-	check 18808 jnewbery:2020-04-getdata
+	18766 blocksonly_no_feeest-0.20							last=33ca3590243
+		# diff-minimised
+	18808 p2p_drop_unknown_getdata-0.20						last=9847e205bf7 jnewbery/2020-04-getdata
+		# NOTE: Omitted final commit adding comments
 	# Needs review: 18850 -  # Fix ZapSelectTx to sync wallet spends
 	# Needs fixes: 18861 sipa:202004_private_getdata
 # FUNCTIONALITY:
@@ -122,7 +127,7 @@ checkout origin/0.20
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				8d801bd6ade
-	18275 kallewoof/2003-wallet-error-on-feechange
+	18275 wallet_no_change_explicitfee-0.20					last=44cc75f80ee kallewoof/2003-wallet-error-on-feechange
 	11413 explicit_fee-0.20+knots				80ba6c30043	last=a29b9939b65 kallewoof/explicit-fee
 		TODO: remove 18275 from this
 		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
@@ -268,6 +273,8 @@ checkout origin/0.20
 		# (and removed release notes)
 	# Needs work & concept ACK: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 	# Needs work/review: 17918 emilengler:2020-01-hide-non-pkhash-addresses
+	17929 gitian_linux_ldO2-0.20
+		# NOTE: gitian only
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	17955 gui_uri_paste-0.20+knots				e584afcc743	last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
 	17958 rpc_getgeneralinfo-0.20+knots			9df4b5ec9f7	last=cdbd38df131  # getgeneralinfo RPC
