@@ -32,7 +32,7 @@ checkout origin/0.20
 	9524 marco/Mf1701-qaPruning					2617c80565b	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					b91935a2f33
 	18437 -													last=182dbdf0f4b  # util: Detect posix_fallocate() instead of assuming
-	14485 fadvise								c196c18b9c4
+	14485 fadvise-0.20+knots					c196c18b9c4	last=0eb200d0ffd fadvise
 		# Was #12491
 	14501 fsync_dir								4b2d9b4aafe
 		# Was #12696
