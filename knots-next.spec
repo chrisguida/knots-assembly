@@ -37,7 +37,7 @@ checkout origin/0.20
 	14501 fsync_dir								4b2d9b4aafe
 		# Was #12696
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
-	17204 meshcollider/201910_1negate_rebase	d64ab583d72	last=0946a703273 meshcollider/201910_1negate_rebase
+	17204 meshcollider/201910_1negate_rebase	d64ab583d72	last=45af54fbdc8 meshcollider/201910_1negate_rebase
 		# based on 5af7625079 sipa/201804_keepnegone
 	13608 -										3f9f71a66a3	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs fix?? 13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
@@ -63,7 +63,7 @@ checkout origin/0.20
 	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
 	18133 bugfix_qvalidlineedit					adad02360a6
 	# Needs careful review: 18192 bugfix_addressbook_change
-	18194 bugfix_gui_edit_sendaddr-mini			a54995ed86f	last=2667478697b bugfix_gui_edit_sendaddr
+	18194 bugfix_gui_edit_sendaddr-mini			a54995ed86f	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
@@ -72,7 +72,9 @@ checkout origin/0.20
 	18452 hebasto/20200327-waitfor							last=2d7b6bc6c9c
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18467 -													last=38677274f93  # rpc: Improve documentation and return value of settxfee
-	18578 promag/2020-fix-coincontroldialog-leak			last=a3a02ddea93
+	18578 fix_ccd_leak-0.20									last=e8123eae40e promag/2020-fix-coincontroldialog-leak
+		# HELD BACK a3a02ddea93..e8123eae40e: Upstream removed unnecessary constructor, and dropped questionable size_t fix
+		# TODO: reconsider size_t fix beofre including this in any Knots!
 	18729 intro_dont_change_user_prune
 	18766 blocksonly_no_feeest-0.20							last=33ca3590243
 		# diff-minimised
