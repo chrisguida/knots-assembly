@@ -68,7 +68,6 @@ checkout origin/0.20
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18335 -													last=4bb892cec23  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
-	18729 intro_dont_change_user_prune
 	18452 hebasto/20200327-waitfor							last=2d7b6bc6c9c
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18467 -													last=38677274f93  # rpc: Improve documentation and return value of settxfee
