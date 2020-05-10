@@ -129,7 +129,7 @@ checkout origin/0.20
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				8d801bd6ade
 	18275 wallet_no_change_explicitfee-0.20					last=44cc75f80ee kallewoof/2003-wallet-error-on-feechange
-	11413 explicit_fee-0.20+knots				80ba6c30043	last=9afd897104c kallewoof/explicit-fee
+	11413 explicit_fee-0.20+knots				80ba6c30043	last=4c952c70540 kallewoof/explicit-fee
 		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
