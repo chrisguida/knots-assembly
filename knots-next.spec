@@ -218,8 +218,8 @@ checkout origin/0.20
 	-     rpc_gai_txids							81ecb2e1120
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	look into 18772 (part of 16083)
-	16083 rpc_getblock_prevouts_fees-0.19		2cf8730b711	last=dd83c4c925
+	18772 getblock_fees-0.20
+	16083 rpc_getblock_prevouts_fees-0.20		2cf8730b711	last=dd83c4c925
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
 		# Renamed "coinbase" field to "generated"
 		# Renamed "fees" field to "fee"
