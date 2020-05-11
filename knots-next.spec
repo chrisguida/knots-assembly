@@ -128,8 +128,10 @@ checkout origin/0.20
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	# Needs work: 11201 justicz:maxj_add_verify_tx_rpc
 	-     rpc_mempoolentry_txhash				8d801bd6ade
+	14641 promag/2018-11-fundrawtransaction		58d9c58687f	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
+		# NOTE: held back .gitignore nonsense change & relnotes
 	18275 wallet_no_change_explicitfee-0.20					last=44cc75f80ee kallewoof/2003-wallet-error-on-feechange
-	11413 explicit_fee-0.20+knots				80ba6c30043	last=4c952c70540 kallewoof/explicit-fee
+	11413 explicit_fee-0.20+knots				80ba6c30043	last=53342290f47 kallewoof/explicit-fee
 		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
@@ -165,8 +167,6 @@ checkout origin/0.20
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	14137 win_taskbar_progress					b610a34da31	last=18eb4dbb8a
-	14641 fundraw_minconf-0.20+knots			58d9c58687f	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
-		# NOTE: held back .gitignore nonsense change & relnotes
 	14687 zmqkeepalive-0.19+knots				cac95fd51b5	last=c276df7759
 		# NOTE: modified to soft-fail only
 	# wait for Core?: 14707
