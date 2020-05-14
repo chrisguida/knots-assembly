@@ -32,7 +32,7 @@ checkout origin/0.20
 	9524 marco/Mf1701-qaPruning					2617c80565b	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					b91935a2f33
 	18437 -													last=182dbdf0f4b  # util: Detect posix_fallocate() instead of assuming
-	14485 fadvise-0.20+knots					c196c18b9c4	last=0eb200d0ffd fadvise
+	14485 fadvise-0.20+knots					c196c18b9c4	last=c063994a14f fadvise
 		# Was #12491
 	14501 fsync_dir								4b2d9b4aafe
 		# Was #12696
@@ -73,7 +73,7 @@ checkout origin/0.20
 	18467 -													last=38677274f93  # rpc: Improve documentation and return value of settxfee
 	18578 fix_ccd_leak-0.20									last=e8123eae40e promag/2020-fix-coincontroldialog-leak
 		# HELD BACK a3a02ddea93..e8123eae40e: Upstream removed unnecessary constructor, and dropped questionable size_t fix
-		# TODO: reconsider size_t fix beofre including this in any Knots!
+		# TODO: reconsider size_t fix before including this in any Knots!
 	18729 intro_dont_change_user_prune
 	18766 blocksonly_no_feeest-0.20							last=33ca3590243
 		# diff-minimised
@@ -103,7 +103,7 @@ checkout origin/0.20
 	8550 old_stats_qt-0.20						23537cb5322	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9422 mempool_dat_extensible					5eb5fb7bf25
-	9504 dumpmasterprivkey-0.18					b2f9fe8cc74	last=07fc81109a
+	9504 dumpmasterprivkey-0.20					b2f9fe8cc74	last=07fc81109a
 	# not ready yet: 9483 SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
@@ -240,7 +240,7 @@ checkout origin/0.20
 	-     gui_bech32_errpos-0.20+knots			547af169965  # Latest code
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
-	17034 achow101/bip174-extensions			fbeea35914e	last=7795804b4c1 achow101/bip174-extensions
+	17034 psbt_ver_proprietary-0.20				fbeea35914e	last=19200a775a7 achow101/bip174-extensions
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
 	# Needs signing provider stuff - 0.20?: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options?
@@ -250,13 +250,15 @@ checkout origin/0.20
 	#TODO: Android packaging? #17227 + #17396?
 	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
 	# Needs fix: 17355 za-kk:oct-19-17174
-	16432 gui_overview_privacy-0.20+knots		01a221dac9d	last=dba83b9dab9
+	16432 gui_overview_privacy-0.20+knots		01a221dac9d	last=6920e1236b3
 		# NOTE: Held back ea1fb691c9c..dba83b9dab9
 		# NOTE: Dropped monospace font / justify hack in privacy mode
 		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
+	18877 neutrino_cfcheckpt-0.20+knots
 	16442 neutrino-0.20+knots					012949c76ce	last=7608b32fc27
 		# NOTE: Held back cdf12ea6a5b itself since it demands users actively involved in index state
+	18972 neutrino_whitelist-0.20+knots						last=51e9de5b435
 	16463 bip174_xpub-0.20+knots				c2962442602	last=ef3b959fded achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
