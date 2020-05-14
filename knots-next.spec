@@ -9,7 +9,7 @@ checkout origin/0.20
 	2241 sys_leveldb							5ef0d062931
 	5416 sys_libsecp256k1						3a75e059dd3
 	7485 sys_univalue_def						34d525a0efa
-	13789 bugfix_asm_pragmas					42302b9b565
+	13789 bugfix_asm_pragmas-0.20				42302b9b565	last=14337d0d80b bugfix_asm_pragmas
 	-     bugfix_asm_leveldb_check				7343cea2d59
 	15155 test_external_bcli					e5ee5cbd543
 	16564 -										32f49042fd2	last=9a19c9ada5  # Always define the raii_event_tests test suite
@@ -20,9 +20,9 @@ checkout origin/0.20
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
 	18556 drop_dist-0.20
-	18818 fix_gitian_src_202004-0.20
+	18818 fix_gitian_src_202004-0.20						last=3897f3a2ec0 fix_gitian_src_202004
 		# +part of #18741
-	18902 fix_release_tarball-0.20
+	18902 fix_release_tarball-0.20							last=83ecd1b15e8 fix_gitdir_again
 	18427 2020mingwthrd-mini								last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case
 	17828 practicalswift/log-categories			506d59c2b8a	last=04960621582 practicalswift/log-categories
@@ -68,7 +68,8 @@ checkout origin/0.20
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18335 -													last=4bb892cec23  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
-	18452 hebasto/20200327-waitfor							last=2d7b6bc6c9c
+	18452 2d7b6bc6c9c										last=da73f1513a6
+		# TODO: Held back 2d7b6bc6c9c..da73f1513a6 until #18814 arrives in 0.20 branch
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18467 -													last=38677274f93  # rpc: Improve documentation and return value of settxfee
 	18578 fix_ccd_leak-0.20									last=e8123eae40e promag/2020-fix-coincontroldialog-leak
@@ -84,7 +85,9 @@ checkout origin/0.20
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
-	14066 gitian_power64+knots					a0682b1c6d9	last=c5cf0fa4866 gitian_power64
+	17929 gitian_linux_ldO2-0.20
+		# NOTE: gitian only
+	14066 gitian_power64-0.20+knots					a0682b1c6d9	last=fb0dd8e3d72 gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -256,7 +259,7 @@ checkout origin/0.20
 		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
 	18877 neutrino_cfcheckpt-0.20+knots
-	16442 neutrino-0.20+knots					012949c76ce	last=7608b32fc27
+	18876 neutrino-0.20+knots					012949c76ce	last=5488ce98cf2 8e5e184e3
 		# NOTE: Held back cdf12ea6a5b itself since it demands users actively involved in index state
 	18972 neutrino_whitelist-0.20+knots						last=51e9de5b435
 	16463 bip174_xpub-0.20+knots				c2962442602	last=ef3b959fded achow101/bip174-xpub
@@ -275,8 +278,6 @@ checkout origin/0.20
 		# (and removed release notes)
 	# Needs work & concept ACK: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 	# Needs work/review: 17918 emilengler:2020-01-hide-non-pkhash-addresses
-	17929 gitian_linux_ldO2-0.20
-		# NOTE: gitian only
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	17955 gui_uri_paste-0.20+knots				e584afcc743	last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
 	17958 rpc_getgeneralinfo-0.20+knots			9df4b5ec9f7	last=cdbd38df131  # getgeneralinfo RPC
