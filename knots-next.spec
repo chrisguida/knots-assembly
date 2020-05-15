@@ -18,7 +18,7 @@ checkout origin/0.20
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							931ebfa1f80
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
-	# 0.21 TODO: Restore Valgrind/s390x Travis jobs: https://github.com/bitcoin/bitcoin/pull/18899 https://github.com/bitcoin/bitcoin/pull/18905
+	# TODO: ? Restore Valgrind/s390x Travis jobs: https://github.com/bitcoin/bitcoin/pull/18899 https://github.com/bitcoin/bitcoin/pull/18905
 	18724 qa_cli_rpcwallet-0.20
 # FIXES:
 	18556 drop_dist-0.20
@@ -73,14 +73,9 @@ checkout origin/0.20
 	18452 fix_waitfor-0.20									last=da73f1513a6
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18467 -													last=38677274f93  # rpc: Improve documentation and return value of settxfee
-	18578 fix_ccd_leak-0.20									last=e8123eae40e promag/2020-fix-coincontroldialog-leak
-		# HELD BACK a3a02ddea93..e8123eae40e: Upstream removed unnecessary constructor, and dropped questionable size_t fix
-		# TODO: reconsider size_t fix before including this in any Knots!
 	18729 intro_dont_change_user_prune
 	18766 blocksonly_no_feeest-0.20							last=33ca3590243
 		# diff-minimised
-	18808 p2p_drop_unknown_getdata-0.20						last=9847e205bf7 jnewbery/2020-04-getdata
-		# NOTE: Omitted final commit adding comments
 	# Needs review: 18850 -  # Fix ZapSelectTx to sync wallet spends
 	# Needs fixes: 18861 sipa:202004_private_getdata
 # FUNCTIONALITY:
