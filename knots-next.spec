@@ -262,7 +262,7 @@ checkout origin/0.20
 	18876 neutrino-0.20+knots					012949c76ce	last=5488ce98cf2 8e5e184e3
 		# NOTE: Held back cdf12ea6a5b itself since it demands users actively involved in index state
 	18972 neutrino_whitelist-0.20+knots						last=51e9de5b435
-	16463 bip174_xpub-0.20+knots				c2962442602	last=ef3b959fded achow101/bip174-xpub
+	16463 bip174_xpub-0.20+knots				c2962442602	last=8ae43e849c7 achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
@@ -271,7 +271,7 @@ checkout origin/0.20
 	18027 gui_psbt_opts_dialog-0.20+knots		6719aab1141	last=562800b8155 gwillen/feature-psbt-ops-dialog
 		# NOTE: Dropped changes to error strings
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
-	17631 rest_blockfilter-0.20					98dbf80046a	last=3ab6abcc4dd matt/2019-11-filter-rest
+	17631 rest_blockfilter-0.20					98dbf80046a	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	17636 guisettings-0.20						c0f3baf5cda	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
