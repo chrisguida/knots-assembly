@@ -18,6 +18,8 @@ checkout origin/0.20
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							931ebfa1f80
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
+	# 0.21 TODO: Restore Valgrind/s390x Travis jobs: https://github.com/bitcoin/bitcoin/pull/18899 https://github.com/bitcoin/bitcoin/pull/18905
+	18724 qa_cli_rpcwallet-0.20
 # FIXES:
 	18556 drop_dist-0.20
 	18818 fix_gitian_src_202004-0.20						last=3897f3a2ec0 fix_gitian_src_202004
@@ -68,8 +70,7 @@ checkout origin/0.20
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18335 -													last=4bb892cec23  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
-	18452 2d7b6bc6c9c										last=da73f1513a6
-		# TODO: Held back 2d7b6bc6c9c..da73f1513a6 until #18814 arrives in 0.20 branch
+	18452 fix_waitfor-0.20									last=da73f1513a6
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18467 -													last=38677274f93  # rpc: Improve documentation and return value of settxfee
 	18578 fix_ccd_leak-0.20									last=e8123eae40e promag/2020-fix-coincontroldialog-leak
@@ -298,7 +299,8 @@ checkout origin/0.20
 	18728 intro_prune_size
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
-	18594 jonatack:cli-getinfo-multiwallet-balances
+	18574 cli_getinfo_balances-0.20
+	18594 cli_getinfo_mwbalances-0.20						last=2e7d8b9bf58 jonatack/cli-getinfo-multiwallet-balances
 	18570 -  # rpc: return block hash & height in getbalances, gettransaction & getwalletinfo JSONs
 	18611 -  # cli: show default values in config args log
 	diff-minimised 18654 achow101:psbtbumpfee
