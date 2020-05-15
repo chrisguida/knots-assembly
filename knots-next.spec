@@ -294,7 +294,7 @@ checkout origin/0.20
 	18238 ajtowns/202002-bump-notfound			e48828fbabb	last=a204d1586ca ajtowns/202002-bump-notfound
 	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
 	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
-	18309 -  # zmq: Add support to listen on multiple interfaces
+	18309 -													last=751a5c5d562  # zmq: Add support to listen on multiple interfaces
 	18728 intro_prune_size
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
