@@ -120,7 +120,7 @@ checkout origin/0.20
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 	10594 whitelist_outgoing-mini-0.20+knots	95b7e4c506a	last=d465ea1e057 whitelist_outgoing
 		#TODO: Split this up?
-	10350 filtered_witblock-0.19				ee4bf72196f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.20				ee4bf72196f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -199,7 +199,7 @@ checkout origin/0.20
 	# Needs work: 18077 hebasto/20200130-natpmp
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
 		# TODO: Switch to rwconf?
-	15768 -										9c52fd0a4c1	last=f5a3a5b9ab3  # gui: Add close window shortcut
+	15768 gui_ctrl_w-0.20						9c52fd0a4c1	last=f5a3a5b9ab3  # gui: Add close window shortcut
 	17795 gui_console_ctrl_d-0.20+knots			299a1cf9c83
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
@@ -291,7 +291,6 @@ checkout origin/0.20
 	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
 	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
 	18309 -													last=751a5c5d562  # zmq: Add support to listen on multiple interfaces
-	18728 intro_prune_size
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
 	18574 cli_getinfo_balances-0.20
