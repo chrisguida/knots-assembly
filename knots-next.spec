@@ -207,7 +207,7 @@ checkout origin/0.20
 		# TODO: Minify and test well
 	15836 fee_histogram-0.20					1fe42b9c815	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
-	15861 restore_vbits_warning					6f1c5b1da81
+	15861 restore_vbits_warning-0.20			6f1c5b1da81 last=9de382aae41 restore_vbits_warning
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
 	# Needs QA/review: 15946 jonasschnelli:2019/05/prune_blockfilter
