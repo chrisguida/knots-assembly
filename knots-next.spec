@@ -257,6 +257,7 @@ checkout origin/0.20
 	18877 neutrino_cfcheckpt-0.20+knots
 	18876 neutrino-0.20+knots					012949c76ce	last=5488ce98cf2 8e5e184e3
 		# NOTE: Held back cdf12ea6a5b itself since it demands users actively involved in index state
+		# TODO: redo with #19010
 	18972 neutrino_whitelist-0.20+knots						last=51e9de5b435
 	16463 bip174_xpub-0.20+knots				c2962442602	last=8ae43e849c7 achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
@@ -295,7 +296,7 @@ checkout origin/0.20
 	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
 	18574 cli_getinfo_balances-0.20
 	18594 cli_getinfo_mwbalances-0.20						last=2e7d8b9bf58 jonatack/cli-getinfo-multiwallet-balances
-	18570 -  # rpc: return block hash & height in getbalances, gettransaction & getwalletinfo JSONs
+	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
 	18611 -  # cli: show default values in config args log
 	diff-minimised 18654 achow101:psbtbumpfee
 	18789 achow101:create-unsigned-sendconfdialog OR these two:
@@ -314,6 +315,7 @@ checkout origin/0.20
 	7533 sendraw_force-0.20+knots				9c9ea7f80bd  # Latest code now
 	11082 rwconf								41b9f119bb7
 	7510 rwconf_gui								4cddb2d955c
+		# 0.21 TODO: update neutrino option name
 	-    rwconf_gui_plus-0.19+knots				5463b9e08fd
 	-    preserve_unsupported_keyflags			907d9c37864
 	 559 accept_nonstdtxn						cba789cceb1
@@ -356,6 +358,7 @@ checkout origin/0.20
 	n/a  (cherrypick=49c5b0fdd44)				176adbc13c5  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 			gs a29b9939b65:doc/release-notes-11413.md
+			gs fdd577dfc5d:doc/release-notes-18570.md
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
