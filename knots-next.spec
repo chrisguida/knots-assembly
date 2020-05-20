@@ -297,8 +297,9 @@ checkout origin/0.20
 	18574 cli_getinfo_balances-0.20
 	18594 cli_getinfo_mwbalances-0.20						last=2e7d8b9bf58 jonatack/cli-getinfo-multiwallet-balances
 	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
-	18611 -  # cli: show default values in config args log
-	diff-minimised 18654 achow101:psbtbumpfee
+	# Needs work? 18611 -  # cli: show default values in config args log
+	18654 rpc_psbtbumpfee-0.20								last=61d6e410e00 achow101/psbtbumpfee
+		# NOTE: Partially rewrote to minimise diff/merge issues
 	18789 achow101:create-unsigned-sendconfdialog OR these two:
 	18655 achow101:split-bumpfeeaction
 	18656 achow101:make-unsigned-button
