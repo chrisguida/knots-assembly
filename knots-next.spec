@@ -259,7 +259,7 @@ checkout origin/0.20
 		# NOTE: Held back cdf12ea6a5b itself since it demands users actively involved in index state
 		# TODO: redo with #19010
 	18972 neutrino_whitelist-0.20+knots						last=51e9de5b435
-	16463 bip174_xpub-0.20+knots				c2962442602	last=8ae43e849c7 achow101/bip174-xpub
+	16463 bip174_xpub-0.20+knots				c2962442602	last=ee0dd3ae1fc achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
@@ -296,6 +296,7 @@ checkout origin/0.20
 	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
 	18574 cli_getinfo_balances-0.20
 	18594 cli_getinfo_mwbalances-0.20						last=2e7d8b9bf58 jonatack/cli-getinfo-multiwallet-balances
+		# NOTE: Omitted 256be91d6ca (refactor)
 	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18654 rpc_psbtbumpfee-0.20								last=61d6e410e00 achow101/psbtbumpfee
