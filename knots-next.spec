@@ -181,7 +181,7 @@ checkout origin/0.20
 		# Moved init around to avoid conflict w/ 15367
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
-	15367 -										3567de0e582	last=4b6987c85d8	# feature: Added ability for users to add a startup command
+	15367 startupnotify-0.20					3567de0e582	last=7981a11299a	# feature: Added ability for users to add a startup command
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	15423 tor_socks_port						1fcfd051da3
 	15428 tor_gui_pairing-0.20+knots			0bfc25eab88	# latest code now
@@ -249,7 +249,8 @@ checkout origin/0.20
 	#TODO: Android packaging? #17227 + #17396?
 	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
 	# Needs fix: 17355 za-kk:oct-19-17174
-	16432 gui_overview_privacy-0.20+knots		01a221dac9d	last=6920e1236b3
+	16432 gui_overview_privacy-0.20+knots		01a221dac9d	last=908b01457bc hebasto/20190721-privacy
+		# TODO: low-priority updates 6920e1236b3..908b01457bc
 		# NOTE: Held back ea1fb691c9c..dba83b9dab9
 		# NOTE: Dropped monospace font / justify hack in privacy mode
 		# Ensure copying balances isn't annoying
