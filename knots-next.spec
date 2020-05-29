@@ -296,8 +296,9 @@ checkout origin/0.20
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
 	18574 cli_getinfo_balances-0.20
-	18594 cli_getinfo_mwbalances-0.20						last=2e7d8b9bf58 jonatack/cli-getinfo-multiwallet-balances
-		# NOTE: Omitted 256be91d6ca (refactor)
+	18594 cli_getinfo_mwbalances-0.20						last=5edad5ce5d3 jonatack/cli-getinfo-multiwallet-balances
+		# NOTE: Omitted 903b6c117f5 (refactor)
+		todo: +#19089
 	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18654 rpc_psbtbumpfee-0.20								last=61d6e410e00 achow101/psbtbumpfee
