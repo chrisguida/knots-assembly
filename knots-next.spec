@@ -249,8 +249,8 @@ checkout origin/0.20
 	#TODO: Android packaging? #17227 + #17396?
 	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
 	# Needs fix: 17355 za-kk:oct-19-17174
-	16432 gui_overview_privacy-0.20+knots		01a221dac9d	last=908b01457bc hebasto/20190721-privacy
-		# TODO: low-priority updates 6920e1236b3..908b01457bc
+	16432 gui_overview_privacy-0.20+knots		01a221dac9d	last=8d75115844b hebasto/20190721-privacy
+		# TODO: low-priority updates 6920e1236b3..8d75115844b
 		# NOTE: Held back ea1fb691c9c..dba83b9dab9
 		# NOTE: Dropped monospace font / justify hack in privacy mode
 		# Ensure copying balances isn't annoying
@@ -266,8 +266,8 @@ checkout origin/0.20
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
 	17509 gui_saveload_psbt-0.20+knots			10e48579513	last=764bfe4cba3 Sjors/2019/11/gui-psbt-save
 		# NOTE: Minified
-	18027 gui_psbt_opts_dialog-0.20+knots		6719aab1141	last=562800b8155 gwillen/feature-psbt-ops-dialog
-		# NOTE: Dropped changes to error strings
+	18027 gui_psbt_opts_dialog-0.20+knots		6719aab1141	last=71694516465 gwillen/feature-psbt-ops-dialog
+		# NOTE: Dropped changes to error strings, and unrelated 71694516465
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.20					98dbf80046a	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
@@ -313,6 +313,7 @@ checkout origin/0.20
 	18827 brakmic:getrpcwhitelist
 	18830 brakmic:getrpcinfo
 	# Needs review: 18849 jb55:zeroalloc
+	TODO: Check if #19106 fix is needed
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
