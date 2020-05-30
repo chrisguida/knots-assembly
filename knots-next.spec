@@ -277,7 +277,7 @@ checkout origin/0.20
 	# Needs work & concept ACK: rpc: Make __cookie__ user immune to rpcwhitelist #17815
 	# Needs work/review: 17918 emilengler:2020-01-hide-non-pkhash-addresses
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	17955 gui_uri_paste-0.20+knots				e584afcc743	last=fa5887c5231 emilengler/2020-01-paste-bitcoin-uri-button
+	17955 gui_uri_paste-0.20+knots				e584afcc743	last=0139b428923 emilengler/2020-01-paste-bitcoin-uri-button
 	17958 rpc_getgeneralinfo-0.20+knots			9df4b5ec9f7	last=cdbd38df131  # getgeneralinfo RPC
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	# Needs review: 18000 -  # Coin Statistics Index
@@ -298,7 +298,7 @@ checkout origin/0.20
 	18574 cli_getinfo_balances-0.20
 	18594 cli_getinfo_mwbalances-0.20						last=5edad5ce5d3 jonatack/cli-getinfo-multiwallet-balances
 		# NOTE: Omitted 903b6c117f5 (refactor)
-		todo: +#19089
+	19089 cli_getinfo_mwbalances_pt2-0.20					last=75cae182a7b jonatack/cli-getinfo-multiwallet-follow-ups
 	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18654 rpc_psbtbumpfee-0.20								last=61d6e410e00 achow101/psbtbumpfee
@@ -364,6 +364,7 @@ checkout origin/0.20
 			# check travis for misspellings
 			gs a29b9939b65:doc/release-notes-11413.md
 			gs fdd577dfc5d:doc/release-notes-18570.md
+			gs origin-pull/19089/head
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
