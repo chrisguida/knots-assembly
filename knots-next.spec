@@ -298,17 +298,16 @@ checkout origin/0.20
 	18574 cli_getinfo_balances-0.20
 	18594 cli_getinfo_mwbalances-0.20						last=5edad5ce5d3 jonatack/cli-getinfo-multiwallet-balances
 		# NOTE: Omitted 903b6c117f5 (refactor)
-	19089 cli_getinfo_mwbalances_pt2-0.20					last=75cae182a7b jonatack/cli-getinfo-multiwallet-follow-ups
+	19089 cli_getinfo_mwbalances_pt2-0.20					last=8ab19a3d440 jonatack/cli-getinfo-multiwallet-follow-ups
 	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18654 rpc_psbtbumpfee-0.20								last=61d6e410e00 achow101/psbtbumpfee
 		# NOTE: Partially rewrote to minimise diff/merge issues
-	18789 achow101:create-unsigned-sendconfdialog OR these two:
-	18655 achow101:split-bumpfeeaction
-	18656 achow101:make-unsigned-button
-	18689 -  # rpc: allow dumptxoutset to dump human-readable data
-	18722 -  # addrman: improve performance by using more suitable containers
-		TODO: exclude benchmark
+	# TODO: (conflicts with address reuse warning) 18789 achow101:create-unsigned-sendconfdialog OR these two:
+		# 18655 achow101:split-bumpfeeaction
+		# 18656 achow101:make-unsigned-button
+	18689 rpc_dumptxoutset_hr-0.20							last=cd20cb886de
+	18722 O_addrman_unordered_map-0.20						last=7cc317285f3
 	18728 intro_prune_size
 	18827 brakmic:getrpcwhitelist
 	18830 brakmic:getrpcinfo
