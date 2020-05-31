@@ -309,13 +309,12 @@ checkout origin/0.20
 	18689 rpc_dumptxoutset_hr-0.20							last=cd20cb886de
 	18722 O_addrman_unordered_map-0.20						last=7cc317285f3
 	18728 intro_prune_size
-	19117 rpc_getrpcwhitelist-0.20							last=e4f0dab4633 rpc_getrpcwhitelist
+	19117 rpc_getrpcwhitelist-0.20							last=94fad2edec5 rpc_getrpcwhitelist
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-0.20+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
-	18830 brakmic:getrpcinfo
+	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
-	TODO: Check if #19106 fix is needed
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
