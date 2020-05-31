@@ -309,7 +309,10 @@ checkout origin/0.20
 	18689 rpc_dumptxoutset_hr-0.20							last=cd20cb886de
 	18722 O_addrman_unordered_map-0.20						last=7cc317285f3
 	18728 intro_prune_size
-	18827 brakmic:getrpcwhitelist
+	19117 rpc_getrpcwhitelist-0.20							last=e4f0dab4633 rpc_getrpcwhitelist
+		# NOTE: Was #18827 before any Knots merge
+	-     getrpcwhitelist_wallets-0.20+knots
+		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	18830 brakmic:getrpcinfo
 	# Needs review: 18849 jb55:zeroalloc
 	TODO: Check if #19106 fix is needed
@@ -364,6 +367,7 @@ checkout origin/0.20
 			gs a29b9939b65:doc/release-notes-11413.md
 			gs fdd577dfc5d:doc/release-notes-18570.md
 			gs origin-pull/19089/head
+			gs origin-pull/18827/head
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
