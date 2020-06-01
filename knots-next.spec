@@ -322,15 +322,15 @@ checkout origin/0.20
 	11082 rwconf								41b9f119bb7
 	7510 rwconf_gui								4cddb2d955c
 		# 0.21 TODO: update neutrino option name
-	-    rwconf_gui_plus-0.19+knots				5463b9e08fd
+	-    rwconf_gui_plus						5463b9e08fd
 	-    preserve_unsupported_keyflags			907d9c37864
 	 559 accept_nonstdtxn						cba789cceb1
 	 929 tbc									88155f05a9f
 	 553 bugfix_qt_uri_amount_parser			fc596062efd
 	-    mining_priority						840235f5c49  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					5448798f7cb
-	5891 qt_console_history_persist-0.19+knots	1257cc2b3e8	last=ea852deea35 qt_console_history_persist
-	7219 rbf_opts-0.19+knots					e8ad31b9e4e
+	5891 qt_console_history_persist-0.20+knots	1257cc2b3e8	last=ea852deea35 qt_console_history_persist
+	7219 rbf_opts-0.20+knots					e8ad31b9e4e
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					64e578fe3b2
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
@@ -338,7 +338,7 @@ checkout origin/0.20
 	10282 timebomb_knots						4c18de9f7fb
 	-     gui_wallet_displayname-0.19			190666227ad	# Latest code now
 	-     gui_request_payment_label-0.19		ecc9b39284d
-	n/a  checkpoint_update-0.19					471acd7bfc3
+	n/a  checkpoint_update-0.20					471acd7bfc3
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				3601f544269
