@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #18867
 
-checkout origin/0.20
+checkout v0.20.0
 @0.20.x-syslibs
 	5872 subdir_incl_compat						3dce4412b12
 	2241 sys_leveldb							5ef0d062931
@@ -78,6 +78,11 @@ checkout origin/0.20
 		# diff-minimised
 	# Needs review: 18850 -  # Fix ZapSelectTx to sync wallet spends
 	# Needs fixes: 18861 sipa:202004_private_getdata
+	18896 bugfix_gui_pr18896-0.17							last=1e9bfd4926a
+	18956 win_min_version_flag-0.18
+	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
+	18982 bugfix_walletnotify_conflict-0.20					last=7eaf86d3bfc
+	# Needs review: 18990 MarcoFalke:2005-logMempoolRej
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -256,6 +261,7 @@ checkout origin/0.20
 		# Ensure copying balances isn't annoying
 		# Should balances be forced monospace normally just for masking??
 	18877 neutrino_cfcheckpt-0.20+knots
+	# TODO: Split out 18960, 19010, 19044, 19070
 	18876 neutrino-0.20+knots					012949c76ce	last=5488ce98cf2 8e5e184e3
 		# NOTE: Held back cdf12ea6a5b itself since it demands users actively involved in index state
 		# TODO: redo with #19010
@@ -315,6 +321,7 @@ checkout origin/0.20
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
+	18991 -  # Cache responses to GETADDR to prevent topology leaks
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
