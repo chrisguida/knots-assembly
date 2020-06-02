@@ -342,9 +342,9 @@ checkout origin/0.20
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				3601f544269
-	-    bytespersigopstrict-0.19+knots			d93712a1875
-	9749 unique_spk_mempool-0.19+knots			031015ce77a
-	-    bloom_default-0.19+knots				df61037d315
+	-    bytespersigopstrict-0.20+knots			d93712a1875
+	9749 unique_spk_mempool-0.20+knots			031015ce77a
+	-    bloom_default-0.20+knots				df61037d315
 	-    rwconf_policy-0.19+knots				eb669c5e944
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
