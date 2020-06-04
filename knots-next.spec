@@ -83,6 +83,9 @@ checkout v0.20.0
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	18982 bugfix_walletnotify_conflict-0.20					last=7eaf86d3bfc
 	# Needs review: 18990 MarcoFalke:2005-logMempoolRej
+	18993 -  # qt: increase console command max length #18993
+	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
+	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -238,6 +241,7 @@ checkout v0.20.0
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
+		# NOTE: New version: 19031 Implement ADDRv2 support (part of BIP155)
 	16795 rpc_inferred_output_descriptors-0.20	fb5b42b8478	last=dcd5c4a5773 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.20+knots		f94326eb003	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
@@ -322,7 +326,11 @@ checkout v0.20.0
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	18991 -  # Cache responses to GETADDR to prevent topology leaks
+	# Needs concept review: 19043 torcontrol: add -tortarget config
+	19092 jonatack:cli-getinfo-multiwallet-total-balance
+	19093 -  # RPC: testmempoolaccept returns transaction fee
 # Non-upstreamed functionality:
+	-     restore_rejectmsg
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.20+knots				9c9ea7f80bd  # Latest code now
