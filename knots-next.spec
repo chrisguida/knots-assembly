@@ -83,7 +83,7 @@ checkout v0.20.0
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	18982 bugfix_walletnotify_conflict-0.20					last=7eaf86d3bfc
 	# Needs review: 18990 MarcoFalke:2005-logMempoolRej
-	18993 -  # qt: increase console command max length #18993
+	18993 gui_console_longinput-0.8							last=fc6a637a013  # qt: increase console command max length #18993
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
 # FUNCTIONALITY:
@@ -330,6 +330,7 @@ checkout v0.20.0
 	19092 jonatack:cli-getinfo-multiwallet-total-balance
 	19093 -  # RPC: testmempoolaccept returns transaction fee
 # Non-upstreamed functionality:
+	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
