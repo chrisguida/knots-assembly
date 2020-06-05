@@ -13,6 +13,8 @@ checkout v0.20.0
 	-     bugfix_asm_leveldb_check				7343cea2d59
 	15155 test_external_bcli					e5ee5cbd543
 	16564 -										32f49042fd2	last=9a19c9ada5  # Always define the raii_event_tests test suite
+	19097 bugfix_incl_qpainterpath-0.9
+	# TODO: Check build with -fno-common
 @0.20.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
@@ -255,6 +257,7 @@ checkout v0.20.0
 		# TODO: Diff-minimise
 		# Partial rebase at f2fefb51511 (on v0.19.0 tag!)
 	# Needs review: 17219 Sjors:2019/10/change-without-keypool
+		# NOTE: release notes in #19115
 	#TODO: Android packaging? #17227 + #17396?
 	# Needs review: 17268 JeremyRubin:mempool-experiments-2  # Epoch Mempool
 	# Needs fix: 17355 za-kk:oct-19-17174
