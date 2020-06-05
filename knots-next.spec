@@ -1,7 +1,7 @@
-timestamp 2020-05-04 20:11:06
+timestamp 2020-06-05 17:17:31
 lastapply no-merge
 
-#.. checked up to PR #18867
+#.. checked up to PR #19178
 
 checkout v0.20.0
 @0.20.x-syslibs
@@ -88,6 +88,7 @@ checkout v0.20.0
 	18993 gui_console_longinput-0.8							last=fc6a637a013  # qt: increase console command max length #18993
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
+	19169 -  # rpc: Validate provided keys for query_options parameter in listunspent
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -215,6 +216,7 @@ checkout v0.20.0
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
 		# TODO: Minify and test well
+		# OR: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram-0.20					1fe42b9c815	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 	15861 restore_vbits_warning-0.20			6f1c5b1da81 last=9de382aae41 restore_vbits_warning
@@ -332,6 +334,11 @@ checkout v0.20.0
 	# Needs concept review: 19043 torcontrol: add -tortarget config
 	19092 jonatack:cli-getinfo-multiwallet-total-balance
 	19093 -  # RPC: testmempoolaccept returns transaction fee
+	# Needs consideration: 19109 sipa:202005_bloom_relay
+	# 0.21 TODO: 19136 achow101:export-descriptor
+	19137 achow101:dumpwalletrecords
+	19142 MarcoFalke:2006-valVerifyDbInterrupt4
+		TODO: Diff-minimise (only add 1 ShutdownRequested)
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg
@@ -378,7 +385,7 @@ checkout v0.20.0
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
 	n/a  (cherrypick=9600fe90fb2e446cac)		f63eb318b5e	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200304)			fa2f7c2d6bd
+	n/a  (bump_version=Knots:20200605)			fa2f7c2d6bd
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=49c5b0fdd44)				176adbc13c5  # release notes: write/update, including change log and credits
 			# check travis for misspellings
