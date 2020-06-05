@@ -5,6 +5,7 @@ lastapply no-merge
 
 checkout v0.20.0
 @0.20.x-syslibs
+	19097 bugfix_incl_qpainterpath-0.9
 	5872 subdir_incl_compat						3dce4412b12
 	2241 sys_leveldb							5ef0d062931
 	5416 sys_libsecp256k1						3a75e059dd3
@@ -13,7 +14,6 @@ checkout v0.20.0
 	-     bugfix_asm_leveldb_check				7343cea2d59
 	15155 test_external_bcli					e5ee5cbd543
 	16564 -										32f49042fd2	last=9a19c9ada5  # Always define the raii_event_tests test suite
-	19097 bugfix_incl_qpainterpath-0.9
 	# TODO: Check build with -fno-common
 @0.20.x-knots
 # TESTS:
@@ -88,7 +88,7 @@ checkout v0.20.0
 	18993 gui_console_longinput-0.8							last=fc6a637a013  # qt: increase console command max length #18993
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
-	19169 -  # rpc: Validate provided keys for query_options parameter in listunspent
+	19169 rpc_listunspent_optscheck-0.15					last=a99a3c0bd6d  # rpc: Validate provided keys for query_options parameter in listunspent
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
