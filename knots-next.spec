@@ -315,6 +315,7 @@ checkout v0.20.0
 	18594 cli_getinfo_mwbalances-0.20						last=5edad5ce5d3 jonatack/cli-getinfo-multiwallet-balances
 		# NOTE: Omitted 903b6c117f5 (refactor)
 	19089 cli_getinfo_mwbalances_pt2-0.20					last=0215c23a956 jonatack/cli-getinfo-multiwallet-follow-ups
+	19092 cli_getinfo_mw_total_balance-0.20					last=d1ae2e5827c jonatack/cli-getinfo-multiwallet-total-balance
 	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18654 rpc_psbtbumpfee-0.20								last=61d6e410e00 achow101/psbtbumpfee
@@ -334,7 +335,6 @@ checkout v0.20.0
 	18991 p2p_getaddr_cache-0.20+knots						last=cd83106ce2a  # Cache responses to GETADDR to prevent topology leaks
 		# NOTE: Reordered test_runner to avoid conflict
 	# Needs concept review: 19043 torcontrol: add -tortarget config
-	19092 jonatack:cli-getinfo-multiwallet-total-balance
 	19093 -  # RPC: testmempoolaccept returns transaction fee
 	# Needs consideration: 19109 sipa:202005_bloom_relay
 	# 0.21 TODO: 19136 achow101:export-descriptor
@@ -395,6 +395,7 @@ checkout v0.20.0
 			gs fdd577dfc5d:doc/release-notes-18570.md
 			gs origin-pull/19089/head
 			gs origin-pull/18827/head
+			gs origin-pull/19092/head^
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
