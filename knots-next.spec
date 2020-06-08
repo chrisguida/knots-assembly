@@ -335,12 +335,12 @@ checkout v0.20.0
 	18991 p2p_getaddr_cache-0.20+knots						last=cd83106ce2a  # Cache responses to GETADDR to prevent topology leaks
 		# NOTE: Reordered test_runner to avoid conflict
 	# Needs concept review: 19043 torcontrol: add -tortarget config
-	19093 -  # RPC: testmempoolaccept returns transaction fee
+	19093 rpc_testmempoolaccept_fee-0.20					last=520ae886bb6  # RPC: testmempoolaccept returns transaction fee
 	# Needs consideration: 19109 sipa:202005_bloom_relay
 	# 0.21 TODO: 19136 achow101:export-descriptor
-	19137 achow101:dumpwalletrecords
-	19142 MarcoFalke:2006-valVerifyDbInterrupt4
-		TODO: Diff-minimise (only add 1 ShutdownRequested)
+	# Depends on refactor: 19137 achow101/dumpwalletrecords
+	19142 verifydb_lv4_interrupt-0.20
+		# Diff-minimised
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg
