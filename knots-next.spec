@@ -331,8 +331,8 @@ checkout v0.20.0
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
-	18991 -  # Cache responses to GETADDR to prevent topology leaks
-		Backport to rebase on minimal +knots 4e093305fa6
+	18991 p2p_getaddr_cache-0.20+knots						last=cd83106ce2a  # Cache responses to GETADDR to prevent topology leaks
+		# NOTE: Reordered test_runner to avoid conflict
 	# Needs concept review: 19043 torcontrol: add -tortarget config
 	19092 jonatack:cli-getinfo-multiwallet-total-balance
 	19093 -  # RPC: testmempoolaccept returns transaction fee
