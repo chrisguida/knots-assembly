@@ -274,7 +274,8 @@ checkout v0.20.0
 	18876 neutrino-0.20+knots					012949c76ce	last=5488ce98cf2 8e5e184e3
 		# NOTE: Held back cdf12ea6a5b itself since it demands users actively involved in index state
 		# TODO: redo with #19010
-	18972 neutrino_whitelist-0.20+knots						last=51e9de5b435
+	18972 neutrino_whitelist-0.20+knots						last=f1ebb52cd43
+		# NOTE: Excluded refactor
 	16463 bip174_xpub-0.20+knots				c2962442602	last=ee0dd3ae1fc achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
 	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
@@ -313,7 +314,7 @@ checkout v0.20.0
 	18574 cli_getinfo_balances-0.20
 	18594 cli_getinfo_mwbalances-0.20						last=5edad5ce5d3 jonatack/cli-getinfo-multiwallet-balances
 		# NOTE: Omitted 903b6c117f5 (refactor)
-	19089 cli_getinfo_mwbalances_pt2-0.20					last=8ab19a3d440 jonatack/cli-getinfo-multiwallet-follow-ups
+	19089 cli_getinfo_mwbalances_pt2-0.20					last=0215c23a956 jonatack/cli-getinfo-multiwallet-follow-ups
 	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18654 rpc_psbtbumpfee-0.20								last=61d6e410e00 achow101/psbtbumpfee
@@ -331,6 +332,7 @@ checkout v0.20.0
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	18991 -  # Cache responses to GETADDR to prevent topology leaks
+		Backport to rebase on minimal +knots 4e093305fa6
 	# Needs concept review: 19043 torcontrol: add -tortarget config
 	19092 jonatack:cli-getinfo-multiwallet-total-balance
 	19093 -  # RPC: testmempoolaccept returns transaction fee
