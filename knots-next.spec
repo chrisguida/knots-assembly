@@ -332,10 +332,11 @@ checkout v0.20.0
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
-	18991 p2p_getaddr_cache-0.20+knots						last=cd83106ce2a  # Cache responses to GETADDR to prevent topology leaks
+	18991 p2p_getaddr_cache-0.20+knots						last=e24fb39aa91  # Cache responses to GETADDR to prevent topology leaks
 		# NOTE: Reordered test_runner to avoid conflict
 	# Needs concept review: 19043 torcontrol: add -tortarget config
-	19093 rpc_testmempoolaccept_fee-0.20					last=520ae886bb6  # RPC: testmempoolaccept returns transaction fee
+	19093 rpc_testmempoolaccept_fee-0.20					last=c7c3f458eb2  # RPC: testmempoolaccept returns transaction fee
+		# Held back 520ae886bb6..c7c3f458eb2 (trivial, and lots of stuff is based on top of this)
 	# Needs consideration: 19109 sipa:202005_bloom_relay
 	# 0.21 TODO: 19136 achow101:export-descriptor
 	# Depends on refactor: 19137 achow101/dumpwalletrecords
@@ -343,7 +344,7 @@ checkout v0.20.0
 		# Diff-minimised
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
-	-     restore_rejectmsg
+	-     restore_rejectmsg-0.20+knots						last=db0b6745fb3 restore_rejectmsg
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.20+knots				9c9ea7f80bd  # Latest code now
