@@ -283,7 +283,7 @@ checkout v0.20.0
 	17509 gui_saveload_psbt-0.20+knots			10e48579513	last=764bfe4cba3 Sjors/2019/11/gui-psbt-save
 		# NOTE: Minified
 	18027 gui_psbt_opts_dialog-0.20+knots		6719aab1141	last=71694516465 gwillen/feature-psbt-ops-dialog
-		# NOTE: Dropped changes to error strings, and unrelated 71694516465
+		# NOTE: Dropped changes to error strings (at least some re-implemented on my own), and unrelated 71694516465
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.20					98dbf80046a	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
@@ -336,7 +336,6 @@ checkout v0.20.0
 		# NOTE: Reordered test_runner to avoid conflict
 	# Needs concept review: 19043 torcontrol: add -tortarget config
 	19093 rpc_testmempoolaccept_fee-0.20					last=c7c3f458eb2  # RPC: testmempoolaccept returns transaction fee
-		# Held back 520ae886bb6..c7c3f458eb2 (trivial, and lots of stuff is based on top of this)
 	# Needs consideration: 19109 sipa:202005_bloom_relay
 	# 0.21 TODO: 19136 achow101:export-descriptor
 	# Depends on refactor: 19137 achow101/dumpwalletrecords
