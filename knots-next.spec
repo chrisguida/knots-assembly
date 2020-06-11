@@ -1,7 +1,7 @@
-timestamp 2020-06-05 17:17:31
+timestamp 2020-06-11 21:37:36
 lastapply no-merge
 
-#.. checked up to PR #19178
+#.. checked up to PR #19253
 
 checkout v0.20.0
 @0.20.x-syslibs
@@ -89,7 +89,11 @@ checkout v0.20.0
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
 	19169 rpc_listunspent_optscheck-0.15					last=a99a3c0bd6d  # rpc: Validate provided keys for query_options parameter in listunspent
+	19215 achow101/psbt-segwit-fixes
+	19237 elichai/2020-06-pubkey
 	19241 help_checkpoint_num
+	19243 misbehaving_limit-0.20							last=7f1e47de55e misbehaving_limit
+	# OR 19219 sipa:202006_discourage
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -342,6 +346,8 @@ checkout v0.20.0
 	# Depends on refactor: 19137 achow101/dumpwalletrecords
 	19142 verifydb_lv4_interrupt-0.20
 		# Diff-minimised
+	19191 MarcoFalke/2006-netPerDow
+	19204 MarcoFalke/2006-netInvWaste
 	19242 uaappend
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
