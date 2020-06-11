@@ -89,6 +89,7 @@ checkout v0.20.0
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
 	19169 rpc_listunspent_optscheck-0.15					last=a99a3c0bd6d  # rpc: Validate provided keys for query_options parameter in listunspent
+	19241 help_checkpoint_num
 # FUNCTIONALITY:
 	-     restore_win32							f7147699d7d
 	-     restore_linux32
@@ -335,12 +336,13 @@ checkout v0.20.0
 	18991 p2p_getaddr_cache-0.20+knots						last=e24fb39aa91  # Cache responses to GETADDR to prevent topology leaks
 		# NOTE: Reordered test_runner to avoid conflict
 	# Needs concept review: 19043 torcontrol: add -tortarget config
-	19093 rpc_testmempoolaccept_fee-0.20					last=c7c3f458eb2  # RPC: testmempoolaccept returns transaction fee
+	19093 rpc_testmempoolaccept_fee-0.20					last=3218bba02ce  # RPC: testmempoolaccept returns transaction fee
 	# Needs consideration: 19109 sipa:202005_bloom_relay
 	# 0.21 TODO: 19136 achow101:export-descriptor
 	# Depends on refactor: 19137 achow101/dumpwalletrecords
 	19142 verifydb_lv4_interrupt-0.20
 		# Diff-minimised
+	19242 uaappend
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots						last=db0b6745fb3 restore_rejectmsg
@@ -373,7 +375,7 @@ checkout v0.20.0
 	-    bytespersigopstrict-0.20+knots			d93712a1875
 	9749 unique_spk_mempool-0.20+knots			031015ce77a
 	-    bloom_default-0.20+knots				df61037d315
-	-    rwconf_policy-0.19+knots				eb669c5e944
+	-    rwconf_policy-0.20+knots				eb669c5e944
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
