@@ -89,8 +89,9 @@ checkout v0.20.0
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
 	19169 rpc_listunspent_optscheck-0.15					last=a99a3c0bd6d  # rpc: Validate provided keys for query_options parameter in listunspent
-	19215 achow101/psbt-segwit-fixes
-	19237 elichai/2020-06-pubkey
+	19215 psbt_segwit_fix-0.20								last=836d6fc375a achow101/psbt-segwit-fixes
+		# NOTE: Diff-minimised
+	19237 pubkey_size_check-0.10							last=9b8907faded elichai/2020-06-pubkey
 	19241 help_checkpoint_num
 	19243 misbehaving_limit-0.20							last=7f1e47de55e misbehaving_limit
 	# OR 19219 sipa:202006_discourage
@@ -257,7 +258,7 @@ checkout v0.20.0
 	-     gui_bech32_errpos-0.20+knots			547af169965  # Latest code
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
-	17034 psbt_ver_proprietary-0.20				fbeea35914e	last=19200a775a7 achow101/bip174-extensions
+	17034 psbt_ver_proprietary-0.20+knots		fbeea35914e	last=19200a775a7 achow101/bip174-extensions
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
 	# Needs signing provider stuff - 0.20?: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options?
@@ -346,8 +347,9 @@ checkout v0.20.0
 	# Depends on refactor: 19137 achow101/dumpwalletrecords
 	19142 verifydb_lv4_interrupt-0.20
 		# Diff-minimised
-	19191 MarcoFalke/2006-netPerDow
-	19204 MarcoFalke/2006-netInvWaste
+	19191 p2p_permission_download-0.20+knots				last=111109a1e79 marco/2006-netPerDow
+	19204 p2p_ibd_noinv-0.20								last=fa8a66cf7e2 marco/2006-netInvWaste
+		# NOTE: Dropped refactors, and diff-minimised
 	19242 uaappend
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
