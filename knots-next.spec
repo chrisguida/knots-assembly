@@ -96,11 +96,11 @@ checkout v0.20.0
 	19243 misbehaving_limit-0.20							last=7f1e47de55e misbehaving_limit
 	# OR 19219 sipa:202006_discourage
 # FUNCTIONALITY:
-	-     restore_win32							f7147699d7d
+	-     restore_win32-0.20+knots				f7147699d7d
 	-     restore_linux32
 	17929 gitian_linux_ldO2-0.20
 		# NOTE: gitian only
-	14066 gitian_power64-0.20+knots					a0682b1c6d9	last=fb0dd8e3d72 gitian_power64
+	14066 gitian_power64-0.20+knots				a0682b1c6d9	last=fb0dd8e3d72 gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -324,8 +324,8 @@ checkout v0.20.0
 	19092 cli_getinfo_mw_total_balance-0.20					last=d1ae2e5827c jonatack/cli-getinfo-multiwallet-total-balance
 	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
-	18654 rpc_psbtbumpfee-0.20								last=61d6e410e00 achow101/psbtbumpfee
-		# NOTE: Partially rewrote to minimise diff/merge issues
+	18654 rpc_psbtbumpfee-0.20								last=b8f0e96ed5d achow101/psbtbumpfee
+		# NOTE: Held back deprecation
 	# TODO: (conflicts with address reuse warning) 18789 achow101:create-unsigned-sendconfdialog OR these two:
 		# 18655 achow101:split-bumpfeeaction
 		# 18656 achow101:make-unsigned-button
@@ -348,6 +348,7 @@ checkout v0.20.0
 	19142 verifydb_lv4_interrupt-0.20
 		# Diff-minimised
 	19191 p2p_permission_download-0.20+knots				last=111109a1e79 marco/2006-netPerDow
+		# IMPORTANT: Avoid conflicts with PF_ADDR or other permission flags (moved to 1<<18)
 	19204 p2p_ibd_noinv-0.20								last=fa8a66cf7e2 marco/2006-netInvWaste
 		# NOTE: Dropped refactors, and diff-minimised
 	19242 uaappend
@@ -388,6 +389,7 @@ checkout v0.20.0
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.19							bc35ebccb7e
+		837dfb21a85 almost done
 		FIXME: using `git archive` to make source tarball means we need to append generated files!
 # BRANDING:
 	n/a  knots_branding-0.19					77761a69811
@@ -396,8 +398,9 @@ checkout v0.20.0
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
+TODO: Check that we aren't deprcating anything in Core
 	n/a  (cherrypick=9600fe90fb2e446cac)		f63eb318b5e	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200605)			fa2f7c2d6bd
+	n/a  (bump_version=Knots:20200611)			fa2f7c2d6bd
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=49c5b0fdd44)				176adbc13c5  # release notes: write/update, including change log and credits
 			# check travis for misspellings
