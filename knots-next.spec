@@ -22,6 +22,7 @@ checkout v0.20.0
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 	# TODO: ? Restore Valgrind/s390x Travis jobs: https://github.com/bitcoin/bitcoin/pull/18899 https://github.com/bitcoin/bitcoin/pull/18905
 	18724 qa_cli_rpcwallet-0.20
+		# NOTE: Removed a blank line to ensure non-invisible conflict with #18574
 # FIXES:
 	18556 drop_dist-0.20
 	18818 fix_gitian_src_202004-0.20						last=3897f3a2ec0 fix_gitian_src_202004
@@ -324,7 +325,7 @@ checkout v0.20.0
 	19092 cli_getinfo_mw_total_balance-0.20					last=d1ae2e5827c jonatack/cli-getinfo-multiwallet-total-balance
 	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
-	18654 rpc_psbtbumpfee-0.20								last=b8f0e96ed5d achow101/psbtbumpfee
+	18654 rpc_psbtbumpfee-0.20								last=de0ad3a23c5 achow101/psbtbumpfee
 		# NOTE: Held back deprecation
 	# TODO: (conflicts with address reuse warning) 18789 achow101:create-unsigned-sendconfdialog OR these two:
 		# 18655 achow101:split-bumpfeeaction
