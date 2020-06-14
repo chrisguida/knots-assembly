@@ -21,8 +21,6 @@ checkout v0.20.0
 	-     lint_relaxer							931ebfa1f80
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 	# TODO: ? Restore Valgrind/s390x Travis jobs: https://github.com/bitcoin/bitcoin/pull/18899 https://github.com/bitcoin/bitcoin/pull/18905
-	# Can't seem to make it work: 18724 qa_cli_rpcwallet-0.20
-		# NOTE: invisible conflict with #18574 if not careful (remove a blank line?)
 # FIXES:
 	18556 drop_dist-0.20
 	18818 fix_gitian_src_202004-0.20						last=3897f3a2ec0 fix_gitian_src_202004
@@ -318,11 +316,16 @@ checkout v0.20.0
 	18309 -													last=751a5c5d562  # zmq: Add support to listen on multiple interfaces
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
+	# ---- BEGIN IN SEQUENCE ----
 	18574 cli_getinfo_balances-0.20
-	18594 cli_getinfo_mwbalances-0.20						last=5edad5ce5d3 jonatack/cli-getinfo-multiwallet-balances
+	18653 qa_cli_rpcwait_pt1-0.20+knots
+	18691 qa_cli_rpcwait-0.20+knots
+	18724 qa_cli_rpcwallet-0.20+knots
+	18594 cli_getinfo_mwbalances_pt1-0.20+knots				last=5edad5ce5d3 jonatack/cli-getinfo-multiwallet-balances
 		# NOTE: Omitted 903b6c117f5 (refactor)
-	19089 cli_getinfo_mwbalances_pt2-0.20					last=0215c23a956 jonatack/cli-getinfo-multiwallet-follow-ups
-	19092 cli_getinfo_mw_total_balance-0.20					last=d1ae2e5827c jonatack/cli-getinfo-multiwallet-total-balance
+	19089 cli_getinfo_mwbalances-0.20+knots					last=0215c23a956 jonatack/cli-getinfo-multiwallet-follow-ups
+	19092 cli_getinfo_mw_total_balance-0.20+knots			last=d1ae2e5827c jonatack/cli-getinfo-multiwallet-total-balance
+	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock-0.20				last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18654 rpc_psbtbumpfee-0.20								last=70e8422b585 achow101/psbtbumpfee
