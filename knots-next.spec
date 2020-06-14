@@ -1,7 +1,7 @@
-timestamp 2020-06-11 21:37:36
+timestamp 2020-06-14 23:42:05
 lastapply no-merge
 
-#.. checked up to PR #19253
+#.. checked up to PR #19277
 
 checkout v0.20.0
 @0.20.x-syslibs
@@ -362,6 +362,7 @@ checkout v0.20.0
 	19204 p2p_ibd_noinv-0.20								last=fa8a66cf7e2 marco/2006-netInvWaste
 		# NOTE: Dropped refactors, and diff-minimised
 	19242 uaappend
+	# Needs review: 19271 andrewtoth:warm-coinscache
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots						 # Latest code now
@@ -411,7 +412,7 @@ STOP
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
 TODO: Check that we aren't deprcating anything in Core
 	n/a  (cherrypick=9600fe90fb2e446cac)		f63eb318b5e	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200611)			fa2f7c2d6bd
+	n/a  (bump_version=Knots:20200614)			fa2f7c2d6bd
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=49c5b0fdd44)				176adbc13c5  # release notes: write/update, including change log and credits
 			# check travis for misspellings
