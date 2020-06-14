@@ -21,7 +21,10 @@ checkout v0.20.0
 	-     lint_relaxer							931ebfa1f80
 	17402 travis_ppc64							228a9f05aa4	last=1d684f05341 elichai/2019-11-powerpc64
 	# TODO: ? Restore Valgrind/s390x Travis jobs: https://github.com/bitcoin/bitcoin/pull/18899 https://github.com/bitcoin/bitcoin/pull/18905
+	18750 ignore_external_warnings-0.20+knots				last=1e4e981487d
 # FIXES:
+	-     qa_fix_tz_nonia-0.20
+		# Part of #19008
 	18556 drop_dist-0.20
 	18818 fix_gitian_src_202004-0.20						last=3897f3a2ec0 fix_gitian_src_202004
 		# +part of #18741
@@ -343,6 +346,8 @@ checkout v0.20.0
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
+	# Not needed: 18781 getrandomduration-0.20							last=0000ea32656 marco/2004-randDur
+		# GetRandMicros seems just as well...
 	18991 p2p_getaddr_cache-0.20+knots						last=e24fb39aa91  # Cache responses to GETADDR to prevent topology leaks
 		# NOTE: Reordered test_runner to avoid conflict
 	# Needs concept review: 19043 torcontrol: add -tortarget config
@@ -359,7 +364,7 @@ checkout v0.20.0
 	19242 uaappend
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
-	-     restore_rejectmsg-0.20+knots						last=db0b6745fb3 restore_rejectmsg
+	-     restore_rejectmsg-0.20+knots						 # Latest code now
 	-     restore_blockmaxsize					ab64cadc3f0
 	7107 qtnetworkport							46b01d384bc	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.20+knots				9c9ea7f80bd  # Latest code now
@@ -389,12 +394,13 @@ checkout v0.20.0
 	-    bytespersigopstrict-0.20+knots			d93712a1875
 	9749 unique_spk_mempool-0.20+knots			031015ce77a
 	-    bloom_default-0.20+knots				df61037d315
+STOP
 	-    rwconf_policy-0.20+knots				eb669c5e944
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.19							bc35ebccb7e
-		616b448068a almost done
+		90476019520 almost done
 		FIXME: using `git archive` to make source tarball means we need to append generated files!
 # BRANDING:
 	n/a  knots_branding-0.19					77761a69811
