@@ -212,8 +212,9 @@ checkout v0.20.0
 	# Needs review: 15505 sdaftuar:2019-02-notfound-requests
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
-	15633 nohbcbfornonwit						ef50f754927	last=fb791ef082 gmaxwell/201803-nohbcbfornonwit
+	15633 nohbcbfornonwit						ef50f754927
 		# NOTE: added test fix from sdaftuar/test-15633-2
+		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
 	# USELESS Shared-lib 15717 Changes to support NAT-PMP
 	# Needs work: 18077 hebasto/20200130-natpmp
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
@@ -337,7 +338,7 @@ checkout v0.20.0
 	# TODO: (conflicts with address reuse warning) 18789 achow101:create-unsigned-sendconfdialog OR these two:
 		# 18655 achow101:split-bumpfeeaction
 		# 18656 achow101:make-unsigned-button
-	18689 rpc_dumptxoutset_hr-0.20							last=cd20cb886de
+	18689 rpc_dumptxoutset_hr-0.20							last=82046cf7fa3
 	18722 O_addrman_unordered_map-0.20						last=7cc317285f3
 	18728 intro_prune_size
 	19117 rpc_getrpcwhitelist-0.20							last=94fad2edec5 rpc_getrpcwhitelist
@@ -348,7 +349,7 @@ checkout v0.20.0
 	# Needs review: 18849 jb55:zeroalloc
 	# Not needed: 18781 getrandomduration-0.20							last=0000ea32656 marco/2004-randDur
 		# GetRandMicros seems just as well...
-	18991 p2p_getaddr_cache-0.20+knots						last=e24fb39aa91  # Cache responses to GETADDR to prevent topology leaks
+	18991 p2p_getaddr_cache-0.20+knots						last=d1312914a0d  # Cache responses to GETADDR to prevent topology leaks
 		# NOTE: Reordered test_runner to avoid conflict
 	# Needs concept review: 19043 torcontrol: add -tortarget config
 	19093 rpc_testmempoolaccept_fee-0.20					last=3218bba02ce  # RPC: testmempoolaccept returns transaction fee
