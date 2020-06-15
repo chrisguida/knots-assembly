@@ -402,14 +402,14 @@ checkout v0.20.0
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.20							bc35ebccb7e
 # BRANDING:
-	n/a  knots_branding-0.19					77761a69811
+	n/a  knots_branding-0.20					77761a69811
 #FIXME: Check there are no menu icons
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
-TODO: Check that we aren't deprcating anything in Core
-	n/a  (cherrypick=9600fe90fb2e446cac)		f63eb318b5e	# doc/{bips,files}
+#TODO: Check that we aren't deprcating anything in Core
+	n/a  (cherrypick=6b32ed8eb2773d5aa0)		f63eb318b5e	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200614)			fa2f7c2d6bd
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=49c5b0fdd44)				176adbc13c5  # release notes: write/update, including change log and credits
