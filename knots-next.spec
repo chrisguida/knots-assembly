@@ -396,14 +396,11 @@ checkout v0.20.0
 	-    bytespersigopstrict-0.20+knots			d93712a1875
 	9749 unique_spk_mempool-0.20+knots			031015ce77a
 	-    bloom_default-0.20+knots				df61037d315
-STOP
 	-    rwconf_policy-0.20+knots				eb669c5e944
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
-	7483 svg_icon-0.19							bc35ebccb7e
-		90476019520 almost done
-		FIXME: using `git archive` to make source tarball means we need to append generated files!
+	7483 svg_icon-0.20							bc35ebccb7e
 # BRANDING:
 	n/a  knots_branding-0.19					77761a69811
 #FIXME: Check there are no menu icons
