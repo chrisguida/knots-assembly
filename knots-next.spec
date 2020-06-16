@@ -150,6 +150,7 @@ checkout v0.20.0
 		# NOTE: held back .gitignore nonsense change & relnotes
 	18275 wallet_no_change_explicitfee-0.20					last=44cc75f80ee kallewoof/2003-wallet-error-on-feechange
 	11413 explicit_fee-0.20+knots				80ba6c30043	last=53342290f47 kallewoof/explicit-fee
+		# FIXME: When rebasing, squash away the commit subject "test" (it belongs with the following commit!)
 		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
@@ -409,24 +410,20 @@ checkout v0.20.0
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
 #TODO: Check that we aren't deprcating anything in Core
+#TODO: verify src tarball includes rendered_icons incl nsis-header
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		f63eb318b5e	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200614)			fa2f7c2d6bd
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=49c5b0fdd44)				176adbc13c5  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=77151dae830)				176adbc13c5  # release notes: write/update, including change log and credits
 			# check travis for misspellings
-			gs a29b9939b65:doc/release-notes-11413.md
-			gs fdd577dfc5d:doc/release-notes-18570.md
-			gs origin-pull/19089/head
-			gs origin-pull/18827/head
-			gs origin-pull/19092/head^
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=f33596fe405)				80d7a0e9d6d  # translation update
-	n/a  (cherrypick=39c23bfb7cb)				3dd81e63cba	# update manpages (build first)
+	n/a  (cherrypick=015a476a74b)				80d7a0e9d6d  # translation update
+	n/a  (cherrypick=908fafff2c6)				3dd81e63cba	# update manpages (build first)
 # NOTE: use git diff --minimal for patches!
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
