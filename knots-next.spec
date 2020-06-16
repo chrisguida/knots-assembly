@@ -21,15 +21,15 @@ checkout v0.20.0
 	-     lint_relaxer							09b7b255efc
 	17402 travis_ppc64							d0067dcca3c	last=1d684f05341 elichai/2019-11-powerpc64
 	# TODO: ? Restore Valgrind/s390x Travis jobs: https://github.com/bitcoin/bitcoin/pull/18899 https://github.com/bitcoin/bitcoin/pull/18905
-	18750 ignore_external_warnings-0.20+knots	abb8b3b1ea6				last=1e4e981487d
+	18750 ignore_external_warnings-0.20+knots	abb8b3b1ea6	last=1e4e981487d
 # FIXES:
 	-     qa_fix_tz_nonia-0.20					16ad72abf85
 		# Part of #19008
 	18556 drop_dist-0.20						15a14502668
-	18818 fix_gitian_src_202004-0.20			c6486481508						last=3897f3a2ec0 fix_gitian_src_202004
+	18818 fix_gitian_src_202004-0.20			c6486481508	last=3897f3a2ec0 fix_gitian_src_202004
 		# +part of #18741
-	18902 fix_release_tarball-0.20				b990cad271c							last=83ecd1b15e8 fix_gitdir_again
-	18427 2020mingwthrd-mini					e6871c183da								last=7fe49671dd4 2020mingwthrd
+	18902 fix_release_tarball-0.20				b990cad271c	last=83ecd1b15e8 fix_gitdir_again
+	18427 2020mingwthrd-mini					e6871c183da	last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				0e4ceb8d6f3
 	17828 practicalswift/log-categories			4b83b8f28cb	last=04960621582 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		02b8050d642	last=7b5e4001f9 laanwj/2018_12_http_bind_error
@@ -37,7 +37,7 @@ checkout v0.20.0
 	18287 fix_libevent_win_ipv6					03032b55cd6
 	9524 marco/Mf1701-qaPruning					0ad35cc88a2	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					36c7b301c97
-	18437 -										1a5f2f6a5c3													last=182dbdf0f4b  # util: Detect posix_fallocate() instead of assuming
+	18437 -										1a5f2f6a5c3	last=182dbdf0f4b  # util: Detect posix_fallocate() instead of assuming
 	14485 fadvise-0.20+knots					b7068aab4f8	last=c063994a14f fadvise
 		# Was #12491
 	14501 fsync_dir								1629199c839
@@ -73,29 +73,29 @@ checkout v0.20.0
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
-	18335 -										69fa0886ae7													last=4bb892cec23  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
-	18452 fix_waitfor-0.20						0c1bc841f79									last=da73f1513a6
+	18335 -										69fa0886ae7	last=4bb892cec23  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
+	18452 fix_waitfor-0.20						0c1bc841f79	last=da73f1513a6
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
-	18467 -										56951230658													last=38677274f93  # rpc: Improve documentation and return value of settxfee
+	18467 -										56951230658	last=38677274f93  # rpc: Improve documentation and return value of settxfee
 	18729 intro_dont_change_user_prune			3a031919ce2
-	18766 blocksonly_no_feeest-0.20				39d295124ec							last=33ca3590243
+	18766 blocksonly_no_feeest-0.20				39d295124ec	last=33ca3590243
 		# diff-minimised
 	# Needs review: 18850 -  # Fix ZapSelectTx to sync wallet spends
 	# Needs fixes: 18861 sipa:202004_private_getdata
-	18896 bugfix_gui_pr18896-0.17				707a1abec7a							last=1e9bfd4926a
+	18896 bugfix_gui_pr18896-0.17				707a1abec7a	last=1e9bfd4926a
 	18956 win_min_version_flag-0.18				80485eec2ef
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
-	18982 bugfix_walletnotify_conflict-0.20		9466756d416					last=7eaf86d3bfc
+	18982 bugfix_walletnotify_conflict-0.20		9466756d416	last=7eaf86d3bfc
 	# Needs review: 18990 MarcoFalke:2005-logMempoolRej
-	18993 gui_console_longinput-0.8				b9fe68f4746							last=fc6a637a013  # qt: increase console command max length #18993
+	18993 gui_console_longinput-0.8				b9fe68f4746	last=fc6a637a013  # qt: increase console command max length #18993
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
-	19169 rpc_listunspent_optscheck-0.15		4e6663c5fb2					last=a99a3c0bd6d  # rpc: Validate provided keys for query_options parameter in listunspent
-	19215 psbt_segwit_fix-0.20					40bec1bf45c								last=836d6fc375a achow101/psbt-segwit-fixes
+	19169 rpc_listunspent_optscheck-0.15		4e6663c5fb2	last=a99a3c0bd6d  # rpc: Validate provided keys for query_options parameter in listunspent
+	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-segwit-fixes
 		# NOTE: Diff-minimised
-	19237 pubkey_size_check-0.10				0f6ec343b8f							last=9b8907faded elichai/2020-06-pubkey
+	19237 pubkey_size_check-0.10				0f6ec343b8f	last=9b8907faded elichai/2020-06-pubkey
 	19241 help_checkpoint_num					9a4eb1b9414
-	19243 misbehaving_limit-0.20				c325a9422b8							last=7f1e47de55e misbehaving_limit
+	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limit
 	# OR 19219 sipa:202006_discourage
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
@@ -148,7 +148,7 @@ checkout v0.20.0
 	-     rpc_mempoolentry_txhash				8309d9448f5
 	14641 promag/2018-11-fundrawtransaction		c1cfa6239ce	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 		# NOTE: held back .gitignore nonsense change & relnotes
-	18275 wallet_no_change_explicitfee-0.20		0e864c9e9c9					last=44cc75f80ee kallewoof/2003-wallet-error-on-feechange
+	18275 wallet_no_change_explicitfee-0.20		0e864c9e9c9	last=44cc75f80ee kallewoof/2003-wallet-error-on-feechange
 	11413 explicit_fee-0.20+knots				88deb8d6c07	last=53342290f47 kallewoof/explicit-fee
 		# FIXME: When rebasing, squash away the commit subject "test" (it belongs with the following commit!)
 		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
@@ -284,7 +284,7 @@ checkout v0.20.0
 	18876 neutrino-0.20+knots					3fdfc4d118e	last=5488ce98cf2 8e5e184e3
 		# NOTE: Held back cdf12ea6a5b itself since it demands users actively involved in index state
 		# TODO: redo with #19010
-	18972 neutrino_whitelist-0.20+knots			dbc40537925						last=f1ebb52cd43
+	18972 neutrino_whitelist-0.20+knots			dbc40537925	last=f1ebb52cd43
 		# NOTE: Excluded refactor
 	16463 bip174_xpub-0.20+knots				7b77b36f9c0	last=ee0dd3ae1fc achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
@@ -318,7 +318,7 @@ checkout v0.20.0
 	18238 ajtowns/202002-bump-notfound			4580af8aab8	last=a204d1586ca ajtowns/202002-bump-notfound
 	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
 	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
-	18309 -										5d1b30f6e72													last=751a5c5d562  # zmq: Add support to listen on multiple interfaces
+	18309 -										5d1b30f6e72	last=751a5c5d562  # zmq: Add support to listen on multiple interfaces
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
 	# ---- BEGIN IN SEQUENCE ----
@@ -326,23 +326,23 @@ checkout v0.20.0
 	18653 qa_cli_rpcwait_pt1-0.20+knots			77a58b1908e
 	18691 qa_cli_rpcwait-0.20+knots				d8d2cb0e13e
 	18724 qa_cli_rpcwallet-0.20+knots			972079e2334
-	18594 cli_getinfo_mwbalances_pt1-0.20+knots	12d39ff3565				last=5edad5ce5d3 jonatack/cli-getinfo-multiwallet-balances
+	18594 cli_getinfo_mwbalances_pt1-0.20+knots	12d39ff3565	last=5edad5ce5d3 jonatack/cli-getinfo-multiwallet-balances
 		# NOTE: Omitted 903b6c117f5 (refactor)
-	19089 cli_getinfo_mwbalances-0.20+knots		6888b876993					last=0215c23a956 jonatack/cli-getinfo-multiwallet-follow-ups
-	19092 cli_getinfo_mw_total_balance-0.20+knots	558f0cba7e8			last=d1ae2e5827c jonatack/cli-getinfo-multiwallet-total-balance
+	19089 cli_getinfo_mwbalances-0.20+knots		6888b876993	last=0215c23a956 jonatack/cli-getinfo-multiwallet-follow-ups
+	19092 cli_getinfo_mw_total_balance-0.20+knots	558f0cba7e8	last=d1ae2e5827c jonatack/cli-getinfo-multiwallet-total-balance
 	# ---- END IN SEQUENCE ----
-	18570 wallet_rpc_lastprocessedblock-0.20	4edbeeffa1e				last=1e868bbbb1b
+	18570 wallet_rpc_lastprocessedblock-0.20	4edbeeffa1e	last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
-	18654 rpc_psbtbumpfee-0.20					b3541bd411f								last=70e8422b585 achow101/psbtbumpfee
+	18654 rpc_psbtbumpfee-0.20					b3541bd411f	last=70e8422b585 achow101/psbtbumpfee
 		# NOTE: Held back de0ad3a23c5..70e8422b585
 		# NOTE: Held back deprecation
 	# TODO: (conflicts with address reuse warning) 18789 achow101:create-unsigned-sendconfdialog OR these two:
 		# 18655 achow101:split-bumpfeeaction
 		# 18656 achow101:make-unsigned-button
-	18689 rpc_dumptxoutset_hr-0.20				1c985857a32							last=82046cf7fa3
-	18722 O_addrman_unordered_map-0.20			fff6da25dad						last=7cc317285f3
+	18689 rpc_dumptxoutset_hr-0.20				1c985857a32	last=82046cf7fa3
+	18722 O_addrman_unordered_map-0.20			fff6da25dad	last=7cc317285f3
 	18728 intro_prune_size						1cc439b79ff
-	19117 rpc_getrpcwhitelist-0.20				a3ec5e0bf6f							last=94fad2edec5 rpc_getrpcwhitelist
+	19117 rpc_getrpcwhitelist-0.20				a3ec5e0bf6f	last=94fad2edec5 rpc_getrpcwhitelist
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-0.20+knots	482f59b5b6a
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
@@ -350,18 +350,18 @@ checkout v0.20.0
 	# Needs review: 18849 jb55:zeroalloc
 	# Not needed: 18781 getrandomduration-0.20							last=0000ea32656 marco/2004-randDur
 		# GetRandMicros seems just as well...
-	18991 p2p_getaddr_cache-0.20+knots			02f431379b0						last=d1312914a0d  # Cache responses to GETADDR to prevent topology leaks
+	18991 p2p_getaddr_cache-0.20+knots			02f431379b0	last=d1312914a0d  # Cache responses to GETADDR to prevent topology leaks
 		# NOTE: Reordered test_runner to avoid conflict
 	# Needs concept review: 19043 torcontrol: add -tortarget config
-	19093 rpc_testmempoolaccept_fee-0.20		591160ee6e0					last=3218bba02ce  # RPC: testmempoolaccept returns transaction fee
+	19093 rpc_testmempoolaccept_fee-0.20		591160ee6e0	last=3218bba02ce  # RPC: testmempoolaccept returns transaction fee
 	# Needs consideration: 19109 sipa:202005_bloom_relay
 	# 0.21 TODO: 19136 achow101:export-descriptor
 	# Depends on refactor: 19137 achow101/dumpwalletrecords
 	19142 verifydb_lv4_interrupt-0.20			0ac5c96446e
 		# Diff-minimised
-	19191 p2p_permission_download-0.20+knots	294b7500ff1				last=111109a1e79 marco/2006-netPerDow
+	19191 p2p_permission_download-0.20+knots	294b7500ff1	last=111109a1e79 marco/2006-netPerDow
 		# IMPORTANT: Avoid conflicts with PF_ADDR or other permission flags (moved to 1<<18)
-	19204 p2p_ibd_noinv-0.20					4dadc1acfe2								last=fa8a66cf7e2 marco/2006-netInvWaste
+	19204 p2p_ibd_noinv-0.20					4dadc1acfe2	last=fa8a66cf7e2 marco/2006-netInvWaste
 		# NOTE: Dropped refactors, and diff-minimised
 	19242 uaappend								e51b897ef57
 	# Needs review: 19271 andrewtoth:warm-coinscache
