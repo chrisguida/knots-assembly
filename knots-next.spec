@@ -121,6 +121,7 @@ checkout v0.20.0
 	8550 old_stats_qt-0.20						7403fcd336d	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9422 mempool_dat_extensible					2eee2bb1c6c
+		TODO: adapt test/functional/mempool_compatibility.py
 	9504 dumpmasterprivkey-0.20					cbef3920a8a	last=07fc81109a
 	# not ready yet: 9483 SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
@@ -371,7 +372,7 @@ checkout v0.20.0
 	-     restore_blockmaxsize					dbf0ee97444
 	7107 qtnetworkport							90aa95e0d61	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
-	11082 rwconf								8970266b9fb
+	11082 rwconf-0.20							8970266b9fb	last=??? 2020-06-17
 	7510 rwconf_gui								3afa6aa4316
 		# 0.21 TODO: update neutrino option name
 	-    rwconf_gui_plus						14766a737fe
