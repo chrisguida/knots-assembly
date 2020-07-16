@@ -122,6 +122,7 @@ checkout v0.20.0
 		# Held back on old version due to conflict with RPC updates...
 	9422 mempool_dat_extensible					2eee2bb1c6c
 		TODO: adapt test/functional/mempool_compatibility.py
+		# Rebased in #19488
 	9504 dumpmasterprivkey-0.20					cbef3920a8a	last=07fc81109a
 	# not ready yet: 9483 SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
