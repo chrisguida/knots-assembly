@@ -21,7 +21,7 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	-     lint_relaxer							09b7b255efc
 	17402 travis_ppc64							d0067dcca3c	last=1d684f05341 elichai/2019-11-powerpc64
 	# TODO: ? Restore Valgrind/s390x Travis jobs: https://github.com/bitcoin/bitcoin/pull/18899 https://github.com/bitcoin/bitcoin/pull/18905
-	18750 ignore_external_warnings-0.20+knots	abb8b3b1ea6	last=1e4e981487d
+	18750 ignore_external_warnings-0.20+knots	abb8b3b1ea6	last=426e6dc36e2
 # FIXES:
 	-     qa_fix_tz_nonia-0.20					16ad72abf85
 		# Part of #19008
@@ -43,7 +43,7 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	14501 fsync_dir								1629199c839
 		# Was #12696
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
-	17204 meshcollider/201910_1negate_rebase	e382a75d141	last=45af54fbdc8 meshcollider/201910_1negate_rebase
+	17204 fix_1neg-0.20							e382a75d141	last=dca28634d77 meshcollider/201910_1negate_rebase
 		# based on 5af7625079 sipa/201804_keepnegone
 	13608 -										701edd6b714	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	# Needs fix?? 13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
@@ -73,7 +73,7 @@ TM	17946 fix_gbt_buried						e6943a490bd
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
-	18335 -										69fa0886ae7	last=4bb892cec23  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
+	18335 -										69fa0886ae7	last=b5a80fa7e48  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18452 fix_waitfor-0.20						0c1bc841f79	last=da73f1513a6
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18467 -										56951230658	last=38677274f93  # rpc: Improve documentation and return value of settxfee
