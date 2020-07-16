@@ -1,11 +1,11 @@
 timestamp 2020-06-14 23:42:05
-lastapply no-merge
+#lastapply no-merge
 
 #.. checked up to PR #19277
 
-checkout v0.20.0
+checkout origin/0.20
 @0.20.x-syslibs
-	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
+TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	5872 subdir_incl_compat						7966eb85808
 	2241 sys_leveldb							e4e158aa9fd
 	5416 sys_libsecp256k1						d04dccfa219
@@ -65,7 +65,7 @@ checkout v0.20.0
 	# Needs review: 17457 bugfix_multiwallet_coincontrol
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 	# Needs to be just a bugfix: 17597 qt: Fix height of QR-less ReceiveRequestDialog
-	17946 fix_gbt_buried						e6943a490bd
+TM	17946 fix_gbt_buried						e6943a490bd
 	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
 	18133 bugfix_qvalidlineedit					2ee1afa6778
 	# Needs careful review: 18192 bugfix_addressbook_change
@@ -85,18 +85,18 @@ checkout v0.20.0
 	18896 bugfix_gui_pr18896-0.17				707a1abec7a	last=1e9bfd4926a
 	18956 win_min_version_flag-0.18				80485eec2ef
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
-	18982 bugfix_walletnotify_conflict-0.20		9466756d416	last=7eaf86d3bfc
+TM	18982 bugfix_walletnotify_conflict-0.20		9466756d416	last=7eaf86d3bfc
 	# Needs review: 18990 MarcoFalke:2005-logMempoolRej
 	18993 gui_console_longinput-0.8				b9fe68f4746	last=fc6a637a013  # qt: increase console command max length #18993
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
 	19169 rpc_listunspent_optscheck-0.15		4e6663c5fb2	last=a99a3c0bd6d  # rpc: Validate provided keys for query_options parameter in listunspent
-	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-segwit-fixes
+TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-segwit-fixes
 		# NOTE: Diff-minimised
 	19237 pubkey_size_check-0.10				0f6ec343b8f	last=9b8907faded elichai/2020-06-pubkey
 	19241 help_checkpoint_num					9a4eb1b9414
 	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limit
-	# OR 19219 sipa:202006_discourage
+	# Revert 19219 sipa:202006_discourage and implement its API?
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
