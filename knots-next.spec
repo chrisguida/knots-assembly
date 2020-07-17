@@ -97,6 +97,7 @@ TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-seg
 	19241 help_checkpoint_num					9a4eb1b9414
 	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limit
 	# Revert 19219 sipa:202006_discourage and implement its API?
+	19536 fix_qfiledialog-0.19
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
