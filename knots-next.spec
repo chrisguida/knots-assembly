@@ -73,10 +73,10 @@ TM	17946 fix_gbt_buried						e6943a490bd
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
-	18335 -										69fa0886ae7	last=b5a80fa7e48  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
+	18335 cli_svcunavail-0.20					69fa0886ae7	last=b5a80fa7e48  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18452 fix_waitfor-0.20						0c1bc841f79	last=da73f1513a6
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
-	18467 -										56951230658	last=38677274f93  # rpc: Improve documentation and return value of settxfee
+m	18467 -										56951230658	last=38677274f93  # rpc: Improve documentation and return value of settxfee
 	18729 intro_dont_change_user_prune			3a031919ce2
 	18766 blocksonly_no_feeest-0.20				39d295124ec	last=33ca3590243
 		# diff-minimised
