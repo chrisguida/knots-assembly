@@ -1,7 +1,7 @@
 timestamp 2020-06-14 23:42:05
 #lastapply no-merge
 
-#.. checked up to PR #19277
+#.. checked up to PR #19634
 
 checkout v0.20.1rc1
 @0.20.x-syslibs
@@ -397,6 +397,7 @@ TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-seg
 	# Needs consideration: 19569 sipa:202007_wtxid_followup
 	18044 jnewbery:2020-07-v20-wtxid-relay
 	19569 sipa:202007_wtxid_followup minus refactoring?
+	19620 sdaftuar:2020-07-reject-unknown-wit
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots			82327138b5b						 # Latest code now
