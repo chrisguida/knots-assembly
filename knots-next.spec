@@ -1,7 +1,7 @@
-timestamp 2020-06-14 23:42:05
+timestamp 2020-07-31 21:51:53
 #lastapply no-merge
 
-#.. checked up to PR #19634
+#.. checked up to PR #19634 / gui #40
 
 checkout v0.20.1rc1
 @0.20.x-syslibs
@@ -111,6 +111,10 @@ TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-seg
 	19502 bugfix_listwalletdir_errors
 	19526 MarcoFalke:2007-logErrorVal
 		TODO: Diff-minimise
+	g8    hebasto:200619-crash
+	# Needs review: g18    hebasto:200701-peer
+	g20   hebasto:200702-tooltip
+	g39   hebasto:200721-prim
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
@@ -398,6 +402,10 @@ TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-seg
 	18044 jnewbery:2020-07-v20-wtxid-relay
 	19569 sipa:202007_wtxid_followup minus refactoring?
 	19620 sdaftuar:2020-07-reject-unknown-wit
+	# Needs work: g4    Sjors:2019/08/hww-qt
+	g6    -  # Do not truncate node flag strings in debugwindow peers details tab
+	# Needs work: g27   # top to bottom UI layout
+	g34   laanwj:2020_07_gui_permissions
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots			82327138b5b						 # Latest code now
@@ -446,7 +454,7 @@ TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-seg
 #TODO: Check that we aren't deprcating anything in Core
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		f1b28f574c1	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200614)			6e8c7da0ef7
+	n/a  (bump_version=Knots:20200731)			6e8c7da0ef7
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=77151dae830)				25b8cf78776  # release notes: write/update, including change log and credits
 			# check travis for misspellings
