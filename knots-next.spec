@@ -3,7 +3,7 @@ timestamp 2020-06-14 23:42:05
 
 #.. checked up to PR #19277
 
-checkout origin/0.20
+checkout v0.20.1rc1
 @0.20.x-syslibs
 TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	5872 subdir_incl_compat						7966eb85808
@@ -15,12 +15,13 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	15155 test_external_bcli					2478871ebfa
 	16564 -										459f2e93097	last=9a19c9ada5  # Always define the raii_event_tests test suite
 	# TODO: Check build with -fno-common
+	19403 fanquake:improve_builtin_clz_detection
 @0.20.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							09b7b255efc
 	17402 travis_ppc64							d0067dcca3c	last=1d684f05341 elichai/2019-11-powerpc64
-	# TODO: ? Restore Valgrind/s390x Travis jobs: https://github.com/bitcoin/bitcoin/pull/18899 https://github.com/bitcoin/bitcoin/pull/18905
+	19613 MarcoFalke:2007-travisS390x
 	18750 ignore_external_warnings-0.20+knots	abb8b3b1ea6	last=426e6dc36e2
 # FIXES:
 	-     qa_fix_tz_nonia-0.20					16ad72abf85
@@ -35,6 +36,7 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	14968 laanwj/2018_12_http_bind_error		02b8050d642	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					f25e88208ce
 	18287 fix_libevent_win_ipv6					03032b55cd6
+	19375 fanquake:libevent_target_0x0601
 	9524 marco/Mf1701-qaPruning					0ad35cc88a2	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					36c7b301c97
 	18437 -										1a5f2f6a5c3	last=182dbdf0f4b  # util: Detect posix_fallocate() instead of assuming
@@ -80,7 +82,8 @@ m	18467 -										56951230658	last=38677274f93  # rpc: Improve documentation an
 	18729 intro_dont_change_user_prune			3a031919ce2
 	18766 blocksonly_no_feeest-0.20				39d295124ec	last=33ca3590243
 		# diff-minimised
-	# Needs review: 18850 -  # Fix ZapSelectTx to sync wallet spends
+	18850 -  # Fix ZapSelectTx to sync wallet spends
+		FIXME: Needs #19493
 	# Needs fixes: 18861 sipa:202004_private_getdata
 	18896 bugfix_gui_pr18896-0.17				707a1abec7a	last=1e9bfd4926a
 	18956 win_min_version_flag-0.18				80485eec2ef
@@ -97,13 +100,25 @@ TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-seg
 	19241 help_checkpoint_num					9a4eb1b9414
 	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limit
 	# Revert 19219 sipa:202006_discourage and implement its API?
+	# Needs review: 19289 promag:2020-06-wallet-less-locks
 	19536 fix_qfiledialog-0.19
+	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
+	19362 prusnak:rpc-scantxoutset-reset-progress
+		FIXME: Grab promag's rework
+	19419 # wallet: let Listwalletdir do not iterate trough our blocksdata.
+		TODO: use unordered_set
+	# Needs review: 19434 promag:2020-06-remote-disconnect
+	19502 bugfix_listwalletdir_errors
+	19526 MarcoFalke:2007-logErrorVal
+		TODO: Diff-minimise
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
 	17929 gitian_linux_ldO2-0.20				26fefe212dd
 		# NOTE: gitian only
 	14066 gitian_power64-0.20+knots				20d39fc3fca	last=fb0dd8e3d72 gitian_power64
+	19525 fanquake:z_separate_code
+		TODO: Minimal, skip the checks
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -135,6 +150,7 @@ TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-seg
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	10554 zmq_wtx-0.20							571764f1cb3	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
+	19572 instagibbs:zmq_sequence_all
 	12674 rpc_onetry_nonpriv					cc83c5fcb2c
 	10593 relax_invblk_punishment				e110d8ee566
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
@@ -192,7 +208,6 @@ TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-seg
 	14687 zmqkeepalive-0.19+knots				707b32739ea	last=c276df7759
 		# NOTE: modified to soft-fail only
 	# wait for Core?: 14707
-	# needs review: 14898 nextpagepointer & list ordering options for listtransactions
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	15115 rm_send2self-mini						b0a97dee1f5	last=14bb8db698d rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
@@ -368,6 +383,20 @@ TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-seg
 		# NOTE: Dropped refactors, and diff-minimised
 	19242 uaappend								e51b897ef57
 	# Needs review: 19271 andrewtoth:warm-coinscache
+	19328 fjahr:csi-5-hash_type-none
+	19405 jonatack:in-and-out-connections
+	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
+	19463 prune_locks-0.20									last=f4b2ed65ea5 prune_locks
+		TODO: use separate db?
+	19473 hebasto:200709-setnet
+	# Needs work: 19476 promag:2020-07-rpc-mempoolchanges
+	# Needs work: 19485 # torcontrol: Create also a V3 ed25519-V3 onion address.
+	19501 -  # send* RPCs in the wallet returns the "fee reason"
+	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
+	19550 fjahr:index_rpc
+	# Needs consideration: 19569 sipa:202007_wtxid_followup
+	18044 jnewbery:2020-07-v20-wtxid-relay
+	19569 sipa:202007_wtxid_followup minus refactoring?
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots			82327138b5b						 # Latest code now
@@ -401,6 +430,7 @@ TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-seg
 	9749 unique_spk_mempool-0.20+knots			8cf9bace072
 	-    bloom_default-0.20+knots				2c51ec2558f
 	-    rwconf_policy-0.20+knots				819388c8351
+		FIXME: split actual policy changes out to another line
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
