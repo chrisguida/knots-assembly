@@ -15,13 +15,13 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	15155 test_external_bcli					2478871ebfa
 	16564 -										459f2e93097	last=9a19c9ada5  # Always define the raii_event_tests test suite
 	# TODO: Check build with -fno-common
-	19403 fanquake:improve_builtin_clz_detection
+	19403 bugfix_conf_builtin_clzl-0.18
 @0.20.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							09b7b255efc
 	17402 travis_ppc64							d0067dcca3c	last=1d684f05341 elichai/2019-11-powerpc64
-	19613 MarcoFalke:2007-travisS390x
+	19613 travis_s390x-0.20
 	18750 ignore_external_warnings-0.20+knots	abb8b3b1ea6	last=426e6dc36e2
 # FIXES:
 	-     qa_fix_tz_nonia-0.20					16ad72abf85
@@ -35,8 +35,8 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	17828 practicalswift/log-categories			4b83b8f28cb	last=04960621582 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		02b8050d642	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					f25e88208ce
-	18287 fix_libevent_win_ipv6					03032b55cd6
-	19375 fanquake:libevent_target_0x0601
+	18287 fix_libevent_win_ipv6^				03032b55cd6
+	19375 fix_libevent_win_ipv6
 	9524 marco/Mf1701-qaPruning					0ad35cc88a2	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					36c7b301c97
 	18437 -										1a5f2f6a5c3	last=182dbdf0f4b  # util: Detect posix_fallocate() instead of assuming
@@ -75,15 +75,17 @@ TM	17946 fix_gbt_buried						e6943a490bd
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
-	18335 cli_svcunavail-0.20					69fa0886ae7	last=b5a80fa7e48  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
+	18335 cli_svcunavail-0.20					69fa0886ae7	last=db0d4605b9e  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18452 fix_waitfor-0.20						0c1bc841f79	last=da73f1513a6
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
-m	18467 -										56951230658	last=38677274f93  # rpc: Improve documentation and return value of settxfee
+m	18467 settxfee_maxtxfee-0.20				56951230658  # rpc: Improve documentation and return value of settxfee
 	18729 intro_dont_change_user_prune			3a031919ce2
-	18766 blocksonly_no_feeest-0.20				39d295124ec	last=33ca3590243
+	18766 blocksonly_no_feeest-0.20				39d295124ec	last=300bf14002f
 		# diff-minimised
-	18850 -  # Fix ZapSelectTx to sync wallet spends
-		FIXME: Needs #19493
+		# HELD BACK 33ca3590243...300bf14002f due to refactor complication
+	18727 qa_createwalletfromfile-0.20
+	18850 fix_zapselecttx_sync-0.20^
+	19493 fix_zapselecttx_sync-0.20
 	# Needs fixes: 18861 sipa:202004_private_getdata
 	18896 bugfix_gui_pr18896-0.17				707a1abec7a	last=1e9bfd4926a
 	18956 win_min_version_flag-0.18				80485eec2ef
