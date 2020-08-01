@@ -98,25 +98,21 @@ TM	18982 bugfix_walletnotify_conflict-0.20		9466756d416	last=7eaf86d3bfc
 	19169 rpc_listunspent_optscheck-0.15		4e6663c5fb2	last=a99a3c0bd6d  # rpc: Validate provided keys for query_options parameter in listunspent
 TM	19215 psbt_segwit_fix-0.20					40bec1bf45c	last=836d6fc375a achow101/psbt-segwit-fixes
 		# NOTE: Diff-minimised
-	19237 pubkey_size_check-0.10				0f6ec343b8f	last=9b8907faded elichai/2020-06-pubkey
+	19237 pubkey_size_check-0.20				0f6ec343b8f	last=37ae687f95c elichai/2020-06-pubkey
 	19241 help_checkpoint_num					9a4eb1b9414
-	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limit
-	# Revert 19219 sipa:202006_discourage and implement its API?
+NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limit
 	# Needs review: 19289 promag:2020-06-wallet-less-locks
-	19536 fix_qfiledialog-0.19
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
-	19362 prusnak:rpc-scantxoutset-reset-progress
-		FIXME: Grab promag's rework
-	19419 # wallet: let Listwalletdir do not iterate trough our blocksdata.
-		TODO: use unordered_set
+	19362 rpc_scantxoutset_reset_progress-0.17				last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
+	19502 bugfix_listwalletdir_errors-mini					last=4f0cbc4bc74 bugfix_listwalletdir_errors
+	19419 listwalletdir_skip_data-0.18						last=320e94ecc1b
+		# NOTE: modified to use std::set and diff-minimise
 	# Needs review: 19434 promag:2020-06-remote-disconnect
-	19502 bugfix_listwalletdir_errors
-	19526 MarcoFalke:2007-logErrorVal
-		TODO: Diff-minimise
-	g8    hebasto:200619-crash
+	# Mostly-Redundant with #17828: 19526 log_category_chkblkhdr-0.20
+		# Diff-minimised
 	# Needs review: g18    hebasto:200701-peer
-	g20   hebasto:200702-tooltip
-	g39   hebasto:200721-prim
+	g20   bugfix_intro_tooltipwrap-0.17						last=c32b53fd13b hebasto-g/200702-tooltip
+	g39   gui_recvaddr_defaultbtn-0.14						last=4ec49f8d1e2 hebasto-g/200721-prim
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
