@@ -111,7 +111,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Mostly-Redundant with #17828: 19526 log_category_chkblkhdr-0.20
 		# Diff-minimised
 	# Needs review: g18    hebasto:200701-peer
-	g20   bugfix_intro_tooltipwrap-0.17						last=c32b53fd13b hebasto-g/200702-tooltip
+	g20   bugfix_intro_tooltipwrap-0.17						last=6ed4bcabc1a hebasto-g/200702-tooltip
 	g39   gui_recvaddr_defaultbtn-0.14						last=4ec49f8d1e2 hebasto-g/200721-prim
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
@@ -119,8 +119,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	17929 gitian_linux_ldO2-0.20				26fefe212dd
 		# NOTE: gitian only
 	14066 gitian_power64-0.20+knots				20d39fc3fca	last=fb0dd8e3d72 gitian_power64
-	19525 fanquake:z_separate_code
-		TODO: Minimal, skip the checks
+	19525 z_separate_code-0.17
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -138,8 +137,8 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 		# Held back on old version due to conflict with GUI updates...
 	8550 old_stats_qt-0.20						7403fcd336d	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
-	9422 mempool_dat_extensible					2eee2bb1c6c
-		TODO: adapt test/functional/mempool_compatibility.py
+	9422 mempool_dat_extensible-0.20			2eee2bb1c6c last=1befffc0b48 mempool_dat_extensible
+		# 0.21 TODO: adapt test/functional/mempool_compatibility.py
 		# Rebased in #19488
 	9504 dumpmasterprivkey-0.20					cbef3920a8a	last=07fc81109a
 	# not ready yet: 9483 SPV
