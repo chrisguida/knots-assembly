@@ -75,7 +75,7 @@ TM	17946 fix_gbt_buried						e6943a490bd
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
-	18335 cli_svcunavail-0.20					69fa0886ae7	last=db0d4605b9e  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
+	18335 cli_svcunavail-0.20					69fa0886ae7	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18452 fix_waitfor-0.20						0c1bc841f79	last=da73f1513a6
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 m	18467 settxfee_maxtxfee-0.20				56951230658  # rpc: Improve documentation and return value of settxfee
@@ -151,7 +151,8 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	10554 zmq_wtx-0.20							571764f1cb3	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
-	19572 instagibbs:zmq_sequence_all
+	# Needs work... 19572 instagibbs:zmq_sequence_all
+		# NOTE: c6b3fff27d2 has rebase (on top of mid-assemble)
 	12674 rpc_onetry_nonpriv					cc83c5fcb2c
 	10593 relax_invblk_punishment				e110d8ee566
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
@@ -169,7 +170,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	14641 promag/2018-11-fundrawtransaction		c1cfa6239ce	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 		# NOTE: held back .gitignore nonsense change & relnotes
 	18275 wallet_no_change_explicitfee-0.20		0e864c9e9c9	last=44cc75f80ee kallewoof/2003-wallet-error-on-feechange
-	11413 explicit_fee-0.20+knots				88deb8d6c07	last=53342290f47 kallewoof/explicit-fee
+	11413 explicit_fee-0.20+knots				88deb8d6c07	last=25dac9fa652 kallewoof/explicit-fee
 		# FIXME: When rebasing, squash away the commit subject "test" (it belongs with the following commit!)
 		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
@@ -183,7 +184,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 		# NOTE: Competing with #15341
-	12677 listunspent_ancestorinfo				40a53d53705
+	12677 listunspent_ancestorinfo-0.20			40a53d53705	last=db9baad856a listunspent_ancestorinfo
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	# TODO ? 12792 w/ renamed param
@@ -220,7 +221,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 		# Moved init around to avoid conflict w/ 15367
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
-	15367 startupnotify-0.20					59b011df43f	last=7981a11299a	# feature: Added ability for users to add a startup command
+	15367 startupnotify-0.20					59b011df43f	last=128d9fe1e2e	# feature: Added ability for users to add a startup command
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	15423 tor_socks_port						ba0798c3f80
 	15428 tor_gui_pairing-0.20+knots			44c81dca8a1	# latest code now
@@ -281,7 +282,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	-     gui_bech32_errpos-0.20+knots			c54ddd9c639  # Latest code
 	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
-	17034 psbt_ver_proprietary-0.20+knots		78fb88c5a1c	last=19200a775a7 achow101/bip174-extensions
+	17034 psbt_ver_proprietary-0.20+knots		78fb88c5a1c	last=ddaccbc7bbd achow101/bip174-extensions
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
 	# Needs signing provider stuff - 0.20?: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options?
