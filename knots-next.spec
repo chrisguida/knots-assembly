@@ -312,8 +312,9 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
 	17509 gui_saveload_psbt-0.20+knots			271b7bcf47d	last=764bfe4cba3 Sjors/2019/11/gui-psbt-save
 		# NOTE: Minified
-	18027 gui_psbt_opts_dialog-0.20+knots		a0a607bb3b0	last=71694516465 gwillen/feature-psbt-ops-dialog
-		# NOTE: Dropped changes to error strings (at least some re-implemented on my own), and unrelated 71694516465
+	18027 gui_psbt_opts_dialog-0.20+knots		a0a607bb3b0	last=931dd476085 gwillen/feature-psbt-ops-dialog
+		# NOTE: Dropped changes to error strings (at least some re-implemented on my own), and unrelated 931dd476085
+		# NOTE: Held back efde5525704->11a0ffb29d1 because it shouldn't matter
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.20					abb826147d7	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
@@ -327,7 +328,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	17958 rpc_getgeneralinfo-0.20+knots			04f42e93758	last=cdbd38df131  # getgeneralinfo RPC
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	# Needs review: 18000 -  # Coin Statistics Index
-	18014 siphash_optimise_pr18014-0.19			54ee5b98cb0	last=de0c7fccb4b elichai/2020-01-siphash
+	18014 siphash_optimise_pr18014-0.19			54ee5b98cb0	last=9ed348ddea3 elichai/2020-01-siphash
 		# NOTE: Dropped benchmarks
 	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
 		# +18807 (WIP)
@@ -348,19 +349,20 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	18724 qa_cli_rpcwallet-0.20+knots			972079e2334
 	18594 cli_getinfo_mwbalances_pt1-0.20+knots	12d39ff3565	last=5edad5ce5d3 jonatack/cli-getinfo-multiwallet-balances
 		# NOTE: Omitted 903b6c117f5 (refactor)
-	19089 cli_getinfo_mwbalances-0.20+knots		6888b876993	last=0215c23a956 jonatack/cli-getinfo-multiwallet-follow-ups
-	19092 cli_getinfo_mw_total_balance-0.20+knots	558f0cba7e8	last=d1ae2e5827c jonatack/cli-getinfo-multiwallet-total-balance
+	19089 cli_getinfo_mwbalances-0.20+knots		6888b876993	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+	19092 cli_getinfo_mw_total_balance-0.20+knots	558f0cba7e8	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock-0.20	4edbeeffa1e	last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
-	18654 rpc_psbtbumpfee-0.20					b3541bd411f	last=70e8422b585 achow101/psbtbumpfee
+	18654 rpc_psbtbumpfee-0.20					b3541bd411f	last=79d6332e9e4 achow101/psbtbumpfee
 		# NOTE: Held back de0ad3a23c5..70e8422b585
 		# NOTE: Held back deprecation
 	# TODO: (conflicts with address reuse warning) 18789 achow101:create-unsigned-sendconfdialog OR these two:
 		# 18655 achow101:split-bumpfeeaction
 		# 18656 achow101:make-unsigned-button
 	18689 rpc_dumptxoutset_hr-0.20				1c985857a32	last=82046cf7fa3
-	18722 O_addrman_unordered_map-0.20			fff6da25dad	last=7cc317285f3
+	18722 O_addrman_unordered_map-0.20			fff6da25dad	last=d6e782174ec
 	18728 intro_prune_size						1cc439b79ff
 	19117 rpc_getrpcwhitelist-0.20				a3ec5e0bf6f	last=94fad2edec5 rpc_getrpcwhitelist
 		# NOTE: Was #18827 before any Knots merge
@@ -370,8 +372,10 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs review: 18849 jb55:zeroalloc
 	# Not needed: 18781 getrandomduration-0.20							last=0000ea32656 marco/2004-randDur
 		# GetRandMicros seems just as well...
-	18991 p2p_getaddr_cache-0.20+knots			02f431379b0	last=d1312914a0d  # Cache responses to GETADDR to prevent topology leaks
+	18991 p2p_getaddr_cache-0.20+knots			02f431379b0	last=3bd67ba5a4e  # Cache responses to GETADDR to prevent topology leaks
 		# NOTE: Reordered test_runner to avoid conflict
+		# Held back ded742bc5b9 (RPC change), 7cc0e8101f0 (non-evaluated effect), doxygen comment changes, and refactoring
+		# Held back removal of addr from implicit flags (rebased in b78f81553d8a4)
 	# Needs concept review: 19043 torcontrol: add -tortarget config
 	19093 rpc_testmempoolaccept_fee-0.20		591160ee6e0	last=3218bba02ce  # RPC: testmempoolaccept returns transaction fee
 	# Needs consideration: 19109 sipa:202005_bloom_relay
