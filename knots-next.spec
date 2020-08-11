@@ -113,6 +113,8 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs review: g18    hebasto:200701-peer
 	g20   bugfix_intro_tooltipwrap-0.17						last=6ed4bcabc1a hebasto-g/200702-tooltip
 	g39   gui_recvaddr_defaultbtn-0.14						last=4ec49f8d1e2 hebasto-g/200721-prim
+	# Needs review: 19645 ariard:2020-08-wtxid-replacement
+	# Needs concept ack: 19655 rpc: Catch listsinceblock target_confirmations exceeding block count
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
@@ -410,6 +412,10 @@ NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
 	g6    -  # Do not truncate node flag strings in debugwindow peers details tab
 	# Needs work: g27   # top to bottom UI layout
 	g34   laanwj:2020_07_gui_permissions
+	# Needs concept ACK: 19635 -ephemeraltoronion
+	19643 jonatack/netinfo
+		TODO: Remove refactoring/safety issues
+	# Needs changes? 19658 jnewbery:2020-07-addrman-get
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots			82327138b5b						 # Latest code now
