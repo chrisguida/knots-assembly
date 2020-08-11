@@ -22,7 +22,7 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	-     lint_relaxer							09b7b255efc
 	17402 travis_ppc64							d0067dcca3c	last=1d684f05341 elichai/2019-11-powerpc64
 	19613 travis_s390x-0.20
-	18750 ignore_external_warnings-0.20+knots	abb8b3b1ea6	last=426e6dc36e2
+	18750 ignore_external_warnings-0.20+knots	abb8b3b1ea6	last=ec1ea76247e
 # FIXES:
 	-     qa_fix_tz_nonia-0.20					16ad72abf85
 		# Part of #19008
@@ -276,7 +276,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 		# NOTE: New version: 19031 Implement ADDRv2 support (part of BIP155)
-	16795 rpc_inferred_output_descriptors-0.20	d08df435e1f	last=dcd5c4a5773 instagibbs/decode_descriptor
+	16795 rpc_inferred_output_descriptors-0.20	d08df435e1f	last=06c98d68a43 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.20+knots		86d6eff0ef1	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 	-     gui_bech32_errpos-0.20+knots			c54ddd9c639  # Latest code
@@ -377,15 +377,17 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 		# Held back ded742bc5b9 (RPC change), 7cc0e8101f0 (non-evaluated effect), doxygen comment changes, and refactoring
 		# Held back removal of addr from implicit flags (rebased in b78f81553d8a4)
 	# Needs concept review: 19043 torcontrol: add -tortarget config
-	19093 rpc_testmempoolaccept_fee-0.20		591160ee6e0	last=3218bba02ce  # RPC: testmempoolaccept returns transaction fee
+	19093 rpc_testmempoolaccept_fee-0.20		591160ee6e0	last=c9781e92a21  # RPC: testmempoolaccept returns transaction fee
 	# Needs consideration: 19109 sipa:202005_bloom_relay
 	# 0.21 TODO: 19136 achow101:export-descriptor
 	# Depends on refactor: 19137 achow101/dumpwalletrecords
 	19142 verifydb_lv4_interrupt-0.20			0ac5c96446e
 		# Diff-minimised
-	19191 p2p_permission_download-0.20+knots	294b7500ff1	last=111109a1e79 marco/2006-netPerDow
+NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
+	19191 p2p_permission_download-0.20.1+knots				last=fa0540cd46e marco/2006-netPerDow
 		# IMPORTANT: Avoid conflicts with PF_ADDR or other permission flags (moved to 1<<18)
-	19204 p2p_ibd_noinv-0.20					4dadc1acfe2	last=fa8a66cf7e2 marco/2006-netInvWaste
+		# Held back 111109a1e79...fa0540cd46e (help doc updates)
+	19204 p2p_ibd_noinv-0.20					4dadc1acfe2	last=fa06d7e9348 marco/2006-netInvWaste
 		# NOTE: Dropped refactors, and diff-minimised
 	19242 uaappend								e51b897ef57
 	# Needs review: 19271 andrewtoth:warm-coinscache
