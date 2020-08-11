@@ -1,4 +1,4 @@
-timestamp 2020-07-31 21:51:53
+timestamp 2020-08-11 22:08:37
 #lastapply no-merge
 
 #.. checked up to PR #19634 / gui #40
@@ -115,6 +115,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	g39   gui_recvaddr_defaultbtn-0.14						last=4ec49f8d1e2 hebasto-g/200721-prim
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs concept ack: 19655 rpc: Catch listsinceblock target_confirmations exceeding block count
+	# Needs _careful_ review: 19670 sdaftuar:2020-08-improved-eviction
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
@@ -378,6 +379,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 		# NOTE: Reordered test_runner to avoid conflict
 		# Held back ded742bc5b9 (RPC change), 7cc0e8101f0 (non-evaluated effect), doxygen comment changes, and refactoring
 		# Held back removal of addr from implicit flags (rebased in b78f81553d8a4)
+	# Needs fixes: 19697  # Improvements on ADDR caching
 	# Needs concept review: 19043 torcontrol: add -tortarget config
 	19093 rpc_testmempoolaccept_fee-0.20		591160ee6e0	last=c9781e92a21  # RPC: testmempoolaccept returns transaction fee
 	# Needs consideration: 19109 sipa:202005_bloom_relay
@@ -393,25 +395,25 @@ NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
 		# NOTE: Dropped refactors, and diff-minimised
 	19242 uaappend								e51b897ef57
 	# Needs review: 19271 andrewtoth:warm-coinscache
-	19328 fjahr:csi-5-hash_type-none
-	19405 jonatack:in-and-out-connections
+	19328 -
+	19405 jonatack/in-and-out-connections
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 	19463 prune_locks-0.20									last=f4b2ed65ea5 prune_locks
 		TODO: use separate db?
-	19473 hebasto:200709-setnet
+	19473 hebasto/200709-setnet
 	# Needs work: 19476 promag:2020-07-rpc-mempoolchanges
 	# Needs work: 19485 # torcontrol: Create also a V3 ed25519-V3 onion address.
 	19501 -  # send* RPCs in the wallet returns the "fee reason"
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
-	19550 fjahr:index_rpc
+	19550 fjahr/index_rpc
 	# Needs consideration: 19569 sipa:202007_wtxid_followup
-	18044 jnewbery:2020-07-v20-wtxid-relay
-	19569 sipa:202007_wtxid_followup minus refactoring?
-	19620 sdaftuar:2020-07-reject-unknown-wit
+	18044 jnewbery/2020-07-v20-wtxid-relay
+	19569 sipa/202007_wtxid_followup minus refactoring?
+	19620 sdaftuar/2020-07-reject-unknown-wit
 	# Needs work: g4    Sjors:2019/08/hww-qt
 	g6    -  # Do not truncate node flag strings in debugwindow peers details tab
 	# Needs work: g27   # top to bottom UI layout
-	g34   laanwj:2020_07_gui_permissions
+	g34   laanwj/2020_07_gui_permissions
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	19643 jonatack/netinfo
 		TODO: Remove refactoring/safety issues
@@ -464,7 +466,7 @@ NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
 #TODO: Check that we aren't deprcating anything in Core
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		f1b28f574c1	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200731)			6e8c7da0ef7
+	n/a  (bump_version=Knots:20200811)			6e8c7da0ef7
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=77151dae830)				25b8cf78776  # release notes: write/update, including change log and credits
 			# check travis for misspellings
