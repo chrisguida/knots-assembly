@@ -387,7 +387,7 @@ NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
 	19191 p2p_permission_download-0.20.1+knots				last=fa0540cd46e marco/2006-netPerDow
 		# IMPORTANT: Avoid conflicts with PF_ADDR or other permission flags (moved to 1<<18)
 		# Held back 111109a1e79...fa0540cd46e (help doc updates)
-	19204 p2p_ibd_noinv-0.20					4dadc1acfe2	last=fa06d7e9348 marco/2006-netInvWaste
+	19204 p2p_ibd_noinv-0.20					4dadc1acfe2	last=fa525e4d1cf marco/2006-netInvWaste
 		# NOTE: Dropped refactors, and diff-minimised
 	19242 uaappend								e51b897ef57
 	# Needs review: 19271 andrewtoth:warm-coinscache
