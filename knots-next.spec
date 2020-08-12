@@ -1,7 +1,7 @@
 timestamp 2020-08-11 22:08:37
 #lastapply no-merge
 
-#.. checked up to PR #19634 / gui #40
+#.. checked up to PR #19698 / gui #46
 
 checkout v0.20.1rc1
 @0.20.x-syslibs
@@ -116,6 +116,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs concept ack: 19655 rpc: Catch listsinceblock target_confirmations exceeding block count
 	# Needs _careful_ review: 19670 sdaftuar:2020-08-improved-eviction
+	g43   bugfix_encrypt_menu_state-0.20
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
@@ -395,17 +396,16 @@ NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
 		# NOTE: Dropped refactors, and diff-minimised
 	19242 uaappend								e51b897ef57
 	# Needs review: 19271 andrewtoth:warm-coinscache
-	19328 -
-	19405 jonatack/in-and-out-connections
+	19328 rpc_gettxoutsetinfo_hash_type-0.20
+	19405 rpc_netinfo_conncount_inout-0.20					last=94a792cc19f jonatack/in-and-out-connections
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
-	19463 prune_locks-0.20									last=f4b2ed65ea5 prune_locks
-		TODO: use separate db?
-	19473 hebasto/200709-setnet
+	19463 prune_locks-0.20+knots							last=f4b2ed65ea5 prune_locks
+	19473 param_networkactive-0.20
 	# Needs work: 19476 promag:2020-07-rpc-mempoolchanges
 	# Needs work: 19485 # torcontrol: Create also a V3 ed25519-V3 onion address.
-	19501 -  # send* RPCs in the wallet returns the "fee reason"
+	# TODO: 19501 -  # send* RPCs in the wallet returns the "fee reason"
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
-	19550 fjahr/index_rpc
+	19550 rpc_getindexinfo-0.20								last=47a5372d289
 	# Needs consideration: 19569 sipa:202007_wtxid_followup
 	18044 jnewbery/2020-07-v20-wtxid-relay
 	19569 sipa/202007_wtxid_followup minus refactoring?
@@ -470,6 +470,8 @@ NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=77151dae830)				25b8cf78776  # release notes: write/update, including change log and credits
 			# check travis for misspellings
+			#origin-pull/19405/head:doc/release-notes-19405.md
+			#origin-pull/19550/head
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
