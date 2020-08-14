@@ -216,7 +216,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	15115 rm_send2self-mini						b0a97dee1f5	last=14bb8db698d rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
-	15202 promag/2019-01-closeallwallets
+	15202 gui_closeallwallets-0.19
 	# Needs review: 15204 promag:2019-01-openexternalwallet
 	15218 postibd_flush							14f13060e9e	last=d2ecb70d64  # validation: Flush state after initial sync
 		# Moved init around to avoid conflict w/ 15367
@@ -331,7 +331,6 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 		# NOTE: Dropped benchmarks
 	# Needs review: 18038 -  # P2P: Mempool tracks locally submitted transactions to improve privacy
 		# +18807 (WIP)
-	# Needs review & BIP finality: 18044 sdaftuar:2020-01-wtxid-inv
 	18223 blockfilter_v0-0.19					1e2018374f7	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
@@ -340,7 +339,6 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs concept review: 18244 Sjors:2020/03/rpc_coin_locks
 	18309 -										5d1b30f6e72	last=751a5c5d562  # zmq: Add support to listen on multiple interfaces
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
-	# Needs interface changes: 18453 jonatack:call-getbalances-for-getinfo-balance
 	# ---- BEGIN IN SEQUENCE ----
 	18574 cli_getinfo_balances-0.20				51351199e37
 	18653 qa_cli_rpcwait_pt1-0.20+knots			77a58b1908e
