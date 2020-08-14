@@ -116,7 +116,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs concept ack: 19655 rpc: Catch listsinceblock target_confirmations exceeding block count
 	# Needs _careful_ review: 19670 sdaftuar:2020-08-improved-eviction
-	g43   bugfix_encrypt_menu_state-0.20
+	g43   bugfix_encrypt_menu_state-0.20					last=20c9e035543 hebasto-g/200803-encrypt
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
@@ -280,7 +280,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
 		# NOTE: New version: 19031 Implement ADDRv2 support (part of BIP155)
-	16795 rpc_inferred_output_descriptors-0.20	d08df435e1f	last=06c98d68a43 instagibbs/decode_descriptor
+	16795 rpc_inferred_output_descriptors-0.20	d08df435e1f	last=ef91078d672 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.20+knots		86d6eff0ef1	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 	-     gui_bech32_errpos-0.20+knots			c54ddd9c639  # Latest code
@@ -407,23 +407,26 @@ NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
 	19550 rpc_getindexinfo-0.20								last=47a5372d289
 	# Needs consideration: 19569 sipa:202007_wtxid_followup
-	18044 jnewbery/2020-07-v20-wtxid-relay
-	19569 sipa/202007_wtxid_followup minus refactoring?
-	19620 sdaftuar/2020-07-reject-unknown-wit
+	# ---- BEGIN WTXID RELAY ----
+	# Problematic due to risky conflicts with #18238
+	#18044 wtxid_relay-0.20.1+knots							last=4daad798f3b jnewbery/2020-07-v20-wtxid-relay
+	#	# really #19606
+	#19569 sipa/202007_wtxid_followup minus refactoring?
+	# ---- END WTXID RELAY ----
+	19620 sdaftuar/2020-08-reject-unknown-wit-0.20			last=107cf1515e6 sdaftuar/2020-08-reject-unknown-wit-0.20
 	# Needs work: g4    Sjors:2019/08/hww-qt
-	g6    -  # Do not truncate node flag strings in debugwindow peers details tab
+	g6    peerdetails_no_trunc-0.18
 	# Needs work: g27   # top to bottom UI layout
-	g34   laanwj/2020_07_gui_permissions
+	g34   gui_p2ppermissions-0.20							last=784ef8be41c
 	# Needs concept ACK: 19635 -ephemeraltoronion
-	19643 jonatack/netinfo
-		TODO: Remove refactoring/safety issues
+	19643 cli_netinfo-0.20
 	# Needs changes? 19658 jnewbery:2020-07-addrman-get
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
-	-     restore_rejectmsg-0.20+knots			82327138b5b						 # Latest code now
+m	-     restore_rejectmsg-0.20+knots			82327138b5b						 # Latest code now
 	-     restore_blockmaxsize					dbf0ee97444
 	7107 qtnetworkport							90aa95e0d61	last=1f37c87 origin-pull/7107/head
-	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
+m	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
 	11082 rwconf-0.20							8970266b9fb	last=??? 2020-06-17
 	7510 rwconf_gui								3afa6aa4316
 		# 0.21 TODO: update neutrino option name
