@@ -278,7 +278,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	16807 bech32_error_detection-0.20+knots		86d6eff0ef1	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 	-     gui_bech32_errpos-0.20+knots			c54ddd9c639  # Latest code
-	16939 ajtowns/201909-avoid-dns-if-addrman-populated
+	16939 ajtowns/201909-avoid-dns-if-addrman-populated		last=96954d17948
 		# If rebasing, diff-minimise too?
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
 	17034 psbt_ver_proprietary-0.20+knots		78fb88c5a1c	last=ddaccbc7bbd achow101/bip174-extensions
