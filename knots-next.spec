@@ -1,7 +1,7 @@
-timestamp 2020-08-11 22:08:37
+timestamp 2020-08-14 06:15:23
 #lastapply no-merge
 
-#.. checked up to PR #19698 / gui #46
+#.. checked up to PR #19721 / gui #61
 
 checkout v0.20.1rc1
 @0.20.x-syslibs
@@ -117,6 +117,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs concept ack: 19655 rpc: Catch listsinceblock target_confirmations exceeding block count
 	# Needs _careful_ review: 19670 sdaftuar:2020-08-improved-eviction
 	g43   bugfix_encrypt_menu_state-0.20					last=20c9e035543 hebasto-g/200803-encrypt
+	# Needs review: g59 hebasto-g/200814-rpc
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
@@ -427,7 +428,7 @@ m	-     restore_rejectmsg-0.20+knots			82327138b5b						 # Latest code now
 	-     restore_blockmaxsize					dbf0ee97444
 	7107 qtnetworkport							90aa95e0d61	last=1f37c87 origin-pull/7107/head
 m	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
-	11082 rwconf-0.20							8970266b9fb	last=??? 2020-06-17
+	11082 rwconf-0.20							8970266b9fb	last=78bc86711a8 rwconf
 	7510 rwconf_gui								3afa6aa4316
 		# 0.21 TODO: update neutrino option name
 	-    rwconf_gui_plus						14766a737fe
@@ -454,7 +455,7 @@ m	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
 	9749 unique_spk_mempool-0.20+knots			8cf9bace072
 	-    bloom_default-0.20+knots				2c51ec2558f
 	-    rwconf_policy-0.20+knots				819388c8351
-		FIXME: split actual policy changes out to another line
+		#FIXME 0.21: split actual policy changes out to another line
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
@@ -469,7 +470,7 @@ m	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
 #TODO: Check that we aren't deprcating anything in Core
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		f1b28f574c1	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200811)			6e8c7da0ef7
+	n/a  (bump_version=Knots:20200814)			6e8c7da0ef7
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=77151dae830)				25b8cf78776  # release notes: write/update, including change log and credits
 			# check travis for misspellings
