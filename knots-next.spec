@@ -87,7 +87,7 @@ m	18467 settxfee_maxtxfee-0.20				56951230658  # rpc: Improve documentation and 
 	18956 win_min_version_flag-0.18				80485eec2ef
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 TM	18982 bugfix_walletnotify_conflict-0.20		9466756d416	last=7eaf86d3bfc
-	18990 marco/2005-logMempoolRej
+	# Conflicts with #17828? 18990 logmempoolrej-0.20
 	18993 gui_console_longinput-0.8				b9fe68f4746	last=fc6a637a013  # qt: increase console command max length #18993
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
@@ -231,7 +231,6 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
-	# Needs review: 15505 sdaftuar:2019-02-notfound-requests
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	15633 nohbcbfornonwit						4332dcb6985
@@ -268,20 +267,19 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	# Needs review: 16377 Sjors:2019/07/walletcreatefundedpsbt_addinputs
 	# Needs review: 16378 Sjors:2019/07/send
 	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
 		# NOTE: Bumps boost version!
-	# needs completion: 15876
+	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# Depends-on-16546: 16549 Sjors:2019/08/hww-qt
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	# Needs review (and BIP finalisation?): 16748 dongcarl:2019-07-addrv2v4
-		# NOTE: New version: 19031 Implement ADDRv2 support (part of BIP155)
+	# Needs review (and BIP finalisation?): 19031 Implement ADDRv2 support (part of BIP155)
 	16795 rpc_inferred_output_descriptors-0.20	d08df435e1f	last=ef91078d672 instagibbs/decode_descriptor
 	16807 bech32_error_detection-0.20+knots		86d6eff0ef1	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 	-     gui_bech32_errpos-0.20+knots			c54ddd9c639  # Latest code
-	# Meh, needs review? 16939 ajtowns:201909-avoid-dns-if-addrman-populated
+	16939 ajtowns/201909-avoid-dns-if-addrman-populated
+		# If rebasing, diff-minimise too?
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
 	17034 psbt_ver_proprietary-0.20+knots		78fb88c5a1c	last=ddaccbc7bbd achow101/bip174-extensions
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
