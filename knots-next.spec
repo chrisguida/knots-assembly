@@ -101,7 +101,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17				last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
 	19502 bugfix_listwalletdir_errors-mini					last=4f0cbc4bc74 bugfix_listwalletdir_errors
-	19419 listwalletdir_skip_data-0.18						last=320e94ecc1b
+	19419 listwalletdir_skip_data-0.20+knots				last=320e94ecc1b
 		# NOTE: modified to use std::set and diff-minimise
 	# Needs review: 19434 promag:2020-06-remote-disconnect
 	# Mostly-Redundant with #17828: 19526 log_category_chkblkhdr-0.20
@@ -320,7 +320,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	17636 guisettings-0.20						b868facc15f	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
-	# Needs work & concept ACK: rpc: Make __cookie__ user immune to rpcwhitelist #17815
+	# Needs work & concept ACK: 17815 rpc: Make __cookie__ user immune to rpcwhitelist
 	# Needs work/review: 17918 emilengler:2020-01-hide-non-pkhash-addresses
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	17955 gui_uri_paste-0.20+knots				fbc1293bbfe	last=0139b428923 emilengler/2020-01-paste-bitcoin-uri-button
