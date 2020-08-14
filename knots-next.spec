@@ -48,7 +48,6 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	17204 fix_1neg-0.20							e382a75d141	last=dca28634d77 meshcollider/201910_1negate_rebase
 		# based on 5af7625079 sipa/201804_keepnegone
 	13608 -										701edd6b714	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
-	# Needs fix?? 13674 -													# Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 	-     bugfix_rpc_getbalance_hacky			c65df08e279
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
@@ -64,13 +63,10 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	16525 rpc_unsigned_txver-0.18				0151d9080c1	last=e80259f197 matt/2019-07-unsigned-tx-ver
-	# Needs review: 17457 bugfix_multiwallet_coincontrol
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
-	# Needs to be just a bugfix: 17597 qt: Fix height of QR-less ReceiveRequestDialog
 TM	17946 fix_gbt_buried						e6943a490bd
-	# Needs review: 18095 -  # Fix crashes and infinite loop in ListWalletDir()
+	18095 fix_listwalletdir_errorcatch-0.20					last=6307dfa87e3
 	18133 bugfix_qvalidlineedit					2ee1afa6778
-	# Needs careful review: 18192 bugfix_addressbook_change
 	18194 bugfix_gui_edit_sendaddr-mini			824e19d101e	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
@@ -91,7 +87,7 @@ m	18467 settxfee_maxtxfee-0.20				56951230658  # rpc: Improve documentation and 
 	18956 win_min_version_flag-0.18				80485eec2ef
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 TM	18982 bugfix_walletnotify_conflict-0.20		9466756d416	last=7eaf86d3bfc
-	# Needs review: 18990 MarcoFalke:2005-logMempoolRej
+	18990 marco/2005-logMempoolRej
 	18993 gui_console_longinput-0.8				b9fe68f4746	last=fc6a637a013  # qt: increase console command max length #18993
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
@@ -118,6 +114,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs _careful_ review: 19670 sdaftuar:2020-08-improved-eviction
 	g43   bugfix_encrypt_menu_state-0.20					last=20c9e035543 hebasto-g/200803-encrypt
 	# Needs review: g59 hebasto-g/200814-rpc
+		# NOTE: WAS Needs fix?? 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				1552b435490
 	-     restore_linux32						0e7dbc08530
@@ -205,7 +202,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs work: 13836 clearmempool RPC
 	# Needs review: 13903 Significantly reduce GetTransaction cs_main locking
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
-	# Needs review: 13989 add avx512 instrinsic
+	# Needs work: 13989 add avx512 instrinsic
 	# Needs review: 13990 WIP: allow fee estimation to work with lower fees
 	# Needs review: 14032 Add p2p layer encryption with ECDH/ChaCha20Poly1305
 	# Needs review: 14035 Utxoscriptindex
@@ -218,9 +215,8 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	15115 rm_send2self-mini						b0a97dee1f5	last=14bb8db698d rm_send2self
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
-	# Not ready: 15150 promag:2019-01-consolewalletselector
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
-	# Needs review/revision: 15202 promag:2019-01-closeallwallets
+	15202 promag/2019-01-closeallwallets
 	# Needs review: 15204 promag:2019-01-openexternalwallet
 	15218 postibd_flush							14f13060e9e	last=d2ecb70d64  # validation: Flush state after initial sync
 		# Moved init around to avoid conflict w/ 15367
