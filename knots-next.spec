@@ -3,7 +3,7 @@ timestamp 2020-08-14 06:15:23
 
 #.. checked up to PR #19721 / gui #61
 
-checkout v0.20.1rc1
+checkout bf0dc356ac4
 @0.20.x-syslibs
 TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	5872 subdir_incl_compat						7966eb85808
@@ -464,10 +464,8 @@ m	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		f1b28f574c1	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200814)			6e8c7da0ef7
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=77151dae830)				25b8cf78776  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=5db0ba9c374)				25b8cf78776  # release notes: write/update, including change log and credits
 			# check travis for misspellings
-			#origin-pull/19405/head:doc/release-notes-19405.md
-			#origin-pull/19550/head
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
