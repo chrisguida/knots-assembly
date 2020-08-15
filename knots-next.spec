@@ -1,7 +1,7 @@
-timestamp 2020-08-14 06:15:23
+timestamp 2020-08-15 06:18:02
 #lastapply no-merge
 
-#.. checked up to PR #19721 / gui #61
+#.. checked up to PR #19728 / gui #61
 
 checkout bf0dc356ac4
 @0.20.x-syslibs
@@ -414,6 +414,9 @@ NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	19643 cli_netinfo-0.20
 	# Needs changes? 19658 jnewbery:2020-07-addrman-get
+	# Needs concept review: 19723 sdaftuar/2020-08-feature-negotiation
+	# Needs concept review: 19725 -  # [RPC] Add connection type to getpeerinfo, improve logs
+	19728 addr_relay_branching-0.14							last=86d4cf42d97 sipa/202008_increase_addr_branching
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 m	-     restore_rejectmsg-0.20+knots			82327138b5b						 # Latest code now
@@ -462,7 +465,7 @@ m	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
 #TODO: Check that we aren't deprcating anything in Core
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		f1b28f574c1	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200814)			6e8c7da0ef7
+	n/a  (bump_version=Knots:20200815)			6e8c7da0ef7
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=5db0ba9c374)				25b8cf78776  # release notes: write/update, including change log and credits
 			# check travis for misspellings
@@ -472,8 +475,8 @@ m	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=015a476a74b)				cd5165666b0  # translation update
-	n/a  (cherrypick=908fafff2c6)				1c9c0ea9d36	# update manpages (build first)
+	n/a  (cherrypick=b9a7c5d663b)				cd5165666b0  # translation update
+	n/a  (cherrypick=908fafff2c6)				1c9c0ea9d36  # update manpages (build first)
 # NOTE: use git diff --minimal for patches!
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
