@@ -65,7 +65,7 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	16525 rpc_unsigned_txver-0.18				0151d9080c1	last=e80259f197 matt/2019-07-unsigned-tx-ver
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 TM	17946 fix_gbt_buried						e6943a490bd
-	18095 fix_listwalletdir_errorcatch-0.20					last=6307dfa87e3
+	18095 -													last=6307dfa87e3  # Fix crashes and infinite loop in ListWalletDir()
 	18133 bugfix_qvalidlineedit					2ee1afa6778
 	18194 bugfix_gui_edit_sendaddr-mini			824e19d101e	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
