@@ -101,7 +101,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17				last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
 	19502 bugfix_listwalletdir_errors-mini					last=4f0cbc4bc74 bugfix_listwalletdir_errors
-	19419 listwalletdir_skip_data-0.20+knots				last=320e94ecc1b
+	19419 listwalletdir_skip_data-0.20+knots				last=caa418440dd
 		# NOTE: modified to use std::set and diff-minimise
 	# Needs review: 19434 promag:2020-06-remote-disconnect
 	# Mostly-Redundant with #17828: 19526 log_category_chkblkhdr-0.20
@@ -467,7 +467,7 @@ m	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		f1b28f574c1	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200815)			6e8c7da0ef7
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=5db0ba9c374)				25b8cf78776  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=122a503033f)				25b8cf78776  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
