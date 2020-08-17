@@ -392,7 +392,8 @@ NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
 	19242 uaappend								e51b897ef57
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	19328 rpc_gettxoutsetinfo_hash_type-0.20
-	19405 rpc_netinfo_conncount_inout-0.20					last=94a792cc19f jonatack/in-and-out-connections
+	19405 rpc_netinfo_conncount_inout-0.20+knots			last=94a792cc19f jonatack/in-and-out-connections
+		# NOTE: Requires +knots for invisible conflict with #19089
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 	19463 prune_locks-0.20+knots							last=f4b2ed65ea5 prune_locks
 	19473 param_networkactive-0.20
