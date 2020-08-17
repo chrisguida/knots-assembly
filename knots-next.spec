@@ -47,6 +47,8 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
 	17204 fix_1neg-0.20							e382a75d141	last=dca28634d77 meshcollider/201910_1negate_rebase
 		# based on 5af7625079 sipa/201804_keepnegone
+		# WARNING: Subtle test rebase issue: signrawtransactionwithwallet in master allows for the test case, but not 0.20 because it isn't wallet-related
+		#          This appears to be a regression in 0.20; see also #19737
 	13608 -										701edd6b714	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	-     bugfix_rpc_getbalance_hacky			c65df08e279
 	# FIX THE BELOW:
@@ -476,7 +478,7 @@ m	7533 sendraw_force-0.20+knots				e6e442cc9bd  # Latest code now
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=b9a7c5d663b)				cd5165666b0  # translation update
-	n/a  (cherrypick=908fafff2c6)				1c9c0ea9d36  # update manpages (build first)
+	n/a  (cherrypick=7b55b1058fd)				1c9c0ea9d36  # update manpages (build first)
 # NOTE: use git diff --minimal for patches!
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
