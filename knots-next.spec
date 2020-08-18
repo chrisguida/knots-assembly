@@ -68,6 +68,7 @@ TM	19097 bugfix_incl_qpainterpath-0.9			0521218641a
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 TM	17946 fix_gbt_buried						8c07dc5fe74
 	18095 -										c6dfc3206fd	last=6307dfa87e3  # Fix crashes and infinite loop in ListWalletDir()
+		FIXME: Apply f4329475195
 	18133 bugfix_qvalidlineedit					49b42b1e149
 	18194 bugfix_gui_edit_sendaddr-mini			9fada3c674d	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
@@ -105,6 +106,7 @@ NM	19243 misbehaving_limit-0.20				b5a319968c8	last=7f1e47de55e misbehaving_limi
 	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=4f0cbc4bc74 bugfix_listwalletdir_errors
 	19419 listwalletdir_skip_data-0.20+knots	c25545c6d7c	last=caa418440dd
 		# NOTE: modified to use std::set and diff-minimise
+		FIXME: Apply f4329475195
 	# Needs review: 19434 promag:2020-06-remote-disconnect
 	# Mostly-Redundant with #17828: 19526 log_category_chkblkhdr-0.20
 		# Diff-minimised
@@ -122,6 +124,7 @@ NM	19243 misbehaving_limit-0.20				b5a319968c8	last=7f1e47de55e misbehaving_limi
 	-     restore_linux32						275c3f2b076
 	17929 gitian_linux_ldO2-0.20				493a23570cc
 		# NOTE: gitian only
+	# 0.21 TODO: #19751 comes out of #14066 below
 	14066 gitian_power64-0.20+knots				5d7416dc553	last=5155e99f455 gitian_power64
 	19525 z_separate_code-0.17					34141a5b841
 		# NOTE: Carries a commit from master #14066 to avoid bogus .plt security check on PPC64
@@ -479,6 +482,7 @@ m	7533 sendraw_force-0.20+knots				5999c6933c5  # Latest code now
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
+	# 0.21 TODO: Move manpages before ts (so manpages become part of branding patch)
 	n/a  (cherrypick=b9a7c5d663b)				b0c69f9a261  # translation update
 	n/a  (cherrypick=7b55b1058fd)				5f5b833b3c2  # update manpages (build first)
 # NOTE: use git diff --minimal for patches!
