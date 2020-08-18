@@ -67,7 +67,7 @@ TM	19097 bugfix_incl_qpainterpath-0.9			0521218641a
 	16525 rpc_unsigned_txver-0.18				e174d4d331c	last=e80259f197 matt/2019-07-unsigned-tx-ver
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 TM	17946 fix_gbt_buried						8c07dc5fe74
-	18095 -										c6dfc3206fd													last=6307dfa87e3  # Fix crashes and infinite loop in ListWalletDir()
+	18095 -										c6dfc3206fd	last=6307dfa87e3  # Fix crashes and infinite loop in ListWalletDir()
 	18133 bugfix_qvalidlineedit					49b42b1e149
 	18194 bugfix_gui_edit_sendaddr-mini			9fada3c674d	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
@@ -101,20 +101,20 @@ TM	19215 psbt_segwit_fix-0.20					064473d40d3	last=836d6fc375a achow101/psbt-seg
 NM	19243 misbehaving_limit-0.20				b5a319968c8	last=7f1e47de55e misbehaving_limit
 	# Needs review: 19289 promag:2020-06-wallet-less-locks
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
-	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439				last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
-	19502 bugfix_listwalletdir_errors-mini		48100d93e96					last=4f0cbc4bc74 bugfix_listwalletdir_errors
-	19419 listwalletdir_skip_data-0.20+knots	c25545c6d7c				last=caa418440dd
+	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
+	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=4f0cbc4bc74 bugfix_listwalletdir_errors
+	19419 listwalletdir_skip_data-0.20+knots	c25545c6d7c	last=caa418440dd
 		# NOTE: modified to use std::set and diff-minimise
 	# Needs review: 19434 promag:2020-06-remote-disconnect
 	# Mostly-Redundant with #17828: 19526 log_category_chkblkhdr-0.20
 		# Diff-minimised
 	# Needs review: g18    hebasto:200701-peer
-	g20   bugfix_intro_tooltipwrap-0.17			71aa9003e5c						last=6ed4bcabc1a hebasto-g/200702-tooltip
-	g39   gui_recvaddr_defaultbtn-0.14			0d641d4bd1d						last=4ec49f8d1e2 hebasto-g/200721-prim
+	g20   bugfix_intro_tooltipwrap-0.17			71aa9003e5c	last=6ed4bcabc1a hebasto-g/200702-tooltip
+	g39   gui_recvaddr_defaultbtn-0.14			0d641d4bd1d	last=4ec49f8d1e2 hebasto-g/200721-prim
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs concept ack: 19655 rpc: Catch listsinceblock target_confirmations exceeding block count
 	# Needs _careful_ review: 19670 sdaftuar:2020-08-improved-eviction
-	g43   bugfix_encrypt_menu_state-0.20		ad43955a127					last=20c9e035543 hebasto-g/200803-encrypt
+	g43   bugfix_encrypt_menu_state-0.20		ad43955a127	last=20c9e035543 hebasto-g/200803-encrypt
 	# Needs review: g59 hebasto-g/200814-rpc
 		# NOTE: WAS Needs fix?? 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 # FUNCTIONALITY:
@@ -281,7 +281,7 @@ NM	19243 misbehaving_limit-0.20				b5a319968c8	last=7f1e47de55e misbehaving_limi
 	16807 bech32_error_detection-0.20+knots		9ba289863a6	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
 	-     gui_bech32_errpos-0.20+knots			4c26070eb13  # Latest code
-	16939 ajtowns/201909-avoid-dns-if-addrman-populated	fb8a29dbead		last=96954d17948
+	16939 ajtowns/201909-avoid-dns-if-addrman-populated	fb8a29dbead	last=96954d17948
 		# If rebasing, diff-minimise too?
 	# Needs concept ack: 16981 LarryRuane:reindex-speedup
 	17034 psbt_ver_proprietary-0.20+knots		c688e87d5e5	last=ddaccbc7bbd achow101/bip174-extensions
@@ -385,7 +385,7 @@ NM	19243 misbehaving_limit-0.20				b5a319968c8	last=7f1e47de55e misbehaving_limi
 	19142 verifydb_lv4_interrupt-0.20			c3c96c16cd1
 		# Diff-minimised
 NM	19191 p2p_permission_download-0.20+knots	de02439902e
-	19191 p2p_permission_download-0.20.1+knots	55fb5d4ac1c				last=fa0540cd46e marco/2006-netPerDow
+	19191 p2p_permission_download-0.20.1+knots	55fb5d4ac1c	last=fa0540cd46e marco/2006-netPerDow
 		# IMPORTANT: Avoid conflicts with PF_ADDR or other permission flags (moved to 1<<18)
 		# Held back 111109a1e79...fa0540cd46e (help doc updates)
 	19204 p2p_ibd_noinv-0.20					7365d2fdb96	last=fa525e4d1cf marco/2006-netInvWaste
@@ -393,16 +393,16 @@ NM	19191 p2p_permission_download-0.20+knots	de02439902e
 	19242 uaappend								d4ad2f71f8b
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	19328 rpc_gettxoutsetinfo_hash_type-0.20	bf61b169e41
-	19405 rpc_netinfo_conncount_inout-0.20+knots	78f560f7558			last=94a792cc19f jonatack/in-and-out-connections
+	19405 rpc_netinfo_conncount_inout-0.20+knots	78f560f7558	last=94a792cc19f jonatack/in-and-out-connections
 		# NOTE: Requires +knots for invisible conflict with #19089
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
-	19463 prune_locks-0.20+knots				50b13a85c7a							last=f4b2ed65ea5 prune_locks
+	19463 prune_locks-0.20+knots				50b13a85c7a	last=f4b2ed65ea5 prune_locks
 	19473 param_networkactive-0.20				6a653630472
 	# Needs work: 19476 promag:2020-07-rpc-mempoolchanges
 	# Needs work: 19485 # torcontrol: Create also a V3 ed25519-V3 onion address.
 	# TODO: 19501 -  # send* RPCs in the wallet returns the "fee reason"
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
-	19550 rpc_getindexinfo-0.20					42b8ecfc8d6								last=47a5372d289
+	19550 rpc_getindexinfo-0.20					42b8ecfc8d6	last=47a5372d289
 	# Needs consideration: 19569 sipa:202007_wtxid_followup
 	# ---- BEGIN WTXID RELAY ----
 	# Problematic due to risky conflicts with #18238
@@ -410,20 +410,20 @@ NM	19191 p2p_permission_download-0.20+knots	de02439902e
 	#	# really #19606
 	#19569 sipa/202007_wtxid_followup minus refactoring?
 	# ---- END WTXID RELAY ----
-	19620 sdaftuar/2020-08-reject-unknown-wit-0.20	c932d5e6d09			last=107cf1515e6 sdaftuar/2020-08-reject-unknown-wit-0.20
+	19620 sdaftuar/2020-08-reject-unknown-wit-0.20	c932d5e6d09	last=107cf1515e6 sdaftuar/2020-08-reject-unknown-wit-0.20
 	# Needs work: g4    Sjors:2019/08/hww-qt
 	g6    peerdetails_no_trunc-0.18				1300fdee19c
 	# Needs work: g27   # top to bottom UI layout
-	g34   gui_p2ppermissions-0.20				5e1ae75f651							last=784ef8be41c
+	g34   gui_p2ppermissions-0.20				5e1ae75f651	last=784ef8be41c
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	19643 cli_netinfo-0.20						ce571c2c51f
 	# Needs changes? 19658 jnewbery:2020-07-addrman-get
 	# Needs concept review: 19723 sdaftuar/2020-08-feature-negotiation
 	# Needs concept review: 19725 -  # [RPC] Add connection type to getpeerinfo, improve logs
-	19728 addr_relay_branching-0.14				5459fe3aab6							last=86d4cf42d97 sipa/202008_increase_addr_branching
+	19728 addr_relay_branching-0.14				5459fe3aab6	last=86d4cf42d97 sipa/202008_increase_addr_branching
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
-m	-     restore_rejectmsg-0.20+knots			f99fd33ae0a						 # Latest code now
+m	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
 	-     restore_blockmaxsize					77a6f199fa5
 	7107 qtnetworkport							bf7aeb32a35	last=1f37c87 origin-pull/7107/head
 m	7533 sendraw_force-0.20+knots				5999c6933c5  # Latest code now
