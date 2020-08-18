@@ -122,8 +122,9 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	-     restore_linux32						0e7dbc08530
 	17929 gitian_linux_ldO2-0.20				26fefe212dd
 		# NOTE: gitian only
-	14066 gitian_power64-0.20+knots				20d39fc3fca	last=fb0dd8e3d72 gitian_power64
+	14066 gitian_power64-0.20+knots				20d39fc3fca	last=5155e99f455 gitian_power64
 	19525 z_separate_code-0.17
+		# NOTE: Carries a commit from master #14066 to avoid bogus .plt security check on PPC64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
