@@ -203,6 +203,7 @@ NM	19243 misbehaving_limit-0.20				b5a319968c8	last=7f1e47de55e misbehaving_limi
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
 	13203 dsha256_power8-0.20					859d5652145	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
+		FIXME: cherrypick f40dd1dda5e68af77a88abc214e7e1dfb40b04a1
 	-     dsha256_power8-0.20_asm_pragmas		81da69b2979
 	-     walletnotify_w_win					a7967686d4c
 	# Needs work: 13836 clearmempool RPC
