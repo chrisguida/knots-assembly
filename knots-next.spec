@@ -155,7 +155,7 @@ NM	19243 misbehaving_limit-0.20				b5a319968c8	last=7f1e47de55e misbehaving_limi
 	# ehhhhh?? 9728 Can create Watch Only HD wallet with -hdwatchonly
 	# not ready: 9745 [RPC] Getting confirmations command
 	9849 gui_netwatch							6319a2247ca
-	10615 multiwallet_rpc						e6abc3c24b3
+	10615 multiwallet_rpc-0.19					e6abc3c24b3	last=8c079fbff7c multiwallet_rpc
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	10554 zmq_wtx-0.20							76276a5d5b4	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
@@ -431,7 +431,7 @@ m	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
 	-     restore_blockmaxsize					77a6f199fa5
 	7107 qtnetworkport							bf7aeb32a35	last=1f37c87 origin-pull/7107/head
 m	7533 sendraw_force-0.20+knots				5999c6933c5  # Latest code now
-	11082 rwconf-0.20							3858d1e74e1	last=78bc86711a8 rwconf
+	11082 rwconf-0.20							3858d1e74e1	last=6095c42abe1 rwconf
 	7510 rwconf_gui								16293b1e43e
 		# 0.21 TODO: update neutrino option name
 	-    rwconf_gui_plus						be0027f92b2
