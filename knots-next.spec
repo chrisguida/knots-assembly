@@ -425,6 +425,7 @@ NM	19191 p2p_permission_download-0.20+knots	de02439902e
 	# Needs concept review: 19723 sdaftuar/2020-08-feature-negotiation
 	# Needs concept review: 19725 -  # [RPC] Add connection type to getpeerinfo, improve logs
 	19728 addr_relay_branching-0.14				5459fe3aab6	last=86d4cf42d97 sipa/202008_increase_addr_branching
+	TODO: --enable-endomorphism in libsecp256k1
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 m	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
