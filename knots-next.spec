@@ -16,6 +16,8 @@ TM	19097 bugfix_incl_qpainterpath-0.9			0521218641a
 	16564 -										7e9fe94ce00	last=9a19c9ada5  # Always define the raii_event_tests test suite
 	# TODO: Check build with -fno-common
 	19403 bugfix_conf_builtin_clzl-0.18			192a1904a55
+	FIXME: Don't override with -O3 in secp256k1
+		OTOH, maybe it doesn't matter since Gentoo uses system libsecp256k1
 @0.20.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
