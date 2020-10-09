@@ -1,11 +1,10 @@
 timestamp 2020-08-15 06:18:02
-#lastapply no-merge
+lastapply no-merge
 
 #.. checked up to PR #19728 / gui #61
 
-checkout bf0dc356ac4
+checkout origin/master
 @0.20.x-syslibs
-TM	19097 bugfix_incl_qpainterpath-0.9			0521218641a
 	5872 subdir_incl_compat						500e007903f
 	2241 sys_leveldb							1417948c866
 	5416 sys_libsecp256k1						c5a440728e9
@@ -68,7 +67,6 @@ TM	19097 bugfix_incl_qpainterpath-0.9			0521218641a
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	16525 rpc_unsigned_txver-0.18				e174d4d331c	last=e80259f197 matt/2019-07-unsigned-tx-ver
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
-TM	17946 fix_gbt_buried						8c07dc5fe74
 	18095 -										c6dfc3206fd	last=6307dfa87e3  # Fix crashes and infinite loop in ListWalletDir()
 		FIXME: Apply f4329475195
 	18133 bugfix_qvalidlineedit					49b42b1e149
@@ -79,7 +77,7 @@ TM	17946 fix_gbt_buried						8c07dc5fe74
 	18335 cli_svcunavail-0.20					d87686f9b3a	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18452 fix_waitfor-0.20						15cdebdf117	last=da73f1513a6
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
-m	18467 settxfee_maxtxfee-0.20				595bcdd3efc  # rpc: Improve documentation and return value of settxfee
+	18467 settxfee_maxtxfee-0.20				595bcdd3efc  # rpc: Improve documentation and return value of settxfee
 	18729 intro_dont_change_user_prune			927b68d75c4
 	18766 blocksonly_no_feeest-0.20				4c85e2551bc	last=300bf14002f
 		# diff-minimised
@@ -91,17 +89,13 @@ m	18467 settxfee_maxtxfee-0.20				595bcdd3efc  # rpc: Improve documentation and 
 	18896 bugfix_gui_pr18896-0.17				739fce2ba5d	last=1e9bfd4926a
 	18956 win_min_version_flag-0.18				abbd8dbc2cd
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
-TM	18982 bugfix_walletnotify_conflict-0.20		df79d6c40bb	last=7eaf86d3bfc
 	# Conflicts with #17828? 18990 logmempoolrej-0.20
 	18993 gui_console_longinput-0.8				dda663e4130	last=fc6a637a013  # qt: increase console command max length #18993
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs concept ack & care: 19011 jonasschnelli:2020/05/guilocks
 	19169 rpc_listunspent_optscheck-0.15		0c9dd37a207	last=a99a3c0bd6d  # rpc: Validate provided keys for query_options parameter in listunspent
-TM	19215 psbt_segwit_fix-0.20					064473d40d3	last=836d6fc375a achow101/psbt-segwit-fixes
-		# NOTE: Diff-minimised
 	19237 pubkey_size_check-0.20				56a158b263b	last=37ae687f95c elichai/2020-06-pubkey
 	19241 help_checkpoint_num					c28c15830f9
-NM	19243 misbehaving_limit-0.20				b5a319968c8	last=7f1e47de55e misbehaving_limit
 	# Needs review: 19289 promag:2020-06-wallet-less-locks
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
@@ -390,7 +384,6 @@ NM	19243 misbehaving_limit-0.20				b5a319968c8	last=7f1e47de55e misbehaving_limi
 	# Depends on refactor: 19137 achow101/dumpwalletrecords
 	19142 verifydb_lv4_interrupt-0.20			c3c96c16cd1
 		# Diff-minimised
-NM	19191 p2p_permission_download-0.20+knots	de02439902e
 	19191 p2p_permission_download-0.20.1+knots	55fb5d4ac1c	last=fa0540cd46e marco/2006-netPerDow
 		# IMPORTANT: Avoid conflicts with PF_ADDR or other permission flags (moved to 1<<18)
 		# Held back 111109a1e79...fa0540cd46e (help doc updates)
@@ -430,10 +423,10 @@ NM	19191 p2p_permission_download-0.20+knots	de02439902e
 	TODO: --enable-endomorphism in libsecp256k1
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
-m	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
+	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
 	-     restore_blockmaxsize					77a6f199fa5
 	7107 qtnetworkport							bf7aeb32a35	last=1f37c87 origin-pull/7107/head
-m	7533 sendraw_force-0.20+knots				5999c6933c5  # Latest code now
+	7533 sendraw_force-0.20+knots				5999c6933c5  # Latest code now
 	11082 rwconf-0.20							3858d1e74e1	last=6095c42abe1 rwconf
 	7510 rwconf_gui								16293b1e43e
 		# 0.21 TODO: update neutrino option name
