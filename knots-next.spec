@@ -12,9 +12,7 @@ checkout origin/master
 	13789 bugfix_asm_pragmas					369a7f5afa3
 	-     bugfix_asm_leveldb_check				02dc65eba04
 	15155 test_external_bcli					9de9dca3491
-	# TODO: Check build with -fno-common
-	FIXME: Don't override with -O3 in secp256k1
-		OTOH, maybe it doesn't matter since Gentoo uses system libsecp256k1
+	# Needs review: 20121 secp256k1_allow_bignum
 @0.20.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
@@ -370,6 +368,7 @@ checkout origin/master
 #TODO: check for 'false' instead of ALLOW_ANY in addArgs
 #TODO: Check that we aren't deprcating anything in Core
 #TODO: verify src tarball includes rendered_icons incl nsis-header
+# TODO: Check build with -fno-common
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
 	n/a  (bump_version=Knots:20200815)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
