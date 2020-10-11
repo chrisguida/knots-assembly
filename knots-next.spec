@@ -9,7 +9,7 @@ checkout origin/master
 	2241 sys_leveldb							1417948c866
 	5416 sys_libsecp256k1						c5a440728e9
 	7485 sys_univalue_def						b9b4cf77ff4
-	13789 bugfix_asm_pragmas-0.20				369a7f5afa3	last=14337d0d80b bugfix_asm_pragmas
+	13789 bugfix_asm_pragmas					369a7f5afa3
 	-     bugfix_asm_leveldb_check				02dc65eba04
 	15155 test_external_bcli					9de9dca3491
 	# TODO: Check build with -fno-common
@@ -22,7 +22,7 @@ checkout origin/master
 	17402 travis_ppc64							aa3052ac519	last=1d684f05341 elichai/2019-11-powerpc64
 	18750 ignore_external_warnings-0.20+knots	29118b6ad18	last=ec1ea76247e
 # FIXES:
-	18818 fix_gitian_src_202004-0.20			57102d3df4c	last=3897f3a2ec0 fix_gitian_src_202004
+	18818 fix_gitian_src_202004					57102d3df4c
 		# +part of #18741 (NOTE: now merged!)
 	18902 fix_release_tarball-0.20				3d6e49e807e	last=83ecd1b15e8 fix_gitdir_again
 	18427 2020mingwthrd-mini					380c86e8d16	last=7fe49671dd4 2020mingwthrd
@@ -151,7 +151,7 @@ checkout origin/master
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 		# NOTE: Competing with #15341
-	12677 listunspent_ancestorinfo-0.20			b5d1f97cb72	last=db9baad856a listunspent_ancestorinfo
+	12677 listunspent_ancestorinfo				b5d1f97cb72
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	# TODO ? 12792 w/ renamed param
@@ -209,7 +209,7 @@ checkout origin/master
 		# OR: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram-0.20					6476c61e5dc	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
-	15861 restore_vbits_warning-0.20			ef496a36c32 last=9de382aae41 restore_vbits_warning
+	15861 restore_vbits_warning					ef496a36c32
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
 	# Needs QA/review: 15946 jonasschnelli:2019/05/prune_blockfilter
 		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
@@ -296,7 +296,7 @@ checkout origin/master
 	18689 rpc_dumptxoutset_hr-0.20				aa7b71901bd	last=82046cf7fa3
 	18722 O_addrman_unordered_map-0.20			e7fba4623d9	last=d6e782174ec
 	18728 intro_prune_size						ee19f9b631f
-	19117 rpc_getrpcwhitelist-0.20				e5201e7568a	last=94fad2edec5 rpc_getrpcwhitelist
+	19117 rpc_getrpcwhitelist					e5201e7568a
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-0.20+knots	c4e1b0ecbe6
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
@@ -329,7 +329,7 @@ checkout origin/master
 	-     restore_blockmaxsize					77a6f199fa5
 	7107 qtnetworkport							bf7aeb32a35	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.20+knots				5999c6933c5  # Latest code now
-	11082 rwconf-0.20							3858d1e74e1	last=6095c42abe1 rwconf
+	11082 rwconf								3858d1e74e1
 	7510 rwconf_gui								16293b1e43e
 		# 0.21 TODO: update neutrino option name
 	-    rwconf_gui_plus						be0027f92b2
