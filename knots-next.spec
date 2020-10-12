@@ -18,11 +18,11 @@ checkout origin/master
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							701d4ca9a34
 	17402 travis_ppc64							aa3052ac519	last=1d684f05341 elichai/2019-11-powerpc64
-	18750 ignore_external_warnings-0.20+knots	29118b6ad18	last=ec1ea76247e
+	18750 -										29118b6ad18	last=359870798ed  # ignore_external_warnings
+		# TODO: Address my own review comments if vasild doesn't in time
 # FIXES:
 	18818 fix_gitian_src_202004					57102d3df4c
-		# +part of #18741 (NOTE: now merged!)
-	18902 fix_release_tarball-0.20				3d6e49e807e	last=83ecd1b15e8 fix_gitdir_again
+	18902 fix_gitdir_again						3d6e49e807e
 	18427 2020mingwthrd-mini					380c86e8d16	last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				e32605dd3c2
 	17828 practicalswift/log-categories			7a40b3433d6	last=04960621582 practicalswift/log-categories
