@@ -18,20 +18,19 @@ checkout origin/master
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							701d4ca9a34
 	17402 travis_ppc64							aa3052ac519	last=1d684f05341 elichai/2019-11-powerpc64
-	18750 -										29118b6ad18	last=359870798ed  # ignore_external_warnings
+	18750 -										29118b6ad18	last=ba8950ee013  # ignore_external_warnings
 		# TODO: Address my own review comments if vasild doesn't in time
 # FIXES:
 	18818 fix_gitian_src_202004					57102d3df4c
 	18902 fix_gitdir_again						3d6e49e807e
 	18427 2020mingwthrd-mini					380c86e8d16	last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				e32605dd3c2
-	17828 practicalswift/log-categories			7a40b3433d6	last=04960621582 practicalswift/log-categories
-		# NOTE: conflicting(?) #18990 & #19526 got merged
+	17828 p2p_log_categories					7a40b3433d6	last=04960621582 practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		a57f6aa8b6b	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					f1de252e1b4
 	9524 marco/Mf1701-qaPruning					bd414d85961	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					7b23b0d08e7
-	14485 fadvise-0.20+knots					479d173ba1b	last=c063994a14f fadvise
+	14485 fadvise								479d173ba1b
 		# Was #12491
 	14501 fsync_dir								fc8469acb68
 		# Was #12696
@@ -52,24 +51,23 @@ checkout origin/master
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
-	18095 -										c6dfc3206fd	last=6307dfa87e3  # Fix crashes and infinite loop in ListWalletDir()
-		FIXME: Apply f4329475195
+	18095 -										c6dfc3206fd	last=2f06e9d12bb  # Fix crashes and infinite loop in ListWalletDir()
 	18133 bugfix_qvalidlineedit					49b42b1e149
 	18194 bugfix_gui_edit_sendaddr-mini			9fada3c674d	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs work: 18189 -  # Add error handling to all boost filesystem functions
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
-	18335 cli_svcunavail-0.20					d87686f9b3a	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
+	18335 -										d87686f9b3a	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18729 intro_dont_change_user_prune			927b68d75c4
-	18766 blocksonly_no_feeest-0.20				4c85e2551bc	last=300bf14002f
+	18766 blocksonly_no_feeest-0.21				4c85e2551bc	last=4105c63a67a
 		# diff-minimised
-		# HELD BACK 33ca3590243...300bf14002f due to refactor complication
+		# HELD BACK 33ca3590243...4105c63a67a due to refactor complication
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
-	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=4f0cbc4bc74 bugfix_listwalletdir_errors
+	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=1e77a8d5a4f bugfix_listwalletdir_errors
 	19419 listwalletdir_skip_data-0.20+knots	c25545c6d7c	last=caa418440dd
 		# NOTE: modified to use std::set and diff-minimise
 		FIXME: Apply f4329475195
