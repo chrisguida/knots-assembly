@@ -68,15 +68,15 @@ checkout origin/master
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
 	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=1e77a8d5a4f bugfix_listwalletdir_errors
-	19419 listwalletdir_skip_data-0.20+knots	c25545c6d7c	last=caa418440dd
+	19419 listwalletdir_skip_data-0.21+knots	c25545c6d7c	last=3f9cc0cd736
 		# NOTE: modified to use std::set and diff-minimise
-		FIXME: Apply f4329475195
+		# NOTE: added default "blocks" dir to exclusions
 	# Needs review: 19434 promag:2020-06-remote-disconnect
 	# Needs review: g18    hebasto:200701-peer
-	g20   bugfix_intro_tooltipwrap-0.17			71aa9003e5c	last=6ed4bcabc1a hebasto-g/200702-tooltip
-	g39   gui_recvaddr_defaultbtn-0.14			0d641d4bd1d	last=4ec49f8d1e2 hebasto-g/200721-prim
+	g20   hebasto-g/200702-tooltip				71aa9003e5c	last=6ed4bcabc1a
+	g39   hebasto-g/200721-prim					0d641d4bd1d	last=4ec49f8d1e2
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
-	g43   bugfix_encrypt_menu_state-0.20		ad43955a127	last=20c9e035543 hebasto-g/200803-encrypt
+	g43   hebasto-g/200803-encrypt				ad43955a127	last=20c9e035543
 	# Needs review: g59 hebasto-g/200814-rpc
 		# NOTE: WAS Needs fix?? 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 # FUNCTIONALITY:
