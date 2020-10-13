@@ -74,7 +74,6 @@ checkout origin/master
 	# Needs review: 19434 promag:2020-06-remote-disconnect
 	# Needs review: g18    hebasto:200701-peer
 	g20   hebasto-g/200702-tooltip				71aa9003e5c	last=6ed4bcabc1a
-	g39   hebasto-g/200721-prim					0d641d4bd1d	last=4ec49f8d1e2
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	g43   hebasto-g/200803-encrypt				ad43955a127	last=20c9e035543
 	# Needs review: g59 hebasto-g/200814-rpc
@@ -314,9 +313,7 @@ checkout origin/master
 	# Needs work: 19485 # torcontrol: Create also a V3 ed25519-V3 onion address.
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
 	# Needs work: g4    Sjors:2019/08/hww-qt
-	g6    peerdetails_no_trunc-0.18				1300fdee19c
 	# Needs work: g27   # top to bottom UI layout
-	g34   gui_p2ppermissions-0.20				5e1ae75f651	last=784ef8be41c
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	TODO: --enable-endomorphism in libsecp256k1
 # Non-upstreamed functionality:
