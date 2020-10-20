@@ -1,7 +1,7 @@
 timestamp 2020-08-15 06:18:02
 lastapply no-merge
 
-#.. checked up to PR #19728 / gui #61
+#.. checked up to PR #19825 / gui #61
 
 checkout origin/master
 @0.20.x-syslibs
@@ -76,6 +76,8 @@ checkout origin/master
 	g43   hebasto-g/200803-encrypt				ad43955a127	last=20c9e035543
 	# Needs review: g59 hebasto-g/200814-rpc
 		# NOTE: WAS Needs fix?? 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
+    # Needs review? 19753 -  # p2p: don't add AlreadyHave transactions to recentRejects
+    19793 ryanofsky/pr/badsalv
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				9dbb4bb8313
 	-     restore_linux32						275c3f2b076
@@ -315,6 +317,11 @@ checkout origin/master
 	# Needs work: g27   # top to bottom UI layout
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	TODO: --enable-endomorphism in libsecp256k1
+	19762 ryanofsky/pr/named
+	# Needs review and triage (fix or feature?): 19763 vasild:only_relay_to_unaware
+	19776 -  # net, rpc: expose high bandwidth mode state via getpeerinfo
+	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
+	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
