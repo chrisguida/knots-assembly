@@ -18,8 +18,6 @@ checkout origin/master
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							701d4ca9a34
 	17402 travis_ppc64							aa3052ac519	last=1d684f05341 elichai/2019-11-powerpc64
-	18750 -										29118b6ad18	last=ba8950ee013  # ignore_external_warnings
-		# TODO: Address my own review comments if vasild doesn't in time
 # FIXES:
 	18818 fix_gitian_src_202004					57102d3df4c
 	18902 fix_gitdir_again						3d6e49e807e
@@ -51,7 +49,7 @@ checkout origin/master
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
-	18095 -										c6dfc3206fd	last=2f06e9d12bb  # Fix crashes and infinite loop in ListWalletDir()
+	18095 -										c6dfc3206fd	last=6904a309194  # Fix crashes and infinite loop in ListWalletDir()
 	18133 bugfix_qvalidlineedit					49b42b1e149
 	18194 bugfix_gui_edit_sendaddr-mini			9fada3c674d	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
@@ -67,7 +65,7 @@ checkout origin/master
 	# Needs concept review & possible Knots adjustments: 19001 qt: bugfix unsupported QLocale languages
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
-	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=1e77a8d5a4f bugfix_listwalletdir_errors
+	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=9f74b7b3beb bugfix_listwalletdir_errors
 	19419 listwalletdir_skip_data-0.21+knots	c25545c6d7c	last=3f9cc0cd736
 		# NOTE: modified to use std::set and diff-minimise
 		# NOTE: added default "blocks" dir to exclusions
@@ -184,6 +182,7 @@ checkout origin/master
 	15423 tor_socks_port						b7a42a9a040
 	15428 tor_gui_pairing-0.20+knots			be06cae0e71	# latest code now
 	15421 tor_subprocess-0.20+knots				7f54810b99d	last=f2add182487 tor_subprocess
+		NOTE: we have boost::process now?
 	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Waiting to be non-WIP: 15487 [WIP] descriptor based wallet serialization and import
