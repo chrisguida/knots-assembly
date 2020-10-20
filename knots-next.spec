@@ -1,7 +1,7 @@
 timestamp 2020-08-15 06:18:02
 lastapply no-merge
 
-#.. checked up to PR #19825 / gui #61
+#.. checked up to PR #19861 / gui #61
 
 checkout origin/master
 @0.20.x-syslibs
@@ -24,6 +24,7 @@ checkout origin/master
 	18427 2020mingwthrd-mini					380c86e8d16	last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				e32605dd3c2
 	17828 p2p_log_categories					7a40b3433d6	last=04960621582 practicalswift/log-categories
+	# Needs concept ACK: 19832 hebasto/200829-log
 	14968 laanwj/2018_12_http_bind_error		a57f6aa8b6b	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					f1de252e1b4
 	9524 marco/Mf1701-qaPruning					bd414d85961	last=88883ae13d marco/Mf1701-qaPruning
@@ -322,6 +323,8 @@ checkout origin/master
 	19776 -  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
+	19847 promag/2020-08-gettxoutproof
+	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
