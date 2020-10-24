@@ -1,7 +1,7 @@
 timestamp 2020-08-15 06:18:02
 lastapply no-merge
 
-#.. checked up to PR #19900 / gui #61
+#.. checked up to PR #20008 / gui #61
 
 checkout origin/master
 @0.20.x-syslibs
@@ -25,6 +25,7 @@ checkout origin/master
 	18490 bugfix_symcheck_pe_case				e32605dd3c2
 	17828 p2p_log_categories					7a40b3433d6	last=04960621582 practicalswift/log-categories
 	# Needs concept ACK: 19832 hebasto/200829-log
+	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 	14968 laanwj/2018_12_http_bind_error		a57f6aa8b6b	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					f1de252e1b4
 	9524 marco/Mf1701-qaPruning					bd414d85961	last=88883ae13d marco/Mf1701-qaPruning
@@ -83,6 +84,7 @@ checkout origin/master
     # Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
     # Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
     # Needs work: 19888 fjahr/genesisblockstats
+    20080 hebasto/201004-strip
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				9dbb4bb8313
 	-     restore_linux32						275c3f2b076
