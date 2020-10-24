@@ -1,7 +1,7 @@
 timestamp 2020-08-15 06:18:02
 lastapply no-merge
 
-#.. checked up to PR #20008 / gui #61
+#.. checked up to PR #20233 / gui #61
 
 checkout origin/master
 @0.20.x-syslibs
@@ -12,7 +12,10 @@ checkout origin/master
 	13789 bugfix_asm_pragmas					369a7f5afa3
 	-     bugfix_asm_leveldb_check				02dc65eba04
 	15155 test_external_bcli					9de9dca3491
-	# Needs review: 20121 secp256k1_allow_bignum
+	20121 secp256k1_allow_bignum
+	20156 opt_sqlite
+	20202 opt-sqlite-bdb
+        FIXME: Make sure tests skip properly per review concerns
 @0.20.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
@@ -85,6 +88,10 @@ checkout origin/master
     # Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
     # Needs work: 19888 fjahr/genesisblockstats
     20080 hebasto/201004-strip
+    20120 jonatack/fix-getnetworkinfo-empty-networks
+    # Needs review: 20196 vasild/fix_GetListenPort
+    20220 jonatack/explicit-feerate-follow-ups
+        FIXME: Needs review / only fixes?
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				9dbb4bb8313
 	-     restore_linux32						275c3f2b076
@@ -317,6 +324,7 @@ checkout origin/master
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 	19463 prune_locks-0.20+knots				50b13a85c7a	last=f4b2ed65ea5 prune_locks
+        FIXME: ensure #20205 is merged, or ban sqlite wallets? :/
 	# Needs work: 19476 promag:2020-07-rpc-mempoolchanges
 	# Needs work: 19485 # torcontrol: Create also a V3 ed25519-V3 onion address.
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
@@ -332,6 +340,13 @@ checkout origin/master
 	19847 promag/2020-08-gettxoutproof
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 	19873 mempressure
+	# Needs serious work: 20139 -  # "Removed unused warning and formatted RPC result" supposedly
+	# Needs work: 20154 kallewoof/202010-bip322
+	# Needs work: g#86 hebasto/200902-tor
+	# Needs work: 20172 hebasto/201016-tor
+	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
+	20226 -  # wallet, rpc: add listdescriptors command
+        TODO: make sure it's sane
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
