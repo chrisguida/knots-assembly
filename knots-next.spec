@@ -1,7 +1,7 @@
 timestamp 2020-08-15 06:18:02
 lastapply no-merge
 
-#.. checked up to PR #20233 / gui #61
+#.. checked up to PR #20233 / gui #109
 
 checkout origin/master
 @0.20.x-syslibs
@@ -92,6 +92,10 @@ checkout origin/master
     # Needs review: 20196 vasild/fix_GetListenPort
     20220 jonatack/explicit-feerate-follow-ups
         FIXME: Needs review / only fixes?
+    g87   hebasto/200910-mono
+        FIXME: remove size assignment
+    g107  hebasto/201023-geometry
+        FIXME: needs fixing
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				9dbb4bb8313
 	-     restore_linux32						275c3f2b076
@@ -113,6 +117,8 @@ checkout origin/master
 	9152 sweepprivkeys							3c24aa35b17
 	9245 ionice									13605834424
 	-    ionice_win								ca85c802d4c
+	g108 jonasschnelli/2020/03/mempool_graph
+        TODO: combine with below somehow?
 	8501 old_stats_rpc-0.20						406c8006f29	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
 	8550 old_stats_qt-0.20						402b6f3f1a9	last=63fb11652f
@@ -342,11 +348,15 @@ checkout origin/master
 	19873 mempressure
 	# Needs serious work: 20139 -  # "Removed unused warning and formatted RPC result" supposedly
 	# Needs work: 20154 kallewoof/202010-bip322
-	# Needs work: g#86 hebasto/200902-tor
+	# Needs work: g86 hebasto/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
 	20226 -  # wallet, rpc: add listdescriptors command
         TODO: make sure it's sane
+    g90  RandyMcMillan/debugwindow-ui
+        TODO: Diff-minimise
+    g96  Sjors/2020/09/create_wallet
+        TODO: review
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
