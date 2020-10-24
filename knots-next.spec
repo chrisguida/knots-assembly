@@ -1,7 +1,7 @@
 timestamp 2020-08-15 06:18:02
 lastapply no-merge
 
-#.. checked up to PR #19861 / gui #61
+#.. checked up to PR #19900 / gui #61
 
 checkout origin/master
 @0.20.x-syslibs
@@ -79,6 +79,10 @@ checkout origin/master
 		# NOTE: WAS Needs fix?? 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
     # Needs review? 19753 -  # p2p: don't add AlreadyHave transactions to recentRejects
     19793 ryanofsky/pr/badsalv
+    # Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
+    # Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
+    # Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
+    # Needs work: 19888 fjahr/genesisblockstats
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				9dbb4bb8313
 	-     restore_linux32						275c3f2b076
@@ -325,6 +329,7 @@ checkout origin/master
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	19847 promag/2020-08-gettxoutproof
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
+	19873 mempressure
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
