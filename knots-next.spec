@@ -1,10 +1,10 @@
-timestamp 2020-08-15 06:18:02
+timestamp 2020-10-24 08:12:46
 lastapply no-merge
 
 #.. checked up to PR #20233 / gui #109
 
 checkout origin/master
-@0.20.x-syslibs
+@0.21.x-syslibs
 	5872 subdir_incl_compat						500e007903f
 	2241 sys_leveldb							1417948c866
 	5416 sys_libsecp256k1						c5a440728e9
@@ -16,7 +16,7 @@ checkout origin/master
 	20156 opt_sqlite
 	20202 opt-sqlite-bdb
         FIXME: Make sure tests skip properly per review concerns
-@0.20.x-knots
+@0.21.x-knots
 # TESTS:
 	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
 	-     lint_relaxer							701d4ca9a34
@@ -406,7 +406,7 @@ checkout origin/master
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
-	n/a  (bump_version=Knots:20200815)			c38be07358d
+	n/a  (bump_version=Knots:20201024)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=122a503033f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
