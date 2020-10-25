@@ -5,6 +5,7 @@ lastapply no-merge
 
 checkout origin/master
 @0.21.x-syslibs
+	20121 secp256k1_allow_bignum
 	5872 subdir_incl_compat						500e007903f
 	2241 sys_leveldb							1417948c866
 	5416 sys_libsecp256k1						c5a440728e9
@@ -12,10 +13,9 @@ checkout origin/master
 	13789 bugfix_asm_pragmas					369a7f5afa3
 	-     bugfix_asm_leveldb_check				02dc65eba04
 	15155 test_external_bcli					9de9dca3491
-	20121 secp256k1_allow_bignum
 	20156 opt_sqlite
-	20202 opt-sqlite-bdb
-        FIXME: Make sure tests skip properly per review concerns
+	# TODO: 20202 achow101/opt-sqlite-bdb
+        #FIXME: Make sure tests skip properly per review concerns
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							701d4ca9a34
@@ -60,9 +60,9 @@ checkout origin/master
 	18335 -										d87686f9b3a	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18729 intro_dont_change_user_prune			927b68d75c4
-	18766 blocksonly_no_feeest-0.21				4c85e2551bc	last=4105c63a67a
+	18766 blocksonly_no_feeest-0.21				4c85e2551bc	last=4aaad74c4c8
 		# diff-minimised
-		# HELD BACK 33ca3590243...4105c63a67a due to refactor complication
+		# HELD BACK 33ca3590243...4aaad74c4c8 due to refactor complication
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
@@ -72,9 +72,7 @@ checkout origin/master
 		# NOTE: added default "blocks" dir to exclusions
 	# Needs review: 19434 promag:2020-06-remote-disconnect
 	# Needs review: g18    hebasto:200701-peer
-	g20   hebasto-g/200702-tooltip				71aa9003e5c	last=6ed4bcabc1a
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
-	g43   hebasto-g/200803-encrypt				ad43955a127	last=20c9e035543
 	# Needs review: g59 hebasto-g/200814-rpc
     # Needs review? 19753 -  # p2p: don't add AlreadyHave transactions to recentRejects
     19793 ryanofsky/pr/badsalv
