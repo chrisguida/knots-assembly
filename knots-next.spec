@@ -15,7 +15,7 @@ checkout origin/master
 	15155 test_external_bcli					9de9dca3491
 	20156 opt_sqlite
 	# TODO: 20202 achow101/opt-sqlite-bdb
-        #FIXME: Make sure tests skip properly per review concerns
+		#FIXME: Make sure tests skip properly per review concerns
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							701d4ca9a34
@@ -74,21 +74,21 @@ checkout origin/master
 	# Needs review: g18    hebasto:200701-peer
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs review: g59 hebasto-g/200814-rpc
-    # Needs review? 19753 -  # p2p: don't add AlreadyHave transactions to recentRejects
-    19793 ryanofsky/pr/badsalv
-    # Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
-    # Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-    # Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
-    # Needs work: 19888 fjahr/genesisblockstats
-    20080 hebasto/201004-strip
-    20120 jonatack/fix-getnetworkinfo-empty-networks
-    # Needs review: 20196 vasild/fix_GetListenPort
-    20220 jonatack/explicit-feerate-follow-ups
-        FIXME: Needs review / only fixes?
-    g87   hebasto/200910-mono
-        FIXME: remove size assignment
-    g107  hebasto/201023-geometry
-        FIXME: needs fixing
+	# Needs review? 19753 -  # p2p: don't add AlreadyHave transactions to recentRejects
+	19793 ryanofsky/pr/badsalv
+	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
+	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
+	# Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
+	# Needs work: 19888 fjahr/genesisblockstats
+	20080 hebasto/201004-strip
+	20120 jonatack/fix-getnetworkinfo-empty-networks
+	# Needs review: 20196 vasild/fix_GetListenPort
+	20220 jonatack/explicit-feerate-follow-ups
+		FIXME: Needs review / only fixes?
+	g87   hebasto/200910-mono
+		FIXME: remove size assignment
+	g107  hebasto/201023-geometry
+		FIXME: needs fixing
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				9dbb4bb8313
 	-     restore_linux32						275c3f2b076
@@ -110,7 +110,7 @@ checkout origin/master
 	9245 ionice									13605834424
 	-    ionice_win								ca85c802d4c
 	g108 jonasschnelli/2020/03/mempool_graph
-        TODO: combine with below somehow?
+		TODO: combine with below somehow?
 	8501 old_stats_rpc-0.20						406c8006f29	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
 	8550 old_stats_qt-0.20						402b6f3f1a9	last=63fb11652f
@@ -153,7 +153,7 @@ checkout origin/master
 	11803 bugfix_dumpwallet_hdkeypath			46b4bdc858b
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
-    # Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
+	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
 	12677 listunspent_ancestorinfo				b5d1f97cb72
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
@@ -226,7 +226,7 @@ checkout origin/master
 	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
 		# NOTE: Bumps boost version!
 	# Depends-on-16546: g4 Sjors:2019/08/hww-qt
-        # NOTE: was #16549
+		# NOTE: was #16549
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	16795 rpc_inferred_output_descriptors-0.20	593533e6b91	last=ef91078d672 instagibbs/decode_descriptor
@@ -252,8 +252,8 @@ checkout origin/master
 	16463 bip174_xpub-0.20+knots				8e6f8d3cc9c	last=ee0dd3ae1fc achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
 	16490 marco/1907-rpcMempoolWhyReplacable
-        TODO: Diff-minimise
-        TODO: Support Knots policies
+		TODO: Diff-minimise
+		TODO: Support Knots policies
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.20					bb71d390fea	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
@@ -282,8 +282,8 @@ checkout origin/master
 	18570 wallet_rpc_lastprocessedblock-0.20	5fb71e64dce	last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18789 achow101:create-unsigned-sendconfdialog
-        TODO: Resolve conflict with wallet_no_reuse
-        #OR these two:
+		TODO: Resolve conflict with wallet_no_reuse
+		#OR these two:
 		# 18655 achow101:split-bumpfeeaction
 		# 18656 achow101:make-unsigned-button
 	18689 rpc_dumptxoutset_hr-0.20				aa7b71901bd	last=82046cf7fa3
@@ -306,12 +306,12 @@ checkout origin/master
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 	19463 prune_locks-0.20+knots				50b13a85c7a	last=f4b2ed65ea5 prune_locks
-        FIXME: ensure #20205 is merged, or ban sqlite wallets? :/
+		FIXME: ensure #20205 is merged, or ban sqlite wallets? :/
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
-        # NOTE: Included in Android fork below?
+		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	TODO: --enable-endomorphism in libsecp256k1
 	19762 ryanofsky/pr/named
@@ -327,11 +327,11 @@ checkout origin/master
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
 	20226 -  # wallet, rpc: add listdescriptors command
-        TODO: make sure it's sane
-    g90  RandyMcMillan/debugwindow-ui
-        TODO: Diff-minimise
-    g96  Sjors/2020/09/create_wallet
-        TODO: review
+		TODO: make sure it's sane
+	g90  RandyMcMillan/debugwindow-ui
+		TODO: Diff-minimise
+	g96  Sjors/2020/09/create_wallet
+		TODO: review
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
