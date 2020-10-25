@@ -75,13 +75,14 @@ checkout origin/master
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs review: g59 hebasto-g/200814-rpc
 	# Needs review? 19753 -  # p2p: don't add AlreadyHave transactions to recentRejects
-	19793 ryanofsky/pr/badsalv
+	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
 	# Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
 	# Needs work: 19888 fjahr/genesisblockstats
-	20080 hebasto/201004-strip
-	20120 jonatack/fix-getnetworkinfo-empty-networks
+	20080 hebasto/201004-strip^								last=1c55140c395 hebasto/201004-strip
+		# NOTE: Held back trivial comment changes in final commit, to diff-minimise
+	20120 getnetworkinfo_skip_unsupp-0.21					last=7b5bd3102e0 jonatack/fix-getnetworkinfo-empty-networks
 	# Needs review: 20196 vasild/fix_GetListenPort
 	20220 jonatack/explicit-feerate-follow-ups
 		FIXME: Needs review / only fixes?
