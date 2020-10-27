@@ -89,14 +89,10 @@ checkout origin/master
 		#FIXME: Needs review / only fixes?
 	g87   hebasto-g/200910-mono								last=2e386cd3dd3
 # FUNCTIONALITY:
-	-     restore_win32-0.20+knots				9dbb4bb8313
+	-     restore_win32							9dbb4bb8313
 	-     restore_linux32						275c3f2b076
 		# NOTE: gitian only
-	# 0.21 TODO: #19751 comes out of #14066 below
-	14066 gitian_power64-0.20+knots				5d7416dc553	last=5155e99f455 gitian_power64
-	# Need #14066 ? due to:
-		#19525 z_separate_code-0.17					34141a5b841
-			# NOTE: Carries a commit from master #14066 to avoid bogus .plt security check on PPC64
+	14066 gitian_power64						5d7416dc553
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
