@@ -80,7 +80,7 @@ checkout origin/master
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
 	# Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
 	# Needs work: 19888 fjahr/genesisblockstats
-	20080 hebasto/201004-strip^								last=1c55140c395 hebasto/201004-strip
+	20080 hebasto/201004-strip^								last=ad5cef5dfdd hebasto/201004-strip
 		# NOTE: Held back trivial comment changes in final commit, to diff-minimise
 	20120 getnetworkinfo_skip_unsupp-0.21					last=7b5bd3102e0 jonatack/fix-getnetworkinfo-empty-networks
 	# Needs review: 20196 vasild/fix_GetListenPort
@@ -92,7 +92,7 @@ checkout origin/master
 	-     restore_win32							9dbb4bb8313
 	-     restore_linux32						275c3f2b076
 		# NOTE: gitian only
-	14066 gitian_power64						5d7416dc553
+	14066 gitian_power64-0.21+knots				5d7416dc553	last=622de1cc7e9 gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
