@@ -84,12 +84,10 @@ checkout origin/master
 		# NOTE: Held back trivial comment changes in final commit, to diff-minimise
 	20120 getnetworkinfo_skip_unsupp-0.21					last=7b5bd3102e0 jonatack/fix-getnetworkinfo-empty-networks
 	# Needs review: 20196 vasild/fix_GetListenPort
-	20220 jonatack/explicit-feerate-follow-ups
-		FIXME: Needs review / only fixes?
-	g87   hebasto/200910-mono
-		FIXME: remove size assignment
-	g107  hebasto/201023-geometry
-		FIXME: needs fixing
+	20250 rpcwallet_explicit_fixups
+	# or 20220 jonatack/explicit-feerate-follow-ups
+		#FIXME: Needs review / only fixes?
+	g87   hebasto-g/200910-mono								last=2e386cd3dd3
 # FUNCTIONALITY:
 	-     restore_win32-0.20+knots				9dbb4bb8313
 	-     restore_linux32						275c3f2b076
