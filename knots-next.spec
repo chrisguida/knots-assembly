@@ -109,9 +109,9 @@ checkout origin/master
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	10594 whitelist_outgoing-mini-0.20+knots	3cd212d495f	last=d465ea1e057 whitelist_outgoing
+	17167 whitelist_outgoing-mini-0.20+knots	3cd212d495f	last=d465ea1e057 whitelist_outgoing
 		#TODO: Split this up?
-		# NOTE: rebased in #17167
+		# NOTE: Originally #10594
 	14641 promag/2018-11-fundrawtransaction		33cd8edfcf1	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 		# NOTE: held back .gitignore nonsense change & relnotes
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
@@ -121,8 +121,8 @@ checkout origin/master
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	# TODO ? 12792 w/ renamed param
-	12911 rpc_sign_show_fees					97135294f97	last=47b2ba29df2 kallewoof/sign-show-fees
-		# NOTE: Rebased as #18479
+	18479 rpc_sign_show_fees					97135294f97	last=47b2ba29df2 kallewoof/sign-show-fees
+		# NOTE: Originally #12911
 		TODO: fix review nit
 	# Needs review and care (new index): 13014 jonasschnelli:2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
@@ -134,8 +134,8 @@ checkout origin/master
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	# wait for Core?: 14707  # [RPC] Include coinbase transactions in receivedby RPCs
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
-	15115 rm_send2self-mini						a5ff336f2ab	last=14bb8db698d rm_send2self
-		# NOTE: Rebased in gui#119
+	g119  rm_send2self-mini						a5ff336f2ab	last=14bb8db698d rm_send2self
+		# NOTE: Originally #15115
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
@@ -287,9 +287,9 @@ checkout origin/master
 		# Held back on old version due to conflict with GUI updates...
 	8550 old_stats_qt-0.20						402b6f3f1a9	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
-	9422 mempool_dat_extensible-0.20			ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
+	19488 mempool_dat_extensible-0.20			ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
 		# 0.21 TODO: adapt test/functional/mempool_compatibility.py
-		# Rebased in #19488
+		# Originally #9422
 	9504 dumpmasterprivkey-0.20					3b7a3f8ac6f	last=07fc81109a
 	9849 gui_netwatch							6319a2247ca
 	10615 multiwallet_rpc-0.19					e6abc3c24b3	last=8c079fbff7c multiwallet_rpc
