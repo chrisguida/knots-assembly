@@ -175,11 +175,7 @@ checkout origin/master
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	16795 rpc_inferred_output_descriptors-0.20	593533e6b91	last=ef91078d672 instagibbs/decode_descriptor
-	16807 bech32_error_detection-0.20+knots		9ba289863a6	last=54e107add41 meshcollider/201909_bech32_error_detection
-		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
-	-     gui_bech32_errpos-0.20+knots			4c26070eb13  # Latest code
 	# Needs review: 16981 LarryRuane:reindex-speedup
-	17034 psbt_ver_proprietary-0.20+knots		c688e87d5e5	last=ddaccbc7bbd achow101/bip174-extensions
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
 	17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options?
@@ -202,49 +198,25 @@ checkout origin/master
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.20					bb71d390fea	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
-	17636 guisettings-0.20						8319dbc82db	last=187f9684e03 emilengler/2019-11-guisettings
-		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
-		# (and removed release notes)
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	17955 gui_uri_paste-0.20+knots				5053da42d85	last=0139b428923 emilengler/2020-01-paste-bitcoin-uri-button
-	17958 rpc_getgeneralinfo-0.20+knots			4a3b2bf65d5	last=cdbd38df131  # getgeneralinfo RPC
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.19			e305c0a192e	last=9ed348ddea3 elichai/2020-01-siphash
 		# NOTE: Dropped benchmarks
-	18223 blockfilter_v0-0.19					84182b53513	last=5561e7a0c79
-		# NOTE: Don't enable with -blockfilterindex=1
-		# NOTE: Diff-minimised
-	18238 ajtowns/202002-bump-notfound			8c1f5a7139f	last=a204d1586ca ajtowns/202002-bump-notfound
 	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
-	# ---- BEGIN IN SEQUENCE ----
-	# NOW MERGED: 18574, 18653, 18691, 18724, 18594
-	19089 cli_getinfo_mwbalances-0.20+knots		9332257e9d8	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
-		FIXME: invisible conflcit with merged 19405 rpc_netinfo_conncount_inout-0.20+knots	78f560f7558	last=94a792cc19f jonatack/in-and-out-connections
-	19092 cli_getinfo_mw_total_balance-0.20+knots	b2bafd9cba3	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
-		# Held back s/several/multiple (& comment changes) because why bother
-	# ---- END IN SEQUENCE ----
-	18570 wallet_rpc_lastprocessedblock-0.20	5fb71e64dce	last=1e868bbbb1b
 	# Needs work? 18611 -  # cli: show default values in config args log
-	18789 achow101:create-unsigned-sendconfdialog
-		TODO: Resolve conflict with wallet_no_reuse
-		#OR these two:
-		# 18655 achow101:split-bumpfeeaction
-		# 18656 achow101:make-unsigned-button
 	18689 rpc_dumptxoutset_hr-0.20				aa7b71901bd	last=82046cf7fa3
 	18722 O_addrman_unordered_map-0.20			e7fba4623d9	last=d6e782174ec
-	18728 intro_prune_size						ee19f9b631f
-	19117 rpc_getrpcwhitelist					e5201e7568a
-		# NOTE: Was #18827 before any Knots merge
-	-     getrpcwhitelist_wallets-0.20+knots	c4e1b0ecbe6
-		# NOTE: when #19118..#19120 get merged, add 71294ee9799
+	g125  intro_prune_size						ee19f9b631f
+		# NOTE: Originally #18728
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	TODO: Check for held-back of merged 18991 p2p_getaddr_cache-0.20+knots			17f457ef4d6	last=3bd67ba5a4e  # Cache responses to GETADDR to prevent topology leaks
 		# Held back removal of addr from implicit flags (rebased in b78f81553d8a4)
-	19093 rpc_testmempoolaccept_fee-0.20		f0de7aa23d5	last=c9781e92a21  # RPC: testmempoolaccept returns transaction fee
 	19136 achow101:export-descriptor
 	19137 achow101/dumpwalletrecords
+		TODO: can we save/restore the wallet id?
 	TODO: Check for permission flag conflicts in merged 19191 p2p_permission_download-0.20.1+knots	55fb5d4ac1c	last=fa0540cd46e marco/2006-netPerDow
 		# IMPORTANT: Avoid conflicts with PF_ADDR or other permission flags (moved to 1<<18)
 	19242 uaappend								d4ad2f71f8b
@@ -324,6 +296,35 @@ checkout origin/master
 	17795 gui_console_ctrl_d-0.20+knots			47d8d7a7209
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					ef496a36c32
+	16807 bech32_error_detection-0.20+knots		9ba289863a6	last=54e107add41 meshcollider/201909_bech32_error_detection
+		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
+	-     gui_bech32_errpos-0.20+knots			4c26070eb13  # Latest code
+	17034 psbt_ver_proprietary-0.20+knots		c688e87d5e5	last=ddaccbc7bbd achow101/bip174-extensions
+	17636 guisettings-0.20						8319dbc82db	last=187f9684e03 emilengler/2019-11-guisettings
+		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
+		# (and removed release notes)
+	17958 rpc_getgeneralinfo-0.20+knots			4a3b2bf65d5	last=cdbd38df131  # getgeneralinfo RPC
+	18223 blockfilter_v0-0.19					84182b53513	last=5561e7a0c79
+		# NOTE: Don't enable with -blockfilterindex=1
+		# NOTE: Diff-minimised
+	18238 ajtowns/202002-bump-notfound			8c1f5a7139f	last=a204d1586ca ajtowns/202002-bump-notfound
+	# ---- BEGIN IN SEQUENCE ----
+	# NOW MERGED: 18574, 18653, 18691, 18724, 18594
+	19089 cli_getinfo_mwbalances-0.20+knots		9332257e9d8	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+		FIXME: invisible conflcit with merged 19405 rpc_netinfo_conncount_inout-0.20+knots	78f560f7558	last=94a792cc19f jonatack/in-and-out-connections
+	19092 cli_getinfo_mw_total_balance-0.20+knots	b2bafd9cba3	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+		# Held back s/several/multiple (& comment changes) because why bother
+	# ---- END IN SEQUENCE ----
+	18570 wallet_rpc_lastprocessedblock-0.20	5fb71e64dce	last=1e868bbbb1b
+	18789 achow101:create-unsigned-sendconfdialog
+		TODO: Resolve conflict with wallet_no_reuse
+		#OR these two:
+		# 18655 achow101:split-bumpfeeaction
+		# 18656 achow101:make-unsigned-button
+	19117 rpc_getrpcwhitelist					e5201e7568a
+		# NOTE: Was #18827 before any Knots merge
+	-     getrpcwhitelist_wallets-0.20+knots	c4e1b0ecbe6
+		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 ljr
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
