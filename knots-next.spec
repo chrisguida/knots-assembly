@@ -13,7 +13,6 @@ checkout origin/master
 	13789 bugfix_asm_pragmas					369a7f5afa3
 	-     bugfix_asm_leveldb_check				02dc65eba04
 	15155 test_external_bcli					9de9dca3491
-	20156 opt_sqlite
 	# TODO: 20202 achow101/opt-sqlite-bdb
 		#FIXME: Make sure tests skip properly per review concerns
 @0.21.x-knots
@@ -74,7 +73,6 @@ checkout origin/master
 	# Needs review: g18    hebasto:200701-peer
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs review: g59 hebasto-g/200814-rpc
-	# Needs review? 19753 -  # p2p: don't add AlreadyHave transactions to recentRejects
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
