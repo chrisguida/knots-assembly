@@ -65,7 +65,7 @@ checkout origin/master
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
-	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=9f74b7b3beb bugfix_listwalletdir_errors
+	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=44c0bc31f4f bugfix_listwalletdir_errors
 	19419 listwalletdir_skip_data-0.21+knots	c25545c6d7c	last=3f9cc0cd736
 		# NOTE: modified to use std::set and diff-minimise
 		# NOTE: added default "blocks" dir to exclusions
@@ -97,7 +97,7 @@ checkout origin/master
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	g108 jonasschnelli/2020/03/mempool_graph
+	g108 jonas/2020/03/mempool_graph
 		TODO: combine with below somehow?
 	# not ready yet: 9483 SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
@@ -122,7 +122,7 @@ checkout origin/master
 	18479 rpc_sign_show_fees					97135294f97	last=47b2ba29df2 kallewoof/sign-show-fees
 		# NOTE: Originally #12911
 		TODO: fix review nit
-	# Needs review and care (new index): 13014 jonasschnelli:2018/04/txindex_prune
+	# Needs review and care (new index): 13014 jonas/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs work: 13989 add avx512 instrinsic
 	# Needs review: 13990 WIP: allow fee estimation to work with lower fees
@@ -151,7 +151,7 @@ checkout origin/master
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram-0.20					6476c61e5dc	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
-	# Needs QA/review: 15946 jonasschnelli:2019/05/prune_blockfilter
+	# Needs QA/review: 15946 jonas/2019/05/prune_blockfilter
 		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
 	17463 gui_custom_sendyes					06ef790c0b9
 	15987 wallet_no_reuse-0.21+knots			fcee9d7e1ff
@@ -201,7 +201,7 @@ checkout origin/master
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.19			e305c0a192e	last=9ed348ddea3 elichai/2020-01-siphash
 		# NOTE: Dropped benchmarks
-	# Needs work/review/completion: 18242 jonasschnelli:2020/03/net_v2
+	# Needs work/review/completion: 18242 jonas/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18689 rpc_dumptxoutset_hr-0.20				aa7b71901bd	last=82046cf7fa3
