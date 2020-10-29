@@ -99,53 +99,21 @@ checkout origin/master
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	8751 sort-multisigs-0.20					b2b72634313	last=e11cb50a09  # multisig sorting
-		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
-	9152 sweepprivkeys							3c24aa35b17
-	9245 ionice									13605834424
-	-    ionice_win								ca85c802d4c
 	g108 jonasschnelli/2020/03/mempool_graph
 		TODO: combine with below somehow?
-	8501 old_stats_rpc-0.20						406c8006f29	last=7af0ea43b2
-		# Held back on old version due to conflict with GUI updates...
-	8550 old_stats_qt-0.20						402b6f3f1a9	last=63fb11652f
-		# Held back on old version due to conflict with RPC updates...
-	9422 mempool_dat_extensible-0.20			ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
-		# 0.21 TODO: adapt test/functional/mempool_compatibility.py
-		# Rebased in #19488
-	9504 dumpmasterprivkey-0.20					3b7a3f8ac6f	last=07fc81109a
 	# not ready yet: 9483 SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
 	# not ready: 9745 [RPC] Getting confirmations command
-	9849 gui_netwatch							6319a2247ca
-	10615 multiwallet_rpc-0.19					e6abc3c24b3	last=8c079fbff7c multiwallet_rpc
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
-	10554 zmq_wtx-0.20							76276a5d5b4	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
-	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
-	12674 rpc_onetry_nonpriv					f0764bb161b
-	10593 relax_invblk_punishment				4f45db31a80
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 	10594 whitelist_outgoing-mini-0.20+knots	3cd212d495f	last=d465ea1e057 whitelist_outgoing
 		#TODO: Split this up?
 		# NOTE: rebased in #17167
-	10350 filtered_witblock-0.20				250f42bd6ce	last=3f388ddcd3 codeshark/MFWB_no_bump_2
-		# NOTE: Don't bump protocol version!
-	# script debugger needs major reworking: 10729 scriptex								43b88be136
-	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
-	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
-	-     rpc_mempoolentry_txhash				57c4d73c76d
 	14641 promag/2018-11-fundrawtransaction		33cd8edfcf1	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 		# NOTE: held back .gitignore nonsense change & relnotes
-	TODO: Compatibility with merged #11413 explicit_fee-0.20+knots				1c65e068ee7	last=25dac9fa652 kallewoof/explicit-fee
-		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
-		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
-	11750 coincontrol_multiselect				1bb9bcd76e5	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
-		# NOTE: deviated from PR
-	11770 rest_fee-0.19							3805e99c89d	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
-	11803 bugfix_dumpwallet_hdkeypath			46b4bdc858b
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
@@ -155,13 +123,8 @@ checkout origin/master
 	# TODO ? 12792 w/ renamed param
 	12911 rpc_sign_show_fees					97135294f97	last=47b2ba29df2 kallewoof/sign-show-fees
 		# NOTE: Rebased as #18479
-	12965 scriptthreads-0.20					b324ae42770	last=dfab6c6866 jonas/2018/04/svt
+		TODO: fix review nit
 	# Needs review and care (new index): 13014 jonasschnelli:2018/04/txindex_prune
-	13203 dsha256_power8-0.20					859d5652145	last=3b402e0738 matt/2018-05-asm
-		# NOTE: Stripped out benchmark change
-		FIXME: cherrypick f40dd1dda5e68af77a88abc214e7e1dfb40b04a1
-	-     dsha256_power8-0.20_asm_pragmas		81da69b2979
-	-     walletnotify_w_win					a7967686d4c
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs work: 13989 add avx512 instrinsic
 	# Needs review: 13990 WIP: allow fee estimation to work with lower fees
@@ -169,44 +132,31 @@ checkout origin/master
 	# Needs review: 14035 Utxoscriptindex
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
-	14137 win_taskbar_progress					e1dbdd78697	last=18eb4dbb8a
 	# wait for Core?: 14707  # [RPC] Include coinbase transactions in receivedby RPCs
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	15115 rm_send2self-mini						a5ff336f2ab	last=14bb8db698d rm_send2self
+		# NOTE: Rebased in gui#119
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review: 15204 promag:2019-01-openexternalwallet
-	15218 postibd_flush							2b5ad4ecd2a	last=d2ecb70d64  # validation: Flush state after initial sync
-		# Previously had moved init around to avoid conflict w/ 15367 (now merged)
-		# TODO: Rewrite after #17487 is ready/safe to merge
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	15423 tor_socks_port						b7a42a9a040
-	15428 tor_gui_pairing-0.20+knots			be06cae0e71	# latest code now
-	15421 tor_subprocess-0.20+knots				7f54810b99d	last=f2add182487 tor_subprocess
-		NOTE: we have boost::process now?
-	# TODO: tor gitian bundle!
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
-	15633 nohbcbfornonwit						305eabd5a3a
-		# NOTE: added test fix from sdaftuar/test-15633-2
-		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
 	18077 hebasto/20200130-natpmp
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
 		TODO: Switch to rwconf?
-	17795 gui_console_ctrl_d-0.20+knots			47d8d7a7209
-		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram-0.20					6476c61e5dc	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
-	15861 restore_vbits_warning					ef496a36c32
 	# Needs QA/review: 15946 jonasschnelli:2019/05/prune_blockfilter
 		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
 	17463 gui_custom_sendyes					06ef790c0b9
-	15987 wallet_no_reuse-0.20+knots			fcee9d7e1ff
+	15987 wallet_no_reuse-0.21+knots			fcee9d7e1ff
 	-     rpc_gai_txids							b981a160cc4
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
@@ -327,8 +277,63 @@ checkout origin/master
 		TODO: Diff-minimise
 	g96  Sjors/2020/09/create_wallet
 		TODO: review
+# Non-progress functionality:
+	8751 sort-multisigs-0.20					b2b72634313	last=e11cb50a09  # multisig sorting
+		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
+	9152 sweepprivkeys							3c24aa35b17
+	9245 ionice									13605834424
+	-    ionice_win								ca85c802d4c
+	8501 old_stats_rpc-0.20						406c8006f29	last=7af0ea43b2
+		# Held back on old version due to conflict with GUI updates...
+	8550 old_stats_qt-0.20						402b6f3f1a9	last=63fb11652f
+		# Held back on old version due to conflict with RPC updates...
+	9422 mempool_dat_extensible-0.20			ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
+		# 0.21 TODO: adapt test/functional/mempool_compatibility.py
+		# Rebased in #19488
+	9504 dumpmasterprivkey-0.20					3b7a3f8ac6f	last=07fc81109a
+	9849 gui_netwatch							6319a2247ca
+	10615 multiwallet_rpc-0.19					e6abc3c24b3	last=8c079fbff7c multiwallet_rpc
+	10554 zmq_wtx-0.20							76276a5d5b4	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
+	12674 rpc_onetry_nonpriv					f0764bb161b
+	10593 relax_invblk_punishment				4f45db31a80
+	10350 filtered_witblock-0.20				250f42bd6ce	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+		# NOTE: Don't bump protocol version!
+	# script debugger needs major reworking: 10729 scriptex								43b88be136
+	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
+	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
+	11750 coincontrol_multiselect				1bb9bcd76e5	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
+		# NOTE: deviated from PR
+	11770 rest_fee-0.19							3805e99c89d	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11803 bugfix_dumpwallet_hdkeypath			46b4bdc858b
+	12965 scriptthreads-0.20					b324ae42770	last=dfab6c6866 jonas/2018/04/svt
+	13203 dsha256_power8-0.20					859d5652145	last=3b402e0738 matt/2018-05-asm
+		# NOTE: Stripped out benchmark change
+		FIXME: cherrypick f40dd1dda5e68af77a88abc214e7e1dfb40b04a1
+	-     dsha256_power8-0.20_asm_pragmas		81da69b2979
+	15218 postibd_flush							2b5ad4ecd2a	last=d2ecb70d64  # validation: Flush state after initial sync
+		# Previously had moved init around to avoid conflict w/ 15367 (now merged)
+		# TODO: Rewrite after #17487 is ready/safe to merge
+	15428 tor_gui_pairing-0.20+knots			be06cae0e71	# latest code now
+	15421 tor_subprocess-0.20+knots				7f54810b99d	last=f2add182487 tor_subprocess
+		NOTE: we have boost::process now?
+	# TODO: tor gitian bundle!
+	15633 nohbcbfornonwit						305eabd5a3a
+		# NOTE: added test fix from sdaftuar/test-15633-2
+		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
+	17795 gui_console_ctrl_d-0.20+knots			47d8d7a7209
+		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
+	15861 restore_vbits_warning					ef496a36c32
+ljr
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
+	-     rpc_mempoolentry_txhash				57c4d73c76d
+	TODO: Compatibility with merged #11413 explicit_fee-0.20+knots				1c65e068ee7	last=25dac9fa652 kallewoof/explicit-fee
+		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
+		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
+	-     walletnotify_w_win					a7967686d4c
+	14137 win_taskbar_progress					e1dbdd78697	last=18eb4dbb8a
+...
 	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
 	-     restore_blockmaxsize					77a6f199fa5
 	7107 qtnetworkport							bf7aeb32a35	last=1f37c87 origin-pull/7107/head
