@@ -97,8 +97,6 @@ checkout origin/master
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
-	g108 jonas/2020/03/mempool_graph
-		TODO: combine with below somehow?
 	# not ready yet: 9483 SPV
 	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
 	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
@@ -151,6 +149,7 @@ checkout origin/master
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram-0.20					6476c61e5dc	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
+	# Totally broken: g108 jonas/2020/03/mempool_graph									last=42b451ebf1e
 	# Needs QA/review: 15946 jonas/2019/05/prune_blockfilter
 		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
 	17463 gui_custom_sendyes					06ef790c0b9
