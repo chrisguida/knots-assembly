@@ -109,8 +109,7 @@ checkout origin/master
 		#TODO: Split this up?
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
-	14641 promag/2018-11-fundrawtransaction		33cd8edfcf1	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
-		# NOTE: held back .gitignore nonsense change & relnotes
+	14641 fundraw_minconf						33cd8edfcf1	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
@@ -120,7 +119,6 @@ checkout origin/master
 	# TODO ? 12792 w/ renamed param
 	18479 rpc_sign_show_fees					97135294f97	last=47b2ba29df2 kallewoof/sign-show-fees
 		# NOTE: Originally #12911
-		TODO: fix review nit
 	# Needs review and care (new index): 13014 jonas/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs work: 13989 add avx512 instrinsic
