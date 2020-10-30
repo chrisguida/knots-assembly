@@ -105,8 +105,9 @@ checkout origin/master
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	17167 whitelist_outgoing-mini-0.20+knots	3cd212d495f	last=d465ea1e057 whitelist_outgoing
+	17167 whitelist_outgoing-mini-0.21+knots	3cd212d495f	last=200e09f00b0 whitelist_outgoing
 		#TODO: Split this up?
+		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
 	14641 promag/2018-11-fundrawtransaction		33cd8edfcf1	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 		# NOTE: held back .gitignore nonsense change & relnotes
