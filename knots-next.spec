@@ -117,7 +117,7 @@ checkout origin/master
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	# TODO ? 12792 w/ renamed param
-	18479 rpc_sign_show_fees					97135294f97	last=47b2ba29df2 kallewoof/sign-show-fees
+	18479 rpc_sign_show_fees					97135294f97	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
 	# Needs review and care (new index): 13014 jonas/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
@@ -129,7 +129,7 @@ checkout origin/master
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	# wait for Core?: 14707  # [RPC] Include coinbase transactions in receivedby RPCs
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
-	g119  rm_send2self-mini						a5ff336f2ab	last=14bb8db698d rm_send2self
+	g119  rm_send2self-mini						a5ff336f2ab	last=77a74aac443 rm_send2self
 		# NOTE: Originally #15115
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
@@ -142,9 +142,9 @@ checkout origin/master
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
-	18077 hebasto/20200130-natpmp
+	# Needs work: 18077 hebasto/20200130-natpmp
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
-		TODO: Switch to rwconf?
+		# TODO: Switch to rwconf?
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram-0.20					6476c61e5dc	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
