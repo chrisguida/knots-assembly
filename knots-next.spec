@@ -18,6 +18,7 @@ checkout origin/master
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							701d4ca9a34
+	-     travis_restore_s390x
 	17402 travis_ppc64							aa3052ac519	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
 	18818 fix_gitian_src_202004					57102d3df4c
@@ -65,7 +66,7 @@ checkout origin/master
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
-	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=44c0bc31f4f bugfix_listwalletdir_errors
+	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=24d2d3341d0 bugfix_listwalletdir_errors
 	19419 listwalletdir_skip_data-0.21+knots	c25545c6d7c	last=3f9cc0cd736
 		# NOTE: modified to use std::set and diff-minimise
 		# NOTE: added default "blocks" dir to exclusions
@@ -78,19 +79,14 @@ checkout origin/master
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
 	# Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
 	# Needs work: 19888 fjahr/genesisblockstats
-	20080 hebasto/201004-strip^								last=ad5cef5dfdd hebasto/201004-strip
-		# NOTE: Held back trivial comment changes in final commit, to diff-minimise
 	20120 getnetworkinfo_skip_unsupp-0.21					last=7b5bd3102e0 jonatack/fix-getnetworkinfo-empty-networks
 	# Needs review: 20196 vasild/fix_GetListenPort
-	20250 rpcwallet_explicit_fixups
-	# or 20220 jonatack/explicit-feerate-follow-ups
-		#FIXME: Needs review / only fixes?
 	g87   hebasto-g/200910-mono								last=2e386cd3dd3
 # FUNCTIONALITY:
 	-     restore_win32							9dbb4bb8313
 	-     restore_linux32						275c3f2b076
 		# NOTE: gitian only
-	14066 gitian_power64-0.21+knots				5d7416dc553	last=622de1cc7e9 gitian_power64
+	14066 gitian_power64-0.21+knots				5d7416dc553	last=06b6d53c026 gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
