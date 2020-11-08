@@ -142,21 +142,20 @@ checkout origin/master
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
 		# TODO: Switch to rwconf?
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
-	15836 fee_histogram-0.20					6476c61e5dc	last=b94292a7cb jonas/2019/04/feeinfo
+	15836 fee_histogram							6476c61e5dc	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 	# Totally broken: g108 jonas/2020/03/mempool_graph									last=42b451ebf1e
 	# Needs QA/review: 15946 jonas/2019/05/prune_blockfilter
 		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
 	17463 gui_custom_sendyes					06ef790c0b9
 	15987 wallet_no_reuse-0.21+knots			fcee9d7e1ff
-	-     rpc_gai_txids							b981a160cc4
+	-     rpc_gai_txids-0.21+knots				b981a160cc4
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	18772 getblock_fees-0.20					89677d99147
-	16083 rpc_getblock_prevouts_fees-0.20		7766bcdd2d6	last=dd83c4c925
+	18772 -										89677d99147 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
+	16083 rpc_getblock_prevouts_fees-0.21		7766bcdd2d6	last=dd83c4c925
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
 		# Renamed "coinbase" field to "generated"
-		# Renamed "fees" field to "fee"
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
