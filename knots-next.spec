@@ -165,13 +165,13 @@ checkout origin/master
 		# NOTE: was #16549
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	16795 rpc_inferred_output_descriptors-0.20	593533e6b91	last=ef91078d672 instagibbs/decode_descriptor
+	16795 rpc_inferred_output_descriptors		593533e6b91	last=4372d342803 instagibbs/decode_descriptor
+		# Fixes: 478a4da04e77ca4438929909fafdbb0e57614577
 	# Needs review: 16981 LarryRuane:reindex-speedup
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
-	17211 achow101/fundtx-external-inputs
-		# TODO: Move new param to options?
+	# Needs review: 17211 achow101/fundtx-external-inputs
+		# TODO: Move new param to options? (watch out for send RPC)
 		# TODO: Diff-minimise
-		# Partial rebase at f2fefb51511 (on v0.19.0 tag!)
 	# Needs fix: 17355 za-kk:oct-19-17174
 	TODO: Make sure this is sane as merged: 16432 gui_overview_privacy-0.20+knots		8cf7668fdcb	last=8d75115844b hebasto/20190721-privacy
 		# TODO: low-priority updates 6920e1236b3..8d75115844b
