@@ -173,12 +173,6 @@ checkout origin/master
 		# TODO: Move new param to options? (watch out for send RPC)
 		# TODO: Diff-minimise
 	# Needs fix: 17355 za-kk:oct-19-17174
-	TODO: Make sure this is sane as merged: 16432 gui_overview_privacy-0.20+knots		8cf7668fdcb	last=8d75115844b hebasto/20190721-privacy
-		# TODO: low-priority updates 6920e1236b3..8d75115844b
-		# NOTE: Held back ea1fb691c9c..dba83b9dab9
-		# NOTE: Dropped monospace font / justify hack in privacy mode
-		# Ensure copying balances isn't annoying
-		# Should balances be forced monospace normally just for masking??
 	18972 neutrino_whitelist-0.20+knots			b02540ef13d	last=f1ebb52cd43
 		# NOTE: Excluded refactor
 	16463 bip174_xpub-0.20+knots				8e6f8d3cc9c	last=ee0dd3ae1fc achow101/bip174-xpub
