@@ -66,7 +66,6 @@ checkout origin/master
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
-	19502 bugfix_listwalletdir_errors-mini		48100d93e96	last=24d2d3341d0 bugfix_listwalletdir_errors
 	19419 listwalletdir_skip_data-0.21+knots	c25545c6d7c	last=3f9cc0cd736
 		# NOTE: modified to use std::set and diff-minimise
 		# NOTE: added default "blocks" dir to exclusions
