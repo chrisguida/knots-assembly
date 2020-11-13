@@ -83,10 +83,10 @@ checkout origin/master
 	20120 getnetworkinfo_skip_unsupp-0.21					last=7b5bd3102e0 jonatack/fix-getnetworkinfo-empty-networks
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono								last=2e386cd3dd3
-	20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
-		TODO: diff-minimise, review
+	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
+		#TODO: diff-minimise, review
 	# Needs review: g121 promag/2020-10-missing-transaction-notifications
-	TODO: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
+	# Needs work: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 # FUNCTIONALITY:
 	-     restore_win32							9dbb4bb8313
 	-     restore_linux32						275c3f2b076
