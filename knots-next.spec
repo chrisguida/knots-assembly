@@ -1,7 +1,7 @@
-timestamp 2020-10-24 08:12:46
+timestamp 2020-11-13 06:45:01
 lastapply no-merge
 
-#.. checked up to PR #20233 / gui #109
+#.. checked up to PR #20383 / gui #129
 
 checkout origin/master
 @0.21.x-syslibs
@@ -15,6 +15,8 @@ checkout origin/master
 	15155 test_external_bcli					9de9dca3491
 	# TODO: 20202 achow101/opt-sqlite-bdb
 		#FIXME: Make sure tests skip properly per review concerns
+		# Needs #20267
+	20358 -													last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							701d4ca9a34
@@ -81,6 +83,10 @@ checkout origin/master
 	20120 getnetworkinfo_skip_unsupp-0.21					last=7b5bd3102e0 jonatack/fix-getnetworkinfo-empty-networks
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono								last=2e386cd3dd3
+	20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
+		TODO: diff-minimise, review
+	# Needs review: g121 promag/2020-10-missing-transaction-notifications
+	TODO: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 # FUNCTIONALITY:
 	-     restore_win32							9dbb4bb8313
 	-     restore_linux32						275c3f2b076
@@ -233,6 +239,13 @@ checkout origin/master
 		TODO: Diff-minimise
 	g96  Sjors/2020/09/create_wallet
 		TODO: review
+	20254 vasild/i2p_static									last=8b4a3714b91
+	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
+	20275 no_sqlite_but_list-mini							last=417e95a97b4 ryanofsky/pr/exist
+	20295 Sjors/2020/11/getblockfrompeer
+	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
+	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
+	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
 # Non-progress functionality:
 	8751 sort-multisigs-0.20					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -366,7 +379,7 @@ ljr
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
-	n/a  (bump_version=Knots:20201024)			c38be07358d
+	n/a  (bump_version=Knots:20201113)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=122a503033f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
