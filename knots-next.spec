@@ -18,11 +18,11 @@ checkout origin/master
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							701d4ca9a34
-	-     travis_restore_s390x
 	17402 travis_ppc64							aa3052ac519	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
 	18818 fix_gitian_src_202004					57102d3df4c
 	18902 fix_gitdir_again						3d6e49e807e
+		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					380c86e8d16	last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				e32605dd3c2
 	17828 p2p_log_categories					7a40b3433d6	last=04960621582 practicalswift/log-categories
@@ -52,7 +52,6 @@ checkout origin/master
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
-	18095 -										c6dfc3206fd	last=6904a309194  # Fix crashes and infinite loop in ListWalletDir()
 	18133 bugfix_qvalidlineedit					49b42b1e149
 	18194 bugfix_gui_edit_sendaddr-mini			9fada3c674d	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
@@ -66,8 +65,9 @@ checkout origin/master
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
-	19419 listwalletdir_skip_data-0.21+knots	c25545c6d7c	last=3f9cc0cd736
+	19419 listwalletdir_skip_data				c25545c6d7c	last=c730c7a6b6e Saibato/wallet_351
 		# NOTE: modified to use std::set and diff-minimise
+			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
 	# Needs review: 19434 promag:2020-06-remote-disconnect
 	# Needs review: g18    hebasto:200701-peer
@@ -172,8 +172,8 @@ checkout origin/master
 		# TODO: Move new param to options? (watch out for send RPC)
 		# TODO: Diff-minimise
 	# Needs fix: 17355 za-kk:oct-19-17174
-	18972 neutrino_whitelist-0.20+knots			b02540ef13d	last=f1ebb52cd43
-		# NOTE: Excluded refactor
+	18972 neutrino_whitelist-mini				b02540ef13d	last=339fe189eb9
+		# NOTE: Diff-minimised
 	16463 bip174_xpub-0.20+knots				8e6f8d3cc9c	last=ee0dd3ae1fc achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
 	16490 marco/1907-rpcMempoolWhyReplacable
