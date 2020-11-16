@@ -177,11 +177,8 @@ checkout origin/master
 	# Needs fix: 17355 za-kk:oct-19-17174
 	18972 neutrino_whitelist-mini				b02540ef13d	last=339fe189eb9
 		# NOTE: Diff-minimised
-	16463 bip174_xpub-0.20+knots				8e6f8d3cc9c	last=ee0dd3ae1fc achow101/bip174-xpub
+	16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=ee0dd3ae1fc achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
-	16490 marco/1907-rpcMempoolWhyReplacable
-		TODO: Diff-minimise
-		TODO: Support Knots policies
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.20					bb71d390fea	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
@@ -287,6 +284,9 @@ checkout origin/master
 	15633 nohbcbfornonwit						305eabd5a3a
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
+	#16490 marco/1907-rpcMempoolWhyReplacable
+	#	TODO: Diff-minimise
+	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d-0.20+knots			47d8d7a7209
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					ef496a36c32
