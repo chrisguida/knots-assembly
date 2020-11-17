@@ -19,7 +19,6 @@ checkout origin/master
 	20358 -													last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 @0.21.x-knots
 # TESTS:
-	20390 cirrus_nonpr_fix
 	-     lint_relaxer							701d4ca9a34
 	17402 travis_ppc64							aa3052ac519	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
@@ -183,10 +182,10 @@ checkout origin/master
 	17631 rest_blockfilter-0.20					bb71d390fea	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	17955 gui_uri_paste-0.20+knots				5053da42d85	last=0139b428923 emilengler/2020-01-paste-bitcoin-uri-button
+	17955 emilengler/2020-01-paste-bitcoin-uri-button	5053da42d85	last=0139b428923
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
-	18014 siphash_optimise_pr18014-0.19			e305c0a192e	last=9ed348ddea3 elichai/2020-01-siphash
-		# NOTE: Dropped benchmarks
+	18014 siphash_optimise_pr18014-0.21+knots	e305c0a192e	last=9ed348ddea3 elichai/2020-01-siphash
+		# NOTE: Dropped benchmarks & diff-minimised
 	# Needs work/review/completion: 18242 jonas/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
