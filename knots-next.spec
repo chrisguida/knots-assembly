@@ -189,8 +189,9 @@ checkout origin/master
 	# Needs work/review/completion: 18242 jonas/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
-	18689 rpc_dumptxoutset_hr-0.20				aa7b71901bd	last=82046cf7fa3
-	18722 O_addrman_unordered_map-0.20			e7fba4623d9	last=d6e782174ec
+	18689 rpc_dumptxoutset_hr					aa7b71901bd	last=82046cf7fa3
+	18722 O_addrman_unordered_map-0.21+knots	e7fba4623d9	last=d517c9d376f
+		# NOTE: Restored C++11 compatibility from d6e782174ec
 	g125  intro_prune_size						ee19f9b631f
 		# NOTE: Originally #18728
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
