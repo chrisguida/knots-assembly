@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #20383 / gui #129
 
-checkout origin/master
+checkout origin/0.21
 @0.21.x-syslibs
 	20121 secp256k1_allow_bignum
 	5872 subdir_incl_compat						500e007903f
@@ -196,8 +196,6 @@ checkout origin/master
 		# NOTE: Originally #18728
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
-	TODO: Check for held-back of merged 18991 p2p_getaddr_cache-0.20+knots			17f457ef4d6	last=3bd67ba5a4e  # Cache responses to GETADDR to prevent topology leaks
-		# Held back removal of addr from implicit flags (rebased in b78f81553d8a4)
 	19136 achow101:export-descriptor
 	19137 achow101/dumpwalletrecords
 		TODO: can we save/restore the wallet id?
@@ -324,9 +322,6 @@ checkout origin/master
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				57c4d73c76d
-	TODO: Compatibility with merged #11413 explicit_fee-0.20+knots				1c65e068ee7	last=25dac9fa652 kallewoof/explicit-fee
-		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
-		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
 	-     walletnotify_w_win					a7967686d4c
 	14137 win_taskbar_progress					e1dbdd78697	last=18eb4dbb8a
 	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
@@ -337,7 +332,6 @@ checkout origin/master
 	7510 rwconf_gui								16293b1e43e
 		# 0.21 TODO: update neutrino option name
 	-    rwconf_gui_plus						be0027f92b2
-	-    preserve_unsupported_keyflags			830d18f021a
 	 559 accept_nonstdtxn						1da672d42c9
 	 929 tbc									c4756a6c311
 	 553 bugfix_qt_uri_amount_parser			14443183ee8
@@ -349,11 +343,17 @@ checkout origin/master
 	12146 opt_wallet_segwit2					dfe45d4f91d
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
-	10282 timebomb_knots						df904a5f8b2
 	-     gui_wallet_displayname-0.19			ad59c0b3f14	# Latest code now
 	-     gui_request_payment_label-0.19		d89e4408b1d
-	n/a  checkpoint_update-0.20					5a868f43b54
+# Non-upstreamed Knots compatibility:
+	-    preserve_unsupported_keyflags			830d18f021a
+	TODO: Compatibility with merged #11413 explicit_fee-0.20+knots				1c65e068ee7	last=25dac9fa652 kallewoof/explicit-fee
+		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
+		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
+	-     netperms_implicit_addr
 # POLICY:
+	10282 timebomb_knots						df904a5f8b2
+	n/a  checkpoint_update-0.20					5a868f43b54
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				71333c3e4b5
 	-    bytespersigopstrict-0.20+knots			f921debe480
