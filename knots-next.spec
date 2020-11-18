@@ -231,8 +231,6 @@ checkout origin/master
 		TODO: make sure it's sane
 	g90  RandyMcMillan/debugwindow-ui
 		TODO: Diff-minimise
-	g96  Sjors/2020/09/create_wallet
-		TODO: review
 	20254 vasild/i2p_static									last=8b4a3714b91
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini							last=417e95a97b4 ryanofsky/pr/exist
