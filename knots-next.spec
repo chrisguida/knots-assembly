@@ -199,13 +199,10 @@ checkout origin/0.21
 	19136 achow101/export-descriptor						last=de6b389d5db
 	19137 wallettool_dump-0.21+knots						last=7f5adfaf6f7 achow101/dumpwalletrecords
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
-	TODO: Check for permission flag conflicts in merged 19191 p2p_permission_download-0.20.1+knots	55fb5d4ac1c	last=fa0540cd46e marco/2006-netPerDow
-		# IMPORTANT: Avoid conflicts with PF_ADDR or other permission flags (moved to 1<<18)
 	19242 uaappend								d4ad2f71f8b
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
-	19463 prune_locks-0.20+knots				50b13a85c7a	last=f4b2ed65ea5 prune_locks
-		FIXME: ensure #20205 is merged, or ban sqlite wallets? :/
+	19463 prune_locks							50b13a85c7a
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
@@ -375,6 +372,7 @@ checkout origin/0.21
 #TODO: Check that we aren't deprcating anything in Core
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
+# TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
 	n/a  (bump_version=Knots:20201113)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
