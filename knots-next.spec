@@ -179,7 +179,7 @@ checkout origin/0.21
 	16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=ee0dd3ae1fc achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
-	17631 rest_blockfilter-0.20					bb71d390fea	last=16d8d2da598 matt/2019-11-filter-rest
+	17631 rest_blockfilter-0.21					bb71d390fea	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	17955 emilengler/2020-01-paste-bitcoin-uri-button	5053da42d85	last=0139b428923
@@ -196,9 +196,9 @@ checkout origin/0.21
 		# NOTE: Originally #18728
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
-	19136 achow101:export-descriptor
-	19137 achow101/dumpwalletrecords
-		TODO: can we save/restore the wallet id?
+	19136 achow101/export-descriptor						last=de6b389d5db
+	19137 wallettool_dump-0.21+knots						last=7f5adfaf6f7 achow101/dumpwalletrecords
+		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
 	TODO: Check for permission flag conflicts in merged 19191 p2p_permission_download-0.20.1+knots	55fb5d4ac1c	last=fa0540cd46e marco/2006-netPerDow
 		# IMPORTANT: Avoid conflicts with PF_ADDR or other permission flags (moved to 1<<18)
 	19242 uaappend								d4ad2f71f8b
