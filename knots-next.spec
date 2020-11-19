@@ -209,12 +209,10 @@ checkout origin/0.21
 	# Needs work: g27   # top to bottom UI layout
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
-	TODO: --enable-endomorphism in libsecp256k1
-	19762 ryanofsky/pr/named
+	19762 ryanofsky/pr/named								last=894c414dafb
 	# Needs review and triage (fix or feature?): 19763 vasild:only_relay_to_unaware
-	19776 -  # net, rpc: expose high bandwidth mode state via getpeerinfo
+	19776 -													last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
-	19847 promag/2020-08-gettxoutproof
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 	19873 mempressure
 	# Needs serious work: 20139 -  # "Removed unused warning and formatted RPC result" supposedly
@@ -222,11 +220,9 @@ checkout origin/0.21
 	# Needs work: g86 hebasto/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
-	20226 -  # wallet, rpc: add listdescriptors command
-		TODO: make sure it's sane
-	g90  RandyMcMillan/debugwindow-ui
-		TODO: Diff-minimise
-	20254 vasild/i2p_static									last=8b4a3714b91
+	20226 -													last=ac17caba76f  # wallet, rpc: add listdescriptors command
+	g90   -													last=5036d9a4e91  # Enlarge Network Traffic Graph
+	20254 i2p_static-0.21+knots								last=8b4a3714b91 vasild/i2p_static
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini							last=417e95a97b4 ryanofsky/pr/exist
 	20295 Sjors/2020/11/getblockfrompeer
