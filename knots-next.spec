@@ -22,6 +22,7 @@ checkout origin/0.21
 	-     lint_relaxer							701d4ca9a34
 	17402 travis_ppc64							aa3052ac519	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
+	20428 ajtowns/202011-test-taproot-signmany				last=7ffac125453
 	18818 fix_gitian_src_202004					57102d3df4c
 	18902 fix_gitdir_again						3d6e49e807e
 		# NOTE: based directly on #18818
@@ -198,8 +199,9 @@ checkout origin/0.21
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	19136 achow101/export-descriptor						last=de6b389d5db
-	19137 wallettool_dump-0.21+knots						last=7f5adfaf6f7 achow101/dumpwalletrecords
+	19137 wallettool_dump-0.21+knots						last=47b4599b7b1 achow101/dumpwalletrecords
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
+		# NOTE: Changed to print warnings to stderr instead of stdout
 	19242 uaappend								d4ad2f71f8b
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
@@ -222,7 +224,7 @@ checkout origin/0.21
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
 	20226 -													last=ac17caba76f  # wallet, rpc: add listdescriptors command
-	g90   -													last=5036d9a4e91  # Enlarge Network Traffic Graph
+	g90   -													last=7a05be5e47d  # Enlarge Network Traffic Graph
 	20254 i2p_static-0.21+knots								last=8b4a3714b91 vasild/i2p_static
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini							last=727e0aad58b ryanofsky/pr/exist
