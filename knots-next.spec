@@ -40,6 +40,7 @@ checkout origin/0.21
 		# Was #12696
 	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
 	13608 -										c9dace04e15	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
+	-     deprecated_param_names
 	-     bugfix_rpc_getbalance_hacky			dd9deca43e6
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
@@ -224,8 +225,8 @@ checkout origin/0.21
 	g90   -													last=5036d9a4e91  # Enlarge Network Traffic Graph
 	20254 i2p_static-0.21+knots								last=8b4a3714b91 vasild/i2p_static
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	20275 no_sqlite_but_list-mini							last=417e95a97b4 ryanofsky/pr/exist
-	20295 Sjors/2020/11/getblockfrompeer
+	20275 no_sqlite_but_list-mini							last=727e0aad58b ryanofsky/pr/exist
+	20295 Sjors/2020/11/getblockfrompeer					last=f74c19e61f6
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
