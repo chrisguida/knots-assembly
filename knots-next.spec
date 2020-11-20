@@ -233,18 +233,15 @@ checkout origin/0.21
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
 # Non-progress functionality:
-	8751 sort-multisigs-0.20					b2b72634313	last=e11cb50a09  # multisig sorting
+	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	9152 sweepprivkeys							3c24aa35b17
 	9245 ionice									13605834424
 	-    ionice_win								ca85c802d4c
-	8501 old_stats_rpc-0.20						406c8006f29	last=7af0ea43b2
+	8501  old_stats_rpc-0.21					406c8006f29	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
-	8550 old_stats_qt-0.20						402b6f3f1a9	last=63fb11652f
+	8550  old_stats_qt-0.21						402b6f3f1a9	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
-	19488 mempool_dat_extensible-0.20			ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
-		# 0.21 TODO: adapt test/functional/mempool_compatibility.py
-		# Originally #9422
 	9504 dumpmasterprivkey-0.20					3b7a3f8ac6f	last=07fc81109a
 	9849 gui_netwatch							6319a2247ca
 	10615 multiwallet_rpc-0.19					e6abc3c24b3	last=8c079fbff7c multiwallet_rpc
@@ -343,6 +340,9 @@ checkout origin/0.21
 	-     gui_request_payment_label-0.19		d89e4408b1d
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			830d18f021a
+	9422  mempool_dat_extensible-0.20			ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
+		# 0.21 TODO: adapt test/functional/mempool_compatibility.py
+		# Briefly re-PR'd as #19488 between 0.20 and 0.21
 	TODO: Compatibility with merged #11413 explicit_fee-0.20+knots				1c65e068ee7	last=25dac9fa652 kallewoof/explicit-fee
 		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
