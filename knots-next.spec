@@ -22,7 +22,6 @@ checkout origin/0.21
 	-     lint_relaxer							701d4ca9a34
 	17402 travis_ppc64							aa3052ac519	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
-	20428 ajtowns/202011-test-taproot-signmany				last=7ffac125453
 	18818 fix_gitian_src_202004					57102d3df4c
 	18902 fix_gitdir_again						3d6e49e807e
 		# NOTE: based directly on #18818
@@ -89,7 +88,6 @@ checkout origin/0.21
 		#TODO: diff-minimise, review
 	# Needs review: g121 promag/2020-10-missing-transaction-notifications
 	# Needs work: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
-	20462 unloadwallet_namematch_pt1
 	20448 unloadwallet_namematch
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313
@@ -201,7 +199,7 @@ checkout origin/0.21
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	19136 achow101/export-descriptor						last=de6b389d5db
-	19137 wallettool_dump-0.21+knots						last=47b4599b7b1 achow101/dumpwalletrecords
+	19137 wallettool_dump-0.21+knots						last=19b2f4d6f79 achow101/dumpwalletrecords
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
 		# NOTE: Changed to print warnings to stderr instead of stdout
 	19242 uaappend								d4ad2f71f8b
@@ -247,7 +245,7 @@ checkout origin/0.21
 	9504 dumpmasterprivkey-0.21					3b7a3f8ac6f	last=07fc81109a
 	9849 gui_netwatch-0.21+knots				6319a2247ca	last=c4599591e97 gui_netwatch
 	10615 multiwallet_rpc						e6abc3c24b3
-	10554 zmq_wtx-0.21							76276a5d5b4	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-0.21+knots					76276a5d5b4	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	12674 rpc_onetry_nonpriv					f0764bb161b
 	10593 relax_invblk_punishment				4f45db31a80
