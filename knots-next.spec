@@ -89,6 +89,7 @@ checkout origin/0.21
 		#TODO: diff-minimise, review
 	# Needs review: g121 promag/2020-10-missing-transaction-notifications
 	# Needs work: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
+	20462 unloadwallet_namematch_pt1
 	20448 unloadwallet_namematch
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313
@@ -246,7 +247,7 @@ checkout origin/0.21
 	9504 dumpmasterprivkey-0.21					3b7a3f8ac6f	last=07fc81109a
 	9849 gui_netwatch-0.21+knots				6319a2247ca	last=c4599591e97 gui_netwatch
 	10615 multiwallet_rpc						e6abc3c24b3
-	10554 zmq_wtx-0.20							76276a5d5b4	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-0.21							76276a5d5b4	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	12674 rpc_onetry_nonpriv					f0764bb161b
 	10593 relax_invblk_punishment				4f45db31a80
