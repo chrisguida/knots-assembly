@@ -1,7 +1,7 @@
-timestamp 2020-11-13 06:45:01
+timestamp 2020-11-25 11:36:32
 lastapply no-merge
 
-#.. checked up to PR #20383 / gui #129
+#.. checked up to PR #20483 / gui #134
 
 checkout origin/0.21
 @0.21.x-syslibs
@@ -15,7 +15,7 @@ checkout origin/0.21
 	15155 test_external_bcli					9de9dca3491
 	# TODO: 20202 achow101/opt-sqlite-bdb
 		#FIXME: Make sure tests skip properly per review concerns
-		# Needs #20267
+		# Needs #20458 #20267 #20478
 	20358 -													last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 @0.21.x-knots
 # TESTS:
@@ -232,6 +232,10 @@ checkout origin/0.21
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
+	20391 jonatack/setfeerate
+	20403 jonatack/upgradewallet-improvements
+	20407 promag/2020-11-rpcauthfile
+	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -363,6 +367,7 @@ checkout origin/0.21
 	7483 svg_icon-0.20							4835bcd3444
 # BRANDING:
 	n/a  knots_branding-0.20					a65cba08b8d
+# FIXME: check there's no univalue push_back(bool) - see #20424
 #FIXME: Check there are no menu icons
 #FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
@@ -373,7 +378,7 @@ checkout origin/0.21
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
-	n/a  (bump_version=Knots:20201113)			c38be07358d
+	n/a  (bump_version=Knots:20201125)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=122a503033f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
