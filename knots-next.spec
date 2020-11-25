@@ -232,10 +232,13 @@ checkout origin/0.21
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
-	20391 jonatack/setfeerate
-	20403 jonatack/upgradewallet-improvements
-	20407 promag/2020-11-rpcauthfile
+	20391 rpc_setfeerate-0.21								last=a96417d85ae jonatack/setfeerate
+		# NOTE: Minimised tests to only add new ones
+		# NOTE: Dropped final commit changing settxfee docs
+	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
+	20407 promag/2020-11-rpcauthfile						last=ff5d7fa1e4c
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
+	20484 estimatefee_fee_rate-0.21
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -248,7 +251,7 @@ checkout origin/0.21
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-0.21					3b7a3f8ac6f	last=07fc81109a
 	9849 gui_netwatch-0.21+knots				6319a2247ca	last=c4599591e97 gui_netwatch
-	10615 multiwallet_rpc						e6abc3c24b3
+	10615 multiwallet_rpc-0.21+knots			e6abc3c24b3	last=ee12dd02601 multiwallet_rpc
 	10554 zmq_wtx-0.21+knots					76276a5d5b4	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	12674 rpc_onetry_nonpriv					f0764bb161b
