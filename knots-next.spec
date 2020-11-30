@@ -93,7 +93,7 @@ checkout origin/0.21
 	-     restore_win32							9dbb4bb8313
 	-     restore_linux32						275c3f2b076
 		# NOTE: gitian only
-	14066 gitian_power64-0.21+knots				5d7416dc553	last=06b6d53c026 gitian_power64
+	14066 gitian_power64-0.21+knots				5d7416dc553	last=31dbf0b677d gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
