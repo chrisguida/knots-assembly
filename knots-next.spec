@@ -108,7 +108,7 @@ checkout origin/0.21
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	14641 fundraw_minconf						33cd8edfcf1	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
+	14641 fundraw_minconf-0.21					33cd8edfcf1	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
@@ -232,9 +232,9 @@ checkout origin/0.21
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
-	20391 rpc_setfeerate-0.21								last=a96417d85ae jonatack/setfeerate
+	20391 rpc_setfeerate-0.21								last=14c5e50110a jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
-		# NOTE: Dropped final commit changing settxfee docs
+		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
 	20407 tmp_rpcauthfile									last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
