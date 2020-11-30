@@ -1,7 +1,7 @@
-timestamp 2020-11-25 11:36:32
+timestamp 2020-11-30 06:10:34
 lastapply no-merge
 
-#.. checked up to PR #20483 / gui #134
+#.. checked up to PR #20530 / gui #140
 
 checkout origin/0.21
 @0.21.x-syslibs
@@ -9,6 +9,7 @@ checkout origin/0.21
 	5872 subdir_incl_compat						500e007903f
 	2241 sys_leveldb							1417948c866
 	5416 sys_libsecp256k1						c5a440728e9
+		#FIXME: address #20505
 	7485 sys_univalue_def						b9b4cf77ff4
 	13789 bugfix_asm_pragmas					369a7f5afa3
 	-     bugfix_asm_leveldb_check				02dc65eba04
@@ -238,6 +239,7 @@ checkout origin/0.21
 	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
 	20407 tmp_rpcauthfile									last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
+	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -380,7 +382,7 @@ checkout origin/0.21
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
-	n/a  (bump_version=Knots:20201125)			c38be07358d
+	n/a  (bump_version=Knots:20201130)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=122a503033f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
