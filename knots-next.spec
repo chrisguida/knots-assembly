@@ -232,13 +232,12 @@ checkout origin/0.21
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
-	20391 rpc_setfeerate-0.21								last=14c5e50110a jonatack/setfeerate
+	20391 rpc_setfeerate-0.21								last=2176a3af542 jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
 	20407 tmp_rpcauthfile									last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
-	20484 estimatefee_fee_rate-0.21
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
