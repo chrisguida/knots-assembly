@@ -224,7 +224,7 @@ checkout origin/0.21
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
 	20226 -													last=ac17caba76f  # wallet, rpc: add listdescriptors command
-	g90   -													last=7a05be5e47d  # Enlarge Network Traffic Graph
+	g90   tmp_g90											last=7a05be5e47d  # Enlarge Network Traffic Graph
 	20254 i2p_static-0.21+knots								last=8b4a3714b91 vasild/i2p_static
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini							last=727e0aad58b ryanofsky/pr/exist
@@ -236,7 +236,7 @@ checkout origin/0.21
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Dropped final commit changing settxfee docs
 	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
-	20407 promag/2020-11-rpcauthfile						last=ff5d7fa1e4c
+	20407 tmp_rpcauthfile									last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
 	20484 estimatefee_fee_rate-0.21
 # Non-progress functionality:
