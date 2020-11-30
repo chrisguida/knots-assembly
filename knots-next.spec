@@ -90,7 +90,7 @@ checkout origin/0.21
 	# Needs work: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch
 # FUNCTIONALITY:
-	-     restore_win32-0.21+knots				9dbb4bb8313
+	-     restore_win32							9dbb4bb8313
 	-     restore_linux32						275c3f2b076
 		# NOTE: gitian only
 	14066 gitian_power64-0.21+knots				5d7416dc553	last=06b6d53c026 gitian_power64
