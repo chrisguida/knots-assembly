@@ -1,0 +1,13 @@
+diff --git a/configure.ac b/configure.ac
+index 3a4b9503817..a9556dcfdc1 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -1799,7 +1799,7 @@ if test x$need_bundled_univalue = xyes; then
+ fi
+ 
+ if test x$system_libsecp256k1 = xno; then
+-ac_configure_args="${ac_configure_args} --disable-shared --with-pic --enable-benchmark=no --with-bignum=no --enable-module-recovery --enable-module-schnorrsig --enable-experimental"
++ac_configure_args="--with-bignum=no ${ac_configure_args} --disable-shared --with-pic --enable-benchmark=no --enable-module-recovery --enable-module-schnorrsig --enable-experimental"
+ AC_CONFIG_SUBDIRS([src/secp256k1])
+ fi
+ 

@@ -5,11 +5,9 @@ lastapply no-merge
 
 checkout origin/0.21
 @0.21.x-syslibs
-	20121 secp256k1_allow_bignum
 	5872 subdir_incl_compat						500e007903f
 	2241 sys_leveldb							1417948c866
-	5416 sys_libsecp256k1						c5a440728e9
-		#FIXME: address #20505
+	5416 sys_libsecp256k1-0.21					c5a440728e9	last=258c28e99b3 sys_libsecp256k1
 	7485 sys_univalue_def						b9b4cf77ff4
 	13789 bugfix_asm_pragmas					369a7f5afa3
 	-     bugfix_asm_leveldb_check				02dc65eba04
@@ -17,6 +15,7 @@ checkout origin/0.21
 	# TODO: 20202 achow101/opt-sqlite-bdb
 		#FIXME: Make sure tests skip properly per review concerns
 		# Needs #20458 #20267 #20478
+	20121 secp256k1_allow_bignum
 	20358 -													last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 @0.21.x-knots
 # TESTS:
@@ -63,7 +62,7 @@ checkout origin/0.21
 	18335 -										d87686f9b3a	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18729 intro_dont_change_user_prune			927b68d75c4
-	18766 blocksonly_no_feeest-0.21				4c85e2551bc	last=4aaad74c4c8
+	18766 blocksonly_no_feeest-0.21				4c85e2551bc	last=01e39989f23
 		# diff-minimised
 		# HELD BACK 33ca3590243...4aaad74c4c8 due to refactor complication
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
@@ -233,7 +232,7 @@ checkout origin/0.21
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
-	20391 rpc_setfeerate-0.21								last=2176a3af542 jonatack/setfeerate
+	20391 rpc_setfeerate-0.21								last=73a0f027639 jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
@@ -255,7 +254,8 @@ checkout origin/0.21
 	10615 multiwallet_rpc-0.21+knots			e6abc3c24b3	last=ee12dd02601 multiwallet_rpc
 	10554 zmq_wtx-0.21+knots					76276a5d5b4	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
-	12674 rpc_onetry_nonpriv					f0764bb161b
+	20551 rpc_onetry_conntype
+		# NOTE: Originally based on #12674
 	10593 relax_invblk_punishment				4f45db31a80
 	10350 filtered_witblock-0.20				250f42bd6ce	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
@@ -355,6 +355,8 @@ checkout origin/0.21
 		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
 		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
 	-     netperms_implicit_addr
+	12674 rpc_onetry_nonpriv-0.21+knots			f0764bb161b
+		TODO: rebase on top of #20551
 # POLICY:
 	10282 timebomb_knots						df904a5f8b2
 	n/a  checkpoint_update-0.20					5a868f43b54
