@@ -62,7 +62,7 @@ checkout origin/0.21
 	18335 -										d87686f9b3a	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18729 intro_dont_change_user_prune			927b68d75c4
-	18766 blocksonly_no_feeest-0.21				4c85e2551bc	last=01e39989f23
+	18766 blocksonly_no_feeest-0.21				4c85e2551bc	last=4e28753f606
 		# diff-minimised
 		# HELD BACK 33ca3590243...4aaad74c4c8 due to refactor complication
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
@@ -223,7 +223,7 @@ checkout origin/0.21
 	# Needs work: g86 hebasto/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
-	20226 -													last=ac17caba76f  # wallet, rpc: add listdescriptors command
+	20226 -													last=55e26b3425f  # wallet, rpc: add listdescriptors command
 	g90   tmp_g90											last=7a05be5e47d  # Enlarge Network Traffic Graph
 	20254 i2p_static-0.21+knots								last=8b4a3714b91 vasild/i2p_static
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
@@ -237,6 +237,7 @@ checkout origin/0.21
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
 	20407 tmp_rpcauthfile									last=ff5d7fa1e4c promag/2020-11-rpcauthfile
+		# NOTE: change rpcauth.py to use mode 'a'? https://github.com/bitcoin/bitcoin/pull/20407#discussion_r530000587
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 # Non-progress functionality:
@@ -257,7 +258,7 @@ checkout origin/0.21
 	20551 rpc_onetry_conntype
 		# NOTE: Originally based on #12674
 	10593 relax_invblk_punishment				4f45db31a80
-	10350 filtered_witblock-0.20				250f42bd6ce	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.21				250f42bd6ce	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -269,10 +270,8 @@ checkout origin/0.21
 	12965 scriptthreads-0.20					b324ae42770	last=dfab6c6866 jonas/2018/04/svt
 	13203 dsha256_power8-0.20					859d5652145	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
-		FIXME: cherrypick f40dd1dda5e68af77a88abc214e7e1dfb40b04a1
 	-     dsha256_power8-0.20_asm_pragmas		81da69b2979
 	15218 postibd_flush							2b5ad4ecd2a	last=d2ecb70d64  # validation: Flush state after initial sync
-		# Previously had moved init around to avoid conflict w/ 15367 (now merged)
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-0.20+knots			be06cae0e71	# latest code now
 	15421 tor_subprocess-0.20+knots				7f54810b99d	last=f2add182487 tor_subprocess
