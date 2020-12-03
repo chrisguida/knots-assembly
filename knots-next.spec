@@ -276,13 +276,13 @@ checkout origin/0.21
 	15428 tor_gui_pairing-0.21+knots			be06cae0e71	# latest code now
 	15421 tor_subprocess-0.21+knots				7f54810b99d	last=58c6cafd3a1 tor_subprocess
 	# TODO: tor gitian bundle!
-	15633 nohbcbfornonwit						305eabd5a3a
+	15633 nohbcbfornonwit-0.21+knots			305eabd5a3a	last=ac897f0bd3a nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
 	#16490 marco/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
-	17795 gui_console_ctrl_d-0.20+knots			47d8d7a7209
+	17795 gui_console_ctrl_d					47d8d7a7209
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					ef496a36c32
 	16807 bech32_error_detection-0.20+knots		9ba289863a6	last=54e107add41 meshcollider/201909_bech32_error_detection
