@@ -273,9 +273,8 @@ checkout origin/0.21
 	-     dsha256_power8-0.20_asm_pragmas		81da69b2979
 	15218 postibd_flush							2b5ad4ecd2a	last=d2ecb70d64  # validation: Flush state after initial sync
 		# TODO: Rewrite after #17487 is ready/safe to merge
-	15428 tor_gui_pairing-0.20+knots			be06cae0e71	# latest code now
-	15421 tor_subprocess-0.20+knots				7f54810b99d	last=f2add182487 tor_subprocess
-		NOTE: we have boost::process now?
+	15428 tor_gui_pairing-0.21+knots			be06cae0e71	# latest code now
+	15421 tor_subprocess-0.21+knots				7f54810b99d	last=58c6cafd3a1 tor_subprocess
 	# TODO: tor gitian bundle!
 	15633 nohbcbfornonwit						305eabd5a3a
 		# NOTE: added test fix from sdaftuar/test-15633-2
@@ -356,6 +355,7 @@ checkout origin/0.21
 	-     netperms_implicit_addr
 	12674 rpc_onetry_nonpriv-0.21+knots			f0764bb161b
 		TODO: rebase on top of #20551
+	TODO: add a bitcoinknots.conf ?
 # POLICY:
 	10282 timebomb_knots						df904a5f8b2
 	n/a  checkpoint_update-0.20					5a868f43b54
