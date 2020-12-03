@@ -285,10 +285,10 @@ checkout origin/0.21
 	17795 gui_console_ctrl_d					47d8d7a7209
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					ef496a36c32
-	16807 bech32_error_detection-0.20+knots		9ba289863a6	last=54e107add41 meshcollider/201909_bech32_error_detection
-		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack
-	-     gui_bech32_errpos-0.20+knots			4c26070eb13  # Latest code
-	17034 psbt_ver_proprietary-0.20+knots		c688e87d5e5	last=ddaccbc7bbd achow101/bip174-extensions
+	16807 bech32_error_detection-0.21+knots		9ba289863a6	last=54e107add41 meshcollider/201909_bech32_error_detection
+		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack, +x test
+	-     gui_bech32_errpos-0.21+knots			4c26070eb13  # Latest code
+	17034 achow101/bip174-extensions			c688e87d5e5	last=7d0b3d9c231
 	17636 guisettings-0.20						8319dbc82db	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
