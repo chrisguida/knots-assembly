@@ -297,10 +297,8 @@ checkout origin/0.21
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
-	# NOW MERGED: 18574, 18653, 18691, 18724, 18594
-	19089 cli_getinfo_mwbalances-0.20+knots		9332257e9d8	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
-		FIXME: invisible conflcit with merged 19405 rpc_netinfo_conncount_inout-0.20+knots	78f560f7558	last=94a792cc19f jonatack/in-and-out-connections
-	19092 cli_getinfo_mw_total_balance-0.20+knots	b2bafd9cba3	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+	19089 cli_getinfo_mwbalances				9332257e9d8	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+	19092 cli_getinfo_mw_total_balance			b2bafd9cba3	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock-0.20	5fb71e64dce	last=1e868bbbb1b
