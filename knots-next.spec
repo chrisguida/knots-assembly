@@ -296,7 +296,6 @@ checkout origin/0.21
 	18223 blockfilter_v0-0.19					84182b53513	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
-	18238 ajtowns/202002-bump-notfound			8c1f5a7139f	last=a204d1586ca ajtowns/202002-bump-notfound
 	# ---- BEGIN IN SEQUENCE ----
 	# NOW MERGED: 18574, 18653, 18691, 18724, 18594
 	19089 cli_getinfo_mwbalances-0.20+knots		9332257e9d8	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
