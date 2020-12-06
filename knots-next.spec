@@ -1,7 +1,7 @@
-timestamp 2020-11-30 06:10:34
+timestamp 2020-12-06 04:51:53
 lastapply no-merge
 
-#.. checked up to PR #20530 / gui #140
+#.. checked up to PR #20582 / gui #144
 
 checkout origin/0.21
 @0.21.x-syslibs
@@ -89,6 +89,8 @@ checkout origin/0.21
 	# Needs review: g121 promag/2020-10-missing-transaction-notifications
 	# Needs work: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch
+	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
+	20573 jonatack/send-allow-feerates-as-strings
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -315,6 +317,7 @@ checkout origin/0.21
 		#TODO: Split this up?
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
+	TODO: assumevalid control in Qt intro https://twitter.com/notgrubles/status/1297671475059728390
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				57c4d73c76d
@@ -380,7 +383,7 @@ checkout origin/0.21
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
-	n/a  (bump_version=Knots:20201130)			c38be07358d
+	n/a  (bump_version=Knots:20201206)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=122a503033f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
@@ -398,6 +401,7 @@ checkout origin/0.21
 @0.21.x-knots-android
 	g27   # top to bottom UI layout
 	17227 -  # Qt: Add Android packaging support
+	20565 -  # Android : Ensure pic build for bdb
 	TODO: gitian descriptor to actually build it all
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
