@@ -90,7 +90,7 @@ checkout origin/0.21
 	# Needs work: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
-	20573 jonatack/send-allow-feerates-as-strings
+	20573 bugfix_str_feerates-0.21							last=6fa72ceb802 jonatack/send-allow-feerates-as-strings
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -226,10 +226,12 @@ checkout origin/0.21
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
 	20226 -													last=55e26b3425f  # wallet, rpc: add listdescriptors command
-	g90   tmp_g90											last=7a05be5e47d  # Enlarge Network Traffic Graph
+	g90   gui_trafficgraph_vert-0.21						last=8b79225642a  # Enlarge Network Traffic Graph
+		# Removed dialog size change
 	20254 i2p_static-0.21+knots								last=8b4a3714b91 vasild/i2p_static
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	20275 no_sqlite_but_list-mini							last=727e0aad58b ryanofsky/pr/exist
+	20275 no_sqlite_but_list-mini							last=f3d870fc227 ryanofsky/pr/exist
+		# Mostly rewritten?
 	20295 Sjors/2020/11/getblockfrompeer					last=f74c19e61f6
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
