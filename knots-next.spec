@@ -154,6 +154,7 @@ checkout origin/0.21
 		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
 	17463 gui_custom_sendyes					06ef790c0b9
 	15987 wallet_no_reuse-0.21+knots			fcee9d7e1ff
+		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
 	-     rpc_gai_txids-0.21+knots				b981a160cc4
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
@@ -305,9 +306,9 @@ checkout origin/0.21
 	19092 cli_getinfo_mw_total_balance			b2bafd9cba3	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
-	18570 wallet_rpc_lastprocessedblock-0.20	5fb71e64dce	last=1e868bbbb1b
-	18789 achow101:create-unsigned-sendconfdialog
-		TODO: Resolve conflict with wallet_no_reuse
+	18570 wallet_rpc_lastprocessedblock			5fb71e64dce	last=1e868bbbb1b
+	#18789 achow101:create-unsigned-sendconfdialog
+		#TODO: Resolve conflict with wallet_no_reuse
 		#OR these two:
 		# 18655 achow101:split-bumpfeeaction
 		# 18656 achow101:make-unsigned-button
