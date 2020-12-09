@@ -236,7 +236,7 @@ checkout origin/0.21
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
-	20391 rpc_setfeerate-0.21								last=73a0f027639 jonatack/setfeerate
+	20391 rpc_setfeerate-0.21								last=43b0d996b2b jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
