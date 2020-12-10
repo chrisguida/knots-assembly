@@ -226,14 +226,14 @@ checkout origin/0.21
 	# Needs work: g86 hebasto/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
-	20226 -													last=55e26b3425f  # wallet, rpc: add listdescriptors command
+	20226 -													last=727ef849681  # wallet, rpc: add listdescriptors command
 	g90   gui_trafficgraph_vert-0.21						last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
 	20254 i2p_static-0.21+knots								last=8b4a3714b91 vasild/i2p_static
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini							last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
-	20295 Sjors/2020/11/getblockfrompeer					last=f74c19e61f6
+	20295 getblockfrompeer-0.21								last=513e38f72a4 Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
@@ -314,7 +314,7 @@ checkout origin/0.21
 		# 18656 achow101:make-unsigned-button
 	19117 rpc_getrpcwhitelist					e5201e7568a
 		# NOTE: Was #18827 before any Knots merge
-	-     getrpcwhitelist_wallets-0.20+knots	c4e1b0ecbe6
+	-     getrpcwhitelist_wallets-0.21+knots	c4e1b0ecbe6
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	17167 whitelist_outgoing-mini-0.21+knots	3cd212d495f	last=200e09f00b0 whitelist_outgoing
 		#TODO: Split this up?
