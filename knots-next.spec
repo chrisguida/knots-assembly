@@ -245,6 +245,7 @@ checkout origin/0.21
 		# NOTE: change rpcauth.py to use mode 'a'? https://github.com/bitcoin/bitcoin/pull/20407#discussion_r530000587
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
+	g149  intro_assumevalid
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -320,7 +321,6 @@ checkout origin/0.21
 		#TODO: Split this up?
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
-	TODO: assumevalid control in Qt intro https://twitter.com/notgrubles/status/1297671475059728390
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				57c4d73c76d
