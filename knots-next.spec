@@ -90,7 +90,6 @@ checkout origin/0.21
 	# Needs work: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
-	20573 bugfix_str_feerates-0.21							last=6fa72ceb802 jonatack/send-allow-feerates-as-strings
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -326,7 +325,6 @@ checkout origin/0.21
 	-     rpc_mempoolentry_txhash				57c4d73c76d
 	-     walletnotify_w_win					a7967686d4c
 	14137 win_taskbar_progress					e1dbdd78697	last=18eb4dbb8a
-	-     restore_rejectmsg-0.20+knots			f99fd33ae0a  # Latest code now
 	-     restore_blockmaxsize					77a6f199fa5
 	7107 qtnetworkport							bf7aeb32a35	last=1f37c87 origin-pull/7107/head
 	7533 sendraw_force-0.20+knots				5999c6933c5  # Latest code now
@@ -396,6 +394,7 @@ checkout origin/0.21
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
+		# 0.21 TODO: dropping reject msg support (too complex to maintain, needs rewrite)
 	# 0.21 TODO: Move manpages before ts (so manpages become part of branding patch)
 	n/a  (cherrypick=b9a7c5d663b)				b0c69f9a261  # translation update
 	n/a  (cherrypick=7b55b1058fd)				5f5b833b3c2  # update manpages (build first)
