@@ -28,7 +28,7 @@ checkout origin/0.21
 	18427 2020mingwthrd-mini					380c86e8d16	last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				e32605dd3c2
 	17828 p2p_log_categories					7a40b3433d6	last=04960621582 practicalswift/log-categories
-	# Needs concept ACK: 19832 hebasto/200829-log
+	19832 hebasto/200829-log								last=1816327e533
 	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 	14968 laanwj/2018_12_http_bind_error		a57f6aa8b6b	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					f1de252e1b4
