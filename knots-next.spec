@@ -1,7 +1,7 @@
-timestamp 2020-12-06 04:51:53
+timestamp 2020-12-14 08:39:18
 lastapply no-merge
 
-#.. checked up to PR #20582 / gui #144
+#.. checked up to PR #20653 / gui #152
 
 checkout origin/0.21
 @0.21.x-syslibs
@@ -17,6 +17,7 @@ checkout origin/0.21
 		# Needs #20458 #20267 #20478
 	20121 secp256k1_allow_bignum
 	20358 -													last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
+	20594 -
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							701d4ca9a34
@@ -90,6 +91,8 @@ checkout origin/0.21
 	# Needs work: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
+	# Needs concept review: 20583 marco/2012-walletSync
+	g152  gui_notify_setup_bg
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -245,6 +248,8 @@ checkout origin/0.21
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid
+	# Needs a reason to move code chunks: 20599 jnewbery/2020-12-tolerate-early-send-messages
+	# Needs review: 20652 -  # Designer fees when coin control is enabled
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -373,6 +378,7 @@ checkout origin/0.21
 	7483 svg_icon-0.20							4835bcd3444
 # BRANDING:
 	n/a  knots_branding-0.20					a65cba08b8d
+		TODO: new logo changes
 # FIXME: check there's no univalue push_back(bool) - see #20424
 #FIXME: Check there are no menu icons
 #FIXME: Check includes use <>
@@ -384,7 +390,7 @@ checkout origin/0.21
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
-	n/a  (bump_version=Knots:20201206)			c38be07358d
+	n/a  (bump_version=Knots:20201214)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=122a503033f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
