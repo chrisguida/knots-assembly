@@ -17,7 +17,7 @@ checkout origin/0.21
 		# Needs #20458 #20267 #20478
 	20121 secp256k1_allow_bignum
 	20358 -													last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
-	20594 -
+	20594 conf_getauxval-0.21								last=836a3dc02c7 jonas/2020/12/getauxval
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							701d4ca9a34
@@ -93,6 +93,7 @@ checkout origin/0.21
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
 	# Needs concept review: 20583 marco/2012-walletSync
 	g152  gui_notify_setup_bg
+		TODO: * 04595c9a0f7 fixup! GUI: Initialise DBus notifications in another thread
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -276,6 +277,7 @@ checkout origin/0.21
 	11750 coincontrol_multiselect				1bb9bcd76e5	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
 	11770 rest_fee-0.19							3805e99c89d	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+		TODO: * 70b2099e2e7 fixup! rest: add endpoint for estimatesmartfee
 	11803 bugfix_dumpwallet_hdkeypath			46b4bdc858b
 	12965 scriptthreads-0.20					b324ae42770	last=dfab6c6866 jonas/2018/04/svt
 	13203 dsha256_power8-0.20					859d5652145	last=3b402e0738 matt/2018-05-asm
@@ -318,6 +320,7 @@ checkout origin/0.21
 		# 18655 achow101:split-bumpfeeaction
 		# 18656 achow101:make-unsigned-button
 	19117 rpc_getrpcwhitelist					e5201e7568a
+		TODO: * 2f8ddbe5d72 (HEAD) fixup! RPC: getrpcwhitelist: Return a list of wallets as a JSON Object
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-0.21+knots	c4e1b0ecbe6
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
@@ -332,6 +335,7 @@ checkout origin/0.21
 	14137 win_taskbar_progress					e1dbdd78697	last=18eb4dbb8a
 	-     restore_blockmaxsize					77a6f199fa5
 	7107 qtnetworkport							bf7aeb32a35	last=1f37c87 origin-pull/7107/head
+		TODO: * 19864aae00c fixup! Qt: Ask user to use standard port on startup if specified port is in use
 	7533 sendraw_force-0.20+knots				5999c6933c5  # Latest code now
 	11082 rwconf								3858d1e74e1
 	7510 rwconf_gui								16293b1e43e
