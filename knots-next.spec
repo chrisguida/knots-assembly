@@ -297,6 +297,9 @@ checkout origin/0.21
 	17795 gui_console_ctrl_d					47d8d7a7209
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					ef496a36c32
+		TODO: * 5e753babf82 fixup! Restore warning for individual unknown version bits, as well as unknown version schemas
+		TODO: * 983a7d28477 fixup! Restore warning for individual unknown version bits, as well as unknown version schemas
+		TODO: * 779de98d77a fixup! Restore warning for individual unknown version bits, as well as unknown version schemas
 	16807 bech32_error_detection-0.21+knots		9ba289863a6	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack, +x test
 	-     gui_bech32_errpos-0.21+knots			4c26070eb13  # Latest code
@@ -321,6 +324,7 @@ checkout origin/0.21
 		# 18656 achow101:make-unsigned-button
 	19117 rpc_getrpcwhitelist					e5201e7568a
 		TODO: * 2f8ddbe5d72 (HEAD) fixup! RPC: getrpcwhitelist: Return a list of wallets as a JSON Object
+		TODO: * e002e561675 (HEAD) fixup! RPC: getrpcwhitelist: Return a list of wallets as a JSON Object
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-0.21+knots	c4e1b0ecbe6
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
@@ -337,6 +341,7 @@ checkout origin/0.21
 	7107 qtnetworkport							bf7aeb32a35	last=1f37c87 origin-pull/7107/head
 		TODO: * 19864aae00c fixup! Qt: Ask user to use standard port on startup if specified port is in use
 	7533 sendraw_force-0.20+knots				5999c6933c5  # Latest code now
+		TODO: rebase in 2a638836ec7 needs rebasing off temp or finishing
 	11082 rwconf								3858d1e74e1
 	7510 rwconf_gui								16293b1e43e
 		# 0.21 TODO: update neutrino option name
