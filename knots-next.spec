@@ -335,8 +335,6 @@ checkout origin/0.21
 	7533  sendraw_force							5999c6933c5
 	11082 rwconf								3858d1e74e1
 	7510 rwconf_gui								16293b1e43e
-		# 0.21 TODO: update neutrino option name
-	-    rwconf_gui_plus						be0027f92b2
 	 559 accept_nonstdtxn						1da672d42c9
 	 929 tbc									c4756a6c311
 	 553 bugfix_qt_uri_amount_parser			14443183ee8
