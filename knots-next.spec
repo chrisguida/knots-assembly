@@ -69,7 +69,7 @@ checkout origin/0.21
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	663b923b439	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
-	19419 listwalletdir_skip_data				c25545c6d7c	last=c730c7a6b6e Saibato/wallet_351
+	19419 listwalletdir_skip_data				c25545c6d7c	last=3f9cc0cd736 Saibato/wallet_351
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
@@ -204,9 +204,10 @@ checkout origin/0.21
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	19136 achow101/export-descriptor						last=de6b389d5db
-	19137 wallettool_dump-0.21+knots						last=19b2f4d6f79 achow101/dumpwalletrecords
+	19137 wallettool_dump-0.21+knots						last=23cac24dd3f achow101/dumpwalletrecords
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
 		# NOTE: Changed to print warnings to stderr instead of stdout
+		# NOTE: Diff-minimised
 	19242 uaappend								d4ad2f71f8b
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
@@ -341,7 +342,7 @@ checkout origin/0.21
 	 553 bugfix_qt_uri_amount_parser			14443183ee8
 	-    mining_priority						d75b4239f99  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					7765ac926bd
-	5891 qt_console_history_persist-0.20+knots	c4aaf9bb86f	last=ea852deea35 qt_console_history_persist
+	5891  qt_console_history_persist-0.21+knots	c4aaf9bb86f	last=ea852deea35 qt_console_history_persist
 	7219 rbf_opts-0.20+knots					da89337a123
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					dfe45d4f91d
