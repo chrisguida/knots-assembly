@@ -336,6 +336,7 @@ checkout origin/0.21
 	11082 rwconf								3858d1e74e1
 	7510 rwconf_gui								16293b1e43e
 	 559 accept_nonstdtxn						1da672d42c9
+	g153 const_max_digits
 	 929 tbc									c4756a6c311
 	 553 bugfix_qt_uri_amount_parser			14443183ee8
 	-    mining_priority						d75b4239f99  # NOTE: now the latest code, rebased
