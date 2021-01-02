@@ -93,6 +93,7 @@ checkout origin/0.21
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
 	# Needs concept review: 20583 marco/2012-walletSync
 	g152  gui_notify_setup_bg
+	-     bugfix_gui_drop_abc_confusing_hack
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
