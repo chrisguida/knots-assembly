@@ -1,7 +1,7 @@
-timestamp 2020-12-14 08:39:18
+timestamp 2021-01-06 05:30:42
 lastapply no-merge
 
-#.. checked up to PR #20653 / gui #152
+#.. checked up to PR #20867 / gui #176
 
 checkout origin/0.21
 @0.21.x-syslibs
@@ -30,6 +30,7 @@ checkout origin/0.21
 	18490 bugfix_symcheck_pe_case				e32605dd3c2
 	17828 p2p_log_categories					7a40b3433d6	last=04960621582 practicalswift/log-categories
 	19832 hebasto/200829-log								last=1816327e533
+	20845 MarcoFalke:2101-netLogDisconnect
 	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 	14968 laanwj/2018_12_http_bind_error		a57f6aa8b6b	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					f1de252e1b4
@@ -94,6 +95,14 @@ checkout origin/0.21
 	# Needs concept review: 20583 marco/2012-walletSync
 	g152  gui_notify_setup_bg
 	-     bugfix_gui_drop_abc_confusing_hack
+	20805 emilengler:2020-12-update-license-year-range-to-2021
+		FIXME: minify?
+	FIXME: ensure 20852 or 20849 go in
+	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
+	# Too messy? g164 hebasto:201224-signal
+	# Confirm bug even exists: g167 RandyMcMillan:help-message-raise
+	g171  hebasto:210101-wallet  # Use layout manager for Create Wallet dialog
+	# Meh? Diff too big? g176 hebasto:210103-delegate
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -234,6 +243,8 @@ checkout origin/0.21
 	g90   gui_trafficgraph_vert-0.21						last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
 	20254 i2p_static-0.21+knots								last=8b4a3714b91 vasild/i2p_static
+	20685 vasild:i2p_sam
+	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini							last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
@@ -252,7 +263,13 @@ checkout origin/0.21
 	g149  intro_assumevalid
 	# Needs a reason to move code chunks: 20599 jnewbery/2020-12-tolerate-early-send-messages
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
+	20664 jonasschnelli:2020/12/filterblocks_rpc
+	20702 -  # rpc: Add getblocklocations call
+	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max
+	# Needs BIP review: 20861 sipa:202101_bech32m
+	# Needs review? 20867 darosior:descriptor_multi_wsh
+	g163  jonatack:display-peer-conn-types
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -300,6 +317,7 @@ checkout origin/0.21
 	15861 restore_vbits_warning					ef496a36c32
 	16807 bech32_error_detection-0.21+knots		9ba289863a6	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack, +x test
+	20832 -  # rpc: Better error messages for invalid addresses
 	-     gui_bech32_errpos-0.21+knots			4c26070eb13  # Latest code
 	17034 psbt_ver_proprietary-0.21+knots		c688e87d5e5	last=7d0b3d9c231 achow101/bip174-extensions
 	17636 guisettings-0.21						8319dbc82db	last=187f9684e03 emilengler/2019-11-guisettings
@@ -328,6 +346,9 @@ checkout origin/0.21
 		#TODO: Split this up?
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
+	20764 jonatack:netinfo-updates-dec-2020
+		FIXME: Check if all applicable to 0.21
+	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				57c4d73c76d
@@ -336,6 +357,7 @@ checkout origin/0.21
 	-     restore_blockmaxsize					77a6f199fa5
 	7107 qtnetworkport							bf7aeb32a35	last=1f37c87 origin-pull/7107/head
 	7533  sendraw_force							5999c6933c5
+		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf								3858d1e74e1
 	7510 rwconf_gui								16293b1e43e
 	 559 accept_nonstdtxn						1da672d42c9
@@ -352,6 +374,7 @@ checkout origin/0.21
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			ad59c0b3f14	# Latest code now
 	-     gui_request_payment_label-0.21		d89e4408b1d
+	# 0.22 TODO: Revert g162 ? (and make sure IP sort first sorts by network - PR if needs fixing)
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			830d18f021a
 	9422  mempool_dat_extensible-0.20			ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
@@ -412,6 +435,7 @@ checkout origin/0.21
 	g27   # top to bottom UI layout
 	17227 -  # Qt: Add Android packaging support
 	20565 -  # Android : Ensure pic build for bdb
+	20814 -  # qt: Request Android permissions on APi >= 23
 	TODO: gitian descriptor to actually build it all
 
 # TODO: Try Snap package stuff documented in doc/release-process.md
