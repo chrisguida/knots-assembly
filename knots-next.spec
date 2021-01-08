@@ -30,7 +30,7 @@ checkout origin/0.21
 	18490 bugfix_symcheck_pe_case				e32605dd3c2
 	17828 p2p_log_categories					7a40b3433d6	last=04960621582 practicalswift/log-categories
 	19832 hebasto/200829-log								last=1816327e533
-	20845 MarcoFalke:2101-netLogDisconnect
+	20845 net_logcategory_localdisconnect-0.21				last=fae5c7c92b0 marco/2101-netLogDisconnect
 	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 	14968 laanwj/2018_12_http_bind_error		a57f6aa8b6b	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					f1de252e1b4
@@ -95,13 +95,13 @@ checkout origin/0.21
 	# Needs concept review: 20583 marco/2012-walletSync
 	g152  gui_notify_setup_bg
 	-     bugfix_gui_drop_abc_confusing_hack
-	20805 emilengler:2020-12-update-license-year-range-to-2021
-		FIXME: minify?
-	FIXME: ensure 20852 or 20849 go in
+	20805 copyright_2021-0.21
+		# NOTE: Diff-minimised
+	# 0.21 FIXME: ensure 20852 or 20849 go in
 	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
 	# Too messy? g164 hebasto:201224-signal
 	# Confirm bug even exists: g167 RandyMcMillan:help-message-raise
-	g171  hebasto:210101-wallet  # Use layout manager for Create Wallet dialog
+	g171  qt_createwallet_layoutmgr-0.21					last=d4feb6812a2 hebasto-g/210101-wallet
 	# Meh? Diff too big? g176 hebasto:210103-delegate
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
@@ -183,7 +183,7 @@ checkout origin/0.21
 		# NOTE: was #16549
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	16795 rpc_inferred_output_descriptors		593533e6b91	last=4372d342803 instagibbs/decode_descriptor
+	16795 rpc_inferred_output_descriptors		593533e6b91	last=3038f944a6d instagibbs/decode_descriptor
 		# Fixes: 478a4da04e77ca4438929909fafdbb0e57614577
 	# Needs review: 16981 LarryRuane:reindex-speedup
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
@@ -415,7 +415,7 @@ checkout origin/0.21
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
-	n/a  (bump_version=Knots:20201214)			c38be07358d
+	n/a  (bump_version=Knots:20210106)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=122a503033f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
