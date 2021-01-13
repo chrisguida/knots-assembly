@@ -83,7 +83,6 @@ checkout origin/0.21
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
 	# Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
 	# Needs work: 19888 fjahr/genesisblockstats
-	20120 getnetworkinfo_skip_unsupp-0.21					last=7b5bd3102e0 jonatack/fix-getnetworkinfo-empty-networks
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono								last=2e386cd3dd3
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
@@ -103,7 +102,7 @@ checkout origin/0.21
 	# Confirm bug even exists: g167 RandyMcMillan:help-message-raise
 	g171  qt_createwallet_layoutmgr-0.21					last=d4feb6812a2 hebasto-g/210101-wallet
 	# Meh? Diff too big? g176 hebasto:210103-delegate
-	g177  hebasto-g/210107-style
+	g177  workaround_qt_macos11_fusion-0.21					last=4e1154dfd12 hebasto-g/210107-style
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -194,7 +193,7 @@ checkout origin/0.21
 	# Needs fix: 17355 za-kk:oct-19-17174
 	18972 neutrino_whitelist-mini				b02540ef13d	last=339fe189eb9
 		# NOTE: Diff-minimised
-	16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=ee0dd3ae1fc achow101/bip174-xpub
+	16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.21					bb71d390fea	last=16d8d2da598 matt/2019-11-filter-rest
@@ -243,8 +242,8 @@ checkout origin/0.21
 	20226 -													last=727ef849681  # wallet, rpc: add listdescriptors command
 	g90   gui_trafficgraph_vert-0.21						last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
-	20254 i2p_static-0.21+knots								last=8b4a3714b91 vasild/i2p_static
-	20685 vasild:i2p_sam
+	20254 i2p_static-0.21									last=8b4a3714b91 vasild/i2p_static
+	# Needs review: 20685 vasild/i2p_sam
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini							last=f3d870fc227 ryanofsky/pr/exist
