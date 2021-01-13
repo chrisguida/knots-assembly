@@ -1,7 +1,7 @@
-timestamp 2021-01-06 05:30:42
+timestamp 2021-01-13 04:15:03
 lastapply no-merge
 
-#.. checked up to PR #20867 / gui #176
+#.. checked up to PR #20926 / gui #183
 
 checkout origin/0.21
 @0.21.x-syslibs
@@ -97,12 +97,13 @@ checkout origin/0.21
 	-     bugfix_gui_drop_abc_confusing_hack
 	20805 copyright_2021-0.21
 		# NOTE: Diff-minimised
-	# 0.21 FIXME: ensure 20852 or 20849 go in
+	# 0.21 FIXME: ensure 20852 or 20849 go in; 20904?
 	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
 	# Too messy? g164 hebasto:201224-signal
 	# Confirm bug even exists: g167 RandyMcMillan:help-message-raise
 	g171  qt_createwallet_layoutmgr-0.21					last=d4feb6812a2 hebasto-g/210101-wallet
 	# Meh? Diff too big? g176 hebasto:210103-delegate
+	g177  hebasto-g/210107-style
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -269,7 +270,12 @@ checkout origin/0.21
 	20827 ibd_prune_max
 	# Needs BIP review: 20861 sipa:202101_bech32m
 	# Needs review? 20867 darosior:descriptor_multi_wsh
-	g163  jonatack:display-peer-conn-types
+	g163  jonatack-g/display-peer-conn-types
+	g180  jonatack-g/peer-details-connection-type-followups
+		Diff-minimise
+	20916 marco/2101-wtxidTestmempool
+		#TODO: Diff-minimise
+	Arrow-variant of g179  jonatack-g/add-peers-dir-and-type-columns
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -415,7 +421,7 @@ checkout origin/0.21
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
-	n/a  (bump_version=Knots:20210106)			c38be07358d
+	n/a  (bump_version=Knots:20210113)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=122a503033f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
