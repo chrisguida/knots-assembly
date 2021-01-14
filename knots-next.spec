@@ -252,7 +252,7 @@ checkout origin/0.21
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
-	20391 rpc_setfeerate-0.21								last=43b0d996b2b jonatack/setfeerate
+	20391 rpc_setfeerate-0.21								last=4e7aa73e867 jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
@@ -263,8 +263,8 @@ checkout origin/0.21
 	g149  intro_assumevalid
 	# Needs a reason to move code chunks: 20599 jnewbery/2020-12-tolerate-early-send-messages
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	20664 jonasschnelli:2020/12/filterblocks_rpc
-	20702 -  # rpc: Add getblocklocations call
+	20664 rpc_scanblocks-0.21								last=f22a048f8d6 jonas/2020/12/filterblocks_rpc
+	20702 rpc_getblocklocations-0.21						last=9b03c654eb3
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max
 	# Needs BIP review: 20861 sipa:202101_bech32m
