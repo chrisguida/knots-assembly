@@ -248,7 +248,7 @@ checkout v0.21.0
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini							last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
-	20295 getblockfrompeer-0.21								last=513e38f72a4 Sjors/2020/11/getblockfrompeer
+	20295 getblockfrompeer-0.21								last=c0030dd69cb Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
@@ -274,8 +274,8 @@ checkout v0.21.0
 	g180  gui_peer_relay_detail-0.21+knots					last=79a2576af1e jonatack-g/peer-details-connection-type-followups
 		# NOTE: Carries commit from g163 since it messes with the string anyway
 		# NOTE: Left off final doxygen commit
-	20916 marco/2101-wtxidTestmempool
-		#TODO: Diff-minimise
+	20916 rpc_testmempoolaccept_wtxid-0.21					last=fa0aa87071e marco/2101-wtxidTestmempool
+		# Diff-minimised
 	Arrow-variant of g179  jonatack-g/add-peers-dir-and-type-columns
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
