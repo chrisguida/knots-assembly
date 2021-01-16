@@ -271,8 +271,9 @@ checkout v0.21.0
 	# Needs review? 20867 darosior:descriptor_multi_wsh
 	g163  gui_peer_conntype-0.21  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
-	g180  jonatack-g/peer-details-connection-type-followups
-		Diff-minimise
+	g180  gui_peer_relay_detail-0.21+knots					last=79a2576af1e jonatack-g/peer-details-connection-type-followups
+		# NOTE: Carries commit from g163 since it messes with the string anyway
+		# NOTE: Left off final doxygen commit
 	20916 marco/2101-wtxidTestmempool
 		#TODO: Diff-minimise
 	Arrow-variant of g179  jonatack-g/add-peers-dir-and-type-columns
