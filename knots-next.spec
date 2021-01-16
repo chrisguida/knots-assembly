@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #20926 / gui #183
 
-checkout origin/0.21
+checkout v0.21.0
 @0.21.x-syslibs
 	5872 subdir_incl_compat						500e007903f
 	2241 sys_leveldb							1417948c866
@@ -269,7 +269,8 @@ checkout origin/0.21
 	20827 ibd_prune_max
 	# Needs BIP review: 20861 sipa:202101_bech32m
 	# Needs review? 20867 darosior:descriptor_multi_wsh
-	g163  jonatack-g/display-peer-conn-types
+	g163  gui_peer_conntype-0.21  # jonatack-g/display-peer-conn-types
+		# NOTE: Stripped unrelated string changes
 	g180  jonatack-g/peer-details-connection-type-followups
 		Diff-minimise
 	20916 marco/2101-wtxidTestmempool
