@@ -274,9 +274,10 @@ checkout v0.21.0
 	g180  gui_peer_relay_detail-0.21+knots					last=79a2576af1e jonatack-g/peer-details-connection-type-followups
 		# NOTE: Carries commit from g163 since it messes with the string anyway
 		# NOTE: Left off final doxygen commit
+	g179  gui_peers_conntype-0.21+knots	last=9f76ba6597c jonatack-g/add-peers-dir-and-type-columns
+	-     qt_peers_directionarrow-0.21+knots				last=52279e4b24a tmp_gui_peers_dir_arrows
 	20916 rpc_testmempoolaccept_wtxid-0.21					last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
-	Arrow-variant of g179  jonatack-g/add-peers-dir-and-type-columns
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -356,6 +357,8 @@ checkout v0.21.0
 	20764 jonatack:netinfo-updates-dec-2020
 		FIXME: Check if all applicable to 0.21
 	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
+	g165  hebasto-g/201225-geo
+		TODO: Use a different setting name to avoid column differences vs Core
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				57c4d73c76d
@@ -382,6 +385,7 @@ checkout v0.21.0
 	-     gui_wallet_displayname-0.19			ad59c0b3f14	# Latest code now
 	-     gui_request_payment_label-0.21		d89e4408b1d
 	# 0.22 TODO: Revert g162 ? (and make sure IP sort first sorts by network - PR if needs fixing)
+	TODO: ensure IP sort ^
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			830d18f021a
 	9422  mempool_dat_extensible-0.20			ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
