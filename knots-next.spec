@@ -325,9 +325,9 @@ checkout v0.21.0
 	15861 restore_vbits_warning					ef496a36c32
 	16807 bech32_error_detection-0.21+knots		9ba289863a6	last=54e107add41 meshcollider/201909_bech32_error_detection
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack, +x test
-	20832 -  # rpc: Better error messages for invalid addresses
+	# Redundant/conflicts with 16807: 20832 -  # rpc: Better error messages for invalid addresses
 	-     gui_bech32_errpos-0.21+knots			4c26070eb13  # Latest code
-	17034 psbt_ver_proprietary-0.21+knots		c688e87d5e5	last=7d0b3d9c231 achow101/bip174-extensions
+	17034 psbt_ver_proprietary-0.21+knots		c688e87d5e5	last=76b0bf4709f achow101/bip174-extensions
 	17636 guisettings-0.21						8319dbc82db	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
@@ -354,11 +354,12 @@ checkout v0.21.0
 		#TODO: Split this up?
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
-	20764 jonatack:netinfo-updates-dec-2020
-		FIXME: Check if all applicable to 0.21
+	# TODO: 20764 jonatack/netinfo-updates-dec-2020
+		#FIXME: Check if all applicable to 0.21
 	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
-	g165  hebasto-g/201225-geo
-		TODO: Use a different setting name to avoid column differences vs Core
+	g165  gui_peers_splitter_ss-0.21+knots
+		# NOTE: Changed setting name since our splitters don't match Core's
+		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				57c4d73c76d
