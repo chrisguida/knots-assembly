@@ -278,6 +278,8 @@ checkout v0.21.0
 	-     qt_peers_directionarrow-0.21+knots				last=52279e4b24a tmp_gui_peers_dir_arrows
 	20916 rpc_testmempoolaccept_wtxid-0.21					last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
+	g162  gui_peers_detail_network-0.21+knots
+		# NOTE: Left out Peers table column & misc formatting changes
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -384,12 +386,12 @@ checkout v0.21.0
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			ad59c0b3f14	# Latest code now
-	-     gui_request_payment_label-0.21		d89e4408b1d
-	# 0.22 TODO: Revert g162 ? (and make sure IP sort first sorts by network - PR if needs fixing)
-	TODO: ensure IP sort ^
+	-     gui_request_payment_label-0.19		d89e4408b1d
+	-     gui_peers_sort_network-0.21+knots
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			830d18f021a
 	9422  mempool_dat_extensible-0.20			ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
+		# TODO: Load only for 0.21?
 		# 0.21 TODO: adapt test/functional/mempool_compatibility.py
 		# Briefly re-PR'd as #19488 between 0.20 and 0.21
 	TODO: Compatibility with merged #11413 explicit_fee-0.20+knots				1c65e068ee7	last=25dac9fa652 kallewoof/explicit-fee
