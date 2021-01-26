@@ -390,13 +390,9 @@ checkout v0.21.0
 	-     gui_peers_sort_network-0.21+knots
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			830d18f021a
-	9422  mempool_dat_extensible-0.20			ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
-		# TODO: Load only for 0.21?
-		# 0.21 TODO: adapt test/functional/mempool_compatibility.py
-		# Briefly re-PR'd as #19488 between 0.20 and 0.21
-	TODO: Compatibility with merged #11413 explicit_fee-0.20+knots				1c65e068ee7	last=25dac9fa652 kallewoof/explicit-fee
-		# NOTE: Dropped 4855bc80992 and 4e5fc19d9d9; diff-minimised and:
-		# NOTE: Retained compatibility with "EXPLICIT" fee mode, and fixed upper/lower casing
+	9422  mempool_dat_extensible_mod-0.21+knots	ad1414bcc50 last=1befffc0b48 mempool_dat_extensible
+		# 0.22 TODO: Load-only (kept read/write for 0.21 only so 0.14-0.20 don't lose prioirities on downgrade)
+	11413 rpc_feemode_explicit_compat-0.21+knots
 	-     netperms_implicit_addr
 	12674 rpc_onetry_nonpriv-0.21+knots			f0764bb161b
 		TODO: rebase on top of #20551
