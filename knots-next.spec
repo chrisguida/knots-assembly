@@ -397,8 +397,6 @@ checkout v0.21.0
 	12674 rpc_onetry_nonpriv-0.21+knots			f0764bb161b
 	# TODO: add a bitcoinknots.conf ?
 # POLICY:
-	10282 timebomb_knots						df904a5f8b2
-	n/a  checkpoint_update-0.20					5a868f43b54
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				71333c3e4b5
 	-    bytespersigopstrict-0.20+knots			f921debe480
@@ -408,6 +406,8 @@ checkout v0.21.0
 		#FIXME 0.21: split actual policy changes out to another line
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
+	n/a   checkpoint_update-0.21				5a868f43b54
+	10282 timebomb_knots						df904a5f8b2
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.20							4835bcd3444
 # BRANDING:
