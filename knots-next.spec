@@ -193,8 +193,9 @@ checkout v0.21.0
 	# Needs fix: 17355 za-kk:oct-19-17174
 	18972 neutrino_whitelist-mini				b02540ef13d	last=339fe189eb9
 		# NOTE: Diff-minimised
-	16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
-		# NOTE: Diff-minimised by excluding moveonly
+	17034 psbt_ver_proprietary_xpub-0.21		c688e87d5e5	last=93d232e57e5 achow101/bip174-extensions
+		# NOTE: Diff-minimised
+		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.21					bb71d390fea	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
@@ -329,7 +330,6 @@ checkout v0.21.0
 		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack, +x test
 	# Redundant/conflicts with 16807: 20832 -  # rpc: Better error messages for invalid addresses
 	-     gui_bech32_errpos-0.21+knots			4c26070eb13  # Latest code
-	17034 psbt_ver_proprietary-0.21+knots		c688e87d5e5	last=76b0bf4709f achow101/bip174-extensions
 	17636 guisettings-0.21						8319dbc82db	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
