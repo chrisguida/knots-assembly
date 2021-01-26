@@ -395,8 +395,7 @@ checkout v0.21.0
 	11413 rpc_feemode_explicit_compat-0.21+knots
 	-     netperms_implicit_addr
 	12674 rpc_onetry_nonpriv-0.21+knots			f0764bb161b
-		TODO: rebase on top of #20551
-	TODO: add a bitcoinknots.conf ?
+	# TODO: add a bitcoinknots.conf ?
 # POLICY:
 	10282 timebomb_knots						df904a5f8b2
 	n/a  checkpoint_update-0.20					5a868f43b54
