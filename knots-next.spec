@@ -240,7 +240,8 @@ checkout v0.21.0
 	# Needs work: g86 hebasto/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
-	20226 rpc_listdescriptors-0.21							last=0e31abf1d3e
+	20226 rpc_listdescriptors-0.21							last=bbb34e91ffc
+		# NOTE: Held back 0e31abf1d3e..bbb34e91ffc for now (I like my "skip" better)
 	g90   gui_trafficgraph_vert-0.21						last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
 	20254 i2p_static-0.21									last=8b4a3714b91 vasild/i2p_static
