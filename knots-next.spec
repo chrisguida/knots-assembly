@@ -96,7 +96,7 @@ checkout v0.21.0
 	-     bugfix_gui_drop_abc_confusing_hack
 	20805 copyright_2021-0.21
 		# NOTE: Diff-minimised
-	# 0.21 FIXME: ensure 20852 or 20849 go in; 20904? 20966?
+	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
 	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
 	# Too messy? g164 hebasto:201224-signal
 	# Confirm bug even exists: g167 RandyMcMillan:help-message-raise
@@ -285,7 +285,7 @@ checkout v0.21.0
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots
 		# NOTE: Left out Peers table column & misc formatting changes
-	20944 marco/2101-rpcMempoolTotalFee
+	20944 rpc_getmempoolinfo_total_fee-0.21					last=fa362064e38 marco/2101-rpcMempoolTotalFee
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots
 # Non-progress functionality:
