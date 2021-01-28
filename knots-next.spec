@@ -286,6 +286,7 @@ checkout v0.21.0
 	g162  gui_peers_detail_network-0.21+knots
 		# NOTE: Left out Peers table column & misc formatting changes
 	20944 rpc_getmempoolinfo_total_fee-0.21					last=fa362064e38 marco/2101-rpcMempoolTotalFee
+		# NOTE: Minor code rearranging to avoid conflicts
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots
 # Non-progress functionality:
@@ -429,7 +430,7 @@ checkout v0.21.0
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
-	n/a  (bump_version=Knots:20210113)			c38be07358d
+	n/a  (bump_version=Knots:20210128)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=122a503033f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
