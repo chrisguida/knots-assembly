@@ -400,8 +400,8 @@ checkout v0.21.0
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				71333c3e4b5
 	-    bytespersigopstrict-0.21+knots			f921debe480
-	9749 unique_spk_mempool-0.20+knots			200fda55358
-	-    bloom_default-0.20+knots				cdc7408913a
+	9749  unique_spk_mempool-0.21+knots			200fda55358
+	-     bloom_default-0.21+knots				cdc7408913a
 	-    rwconf_policy-0.20+knots				114a6a96f4c
 		#FIXME 0.21: split actual policy changes out to another line
 		#TODO: Add segwit wallet stuff?
