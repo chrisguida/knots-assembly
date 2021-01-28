@@ -103,10 +103,8 @@ checkout v0.21.0
 	g171  qt_createwallet_layoutmgr-0.21					last=d4feb6812a2 hebasto-g/210101-wallet
 	# Meh? Diff too big? g176 hebasto:210103-delegate (fix in #20983)
 	g177  workaround_qt_macos11_fusion-0.21					last=4e1154dfd12 hebasto-g/210107-style
-	20952 laanwj/2021-01-berkeleydb-sanity-check
-	g186  -
-	g188  achow101/bin-mode-psbts
-	g194  hebasto/210121-window
+	20952 bdb_sanity_check-0.21
+	g188  bugfix_psbt_binmode-0.21							last=cc3971c9ff5 achow101-g/bin-mode-psbts
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -259,7 +257,7 @@ checkout v0.21.0
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
-	20391 rpc_setfeerate-0.21								last=4e7aa73e867 jonatack/setfeerate
+	20391 rpc_setfeerate-0.21								last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
@@ -289,6 +287,7 @@ checkout v0.21.0
 		# NOTE: Left out Peers table column & misc formatting changes
 	20944 marco/2101-rpcMempoolTotalFee
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
+	g186  gui_bumpfee_privacywarn-0.21+knots
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -368,6 +367,7 @@ checkout v0.21.0
 		#FIXME: Check if all applicable to 0.21
 	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
 	g165  gui_peers_splitter_ss-0.21+knots
+		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
 # Non-upstreamed functionality:
