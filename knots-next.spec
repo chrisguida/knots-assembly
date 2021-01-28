@@ -404,9 +404,8 @@ checkout v0.21.0
 	-     bloom_default-0.21+knots				cdc7408913a
 	n/a   checkpoint_update-0.21				5a868f43b54
 	10282 timebomb_knots						df904a5f8b2
-	# These go together, and after everything else since they dep on many:
 	-     rwconf_policy-0.21+knots				114a6a96f4c
-	-     knots_policy-0.21
+		# Include Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
