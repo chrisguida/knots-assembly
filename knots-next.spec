@@ -1,7 +1,7 @@
-timestamp 2021-01-13 04:15:03
+timestamp 2021-01-28 09:12:57
 lastapply no-merge
 
-#.. checked up to PR #20926 / gui #183
+#.. checked up to PR #21026 / gui #199
 
 checkout v0.21.0
 @0.21.x-syslibs
@@ -96,18 +96,24 @@ checkout v0.21.0
 	-     bugfix_gui_drop_abc_confusing_hack
 	20805 copyright_2021-0.21
 		# NOTE: Diff-minimised
-	# 0.21 FIXME: ensure 20852 or 20849 go in; 20904?
+	# 0.21 FIXME: ensure 20852 or 20849 go in; 20904? 20966?
 	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
 	# Too messy? g164 hebasto:201224-signal
 	# Confirm bug even exists: g167 RandyMcMillan:help-message-raise
 	g171  qt_createwallet_layoutmgr-0.21					last=d4feb6812a2 hebasto-g/210101-wallet
-	# Meh? Diff too big? g176 hebasto:210103-delegate
+	# Meh? Diff too big? g176 hebasto:210103-delegate (fix in #20983)
 	g177  workaround_qt_macos11_fusion-0.21					last=4e1154dfd12 hebasto-g/210107-style
+	20952 laanwj/2021-01-berkeleydb-sanity-check
+	g186  -
+	g188  achow101/bin-mode-psbts
+	g194  hebasto/210121-window
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
 		# NOTE: gitian only
-	14066 gitian_power64-0.21+knots				5d7416dc553	last=31dbf0b677d gitian_power64
+	20963 gitian_power64-0.21+knots				5d7416dc553	last=543bf745d38 gitian_power64
+		# NOTE: Originally #14066
+		# Held back 31dbf0b677d..543bf745d38 - probably only applicable to master
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -281,6 +287,8 @@ checkout v0.21.0
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots
 		# NOTE: Left out Peers table column & misc formatting changes
+	20944 marco/2101-rpcMempoolTotalFee
+	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					b2b72634313	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
