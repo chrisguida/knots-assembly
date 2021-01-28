@@ -402,12 +402,13 @@ checkout v0.21.0
 	-    bytespersigopstrict-0.21+knots			f921debe480
 	9749  unique_spk_mempool-0.21+knots			200fda55358
 	-     bloom_default-0.21+knots				cdc7408913a
-	-    rwconf_policy-0.20+knots				114a6a96f4c
-		#FIXME 0.21: split actual policy changes out to another line
-		#TODO: Add segwit wallet stuff?
-		#TODO: final rebase (fix blockmax{size,weight})
 	n/a   checkpoint_update-0.21				5a868f43b54
 	10282 timebomb_knots						df904a5f8b2
+	# These go together, and after everything else since they dep on many:
+	-     rwconf_policy-0.21+knots				114a6a96f4c
+	-     knots_policy-0.21
+		#TODO: Add segwit wallet stuff?
+		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	7483 svg_icon-0.20							4835bcd3444
 # BRANDING:
