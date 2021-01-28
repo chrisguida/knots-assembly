@@ -409,17 +409,14 @@ checkout v0.21.0
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
-	7483 svg_icon-0.20							4835bcd3444
+	7483  svg_icon-0.21+knots					4835bcd3444
 # BRANDING:
-	n/a  knots_branding-0.20					a65cba08b8d
-		TODO: new logo changes
-# FIXME: check there's no univalue push_back(bool) - see #20424
+	n/a   knots_branding-0.21					a65cba08b8d
+#FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check there are no menu icons
-#FIXME: Check includes use <>
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
-#TODO: check for 'false' instead of ALLOW_ANY in addArgs
-#TODO: Check that we aren't deprcating anything in Core
+#TODO: Check that we aren't deprecating anything in Core
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
