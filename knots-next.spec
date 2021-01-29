@@ -348,8 +348,8 @@ checkout v0.21.0
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
-	19089 cli_getinfo_mwbalances				9332257e9d8	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
-	19092 cli_getinfo_mw_total_balance			b2bafd9cba3	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+	19089 cli_getinfo_mwbalances-0.21+knots		9332257e9d8	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+	19092 cli_getinfo_mw_total_balance-0.21+knots	b2bafd9cba3	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock			5fb71e64dce	last=1e868bbbb1b
@@ -415,7 +415,6 @@ checkout v0.21.0
 	-     bloom_default-0.21+knots				cdc7408913a
 	n/a   checkpoint_update-0.21				5a868f43b54
 	10282 timebomb_knots						df904a5f8b2
-x
 	-     rwconf_policy-0.21+knots				114a6a96f4c
 		# Include Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
