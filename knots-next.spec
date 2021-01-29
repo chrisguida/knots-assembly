@@ -105,6 +105,8 @@ checkout v0.21.0
 	g177  workaround_qt_macos11_fusion-0.21					last=4e1154dfd12 hebasto-g/210107-style
 	20952 bdb_sanity_check-0.21
 	g188  bugfix_psbt_binmode-0.21							last=cc3971c9ff5 achow101-g/bin-mode-psbts
+	21028 bips_44-49-84
+	21029 cli_doc_geNnewaddr
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -413,6 +415,7 @@ checkout v0.21.0
 	-     bloom_default-0.21+knots				cdc7408913a
 	n/a   checkpoint_update-0.21				5a868f43b54
 	10282 timebomb_knots						df904a5f8b2
+x
 	-     rwconf_policy-0.21+knots				114a6a96f4c
 		# Include Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
@@ -429,21 +432,20 @@ checkout v0.21.0
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
-	n/a  (cherrypick=6b32ed8eb2773d5aa0)		91ea84ade32	# doc/{bips,files}
+	n/a  (cherrypick=e0968d0328b2877330)		91ea84ade32	# doc/{bips,files}
 	n/a  (bump_version=Knots:20210128)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=122a503033f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=3ade1b6de2f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
+		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
 		# git log --pretty=oneline --abbrev-commit > lol && grep '^-.*`.*` \*' doc/release-notes.md|while IFS='`' read a b c; do grep -q $b lol && continue; grep "$(echo ${c:2} | sed 's/ *(.*$//')" lol || echo "$a\`\`$c"; done
 		# Make sure no binary files added!
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-		# 0.21 TODO: dropping reject msg support (too complex to maintain, needs rewrite)
-	# 0.21 TODO: Move manpages before ts (so manpages become part of branding patch)
-	n/a  (cherrypick=b9a7c5d663b)				b0c69f9a261  # translation update
 	n/a  (cherrypick=7b55b1058fd)				5f5b833b3c2  # update manpages (build first)
+	n/a  (cherrypick=b9a7c5d663b)				b0c69f9a261  # translation update
 # NOTE: use git diff --minimal for patches!
 
 @0.21.x-knots-android
