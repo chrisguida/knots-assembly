@@ -272,7 +272,7 @@ checkout v0.21.0
 	g149  intro_assumevalid
 	# Needs a reason to move code chunks: 20599 jnewbery/2020-12-tolerate-early-send-messages
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	20664 rpc_scanblocks-0.21								last=f22a048f8d6 jonas/2020/12/filterblocks_rpc
+	20664 rpc_scanblocks-0.21								last=ab315e5294b jonas/2020/12/filterblocks_rpc
 	20702 rpc_getblocklocations-0.21						last=9b03c654eb3
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max
@@ -436,7 +436,7 @@ checkout v0.21.0
 	n/a  (cherrypick=e0968d0328b2877330)		91ea84ade32	# doc/{bips,files}
 	n/a  (bump_version=Knots:20210130)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=3ade1b6de2f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=55df7a04800)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
@@ -445,7 +445,7 @@ checkout v0.21.0
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=7b55b1058fd)				5f5b833b3c2  # update manpages (build first)
+	n/a  (cherrypick=f85265ea4d8)				5f5b833b3c2  # update manpages (build first)
 	n/a  (cherrypick=b9a7c5d663b)				b0c69f9a261  # translation update
 # NOTE: use git diff --minimal for patches!
 
