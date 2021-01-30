@@ -16,8 +16,8 @@ checkout v0.21.0
 		#FIXME: Make sure tests skip properly per review concerns
 		# Needs #20458 #20267 #20478
 	20121 secp256k1_allow_bignum				6137b192b01
-	20358 -										20c750b874c													last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
-	20594 conf_getauxval-0.21					0489bf7a484								last=836a3dc02c7 jonas/2020/12/getauxval
+	20358 -										20c750b874c	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
+	20594 conf_getauxval-0.21					0489bf7a484	last=836a3dc02c7 jonas/2020/12/getauxval
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							6b3ec23b7ed
@@ -29,8 +29,8 @@ checkout v0.21.0
 	18427 2020mingwthrd-mini					6d99a88337e	last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				ada6068f813
 	17828 p2p_log_categories					f8284c15abb	last=04960621582 practicalswift/log-categories
-	19832 hebasto/200829-log					9edcf4da007								last=1816327e533
-	20845 net_logcategory_localdisconnect-0.21	52a728a1cba				last=fae5c7c92b0 marco/2101-netLogDisconnect
+	19832 hebasto/200829-log					9edcf4da007	last=1816327e533
+	20845 net_logcategory_localdisconnect-0.21	52a728a1cba	last=fae5c7c92b0 marco/2101-netLogDisconnect
 	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 	14968 laanwj/2018_12_http_bind_error		935169d3c0d	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					8005696f9f3
@@ -84,7 +84,7 @@ checkout v0.21.0
 	# Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
 	# Needs work: 19888 fjahr/genesisblockstats
 	# Needs review: 20196 vasild/fix_GetListenPort
-	g87   hebasto-g/200910-mono					cecabfc6440								last=2e386cd3dd3
+	g87   hebasto-g/200910-mono					cecabfc6440	last=2e386cd3dd3
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
 	# Needs review: g121 promag/2020-10-missing-transaction-notifications
@@ -100,11 +100,11 @@ checkout v0.21.0
 	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
 	# Too messy? g164 hebasto:201224-signal
 	# Confirm bug even exists: g167 RandyMcMillan:help-message-raise
-	g171  qt_createwallet_layoutmgr-0.21		b3652905431					last=d4feb6812a2 hebasto-g/210101-wallet
+	g171  qt_createwallet_layoutmgr-0.21		b3652905431	last=d4feb6812a2 hebasto-g/210101-wallet
 	# Meh? Diff too big? g176 hebasto:210103-delegate (fix in #20983)
-	g177  workaround_qt_macos11_fusion-0.21		1d7792c06df					last=4e1154dfd12 hebasto-g/210107-style
+	g177  workaround_qt_macos11_fusion-0.21		1d7792c06df	last=4e1154dfd12 hebasto-g/210107-style
 	20952 bdb_sanity_check-0.21					ee58bbed140
-	g188  bugfix_psbt_binmode-0.21				4024211b958							last=cc3971c9ff5 achow101-g/bin-mode-psbts
+	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin-mode-psbts
 	21028 bips_44-49-84							84554a991f3
 	21029 cli_doc_geNnewaddr					733dcdcccfb
 	# Needs review: g201  jonatack/inbound-block-relay
@@ -222,8 +222,8 @@ checkout v0.21.0
 		# NOTE: Originally #18728
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
-	19136 achow101/export-descriptor			c920850bd18						last=de6b389d5db
-	19137 wallettool_dump-0.21+knots			c2cf1b59bd9						last=23cac24dd3f achow101/dumpwalletrecords
+	19136 achow101/export-descriptor			c920850bd18	last=de6b389d5db
+	19137 wallettool_dump-0.21+knots			c2cf1b59bd9	last=23cac24dd3f achow101/dumpwalletrecords
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
 		# NOTE: Changed to print warnings to stderr instead of stdout
 		# NOTE: Diff-minimised
@@ -237,9 +237,9 @@ checkout v0.21.0
 	# Needs work: g27   # top to bottom UI layout
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
-	19762 ryanofsky/pr/named					8e03dc582e5								last=894c414dafb
+	19762 ryanofsky/pr/named					8e03dc582e5	last=894c414dafb
 	# Needs review and triage (fix or feature?): 19763 vasild:only_relay_to_unaware
-	19776 -										c0f75c5e52a													last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
+	19776 -										c0f75c5e52a	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 	19873 mempressure							433e6af60db
@@ -248,48 +248,48 @@ checkout v0.21.0
 	# Needs work: g86 hebasto/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
-	20226 rpc_listdescriptors-0.21				35574ef5955							last=647b81b7093
-	g90   gui_trafficgraph_vert-0.21			823073c11b8						last=8b79225642a  # Enlarge Network Traffic Graph
+	20226 rpc_listdescriptors-0.21				35574ef5955	last=647b81b7093
+	g90   gui_trafficgraph_vert-0.21			823073c11b8	last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
-	20254 i2p_static-0.21						5e7a2e67827									last=8b4a3714b91 vasild/i2p_static
+	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
 	# Needs review: 20685 vasild/i2p_sam
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	20275 no_sqlite_but_list-mini				48a3b95a506							last=f3d870fc227 ryanofsky/pr/exist
+	20275 no_sqlite_but_list-mini				48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
-	20295 getblockfrompeer-0.21					36a451cb339								last=c0030dd69cb Sjors/2020/11/getblockfrompeer
+	20295 getblockfrompeer-0.21					36a451cb339	last=c0030dd69cb Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
-	20391 rpc_setfeerate-0.21					9c613464efe								last=1002e2d0d7f jonatack/setfeerate
+	20391 rpc_setfeerate-0.21					9c613464efe	last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
-	20403 upgradewallet_pr20403-0.21+knots		b6cabe60262					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
-	20407 rpcauthfile-0.21+knots				e44b9f53561							last=ff5d7fa1e4c promag/2020-11-rpcauthfile
+	20403 upgradewallet_pr20403-0.21+knots		b6cabe60262	last=3eb6f8b2e61 jonatack/upgradewallet-improvements
+	20407 rpcauthfile-0.21+knots				e44b9f53561	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 		# NOTE: fixed bug, added multi-line support, and added tests
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid						ce7b5633bf5
 	# Needs a reason to move code chunks: 20599 jnewbery/2020-12-tolerate-early-send-messages
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	20664 rpc_scanblocks-0.21					6f48a710889								last=ab315e5294b jonas/2020/12/filterblocks_rpc
-	20702 rpc_getblocklocations-0.21			2b8c96aa433						last=9b03c654eb3
+	20664 rpc_scanblocks-0.21					6f48a710889	last=ab315e5294b jonas/2020/12/filterblocks_rpc
+	20702 rpc_getblocklocations-0.21			2b8c96aa433	last=9b03c654eb3
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							cc7902a09d0
 	# Needs BIP review: 20861 sipa:202101_bech32m
 	# Needs review? 20867 darosior:descriptor_multi_wsh
 	g163  gui_peer_conntype-0.21				fcc7d7afd82  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
-	g180  gui_peer_relay_detail-0.21+knots		79575c9d88a					last=79a2576af1e jonatack-g/peer-details-connection-type-followups
+	g180  gui_peer_relay_detail-0.21+knots		79575c9d88a	last=79a2576af1e jonatack-g/peer-details-connection-type-followups
 		# NOTE: Carries commit from g163 since it messes with the string anyway
 		# NOTE: Left off final doxygen commit
 	g179  gui_peers_conntype-0.21+knots			db1d8415614	last=9f76ba6597c jonatack-g/add-peers-dir-and-type-columns
-	-     qt_peers_directionarrow-0.21+knots	fa00cf3cbca				last=52279e4b24a tmp_gui_peers_dir_arrows
-	20916 rpc_testmempoolaccept_wtxid-0.21		a78ab94ec0f					last=fa0aa87071e marco/2101-wtxidTestmempool
+	-     qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=52279e4b24a tmp_gui_peers_dir_arrows
+	20916 rpc_testmempoolaccept_wtxid-0.21		a78ab94ec0f	last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 		# NOTE: Left out Peers table column & misc formatting changes
-	20944 rpc_getmempoolinfo_total_fee-0.21		4ca6b64935f					last=fa362064e38 marco/2101-rpcMempoolTotalFee
+	20944 rpc_getmempoolinfo_total_fee-0.21		4ca6b64935f	last=fa362064e38 marco/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots	7a0256e272a
