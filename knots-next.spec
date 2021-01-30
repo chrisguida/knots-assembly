@@ -446,7 +446,7 @@ checkout v0.21.0
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=f85265ea4d8)				5f5b833b3c2  # update manpages (build first)
-	n/a  (cherrypick=b9a7c5d663b)				b0c69f9a261  # translation update
+	n/a  (cherrypick=63fcf9deced)				b0c69f9a261  # translation update
 # NOTE: use git diff --minimal for patches!
 
 @0.21.x-knots-android
