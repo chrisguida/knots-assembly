@@ -1,7 +1,7 @@
-timestamp 2021-01-28 09:12:57
+timestamp 2021-01-30 05:16:37
 lastapply no-merge
 
-#.. checked up to PR #21026 / gui #199
+#.. checked up to PR #21038 / gui #199
 
 checkout v0.21.0
 @0.21.x-syslibs
@@ -107,6 +107,8 @@ checkout v0.21.0
 	g188  bugfix_psbt_binmode-0.21							last=cc3971c9ff5 achow101-g/bin-mode-psbts
 	21028 bips_44-49-84
 	21029 cli_doc_geNnewaddr
+	# Needs review: g201  jonatack/inbound-block-relay
+	# Needs review: g202  RandyMcMillan/peers-tab-sidepanel
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				9dbb4bb8313	last=3e30ae0514e restore_win32
 	-     restore_linux32						275c3f2b076
@@ -432,7 +434,7 @@ checkout v0.21.0
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=e0968d0328b2877330)		91ea84ade32	# doc/{bips,files}
-	n/a  (bump_version=Knots:20210128)			c38be07358d
+	n/a  (bump_version=Knots:20210130)			c38be07358d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=3ade1b6de2f)				9efbaf7ee8d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
