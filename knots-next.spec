@@ -263,8 +263,8 @@ checkout v0.21.0
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots					last=3eb6f8b2e61 jonatack/upgradewallet-improvements
-	20407 tmp_rpcauthfile									last=ff5d7fa1e4c promag/2020-11-rpcauthfile
-		# NOTE: change rpcauth.py to use mode 'a'? https://github.com/bitcoin/bitcoin/pull/20407#discussion_r530000587
+	20407 rpcauthfile-0.21+knots							last=ff5d7fa1e4c promag/2020-11-rpcauthfile
+		# NOTE: fixed bug, added multi-line support, and added tests
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid
