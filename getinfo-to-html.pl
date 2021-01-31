@@ -5,6 +5,7 @@
 # Note this is presently NOT free software. See LICENSE for details.
 # Use at your own risk. No warranty.
 
+use sort 'stable';
 use strict;
 use warnings;
 use forks;
@@ -90,7 +91,7 @@ sub prep_html {
 			$bb += 1000000 if $bb =~ s/^g//;
 			return $aa <=> $bb
 		}
-		$aa cmp $bb
+		0  # Stable sort
 	} @to_process;
 	my @threads;
 	my $i;
