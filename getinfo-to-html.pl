@@ -7,7 +7,7 @@
 
 use strict;
 use warnings;
-use threads;
+use forks;
 use utf8;
 
 BEGIN { binmode STDOUT, ":utf8" }
@@ -81,7 +81,7 @@ sub prep_html {
 					$req->authorization_basic(@github_auth);
 					my $content = LWP::UserAgent->new->request($req)->content;
 					$j = decode_json $content;
-					die unless $j->{title};
+					die $content unless $j->{title};
 					
 					open my $f, ">$cachedir/$prspec";
 					print $f $content;
