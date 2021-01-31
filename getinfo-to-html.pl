@@ -29,7 +29,45 @@ my @github_auth;
 	chomp for @github_auth;
 }
 
+sub makegitcmd {
+	("git", "--no-pager", @_)
+}
+
+sub syscapture {
+	my @cmd = @_;
+	#print "@cmd\n";
+	open(my $outio, "-|", @cmd);
+	my $out;
+	{
+		local $/;
+		$out = <$outio>;
+	}
+	close $outio;
+	my $ec = $?;
+	($ec, $out)
+}
+
+sub gitcapture {
+	my @cmd = makegitcmd(@_);
+	my ($ec, $out) = syscapture(@cmd);
+	chomp $out;
+	die "@cmd failed (exit code $ec; output $out)" if $ec;
+	$out
+}
+
+sub wc_l {
+	return 0 unless length $_[0];
+	1 + ($_[0] =~ tr/\n//)
+}
+
 my @to_process;
+
+my $base;
+{
+	my $line = <>;
+	$line =~ m/^checkout (.*)$/ or die;
+	$base = $1;
+}
 
 my %sortorder = (
 	"\@" => 0,
@@ -91,6 +129,16 @@ sub prep_html {
 				$_ = "<a";
 				$_ .= " class=\"merged\"" if $j->{merged};
 				$_ .= " href=\"" . $j->{"html_url"} . "\">" . $j->{title} . "</a>";
+			} elsif (m/^BM (\S+) (\S+)$/) {
+				my ($branch, $lastmerge) = @{^CAPTURE};
+				my $gitlog = gitcapture("log", "--no-decorate", "--no-merges", "--pretty=%H %s", "$base..$branch");
+				if (wc_l($gitlog) == 1) {
+					my ($commithash, $subject) = split /\s/, $gitlog, 2;
+					$_ = "<a href=\"https://github.com/bitcoinknots/bitcoin/commit/$commithash\">$subject</a>";
+				} else {
+					my $mergecommit = gitcapture("rev-parse", $lastmerge);
+					$_ = "<a href=\"https://github.com/bitcoinknots/bitcoin/commit/$mergecommit\">TODO</a>";
+				}
 			}
 			"$_\n"
 		};
