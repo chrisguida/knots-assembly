@@ -14,6 +14,7 @@ use utf8;
 BEGIN { binmode STDOUT, ":utf8" }
 
 use File::Basename;
+use HTML::Entities;
 use HTTP::Request;
 use JSON::PP;
 use LWP;
@@ -68,6 +69,10 @@ my $base;
 	my $line = <>;
 	$line =~ m/^checkout (.*)$/ or die;
 	$base = $1;
+}
+
+sub htmlencode {
+	encode_entities(@_, "<>&")
 }
 
 my %sortorder = (
@@ -129,19 +134,22 @@ sub prep_html {
 				}
 				$_ = "<a";
 				$_ .= " class=\"merged\"" if $j->{merged};
-				$_ .= " href=\"" . $j->{"html_url"} . "\">" . $j->{title} . "</a>";
+				my $subject = htmlencode($j->{title});
+				$_ .= " href=\"" . $j->{"html_url"} . "\">" . $subject . "</a>";
 			} elsif (m/^BM (\S+) (\S+)$/ or m/^LA ()(\S+)$/) {
 				my ($branch, $lastmerge) = @{^CAPTURE};
 				my $gitlog = gitcapture("log", "--no-decorate", "--no-merges", "--pretty=%H %s", "$lastmerge^..$lastmerge");
 				if (wc_l($gitlog) == 1) {
 					my ($commithash, $subject) = split /\s/, $gitlog, 2;
+					$subject = htmlencode($subject);
 					$_ = "<a href=\"https://github.com/bitcoinknots/bitcoin/commit/$commithash\">$subject</a>";
 				} else {
 					my $mergecommit = gitcapture("rev-parse", $lastmerge);
 					$_ = "<a href=\"https://github.com/bitcoinknots/bitcoin/commit/$mergecommit\">TODO</a>";
 				}
 			}
-			"<li>$_</li>\n"
+			$_ = "<li>$_</li>" if m[^<];
+			"$_\n"
 		};
 		if ($line =~ /^PR /) {
 			if (not $i++) {  # First PR job runs synchronously to init LWP
