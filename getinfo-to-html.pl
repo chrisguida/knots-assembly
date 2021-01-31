@@ -10,9 +10,16 @@ use warnings;
 use threads;
 use utf8;
 
+BEGIN { binmode STDOUT, ":utf8" }
+
+use File::Basename;
 use HTTP::Request;
 use JSON::PP;
 use LWP;
+
+my $cachedir = dirname(__FILE__) . "/getinfo-to-html-cache/";
+
+warn "Remember to wipe cache if PRs might have been merged!\n";
 
 my @github_auth;
 {
@@ -47,25 +54,53 @@ sub prep_html {
 		$aa cmp $bb
 	} @to_process;
 	my @threads;
+	my $i;
 	while ($_ = shift @to_process) {
+		my $line = $_;
 		push @threads, async {
-			if (s/^PR (g)?//) {
-				my $repo;
-				if (defined $1) {
-					$repo = "bitcoin-core/gui";
+			if (s/^PR ((g)?(.*))//) {
+				my ($prspec, $is_gui, $prnum) = @{^CAPTURE};
+				my $j;
+				if (-e "$cachedir/$prspec") {
+					open my $f, "<$cachedir/$prspec";
+					my $content;
+					{
+						local $/ = undef;
+						$content = <$f>;
+					}
+					close $f;
+					$j = decode_json $content;
 				} else {
-					$repo = "bitcoin/bitcoin";
+					my $repo;
+					if (defined $is_gui) {
+						$repo = "bitcoin-core/gui";
+					} else {
+						$repo = "bitcoin/bitcoin";
+					}
+					my $req = HTTP::Request->new(GET => "https://api.github.com/repos/$repo/pulls/$prnum");
+					$req->authorization_basic(@github_auth);
+					my $content = LWP::UserAgent->new->request($req)->content;
+					$j = decode_json $content;
+					die unless $j->{title};
+					
+					open my $f, ">$cachedir/$prspec";
+					print $f $content;
+					close $f;
 				}
-				my $req = HTTP::Request->new(GET => "https://api.github.com/repos/$repo/pulls/$_");
-				$req->authorization_basic(@github_auth);
-				my $content = LWP::UserAgent->new->request($req)->content;
-				my $j = decode_json $content;
 				$_ = "<a";
 				$_ .= " class=\"merged\"" if $j->{merged};
 				$_ .= " href=\"" . $j->{"html_url"} . "\">" . $j->{title} . "</a>";
 			}
 			"$_\n"
 		};
+		if ($line =~ /^PR /) {
+			if (not $i++) {  # First PR job runs synchronously to init LWP
+				while (@threads) {
+					my $thread = shift @threads;
+					print $thread->join;
+				}
+			}
+		}
 		while (@threads > 4) {
 			my $thread = shift @threads;
 			print $thread->join;
