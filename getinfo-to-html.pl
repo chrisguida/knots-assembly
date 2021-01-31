@@ -7,6 +7,19 @@
 
 use strict;
 use warnings;
+use threads;
+use utf8;
+
+use HTTP::Request;
+use JSON::PP;
+use LWP;
+
+my @github_auth;
+{
+	open my $f, "<&3" or die;
+	@github_auth = <$f>;
+	close $f;
+}
 
 my @to_process;
 
@@ -33,8 +46,33 @@ sub prep_html {
 		}
 		$aa cmp $bb
 	} @to_process;
+	my @threads;
 	while ($_ = shift @to_process) {
-		print "$_\n";
+		push @threads, async {
+			if (s/^PR (g)?//) {
+				my $repo;
+				if (defined $1) {
+					$repo = "bitcoin-core/gui";
+				} else {
+					$repo = "bitcoin/bitcoin";
+				}
+				my $req = HTTP::Request->new(GET => "https://api.github.com/repos/$repo/pulls/$_");
+				$req->authorization_basic(@github_auth);
+				my $content = LWP::UserAgent->new->request($req)->content;
+				my $j = decode_json $content;
+				$_ = "<a";
+				$_ .= " class=\"merged\"" if $j->{merged};
+				$_ .= " href=\"" . $j->{"html_url"} . "\">" . $j->{title} . "</a>";
+			}
+			"$_\n"
+		};
+		while (@threads > 4) {
+			my $thread = shift @threads;
+			print $thread->join;
+		}
+	}
+	for my $thread (@threads) {
+		print $thread->join;
 	}
 }
 
