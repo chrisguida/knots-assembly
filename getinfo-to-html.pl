@@ -141,7 +141,7 @@ sub prep_html {
 					$_ = "<a href=\"https://github.com/bitcoinknots/bitcoin/commit/$mergecommit\">TODO</a>";
 				}
 			}
-			"$_\n"
+			"<li>$_</li>\n"
 		};
 		if ($line =~ /^PR /) {
 			if (not $i++) {  # First PR job runs synchronously to init LWP
