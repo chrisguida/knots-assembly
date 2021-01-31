@@ -26,6 +26,7 @@ my @github_auth;
 	open my $f, "<&3" or die;
 	@github_auth = <$f>;
 	close $f;
+	chomp for @github_auth;
 }
 
 my @to_process;
