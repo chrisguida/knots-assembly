@@ -130,9 +130,9 @@ sub prep_html {
 				$_ = "<a";
 				$_ .= " class=\"merged\"" if $j->{merged};
 				$_ .= " href=\"" . $j->{"html_url"} . "\">" . $j->{title} . "</a>";
-			} elsif (m/^BM (\S+) (\S+)$/) {
+			} elsif (m/^BM (\S+) (\S+)$/ or m/^LA ()(\S+)$/) {
 				my ($branch, $lastmerge) = @{^CAPTURE};
-				my $gitlog = gitcapture("log", "--no-decorate", "--no-merges", "--pretty=%H %s", "$lastmerge^..$lastmerge^2");
+				my $gitlog = gitcapture("log", "--no-decorate", "--no-merges", "--pretty=%H %s", "$lastmerge^..$lastmerge");
 				if (wc_l($gitlog) == 1) {
 					my ($commithash, $subject) = split /\s/, $gitlog, 2;
 					$_ = "<a href=\"https://github.com/bitcoinknots/bitcoin/commit/$commithash\">$subject</a>";
