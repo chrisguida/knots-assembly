@@ -131,7 +131,7 @@ sub prep_html {
 				$_ .= " href=\"" . $j->{"html_url"} . "\">" . $j->{title} . "</a>";
 			} elsif (m/^BM (\S+) (\S+)$/) {
 				my ($branch, $lastmerge) = @{^CAPTURE};
-				my $gitlog = gitcapture("log", "--no-decorate", "--no-merges", "--pretty=%H %s", "$base..$branch");
+				my $gitlog = gitcapture("log", "--no-decorate", "--no-merges", "--pretty=%H %s", "$lastmerge^..$lastmerge^2");
 				if (wc_l($gitlog) == 1) {
 					my ($commithash, $subject) = split /\s/, $gitlog, 2;
 					$_ = "<a href=\"https://github.com/bitcoinknots/bitcoin/commit/$commithash\">$subject</a>";
