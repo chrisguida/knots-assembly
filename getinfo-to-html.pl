@@ -71,8 +71,12 @@ my $base;
 	$base = $1;
 }
 
-sub htmlencode {
-	encode_entities(@_, "<>&")
+sub preptitle {
+	my ($title) = @_;
+	$title =~ s/^\[?WIP\]?\:?//i;
+	$title =~ s/^\s+//;
+	$title =~ s/\.?\s*$//;
+	encode_entities($title, "<>&")
 }
 
 my %sortorder = (
@@ -134,18 +138,18 @@ sub prep_html {
 				}
 				$_ = "<a";
 				$_ .= " class=\"merged\"" if $j->{merged};
-				my $subject = htmlencode($j->{title});
+				my $subject = preptitle($j->{title});
 				$_ .= " href=\"" . $j->{"html_url"} . "\">" . $subject . "</a>";
 			} elsif (m/^BM (\S+) (\S+)$/ or m/^LA ()(\S+)$/) {
 				my ($branch, $lastmerge) = @{^CAPTURE};
 				my $gitlog = gitcapture("log", "--no-decorate", "--no-merges", "--pretty=%H %s", "$lastmerge^..$lastmerge");
 				if (wc_l($gitlog) == 1) {
 					my ($commithash, $subject) = split /\s/, $gitlog, 2;
-					$subject = htmlencode($subject);
+					$subject = preptitle($subject);
 					$_ = "<a href=\"https://github.com/bitcoinknots/bitcoin/commit/$commithash\">$subject</a>";
 				} else {
 					my $mergecommit = gitcapture("rev-parse", $lastmerge);
-					$_ = "<a href=\"https://github.com/bitcoinknots/bitcoin/commit/$mergecommit\">TODO</a>";
+					$_ = "<a href=\"https://github.com/bitcoinknots/bitcoin/commit/$mergecommit\">TODO: $branch</a>";
 				}
 			}
 			$_ = "<li>$_</li>" if m[^<];
