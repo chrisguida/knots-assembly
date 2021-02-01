@@ -93,7 +93,6 @@ checkout v0.21.0
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
 	# Needs concept review: 20583 marco/2012-walletSync
 	g152  gui_notify_setup_bg					f5193e74b49
-		TODO: Merge 53f0ef968591f0c7f48798bd498bcd5c616d6a22
 	-     bugfix_gui_drop_abc_confusing_hack	a22512d2d9d
 	20805 copyright_2021-0.21					11239d013ad
 		# NOTE: Diff-minimised
@@ -220,7 +219,6 @@ checkout v0.21.0
 	18722 O_addrman_unordered_map-0.21+knots	402247de36d	last=d517c9d376f
 		# NOTE: Restored C++11 compatibility from d6e782174ec
 	g125  intro_prune_size						f1f840d7e24
-		TODO: Merge 72aeedc303a31a644b335e97f140e57413817688
 		# NOTE: Originally #18728
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
