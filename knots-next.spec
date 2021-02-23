@@ -293,6 +293,7 @@ checkout v0.21.0
 		# NOTE: Minor code rearranging to avoid conflicts
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots	7a0256e272a
+	21056 cdecker/rpcwait-timeout
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -306,6 +307,7 @@ checkout v0.21.0
 	9504 dumpmasterprivkey-0.21					82506cdd9e8	last=07fc81109a
 	9849 gui_netwatch-0.21+knots				d8b7e2d12e0	last=c4599591e97 gui_netwatch
 	10615 multiwallet_rpc-0.21+knots			9ebcde7606c	last=ee12dd02601 multiwallet_rpc
+		FIXME: Restrict backupwallet/dumpwallet somehow???
 	10554 zmq_wtx-0.21+knots					d933d13de8c	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					ba634e68076
