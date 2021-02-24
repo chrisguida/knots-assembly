@@ -1,7 +1,7 @@
-timestamp 2021-01-30 05:16:37
-lastapply no-merge
+timestamp 2021-02-24 03:37:25
+#lastapply no-merge
 
-#.. checked up to PR #21038 / gui #199
+#.. checked up to PR #21289 / gui #221
 
 checkout v0.21.0
 @0.21.x-syslibs
@@ -18,6 +18,8 @@ checkout v0.21.0
 	20121 secp256k1_allow_bignum				6137b192b01
 	20358 -										20c750b874c	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					0489bf7a484	last=836a3dc02c7 jonas/2020/12/getauxval
+	21250 theStack/2021-02-build-pass-have_o_cloexec
+	# 22.0 TODO: g216  optional_font
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							6b3ec23b7ed
@@ -82,6 +84,7 @@ checkout v0.21.0
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
 	# Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
+		# NOTE: Bugfix in #21254
 	# Needs work: 19888 fjahr/genesisblockstats
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					cecabfc6440	last=2e386cd3dd3
@@ -109,6 +112,19 @@ checkout v0.21.0
 	21029 cli_doc_geNnewaddr					733dcdcccfb
 	# Needs review: g201  jonatack/inbound-block-relay
 	# Needs review: g202  RandyMcMillan/peers-tab-sidepanel
+	21083 achow101/createtx-same-feerate
+		TODO: minimise
+	21106 pstratem/2021-02-07-isinitialblockdownload-timeout
+		FIXME: Address bugs
+	21111 parazyd/openrc-init-improve
+	# Needs review: 21161 ajtowns/202102-fee-bug-medianval
+	21192 laanwj/2021-02-netinfo-verbosity
+	21201 achow101/fix-sendmoney
+	g202  RandyMcMillan/peers-tab-sidepanel
+	g203  jonatack/display-plain-inbound-and-add-release-notes
+	g204  hebasto/210131-resize
+	g217  jarolrod/warning-look-like-button
+	# Needs careful review: g219 hebasto/210223-toolbar
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
 	-     restore_linux32						7a156d40653
@@ -180,6 +196,7 @@ checkout v0.21.0
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	18772 -										6b8d1024b6c last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	16083 rpc_getblock_prevouts_fees-0.21		194833f5285	last=dd83c4c925
+		TODO: Check for changes in #21245 rebase
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
 		# Renamed "coinbase" field to "generated"
 		# Silenced warnings
@@ -204,6 +221,8 @@ checkout v0.21.0
 	17034 psbt_ver_proprietary_xpub-0.21		bae5cc5fc29	last=93d232e57e5 achow101/bip174-extensions
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
+	21283 achow101/psbt2
+		TODO: diff-minimise??
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.21					f1d75e5e5ed	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
@@ -249,6 +268,7 @@ checkout v0.21.0
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
 	20226 rpc_listdescriptors-0.21				35574ef5955	last=647b81b7093
+		TODO: potential bugfix in 21277
 	g90   gui_trafficgraph_vert-0.21			823073c11b8	last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
@@ -294,6 +314,19 @@ checkout v0.21.0
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots	7a0256e272a
 	21056 cdecker/rpcwait-timeout
+	NOTE: Likely needed for HW wallet support: #21127
+	21141 -  # wallet: Add new format string placeholders for walletnotify
+	21158 -  # lib: Add Taproot support to libconsensus
+		TODO: minimise
+	21173 -  # util: faster HexStr => 13% faster blockToJSON
+	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
+	21260 -  # wallet: indicate whether a transaction is in the mempool
+		TODO: Check if my review comments have been addressed
+	21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
+		TODO: Check if my review comments have been addressed
+	# 22.0 TODO: Revert gui#211
+	g213  jarolrod/add-copyaddress-requestedpayments
+	g214  jarolrod/disable-contextactions-novalue
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -377,6 +410,8 @@ checkout v0.21.0
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
+	g205  hebasto/210131-header
+	g206  jonatack/add-fields-to-peer-details
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				7282a392f4f
@@ -436,7 +471,7 @@ checkout v0.21.0
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=e0968d0328b2877330)		c91fc545126	# doc/{bips,files}
-	n/a  (bump_version=Knots:20210130)			ea72e5a5e33
+	n/a  (bump_version=Knots:20210224)			ea72e5a5e33
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=55df7a04800)				cc37fd7c8be  # release notes: write/update, including change log and credits
 			# check travis for misspellings
@@ -447,6 +482,7 @@ checkout v0.21.0
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
+		# 22.0 TODO: #21063 API change if merged
 	n/a  (cherrypick=f85265ea4d8)				878980c69c4  # update manpages (build first)
 	n/a  (cherrypick=63fcf9deced)				d4a64f61c13  # translation update
 # NOTE: use git diff --minimal for patches!
