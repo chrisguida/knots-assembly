@@ -12,9 +12,12 @@ checkout v0.21.0
 	13789 bugfix_asm_pragmas					a5fc4e7be85
 	-     bugfix_asm_leveldb_check				b37c1f867cd
 	15155 test_external_bcli					b1ca07dc0f0
-	# TODO: 20202 achow101/opt-sqlite-bdb
-		#FIXME: Make sure tests skip properly per review concerns
-		# Needs #20458 #20267 #20478
+	20202 opt_bdb-0.21
+		# +#20458+#20267
+		# Omitted default-tests-to-descriptors-when-bdb-not-compiled: a2282b44a4d 373158bc44c
+		# Omitted "Don't make any wallets unless wallet is required": 45b4366f8ff 104a3a22564 6e06ca05880
+		# Diff-minimised
+	-     opt_bdb_extracare-0.21
 	20121 secp256k1_allow_bignum				6137b192b01
 	20358 -										20c750b874c	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					0489bf7a484	last=836a3dc02c7 jonas/2020/12/getauxval
@@ -246,6 +249,7 @@ checkout v0.21.0
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
 		# NOTE: Changed to print warnings to stderr instead of stdout
 		# NOTE: Diff-minimised
+		TODO: When opt_bdb is merged, need to add part of #20267 49797c3ccfb
 	19242 uaappend								a2676744f50
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
@@ -277,6 +281,7 @@ checkout v0.21.0
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini				48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
+		TODO: When opt_bdb is merged, make this work both ways
 	20295 getblockfrompeer-0.21					36a451cb339	last=c0030dd69cb Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
@@ -442,6 +447,7 @@ checkout v0.21.0
 	-    preserve_unsupported_keyflags			189276115ab
 	9422  mempool_dat_extensible_mod-0.21+knots	f4f5c7f69bf last=1befffc0b48 mempool_dat_extensible
 		# 0.22 TODO: Load-only (kept read/write for 0.21 only so 0.14-0.20 don't lose prioirities on downgrade)
+		FIXME: Address 32 MB limit bug (https://github.com/bitcoinknots/bitcoin/issues/30)
 	11413 rpc_feemode_explicit_compat-0.21+knots	55502e4eeff
 	-     netperms_implicit_addr				710fc292260
 	12674 rpc_onetry_nonpriv-0.21+knots			b660a9f435d
