@@ -1,7 +1,7 @@
-timestamp 2021-02-24 03:37:25
+timestamp 2021-02-27 04:08:11
 #lastapply no-merge
 
-#.. checked up to PR #21289 / gui #221
+#.. checked up to PR #21304 / gui #229
 
 checkout v0.21.0
 @0.21.x-syslibs
@@ -199,7 +199,7 @@ checkout v0.21.0
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	18772 -										6b8d1024b6c last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	16083 rpc_getblock_prevouts_fees-0.21		194833f5285	last=dd83c4c925
-		TODO: Check for changes in #21245 rebase
+		TODO: Check for changes in #21245 rebase (skip enum; add REST extended)
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
 		# Renamed "coinbase" field to "generated"
 		# Silenced warnings
@@ -329,7 +329,6 @@ checkout v0.21.0
 		TODO: Check if my review comments have been addressed
 	21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		TODO: Check if my review comments have been addressed
-	# 22.0 TODO: Revert gui#211
 	g213  jarolrod/add-copyaddress-requestedpayments
 	g214  jarolrod/disable-contextactions-novalue
 # Non-progress functionality:
@@ -416,7 +415,10 @@ checkout v0.21.0
 		# NOTE: Changed setting name since our splitters don't match Core's
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
 	g205  hebasto/210131-header
+		TODO: +gui#229
 	g206  jonatack/add-fields-to-peer-details
+	g226  jonatack/add-last-block-and-last-transaction-to-peer-details
+	g230  gui_backup_formats
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				7282a392f4f
@@ -477,7 +479,7 @@ checkout v0.21.0
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=e0968d0328b2877330)		c91fc545126	# doc/{bips,files}
-	n/a  (bump_version=Knots:20210224)			ea72e5a5e33
+	n/a  (bump_version=Knots:20210227)			ea72e5a5e33
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=55df7a04800)				cc37fd7c8be  # release notes: write/update, including change log and credits
 			# check travis for misspellings
