@@ -80,9 +80,9 @@ checkout v0.21.0
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
 	# Needs review: 19434 promag:2020-06-remote-disconnect
-	# Needs review: g18    hebasto:200701-peer
+	# Needs review: g18   hebasto-g/200701-peer
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
-	# Needs review: g59 hebasto-g/200814-rpc
+	# Needs review: g59   hebasto-g/200814-rpc
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
@@ -93,7 +93,7 @@ checkout v0.21.0
 	g87   hebasto-g/200910-mono					cecabfc6440	last=2e386cd3dd3
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
-	# Needs review: g121 promag/2020-10-missing-transaction-notifications
+	# Needs review: g121 promag-g/2020-10-missing-transaction-notifications
 	# Needs work: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch				23c02df92c0
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
@@ -104,17 +104,17 @@ checkout v0.21.0
 		# NOTE: Diff-minimised
 	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
 	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
-	# Too messy? g164 hebasto:201224-signal
-	# Confirm bug even exists: g167 RandyMcMillan:help-message-raise
+	# Too messy? g164 hebasto-g/201224-signal
+	# Confirm bug even exists: g167 RandyMcMillan-g/help-message-raise
 	g171  qt_createwallet_layoutmgr-0.21		b3652905431	last=d4feb6812a2 hebasto-g/210101-wallet
-	# Meh? Diff too big? g176 hebasto:210103-delegate (fix in #20983)
+	# Meh? Diff too big? g176 hebasto-g/210103-delegate (fix in #20983)
 	g177  workaround_qt_macos11_fusion-0.21		1d7792c06df	last=4e1154dfd12 hebasto-g/210107-style
 	20952 bdb_sanity_check-0.21					ee58bbed140
 	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin-mode-psbts
 	21028 bips_44-49-84							84554a991f3
 	21029 cli_doc_geNnewaddr					733dcdcccfb
-	# Needs review: g201  jonatack/inbound-block-relay
-	# Needs review: g202  RandyMcMillan/peers-tab-sidepanel
+	# Needs review: g201  jonatack-g/inbound-block-relay
+	# Needs review: g202  RandyMcMillan-g/peers-tab-sidepanel
 	21083 achow101/createtx-same-feerate
 		TODO: minimise
 	21106 pstratem/2021-02-07-isinitialblockdownload-timeout
@@ -123,11 +123,11 @@ checkout v0.21.0
 	# Needs review: 21161 ajtowns/202102-fee-bug-medianval
 	21192 laanwj/2021-02-netinfo-verbosity
 	21201 achow101/fix-sendmoney
-	g202  RandyMcMillan/peers-tab-sidepanel
-	g203  jonatack/display-plain-inbound-and-add-release-notes
-	g204  hebasto/210131-resize
-	g217  jarolrod/warning-look-like-button
-	# Needs careful review: g219 hebasto/210223-toolbar
+	g202  RandyMcMillan-g/peers-tab-sidepanel
+	g203  jonatack-g/display-plain-inbound-and-add-release-notes
+	g204  hebasto-g/210131-resize
+	g217  jarolrod-g/warning-look-like-button
+	# Needs careful review: g219 hebasto-g/210223-toolbar
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
 	-     restore_linux32						7a156d40653
@@ -207,7 +207,7 @@ checkout v0.21.0
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
 		# NOTE: Bumps boost version!
-	# Depends-on-16546: g4 Sjors:2019/08/hww-qt
+	# Depends-on-16546: g4 Sjors-g/2019/08/hww-qt
 		# NOTE: was #16549
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
@@ -268,7 +268,7 @@ checkout v0.21.0
 	19873 mempressure							433e6af60db
 	# Needs serious work: 20139 -  # "Removed unused warning and formatted RPC result" supposedly
 	# Needs work: 20154 kallewoof/202010-bip322
-	# Needs work: g86 hebasto/200902-tor
+	# Needs work: g86   hebasto-g/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
 	20226 rpc_listdescriptors-0.21				35574ef5955	last=647b81b7093
@@ -329,8 +329,8 @@ checkout v0.21.0
 		TODO: Check if my review comments have been addressed
 	21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		TODO: Check if my review comments have been addressed
-	g213  jarolrod/add-copyaddress-requestedpayments
-	g214  jarolrod/disable-contextactions-novalue
+	g213  jarolrod-g/add-copyaddress-requestedpayments
+	g214  jarolrod-g/disable-contextactions-novalue
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -414,10 +414,10 @@ checkout v0.21.0
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
-	g205  hebasto/210131-header
+	g205  hebasto-g/210131-header
 		TODO: +gui#229
-	g206  jonatack/add-fields-to-peer-details
-	g226  jonatack/add-last-block-and-last-transaction-to-peer-details
+	g206  jonatack-g/add-fields-to-peer-details
+	g226  jonatack-g/add-last-block-and-last-transaction-to-peer-details
 	g230  gui_backup_formats
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
