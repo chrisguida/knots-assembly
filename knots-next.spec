@@ -98,7 +98,7 @@ NM	-     marco/2101-2101Backports^^^^^          # g177, handled later
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
 	19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
 		NOTE: Bugfix in #21254
-	19888 fjahr/genesisblockstats
+	19888 -  # rpc: Fix getblockstats issues
 		TODO: Look over for safety
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					cecabfc6440	last=2e386cd3dd3
@@ -216,7 +216,7 @@ NM	-     marco/2101-2101Backports^^^^^          # g177, handled later
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	16546 Sjors:2019/08/hww-box2
+	16546 Sjors/2019/08/hww-box2
 		NOTE: Bumps boost version!
 		TODO: add #21292
 		NOTE: Likely needed for HW wallet support: #21127
