@@ -45,7 +45,7 @@ checkout v0.21.0
 		# Was #12491
 	14501 fsync_dir								a68c3372204
 		# Was #12696
-	# TODO: fsync_dir_pt2 after PR submitted & reviewed & tested
+	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	13608 -										22b031869b0	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	-     deprecated_param_names				1d990681394
 	-     bugfix_rpc_getbalance_hacky			d191e08bada
@@ -86,9 +86,10 @@ checkout v0.21.0
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	# Needs concept ACK: 19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
-		# NOTE: Bugfix in #21254
-	# Needs work: 19888 fjahr/genesisblockstats
+	19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
+		NOTE: Bugfix in #21254
+	19888 fjahr/genesisblockstats
+		TODO: Look over for safety
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					cecabfc6440	last=2e386cd3dd3
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
