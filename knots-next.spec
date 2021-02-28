@@ -133,6 +133,9 @@ checkout v0.21.0
 	g204  hebasto-g/210131-resize
 	g217  jarolrod-g/warning-look-like-button
 	# Needs careful review: g219 hebasto-g/210223-toolbar
+# SOFTFORK:
+	19573 bip8
+	TODO: taproot activation params
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
 	-     restore_linux32						7a156d40653
@@ -211,6 +214,7 @@ checkout v0.21.0
 	16546 Sjors:2019/08/hww-box2
 		NOTE: Bumps boost version!
 		TODO: add #21292
+		NOTE: Likely needed for HW wallet support: #21127
 	g4    Sjors-g/2019/08/hww-qt
 		# NOTE: was #16549
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
@@ -270,12 +274,11 @@ checkout v0.21.0
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	19762 ryanofsky/pr/named					8e03dc582e5	last=894c414dafb
-	# Needs review and triage (fix or feature?): 19763 vasild:only_relay_to_unaware
+	19763 vasild/only_relay_to_unaware
 	19776 -										c0f75c5e52a	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 	19873 mempressure							433e6af60db
-	# Needs serious work: 20139 -  # "Removed unused warning and formatted RPC result" supposedly
 	# Needs work: 20154 kallewoof/202010-bip322
 	# Needs work: g86   hebasto-g/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
@@ -285,7 +288,7 @@ checkout v0.21.0
 	g90   gui_trafficgraph_vert-0.21			823073c11b8	last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
-	# Needs review: 20685 vasild/i2p_sam
+	20685 vasild/i2p_sam
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini				48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
@@ -294,7 +297,7 @@ checkout v0.21.0
 	20295 getblockfrompeer-0.21					36a451cb339	last=c0030dd69cb Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
-	# Needs review: 20365 -  # wallettool: add parameter to create descriptors wallet
+	20365 -  # wallettool: add parameter to create descriptors wallet
 	20391 rpc_setfeerate-0.21					9c613464efe	last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
@@ -310,7 +313,7 @@ checkout v0.21.0
 	20702 rpc_getblocklocations-0.21			2b8c96aa433	last=9b03c654eb3
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							cc7902a09d0
-	# Needs BIP review: 20861 sipa:202101_bech32m
+	20861 sipa/202101_bech32m
 	# Needs review? 20867 darosior:descriptor_multi_wsh
 	g163  gui_peer_conntype-0.21				fcc7d7afd82  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
@@ -328,7 +331,6 @@ checkout v0.21.0
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots	7a0256e272a
 	21056 cdecker/rpcwait-timeout
-	NOTE: Likely needed for HW wallet support: #21127
 	21141 -  # wallet: Add new format string placeholders for walletnotify
 	21158 -  # lib: Add Taproot support to libconsensus
 		TODO: minimise
@@ -380,7 +382,7 @@ checkout v0.21.0
 	15633 nohbcbfornonwit-0.21+knots			a2a5e87357d	last=ac897f0bd3a nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
-	#16490 marco/1907-rpcMempoolWhyReplacable
+	16490 marco/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d					2ba0d7680f2
@@ -403,7 +405,7 @@ checkout v0.21.0
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock			d8be75679d9	last=1e868bbbb1b
-	#18789 achow101:create-unsigned-sendconfdialog
+	18789 achow101/create-unsigned-sendconfdialog
 		#TODO: Resolve conflict with wallet_no_reuse
 		#OR these two:
 		# 18655 achow101:split-bumpfeeaction
@@ -416,8 +418,8 @@ checkout v0.21.0
 		#TODO: Split this up?
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
-	# TODO: 20764 jonatack/netinfo-updates-dec-2020
-		#FIXME: Check if all applicable to 0.21
+	20764 jonatack/netinfo-updates-dec-2020
+		FIXME: Check if all applicable to 0.21
 	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
 	g165  gui_peers_splitter_ss-0.21+knots		e6d89996c67
 		# +g194 Save/restore RPCConsole geometry only for window
