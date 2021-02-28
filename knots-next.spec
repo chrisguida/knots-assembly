@@ -28,6 +28,11 @@ checkout v0.21.0
 	-     lint_relaxer							6b3ec23b7ed
 	17402 travis_ppc64							12dfd387f7c	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
+	20901 marco/2101-2101Backports
+		# Includes: 
+		#	g167 RandyMcMillan-g/help-message-raise
+		#	...?
+		FIXME: populate list above, maybe split into multiple lines for each PR backported
 	18818 fix_gitian_src_202004					6fc637d9972
 	18902 fix_gitdir_again						f7355def795
 		# NOTE: based directly on #18818
@@ -95,7 +100,7 @@ checkout v0.21.0
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
 	# Needs review: g121 promag-g/2020-10-missing-transaction-notifications
-	# Needs work: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
+	# Needs review: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch				23c02df92c0
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
 	# Needs concept review: 20583 marco/2012-walletSync
@@ -106,7 +111,6 @@ checkout v0.21.0
 	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
 	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
 	# Too messy? g164 hebasto-g/201224-signal
-	# Confirm bug even exists: g167 RandyMcMillan-g/help-message-raise
 	g171  qt_createwallet_layoutmgr-0.21		b3652905431	last=d4feb6812a2 hebasto-g/210101-wallet
 	# Meh? Diff too big? g176 hebasto-g/210103-delegate (fix in #20983)
 	g177  workaround_qt_macos11_fusion-0.21		1d7792c06df	last=4e1154dfd12 hebasto-g/210107-style
@@ -115,7 +119,7 @@ checkout v0.21.0
 	21028 bips_44-49-84							84554a991f3
 	21029 cli_doc_geNnewaddr					733dcdcccfb
 	# Needs review: g201  jonatack-g/inbound-block-relay
-	# Needs review: g202  RandyMcMillan-g/peers-tab-sidepanel
+	g202  RandyMcMillan-g/peers-tab-sidepanel
 	21083 achow101/createtx-same-feerate
 		TODO: minimise
 	21106 pstratem/2021-02-07-isinitialblockdownload-timeout
@@ -173,7 +177,7 @@ checkout v0.21.0
 	g119  rm_send2self-mini						2fac1e80cc9	last=77a74aac443 rm_send2self
 		# NOTE: Originally #15115
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
-	# Needs review (at least): 15129 rpc: Added ability to remove watch only addresses
+	15129 benthecarman/remove_watch_only_address
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review: 15204 promag:2019-01-openexternalwallet
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
@@ -183,15 +187,13 @@ checkout v0.21.0
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
-	# Needs work: 18077 hebasto/20200130-natpmp
+	18077 hebasto/20200130-natpmp
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
-		# TODO: Switch to rwconf?
+		TODO: Switch to rwconf?
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram							d5711407461	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 	# Totally broken: g108 jonas/2020/03/mempool_graph									last=42b451ebf1e
-	# Needs QA/review: 15946 jonas/2019/05/prune_blockfilter
-		# NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
 	17463 gui_custom_sendyes					f97f61983f6
 	15987 wallet_no_reuse-0.21+knots			d2a92674d94
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
@@ -206,9 +208,10 @@ checkout v0.21.0
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	# Needs mucho review: 16546 Sjors:2019/08/hww-box2 # -signer
-		# NOTE: Bumps boost version!
-	# Depends-on-16546: g4 Sjors-g/2019/08/hww-qt
+	16546 Sjors:2019/08/hww-box2
+		NOTE: Bumps boost version!
+		TODO: add #21292
+	g4    Sjors-g/2019/08/hww-qt
 		# NOTE: was #16549
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
@@ -219,7 +222,8 @@ checkout v0.21.0
 	# Needs review: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options? (watch out for send RPC)
 		# TODO: Diff-minimise
-	# Needs fix: 17355 za-kk:oct-19-17174
+	17355 za-kk:oct-19-17174
+		TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
 	18972 neutrino_whitelist-mini				738e702e9a1	last=339fe189eb9
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-0.21		bae5cc5fc29	last=93d232e57e5 achow101/bip174-extensions
@@ -227,7 +231,8 @@ checkout v0.21.0
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
 	21283 achow101/psbt2
 		TODO: diff-minimise??
-	# Needs review: 17529 rpc: Faster getblock using PureBlock
+	21319 getblock_optimise
+		# Context: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.21					f1d75e5e5ed	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
@@ -255,6 +260,9 @@ checkout v0.21.0
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 	19463 prune_locks							00eb76ff486
+	15946 jonas/2019/05/prune_blockfilter
+		NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
+		NOTE: Integrate prune locks
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
