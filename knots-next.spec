@@ -21,23 +21,22 @@ checkout v0.21.0
 	20121 secp256k1_allow_bignum				6137b192b01
 	20358 -										20c750b874c	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					0489bf7a484	last=836a3dc02c7 jonas/2020/12/getauxval
-	21250 theStack/2021-02-build-pass-have_o_cloexec
 	# 22.0 TODO: g216  optional_font
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							6b3ec23b7ed
 	17402 travis_ppc64							12dfd387f7c	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
-	20852 marco/2101-2101Backports^^^^^^^^^^^^^  # net: allow CSubNet of non-IP networks
-	g148  marco/2101-2101Backports^^^^^^^^^^^^   # Bugfix: GUI: Restore SendConfirmationDialog button default to "Yes"
-NM	-     marco/2101-2101Backports^^^^^^^^^^^    # g171, handled later
-	g176  marco/2101-2101Backports^^^^^^^^       # Fix TxViewDelegate layout
-	20983 marco/2101-2101Backports^^^^^^^        # Fix MSVC build after gui#176
-	g167  marco/2101-2101Backports^^^^^^
-NM	-     marco/2101-2101Backports^^^^^          # g177, handled later
-	21081 marco/2101-2101Backports^^^^           # test: fix the unreachable code at feature_taproot
-	21043 marco/2101-2101Backports^^             # net: Avoid UBSan warning in ProcessMessage(...)
-	21201 marco/2101-2101Backports               # rpc: Disallow sendtoaddress and sendmany when private keys disabled
+	20852 marco/2101-2101Backports^^^^^^^^^^^^^ last=39b43298d9c  # net: allow CSubNet of non-IP networks
+	g148  marco/2101-2101Backports^^^^^^^^^^^^  last=8775691383f  # Bugfix: GUI: Restore SendConfirmationDialog button default to "Yes"
+NM	-     marco/2101-2101Backports^^^^^^^^^^^                     # g171, handled later
+	g176  marco/2101-2101Backports^^^^^^^^      last=af58f5b12ce  # Fix TxViewDelegate layout
+	20983 marco/2101-2101Backports^^^^^^^       last=c5354e4641d  # Fix MSVC build after gui#176
+	g167  marco/2101-2101Backports^^^^^^        last=77114462f23  # raise helpMessageDialog
+NM	-     marco/2101-2101Backports^^^^^                           # g177, handled later
+	21081 marco/2101-2101Backports^^^^          last=5e0cd25e295  # test: fix the unreachable code at feature_taproot
+	21043 marco/2101-2101Backports^^            last=3ddbf22ed17  # net: Avoid UBSan warning in ProcessMessage(...)
+	21201 marco/2101-2101Backports              last=6bfbc97d716  # rpc: Disallow sendtoaddress and sendmany when private keys disabled
 	18818 fix_gitian_src_202004					6fc637d9972
 	18902 fix_gitdir_again						f7355def795
 		# NOTE: based directly on #18818
@@ -45,7 +44,7 @@ NM	-     marco/2101-2101Backports^^^^^          # g177, handled later
 	18490 bugfix_symcheck_pe_case				ada6068f813
 	17828 p2p_log_categories					f8284c15abb	last=04960621582 practicalswift/log-categories
 	19832 hebasto/200829-log					9edcf4da007	last=1816327e533
-	20845 net_logcategory_localdisconnect-0.21	52a728a1cba	last=fae5c7c92b0 marco/2101-netLogDisconnect
+	20845 net_logcategory_localdisconnect-0.21	52a728a1cba	last=fa55159b9ed marco/2101-netLogDisconnect
 	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 	14968 laanwj/2018_12_http_bind_error		935169d3c0d	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					8005696f9f3
@@ -85,7 +84,7 @@ NM	-     marco/2101-2101Backports^^^^^          # g177, handled later
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19362 rpc_scantxoutset_reset_progress-0.17	57179188510	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
-	19419 listwalletdir_skip_data				eaa839d579c	last=3f9cc0cd736 Saibato/wallet_351
+m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/wallet_351
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
@@ -96,10 +95,9 @@ NM	-     marco/2101-2101Backports^^^^^          # g177, handled later
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19884 -  # p2p: No delay in adding fixed seeds if -dnsseed=0 and peers.dat is empty
-		NOTE: Bugfix in #21254
-	19888 -  # rpc: Fix getblockstats issues
-		TODO: Look over for safety
+	19884 fixedseeds-0.21
+		# +partial #21254 (bugfix only)
+	19888 getblockstats_utxo_actual-0.21+knots
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					cecabfc6440	last=2e386cd3dd3
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
