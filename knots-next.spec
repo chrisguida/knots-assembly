@@ -180,7 +180,6 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	g119  rm_send2self-mini						2fac1e80cc9	last=77a74aac443 rm_send2self
 		# NOTE: Originally #15115
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
-	15129 benthecarman/remove_watch_only_address
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review: 15204 promag:2019-01-openexternalwallet
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
@@ -190,9 +189,6 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
-	18077 hebasto/20200130-natpmp
-		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
-		TODO: Switch to rwconf?
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram							d5711407461	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
@@ -211,12 +207,6 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	16546 Sjors/2019/08/hww-box2
-		NOTE: Bumps boost version!
-		TODO: add #21292
-		NOTE: Likely needed for HW wallet support: #21127
-	g4    Sjors-g/2019/08/hww-qt
-		# NOTE: was #16549
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	16795 rpc_inferred_output_descriptors		7ff89fc575a	last=3038f944a6d instagibbs/decode_descriptor
@@ -226,17 +216,11 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs review: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options? (watch out for send RPC)
 		# TODO: Diff-minimise
-	17355 za-kk:oct-19-17174
-		TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
 	18972 neutrino_whitelist-mini				738e702e9a1	last=339fe189eb9
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-0.21		bae5cc5fc29	last=93d232e57e5 achow101/bip174-extensions
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
-	21283 achow101/psbt2
-		TODO: diff-minimise??
-	21319 getblock_optimise
-		# Context: 17529 rpc: Faster getblock using PureBlock
 	17631 rest_blockfilter-0.21					f1d75e5e5ed	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
@@ -264,9 +248,6 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 	19463 prune_locks							00eb76ff486
-	15946 jonas/2019/05/prune_blockfilter
-		NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
-		NOTE: Integrate prune locks
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
@@ -274,7 +255,6 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	19762 ryanofsky/pr/named					8e03dc582e5	last=894c414dafb
-	19763 vasild/only_relay_to_unaware
 	19776 -										c0f75c5e52a	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
@@ -288,7 +268,6 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	g90   gui_trafficgraph_vert-0.21			823073c11b8	last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
-	20685 vasild/i2p_sam
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	20275 no_sqlite_but_list-mini				48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
@@ -297,7 +276,6 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	20295 getblockfrompeer-0.21					36a451cb339	last=c0030dd69cb Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
-	20365 -  # wallettool: add parameter to create descriptors wallet
 	20391 rpc_setfeerate-0.21					9c613464efe	last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
@@ -313,7 +291,6 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	20702 rpc_getblocklocations-0.21			2b8c96aa433	last=9b03c654eb3
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							cc7902a09d0
-	20861 sipa/202101_bech32m
 	# Needs review? 20867 darosior:descriptor_multi_wsh
 	g163  gui_peer_conntype-0.21				fcc7d7afd82  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
@@ -331,6 +308,29 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 		# NOTE: Minor code rearranging to avoid conflicts
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots	7a0256e272a
+	15129 benthecarman/remove_watch_only_address
+	18077 hebasto/20200130-natpmp
+		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
+		TODO: Switch to rwconf?
+	16546 Sjors/2019/08/hww-box2
+		NOTE: Bumps boost version!
+		TODO: add #21292
+		NOTE: Likely needed for HW wallet support: #21127
+	g4    Sjors-g/2019/08/hww-qt
+		# NOTE: was #16549
+	17355 za-kk/oct-19-17174
+		TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
+	21283 achow101/psbt2
+		TODO: diff-minimise??
+	21319 getblock_optimise
+		# Context: 17529 rpc: Faster getblock using PureBlock
+	15946 jonas/2019/05/prune_blockfilter
+		NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
+		NOTE: Integrate prune locks
+	19763 vasild/only_relay_to_unaware
+	20685 vasild/i2p_sam
+	20365 -  # wallettool: add parameter to create descriptors wallet
+	20861 sipa/202101_bech32m
 	21056 cdecker/rpcwait-timeout
 	21141 -  # wallet: Add new format string placeholders for walletnotify
 	21158 -  # lib: Add Taproot support to libconsensus
