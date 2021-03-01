@@ -193,15 +193,16 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	15836 fee_histogram							d5711407461	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 	# Totally broken: g108 jonas/2020/03/mempool_graph									last=42b451ebf1e
-	17463 gui_custom_sendyes					f97f61983f6
+m	17463 gui_custom_sendyes					f97f61983f6
 	15987 wallet_no_reuse-0.21+knots			d2a92674d94
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
 	-     rpc_gai_txids-0.21+knots				0b19fadfdaa
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	18772 -										6b8d1024b6c last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
-	16083 rpc_getblock_prevouts_fees-0.21		194833f5285	last=dd83c4c925
-		TODO: Check for changes in #21245 rebase (skip enum; add REST extended)
+	21245 rpc_getblock_prevouts_fees-0.21		194833f5285	last=bce09fe7429
+		# Was originally #16083
+		# Held back change of verbosity to class enum, and generally kept #16083 base
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
 		# Renamed "coinbase" field to "generated"
 		# Silenced warnings
