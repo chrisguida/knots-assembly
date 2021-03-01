@@ -125,8 +125,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	g202  bugfix_gui_peerdetail_hide-0.18
 	# Needs review: 21083 createtx_same_feerate-0.21						last=7b4b48f6aa1 achow101/createtx-same-feerate
 		# NOTE: Rebased onto branch-0.21 in createtx_same_feerate-0.21 (partially diff-minimised)
-	21106 pstratem/2021-02-07-isinitialblockdownload-timeout
-		FIXME: Address bugs
+	# Needs review & bug fixes: 21106 pstratem/2021-02-07-isinitialblockdownload-timeout
 	21111 parazyd/openrc-init-improve
 	# Needs review: 21161 ajtowns/202102-fee-bug-medianval
 	21192 laanwj/2021-02-netinfo-verbosity
