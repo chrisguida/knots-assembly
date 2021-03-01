@@ -126,13 +126,12 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs review: 21083 createtx_same_feerate-0.21						last=7b4b48f6aa1 achow101/createtx-same-feerate
 		# NOTE: Rebased onto branch-0.21 in createtx_same_feerate-0.21 (partially diff-minimised)
 	# Needs review & bug fixes: 21106 pstratem/2021-02-07-isinitialblockdownload-timeout
-	21111 parazyd/openrc-init-improve
+	21111 openrc_no_rpcpassword-0.12						last=95f97111dd2 parazyd/openrc-init-improve
 	# Needs review: 21161 ajtowns/202102-fee-bug-medianval
-	21192 laanwj/2021-02-netinfo-verbosity
-	21201 achow101/fix-sendmoney
-	g203  jonatack-g/display-plain-inbound-and-add-release-notes
-	g204  hebasto-g/210131-resize
-	g217  jarolrod-g/warning-look-like-button
+	21192 bugfix_netinfo_tooverbose-0.21					last=882ce25132e laanwj/2021-02-netinfo-verbosity
+	g204  bugfix_gui_rm_old_fixer-0.18						last=3913d1e8c1f
+		# Diff-minimised
+	g217  gui_clickable_warning-0.11						last=67c59ae4793 jarolrod-g/warning-look-like-button
 	# Needs careful review: g219 hebasto-g/210223-toolbar
 # SOFTFORK:
 	19573 bip8
@@ -321,6 +320,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	g180  gui_peer_relay_detail-0.21+knots		79575c9d88a	last=79a2576af1e jonatack-g/peer-details-connection-type-followups
 		# NOTE: Carries commit from g163 since it messes with the string anyway
 		# NOTE: Left off final doxygen commit
+		TODO: +g203  -  # Display plain "Inbound" in peer details
 	g179  gui_peers_conntype-0.21+knots			db1d8415614	last=9f76ba6597c jonatack-g/add-peers-dir-and-type-columns
 	-     qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=52279e4b24a tmp_gui_peers_dir_arrows
 	20916 rpc_testmempoolaccept_wtxid-0.21		a78ab94ec0f	last=fa0aa87071e marco/2101-wtxidTestmempool
