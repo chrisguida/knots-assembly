@@ -135,7 +135,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs careful review: g219 hebasto-g/210223-toolbar
 # SOFTFORK:
 	19573 bip8
-	TODO: taproot activation params
+	#TODO: taproot activation params
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
 	-     restore_linux32						7a156d40653
@@ -318,7 +318,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 		NOTE: Likely needed for HW wallet support: #21127
 	g4    Sjors-g/2019/08/hww-qt
 		# NOTE: was #16549
-	17355 za-kk/oct-19-17174
+	17355 -  # gui: grey out used address in address book
 		TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
 	21283 achow101/psbt2
 		TODO: diff-minimise??
