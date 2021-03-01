@@ -119,10 +119,10 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	g177  workaround_qt_macos11_fusion-0.21		1d7792c06df	last=4e1154dfd12 hebasto-g/210107-style
 	20952 bdb_sanity_check-0.21					ee58bbed140
 	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin-mode-psbts
-	21028 bips_44-49-84							84554a991f3
+	21028 bips_44-49-84-0.21+knots				84554a991f3
 	21029 cli_doc_geNnewaddr					733dcdcccfb
 	# Needs review: g201  jonatack-g/inbound-block-relay
-	g202  RandyMcMillan-g/peers-tab-sidepanel
+	g202  bugfix_gui_peerdetail_hide-0.18
 	21083 achow101/createtx-same-feerate
 		TODO: minimise
 	21106 pstratem/2021-02-07-isinitialblockdownload-timeout
@@ -131,7 +131,6 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs review: 21161 ajtowns/202102-fee-bug-medianval
 	21192 laanwj/2021-02-netinfo-verbosity
 	21201 achow101/fix-sendmoney
-	g202  RandyMcMillan-g/peers-tab-sidepanel
 	g203  jonatack-g/display-plain-inbound-and-add-release-notes
 	g204  hebasto-g/210131-resize
 	g217  jarolrod-g/warning-look-like-button
