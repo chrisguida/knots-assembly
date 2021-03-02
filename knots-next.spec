@@ -244,7 +244,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
 		# NOTE: Changed to print warnings to stderr instead of stdout
 		# NOTE: Diff-minimised
-		TODO: When opt_bdb is merged, need to add part of #20267 49797c3ccfb
+		# If bdb is reenabled, need #20267 49797c3ccfb
 	19242 uaappend								a2676744f50
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
@@ -265,15 +265,16 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	# Needs work: 20172 hebasto/201016-tor
 	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
 	20226 rpc_listdescriptors-0.21				35574ef5955	last=647b81b7093
-		TODO: potential bugfix in 21277
+	21277 listdescriptors_normalized-0.21+knots
+		# TODO: Drop 0.21.0 compatibility "desc" when return format is updated or 21329 is ready
+	# Needs review + upstream (changes wallet format): 21329 achow101:norm-desc-xpub-cache
 	g90   gui_trafficgraph_vert-0.21			823073c11b8	last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	20275 no_sqlite_but_list-mini				48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
+	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
-		TODO: When opt_bdb is merged, make this work both ways
 	20295 getblockfrompeer-0.21					36a451cb339	last=c0030dd69cb Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
@@ -315,7 +316,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 		TODO: Switch to rwconf?
 	16546 Sjors/2019/08/hww-box2
 		NOTE: Bumps boost version!
-		TODO: add #21292
+		TODO: add #21292 + #21339
 		NOTE: Likely needed for HW wallet support: #21127
 	g4    Sjors-g/2019/08/hww-qt
 		# NOTE: was #16549
