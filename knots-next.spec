@@ -200,7 +200,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	18772 -										6b8d1024b6c last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
-	21245 rpc_getblock_prevouts_fees-0.21		194833f5285	last=bce09fe7429
+	21245 rpc_getblock_prevouts_fees-0.21		194833f5285	last=7fc316e2c9f
 		# Was originally #16083
 		# Held back change of verbosity to class enum, and generally kept #16083 base
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
@@ -233,9 +233,9 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18689 rpc_dumptxoutset_hr					c056cd7b249	last=82046cf7fa3
-	18722 O_addrman_unordered_map-0.21+knots	402247de36d	last=d517c9d376f
+	18722 O_addrman_unordered_map-0.21+knots	402247de36d	last=6f0c9f53903
 		# NOTE: Restored C++11 compatibility from d6e782174ec
-	g125  intro_prune_size						f1f840d7e24
+	g125  intro_prune_size-0.21					f1f840d7e24
 		# NOTE: Originally #18728
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
