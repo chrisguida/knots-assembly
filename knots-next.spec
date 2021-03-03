@@ -345,6 +345,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 		TODO: Check if my review comments have been addressed
 	g213  jarolrod-g/add-copyaddress-requestedpayments
 	g214  jarolrod-g/disable-contextactions-novalue
+	g236  gui_init_walleterror_cont
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
