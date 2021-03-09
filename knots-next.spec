@@ -1,7 +1,7 @@
-timestamp 2021-02-27 04:08:11
+timestamp 2021-03-09 06:52:20
 #lastapply no-merge
 
-#.. checked up to PR #21304 / gui #229
+#.. checked up to PR #21398 / gui #236
 
 checkout v0.21.0
 @0.21.x-syslibs
@@ -57,6 +57,7 @@ NM	-     marco/2101-2101Backports^^^^^^                          # g177, handled
 	14501 fsync_dir								a68c3372204
 		# Was #12696
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
+	# Needs bugfix: -     fsync_dir_win
 	13608 -										22b031869b0	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	-     deprecated_param_names				1d990681394
 	-     bugfix_rpc_getbalance_hacky			d191e08bada
@@ -135,9 +136,13 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 		# Diff-minimised
 	g217  gui_clickable_warning-0.11						last=67c59ae4793 jarolrod-g/warning-look-like-button
 	# Needs careful review: g219 hebasto-g/210223-toolbar
+	g236  gui_init_walleterror_cont
 # SOFTFORK:
+	21334 Sjors/2021/03/bip9_tests
+	21392 achow101/bip8-speedy-trial
+		TODO: Carefully review myself
 	19573 bip8
-	#TODO: taproot activation params
+	#TODO: taproot activation params (see #21393)
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
 	-     restore_linux32						7a156d40653
@@ -314,6 +319,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	g186  gui_bumpfee_privacywarn-0.21+knots	7a0256e272a
 	15129 benthecarman/remove_watch_only_address
 	18077 hebasto/20200130-natpmp
+		FIXME: Needs #21320
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
 		TODO: Switch to rwconf?
 	16546 Sjors/2019/08/hww-box2
@@ -348,6 +354,16 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	g213  jarolrod-g/add-copyaddress-requestedpayments
 	g214  jarolrod-g/disable-contextactions-novalue
 	g236  gui_init_walleterror_cont
+	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
+	21327 -  # net_processing: ignore transactions while in IBD
+	21359 -  # rpc: include_unsafe option for fundrawtransaction
+		TODO: Make API changes inside CCoinControl instead
+	g205  hebasto-g/210131-header
+		TODO: +gui#229
+	g206  jonatack-g/add-fields-to-peer-details
+	g226  jonatack-g/add-last-block-and-last-transaction-to-peer-details
+	g230  gui_backup_formats
+	# Needs review & wallet format impact eval: 21365 sipa/202102_taproot_sign
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -431,11 +447,6 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
-	g205  hebasto-g/210131-header
-		TODO: +gui#229
-	g206  jonatack-g/add-fields-to-peer-details
-	g226  jonatack-g/add-last-block-and-last-transaction-to-peer-details
-	g230  gui_backup_formats
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				7282a392f4f
@@ -496,7 +507,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=e0968d0328b2877330)		c91fc545126	# doc/{bips,files}
-	n/a  (bump_version=Knots:20210227)			ea72e5a5e33
+	n/a  (bump_version=Knots:20210309)			ea72e5a5e33
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=55df7a04800)				cc37fd7c8be  # release notes: write/update, including change log and credits
 			# check travis for misspellings
