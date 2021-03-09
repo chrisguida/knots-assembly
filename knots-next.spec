@@ -273,7 +273,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
+m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 getblockfrompeer-0.21					36a451cb339	last=c0030dd69cb Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
