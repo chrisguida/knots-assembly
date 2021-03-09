@@ -138,7 +138,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs careful review: g219 hebasto-g/210223-toolbar
 	g236  gui_init_walleterror_cont
 # SOFTFORK:
-	21334 Sjors/2021/03/bip9_tests
+	21334 -													last=0c471a5f306  # test: Additional (refactored) BIP9 tests
 	21392 achow101/bip8-speedy-trial
 		TODO: Carefully review myself
 	19573 bip8
