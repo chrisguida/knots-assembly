@@ -79,7 +79,7 @@ NM	-     marco/2101-2101Backports^^^^^^                          # g177, handled
 		# NOTE: -mini is just missing the last commit :)
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18335 -										038acf93243	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
-	# Needs concept ACK: 18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
+	18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18729 intro_dont_change_user_prune			c80f7d5e9a5
 	18766 blocksonly_no_feeest-0.21				4249edfa001	last=4e28753f606
 		# diff-minimised
