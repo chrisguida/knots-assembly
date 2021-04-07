@@ -143,7 +143,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	21489 ajtowns_202103-versionbits-fuzz-followups-0.21
 	21392 achow101_bip8-speedy-trial-0.21					last=2e55bcedb8d achow101/bip8-speedy-trial
 	21393 achow101_taproot-speedy-trial-0.21				last=93c7225823f achow101/taproot-speedy-trial
-	19573 bip8_lottrue-0.21
+	19573 bip8_lottrue-0.21									last=00a1a9cd665 bip8
 	-     bip8_taproot-0.21
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
