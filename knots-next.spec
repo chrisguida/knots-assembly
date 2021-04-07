@@ -139,10 +139,12 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	g236  gui_init_walleterror_cont
 # SOFTFORK:
 	21334 -													last=0c471a5f306  # test: Additional (refactored) BIP9 tests
-	21392 achow101/bip8-speedy-trial
-		TODO: Carefully review myself
-	19573 bip8
-	#TODO: taproot activation params (see #21393)
+	21380 ajtowns_202103-versionbits-tests-021
+	-     bip8_minimal
+	21392 bip8_st_mini-0.21									last=9f98cf7dfb1 achow101/bip8-speedy-trial
+	19573 bip8_lottrue-0.21
+	21393 bip8_taproot_st-0.21
+	-     bip8_taproot-0.21
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
 	-     restore_linux32						7a156d40653
