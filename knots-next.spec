@@ -3,7 +3,7 @@ timestamp 2021-03-09 06:52:20
 
 #.. checked up to PR #21398 / gui #236
 
-checkout v0.21.0
+checkout v0.21.1
 @0.21.x-syslibs
 	5872 subdir_incl_compat						1cbdb2ff17a
 	2241 sys_leveldb							9cb10b093fb
@@ -138,13 +138,10 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs careful review: g219 hebasto-g/210223-toolbar
 	g236  gui_init_walleterror_cont
 # SOFTFORK:
-	21334 -													last=0c471a5f306  # test: Additional (refactored) BIP9 tests
-	21380 ajtowns_202103-versionbits-tests-021
-	21489 ajtowns_202103-versionbits-fuzz-followups-0.21
-	21392 achow101_bip8-speedy-trial-0.21					last=2e55bcedb8d achow101/bip8-speedy-trial
-	21393 achow101_taproot-speedy-trial-0.21				last=93c7225823f achow101/taproot-speedy-trial
-	19573 bip8_lottrue-0.21									last=0a8b9745eca bip8
-	-     bip8_taproot-0.21
+	21460 bip9bip8_minimal-0.21.1							last=65895c4fc9d bip8_minimal-0.21.1
+	19573 bip9bip8_lottrue-0.21								last=792361c29b6 bip8_lottrue-0.21
+	-     bip9bip8_taproot-0.21								last=bc6b4fa560f bip8_taproot-0.21.1
+	TODO: Option for ST
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
 	-     restore_linux32						7a156d40653
