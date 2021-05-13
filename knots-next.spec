@@ -464,7 +464,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	-    mining_priority						c5322455df2  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					c91a2e74ed1
 	5891  qt_console_history_persist-0.21+knots	0c6fb2613e8	last=ea852deea35 qt_console_history_persist
-	7219 rbf_opts-0.21+knots					3dbe593a6e4
+	7219  rbf_opts-0.21+knots					3dbe593a6e4	last=5df41eadb59 fullrbf # missing 91786d16ccc + revert34ae6640174
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					53432dc49d3
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
