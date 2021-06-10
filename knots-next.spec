@@ -137,7 +137,13 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	g217  gui_clickable_warning-0.11						last=67c59ae4793 jarolrod-g/warning-look-like-button
 	# Needs careful review: g219 hebasto-g/210223-toolbar
 	g236  gui_init_walleterror_cont
+	# Complex: 21007 hebasto:210316-fork
+		# +21447 TODO
+	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
+	Partial? 21560 laanwj:2021-03-torv3-hardcoded-seeds
+	21644 jonatack/NetPermissionFlags-noban-bugfix
 # SOFTFORK:
+	-     enforce_checkpoints
 	21460 bip9bip8_minimal-0.21.1							last=65895c4fc9d bip8_minimal-0.21.1
 	19573 bip9bip8_lottrue-0.21								last=792361c29b6 bip8_lottrue-0.21
 	-     bip9bip8_taproot-0.21								last=bc6b4fa560f bip8_taproot-0.21.1
@@ -198,6 +204,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram							d5711407461	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
+		TODO: Replace with #21422 ?
 	# Totally broken: g108 jonas/2020/03/mempool_graph									last=42b451ebf1e
 m	17463 gui_custom_sendyes					f97f61983f6
 	15987 wallet_no_reuse-0.21+knots			d2a92674d94
@@ -277,6 +284,8 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	g90   gui_trafficgraph_vert-0.21			823073c11b8	last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
+	TODO: +21407+21631
+		# TODO??? 21514 vasild:ignore_port_in_i2p
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
@@ -325,6 +334,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		NOTE: Bumps boost version!
 		TODO: add #21292 + #21339
 		NOTE: Likely needed for HW wallet support: #21127
+		+#21417+#21467+#21576+#21666
 	g4    Sjors-g/2019/08/hww-qt
 		# NOTE: was #16549
 	17355 -  # gui: grey out used address in address book
@@ -340,6 +350,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	20685 vasild/i2p_sam
 	20365 -  # wallettool: add parameter to create descriptors wallet
 	20861 sipa/202101_bech32m
+		TODO: +21471
 	21056 cdecker/rpcwait-timeout
 	21141 -  # wallet: Add new format string placeholders for walletnotify
 	21158 -  # lib: Add Taproot support to libconsensus
@@ -363,6 +374,16 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	g226  jonatack-g/add-last-block-and-last-transaction-to-peer-details
 	g230  gui_backup_formats
 	# Needs review & wallet format impact eval: 21365 sipa/202102_taproot_sign
+	Depends on another PR? 21413 glozow/2021-03-bypass-timelocks
+	21426 jonatack/rm-scantxoutset-warning
+	Needs Concept ACK: 21500 S3RK:listdescriptors_private
+	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
+	# Needs review: 21528 amitiuttarwar:2021-03-addr-defer2
+	21594 jonatack/getnodeaddresses-network
+	21595 jonatack/addressinfo
+	21602 jarolrod/ban-time-info
+	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
+	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
