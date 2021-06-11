@@ -281,6 +281,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	g90   gui_trafficgraph_vert-0.21			823073c11b8	last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
+		# TODO: +21825 ?
 	TODO: +21407+21631
 		# TODO??? 21514 vasild:ignore_port_in_i2p
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
@@ -382,6 +383,10 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
+	21780 rebroad/MaxMempoolRPC
+		# TODO: Apply limit immediately (look at rwconf_gui and LimitMempoolSize)
+	# Needs review: 21827 rebroad/SplashLoadBlockProgress
+	21832 -  # cli: Improve -getinfo return format
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -465,6 +470,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
+	# Needs purpose: 21815 prayank23:max-out-full-relay
 # Non-upstreamed functionality:
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				7282a392f4f
