@@ -142,12 +142,9 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
 	Partial? 21560 laanwj:2021-03-torv3-hardcoded-seeds
 	21644 jonatack/NetPermissionFlags-noban-bugfix
+	21710 jonatack/update-addnode-docs
 # SOFTFORK:
-	-     enforce_checkpoints
-	21460 bip9bip8_minimal-0.21.1							last=65895c4fc9d bip8_minimal-0.21.1
-	19573 bip9bip8_lottrue-0.21								last=792361c29b6 bip8_lottrue-0.21
-	-     bip9bip8_taproot-0.21								last=bc6b4fa560f bip8_taproot-0.21.1
-	TODO: Option for ST
+	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
 	-     restore_linux32						7a156d40653
@@ -384,6 +381,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	21602 jarolrod/ban-time-info
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
+	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -508,6 +506,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	-    bytespersigopstrict-0.21+knots			c6e7665a461
 	9749  unique_spk_mempool-0.21+knots			81517600915
 	-     bloom_default-0.21+knots				784558e4f7b
+	-     enforce_checkpoints
 	n/a   checkpoint_update-0.21				ef8f3826f52
 	10282 timebomb_knots						486d4c9f50f
 	-     rwconf_policy-0.21+knots				8d876234db0
