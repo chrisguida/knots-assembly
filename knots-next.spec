@@ -5,6 +5,10 @@ timestamp 2021-03-09 06:52:20
 
 checkout v0.21.1
 @0.21.x-syslibs
+# BUILD BUGS:
+	21882 hebasto/210507-fuzz32
+	21920 marco/2105-buildAtomicLink
+# SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						1cbdb2ff17a
 	2241 sys_leveldb							9cb10b093fb
 	5416 sys_libsecp256k1-0.21					0c3cda80472	last=258c28e99b3 sys_libsecp256k1
@@ -143,7 +147,13 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	Partial? 21560 laanwj:2021-03-torv3-hardcoded-seeds
 	21644 jonatack/NetPermissionFlags-noban-bugfix
 	21710 jonatack/update-addnode-docs
+	21907 hebasto/210510-win
+	21944 prayank23/wallet-win-root
+	22013 ajtowns/202105-ignoreblockrelayfordnsskip
+	22079 -  # zmq: Add support to listen on IPv6 addresses
 # SOFTFORK:
+	21934 rpc_getblockchaininfo_lockedin_statistics
+	22016 Sjors/2021/05/versionbits_period_start
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
@@ -261,6 +271,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	19463 prune_locks							00eb76ff486
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
+		# +22047
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
 		# NOTE: Included in Android fork below?
@@ -282,6 +293,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 		# Removed dialog size change
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
 		# TODO: +21825 ?
+		TODO: +21914
 	TODO: +21407+21631
 		# TODO??? 21514 vasild:ignore_port_in_i2p
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
@@ -333,6 +345,9 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		TODO: add #21292 + #21339
 		NOTE: Likely needed for HW wallet support: #21127
 		+#21417+#21467+#21576+#21666
+		+#21935?
+	21928 Sjors/2021/05/hww-toggle
+		TODO: Avoid wallet format changes
 	g4    Sjors-g/2019/08/hww-qt
 		# NOTE: was #16549
 	17355 -  # gui: grey out used address in address book
@@ -387,6 +402,13 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		# TODO: Apply limit immediately (look at rwconf_gui and LimitMempoolSize)
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	21832 -  # cli: Improve -getinfo return format
+	# Needs reivew: 21841 rebroad/SteadierFeefilter
+	21843 jonatack/getnodeaddresses-by-network
+	# Needs completion: 21851 fanquake/m1_support_depends
+		# +22070
+	# Needs review/optionality: 22009 achow101:cs-waste-2
+	Review: 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
+	22072 -  # Add reindex=auto flag to automatically reindex corrupt data
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -472,6 +494,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 # Non-upstreamed functionality:
+	# 22.0 TODO: Revert #21992 (removed -feefilter option, useful for manually prioritised transactions)
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				7282a392f4f
 	-     walletnotify_w_win					ee2308c6163
