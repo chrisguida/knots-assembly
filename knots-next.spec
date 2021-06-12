@@ -1,7 +1,7 @@
-timestamp 2021-03-09 06:52:20
+timestamp 2021-06-12 09:06:11
 #lastapply no-merge
 
-#.. checked up to PR #22230 / gui #236
+#.. checked up to PR #22230 / gui #363
 
 checkout v0.21.1
 @0.21.x-syslibs
@@ -159,6 +159,8 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	g271  jarolrod/dont-clear-console
 	g276  hebasto/210410-elide
 	g280  prayank23/uri-error
+	g325  hebasto/210512-peer
+	g329  jarolrod/fix-cb-hitbox
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics
 	22016 Sjors/2021/05/versionbits_period_start
@@ -337,7 +339,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		# NOTE: Left off final doxygen commit
 		TODO: +g203  -  # Display plain "Inbound" in peer details
 	g179  gui_peers_conntype-0.21+knots			db1d8415614	last=9f76ba6597c jonatack-g/add-peers-dir-and-type-columns
-	g317  qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=52279e4b24a tmp_gui_peers_dir_arrows
+	g363  qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=52279e4b24a tmp_gui_peers_dir_arrows
 	20916 rpc_testmempoolaccept_wtxid-0.21		a78ab94ec0f	last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
@@ -426,6 +428,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	22159 marco/2106-buildPattern
 	g256  hebasto/210323-peers
 	g275  hebasto/210409-dark
+	g330  jarolrod/prompt-icon-colorized
 	g281  jarolrod/mul-shortcuts-resize
 	g291  -  # Network Graph layout - debug window improvement
 	g293  RandyMcMillan/enable-wordwrap-services
@@ -435,6 +438,9 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	g309  hebasto/210501-network
 	g318  jarolrod/copy-addr-peer
 		TODO: Add keyboard shortcut
+	Needs review: g342 hebasto/210521-wallet
+	Diff-minimise: g343 hebasto/210522-ppd
+	g362  kbshortcuts_context
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
