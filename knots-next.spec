@@ -1,7 +1,7 @@
 timestamp 2021-03-09 06:52:20
 #lastapply no-merge
 
-#.. checked up to PR #21398 / gui #236
+#.. checked up to PR #22230 / gui #236
 
 checkout v0.21.1
 @0.21.x-syslibs
@@ -26,6 +26,7 @@ checkout v0.21.1
 	20358 -										20c750b874c	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					0489bf7a484	last=836a3dc02c7 jonas/2020/12/getauxval
 	# 22.0 TODO: g216  optional_font
+	Maybe restore: 7339  opt_libevent
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							6b3ec23b7ed
@@ -151,6 +152,13 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	21944 prayank23/wallet-win-root
 	22013 ajtowns/202105-ignoreblockrelayfordnsskip
 	22079 -  # zmq: Add support to listen on IPv6 addresses
+	22096 -  # p2p: AddrFetch - don't disconnect on self-announcements
+	Determine if any of #22154 (bech32m fixup) is needed
+	g243  jarolrod/create-wallet
+	g251  hebasto/210317-uri
+	g271  jarolrod/dont-clear-console
+	g276  hebasto/210410-elide
+	g280  prayank23/uri-error
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics
 	22016 Sjors/2021/05/versionbits_period_start
@@ -213,6 +221,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 		TODO: Replace with #21422 ?
 	# Totally broken: g108 jonas/2020/03/mempool_graph									last=42b451ebf1e
+		Check gui#320 for usability
 m	17463 gui_custom_sendyes					f97f61983f6
 	15987 wallet_no_reuse-0.21+knots			d2a92674d94
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
@@ -246,6 +255,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	17955 emilengler/2020-01-paste-bitcoin-uri-button	f645ed82537	last=0139b428923
+		TODO: Replace with gui#319
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.21+knots	95cd39cbb6e	last=9ed348ddea3 elichai/2020-01-siphash
 		# NOTE: Dropped benchmarks & diff-minimised
@@ -294,6 +304,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
 		# TODO: +21825 ?
 		TODO: +21914
+		+22211 ?? (what does Tor do?)
 	TODO: +21407+21631
 		# TODO??? 21514 vasild:ignore_port_in_i2p
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
@@ -326,7 +337,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		# NOTE: Left off final doxygen commit
 		TODO: +g203  -  # Display plain "Inbound" in peer details
 	g179  gui_peers_conntype-0.21+knots			db1d8415614	last=9f76ba6597c jonatack-g/add-peers-dir-and-type-columns
-	-     qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=52279e4b24a tmp_gui_peers_dir_arrows
+	g317  qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=52279e4b24a tmp_gui_peers_dir_arrows
 	20916 rpc_testmempoolaccept_wtxid-0.21		a78ab94ec0f	last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
@@ -346,6 +357,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		NOTE: Likely needed for HW wallet support: #21127
 		+#21417+#21467+#21576+#21666
 		+#21935?
+		+#22173?
 	21928 Sjors/2021/05/hww-toggle
 		TODO: Avoid wallet format changes
 	g4    Sjors-g/2019/08/hww-qt
@@ -409,6 +421,20 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	# Needs review/optionality: 22009 achow101:cs-waste-2
 	Review: 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
 	22072 -  # Add reindex=auto flag to automatically reindex corrupt data
+	22147 sdaftuar/2021-06-reserve-outbound-hb
+	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
+	22159 marco/2106-buildPattern
+	g256  hebasto/210323-peers
+	g275  hebasto/210409-dark
+	g281  jarolrod/mul-shortcuts-resize
+	g291  -  # Network Graph layout - debug window improvement
+	g293  RandyMcMillan/enable-wordwrap-services
+	g298  RandyMcMillan/alt-row-colors
+	g307  hebasto/210501-stripes
+	Change to have both? g305 rebroad/SendRecvSpeed-gui
+	g309  hebasto/210501-network
+	g318  jarolrod/copy-addr-peer
+		TODO: Add keyboard shortcut
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -488,6 +514,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	20764 jonatack/netinfo-updates-dec-2020
 		FIXME: Check if all applicable to 0.21
 	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
+		# +22084
 	g165  gui_peers_splitter_ss-0.21+knots		e6d89996c67
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
@@ -554,6 +581,7 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
+TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=e0968d0328b2877330)		c91fc545126	# doc/{bips,files}
 	n/a  (bump_version=Knots:20210309)			ea72e5a5e33
 #	n/a  knots_historical_relnotes				61100a2
