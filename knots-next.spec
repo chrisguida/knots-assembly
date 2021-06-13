@@ -154,13 +154,13 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	22079 -  # zmq: Add support to listen on IPv6 addresses
 	22096 -  # p2p: AddrFetch - don't disconnect on self-announcements
 	Determine if any of #22154 (bech32m fixup) is needed
-	g243  jarolrod/create-wallet
-	g251  hebasto/210317-uri
-	g271  jarolrod/dont-clear-console
-	g276  hebasto/210410-elide
-	g280  prayank23/uri-error
-	g325  hebasto/210512-peer
-	g329  jarolrod/fix-cb-hitbox
+	g243  jarolrod-g/create-wallet
+	g251  hebasto-g/210317-uri
+	g271  jarolrod-g/dont-clear-console
+	g276  hebasto-g/210410-elide
+	g280  prayank23-g/uri-error
+	g325  hebasto-g/210512-peer
+	g329  jarolrod-g/fix-cb-hitbox
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics
 	22016 Sjors/2021/05/versionbits_period_start
@@ -222,7 +222,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	15836 fee_histogram							d5711407461	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 		TODO: Replace with #21422 ?
-	# Totally broken: g108 jonas/2020/03/mempool_graph									last=42b451ebf1e
+	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		Check gui#320 for usability
 m	17463 gui_custom_sendyes					f97f61983f6
 	15987 wallet_no_reuse-0.21+knots			d2a92674d94
@@ -426,20 +426,20 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	22147 sdaftuar/2021-06-reserve-outbound-hb
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
 	22159 marco/2106-buildPattern
-	g256  hebasto/210323-peers
-	g275  hebasto/210409-dark
-	g330  jarolrod/prompt-icon-colorized
-	g281  jarolrod/mul-shortcuts-resize
+	g256  hebasto-g/210323-peers
+	g275  hebasto-g/210409-dark
+	g330  jarolrod-g/prompt-icon-colorized
+	g281  jarolrod-g/mul-shortcuts-resize
 	g291  -  # Network Graph layout - debug window improvement
-	g293  RandyMcMillan/enable-wordwrap-services
-	g298  RandyMcMillan/alt-row-colors
-	g307  hebasto/210501-stripes
-	Change to have both? g305 rebroad/SendRecvSpeed-gui
-	g309  hebasto/210501-network
-	g318  jarolrod/copy-addr-peer
+	g293  RandyMcMillan-g/enable-wordwrap-services
+	g298  RandyMcMillan-g/alt-row-colors
+	g307  hebasto-g/210501-stripes
+	Change to have both? g305 rebroad-g/SendRecvSpeed-gui
+	g309  hebasto-g/210501-network
+	g318  jarolrod-g/copy-addr-peer
 		TODO: Add keyboard shortcut
-	Needs review: g342 hebasto/210521-wallet
-	Diff-minimise: g343 hebasto/210522-ppd
+	Needs review: g342 hebasto-g/210521-wallet
+	Diff-minimise: g343 hebasto-g/210522-ppd
 	g362  kbshortcuts_context
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
