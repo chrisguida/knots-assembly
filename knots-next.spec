@@ -33,17 +33,6 @@ checkout v0.21.1
 	17402 travis_ppc64							12dfd387f7c	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
 	(CHECK-LAST)	last=36ecf5eb875 marco/2101-2101Backports
-	20852 marco/2101-2101Backports^^^^^^^^^^^^^^ last=39b43298d9c  # net: allow CSubNet of non-IP networks
-	g148  marco/2101-2101Backports^^^^^^^^^^^^^ last=8775691383f  # Bugfix: GUI: Restore SendConfirmationDialog button default to "Yes"
-NM	-     marco/2101-2101Backports^^^^^^^^^^^^                    # g171, handled later
-	g176  marco/2101-2101Backports^^^^^^^^^     last=af58f5b12ce  # Fix TxViewDelegate layout
-	20983 marco/2101-2101Backports^^^^^^^^      last=c5354e4641d  # Fix MSVC build after gui#176
-	g167  marco/2101-2101Backports^^^^^^^       last=77114462f23  # raise helpMessageDialog
-NM	-     marco/2101-2101Backports^^^^^^                          # g177, handled later
-	21081 marco/2101-2101Backports^^^^^         last=5e0cd25e295  # test: fix the unreachable code at feature_taproot
-	21043 marco/2101-2101Backports^^^           last=3ddbf22ed17  # net: Avoid UBSan warning in ProcessMessage(...)
-	21201 marco/2101-2101Backports^             last=6bfbc97d716  # rpc: Disallow sendtoaddress and sendmany when private keys disabled
-	# didn't bother: 20562 marco/2101-2101Backports
 	18818 fix_gitian_src_202004					6fc637d9972
 	18902 fix_gitdir_again						f7355def795
 		# NOTE: based directly on #18818
@@ -126,13 +115,11 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Meh? Diff too big? g176 hebasto-g/210103-delegate (fix in #20983)
 	g177  workaround_qt_macos11_fusion-0.21		1d7792c06df	last=4e1154dfd12 hebasto-g/210107-style
 	20952 bdb_sanity_check-0.21					ee58bbed140
-	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin-mode-psbts
+TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin-mode-psbts
 	21028 bips_44-49-84-0.21+knots				84554a991f3
 	21029 cli_doc_geNnewaddr					733dcdcccfb
 	# Needs review: g201  jonatack-g/inbound-block-relay
 	g202  bugfix_gui_peerdetail_hide-0.18
-	# Needs review: 21083 createtx_same_feerate-0.21						last=7b4b48f6aa1 achow101/createtx-same-feerate
-		# NOTE: Rebased onto branch-0.21 in createtx_same_feerate-0.21 (partially diff-minimised)
 	# Needs review & bug fixes: 21106 pstratem/2021-02-07-isinitialblockdownload-timeout
 	21111 openrc_no_rpcpassword-0.12						last=95f97111dd2 parazyd/openrc-init-improve
 	# Needs review: 21161 ajtowns/202102-fee-bug-medianval
@@ -145,6 +132,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Complex: 21007 hebasto:210316-fork
 		# +21447 TODO
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
+	21471 ???
 	Partial? 21560 laanwj:2021-03-torv3-hardcoded-seeds
 	21644 jonatack/NetPermissionFlags-noban-bugfix
 	21710 jonatack/update-addnode-docs
@@ -376,8 +364,6 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	19763 vasild/only_relay_to_unaware
 	20685 vasild/i2p_sam
 	20365 -  # wallettool: add parameter to create descriptors wallet
-	20861 sipa/202101_bech32m
-		TODO: +21471
 	21056 cdecker/rpcwait-timeout
 	21141 -  # wallet: Add new format string placeholders for walletnotify
 	21158 -  # lib: Add Taproot support to libconsensus
