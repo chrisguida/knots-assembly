@@ -6,8 +6,9 @@ timestamp 2021-06-12 09:06:11
 checkout v0.21.1
 @0.21.x-syslibs
 # BUILD BUGS:
-	21882 hebasto/210507-fuzz32
-	21920 marco/2105-buildAtomicLink
+	21882 fuzz32_llvm_workaround-0.21+knots					last=bd55f62549e hebasto/210507-fuzz32
+	20938 configure_latomic_checks-0.14^
+	21920 configure_latomic_checks-0.14
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						1cbdb2ff17a
 	2241 sys_leveldb							9cb10b093fb
