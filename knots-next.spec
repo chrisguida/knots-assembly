@@ -27,13 +27,12 @@ checkout v0.21.1
 	20358 -										20c750b874c	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					0489bf7a484	last=836a3dc02c7 jonas/2020/12/getauxval
 	# 22.0 TODO: g216  optional_font
-	Maybe restore: 7339  opt_libevent
+	#Maybe restore: 7339  opt_libevent
 @0.21.x-knots
 # TESTS:
 	-     lint_relaxer							6b3ec23b7ed
 	17402 travis_ppc64							12dfd387f7c	last=1d684f05341 elichai/2019-11-powerpc64
 # FIXES:
-	(CHECK-LAST)	last=36ecf5eb875 marco/2101-2101Backports
 	18818 fix_gitian_src_202004					6fc637d9972
 	18902 fix_gitdir_again						f7355def795
 		# NOTE: based directly on #18818
