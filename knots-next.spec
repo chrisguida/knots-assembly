@@ -73,7 +73,7 @@ checkout v0.21.1
 		# NOTE: -mini is just missing the last commit :)
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18335 -										038acf93243	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
-	18466 -  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
+	18466 -													last=a5cfb40e27b  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18729 intro_dont_change_user_prune			c80f7d5e9a5
 	18766 blocksonly_no_feeest-0.21				4249edfa001	last=4e28753f606
 		# diff-minimised
@@ -111,9 +111,9 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
 	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
 	# Too messy? g164 hebasto-g/201224-signal
-	g171  qt_createwallet_layoutmgr-0.21		b3652905431	last=d4feb6812a2 hebasto-g/210101-wallet
+TM	g171  qt_createwallet_layoutmgr-0.21		b3652905431	last=d4feb6812a2 hebasto-g/210101-wallet
 	# Meh? Diff too big? g176 hebasto-g/210103-delegate (fix in #20983)
-	g177  workaround_qt_macos11_fusion-0.21		1d7792c06df	last=4e1154dfd12 hebasto-g/210107-style
+TM	g177  workaround_qt_macos11_fusion-0.21		1d7792c06df	last=4e1154dfd12 hebasto-g/210107-style
 	20952 bdb_sanity_check-0.21					ee58bbed140
 TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin-mode-psbts
 	21028 bips_44-49-84-0.21+knots				84554a991f3
@@ -132,9 +132,8 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	# Complex: 21007 hebasto:210316-fork
 		# +21447 TODO
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
-	21471 ???
-	Partial? 21560 laanwj:2021-03-torv3-hardcoded-seeds
-	21644 jonatack/NetPermissionFlags-noban-bugfix
+	# TODO: Last commit? Diff-minimised somehow? 21560 laanwj/2021-03-torv3-hardcoded-seeds
+	21644 bugfix_addlocal_downloadbind-0.21
 	21710 jonatack/update-addnode-docs
 	21907 hebasto/210510-win
 	21944 prayank23/wallet-win-root
