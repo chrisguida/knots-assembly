@@ -32,6 +32,7 @@ checkout v0.21.1
 # TESTS:
 	-     lint_relaxer							6b3ec23b7ed
 	17402 travis_ppc64							12dfd387f7c	last=1d684f05341 elichai/2019-11-powerpc64
+	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20
 # FIXES:
 	18818 fix_gitian_src_202004					6fc637d9972
 	18902 fix_gitdir_again						f7355def795
@@ -134,12 +135,14 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
 	# TODO: Last commit? Diff-minimised somehow? 21560 laanwj/2021-03-torv3-hardcoded-seeds
 	21644 bugfix_addlocal_downloadbind-0.21
-	21710 jonatack/update-addnode-docs
-	21907 hebasto/210510-win
-	21944 prayank23/wallet-win-root
-	22013 ajtowns/202105-ignoreblockrelayfordnsskip
-	22079 -  # zmq: Add support to listen on IPv6 addresses
-	22096 -  # p2p: AddrFetch - don't disconnect on self-announcements
+	21907 listwalletdir_iterate_inf-0.19
+	21944 fix_listwalletdir_rootdir-0.21+knots
+	22013 ignoreblockrelayfordnsskip-0.21
+	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
+	19315 rpc_addconnection-0.21
+		# PARTIAL: Only the actual addconnection RPC method
+	22096 fix_p2p_addrfetch_ignoreselfadv-0.21
+		# Includes part of #21236 (to avoid an extra GetTime on top of the 4 existing)
 	Determine if any of #22154 (bech32m fixup) is needed
 	g243  jarolrod-g/create-wallet
 	g251  hebasto-g/210317-uri
