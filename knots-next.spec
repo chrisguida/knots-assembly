@@ -143,14 +143,14 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 		# PARTIAL: Only the actual addconnection RPC method
 	22096 fix_p2p_addrfetch_ignoreselfadv-0.21
 		# Includes part of #21236 (to avoid an extra GetTime on top of the 4 existing)
-	Determine if any of #22154 (bech32m fixup) is needed
-	g243  jarolrod-g/create-wallet
-	g251  hebasto-g/210317-uri
-	g271  jarolrod-g/dont-clear-console
-	g276  hebasto-g/210410-elide
-	g280  prayank23-g/uri-error
-	g325  hebasto-g/210512-peer
-	g329  jarolrod-g/fix-cb-hitbox
+	# TODO: Determine if any of #22154 (bech32m fixup) is needed
+	g243  gui_createwallet_opts_conflict-0.21
+	g251  fix_bip70_errormsg-0.20
+	g271  fix_gui_rpcconsole_fontsz_prompt-0.21
+	g276  gui_peers_elide-0.18
+	g280  gui_urihandler_nophishing-0.20
+	g325  gui_peers_rightalign_id-0.21
+	g329  rpcconsole_toolbuttons-0.21+knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics
 	22016 Sjors/2021/05/versionbits_period_start
