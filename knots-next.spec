@@ -152,8 +152,8 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	g325  gui_peers_rightalign_id-0.21
 	g329  rpcconsole_toolbuttons-0.21+knots
 # SOFTFORK:
-	21934 rpc_getblockchaininfo_lockedin_statistics
-	22016 Sjors/2021/05/versionbits_period_start
+	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
+	22016 rpc_gbci_period_start-0.21.1+knots				last=04ce309840f Sjors/2021/05/versionbits_period_start
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
