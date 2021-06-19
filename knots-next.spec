@@ -211,7 +211,9 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram							d5711407461	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
-		TODO: Replace with #21422 ?
+		# NOTE: Backported some features/test from #21422 (but not API incompatibilities)
+		# NOTE: Added extra tests for compatibility with old Knots
+		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		Check gui#320 for usability
 m	17463 gui_custom_sendyes					f97f61983f6
