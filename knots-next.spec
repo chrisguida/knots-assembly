@@ -215,7 +215,7 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
-		Check gui#320 for usability
+		# TODO: Check gui#320 for usability
 m	17463 gui_custom_sendyes					f97f61983f6
 	15987 wallet_no_reuse-0.21+knots			d2a92674d94
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
@@ -242,7 +242,8 @@ m	17463 gui_custom_sendyes					f97f61983f6
 		# TODO: Diff-minimise
 	18972 neutrino_whitelist-mini				738e702e9a1	last=339fe189eb9
 		# NOTE: Diff-minimised
-	17034 psbt_ver_proprietary_xpub-0.21		bae5cc5fc29	last=93d232e57e5 achow101/bip174-extensions
+	17034 psbt_ver_proprietary_xpub-0.21		bae5cc5fc29	last=cc2644ffc6e achow101/bip174-extensions
+		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
 	17631 rest_blockfilter-0.21					f1d75e5e5ed	last=16d8d2da598 matt/2019-11-filter-rest
