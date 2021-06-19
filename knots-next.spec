@@ -214,6 +214,7 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 		# NOTE: Backported some features/test from #21422 (but not API incompatibilities)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
+	(CHECK-LAST)	last=9d16921 origin-pull/21422/head
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
 m	17463 gui_custom_sendyes					f97f61983f6
@@ -249,8 +250,8 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	17631 rest_blockfilter-0.21					f1d75e5e5ed	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	17955 emilengler/2020-01-paste-bitcoin-uri-button	f645ed82537	last=0139b428923
-		TODO: Replace with gui#319
+	g319  gui_openuri_pastebtn-0.21				f645ed82537	last=84f23e8ec5b
+		# NOTE: Used to be #17955
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.21+knots	95cd39cbb6e	last=9ed348ddea3 elichai/2020-01-siphash
 		# NOTE: Dropped benchmarks & diff-minimised
