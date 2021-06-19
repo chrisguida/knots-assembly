@@ -253,13 +253,14 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	g319  gui_openuri_pastebtn-0.21				f645ed82537	last=84f23e8ec5b
 		# NOTE: Used to be #17955
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
-	18014 siphash_optimise_pr18014-0.21+knots	95cd39cbb6e	last=9ed348ddea3 elichai/2020-01-siphash
+	18014 siphash_optimise_pr18014-0.21+knots	95cd39cbb6e	last=19e28a41168 elichai/2020-01-siphash
+		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
 	# Needs work/review/completion: 18242 jonas/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
-	18689 rpc_dumptxoutset_hr					c056cd7b249	last=82046cf7fa3
-	18722 O_addrman_unordered_map-0.21+knots	402247de36d	last=6f0c9f53903
+	18689 rpc_dumptxoutset_hr					c056cd7b249	last=65d0697fe34
+	18722 O_addrman_unordered_map-0.21+knots	402247de36d	last=a92485b2c25
 		# NOTE: Restored C++11 compatibility from d6e782174ec
 	g125  intro_prune_size-0.21					f1f840d7e24
 		# NOTE: Originally #18728
