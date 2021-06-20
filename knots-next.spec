@@ -214,7 +214,7 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 		# NOTE: Backported some features/test from #21422 (but not API incompatibilities)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
-	(CHECK-LAST)	last=9d16921 origin-pull/21422/head
+	(CHECK-LAST)	last=36f5e224f5f origin-pull/21422/head
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
 m	17463 gui_custom_sendyes					f97f61983f6
@@ -298,12 +298,16 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	# Needs review + upstream (changes wallet format): 21329 achow101:norm-desc-xpub-cache
 	g90   gui_trafficgraph_vert-0.21			823073c11b8	last=8b79225642a  # Enlarge Network Traffic Graph
 		# Removed dialog size change
+	21594 rpc_getnodeaddrs_network-0.21
+		# Diff-minimised / doc changes left out
+		# Includes part of #20965 (GetNetworkNames)
+	21843 rpc_getnodeaddrs_by_network-0.21
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
-		# TODO: +21825 ?
-		TODO: +21914
-		+22211 ?? (what does Tor do?)
-	TODO: +21407+21631
+		# TODO: +21825 ? (needs 21560?)
+		#TODO: +21914
+		#TODO: +21407+21631
 		# TODO??? 21514 vasild:ignore_port_in_i2p
+	22211 -
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
@@ -399,7 +403,6 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	Needs Concept ACK: 21500 S3RK:listdescriptors_private
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 	# Needs review: 21528 amitiuttarwar:2021-03-addr-defer2
-	21594 jonatack/getnodeaddresses-network
 	21595 jonatack/addressinfo
 	21602 jarolrod/ban-time-info
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
@@ -410,7 +413,6 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	21832 -  # cli: Improve -getinfo return format
 	# Needs reivew: 21841 rebroad/SteadierFeefilter
-	21843 jonatack/getnodeaddresses-by-network
 	# Needs completion: 21851 fanquake/m1_support_depends
 		# +22070
 	# Needs review/optionality: 22009 achow101:cs-waste-2
@@ -594,6 +596,8 @@ TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# 22.0 TODO: #21063 API change if merged
+		gs origin-pull/21594/head^^ doc/release-notes.md
+		gs origin-pull/21843/head
 	n/a  (cherrypick=f85265ea4d8)				878980c69c4  # update manpages (build first)
 	n/a  (cherrypick=63fcf9deced)				d4a64f61c13  # translation update
 # NOTE: use git diff --minimal for patches!
