@@ -141,7 +141,7 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
 	19315 rpc_addconnection-0.21
 		# PARTIAL: Only the actual addconnection RPC method
-	22096 fix_p2p_addrfetch_ignoreselfadv-0.21
+	22096 fix_p2p_addrfetch_ignoreselfadv-0.21+knots
 		# Includes part of #21236 (to avoid an extra GetTime on top of the 4 existing)
 	# TODO: Determine if any of #22154 (bech32m fixup) is needed
 	g243  gui_createwallet_opts_conflict-0.21
@@ -303,11 +303,13 @@ m	17463 gui_custom_sendyes					f97f61983f6
 		# Includes part of #20965 (GetNetworkNames)
 	21843 rpc_getnodeaddrs_by_network-0.21
 	20254 i2p_static-0.21						5e7a2e67827	last=8b4a3714b91 vasild/i2p_static
+		# + a4693f44cfe from #20685
 		# TODO: +21825 ? (needs 21560?)
 		#TODO: +21914
 		#TODO: +21407+21631
 		# TODO??? 21514 vasild:ignore_port_in_i2p
-	22211 -
+	# TODO: 20685 vasild/i2p_sam
+	22211 i2p_IsRelayable-0.21+knots						last=7593b06bd12
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
@@ -373,7 +375,6 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
 		NOTE: Integrate prune locks
 	19763 vasild/only_relay_to_unaware
-	20685 vasild/i2p_sam
 	20365 -  # wallettool: add parameter to create descriptors wallet
 	21056 cdecker/rpcwait-timeout
 	21141 -  # wallet: Add new format string placeholders for walletnotify
