@@ -314,7 +314,7 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
-	20295 getblockfrompeer-0.21					36a451cb339	last=c0030dd69cb Sjors/2020/11/getblockfrompeer
+	20295 getblockfrompeer-0.21					36a451cb339	last=d0b537458d9 Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-0.21					9c613464efe	last=1002e2d0d7f jonatack/setfeerate
@@ -328,7 +328,8 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	g149  intro_assumevalid						ce7b5633bf5
 	# Needs a reason to move code chunks: 20599 jnewbery/2020-12-tolerate-early-send-messages
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	20664 rpc_scanblocks-0.21					6f48a710889	last=ab315e5294b jonas/2020/12/filterblocks_rpc
+	20664 rpc_scanblocks-0.21					6f48a710889	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
+		# Held back insignificant API changes ab315e5294b...71b7cdb460e
 	20702 rpc_getblocklocations-0.21			2b8c96aa433	last=9b03c654eb3
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							cc7902a09d0
@@ -336,9 +337,9 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	g163  gui_peer_conntype-0.21				fcc7d7afd82  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
 	g180  gui_peer_relay_detail-0.21+knots		79575c9d88a	last=79a2576af1e jonatack-g/peer-details-connection-type-followups
+		# +g203  Display plain "Inbound" in peer details
 		# NOTE: Carries commit from g163 since it messes with the string anyway
 		# NOTE: Left off final doxygen commit
-		TODO: +g203  -  # Display plain "Inbound" in peer details
 	g179  gui_peers_conntype-0.21+knots			db1d8415614	last=9f76ba6597c jonatack-g/add-peers-dir-and-type-columns
 	g363  qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=52279e4b24a tmp_gui_peers_dir_arrows
 	20916 rpc_testmempoolaccept_wtxid-0.21		a78ab94ec0f	last=fa0aa87071e marco/2101-wtxidTestmempool
