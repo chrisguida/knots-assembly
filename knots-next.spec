@@ -372,17 +372,17 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# TODO: g4    Sjors-g/2019/08/hww-qt
 		# NOTE: was #16549
 	# ---- END HWI SUPPORT ----
-	17355 -  # gui: grey out used address in address book
-		TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
-	21283 achow101/psbt2
-		TODO: diff-minimise??
+	# TODO: 17355 -  # gui: grey out used address in address book
+		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
+	# TODO: 21283 achow101/psbt2
+		# TODO: diff-minimise??
 	21319 getblock_optimise
 		# Context: 17529 rpc: Faster getblock using PureBlock
-	15946 jonas/2019/05/prune_blockfilter
-		NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
-		NOTE: Integrate prune locks
+	# TODO: 15946 jonas/2019/05/prune_blockfilter
+		#NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
+		#NOTE: Integrate prune locks
 	19763 vasild/only_relay_to_unaware
-	20365 -  # wallettool: add parameter to create descriptors wallet
+	20365 wallettool_create_descriptors-0.21+k
 	21056 cdecker/rpcwait-timeout
 	21141 -  # wallet: Add new format string placeholders for walletnotify
 	21158 -  # lib: Add Taproot support to libconsensus
