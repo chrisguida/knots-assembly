@@ -344,17 +344,17 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		# NOTE: Left off final doxygen commit
 m	g179  gui_peers_conntype-0.21+knots			db1d8415614	last=be4cf4832f1 jonatack-g/add-peers-dir-and-type-columns
 		# NOTE: Held back 9f76ba6597c...be4cf4832f1 (no real change once we add gui#363 on top)
-	g363  qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=a10cae6dd3f qt_peers_directionarrow
+	g363  qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=41c881c8a78 qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 	20916 rpc_testmempoolaccept_wtxid-0.21		a78ab94ec0f	last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
-	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
+m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 		# NOTE: Left out Peers table column & misc formatting changes
 	20944 rpc_getmempoolinfo_total_fee-0.21		4ca6b64935f	last=fa362064e38 marco/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots	7a0256e272a
-	15129 benthecarman/remove_watch_only_address
+	15129 rpc_removeaddress-0.21							last=fdbd01b50e0 benthecarman/remove_watch_only_address
 	18077 hebasto/20200130-natpmp
 		FIXME: Needs #21320
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
@@ -603,6 +603,7 @@ TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 		# 22.0 TODO: #21063 API change if merged
 		gs origin-pull/21594/head^^ doc/release-notes.md
 		gs origin-pull/21843/head
+		gs benthecarman/remove_watch_only_address:doc/release-notes-15129.md
 	n/a  (cherrypick=f85265ea4d8)				878980c69c4  # update manpages (build first)
 	n/a  (cherrypick=63fcf9deced)				d4a64f61c13  # translation update
 # NOTE: use git diff --minimal for patches!
