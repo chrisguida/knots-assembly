@@ -355,21 +355,23 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots	7a0256e272a
 	15129 rpc_removeaddress-0.21							last=fdbd01b50e0 benthecarman/remove_watch_only_address
-	18077 hebasto/20200130-natpmp
-		FIXME: Needs #21320
+	# TODO: 18077 hebasto/20200130-natpmp
+		# FIXME: Needs #21320
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
-		TODO: Switch to rwconf?
-	16546 Sjors/2019/08/hww-box2
-		NOTE: Bumps boost version!
-		TODO: add #21292 + #21339
-		NOTE: Likely needed for HW wallet support: #21127
-		+#21417+#21467+#21576+#21666
-		+#21935?
-		+#22173?
-	21928 Sjors/2021/05/hww-toggle
-		TODO: Avoid wallet format changes
-	g4    Sjors-g/2019/08/hww-qt
+		# TODO: Switch to rwconf?
+	# ---- BEGIN HWI SUPPORT, TODO ----
+	# TODO: 16546 Sjors/2019/08/hww-box2
+		# NOTE: Bumps boost version!
+		# TODO: add #21292 + #21339
+		# NOTE: Likely needed for HW wallet support: #21127
+		#+#21417+#21467+#21576+#21666
+		#+#21935?
+		#+#22173?
+	# TODO: 21928 Sjors/2021/05/hww-toggle
+		# TODO: Avoid wallet format changes
+	# TODO: g4    Sjors-g/2019/08/hww-qt
 		# NOTE: was #16549
+	# ---- END HWI SUPPORT ----
 	17355 -  # gui: grey out used address in address book
 		TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
 	21283 achow101/psbt2
