@@ -156,6 +156,7 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	22016 rpc_gbci_period_start-0.21.1+knots				last=04ce309840f Sjors/2021/05/versionbits_period_start
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
+	g275  gui_darkmode-0.21
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
 	-     restore_linux32						7a156d40653
 		# NOTE: gitian only
@@ -340,8 +341,11 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 		# +g203  Display plain "Inbound" in peer details
 		# NOTE: Carries commit from g163 since it messes with the string anyway
 		# NOTE: Left off final doxygen commit
-	g179  gui_peers_conntype-0.21+knots			db1d8415614	last=9f76ba6597c jonatack-g/add-peers-dir-and-type-columns
-	g363  qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=52279e4b24a tmp_gui_peers_dir_arrows
+	g179  gui_peers_conntype-0.21+knots			db1d8415614	last=be4cf4832f1 jonatack-g/add-peers-dir-and-type-columns
+		# NOTE: Held back 9f76ba6597c...be4cf4832f1 (no real change once we add gui#363 on top)
+	g363  qt_peers_directionarrow-0.21+knots	fa00cf3cbca	last=14b35df0293 qt_peers_directionarrow
+		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
+		TODO: * ee3fa45933c GUI: Make Peers table aware of runtime palette change
 	20916 rpc_testmempoolaccept_wtxid-0.21		a78ab94ec0f	last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
@@ -424,7 +428,6 @@ m	20275 list_unsupported_wallets-0.21+knots	48a3b95a506	last=f3d870fc227 ryanofs
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
 	22159 marco/2106-buildPattern
 	g256  hebasto-g/210323-peers
-	g275  hebasto-g/210409-dark
 	g330  jarolrod-g/prompt-icon-colorized
 	g281  jarolrod-g/mul-shortcuts-resize
 	g291  -  # Network Graph layout - debug window improvement
