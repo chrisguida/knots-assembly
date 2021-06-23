@@ -391,13 +391,12 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
 	21260 rpcwallet_tx_in_mempool-0.21						last=46bf0b7b5d8
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
+		# NOTE: Ensure default is actually true
 	g213  gui_payrequest_copyaddr-0.18
 	g214  gui_payrequest_disablena-0.18+knots
-	g236  gui_init_walleterror_cont
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
-	21327 -  # net_processing: ignore transactions while in IBD
-	21359 -  # rpc: include_unsafe option for fundrawtransaction
-		TODO: Make API changes inside CCoinControl instead
+	21327 p2p_ignore_tx_in_ibd-0.21							last=648c5c73aef
+	21359 rpc_fundraw_includeunsafe-0.21+knots
 	g205  hebasto-g/210131-header
 		TODO: +gui#229
 	g206  jonatack-g/add-fields-to-peer-details
