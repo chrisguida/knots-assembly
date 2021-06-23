@@ -381,9 +381,9 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# TODO: 15946 jonas/2019/05/prune_blockfilter
 		#NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
 		#NOTE: Integrate prune locks
-	19763 vasild/only_relay_to_unaware
+	19763 p2p_no_relay_to_origin-0.21+knots
 	20365 wallettool_create_descriptors-0.21+k
-	21056 cdecker/rpcwait-timeout
+	21056 rpcwaittimeout-0.21
 	21141 -  # wallet: Add new format string placeholders for walletnotify
 	21158 -  # lib: Add Taproot support to libconsensus
 		TODO: minimise
@@ -606,6 +606,7 @@ TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 		gs origin-pull/21594/head^^ doc/release-notes.md
 		gs origin-pull/21843/head
 		gs benthecarman/remove_watch_only_address:doc/release-notes-15129.md
+		gs c490e17ef69
 	n/a  (cherrypick=f85265ea4d8)				878980c69c4  # update manpages (build first)
 	n/a  (cherrypick=63fcf9deced)				d4a64f61c13  # translation update
 # NOTE: use git diff --minimal for patches!
