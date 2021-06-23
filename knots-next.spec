@@ -384,10 +384,10 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	19763 p2p_no_relay_to_origin-0.21+knots
 	20365 wallettool_create_descriptors-0.21+k
 	21056 rpcwaittimeout-0.21
-	21141 -  # wallet: Add new format string placeholders for walletnotify
-	21158 -  # lib: Add Taproot support to libconsensus
-		TODO: minimise
-	21173 -  # util: faster HexStr => 13% faster blockToJSON
+	21141 walletnotify_blockhash-0.21
+	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
+		#TODO: minimise
+	21173 optimise_hexstr-0.21
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
 	21260 -  # wallet: indicate whether a transaction is in the mempool
 		TODO: Check if my review comments have been addressed
