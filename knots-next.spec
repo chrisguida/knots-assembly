@@ -389,12 +389,10 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 		#TODO: minimise
 	21173 optimise_hexstr-0.21
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
-	21260 -  # wallet: indicate whether a transaction is in the mempool
-		TODO: Check if my review comments have been addressed
-	21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
-		TODO: Check if my review comments have been addressed
-	g213  jarolrod-g/add-copyaddress-requestedpayments
-	g214  jarolrod-g/disable-contextactions-novalue
+	21260 rpcwallet_tx_in_mempool-0.21						last=46bf0b7b5d8
+	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
+	g213  gui_payrequest_copyaddr-0.18
+	g214  gui_payrequest_disablena-0.18+knots
 	g236  gui_init_walleterror_cont
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
 	21327 -  # net_processing: ignore transactions while in IBD
