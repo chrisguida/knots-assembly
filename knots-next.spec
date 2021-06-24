@@ -397,10 +397,12 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
 	21327 p2p_ignore_tx_in_ibd-0.21							last=648c5c73aef
 	21359 rpc_fundraw_includeunsafe-0.21+knots
-	g205  hebasto-g/210131-header
-		TODO: +gui#229
-	g206  jonatack-g/add-fields-to-peer-details
-	g226  jonatack-g/add-last-block-and-last-transaction-to-peer-details
+	g205  gui_save_txview_reqview_columns-0.19
+		# +gui#368
+		# NOTE: Diff minimised
+		# NOTE: gui#229 not applicable to backport
+	g206  gui_peers_relayinfo-0.21+knots
+	g226  gui_peers_lastblocktx-0.21+knots
 	g230  gui_backup_formats
 	# Needs review & wallet format impact eval: 21365 sipa/202102_taproot_sign
 	Depends on another PR? 21413 glozow/2021-03-bypass-timelocks
