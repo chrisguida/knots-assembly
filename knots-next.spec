@@ -414,7 +414,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Needs review: 21528 amitiuttarwar:2021-03-addr-defer2
 	21595 cli_addrinfo-0.21+knots
 		# NOTE: Adapted error message for Knots
-	21602 jarolrod/ban-time-info
+	21602 rpc_listbanned_deltas-0.21
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
@@ -608,6 +608,7 @@ TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 		gs benthecarman/remove_watch_only_address:doc/release-notes-15129.md
 		gs c490e17ef69
 		gs bb85cbc4f76
+		gs d3b0b08b0f0 - remove last sentence
 	n/a  (cherrypick=f85265ea4d8)				878980c69c4  # update manpages (build first)
 	n/a  (cherrypick=63fcf9deced)				d4a64f61c13  # translation update
 # NOTE: use git diff --minimal for patches!
