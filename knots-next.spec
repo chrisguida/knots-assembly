@@ -403,7 +403,8 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 		# NOTE: gui#229 not applicable to backport
 	g206  gui_peers_relayinfo-0.21+knots
 	g226  gui_peers_lastblocktx-0.21+knots
-	g230  gui_backup_formats
+	g230  gui_backup_formats-0.21+knots						last=e91a3f39d01 gui_backup_formats
+		# NOTE: To avoid conflict with wallettool_dump-0.21+knots, added 5ab50bc98db GUI: Omit DbDump option for backup of BDB wallets
 	# Needs review & wallet format impact eval: 21365 sipa/202102_taproot_sign
 	Depends on another PR? 21413 glozow/2021-03-bypass-timelocks
 	21426 jonatack/rm-scantxoutset-warning
