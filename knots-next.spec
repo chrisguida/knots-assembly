@@ -406,7 +406,9 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	g230  gui_backup_formats-0.21+knots						last=e91a3f39d01 gui_backup_formats
 		# NOTE: To avoid conflict with wallettool_dump-0.21+knots, added 5ab50bc98db GUI: Omit DbDump option for backup of BDB wallets
 	# Needs review & wallet format impact eval: 21365 sipa/202102_taproot_sign
-	Depends on another PR? 21413 glozow/2021-03-bypass-timelocks
+	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
+		# +22084
+	# Depends on #20833: 21413 glozow/2021-03-bypass-timelocks
 	21426 jonatack/rm-scantxoutset-warning
 	Needs Concept ACK: 21500 S3RK:listdescriptors_private
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
@@ -521,8 +523,6 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 		# NOTE: Originally #10594
 	20764 jonatack/netinfo-updates-dec-2020
 		FIXME: Check if all applicable to 0.21
-	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
-		# +22084
 	g165  gui_peers_splitter_ss-0.21+knots		e6d89996c67
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
