@@ -409,11 +409,11 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
 		# +22084
 	# Depends on #20833: 21413 glozow/2021-03-bypass-timelocks
-	21426 jonatack/rm-scantxoutset-warning
-	Needs Concept ACK: 21500 S3RK:listdescriptors_private
+	# Needs Concept ACK: 21500 S3RK:listdescriptors_private
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 	# Needs review: 21528 amitiuttarwar:2021-03-addr-defer2
-	21595 jonatack/addressinfo
+	21595 cli_addrinfo-0.21+knots
+		# NOTE: Adapted error message for Knots
 	21602 jarolrod/ban-time-info
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
@@ -607,6 +607,7 @@ TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 		gs origin-pull/21843/head
 		gs benthecarman/remove_watch_only_address:doc/release-notes-15129.md
 		gs c490e17ef69
+		gs bb85cbc4f76
 	n/a  (cherrypick=f85265ea4d8)				878980c69c4  # update manpages (build first)
 	n/a  (cherrypick=63fcf9deced)				d4a64f61c13  # translation update
 # NOTE: use git diff --minimal for patches!
