@@ -442,10 +442,11 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	g293  gui_peers_services_wordwrap-0.18
 	g298  gui_peers_altrowcolor-0.21+knots_pt1
 	g307  gui_peers_altrowcolor-0.21+knots					last=fdf80937d1c hebasto-g/210501-stripes
-	Change to have both? g305 rebroad-g/SendRecvSpeed-gui
-	g309  hebasto-g/210501-network
-	g318  jarolrod-g/copy-addr-peer
-		TODO: Add keyboard shortcut
+	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
+	g309  gui_neticon_peerstab-0.18
+		# Diff-minimised
+	g318  gui_peers_copyaddr-0.14							last=65d1d351786 jarolrod-g/copy-addr-peer
+		# NOTE: Added keyboard shortcut
 	Needs review: g342 hebasto-g/210521-wallet
 	Diff-minimise: g343 hebasto-g/210522-ppd
 	g362  kbshortcuts_context
