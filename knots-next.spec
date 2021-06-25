@@ -300,7 +300,8 @@ m	17463 gui_custom_sendyes					f97f61983f6
 	21277 listdescriptors_normalized-0.21+knots
 		# TODO: Drop 0.21.0 compatibility "desc" when return format is updated or 21329 is ready
 	# Needs review + upstream (changes wallet format): 21329 achow101:norm-desc-xpub-cache
-	g90   gui_trafficgraph_vert-0.21			823073c11b8	last=8b79225642a  # Enlarge Network Traffic Graph
+	g291  gui_trafficgraph_vert-0.21			823073c11b8	last=1f373f93a60  # Enlarge Network Traffic Graph
+		# WAS gui#90
 		# Removed dialog size change
 	21594 rpc_getnodeaddrs_network-0.21
 		# Diff-minimised / doc changes left out
@@ -436,8 +437,8 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
-	g281  jarolrod-g/mul-shortcuts-resize
-	g291  -  # Network Graph layout - debug window improvement
+	g281  gui_console_fontsize_shortcuts-0.21+k
+		# NOTE: Diff-minimised
 	g293  RandyMcMillan-g/enable-wordwrap-services
 	g298  RandyMcMillan-g/alt-row-colors
 	g307  hebasto-g/210501-stripes
