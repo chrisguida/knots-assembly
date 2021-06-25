@@ -447,9 +447,9 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 		# Diff-minimised
 	g318  gui_peers_copyaddr-0.14							last=65d1d351786 jarolrod-g/copy-addr-peer
 		# NOTE: Added keyboard shortcut
-	Needs review: g342 hebasto-g/210521-wallet
-	Diff-minimise: g343 hebasto-g/210522-ppd
-	g362  kbshortcuts_context
+	# Needs review: g342 hebasto-g/210521-wallet
+	g343  gui_instaprogress-0.19
+	g362  kbshortcuts_context-0.21+knots					last=e4c916a0ea0 kbshortcuts_context
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
