@@ -418,8 +418,8 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
-	21780 rebroad/MaxMempoolRPC
-		# TODO: Apply limit immediately (look at rwconf_gui and LimitMempoolSize)
+	21780 rpc_maxmempool-0.21								last=040b280c661 rebroad/MaxMempoolRPC
+		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	21832 -  # cli: Improve -getinfo return format
 	# Needs reivew: 21841 rebroad/SteadierFeefilter
