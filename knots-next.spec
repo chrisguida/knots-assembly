@@ -439,9 +439,9 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
 	g281  gui_console_fontsize_shortcuts-0.21+k
 		# NOTE: Diff-minimised
-	g293  RandyMcMillan-g/enable-wordwrap-services
-	g298  RandyMcMillan-g/alt-row-colors
-	g307  hebasto-g/210501-stripes
+	g293  gui_peers_services_wordwrap-0.18
+	g298  gui_peers_altrowcolor-0.21+knots_pt1
+	g307  gui_peers_altrowcolor-0.21+knots					last=fdf80937d1c hebasto-g/210501-stripes
 	Change to have both? g305 rebroad-g/SendRecvSpeed-gui
 	g309  hebasto-g/210501-network
 	g318  jarolrod-g/copy-addr-peer
