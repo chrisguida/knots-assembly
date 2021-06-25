@@ -427,8 +427,8 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Needs completion: 21851 fanquake/m1_support_depends
 		# +22070
 	# Needs review/optionality: 22009 achow101:cs-waste-2
-	Review: 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
-	22072 -  # Add reindex=auto flag to automatically reindex corrupt data
+	# Duplicate (of #14641): 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
+	22072 autoreindex-0.21									last=602f4da9178
 	22147 sdaftuar/2021-06-reserve-outbound-hb
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
 	22159 marco/2106-buildPattern
