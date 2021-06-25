@@ -135,6 +135,7 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
 	# TODO: Last commit? Diff-minimised somehow? 21560 laanwj/2021-03-torv3-hardcoded-seeds
 	21644 bugfix_addlocal_downloadbind-0.21
+	21822 bugfix_cli_pr21822-0.21
 	21907 listwalletdir_iterate_inf-0.19
 	21944 fix_listwalletdir_rootdir-0.21+knots
 	22013 ignoreblockrelayfordnsskip-0.21
@@ -421,7 +422,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	21780 rpc_maxmempool-0.21								last=040b280c661 rebroad/MaxMempoolRPC
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
-	21832 -  # cli: Improve -getinfo return format
+	21832 cli_color_getinfo-0.21							last=14cb2e0fe13
 	# Needs reivew: 21841 rebroad/SteadierFeefilter
 	# Needs completion: 21851 fanquake/m1_support_depends
 		# +22070
