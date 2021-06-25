@@ -158,6 +158,7 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	g275  gui_darkmode-0.21
+		# NOTE: Fixed bug in gui#330 a simpler way b942216a1a7
 	g366  gui_palettechange-0.21
 	-     restore_win32-0.21+knots				ead2c865bd9	last=3e30ae0514e restore_win32
 	-     restore_linux32						7a156d40653
@@ -429,11 +430,12 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Needs review/optionality: 22009 achow101:cs-waste-2
 	# Duplicate (of #14641): 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
 	22072 autoreindex-0.21									last=602f4da9178
-	22147 sdaftuar/2021-06-reserve-outbound-hb
+	22147 p2p_protect_last_outHB-0.21
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
-	22159 marco/2106-buildPattern
-	g256  hebasto-g/210323-peers
-	g330  jarolrod-g/prompt-icon-colorized
+	22159 conf_append_cxxflags-0.10							last=faac8383364 marco/2106-buildPattern
+	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers
+	# Not useful: g358  jarolrod-g/themedlabel-forms
+	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
 	g281  jarolrod-g/mul-shortcuts-resize
 	g291  -  # Network Graph layout - debug window improvement
 	g293  RandyMcMillan-g/enable-wordwrap-services
