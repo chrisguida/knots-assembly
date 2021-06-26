@@ -462,8 +462,8 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-0.21					82506cdd9e8	last=07fc81109a
 	9849 gui_netwatch-0.21+knots				d8b7e2d12e0	last=c4599591e97 gui_netwatch
-	10615 multiwallet_rpc-0.21+knots			9ebcde7606c	last=ee12dd02601 multiwallet_rpc
-		FIXME: Restrict backupwallet/dumpwallet somehow???
+	10615 multiwallet_rpc-0.21+knots			9ebcde7606c	last=5a10f8307a5 multiwallet_rpc
+		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-0.21+knots					d933d13de8c	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					ba634e68076
