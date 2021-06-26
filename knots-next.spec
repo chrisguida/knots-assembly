@@ -142,6 +142,7 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
 	19315 rpc_addconnection-0.21
 		# PARTIAL: Only the actual addconnection RPC method
+		# NOTE: Modified to allow use on non-regtest networks
 	22096 fix_p2p_addrfetch_ignoreselfadv-0.21+knots
 		# Includes part of #21236 (to avoid an extra GetTime on top of the 4 existing)
 	# TODO: Determine if any of #22154 (bech32m fixup) is needed
@@ -468,7 +469,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					ba634e68076
 		# NOTE: Originally based on #12674
-	10593 relax_invblk_punishment				b3602f5b7b5
+m	10593 relax_invblk_punishment-0.21+knots	b3602f5b7b5	last=a06d916c75a relax_invblk_punishment
 	10350 filtered_witblock-0.21				69ebcc245a9	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
@@ -490,7 +491,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	15633 nohbcbfornonwit-0.21+knots			a2a5e87357d	last=ac897f0bd3a nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
-	16490 marco/1907-rpcMempoolWhyReplacable
+	# TODO: 16490 marco/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d					2ba0d7680f2
