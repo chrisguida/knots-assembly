@@ -517,7 +517,7 @@ m	19092 cli_getinfo_mw_total_balance-0.21+knots	559324faf71	last=08ac1abc583 jon
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
 m	18570 wallet_rpc_lastprocessedblock-0.21+k	d8be75679d9	last=1e868bbbb1b
-	18789 achow101/create-unsigned-sendconfdialog
+	# TODO: 18789 achow101/create-unsigned-sendconfdialog
 		#TODO: Resolve conflict with wallet_no_reuse
 		#OR these two:
 		# 18655 achow101:split-bumpfeeaction
@@ -526,19 +526,21 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	d8be75679d9	last=1e868bbbb1b
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-0.21+knots	c7725d21554
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
-	17167 whitelist_outgoing-mini-0.21+knots	a1fdd41267d	last=200e09f00b0 whitelist_outgoing
+	17167 whitelist_outgoing-mini-0.21+knots	a1fdd41267d	last=f794108f9e9 whitelist_outgoing
 		#TODO: Split this up?
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
-	20764 jonatack/netinfo-updates-dec-2020
-		FIXME: Check if all applicable to 0.21
+	# TODO: 20764 jonatack/netinfo-updates-dec-2020
+		# FIXME: Check if all applicable to 0.21
 	g165  gui_peers_splitter_ss-0.21+knots		e6d89996c67
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
 	# Needs purpose: 21815 prayank23:max-out-full-relay
+	# FIXME: text below QR Code doesn't fit bech32 with Console font!
 # Non-upstreamed functionality:
 	# 22.0 TODO: Revert #21992 (removed -feefilter option, useful for manually prioritised transactions)
+	-     gui_payreq_textedit-0.21
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				7282a392f4f
 	-     walletnotify_w_win					ee2308c6163
