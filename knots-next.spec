@@ -496,10 +496,12 @@ m	10593 relax_invblk_punishment-0.21+knots	b3602f5b7b5	last=a06d916c75a relax_in
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d					2ba0d7680f2
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
-	15861 restore_vbits_warning					bd72d5147d2
-	16807 bech32_error_detection-0.21+knots		14b2c049b33	last=54e107add41 meshcollider/201909_bech32_error_detection
-		# NOTE: Minor diff-minimisation, dropped relnotes, added autodetect hack, +x test
-	# Redundant/conflicts with 16807: 20832 -  # rpc: Better error messages for invalid addresses
+m	15861 restore_vbits_warning-0.21+knots		bd72d5147d2	last=f016cd420df restore_vbits_warning
+	20832 rpc_validateaddress_error-0.21.1
+	16807 bech32_error_detection-0.21.1+knots				last=3bc568d6753 meshcollider/201909_bech32_error_detection
+	n/a   rpc_compat_error_index-0.21+knots
+		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
+NM	16807 bech32_error_detection-0.21+knots		14b2c049b33	last=54e107add41 meshcollider/201909_bech32_error_detection
 	-     gui_bech32_errpos-0.21+knots			065bf445e2f  # Latest code
 	17636 guisettings-0.21						d1a9bd6dcc2	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
@@ -615,6 +617,7 @@ TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 		gs c490e17ef69
 		gs bb85cbc4f76
 		gs d3b0b08b0f0 - remove last sentence
+		gs 3493dbfd1fc - contrast to prior releases
 	n/a  (cherrypick=f85265ea4d8)				878980c69c4  # update manpages (build first)
 	n/a  (cherrypick=63fcf9deced)				d4a64f61c13  # translation update
 # NOTE: use git diff --minimal for patches!
