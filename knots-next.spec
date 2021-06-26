@@ -425,7 +425,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	21780 rpc_maxmempool-0.21								last=040b280c661 rebroad/MaxMempoolRPC
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
-	21832 cli_color_getinfo-0.21							last=14cb2e0fe13
+	# Too many conflicts: 21832 cli_color_getinfo-0.21							last=14cb2e0fe13
 	# Needs reivew: 21841 rebroad/SteadierFeefilter
 	# Needs completion: 21851 fanquake/m1_support_depends
 		# +22070
@@ -501,21 +501,22 @@ m	15861 restore_vbits_warning-0.21+knots		bd72d5147d2	last=f016cd420df restore_v
 	16807 bech32_error_detection-0.21.1+knots				last=3bc568d6753 meshcollider/201909_bech32_error_detection
 	n/a   rpc_compat_error_index-0.21+knots
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
+	-     gui_bech32_errpos-0.21.1+knots  # Latest code
 NM	16807 bech32_error_detection-0.21+knots		14b2c049b33	last=54e107add41 meshcollider/201909_bech32_error_detection
-	-     gui_bech32_errpos-0.21+knots			065bf445e2f  # Latest code
+NM	-     gui_bech32_errpos-0.21+knots			065bf445e2f
 	17636 guisettings-0.21						d1a9bd6dcc2	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
-	17958 rpc_getgeneralinfo-0.21+knots			a2866ddc27a	last=cdbd38df131  # getgeneralinfo RPC
+m	17958 rpc_getgeneralinfo-0.21+knots			a2866ddc27a	last=cdbd38df131  # getgeneralinfo RPC
 	18223 blockfilter_v0-0.19					0350277f3df	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
-	19089 cli_getinfo_mwbalances-0.21+knots		9f091b577ae	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
-	19092 cli_getinfo_mw_total_balance-0.21+knots	559324faf71	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+m	19089 cli_getinfo_mwbalances-0.21+knots		9f091b577ae	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+m	19092 cli_getinfo_mw_total_balance-0.21+knots	559324faf71	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
-	18570 wallet_rpc_lastprocessedblock			d8be75679d9	last=1e868bbbb1b
+m	18570 wallet_rpc_lastprocessedblock-0.21+k	d8be75679d9	last=1e868bbbb1b
 	18789 achow101/create-unsigned-sendconfdialog
 		#TODO: Resolve conflict with wallet_no_reuse
 		#OR these two:
