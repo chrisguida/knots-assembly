@@ -479,6 +479,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	9504 dumpmasterprivkey-0.21					82506cdd9e8	last=07fc81109a
 	9849 gui_netwatch-0.21+knots				d8b7e2d12e0	last=c4599591e97 gui_netwatch
 	10615 multiwallet_rpc-0.21+knots			9ebcde7606c	last=5a10f8307a5 multiwallet_rpc
+		FIXME: Re-allow loadwallet of dedicated wallet name
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-0.21+knots					d933d13de8c	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
@@ -600,6 +601,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	f4f5c7f69bf
 	-     bloom_default-0.21+knots				784558e4f7b
 	-     enforce_checkpoints
 	n/a   checkpoint_update-0.21				ef8f3826f52
+		TODO: Ensure post-Taproot-lockin is included!
 	10282 timebomb_knots						486d4c9f50f
 m	-     rwconf_policy-0.21+knots				8d876234db0
 		# Include Knots policy changes for simplification of final rebase process
@@ -619,9 +621,9 @@ m	-     rwconf_policy-0.21+knots				8d876234db0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # 22.0 TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=e0968d0328b2877330)		c91fc545126	# doc/{bips,files}
-	n/a  (bump_version=Knots:20210309)			ea72e5a5e33
+	n/a  (bump_version=Knots:20210627)			ea72e5a5e33
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=55df7a04800)				cc37fd7c8be  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=50582e7f5e2)				cc37fd7c8be  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
@@ -631,13 +633,6 @@ m	-     rwconf_policy-0.21+knots				8d876234db0
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# 22.0 TODO: #21063 API change if merged
-		gs origin-pull/21594/head^^ doc/release-notes.md
-		gs origin-pull/21843/head
-		gs benthecarman/remove_watch_only_address:doc/release-notes-15129.md
-		gs c490e17ef69
-		gs bb85cbc4f76
-		gs d3b0b08b0f0 - remove last sentence
-		gs 3493dbfd1fc - contrast to prior releases
 	n/a  (cherrypick=f85265ea4d8)				878980c69c4  # update manpages (build first)
 	n/a  (cherrypick=63fcf9deced)				d4a64f61c13  # translation update
 		TODO: https://github.com/bitcoin/bitcoin/pull/22276 check
