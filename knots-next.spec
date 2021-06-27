@@ -9,7 +9,6 @@ checkout v0.21.1
 	21882 fuzz32_llvm_workaround-0.21+knots					last=bd55f62549e hebasto/210507-fuzz32
 	20938 configure_latomic_checks-0.14^
 	21920 configure_latomic_checks-0.14
-	22309 marco/2106-include diff-minimised
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						1cbdb2ff17a
 	2241 sys_leveldb							9cb10b093fb
@@ -156,8 +155,8 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	g329  rpcconsole_toolbuttons-0.21+knots
 	# Needs review: 22261 jnewbery/2021-06-broadcast-fixes
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
-	22308 marco/2106-wallet
-	22311 marco/2106-testsyncwithvalidationinterfacequeue
+	22308 bugfix_pr22308-0.17
+	22311 bugfix_pr22311-0.21
 	# Needs review: g365  hebasto-g/210614-tx
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -395,7 +394,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	19763 p2p_no_relay_to_origin-0.21+knots
 	20365 wallettool_create_descriptors-0.21+k
 	21056 rpcwaittimeout-0.21
-		FIXME: +22327
+		# +#22327
 	21141 walletnotify_blockhash-0.21
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
@@ -462,8 +461,10 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	g362  kbshortcuts_context-0.21+knots					last=e4c916a0ea0 kbshortcuts_context
 	# TODO? 22253 glozow/2021-06-same-txid-diff-wtxid
 	# Needs review: jonatack/ProtectEvictionCandidatesByRatio-perf-enhancements
-	22288 - Diff-minimize
-	22340 -  # Use legacy relaying to download blocks in blocks-only mode
+	22288 torcontrol_dnslookup-0.21							last=809d0204495
+		# Diff-minimised
+	# Needs review: 22340 -  # Use legacy relaying to download blocks in blocks-only mode
+		# NOTE: Rebased in 0e3b643ba55
 	# Too many TODOs: 22341 Sjors/2021/06/getxpub
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
