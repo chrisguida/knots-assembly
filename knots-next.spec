@@ -584,10 +584,10 @@ m	7510  rwconf_gui							7cf7822ab2f
 	-     gui_peers_sort_network-0.21+knots		c4fbf4c6084
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			189276115ab
-	-    mempool_knots014_compat-0.21+knots		f4f5c7f69bf last=1befffc0b48 mempool_dat_extensible
+	-    mempool_knots014_compat-0.21+knots					last=1befffc0b48 mempool_dat_extensible
 		# NOTE: Load-only
-		TODO: Test Knots014 mempool.dat with >32 MB txs (https://github.com/bitcoinknots/bitcoin/issues/30)
-NM	9422  mempool_dat_extensible_mod-0.21+knots	f4f5c7f69bf last=1befffc0b48 mempool_dat_extensible
+		# TODO: Test Knots014 mempool.dat with >32 MB txs (https://github.com/bitcoinknots/bitcoin/issues/30)
+NM	9422  mempool_dat_extensible_mod-0.21+knots	f4f5c7f69bf
 	11413 rpc_feemode_explicit_compat-0.21+knots	55502e4eeff
 	-     netperms_implicit_addr				710fc292260
 	12674 rpc_onetry_nonpriv-0.21+knots			b660a9f435d
@@ -601,7 +601,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	f4f5c7f69bf last=1befffc0b48 memp
 	-     enforce_checkpoints
 	n/a   checkpoint_update-0.21				ef8f3826f52
 	10282 timebomb_knots						486d4c9f50f
-	-     rwconf_policy-0.21+knots				8d876234db0
+m	-     rwconf_policy-0.21+knots				8d876234db0
 		# Include Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
@@ -617,7 +617,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	f4f5c7f69bf last=1befffc0b48 memp
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
-TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
+# 22.0 TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=e0968d0328b2877330)		c91fc545126	# doc/{bips,files}
 	n/a  (bump_version=Knots:20210309)			ea72e5a5e33
 #	n/a  knots_historical_relnotes				61100a2
