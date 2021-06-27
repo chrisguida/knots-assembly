@@ -584,9 +584,10 @@ m	7510  rwconf_gui							7cf7822ab2f
 	-     gui_peers_sort_network-0.21+knots		c4fbf4c6084
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			189276115ab
-	9422  mempool_dat_extensible_mod-0.21+knots	f4f5c7f69bf last=1befffc0b48 mempool_dat_extensible
-		# 0.22 TODO: Load-only (kept read/write for 0.21 only so 0.14-0.20 don't lose prioirities on downgrade)
-		FIXME: Address 32 MB limit bug (https://github.com/bitcoinknots/bitcoin/issues/30)
+	-    mempool_knots014_compat-0.21+knots		f4f5c7f69bf last=1befffc0b48 mempool_dat_extensible
+		# NOTE: Load-only
+		TODO: Test Knots014 mempool.dat with >32 MB txs (https://github.com/bitcoinknots/bitcoin/issues/30)
+NM	9422  mempool_dat_extensible_mod-0.21+knots	f4f5c7f69bf last=1befffc0b48 mempool_dat_extensible
 	11413 rpc_feemode_explicit_compat-0.21+knots	55502e4eeff
 	-     netperms_implicit_addr				710fc292260
 	12674 rpc_onetry_nonpriv-0.21+knots			b660a9f435d
