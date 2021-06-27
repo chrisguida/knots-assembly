@@ -1,7 +1,7 @@
-timestamp 2021-06-12 09:06:11
+timestamp 2021-06-27 00:37:39
 #lastapply no-merge
 
-#.. checked up to PR #22230 / gui #363
+#.. checked up to PR #22347 / gui #372
 
 checkout v0.21.1
 @0.21.x-syslibs
@@ -9,6 +9,7 @@ checkout v0.21.1
 	21882 fuzz32_llvm_workaround-0.21+knots					last=bd55f62549e hebasto/210507-fuzz32
 	20938 configure_latomic_checks-0.14^
 	21920 configure_latomic_checks-0.14
+	22309 marco/2106-include diff-minimised
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						1cbdb2ff17a
 	2241 sys_leveldb							9cb10b093fb
@@ -153,6 +154,11 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	g280  gui_urihandler_nophishing-0.20
 	g325  gui_peers_rightalign_id-0.21
 	g329  rpcconsole_toolbuttons-0.21+knots
+	# Needs review: 22261 jnewbery/2021-06-broadcast-fixes
+	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
+	22308 marco/2106-wallet
+	22311 marco/2106-testsyncwithvalidationinterfacequeue
+	# Needs review: g365  hebasto-g/210614-tx
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 	22016 rpc_gbci_period_start-0.21.1+knots				last=04ce309840f Sjors/2021/05/versionbits_period_start
@@ -375,6 +381,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 		# TODO: Avoid wallet format changes
 	# TODO: g4    Sjors-g/2019/08/hww-qt
 		# NOTE: was #16549
+	# 22334 ?
 	# ---- END HWI SUPPORT ----
 	# TODO: 17355 -  # gui: grey out used address in address book
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
@@ -388,6 +395,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	19763 p2p_no_relay_to_origin-0.21+knots
 	20365 wallettool_create_descriptors-0.21+k
 	21056 rpcwaittimeout-0.21
+		FIXME: +22327
 	21141 walletnotify_blockhash-0.21
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
@@ -410,6 +418,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	g230  gui_backup_formats-0.21+knots						last=e91a3f39d01 gui_backup_formats
 		# NOTE: To avoid conflict with wallettool_dump-0.21+knots, added 5ab50bc98db GUI: Omit DbDump option for backup of BDB wallets
 	# Needs review & wallet format impact eval: 21365 sipa/202102_taproot_sign
+		# +22275+22342
 	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
 		# +22084
 	# Depends on #20833: 21413 glozow/2021-03-bypass-timelocks
@@ -451,6 +460,11 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Needs review: g342 hebasto-g/210521-wallet
 	g343  gui_instaprogress-0.19
 	g362  kbshortcuts_context-0.21+knots					last=e4c916a0ea0 kbshortcuts_context
+	# TODO? 22253 glozow/2021-06-same-txid-diff-wtxid
+	# Needs review: jonatack/ProtectEvictionCandidatesByRatio-perf-enhancements
+	22288 - Diff-minimize
+	22340 -  # Use legacy relaying to download blocks in blocks-only mode
+	# Too many TODOs: 22341 Sjors/2021/06/getxpub
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -540,6 +554,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	d8be75679d9	last=1e868bbbb1b
 	# FIXME: text below QR Code doesn't fit bech32 with Console font!
 # Non-upstreamed functionality:
 	# 22.0 TODO: Revert #21992 (removed -feefilter option, useful for manually prioritised transactions)
+	# 22.0 TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
 	-     gui_payreq_textedit-0.21
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				7282a392f4f
@@ -623,6 +638,7 @@ TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 		gs 3493dbfd1fc - contrast to prior releases
 	n/a  (cherrypick=f85265ea4d8)				878980c69c4  # update manpages (build first)
 	n/a  (cherrypick=63fcf9deced)				d4a64f61c13  # translation update
+		TODO: https://github.com/bitcoin/bitcoin/pull/22276 check
 # NOTE: use git diff --minimal for patches!
 
 @0.21.x-knots-android
