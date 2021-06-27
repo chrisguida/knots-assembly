@@ -439,7 +439,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
 	g281  gui_console_fontsize_shortcuts-0.21+k
-		# NOTE: Diff-minimised
+		# NOTE: Diff-minimised and moved AddButtonShortcut to avoid conflict with #553 later
 	g293  gui_peers_services_wordwrap-0.18
 	g298  gui_peers_altrowcolor-0.21+knots_pt1
 	g307  gui_peers_altrowcolor-0.21+knots					last=fdf80937d1c hebasto-g/210501-stripes
@@ -543,14 +543,14 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	d8be75679d9	last=1e868bbbb1b
 	-     gui_payreq_textedit-0.21
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				7282a392f4f
-	-     walletnotify_w_win					ee2308c6163
+m	-     walletnotify_w_win-0.21+knots			ee2308c6163	last=a291491d2fd walletnotify_w_win
 	14137 win_taskbar_progress					731d80d2fa5	last=18eb4dbb8a
 	-     restore_blockmaxsize					762f1ed78d1
 	7107 qtnetworkport							37d1a79eda3	last=1f37c87 origin-pull/7107/head
 	7533  sendraw_force							ce8afbd4b4c
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf								d23b5dd2c4c
-	7510 rwconf_gui								7cf7822ab2f
+m	7510  rwconf_gui							7cf7822ab2f
 	 559 accept_nonstdtxn						d50ed506672
 	g153 const_max_digits						582bdd2599f
 	 929 tbc									d0f0c094f51
