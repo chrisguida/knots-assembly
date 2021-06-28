@@ -632,8 +632,7 @@ m	-     rwconf_policy-0.21+knots				8d876234db0
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# 22.0 TODO: #21063 API change if merged
 	n/a  (cherrypick=33ee7963ad4)				878980c69c4  # update manpages (build first)
-	n/a  (cherrypick=63fcf9deced)				d4a64f61c13  # translation update
-		TODO: https://github.com/bitcoin/bitcoin/pull/22276 check
+	n/a  (cherrypick=cfc0da2cac1)				d4a64f61c13  # translation update
 # NOTE: use git diff --minimal for patches!
 
 @0.21.x-knots-android
