@@ -162,6 +162,7 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	22308 bugfix_pr22308-0.17
 	22311 bugfix_pr22311-0.21
 	# Needs review: g365  hebasto-g/210614-tx
+	18842 fix_wallet_pr18842-0.21
 	22359 fix_wallet_pr22359-0.21							last=fa9ef0e8c6f
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 # SOFTFORK:
@@ -628,7 +629,7 @@ m	-     rwconf_policy-0.21+knots				8d876234db0
 	n/a  (cherrypick=e0968d0328b2877330)		c91fc545126	# doc/{bips,files}
 	n/a  (bump_version=Knots:20210629)			ea72e5a5e33
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=516fade3dee)				cc37fd7c8be  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=96316586c91)				cc37fd7c8be  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
