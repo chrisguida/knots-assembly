@@ -1,7 +1,7 @@
-timestamp 2021-06-27 00:37:39
+timestamp 2021-06-29 06:26:51
 #lastapply no-merge
 
-#.. checked up to PR #22347 / gui #372
+#.. checked up to PR #22369 / gui #375
 
 checkout v0.21.1
 @0.21.x-syslibs
@@ -30,6 +30,9 @@ checkout v0.21.1
 	#Maybe restore: 7339  opt_libevent
 @0.21.x-knots
 # TESTS:
+	22279 fix_fuzz_baseencdec_pr22279-0.21
+	22002 fix_fuzz_system_pr22002-0.21
+	22137 fix_fuzz_system_pr22137-0.21
 	-     lint_relaxer							6b3ec23b7ed
 	17402 travis_ppc64							12dfd387f7c	last=1d684f05341 elichai/2019-11-powerpc64
 	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20
@@ -112,6 +115,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	eaa839d579c	last=3f9cc0cd736 Saibato/
 	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
 	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
 	# Too messy? g164 hebasto-g/201224-signal
+		# +gui#375 fix
 TM	g171  qt_createwallet_layoutmgr-0.21		b3652905431	last=d4feb6812a2 hebasto-g/210101-wallet
 	# Meh? Diff too big? g176 hebasto-g/210103-delegate (fix in #20983)
 TM	g177  workaround_qt_macos11_fusion-0.21		1d7792c06df	last=4e1154dfd12 hebasto-g/210107-style
@@ -158,6 +162,8 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 	22308 bugfix_pr22308-0.17
 	22311 bugfix_pr22311-0.21
 	# Needs review: g365  hebasto-g/210614-tx
+	22359 fix_wallet_pr22359-0.21							last=fa9ef0e8c6f
+	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 	22016 rpc_gbci_period_start-0.21.1+knots				last=04ce309840f Sjors/2021/05/versionbits_period_start
@@ -376,6 +382,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 		#+#21417+#21467+#21576+#21666
 		#+#21935?
 		#+#22173?
+		#+#22348 ?
 	# TODO: 21928 Sjors/2021/05/hww-toggle
 		# TODO: Avoid wallet format changes
 	# TODO: g4    Sjors-g/2019/08/hww-qt
@@ -466,6 +473,7 @@ m	g162  gui_peers_detail_network-0.21+knots	2e85fc5aa76
 	# Needs review: 22340 -  # Use legacy relaying to download blocks in blocks-only mode
 		# NOTE: Rebased in 0e3b643ba55
 	# Too many TODOs: 22341 Sjors/2021/06/getxpub
+	# Needs work: 22350 -  # Log rotation
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					a1b1f408a1a	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -586,7 +594,6 @@ m	7510  rwconf_gui							7cf7822ab2f
 	-    preserve_unsupported_keyflags			189276115ab
 	-    mempool_knots014_compat-0.21+knots					last=1befffc0b48 mempool_dat_extensible
 		# NOTE: Load-only
-		# TODO: Test Knots014 mempool.dat with >32 MB txs (https://github.com/bitcoinknots/bitcoin/issues/30)
 NM	9422  mempool_dat_extensible_mod-0.21+knots	f4f5c7f69bf
 	11413 rpc_feemode_explicit_compat-0.21+knots	55502e4eeff
 	-     netperms_implicit_addr				710fc292260
@@ -619,7 +626,7 @@ m	-     rwconf_policy-0.21+knots				8d876234db0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # 22.0 TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=e0968d0328b2877330)		c91fc545126	# doc/{bips,files}
-	n/a  (bump_version=Knots:20210627)			ea72e5a5e33
+	n/a  (bump_version=Knots:20210629)			ea72e5a5e33
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=516fade3dee)				cc37fd7c8be  # release notes: write/update, including change log and credits
 			# check travis for misspellings
@@ -632,7 +639,7 @@ m	-     rwconf_policy-0.21+knots				8d876234db0
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# 22.0 TODO: #21063 API change if merged
 	n/a  (cherrypick=33ee7963ad4)				878980c69c4  # update manpages (build first)
-	n/a  (cherrypick=038e73e4232)				d4a64f61c13  # translation update
+	n/a  (cherrypick=936fd13cd23)				d4a64f61c13  # translation update
 # NOTE: use git diff --minimal for patches!
 
 @0.21.x-knots-android
