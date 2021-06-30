@@ -6,7 +6,7 @@ timestamp 2021-06-29 06:26:51
 checkout v0.21.1
 @0.21.x-syslibs
 # BUILD BUGS:
-	21882 fuzz32_llvm_workaround-0.21+knots		d994684b569					last=bd55f62549e hebasto/210507-fuzz32
+	21882 fuzz32_llvm_workaround-0.21+knots		d994684b569	last=bd55f62549e hebasto/210507-fuzz32
 	20938 configure_latomic_checks-0.14^		ee5e40704b0
 	21920 configure_latomic_checks-0.14			4f3c88f543a
 # SYSLIBS: (and old build bugs)
@@ -77,7 +77,7 @@ checkout v0.21.1
 		# NOTE: -mini is just missing the last commit :)
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18335 -										10c0773e7fd	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
-	18466 -										cf0e22b6d2f													last=a5cfb40e27b  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
+	18466 -										cf0e22b6d2f	last=a5cfb40e27b  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18729 intro_dont_change_user_prune			25f70064ec8
 	18766 blocksonly_no_feeest-0.21				e46a9d86ca1	last=4e28753f606
 		# diff-minimised
@@ -126,12 +126,12 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	# Needs review: g201  jonatack-g/inbound-block-relay
 	g202  bugfix_gui_peerdetail_hide-0.18		c27915c33d9
 	# Needs review & bug fixes: 21106 pstratem/2021-02-07-isinitialblockdownload-timeout
-	21111 openrc_no_rpcpassword-0.12			0c26ecef607						last=95f97111dd2 parazyd/openrc-init-improve
+	21111 openrc_no_rpcpassword-0.12			0c26ecef607	last=95f97111dd2 parazyd/openrc-init-improve
 	# Needs review: 21161 ajtowns/202102-fee-bug-medianval
-	21192 bugfix_netinfo_tooverbose-0.21		b068b1f1c54					last=882ce25132e laanwj/2021-02-netinfo-verbosity
-	g204  bugfix_gui_rm_old_fixer-0.18			94b0d8bf06d						last=3913d1e8c1f
+	21192 bugfix_netinfo_tooverbose-0.21		b068b1f1c54	last=882ce25132e laanwj/2021-02-netinfo-verbosity
+	g204  bugfix_gui_rm_old_fixer-0.18			94b0d8bf06d	last=3913d1e8c1f
 		# Diff-minimised
-	g217  gui_clickable_warning-0.11			0311cc01d15						last=67c59ae4793 jarolrod-g/warning-look-like-button
+	g217  gui_clickable_warning-0.11			0311cc01d15	last=67c59ae4793 jarolrod-g/warning-look-like-button
 	# Needs careful review: g219 hebasto-g/210223-toolbar
 	g236  gui_init_walleterror_cont				37fc886f39f
 	# Complex: 21007 hebasto:210316-fork
@@ -163,11 +163,11 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	22311 bugfix_pr22311-0.21					995e84e1904
 	# Needs review: g365  hebasto-g/210614-tx
 	18842 fix_wallet_pr18842-0.21				42b45600d37
-	22359 fix_wallet_pr22359-0.21				3244e0d002f							last=fa9ef0e8c6f
+	22359 fix_wallet_pr22359-0.21				3244e0d002f	last=fa9ef0e8c6f
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
-	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1				last=04ce309840f Sjors/2021/05/versionbits_period_start
+	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=04ce309840f Sjors/2021/05/versionbits_period_start
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	g275  gui_darkmode-0.21						8939a4a109b
@@ -327,7 +327,7 @@ m	17463 gui_custom_sendyes					998dd492930
 		#TODO: +21407+21631
 		# TODO??? 21514 vasild:ignore_port_in_i2p
 	# TODO: 20685 vasild/i2p_sam
-	22211 i2p_IsRelayable-0.21+knots			03d28fdf8dd						last=7593b06bd12
+	22211 i2p_IsRelayable-0.21+knots			03d28fdf8dd	last=7593b06bd12
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 m	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
@@ -370,7 +370,7 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# NOTE: Minor code rearranging to avoid conflicts
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots	9ca3cf1b24b
-	15129 rpc_removeaddress-0.21				423fd4425f4							last=fdbd01b50e0 benthecarman/remove_watch_only_address
+	15129 rpc_removeaddress-0.21				423fd4425f4	last=fdbd01b50e0 benthecarman/remove_watch_only_address
 	# TODO: 18077 hebasto/20200130-natpmp
 		# FIXME: Needs #21320
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
@@ -408,13 +408,13 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		#TODO: minimise
 	21173 optimise_hexstr-0.21					b4ac741d755
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
-	21260 rpcwallet_tx_in_mempool-0.21			28ec9283de6						last=46bf0b7b5d8
+	21260 rpcwallet_tx_in_mempool-0.21			28ec9283de6	last=46bf0b7b5d8
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
 	g213  gui_payrequest_copyaddr-0.18			d165eeec1fc
 	g214  gui_payrequest_disablena-0.18+knots	4853dd20a7e
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
-	21327 p2p_ignore_tx_in_ibd-0.21				093927be571							last=648c5c73aef
+	21327 p2p_ignore_tx_in_ibd-0.21				093927be571	last=648c5c73aef
 	21359 rpc_fundraw_includeunsafe-0.21+knots	52b632873e7
 	g205  gui_save_txview_reqview_columns-0.19	6facbfb184d
 		# +gui#368
@@ -422,7 +422,7 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# NOTE: gui#229 not applicable to backport
 	g206  gui_peers_relayinfo-0.21+knots		60e29d15120
 	g226  gui_peers_lastblocktx-0.21+knots		1c333eb7c65
-	g230  gui_backup_formats-0.21+knots			557904a49bb						last=e91a3f39d01 gui_backup_formats
+	g230  gui_backup_formats-0.21+knots			557904a49bb	last=e91a3f39d01 gui_backup_formats
 		# NOTE: To avoid conflict with wallettool_dump-0.21+knots, added 5ab50bc98db GUI: Omit DbDump option for backup of BDB wallets
 	# Needs review & wallet format impact eval: 21365 sipa/202102_taproot_sign
 		# +22275+22342
@@ -438,7 +438,7 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
-	21780 rpc_maxmempool-0.21					0bc176fa910								last=040b280c661 rebroad/MaxMempoolRPC
+	21780 rpc_maxmempool-0.21					0bc176fa910	last=040b280c661 rebroad/MaxMempoolRPC
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Too many conflicts: 21832 cli_color_getinfo-0.21							last=14cb2e0fe13
@@ -447,10 +447,10 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# +22070
 	# Needs review/optionality: 22009 achow101:cs-waste-2
 	# Duplicate (of #14641): 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
-	22072 autoreindex-0.21						66d83231979									last=602f4da9178
+	22072 autoreindex-0.21						66d83231979	last=602f4da9178
 	22147 p2p_protect_last_outHB-0.21			8f7863d9729
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
-	22159 conf_append_cxxflags-0.10				deede4f8965							last=faac8383364 marco/2106-buildPattern
+	22159 conf_append_cxxflags-0.10				deede4f8965	last=faac8383364 marco/2106-buildPattern
 	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
@@ -458,18 +458,18 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# NOTE: Diff-minimised and moved AddButtonShortcut to avoid conflict with #553 later
 	g293  gui_peers_services_wordwrap-0.18		d8b9433aeef
 	g298  gui_peers_altrowcolor-0.21+knots_pt1	840c66b724f
-	g307  gui_peers_altrowcolor-0.21+knots		7d9f56d4c76					last=fdf80937d1c hebasto-g/210501-stripes
+	g307  gui_peers_altrowcolor-0.21+knots		7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
 	g309  gui_neticon_peerstab-0.18				f3e47ff2e91
 		# Diff-minimised
-	g318  gui_peers_copyaddr-0.14				172639c9e05							last=65d1d351786 jarolrod-g/copy-addr-peer
+	g318  gui_peers_copyaddr-0.14				172639c9e05	last=65d1d351786 jarolrod-g/copy-addr-peer
 		# NOTE: Added keyboard shortcut
 	# Needs review: g342 hebasto-g/210521-wallet
 	g343  gui_instaprogress-0.19				c62ac024c54
-	g362  kbshortcuts_context-0.21+knots		60fbd5be8e7					last=e4c916a0ea0 kbshortcuts_context
+	g362  kbshortcuts_context-0.21+knots		60fbd5be8e7	last=e4c916a0ea0 kbshortcuts_context
 	# TODO? 22253 glozow/2021-06-same-txid-diff-wtxid
 	# Needs review: jonatack/ProtectEvictionCandidatesByRatio-perf-enhancements
-	22288 torcontrol_dnslookup-0.21				d8f8412dcc4							last=cdd51e8ee15
+	22288 torcontrol_dnslookup-0.21				d8f8412dcc4	last=cdd51e8ee15
 		# Diff-minimised
 	# Needs review: 22340 -  # Use legacy relaying to download blocks in blocks-only mode
 		# NOTE: Rebased in 0e3b643ba55
@@ -522,7 +522,7 @@ m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_in
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 m	15861 restore_vbits_warning-0.21+knots		43dad5a3906	last=f016cd420df restore_vbits_warning
 	20832 rpc_validateaddress_error-0.21.1		46b02eee06b
-	16807 bech32_error_detection-0.21.1+knots	47e52930e8f				last=3bc568d6753 meshcollider/201909_bech32_error_detection
+	16807 bech32_error_detection-0.21.1+knots	47e52930e8f	last=3bc568d6753 meshcollider/201909_bech32_error_detection
 	n/a   rpc_compat_error_index-0.21+knots		c0b669d2000
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	-     gui_bech32_errpos-0.21.1+knots		63858cb48e1  # Latest code
@@ -593,7 +593,7 @@ m	7510  rwconf_gui							31da64c50bc
 	-     gui_peers_sort_network-0.21+knots		a3e6f0ec5e2
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
-	-    mempool_knots014_compat-0.21+knots		4d6b8b17d26					last=1befffc0b48 mempool_dat_extensible
+	-    mempool_knots014_compat-0.21+knots		4d6b8b17d26	last=1befffc0b48 mempool_dat_extensible
 		# NOTE: Load-only
 NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	11413 rpc_feemode_explicit_compat-0.21+knots	ca8dbc1e33d
