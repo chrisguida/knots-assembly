@@ -3,6 +3,8 @@ timestamp 2021-06-29 06:26:51
 
 #.. checked up to PR #22369 / gui #375
 
+merge in xenial patching if Qt5.5 supported still
+
 checkout v0.21.1
 @0.21.x-syslibs
 # BUILD BUGS:
@@ -119,6 +121,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/
 TM	g171  qt_createwallet_layoutmgr-0.21		1ab94ce61ef	last=d4feb6812a2 hebasto-g/210101-wallet
 	# Meh? Diff too big? g176 hebasto-g/210103-delegate (fix in #20983)
 TM	g177  workaround_qt_macos11_fusion-0.21		9ab4bdc6608	last=4e1154dfd12 hebasto-g/210107-style
+	TODO: Revert g177 now that we have dark mode???
 	20952 bdb_sanity_check-0.21					85ec10ee85e
 TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin-mode-psbts
 	21028 bips_44-49-84-0.21+knots				915ffbb4cea
@@ -510,6 +513,7 @@ m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_in
 	15218 postibd_flush							84b38613864	last=d2ecb70d64  # validation: Flush state after initial sync
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-0.21+knots			e509f51807e	# latest code now
+		FIXME: QR code kinda messed up
 	15421 tor_subprocess-0.21+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
 	# TODO: tor gitian bundle!
 	15633 nohbcbfornonwit-0.21+knots			c48ce12aa19	last=ac897f0bd3a nohbcbfornonwit
@@ -614,6 +618,7 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
+	NOTE TO SELF: Remove release-notes-prNNNNN.md files BEFORE the svg icon merge so it doesn't get added then removed in different patch files >_<
 	7483  svg_icon-0.21+knots					469d40983b1
 # BRANDING:
 	n/a   knots_branding-0.21					1ee7ca43f35
