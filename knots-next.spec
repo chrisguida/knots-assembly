@@ -113,13 +113,11 @@ m	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/
 	20805 copyright_2021-0.21					f9379afcd0c
 		# NOTE: Diff-minimised
 	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
-	# Needs more PRs - for Dark Mode support: g154 -  # qt: Colorize icons on macOS for Dark mode support
 	# Too messy? g164 hebasto-g/201224-signal
 		# +gui#375 fix
 TM	g171  qt_createwallet_layoutmgr-0.21		1ab94ce61ef	last=d4feb6812a2 hebasto-g/210101-wallet
 	# Meh? Diff too big? g176 hebasto-g/210103-delegate (fix in #20983)
 TM	g177  workaround_qt_macos11_fusion-0.21		9ab4bdc6608	last=4e1154dfd12 hebasto-g/210107-style
-	TODO: Revert g177 now that we have dark mode???
 	20952 bdb_sanity_check-0.21					85ec10ee85e
 TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin-mode-psbts
 	21028 bips_44-49-84-0.21+knots				915ffbb4cea
@@ -174,8 +172,9 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=04ce309840f Sjors/2021/05/versionbits_period_start
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
-	g275  gui_darkmode-0.21						8939a4a109b
+	g275  gui_darkmode-0.21_pt1					8939a4a109b
 		# NOTE: Fixed bug in gui#330 a simpler way b942216a1a7
+	g154  gui_darkmode-0.21
 	g366  gui_palettechange-0.21				55b04f94483
 	-     restore_win32-0.21+knots				d37803a84cc	last=3e30ae0514e restore_win32
 	-     restore_linux32						efa9ee85ed6
