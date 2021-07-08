@@ -517,7 +517,7 @@ m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_in
 	15428 tor_gui_pairing-0.21+knots			e509f51807e	# latest code now
 		FIXME: 42228f7aab1 Bugfix: GUI: Pairing: Don't try to add layout to the wrong parent even temporarily
 		FIXME: 380bed9e0d0 Bugfix: GUI: Pairing: Only attach to non-null client model signals
-		FIXME: QR code kinda messed up
+		FIXME: 911dd46307b Bugfix: GUI: QRImageWidget: Fix centring of QR Code when text.isEmpty
 	15421 tor_subprocess-0.21+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
 		FIXME: if tor survives bitcoin-qt exiting, it keeps the listening port bound??
 			Fixing this is problematic. It needs a newer boost version that doesn't exist yet (see https://github.com/boostorg/process/issues/200)
