@@ -168,9 +168,8 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	18842 fix_wallet_pr18842-0.21				42b45600d37
 	22359 fix_wallet_pr22359-0.21				3244e0d002f	last=fa9ef0e8c6f
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
-	22417 bpchild_closefds-0.21								last=b611384f901 bpchild_closefds
-		TODO: ad6b334232f util/system: Close non-std fds before execing slave processes
-		NOTE: Need #ifdef BOOST_POSIX_API around include because Win64 extend header is b0rked
+	22417 bpchild_closefds-0.21								last=3b6153ba336 bpchild_closefds
+		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 @0.21.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
