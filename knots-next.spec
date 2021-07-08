@@ -216,7 +216,7 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	# wait for Core?: 14707  # [RPC] Include coinbase transactions in receivedby RPCs
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
-	g119  rm_send2self-mini						f97c6773966	last=77a74aac443 rm_send2self
+	g119  rm_send2self-mini						f97c6773966	last=aa744e4382e rm_send2self
 		# NOTE: Originally #15115
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
@@ -295,7 +295,7 @@ m	17463 gui_custom_sendyes					998dd492930
 	19242 uaappend								0501a4912b2
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
-	19463 prune_locks							7688250cdac
+	19463 prune_locks-0.21						7688250cdac	last=1ad45edbfeb prune_locks
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
 		# +22047
