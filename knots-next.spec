@@ -168,6 +168,8 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	18842 fix_wallet_pr18842-0.21				42b45600d37
 	22359 fix_wallet_pr22359-0.21				3244e0d002f	last=fa9ef0e8c6f
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
+	22417 bpchild_closefds-0.21								last=b611384f901 bpchild_closefds
+		TODO: ad6b334232f util/system: Close non-std fds before execing slave processes
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=04ce309840f Sjors/2021/05/versionbits_period_start
@@ -513,8 +515,12 @@ m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_in
 	15218 postibd_flush							84b38613864	last=d2ecb70d64  # validation: Flush state after initial sync
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-0.21+knots			e509f51807e	# latest code now
+		FIXME: 42228f7aab1 Bugfix: GUI: Pairing: Don't try to add layout to the wrong parent even temporarily
+		FIXME: 380bed9e0d0 Bugfix: GUI: Pairing: Only attach to non-null client model signals
 		FIXME: QR code kinda messed up
 	15421 tor_subprocess-0.21+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
+		FIXME: if tor survives bitcoin-qt exiting, it keeps the listening port bound??
+			Fixing this is problematic. It needs a newer boost version that doesn't exist yet (see https://github.com/boostorg/process/issues/200)
 	# TODO: tor gitian bundle!
 	15633 nohbcbfornonwit-0.21+knots			c48ce12aa19	last=ac897f0bd3a nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
