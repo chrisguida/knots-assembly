@@ -3,8 +3,6 @@ timestamp 2021-06-29 06:26:51
 
 #.. checked up to PR #22369 / gui #375
 
-merge in xenial patching if Qt5.5 supported still
-
 checkout v0.21.1
 @0.21.x-syslibs
 # BUILD BUGS:
@@ -467,9 +465,11 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	g307  gui_peers_altrowcolor-0.21+knots		7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
 	g309  gui_neticon_peerstab-0.18				f3e47ff2e91
+		# NOTE: Fixed Qt5.5 compatibility
 		# Diff-minimised
 	g318  gui_peers_copyaddr-0.14				172639c9e05	last=65d1d351786 jarolrod-g/copy-addr-peer
 		# NOTE: Added keyboard shortcut
+		# NOTE: Fixed Qt5.5 compatibility
 	# Needs review: g342 hebasto-g/210521-wallet
 	g343  gui_instaprogress-0.19				c62ac024c54
 	g362  kbshortcuts_context-0.21+knots		60fbd5be8e7	last=e4c916a0ea0 kbshortcuts_context
