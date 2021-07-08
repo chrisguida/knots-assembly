@@ -162,7 +162,8 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	22311 bugfix_pr22311-0.21					995e84e1904
 	# Needs review: g365  hebasto-g/210614-tx
 	18842 fix_wallet_pr18842-0.21				42b45600d37
-	22359 fix_wallet_pr22359-0.21				3244e0d002f	last=fa9ef0e8c6f
+	22359 fix_wallet_pr22359-0.21				3244e0d002f	last=fa6fd3dd6a4
+		# Semi-diff-minimised
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds-0.21								last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
@@ -270,7 +271,7 @@ m	17463 gui_custom_sendyes					998dd492930
 	17631 rest_blockfilter-0.21					31a7b2798a2	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	g319  gui_openuri_pastebtn-0.21				3cb5fcd37dd	last=84f23e8ec5b
+	g319  gui_openuri_pastebtn-0.21				3cb5fcd37dd	last=5062565e112
 		# NOTE: Used to be #17955
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.21+knots	996d632f395	last=19e28a41168 elichai/2020-01-siphash
