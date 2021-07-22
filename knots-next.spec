@@ -1,16 +1,19 @@
-timestamp 2021-06-29 06:26:51
-#lastapply no-merge
+timestamp 2021-07-22 08:01:09
+lastapply no-merge
 
-#.. checked up to PR #22369 / gui #375
+#.. checked up to PR #22525 / gui #384
 
 checkout origin/22.x
 @22.x-syslibs
 # BUILD BUGS:
 	21882 fuzz32_llvm_workaround-0.21+knots		d994684b569	last=bd55f62549e hebasto/210507-fuzz32
+	22380 fanquake/set_std_c_version_depends
+	22390 fanquake/netbsd_dont_set_locale
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
 	5416 sys_libsecp256k1-0.21					c2e8d067f0b	last=258c28e99b3 sys_libsecp256k1
+	22412 bugfix_pushback_bool
 	7485 sys_univalue_def						663a72e6a12
 	13789 bugfix_asm_pragmas					82ab60f2428
 	-     bugfix_asm_leveldb_check				741060d31b8
@@ -105,6 +108,7 @@ checkout origin/22.x
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds-0.21								last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
+	Needs review: g379 ryanofsky/pr/badset
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -344,6 +348,14 @@ checkout origin/22.x
 		# NOTE: Rebased in 0e3b643ba55
 	# Too many TODOs: 22341 Sjors/2021/06/getxpub
 	# Needs work: 22350 -  # Log rotation
+	22372 multinotify
+	22383 -  # rpc: Prefer to use txindex if available for GetTransaction
+		TODO: Add optimisation in review comment
+	22501 jonatack/netinfo-addr-statistics
+	22513 achow101/psbt-no-finalize
+		FIXME: options object
+	Needs review: 22514 achow101/psbt-sighash-default
+	g384  -  # add copy subnet action for banned peer
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -490,7 +502,7 @@ checkout origin/22.x
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
-	n/a  (bump_version=Knots:20210629)			0a9a4537a5d
+	n/a  (bump_version=Knots:20210722)			0a9a4537a5d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=96316586c91)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
