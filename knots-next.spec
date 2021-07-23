@@ -7,6 +7,7 @@ checkout origin/22.x
 @22.x-syslibs
 # BUILD BUGS:
 	21882 fuzz32_llvm_workaround-0.21+knots		d994684b569	last=bd55f62549e hebasto/210507-fuzz32
+		# NOTE: Has improvements/fixes
 	22380 fanquake/set_std_c_version_depends
 	22390 fanquake/netbsd_dont_set_locale
 # SYSLIBS: (and old build bugs)
@@ -83,7 +84,8 @@ checkout origin/22.x
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-0.21+knots	37dd20ac3a1
+	19888 getblockstats_utxo_actual-0.21+knots	37dd20ac3a1	last=0af88a85e59
+		# modified
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					13002cb08f2	last=2e386cd3dd3
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
@@ -106,12 +108,12 @@ checkout origin/22.x
 	22359 fix_wallet_pr22359-0.21				3244e0d002f	last=fa6fd3dd6a4
 		# Semi-diff-minimised
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
-	22417 bpchild_closefds-0.21								last=3b6153ba336 bpchild_closefds
+	22417 bpchild_closefds									last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 	Needs review: g379 ryanofsky/pr/badset
 @22.x-knots
 # SOFTFORK:
-	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
+	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=04ce309840f Sjors/2021/05/versionbits_period_start
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -161,7 +163,7 @@ checkout origin/22.x
 	# Needs review: 15204 promag:2019-01-openexternalwallet
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
-	15423 tor_socks_port-0.21					67bfe9cad94	last=d37d95a9ea2 tor_socks_port
+	15423 tor_socks_port						67bfe9cad94	last=d37d95a9ea2 tor_socks_port
 		# Held back 962f168a014..398df42f449
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
@@ -208,7 +210,7 @@ checkout origin/22.x
 	17631 rest_blockfilter-0.21					31a7b2798a2	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	g319  gui_openuri_pastebtn-0.21				3cb5fcd37dd	last=5062565e112
+	g319  -										3cb5fcd37dd	last=5062565e112  # gui_openuri_pastebtn-0.21
 		# NOTE: Used to be #17955
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.21+knots	996d632f395	last=19e28a41168 elichai/2020-01-siphash
@@ -228,7 +230,7 @@ checkout origin/22.x
 	19242 uaappend								0501a4912b2
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
-	19463 prune_locks-0.21						7688250cdac	last=1ad45edbfeb prune_locks
+	19463 prune_locks							7688250cdac	last=1ad45edbfeb prune_locks
 	# Needs review: 18000 -  # Coin Statistics Index
 	TODO: MERGED UPSTREAM: # Needs review: 19521 # Coinstats Index (without UTXO set hash)
 		# +22047
@@ -258,7 +260,7 @@ checkout origin/22.x
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	TODO: MERGED UPSTREAM: 20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
-	20295 getblockfrompeer-0.21					947c37b0b52	last=d0b537458d9 Sjors/2020/11/getblockfrompeer
+	20295 Sjors/2020/11/getblockfrompeer		947c37b0b52	last=d0b537458d9 Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
@@ -283,7 +285,7 @@ checkout origin/22.x
 	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# NOTE: Left out Peers table column & misc formatting changes
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
-	15129 rpc_removeaddress-0.21				423fd4425f4	last=fdbd01b50e0 benthecarman/remove_watch_only_address
+	15129 benthecarman/remove_watch_only_address	423fd4425f4	last=fdbd01b50e0 benthecarman/remove_watch_only_address
 	# ---- BEGIN HWI SUPPORT, TODO ----
 	21576 ???
 	# TODO: 21928 Sjors/2021/05/hww-toggle
@@ -301,11 +303,11 @@ checkout origin/22.x
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
-	21260 rpcwallet_tx_in_mempool-0.21			28ec9283de6	last=46bf0b7b5d8
+	21260 -										28ec9283de6	last=46bf0b7b5d8  # rpcwallet_tx_in_mempool-0.21
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
-	21327 p2p_ignore_tx_in_ibd-0.21				093927be571	last=648c5c73aef
+	21327 -										093927be571	last=648c5c73aef  # p2p_ignore_tx_in_ibd-0.21
 	TODO: MERGED UPSTREAM: g205  gui_save_txview_reqview_columns-0.19	6facbfb184d
 		# +gui#368
 		# NOTE: Diff minimised
@@ -332,10 +334,10 @@ checkout origin/22.x
 		# +22070 (MERGED UPSTREAM)
 	# Needs review/optionality: 22009 achow101:cs-waste-2
 	# Duplicate (of #14641): 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
-	22072 autoreindex-0.21						66d83231979	last=602f4da9178
-	22159 conf_append_cxxflags-0.10				deede4f8965	last=fa14c6818f4 marco/2106-buildPattern
+	22072 -										66d83231979	last=602f4da9178  # autoreindex-0.21
+	22159 marco/2106-buildPattern				deede4f8965	last=fa14c6818f4 marco/2106-buildPattern
 	# Not useful: g358  jarolrod-g/themedlabel-forms
-	g307  gui_peers_altrowcolor-0.21+knots		7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
+	g307  hebasto-g/210501-stripes				7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
 	g318  gui_peers_copyaddr-0.14				172639c9e05	last=65d1d351786 jarolrod-g/copy-addr-peer
 		# NOTE: Added keyboard shortcut
@@ -402,7 +404,7 @@ checkout origin/22.x
 	17795 gui_console_ctrl_d					ca0940d77b6
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning-0.21+knots		43dad5a3906	last=f016cd420df restore_vbits_warning
-	16807 bech32_error_detection-0.21.1+knots	47e52930e8f	last=3bc568d6753 meshcollider/201909_bech32_error_detection
+	16807 meshcollider/201909_bech32_error_detection	47e52930e8f	last=3bc568d6753 meshcollider/201909_bech32_error_detection
 	n/a   rpc_compat_error_index-0.21+knots		c0b669d2000
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	-     gui_bech32_errpos-0.21.1+knots		63858cb48e1  # Latest code
