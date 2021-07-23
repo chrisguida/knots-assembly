@@ -350,7 +350,7 @@ checkout origin/22.x
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify
 	22383 -  # rpc: Prefer to use txindex if available for GetTransaction
-		TODO: Add optimisation in review comment
+	22407 promag/2021-07-getblockchaininfo-time
 	22501 jonatack/netinfo-addr-statistics
 	22513 achow101/psbt-no-finalize
 		FIXME: options object
