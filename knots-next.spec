@@ -6,27 +6,21 @@ lastapply no-merge
 checkout origin/22.x
 @22.x-syslibs
 # BUILD BUGS:
-	21882 fuzz32_llvm_workaround-0.21+knots		d994684b569	last=bd55f62549e hebasto/210507-fuzz32
+	21882 fuzz32_llvm_workaround-22+knots		d994684b569	last=bd55f62549e hebasto/210507-fuzz32
 		# NOTE: Has improvements/fixes
-	22380 fanquake/set_std_c_version_depends
-	22390 fanquake/netbsd_dont_set_locale
+	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
+	22390 fanquake/netbsd_dont_set_locale					last=fdd71448e78
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
-	5416 sys_libsecp256k1-0.21					c2e8d067f0b	last=258c28e99b3 sys_libsecp256k1
+	5416  sys_libsecp256k1						c2e8d067f0b
 	22412 bugfix_pushback_bool
 	7485 sys_univalue_def						663a72e6a12
 	13789 bugfix_asm_pragmas					82ab60f2428
 	-     bugfix_asm_leveldb_check				741060d31b8
 	15155 test_external_bcli					251dcff7eee
-	TODO: MERGED UPSTREAM: 20202 opt_bdb-0.21							1b369a2bfd7
-		# +#20458+#20267
-		# Omitted default-tests-to-descriptors-when-bdb-not-compiled: a2282b44a4d 373158bc44c
-		# Omitted "Don't make any wallets unless wallet is required": 45b4366f8ff 104a3a22564 6e06ca05880
-		# Diff-minimised
-	-     opt_bdb_extracare-0.21				3d26b04ad0f
-	20121 secp256k1_allow_bignum				ed298e34b3d
-	TODO: g216  optional_font
+	-     opt_bdb_extracare						3d26b04ad0f
+	g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 @22.x-knotsfixes
 # TESTS:
