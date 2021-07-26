@@ -5,6 +5,7 @@ lastapply no-merge
 
 checkout origin/22.x
 @22.x-syslibs
+	22534 fanquake/22_x_backports  last=34f9f88bc95  # TEMPORARY HACK
 # BUILD BUGS:
 	21882 fuzz32_llvm_workaround-22+knots		d994684b569	last=bd55f62549e hebasto/210507-fuzz32
 		# NOTE: Has improvements/fixes
@@ -28,6 +29,7 @@ checkout origin/22.x
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 # FIXES:
+	-     gitian_linux_reverttobionic-22
 	18818 fix_gitian_src_202004					e7ae473f644
 		TODO: guix
 	18902 fix_gitdir_again						48e2ecb874f
