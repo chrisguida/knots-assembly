@@ -25,9 +25,11 @@ checkout origin/22.x
 @22.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							9afa5d8517a
-	17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
+	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
+		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 # FIXES:
 	18818 fix_gitian_src_202004					e7ae473f644
+		TODO: guix
 	18902 fix_gitdir_again						48e2ecb874f
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					51d41a3ea10	last=7fe49671dd4 2020mingwthrd
@@ -44,6 +46,7 @@ checkout origin/22.x
 	# Needs bugfix: -     fsync_dir_win
 	13608 -										bdb644e5423	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	-     deprecated_param_names				7a602d396d9
+		FIXME: Need something like 357ba84e018e3d35d4842fe4c731f383edd4c78c (from old lint_relaxer) to deal with fa92912b4bb4629addcbfdfb7cc000be701614af
 	-     bugfix_rpc_getbalance_hacky			2fc80cecb4c
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
@@ -116,6 +119,7 @@ checkout origin/22.x
 	-     restore_win32-0.21+knots				d37803a84cc	last=3e30ae0514e restore_win32
 	-     restore_linux32						efa9ee85ed6
 		# NOTE: gitian only
+		TODO: guix
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -388,7 +392,7 @@ checkout origin/22.x
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-0.21+knots			e509f51807e	# latest code now
 	15421 tor_subprocess-0.21+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
-	# TODO: tor gitian bundle!
+	# TODO: tor gitian bundle! /guix
 	15633 nohbcbfornonwit-0.21+knots			c48ce12aa19	last=ac897f0bd3a nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
