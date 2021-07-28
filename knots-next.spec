@@ -7,7 +7,7 @@ checkout origin/22.x
 @22.x-syslibs
 	22534 fanquake/22_x_backports  last=34f9f88bc95  # TEMPORARY HACK
 # BUILD BUGS:
-	21882 fuzz32_llvm_workaround-22+knots		d994684b569	last=bd55f62549e hebasto/210507-fuzz32
+	21882 hebasto/210507-fuzz32					d994684b569	last=e4c8bb62e4a hebasto/210507-fuzz32
 		# NOTE: Has improvements/fixes
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
 	22390 fanquake/netbsd_dont_set_locale					last=fdd71448e78
