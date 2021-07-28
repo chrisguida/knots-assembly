@@ -29,6 +29,7 @@ checkout origin/22.x
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 # FIXES:
+	22318 hebasto/210623-random								last=35aab4f0c0b
 	-     gitian_linux_reverttobionic-22
 	18818 fix_gitian_src_202004					e7ae473f644
 		TODO: guix
