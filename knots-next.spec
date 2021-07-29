@@ -32,15 +32,15 @@ checkout origin/22.x
 	22318 hebasto/210623-random								last=35aab4f0c0b
 	-     gitian_linux_reverttobionic-22
 	18818 fix_gitian_src_202004					e7ae473f644
-		TODO: guix
 	18902 fix_gitdir_again						48e2ecb874f
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					51d41a3ea10	last=7fe49671dd4 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				b9b3f3bd5c0
 	17828 p2p_log_categories					bab13c46b9b	last=04960621582 practicalswift/log-categories
 	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
-	14968 laanwj/2018_12_http_bind_error		e75ff7b9323	last=7b5e4001f9 laanwj/2018_12_http_bind_error
+	14968 http_bind_error						e75ff7b9323	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					81ed4fe33fa
+		# NOTE: libevent-copied code up to date as of 2021-07-16 c29f1dbe116c88434e77721ca215b8d2082b247f
 	9524 marco/Mf1701-qaPruning					ae3444d7950	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					3cee4ceb1b1
 	14485 fadvise								e87f5a4c952
