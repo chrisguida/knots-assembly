@@ -48,8 +48,7 @@ checkout origin/22.x
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
 	13608 -										bdb644e5423	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
-	-     deprecated_param_names				7a602d396d9
-		FIXME: Need something like 357ba84e018e3d35d4842fe4c731f383edd4c78c (from old lint_relaxer) to deal with fa92912b4bb4629addcbfdfb7cc000be701614af
+	-     rpcarg_type_per_name					7a602d396d9
 	-     bugfix_rpc_getbalance_hacky			2fc80cecb4c
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
