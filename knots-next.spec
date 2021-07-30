@@ -95,12 +95,12 @@ checkout origin/22.x
 	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
 	-     rpc_addconnection_mainnet
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
-	22359 fix_wallet_pr22359-0.21				3244e0d002f	last=fa6fd3dd6a4
+	22359 fix_wallet_pr22359-22					3244e0d002f	last=fa6fd3dd6a4
 		# Semi-diff-minimised
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds									last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
-	Needs review: g379 ryanofsky/pr/badset
+	g379  ryanofsky-g/pr/badset								last=1ee6d0b01a5
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
