@@ -67,12 +67,9 @@ checkout origin/22.x
 		# NOTE: -mini is just missing the last commit :)
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18729 intro_dont_change_user_prune			25f70064ec8
-	TODO: MERGED UPSTREAM: 18766 blocksonly_no_feeest-0.21				e46a9d86ca1	last=4e28753f606
-		# diff-minimised
-		# HELD BACK 33ca3590243...4aaad74c4c8 due to refactor complication
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
-	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/wallet_351
+	19419 listwalletdir_skip_data				a0f6d94c0b9	last=3f9cc0cd736 Saibato/wallet_351
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
@@ -85,23 +82,18 @@ checkout origin/22.x
 	19888 getblockstats_utxo_actual-0.21+knots	37dd20ac3a1	last=0af88a85e59
 		# modified
 	# Needs review: 20196 vasild/fix_GetListenPort
-	g87   hebasto-g/200910-mono					13002cb08f2	last=2e386cd3dd3
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
 	# Needs review: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	# Needs concept review: 20583 marco/2012-walletSync
 	g152  gui_notify_setup_bg					e7a792e44b6
 	-     bugfix_gui_drop_abc_confusing_hack	c0f258de92f
-	TODO: MERGED UPSTREAM W/O FIX??: g164 hebasto-g/201224-signal
-		# +gui#375 fix
 	# Needs review: g201  jonatack-g/inbound-block-relay
 	# Needs review & bug fixes: 21106 pstratem/2021-02-07-isinitialblockdownload-timeout
 	# Needs review: 21161 ajtowns/202102-fee-bug-medianval
 	g236  gui_init_walleterror_cont				37fc886f39f
 	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
-	TODO: MERGED UPSTREAM: 19315 rpc_addconnection-0.21				1e691e1fff6
-		# PARTIAL: Only the actual addconnection RPC method
-		# NOTE: Modified to allow use on non-regtest networks
+	-     rpc_addconnection_mainnet
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
 	22359 fix_wallet_pr22359-0.21				3244e0d002f	last=fa6fd3dd6a4
 		# Semi-diff-minimised
