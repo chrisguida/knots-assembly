@@ -5,7 +5,7 @@ lastapply no-merge
 
 checkout origin/22.x
 @22.x-syslibs
-	22534 fanquake/22_x_backports  last=34f9f88bc95  # TEMPORARY HACK
+	22534 fanquake/22_x_backports  last=cd57bb1a662  # TEMPORARY HACK
 # BUILD BUGS:
 	21882 hebasto/210507-fuzz32					d994684b569	last=e4c8bb62e4a hebasto/210507-fuzz32
 		# NOTE: Has improvements/fixes
@@ -55,7 +55,6 @@ checkout origin/22.x
 	#-     bugfix_rpc_getbalance_acctstar-0.17
 	#	FIXME: jnewbery found a bug :<
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
-	15103 lightsword/getentropy-weak			d61ba875650	last=a7c7fee2e4 lightsword/getentropy-weak
 	# Needs review: 15191 practicalswift:cs_LastBlockFile
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 or 19420 (libevent cleanup)
