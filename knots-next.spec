@@ -101,15 +101,14 @@ checkout origin/22.x
 	22417 bpchild_closefds									last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 	g379  ryanofsky-g/pr/badset								last=1ee6d0b01a5
+	FIXME guix/gitian: GCC 9 is affected by #20005 "memcmp with constants that contain zero bytes are broken in GCC", and the newer `g++-mingw-w64` will be ba
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
-	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=04ce309840f Sjors/2021/05/versionbits_period_start
+	22016 rpc_gbci_period_start-22+knots		4910107f0d1	last=b2773c7a6eb Sjors/2021/05/versionbits_period_start
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
-	TODO: MERGED UPSTREAM: g275  gui_darkmode-0.21_pt1					8939a4a109b
-		# NOTE: Fixed bug in gui#330 a simpler way b942216a1a7
-	-     restore_win32-0.21+knots				d37803a84cc	last=3e30ae0514e restore_win32
+	-     restore_win32-22						d37803a84cc	last=3e30ae0514e restore_win32
 	-     restore_linux32						efa9ee85ed6
 		# NOTE: gitian only
 		TODO: guix
