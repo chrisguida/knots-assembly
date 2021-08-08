@@ -5,7 +5,7 @@ lastapply no-merge
 
 checkout origin/22.x
 @22.x-syslibs
-	22534 fanquake/22_x_backports  last=cd57bb1a662  # TEMPORARY HACK
+	22534 fanquake/22_x_backports  last=739d19053b1  # TEMPORARY HACK
 # BUILD BUGS:
 	21882 hebasto/210507-fuzz32					d994684b569	last=e4c8bb62e4a hebasto/210507-fuzz32
 		# NOTE: Has improvements/fixes
