@@ -61,7 +61,8 @@ checkout origin/22.x
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
-	18133 bugfix_qvalidlineedit					7933a2d752b
+	g404  bugfix_qvalidlineedit					7933a2d752b
+		# Was #18133
 	18194 bugfix_gui_edit_sendaddr-mini			64ebfdfb0a1	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
@@ -166,7 +167,6 @@ checkout origin/22.x
 	(CHECK-LAST)	last=36f5e224f5f origin-pull/21422/head
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
-	17463 gui_custom_sendyes					998dd492930
 	15987 wallet_no_reuse-0.21+knots			7515d038c84
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
 	-     rpc_gai_txids-0.21+knots				01bfbd88472
