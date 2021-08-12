@@ -5,7 +5,6 @@ lastapply no-merge
 
 checkout origin/22.x
 @22.x-syslibs
-	22534 fanquake/22_x_backports  last=739d19053b1  # TEMPORARY HACK
 # BUILD BUGS:
 	21882 hebasto/210507-fuzz32					d994684b569	last=e4c8bb62e4a hebasto/210507-fuzz32
 		# NOTE: Has improvements/fixes
@@ -160,11 +159,10 @@ checkout origin/22.x
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
-	15836 fee_histogram							82829beb890	last=b94292a7cb jonas/2019/04/feeinfo
-		# NOTE: removed extraneous Bitcoin-Qt.* files
-		# NOTE: Backported some features/test from #21422 (but not API incompatibilities)
+	15836 fee_histogram+pr15836_api				82829beb890	last=b94292a7cb jonas/2019/04/feeinfo
+		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
-		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
+		# TODO: Replace with #21422 API ?
 	(CHECK-LAST)	last=36f5e224f5f origin-pull/21422/head
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
