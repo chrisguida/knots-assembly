@@ -13,7 +13,6 @@ checkout origin/22.x
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
-		FIXME: f1f79430b75
 	5416  sys_libsecp256k1						c2e8d067f0b
 	22412 bugfix_pushback_bool
 	7485 sys_univalue_def						663a72e6a12
@@ -80,9 +79,8 @@ checkout origin/22.x
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-0.21+knots	37dd20ac3a1	last=0af88a85e59
+	19888 getblockstats_utxo_actual-22+knots	37dd20ac3a1	last=0af88a85e59
 		# modified
-		FIXME: needs review due to compile error
 	# Needs review: 20196 vasild/fix_GetListenPort
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
@@ -111,7 +109,6 @@ checkout origin/22.x
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	-     restore_win32-22						d37803a84cc	last=3e30ae0514e restore_win32
-		FIXME: Makefile.am:376: error: '#' comment at start of rule is unportable 87aa02c7d0c
 	# TODO: guix win32
 	-     gitian_linux32						efa9ee85ed6
 	-     guix_linux_i686
