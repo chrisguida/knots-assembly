@@ -167,9 +167,8 @@ checkout origin/22.x
 	(CHECK-LAST)	last=36f5e224f5f origin-pull/21422/head
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
-	22693 getaddressinfo_txids
 	15987 wallet_warn_reuse_gui					7515d038c84
-	-     rpc_gai_txids-0.21+knots				01bfbd88472
+	22693 getaddressinfo_txids					01bfbd88472
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	21245 rpc_getblock_prevouts_fees-0.21		5b3f15dcda3	last=7fc316e2c9f
