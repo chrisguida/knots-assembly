@@ -184,7 +184,7 @@ checkout origin/22.x
 	# Needs review: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options? (watch out for send RPC)
 		# TODO: Diff-minimise
-	18972 neutrino_whitelist-mini				892d210d2eb	last=339fe189eb9
+	18972 neutrino_whitelist-mini				892d210d2eb	last=a3300c6b200 neutrino_whitelist
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=cc2644ffc6e achow101/bip174-extensions
 		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
