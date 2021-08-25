@@ -171,13 +171,9 @@ checkout origin/22.x
 	22693 getaddressinfo_txids					01bfbd88472
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	21245 rpc_getblock_prevouts_fees-0.21		5b3f15dcda3	last=7fc316e2c9f
+	21245 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=72dbe981648
 		# Was originally #16083
-		# Held back change of verbosity to class enum, and generally kept #16083 base
-		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
-		# Renamed "coinbase" field to "generated"
-		# Silenced warnings
-		# Minimised diff (removed formatting changes)
+		# Left off release notes & variable rename (last 2 commits)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
