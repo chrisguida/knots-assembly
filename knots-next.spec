@@ -186,8 +186,7 @@ checkout origin/22.x
 		# TODO: Diff-minimise
 	18972 neutrino_whitelist-mini				892d210d2eb	last=a3300c6b200 neutrino_whitelist
 		# NOTE: Diff-minimised
-	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=cc2644ffc6e achow101/bip174-extensions
-		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
+	17034 psbt_ver_proprietary_xpub-22-mini		8cfa229a8e4	last=cc2644ffc6e achow101/bip174-extensions
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
 	17631 rest_blockfilter-0.21					31a7b2798a2	last=16d8d2da598 matt/2019-11-filter-rest
