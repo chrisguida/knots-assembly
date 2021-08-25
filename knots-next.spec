@@ -79,7 +79,7 @@ checkout origin/22.x
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-22+knots	37dd20ac3a1	last=0af88a85e59
+	19888 getblockstats_utxo_actual-22+knots	37dd20ac3a1	last=25fef33c933
 		# modified
 	# Needs review: 20196 vasild/fix_GetListenPort
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
@@ -164,7 +164,7 @@ checkout origin/22.x
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ?
-	(CHECK-LAST)	last=36f5e224f5f origin-pull/21422/head
+	(CHECK-LAST)	last=f2ca3d35ee9 origin-pull/21422/head
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
 	15987 wallet_warn_reuse_gui					7515d038c84
