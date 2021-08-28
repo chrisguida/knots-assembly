@@ -189,7 +189,7 @@ checkout origin/22.x
 	17034 psbt_ver_proprietary_xpub-22-mini		8cfa229a8e4	last=cc2644ffc6e achow101/bip174-extensions
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
-	17631 rest_blockfilter-0.21					31a7b2798a2	last=16d8d2da598 matt/2019-11-filter-rest
+	17631 rest_blockfilter-22					31a7b2798a2	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	g319  -										3cb5fcd37dd	last=5062565e112  # gui_openuri_pastebtn-0.21
@@ -204,11 +204,6 @@ checkout origin/22.x
 	18689 rpc_dumptxoutset_hr					86a235cbd1f	last=65d0697fe34
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
-	TODO: MERGED UPSTREAM: 19137 wallettool_dump-0.21+knots			71d5c75689e	last=23cac24dd3f achow101/dumpwalletrecords
-		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
-		# NOTE: Changed to print warnings to stderr instead of stdout
-		# NOTE: Diff-minimised
-		# If bdb is reenabled, need #20267 49797c3ccfb
 	19242 uaappend								0501a4912b2
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
@@ -422,6 +417,7 @@ checkout origin/22.x
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	# FIXME: text below QR Code doesn't fit bech32 with Console font!
+	-     wallettool_dump_warning-22
 # Non-upstreamed functionality:
 	TODO: Revert #21992 (removed -feefilter option, useful for manually prioritised transactions)
 	TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
