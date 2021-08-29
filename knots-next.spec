@@ -224,12 +224,6 @@ checkout origin/22.x
 	g291  gui_trafficgraph_vert-0.21			088733fcf9a	last=1f373f93a60  # Enlarge Network Traffic Graph
 		# WAS gui#90
 		# Removed dialog size change
-	20254 i2p_static-0.21						b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
-		MERGED UPSTREAM: # + a4693f44cfe from #20685
-		MERGED UPSTREAM: # TODO: +21825 ? (needs 21560?)
-		MERGED UPSTREAM: #TODO: +21914
-		MERGED UPSTREAM: #TODO: +21407+21631
-		# TODO??? 21514 vasild:ignore_port_in_i2p
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	TODO: MERGED UPSTREAM: 20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
