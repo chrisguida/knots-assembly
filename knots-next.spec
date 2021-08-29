@@ -209,8 +209,7 @@ checkout origin/22.x
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 	19463 prune_locks							7688250cdac	last=1ad45edbfeb prune_locks
 	# Needs review: 18000 -  # Coin Statistics Index
-	TODO: MERGED UPSTREAM: # Needs review: 19521 # Coinstats Index (without UTXO set hash)
-		# +22047
+	22047 pr22047-22
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
 		# NOTE: Included in Android fork below?
