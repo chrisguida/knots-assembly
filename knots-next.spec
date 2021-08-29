@@ -221,8 +221,6 @@ checkout origin/22.x
 	# Needs work: 20154 kallewoof/202010-bip322
 	# Needs work: g86   hebasto-g/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
-	TODO: MERGED UPSTREAM: 21277 listdescriptors_normalized-0.21+knots	a45c8b5634a
-		# TODO: Drop 0.21.0 compatibility "desc" when return format is updated or 21329 (MERGED UPSTREAM) is ready
 	g291  gui_trafficgraph_vert-0.21			088733fcf9a	last=1f373f93a60  # Enlarge Network Traffic Graph
 		# WAS gui#90
 		# Removed dialog size change
