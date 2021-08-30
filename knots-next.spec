@@ -226,8 +226,6 @@ checkout origin/22.x
 		# Removed dialog size change
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	TODO: MERGED UPSTREAM: 20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
-		# Mostly rewritten?
 	20295 Sjors/2020/11/getblockfrompeer		947c37b0b52	last=d0b537458d9 Sjors/2020/11/getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
