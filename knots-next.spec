@@ -226,7 +226,9 @@ checkout origin/22.x
 		# Removed dialog size change
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	20295 Sjors/2020/11/getblockfrompeer		947c37b0b52	last=d0b537458d9 Sjors/2020/11/getblockfrompeer
+	20295 rpc_getblockfrompeer_wo_header-22		947c37b0b52	last=29263ae14a8 Sjors/2020/11/getblockfrompeer
+		# Left out code movement
+		# Re-enabled fetching blocks w/o already having header (from older version of PR)
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
