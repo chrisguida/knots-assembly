@@ -231,7 +231,7 @@ checkout origin/22.x
 		# Re-enabled fetching blocks w/o already having header (from older version of PR)
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
-	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
+	20391 rpc_setfeerate-22						ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20407 rpcauthfile-0.21+knots				0726f132d9d	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
