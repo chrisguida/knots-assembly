@@ -234,8 +234,8 @@ checkout origin/22.x
 	20391 rpc_setfeerate-22						ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
-	20407 rpcauthfile-0.21+knots				0726f132d9d	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
-		# NOTE: fixed bug, added multi-line support, and added tests
+	20407 rpcauthfile							0726f132d9d	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
+		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid						8979d48f938
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
