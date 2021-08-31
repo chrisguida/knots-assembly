@@ -241,7 +241,7 @@ checkout origin/22.x
 	g149  intro_assumevalid						8979d48f938
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	20664 jonas/2020/12/filterblocks_rpc		ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
-	20702 rpc_getblocklocations-0.21			8db5bda17bd	last=9b03c654eb3
+	20702 -										8db5bda17bd	last=9b03c654eb3  # rpc: Add getblocklocations call
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							1dcbfaca3b6
 	g180  gui_peer_relay_detail-0.21+knots		f76dd90768b	last=79a2576af1e jonatack-g/peer-details-connection-type-followups
