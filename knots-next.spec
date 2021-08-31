@@ -202,6 +202,7 @@ checkout origin/22.x
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18689 rpc_dumptxoutset_hr					86a235cbd1f	last=65d0697fe34
+		# NOTE: Moved rpc/client lines to avoid conflict with #20664
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	19242 uaappend								0501a4912b2
@@ -239,8 +240,7 @@ checkout origin/22.x
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid						8979d48f938
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	20664 rpc_scanblocks-0.21					ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
-		# Held back insignificant API changes ab315e5294b...71b7cdb460e
+	20664 jonas/2020/12/filterblocks_rpc		ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	20702 rpc_getblocklocations-0.21			8db5bda17bd	last=9b03c654eb3
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							1dcbfaca3b6
