@@ -244,10 +244,6 @@ checkout origin/22.x
 	20702 rpc_getblocklocations					8db5bda17bd	last=9b03c654eb3
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							1dcbfaca3b6
-	g180  gui_peer_relay_detail-0.21+knots		f76dd90768b	last=79a2576af1e jonatack-g/peer-details-connection-type-followups
-		TODO: MERGED UPSTREAM: # +g203  Display plain "Inbound" in peer details
-		# NOTE: Carries commit from g163 since it messes with the string anyway
-		# NOTE: Left off final doxygen commit
 	g363  qt_peers_directionarrow-0.21+knots	4c6de52a7fc	last=41c881c8a78 qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
