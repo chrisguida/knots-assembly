@@ -244,7 +244,7 @@ checkout origin/22.x
 	20702 rpc_getblocklocations					8db5bda17bd	last=9b03c654eb3
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							1dcbfaca3b6
-	g363  qt_peers_directionarrow-0.21+knots	4c6de52a7fc	last=41c881c8a78 qt_peers_directionarrow
+	g363  qt_peers_directionarrow-22+knots		4c6de52a7fc	last=217d1051c8b qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# NOTE: Left out Peers table column & misc formatting changes
@@ -441,6 +441,7 @@ checkout origin/22.x
 	-     netperms_implicit_addr				14687738e62
 	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba
 	# TODO: add a bitcoinknots.conf ?
+	TODO: Check all saveState/restoreState GUI stuff and bump name as needed
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				66fa127a85b
