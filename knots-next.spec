@@ -247,7 +247,7 @@ checkout origin/22.x
 	g363  qt_peers_directionarrow-22+knots		4c6de52a7fc	last=217d1051c8b qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
-	15129 benthecarman/remove_watch_only_address	423fd4425f4	last=fdbd01b50e0 benthecarman/remove_watch_only_address
+	15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 	# ---- BEGIN HWI SUPPORT, TODO ----
 	21576 ???
 	# TODO: 21928 Sjors/2021/05/hww-toggle
