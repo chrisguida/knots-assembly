@@ -246,8 +246,6 @@ checkout origin/22.x
 	20827 ibd_prune_max							1dcbfaca3b6
 	g363  qt_peers_directionarrow-22+knots		4c6de52a7fc	last=217d1051c8b qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
-	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
-		# NOTE: Left out Peers table column & misc formatting changes
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	15129 benthecarman/remove_watch_only_address	423fd4425f4	last=fdbd01b50e0 benthecarman/remove_watch_only_address
 	# ---- BEGIN HWI SUPPORT, TODO ----
@@ -433,6 +431,7 @@ checkout origin/22.x
 	-     gui_wallet_displayname-0.19			71cc4a727ef	# Latest code now
 	-     gui_request_payment_label-0.19		bd9ec2f9431
 	-     gui_peers_sort_network-0.21+knots		a3e6f0ec5e2
+		TODO: Revert 05c08c696a1
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
 	-    mempool_knots014_compat-0.21+knots		4d6b8b17d26	last=1befffc0b48 mempool_dat_extensible
