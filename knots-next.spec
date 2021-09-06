@@ -250,8 +250,7 @@ checkout origin/22.x
 	# ---- BEGIN HWI SUPPORT, TODO ----
 	21576 rpc_bumpfee_signer-22								last=25aa986a53c Sjors/2021/04/signer_bumpfee
 		# Simply dropped misc comment changes in first commit
-	21928 hww_toggle-22+knots								last=7f6947dd706 Sjors/2021/05/hww-toggle
-		# NOTE: Changed to always document new getwalletinfo field
+	21928 hww_toggle-22+knots								last=8a4eaafe271 Sjors/2021/05/hww-toggle
 	# ---- END HWI SUPPORT ----
 	# TODO: 17355 -  # gui: grey out used address in address book
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
