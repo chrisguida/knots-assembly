@@ -177,8 +177,7 @@ checkout origin/22.x
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	16795 rpc_inferred_output_descriptors		5de05c6c9f6	last=3038f944a6d instagibbs/decode_descriptor
-		# Fixes: 478a4da04e77ca4438929909fafdbb0e57614577
+	16795 rpc_inferred_output_descriptors		5de05c6c9f6	last=5e256883651 instagibbs/decode_descriptor
 	# Needs review: 16981 LarryRuane:reindex-speedup
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
 	# Needs review: 17211 achow101/fundtx-external-inputs
