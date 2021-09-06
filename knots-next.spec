@@ -260,9 +260,6 @@ checkout origin/22.x
 		# TODO: diff-minimise??
 	21319 getblock_optimise						b79a8d71419
 		# Context: 17529 rpc: Faster getblock using PureBlock
-	TODO: MERGED UPSTREAM: # TODO: 15946 jonas/2019/05/prune_blockfilter
-		#NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
-		#NOTE: Integrate prune locks
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
@@ -418,6 +415,7 @@ checkout origin/22.x
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf								9eefbf8c5fb
 	7510  rwconf_gui							31da64c50bc
+		TODO: Allow neutrino+pruning (#15946 merged upstream)
 	 559 accept_nonstdtxn						854677f3a98
 	 929 tbc									b92159120bd
 	 553 bugfix_qt_uri_amount_parser			2bef446009c
