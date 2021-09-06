@@ -248,7 +248,7 @@ checkout origin/22.x
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 	# ---- BEGIN HWI SUPPORT, TODO ----
-	21576 rpc_bumpfee_signer-22								last=c7e4cc0c95e Sjors/2021/04/signer_bumpfee
+	21576 rpc_bumpfee_signer-22								last=25aa986a53c Sjors/2021/04/signer_bumpfee
 		# Simply dropped misc comment changes in first commit
 	21928 hww_toggle-22+knots								last=7f6947dd706 Sjors/2021/05/hww-toggle
 		# NOTE: Changed to always document new getwalletinfo field
