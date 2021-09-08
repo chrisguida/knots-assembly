@@ -266,10 +266,7 @@ checkout origin/22.x
 		# NOTE: Ensure default is actually true
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
 	21327 -										093927be571	last=648c5c73aef  # p2p_ignore_tx_in_ibd-0.21
-	TODO: MERGED UPSTREAM: g205  gui_save_txview_reqview_columns-0.19	6facbfb184d
-		# +gui#368
-		# NOTE: Diff minimised
-		# NOTE: gui#229 not applicable to backport
+	g368  bugfix_gui_restored_columns_stretch	6facbfb184d
 	g230  gui_backup_formats-0.21+knots			557904a49bb	last=e91a3f39d01 gui_backup_formats
 		# NOTE: To avoid conflict with wallettool_dump-0.21+knots, added 5ab50bc98db GUI: Omit DbDump option for backup of BDB wallets
 	TODO: MERGED UPSTREAM: # Needs review & wallet format impact eval: 21365 sipa/202102_taproot_sign
