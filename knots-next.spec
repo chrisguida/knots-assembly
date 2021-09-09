@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #22525 / gui #384
 
-checkout origin/22.x
+checkout v22.0
 @22.x-syslibs
 # BUILD BUGS:
 	21882 hebasto/210507-fuzz32					d994684b569	last=e4c8bb62e4a hebasto/210507-fuzz32
@@ -268,14 +268,10 @@ checkout origin/22.x
 	21327 -										093927be571	last=648c5c73aef  # p2p_ignore_tx_in_ibd-0.21
 	g368  bugfix_gui_restored_columns_stretch	6facbfb184d
 	g230  gui_backup_formats					557904a49bb
-	TODO: MERGED UPSTREAM: # Needs review & wallet format impact eval: 21365 sipa/202102_taproot_sign
-		# +22275 (_NOT_ MERGED UPSTREAM) +22342 (MERGED UPSTREAM)
-	TODO? 21413 glozow/2021-03-bypass-timelocks
+	# TODO? 21413 glozow/2021-03-bypass-timelocks
 	# Needs Concept ACK: 21500 S3RK:listdescriptors_private
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 	# Needs review: 21528 amitiuttarwar:2021-03-addr-defer2
-	TODO: MERGED UPSTREAM: 21595 cli_addrinfo-0.21+knots				409d1d8be73
-		# NOTE: Adapted error message for Knots
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
@@ -462,6 +458,7 @@ checkout origin/22.x
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
+		TODO: merged in cfe8f2230078f535b839da87705c2ee155f21753
 	n/a  (bump_version=Knots:20210722)			0a9a4537a5d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=96316586c91)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
