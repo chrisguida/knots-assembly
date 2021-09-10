@@ -275,7 +275,7 @@ checkout v22.0
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
-	21780 rpc_maxmempool-0.21					0bc176fa910	last=040b280c661 rebroad/MaxMempoolRPC
+	21780 rpc_maxmempool						0bc176fa910	last=040b280c661 rebroad/MaxMempoolRPC
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Too many conflicts: 21832 cli_color_getinfo-0.21							last=14cb2e0fe13
