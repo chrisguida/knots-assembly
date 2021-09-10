@@ -287,7 +287,7 @@ checkout v22.0
 	22072 -										66d83231979	last=602f4da9178  # autoreindex-0.21
 	22159 marco/2106-buildPattern				deede4f8965	last=fa14c6818f4 marco/2106-buildPattern
 	# Not useful: g358  jarolrod-g/themedlabel-forms
-	g307  hebasto-g/210501-stripes				7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
+	g307  gui_peers_rowcolouropt-22+knots		7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
 	g318  gui_peers_copyaddr-0.14				172639c9e05	last=65d1d351786 jarolrod-g/copy-addr-peer
 		# NOTE: Added keyboard shortcut
