@@ -289,9 +289,7 @@ checkout v22.0
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	g307  gui_peers_rowcolouropt-22+knots		7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
-	g318  gui_peers_copyaddr-0.14				172639c9e05	last=65d1d351786 jarolrod-g/copy-addr-peer
-		# NOTE: Added keyboard shortcut
-		# NOTE: Fixed Qt5.5 compatibility
+	g318  gui_peers_copyaddr-22					172639c9e05	last=3ec061d9da0 jarolrod-g/copy-addr-peer
 	# Needs review: g342 hebasto-g/210521-wallet
 	# Needs review: jonatack/ProtectEvictionCandidatesByRatio-perf-enhancements
 	22288 torcontrol_dnslookup-0.21				d8f8412dcc4	last=cdd51e8ee15
