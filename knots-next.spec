@@ -299,11 +299,12 @@ checkout v22.0
 	# Too many TODOs: 22341 Sjors/2021/06/getxpub
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify
-	22383 -  # rpc: Prefer to use txindex if available for GetTransaction
-	22407 promag/2021-07-getblockchaininfo-time
-	22501 jonatack/netinfo-addr-statistics
-	22513 achow101/psbt-no-finalize
-		FIXME: options object
+	22383 -													last=78f4c8b98ea  # rpc: Prefer to use txindex if available for GetTransaction
+	22407 -													last=20edf4bcf61
+		# NOTE: promag's own branch is not up to date
+	22501 netinfo_addr_stats-22								last=218862a0184 jonatack/netinfo-addr-statistics
+	22513 rpcwallet_psbt_no_finalize-22+knots				last=7f9310db58d achow101/psbt-no-finalize
+		# Modified to use a new options object instead of an additional bool positional param
 	Needs review: 22514 achow101/psbt-sighash-default
 	g384  -  # add copy subnet action for banned peer
 # Non-progress functionality:
