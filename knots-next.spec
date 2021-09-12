@@ -305,8 +305,8 @@ checkout v22.0
 	22501 netinfo_addr_stats-22								last=218862a0184 jonatack/netinfo-addr-statistics
 	22513 rpcwallet_psbt_no_finalize-22+knots				last=7f9310db58d achow101/psbt-no-finalize
 		# Modified to use a new options object instead of an additional bool positional param
-	Needs review: 22514 achow101/psbt-sighash-default
-	g384  -  # add copy subnet action for banned peer
+	# Needs review: 22514 achow101/psbt-sighash-default
+	g384  -													last=ab1461d5d36  # add copy subnet action for banned peer
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
