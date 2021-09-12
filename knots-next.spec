@@ -308,7 +308,7 @@ checkout v22.0
 	# Needs review: 22514 achow101/psbt-sighash-default
 	g384  -													last=ab1461d5d36  # add copy subnet action for banned peer
 # Non-progress functionality:
-	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
+	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	9152 sweepprivkeys							9d6360908e1
 	9245 ionice									52ed64216eb
