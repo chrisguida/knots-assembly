@@ -106,7 +106,8 @@ checkout v22.0
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
 	22577 fix_race_pr22577-22
 	22591 missing_settings_err-0.21
-	22834 vasild/onlynet
+	22834 bugfix_onlynet-22									last=0ea0de64385 vasild/onlynet
+		# Refactored to be less optimised in favour of being more obviously correct
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	22722 -  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
 	23027 bugfix_util_test_config
