@@ -1,7 +1,7 @@
-timestamp 2021-07-22 08:01:09
+timestamp 2021-09-20 07:27:12
 lastapply no-merge
 
-#.. checked up to PR #22525 / gui #384
+#.. checked up to PR #23049 / gui #424
 
 checkout v22.0
 @22.x-syslibs
@@ -10,6 +10,8 @@ checkout v22.0
 		# NOTE: Has improvements/fixes
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
 	22390 fanquake/netbsd_dont_set_locale					last=fdd71448e78
+	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
+	23045 laanwj/2021-09-arm64-crc32
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
@@ -102,6 +104,28 @@ checkout v22.0
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 	g379  ryanofsky-g/pr/badset								last=1ee6d0b01a5
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
+	22577 -  # Close minor startup race between main and scheduler threads
+	22591 -  # Util: error if settings json exists, but is unreadable
+	22834 vasild/onlynet
+	# Needs review: 22665 darosior:rbf_optin_nomempool
+	22722 -  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
+	23027 bugfix_util_test_config
+	22781 Saibato/fix_ishdenabled
+	# Needs review: 22798 MarcoFalke:2108-docRpc
+	# Needs review (& diff minimisation?): 22817 MarcoFalke:2108-testRaceConnect
+	22820 hebasto/210827-input
+	# Needs review: 22834 vasild:onlynet
+	# TODO? 22836 sipa:202108_bipvec5
+	22895 jonatack/ReadBlockFromDisk-block_pos
+	# Needs review: 22913 -  # Fix the case where the peer status is not updated
+	# Needs review: 22929 S3RK/fix_19856
+	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
+	22959 -  # cli: Display all proxies in -getinfo
+	g393  hebasto-g/210803-encrypt
+	g396  achow101-g/ensure-no-extsigner
+	g399  -  # Fix "Load PSBT" functionality when no wallet loaded
+	g409  -  # Fix window title of wallet loading window
+	g418  jarolrod-g/applesilicon-categorization
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -165,14 +189,15 @@ checkout v22.0
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ?
 	(CHECK-LAST)	last=f2ca3d35ee9 origin-pull/21422/head
+	22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
 	15987 wallet_warn_reuse_gui					7515d038c84
 	22693 getaddressinfo_txids					01bfbd88472
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	21245 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=72dbe981648
-		# Was originally #16083
+	22918 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=72dbe981648
+		# Was originally #16083, then #21245
 		# Left off release notes & variable rename (last 2 commits)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
@@ -207,6 +232,7 @@ checkout v22.0
 	19242 uaappend								0501a4912b2
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
+		# w/ 22807 ?
 	19463 prune_locks							7688250cdac	last=1ad45edbfeb prune_locks
 	# Needs review: 18000 -  # Coin Statistics Index
 	22047 pr22047-22
@@ -272,6 +298,7 @@ checkout v22.0
 	# Needs Concept ACK: 21500 S3RK:listdescriptors_private
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 	# Needs review: 21528 amitiuttarwar:2021-03-addr-defer2
+		# + 22616 + 22618?
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
@@ -300,6 +327,8 @@ checkout v22.0
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify
 	22383 -													last=78f4c8b98ea  # rpc: Prefer to use txindex if available for GetTransaction
+	22609 theStack/202107-gettransaction_remove_lock
+		TODO: Check for safety
 	22407 -													last=20edf4bcf61
 		# NOTE: promag's own branch is not up to date
 	22501 netinfo_addr_stats-22								last=218862a0184 jonatack/netinfo-addr-statistics
@@ -307,6 +336,36 @@ checkout v22.0
 		# Modified to use a new options object instead of an additional bool positional param
 	# Needs review: 22514 achow101/psbt-sighash-default
 	g384  -													last=ab1461d5d36  # add copy subnet action for banned peer
+	TODO: Minimal 22539 darosior/fee_est_rbf
+	# Needs more careful security review: 22541 Add a new RPC command: restorewallet
+	# TODO? 22546 hebasto:210725-deploy
+	22547 -  # cli: Add progress bar for -getinfo
+	# Needs review: 22558 achow101:taproot-psbt
+	# Needs review: 22563 vasild:addrman_per_group_bucketing
+	Diff-minimised 22604 jonatack:rate_limit_addr_follow-ups
+	# Needs review: 22674 glozow:package-child-with-parents
+	# Needs review: vasild:torbind
+	22751 kallewoof/202108-analyzerawtransaction
+	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
+	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
+	22777 jnewbery/2021-08-feeler-no-frelay
+	# TODO: 22778 jnewbery:2021-02-tx-relay-init
+	Diff-minimised 22789 external_signer: improve fingerprint matching logic (stop on first match)
+	# Needs BIP? 22838 achow101:multipath-descs
+	# Not worth added build overhead? 22840 fanquake:fix_depends_lib_optimisation
+	Diff-reduced if possible: 22875 JeremyRubin:threadsafe-fix
+	JUST the fix? 22879 marco/2109-testPeersDat
+	22894 jonatack/netinfo-clarify-client-and-server-versions
+	# Needs review: 22919 -  # fees: skip pointless fee parameter calculation during IBD
+	# Needs review: 22934 -  # Add verification to Sign, SignCompact and SignSchnorr
+	# Needs work: 23019 -  # rpc, wallet: Add listaddresses RPC
+	# Needs review: 23035 jonatack:getnodeaddresses-tried-and-reference_count
+	Diff-minimise g390  -  # Add SubFeeFromAmount to options
+	g391  -  # Add cancel button to configuration options popup
+	g408  -  # Add missing mnemonics in menu bar options
+	# Needs work: g410  benthecarman/uppercase-uri
+	g416  Sjors/2021/09/rpc_setting
+	g419  jarolrod-g/options-tooltips
 # Non-progress functionality:
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -390,6 +449,8 @@ checkout v22.0
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	# FIXME: text below QR Code doesn't fit bech32 with Console font!
 	-     wallettool_dump_warning-22
+	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
+	# Needs work: 22708 hebasto:210815-wayland
 # Non-upstreamed functionality:
 	TODO: Revert #21992 (removed -feefilter option, useful for manually prioritised transactions)
 	TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
@@ -442,6 +503,9 @@ checkout v22.0
 		# Include Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
+	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
+	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
+	# Needs review: 22871 JeremyRubin:discourage-csv
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	NOTE TO SELF: Remove release-notes-prNNNNN.md files BEFORE the svg icon merge so it doesn't get added then removed in different patch files >_<
 	7483  svg_icon-0.21+knots					469d40983b1
