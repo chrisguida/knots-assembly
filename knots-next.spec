@@ -109,15 +109,15 @@ checkout v22.0
 	22834 bugfix_onlynet-22									last=0ea0de64385 vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
 	# Needs review: 22665 darosior:rbf_optin_nomempool
-	22722 -  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
+	22722 fix_estsfee_minrelay-22							last=b2152f3ff21  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
 	23027 bugfix_util_test_config
-	22781 Saibato/fix_ishdenabled
+	22781 fix_ishdenabled-0.21
 	# Needs review: 22798 MarcoFalke:2108-docRpc
 	# Needs review (& diff minimisation?): 22817 MarcoFalke:2108-testRaceConnect
-	22820 hebasto/210827-input
+	22820 fix_config_qtinputsupport-22
 	# Needs review: 22834 vasild:onlynet
 	# TODO? 22836 sipa:202108_bipvec5
-	22895 jonatack/ReadBlockFromDisk-block_pos
+	22895 fix_RBFD_lock_pr22895-22
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
