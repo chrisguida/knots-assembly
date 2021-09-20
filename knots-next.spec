@@ -121,7 +121,6 @@ checkout v22.0
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
-	22959 -  # cli: Display all proxies in -getinfo
 	g393  hebasto-g/210803-encrypt
 	g396  achow101-g/ensure-no-extsigner
 	g399  -  # Fix "Load PSBT" functionality when no wallet loaded
@@ -307,6 +306,7 @@ checkout v22.0
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Too many conflicts: 21832 cli_color_getinfo-0.21							last=14cb2e0fe13
+		# Needs fix 22959 -  # cli: Display all proxies in -getinfo
 	# Needs reivew: 21841 rebroad/SteadierFeefilter
 	# Needs completion: 21851 fanquake/m1_support_depends
 		# +22070 (MERGED UPSTREAM)
