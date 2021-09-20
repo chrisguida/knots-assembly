@@ -11,7 +11,7 @@ checkout v22.0
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
 	22390 fanquake/netbsd_dont_set_locale					last=fdd71448e78
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
-	23045 laanwj/2021-09-arm64-crc32
+	23045 fix_crc32c_arm64_detect-0.20						last=f6a7ed55c9b laanwj/2021-09-arm64-crc32
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
@@ -104,8 +104,8 @@ checkout v22.0
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 	g379  ryanofsky-g/pr/badset								last=1ee6d0b01a5
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
-	22577 -  # Close minor startup race between main and scheduler threads
-	22591 -  # Util: error if settings json exists, but is unreadable
+	22577 fix_race_pr22577-22
+	22591 missing_settings_err-0.21
 	22834 vasild/onlynet
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	22722 -  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
