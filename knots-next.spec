@@ -121,8 +121,6 @@ checkout v22.0
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
-	g393  hebasto-g/210803-encrypt
-	g396  achow101-g/ensure-no-extsigner
 	g399  -  # Fix "Load PSBT" functionality when no wallet loaded
 	g409  -  # Fix window title of wallet loading window
 	g418  jarolrod-g/applesilicon-categorization
