@@ -327,8 +327,8 @@ checkout v22.0
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify
 	22383 -													last=78f4c8b98ea  # rpc: Prefer to use txindex if available for GetTransaction
-	22609 theStack/202107-gettransaction_remove_lock
-		TODO: Check for safety
+	# TODO: 22609 theStack/202107-gettransaction_remove_lock
+		# TODO: Check for safety
 	22407 -													last=20edf4bcf61
 		# NOTE: promag's own branch is not up to date
 	22501 netinfo_addr_stats-22								last=218862a0184 jonatack/netinfo-addr-statistics
@@ -336,13 +336,13 @@ checkout v22.0
 		# Modified to use a new options object instead of an additional bool positional param
 	# Needs review: 22514 achow101/psbt-sighash-default
 	g384  -													last=ab1461d5d36  # add copy subnet action for banned peer
-	TODO: Minimal 22539 darosior/fee_est_rbf
+	# TODO: Minimal 22539 darosior/fee_est_rbf
 	# Needs more careful security review: 22541 Add a new RPC command: restorewallet
 	# TODO? 22546 hebasto:210725-deploy
-	22547 -  # cli: Add progress bar for -getinfo
+	# TODO: 22547 -  # cli: Add progress bar for -getinfo
 	# Needs review: 22558 achow101:taproot-psbt
 	# Needs review: 22563 vasild:addrman_per_group_bucketing
-	Diff-minimised 22604 jonatack:rate_limit_addr_follow-ups
+	# TODO? Diff-minimised 22604 jonatack:rate_limit_addr_follow-ups
 	# Needs review: 22674 glozow:package-child-with-parents
 	# Needs review: vasild:torbind
 	22751 kallewoof/202108-analyzerawtransaction
