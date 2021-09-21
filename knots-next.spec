@@ -121,9 +121,9 @@ checkout v22.0
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
-	g399  -  # Fix "Load PSBT" functionality when no wallet loaded
-	g409  -  # Fix window title of wallet loading window
-	g418  jarolrod-g/applesilicon-categorization
+	g399  fix_load_psbt_wo_wallet-22
+	g409  fix_gui_walletop_titlebar-22						last=d9e421c3ba9
+	g418  mac_platform_metadata-0.20						last=3765c486ef5 jarolrod-g/applesilicon-categorization
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
