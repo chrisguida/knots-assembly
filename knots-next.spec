@@ -187,14 +187,14 @@ checkout v22.0
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ?
 	(CHECK-LAST)	last=f2ca3d35ee9 origin-pull/21422/head
-	22891 prayank23/mempool-getinfo
+	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
 	15987 wallet_warn_reuse_gui					7515d038c84
 	22693 getaddressinfo_txids					01bfbd88472
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	22918 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=72dbe981648
+	22918 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=305a59a7b55
 		# Was originally #16083, then #21245
 		# Left off release notes & variable rename (last 2 commits)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
