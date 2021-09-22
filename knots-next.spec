@@ -11,7 +11,7 @@ checkout v22.0
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
 	22390 fanquake/netbsd_dont_set_locale					last=fdd71448e78
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
-	23045 fix_crc32c_arm64_detect-0.20						last=f6a7ed55c9b laanwj/2021-09-arm64-crc32
+	23045 fix_crc32c_arm64_detect-0.20						last=f2747d1602e laanwj/2021-09-arm64-crc32
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
@@ -122,7 +122,7 @@ checkout v22.0
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
 	g399  fix_load_psbt_wo_wallet-22
-	g409  fix_gui_walletop_titlebar-22						last=d9e421c3ba9
+	g409  fix_gui_walletop_titlebar-22						last=8e11d89ea90
 	g418  mac_platform_metadata-0.20						last=3765c486ef5 jarolrod-g/applesilicon-categorization
 @22.x-knots
 # SOFTFORK:
@@ -345,7 +345,7 @@ checkout v22.0
 	# TODO? Diff-minimised 22604 jonatack:rate_limit_addr_follow-ups
 	# Needs review: 22674 glozow:package-child-with-parents
 	# Needs review: vasild:torbind
-	22751 kallewoof/202108-analyzerawtransaction			last=4d6c1a01532
+	22751 simulaterawtx-22									last=40944a573a2 kallewoof/202108-analyzerawtransaction
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
 	# TODO? 22777 jnewbery/2021-08-feeler-no-frelay
