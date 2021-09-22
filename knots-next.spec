@@ -345,12 +345,13 @@ checkout v22.0
 	# TODO? Diff-minimised 22604 jonatack:rate_limit_addr_follow-ups
 	# Needs review: 22674 glozow:package-child-with-parents
 	# Needs review: vasild:torbind
-	22751 kallewoof/202108-analyzerawtransaction
+	22751 kallewoof/202108-analyzerawtransaction			last=4d6c1a01532
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
-	22777 jnewbery/2021-08-feeler-no-frelay
+	# TODO? 22777 jnewbery/2021-08-feeler-no-frelay
 	# TODO: 22778 jnewbery:2021-02-tx-relay-init
-	Diff-minimised 22789 external_signer: improve fingerprint matching logic (stop on first match)
+	22789 extsigner_pr22789-22								last=d047ed729f1  # external_signer: improve fingerprint matching logic (stop on first match)
+		# Rewritten to diff-minimise and simplify
 	# Needs BIP? 22838 achow101:multipath-descs
 	# Not worth added build overhead? 22840 fanquake:fix_depends_lib_optimisation
 	Diff-reduced if possible: 22875 JeremyRubin:threadsafe-fix
