@@ -214,7 +214,7 @@ checkout v22.0
 	17631 rest_blockfilter-22					31a7b2798a2	last=16d8d2da598 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	g319  -										3cb5fcd37dd	last=5062565e112  # gui_openuri_pastebtn-0.21
+	g319  gui_openuri_pastebtn-22				3cb5fcd37dd	last=dbde0558ce7
 		# NOTE: Used to be #17955
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.21+knots	996d632f395	last=19e28a41168 elichai/2020-01-siphash
@@ -345,7 +345,7 @@ checkout v22.0
 	# TODO? Diff-minimised 22604 jonatack:rate_limit_addr_follow-ups
 	# Needs review: 22674 glozow:package-child-with-parents
 	# Needs review: vasild:torbind
-	22751 simulaterawtx-22									last=40944a573a2 kallewoof/202108-analyzerawtransaction
+	22751 simulaterawtx-22									last=b269f1bb0d6 kallewoof/202108-analyzerawtransaction
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
 	# TODO? 22777 jnewbery/2021-08-feeler-no-frelay
