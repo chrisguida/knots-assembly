@@ -342,6 +342,7 @@ checkout v22.0
 	g384  -													last=ab1461d5d36  # add copy subnet action for banned peer
 	# TODO: Minimal 22539 darosior/fee_est_rbf
 	# Needs more careful security review: 22541 Add a new RPC command: restorewallet
+		# TODO: restrict access in multiwallet_rpc
 	# TODO? 22546 hebasto:210725-deploy
 	# TODO: 22547 -  # cli: Add progress bar for -getinfo
 	# Needs review: 22558 achow101:taproot-psbt
@@ -380,7 +381,7 @@ checkout v22.0
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-22					f9192d9a751	last=07fc81109a
 	9849 gui_netwatch-22+knots					539fa817d21	last=3c8fe76f6ee gui_netwatch
-	10615 multiwallet_rpc-0.21+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
+	10615 multiwallet_rpc-22+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-0.21+knots					dad75802d23	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
