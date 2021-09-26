@@ -367,7 +367,7 @@ checkout v22.0
 	g408  gui_mnemonics_g408-22  # Add missing mnemonics in menu bar options
 	# Needs work: g410  benthecarman/uppercase-uri
 	g416  gui_rpcserver_opt-0.18							last=bd5c826a963 Sjors-g/2021/09/rpc_setting
-	g419  jarolrod-g/options-tooltips
+	g419  gui_dbcache_s.threads_tooltips-0.9				last=9bd168bf545 jarolrod-g/options-tooltips
 # Non-progress functionality:
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
