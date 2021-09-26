@@ -81,7 +81,7 @@ checkout v22.0
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-22+knots	37dd20ac3a1	last=edfc5c66339
+	19888 getblockstats_utxo_actual-22+knots	37dd20ac3a1	last=6cd78060c8e
 		# Diff-minimised incl test changes
 	# Needs review: 20196 vasild/fix_GetListenPort
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
@@ -127,7 +127,7 @@ checkout v22.0
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
-	22016 rpc_gbci_period_start-22+knots		4910107f0d1	last=b2773c7a6eb Sjors/2021/05/versionbits_period_start
+	22016 rpc_gbci_period_start-22+knots		4910107f0d1	last=70d7e0812a7 Sjors/2021/05/versionbits_period_start
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	-     restore_win32-22						d37803a84cc	last=3e30ae0514e restore_win32
