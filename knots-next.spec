@@ -366,7 +366,7 @@ checkout v22.0
 	g391  -													last=0b869df1c91  # Add cancel button to configuration options popup
 	g408  gui_mnemonics_g408-22  # Add missing mnemonics in menu bar options
 	# Needs work: g410  benthecarman/uppercase-uri
-	g416  Sjors/2021/09/rpc_setting
+	g416  gui_rpcserver_opt-0.18							last=bd5c826a963 Sjors-g/2021/09/rpc_setting
 	g419  jarolrod-g/options-tooltips
 # Non-progress functionality:
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
