@@ -383,7 +383,7 @@ checkout v22.0
 	9849 gui_netwatch-22+knots					539fa817d21	last=3c8fe76f6ee gui_netwatch
 	10615 multiwallet_rpc-22+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
-	10554 zmq_wtx-0.21+knots					dad75802d23	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-22+knots						dad75802d23	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					7a1723439c5
 		# NOTE: Originally based on #12674
