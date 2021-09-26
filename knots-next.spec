@@ -362,9 +362,9 @@ checkout v22.0
 	# Needs review: 22934 -  # Add verification to Sign, SignCompact and SignSchnorr
 	# Needs work: 23019 -  # rpc, wallet: Add listaddresses RPC
 	# Needs review: 23035 jonatack:getnodeaddresses-tried-and-reference_count
-	Diff-minimise g390  -  # Add SubFeeFromAmount to options
-	g391  -  # Add cancel button to configuration options popup
-	g408  -  # Add missing mnemonics in menu bar options
+	g390  gui_defopt_subfeefromamt-22
+	g391  -													last=0b869df1c91  # Add cancel button to configuration options popup
+	g408  gui_mnemonics_g408-22  # Add missing mnemonics in menu bar options
 	# Needs work: g410  benthecarman/uppercase-uri
 	g416  Sjors/2021/09/rpc_setting
 	g419  jarolrod-g/options-tooltips
