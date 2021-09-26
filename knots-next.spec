@@ -117,6 +117,9 @@ checkout v22.0
 	22820 fix_config_qtinputsupport-22
 	# Needs review: 22834 vasild:onlynet
 	# TODO? 22836 sipa:202108_bipvec5
+	# Not worth added build overhead? 22840 fanquake:fix_depends_lib_optimisation
+	22875 parseopcode_threadsafe-22							last=d5e006c84a1
+	22879 fix_addrman_err_format-22							last=fab0b55cf06	marco/2109-testPeersDat
 	22895 fix_RBFD_lock_pr22895-22
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review: 22929 S3RK/fix_19856
@@ -353,9 +356,6 @@ checkout v22.0
 	22789 extsigner_pr22789-22								last=d047ed729f1  # external_signer: improve fingerprint matching logic (stop on first match)
 		# Rewritten to diff-minimise and simplify
 	# Needs BIP? 22838 achow101:multipath-descs
-	# Not worth added build overhead? 22840 fanquake:fix_depends_lib_optimisation
-	22875 parseopcode_threadsafe-22							last=d5e006c84a1
-	JUST the fix? 22879 marco/2109-testPeersDat
 	22894 jonatack/netinfo-clarify-client-and-server-versions
 	# Needs review: 22919 -  # fees: skip pointless fee parameter calculation during IBD
 	# Needs review: 22934 -  # Add verification to Sign, SignCompact and SignSchnorr
