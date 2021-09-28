@@ -397,7 +397,7 @@ checkout v22.0
 		# NOTE: deviated from PR
 	11770 rest_fee								d2f6a3d7d5d	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			3b64c7195f0
-	12965 scriptthreads-0.20					8d959f05d3c	last=dfab6c6866 jonas/2018/04/svt
+	12965 scriptthreads							8d959f05d3c	last=dfab6c6866 jonas/2018/04/svt
 	13203 dsha256_power8-0.20					9703ce00ee9	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		6ceb71baa4c
