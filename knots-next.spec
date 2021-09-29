@@ -109,7 +109,7 @@ checkout v22.0
 	22834 bugfix_onlynet-22									last=0ea0de64385 vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
 	# Needs review: 22665 darosior:rbf_optin_nomempool
-	22722 fix_estsfee_minrelay-22							last=b2152f3ff21  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
+	22722 fix_estsfee_minrelay-22							last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
 	23027 bugfix_util_test_config
 	22781 fix_ishdenabled-0.21
 	# Needs review: 22798 MarcoFalke:2108-docRpc
@@ -197,7 +197,7 @@ checkout v22.0
 	22693 getaddressinfo_txids					01bfbd88472
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	22918 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=305a59a7b55
+	22918 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=d4d043b37f8
 		# Was originally #16083, then #21245
 		# Left off release notes & variable rename (last 2 commits)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
@@ -253,7 +253,7 @@ checkout v22.0
 		# Removed dialog size change
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	20295 rpc_getblockfrompeer_wo_header-22		947c37b0b52	last=8ca1ce0f2b3 Sjors/2020/11/getblockfrompeer
+	20295 rpc_getblockfrompeer_wo_header-22		947c37b0b52	last=4096e6fb013 Sjors/2020/11/getblockfrompeer
 		# Left out code movement
 		# Re-enabled fetching blocks w/o already having header (from older version of PR)
 		# Moved code to avoid conflict with 22577
@@ -336,7 +336,7 @@ checkout v22.0
 	22407 -													last=20edf4bcf61
 		# NOTE: promag's own branch is not up to date
 	22501 netinfo_addr_stats-22								last=218862a0184 jonatack/netinfo-addr-statistics
-	22513 rpcwallet_psbt_no_finalize-22+knots				last=7f9310db58d achow101/psbt-no-finalize
+	22513 rpcwallet_psbt_no_finalize-22+knots				last=a99ed898655 achow101/psbt-no-finalize
 		# Modified to use a new options object instead of an additional bool positional param
 	# Needs review: 22514 achow101/psbt-sighash-default
 	g384  -													last=ab1461d5d36  # add copy subnet action for banned peer
