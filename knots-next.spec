@@ -414,7 +414,7 @@ checkout v22.0
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d					ca0940d77b6
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
-	15861 restore_vbits_warning-0.21+knots		43dad5a3906	last=f016cd420df restore_vbits_warning
+	15861 restore_vbits_warning					43dad5a3906
 	16807 meshcollider/201909_bech32_error_detection	47e52930e8f	last=3bc568d6753 meshcollider/201909_bech32_error_detection
 	n/a   rpc_compat_error_index-0.21+knots		c0b669d2000
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
