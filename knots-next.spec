@@ -380,7 +380,7 @@ checkout v22.0
 	8550  old_stats_qt-22						24601755a13	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-22					f9192d9a751	last=07fc81109a
-	9849 gui_netwatch-22+knots					539fa817d21	last=3c8fe76f6ee gui_netwatch
+	9849 gui_netwatch-22+knots					539fa817d21	last=2db813077d1 gui_netwatch
 	10615 multiwallet_rpc-22+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-22+knots						dad75802d23	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
@@ -404,7 +404,7 @@ checkout v22.0
 	15218 postibd_flush-22+knots				84b38613864	last=d2ecb70d64  # validation: Flush state after initial sync
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-22+knots				e509f51807e	# latest code now
-	15421 tor_subprocess-0.21+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
+	15421 tor_subprocess-22+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
 	# TODO: tor gitian bundle! /guix
 	15633 nohbcbfornonwit-0.21+knots			c48ce12aa19	last=ac897f0bd3a nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
