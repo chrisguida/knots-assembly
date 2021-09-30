@@ -125,7 +125,7 @@ checkout v22.0
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
 	g399  fix_load_psbt_wo_wallet-22
-	g409  fix_gui_walletop_titlebar-22						last=8e11d89ea90
+	g409  fix_gui_walletop_titlebar-22						last=e4bf5804bde
 	g418  mac_platform_metadata-0.20						last=3765c486ef5 jarolrod-g/applesilicon-categorization
 @22.x-knots
 # SOFTFORK:
@@ -423,7 +423,7 @@ checkout v22.0
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
 	17958 rpc_getgeneralinfo					95572de08a2	last=cdbd38df131  # getgeneralinfo RPC
-	18223 blockfilter_v0-0.19					fbe06449a10	last=5561e7a0c79
+	18223 blockfilter_v0						fbe06449a10	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
