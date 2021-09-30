@@ -406,7 +406,7 @@ checkout v22.0
 	15428 tor_gui_pairing-22+knots				e509f51807e	# latest code now
 	15421 tor_subprocess-22+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
 	# TODO: tor gitian bundle! /guix
-	15633 nohbcbfornonwit-0.21+knots			c48ce12aa19	last=ac897f0bd3a nohbcbfornonwit
+	15633 nohbcbfornonwit						c48ce12aa19
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
 	# TODO: 16490 marco/1907-rpcMempoolWhyReplacable
