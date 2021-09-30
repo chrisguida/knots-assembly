@@ -416,7 +416,7 @@ checkout v22.0
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					43dad5a3906
 	16807 meshcollider/201909_bech32_error_detection	47e52930e8f	last=3bc568d6753 meshcollider/201909_bech32_error_detection
-	n/a   rpc_compat_error_index-0.21+knots		c0b669d2000
+	n/a   rpc_compat_error_index-22+knots		c0b669d2000
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	-     gui_bech32_errpos-0.21.1+knots		63858cb48e1  # Latest code
 	17636 guisettings-0.21						d4da7377cb0	last=187f9684e03 emilengler/2019-11-guisettings
