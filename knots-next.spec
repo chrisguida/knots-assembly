@@ -418,7 +418,7 @@ checkout v22.0
 	16807 meshcollider/201909_bech32_error_detection	47e52930e8f	last=3bc568d6753 meshcollider/201909_bech32_error_detection
 	n/a   rpc_compat_error_index-22+knots		c0b669d2000
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
-	-     gui_bech32_errpos-0.21.1+knots		63858cb48e1  # Latest code
+	-     gui_bech32_errpos-22+knots			63858cb48e1  # Latest code
 	17636 guisettings-0.21						d4da7377cb0	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
@@ -433,7 +433,7 @@ checkout v22.0
 	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
 	# TODO: 18789 achow101/create-unsigned-sendconfdialog
-		#TODO: Resolve conflict with wallet_no_reuse
+		#TODO: Resolve conflict with wallet_warn_reuse_gui
 		#OR these two:
 		# 18655 achow101:split-bumpfeeaction
 		# 18656 achow101:make-unsigned-button
