@@ -125,7 +125,7 @@ checkout v22.0
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
 	g399  fix_load_psbt_wo_wallet-22
-	g409  fix_gui_walletop_titlebar-22						last=e4bf5804bde
+	g409  fix_gui_walletop_titlebar-22						last=a086a3757b1
 	g418  mac_platform_metadata-0.20						last=3765c486ef5 jarolrod-g/applesilicon-categorization
 @22.x-knots
 # SOFTFORK:
@@ -322,6 +322,7 @@ checkout v22.0
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
 	g318  gui_peers_copyaddr-22					172639c9e05	last=3ec061d9da0 jarolrod-g/copy-addr-peer
 	# Needs review: g342 hebasto-g/210521-wallet
+		# NOTE: Will require newer changes from gui#409 above
 	# Needs review: jonatack/ProtectEvictionCandidatesByRatio-perf-enhancements
 	22288 torcontrol_dnslookup-0.21				d8f8412dcc4	last=cdd51e8ee15
 		# Diff-minimised
@@ -427,7 +428,7 @@ checkout v22.0
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
-	19089 cli_getinfo_mwbalances-0.21+knots		19e9d705f4c	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+	19089 cli_getinfo_mwbalances				19e9d705f4c	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
 	19092 cli_getinfo_mw_total_balance-0.21+knots	aedba84cdb0	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
