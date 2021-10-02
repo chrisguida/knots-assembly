@@ -416,7 +416,8 @@ checkout v22.0
 	17795 gui_console_ctrl_d					ca0940d77b6
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					43dad5a3906
-	16807 meshcollider/201909_bech32_error_detection	47e52930e8f	last=3bc568d6753 meshcollider/201909_bech32_error_detection
+	16807 old_bech32_error_detection			47e52930e8f	last=974227bb457 meshcollider/201909_bech32_error_detection
+		# Held back rewrite 3bc568d6753..974227bb457 for now
 	n/a   rpc_compat_error_index-22+knots		c0b669d2000
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	-     gui_bech32_errpos-22+knots			63858cb48e1  # Latest code
@@ -429,8 +430,7 @@ checkout v22.0
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
 	19089 cli_getinfo_mwbalances				19e9d705f4c	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
-	19092 cli_getinfo_mw_total_balance-0.21+knots	aedba84cdb0	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
-		# Held back s/several/multiple (& comment changes) because why bother
+	19092 cli_getinfo_mw_total_balance			aedba84cdb0	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
 	# TODO: 18789 achow101/create-unsigned-sendconfdialog
