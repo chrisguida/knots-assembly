@@ -1,7 +1,7 @@
-timestamp 2021-09-20 07:27:12
+timestamp 2021-10-03 07:57:17
 lastapply no-merge
 
-#.. checked up to PR #23049 / gui #424
+#.. checked up to PR #23163 / gui #444
 
 checkout v22.0
 @22.x-syslibs
@@ -11,6 +11,7 @@ checkout v22.0
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
 	22390 fanquake/netbsd_dont_set_locale					last=fdd71448e78
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
+	# OR: 23082 fanquake/remove_weak_auxval
 	23045 fix_crc32c_arm64_detect-0.20						last=f2747d1602e laanwj/2021-09-arm64-crc32
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
@@ -24,6 +25,7 @@ checkout v22.0
 	-     opt_bdb_extracare						3d26b04ad0f
 	g216  optional_font
 	#Maybe restore: 7339  opt_libevent
+	# TODO: system crc32c
 @22.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							9afa5d8517a
@@ -127,6 +129,15 @@ checkout v22.0
 	g399  fix_load_psbt_wo_wallet-22
 	g409  fix_gui_walletop_titlebar-22						last=a086a3757b1
 	g418  mac_platform_metadata-0.20						last=3765c486ef5 jarolrod-g/applesilicon-categorization
+	23050 jonatack/fee-vs-feerate
+	23061 marco/2109-fixArgParse
+	# Needs review & concept check: 23074 Package-aware fee estimation
+	23106 meshcollider/202109_walletprocesspsbt_unlocked
+	# TODO: 23139 jonatack/fix-rpc-trusted-field-help
+	23140 sipa/202109_addrmanbias
+	# Not sure about this: 23142 meshcollider:202109_no_assert_corruption
+	Diff-minimised g430 jarolrod-g/3party-tx-links-cleanup
+	g439 hebasto-g/210929-hide
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -370,6 +381,13 @@ checkout v22.0
 	# Needs work: g410  benthecarman/uppercase-uri
 	g416  gui_rpcserver_opt-0.18							last=bd5c826a963 Sjors-g/2021/09/rpc_setting
 	g419  gui_dbcache_s.threads_tooltips-0.9				last=9bd168bf545 jarolrod-g/options-tooltips
+	# Needs Core release (wallet format change): 23065 meshcollider/202109_lockunspent_persistence
+	# Needs work: 23077 vasild/cjdns
+	23113 meshcollider/202109_createmultisig_warnings
+	# Why merge this before Core? (last commit only?) 23115 fanquake:18985_rebased (note: merged in master already)
+	# Needs work: 23152 fanquake/experiment_with_lto
+	23155 jamesob/2021-10-au-rpc-fixes #diff-minimise
+	g436  meshcollider-g/202109_coinselection_copy_vout
 # Non-progress functionality:
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -381,9 +399,11 @@ checkout v22.0
 	8550  old_stats_qt-22						24601755a13	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-22					f9192d9a751	last=07fc81109a
-	9849 gui_netwatch-22+knots					539fa817d21	last=2db813077d1 gui_netwatch
+	g444  gui_netwatch-22+knots					539fa817d21	last=2db813077d1 gui_netwatch
+		# NOTE: Was #9849
 	10615 multiwallet_rpc-22+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
+		FIXME: https://github.com/bitcoinknots/bitcoin/pull/27
 	10554 zmq_wtx-22+knots						dad75802d23	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					7a1723439c5
@@ -433,7 +453,7 @@ checkout v22.0
 	19092 cli_getinfo_mw_total_balance			aedba84cdb0	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock-22+k	a03387247fb	last=1e868bbbb1b
-	# TODO: 18789 achow101/create-unsigned-sendconfdialog
+	# TODO: g441 achow101-g/create-unsigned-sendconfdialog
 		#TODO: Resolve conflict with wallet_warn_reuse_gui
 		#OR these two:
 		# 18655 achow101:split-bumpfeeaction
@@ -455,6 +475,7 @@ checkout v22.0
 	-     wallettool_dump_warning-22
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
 	# Needs work: 22708 hebasto:210815-wayland
+	# TODO (needs concept review?): 23093 meshcollider:202109_keypoolrefill
 # Non-upstreamed functionality:
 	TODO: Revert #21992 (removed -feefilter option, useful for manually prioritised transactions)
 	TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
@@ -510,6 +531,7 @@ checkout v22.0
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
+	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	NOTE TO SELF: Remove release-notes-prNNNNN.md files BEFORE the svg icon merge so it doesn't get added then removed in different patch files >_<
 	7483  svg_icon-0.21+knots					469d40983b1
@@ -526,7 +548,7 @@ checkout v22.0
 TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
 		TODO: merged in cfe8f2230078f535b839da87705c2ee155f21753
-	n/a  (bump_version=Knots:20210722)			0a9a4537a5d
+	n/a  (bump_version=Knots:20211003)			0a9a4537a5d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=96316586c91)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
