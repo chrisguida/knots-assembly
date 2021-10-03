@@ -432,7 +432,7 @@ checkout v22.0
 	19089 cli_getinfo_mwbalances				19e9d705f4c	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
 	19092 cli_getinfo_mw_total_balance			aedba84cdb0	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	# ---- END IN SEQUENCE ----
-	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
+	18570 wallet_rpc_lastprocessedblock-22+k	a03387247fb	last=1e868bbbb1b
 	# TODO: 18789 achow101/create-unsigned-sendconfdialog
 		#TODO: Resolve conflict with wallet_warn_reuse_gui
 		#OR these two:
