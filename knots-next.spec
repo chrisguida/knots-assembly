@@ -385,7 +385,8 @@ checkout v22.0
 	g419  gui_dbcache_s.threads_tooltips-0.9				last=9bd168bf545 jarolrod-g/options-tooltips
 	# Needs Core release (wallet format change): 23065 meshcollider/202109_lockunspent_persistence
 	# Needs work: 23077 vasild/cjdns
-	23113 meshcollider/202109_createmultisig_warnings
+	23113 rpc_multisig_uncomp_warnings-0.21					last=29a78ac4319 meshcollider/202109_createmultisig_warnings
+		# Left off final commit with relnotes
 	# Why merge this before Core? (last commit only?) 23115 fanquake:18985_rebased (note: merged in master already)
 	# Needs work: 23152 fanquake/experiment_with_lto
 	23155 jamesob/2021-10-au-rpc-fixes #diff-minimise
@@ -563,6 +564,7 @@ TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		TODO: #21063 API change if merged
 		gd marco/2109-fixArgParse
+		gd meshcollider/202109_createmultisig_warnings
 	n/a  (cherrypick=33ee7963ad4)				6addc3eccab  # update manpages (build first)
 	n/a  (cherrypick=936fd13cd23)				a886811721c  # translation update
 # NOTE: use git diff --minimal for patches!
