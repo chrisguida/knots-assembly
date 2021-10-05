@@ -127,7 +127,7 @@ checkout v22.0
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
 	g399  fix_load_psbt_wo_wallet-22
-	g409  fix_gui_walletop_titlebar-22						last=9de84f66bed
+	g409  fix_gui_walletop_titlebar-22						last=f86fe193329
 	g418  mac_platform_metadata-0.20						last=3765c486ef5 jarolrod-g/applesilicon-categorization
 	23050 bugfix_pr23050-0.15  # log: change an incorrect fee to fee rate, and vice-versa
 	23061 fix_argparse_persistmempool-22
@@ -463,9 +463,7 @@ checkout v22.0
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-22+knots		bfaf26b19f1
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
-	17167 whitelist_outgoing-mini-0.21+knots	d6b39ef5628	last=81622ba1229 whitelist_outgoing
-		#TODO: Split this up?
-		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
+	17167 whitelist_outgoing-mini-22+knots		d6b39ef5628	last=81622ba1229 whitelist_outgoing
 		# NOTE: Originally #10594
 	TODO: MERGED UPSTREAM: g165  gui_peers_splitter_ss-0.21+knots		8ea7e7fbc3f
 		# +g194 (MERGED UPSTREAM) Save/restore RPCConsole geometry only for window
