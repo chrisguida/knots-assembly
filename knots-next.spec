@@ -127,17 +127,19 @@ checkout v22.0
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
 	g399  fix_load_psbt_wo_wallet-22
-	g409  fix_gui_walletop_titlebar-22						last=a086a3757b1
+	g409  fix_gui_walletop_titlebar-22						last=ccecfa86a01
+		# Held back a086a3757b1..ccecfa86a01 (split up translator strings stupidly)
 	g418  mac_platform_metadata-0.20						last=3765c486ef5 jarolrod-g/applesilicon-categorization
-	23050 jonatack/fee-vs-feerate
-	23061 marco/2109-fixArgParse
+	23050 bugfix_pr23050-0.15  # log: change an incorrect fee to fee rate, and vice-versa
+	23061 fix_argparse_persistmempool-22
 	# Needs review & concept check: 23074 Package-aware fee estimation
-	23106 meshcollider/202109_walletprocesspsbt_unlocked
+	23106 fix_unlock_before_psbtsign-22
 	# TODO: 23139 jonatack/fix-rpc-trusted-field-help
-	23140 sipa/202109_addrmanbias
+	# Needs review: 23140 sipa/202109_addrmanbias
 	# Not sure about this: 23142 meshcollider:202109_no_assert_corruption
-	Diff-minimised g430 jarolrod-g/3party-tx-links-cleanup
-	g439 hebasto-g/210929-hide
+	g430 gui_txlinks_g430-22
+		# NOTE: Left off trivial string change
+	g439 gui_hide_unused_icons-0.20
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -560,6 +562,7 @@ TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		TODO: #21063 API change if merged
+		gd marco/2109-fixArgParse
 	n/a  (cherrypick=33ee7963ad4)				6addc3eccab  # update manpages (build first)
 	n/a  (cherrypick=936fd13cd23)				a886811721c  # translation update
 # NOTE: use git diff --minimal for patches!
