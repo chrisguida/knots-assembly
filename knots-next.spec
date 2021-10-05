@@ -465,10 +465,6 @@ checkout v22.0
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	17167 whitelist_outgoing-mini-22+knots		d6b39ef5628	last=81622ba1229 whitelist_outgoing
 		# NOTE: Originally #10594
-	TODO: MERGED UPSTREAM: g165  gui_peers_splitter_ss-0.21+knots		8ea7e7fbc3f
-		# +g194 (MERGED UPSTREAM) Save/restore RPCConsole geometry only for window
-		# NOTE: Changed setting name since our splitters don't match Core's
-		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	# FIXME: text below QR Code doesn't fit bech32 with Console font!
 	-     wallettool_dump_warning-22
@@ -507,6 +503,8 @@ checkout v22.0
 		TODO: Revert 05c08c696a1
 	22439 achow101/guix-in-gitian
 		Needs mkdir fix?
+	TODO: Each release, see if we need to bump setting names for GUI states
+		eg, f3c8e3a9855
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
 	-    mempool_knots014_compat-0.21+knots		4d6b8b17d26	last=1befffc0b48 mempool_dat_extensible
