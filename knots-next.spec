@@ -279,7 +279,7 @@ checkout v22.0
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid						8979d48f938
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	20664 jonas/2020/12/filterblocks_rpc		ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
+	20664 rpc_filterblocks						ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	20702 rpc_getblocklocations					8db5bda17bd	last=9b03c654eb3
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							1dcbfaca3b6
