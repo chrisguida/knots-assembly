@@ -210,7 +210,7 @@ checkout v22.0
 	22693 getaddressinfo_txids					01bfbd88472
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
-	22918 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=d4d043b37f8
+	22918 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=b0f7af35481
 		# Was originally #16083, then #21245
 		# Left off release notes & variable rename (last 2 commits)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
