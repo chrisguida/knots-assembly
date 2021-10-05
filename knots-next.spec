@@ -389,8 +389,8 @@ checkout v22.0
 		# Left off final commit with relnotes
 	# Why merge this before Core? (last commit only?) 23115 fanquake:18985_rebased (note: merged in master already)
 	# Needs work: 23152 fanquake/experiment_with_lto
-	23155 jamesob/2021-10-au-rpc-fixes #diff-minimise
-	g436  meshcollider-g/202109_coinselection_copy_vout
+	# TODO: 23155 jamesob/2021-10-au-rpc-fixes #diff-minimise
+	g436  gui_coinctrl_copyoutpoint-22
 # Non-progress functionality:
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
