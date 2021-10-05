@@ -503,6 +503,7 @@ checkout v22.0
 		TODO: Revert 05c08c696a1
 	22439 achow101/guix-in-gitian
 		Needs mkdir fix?
+	-     gui_peers_no_net_column
 	TODO: Each release, see if we need to bump setting names for GUI states
 		eg, f3c8e3a9855
 # Non-upstreamed Knots compatibility:
