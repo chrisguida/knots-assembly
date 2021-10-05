@@ -467,12 +467,12 @@ checkout v22.0
 		# NOTE: Originally #10594
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	# FIXME: text below QR Code doesn't fit bech32 with Console font!
-	-     wallettool_dump_warning-22
+	-     wallettool_dump_warning-22+knots
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
 	# Needs work: 22708 hebasto:210815-wayland
 	# TODO (needs concept review?): 23093 meshcollider:202109_keypoolrefill
 # Non-upstreamed functionality:
-	TODO: Revert #21992 (removed -feefilter option, useful for manually prioritised transactions)
+	n/a   restore_feefilter_opt
 	TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
 	-     gui_payreq_textedit-0.21				4a9c6fc46e5
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
