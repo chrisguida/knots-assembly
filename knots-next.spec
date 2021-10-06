@@ -473,11 +473,11 @@ checkout v22.0
 	# TODO (needs concept review?): 23093 meshcollider:202109_keypoolrefill
 # Non-upstreamed functionality:
 	n/a   restore_feefilter_opt
-	TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
-	-     gui_payreq_textedit-0.21				4a9c6fc46e5
+	# 23.0 TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
+	-     gui_payreq_textedit					4a9c6fc46e5
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				011b11763f6
-	-     walletnotify_w_win-0.21+knots			0fafbd4a598	last=a291491d2fd walletnotify_w_win
+	-     walletnotify_w_win-22+knots			0fafbd4a598	last=a291491d2fd walletnotify_w_win
 	14137 win_taskbar_progress					35568cf34dd	last=18eb4dbb8a
 	-     restore_blockmaxsize					7cf11b880fc
 	7107 qtnetworkport							dd2ad9343f6	last=1f37c87 origin-pull/7107/head
