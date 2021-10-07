@@ -636,8 +636,10 @@ m	7510  rwconf_gui							31da64c50bc
 	 559 accept_nonstdtxn						854677f3a98
 	g153 const_max_digits						2db6298f46c
 	 929 tbc									b92159120bd
-	 553 bugfix_qt_uri_amount_parser			2bef446009c
-	-    mining_priority						c1b36c3197d  # NOTE: now the latest code, rebased
+	 553  bugfix_qt_uri_amount_parser-0.17		2bef446009c	last=e3ad5956dda bugfix_qt_uri_amount_parser
+	-     mining_priority-0.21					c1b36c3197d	last=59671b2e665 mining_priority
+		# Didn't backport next_block_height passing (maybe consider when/if someday cs_main can be released)
+		# Didn't backport platform-independent double serialisation
 	5861 gui_restore_addresses					8fa52dc8120
 	5891  qt_console_history_persist-0.21+knots	7ed83221a81	last=ea852deea35 qt_console_history_persist
 	7219  rbf_opts-0.21+knots					ec4af75863b	last=5df41eadb59 fullrbf # missing 91786d16ccc + revert34ae6640174
