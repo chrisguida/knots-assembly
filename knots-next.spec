@@ -266,7 +266,7 @@ checkout v22.0
 		# Removed dialog size change
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	20295 rpc_getblockfrompeer_wo_header-22		947c37b0b52	last=4096e6fb013 Sjors/2020/11/getblockfrompeer
+	20295 rpc_getblockfrompeer_wo_header-22		947c37b0b52	last=9181e2e2179 Sjors/2020/11/getblockfrompeer
 		# Left out code movement
 		# Re-enabled fetching blocks w/o already having header (from older version of PR)
 		# Moved code to avoid conflict with 22577
@@ -382,6 +382,7 @@ checkout v22.0
 	g408  gui_mnemonics_g408-22  # Add missing mnemonics in menu bar options
 	# Needs work: g410  benthecarman/uppercase-uri
 	g416  gui_rpcserver_opt-0.18							last=bd5c826a963 Sjors-g/2021/09/rpc_setting
+		# NOTE: Includes gui#449
 	g419  gui_dbcache_s.threads_tooltips-0.9				last=9bd168bf545 jarolrod-g/options-tooltips
 	# Needs Core release (wallet format change): 23065 meshcollider/202109_lockunspent_persistence
 	# Needs work: 23077 vasild/cjdns
@@ -486,7 +487,6 @@ checkout v22.0
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf								9eefbf8c5fb
 	7510  rwconf_gui							31da64c50bc
-		TODO: Allow neutrino+pruning (#15946 merged upstream)
 	 559 accept_nonstdtxn						854677f3a98
 	 929 tbc									b92159120bd
 	 553 bugfix_qt_uri_amount_parser			2bef446009c
