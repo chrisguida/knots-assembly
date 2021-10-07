@@ -224,7 +224,8 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	# Needs review: 15204 promag:2019-01-openexternalwallet
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
-	15423 tor_socks_port						67bfe9cad94
+	15423 tor_socks_port-0.21					67bfe9cad94	last=d37d95a9ea2 tor_socks_port
+		# Held back 962f168a014..398df42f449
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
@@ -454,7 +455,7 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	22072 autoreindex-0.21						66d83231979	last=602f4da9178
 	22147 p2p_protect_last_outHB-0.21			8f7863d9729
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
-	22159 conf_append_cxxflags-0.10				deede4f8965	last=faac8383364 marco/2106-buildPattern
+	22159 conf_append_cxxflags-0.10				deede4f8965	last=fa14c6818f4 marco/2106-buildPattern
 	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
@@ -517,9 +518,6 @@ m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_in
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-0.21+knots			e509f51807e	# latest code now
 	15421 tor_subprocess-0.21+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
-		FIXME: if tor survives bitcoin-qt exiting, it keeps the listening port bound??
-			Fixing this is problematic. It needs a newer boost version that doesn't exist yet (see https://github.com/boostorg/process/issues/200)
-			Use #22417
 	# TODO: tor gitian bundle!
 	15633 nohbcbfornonwit-0.21+knots			c48ce12aa19	last=ac897f0bd3a nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
@@ -559,7 +557,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-0.21+knots	bfaf26b19f1
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
-	17167 whitelist_outgoing-mini-0.21+knots	d6b39ef5628	last=f794108f9e9 whitelist_outgoing
+	17167 whitelist_outgoing-mini-0.21+knots	d6b39ef5628	last=81622ba1229 whitelist_outgoing
 		#TODO: Split this up?
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
