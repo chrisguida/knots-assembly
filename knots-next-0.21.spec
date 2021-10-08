@@ -650,6 +650,7 @@ m	7510  rwconf_gui							31da64c50bc
 	-     gui_wallet_displayname-0.19			71cc4a727ef	# Latest code now
 	-     gui_request_payment_label-0.19		bd9ec2f9431
 	-     gui_peers_sort_network-0.21+knots		a3e6f0ec5e2
+		TODO: Replace with fixed commit in gui_peers_sort_network-22
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
 	-    mempool_knots014_compat-0.21+knots		4d6b8b17d26	last=1befffc0b48 mempool_dat_extensible

@@ -500,11 +500,10 @@ checkout v22.0
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			71cc4a727ef	# Latest code now
 	-     gui_request_payment_label-0.19		bd9ec2f9431
-	-     gui_peers_sort_network-0.21+knots		a3e6f0ec5e2
-		TODO: Revert 05c08c696a1
+	-     gui_peers_sort_network-22				a3e6f0ec5e2
+	-     gui_peers_no_net_column
 	22439 achow101/guix-in-gitian
 		Needs mkdir fix?
-	-     gui_peers_no_net_column
 	TODO: Each release, see if we need to bump setting names for GUI states
 		eg, f3c8e3a9855
 # Non-upstreamed Knots compatibility:
