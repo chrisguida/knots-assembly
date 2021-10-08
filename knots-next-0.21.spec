@@ -642,7 +642,7 @@ m	7510  rwconf_gui							31da64c50bc
 		# Didn't backport platform-independent double serialisation
 	5861 gui_restore_addresses					8fa52dc8120
 	5891  qt_console_history_persist-0.21+knots	7ed83221a81	last=0cd5fc301d6 qt_console_history_persist
-	7219  rbf_opts-0.21+knots					ec4af75863b	last=5df41eadb59 fullrbf # missing 91786d16ccc + revert34ae6640174
+	7219  rbf_opts-0.21+knots					ec4af75863b	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					c84af5db7d7
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
@@ -677,6 +677,7 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c
 	7483  svg_icon-0.21+knots					469d40983b1
 # BRANDING:
 	n/a   knots_branding-0.21					1ee7ca43f35
+	TODO: drop leading 0 ?
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check there are no menu icons
 #FIXME: Check hidden_args has anything removed (possibly conditional)
