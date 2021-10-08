@@ -401,6 +401,7 @@ checkout v22.0
 	8501  old_stats_rpc-22						2fa33c1f65c	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-22						24601755a13	last=63fb11652f
+		git stash apply 5c06019b199bbe1c41bde5cd63a2637a40339c08
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-22					f9192d9a751	last=07fc81109a
 	g444  gui_netwatch-22+knots					539fa817d21	last=2db813077d1 gui_netwatch
@@ -502,8 +503,8 @@ checkout v22.0
 	-     gui_request_payment_label-0.19		bd9ec2f9431
 	-     gui_peers_sort_network-22				a3e6f0ec5e2
 	-     gui_peers_no_net_column
-	22439 achow101/guix-in-gitian
-		Needs mkdir fix?
+	22439 achow101/guix-in-gitian							last=ebda0463748
+		# Leaving cache mkdir issue unfixed, so user can't forget to repopulate cache if moved away
 	TODO: Each release, see if we need to bump setting names for GUI states
 		eg, f3c8e3a9855
 # Non-upstreamed Knots compatibility:

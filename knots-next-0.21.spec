@@ -678,7 +678,7 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c
 	7483  svg_icon-0.21+knots					469d40983b1
 # BRANDING:
 	n/a   knots_branding-0.21					1ee7ca43f35
-	TODO: drop leading 0 ?
+	TODO: drop leading 0 ? - or more accurately, this should be 21.1.1 I guess...
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check there are no menu icons
 #FIXME: Check hidden_args has anything removed (possibly conditional)
