@@ -493,7 +493,7 @@ checkout v22.0
 	-    mining_priority						c1b36c3197d  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					8fa52dc8120
 	5891  qt_console_history_persist			7ed83221a81	last=0cd5fc301d6 qt_console_history_persist
-	7219  rbf_opts-0.21+knots					ec4af75863b	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
+	7219  fullrbf-22+knots						ec4af75863b	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					c84af5db7d7
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
