@@ -508,8 +508,6 @@ checkout v22.0
 		# TODO: Each release, see if we need to bump setting names for GUI states
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
-	-    mempool_knots014_compat-0.21+knots		4d6b8b17d26	last=1befffc0b48 mempool_dat_extensible
-		# NOTE: Load-only
 	11413 rpc_feemode_explicit_compat-0.21+knots	ca8dbc1e33d
 	-     netperms_implicit_addr				14687738e62
 	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba
@@ -562,6 +560,7 @@ TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 		TODO: #21063 API change if merged
 		gd marco/2109-fixArgParse
 		gd meshcollider/202109_createmultisig_warnings
+		TODO: mempool.dat Knots 0.14-0.21.0 compat dropped
 	n/a  (cherrypick=33ee7963ad4)				6addc3eccab  # update manpages (build first)
 	n/a  (cherrypick=936fd13cd23)				a886811721c  # translation update
 # NOTE: use git diff --minimal for patches!
