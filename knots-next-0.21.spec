@@ -668,7 +668,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	-     bytespersigopstrict-0.21+knots		42fef5047e8	last=0d0b8e71fbb bytespersigopstrict-22+knots
 	9749  unique_spk_mempool-0.21+knots			6f7822ceed3	last=b6f4ce7b327 unique_spk_mempool-22+knots
 	-     bloom_default-0.21+knots				d714d612b62
-	-     enforce_checkpoints					d41dcd18f7c
+	-     enforce_checkpoints-0.21				d41dcd18f7c	last=1de4af3f6c7 enforce_checkpoints
 	n/a   checkpoint_update-0.21				79d59f9403e
 	10282 timebomb_knots						c8b2793aff0
 m	-     rwconf_policy-0.21+knots				bae9992c73c
