@@ -504,15 +504,14 @@ checkout v22.0
 	-     gui_peers_no_net_column
 	22439 achow101/guix-in-gitian							last=ebda0463748
 		# Leaving cache mkdir issue unfixed, so user can't forget to repopulate cache if moved away
-	n/a   gui_peers_bump_setting_keys-22+k
-		# TODO: Each release, see if we need to bump setting names for GUI states
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
 	11413 rpc_feemode_explicit_compat-22		ca8dbc1e33d
 	-     netperms_implicit_addr				14687738e62
 	12674 rpc_onetry_nonpriv-22+knots			b235a94b1ba
 	# TODO: add a bitcoinknots.conf ?
-	TODO: Check all saveState/restoreState GUI stuff and bump name as needed
+	n/a   gui_peers_bump_setting_keys-22+k
+		# TODO: Each release, see if we need to bump setting names for GUI states
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				66fa127a85b
