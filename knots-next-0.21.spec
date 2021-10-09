@@ -659,7 +659,7 @@ m	7510  rwconf_gui							31da64c50bc
 		# NOTE: Load-only
 NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	11413 rpc_feemode_explicit_compat-0.21+knots	ca8dbc1e33d
-	-     netperms_implicit_addr				14687738e62
+	-     netperms_implicit_addr-0.21+knots		14687738e62	last=d1ce634b708 netperms_implicit_addr
 	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba
 	# TODO: add a bitcoinknots.conf ?
 # POLICY:
