@@ -670,6 +670,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	-     bloom_default-0.21+knots				d714d612b62
 	-     enforce_checkpoints-0.21				d41dcd18f7c	last=1de4af3f6c7 enforce_checkpoints
 	n/a   checkpoint_update-0.21				79d59f9403e
+		TODO: update
 	10282 timebomb_knots						c8b2793aff0
 m	-     rwconf_policy-0.21+knots				bae9992c73c
 		# Include Knots policy changes for simplification of final rebase process
