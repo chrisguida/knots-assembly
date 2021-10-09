@@ -508,7 +508,7 @@ checkout v22.0
 		# TODO: Each release, see if we need to bump setting names for GUI states
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
-	11413 rpc_feemode_explicit_compat-0.21+knots	ca8dbc1e33d
+	11413 rpc_feemode_explicit_compat-22		ca8dbc1e33d
 	-     netperms_implicit_addr				14687738e62
 	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba
 	# TODO: add a bitcoinknots.conf ?
