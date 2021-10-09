@@ -540,6 +540,7 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-0.21						24601755a13	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
+		TODO: Consider backporting menu ordering changes
 	9504 dumpmasterprivkey-0.21					f9192d9a751	last=07fc81109a
 	g444  gui_netwatch-0.21+knots				539fa817d21	last=3c8fe76f6ee gui_netwatch
 		# NOTE: Was #9849
@@ -651,6 +652,7 @@ m	7510  rwconf_gui							31da64c50bc
 	-     gui_request_payment_label-0.19		bd9ec2f9431
 	-     gui_peers_sort_network-0.21+knots		a3e6f0ec5e2
 		TODO: Replace with fixed commit in gui_peers_sort_network-22
+	TODO: save/restore peer column widths? (in 22)
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
 	-    mempool_knots014_compat-0.21+knots		4d6b8b17d26	last=1befffc0b48 mempool_dat_extensible
