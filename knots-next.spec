@@ -516,7 +516,7 @@ checkout v22.0
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				66fa127a85b
 	-     bytespersigopstrict-22+knots			42fef5047e8
-	9749  unique_spk_mempool-0.21+knots			6f7822ceed3
+	9749  unique_spk_mempool-22+knots			6f7822ceed3
 	-     bloom_default-0.21+knots				d714d612b62
 	-     enforce_checkpoints					d41dcd18f7c
 	n/a   checkpoint_update-0.21				79d59f9403e
