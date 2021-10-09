@@ -660,7 +660,7 @@ m	7510  rwconf_gui							31da64c50bc
 NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	11413 rpc_feemode_explicit_compat-0.21+knots	ca8dbc1e33d
 	-     netperms_implicit_addr-0.21+knots		14687738e62	last=d1ce634b708 netperms_implicit_addr
-	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba
+	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba	last=054c2214369 rpc_onetry_nonpriv-22+knots
 	# TODO: add a bitcoinknots.conf ?
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions

@@ -510,7 +510,7 @@ checkout v22.0
 	-    preserve_unsupported_keyflags			8c461dcdced
 	11413 rpc_feemode_explicit_compat-22		ca8dbc1e33d
 	-     netperms_implicit_addr				14687738e62
-	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba
+	12674 rpc_onetry_nonpriv-22+knots			b235a94b1ba
 	# TODO: add a bitcoinknots.conf ?
 	TODO: Check all saveState/restoreState GUI stuff and bump name as needed
 # POLICY:
