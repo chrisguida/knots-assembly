@@ -533,7 +533,7 @@ checkout v22.0
 	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (cherrypick=eaa9f92b50b)  # delete release notes fragments
-	7483  svg_icon-0.21+knots					469d40983b1
+	7483  svg_icon-22+knots						469d40983b1
 # BRANDING:
 	n/a   knots_branding-0.21					1ee7ca43f35
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4

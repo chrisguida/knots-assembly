@@ -94,7 +94,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			a7912915185
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 TM	19362 rpc_scantxoutset_reset_progress-0.17	13e1e8980d8	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
 m	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/wallet_351
-	(CHECK-LAST)	last=??? listwalletdir_skip_data
+	(CHECK-LAST)	last=17f214f4b7f listwalletdir_skip_data
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
@@ -217,7 +217,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=04ce309840f Sjors/2021/05/versionbits_period_start
-	(CHECK-LAST)	last=??? rpc_gbci_period_start-22+knots
+	(CHECK-LAST)	last=d6d1a1b47eb rpc_gbci_period_start-22+knots
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	g275  gui_darkmode-0.21_pt1					8939a4a109b
@@ -250,7 +250,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	(CHECK-LAST)	last=36f5e224f5f origin-pull/21422/head
 m	17463 gui_custom_sendyes					998dd492930
-	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=??? wallet_no_reuse-0.21+knot
+	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=??? wallet_warn_reuse_gui
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
 	-     rpc_gai_txids-0.21+knots				01bfbd88472	last=??? getaddressinfo_txids
 	18772 -										bcfd0b89ee7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
@@ -576,7 +576,7 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-2
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	NOTE TO SELF: Remove release-notes-prNNNNN.md files BEFORE the svg icon merge so it doesn't get added then removed in different patch files >_<
-	7483  svg_icon-0.21+knots					469d40983b1
+	7483  svg_icon-0.21+knots					469d40983b1	last=??? svg_icon-22+knots
 # BRANDING:
 	n/a   knots_branding-0.21					1ee7ca43f35
 	TODO: drop leading 0 ? - or more accurately, this should be 21.1.1 I guess...
