@@ -6,7 +6,7 @@ lastapply no-merge
 checkout v0.21.2
 @0.21.x-syslibs
 # BUILD BUGS:
-	21882 fuzz32_llvm_workaround-0.21+knots		d994684b569	last=bd55f62549e hebasto/210507-fuzz32
+	21882 fuzz32_llvm_workaround-0.21+knots		d994684b569	last=e4c8bb62e4a hebasto/210507-fuzz32
 	20938 configure_latomic_checks-0.14^		ee5e40704b0
 	21920 configure_latomic_checks-0.14			4f3c88f543a
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
