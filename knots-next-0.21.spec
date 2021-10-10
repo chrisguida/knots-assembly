@@ -27,17 +27,17 @@ checkout v0.21.2
 		# Omitted default-tests-to-descriptors-when-bdb-not-compiled: a2282b44a4d 373158bc44c
 		# Omitted "Don't make any wallets unless wallet is required": 45b4366f8ff 104a3a22564 6e06ca05880
 		# Diff-minimised
-	-     opt_bdb_extracare-0.21				3d26b04ad0f
+	-     opt_bdb_extracare-0.21				3d26b04ad0f	last=aa6a707d7ca opt_bdb_extracare
 	20121 secp256k1_allow_bignum				ed298e34b3d
 	20358 -										980c71c1f50	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					cfc912ffcdc	last=836a3dc02c7 jonas/2020/12/getauxval
-	# 22.0 TODO: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
+	# TODO: system crc32c
 @0.21.x-knotsfixes
 # TESTS:
-	22279 fix_fuzz_baseencdec_pr22279-0.21		3d80a04b144
-	22002 fix_fuzz_system_pr22002-0.21			867a7fc53df
-	22137 fix_fuzz_system_pr22137-0.21			a7912915185
+TM	22279 fix_fuzz_baseencdec_pr22279-0.21		3d80a04b144
+TM	22002 fix_fuzz_system_pr22002-0.21			867a7fc53df
+TM	22137 fix_fuzz_system_pr22137-0.21			a7912915185
 	-     lint_relaxer							9afa5d8517a
 	17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20	6430702d120
@@ -53,6 +53,7 @@ checkout v0.21.2
 	20845 net_logcategory_localdisconnect-0.21	fb5ba0afa13	last=fa55159b9ed marco/2101-netLogDisconnect
 	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 	14968 laanwj/2018_12_http_bind_error		e75ff7b9323	last=7b5e4001f9 laanwj/2018_12_http_bind_error
+	(CHECK-LAST)	last=8520c437a0d http_bind_error
 	-     http_bind_error+extra					81ed4fe33fa
 	9524 marco/Mf1701-qaPruning					ae3444d7950	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					3cee4ceb1b1
@@ -91,13 +92,14 @@ checkout v0.21.2
 		# HELD BACK 33ca3590243...4aaad74c4c8 due to refactor complication
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
-	19362 rpc_scantxoutset_reset_progress-0.17	13e1e8980d8	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
+TM	19362 rpc_scantxoutset_reset_progress-0.17	13e1e8980d8	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
 m	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/wallet_351
+	(CHECK-LAST)	last=??? listwalletdir_skip_data
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
 	# Needs review: 19434 promag:2020-06-remote-disconnect
-	# Needs review: g18   hebasto-g/200701-peer
+	g18   hebasto-g/200701-peer
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs review: g59   hebasto-g/200814-rpc
 	# Needs review: 19793 ryanofsky/pr/badsalv
@@ -106,11 +108,12 @@ m	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/
 	19884 fixedseeds-0.21						5ff339ffa5d
 		# +partial #21254 (bugfix only)
 	19888 getblockstats_utxo_actual-0.21+knots	37dd20ac3a1	last=37bbfe96674
+	(CHECK-LAST)	last=??? getblockstats_utxo_actual-22+knots
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					13002cb08f2	last=2e386cd3dd3
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
-	# Needs review: g121 promag-g/2020-10-missing-transaction-notifications
+	g121  promag-g/2020-10-missing-transaction-notifications
 	# Needs review: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch				02b171f7ec5
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
@@ -144,9 +147,9 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 		# +21447 TODO
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
 	# TODO: Last commit? Diff-minimised somehow? 21560 laanwj/2021-03-torv3-hardcoded-seeds
-	21644 bugfix_addlocal_downloadbind-0.21		2f5bc37b025
+	Partially upstream: 21644 bugfix_addlocal_downloadbind-0.21		2f5bc37b025
 	21822 bugfix_cli_pr21822-0.21				791f7e23c3b
-	21907 listwalletdir_iterate_inf-0.19		985e103723c
+TM	21907 listwalletdir_iterate_inf-0.19		985e103723c
 	21944 fix_listwalletdir_rootdir-0.21+knots	32993f653d7
 	22013 ignoreblockrelayfordnsskip-0.21		219665bf068
 	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
@@ -160,16 +163,16 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	g251  fix_bip70_errormsg-0.20				5d45a4f9de0
 	g271  fix_gui_rpcconsole_fontsz_prompt-0.21	492bb4b683a
 	g276  gui_peers_elide-0.18					ba0720634c9
-	g280  gui_urihandler_nophishing-0.20		b7026991708
+TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	g325  gui_peers_rightalign_id-0.21			2d229bb6dd9
 	g329  rpcconsole_toolbuttons-0.21+knots		a40ba0d5ba2
 	# Needs review: 22261 jnewbery/2021-06-broadcast-fixes
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
 	22308 bugfix_pr22308-0.17					c009ccfeb2f
 	22311 bugfix_pr22311-0.21					995e84e1904
-	# Needs review: g365  hebasto-g/210614-tx
 	18842 fix_wallet_pr18842-0.21				42b45600d37
 	22359 fix_wallet_pr22359-0.21				3244e0d002f	last=fa6fd3dd6a4
+	(CHECK-LAST)	last=??? fix_wallet_pr22359-22
 		# Semi-diff-minimised
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds-0.21								last=3b6153ba336 bpchild_closefds
@@ -214,6 +217,7 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=04ce309840f Sjors/2021/05/versionbits_period_start
+	(CHECK-LAST)	last=??? rpc_gbci_period_start-22+knots
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	g275  gui_darkmode-0.21_pt1					8939a4a109b
@@ -221,6 +225,7 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	g154  gui_darkmode-0.21
 	g366  gui_palettechange-0.21				55b04f94483
 	-     restore_win32-0.21+knots				d37803a84cc	last=3e30ae0514e restore_win32
+	(CHECK-LAST)	last=??? restore_win32-22
 	-     restore_linux32						efa9ee85ed6
 		# NOTE: gitian only
 	20963 gitian_power64-0.21+knots				d7151c1b629	last=543bf745d38 gitian_power64
@@ -241,6 +246,7 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 	14641 fundraw_minconf-0.21					fde6c8132bc	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
+	(CHECK-LAST)	last=??? fundraw_minconf
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
@@ -275,6 +281,7 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram							82829beb890	last=b94292a7cb jonas/2019/04/feeinfo
+	(CHECK-LAST)	last=??? fee_histogram+pr15836_api
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 		# NOTE: Backported some features/test from #21422 (but not API incompatibilities)
 		# NOTE: Added extra tests for compatibility with old Knots
@@ -283,13 +290,14 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
 m	17463 gui_custom_sendyes					998dd492930
-	15987 wallet_no_reuse-0.21+knots			7515d038c84
+	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=??? wallet_no_reuse-0.21+knot
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
-	-     rpc_gai_txids-0.21+knots				01bfbd88472
+	-     rpc_gai_txids-0.21+knots				01bfbd88472	last=??? getaddressinfo_txids
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	18772 -										bcfd0b89ee7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	22918 rpc_getblock_prevouts_fees-0.21		5b3f15dcda3	last=7fc316e2c9f
+	(CHECK-LAST)	last=??? rpc_getblock_prevouts_fees-22
 		# Was originally #16083, then #21245
 		# Held back change of verbosity to class enum, and generally kept #16083 base
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
@@ -309,13 +317,16 @@ m	17463 gui_custom_sendyes					998dd492930
 	18972 neutrino_whitelist-mini				892d210d2eb	last=339fe189eb9
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=cc2644ffc6e achow101/bip174-extensions
+	(CHECK-LAST)	last=??? psbt_ver_proprietary_xpub-22-mini
 		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
 	17631 rest_blockfilter-0.21					31a7b2798a2	last=16d8d2da598 matt/2019-11-filter-rest
+	(CHECK-LAST)	last=??? rest_blockfilter-22
 		# NOTE: Dropped unrelated extra commits
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	g319  gui_openuri_pastebtn-0.21				3cb5fcd37dd	last=5062565e112
+	(CHECK-LAST)	last=??? gui_openuri_pastebtn-22
 		# NOTE: Used to be #17955
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.21+knots	996d632f395	last=19e28a41168 elichai/2020-01-siphash
@@ -382,13 +393,16 @@ m	17463 gui_custom_sendyes					998dd492930
 m	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 getblockfrompeer-0.21					947c37b0b52	last=d0b537458d9 Sjors/2020/11/getblockfrompeer
+	(CHECK-LAST)	last=??? rpc_getblockfrompeer_wo_header-22
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
+	(CHECK-LAST)	last=??? rpc_setfeerate-22
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots		69a6f1d0a06	last=3eb6f8b2e61 jonatack/upgradewallet-improvements
 	20407 rpcauthfile-0.21+knots				0726f132d9d	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
+	(CHECK-LAST)	last=??? rpcauthfile
 		# NOTE: fixed bug, added multi-line support, and added tests
 	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
@@ -396,8 +410,10 @@ m	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofs
 	# Needs a reason to move code chunks: 20599 jnewbery/2020-12-tolerate-early-send-messages
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	20664 rpc_scanblocks-0.21					ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
+	(CHECK-LAST)	last=??? rpc_filterblocks
 		# Held back insignificant API changes ab315e5294b...71b7cdb460e
 	20702 rpc_getblocklocations-0.21			8db5bda17bd	last=9b03c654eb3
+	(CHECK-LAST)	last=??? rpc_getblocklocations
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							1dcbfaca3b6
 	# Needs review? 20867 darosior:descriptor_multi_wsh
@@ -410,6 +426,7 @@ m	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofs
 m	g179  gui_peers_conntype-0.21+knots			91c9dee9995	last=be4cf4832f1 jonatack-g/add-peers-dir-and-type-columns
 		# NOTE: Held back 9f76ba6597c...be4cf4832f1 (no real change once we add gui#363 on top)
 	g363  qt_peers_directionarrow-0.21+knots	4c6de52a7fc	last=41c881c8a78 qt_peers_directionarrow
+	(CHECK-LAST)	last=??? qt_peers_directionarrow-22+knots
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 	20916 rpc_testmempoolaccept_wtxid-0.21		c20cc1b1caa	last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
@@ -420,6 +437,7 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots	9ca3cf1b24b
 	15129 rpc_removeaddress-0.21				423fd4425f4	last=fdbd01b50e0 benthecarman/remove_watch_only_address
+	(CHECK-LAST)	last=??? remove_watch_only_address-22
 	# TODO: 18077 hebasto/20200130-natpmp
 		# FIXME: Needs #21320
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
@@ -489,6 +507,7 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
 	21780 rpc_maxmempool-0.21					0bc176fa910	last=040b280c661 rebroad/MaxMempoolRPC
+	(CHECK-LAST)	last=??? rpc_maxmempool
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Too many conflicts: 21832 cli_color_getinfo-0.21							last=14cb2e0fe13
@@ -510,11 +529,13 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	g293  gui_peers_services_wordwrap-0.18		d8b9433aeef
 	g298  gui_peers_altrowcolor-0.21+knots_pt1	840c66b724f
 	g307  gui_peers_altrowcolor-0.21+knots		7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
+	(CHECK-LAST)	last=??? gui_peers_rowcolouropt-22
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
 	g309  gui_neticon_peerstab-0.18				f3e47ff2e91
 		# NOTE: Fixed Qt5.5 compatibility
 		# Diff-minimised
 	g318  gui_peers_copyaddr-0.14				172639c9e05	last=65d1d351786 jarolrod-g/copy-addr-peer
+	(CHECK-LAST)	last=??? gui_peers_copyaddr-22
 		# NOTE: Added keyboard shortcut
 		# NOTE: Fixed Qt5.5 compatibility
 	# Needs review: g342 hebasto-g/210521-wallet
@@ -532,27 +553,34 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	22372 multinotify
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
+	(CHECK-LAST)	last=??? sort-multisigs-22
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	9152 sweepprivkeys							9d6360908e1
 	9245 ionice									52ed64216eb
 	-    ionice_win								22b1c9241e8
 	8501  old_stats_rpc-0.21					2fa33c1f65c	last=7af0ea43b2
+	(CHECK-LAST)	last=??? old_stats_rpc-22
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-0.21						24601755a13	last=63fb11652f
+	(CHECK-LAST)	last=??? old_stats_qt-22
 		# Held back on old version due to conflict with RPC updates...
 		TODO: Consider backporting menu ordering changes
 	9504 dumpmasterprivkey-0.21					f9192d9a751	last=07fc81109a
 	g444  gui_netwatch-0.21+knots				539fa817d21	last=3c8fe76f6ee gui_netwatch
+	(CHECK-LAST)	last=??? gui_netwatch-22+knots
 		# NOTE: Was #9849
 		TODO: Ensure bugfix is in
 	10615 multiwallet_rpc-0.21+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
+	(CHECK-LAST)	last=??? multiwallet_rpc-22+knots
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-0.21+knots					dad75802d23	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	(CHECK-LAST)	last=??? zmq_wtx-22+knots
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					7a1723439c5
 		# NOTE: Originally based on #12674
 m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_invblk_punishment
 	10350 filtered_witblock-0.21				5cb7a4a645a	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	(CHECK-LAST)	last=??? filtered_witblock-22
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -560,15 +588,20 @@ m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_in
 	11750 coincontrol_multiselect				e40fcaeb7fe	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
 	11770 rest_fee-0.21							d2f6a3d7d5d	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	(CHECK-LAST)	last=??? rest_fee
 	11803 bugfix_dumpwallet_hdkeypath			3b64c7195f0
 	12965 scriptthreads-0.20					8d959f05d3c	last=dfab6c6866 jonas/2018/04/svt
+	(CHECK-LAST)	last=??? scriptthreads
 	13203 dsha256_power8-0.20					9703ce00ee9	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		6ceb71baa4c
 	15218 postibd_flush							84b38613864	last=d2ecb70d64  # validation: Flush state after initial sync
+	(CHECK-LAST)	last=??? postibd_flush-22+knots
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-0.21+knots			e509f51807e	# latest code now
+	(CHECK-LAST)	last=??? tor_gui_pairing-22+knots
 	15421 tor_subprocess-0.21+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
+	(CHECK-LAST)	last=??? tor_subprocess-22+knots
 	# TODO: tor gitian bundle!
 	15633 nohbcbfornonwit-0.21+knots			c48ce12aa19	last=ac897f0bd3a nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
@@ -581,24 +614,32 @@ m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_in
 m	15861 restore_vbits_warning-0.21+knots		43dad5a3906	last=f016cd420df restore_vbits_warning
 	20832 rpc_validateaddress_error-0.21.1		46b02eee06b
 	16807 bech32_error_detection-0.21.1+knots	47e52930e8f	last=3bc568d6753 meshcollider/201909_bech32_error_detection
+	(CHECK-LAST)	last=??? old_bech32_error_detection
 	n/a   rpc_compat_error_index-0.21+knots		c0b669d2000
+	(CHECK-LAST)	last=??? rpc_compat_error_index-22+knots
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
-	-     gui_bech32_errpos-0.21.1+knots		63858cb48e1  # Latest code
+	-     gui_bech32_errpos-0.21.1+knots		63858cb48e1
+	(CHECK-LAST)	last=??? gui_bech32_errpos-22+knots
 NM	16807 bech32_error_detection-0.21+knots		80ccc5ad7c5	last=54e107add41 meshcollider/201909_bech32_error_detection
 NM	-     gui_bech32_errpos-0.21+knots			c0b3d61d95e
 	17636 guisettings-0.21						d4da7377cb0	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
 m	17958 rpc_getgeneralinfo-0.21+knots			95572de08a2	last=cdbd38df131  # getgeneralinfo RPC
+	(CHECK-LAST)	last=??? rpc_getgeneralinfo
 	18223 blockfilter_v0-0.19					fbe06449a10	last=5561e7a0c79
+	(CHECK-LAST)	last=??? blockfilter_v0
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
 m	19089 cli_getinfo_mwbalances-0.21+knots		19e9d705f4c	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+	(CHECK-LAST)	last=??? cli_getinfo_mwbalances
 m	19092 cli_getinfo_mw_total_balance-0.21+knots	aedba84cdb0	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+	(CHECK-LAST)	last=??? cli_getinfo_mw_total_balance
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
 m	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
+	(CHECK-LAST)	last=??? wallet_rpc_lastprocessedblock-22+k
 	# TODO: 18789 achow101/create-unsigned-sendconfdialog
 		#TODO: Resolve conflict with wallet_no_reuse
 		#OR these two:
@@ -607,8 +648,10 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
 	19117 rpc_getrpcwhitelist					4e5e20bd9ec
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-0.21+knots	bfaf26b19f1
+	(CHECK-LAST)	last=??? getrpcwhitelist_wallets-22+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	17167 whitelist_outgoing-mini-0.21+knots	d6b39ef5628	last=81622ba1229 whitelist_outgoing
+	(CHECK-LAST)	last=??? whitelist_outgoing-mini-22+knots
 		#TODO: Split this up?
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
@@ -621,12 +664,11 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	# FIXME: text below QR Code doesn't fit bech32 with Console font!
 # Non-upstreamed functionality:
-	# 22.0 TODO: Revert #21992 (removed -feefilter option, useful for manually prioritised transactions)
-	# 22.0 TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
-	-     gui_payreq_textedit-0.21				4a9c6fc46e5
+	-     gui_payreq_textedit-0.21				4a9c6fc46e5 gui_payreq_textedit
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				011b11763f6
-m	-     walletnotify_w_win-0.21+knots			0fafbd4a598	last=a291491d2fd walletnotify_w_win
+m	-     walletnotify_w_win-0.21+knots			0fafbd4a598	ast=a291491d2fd walletnotify_w_win
+	(CHECK-LAST)	last=??? walletnotify_w_win-22+knots
 	14137 win_taskbar_progress					35568cf34dd	last=18eb4dbb8a
 	-     restore_blockmaxsize					7cf11b880fc
 	7107 qtnetworkport							dd2ad9343f6	last=1f37c87 origin-pull/7107/head
@@ -644,6 +686,7 @@ m	7510  rwconf_gui							31da64c50bc
 	5861 gui_restore_addresses					8fa52dc8120
 	5891  qt_console_history_persist-0.21+knots	7ed83221a81	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-0.21+knots					ec4af75863b	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
+	(CHECK-LAST)	last=??? fullrbf-22+knots
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					c84af5db7d7
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
@@ -651,13 +694,14 @@ m	7510  rwconf_gui							31da64c50bc
 	-     gui_wallet_displayname-0.19			71cc4a727ef	# Latest code now
 	-     gui_request_payment_label-0.19		bd9ec2f9431
 	-     gui_peers_sort_network-0.21+knots		a3e6f0ec5e2
+	(CHECK-LAST)	last=??? gui_peers_sort_network-22
 		TODO: Replace with fixed commit in gui_peers_sort_network-22
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
 	-    mempool_knots014_compat-0.21+knots		4d6b8b17d26	last=1befffc0b48 mempool_dat_extensible
 		# NOTE: Load-only
 NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
-	11413 rpc_feemode_explicit_compat-0.21+knots	ca8dbc1e33d
+	11413 rpc_feemode_explicit_compat-0.21+knots	ca8dbc1e33d last=??? rpc_feemode_explicit_compat-22
 	-     netperms_implicit_addr-0.21+knots		14687738e62	last=d1ce634b708 netperms_implicit_addr
 	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba	last=054c2214369 rpc_onetry_nonpriv-22+knots
 	# TODO: add a bitcoinknots.conf ?
@@ -690,7 +734,6 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-2
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
-# 22.0 TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
 	n/a  (bump_version=Knots:20211003)			0a9a4537a5d
 #	n/a  knots_historical_relnotes				61100a2
@@ -703,7 +746,6 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-2
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-		# 22.0 TODO: #21063 API change if merged
 		gd marco/2109-fixArgParse
 	n/a  (cherrypick=33ee7963ad4)				6addc3eccab  # update manpages (build first)
 	n/a  (cherrypick=936fd13cd23)				a886811721c  # translation update

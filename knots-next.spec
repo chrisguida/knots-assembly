@@ -285,6 +285,7 @@ checkout v22.0
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	20664 rpc_filterblocks						ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 		TODO: test/functional/rpc_scanblockfilters.py:44: relevent ==> relevant
+		Rename branch??? 0.21 used a correct name
 	20702 rpc_getblocklocations					8db5bda17bd	last=9b03c654eb3
 		TODO: File "test/functional/rpc_getblocklocations.py" contains a shebang line, but has the file permission 644 instead of the expected executable permission 755. Do "chmod 755 test/functional/rpc_getblocklocations.py" (or remove the shebang line).
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
