@@ -226,6 +226,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	g366  gui_palettechange-0.21				55b04f94483
 	-     restore_win32-0.21+knots				d37803a84cc	last=3e30ae0514e restore_win32
 	(CHECK-LAST)	last=??? restore_win32-22
+		TODO? [restore_win32-22 1d2e11bc769] fixup! Partially revert part of #15939 "Remove Windows 32 bit build"
 	-     restore_linux32						efa9ee85ed6
 		# NOTE: gitian only
 	20963 gitian_power64-0.21+knots				d7151c1b629	last=543bf745d38 gitian_power64
@@ -328,10 +329,11 @@ m	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofs
 		# NOTE: fixed bug, added multi-line support, and added tests
 	g149  intro_assumevalid						8979d48f938
 	20664 rpc_scanblocks-0.21					ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
-	(CHECK-LAST)	last=??? rpc_filterblocks
+	(CHECK-LAST)	last=??? rpc_scanblocks
 		# Held back insignificant API changes ab315e5294b...71b7cdb460e
 	20702 rpc_getblocklocations-0.21			8db5bda17bd	last=9b03c654eb3
 	(CHECK-LAST)	last=??? rpc_getblocklocations
+		TODO: +x test/functional/rpc_getblocklocations.py
 	20827 ibd_prune_max							1dcbfaca3b6
 	g163  gui_peer_conntype-0.21				1157253e0af  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
@@ -371,6 +373,7 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	g213  gui_payrequest_copyaddr-0.18			d165eeec1fc
 	g214  gui_payrequest_disablena-0.18+knots	4853dd20a7e
 	21327 p2p_ignore_tx_in_ibd-0.21				093927be571	last=648c5c73aef
+	(LAST-CHECK)	last=??? p2p_ignore_tx_in_ibd-22
 	21359 rpc_fundraw_includeunsafe-0.21+knots	52b632873e7
 	g205  gui_save_txview_reqview_columns-0.19	6facbfb184d
 		# +gui#368

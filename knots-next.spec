@@ -147,7 +147,6 @@ checkout v22.0
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	-     restore_win32-22						d37803a84cc	last=3e30ae0514e restore_win32
-		TODO: File "ci/test/00_setup_env_win32.sh" contains a shebang line, but has the file permission 644 instead of the expected executable permission 755. Do "chmod 755 ci/test/00_setup_env_win32.sh" (or remove the shebang line).
 	# TODO: guix win32
 	-     gitian_linux32						efa9ee85ed6
 	-     guix_linux_i686
@@ -263,7 +262,7 @@ checkout v22.0
 	# Needs work: g86   hebasto-g/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
 	g291  gui_trafficgraph_vert-0.21			088733fcf9a	last=1f373f93a60  # Enlarge Network Traffic Graph
-		TODO: src/qt/forms/debugwindow.ui:696: Recieved ==> Received
+		# TODO: src/qt/forms/debugwindow.ui:696: Recieved ==> Received
 		# WAS gui#90
 		# Removed dialog size change
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
@@ -282,11 +281,9 @@ checkout v22.0
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid						8979d48f938
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	20664 rpc_filterblocks						ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
-		TODO: test/functional/rpc_scanblockfilters.py:44: relevent ==> relevant
-		Rename branch??? 0.21 used a correct name
+	20664 rpc_scanblocks						ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	20702 rpc_getblocklocations					8db5bda17bd	last=9b03c654eb3
-		TODO: File "test/functional/rpc_getblocklocations.py" contains a shebang line, but has the file permission 644 instead of the expected executable permission 755. Do "chmod 755 test/functional/rpc_getblocklocations.py" (or remove the shebang line).
+		# NOTE: Fixed +x on test/functional/rpc_getblocklocations.py
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							1dcbfaca3b6
 	g363  qt_peers_directionarrow-22+knots		4c6de52a7fc	last=217d1051c8b qt_peers_directionarrow
@@ -311,8 +308,8 @@ checkout v22.0
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
-	21327 -										093927be571	last=648c5c73aef  # p2p_ignore_tx_in_ibd-0.21
-		TODO: test/functional/p2p_ibd_txrelay.py:14: error: Module 'test_framework.messages' has no attribute 'FromHex'  [attr-defined]
+	21327 p2p_ignore_tx_in_ibd-22				093927be571	last=648c5c73aef  # p2p_ignore_tx_in_ibd-0.21
+		# NOTE: Resolved silent conflict FromHex->from_hex
 	g368  bugfix_gui_restored_columns_stretch	6facbfb184d
 	g230  gui_backup_formats					557904a49bb
 	# TODO? 21413 glozow/2021-03-bypass-timelocks
@@ -508,10 +505,7 @@ checkout v22.0
 	-     gui_request_payment_label-0.19		bd9ec2f9431
 	-     gui_peers_sort_network-22				a3e6f0ec5e2
 	-     gui_peers_no_net_column
-	22439 achow101/guix-in-gitian							last=ebda0463748
-		TODO: contrib/gitian-descriptors/README.md:46: comamnd ==> command
-		TODO: contrib/gitian-descriptors/README.md:51: commited ==> committed
-		# Leaving cache mkdir issue unfixed, so user can't forget to repopulate cache if moved away
+	22439 guix_in_gitian									last=ebda0463748 achow101/guix-in-gitian
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
 	11413 rpc_feemode_explicit_compat-22		ca8dbc1e33d
