@@ -38,7 +38,7 @@ checkout v0.21.2
 TM	22279 fix_fuzz_baseencdec_pr22279-0.21		3d80a04b144
 TM	22002 fix_fuzz_system_pr22002-0.21			867a7fc53df
 TM	22137 fix_fuzz_system_pr22137-0.21			a7912915185
-	-     lint_relaxer							9afa5d8517a
+	-     lint_relaxer-0.21						9afa5d8517a	last=7c3ea4aca40 lint_relaxer
 	17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20	6430702d120
 # FIXES:
@@ -177,7 +177,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds-0.21								last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
-	g379  ryanofsky-g/pr/badset								last=1ee6d0b01a5
+	g379  qt_reset_bad_settingsjson-0.21
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
 	22577 fix_race_pr22577-22
 	22591 missing_settings_err-0.21

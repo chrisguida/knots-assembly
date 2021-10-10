@@ -104,8 +104,7 @@ checkout v22.0
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds									last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
-	g379  ryanofsky-g/pr/badset								last=1ee6d0b01a5
-		TODO: src/qt/bitcoin.cpp:192: occured ==> occurred
+	g379  qt_reset_bad_settingsjson-0.21
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
 	22577 fix_race_pr22577-22
 	22591 missing_settings_err-0.21
