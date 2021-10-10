@@ -231,55 +231,16 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	20963 gitian_power64-0.21+knots				d7151c1b629	last=543bf745d38 gitian_power64
 		# NOTE: Originally #14066
 		# Held back 31dbf0b677d..543bf745d38 - probably only applicable to master
-	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
-	# TODO: Just forgetaddress from #8488
-	#8549 jmcorgan/zmq_mempool
-			# check if issue mentioned in 7753 still exists
-	# not ready yet: 9483 SPV
-	# wait for SPV: 9502	# [Qt] Add option to pause/resume block downloads
-	# not ready?? 9722 GUI: Display warning when attempting address reuse (wallet format changes!)
-	# not ready: 9745 [RPC] Getting confirmations command
-	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
-	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
-	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
-	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 	14641 fundraw_minconf-0.21					fde6c8132bc	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	(CHECK-LAST)	last=??? fundraw_minconf
-	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
-		# NOTE: Latest version is rebased for adding inputs, with serious issues
-	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
 	12677 listunspent_ancestorinfo				28b3902be59
-	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
-	# TODO: 12705 kallewoof/importmulti-wif-support
-	# TODO ? 12792 w/ renamed param
 	18479 rpc_sign_show_fees					4d67400f273	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
-	# Needs review and care (new index): 13014 jonas/2018/04/txindex_prune
-	# Needs work: 13947 Dandelion transaction relay (BIP 156)
-	# Needs work: 13989 add avx512 instrinsic
-	# Needs review: 13990 WIP: allow fee estimation to work with lower fees
-	# Needs review: 14032 Add p2p layer encryption with ECDH/ChaCha20Poly1305
-	# Needs review: 14035 Utxoscriptindex
-	# Needs work: 14053 Add address-based index (attempt 4?)
-	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
-	# wait for Core?: 14707  # [RPC] Include coinbase transactions in receivedby RPCs
-	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	g119  rm_send2self-mini						f97c6773966	last=aa744e4382e rm_send2self
 		# NOTE: Originally #15115
-	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
-	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
-	# Needs review: 15204 promag:2019-01-openexternalwallet
-	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
-	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
 	15423 tor_socks_port-0.21					67bfe9cad94	last=d37d95a9ea2 tor_socks_port
 		# Held back 962f168a014..398df42f449
-	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
-	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
-	# Needs review: 15502 ajtowns:201902-trytoavoiddns
-	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
-	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram							82829beb890	last=b94292a7cb jonas/2019/04/feeinfo
 	(CHECK-LAST)	last=??? fee_histogram+pr15836_api
 		# NOTE: removed extraneous Bitcoin-Qt.* files
@@ -287,14 +248,10 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	(CHECK-LAST)	last=36f5e224f5f origin-pull/21422/head
-	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
-		# TODO: Check gui#320 for usability
 m	17463 gui_custom_sendyes					998dd492930
 	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=??? wallet_no_reuse-0.21+knot
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
 	-     rpc_gai_txids-0.21+knots				01bfbd88472	last=??? getaddressinfo_txids
-	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
-	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	18772 -										bcfd0b89ee7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	22918 rpc_getblock_prevouts_fees-0.21		5b3f15dcda3	last=7fc316e2c9f
 	(CHECK-LAST)	last=??? rpc_getblock_prevouts_fees-22
@@ -304,16 +261,8 @@ m	17463 gui_custom_sendyes					998dd492930
 		# Renamed "coinbase" field to "generated"
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
-	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
-	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
-	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	16795 rpc_inferred_output_descriptors		5de05c6c9f6	last=3038f944a6d instagibbs/decode_descriptor
 		# Fixes: 478a4da04e77ca4438929909fafdbb0e57614577
-	# Needs review: 16981 LarryRuane:reindex-speedup
-	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
-	# Needs review: 17211 achow101/fundtx-external-inputs
-		# TODO: Move new param to options? (watch out for send RPC)
-		# TODO: Diff-minimise
 	18972 neutrino_whitelist-mini				892d210d2eb	last=339fe189eb9
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=cc2644ffc6e achow101/bip174-extensions
@@ -324,24 +273,17 @@ m	17463 gui_custom_sendyes					998dd492930
 	17631 rest_blockfilter-0.21					31a7b2798a2	last=16d8d2da598 matt/2019-11-filter-rest
 	(CHECK-LAST)	last=??? rest_blockfilter-22
 		# NOTE: Dropped unrelated extra commits
-	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	g319  gui_openuri_pastebtn-0.21				3cb5fcd37dd	last=5062565e112
 	(CHECK-LAST)	last=??? gui_openuri_pastebtn-22
 		# NOTE: Used to be #17955
-	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.21+knots	996d632f395	last=19e28a41168 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
-	# Needs work/review/completion: 18242 jonas/2020/03/net_v2
-	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
-	# Needs work? 18611 -  # cli: show default values in config args log
 	18689 rpc_dumptxoutset_hr					86a235cbd1f	last=65d0697fe34
 	18722 O_addrman_unordered_map-0.21+knots	a8f034ffd43	last=a92485b2c25
 		# NOTE: Restored C++11 compatibility from d6e782174ec
 	g125  intro_prune_size-0.21					6d1b1a258f5
 		# NOTE: Originally #18728
-	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
-	# Needs review: 18849 jb55:zeroalloc
 	19136 achow101/export-descriptor			3e817fee3cb	last=de6b389d5db
 	19137 wallettool_dump-0.21+knots			71d5c75689e	last=23cac24dd3f achow101/dumpwalletrecords
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
@@ -349,30 +291,13 @@ m	17463 gui_custom_sendyes					998dd492930
 		# NOTE: Diff-minimised
 		# If bdb is reenabled, need #20267 49797c3ccfb
 	19242 uaappend								0501a4912b2
-	# Needs review: 19271 andrewtoth:warm-coinscache
-	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
-		# w/ 22807 ?
 	19463 prune_locks-0.21						7688250cdac	last=1ad45edbfeb prune_locks
-	# Needs review: 18000 -  # Coin Statistics Index
-	# Needs review: 19521 # Coinstats Index (without UTXO set hash)
-		# +22047
-	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
-	# Needs work: g27   # top to bottom UI layout
-		# NOTE: Included in Android fork below?
-	# Needs concept ACK: 19635 -ephemeraltoronion
 	19762 ryanofsky/pr/named					06d0b03981c	last=894c414dafb
 	19776 -										6b92af07758	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
-	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
-	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 	19873 mempressure							d629ab65bcc
-	# Needs work: 20154 kallewoof/202010-bip322
-	# Needs work: g86   hebasto-g/200902-tor
-	# Needs work: 20172 hebasto/201016-tor
-	# Needs review (and diff minimisation?): 20197 jonatack:AttemptToEvictConnection-identify-onions-with-m_inbound_onion
 	20226 rpc_listdescriptors-0.21				16086f5a271	last=647b81b7093
 	21277 listdescriptors_normalized-0.21+knots	a45c8b5634a
 		# TODO: Drop 0.21.0 compatibility "desc" when return format is updated or 21329 is ready
-	# Needs review + upstream (changes wallet format): 21329 achow101:norm-desc-xpub-cache
 	g291  gui_trafficgraph_vert-0.21			088733fcf9a	last=1f373f93a60  # Enlarge Network Traffic Graph
 		# WAS gui#90
 		# Removed dialog size change
@@ -389,13 +314,10 @@ m	17463 gui_custom_sendyes					998dd492930
 	# TODO: 20685 vasild/i2p_sam
 	22211 i2p_IsRelayable-0.21+knots			03d28fdf8dd	last=7593b06bd12
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
-	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 m	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 getblockfrompeer-0.21					947c37b0b52	last=d0b537458d9 Sjors/2020/11/getblockfrompeer
 	(CHECK-LAST)	last=??? rpc_getblockfrompeer_wo_header-22
-	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
-	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=??? rpc_setfeerate-22
 		# NOTE: Minimised tests to only add new ones
@@ -404,19 +326,13 @@ m	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofs
 	20407 rpcauthfile-0.21+knots				0726f132d9d	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 	(CHECK-LAST)	last=??? rpcauthfile
 		# NOTE: fixed bug, added multi-line support, and added tests
-	# Needs review and diff-minimisation: 20421 fanquake/miniupnpc_220
-	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid						8979d48f938
-	# Needs a reason to move code chunks: 20599 jnewbery/2020-12-tolerate-early-send-messages
-	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	20664 rpc_scanblocks-0.21					ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	(CHECK-LAST)	last=??? rpc_filterblocks
 		# Held back insignificant API changes ab315e5294b...71b7cdb460e
 	20702 rpc_getblocklocations-0.21			8db5bda17bd	last=9b03c654eb3
 	(CHECK-LAST)	last=??? rpc_getblocklocations
-	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							1dcbfaca3b6
-	# Needs review? 20867 darosior:descriptor_multi_wsh
 	g163  gui_peer_conntype-0.21				1157253e0af  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
 	g180  gui_peer_relay_detail-0.21+knots		f76dd90768b	last=79a2576af1e jonatack-g/peer-details-connection-type-followups
@@ -434,7 +350,6 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# NOTE: Left out Peers table column & misc formatting changes
 	20944 rpc_getmempoolinfo_total_fee-0.21		b864ecaf5ae	last=fa362064e38 marco/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
-	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	g186  gui_bumpfee_privacywarn-0.21+knots	9ca3cf1b24b
 	15129 rpc_removeaddress-0.21				423fd4425f4	last=fdbd01b50e0 benthecarman/remove_watch_only_address
 	(CHECK-LAST)	last=??? remove_watch_only_address-22
@@ -442,30 +357,8 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# FIXME: Needs #21320
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
 		# TODO: Switch to rwconf?
-	# ---- BEGIN HWI SUPPORT, TODO ----
-	# TODO: 16546 Sjors/2019/08/hww-box2
-		# NOTE: Bumps boost version!
-		# TODO: add #21292 + #21339
-		# NOTE: Likely needed for HW wallet support: #21127
-		#+#21417+#21467+#21576+#21666
-		#+#21935?
-		#+#22173?
-		#+#22348 ?
-	# TODO: 21928 Sjors/2021/05/hww-toggle
-		# TODO: Avoid wallet format changes
-	# TODO: g4    Sjors-g/2019/08/hww-qt
-		# NOTE: was #16549
-	# 22334 ?
-	# ---- END HWI SUPPORT ----
-	# TODO: 17355 -  # gui: grey out used address in address book
-		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
-	# TODO: 21283 achow101/psbt2
-		# TODO: diff-minimise??
 	21319 getblock_optimise						b79a8d71419
 		# Context: 17529 rpc: Faster getblock using PureBlock
-	# TODO: 15946 jonas/2019/05/prune_blockfilter
-		#NOTE: When merging, update GUI neutrino stuff to allow pruning+filters!
-		#NOTE: Integrate prune locks
 	19763 p2p_no_relay_to_origin-0.21+knots		083e7e509a0
 	20365 wallettool_create_descriptors-0.21+k	49afa106a33
 	21056 rpcwaittimeout-0.21					937b82478b1
@@ -474,13 +367,9 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	21173 optimise_hexstr-0.21					b4ac741d755
-	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
 	21260 rpcwallet_tx_in_mempool-0.21			28ec9283de6	last=46bf0b7b5d8
-	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
-		# NOTE: Ensure default is actually true
 	g213  gui_payrequest_copyaddr-0.18			d165eeec1fc
 	g214  gui_payrequest_disablena-0.18+knots	4853dd20a7e
-	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
 	21327 p2p_ignore_tx_in_ibd-0.21				093927be571	last=648c5c73aef
 	21359 rpc_fundraw_includeunsafe-0.21+knots	52b632873e7
 	g205  gui_save_txview_reqview_columns-0.19	6facbfb184d
@@ -491,15 +380,6 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	g226  gui_peers_lastblocktx-0.21+knots		1c333eb7c65
 	g230  gui_backup_formats-0.21+knots			557904a49bb	last=e91a3f39d01 gui_backup_formats
 		# NOTE: To avoid conflict with wallettool_dump-0.21+knots, added 5ab50bc98db GUI: Omit DbDump option for backup of BDB wallets
-	# Needs review & wallet format impact eval: 21365 sipa/202102_taproot_sign
-		# +22275+22342
-	# Needs review (+ minimisation?): 20833 -  # rpc/validation: enable packages through testmempoolaccept
-		# +22084
-	# Depends on #20833: 21413 glozow/2021-03-bypass-timelocks
-	# Needs Concept ACK: 21500 S3RK:listdescriptors_private
-	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
-	# Needs review: 21528 amitiuttarwar:2021-03-addr-defer2
-		# + 22616 + 22618?
 	21595 cli_addrinfo-0.21+knots				409d1d8be73
 		# NOTE: Adapted error message for Knots
 	21602 rpc_listbanned_deltas-0.21			7774e201444
@@ -509,20 +389,11 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	21780 rpc_maxmempool-0.21					0bc176fa910	last=040b280c661 rebroad/MaxMempoolRPC
 	(CHECK-LAST)	last=??? rpc_maxmempool
 		# + bugfix and applying limit immediately
-	# Needs review: 21827 rebroad/SplashLoadBlockProgress
-	# Too many conflicts: 21832 cli_color_getinfo-0.21							last=14cb2e0fe13
-		# Needs fix 22959 -  # cli: Display all proxies in -getinfo
-	# Needs reivew: 21841 rebroad/SteadierFeefilter
-	# Needs completion: 21851 fanquake/m1_support_depends
-		# +22070
-	# Needs review/optionality: 22009 achow101:cs-waste-2
-	# Duplicate (of #14641): 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
 	22072 autoreindex-0.21						66d83231979	last=602f4da9178
 	22147 p2p_protect_last_outHB-0.21			8f7863d9729
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
 	22159 conf_append_cxxflags-0.10				deede4f8965	last=fa14c6818f4 marco/2106-buildPattern
 	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers
-	# Not useful: g358  jarolrod-g/themedlabel-forms
 	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
 	g281  gui_console_fontsize_shortcuts-0.21+k	9b125b71d81
 		# NOTE: Diff-minimised and moved AddButtonShortcut to avoid conflict with #553 later
@@ -530,7 +401,6 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	g298  gui_peers_altrowcolor-0.21+knots_pt1	840c66b724f
 	g307  gui_peers_altrowcolor-0.21+knots		7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
 	(CHECK-LAST)	last=??? gui_peers_rowcolouropt-22
-	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
 	g309  gui_neticon_peerstab-0.18				f3e47ff2e91
 		# NOTE: Fixed Qt5.5 compatibility
 		# Diff-minimised
@@ -538,18 +408,10 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	(CHECK-LAST)	last=??? gui_peers_copyaddr-22
 		# NOTE: Added keyboard shortcut
 		# NOTE: Fixed Qt5.5 compatibility
-	# Needs review: g342 hebasto-g/210521-wallet
-		# NOTE: Will require newer changes from gui#409 above ???(0.21)
 	g343  gui_instaprogress-0.19				c62ac024c54
 	g362  kbshortcuts_context-0.21+knots		60fbd5be8e7	last=e4c916a0ea0 kbshortcuts_context
-	# TODO? 22253 glozow/2021-06-same-txid-diff-wtxid
-	# Needs review: jonatack/ProtectEvictionCandidatesByRatio-perf-enhancements
 	22288 torcontrol_dnslookup-0.21				d8f8412dcc4	last=cdd51e8ee15
 		# Diff-minimised
-	# Needs review: 22340 -  # Use legacy relaying to download blocks in blocks-only mode
-		# NOTE: Rebased in 0e3b643ba55
-	# Too many TODOs: 22341 Sjors/2021/06/getxpub
-	# Needs work: 22350 -  # Log rotation
 	22372 multinotify
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
@@ -575,7 +437,6 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-0.21+knots					dad75802d23	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	(CHECK-LAST)	last=??? zmq_wtx-22+knots
-	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					7a1723439c5
 		# NOTE: Originally based on #12674
 m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_invblk_punishment
@@ -640,11 +501,6 @@ m	19092 cli_getinfo_mw_total_balance-0.21+knots	aedba84cdb0	last=08ac1abc583 jon
 	# ---- END IN SEQUENCE ----
 m	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
 	(CHECK-LAST)	last=??? wallet_rpc_lastprocessedblock-22+k
-	# TODO: 18789 achow101/create-unsigned-sendconfdialog
-		#TODO: Resolve conflict with wallet_no_reuse
-		#OR these two:
-		# 18655 achow101:split-bumpfeeaction
-		# 18656 achow101:make-unsigned-button
 	19117 rpc_getrpcwhitelist					4e5e20bd9ec
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-0.21+knots	bfaf26b19f1
@@ -655,17 +511,13 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
 		#TODO: Split this up?
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
-	# TODO: 20764 jonatack/netinfo-updates-dec-2020
-		# FIXME: Check if all applicable to 0.21
 	g165  gui_peers_splitter_ss-0.21+knots		8ea7e7fbc3f
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
-	# Needs purpose: 21815 prayank23:max-out-full-relay
 	# FIXME: text below QR Code doesn't fit bech32 with Console font!
 # Non-upstreamed functionality:
 	-     gui_payreq_textedit-0.21				4a9c6fc46e5 gui_payreq_textedit
-	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				011b11763f6
 m	-     walletnotify_w_win-0.21+knots			0fafbd4a598	ast=a291491d2fd walletnotify_w_win
 	(CHECK-LAST)	last=??? walletnotify_w_win-22+knots
@@ -687,7 +539,6 @@ m	7510  rwconf_gui							31da64c50bc
 	5891  qt_console_history_persist-0.21+knots	7ed83221a81	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-0.21+knots					ec4af75863b	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
 	(CHECK-LAST)	last=??? fullrbf-22+knots
-	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					c84af5db7d7
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
@@ -750,5 +601,3 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-2
 	n/a  (cherrypick=33ee7963ad4)				6addc3eccab  # update manpages (build first)
 	n/a  (cherrypick=936fd13cd23)				a886811721c  # translation update
 # NOTE: use git diff --minimal for patches!
-
-@0.21.x-knots-android
