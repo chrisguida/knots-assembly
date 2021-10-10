@@ -521,7 +521,7 @@ checkout v22.0
 	-     enforce_checkpoints					d41dcd18f7c
 	n/a   checkpoint_update-22					79d59f9403e
 	10282 timebomb_knots						c8b2793aff0
-	-     rwconf_policy-0.21+knots				bae9992c73c
+	-     rwconf_policy-22+knots				bae9992c73c
 		# Include Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})

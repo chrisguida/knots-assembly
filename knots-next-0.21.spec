@@ -672,7 +672,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	n/a   checkpoint_update-0.21				79d59f9403e
 		TODO: update
 	10282 timebomb_knots						c8b2793aff0
-m	-     rwconf_policy-0.21+knots				bae9992c73c
+m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-22+knots
 		# Include Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
