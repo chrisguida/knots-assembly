@@ -530,7 +530,7 @@ checkout v22.0
 	# Needs review: 22871 JeremyRubin:discourage-csv
 	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
-	NOTE TO SELF: Remove release-notes-prNNNNN.md files BEFORE the svg icon merge so it doesn't get added then removed in different patch files >_<
+	n/a   (cherrypick=eaa9f92b50b)  # delete release notes fragments
 	7483  svg_icon-0.21+knots					469d40983b1
 # BRANDING:
 	n/a   knots_branding-0.21					1ee7ca43f35
