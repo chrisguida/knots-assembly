@@ -14,8 +14,7 @@ checkout v0.21.2
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
 	# OR: 23082 fanquake/remove_weak_auxval
 	23045 fix_crc32c_arm64_detect-0.20						last=f2747d1602e laanwj/2021-09-arm64-crc32
-	23182 fanquake/python_3_10_configure
-		FIXME: buggy
+	# Needs followup fix? 23182 fanquake/python_3_10_configure
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
