@@ -1,7 +1,7 @@
-timestamp 2021-10-03 07:57:17
+timestamp 2021-10-11 03:12:45
 lastapply no-merge
 
-#.. checked up to PR #23163 / gui #444
+#.. checked up to PR #23242 / gui #450
 
 checkout v22.0
 @22.x-syslibs
@@ -13,6 +13,8 @@ checkout v22.0
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
 	# OR: 23082 fanquake/remove_weak_auxval
 	23045 fix_crc32c_arm64_detect-0.20						last=f2747d1602e laanwj/2021-09-arm64-crc32
+	23182 fanquake/python_3_10_configure
+		FIXME: buggy
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
@@ -140,6 +142,10 @@ checkout v22.0
 	g430 gui_txlinks_g430-22
 		# NOTE: Left off trivial string change
 	g439 gui_hide_unused_icons-0.20
+	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
+	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
+	# Needs review: 23227 marco/2110-ToIntegral
+	g446  marco/2110-qtRpcCons
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -222,6 +228,7 @@ checkout v22.0
 	# Needs review: 17211 achow101/fundtx-external-inputs
 		# TODO: Move new param to options? (watch out for send RPC)
 		# TODO: Diff-minimise
+		# Cleanups in #23188; fix in #23200
 	18972 neutrino_whitelist-mini				892d210d2eb	last=a3300c6b200 neutrino_whitelist
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-22-mini		8cfa229a8e4	last=7f066240654 achow101/bip174-extensions
@@ -389,12 +396,14 @@ checkout v22.0
 	g419  gui_dbcache_s.threads_tooltips-0.9				last=9bd168bf545 jarolrod-g/options-tooltips
 	# Needs Core release (wallet format change): 23065 meshcollider/202109_lockunspent_persistence
 	# Needs work: 23077 vasild/cjdns
+		# Followup in #23175
 	23113 rpc_multisig_uncomp_warnings-0.21					last=29a78ac4319 meshcollider/202109_createmultisig_warnings
 		# Left off final commit with relnotes
 	# Why merge this before Core? (last commit only?) 23115 fanquake:18985_rebased (note: merged in master already)
 	# Needs work: 23152 fanquake/experiment_with_lto
 	# TODO: 23155 jamesob/2021-10-au-rpc-fixes #diff-minimise
 	g436  gui_coinctrl_copyoutpoint-22
+	# Needs review (& bumpfee fix?): 23201 achow101/ext-input-weight
 # Non-progress functionality:
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -547,7 +556,7 @@ checkout v22.0
 TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
 		TODO: merged in cfe8f2230078f535b839da87705c2ee155f21753
-	n/a  (bump_version=Knots:20211003)			0a9a4537a5d
+	n/a  (bump_version=Knots:20211011)			0a9a4537a5d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=96316586c91)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
