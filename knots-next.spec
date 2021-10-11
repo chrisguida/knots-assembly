@@ -24,7 +24,7 @@ checkout v22.0
 	-     bugfix_asm_leveldb_check				741060d31b8
 	15155 test_external_bcli					251dcff7eee
 	-     opt_bdb_extracare						3d26b04ad0f
-	g216  optional_font
+	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	# TODO: system crc32c
 @22.x-knotsfixes
@@ -286,6 +286,7 @@ checkout v22.0
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid						8979d48f938
+		TODO: * eb711800bbb GUI/Intro: Use QFontMetrics::horizontalAdvance in Qt 5.11+ rather than deprecated QFontMetrics::width
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	20664 rpc_scanblocks						ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	20702 rpc_getblocklocations					8db5bda17bd	last=9b03c654eb3
@@ -500,6 +501,9 @@ checkout v22.0
 	7510  rwconf_gui							31da64c50bc
 	 559 accept_nonstdtxn						854677f3a98
 	 929 tbc									b92159120bd
+		FIXME: bundled font won't have Tonal! -.-
+		TODO: * c6ab7f320cf (HEAD) GUI: Drop lastResortFont check for Tonal support, since it was a Qt4-only feature
+		TODO: * 7d4412c2fd9 GUI: Fix comparison of character size for Tonal font detection
 	 553 bugfix_qt_uri_amount_parser			2bef446009c
 	-    mining_priority						c1b36c3197d  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					8fa52dc8120
@@ -552,7 +556,7 @@ checkout v22.0
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
-TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
+# TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
 		TODO: merged in cfe8f2230078f535b839da87705c2ee155f21753
 	n/a  (bump_version=Knots:20211011)			0a9a4537a5d
