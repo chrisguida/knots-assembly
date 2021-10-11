@@ -535,7 +535,7 @@ checkout v22.0
 	n/a   (cherrypick=eaa9f92b50b)  # delete release notes fragments
 	7483  svg_icon-22+knots						469d40983b1
 # BRANDING:
-	n/a   knots_branding-0.21					1ee7ca43f35
+	n/a   knots_branding-22						1ee7ca43f35
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check there are no menu icons
 #FIXME: Check hidden_args has anything removed (possibly conditional)

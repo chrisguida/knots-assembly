@@ -578,7 +578,7 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-2
 	NOTE TO SELF: Remove release-notes-prNNNNN.md files BEFORE the svg icon merge so it doesn't get added then removed in different patch files >_<
 	7483  svg_icon-0.21+knots					469d40983b1	last=??? svg_icon-22+knots
 # BRANDING:
-	n/a   knots_branding-0.21					1ee7ca43f35
+	n/a   knots_branding-0.21					1ee7ca43f35	last=2237adedb3f knots_branding-0.21
 	TODO: drop leading 0 ? - or more accurately, this should be 21.1.1 I guess...
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check there are no menu icons
