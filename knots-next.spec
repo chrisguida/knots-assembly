@@ -500,9 +500,7 @@ checkout v22.0
 	7510  rwconf_gui							31da64c50bc
 	 559 accept_nonstdtxn						854677f3a98
 	 929 tbc									b92159120bd
-		FIXME: bundled font won't have Tonal! -.-
-		TODO: * c6ab7f320cf (HEAD) GUI: Drop lastResortFont check for Tonal support, since it was a Qt4-only feature
-		TODO: * 7d4412c2fd9 GUI: Fix comparison of character size for Tonal font detection
+		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			2bef446009c
 	-    mining_priority						c1b36c3197d  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					8fa52dc8120
