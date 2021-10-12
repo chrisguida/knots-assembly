@@ -582,6 +582,7 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-2
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	NOTE TO SELF: Remove release-notes-prNNNNN.md files BEFORE the svg icon merge so it doesn't get added then removed in different patch files >_<
 	7483  svg_icon-0.21+knots					469d40983b1	last=??? svg_icon-22+knots
+		FIXME: s/movies/animation in sed command
 # BRANDING:
 	n/a   knots_branding-0.21					1ee7ca43f35	last=2237adedb3f knots_branding-0.21
 	TODO: drop leading 0 ? - or more accurately, this should be 21.1.1 I guess...
