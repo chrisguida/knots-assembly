@@ -233,7 +233,7 @@ checkout v22.0
 	17034 psbt_ver_proprietary_xpub-22-mini		8cfa229a8e4	last=7f066240654 achow101/bip174-extensions
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
-	17631 rest_blockfilter-22					31a7b2798a2	last=f9b714c4fda matt/2019-11-filter-rest
+	17631 rest_blockfilter-22					31a7b2798a2	last=67b7ba19065 matt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 		# NOTE: Held back most of rebase 16d8d2da598..f9b714c4fda
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
