@@ -571,6 +571,7 @@ checkout v22.0
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=15212a98dd3)				6addc3eccab  # update manpages (build first)
 	n/a  (cherrypick=936fd13cd23)				a886811721c  # translation update
+		# TODO: git grep '＆\|％\|&amp;amp;'
 # NOTE: use git diff --minimal for patches!
 
 @22.x-knots-android
