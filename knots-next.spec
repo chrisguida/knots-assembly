@@ -560,7 +560,7 @@ checkout v22.0
 	n/a  (cherrypick=0ed7b3b85d3f618838)		c7a144c218c	# doc/{bips,files}
 	n/a  (bump_version=Knots:20211011)			0a9a4537a5d
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=a7ff8cb44d2)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=5248e288238)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
@@ -569,7 +569,7 @@ checkout v22.0
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=33ee7963ad4)				6addc3eccab  # update manpages (build first)
+	n/a  (cherrypick=15212a98dd3)				6addc3eccab  # update manpages (build first)
 	n/a  (cherrypick=936fd13cd23)				a886811721c  # translation update
 # NOTE: use git diff --minimal for patches!
 
