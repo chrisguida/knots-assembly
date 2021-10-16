@@ -215,7 +215,6 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 		# NOTE: Left off trivial string change
 	g439 gui_hide_unused_icons-0.20
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
-	Just fix from 23148 dongcarl/2021-09-fix-loader-quick (copy out of #23276)
 	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
 	# Needs review: 23227 marco/2110-ToIntegral
 	# Needs review of backport-rewrite in qt_catch_rpc_index_overflow-0.18 [alt to g446  marco/2110-qtRpcCons]
