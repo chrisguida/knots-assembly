@@ -1,7 +1,7 @@
-timestamp 2021-10-11 03:12:45
+timestamp 2021-10-16 01:09:19
 lastapply no-merge
 
-#.. checked up to PR #23242 / gui #450
+#.. checked up to PR #23289 / gui #454
 
 checkout v22.0
 @22.x-syslibs
@@ -142,10 +142,14 @@ checkout v22.0
 		# NOTE: Left off trivial string change
 	g439 gui_hide_unused_icons-0.20
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
+	Just fix from 23148 dongcarl/2021-09-fix-loader-quick (copy out of #23276)
 	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
 	# Needs review: 23227 marco/2110-ToIntegral
 	# Needs review of backport-rewrite in qt_catch_rpc_index_overflow-0.18 [alt to g446  marco/2110-qtRpcCons]
-	# Needs work? 23268 prayank23/dns-seed-fqdn
+	# TODO: 23268 prayank23/dns-seed-fqdn
+	-    gui_revert_g296
+	# TODO: 23253 marco/2110-utilTxSeqId
+	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -558,7 +562,7 @@ checkout v22.0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		c7a144c218c	# doc/{bips,files}
-	n/a  (bump_version=Knots:20211011)			0a9a4537a5d
+	n/a  (bump_version=Knots:20211016)			0a9a4537a5d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=5248e288238)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
