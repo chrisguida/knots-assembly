@@ -575,8 +575,8 @@ checkout v22.0
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=15212a98dd3)				6addc3eccab  # update manpages (build first)
-	n/a  (cherrypick=9663157b1d3)				a886811721c  # translation update
-		# TODO: git grep '＆\|％\|&amp;amp;'
+	n/a  (cherrypick=59eb363683a)				a886811721c  # translation update
+		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
 
 @22.x-knots-android
