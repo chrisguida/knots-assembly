@@ -184,6 +184,7 @@ checkout v22.0
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	# TODO ? 12792 w/ renamed param
 	18479 rpc_sign_show_fees					4d67400f273	last=47b2ba29df2 !kallewoof/sign-show-fees
+		* 7d832e4ca61 (HEAD) fixup! test: add test to segwit tests for fee rate when signing raw tx
 		# NOTE: Originally #12911
 	# Needs review and care (new index): 13014 jonas/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
@@ -293,6 +294,7 @@ checkout v22.0
 	g149  intro_assumevalid						8979d48f938
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	20664 rpc_scanblocks						ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
+		* be6fb7fb762 rpc_scanblocks: Document possible return values
 	20702 rpc_getblocklocations					8db5bda17bd	last=9b03c654eb3
 		# NOTE: Fixed +x on test/functional/rpc_getblocklocations.py
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
@@ -412,6 +414,7 @@ checkout v22.0
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	9152 sweepprivkeys							9d6360908e1
+		* c8166cb0d40 fixup! RPC: sweepprivkeys method to scan UTXO set and send to local wallet
 	9245 ionice									52ed64216eb
 	-    ionice_win								22b1c9241e8
 	8501  old_stats_rpc-22						2fa33c1f65c	last=7af0ea43b2
@@ -419,7 +422,7 @@ checkout v22.0
 	8550  old_stats_qt-22						24601755a13	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-22					f9192d9a751	last=07fc81109a
-	g444  gui_netwatch-22+knots					539fa817d21	last=2db813077d1 gui_netwatch
+	g444  gui_netwatch-22+knots					539fa817d21	last=b227e4db46f gui_netwatch
 		# NOTE: Was #9849
 	10615 multiwallet_rpc-22+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
@@ -438,6 +441,7 @@ checkout v22.0
 	11770 rest_fee								d2f6a3d7d5d	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			3b64c7195f0
 	12965 scriptthreads							8d959f05d3c	last=dfab6c6866 jonas/2018/04/svt
+		* 597af791547 fixup! Add RPC call setscriptthreadsenabled/scriptthreadsinfo: allow to disable verification threads
 	13203 dsha256_power8-0.20					9703ce00ee9	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		6ceb71baa4c
@@ -479,6 +483,7 @@ checkout v22.0
 		# 18655 achow101:split-bumpfeeaction
 		# 18656 achow101:make-unsigned-button
 	19117 rpc_getrpcwhitelist					4e5e20bd9ec
+		* 7c6b5d41301 fixup! RPC: getrpcwhitelist: Return a list of wallets as a JSON Object
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-22+knots		bfaf26b19f1
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
@@ -487,6 +492,7 @@ checkout v22.0
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	# FIXME: text below QR Code doesn't fit bech32 with Console font!
 	-     wallettool_dump_warning-22+knots
+		* 9fbc39135e5 fixup! wallettool: Warn about dump commands not fully dumping/restoring BDB wallets
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
 	# Needs work: 22708 hebasto:210815-wayland
 	# TODO (needs concept review?): 23093 meshcollider:202109_keypoolrefill
