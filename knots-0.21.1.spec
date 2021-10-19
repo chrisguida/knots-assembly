@@ -237,7 +237,8 @@ TM	g188  bugfix_psbt_binmode-0.21				4024211b958	last=cc3971c9ff5 achow101-g/bin
 m	17463 gui_custom_sendyes					f97f61983f6
 	15987 wallet_no_reuse-0.21+knots			d2a92674d94
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
-	-     rpc_gai_txids-0.21+knots				0b19fadfdaa
+	22693 rpc_gai_txids-0.21+knots				0b19fadfdaa	last=??? getaddressinfo_txids
+		# NOTE: Out-of-order with 15987 above (now based on top of this)
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	18772 -										6b8d1024b6c last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data

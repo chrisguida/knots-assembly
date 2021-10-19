@@ -184,7 +184,7 @@ checkout v22.0
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	# TODO ? 12792 w/ renamed param
 	18479 rpc_sign_show_fees					4d67400f273	last=47b2ba29df2 !kallewoof/sign-show-fees
-		* 7d832e4ca61 (HEAD) fixup! test: add test to segwit tests for fee rate when signing raw tx
+		# Dropped rel notes file
 		# NOTE: Originally #12911
 	# Needs review and care (new index): 13014 jonas/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
@@ -218,8 +218,8 @@ checkout v22.0
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
-	15987 wallet_warn_reuse_gui					7515d038c84
 	22693 getaddressinfo_txids					01bfbd88472
+	15987 wallet_warn_reuse_gui					7515d038c84
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	22918 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=5c34507ecbb
@@ -252,7 +252,7 @@ checkout v22.0
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18689 rpc_dumptxoutset_hr					86a235cbd1f	last=65d0697fe34
-		* 4488aa1ce50 fixup! rpc: allow dumptxoutset to dump human-readable data
+		# Fixed bugs (eg, scoping of ascii_types)
 		# NOTE: Moved rpc/client lines to avoid conflict with #20664
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
@@ -295,7 +295,7 @@ checkout v22.0
 	g149  intro_assumevalid						8979d48f938
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	20664 rpc_scanblocks						ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
-		* be6fb7fb762 rpc_scanblocks: Document possible return values
+		# Added return value documentation (needed for QA to pass)
 	20702 rpc_getblocklocations					8db5bda17bd	last=9b03c654eb3
 		# NOTE: Fixed +x on test/functional/rpc_getblocklocations.py
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
@@ -415,7 +415,6 @@ checkout v22.0
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	9152 sweepprivkeys							9d6360908e1
-		* c8166cb0d40 fixup! RPC: sweepprivkeys method to scan UTXO set and send to local wallet
 	9245 ionice									52ed64216eb
 	-    ionice_win								22b1c9241e8
 	8501  old_stats_rpc-22						2fa33c1f65c	last=7af0ea43b2
@@ -442,12 +441,10 @@ checkout v22.0
 	11770 rest_fee								d2f6a3d7d5d	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			3b64c7195f0
 	12965 scriptthreads							8d959f05d3c	last=dfab6c6866 jonas/2018/04/svt
-		* 597af791547 fixup! Add RPC call setscriptthreadsenabled/scriptthreadsinfo: allow to disable verification threads
 	13203 dsha256_power8-0.20					9703ce00ee9	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		6ceb71baa4c
 	15218 postibd_flush-22+knots				84b38613864	last=d2ecb70d64  # validation: Flush state after initial sync
-		[detached HEAD 86c56e4996a] validation: flush state after initial sync
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-22+knots				e509f51807e	# latest code now
 	15421 tor_subprocess-22+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
@@ -476,7 +473,6 @@ checkout v22.0
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
 	19089 cli_getinfo_mwbalances				19e9d705f4c	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
-		* 90fc36216d8 (HEAD) fixup! test: add coverage for scale in -getinfo amount values
 	19092 cli_getinfo_mw_total_balance			aedba84cdb0	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock-22+k	a03387247fb	last=1e868bbbb1b
@@ -486,7 +482,6 @@ checkout v22.0
 		# 18655 achow101:split-bumpfeeaction
 		# 18656 achow101:make-unsigned-button
 	19117 rpc_getrpcwhitelist					4e5e20bd9ec
-		* 7c6b5d41301 fixup! RPC: getrpcwhitelist: Return a list of wallets as a JSON Object
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-22+knots		bfaf26b19f1
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
@@ -495,7 +490,6 @@ checkout v22.0
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	# FIXME: text below QR Code doesn't fit bech32 with Console font!
 	-     wallettool_dump_warning-22+knots
-		* 9fbc39135e5 fixup! wallettool: Warn about dump commands not fully dumping/restoring BDB wallets
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
 	# Needs work: 22708 hebasto:210815-wayland
 	# TODO (needs concept review?): 23093 meshcollider:202109_keypoolrefill
