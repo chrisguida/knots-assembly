@@ -446,6 +446,7 @@ checkout v22.0
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		6ceb71baa4c
 	15218 postibd_flush-22+knots				84b38613864	last=d2ecb70d64  # validation: Flush state after initial sync
+		[detached HEAD 86c56e4996a] validation: flush state after initial sync
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-22+knots				e509f51807e	# latest code now
 	15421 tor_subprocess-22+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
@@ -474,6 +475,7 @@ checkout v22.0
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
 	19089 cli_getinfo_mwbalances				19e9d705f4c	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+		* 90fc36216d8 (HEAD) fixup! test: add coverage for scale in -getinfo amount values
 	19092 cli_getinfo_mw_total_balance			aedba84cdb0	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock-22+k	a03387247fb	last=1e868bbbb1b
