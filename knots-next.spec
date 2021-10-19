@@ -252,6 +252,7 @@ checkout v22.0
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18689 rpc_dumptxoutset_hr					86a235cbd1f	last=65d0697fe34
+		* 4488aa1ce50 fixup! rpc: allow dumptxoutset to dump human-readable data
 		# NOTE: Moved rpc/client lines to avoid conflict with #20664
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
