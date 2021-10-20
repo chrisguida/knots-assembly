@@ -362,6 +362,9 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# NOTE: Minor code rearranging to avoid conflicts
 	g186  gui_bumpfee_privacywarn-0.21+knots	9ca3cf1b24b
 	15129 rpc_removeaddress-0.21				423fd4425f4	last=fdbd01b50e0 benthecarman/remove_watch_only_address
+		TODO: Temporarily neuter this or null-merge it?
+		# Was included in 0.21.1 broken(!)
+		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
 	(CHECK-LAST)	last=??? remove_watch_only_address-22
 	# TODO: 18077 hebasto/20200130-natpmp
 		# FIXME: Needs #21320

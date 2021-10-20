@@ -303,7 +303,9 @@ checkout v22.0
 	g363  qt_peers_directionarrow-22+knots		4c6de52a7fc	last=217d1051c8b qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
-	15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
+	# Needs work: 15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
+		# Was included in 0.21.1 broken(!)
+		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
 	# ---- BEGIN HWI SUPPORT, TODO ----
 	21576 rpc_bumpfee_signer-22								last=25aa986a53c Sjors/2021/04/signer_bumpfee
 		# Simply dropped misc comment changes in first commit
