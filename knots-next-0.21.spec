@@ -33,7 +33,6 @@ checkout v0.21.2
 	20358 -										980c71c1f50	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					cfc912ffcdc	last=836a3dc02c7 jonas/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
-	# TODO: system crc32c
 @0.21.x-knotsfixes
 # TESTS:
 TM	22279 fix_fuzz_baseencdec_pr22279-0.21		3d80a04b144

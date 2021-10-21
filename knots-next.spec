@@ -26,7 +26,6 @@ checkout v22.0
 	-     opt_bdb_extracare						3d26b04ad0f
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
-	# TODO: system crc32c
 @22.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							9afa5d8517a
