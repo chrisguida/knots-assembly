@@ -33,8 +33,11 @@ checkout v22.0
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 # FIXES:
 	22318 hebasto/210623-random								last=35aab4f0c0b
-	-     gitian_linux_reverttobionic-22
-	TODO: Revert everything (or at least Windows) to bionic to avoid GCC 9.3 (memcmp bug) and GCC bug 102993 (cf-protection=full segfaults)
+	-     gitian_reverttobionic-22
+		# Revert everything to bionic:
+		# - avoids GCC 9 (memcmp bug)
+		# - avoids GCC bug 102993 (cf-protection=full segfaults in generated Win32 code)
+		# - avoids dependency on newer glibc symbols
 	18818 fix_gitian_src_202004					e7ae473f644
 	18902 fix_gitdir_again						48e2ecb874f
 		# NOTE: based directly on #18818
