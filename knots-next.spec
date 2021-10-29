@@ -41,7 +41,7 @@ checkout v22.0
 		# - avoids GCC 9 (memcmp bug)
 		# - avoids GCC bug 102993 (cf-protection=full segfaults in generated Win32 code)
 		# - avoids dependency on newer glibc symbols
-	18818 fix_gitian_src_202004					e7ae473f644
+	18818 fix_gitian_src_202004-22+knots		e7ae473f644	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						48e2ecb874f
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					51d41a3ea10	last=7fe49671dd4 2020mingwthrd
@@ -158,10 +158,10 @@ checkout v22.0
 	# TODO: 23253 marco/2110-utilTxSeqId
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
 	# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
-	23324 jonatack/netinfo-print-peer-counts-for-all-reachable-networks
-	23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
+	23324 netinfo_peer_count_all_reachable-22
+	23333 wallet_fix_pr23333-22  # wallet: fix segfault by avoiding invalid default-ctored external_spk_managers entry
 	# Maybe just the docs from #23341 ?
-	23348 hebasto/211024-rpc-gwi
+	23348 wallet_descr_hide_keypoololdest-0.21				last=303ee60f817 hebasto/211024-rpc-gwi
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 @22.x-knots
@@ -170,7 +170,7 @@ checkout v22.0
 	22016 rpc_gbci_period_start-22+knots		4910107f0d1	last=70d7e0812a7 Sjors/2021/05/versionbits_period_start
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
-	-     restore_win32-22						d37803a84cc	last=3e30ae0514e restore_win32
+	-     restore_win32-22						d37803a84cc	last=3e30ae0514e restore_win32-0.21
 	# TODO: guix win32
 	-     gitian_linux32						efa9ee85ed6
 	-     guix_linux_i686

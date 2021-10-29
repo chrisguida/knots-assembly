@@ -241,7 +241,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 		# NOTE: Fixed bug in gui#330 a simpler way b942216a1a7
 	g154  gui_darkmode-0.21
 	g366  gui_palettechange-0.21				55b04f94483
-	-     restore_win32-0.21+knots				d37803a84cc	last=3e30ae0514e restore_win32
+	-     restore_win32-0.21+knots				d37803a84cc	last=3e30ae0514e restore_win32-0.21
 	(CHECK-LAST)	last=??? restore_win32-22
 		TODO? [restore_win32-22 1d2e11bc769] fixup! Partially revert part of #15939 "Remove Windows 32 bit build"
 	-     restore_linux32						efa9ee85ed6
