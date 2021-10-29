@@ -1,7 +1,7 @@
-timestamp 2021-10-16 01:09:19
+timestamp 2021-10-29 17:30:35
 lastapply no-merge
 
-#.. checked up to PR #23289 / gui #454
+#.. checked up to PR #23387 / gui #459
 
 checkout v22.0
 @22.x-syslibs
@@ -13,7 +13,9 @@ checkout v22.0
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
 	# OR: 23082 fanquake/remove_weak_auxval
 	23045 fix_crc32c_arm64_detect-0.20						last=f2747d1602e laanwj/2021-09-arm64-crc32
-	# Needs followup fix? 23182 fanquake/python_3_10_configure
+	23182 fanquake/python_3_10_configure
+		TODO: Needs +#23317
+	23314 fanquake/libsecp256k1_subtree_update
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
@@ -26,6 +28,7 @@ checkout v22.0
 	-     opt_bdb_extracare						3d26b04ad0f
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
+	23345 hebasto/211024-bw-deps
 @22.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							9afa5d8517a
@@ -154,6 +157,13 @@ checkout v22.0
 	-    gui_revert_g296
 	# TODO: 23253 marco/2110-utilTxSeqId
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
+	# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
+	23324 jonatack/netinfo-print-peer-counts-for-all-reachable-networks
+	23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
+	# Maybe just the docs from #23341 ?
+	23348 hebasto/211024-rpc-gwi
+	# Needs review: 23365 -  # index: Fix backwards search for bestblock
+	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -228,6 +238,7 @@ checkout v22.0
 	22918 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=5c34507ecbb
 		# Was originally #16083, then #21245
 		# Left off release notes & variable rename (last 2 commits)
+		TODO: +#23320
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
@@ -416,6 +427,13 @@ checkout v22.0
 	# TODO: 23155 jamesob/2021-10-au-rpc-fixes #diff-minimise
 	g436  gui_coinctrl_copyoutpoint-22
 	# Needs review (& bumpfee fix?): 23201 achow101/ext-input-weight
+	Review: 23319 -  # rpc: Return fee and prevout (utxos) to getrawtransaction
+	# Needs API review: 23330 JeremyRubin/header-fetch
+	23362 hebasto/211025-cc
+		TODO: Add experimental warning?
+	23387 greenaddress/dump_fee_estimates
+	# Needs fixes: g457 shaavan:peer-table-splitter
+	# Needs work: g459 Sjors-g/2021/10/taproot_gui
 # Non-progress functionality:
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -571,7 +589,7 @@ checkout v22.0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		c7a144c218c	# doc/{bips,files}
-	n/a  (bump_version=Knots:20211016)			0a9a4537a5d
+	n/a  (bump_version=Knots:20211029)			0a9a4537a5d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=064c85062ad)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings

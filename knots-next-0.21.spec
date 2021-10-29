@@ -1,7 +1,7 @@
-timestamp 2021-10-16 01:09:19
+timestamp 2021-10-29 17:30:35
 #lastapply no-merge
 
-#.. checked up to PR #23289 / gui #454
+#.. checked up to PR #23387 / gui #459
 
 checkout v0.21.2
 @0.21.x-syslibs
@@ -14,7 +14,10 @@ checkout v0.21.2
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
 	# OR: 23082 fanquake/remove_weak_auxval
 	23045 fix_crc32c_arm64_detect-0.20						last=f2747d1602e laanwj/2021-09-arm64-crc32
-	# Needs followup fix? 23182 fanquake/python_3_10_configure
+	23182 fanquake/python_3_10_configure
+		TODO: Needs +#23317
+	23314 fanquake/libsecp256k1_subtree_update
+	23345 hebasto/211024-bw-deps
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
@@ -220,6 +223,13 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# TODO: 23268 prayank23/dns-seed-fqdn
 	# TODO: 23253 marco/2110-utilTxSeqId
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
+	# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
+	23324 jonatack/netinfo-print-peer-counts-for-all-reachable-networks
+	23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
+	# Maybe just the docs from #23341 ?
+	23348 hebasto/211024-rpc-gwi
+	# Needs review: 23365 -  # index: Fix backwards search for bestblock
+	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 @0.21.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -269,6 +279,7 @@ m	17463 gui_custom_sendyes					998dd492930
 		# Renamed "coinbase" field to "generated"
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
+		TODO?: +#23320
 	16795 rpc_inferred_output_descriptors		5de05c6c9f6	last=3038f944a6d instagibbs/decode_descriptor
 		# Fixes: 478a4da04e77ca4438929909fafdbb0e57614577
 	18972 neutrino_whitelist-mini				892d210d2eb	last=339fe189eb9
@@ -601,7 +612,8 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-2
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
-	n/a  (bump_version=Knots:20211016)			0a9a4537a5d
+	n/a  (bump_version=Knots:20211029)			0a9a4537a5d
+		TODO: Do we in fact want to bump this with only fixes??
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=96316586c91)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
