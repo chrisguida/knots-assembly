@@ -13,13 +13,13 @@ checkout v22.0
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
 	# OR: 23082 fanquake/remove_weak_auxval
 	23045 fix_crc32c_arm64_detect-0.20						last=f2747d1602e laanwj/2021-09-arm64-crc32
-	23182 fanquake/python_3_10_configure
-		TODO: Needs +#23317
-	23314 fanquake/libsecp256k1_subtree_update
+	23182 py3_10o11-22
+		# +#23317
+	23314 disable_s2561k_openssl_test-22
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
-	5416  sys_libsecp256k1						c2e8d067f0b
+	5416  sys_libsecp256k1-22+lnots				c2e8d067f0b	last=f749462f68c sys_libsecp256k1
 	22412 bugfix_pushback_bool
 	7485 sys_univalue_def						663a72e6a12
 	13789 bugfix_asm_pragmas					82ab60f2428
@@ -28,7 +28,7 @@ checkout v22.0
 	-     opt_bdb_extracare						3d26b04ad0f
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
-	23345 hebasto/211024-bw-deps
+	23345 wallettool_drop_extra_deps-0.21+knots				last=1d96788ce97 hebasto/211024-bw-deps
 @22.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							9afa5d8517a
