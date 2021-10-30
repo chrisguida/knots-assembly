@@ -429,8 +429,10 @@ checkout v22.0
 	# Needs review: 23319 -  # rpc: Return fee and prevout (utxos) to getrawtransaction
 		# Rebase of 2c56d72acac in a662191612c w/ failing test :/ (had to replace hard-coded fee assumption too)
 	# Needs API review: 23330 JeremyRubin/header-fetch
-	23362 hebasto/211025-cc
-		TODO: Add experimental warning?
+	23362 importfromcoldcard-22								last=8076f8d4c2a hebasto/211025-cc
+		# Needed fs::Path{To,From}String rebasing
+		# Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
+		# Added experimental warning
 	23387 greenaddress/dump_fee_estimates
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work: g459 Sjors-g/2021/10/taproot_gui
