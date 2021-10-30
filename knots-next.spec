@@ -419,14 +419,15 @@ checkout v22.0
 	# Needs Core release (wallet format change): 23065 meshcollider/202109_lockunspent_persistence
 	# Needs work: 23077 vasild/cjdns
 		# Followup in #23175
-	23113 rpc_multisig_uncomp_warnings-0.21					last=29a78ac4319 meshcollider/202109_createmultisig_warnings
-		# Left off final commit with relnotes
+	23113 rpc_multisig_uncomp_warnings-0.21					last=2d21025feef meshcollider/202109_createmultisig_warnings
+		# Left off commit with relnotes
 	# Why merge this before Core? (last commit only?) 23115 fanquake:18985_rebased (note: merged in master already)
 	# Needs work: 23152 fanquake/experiment_with_lto
 	# TODO: 23155 jamesob/2021-10-au-rpc-fixes #diff-minimise
 	g436  gui_coinctrl_copyoutpoint-22
 	# Needs review (& bumpfee fix?): 23201 achow101/ext-input-weight
-	Review: 23319 -  # rpc: Return fee and prevout (utxos) to getrawtransaction
+	# Needs review: 23319 -  # rpc: Return fee and prevout (utxos) to getrawtransaction
+		# Rebase of 2c56d72acac in a662191612c w/ failing test :/ (had to replace hard-coded fee assumption too)
 	# Needs API review: 23330 JeremyRubin/header-fetch
 	23362 hebasto/211025-cc
 		TODO: Add experimental warning?
