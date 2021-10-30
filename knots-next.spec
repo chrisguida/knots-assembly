@@ -433,7 +433,7 @@ checkout v22.0
 		# Needed fs::Path{To,From}String rebasing
 		# Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 greenaddress/dump_fee_estimates
+	23387 savefeeestimates-22								last=ecd40a92fbf greenaddress/dump_fee_estimates
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work: g459 Sjors-g/2021/10/taproot_gui
 # Non-progress functionality:
