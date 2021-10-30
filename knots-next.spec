@@ -41,7 +41,7 @@ checkout v22.0
 		# - avoids GCC 9 (memcmp bug)
 		# - avoids GCC bug 102993 (cf-protection=full segfaults in generated Win32 code)
 		# - avoids dependency on newer glibc symbols
-	18818 fix_gitian_src_202004-22+knots		e7ae473f644	last=b5a164d9155 fix_gitian_src_202004
+	18818 fix_gitian_src_202004					e7ae473f644
 	18902 fix_gitdir_again						48e2ecb874f
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					51d41a3ea10	last=7fe49671dd4 2020mingwthrd
