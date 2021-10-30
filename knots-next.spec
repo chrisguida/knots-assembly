@@ -238,7 +238,7 @@ checkout v22.0
 	22918 rpc_getblock_prevouts_fees-22			5b3f15dcda3	last=5c34507ecbb
 		# Was originally #16083, then #21245
 		# Left off release notes & variable rename (last 2 commits)
-		TODO: +#23320
+		# + docs from #23320 (left off refactor commit)
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
