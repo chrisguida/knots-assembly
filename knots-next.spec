@@ -338,8 +338,7 @@ checkout v22.0
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
-	21327 p2p_ignore_tx_in_ibd-22				093927be571	last=648c5c73aef  # p2p_ignore_tx_in_ibd-0.21
-		# NOTE: Resolved silent conflict FromHex->from_hex
+	21327 p2p_ignore_tx_in_ibd-22				093927be571	last=6aed8b7e9b2
 	g368  bugfix_gui_restored_columns_stretch	6facbfb184d
 	g230  gui_backup_formats					557904a49bb
 	# TODO? 21413 glozow/2021-03-bypass-timelocks
