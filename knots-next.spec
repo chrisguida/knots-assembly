@@ -170,8 +170,6 @@ checkout v22.0
 	22016 rpc_gbci_period_start-22+knots		4910107f0d1	last=70d7e0812a7 Sjors/2021/05/versionbits_period_start
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
-	-     restore_win32-22						d37803a84cc	last=3e30ae0514e restore_win32-0.21
-	# TODO: guix win32
 	-     gitian_linux32						efa9ee85ed6
 	-     guix_linux_i686
 	# not ready/deterministic: 13827 NSIS depends build
