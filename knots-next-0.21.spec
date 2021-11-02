@@ -1,7 +1,7 @@
-timestamp 2021-10-29 17:30:35
+timestamp 2021-11-02 17:19:25
 #lastapply no-merge
 
-#.. checked up to PR #23387 / gui #459
+#.. checked up to PR #23416 / gui #459
 
 checkout v0.21.2
 @0.21.x-syslibs
@@ -230,6 +230,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	23348 hebasto/211024-rpc-gwi
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
+	23410 hebasto/211101-bips
 @0.21.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -612,7 +613,7 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-2
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
-	n/a  (bump_version=Knots:20211029)			0a9a4537a5d
+	n/a  (bump_version=Knots:20211102)			0a9a4537a5d
 		TODO: Do we in fact want to bump this with only fixes??
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=96316586c91)				f1cc3f1e0b1  # release notes: write/update, including change log and credits

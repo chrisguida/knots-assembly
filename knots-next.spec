@@ -1,7 +1,7 @@
-timestamp 2021-10-29 17:30:35
+timestamp 2021-11-02 17:19:25
 lastapply no-merge
 
-#.. checked up to PR #23387 / gui #459
+#.. checked up to PR #23416 / gui #459
 
 checkout v22.0
 @22.x-syslibs
@@ -164,6 +164,7 @@ checkout v22.0
 	23348 wallet_descr_hide_keypoololdest-0.21				last=303ee60f817 hebasto/211024-rpc-gwi
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
+	23410 hebasto/211101-bips
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -434,6 +435,9 @@ checkout v22.0
 	23387 savefeeestimates-22								last=ecd40a92fbf greenaddress/dump_fee_estimates
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work: g459 Sjors-g/2021/10/taproot_gui
+	# Needs concept review: 23395 -  # util: Add -shutdownnotify option
+	# Needs careful review: 23397 hebasto/211030-contention
+	23398 -  # rpc: add return message to savemempool RPC
 # Non-progress functionality:
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -589,7 +593,7 @@ checkout v22.0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		c7a144c218c	# doc/{bips,files}
-	n/a  (bump_version=Knots:20211029)			0a9a4537a5d
+	n/a  (bump_version=Knots:20211102)			0a9a4537a5d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=064c85062ad)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
