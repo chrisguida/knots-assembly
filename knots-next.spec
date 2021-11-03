@@ -16,14 +16,13 @@ checkout v22.0
 	23182 py3_10o11-22
 		# +#23317
 	23314 disable_s2561k_openssl_test-22
-	23345 wallettool_drop_extra_deps-0.21+knots				last=1d96788ce97 hebasto/211024-bw-deps
+	23345 wallettool_drop_extra_deps-0.21+knots				last=347774b86c8 hebasto/211024-bw-deps
 		# Dropped MSVC changes
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v22.x
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
-	2241 sys_leveldb							5e9497a8ed7
+	2241  sys_leveldb-22+knots					5e9497a8ed7
 		# 23.x TODO: Revert PR removing EMBEDDED_LEVELDB stuff
-		# FIXME: num of dbs in top commit is wrong with more than 1 index enabled!
 	5416  sys_libsecp256k1-22+lnots				c2e8d067f0b	last=f749462f68c sys_libsecp256k1
 	22412 bugfix_pushback_bool
 	7485 sys_univalue_def						663a72e6a12
