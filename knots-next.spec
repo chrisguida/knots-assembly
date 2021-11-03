@@ -441,7 +441,7 @@ checkout v22.0
 	# Needs work: g459 Sjors-g/2021/10/taproot_gui
 	# Needs concept review: 23395 -  # util: Add -shutdownnotify option
 	# Needs careful review: 23397 hebasto/211030-contention
-	23398 -  # rpc: add return message to savemempool RPC
+	23398 savemempool_filename-22							last=ce064128bd1
 # Non-progress functionality:
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
