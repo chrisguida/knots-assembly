@@ -232,6 +232,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 	23410 hebasto/211101-bips
+		NOTE: Must not include v22.x-specific BIP
 @0.21.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics

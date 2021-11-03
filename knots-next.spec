@@ -164,10 +164,11 @@ checkout v22.0
 	23324 netinfo_peer_count_all_reachable-22
 	23333 wallet_fix_pr23333-22  # wallet: fix segfault by avoiding invalid default-ctored external_spk_managers entry
 	# Maybe just the docs from #23341 ?
-	23348 wallet_descr_hide_keypoololdest-0.21				last=303ee60f817 hebasto/211024-rpc-gwi
+	23348 wallet_descr_hide_keypoololdest-0.21				last=324172ee4f3 hebasto/211024-rpc-gwi
+		# Held back std::optional refactoring 303ee60f817...324172ee4f3
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
-	23410 hebasto/211101-bips
+	23410 doc_bips_380to386-22
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -325,7 +326,7 @@ checkout v22.0
 	# ---- BEGIN HWI SUPPORT, TODO ----
 	21576 rpc_bumpfee_signer-22								last=25aa986a53c Sjors/2021/04/signer_bumpfee
 		# Simply dropped misc comment changes in first commit
-	21928 hww_toggle-22+knots								last=8a4eaafe271 Sjors/2021/05/hww-toggle
+	21928 hww_toggle-22+knots								last=9fcf3025aae Sjors/2021/05/hww-toggle
 	# ---- END HWI SUPPORT ----
 	# TODO: 17355 -  # gui: grey out used address in address book
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
@@ -435,7 +436,7 @@ checkout v22.0
 		# Needed fs::Path{To,From}String rebasing
 		# Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 savefeeestimates-22								last=ecd40a92fbf greenaddress/dump_fee_estimates
+	23387 savefeeestimates-22								last=d5b41e6b2ed greenaddress/dump_fee_estimates
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work: g459 Sjors-g/2021/10/taproot_gui
 	# Needs concept review: 23395 -  # util: Add -shutdownnotify option
