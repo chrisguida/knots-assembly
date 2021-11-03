@@ -16,9 +16,14 @@ checkout v22.0
 	23182 py3_10o11-22
 		# +#23317
 	23314 disable_s2561k_openssl_test-22
+	23345 wallettool_drop_extra_deps-0.21+knots				last=1d96788ce97 hebasto/211024-bw-deps
+		# Dropped MSVC changes
+		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v22.x
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 	2241 sys_leveldb							5e9497a8ed7
+		# 23.x TODO: Revert PR removing EMBEDDED_LEVELDB stuff
+		# FIXME: num of dbs in top commit is wrong with more than 1 index enabled!
 	5416  sys_libsecp256k1-22+lnots				c2e8d067f0b	last=f749462f68c sys_libsecp256k1
 	22412 bugfix_pushback_bool
 	7485 sys_univalue_def						663a72e6a12
@@ -28,7 +33,6 @@ checkout v22.0
 	-     opt_bdb_extracare						3d26b04ad0f
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
-	23345 wallettool_drop_extra_deps-0.21+knots				last=1d96788ce97 hebasto/211024-bw-deps
 @22.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							9afa5d8517a
