@@ -164,8 +164,8 @@ checkout v22.0
 	23324 netinfo_peer_count_all_reachable-22
 	23333 wallet_fix_pr23333-22  # wallet: fix segfault by avoiding invalid default-ctored external_spk_managers entry
 	# Maybe just the docs from #23341 ?
-	23348 wallet_descr_hide_keypoololdest-0.21				last=324172ee4f3 hebasto/211024-rpc-gwi
-		# Held back std::optional refactoring 303ee60f817...324172ee4f3
+	23348 wallet_descr_hide_keypoololdest-0.21				last=ee03c782ba6 hebasto/211024-rpc-gwi
+		# Held back std::optional refactoring 303ee60f817...ee03c782ba6
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 	23410 doc_bips_380to386-22
@@ -441,7 +441,7 @@ checkout v22.0
 	# Needs work: g459 Sjors-g/2021/10/taproot_gui
 	# Needs concept review: 23395 -  # util: Add -shutdownnotify option
 	# Needs careful review: 23397 hebasto/211030-contention
-	23398 savemempool_filename-22							last=ce064128bd1
+	23398 savemempool_filename-22							last=1e30cf12706
 # Non-progress functionality:
 	8751  sort-multisigs-22						e06c15ceea1	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
