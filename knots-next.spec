@@ -40,7 +40,6 @@ checkout v22.0
 # FIXES:
 	22318 hebasto/210623-random								last=35aab4f0c0b
 	-     fix_gitian_gcc8
-		TODO: * 34f71d7670a Bugfix: Actually use wrapped GCC/G++
 	-     gitian_reverttobionic-22
 		# Revert everything to bionic:
 		# - avoids GCC 9 (memcmp bug)
@@ -180,7 +179,6 @@ checkout v22.0
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	-     gitian_linux32						efa9ee85ed6
-		TODO: * 3c9b43afc64 fixes gitian
 	-     guix_linux_i686
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
@@ -537,7 +535,6 @@ checkout v22.0
 	-     rpc_mempoolentry_txhash				011b11763f6
 	-     walletnotify_w_win-22+knots			0fafbd4a598	last=a291491d2fd walletnotify_w_win
 	14137 win_taskbar_progress					35568cf34dd	last=18eb4dbb8a
-		TODO: * 59e5ed77c48 qtwinextras: Make guix happy
 	-     restore_blockmaxsize					7cf11b880fc
 	7107 qtnetworkport							dd2ad9343f6	last=1f37c87 origin-pull/7107/head
 	7533  sendraw_force							1c4e51255a4
