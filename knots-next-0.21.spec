@@ -1,7 +1,7 @@
-timestamp 2021-11-02 17:19:25
+timestamp 2021-11-08 17:44:18
 #lastapply no-merge
 
-#.. checked up to PR #23416 / gui #459
+#.. checked up to PR #23436 / gui #459
 
 checkout v0.21.2
 @0.21.x-syslibs
@@ -231,8 +231,10 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	23348 hebasto/211024-rpc-gwi
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
+		# + fix in #23434 ???
 	23410 hebasto/211101-bips
 		NOTE: Must not include v22.x-specific BIP
+	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
 @0.21.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics

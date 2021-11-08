@@ -1,7 +1,7 @@
-timestamp 2021-11-02 17:19:25
+timestamp 2021-11-08 17:44:18
 lastapply no-merge
 
-#.. checked up to PR #23416 / gui #459
+#.. checked up to PR #23436 / gui #459
 
 checkout v22.0
 @22.x-syslibs
@@ -170,7 +170,9 @@ checkout v22.0
 		# Held back std::optional refactoring 303ee60f817...ee03c782ba6
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
+		# + fix in #23434 ???
 	23410 doc_bips_380to386-22
+	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -601,7 +603,7 @@ checkout v22.0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		c7a144c218c	# doc/{bips,files}
-	n/a  (bump_version=Knots:20211102)			0a9a4537a5d
+	n/a  (bump_version=Knots:20211108)			0a9a4537a5d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=d8f8e3f7b7e)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
