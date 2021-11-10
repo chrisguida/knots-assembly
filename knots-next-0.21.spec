@@ -1,7 +1,8 @@
 timestamp 2021-11-08 17:44:18
 #lastapply no-merge
 
-#.. checked up to PR #23436 / gui #459
+#.. checked up to PR #22369 / gui #375 for features
+#.. checked up to PR #23436 / gui #459 for fixes
 
 checkout v0.21.2
 @0.21.x-syslibs
@@ -618,8 +619,7 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-2
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
-	n/a  (bump_version=Knots:20211102)			0a9a4537a5d
-		TODO: Do we in fact want to bump this with only fixes??
+	n/a  (bump_version=Knots:20210629)			0a9a4537a5d  # DO NOT CHANGE for just fixes
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=96316586c91)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
