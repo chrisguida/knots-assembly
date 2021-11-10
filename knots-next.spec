@@ -9,14 +9,14 @@ checkout v22.0
 	21882 hebasto/210507-fuzz32					9266208d30a	last=e4c8bb62e4a hebasto/210507-fuzz32
 		# NOTE: Has improvements/fixes
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
-	22390 fanquake/netbsd_dont_set_locale		ce1fe030632					last=fdd71448e78
+	22390 fanquake/netbsd_dont_set_locale		ce1fe030632	last=fdd71448e78
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
 	# OR: 23082 fanquake/remove_weak_auxval
-	23045 fix_crc32c_arm64_detect-0.20			7fdb9bcdba3						last=f2747d1602e laanwj/2021-09-arm64-crc32
+	23045 fix_crc32c_arm64_detect-0.20			7fdb9bcdba3	last=f2747d1602e laanwj/2021-09-arm64-crc32
 	23182 py3_10o11-22							3a178c3d4c8
 		# +#23317
 	23314 disable_s2561k_openssl_test-22		fbc4c469a9e
-	23345 wallettool_drop_extra_deps-0.21+knots	19bbee9327b				last=347774b86c8 hebasto/211024-bw-deps
+	23345 wallettool_drop_extra_deps-0.21+knots	19bbee9327b	last=347774b86c8 hebasto/211024-bw-deps
 		# Dropped MSVC changes
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v22.x
 # SYSLIBS: (and old build bugs)
@@ -38,7 +38,7 @@ checkout v22.0
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 # FIXES:
-	22318 hebasto/210623-random					19e3a797c2c								last=35aab4f0c0b
+	22318 hebasto/210623-random					19e3a797c2c	last=35aab4f0c0b
 	-     fix_gitian_gcc8						17e23cf927b
 	-     gitian_reverttobionic-22				7a70cb930d8
 		# Revert everything to bionic:
@@ -113,16 +113,16 @@ checkout v22.0
 	22359 fix_wallet_pr22359-22					6bb11a68214	last=fa6fd3dd6a4
 		# Semi-diff-minimised
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
-	22417 bpchild_closefds						95725111d52									last=3b6153ba336 bpchild_closefds
+	22417 bpchild_closefds						95725111d52	last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 	g379  qt_reset_bad_settingsjson-0.21		4e73e9897eb
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
 	22577 fix_race_pr22577-22					901084a630e
 	22591 missing_settings_err-0.21				12adb9802f1
-	22834 bugfix_onlynet-22						22f55e6b0b5									last=051c2554ca1 vasild/onlynet
+	22834 bugfix_onlynet-22						22f55e6b0b5	last=051c2554ca1 vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
 	# Needs review: 22665 darosior:rbf_optin_nomempool
-	22722 fix_estsfee_minrelay-22				3361f6557d4							last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
+	22722 fix_estsfee_minrelay-22				3361f6557d4	last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
 	23027 bugfix_util_test_config				162911e79ab
 	22781 fix_ishdenabled-0.21					0b3d4f3755b
 	# Needs review: 22798 MarcoFalke:2108-docRpc
@@ -131,16 +131,16 @@ checkout v22.0
 	# Needs review: 22834 vasild:onlynet
 	# TODO? 22836 sipa:202108_bipvec5
 	# Not worth added build overhead? 22840 fanquake:fix_depends_lib_optimisation
-	22875 parseopcode_threadsafe-22				38423f8f8b9							last=d5e006c84a1
-	22879 fix_addrman_err_format-22				4cd97b482fd							last=fab0b55cf06	marco/2109-testPeersDat
+	22875 parseopcode_threadsafe-22				38423f8f8b9	last=d5e006c84a1
+	22879 fix_addrman_err_format-22				4cd97b482fd	last=fab0b55cf06	marco/2109-testPeersDat
 	22895 fix_RBFD_lock_pr22895-22				dff7c4b9e57
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
 	g399  fix_load_psbt_wo_wallet-22			8662af17d5f
-	g409  fix_gui_walletop_titlebar-22			b22ad25feb4						last=01bff8f0494
+	g409  fix_gui_walletop_titlebar-22			b22ad25feb4	last=01bff8f0494
 		# Held back trivial comment change f86fe193329..01bff8f0494
-	g418  mac_platform_metadata-0.20			97464b6fa45						last=3765c486ef5 jarolrod-g/applesilicon-categorization
+	g418  mac_platform_metadata-0.20			97464b6fa45	last=3765c486ef5 jarolrod-g/applesilicon-categorization
 	23050 bugfix_pr23050-0.15					4465c9d346a  # log: change an incorrect fee to fee rate, and vice-versa
 	23061 fix_argparse_persistmempool-22		840126562e5
 	# Needs review & concept check: 23074 Package-aware fee estimation
@@ -165,7 +165,7 @@ checkout v22.0
 	23324 netinfo_peer_count_all_reachable-22	9aeb9bca797
 	23333 wallet_fix_pr23333-22					1bd9a6019dc  # wallet: fix segfault by avoiding invalid default-ctored external_spk_managers entry
 	# Maybe just the docs from #23341 ?
-	23348 wallet_descr_hide_keypoololdest-0.21	cdb1cd5d9a7				last=ee03c782ba6 hebasto/211024-rpc-gwi
+	23348 wallet_descr_hide_keypoololdest-0.21	cdb1cd5d9a7	last=ee03c782ba6 hebasto/211024-rpc-gwi
 		# Held back std::optional refactoring 303ee60f817...ee03c782ba6
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
@@ -327,9 +327,9 @@ checkout v22.0
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
 	# ---- BEGIN HWI SUPPORT, TODO ----
-	21576 rpc_bumpfee_signer-22					b8b2d2d9baa								last=25aa986a53c Sjors/2021/04/signer_bumpfee
+	21576 rpc_bumpfee_signer-22					b8b2d2d9baa	last=25aa986a53c Sjors/2021/04/signer_bumpfee
 		# Simply dropped misc comment changes in first commit
-	21928 hww_toggle-22+knots					c1697fa9595								last=9fcf3025aae Sjors/2021/05/hww-toggle
+	21928 hww_toggle-22+knots					c1697fa9595	last=9fcf3025aae Sjors/2021/05/hww-toggle
 	# ---- END HWI SUPPORT ----
 	# TODO: 17355 -  # gui: grey out used address in address book
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
@@ -382,16 +382,16 @@ checkout v22.0
 	# Too many TODOs: 22341 Sjors/2021/06/getxpub
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							05053cd7598
-	22383 -										d9806eeb1e0													last=78f4c8b98ea  # rpc: Prefer to use txindex if available for GetTransaction
+	22383 -										d9806eeb1e0	last=78f4c8b98ea  # rpc: Prefer to use txindex if available for GetTransaction
 	# TODO: 22609 theStack/202107-gettransaction_remove_lock
 		# TODO: Check for safety
-	22407 -										8d2a6d0acfb													last=20edf4bcf61
+	22407 -										8d2a6d0acfb	last=20edf4bcf61
 		# NOTE: promag's own branch is not up to date
-	22501 netinfo_addr_stats-22					18c1ce99bd7								last=218862a0184 jonatack/netinfo-addr-statistics
-	22513 rpcwallet_psbt_no_finalize-22+knots	51cac865a4d				last=a99ed898655 achow101/psbt-no-finalize
+	22501 netinfo_addr_stats-22					18c1ce99bd7	last=218862a0184 jonatack/netinfo-addr-statistics
+	22513 rpcwallet_psbt_no_finalize-22+knots	51cac865a4d	last=a99ed898655 achow101/psbt-no-finalize
 		# Modified to use a new options object instead of an additional bool positional param
 	# Needs review: 22514 achow101/psbt-sighash-default
-	g384  -										e3520c4302e													last=ab1461d5d36  # add copy subnet action for banned peer
+	g384  -										e3520c4302e	last=ab1461d5d36  # add copy subnet action for banned peer
 	# TODO: Minimal 22539 darosior/fee_est_rbf
 	# Needs more careful security review: 22541 Add a new RPC command: restorewallet
 		# TODO: restrict access in multiwallet_rpc
@@ -402,12 +402,12 @@ checkout v22.0
 	# TODO? Diff-minimised 22604 jonatack:rate_limit_addr_follow-ups
 	# Needs review: 22674 glozow:package-child-with-parents
 	# Needs review: vasild:torbind
-	22751 simulaterawtx-22						364c0507238									last=b269f1bb0d6 kallewoof/202108-analyzerawtransaction
+	22751 simulaterawtx-22						364c0507238	last=b269f1bb0d6 kallewoof/202108-analyzerawtransaction
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
 	# TODO? 22777 jnewbery/2021-08-feeler-no-frelay
 	# TODO: 22778 jnewbery:2021-02-tx-relay-init
-	22789 extsigner_pr22789-22					19b02aa5b1f								last=d047ed729f1  # external_signer: improve fingerprint matching logic (stop on first match)
+	22789 extsigner_pr22789-22					19b02aa5b1f	last=d047ed729f1  # external_signer: improve fingerprint matching logic (stop on first match)
 		# Rewritten to diff-minimise and simplify
 	# Needs BIP? 22838 achow101:multipath-descs
 	# TODO? 22894 jonatack/netinfo-clarify-client-and-server-versions
@@ -416,16 +416,16 @@ checkout v22.0
 	# Needs work: 23019 -  # rpc, wallet: Add listaddresses RPC
 	# Needs review: 23035 jonatack:getnodeaddresses-tried-and-reference_count
 	g390  gui_defopt_subfeefromamt-22			466f5bcd392
-	g391  -										05fc524918d													last=0b869df1c91  # Add cancel button to configuration options popup
+	g391  -										05fc524918d	last=0b869df1c91  # Add cancel button to configuration options popup
 	g408  gui_mnemonics_g408-22					dda7940792e  # Add missing mnemonics in menu bar options
 	# Needs work: g410  benthecarman/uppercase-uri
-	g416  gui_rpcserver_opt-0.18				0be66613eda							last=bd5c826a963 Sjors-g/2021/09/rpc_setting
+	g416  gui_rpcserver_opt-0.18				0be66613eda	last=bd5c826a963 Sjors-g/2021/09/rpc_setting
 		# NOTE: Includes gui#449
-	g419  gui_dbcache_s.threads_tooltips-0.9	88230510554				last=9bd168bf545 jarolrod-g/options-tooltips
+	g419  gui_dbcache_s.threads_tooltips-0.9	88230510554	last=9bd168bf545 jarolrod-g/options-tooltips
 	# Needs Core release (wallet format change): 23065 meshcollider/202109_lockunspent_persistence
 	# Needs work: 23077 vasild/cjdns
 		# Followup in #23175
-	23113 rpc_multisig_uncomp_warnings-0.21		6e4d9f3723f					last=2d21025feef meshcollider/202109_createmultisig_warnings
+	23113 rpc_multisig_uncomp_warnings-0.21		6e4d9f3723f	last=2d21025feef meshcollider/202109_createmultisig_warnings
 		# Left off commit with relnotes
 	# Why merge this before Core? (last commit only?) 23115 fanquake:18985_rebased (note: merged in master already)
 	# Needs work: 23152 fanquake/experiment_with_lto
@@ -435,16 +435,16 @@ checkout v22.0
 	# Needs review: 23319 -  # rpc: Return fee and prevout (utxos) to getrawtransaction
 		# Rebase of 2c56d72acac in a662191612c w/ failing test :/ (had to replace hard-coded fee assumption too)
 	# Needs API review: 23330 JeremyRubin/header-fetch
-	23362 importfromcoldcard-22					ba52f717337								last=8076f8d4c2a hebasto/211025-cc
+	23362 importfromcoldcard-22					ba52f717337	last=8076f8d4c2a hebasto/211025-cc
 		# Needed fs::Path{To,From}String rebasing
 		# Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 savefeeestimates-22					ec0f6c01a85								last=d5b41e6b2ed greenaddress/dump_fee_estimates
+	23387 savefeeestimates-22					ec0f6c01a85	last=d5b41e6b2ed greenaddress/dump_fee_estimates
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work: g459 Sjors-g/2021/10/taproot_gui
 	# Needs concept review: 23395 -  # util: Add -shutdownnotify option
 	# Needs careful review: 23397 hebasto/211030-contention
-	23398 savemempool_filename-22				8b2f9393b74							last=1e30cf12706
+	23398 savemempool_filename-22				8b2f9393b74	last=1e30cf12706
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -557,7 +557,7 @@ checkout v22.0
 	-     gui_request_payment_label-0.19		1bc559e14c5
 	-     gui_peers_sort_network-22				6c709ff6846
 	-     gui_peers_no_net_column				42faba73091
-	22439 guix_in_gitian						6f8b29bd9f8									last=ebda0463748 achow101/guix-in-gitian
+	22439 guix_in_gitian						6f8b29bd9f8	last=ebda0463748 achow101/guix-in-gitian
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			d61bb3c22e9
 	11413 rpc_feemode_explicit_compat-22		e7224269814
