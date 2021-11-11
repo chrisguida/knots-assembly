@@ -15,9 +15,9 @@ checkout v0.21.2
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
 	# OR: 23082 fanquake/remove_weak_auxval
 	23045 fix_crc32c_arm64_detect-0.20						last=f2747d1602e laanwj/2021-09-arm64-crc32
-	23182 py3_9t11-0.21
+	23182 py3_9t11-0.21										last=e11c21c8454 py3_10o11-22
 		# +#23317
-	23314 fanquake/libsecp256k1_subtree_update
+	23314 disable_s2561k_openssl_test-0.21					last=8031de63b5a disable_s2561k_openssl_test-22
 	23345 hebasto/211024-bw-deps
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
