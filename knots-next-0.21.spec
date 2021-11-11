@@ -44,11 +44,12 @@ m	20121 secp256k1_allow_bignum-21+knots		ed298e34b3d
 TM	22279 fix_fuzz_baseencdec_pr22279-0.21		3d80a04b144
 TM	22002 fix_fuzz_system_pr22002-0.21			867a7fc53df
 TM	22137 fix_fuzz_system_pr22137-0.21			a7912915185
-	-     lint_relaxer-0.21						9afa5d8517a	last=7c3ea4aca40 lint_relaxer
+	-     lint_relaxer-0.21						9afa5d8517a	last=598cf8bfb7b lint_relaxer
+		# Held back unnecessary d4d8eb13cbb...598cf8bfb7b
 	17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20	6430702d120
 # FIXES:
-	22318 hebasto/210623-random								last=35aab4f0c0b
+	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b
 	18818 fix_gitian_src_202004					e7ae473f644
 	18902 fix_gitdir_again						48e2ecb874f
 		# NOTE: based directly on #18818
