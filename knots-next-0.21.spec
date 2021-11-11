@@ -23,8 +23,8 @@ checkout v0.21.2
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v22.x
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
-	2241 sys_leveldb-21+knots					5e9497a8ed7	last=bd02e19eaf5 sys_leveldb-22+knots
-	5416 sys_libsecp256k1-0.21					c2e8d067f0b	last=258c28e99b3 sys_libsecp256k1
+m	2241 sys_leveldb-21+knots					5e9497a8ed7	last=bd02e19eaf5 sys_leveldb-22+knots
+	5416 sys_libsecp256k1-0.21					c2e8d067f0b	last=f749462f68c sys_libsecp256k1
 	7485 sys_univalue_def						663a72e6a12
 	13789 bugfix_asm_pragmas					82ab60f2428
 	-     bugfix_asm_leveldb_check				741060d31b8
