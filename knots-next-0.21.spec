@@ -18,11 +18,12 @@ checkout v0.21.2
 	23182 py3_9t11-0.21										last=e11c21c8454 py3_10o11-22
 		# +#23317
 	23314 disable_s2561k_openssl_test-0.21					last=8031de63b5a disable_s2561k_openssl_test-22
-	23345 hebasto/211024-bw-deps
+	23345 wallettool_drop_extra_deps-0.21+knots				last=347774b86c8 hebasto/211024-bw-deps
+		# Dropped MSVC changes
+		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v22.x
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
-	2241 sys_leveldb							5e9497a8ed7
-		# FIXME: num of dbs in top commit is wrong with more than 1 index enabled!
+	2241 sys_leveldb-21+knots					5e9497a8ed7	last=bd02e19eaf5 sys_leveldb-22+knots
 	5416 sys_libsecp256k1-0.21					c2e8d067f0b	last=258c28e99b3 sys_libsecp256k1
 	7485 sys_univalue_def						663a72e6a12
 	13789 bugfix_asm_pragmas					82ab60f2428
