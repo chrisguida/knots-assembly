@@ -50,11 +50,11 @@ TM	22137 fix_fuzz_system_pr22137-0.21			a7912915185
 	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20	6430702d120
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b
-	18818 fix_gitian_src_202004					e7ae473f644
-	18902 fix_gitdir_again						48e2ecb874f
+	18818 fix_gitian_src_202004-21				e7ae473f644	last=b5a164d9155 fix_gitian_src_202004
+	18902 fix_gitdir_again-21					48e2ecb874f	last=686cedcc9cd fix_gitdir_again
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					51d41a3ea10	last=7fe49671dd4 2020mingwthrd
-	18490 bugfix_symcheck_pe_case				b9b3f3bd5c0
+	18490 bugfix_symcheck_pe_case-21			b9b3f3bd5c0	last=24a69574ece bugfix_symcheck_pe_case
 	17828 p2p_log_categories					bab13c46b9b	last=04960621582 practicalswift/log-categories
 	19832 hebasto/200829-log					1ed3a60bb05	last=1816327e533
 	20845 net_logcategory_localdisconnect-0.21	fb5ba0afa13	last=fa55159b9ed marco/2101-netLogDisconnect
