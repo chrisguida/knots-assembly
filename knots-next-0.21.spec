@@ -35,7 +35,7 @@ m	5416 sys_libsecp256k1-0.21+knots			c2e8d067f0b	last=f749462f68c sys_libsecp256
 		# Omitted "Don't make any wallets unless wallet is required": 45b4366f8ff 104a3a22564 6e06ca05880
 		# Diff-minimised
 	-     opt_bdb_extracare-0.21				3d26b04ad0f	last=aa6a707d7ca opt_bdb_extracare
-	20121 secp256k1_allow_bignum				ed298e34b3d
+m	20121 secp256k1_allow_bignum-21+knots		ed298e34b3d
 	20358 -										980c71c1f50	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					cfc912ffcdc	last=836a3dc02c7 jonas/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
