@@ -180,6 +180,7 @@ checkout v22.0
 # FUNCTIONALITY:
 	-     gitian_linux32						95d78266cd4
 	-     guix_linux_i686						d7cabad678b
+		FIXME: symbol __divmoddi4 from unsupported version GCC_7.0.0
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -558,6 +559,7 @@ checkout v22.0
 	-     gui_peers_sort_network-22				6c709ff6846
 	-     gui_peers_no_net_column				42faba73091
 	22439 guix_in_gitian						6f8b29bd9f8	last=ebda0463748 achow101/guix-in-gitian
+		FIXME: Add i686-pc-linux-gnu
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			d61bb3c22e9
 	11413 rpc_feemode_explicit_compat-22		e7224269814
