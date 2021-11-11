@@ -28,7 +28,7 @@ m	5416 sys_libsecp256k1-0.21+knots			c2e8d067f0b	last=f749462f68c sys_libsecp256
 	7485 sys_univalue_def						663a72e6a12
 	13789 bugfix_asm_pragmas					82ab60f2428
 	-     bugfix_asm_leveldb_check				741060d31b8
-	15155 test_external_bcli					251dcff7eee
+	15155 test_external_bcli-21					251dcff7eee	last=06ec7f56dfb test_external_bcli
 	20202 opt_bdb-0.21							1b369a2bfd7
 		# +#20458+#20267
 		# Omitted default-tests-to-descriptors-when-bdb-not-compiled: a2282b44a4d 373158bc44c
