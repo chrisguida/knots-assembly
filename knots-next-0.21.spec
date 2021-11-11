@@ -65,7 +65,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			a7912915185
 	-     http_bind_error+extra-21				81ed4fe33fa	last=fd5353ed826 http_bind_error+extra
 		# NOTE: Held back annotation in gdd 785429c2c7a fd5353ed826
 	9524 marco/Mf1701-qaPruning					ae3444d7950	last=88883ae13d marco/Mf1701-qaPruning
-	10731 log_more_uacomment					3cee4ceb1b1
+	10731 log_more_uacomment-21					3cee4ceb1b1	last=fa16d94b095 log_more_uacomment
 	14485 fadvise								e87f5a4c952
 		# Was #12491
 	14501 fsync_dir								e4a9992dd5e
@@ -74,7 +74,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			a7912915185
 	# Needs bugfix: -     fsync_dir_win
 	13608 -										bdb644e5423	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	-     deprecated_param_names				7a602d396d9
-	-     bugfix_rpc_getbalance_hacky			2fc80cecb4c
+	-     bugfix_rpc_getbalance_hacky-0.21		2fc80cecb4c	last=bb3ba6bebe8 bugfix_rpc_getbalance_hacky
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
