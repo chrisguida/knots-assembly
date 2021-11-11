@@ -11,12 +11,12 @@ checkout v0.21.2
 	20938 configure_latomic_checks-0.14^		ee5e40704b0
 	21920 configure_latomic_checks-0.14			4f3c88f543a
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
-	22390 fanquake/netbsd_dont_set_locale					last=fdd71448e78
+	22390 netbsd_dont_set_locale-0.20
 	# Needs review: 23030 -  # src/randomenv.cpp: fix uclibc build
 	# OR: 23082 fanquake/remove_weak_auxval
 	23045 fix_crc32c_arm64_detect-0.20						last=f2747d1602e laanwj/2021-09-arm64-crc32
-	23182 fanquake/python_3_10_configure
-		TODO: Needs +#23317
+	23182 py3_9t11-0.21
+		# +#23317
 	23314 fanquake/libsecp256k1_subtree_update
 	23345 hebasto/211024-bw-deps
 # SYSLIBS: (and old build bugs)
