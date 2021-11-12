@@ -108,7 +108,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
 	# Needs review: 19434 promag:2020-06-remote-disconnect
-	g18   hebasto-g/200701-peer
+	# TODO: g18   hebasto-g/200701-peer
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs review: g59   hebasto-g/200814-rpc
 	# Needs review: 19793 ryanofsky/pr/badsalv
@@ -116,8 +116,9 @@ m	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
 	19884 fixedseeds-0.21						5ff339ffa5d
 		# +partial #21254 (bugfix only)
-	19888 getblockstats_utxo_actual-0.21+knots	37dd20ac3a1	last=37bbfe96674
-	(CHECK-LAST)	last=??? getblockstats_utxo_actual-22+knots
+	19888 getblockstats_utxo_actual-0.21+knots	37dd20ac3a1	last=6cd78060c8e
+	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
+		# Held back additional tests
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					13002cb08f2	last=2e386cd3dd3
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
