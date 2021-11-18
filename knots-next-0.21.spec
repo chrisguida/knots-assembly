@@ -203,11 +203,13 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	22781 fix_ishdenabled-0.21
 	# Needs review: 22798 MarcoFalke:2108-docRpc
 	# Needs review (& diff minimisation?): 22817 MarcoFalke:2108-testRaceConnect
-	22820 fix_config_qtinputsupport-22
+	# n/a without #21565: 22820 fix_config_qtinputsupport-22
 	# Needs review: 22834 vasild:onlynet
 	# TODO? 22836 sipa:202108_bipvec5
 	# Not worth added build overhead? 22840 fanquake:fix_depends_lib_optimisation
-	22875 parseopcode_threadsafe-22							last=d5e006c84a1
+	19851 abstract_parseopcode-21  # needed for 22875
+	22875 parseopcode_threadsafe-21							last=d5e006c84a1
+	(CHECK-LAST)	last=34fd8e3992c parseopcode_threadsafe-22
 	22879 fix_addrman_err_format-22							last=fab0b55cf06	marco/2109-testPeersDat
 	22895 fix_RBFD_lock_pr22895-22
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
