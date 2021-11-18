@@ -153,7 +153,7 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 		# Diff-minimised
 	g217  gui_clickable_warning-0.11			0311cc01d15	last=67c59ae4793 jarolrod-g/warning-look-like-button
 	# Needs careful review: g219 hebasto-g/210223-toolbar
-	g236  gui_init_walleterror_cont				37fc886f39f
+	g236  gui_init_walleterror_cont-21			37fc886f39f
 	# Complex: 21007 hebasto:210316-fork
 		# +21447 TODO
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
