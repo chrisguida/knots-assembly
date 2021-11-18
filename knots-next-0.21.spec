@@ -183,14 +183,14 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	22311 bugfix_pr22311-0.21					995e84e1904
 	18842 fix_wallet_pr18842-0.21				42b45600d37
 	22359 fix_wallet_pr22359-0.21				3244e0d002f	last=fa6fd3dd6a4
-	(CHECK-LAST)	last=??? fix_wallet_pr22359-22
+	(CHECK-LAST)	last=171ac54ea47 fix_wallet_pr22359-22
 		# Semi-diff-minimised
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds-0.21								last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 	g379  qt_reset_bad_settingsjson-0.21
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
-	22577 fix_race_pr22577-22
+	22577 fix_race_pr22577-0.21.1							last=05e84aa550c fix_race_pr22577-22
 	22591 missing_settings_err-0.21
 	22834 bugfix_onlynet-22									last=0ea0de64385 vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
