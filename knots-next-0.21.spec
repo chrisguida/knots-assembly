@@ -196,7 +196,9 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 		# Refactored to be less optimised in favour of being more obviously correct
 	(CHECK-LAST)	last=61c0c0f7bad bugfix_onlynet-22
 	# Needs review: 22665 darosior:rbf_optin_nomempool
-	22722 fix_estsfee_minrelay-22							last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
+	22722 fix_estsfee_minrelay-21+knots						last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
+		# +#23547
+	(CHECK-LAST)	last=73a5d927f34 fix_estsfee_minrelay-22
 	23027 bugfix_util_test_config
 	22781 fix_ishdenabled-0.21
 	# Needs review: 22798 MarcoFalke:2108-docRpc
