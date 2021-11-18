@@ -158,7 +158,7 @@ TM	g188  bugfix_psbt_binmode-0.21				d46c3cb9d45	last=cc3971c9ff5 achow101-g/bin
 		# +21447 TODO
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
 	# TODO: Last commit? Diff-minimised somehow? 21560 laanwj/2021-03-torv3-hardcoded-seeds
-	Partially upstream: 21644 bugfix_addlocal_downloadbind-0.21		2f5bc37b025
+TM	21644 bugfix_addlocal_downloadbind-0.21		2f5bc37b025
 	21822 bugfix_cli_pr21822-0.21				791f7e23c3b
 TM	21907 listwalletdir_iterate_inf-0.19		985e103723c
 	21944 fix_listwalletdir_rootdir-0.21+knots	32993f653d7
