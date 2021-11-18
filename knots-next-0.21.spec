@@ -18,9 +18,10 @@ checkout v0.21.2
 	23182 py3_9t11-0.21										last=e11c21c8454 py3_10o11-22
 		# +#23317
 	23314 disable_s2561k_openssl_test-0.21					last=8031de63b5a disable_s2561k_openssl_test-22
-	23345 wallettool_drop_extra_deps-0.21+knots				last=347774b86c8 hebasto/211024-bw-deps
+	23345 wallettool_drop_extra_deps-0.21+knots				last=4fe7cf16779 hebasto/211024-bw-deps
 		# Dropped MSVC changes
-		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v22.x
+		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v21.x+v22.x
+		# Held back 347774b86c8...4fe7cf16779 removal of embedded leveldb conditional (might have worked better with sys_leveldb, but oh well)
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 m	2241 sys_leveldb-21+knots					5e9497a8ed7	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -123,7 +124,7 @@ m	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/
 	g87   hebasto-g/200910-mono					13002cb08f2	last=2e386cd3dd3
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
-	g121  promag-g/2020-10-missing-transaction-notifications
+	g121  fix_qt_early_sub_signals-21
 	# Needs review: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch				02b171f7ec5
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
