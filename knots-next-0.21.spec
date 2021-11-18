@@ -192,8 +192,9 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
 	22577 fix_race_pr22577-0.21.1							last=05e84aa550c fix_race_pr22577-22
 	22591 missing_settings_err-0.21
-	22834 bugfix_onlynet-22									last=0ea0de64385 vasild/onlynet
+	22834 bugfix_onlynet-21									last=051c2554ca1 vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
+	(CHECK-LAST)	last=61c0c0f7bad bugfix_onlynet-22
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	22722 fix_estsfee_minrelay-22							last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
 	23027 bugfix_util_test_config
