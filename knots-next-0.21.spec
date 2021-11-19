@@ -228,7 +228,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# TODO: 23139 jonatack/fix-rpc-trusted-field-help
 	# Needs review: 23140 sipa/202109_addrmanbias
 	# Not sure about this: 23142 meshcollider:202109_no_assert_corruption
-	g430 gui_txlinks_g430-22
+	g430 gui_txlinks_g430-0.19								last=a3b35507ce7 gui_txlinks_g430-22
 		# NOTE: Left off trivial string change
 	g439 gui_hide_unused_icons-0.20
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
