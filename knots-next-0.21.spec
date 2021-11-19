@@ -216,9 +216,10 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review: 22929 S3RK/fix_19856
 	# Needs review and diff minimisation: 22932 jonatack:require-GetBlockPos-to-hold-cs_main
-	g399  fix_load_psbt_wo_wallet-22
-	g409  fix_gui_walletop_titlebar-22						last=01bff8f0494
+	g399  fix_load_psbt_wo_wallet-21						last=27f8c7c425d fix_load_psbt_wo_wallet-22
+	g409  fix_gui_walletop_titlebar-0.20					last=01bff8f0494
 		# Held back trivial comment change f86fe193329..01bff8f0494
+	(CHECK-LAST)	last=e817b217145 fix_gui_walletop_titlebar-22
 	g418  mac_platform_metadata-0.20						last=3765c486ef5 jarolrod-g/applesilicon-categorization
 	23050 bugfix_pr23050-0.15  # log: change an incorrect fee to fee rate, and vice-versa
 	23061 fix_argparse_persistmempool-22
