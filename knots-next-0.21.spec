@@ -222,9 +222,9 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	(CHECK-LAST)	last=e817b217145 fix_gui_walletop_titlebar-22
 	g418  mac_platform_metadata-0.20						last=3765c486ef5 jarolrod-g/applesilicon-categorization
 	23050 bugfix_pr23050-0.15  # log: change an incorrect fee to fee rate, and vice-versa
-	23061 fix_argparse_persistmempool-22
+	23061 fix_argparse_persistmempool-21					last=60ef97c3e80 fix_argparse_persistmempool-22
 	# Needs review & concept check: 23074 Package-aware fee estimation
-	23106 fix_unlock_before_psbtsign-22
+	23106 fix_unlock_before_psbtsign-21						last=aebd7bceaf3 fix_unlock_before_psbtsign-22
 	# TODO: 23139 jonatack/fix-rpc-trusted-field-help
 	# Needs review: 23140 sipa/202109_addrmanbias
 	# Not sure about this: 23142 meshcollider:202109_no_assert_corruption
