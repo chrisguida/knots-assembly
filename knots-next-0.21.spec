@@ -239,7 +239,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# TODO: 23253 marco/2110-utilTxSeqId
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
 	# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
-	23324 jonatack/netinfo-print-peer-counts-for-all-reachable-networks
+	# n/a without #20764? 23324 netinfo_peer_count_all_reachable-22
 	23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
 	# Maybe just the docs from #23341 ?
 	23348 hebasto/211024-rpc-gwi
