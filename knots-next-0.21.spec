@@ -252,17 +252,16 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 @0.21.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
-	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=04ce309840f Sjors/2021/05/versionbits_period_start
+	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=70d7e0812a7 Sjors/2021/05/versionbits_period_start
 	(CHECK-LAST)	last=d6d1a1b47eb rpc_gbci_period_start-22+knots
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
-	g275  gui_darkmode-0.21_pt1					8939a4a109b
+m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 		# NOTE: Fixed bug in gui#330 a simpler way b942216a1a7
 	g154  gui_darkmode-0.21
 	g366  gui_palettechange-0.21				55b04f94483
 	-     restore_win32-0.21+knots				d37803a84cc	last=3e30ae0514e restore_win32-0.21
-	(CHECK-LAST)	last=??? restore_win32-22
-		TODO? [restore_win32-22 1d2e11bc769] fixup! Partially revert part of #15939 "Remove Windows 32 bit build"
+	(CHECK-LAST)	last=42e0d32b391 restore_win32-22  # (currently broken)
 	-     restore_linux32						efa9ee85ed6
 		# NOTE: gitian only
 	20963 gitian_power64-0.21+knots				d7151c1b629	last=543bf745d38 gitian_power64
