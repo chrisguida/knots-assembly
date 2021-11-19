@@ -262,7 +262,7 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 	g366  gui_palettechange-0.21				55b04f94483
 	-     restore_win32-0.21+knots				d37803a84cc	last=3e30ae0514e restore_win32-0.21
 	(CHECK-LAST)	last=42e0d32b391 restore_win32-22  # (currently broken)
-	-     restore_linux32						efa9ee85ed6
+	-     restore_linux32-0.21					efa9ee85ed6	last=eeea5b787d4 gitian_linux32
 		# NOTE: gitian only
 	20963 gitian_power64-0.21+knots				d7151c1b629	last=543bf745d38 gitian_power64
 		# NOTE: Originally #14066
