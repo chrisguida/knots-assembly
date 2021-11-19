@@ -269,8 +269,8 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 		# Held back 31dbf0b677d..543bf745d38 - probably only applicable to master
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	14641 fundraw_minconf-0.21					fde6c8132bc	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
-	(CHECK-LAST)	last=??? fundraw_minconf
-	12677 listunspent_ancestorinfo				28b3902be59
+	(CHECK-LAST)	last=4138cb304b8 fundraw_minconf
+	12677 listunspent_ancestorinfo-21			28b3902be59	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees					4d67400f273	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
 	g119  rm_send2self-mini						f97c6773966	last=aa744e4382e rm_send2self
