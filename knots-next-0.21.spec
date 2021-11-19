@@ -242,12 +242,12 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# n/a without #20764? 23324 netinfo_peer_count_all_reachable-22
 	# n/a without #19651: 23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
 	# Maybe just the docs from #23341 ?
-	23348 hebasto/211024-rpc-gwi
+	23348 wallet_descr_hide_keypoololdest-0.21				last=ee03c782ba6 hebasto/211024-rpc-gwi
+		# Held back std::optional refactoring 303ee60f817...ee03c782ba6
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 		# + fix in #23434 ???
-	23410 hebasto/211101-bips
-		NOTE: Must not include v22.x-specific BIP
+	# Moved to Knots bips.md update in branding: 21925 + 23410 hebasto/211101-bips
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
 @0.21.x-knots
 # SOFTFORK:
@@ -632,6 +632,7 @@ m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-2
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
+		TODO: gcp 3364d31c3b5 7fc3fe1a1ab + add Taproot UASF BIP
 	n/a  (bump_version=Knots:20210629)			0a9a4537a5d  # DO NOT CHANGE for just fixes
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=96316586c91)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
