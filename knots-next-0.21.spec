@@ -271,8 +271,9 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 	14641 fundraw_minconf-0.21					fde6c8132bc	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	(CHECK-LAST)	last=4138cb304b8 fundraw_minconf
 	12677 listunspent_ancestorinfo-21			28b3902be59	last=6cb60f3e6d6 listunspent_ancestorinfo
-	18479 rpc_sign_show_fees					4d67400f273	last=47b2ba29df2 !kallewoof/sign-show-fees
+	18479 rpc_sign_show_fees-21					4d67400f273	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
+	(CHECK-LAST)	last=8b77eb9d493 rpc_sign_show_fees
 	g119  rm_send2self-mini						f97c6773966	last=aa744e4382e rm_send2self
 		# NOTE: Originally #15115
 	15423 tor_socks_port-0.21					67bfe9cad94	last=d37d95a9ea2 tor_socks_port
