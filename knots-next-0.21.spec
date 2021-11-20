@@ -291,15 +291,15 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 		# NOTE: Uses older bloom filter implementation
 	-     rpc_gai_txids-0.21+knots				01bfbd88472	last=f954a0d7a00 getaddressinfo_txids
 	18772 -										bcfd0b89ee7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
-	22918 rpc_getblock_prevouts_fees-0.21		5b3f15dcda3	last=7fc316e2c9f
-	(CHECK-LAST)	last=??? rpc_getblock_prevouts_fees-22
+	22918 rpc_getblock_prevouts_fees-0.21		5b3f15dcda3	last=5c34507ecbb
+	(CHECK-LAST)	last=80612d8aded rpc_getblock_prevouts_fees-22
 		# Was originally #16083, then #21245
 		# Held back change of verbosity to class enum, and generally kept #16083 base
 		# Renamed blockToJSON to avoid silent conversion of bool to new int verbosity param
 		# Renamed "coinbase" field to "generated"
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
-		TODO?: +#23320
+		# + docs from #23320 (left off refactor commit)
 	16795 rpc_inferred_output_descriptors		5de05c6c9f6	last=3038f944a6d instagibbs/decode_descriptor
 		# Fixes: 478a4da04e77ca4438929909fafdbb0e57614577
 	18972 neutrino_whitelist-mini				892d210d2eb	last=339fe189eb9
