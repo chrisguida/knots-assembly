@@ -279,13 +279,13 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 	(CHECK-LAST)	last=6328248b214 rm_send2self-mini
 	15423 tor_socks_port-0.21					67bfe9cad94	last=d37d95a9ea2 tor_socks_port
 		# Held back 962f168a014..398df42f449
-	15836 fee_histogram							82829beb890	last=b94292a7cb jonas/2019/04/feeinfo
-	(CHECK-LAST)	last=??? fee_histogram+pr15836_api
+	15836 fee_histogram-21						82829beb890	last=b94292a7cb jonas/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 		# NOTE: Backported some features/test from #21422 (but not API incompatibilities)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
-	(CHECK-LAST)	last=36f5e224f5f origin-pull/21422/head
+	(CHECK-LAST)	last=ae9739d64cc fee_histogram+pr15836_api
+	(CHECK-LAST)	last=f2ca3d35ee9 origin-pull/21422/head
 m	17463 gui_custom_sendyes					998dd492930
 	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=??? wallet_warn_reuse_gui
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
