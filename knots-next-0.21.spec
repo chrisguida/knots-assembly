@@ -103,7 +103,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			a7912915185
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 TM	19362 rpc_scantxoutset_reset_progress-0.17	13e1e8980d8	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
-m	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/wallet_351
+	19419 listwalletdir_skip_data-0.21+knots	a0f6d94c0b9	last=3f9cc0cd736 Saibato/wallet_351
 	(CHECK-LAST)	last=17f214f4b7f listwalletdir_skip_data
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
@@ -286,7 +286,7 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	(CHECK-LAST)	last=ae9739d64cc fee_histogram+pr15836_api
 	(CHECK-LAST)	last=f2ca3d35ee9 origin-pull/21422/head
-m	17463 gui_custom_sendyes					998dd492930
+	17463 gui_custom_sendyes					998dd492930
 	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=??? wallet_warn_reuse_gui
 		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
 	-     rpc_gai_txids-0.21+knots				01bfbd88472	last=??? getaddressinfo_txids
@@ -353,7 +353,7 @@ m	17463 gui_custom_sendyes					998dd492930
 	# TODO: 20685 vasild/i2p_sam
 	22211 i2p_IsRelayable-0.21+knots			03d28fdf8dd	last=7593b06bd12
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
-m	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
+	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 getblockfrompeer-0.21					947c37b0b52	last=d0b537458d9 Sjors/2020/11/getblockfrompeer
 	(CHECK-LAST)	last=??? rpc_getblockfrompeer_wo_header-22
@@ -379,14 +379,14 @@ m	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofs
 		# +g203  Display plain "Inbound" in peer details
 		# NOTE: Carries commit from g163 since it messes with the string anyway
 		# NOTE: Left off final doxygen commit
-m	g179  gui_peers_conntype-0.21+knots			91c9dee9995	last=be4cf4832f1 jonatack-g/add-peers-dir-and-type-columns
+	g179  gui_peers_conntype-0.21+knots			91c9dee9995	last=be4cf4832f1 jonatack-g/add-peers-dir-and-type-columns
 		# NOTE: Held back 9f76ba6597c...be4cf4832f1 (no real change once we add gui#363 on top)
 	g363  qt_peers_directionarrow-0.21+knots	4c6de52a7fc	last=41c881c8a78 qt_peers_directionarrow
 	(CHECK-LAST)	last=??? qt_peers_directionarrow-22+knots
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 	20916 rpc_testmempoolaccept_wtxid-0.21		c20cc1b1caa	last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
-m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
+	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 		# NOTE: Left out Peers table column & misc formatting changes
 	20944 rpc_getmempoolinfo_total_fee-0.21		b864ecaf5ae	last=fa362064e38 marco/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
@@ -483,7 +483,7 @@ m	g162  gui_peers_detail_network-0.21+knots	ce1628bb816
 	(CHECK-LAST)	last=??? zmq_wtx-22+knots
 	20551 rpc_onetry_conntype					7a1723439c5
 		# NOTE: Originally based on #12674
-m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_invblk_punishment
+	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_invblk_punishment
 	10350 filtered_witblock-0.21				5cb7a4a645a	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 	(CHECK-LAST)	last=??? filtered_witblock-22
 		# NOTE: Don't bump protocol version!
@@ -516,7 +516,7 @@ m	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_in
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d					ca0940d77b6
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
-m	15861 restore_vbits_warning-0.21+knots		43dad5a3906	last=f016cd420df restore_vbits_warning
+	15861 restore_vbits_warning-0.21+knots		43dad5a3906	last=f016cd420df restore_vbits_warning
 	20832 rpc_validateaddress_error-0.21.1		46b02eee06b
 	16807 bech32_error_detection-0.21.1+knots	47e52930e8f	last=3bc568d6753 meshcollider/201909_bech32_error_detection
 	(CHECK-LAST)	last=??? old_bech32_error_detection
@@ -530,20 +530,20 @@ NM	-     gui_bech32_errpos-0.21+knots			c0b3d61d95e
 	17636 guisettings-0.21						d4da7377cb0	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
-m	17958 rpc_getgeneralinfo-0.21+knots			95572de08a2	last=cdbd38df131  # getgeneralinfo RPC
+	17958 rpc_getgeneralinfo-0.21+knots			95572de08a2	last=cdbd38df131  # getgeneralinfo RPC
 	(CHECK-LAST)	last=??? rpc_getgeneralinfo
 	18223 blockfilter_v0-0.19					fbe06449a10	last=5561e7a0c79
 	(CHECK-LAST)	last=??? blockfilter_v0
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
-m	19089 cli_getinfo_mwbalances-0.21+knots		19e9d705f4c	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+	19089 cli_getinfo_mwbalances-0.21+knots		19e9d705f4c	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
 	(CHECK-LAST)	last=??? cli_getinfo_mwbalances
-m	19092 cli_getinfo_mw_total_balance-0.21+knots	aedba84cdb0	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+	19092 cli_getinfo_mw_total_balance-0.21+knots	aedba84cdb0	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	(CHECK-LAST)	last=??? cli_getinfo_mw_total_balance
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
-m	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
+	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
 	(CHECK-LAST)	last=??? wallet_rpc_lastprocessedblock-22+k
 	19117 rpc_getrpcwhitelist					4e5e20bd9ec
 		# NOTE: Was #18827 before any Knots merge
@@ -563,7 +563,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	a03387247fb	last=1e868bbbb1b
 # Non-upstreamed functionality:
 	-     gui_payreq_textedit-0.21				4a9c6fc46e5 gui_payreq_textedit
 	-     rpc_mempoolentry_txhash				011b11763f6
-m	-     walletnotify_w_win-0.21+knots			0fafbd4a598	ast=a291491d2fd walletnotify_w_win
+	-     walletnotify_w_win-0.21+knots			0fafbd4a598	ast=a291491d2fd walletnotify_w_win
 	(CHECK-LAST)	last=??? walletnotify_w_win-22+knots
 	14137 win_taskbar_progress					35568cf34dd	last=18eb4dbb8a
 	-     restore_blockmaxsize					7cf11b880fc
@@ -571,7 +571,7 @@ m	-     walletnotify_w_win-0.21+knots			0fafbd4a598	ast=a291491d2fd walletnotify
 	7533  sendraw_force							1c4e51255a4
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf								9eefbf8c5fb
-m	7510  rwconf_gui							31da64c50bc
+	7510  rwconf_gui							31da64c50bc
 	 559 accept_nonstdtxn						854677f3a98
 	g153 const_max_digits						2db6298f46c
 	 929 tbc									b92159120bd
@@ -612,7 +612,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	n/a   checkpoint_update-0.21				79d59f9403e
 		TODO: update
 	10282 timebomb_knots						c8b2793aff0
-m	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-22+knots
+	-     rwconf_policy-0.21+knots				bae9992c73c	last=6fdce5896c0 rwconf_policy-22+knots
 		# Include Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
