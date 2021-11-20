@@ -287,9 +287,9 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 	(CHECK-LAST)	last=ae9739d64cc fee_histogram+pr15836_api
 	(CHECK-LAST)	last=f2ca3d35ee9 origin-pull/21422/head
 	17463 gui_custom_sendyes					998dd492930
-	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=??? wallet_warn_reuse_gui
-		# TODO: Rewrite based on bugfix_gui_bumpyes (g#148) + non-superconstructor #17463
-	-     rpc_gai_txids-0.21+knots				01bfbd88472	last=??? getaddressinfo_txids
+	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=63d1070f734 wallet_warn_reuse_gui
+		# NOTE: Uses older bloom filter implementation
+	-     rpc_gai_txids-0.21+knots				01bfbd88472	last=f954a0d7a00 getaddressinfo_txids
 	18772 -										bcfd0b89ee7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	22918 rpc_getblock_prevouts_fees-0.21		5b3f15dcda3	last=7fc316e2c9f
 	(CHECK-LAST)	last=??? rpc_getblock_prevouts_fees-22
