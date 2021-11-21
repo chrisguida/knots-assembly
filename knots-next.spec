@@ -265,6 +265,7 @@ checkout v22.0
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	g319  gui_openuri_pastebtn-22				ec5bceab101	last=dbde0558ce7
 		# NOTE: Used to be #17955
+		FIXME: Missing Alt+P shortcut key
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.21+knots	65bdd6b4b43	last=19e28a41168 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)

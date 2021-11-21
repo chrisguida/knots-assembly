@@ -313,8 +313,8 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 m	17631 rest_blockfilter-0.21					31a7b2798a2	last=2b64fa3251a matt/2019-11-filter-rest
 	(CHECK-LAST)	last=91feea1216a rest_blockfilter-22
 		# NOTE: Dropped unrelated extra commits
-	g319  gui_openuri_pastebtn-0.21				3cb5fcd37dd	last=5062565e112
-	(CHECK-LAST)	last=??? gui_openuri_pastebtn-22
+	g319  gui_openuri_pastebtn-0.21				3cb5fcd37dd	last=dbde0558ce7
+	(CHECK-LAST)	last=742a5de8f0b gui_openuri_pastebtn-22
 		# NOTE: Used to be #17955
 	18014 siphash_optimise_pr18014-0.21+knots	996d632f395	last=19e28a41168 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
