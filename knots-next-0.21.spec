@@ -331,17 +331,18 @@ m	17631 rest_blockfilter-0.21					31a7b2798a2	last=2b64fa3251a matt/2019-11-filt
 		# NOTE: Changed to print warnings to stderr instead of stdout
 		# NOTE: Diff-minimised
 		# If bdb is reenabled, need #20267 49797c3ccfb
-	19242 uaappend								0501a4912b2
+	19242 uaappend-21							0501a4912b2	last=9552978b318 uaappend
 	19463 prune_locks-0.21						7688250cdac	last=1ad45edbfeb prune_locks
 	19762 ryanofsky/pr/named					06d0b03981c	last=894c414dafb
 	19776 -										6b92af07758	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
-	19873 mempressure							d629ab65bcc
+	19873 mempressure-21						d629ab65bcc last=b9da34cec33 mempressure
 	20226 rpc_listdescriptors-0.21				16086f5a271	last=647b81b7093
 	21277 listdescriptors_normalized-0.21+knots	a45c8b5634a
 		# TODO: Drop 0.21.0 compatibility "desc" when return format is updated or 21329 is ready
-	g291  gui_trafficgraph_vert-0.21			088733fcf9a	last=1f373f93a60  # Enlarge Network Traffic Graph
+	g291  gui_trafficgraph_vert-0.21			088733fcf9a	last=500841e49d6  # Enlarge Network Traffic Graph
 		# WAS gui#90
 		# Removed dialog size change
+		# didn't bother with 1f373f93a60...500841e49d6 only changing widget names
 	21594 rpc_getnodeaddrs_network-0.21			d11f3acf005
 		# Diff-minimised / doc changes left out
 		# Includes part of #20965 (GetNetworkNames)
