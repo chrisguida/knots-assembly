@@ -310,8 +310,8 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
-	17631 rest_blockfilter-0.21					31a7b2798a2	last=16d8d2da598 matt/2019-11-filter-rest
-	(CHECK-LAST)	last=??? rest_blockfilter-22
+m	17631 rest_blockfilter-0.21					31a7b2798a2	last=2b64fa3251a matt/2019-11-filter-rest
+	(CHECK-LAST)	last=91feea1216a rest_blockfilter-22
 		# NOTE: Dropped unrelated extra commits
 	g319  gui_openuri_pastebtn-0.21				3cb5fcd37dd	last=5062565e112
 	(CHECK-LAST)	last=??? gui_openuri_pastebtn-22
