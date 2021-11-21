@@ -302,7 +302,8 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 		# + docs from #23320 (left off refactor commit)
 	16795 rpc_inferred_output_descriptors-21	5de05c6c9f6	last=5e256883651 instagibbs/decode_descriptor
 	(CHECK-LAST)	last=19a6902d148 rpc_inferred_output_descriptors
-	18972 neutrino_whitelist-mini				892d210d2eb	last=339fe189eb9
+	18972 neutrino_whitelist-mini-21			892d210d2eb	last=339fe189eb9
+	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=cc2644ffc6e achow101/bip174-extensions
 	(CHECK-LAST)	last=??? psbt_ver_proprietary_xpub-22-mini
