@@ -305,8 +305,8 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 	18972 neutrino_whitelist-mini-21			892d210d2eb	last=339fe189eb9
 	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
 		# NOTE: Diff-minimised
-	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=cc2644ffc6e achow101/bip174-extensions
-	(CHECK-LAST)	last=??? psbt_ver_proprietary_xpub-22-mini
+	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=7f066240654 achow101/bip174-extensions
+	(CHECK-LAST)	last=634c311b833 psbt_ver_proprietary_xpub-22-mini
 		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
