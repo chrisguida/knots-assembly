@@ -300,8 +300,8 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 		# + docs from #23320 (left off refactor commit)
-	16795 rpc_inferred_output_descriptors		5de05c6c9f6	last=3038f944a6d instagibbs/decode_descriptor
-		# Fixes: 478a4da04e77ca4438929909fafdbb0e57614577
+	16795 rpc_inferred_output_descriptors-21	5de05c6c9f6	last=5e256883651 instagibbs/decode_descriptor
+	(CHECK-LAST)	last=19a6902d148 rpc_inferred_output_descriptors
 	18972 neutrino_whitelist-mini				892d210d2eb	last=339fe189eb9
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=cc2644ffc6e achow101/bip174-extensions
