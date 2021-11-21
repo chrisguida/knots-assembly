@@ -319,7 +319,8 @@ m	17631 rest_blockfilter-0.21					31a7b2798a2	last=2b64fa3251a matt/2019-11-filt
 	18014 siphash_optimise_pr18014-0.21+knots	996d632f395	last=19e28a41168 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
-	18689 rpc_dumptxoutset_hr					86a235cbd1f	last=65d0697fe34
+	18689 rpc_dumptxoutset_hr-21				86a235cbd1f	last=65d0697fe34
+	(CHECK-LAST)	last=9427b409195 rpc_dumptxoutset_hr
 	18722 O_addrman_unordered_map-0.21+knots	a8f034ffd43	last=a92485b2c25
 		# NOTE: Restored C++11 compatibility from d6e782174ec
 	g125  intro_prune_size-0.21					6d1b1a258f5
