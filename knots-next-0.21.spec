@@ -370,7 +370,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# NOTE: fixed bug, added multi-line support, and added tests
 	g149  intro_assumevalid						8979d48f938
 	20664 rpc_scanblocks-0.21					ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
-	(CHECK-LAST)	last=??? rpc_scanblocks
+	(CHECK-LAST)	last=fc381397e2b rpc_scanblocks
 		# Held back insignificant API changes ab315e5294b...71b7cdb460e
 	20702 rpc_getblocklocations-0.21			8db5bda17bd	last=9b03c654eb3
 	(CHECK-LAST)	last=??? rpc_getblocklocations
