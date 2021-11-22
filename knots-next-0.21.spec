@@ -374,7 +374,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# Held back insignificant API changes ab315e5294b...71b7cdb460e
 	20702 rpc_getblocklocations-0.21			8db5bda17bd	last=9b03c654eb3
 	(CHECK-LAST)	last=b60fdcbc2dc rpc_getblocklocations
-	20827 ibd_prune_max							1dcbfaca3b6
+	20827 ibd_prune_max-21						1dcbfaca3b6	last=24f3936337d ibd_prune_max
 	g163  gui_peer_conntype-0.21				1157253e0af  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
 	g180  gui_peer_relay_detail-0.21+knots		f76dd90768b	last=79a2576af1e jonatack-g/peer-details-connection-type-followups
