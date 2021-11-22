@@ -361,12 +361,12 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	20295 rpc_getblockfrompeer_wo_header-21		947c37b0b52	last=9181e2e2179 Sjors/2020/11/getblockfrompeer
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
-	(CHECK-LAST)	last=??? rpc_setfeerate-22
+	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots		69a6f1d0a06	last=3eb6f8b2e61 jonatack/upgradewallet-improvements
 	20407 rpcauthfile-0.21+knots				0726f132d9d	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
-	(CHECK-LAST)	last=??? rpcauthfile
+	(CHECK-LAST)	last=53383d94200 rpcauthfile
 		# NOTE: fixed bug, added multi-line support, and added tests
 	g149  intro_assumevalid						8979d48f938
 	20664 rpc_scanblocks-0.21					ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
@@ -635,6 +635,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
+TODO: Make sure there's no f['"] in python code
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
 		TODO: gcp 3364d31c3b5 7fc3fe1a1ab + add Taproot UASF BIP
 	n/a  (bump_version=Knots:20210629)			0a9a4537a5d  # DO NOT CHANGE for just fixes
