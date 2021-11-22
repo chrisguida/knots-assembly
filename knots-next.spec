@@ -306,6 +306,7 @@ checkout v22.0
 		# Left out code movement
 		# Re-enabled fetching blocks w/o already having header (from older version of PR)
 		# Moved code to avoid conflict with 22577
+		TODO: gcp 15f7d87c757 RPC: Ensure getblockfrompeer errors if the peer doesn't exist, even if we already have the block
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-22						237cdcaf3ee	last=1002e2d0d7f jonatack/setfeerate

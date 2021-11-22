@@ -347,7 +347,7 @@ m	17631 rest_blockfilter-0.21					31a7b2798a2	last=2b64fa3251a matt/2019-11-filt
 		# Diff-minimised / doc changes left out
 		# Includes part of #20965 (GetNetworkNames)
 	21843 rpc_getnodeaddrs_by_network-0.21		cc3724d3400
-	20254 i2p_static-0.21						b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
+m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# + a4693f44cfe from #20685
 		# TODO: +21825 ? (needs 21560?)
 		#TODO: +21914
@@ -358,8 +358,8 @@ m	17631 rest_blockfilter-0.21					31a7b2798a2	last=2b64fa3251a matt/2019-11-filt
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
-	20295 getblockfrompeer-0.21					947c37b0b52	last=d0b537458d9 Sjors/2020/11/getblockfrompeer
-	(CHECK-LAST)	last=??? rpc_getblockfrompeer_wo_header-22
+	20295 rpc_getblockfrompeer_wo_header-21		947c37b0b52	last=9181e2e2179 Sjors/2020/11/getblockfrompeer
+	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=??? rpc_setfeerate-22
 		# NOTE: Minimised tests to only add new ones
