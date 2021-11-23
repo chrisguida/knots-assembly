@@ -393,11 +393,11 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	20944 rpc_getmempoolinfo_total_fee-0.21		b864ecaf5ae	last=fa362064e38 marco/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
 	g186  gui_bumpfee_privacywarn-0.21+knots	9ca3cf1b24b
-	15129 rpc_removeaddress-0.21				423fd4425f4	last=fdbd01b50e0 benthecarman/remove_watch_only_address
-		TODO: Temporarily neuter this or null-merge it?
+	15129 rpc_removeaddress-0.21				423fd4425f4	#TODO#last=fdbd01b50e0 benthecarman/remove_watch_only_address
+		# NOTE: Temporarily disabled! TODO: restore fixed
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
-	(CHECK-LAST)	last=??? remove_watch_only_address-22
+	#TODO#(CHECK-LAST)	last=??? remove_watch_only_address-22
 	# TODO: 18077 hebasto/20200130-natpmp
 		# FIXME: Needs #21320
 		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
