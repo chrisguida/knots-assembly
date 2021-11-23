@@ -465,8 +465,9 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	9152  sweepprivkeys-0.21					9d6360908e1	last=6fcb1e43426 sweepprivkeys
-	9245 ionice									52ed64216eb
-	-    ionice_win								22b1c9241e8
+	9245  ionice-21								52ed64216eb	last=6de915d6dc0 ionice
+		# NOTE: Left off deprioritisation of LoadExternalBlockFile, ReplayBlocks, RollforwardBlock(22.x?)
+	-     ionice_win-22							22b1c9241e8	last=b59bc253116 ionice_win
 	8501  old_stats_rpc-0.21					2fa33c1f65c	last=7af0ea43b2
 	(CHECK-LAST)	last=??? old_stats_rpc-22
 		# Held back on old version due to conflict with GUI updates...
