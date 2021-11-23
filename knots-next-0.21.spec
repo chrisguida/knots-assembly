@@ -446,12 +446,12 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	g293  gui_peers_services_wordwrap-0.18		d8b9433aeef
 	g298  gui_peers_altrowcolor-0.21+knots_pt1	840c66b724f
 	g307  gui_peers_altrowcolor-0.21+knots		7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
-	(CHECK-LAST)	last=??? gui_peers_rowcolouropt-22
+	(CHECK-LAST)	last=84206370984 gui_peers_rowcolouropt-22
 	g309  gui_neticon_peerstab-0.18				f3e47ff2e91
 		# NOTE: Fixed Qt5.5 compatibility
 		# Diff-minimised
-	g318  gui_peers_copyaddr-0.14				172639c9e05	last=65d1d351786 jarolrod-g/copy-addr-peer
-	(CHECK-LAST)	last=??? gui_peers_copyaddr-22
+	g318  gui_peers_copyaddr-0.14				172639c9e05	last=3ec061d9da0 jarolrod-g/copy-addr-peer
+	(CHECK-LAST)	last=676b32e3717 gui_peers_copyaddr-22
 		# NOTE: Added keyboard shortcut
 		# NOTE: Fixed Qt5.5 compatibility
 	g343  gui_instaprogress-0.19				c62ac024c54
