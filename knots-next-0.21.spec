@@ -461,7 +461,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	22372 multinotify-21									last=54b25a8c51e multinotify
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
-	(CHECK-LAST)	last=??? sort-multisigs-22
+	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	9152 sweepprivkeys							9d6360908e1
 	9245 ionice									52ed64216eb
