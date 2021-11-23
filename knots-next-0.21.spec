@@ -383,8 +383,8 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# NOTE: Left off final doxygen commit
 	g179  gui_peers_conntype-0.21+knots			91c9dee9995	last=be4cf4832f1 jonatack-g/add-peers-dir-and-type-columns
 		# NOTE: Held back 9f76ba6597c...be4cf4832f1 (no real change once we add gui#363 on top)
-	g363  qt_peers_directionarrow-0.21+knots	4c6de52a7fc	last=41c881c8a78 qt_peers_directionarrow
-	(CHECK-LAST)	last=??? qt_peers_directionarrow-22+knots
+	g363  qt_peers_directionarrow-0.21+knots	4c6de52a7fc	last=217d1051c8b qt_peers_directionarrow
+	(CHECK-LAST)	last=4d70dc134c2 qt_peers_directionarrow-22+knots
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 	20916 rpc_testmempoolaccept_wtxid-0.21		c20cc1b1caa	last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
@@ -634,7 +634,8 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
-TODO: Make sure there's no f['"] in python code
+TODO: Make sure there's no f' f" in python code
+TODO: Make sure there's no \d'\d or 0b\d+ in C++ code
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
 		TODO: gcp 3364d31c3b5 7fc3fe1a1ab + add Taproot UASF BIP
 	n/a  (bump_version=Knots:20210629)			0a9a4537a5d  # DO NOT CHANGE for just fixes

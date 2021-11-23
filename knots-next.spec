@@ -325,6 +325,7 @@ checkout v22.0
 	20827 ibd_prune_max							fae2ccbd3f9
 	g363  qt_peers_directionarrow-22+knots		63d06a67ec1	last=217d1051c8b qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
+		TODO: 21.x aligns the direction column on the right side
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	# Needs work: 15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 		# Was included in 0.21.1 broken(!)
