@@ -424,7 +424,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# NOTE: gui#229 not applicable to backport
 	g206  gui_peers_relayinfo-0.21+knots		60e29d15120
 	g226  gui_peers_lastblocktx-0.21+knots		1c333eb7c65
-	g230  gui_backup_formats-0.21+knots			557904a49bb	last=e91a3f39d01 gui_backup_formats
+	g230  gui_backup_formats-0.21+knots			557904a49bb	last=4490d994755 gui_backup_formats
 		# NOTE: To avoid conflict with wallettool_dump-0.21+knots, added 5ab50bc98db GUI: Omit DbDump option for backup of BDB wallets
 	21595 cli_addrinfo-0.21+knots				409d1d8be73
 		# NOTE: Adapted error message for Knots
@@ -433,7 +433,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
 	21780 rpc_maxmempool-0.21					0bc176fa910	last=040b280c661 rebroad/MaxMempoolRPC
-	(CHECK-LAST)	last=??? rpc_maxmempool
+	(CHECK-LAST)	last=43eb542612e rpc_maxmempool
 		# + bugfix and applying limit immediately
 	22072 autoreindex-0.21						66d83231979	last=602f4da9178
 	22147 p2p_protect_last_outHB-0.21			8f7863d9729
