@@ -458,7 +458,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	g362  kbshortcuts_context-0.21+knots		60fbd5be8e7	last=e4c916a0ea0 kbshortcuts_context
 	22288 torcontrol_dnslookup-0.21				d8f8412dcc4	last=cdd51e8ee15
 		# Diff-minimised
-	22372 multinotify
+	22372 multinotify-21									last=54b25a8c51e multinotify
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=??? sort-multisigs-22
