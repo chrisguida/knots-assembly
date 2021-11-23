@@ -280,12 +280,13 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 	15423 tor_socks_port-0.21					67bfe9cad94	last=d37d95a9ea2 tor_socks_port
 		# Held back 962f168a014..398df42f449
 	15836 fee_histogram-21						82829beb890	last=b94292a7cb jonas/2019/04/feeinfo
+		# Held back approach changes (that ignore CPFP) f2ca3d35ee9..47b5c3e03a7 - current approach is arguably buggy (see sipa's review on PR)
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 		# NOTE: Backported some features/test from #21422 (but not API incompatibilities)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	(CHECK-LAST)	last=ae9739d64cc fee_histogram+pr15836_api
-	(CHECK-LAST)	last=f2ca3d35ee9 origin-pull/21422/head
+	(CHECK-LAST)	last=47b5c3e03a7 origin-pull/21422/head
 	17463 gui_custom_sendyes					998dd492930
 	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=63d1070f734 wallet_warn_reuse_gui
 		# NOTE: Uses older bloom filter implementation
@@ -463,7 +464,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
-	9152 sweepprivkeys							9d6360908e1
+	9152  sweepprivkeys-0.21					9d6360908e1	last=6fcb1e43426 sweepprivkeys
 	9245 ionice									52ed64216eb
 	-    ionice_win								22b1c9241e8
 	8501  old_stats_rpc-0.21					2fa33c1f65c	last=7af0ea43b2
