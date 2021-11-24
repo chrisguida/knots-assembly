@@ -469,12 +469,12 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# NOTE: Left off deprioritisation of LoadExternalBlockFile, ReplayBlocks, RollforwardBlock(22.x?)
 	-     ionice_win-22							22b1c9241e8	last=b59bc253116 ionice_win
 	8501  old_stats_rpc-0.21					2fa33c1f65c	last=7af0ea43b2
-	(CHECK-LAST)	last=??? old_stats_rpc-22
+	(CHECK-LAST)	last=8cfab679cb2 old_stats_rpc-22
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-0.21						24601755a13	last=63fb11652f
-	(CHECK-LAST)	last=??? old_stats_qt-22
+	(CHECK-LAST)	last=9b99d9c327b old_stats_qt-22
 		# Held back on old version due to conflict with RPC updates...
-		TODO: Consider backporting menu ordering changes
+		# TODO: Consider backporting menu ordering changes (9b99d9c327b)
 	9504 dumpmasterprivkey-0.21					f9192d9a751	last=07fc81109a
 	g444  gui_netwatch-0.21+knots				539fa817d21	last=3c8fe76f6ee gui_netwatch
 	(CHECK-LAST)	last=??? gui_netwatch-22+knots
