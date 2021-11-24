@@ -286,7 +286,7 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	(CHECK-LAST)	last=ae9739d64cc fee_histogram+pr15836_api
-	(CHECK-LAST)	last=47b5c3e03a7 origin-pull/21422/head
+	(CHECK-LAST)	last=b12f0822cdd origin-pull/21422/head
 	17463 gui_custom_sendyes					998dd492930
 	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=63d1070f734 wallet_warn_reuse_gui
 		# NOTE: Uses older bloom filter implementation
