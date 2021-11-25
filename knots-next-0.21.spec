@@ -192,7 +192,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
 	22577 fix_race_pr22577-0.21.1							last=05e84aa550c fix_race_pr22577-22
 	22591 missing_settings_err-0.21
-	22834 bugfix_onlynet-21									last=051c2554ca1 vasild/onlynet
+	22834 bugfix_onlynet-21									last=0eea83a85ec vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
 	(CHECK-LAST)	last=61c0c0f7bad bugfix_onlynet-22
 	# Needs review: 22665 darosior:rbf_optin_nomempool
@@ -286,7 +286,7 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	(CHECK-LAST)	last=ae9739d64cc fee_histogram+pr15836_api
-	(CHECK-LAST)	last=b12f0822cdd origin-pull/21422/head
+	(CHECK-LAST)	last=2d2bae70ab5 origin-pull/21422/head
 	17463 gui_custom_sendyes					998dd492930
 	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=63d1070f734 wallet_warn_reuse_gui
 		# NOTE: Uses older bloom filter implementation
@@ -476,7 +476,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# Held back on old version due to conflict with RPC updates...
 		# TODO: Consider backporting menu ordering changes (9b99d9c327b)
 	9504 dumpmasterprivkey-0.21					f9192d9a751	last=07fc81109a
-	g444  gui_netwatch-0.21+knots				539fa817d21	last=3c8fe76f6ee gui_netwatch
+	g444  gui_netwatch-0.21+knots				539fa817d21	last=b227e4db46f gui_netwatch
 	(CHECK-LAST)	last=7f59a6deb52 gui_netwatch-22+knots
 		# NOTE: Was #9849
 		# TODO: Consider backporting menu ordering changes (7f59a6deb52)
