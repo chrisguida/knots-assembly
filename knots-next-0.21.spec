@@ -477,9 +477,9 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# TODO: Consider backporting menu ordering changes (9b99d9c327b)
 	9504 dumpmasterprivkey-0.21					f9192d9a751	last=07fc81109a
 	g444  gui_netwatch-0.21+knots				539fa817d21	last=3c8fe76f6ee gui_netwatch
-	(CHECK-LAST)	last=??? gui_netwatch-22+knots
+	(CHECK-LAST)	last=7f59a6deb52 gui_netwatch-22+knots
 		# NOTE: Was #9849
-		TODO: Ensure bugfix is in
+		# TODO: Consider backporting menu ordering changes (7f59a6deb52)
 	10615 multiwallet_rpc-0.21+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
 	(CHECK-LAST)	last=??? multiwallet_rpc-22+knots
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
@@ -626,6 +626,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 		FIXME: s/movies/animation in sed command
 # BRANDING:
 	n/a   knots_branding-0.21					1ee7ca43f35	last=2237adedb3f knots_branding-0.21
+		TODO: Silver/steel rope?
 	n/a   ver_dropzero-0.21
 	TODO: this should be 21.1.1 I guess... and bump copyright year once we get to 2022+
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
