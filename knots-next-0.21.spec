@@ -505,8 +505,8 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	13203 dsha256_power8-0.20					9703ce00ee9	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		6ceb71baa4c
-	15218 postibd_flush							84b38613864	last=d2ecb70d64  # validation: Flush state after initial sync
-	(CHECK-LAST)	last=??? postibd_flush-22+knots
+m	15218 postibd_flush-21+knots				84b38613864	last=d2ecb70d64  # validation: Flush stateafter initial sync
+	(CHECK-LAST)	last=8faeb93d48d postibd_flush-22+knots
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-0.21+knots			e509f51807e	# latest code now
 	(CHECK-LAST)	last=??? tor_gui_pairing-22+knots
