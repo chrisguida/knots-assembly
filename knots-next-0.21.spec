@@ -487,9 +487,9 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	(CHECK-LAST)	last=39cf88db90b zmq_wtx-22+knots
 	20551 rpc_onetry_conntype-21				7a1723439c5	last=7661ce6ddaf rpc_onetry_conntype
 		# NOTE: Originally based on #12674
-	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_invblk_punishment
+	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=57903e3f34d relax_invblk_punishment
 	10350 filtered_witblock-0.21				5cb7a4a645a	last=3f388ddcd3 codeshark/MFWB_no_bump_2
-	(CHECK-LAST)	last=??? filtered_witblock-22
+	(CHECK-LAST)	last=6bf4092cb7b filtered_witblock-22
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -497,10 +497,11 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	11750 coincontrol_multiselect				e40fcaeb7fe	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
 	11770 rest_fee-0.21							d2f6a3d7d5d	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
-	(CHECK-LAST)	last=??? rest_fee
+	(CHECK-LAST)	last=cec2e1bb857 rest_fee
 	11803 bugfix_dumpwallet_hdkeypath			3b64c7195f0
 	12965 scriptthreads-0.20					8d959f05d3c	last=dfab6c6866 jonas/2018/04/svt
-	(CHECK-LAST)	last=??? scriptthreads
+	(CHECK-LAST)	last=f6052208ab0 scriptthreads
+		# Held back RPCResult NONE cuz undocumented is actually better
 	13203 dsha256_power8-0.20					9703ce00ee9	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		6ceb71baa4c
