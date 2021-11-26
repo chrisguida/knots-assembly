@@ -509,7 +509,7 @@ m	15218 postibd_flush-21+knots				84b38613864	last=d2ecb70d64  # validation: Flu
 	(CHECK-LAST)	last=8faeb93d48d postibd_flush-22+knots
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-0.21+knots			e509f51807e	# latest code now
-	(CHECK-LAST)	last=??? tor_gui_pairing-22+knots
+	(CHECK-LAST)	last=4a881554991 tor_gui_pairing-22+knots
 	15421 tor_subprocess-0.21+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
 	(CHECK-LAST)	last=??? tor_subprocess-22+knots
 	# TODO: tor gitian bundle!

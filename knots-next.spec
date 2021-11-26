@@ -484,7 +484,7 @@ checkout v22.0
 	-     dsha256_power8-0.20_asm_pragmas		8ef3c1cb910
 	15218 postibd_flush-22+knots				5a11498f7df	last=d2ecb70d64  # validation: Flush state after initial sync
 		# TODO: Rewrite after #17487 is ready/safe to merge
-	15428 tor_gui_pairing-22+knots				b0cfbb9f68f	# latest code now
+	15428 tor_gui_pairing-22+knots				b0cfbb9f68f	last=16cb2ae1fe0 tor_gui_pairing-0.21+knots
 	15421 tor_subprocess-22+knots				db4dd219005	last=58c6cafd3a1 tor_subprocess
 	# TODO: tor gitian bundle! /guix
 	15633 nohbcbfornonwit						8e9e203c847
