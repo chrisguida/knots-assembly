@@ -481,11 +481,11 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# NOTE: Was #9849
 		# TODO: Consider backporting menu ordering changes (7f59a6deb52)
 	10615 multiwallet_rpc-0.21+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
-	(CHECK-LAST)	last=??? multiwallet_rpc-22+knots
+	(CHECK-LAST)	last=d927c064439 multiwallet_rpc-22+knots
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-0.21+knots					dad75802d23	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
-	(CHECK-LAST)	last=??? zmq_wtx-22+knots
-	20551 rpc_onetry_conntype					7a1723439c5
+	(CHECK-LAST)	last=39cf88db90b zmq_wtx-22+knots
+	20551 rpc_onetry_conntype-21				7a1723439c5	last=7661ce6ddaf rpc_onetry_conntype
 		# NOTE: Originally based on #12674
 	10593 relax_invblk_punishment-0.21+knots	040052148d5	last=a06d916c75a relax_invblk_punishment
 	10350 filtered_witblock-0.21				5cb7a4a645a	last=3f388ddcd3 codeshark/MFWB_no_bump_2
