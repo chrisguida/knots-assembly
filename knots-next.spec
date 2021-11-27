@@ -488,6 +488,7 @@ checkout v22.0
 	15421 tor_subprocess-22+knots				db4dd219005	last=58c6cafd3a1 tor_subprocess
 	# TODO: tor gitian bundle! /guix
 	15633 nohbcbfornonwit						8e9e203c847
+		FIXME: Revisit why f5e4f1650fe is necessary in 22.x, but not in 21.x where the same code exists
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
 	# TODO: 16490 marco/1907-rpcMempoolWhyReplacable
