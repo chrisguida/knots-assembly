@@ -22,6 +22,7 @@ checkout v0.21.2
 		# Dropped MSVC changes
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v21.x+v22.x
 		# Held back 347774b86c8...4fe7cf16779 removal of embedded leveldb conditional (might have worked better with sys_leveldb, but oh well)
+	22348 hebasto/210627-boost
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 m	2241 sys_leveldb-21+knots					5e9497a8ed7	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -511,6 +512,7 @@ m	15218 postibd_flush-21+knots				84b38613864	last=d2ecb70d64  # validation: Flu
 	15428 tor_gui_pairing-0.21+knots			e509f51807e	# latest code now
 	(CHECK-LAST)	last=4a881554991 tor_gui_pairing-22+knots
 	15421 tor_subprocess-0.21+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
+		TODO: Rebase with #22348 (need to add to torcontrol.{cpp,h})
 	(CHECK-LAST)	last=??? tor_subprocess-22+knots
 	# TODO: tor gitian bundle!
 	15633 nohbcbfornonwit-0.21+knots			c48ce12aa19	last=ac897f0bd3a nohbcbfornonwit
