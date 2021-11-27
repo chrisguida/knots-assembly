@@ -522,10 +522,12 @@ m	15218 postibd_flush-21+knots				84b38613864	last=d2ecb70d64  # validation: Flu
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d					ca0940d77b6
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
-	15861 restore_vbits_warning-0.21+knots		43dad5a3906	last=f016cd420df restore_vbits_warning
+	15861 restore_vbits_warning-0.21+knots		43dad5a3906	last=896eea449ad restore_vbits_warning
 	20832 rpc_validateaddress_error-0.21.1		46b02eee06b
-	16807 bech32_error_detection-0.21.1+knots	47e52930e8f	last=3bc568d6753 meshcollider/201909_bech32_error_detection
-	(CHECK-LAST)	last=??? old_bech32_error_detection
+	16807 bech32_error_detection-0.21.1+knots	47e52930e8f	last=88cc4810926 meshcollider/201909_bech32_error_detection
+	(CHECK-LAST)	last=3bc568d6753 old_bech32_error_detection
+		# Held back rewrite 3bc568d6753..974227bb457 for now
+		# Held back comment drop 974227bb457..88cc4810926
 	n/a   rpc_compat_error_index-0.21+knots		c0b669d2000
 	(CHECK-LAST)	last=??? rpc_compat_error_index-22+knots
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
