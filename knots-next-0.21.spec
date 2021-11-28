@@ -578,8 +578,9 @@ m	-     walletnotify_w_win-0.21+knots			0fafbd4a598	last=a291491d2fd walletnotif
 	(CHECK-LAST)	last=d855b377d6e qtnetworkport
 	7533  sendraw_force-0.21					1c4e51255a4	last=074e22628db sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
-	11082 rwconf								9eefbf8c5fb
-	7510  rwconf_gui							31da64c50bc
+	11082 rwconf-0.21							9eefbf8c5fb	last=ad7812c9eb7 rwconf
+	7510  rwconf_gui-0.21						31da64c50bc	last=5465696bf16 rwconf_gui
+		# NOTE: Missing cac3d7873a3 due to not having #15946 in 21.x
 	 559 accept_nonstdtxn						854677f3a98
 	g153 const_max_digits						2db6298f46c
 	 929 tbc									b92159120bd
