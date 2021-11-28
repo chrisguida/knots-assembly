@@ -581,12 +581,11 @@ m	-     walletnotify_w_win-0.21+knots			0fafbd4a598	last=a291491d2fd walletnotif
 	11082 rwconf-0.21							9eefbf8c5fb	last=ad7812c9eb7 rwconf
 	7510  rwconf_gui-0.21						31da64c50bc	last=5465696bf16 rwconf_gui
 		# NOTE: Missing cac3d7873a3 due to not having #15946 in 21.x
-	 559 accept_nonstdtxn						854677f3a98
+	559   accept_nonstdtxn-0.21					854677f3a98	last=75b02a00617 accept_nonstdtxn
 	g153 const_max_digits						2db6298f46c
 	 929 tbc									b92159120bd
-		TODO: * 7d4412c2fd9 GUI: Fix comparison of character size for Tonal font detection
 	 553  bugfix_qt_uri_amount_parser-0.17		2bef446009c	last=e3ad5956dda bugfix_qt_uri_amount_parser
-	-     mining_priority-0.21					c1b36c3197d	last=59671b2e665 mining_priority
+	-     mining_priority-0.21					c1b36c3197d	last=58e2cab4b18 mining_priority
 		# Didn't backport next_block_height passing (maybe consider when/if someday cs_main can be released)
 		# Didn't backport platform-independent double serialisation
 	5861 gui_restore_addresses					8fa52dc8120
