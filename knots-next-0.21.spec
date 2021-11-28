@@ -558,8 +558,7 @@ NM	-     gui_bech32_errpos-0.21+knots			c0b3d61d95e
 	-     getrpcwhitelist_wallets-0.21+knots	bfaf26b19f1	last=1e1d1e2e62c getrpcwhitelist_wallets-22+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	17167 whitelist_outgoing-mini-0.21+knots	d6b39ef5628	last=81622ba1229 whitelist_outgoing
-	(CHECK-LAST)	last=??? whitelist_outgoing-mini-22+knots
-		#TODO: Split this up?
+	(CHECK-LAST)	last=9cf184186c9 whitelist_outgoing-mini-22+knots
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
 	g165  gui_peers_splitter_ss-0.21+knots		8ea7e7fbc3f
@@ -568,11 +567,12 @@ NM	-     gui_bech32_errpos-0.21+knots			c0b3d61d95e
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
 	# FIXME: text below QR Code doesn't fit bech32 with Console font!
 # Non-upstreamed functionality:
-	-     gui_payreq_textedit-0.21				4a9c6fc46e5 gui_payreq_textedit
+	-     gui_payreq_textedit-0.21				4a9c6fc46e5 last=9cb216e6ff8 gui_payreq_textedit
 	-     rpc_mempoolentry_txhash				011b11763f6
-	-     walletnotify_w_win-0.21+knots			0fafbd4a598	ast=a291491d2fd walletnotify_w_win
-	(CHECK-LAST)	last=??? walletnotify_w_win-22+knots
-	14137 win_taskbar_progress					35568cf34dd	last=18eb4dbb8a
+m	-     walletnotify_w_win-0.21+knots			0fafbd4a598	last=a291491d2fd walletnotify_w_win
+	(CHECK-LAST)	last=4c481517859 walletnotify_w_win-22+knots
+	14137 win_taskbar_progress-0.21+knots		35568cf34dd	last=18eb4dbb8a
+	(CHECK-LAST)	last=f30b740b4ff win_taskbar_progress
 	-     restore_blockmaxsize					7cf11b880fc
 	7107 qtnetworkport							dd2ad9343f6	last=1f37c87 origin-pull/7107/head
 	7533  sendraw_force							1c4e51255a4
