@@ -529,10 +529,10 @@ m	15218 postibd_flush-21+knots				84b38613864	last=d2ecb70d64  # validation: Flu
 		# Held back rewrite 3bc568d6753..974227bb457 for now
 		# Held back comment drop 974227bb457..88cc4810926
 	n/a   rpc_compat_error_index-0.21+knots		c0b669d2000
-	(CHECK-LAST)	last=??? rpc_compat_error_index-22+knots
+	(CHECK-LAST)	last=e480af6868c rpc_compat_error_index-22+knots
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	-     gui_bech32_errpos-0.21.1+knots		63858cb48e1
-	(CHECK-LAST)	last=??? gui_bech32_errpos-22+knots
+	(CHECK-LAST)	last=7532115c6d8 gui_bech32_errpos-22+knots
 NM	16807 bech32_error_detection-0.21+knots		80ccc5ad7c5	last=54e107add41 meshcollider/201909_bech32_error_detection
 NM	-     gui_bech32_errpos-0.21+knots			c0b3d61d95e
 	17636 guisettings-0.21						d4da7377cb0	last=187f9684e03 emilengler/2019-11-guisettings
