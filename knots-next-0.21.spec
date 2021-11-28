@@ -604,7 +604,7 @@ m	-     mining_priority-0.21+knots			c1b36c3197d	last=58e2cab4b18 mining_priorit
 	-    mempool_knots014_compat-0.21+knots		4d6b8b17d26	last=1befffc0b48 mempool_dat_extensible
 		# NOTE: Load-only
 NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
-	11413 rpc_feemode_explicit_compat-0.21+knots	ca8dbc1e33d last=??? rpc_feemode_explicit_compat-22
+	11413 rpc_feemode_explicit_compat-0.21+knots	ca8dbc1e33d last=56553e0d43c rpc_feemode_explicit_compat-22
 	-     netperms_implicit_addr-0.21+knots		14687738e62	last=d1ce634b708 netperms_implicit_addr
 	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba	last=054c2214369 rpc_onetry_nonpriv-22+knots
 	# TODO: add a bitcoinknots.conf ?
