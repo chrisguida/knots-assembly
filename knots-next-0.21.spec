@@ -576,7 +576,7 @@ m	-     walletnotify_w_win-0.21+knots			0fafbd4a598	last=a291491d2fd walletnotif
 	-     restore_blockmaxsize-21				7cf11b880fc	last=0df4a820dd6 restore_blockmaxsize
 	7107  qtnetworkport-21						dd2ad9343f6	last=1f37c87 origin-pull/7107/head
 	(CHECK-LAST)	last=d855b377d6e qtnetworkport
-	7533  sendraw_force							1c4e51255a4
+	7533  sendraw_force-0.21					1c4e51255a4	last=074e22628db sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf								9eefbf8c5fb
 	7510  rwconf_gui							31da64c50bc
