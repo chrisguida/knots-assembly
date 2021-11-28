@@ -585,21 +585,20 @@ m	-     walletnotify_w_win-0.21+knots			0fafbd4a598	last=a291491d2fd walletnotif
 	g153 const_max_digits						2db6298f46c
 	 929 tbc									b92159120bd
 	 553  bugfix_qt_uri_amount_parser-0.17		2bef446009c	last=e3ad5956dda bugfix_qt_uri_amount_parser
-	-     mining_priority-0.21					c1b36c3197d	last=58e2cab4b18 mining_priority
+m	-     mining_priority-0.21+knots			c1b36c3197d	last=58e2cab4b18 mining_priority
 		# Didn't backport next_block_height passing (maybe consider when/if someday cs_main can be released)
 		# Didn't backport platform-independent double serialisation
 	5861 gui_restore_addresses					8fa52dc8120
 	5891  qt_console_history_persist-0.21+knots	7ed83221a81	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-0.21+knots					ec4af75863b	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
-	(CHECK-LAST)	last=??? fullrbf-22+knots
+	(CHECK-LAST)	last=8db545872f6 fullrbf-22+knots
 	12146 opt_wallet_segwit2					c84af5db7d7
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			71cc4a727ef	# Latest code now
 	-     gui_request_payment_label-0.19		bd9ec2f9431
 	-     gui_peers_sort_network-0.21+knots		a3e6f0ec5e2
-	(CHECK-LAST)	last=??? gui_peers_sort_network-22
-		TODO: Replace with fixed commit in gui_peers_sort_network-22
+	(CHECK-LAST)	last=3ae2746dcf7 gui_peers_sort_network-22
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			8c461dcdced
 	-    mempool_knots014_compat-0.21+knots		4d6b8b17d26	last=1befffc0b48 mempool_dat_extensible
