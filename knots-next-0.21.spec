@@ -539,9 +539,9 @@ NM	-     gui_bech32_errpos-0.21+knots			c0b3d61d95e
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
 	17958 rpc_getgeneralinfo-0.21+knots			95572de08a2	last=cdbd38df131  # getgeneralinfo RPC
-	(CHECK-LAST)	last=??? rpc_getgeneralinfo
+	(CHECK-LAST)	last=65f6caeebbd rpc_getgeneralinfo
 	18223 blockfilter_v0-0.19					fbe06449a10	last=5561e7a0c79
-	(CHECK-LAST)	last=??? blockfilter_v0
+	(CHECK-LAST)	last=7f0131feac7 blockfilter_v0
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
