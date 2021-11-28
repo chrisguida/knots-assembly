@@ -523,6 +523,7 @@ checkout v22.0
 	19117 rpc_getrpcwhitelist					e889e17cb9c
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-22+knots		b54d2969e2d
+		TODO: Use .requires_wallet instead of manual creation of default wallet?
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	17167 whitelist_outgoing-mini-22+knots		569c4bc343f	last=81622ba1229 whitelist_outgoing
 		# NOTE: Originally #10594
