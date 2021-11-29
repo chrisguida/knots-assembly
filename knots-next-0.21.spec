@@ -624,9 +624,8 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
-	NOTE TO SELF: Remove release-notes-prNNNNN.md files BEFORE the svg icon merge so it doesn't get added then removed in different patch files >_<
-	7483  svg_icon-0.21+knots					469d40983b1	last=??? svg_icon-22+knots
-		FIXME: s/movies/animation in sed command
+	n/a   (cherrypick=33db4be1068)  # delete release notes fragments
+	7483  svg_icon-0.21+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 # BRANDING:
 	n/a   knots_branding-0.21					1ee7ca43f35	last=2237adedb3f knots_branding-0.21
 		TODO: Silver/steel rope?
