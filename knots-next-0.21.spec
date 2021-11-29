@@ -608,11 +608,10 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	-     netperms_implicit_addr-0.21+knots		14687738e62	last=d1ce634b708 netperms_implicit_addr
 	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba	last=054c2214369 rpc_onetry_nonpriv-22+knots
 	# TODO: add a bitcoinknots.conf ?
-	TODO: save/restore peer column widths? (in 22)
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				66fa127a85b
-	-     bytespersigopstrict-0.21+knots		42fef5047e8	last=0d0b8e71fbb bytespersigopstrict-22+knots
+	-     bytespersigopstrict-0.21+knots		42fef5047e8	last=712c7abc3a1 bytespersigopstrict-22+knots
 	9749  unique_spk_mempool-0.21+knots			6f7822ceed3	last=b6f4ce7b327 unique_spk_mempool-22+knots
 	-     bloom_default-0.21+knots				d714d612b62
 	-     enforce_checkpoints-0.21				d41dcd18f7c	last=1de4af3f6c7 enforce_checkpoints
