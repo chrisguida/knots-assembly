@@ -625,7 +625,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (cherrypick=33db4be1068)  # delete release notes fragments
-	7483  svg_icon-0.21+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
+m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 # BRANDING:
 	n/a   knots_branding-0.21					1ee7ca43f35	last=2237adedb3f knots_branding-0.21
 		TODO: Silver/steel rope?
