@@ -292,7 +292,7 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 	17463 gui_custom_sendyes					998dd492930
 	15987 wallet_no_reuse-0.21+knots			7515d038c84	last=63d1070f734 wallet_warn_reuse_gui
 		# NOTE: Uses older bloom filter implementation
-	-     rpc_gai_txids-0.21+knots				01bfbd88472	last=f954a0d7a00 getaddressinfo_txids
+	22693 rpc_gai_txids-0.21+knots				01bfbd88472	last=f954a0d7a00 getaddressinfo_txids
 	18772 -										bcfd0b89ee7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	22918 rpc_getblock_prevouts_fees-0.21		5b3f15dcda3	last=5c34507ecbb
 	(CHECK-LAST)	last=80612d8aded rpc_getblock_prevouts_fees-22
@@ -653,7 +653,7 @@ m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 	n/a  knots_bips-21
 	n/a  (bump_version=Knots:20210629)			0a9a4537a5d  # DO NOT CHANGE for just fixes
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=96316586c91)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=36e58d7b713)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
@@ -662,7 +662,6 @@ m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-		gd marco/2109-fixArgParse
-	n/a  (cherrypick=33ee7963ad4)				6addc3eccab  # update manpages (build first)
+	n/a  (cherrypick=16290c18d8d)				6addc3eccab  # update manpages (build first)
 	n/a  (cherrypick=936fd13cd23)				a886811721c  # translation update
 # NOTE: use git diff --minimal for patches!
