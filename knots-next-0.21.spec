@@ -356,9 +356,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		#TODO: +21914
 		#TODO: +21407+21631
 		# TODO??? 21514 vasild:ignore_port_in_i2p
-	# TODO: 20685 vasild/i2p_sam
 	22211 i2p_IsRelayable-0.21+knots			03d28fdf8dd	last=7593b06bd12
-	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		947c37b0b52	last=9181e2e2179 Sjors/2020/11/getblockfrompeer
@@ -401,10 +399,6 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
 	#TODO#(CHECK-LAST)	last=??? remove_watch_only_address-22
-	# TODO: 18077 hebasto/20200130-natpmp
-		# FIXME: Needs #21320
-		# NOTE: Diff-minimised rebase of 2d5d98ce0aa is at c6ff5633b56
-		# TODO: Switch to rwconf?
 	21319 getblock_optimise						b79a8d71419
 		# Context: 17529 rpc: Faster getblock using PureBlock
 	19763 p2p_no_relay_to_origin-0.21+knots		083e7e509a0
@@ -509,12 +503,10 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	-     dsha256_power8-0.20_asm_pragmas		6ceb71baa4c
 m	15218 postibd_flush-21+knots				84b38613864	last=d2ecb70d64  # validation: Flush stateafter initial sync
 	(CHECK-LAST)	last=8faeb93d48d postibd_flush-22+knots
-		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-0.21+knots			e509f51807e	# latest code now
 	(CHECK-LAST)	last=4a881554991 tor_gui_pairing-22+knots
 	15421 tor_subprocess-0.21+knots				3de8ab01bf5	last=58c6cafd3a1 tor_subprocess
 	(CHECK-LAST)	last=1fae7eff568 tor_subprocess-22+knots
-	# TODO: tor gitian bundle!
 	15633 nohbcbfornonwit-0.21+knots			c48ce12aa19	last=f5e4f1650fe nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
@@ -610,7 +602,6 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	12674 rpc_onetry_nonpriv-0.21+knots			b235a94b1ba	last=054c2214369 rpc_onetry_nonpriv-22+knots
 	# TODO: add a bitcoinknots.conf ?
 # POLICY:
-	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				66fa127a85b
 	-     bytespersigopstrict-0.21+knots		42fef5047e8	last=712c7abc3a1 bytespersigopstrict-22+knots
 	9749  unique_spk_mempool-0.21+knots			6f7822ceed3	last=36bb6460136 unique_spk_mempool-22+knots
@@ -622,8 +613,6 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	-     rwconf_policy-0.21+knots				bae9992c73c	last=b1c0c0394ae rwconf_policy-22+knots
 		# Include Knots policy changes for simplification of final rebase process
 		# Held back git diff 19fd29ce45d..af4614fbd26 which is likely a noop
-		#TODO: Add segwit wallet stuff?
-		#TODO: final rebase (fix blockmax{size,weight})
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (cherrypick=33db4be1068)  # delete release notes fragments
 m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
