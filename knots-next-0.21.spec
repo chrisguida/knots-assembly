@@ -635,15 +635,22 @@ m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check there are no menu icons
 #FIXME: Check hidden_args has anything removed (possibly conditional)
-#FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
+#FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --no-merges --pretty='%s' v0.21.2..|sort|uniq -c |sort -n
+#       EXPECTED:
+#           2 Add Bech32 error location function
+#           2 GUI: Initialise DBus notifications in another thread
+#           2 GUI: Point out position of invalid characters in Bech32 addresses
+#           2 GUI: Support returning positions from BitcoinAddress{Entry,Check}Validator::validate
+#           2 build: improve macro for testing -latomic requirement
+#       lol  # look for ^\|/ branch points later than the tag
 #TODO: Check that we aren't deprecating anything in Core
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
-TODO: Make sure there's no f' f" in python code: git grep '\bf['\''"]' $(git ls-files | grep '\.py$')
-TODO: Make sure there's no \d'\d or 0b\d+ in C++ code
+#TODO: Make sure there's no f' f" in python code: git grep '\bf['\''"]' $(git ls-files | grep '\.py$')
+#TODO: Make sure there's no \d'\d or 0b\d+ in C++ code: git grep '[0-9]'\''[0-9]\|\b0b[01]\+[^2-9][^0-9a-z]'
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
-		TODO: gcp 3364d31c3b5 7fc3fe1a1ab + add Taproot UASF BIP
+	n/a  knots_bips-21
 	n/a  (bump_version=Knots:20210629)			0a9a4537a5d  # DO NOT CHANGE for just fixes
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=96316586c91)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
