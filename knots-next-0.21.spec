@@ -134,6 +134,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	13e1e8980d8	last=8c4129b4540 prusn
 	-     bugfix_gui_drop_abc_confusing_hack	c0f258de92f
 	20805 copyright_2021-0.21					f9379afcd0c
 		# NOTE: Diff-minimised
+		# TODO: Bump in 2022+
 	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
 	# Too messy? g164 hebasto-g/201224-signal
 		# +gui#375 fix
@@ -628,8 +629,9 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 # BRANDING:
 	n/a   knots_branding-21						1ee7ca43f35	last=282420dea44 knots_branding-22
-	n/a   ver_dropzero-21+knots
-	TODO: this should be 21.1.1 I guess... and bump copyright year once we get to 2022+
+	n/a   ver_dropzero-21.2+knots
+		# this should be 21.1.1 I guess? keeping 21.2.0 for now to match Core...
+		# TODO: bump ver properly when Core abandons it
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check there are no menu icons
 #FIXME: Check hidden_args has anything removed (possibly conditional)
