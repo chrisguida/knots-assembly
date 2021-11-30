@@ -227,7 +227,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	23061 fix_argparse_persistmempool-21					last=60ef97c3e80 fix_argparse_persistmempool-22
 	# Needs review & concept check: 23074 Package-aware fee estimation
 	23106 fix_unlock_before_psbtsign-21						last=aebd7bceaf3 fix_unlock_before_psbtsign-22
-	# TODO: 23139 jonatack/fix-rpc-trusted-field-help
+	# TODO: 23139 jonatack/fix-rpc-trusted-field-help #21.2TODO
 	# Needs review: 23140 sipa/202109_addrmanbias
 	# Not sure about this: 23142 meshcollider:202109_no_assert_corruption
 	g430 gui_txlinks_g430-0.19								last=a3b35507ce7 gui_txlinks_g430-22
@@ -394,7 +394,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	20944 rpc_getmempoolinfo_total_fee-0.21		b864ecaf5ae	last=fa362064e38 marco/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
 	g186  gui_bumpfee_privacywarn-0.21+knots	9ca3cf1b24b
-	15129 rpc_removeaddress-0.21				423fd4425f4	#TODO#last=fdbd01b50e0 benthecarman/remove_watch_only_address
+	15129 rpc_removeaddress-0.21				423fd4425f4	#TODO#last=fdbd01b50e0 benthecarman/remove_watch_only_address #21.2TODO
 		# NOTE: Temporarily disabled! TODO: restore fixed
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
@@ -436,7 +436,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	22147 p2p_protect_last_outHB-0.21			8f7863d9729
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
 	22159 conf_append_cxxflags-0.10				deede4f8965	last=fa14c6818f4 marco/2106-buildPattern
-	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers
+	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers #21.2TODO
 	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
 	g281  gui_console_fontsize_shortcuts-0.21+k	9b125b71d81
 		# NOTE: Diff-minimised and moved AddButtonShortcut to avoid conflict with #553 later
@@ -470,12 +470,12 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	8550  old_stats_qt-0.21						24601755a13	last=63fb11652f
 	(CHECK-LAST)	last=9b99d9c327b old_stats_qt-22
 		# Held back on old version due to conflict with RPC updates...
-		# TODO: Consider backporting menu ordering changes (9b99d9c327b)
+		# TODO: Consider backporting menu ordering changes (9b99d9c327b) #21.2TODO
 	9504 dumpmasterprivkey-0.21					f9192d9a751	last=07fc81109a
 	g444  gui_netwatch-0.21+knots				539fa817d21	last=b227e4db46f gui_netwatch
 	(CHECK-LAST)	last=7f59a6deb52 gui_netwatch-22+knots
 		# NOTE: Was #9849
-		# TODO: Consider backporting menu ordering changes (7f59a6deb52)
+		# TODO: Consider backporting menu ordering changes (7f59a6deb52) #21.2TODO
 	10615 multiwallet_rpc-0.21+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
 	(CHECK-LAST)	last=d927c064439 multiwallet_rpc-22+knots
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
@@ -557,8 +557,8 @@ NM	-     gui_bech32_errpos-0.21+knots			c0b3d61d95e
 	g165  gui_peers_splitter_ss-0.21+knots		8ea7e7fbc3f
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
-		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
-	# FIXME: text below QR Code doesn't fit bech32 with Console font!
+		# TODO: Each release, see if we need to bump setting name (and figure out back compat?) #21.2TODO
+	# FIXME: text below QR Code doesn't fit bech32 with Console font! #21.2TODO
 # Non-upstreamed functionality:
 	-     gui_payreq_textedit-0.21				4a9c6fc46e5 last=9cb216e6ff8 gui_payreq_textedit
 	-     rpc_mempoolentry_txhash				011b11763f6
@@ -608,7 +608,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	-     bloom_default-0.21+knots				d714d612b62
 	-     enforce_checkpoints-0.21				d41dcd18f7c	last=1de4af3f6c7 enforce_checkpoints
 	n/a   checkpoint_update-0.21				79d59f9403e	#last=??? checkpoint_update-22
-		#TODO: update
+		#TODO: update #21.2TODO
 	10282 timebomb_knots						c8b2793aff0
 	-     rwconf_policy-0.21+knots				bae9992c73c	last=b1c0c0394ae rwconf_policy-22+knots
 		# Include Knots policy changes for simplification of final rebase process
@@ -621,7 +621,7 @@ m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 	n/a   ver_dropzero-21.2+knots
 		# this should be 21.1.1 I guess? keeping 21.2.0 for now to match Core...
 		# TODO: bump ver properly when Core abandons it
-#FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
+#FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4 #21.2TODO
 #FIXME: Check there are no menu icons
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --no-merges --pretty='%s' v0.21.2..|sort|uniq -c |sort -n
