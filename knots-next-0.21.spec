@@ -201,7 +201,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	22722 fix_estsfee_minrelay-21+knots						last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
 		# +#23547
 	(CHECK-LAST)	last=73a5d927f34 fix_estsfee_minrelay-22
-	23027 bugfix_util_test_config
+	23027 bugfix_util_test_config-0.20						last=026073cf9d7 bugfix_util_test_config
 	22781 fix_ishdenabled-0.21
 	# Needs review: 22798 MarcoFalke:2108-docRpc
 	# Needs review (& diff minimisation?): 22817 MarcoFalke:2108-testRaceConnect
@@ -640,7 +640,7 @@ m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 #TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
-TODO: Make sure there's no f' f" in python code
+TODO: Make sure there's no f' f" in python code: git grep '\bf['\''"]' $(git ls-files | grep '\.py$')
 TODO: Make sure there's no \d'\d or 0b\d+ in C++ code
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
 		TODO: gcp 3364d31c3b5 7fc3fe1a1ab + add Taproot UASF BIP
