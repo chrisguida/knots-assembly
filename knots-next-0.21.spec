@@ -627,8 +627,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	n/a   (cherrypick=33db4be1068)  # delete release notes fragments
 m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 # BRANDING:
-	n/a   knots_branding-0.21					1ee7ca43f35	last=2237adedb3f knots_branding-0.21
-		TODO: Silver/steel rope?
+	n/a   knots_branding-21						1ee7ca43f35	last=282420dea44 knots_branding-22
 	n/a   ver_dropzero-0.21
 	TODO: this should be 21.1.1 I guess... and bump copyright year once we get to 2022+
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
