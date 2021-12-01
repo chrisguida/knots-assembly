@@ -1,8 +1,8 @@
-timestamp 2021-11-08 17:44:18
+timestamp 2021-11-30 11:51:21
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #23436 / gui #459 for fixes
+#.. checked up to PR #23637 / gui #484 for fixes
 
 checkout v0.21.2
 @0.21.x-syslibs
@@ -23,6 +23,8 @@ checkout v0.21.2
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v21.x+v22.x
 		# Held back 347774b86c8...4fe7cf16779 removal of embedded leveldb conditional (might have worked better with sys_leveldb, but oh well)
 	22348 workaround_boost_issue96-21						last=67669ab425b hebasto/210627-boost
+	23607 -  # evhttp_connection_get_peer compatibility with future libevent
+	# Needs review: 23609 hebasto/211126-reduce
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
 m	2241 sys_leveldb-21+knots					5e9497a8ed7	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -251,6 +253,12 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 		# + fix in #23434 ???
 	# Moved to Knots bips.md update in branding: 21925 + 23410 hebasto/211101-bips
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
+	# Needs review/diff-minimisation: 23486 marco/2111-rpcScript
+	# Needs work: 23502 achow101/tr-low-fee-est
+	# Needs work: 23534 achow101/no-change-fee-w-sffo
+	# Needs review: 23628 -  # Check descriptors returned by external signers
+	# Needs review: 23631 -  # p2p: Don't use timestamps from inbound peers for Adjusted Time
+	g477  -  # Monospaced output in Console on macOS
 @0.21.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -373,6 +381,8 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	20664 rpc_scanblocks-0.21					ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	(CHECK-LAST)	last=fc381397e2b rpc_scanblocks
 		# Held back insignificant API changes ab315e5294b...71b7cdb460e
+		# Added return value documentation (needed for QA to pass)
+		TODO: migrate to #23549
 	20702 rpc_getblocklocations-0.21			8db5bda17bd	last=9b03c654eb3
 	(CHECK-LAST)	last=b60fdcbc2dc rpc_getblocklocations
 	20827 ibd_prune_max-21						1dcbfaca3b6	last=24f3936337d ibd_prune_max
@@ -456,6 +466,8 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	22288 torcontrol_dnslookup-0.21				d8f8412dcc4	last=cdd51e8ee15
 		# Diff-minimised
 	22372 multinotify-21									last=54b25a8c51e multinotify
+	23634 theStack/202111-rpc-add_scantxoutset_examples
+	g469  achow101/b64-psbt-gui
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
@@ -519,7 +531,7 @@ m	15218 postibd_flush-21+knots				84b38613864	last=d2ecb70d64  # validation: Flu
 	20832 rpc_validateaddress_error-0.21.1		46b02eee06b
 	16807 bech32_error_detection-0.21.1+knots	47e52930e8f	last=88cc4810926 meshcollider/201909_bech32_error_detection
 	(CHECK-LAST)	last=3bc568d6753 old_bech32_error_detection
-		# Held back rewrite 3bc568d6753..974227bb457 for now
+		# Held back rewrite 3bc568d6753..974227bb457 for now; when updating, add in #23577
 		# Held back comment drop 974227bb457..88cc4810926
 	n/a   rpc_compat_error_index-0.21+knots		c0b669d2000
 	(CHECK-LAST)	last=e480af6868c rpc_compat_error_index-22+knots

@@ -1,7 +1,7 @@
-timestamp 2021-11-08 17:44:18
+timestamp 2021-11-30 11:51:21
 lastapply no-merge
 
-#.. checked up to PR #23436 / gui #459
+#.. checked up to PR #23637 / gui #484
 
 checkout v22.0
 @22.x-syslibs
@@ -19,12 +19,15 @@ checkout v22.0
 	23345 wallettool_drop_extra_deps-0.21+knots	19bbee9327b	last=347774b86c8 hebasto/211024-bw-deps
 		# Dropped MSVC changes
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v22.x
+	23607 -  # evhttp_connection_get_peer compatibility with future libevent
+	# Needs review: 23609 hebasto/211126-reduce
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						a218f649f67
 	2241  sys_leveldb-22+knots					8cb438ae8ca  # latest code now
 		# 23.x TODO: Revert PR removing EMBEDDED_LEVELDB stuff
 	5416  sys_libsecp256k1-22+lnots				6bb55432d3d	last=f749462f68c sys_libsecp256k1
 	22412 bugfix_pushback_bool					f4f0d881fdd
+	# 23.x TODO: sys_univalue; revert #23464 ...
 	7485 sys_univalue_def						1d03ddd0d67
 	13789 bugfix_asm_pragmas					2fffe355376
 	-     bugfix_asm_leveldb_check				74ba4e0ac1f
@@ -123,6 +126,7 @@ checkout v22.0
 		# Refactored to be less optimised in favour of being more obviously correct
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	22722 fix_estsfee_minrelay-22				3361f6557d4	last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
+		FIXME: +#23547
 	23027 bugfix_util_test_config				162911e79ab
 	22781 fix_ishdenabled-0.21					0b3d4f3755b
 	# Needs review: 22798 MarcoFalke:2108-docRpc
@@ -172,6 +176,12 @@ checkout v22.0
 		# + fix in #23434 ???
 	23410 doc_bips_380to386-22					b1b1b9c036d
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
+	# Needs review/diff-minimisation: 23486 marco/2111-rpcScript
+	# Needs work: 23502 achow101/tr-low-fee-est
+	# Needs work: 23534 achow101/no-change-fee-w-sffo
+	# Needs review: 23628 -  # Check descriptors returned by external signers
+	# Needs review: 23631 -  # p2p: Don't use timestamps from inbound peers for Adjusted Time
+	g477  -  # Monospaced output in Console on macOS
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	25a98c36ce4	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -319,6 +329,7 @@ checkout v22.0
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	20664 rpc_scanblocks						7c0065a63e4	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 		# Added return value documentation (needed for QA to pass)
+		TODO: migrate to #23549
 	20702 rpc_getblocklocations					aa48cd06cbd	last=9b03c654eb3
 		# NOTE: Fixed +x on test/functional/rpc_getblocklocations.py
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
@@ -399,6 +410,7 @@ checkout v22.0
 	# TODO: Minimal 22539 darosior/fee_est_rbf
 	# Needs more careful security review: 22541 Add a new RPC command: restorewallet
 		# TODO: restrict access in multiwallet_rpc
+	# Needs work: g471 -  # Add Wallet Restore in the GUI
 	# TODO? 22546 hebasto:210725-deploy
 	# TODO: 22547 -  # cli: Add progress bar for -getinfo
 	# Needs review: 22558 achow101:taproot-psbt
@@ -449,6 +461,21 @@ checkout v22.0
 	# Needs concept review: 23395 -  # util: Add -shutdownnotify option
 	# Needs careful review: 23397 hebasto/211030-contention
 	23398 savemempool_filename-22				8b2f9393b74	last=1e30cf12706
+	23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection
+	# Needs review/walletsafety checks: 23480 sipa/202110_untweakedtr
+	# Needs diff-minimisation and de-removal: 23508 ajtowns/202111-getforkinfo
+	# Not worth it? 23510 -  # doc: Fixed dead link in build-unix.md
+	# Diff-minimised? 23512 marco/2111-policyTaprootActive
+	# Needs concept + review + BIP: 23531 prusnak/yggdrasil
+	# Needs review/deps: 23544 Sjors/2021/11/no_descriptors
+	# Needs work: 23578 Sjors/2021/11/taproot_signer
+	# Needs work: 23611 fanquake/lto_in_depends
+	Review: 23624 -  # zmq: add rawmempooltx publisher
+	23634 theStack/202111-rpc-add_scantxoutset_examples
+	# 23.x TODO: Alternative to g459 Add Taproot checkbox to receive tab
+	g469  achow101/b64-psbt-gui
+	g473  rebroad/NonLinearTraffic
+	# Needs work: g484 rebroad/RetainNetworkGraphOnIntervalChange
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -498,7 +525,7 @@ checkout v22.0
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					115213e2bd8
 	16807 old_bech32_error_detection			09c2d5f6fd5	last=88cc4810926 meshcollider/201909_bech32_error_detection
-		# Held back rewrite 3bc568d6753..974227bb457 for now
+		# Held back rewrite 3bc568d6753..974227bb457 for now; when updating, add in #23577
 		# Held back comment drop 974227bb457..88cc4810926
 	n/a   rpc_compat_error_index-22+knots		733deba4309
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
@@ -625,3 +652,4 @@ checkout v22.0
 # NOTE: use git diff --minimal for patches!
 
 @22.x-knots-android
+	#23478
