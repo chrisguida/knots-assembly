@@ -23,7 +23,7 @@ checkout v0.21.2
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v21.x+v22.x
 		# Held back 347774b86c8...4fe7cf16779 removal of embedded leveldb conditional (might have worked better with sys_leveldb, but oh well)
 	22348 workaround_boost_issue96-21						last=67669ab425b hebasto/210627-boost
-	23607 -  # evhttp_connection_get_peer compatibility with future libevent
+	23607 evhttp_connection_get_peer_compat-21				last=40f4aa8a619  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817

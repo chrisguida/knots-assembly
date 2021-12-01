@@ -19,7 +19,7 @@ checkout v22.0
 	23345 wallettool_drop_extra_deps-0.21+knots	19bbee9327b	last=347774b86c8 hebasto/211024-bw-deps
 		# Dropped MSVC changes
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v22.x
-	23607 -  # evhttp_connection_get_peer compatibility with future libevent
+	23607 evhttp_connection_get_peer_compat-21				last=40f4aa8a619  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						a218f649f67
