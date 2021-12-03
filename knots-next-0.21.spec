@@ -23,7 +23,8 @@ checkout v0.21.2
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v21.x+v22.x
 		# Held back 347774b86c8...4fe7cf16779 removal of embedded leveldb conditional (might have worked better with sys_leveldb, but oh well)
 	22348 workaround_boost_issue96-21						last=67669ab425b hebasto/210627-boost
-	23607 evhttp_connection_get_peer_compat-21				last=40f4aa8a619  # evhttp_connection_get_peer compatibility with possible-future libevent
+	23607 evhttp_connection_get_peer_compat-21				last=091ccc38c2e  # evhttp_connection_get_peer compatibility with possible-future libevent
+		# NOTE: Fixed several bugs
 	# Needs review: 23609 hebasto/211126-reduce
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
@@ -258,7 +259,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
 	# Needs review: 23628 -  # Check descriptors returned by external signers
 	# Needs review: 23631 -  # p2p: Don't use timestamps from inbound peers for Adjusted Time
-	g477  -  # Monospaced output in Console on macOS
+	g477  gui477_fix_mac_console_font-0.13  # Monospaced output in Console on macOS
 @0.21.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -367,7 +368,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	22211 i2p_IsRelayable-0.21+knots			03d28fdf8dd	last=7593b06bd12
 	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
-	20295 rpc_getblockfrompeer_wo_header-21		947c37b0b52	last=9181e2e2179 Sjors/2020/11/getblockfrompeer
+	20295 rpc_getblockfrompeer_wo_header-21		947c37b0b52	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
