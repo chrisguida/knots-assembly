@@ -468,7 +468,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	22288 torcontrol_dnslookup-0.21				d8f8412dcc4	last=cdd51e8ee15
 		# Diff-minimised
 	22372 multinotify-21									last=54b25a8c51e multinotify
-	23634 theStack/202111-rpc-add_scantxoutset_examples
+	23634 rpc_scantxoutset_examples-21						last=1ed5681407a theStack/202111-rpc-add_scantxoutset_examples
 	g469  achow101/b64-psbt-gui
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
