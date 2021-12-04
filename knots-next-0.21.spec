@@ -379,11 +379,12 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	(CHECK-LAST)	last=53383d94200 rpcauthfile
 		# NOTE: fixed bug, added multi-line support, and added tests
 	g149  intro_assumevalid						8979d48f938
-	20664 rpc_scanblocks-0.21					ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
+	23549 rpc_scanblocks-0.21					ad927cbdb4c	last=e1c89184cd3 jamesob/2021-11-scanblocks
+	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	(CHECK-LAST)	last=fc381397e2b rpc_scanblocks
-		# Held back insignificant API changes ab315e5294b...71b7cdb460e
+		# Held back insignificant comment/errormsg changes ab315e5294b...71b7cdb460e
 		# Added return value documentation (needed for QA to pass)
-		TODO: migrate to #23549
+		# NOTE: Was #20664
 	20702 rpc_getblocklocations-0.21			8db5bda17bd	last=9b03c654eb3
 	(CHECK-LAST)	last=b60fdcbc2dc rpc_getblocklocations
 	20827 ibd_prune_max-21						1dcbfaca3b6	last=24f3936337d ibd_prune_max
