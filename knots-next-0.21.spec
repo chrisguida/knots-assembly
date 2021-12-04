@@ -469,7 +469,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 		# Diff-minimised
 	22372 multinotify-21									last=54b25a8c51e multinotify
 	23634 rpc_scantxoutset_examples-21						last=1ed5681407a theStack/202111-rpc-add_scantxoutset_examples
-	g469  achow101-g/b64-psbt-gui
+	g469  qt_psbt_b64-21+knots								last=d54f498f8ab achow101-g/b64-psbt-gui
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
