@@ -473,9 +473,9 @@ checkout v22.0
 	Review: 23624 -  # zmq: add rawmempooltx publisher
 	23634 theStack/202111-rpc-add_scantxoutset_examples
 	# 23.x TODO: Alternative to g459 Add Taproot checkbox to receive tab
-	g469  achow101/b64-psbt-gui
-	g473  rebroad/NonLinearTraffic
-	# Needs work: g484 rebroad/RetainNetworkGraphOnIntervalChange
+	g469  achow101-g/b64-psbt-gui
+	g473  rebroad-g/NonLinearTraffic
+	# Needs work: g484 rebroad-g/RetainNetworkGraphOnIntervalChange
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
