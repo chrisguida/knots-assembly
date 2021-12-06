@@ -121,7 +121,8 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	13e1e8980d8	last=8c4129b4540 prusn
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
 	19884 fixedseeds-0.21						5ff339ffa5d
 		# +partial #21254 (bugfix only)
-	19888 getblockstats_utxo_actual-0.21+knots	37dd20ac3a1	last=6cd78060c8e
+	22798 doc_fix_pr22798-21.1
+m	19888 getblockstats_utxo_actual-21.1+knots	37dd20ac3a1	last=6cd78060c8e
 	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
 		# Held back additional tests
 	# Needs review: 20196 vasild/fix_GetListenPort
@@ -206,7 +207,6 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	(CHECK-LAST)	last=73a5d927f34 fix_estsfee_minrelay-22
 	23027 bugfix_util_test_config-0.20						last=026073cf9d7 bugfix_util_test_config
 	22781 fix_ishdenabled-0.21
-	# Needs review: 22798 MarcoFalke:2108-docRpc
 	# Needs review (& diff minimisation?): 22817 MarcoFalke:2108-testRaceConnect
 	# n/a without #21565: 22820 fix_config_qtinputsupport-22
 	# Needs review: 22834 vasild:onlynet
@@ -230,7 +230,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	23061 fix_argparse_persistmempool-21					last=60ef97c3e80 fix_argparse_persistmempool-22
 	# Needs review & concept check: 23074 Package-aware fee estimation
 	23106 fix_unlock_before_psbtsign-21						last=aebd7bceaf3 fix_unlock_before_psbtsign-22
-	# TODO: 23139 jonatack/fix-rpc-trusted-field-help #21.2TODO
+	23139 doc_fix_pr23139_txdesc-21.1
 	# Needs review: 23140 sipa/202109_addrmanbias
 	# Not sure about this: 23142 meshcollider:202109_no_assert_corruption
 	g430 gui_txlinks_g430-0.19								last=a3b35507ce7 gui_txlinks_g430-22
@@ -259,11 +259,13 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
 	# Needs review: 23628 -  # Check descriptors returned by external signers
 	# Needs review: 23631 -  # p2p: Don't use timestamps from inbound peers for Adjusted Time
+	23634 rpc_scantxoutset_examples-21						last=1ed5681407a theStack/202111-rpc-add_scantxoutset_examples
+	20556 doc_fix_pr20556-21
 	g477  gui477_fix_mac_console_font-0.13  # Monospaced output in Console on macOS
 @0.21.x-knots
 # SOFTFORK:
-	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
-	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=70d7e0812a7 Sjors/2021/05/versionbits_period_start
+m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
+m	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=70d7e0812a7 Sjors/2021/05/versionbits_period_start
 	(CHECK-LAST)	last=d6d1a1b47eb rpc_gbci_period_start-22+knots
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -281,7 +283,7 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	14641 fundraw_minconf-0.21					fde6c8132bc	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	(CHECK-LAST)	last=4138cb304b8 fundraw_minconf
-	12677 listunspent_ancestorinfo-21			28b3902be59	last=6cb60f3e6d6 listunspent_ancestorinfo
+m	12677 listunspent_ancestorinfo-21.1+knots	28b3902be59	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					4d67400f273	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
 	(CHECK-LAST)	last=8b77eb9d493 rpc_sign_show_fees
@@ -317,7 +319,7 @@ m	g275  gui_darkmode-0.21.2_pt1				8939a4a109b
 	18972 neutrino_whitelist-mini-21			892d210d2eb	last=339fe189eb9
 	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
 		# NOTE: Diff-minimised
-	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=7f066240654 achow101/bip174-extensions
+	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	#last=7f066240654 achow101/bip174-extensions
 	(CHECK-LAST)	last=634c311b833 psbt_ver_proprietary_xpub-22-mini
 		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
 		# NOTE: Diff-minimised
@@ -468,7 +470,6 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	22288 torcontrol_dnslookup-0.21				d8f8412dcc4	last=cdd51e8ee15
 		# Diff-minimised
 	22372 multinotify-21									last=54b25a8c51e multinotify
-	23634 rpc_scantxoutset_examples-21						last=1ed5681407a theStack/202111-rpc-add_scantxoutset_examples
 	g469  qt_psbt_b64-21+knots								last=d54f498f8ab achow101-g/b64-psbt-gui
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					e06c15ceea1	last=e11cb50a09  # multisig sorting
