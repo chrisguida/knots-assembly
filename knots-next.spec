@@ -356,6 +356,7 @@ checkout v22.0
 		#TODO: minimise
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
 	21260 -										3fedb585da1	last=46bf0b7b5d8  # rpcwallet_tx_in_mempool-0.21
+		TODO: Merge fixes from rpcwallet_tx_in_mempool-21.1+knots
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`

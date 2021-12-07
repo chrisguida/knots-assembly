@@ -319,7 +319,7 @@ m	12677 listunspent_ancestorinfo-21.1+knots	28b3902be59	last=6cb60f3e6d6 listuns
 	18972 neutrino_whitelist-mini-21			892d210d2eb	last=339fe189eb9
 	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
 		# NOTE: Diff-minimised
-	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	#last=7f066240654 achow101/bip174-extensions
+	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=7f066240654 achow101/bip174-extensions
 	(CHECK-LAST)	last=634c311b833 psbt_ver_proprietary_xpub-22-mini
 		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
 		# NOTE: Diff-minimised
@@ -423,7 +423,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	21173 optimise_hexstr-0.21					b4ac741d755
-	21260 rpcwallet_tx_in_mempool-0.21			28ec9283de6	last=46bf0b7b5d8
+m	21260 rpcwallet_tx_in_mempool-21.1+knots		28ec9283de6	last=46bf0b7b5d8
 	g213  gui_payrequest_copyaddr-0.18			d165eeec1fc
 	g214  gui_payrequest_disablena-0.18+knots	4853dd20a7e
 	21327 p2p_ignore_tx_in_ibd-0.21				093927be571	last=6aed8b7e9b2
