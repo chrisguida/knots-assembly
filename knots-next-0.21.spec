@@ -531,7 +531,7 @@ m	15218 postibd_flush-21+knots				84b38613864	last=d2ecb70d64  # validation: Flu
 	17795 gui_console_ctrl_d					ca0940d77b6
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning-0.21+knots		43dad5a3906	last=896eea449ad restore_vbits_warning
-	20832 rpc_validateaddress_error-0.21.1		46b02eee06b
+m	20832 rpc_validateaddress_error-0.21.1+k	46b02eee06b
 	16807 bech32_error_detection-0.21.1+knots	47e52930e8f	last=88cc4810926 meshcollider/201909_bech32_error_detection
 	(CHECK-LAST)	last=3bc568d6753 old_bech32_error_detection
 		# Held back rewrite 3bc568d6753..974227bb457 for now; when updating, add in #23577
@@ -658,7 +658,7 @@ m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 	n/a  knots_bips-21
 	n/a  (bump_version=Knots:20210629)			0a9a4537a5d  # DO NOT CHANGE for just fixes
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=e8c0a656c0a)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=c504540629b)				f1cc3f1e0b1  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
