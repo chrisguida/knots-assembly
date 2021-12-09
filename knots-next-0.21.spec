@@ -23,8 +23,7 @@ checkout v0.21.2
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v21.x+v22.x
 		# Held back 347774b86c8...4fe7cf16779 removal of embedded leveldb conditional (might have worked better with sys_leveldb, but oh well)
 	22348 workaround_boost_issue96-21						last=67669ab425b hebasto/210627-boost
-	23607 evhttp_connection_get_peer_compat-21				last=091ccc38c2e  # evhttp_connection_get_peer compatibility with possible-future libevent
-		# NOTE: Fixed several bugs
+	23607 evhttp_connection_get_peer_compat-21				last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						f2e1e41e817
@@ -44,7 +43,7 @@ m	20121 secp256k1_allow_bignum-21+knots		ed298e34b3d
 	20358 -										980c71c1f50	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					cfc912ffcdc	last=836a3dc02c7 jonas/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
-	23716 sipa/202112_ripemd160
+	23716 qa_own_ripemd160-21
 @0.21.x-knotsfixes
 # TESTS:
 TM	22279 fix_fuzz_baseencdec_pr22279-0.21		3d80a04b144
