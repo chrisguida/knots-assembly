@@ -1,7 +1,7 @@
-timestamp 2021-11-30 11:51:21
+timestamp 2021-12-09 02:53:14
 lastapply no-merge
 
-#.. checked up to PR #23637 / gui #484
+#.. checked up to PR #23722 / gui #497
 
 checkout v22.0
 @22.x-syslibs
@@ -35,6 +35,7 @@ checkout v22.0
 	-     opt_bdb_extracare						27c4d454903
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
+	23716 sipa/202112_ripemd160
 @22.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							f351877c154
@@ -182,6 +183,12 @@ checkout v22.0
 	# Needs review: 23628 -  # Check descriptors returned by external signers
 	# Needs review: 23631 -  # p2p: Don't use timestamps from inbound peers for Adjusted Time
 	g477  -  # Monospaced output in Console on macOS
+	Diff-minimised 23644 marco/2112-walletNoAdjust
+	Diff-minimised 23652 marco/2112-docOptPeer
+	# Needs review: 23673 hebasto/211204-native
+	23676 -  # rpc: correct getnewaddress/getrawchangeaddress address_type helptext
+	Diff-minimised 23694 marco/2112-docOpt
+	Diff-minimised 23702 marco/2112-docOpt
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	25a98c36ce4	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -317,6 +324,7 @@ checkout v22.0
 		# Re-enabled fetching blocks w/o already having header (from older version of PR)
 		# Moved code to avoid conflict with 22577
 		TODO: gcp 15f7d87c757 RPC: Ensure getblockfrompeer errors if the peer doesn't exist, even if we already have the block
+		TODO: +#23706
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-22						237cdcaf3ee	last=1002e2d0d7f jonatack/setfeerate
@@ -477,6 +485,10 @@ checkout v22.0
 	g469  achow101-g/b64-psbt-gui
 	g473  rebroad-g/NonLinearTraffic
 	# Needs work: g484 rebroad-g/RetainNetworkGraphOnIntervalChange
+	# Needs concept (performance hit?): 23662 theStack:202112-rpc-improve_getreceivedby_performance
+	# Needs review: 23718 darosior/psbt_preimages_fields
+	g492  rebroad-g/NetworkGraphTooltip
+	g497  qt_fontsel
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -636,7 +648,7 @@ checkout v22.0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		9fa4d038aaa	# doc/{bips,files}
-	n/a  (bump_version=Knots:20211108)			bcc3f6e8502
+	n/a  (bump_version=Knots:20211209)			bcc3f6e8502
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=c22129a3cec)				b31ddd5021f  # release notes: write/update, including change log and credits
 			# check travis for misspellings

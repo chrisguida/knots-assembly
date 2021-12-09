@@ -1,8 +1,8 @@
-timestamp 2021-11-30 11:51:21
+timestamp 2021-12-09 02:53:14
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #23637 / gui #484 for fixes
+#.. checked up to PR #23722 / gui #497 for fixes
 
 checkout v0.21.2
 @0.21.x-syslibs
@@ -44,6 +44,7 @@ m	20121 secp256k1_allow_bignum-21+knots		ed298e34b3d
 	20358 -										980c71c1f50	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					cfc912ffcdc	last=836a3dc02c7 jonas/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
+	23716 sipa/202112_ripemd160
 @0.21.x-knotsfixes
 # TESTS:
 TM	22279 fix_fuzz_baseencdec_pr22279-0.21		3d80a04b144
@@ -262,6 +263,12 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	23634 rpc_scantxoutset_examples-21						last=1ed5681407a theStack/202111-rpc-add_scantxoutset_examples
 	20556 doc_fix_pr20556-21
 	g477  gui477_fix_mac_console_font-0.13  # Monospaced output in Console on macOS
+	Diff-minimised 23644 marco/2112-walletNoAdjust
+	Diff-minimised 23652 marco/2112-docOptPeer
+	# Needs review: 23673 hebasto/211204-native
+	23676 -  # rpc: correct getnewaddress/getrawchangeaddress address_type helptext
+	Diff-minimised 23694 marco/2112-docOpt
+	Diff-minimised 23702 marco/2112-docOpt
 @0.21.x-knots
 # SOFTFORK:
 m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -371,6 +378,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		947c37b0b52	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
+		TODO: +#23706
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
