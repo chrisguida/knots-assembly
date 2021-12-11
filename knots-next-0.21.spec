@@ -262,12 +262,10 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	23634 rpc_scantxoutset_examples-21						last=1ed5681407a theStack/202111-rpc-add_scantxoutset_examples
 	20556 doc_fix_pr20556-21
 	g477  gui477_fix_mac_console_font-0.13  # Monospaced output in Console on macOS
-	Diff-minimised 23644 marco/2112-walletNoAdjust
-	Diff-minimised 23652 marco/2112-docOptPeer
+	23644 wtx_timercvd_noadjust-21
+		# Diff-miniised
+	# Needs correctness verification (especially startingheight which changed in 22.x): Diff-minimised 23652 marco/2112-docOptPeer
 	# Needs review: 23673 hebasto/211204-native
-	23676 -  # rpc: correct getnewaddress/getrawchangeaddress address_type helptext
-	Diff-minimised 23694 marco/2112-docOpt
-	Diff-minimised 23702 marco/2112-docOpt
 @0.21.x-knots
 # SOFTFORK:
 m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -377,7 +375,7 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		947c37b0b52	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
-		TODO: +#23706
+		TODO: +#23702 +#23706
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
