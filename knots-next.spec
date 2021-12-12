@@ -1,7 +1,7 @@
-timestamp 2021-12-09 02:53:14
+timestamp 2021-12-12 07:22:57
 lastapply no-merge
 
-#.. checked up to PR #23722 / gui #497
+#.. checked up to PR #23751 / gui #504
 
 checkout v22.0
 @22.x-syslibs
@@ -189,6 +189,7 @@ checkout v22.0
 	23676 -  # rpc: correct getnewaddress/getrawchangeaddress address_type helptext
 	Diff-minimised 23694 marco/2112-docOpt
 	Diff-minimised 23702 marco/2112-docOpt
+	23750 darosior/no_label_range_descriptors
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	25a98c36ce4	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -489,6 +490,7 @@ checkout v22.0
 	# Needs review: 23718 darosior/psbt_preimages_fields
 	g492  rebroad-g/NetworkGraphTooltip
 	g497  qt_fontsel
+	# idk 23724 -  # build: add systemtap's sys/sdt.h as depends for GUIX builds with USDT tracepoints
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -597,6 +599,7 @@ checkout v22.0
 	7219  fullrbf-22+knots						5c5190476b9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					901c180339a
+		TODO: Revert(?) #23731 - but maybe n/a since it's for descriptor wallets which are explicit for all types?
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			5b753d4e201	# Latest code now

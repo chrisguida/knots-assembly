@@ -1,8 +1,8 @@
-timestamp 2021-12-09 02:53:14
+timestamp 2021-12-12 07:22:57
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #23722 / gui #497 for fixes
+#.. checked up to PR #23751 / gui #504 for fixes
 
 checkout v0.21.2
 @0.21.x-syslibs
@@ -266,6 +266,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 		# Diff-miniised
 	# Needs correctness verification (especially startingheight which changed in 22.x): Diff-minimised 23652 marco/2112-docOptPeer
 	# Needs review: 23673 hebasto/211204-native
+	23750 darosior/no_label_range_descriptors
 @0.21.x-knots
 # SOFTFORK:
 m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
