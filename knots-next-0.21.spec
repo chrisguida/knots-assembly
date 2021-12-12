@@ -122,7 +122,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	13e1e8980d8	last=8c4129b4540 prusn
 	19884 fixedseeds-0.21						5ff339ffa5d
 		# +partial #21254 (bugfix only)
 	22798 doc_fix_pr22798-21.1
-m	19888 getblockstats_utxo_actual-21.1+knots	37dd20ac3a1	last=6cd78060c8e
+m	19888 getblockstats_utxo_actual-21.1+knots	37dd20ac3a1	last=ca5de4bf4ab
 	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
 		# Held back additional tests
 	# Needs review: 20196 vasild/fix_GetListenPort
@@ -269,7 +269,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 @0.21.x-knots
 # SOFTFORK:
 m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
-m	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=70d7e0812a7 Sjors/2021/05/versionbits_period_start
+m	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	(CHECK-LAST)	last=d6d1a1b47eb rpc_gbci_period_start-22+knots
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -323,9 +323,10 @@ m	12677 listunspent_ancestorinfo-21.1+knots	28b3902be59	last=6cb60f3e6d6 listuns
 	18972 neutrino_whitelist-mini-21			892d210d2eb	last=339fe189eb9
 	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
 		# NOTE: Diff-minimised
-	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=7f066240654 achow101/bip174-extensions
+	17034 psbt_ver_proprietary_xpub-0.21		8cfa229a8e4	last=81521173ba8 achow101/bip174-extensions
 	(CHECK-LAST)	last=634c311b833 psbt_ver_proprietary_xpub-22-mini
 		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
+		# NOTE: Didn't bother removing duplicate test
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
 m	17631 rest_blockfilter-0.21					31a7b2798a2	last=2b64fa3251a matt/2019-11-filter-rest
@@ -375,7 +376,9 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	20275 list_unsupported_wallets-0.21+knots	4db68baa351	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		947c37b0b52	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
-		TODO: +#23702 +#23706
+		# +#23702
+		# NOTE: Forward-compatible with param rename in #23706
+		# TODO: +#23706 ?
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	20391 rpc_setfeerate-0.21					ed17a7d8d62	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
