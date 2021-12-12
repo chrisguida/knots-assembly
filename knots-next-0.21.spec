@@ -266,7 +266,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 		# Diff-miniised
 	# Needs correctness verification (especially startingheight which changed in 22.x): Diff-minimised 23652 marco/2112-docOptPeer
 	# Needs review: 23673 hebasto/211204-native
-	23750 darosior/no_label_range_descriptors
+	23750 docfix_importdesc_range_no_label-21							last=65efbba45d8 darosior/no_label_range_descriptors
 @0.21.x-knots
 # SOFTFORK:
 m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -417,11 +417,11 @@ m	20254 i2p_static-21+knots					b1aec3e913f	last=8b4a3714b91 vasild/i2p_static
 	20944 rpc_getmempoolinfo_total_fee-0.21		b864ecaf5ae	last=fa362064e38 marco/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
 	g186  gui_bumpfee_privacywarn-0.21+knots	9ca3cf1b24b
-	15129 rpc_removeaddress-0.21				423fd4425f4	#TODO#last=fdbd01b50e0 benthecarman/remove_watch_only_address #21.2TODO
+	15129 rpc_removeaddress-0.21				423fd4425f4	#21.2TODO#last=fdbd01b50e0 benthecarman/remove_watch_only_address #21.2TODO
 		# NOTE: Temporarily disabled! TODO: restore fixed
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
-	#TODO#(CHECK-LAST)	last=??? remove_watch_only_address-22
+	#21.2TODO#(CHECK-LAST)	last=??? remove_watch_only_address-22
 	21319 getblock_optimise						b79a8d71419
 		# Context: 17529 rpc: Faster getblock using PureBlock
 	19763 p2p_no_relay_to_origin-0.21+knots		083e7e509a0
@@ -459,7 +459,7 @@ m	21260 rpcwallet_tx_in_mempool-21.1+knots		28ec9283de6	last=46bf0b7b5d8
 	22147 p2p_protect_last_outHB-0.21			8f7863d9729
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
 	22159 conf_append_cxxflags-0.10				deede4f8965	last=fa14c6818f4 marco/2106-buildPattern
-	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers #21.2TODO
+	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers
 	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
 	g281  gui_console_fontsize_shortcuts-0.21+k	9b125b71d81
 		# NOTE: Diff-minimised and moved AddButtonShortcut to avoid conflict with #553 later
@@ -494,12 +494,10 @@ m	21260 rpcwallet_tx_in_mempool-21.1+knots		28ec9283de6	last=46bf0b7b5d8
 	8550  old_stats_qt-0.21						24601755a13	last=63fb11652f
 	(CHECK-LAST)	last=9b99d9c327b old_stats_qt-22
 		# Held back on old version due to conflict with RPC updates...
-		# TODO: Consider backporting menu ordering changes (9b99d9c327b) #21.2TODO
 	9504 dumpmasterprivkey-0.21					f9192d9a751	last=07fc81109a
 	g444  gui_netwatch-0.21+knots				539fa817d21	last=b227e4db46f gui_netwatch
 	(CHECK-LAST)	last=7f59a6deb52 gui_netwatch-22+knots
 		# NOTE: Was #9849
-		# TODO: Consider backporting menu ordering changes (7f59a6deb52) #21.2TODO
 	10615 multiwallet_rpc-0.21+knots			cc2b14bbbcf	last=5a10f8307a5 multiwallet_rpc
 	(CHECK-LAST)	last=d927c064439 multiwallet_rpc-22+knots
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
@@ -676,6 +674,6 @@ m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=16290c18d8d)				6addc3eccab  # update manpages (build first)
+	n/a  (cherrypick=a76c71bf46b)				6addc3eccab  # update manpages (build first)
 	n/a  (cherrypick=936fd13cd23)				a886811721c  # translation update
 # NOTE: use git diff --minimal for patches!
