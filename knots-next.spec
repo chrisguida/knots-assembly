@@ -625,7 +625,7 @@ checkout v22.0
 	9749  unique_spk_mempool-22+knots			1e69a9eb689
 	-     bloom_default-0.21+knots				bfd460431a0
 	-     enforce_checkpoints					9bd94bf5d54
-	n/a   checkpoint_update-22					197ba14f3ca
+	n/a   checkpoint_update-22					197ba14f3ca	last=531aaa286d3 checkpoint_update-0.21
 	10282 timebomb_knots						4c57977383e
 	-     rwconf_policy-22+knots				4c9a3ad0147
 		# Include Knots policy changes for simplification of final rebase process
