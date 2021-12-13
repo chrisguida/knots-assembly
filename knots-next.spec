@@ -1,7 +1,7 @@
-timestamp 2021-12-12 07:22:57
+timestamp 2021-12-13 10:39:46
 lastapply no-merge
 
-#.. checked up to PR #23751 / gui #504
+#.. checked up to PR #23762 / gui #506
 
 checkout v22.0
 @22.x-syslibs
@@ -493,6 +493,7 @@ checkout v22.0
 	g492  rebroad-g/NetworkGraphTooltip
 	g497  qt_fontsel
 	# idk 23724 -  # build: add systemtap's sys/sdt.h as depends for GUIX builds with USDT tracepoints
+	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -653,7 +654,7 @@ checkout v22.0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		9fa4d038aaa	# doc/{bips,files}
-	n/a  (bump_version=Knots:20211209)			bcc3f6e8502
+	n/a  (bump_version=Knots:20211213)			bcc3f6e8502
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=c22129a3cec)				b31ddd5021f  # release notes: write/update, including change log and credits
 			# check travis for misspellings
