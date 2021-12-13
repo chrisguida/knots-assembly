@@ -580,8 +580,8 @@ NM	-     gui_bech32_errpos-0.21+knots			c0b3d61d95e
 		# NOTE: Originally #10594
 	g165  gui_peers_splitter_ss-0.21+knots		8ea7e7fbc3f
 		# +g194 Save/restore RPCConsole geometry only for window
-		# NOTE: Changed setting name since our splitters don't match Core's
-		# TODO: Each release, see if we need to bump setting name (and figure out back compat?) #21.2TODO
+		# NOTE: Changed setting name since our peer table width doesn't match Core's
+		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
 # Non-upstreamed functionality:
 	-     gui_payreq_textedit-0.21				4a9c6fc46e5 last=9cb216e6ff8 gui_payreq_textedit
 	-     rpc_mempoolentry_txhash				011b11763f6
