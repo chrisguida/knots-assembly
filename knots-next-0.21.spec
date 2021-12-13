@@ -267,6 +267,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# Needs correctness verification (especially startingheight which changed in 22.x): Diff-minimised 23652 marco/2112-docOptPeer
 	# Needs review: 23673 hebasto/211204-native
 	23750 docfix_importdesc_range_no_label-21							last=65efbba45d8 darosior/no_label_range_descriptors
+	g506  qt_qrcode_sizefixes
 @0.21.x-knots
 # SOFTFORK:
 m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -580,7 +581,6 @@ NM	-     gui_bech32_errpos-0.21+knots			c0b3d61d95e
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our splitters don't match Core's
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?) #21.2TODO
-	# FIXME: text below QR Code doesn't fit bech32 with Console font! #21.2TODO
 # Non-upstreamed functionality:
 	-     gui_payreq_textedit-0.21				4a9c6fc46e5 last=9cb216e6ff8 gui_payreq_textedit
 	-     rpc_mempoolentry_txhash				011b11763f6

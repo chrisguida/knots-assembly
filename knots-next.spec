@@ -190,6 +190,8 @@ checkout v22.0
 	Diff-minimised 23694 marco/2112-docOpt
 	Diff-minimised 23702 marco/2112-docOpt
 	23750 darosior/no_label_range_descriptors
+	g506  qt_qrcode_sizefixes
+		TODO: Allow customising the font with g497
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	25a98c36ce4	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -570,7 +572,6 @@ checkout v22.0
 	17167 whitelist_outgoing-mini-22+knots		569c4bc343f	last=81622ba1229 whitelist_outgoing
 		# NOTE: Originally #10594
 	# Needs purpose: 21815 prayank23:max-out-full-relay
-	# FIXME: text below QR Code doesn't fit bech32 with Console font!
 	-     wallettool_dump_warning-22+knots		1450e955bea
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
 	# Needs work: 22708 hebasto:210815-wayland
