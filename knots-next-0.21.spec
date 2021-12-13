@@ -631,7 +631,6 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	7ed6f1a62c7
 	-     bloom_default-0.21+knots				d714d612b62
 	-     enforce_checkpoints-0.21				d41dcd18f7c	last=1de4af3f6c7 enforce_checkpoints
 	n/a   checkpoint_update-0.21				79d59f9403e	last=1923722495d checkpoint_update-22
-		#TODO: verify #21.2TODO
 	10282 timebomb_knots						c8b2793aff0
 	-     rwconf_policy-0.21+knots				bae9992c73c	last=b1c0c0394ae rwconf_policy-22+knots
 		# Include Knots policy changes for simplification of final rebase process
@@ -644,7 +643,7 @@ m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 	n/a   ver_dropzero-21.2+knots
 		# this should be 21.1.1 I guess? keeping 21.2.0 for now to match Core...
 		# TODO: bump ver properly when Core abandons it
-#FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4 #21.2TODO
+#FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check there are no menu icons
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --no-merges --pretty='%s' v0.21.2..|sort|uniq -c |sort -n
@@ -661,7 +660,8 @@ m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 #TODO: Make sure there's no f' f" in python code: git grep '\bf['\''"]' $(git ls-files | grep '\.py$')
 #TODO: Make sure there's no \d'\d or 0b\d+ in C++ code: git grep '[0-9]'\''[0-9]\|\b0b[01]\+[^2-9][^0-9a-z]'
-#TODO: Make sure there's no Qt5.5 incompatibilities: git grep 'addAction(.*\[.*\]\s*{'  #21.2TODO
+#TODO: Make sure there's no Qt5.5 incompatibilities: git grep 'addAction(.*\[.*\]\s*{'
+#TODO: Make sure there's no -Wc++14-extensions triggered
 	n/a  (cherrypick=e0968d0328b2877330)		c7a144c218c	# doc/{bips,files}
 	n/a  knots_bips-21
 	n/a  (bump_version=Knots:20210629)			0a9a4537a5d  # DO NOT CHANGE for just fixes
