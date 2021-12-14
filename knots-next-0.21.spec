@@ -676,5 +676,5 @@ m	7483  svg_icon-21.2+knots					469d40983b1	last=afaab080b87 svg_icon-22+knots
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=a76c71bf46b)				6addc3eccab  # update manpages (build first)
-	n/a  (cherrypick=936fd13cd23)				a886811721c  # translation update
+	n/a  (cherrypick=3b34e884d32)				a886811721c  # translation update
 # NOTE: use git diff --minimal for patches!
