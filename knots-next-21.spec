@@ -5,7 +5,7 @@ timestamp 2021-12-13 10:39:46
 #.. checked up to PR #23762 / gui #506 for fixes
 
 checkout v0.21.2
-@0.21.x-syslibs
+@21.x-syslibs
 # BUILD BUGS:
 	21882 fuzz32_llvm_workaround-0.21+knots		d994684b569	last=e4c8bb62e4a hebasto/210507-fuzz32
 	20938 configure_latomic_checks-0.14^		ee5e40704b0
@@ -44,7 +44,7 @@ m	20121 secp256k1_allow_bignum-21+knots		ed298e34b3d
 	20594 conf_getauxval-0.21					cfc912ffcdc	last=836a3dc02c7 jonas/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
 	23716 qa_own_ripemd160-21
-@0.21.x-knotsfixes
+@21.x-knotsfixes
 # TESTS:
 TM	22279 fix_fuzz_baseencdec_pr22279-0.21		3d80a04b144
 TM	22002 fix_fuzz_system_pr22002-0.21			867a7fc53df
@@ -268,7 +268,7 @@ TM	g280  gui_urihandler_nophishing-0.20		b7026991708
 	# Needs review: 23673 hebasto/211204-native
 	23750 docfix_importdesc_range_no_label-21							last=65efbba45d8 darosior/no_label_range_descriptors
 	g506  qt_qrcode_sizefixes
-@0.21.x-knots
+@21.x-knots
 # SOFTFORK:
 m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 m	22016 rpc_gbci_period_start-0.21.1+knots	4910107f0d1	last=1898b9be12c Sjors/2021/05/versionbits_period_start
