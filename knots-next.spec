@@ -182,7 +182,7 @@ checkout v22.0
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
 	# Needs review: 23628 -  # Check descriptors returned by external signers
 	# Needs review: 23631 -  # p2p: Don't use timestamps from inbound peers for Adjusted Time
-	g477  -  # Monospaced output in Console on macOS
+	g477  gui477_fix_mac_console_font-22  # Monospaced output in Console on macOS
 	Diff-minimised 23644 marco/2112-walletNoAdjust
 	Diff-minimised 23652 marco/2112-docOptPeer
 	# Needs review: 23673 hebasto/211204-native
