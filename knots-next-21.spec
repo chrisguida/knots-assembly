@@ -25,9 +25,11 @@ checkout v0.21.2
 	22348 workaround_boost_issue96-21			db54924736a	last=67669ab425b hebasto/210627-boost
 	23607 evhttp_connection_get_peer_compat-21	a5d963d4635	last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
+	TODO: Get rid of the -O0 in configure
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						9815be994a1
 m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
+		TODO: check that bitcoin-tx builds without leveldb
 m	5416 sys_libsecp256k1-0.21+knots			813a5353e1d	last=f749462f68c sys_libsecp256k1
 	7485 sys_univalue_def						c393c7a7f51
 	13789 bugfix_asm_pragmas					e33b0f86575
@@ -44,6 +46,7 @@ m	20121 secp256k1_allow_bignum-21+knots		b2befc7fef1
 	20594 conf_getauxval-0.21					563aacf22be	last=836a3dc02c7 jonas/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
 	23716 qa_own_ripemd160-21					a93adb92909
+	TODO: delete release notes fragments
 @21.x-knotsfixes
 # TESTS:
 TM	22279 fix_fuzz_baseencdec_pr22279-0.21		0c8d22592f5
@@ -54,6 +57,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	17402 travis_ppc64							3f88efab27c	last=1d684f05341 elichai/2019-11-powerpc64
 	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20	4a97d761fcc
 	n/a   knots_ci_tweaks-21					a30b2c8bb0f
+	TODO: Can we get a minimum-dep-versions CI going??
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=b5a164d9155 fix_gitian_src_202004
@@ -269,6 +273,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 23673 hebasto/211204-native
 	23750 docfix_importdesc_range_no_label-21	397093e7779	last=65efbba45d8 darosior/no_label_range_descriptors
 	g506  qt_qrcode_sizefixes					4724488fe3d
+	TODO: delete release notes fragments
 @21.x-knots
 # SOFTFORK:
 m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	394e59e2f86	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -608,6 +613,7 @@ m	-     mining_priority-0.21+knots			1e33269a0ae	last=58e2cab4b18 mining_priorit
 	5861 gui_restore_addresses					a81fd2b77ff
 	5891  qt_console_history_persist-0.21+knots	831cc0d61d1	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-0.21+knots					6b8135375e9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
+		FIXME: Why isn't service bit 26 present?
 	(CHECK-LAST)	last=8db545872f6 fullrbf-22+knots
 	12146 opt_wallet_segwit2					ffc242d52be
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
@@ -663,6 +669,7 @@ m	7483  svg_icon-21.2+knots					10090268130	last=afaab080b87 svg_icon-22+knots
 #TODO: Make sure there's no \d'\d or 0b\d+ in C++ code: git grep '[0-9]'\''[0-9]\|\b0b[01]\+[^2-9][^0-9a-z]'
 #TODO: Make sure there's no Qt5.5 incompatibilities: git grep 'addAction(.*\[.*\]\s*{'
 #TODO: Make sure there's no -Wc++14-extensions triggered
+#TODO: Make sure there's no optional .has_value() (Boost 1.68 dep)
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
 	n/a  knots_bips-21							95f1a0c7adb
 	n/a  (bump_version=Knots:20210629)			27c16a89cc5  # DO NOT CHANGE for just fixes

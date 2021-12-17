@@ -25,6 +25,7 @@ checkout v22.0
 	5872 subdir_incl_compat						a218f649f67
 	2241  sys_leveldb-22+knots					8cb438ae8ca  # latest code now
 		# 23.x TODO: Revert PR removing EMBEDDED_LEVELDB stuff
+		FIXME: bitcoin-tx fails without leveldb
 	5416  sys_libsecp256k1-22+lnots				6bb55432d3d	last=f749462f68c sys_libsecp256k1
 	22412 bugfix_pushback_bool					f4f0d881fdd
 	# 23.x TODO: sys_univalue; revert #23464 ...
@@ -600,6 +601,7 @@ checkout v22.0
 	5861 gui_restore_addresses					8f11d2dcae3
 	5891  qt_console_history_persist			189074c6a1a	last=0cd5fc301d6 qt_console_history_persist
 	7219  fullrbf-22+knots						5c5190476b9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
+		FIXME: Why isn't service bit 26 present?
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					901c180339a
 		TODO: Revert(?) #23731 - but maybe n/a since it's for descriptor wallets which are explicit for all types?
