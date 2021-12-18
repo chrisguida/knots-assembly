@@ -53,7 +53,7 @@ checkout v22.0
 	18818 fix_gitian_src_202004-22+knots		e8914fe7cab	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						48e994efd24
 		# NOTE: based directly on #18818
-	18427 2020mingwthrd-mini					55e20380c66	last=7fe49671dd4 2020mingwthrd
+	18427 2020mingwthrd-mini					55e20380c66	last=570ac855612 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				be8f2d388ea
 	17828 p2p_log_categories					037303a8383	last=04960621582 practicalswift/log-categories
 	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks

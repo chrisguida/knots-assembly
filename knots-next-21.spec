@@ -63,7 +63,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again-21					9e6238975fe	last=686cedcc9cd fix_gitdir_again
 		# NOTE: based directly on #18818
-	18427 2020mingwthrd-mini					f4f276a44ae	last=7fe49671dd4 2020mingwthrd
+	18427 2020mingwthrd-mini					f4f276a44ae	last=570ac855612 2020mingwthrd
 	18490 bugfix_symcheck_pe_case-21			dae51d82243	last=24a69574ece bugfix_symcheck_pe_case
 	17828 p2p_log_categories-21					6ed22dedbde	last=04960621582 practicalswift/log-categories
 	(CHECK-LAST)	last=dbbb7c4265e p2p_log_categories
@@ -303,6 +303,8 @@ m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listuns
 		# NOTE: Originally #15115
 	(CHECK-LAST)	last=6328248b214 rm_send2self-mini
 	15423 tor_socks_port-0.21					109cf1f0e3b	last=d37d95a9ea2 tor_socks_port
+		FIXME: * 78a9e337356 fixup! torcontrol: Query Tor for correct -onion configuration
+		FIXME: * da20c1e6d20 fixup! torcontrol: Query Tor for correct -onion configuration
 		# Held back 962f168a014..398df42f449
 	15836 fee_histogram-21						69874bd7a2f	last=b94292a7cb jonas/2019/04/feeinfo
 		# Held back approach changes (that ignore CPFP) f2ca3d35ee9..47b5c3e03a7 - current approach is arguably buggy (see sipa's review on PR)
@@ -485,7 +487,7 @@ m	21260 rpcwallet_tx_in_mempool-21.1+knots		5e9dcde9997	last=46bf0b7b5d8
 	g362  kbshortcuts_context-0.21+knots		979ab82059f	last=e4c916a0ea0 kbshortcuts_context
 	22288 torcontrol_dnslookup-0.21				192658456c6	last=cdd51e8ee15
 		# Diff-minimised
-	22372 multinotify-21						b002df55c73	last=54b25a8c51e multinotify
+	22372 multinotify-21						b002df55c73	last=041b1ed8b79 multinotify
 	g469  qt_psbt_b64-21+knots					65f1d080b90	last=d54f498f8ab achow101-g/b64-psbt-gui
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
