@@ -25,7 +25,7 @@ checkout v22.0
 	5872 subdir_incl_compat						a218f649f67
 	2241  sys_leveldb-22+knots					8cb438ae8ca  # latest code now
 		# 23.x TODO: Revert PR removing EMBEDDED_LEVELDB stuff
-		FIXME: bitcoin-tx fails without leveldb
+		FIXME: f770012e777 Bugfix: init: Move dbwrapper_SanityCheck call out of init/common so we don't break non-LevelDB targets
 	5416  sys_libsecp256k1-22+lnots				6bb55432d3d	last=f749462f68c sys_libsecp256k1
 	22412 bugfix_pushback_bool					f4f0d881fdd
 	# 23.x TODO: sys_univalue; revert #23464 ...

@@ -210,7 +210,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	22722 fix_estsfee_minrelay-21+knots			65397b3d6f1	last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
 		# +#23547
 	(CHECK-LAST)	last=73a5d927f34 fix_estsfee_minrelay-22
-	23027 bugfix_util_test_config-0.20			c1acc532685	last=026073cf9d7 bugfix_util_test_config
+	23027 bugfix_util_test_config-0.20			c1acc532685	last=41ff6c343e9 bugfix_util_test_config
 	22781 fix_ishdenabled-0.21					bd8c4aa3b30
 	# Needs review (& diff minimisation?): 22817 MarcoFalke:2108-testRaceConnect
 	# n/a without #21565: 22820 fix_config_qtinputsupport-22
@@ -317,7 +317,7 @@ m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listuns
 	17463 gui_custom_sendyes					087d3e642af
 	15987 wallet_no_reuse-0.21+knots			952bb1fb9bc	last=63d1070f734 wallet_warn_reuse_gui
 		# NOTE: Uses older bloom filter implementation
-	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=f954a0d7a00 getaddressinfo_txids
+	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=c6e5a3b1974 getaddressinfo_txids
 	18772 -										72084e6f2d7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	22918 rpc_getblock_prevouts_fees-0.21		ce365cd8a1c	last=5c34507ecbb
 	(CHECK-LAST)	last=80612d8aded rpc_getblock_prevouts_fees-22
