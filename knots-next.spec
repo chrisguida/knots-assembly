@@ -7,14 +7,14 @@ checkout master
 @22.x-syslibs
 # BUILD BUGS:
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
-	23607 evhttp_connection_get_peer_compat-21				last=40f4aa8a619  # evhttp_connection_get_peer compatibility with possible-future libevent
+	23607 -													last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
 # SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						a218f649f67
 	2241  sys_leveldb-22+knots					8cb438ae8ca  # latest code now
 		TODO: Revert PR removing EMBEDDED_LEVELDB stuff
 		FIXME: f770012e777 Bugfix: init: Move dbwrapper_SanityCheck call out of init/common so we don't break non-LevelDB targets
-	5416  sys_libsecp256k1-22+lnots				6bb55432d3d	last=f749462f68c sys_libsecp256k1
+	5416  sys_libsecp256k1-22+knots				6bb55432d3d	last=f749462f68c sys_libsecp256k1
 	22412 bugfix_pushback_bool					f4f0d881fdd
 	TODO: sys_univalue; revert #23464 ...
 	7485 sys_univalue_def						1d03ddd0d67
@@ -146,7 +146,7 @@ checkout master
 		TODO: Allow customising the font with g497
 @22.x-knots
 # SOFTFORK:
-	22016 rpc_gbci_period_start-22+knots		32dd1d34493	last=70d7e0812a7 Sjors/2021/05/versionbits_period_start
+	22016 Sjors/2021/05/versionbits_period_start	32dd1d34493	last=70d7e0812a7
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	-     gitian_linux32						95d78266cd4
@@ -300,7 +300,7 @@ checkout master
 	# ---- BEGIN HWI SUPPORT, TODO ----
 	21576 rpc_bumpfee_signer-22					b8b2d2d9baa	last=25aa986a53c Sjors/2021/04/signer_bumpfee
 		# Simply dropped misc comment changes in first commit
-	21928 hww_toggle-22+knots					c1697fa9595	last=9fcf3025aae Sjors/2021/05/hww-toggle
+	21928 Sjors/2021/05/hww-toggle				c1697fa9595	last=9fcf3025aae
 	# ---- END HWI SUPPORT ----
 	# TODO: 17355 -  # gui: grey out used address in address book
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
@@ -366,7 +366,7 @@ checkout master
 	# TODO? Diff-minimised 22604 jonatack:rate_limit_addr_follow-ups
 	# Needs review: 22674 glozow:package-child-with-parents
 	# Needs review: vasild:torbind
-	22751 simulaterawtx-22						364c0507238	last=b269f1bb0d6 kallewoof/202108-analyzerawtransaction
+	22751 kallewoof/202108-analyzerawtransaction		364c0507238	last=b269f1bb0d6  # simulaterawtx
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
 	# TODO? 22777 jnewbery/2021-08-feeler-no-frelay
@@ -392,7 +392,7 @@ checkout master
 		# Needed fs::Path{To,From}String rebasing
 		# Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 savefeeestimates-22					ec0f6c01a85	last=d5b41e6b2ed greenaddress/dump_fee_estimates
+	23387 greenaddress/dump_fee_estimates		ec0f6c01a85	last=d5b41e6b2ed  # savefeeestimates
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work: g459 Sjors-g/2021/10/taproot_gui
 	# Needs concept review: 23395 -  # util: Add -shutdownnotify option
