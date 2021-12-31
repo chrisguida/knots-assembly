@@ -27,7 +27,7 @@ checkout v0.21.2
 	# Needs review: 23609 hebasto/211126-reduce
 	TODO: Get rid of the -O0 in configure
 # SYSLIBS: (and old build bugs)
-	5872 subdir_incl_compat						9815be994a1
+	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
 		TODO: check that bitcoin-tx builds without leveldb
 m	5416 sys_libsecp256k1-0.21+knots			813a5353e1d	last=f749462f68c sys_libsecp256k1

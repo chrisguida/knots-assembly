@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #23762 / gui #506
 
-checkout master
+checkout origin/master
 @22.x-syslibs
 # BUILD BUGS:
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
