@@ -31,7 +31,8 @@ checkout v0.21.2
 m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
 		TODO: check that bitcoin-tx builds without leveldb
 m	5416 sys_libsecp256k1-0.21+knots			813a5353e1d	last=f749462f68c sys_libsecp256k1
-	7485 sys_univalue_def						c393c7a7f51
+	7485  sys_univalue_def-0.18					c393c7a7f51	last= sys_univalue_def
+		TODO: doc update
 	13789 bugfix_asm_pragmas					e33b0f86575
 	-     bugfix_asm_leveldb_check				15cb5704a2a
 	15155 test_external_bcli-21					3385d2476a3	last=06ec7f56dfb test_external_bcli

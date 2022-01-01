@@ -12,9 +12,8 @@ checkout origin/master
 	5872 subdir_incl_compat						a218f649f67
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
-	5416  sys_libsecp256k1-22+knots				6bb55432d3d	last=f749462f68c sys_libsecp256k1
-	22412 bugfix_pushback_bool					f4f0d881fdd
-	TODO: sys_univalue; revert #23464 ...
+	5416  sys_libsecp256k1						6bb55432d3d
+	-     sys_univalue
 	7485 sys_univalue_def						1d03ddd0d67
 	13789 bugfix_asm_pragmas					2fffe355376
 	-     bugfix_asm_leveldb_check				74ba4e0ac1f
