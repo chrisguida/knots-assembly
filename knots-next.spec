@@ -28,13 +28,6 @@ checkout origin/master
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 # FIXES:
-	22318 depends_no_getrandom					19e3a797c2c	last=35aab4f0c0b hebasto/210623-random
-	-     fix_gitian_gcc8						17e23cf927b
-	-     gitian_reverttobionic-22				7a70cb930d8
-		# Revert everything to bionic:
-		# - avoids GCC 9 (memcmp bug)
-		# - avoids GCC bug 102993 (cf-protection=full segfaults in generated Win32 code)
-		# - avoids dependency on newer glibc symbols
 	18818 fix_gitian_src_202004-22+knots		e8914fe7cab	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						48e994efd24
 		# NOTE: based directly on #18818
@@ -103,7 +96,7 @@ checkout origin/master
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds						95725111d52	last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
-	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
+	# FIXME: When upgrading any guix to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
 	22834 bugfix_onlynet-22						22f55e6b0b5	last=051c2554ca1 vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
 	# Needs review: 22665 darosior:rbf_optin_nomempool
@@ -147,7 +140,6 @@ checkout origin/master
 	22016 Sjors/2021/05/versionbits_period_start	32dd1d34493	last=70d7e0812a7
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
-	-     gitian_linux32						95d78266cd4
 	-     guix_linux_i686						d7cabad678b
 		FIXME: symbol __divmoddi4 from unsupported version GCC_7.0.0
 	# not ready/deterministic: 13827 NSIS depends build
@@ -453,7 +445,7 @@ checkout origin/master
 	15428 tor_gui_pairing-22+knots				b0cfbb9f68f	last=16cb2ae1fe0 tor_gui_pairing-0.21+knots
 		FIXME: Revert 4a881554991 (buggy) in favour of g506
 	15421 tor_subprocess-22+knots				db4dd219005	last=58c6cafd3a1 tor_subprocess
-	# TODO: tor gitian bundle! /guix
+	# TODO: tor guix bundle!
 	15633 nohbcbfornonwit						8e9e203c847
 		FIXME: Revisit why f5e4f1650fe is necessary in 22.x, but not in 21.x where the same code exists
 		# NOTE: added test fix from sdaftuar/test-15633-2
