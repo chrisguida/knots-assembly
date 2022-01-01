@@ -34,7 +34,7 @@ m	5416 sys_libsecp256k1-0.21+knots			813a5353e1d	last=f749462f68c sys_libsecp256
 	7485  sys_univalue_def-0.18					c393c7a7f51	last= sys_univalue_def
 		TODO: doc update
 	13789 bugfix_asm_pragmas					e33b0f86575
-	-     bugfix_asm_leveldb_check				15cb5704a2a
+	-     bugfix_asm_leveldb_check-0.20			15cb5704a2a	last=3ca799db25f bugfix_asm_leveldb_check
 	15155 test_external_bcli-21					3385d2476a3	last=06ec7f56dfb test_external_bcli
 	20202 opt_bdb-0.21							4c0c81adb3a
 		# +#20458+#20267
@@ -60,7 +60,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	n/a   knots_ci_tweaks-21					a30b2c8bb0f
 	TODO: Can we get a minimum-dep-versions CI going??
 # FIXES:
-	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b
+	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b aka depends_no_getrandom
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again-21					9e6238975fe	last=686cedcc9cd fix_gitdir_again
 		# NOTE: based directly on #18818

@@ -15,6 +15,7 @@ checkout origin/master
 	5416  sys_libsecp256k1						6bb55432d3d
 	-     sys_univalue
 	7485 sys_univalue_def						1d03ddd0d67
+	#23.xTODO: sys_minisketch
 	13789 bugfix_asm_pragmas					2fffe355376
 	-     bugfix_asm_leveldb_check				74ba4e0ac1f
 	15155 test_external_bcli					0c5868df17b
@@ -23,11 +24,11 @@ checkout origin/master
 	#Maybe restore: 7339  opt_libevent
 @22.x-knotsfixes
 # TESTS:
-	-     lint_relaxer							f351877c154
+	#23.xTODO: as needed only: -     lint_relaxer							f351877c154
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 # FIXES:
-	22318 hebasto/210623-random					19e3a797c2c	last=35aab4f0c0b
+	22318 depends_no_getrandom					19e3a797c2c	last=35aab4f0c0b hebasto/210623-random
 	-     fix_gitian_gcc8						17e23cf927b
 	-     gitian_reverttobionic-22				7a70cb930d8
 		# Revert everything to bionic:
