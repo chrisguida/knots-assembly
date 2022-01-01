@@ -9,11 +9,9 @@ checkout origin/master
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
 	23607 -													last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
-# SYSLIBS: (and old build bugs)
 	5872 subdir_incl_compat						a218f649f67
-	2241  sys_leveldb-22+knots					8cb438ae8ca  # latest code now
-		TODO: Revert PR removing EMBEDDED_LEVELDB stuff
-		FIXME: f770012e777 Bugfix: init: Move dbwrapper_SanityCheck call out of init/common so we don't break non-LevelDB targets
+# SYSLIBS: (and old build bugs)
+	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1-22+knots				6bb55432d3d	last=f749462f68c sys_libsecp256k1
 	22412 bugfix_pushback_bool					f4f0d881fdd
 	TODO: sys_univalue; revert #23464 ...
