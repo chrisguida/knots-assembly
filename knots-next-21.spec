@@ -68,6 +68,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	(CHECK-LAST)	last=d9fd23bb08d 2020mingwthrd-mini
 	18490 bugfix_symcheck_pe_case-21			dae51d82243	last=24a69574ece bugfix_symcheck_pe_case
 	17828 p2p_log_categories-21					6ed22dedbde	last=04960621582 practicalswift/log-categories
+		FIXME: Incorrect rebase into CChainState::ConnectBlock
 	(CHECK-LAST)	last=dbbb7c4265e p2p_log_categories
 	19832 hebasto/200829-log					d64d3aaa576	last=1816327e533
 	20845 net_logcategory_localdisconnect-0.21	11e46eb9473	last=fa55159b9ed marco/2101-netLogDisconnect
