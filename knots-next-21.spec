@@ -64,7 +64,8 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=991498aaad9 guix_reltar_autogen_distclean
 	18902 fix_gitdir_again-21					9e6238975fe	last=e00422d1347 fix_gitdir_again
 		# NOTE: based directly on #18818
-	18427 2020mingwthrd-mini					f4f276a44ae	last=570ac855612 2020mingwthrd
+	18427 2020mingwthrd-mini-21					f4f276a44ae	last=df5ece3e064 2020mingwthrd
+	(CHECK-LAST)	last=d9fd23bb08d 2020mingwthrd-mini
 	18490 bugfix_symcheck_pe_case-21			dae51d82243	last=24a69574ece bugfix_symcheck_pe_case
 	17828 p2p_log_categories-21					6ed22dedbde	last=04960621582 practicalswift/log-categories
 	(CHECK-LAST)	last=dbbb7c4265e p2p_log_categories
