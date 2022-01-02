@@ -28,7 +28,7 @@ checkout origin/master
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 # FIXES:
-	18818 fix_gitian_src_202004-22+knots		e8914fe7cab	last=b5a164d9155 fix_gitian_src_202004
+	18818 guix_reltar_autogen_distclean			e8914fe7cab	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						48e994efd24
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					55e20380c66	last=570ac855612 2020mingwthrd

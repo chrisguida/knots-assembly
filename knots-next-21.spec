@@ -61,7 +61,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	TODO: Can we get a minimum-dep-versions CI going??
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b aka depends_no_getrandom
-	18818 fix_gitian_src_202004-21				01cd0f44b87	last=b5a164d9155 fix_gitian_src_202004
+	18818 fix_gitian_src_202004-21				01cd0f44b87	last=991498aaad9 guix_reltar_autogen_distclean
 	18902 fix_gitdir_again-21					9e6238975fe	last=686cedcc9cd fix_gitdir_again
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					f4f276a44ae	last=570ac855612 2020mingwthrd
