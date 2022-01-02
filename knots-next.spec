@@ -33,7 +33,6 @@ checkout origin/master
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					55e20380c66	last=df5ece3e064 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				be8f2d388ea
-	17828 p2p_log_categories					037303a8383	last=04960621582 practicalswift/log-categories
 	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 	14968 http_bind_error						2d0253e07a7	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					e22b19f9462
