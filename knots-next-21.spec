@@ -116,7 +116,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
 	19419 listwalletdir_skip_data-0.21+knots	ce14eff5578	last=3f9cc0cd736 Saibato/wallet_351
-	(CHECK-LAST)	last=17f214f4b7f listwalletdir_skip_data
+	(CHECK-LAST)	last=559a7cb6188 listwalletdir_skip_data
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions

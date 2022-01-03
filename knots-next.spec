@@ -46,6 +46,7 @@ checkout origin/master
 	13608 -										2be248b0a77	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	-     rpcarg_type_per_name					d40fdba46d8
 	-     bugfix_rpc_getbalance_hacky			b783debf686
+		#23.xTODO: Ensure bugs in #22929 get fixed
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
@@ -76,7 +77,8 @@ checkout origin/master
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-22+knots	d0fceeac30a	last=6cd78060c8e
+	19888 getblockstats_utxo_actual-23+knots	d0fceeac30a	last=ca5de4bf4ab
+		# Based on last^ commit
 		# Diff-minimised incl test changes
 	# Needs review: 20196 vasild/fix_GetListenPort
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
