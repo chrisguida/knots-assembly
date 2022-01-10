@@ -43,7 +43,6 @@ checkout origin/master
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
-	13608 -										2be248b0a77	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
 	-     rpcarg_type_per_name					d40fdba46d8
 	-     bugfix_rpc_getbalance_hacky			b783debf686
 		#23.xTODO: Ensure bugs in #22929 get fixed
