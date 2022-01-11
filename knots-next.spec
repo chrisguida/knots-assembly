@@ -135,7 +135,6 @@ checkout origin/master
 	# Needs review: 23631 -  # p2p: Don't use timestamps from inbound peers for Adjusted Time
 	# Needs review: 23673 hebasto/211204-native
 	g506  qt_qrcode_sizefixes
-		TODO: Allow customising the font with g497
 @22.x-knots
 # SOFTFORK:
 	22016 Sjors/2021/05/versionbits_period_start	32dd1d34493	last=70d7e0812a7
@@ -406,6 +405,9 @@ checkout origin/master
 	# Needs review: 23718 darosior/psbt_preimages_fields
 	g492  rebroad-g/NetworkGraphTooltip
 	g497  qt_fontsel
+	-     qt_fontsel_qrcodes
+		TODO: Add tor_gui_pairing support
+	TODO: qt_fontsel_console
 	# idk 23724 -  # build: add systemtap's sys/sdt.h as depends for GUIX builds with USDT tracepoints
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 # Non-progress functionality:
