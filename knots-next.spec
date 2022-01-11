@@ -97,8 +97,9 @@ checkout origin/master
 	22417 bpchild_closefds						95725111d52	last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 	# FIXME: When upgrading any guix to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
-	22834 bugfix_onlynet-22						22f55e6b0b5	last=051c2554ca1 vasild/onlynet
+	22834 vasild/onlynet^						22f55e6b0b5	last=0eea83a85ec vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
+		#23.xTODO: re-review and re-gcp 61c0c0f7bad net: Make OutboundConnectionAllowedTo more obviously correct
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				162911e79ab
 	# Needs review: 22798 MarcoFalke:2108-docRpc
