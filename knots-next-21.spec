@@ -60,7 +60,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	17402 travis_ppc64							3f88efab27c	last=1d684f05341 elichai/2019-11-powerpc64
 	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20	4a97d761fcc
 	n/a   knots_ci_tweaks-21					a30b2c8bb0f
-	TODO: Can we get a minimum-dep-versions CI going??
+	#TODO: Can we get a minimum-dep-versions CI going??
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b aka depends_no_getrandom
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=991498aaad9 guix_reltar_autogen_distclean
@@ -70,8 +70,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	(CHECK-LAST)	last=d9fd23bb08d 2020mingwthrd-mini
 	18490 bugfix_symcheck_pe_case-21			dae51d82243	last=24a69574ece bugfix_symcheck_pe_case
 	17828 p2p_log_categories-21					6ed22dedbde	last=04960621582 practicalswift/log-categories
-		FIXME: Incorrect rebase into CChainState::ConnectBlock
-	(CHECK-LAST)	last=dbbb7c4265e p2p_log_categories
+	(CHECK-LAST)	last=137964d82dc p2p_log_categories
 	19832 hebasto/200829-log					d64d3aaa576	last=1816327e533
 	20845 net_logcategory_localdisconnect-0.21	11e46eb9473	last=fa55159b9ed marco/2101-netLogDisconnect
 	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
