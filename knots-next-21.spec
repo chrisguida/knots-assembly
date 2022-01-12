@@ -19,11 +19,11 @@ checkout v0.21.2
 		# +#23317
 	23314 disable_s2561k_openssl_test-0.21		1c1ec16b46a	last=8031de63b5a disable_s2561k_openssl_test-22
 	23345 wallettool_drop_extra_deps-0.21+knots	2d9930b2a36	last=4fe7cf16779 hebasto/211024-bw-deps
-		FIXME: $build_bitcoin_util missing in 21.x
-		FIXME: other tools shouldn't need leveldb either
 		# Dropped MSVC changes
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v21.x+v22.x
 		# Held back 347774b86c8...4fe7cf16779 removal of embedded leveldb conditional (might have worked better with sys_leveldb, but oh well)
+		# Fixed silent conflicts (bitcoin-util & natpmp not supported by 21.x)
+		# Allowed bitcoin-{cli,tx} without extra deps too
 	22348 workaround_boost_issue96-21			db54924736a	last=67669ab425b hebasto/210627-boost
 	23607 evhttp_connection_get_peer_compat-21	a5d963d4635	last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
@@ -32,7 +32,6 @@ checkout v0.21.2
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
-		TODO: check that bitcoin-tx builds without leveldb
 m	5416 sys_libsecp256k1-0.21+knots			813a5353e1d	last=f749462f68c sys_libsecp256k1
 	7485  sys_univalue_def-0.18					c393c7a7f51	last= sys_univalue_def
 		TODO: doc update
