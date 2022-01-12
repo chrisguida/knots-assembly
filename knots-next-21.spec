@@ -19,6 +19,8 @@ checkout v0.21.2
 		# +#23317
 	23314 disable_s2561k_openssl_test-0.21		1c1ec16b46a	last=8031de63b5a disable_s2561k_openssl_test-22
 	23345 wallettool_drop_extra_deps-0.21+knots	2d9930b2a36	last=4fe7cf16779 hebasto/211024-bw-deps
+		FIXME: $build_bitcoin_util missing in 21.x
+		FIXME: other tools shouldn't need leveldb either
 		# Dropped MSVC changes
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v21.x+v22.x
 		# Held back 347774b86c8...4fe7cf16779 removal of embedded leveldb conditional (might have worked better with sys_leveldb, but oh well)
