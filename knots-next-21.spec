@@ -23,7 +23,7 @@ checkout v0.21.2
 		# BUILD_LEVELDB becomes EMBEDDED_LEVELDB for v21.x+v22.x
 		# Held back 347774b86c8...4fe7cf16779 removal of embedded leveldb conditional (might have worked better with sys_leveldb, but oh well)
 		# Fixed silent conflicts (bitcoin-util & natpmp not supported by 21.x)
-		# Allowed bitcoin-{cli,tx} without extra deps too
+	24051 config_utils_drop_extra_deps-21+knots				last=98868633d1d config_utils_drop_extra_deps
 	22348 workaround_boost_issue96-21			db54924736a	last=67669ab425b hebasto/210627-boost
 	23607 evhttp_connection_get_peer_compat-21	a5d963d4635	last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
