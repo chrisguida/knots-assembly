@@ -1,7 +1,7 @@
-timestamp 2021-12-13 10:39:46
+timestamp 2022-01-12 08:03:26
 lastapply no-merge
 
-#.. checked up to PR #23762 / gui #506
+#.. checked up to PR #24043 / gui #523
 
 checkout origin/master
 @22.x-syslibs
@@ -125,6 +125,7 @@ checkout origin/master
 	# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
 	# Maybe just the docs from #23341 ?
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
+		# Followups in #23777
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 		# + fix in #23434 ???
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
@@ -135,7 +136,22 @@ checkout origin/master
 	# Needs review: 23631 -  # p2p: Don't use timestamps from inbound peers for Adjusted Time
 	# Needs review: 23673 hebasto/211204-native
 	g506  qt_qrcode_sizefixes
+	# idk? 23781 hebasto/211215-bptest
+	23834 achow101/dump-checksum-size
+	23937 -
+	23975 -
+	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
+	review 24038 marco/2201-lockstuff
+	review 24039 -  # bug fix: prevent UnicodeDecodeError when opening log file in feature_init.py
+	24041 ryanofsky/pr/green  # util: Restore GetIntArg saturating behavior
+	g508  -  # Prevent negative values of progressPerHour
+	review g509  hebasto/211217-unlock
+	review g516  -  # Change 'Show' icon
+	TODO: delete release notes fragments
 @22.x-knots
+# PERFORMANCE:
+	23819 -  # tracing/block_connected: don't serialize block hash twice
+	23880 marco/2112-p2pAsync
 # SOFTFORK:
 	22016 Sjors/2021/05/versionbits_period_start	32dd1d34493	last=70d7e0812a7
 	# TODO: 21702 CheckTemplateVerify
@@ -262,7 +278,7 @@ checkout origin/master
 		# Re-enabled fetching blocks w/o already having header (from older version of PR)
 		# Moved code to avoid conflict with 22577
 		TODO: gcp 15f7d87c757 RPC: Ensure getblockfrompeer errors if the peer doesn't exist, even if we already have the block
-		TODO: +#23706
+		TODO: +#23706+#23813
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-22						237cdcaf3ee	last=1002e2d0d7f jonatack/setfeerate
@@ -354,12 +370,13 @@ checkout origin/master
 	# Needs review: 22558 achow101:taproot-psbt
 	# Needs review: 22563 vasild:addrman_per_group_bucketing
 	# TODO? Diff-minimised 22604 jonatack:rate_limit_addr_follow-ups
-	# Needs review: 22674 glozow:package-child-with-parents
+	# Needs review: 22674 glozow:package-child-with-parents +#23804
 	# Needs review: vasild:torbind
 	22751 kallewoof/202108-analyzerawtransaction		364c0507238	last=b269f1bb0d6  # simulaterawtx
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
 	# TODO? 22777 jnewbery/2021-08-feeler-no-frelay
+		# NOTE: fix in #23774
 	# TODO: 22778 jnewbery:2021-02-tx-relay-init
 	# Needs BIP? 22838 achow101:multipath-descs
 	# TODO? 22894 jonatack/netinfo-clarify-client-and-server-versions
@@ -410,6 +427,10 @@ checkout origin/master
 	TODO: qt_fontsel_console
 	# idk 23724 -  # build: add systemtap's sys/sdt.h as depends for GUIX builds with USDT tracepoints
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
+	# Needs further review? 23789 MarcoFalke:2112-walletChangeChange +#23840
+	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
+	# Needs review: 24012 -  # rest: Use query parameters to control resource loading
+	# Needs review: 24043 sipa/202201_multi_a
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -528,6 +549,8 @@ checkout origin/master
 	-     gui_peers_no_net_column				42faba73091
 	22439 guix_in_gitian						6f8b29bd9f8	last=ebda0463748 achow101/guix-in-gitian
 		FIXME: Add i686-pc-linux-gnu
+	TODO: revert #23927  rpc: Pruning nodes can not fetch blocks before syncing past their height
+	TODO: revert #24031  build: don't compress macOS DMG
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			d61bb3c22e9
 	-     netperms_implicit_addr				3ab6318c892
@@ -555,6 +578,7 @@ checkout origin/master
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (cherrypick=eaa9f92b50b)				dc7e4b0d473  # delete release notes fragments
 	7483  svg_icon-22+knots						22cb29a7fa3
+		TODO: partial revert #23909 & pull earlier #23778 out of reflog
 	n/a   tbc_font								552c253ac34
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
@@ -570,7 +594,7 @@ checkout origin/master
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		9fa4d038aaa	# doc/{bips,files}
-	n/a  (bump_version=Knots:20211213)			bcc3f6e8502
+	n/a  (bump_version=Knots:20220112)			bcc3f6e8502
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=c22129a3cec)				b31ddd5021f  # release notes: write/update, including change log and credits
 			# check travis for misspellings

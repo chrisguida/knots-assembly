@@ -1,8 +1,8 @@
-timestamp 2021-12-13 10:39:46
+timestamp 2022-01-12 08:03:26
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #23762 / gui #506 for fixes
+#.. checked up to PR #24043 / gui #523 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -26,6 +26,7 @@ checkout v0.21.2
 	23607 evhttp_connection_get_peer_compat-21	a5d963d4635	last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
 	TODO: Get rid of the -O0 in configure
+	23947 fanquake/use_host_os_over_TARGET_OS
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -147,7 +148,7 @@ m	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=ca5de4bf4ab
 	-     bugfix_gui_drop_abc_confusing_hack	6e1b3b65525
 	20805 copyright_2021-0.21					c69ba0b3e58
 		# NOTE: Diff-minimised
-		# TODO: Bump in 2022+
+		#21.xTODO: Bump in 2022+
 	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
 	# Too messy? g164 hebasto-g/201224-signal
 		# +gui#375 fix
@@ -259,6 +260,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	23348 wallet_descr_hide_keypoololdest-0.21	bf69f3d1a37	last=ee03c782ba6 hebasto/211024-rpc-gwi
 		# Held back std::optional refactoring 303ee60f817...ee03c782ba6
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
+		# Followups in #23777
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 		# + fix in #23434 ???
 	# Moved to Knots bips.md update in branding: 21925 + 23410 hebasto/211101-bips
@@ -277,6 +279,17 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 23673 hebasto/211204-native
 	23750 docfix_importdesc_range_no_label-21	397093e7779	last=65efbba45d8 darosior/no_label_range_descriptors
 	g506  qt_qrcode_sizefixes					4724488fe3d
+	# idk? 23781 hebasto/211215-bptest
+	23834 achow101/dump-checksum-size
+	23858 marco/2112-testFix
+	23937 -
+	23980 -
+	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
+	review 24038 marco/2201-lockstuff
+	review 24039 -  # bug fix: prevent UnicodeDecodeError when opening log file in feature_init.py
+	24041 ryanofsky/pr/green  # util: Restore GetIntArg saturating behavior
+	g508  -  # Prevent negative values of progressPerHour
+	review g516  -  # Change 'Show' icon
 	TODO: delete release notes fragments
 @21.x-knots
 # SOFTFORK:
@@ -338,12 +351,14 @@ m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listuns
 	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-0.21		0cbd65dd17d	last=81521173ba8 achow101/bip174-extensions
+		TODO: +#23975
 	(CHECK-LAST)	last=634c311b833 psbt_ver_proprietary_xpub-22-mini
 		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
 		# NOTE: Didn't bother removing duplicate test
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
 m	17631 rest_blockfilter-0.21					36a9777315b	last=2b64fa3251a matt/2019-11-filter-rest
+		TODO: +#23836 ?
 	(CHECK-LAST)	last=91feea1216a rest_blockfilter-22
 		# NOTE: Dropped unrelated extra commits
 	g319  gui_openuri_pastebtn-0.21				24178d81b5f	last=dbde0558ce7
@@ -392,7 +407,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
 		# +#23702
 		# NOTE: Forward-compatible with param rename in #23706
-		# TODO: +#23706 ?
+		# TODO: +#23706+#23813 ?
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	20391 rpc_setfeerate-0.21					aef134635d5	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
@@ -493,6 +508,7 @@ m	21260 rpcwallet_tx_in_mempool-21.1+knots		5e9dcde9997	last=46bf0b7b5d8
 		# Diff-minimised
 	22372 multinotify-21						b002df55c73	last=041b1ed8b79 multinotify
 	g469  qt_psbt_b64-21+knots					65f1d080b90	last=d54f498f8ab achow101-g/b64-psbt-gui
+	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
