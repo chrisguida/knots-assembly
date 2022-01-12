@@ -22,6 +22,7 @@ checkout origin/master
 	-     opt_bdb_extracare						27c4d454903
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
+	n/a   (delete_release_notes_fragments)
 @22.x-knotsfixes
 # TESTS:
 	#23.xTODO: as needed only: -     lint_relaxer							f351877c154
@@ -147,7 +148,7 @@ checkout origin/master
 	g508  -  # Prevent negative values of progressPerHour
 	review g509  hebasto/211217-unlock
 	review g516  -  # Change 'Show' icon
-	TODO: delete release notes fragments
+	n/a   (delete_release_notes_fragments)
 @22.x-knots
 # PERFORMANCE:
 	23819 -  # tracing/block_connected: don't serialize block hash twice
@@ -576,7 +577,7 @@ checkout origin/master
 	# Needs review: 22871 JeremyRubin:discourage-csv
 	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
-	n/a   (cherrypick=eaa9f92b50b)				dc7e4b0d473  # delete release notes fragments
+	n/a   (delete_release_notes_fragments)		dc7e4b0d473
 	7483  svg_icon-22+knots						22cb29a7fa3
 		TODO: partial revert #23909 & pull earlier #23778 out of reflog
 	n/a   tbc_font								552c253ac34

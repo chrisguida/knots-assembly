@@ -49,7 +49,7 @@ m	20121 secp256k1_allow_bignum-21+knots		b2befc7fef1
 	20594 conf_getauxval-0.21					563aacf22be	last=836a3dc02c7 jonas/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
 	23716 qa_own_ripemd160-21					a93adb92909
-	TODO: delete release notes fragments
+	n/a   (delete_release_notes_fragments)
 @21.x-knotsfixes
 # TESTS:
 TM	22279 fix_fuzz_baseencdec_pr22279-0.21		0c8d22592f5
@@ -291,7 +291,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24041 ryanofsky/pr/green  # util: Restore GetIntArg saturating behavior
 	g508  -  # Prevent negative values of progressPerHour
 	review g516  -  # Change 'Show' icon
-	TODO: delete release notes fragments
+	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
 m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	394e59e2f86	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -666,7 +666,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		# Include Knots policy changes for simplification of final rebase process
 		# Held back git diff 19fd29ce45d..af4614fbd26 which is likely a noop
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
-	n/a   (cherrypick=33db4be1068)				e0a236336e2  # delete release notes fragments
+	n/a   (delete_release_notes_fragments)		e0a236336e2
 m	7483  svg_icon-21.2+knots					10090268130	last=afaab080b87 svg_icon-22+knots
 # BRANDING:
 	n/a   knots_branding-21						9db64a56d30	last=282420dea44 knots_branding-22
