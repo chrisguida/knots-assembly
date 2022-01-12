@@ -33,8 +33,8 @@ checkout v0.21.2
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
 m	5416  sys_libsecp256k1-0.21+knots			813a5353e1d	last=ad6c1063b16 sys_libsecp256k1
-	7485  sys_univalue_def-0.18					c393c7a7f51	last= sys_univalue_def
-		TODO: doc update
+	n/a   sys_univalue_doc-21								last=fd17f3dc676 sys_univalue
+m	7485  sys_univalue_def-21					c393c7a7f51	last=20bd5eccd54 sys_univalue_def
 	13789 bugfix_asm_pragmas					e33b0f86575
 	-     bugfix_asm_leveldb_check-0.20			15cb5704a2a	last=3ca799db25f bugfix_asm_leveldb_check
 	15155 test_external_bcli-21					3385d2476a3	last=06ec7f56dfb test_external_bcli
@@ -693,6 +693,7 @@ m	7483  svg_icon-21.2+knots					10090268130	last=afaab080b87 svg_icon-22+knots
 #TODO: Make sure there's no Qt5.5 incompatibilities: git grep 'addAction(.*\[.*\]\s*{'
 #TODO: Make sure there's no -Wc++14-extensions triggered
 #TODO: Make sure there's no optional .has_value() (Boost 1.68 dep)
+#TODO: Make sure there's no 'build_bitcoin_util\b|natpmp'
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
 	n/a  knots_bips-21							95f1a0c7adb
 	n/a  (bump_version=Knots:20210629)			27c16a89cc5  # DO NOT CHANGE for just fixes
