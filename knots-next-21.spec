@@ -25,8 +25,8 @@ checkout v0.21.2
 	22348 workaround_boost_issue96-21			db54924736a	last=67669ab425b hebasto/210627-boost
 	23607 evhttp_connection_get_peer_compat-21	a5d963d4635	last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
-	TODO: Get rid of the -O0 in configure
-	23947 fanquake/use_host_os_over_TARGET_OS
+	21421 skip_stack_clash_windows-21
+	23947 config_summary_host_os-21
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
