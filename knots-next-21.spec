@@ -87,7 +87,9 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
 	13608 -										bccc1011cdb	last=876f49c6cd  # bitcoin-tx: Require that input amount is provided for witness transactions
-		TODO: Rebase to #23784 (merged in 23.x)
+		# Didn't bother rebasing to #23784 (merged in 23.x):
+		#	1) Useless string change (inferior IMO)
+		#	2) Added tests which are annoying to merge
 	-     deprecated_param_names				1e916ec2f4b
 	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=bb3ba6bebe8 bugfix_rpc_getbalance_hacky
 	# FIX THE BELOW:
