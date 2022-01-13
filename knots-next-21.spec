@@ -91,7 +91,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		#	1) Useless string change (inferior IMO)
 		#	2) Added tests which are annoying to merge
 	-     deprecated_param_names				1e916ec2f4b
-	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=bb3ba6bebe8 bugfix_rpc_getbalance_hacky
+	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=94b78bb1de8 bugfix_rpc_getbalance_hacky
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
@@ -171,7 +171,8 @@ TM	g188  bugfix_psbt_binmode-0.21				79e220794d8	last=cc3971c9ff5 achow101-g/bin
 		# Diff-minimised
 	g217  gui_clickable_warning-0.11			21f8d05d194	last=67c59ae4793 jarolrod-g/warning-look-like-button
 	# Needs careful review: g219 hebasto-g/210223-toolbar
-	g236  gui_init_walleterror_cont-21			11342604e1e	last=0b00fd650e1 gui_init_walleterror_cont
+	g236  gui_init_walleterror_cont-21			11342604e1e	last=fb3ea0ad3a8 gui_init_walleterror_cont
+		# NOTE: Held back refactoring 0b00fd650e1...fb3ea0ad3a8
 	# Complex: 21007 hebasto:210316-fork
 		# +21447 TODO
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
@@ -225,7 +226,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO? 22836 sipa:202108_bipvec5
 	# Not worth added build overhead? 22840 fanquake:fix_depends_lib_optimisation
 	19851 abstract_parseopcode-21				9cf7454f577  # needed for 22875
-	22875 parseopcode_threadsafe-21				ad627dc37a2	last=d5e006c84a1
+	22875 parseopcode_threadsafe-21				ad627dc37a2	last=7b481f015a0
 	(CHECK-LAST)	last=34fd8e3992c parseopcode_threadsafe-22
 	22879 fix_addrman_err_format-21				2340bf42de5	last=fab0b55cf06 marco/2109-testPeersDat
 	(CHECK-LAST)	last=0a3ec03ea33 fix_addrman_err_format-22
