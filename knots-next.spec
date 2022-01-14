@@ -142,12 +142,12 @@ checkout origin/master
 	23937 -
 	23975 -
 	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
-	review 24038 marco/2201-lockstuff
-	review 24039 -  # bug fix: prevent UnicodeDecodeError when opening log file in feature_init.py
+	# Needs work: 24038 marco/2201-lockstuff #23.xTODO
 	24041 ryanofsky/pr/green  # util: Restore GetIntArg saturating behavior
 	g508  -  # Prevent negative values of progressPerHour
 	review g509  hebasto/211217-unlock
-	review g516  -  # Change 'Show' icon
+	g516  qt_recvreq_show_eyeicon-0.14
+		# Diff-minimised
 	n/a   (delete_release_notes_fragments)
 @22.x-knots
 # PERFORMANCE:
