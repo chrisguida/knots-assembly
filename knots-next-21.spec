@@ -287,8 +287,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	23937 fix_rpcdoc_dumptxoutset_pr23937-21
 	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	# Needs work: 24038 marco/2201-lockstuff #21.xTODO
-	24041 ryanofsky/pr/green  # util: Restore GetIntArg saturating behavior
-	g508  -  # Prevent negative values of progressPerHour
+	g508  fix_qt_progressrate_pr_g508-0.16
 	g516  qt_recvreq_show_eyeicon-0.14
 		# Diff-minimised
 	n/a   (delete_release_notes_fragments)
@@ -320,10 +319,8 @@ m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listuns
 	g119  rm_send2self-mini-21					8a6ed938070	last=aa744e4382e rm_send2self
 		# NOTE: Originally #15115
 	(CHECK-LAST)	last=6328248b214 rm_send2self-mini
-	15423 tor_socks_port-0.21					109cf1f0e3b	last=d37d95a9ea2 tor_socks_port
-		FIXME: * 78a9e337356 fixup! torcontrol: Query Tor for correct -onion configuration
-		FIXME: * da20c1e6d20 fixup! torcontrol: Query Tor for correct -onion configuration
-		# Held back 962f168a014..398df42f449
+	15423 tor_socks_port-0.21					109cf1f0e3b	last=4314a216e31 tor_socks_port
+		# Held back 962f168a014..398df42f449, da20c1e6d20 (not a bugfix)
 	15836 fee_histogram-21						69874bd7a2f	last=b94292a7cb jonas/2019/04/feeinfo
 		# Held back approach changes (that ignore CPFP) f2ca3d35ee9..47b5c3e03a7 - current approach is arguably buggy (see sipa's review on PR)
 		# NOTE: removed extraneous Bitcoin-Qt.* files

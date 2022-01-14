@@ -143,11 +143,8 @@ checkout origin/master
 	23975 -
 	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	# Needs work: 24038 marco/2201-lockstuff #23.xTODO
-	24041 ryanofsky/pr/green  # util: Restore GetIntArg saturating behavior
 	g508  -  # Prevent negative values of progressPerHour
 	review g509  hebasto/211217-unlock
-	g516  qt_recvreq_show_eyeicon-0.14
-		# Diff-minimised
 	n/a   (delete_release_notes_fragments)
 @22.x-knots
 # PERFORMANCE:
