@@ -349,14 +349,14 @@ m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listuns
 	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-0.21		0cbd65dd17d	last=81521173ba8 achow101/bip174-extensions
-		TODO: +#23975
+		# +#23975
 	(CHECK-LAST)	last=634c311b833 psbt_ver_proprietary_xpub-22-mini
 		# NOTE: Held back `gdd 078abaac27e dc93052363d` comment correction
 		# NOTE: Didn't bother removing duplicate test
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
 m	17631 rest_blockfilter-0.21					36a9777315b	last=2b64fa3251a matt/2019-11-filter-rest
-		TODO: +#23836 ?
+		# +#23213 + #23836 (partial)
 	(CHECK-LAST)	last=91feea1216a rest_blockfilter-22
 		# NOTE: Dropped unrelated extra commits
 	g319  gui_openuri_pastebtn-0.21				24178d81b5f	last=dbde0558ce7
@@ -365,7 +365,7 @@ m	17631 rest_blockfilter-0.21					36a9777315b	last=2b64fa3251a matt/2019-11-filt
 	18014 siphash_optimise_pr18014-0.21+knots	0c346e55ba0	last=19e28a41168 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
-	18689 rpc_dumptxoutset_hr-21				b79a47abcb6	last=65d0697fe34
+m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	(CHECK-LAST)	last=9427b409195 rpc_dumptxoutset_hr
 	18722 O_addrman_unordered_map-0.21+knots	008067709d9	last=a92485b2c25
 		# NOTE: Restored C++11 compatibility from d6e782174ec
