@@ -635,7 +635,6 @@ m	-     mining_priority-0.21+knots			1e33269a0ae	last=58e2cab4b18 mining_priorit
 	5861 gui_restore_addresses					a81fd2b77ff
 	5891  qt_console_history_persist-0.21+knots	831cc0d61d1	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-0.21+knots					6b8135375e9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
-		FIXME: Why isn't service bit 26 present?
 	(CHECK-LAST)	last=8db545872f6 fullrbf-22+knots
 	12146 opt_wallet_segwit2					ffc242d52be
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
@@ -661,7 +660,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	-     enforce_checkpoints-0.21				09feeecfdfe	last=1de4af3f6c7 enforce_checkpoints
 	n/a   checkpoint_update-0.21				67bc16f3c2a	last=1923722495d checkpoint_update-22
 	10282 timebomb_knots						4d798a3f50b
-	-     rwconf_policy-0.21+knots				1d0a8a7bf36	last=b1c0c0394ae rwconf_policy-22+knots
+	-     rwconf_policy-0.21+knots				1d0a8a7bf36	last=f89126d2136 rwconf_policy-22+knots
 		# Include Knots policy changes for simplification of final rebase process
 		# Held back git diff 19fd29ce45d..af4614fbd26 which is likely a noop
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
