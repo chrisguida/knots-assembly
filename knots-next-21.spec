@@ -377,7 +377,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# NOTE: Changed to print warnings to stderr instead of stdout
 		# NOTE: Diff-minimised
 		# If bdb is reenabled, need #20267 49797c3ccfb
-		TODO: +#23834 achow101/dump-checksum-size
+		# +#23834 achow101/dump-checksum-size
 	19242 uaappend-21							c9099f45c3c	last=9552978b318 uaappend
 	19463 prune_locks-0.21						ce3e7443523	last=1ad45edbfeb prune_locks
 	19762 ryanofsky/pr/named					3505e6dedbb	last=894c414dafb
@@ -443,7 +443,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 		# NOTE: Left out Peers table column & misc formatting changes
 	20944 rpc_getmempoolinfo_total_fee-0.21		e0125b1b0d9	last=fa362064e38 marco/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
-		TODO: +#23980
+		# +#23980 minor typo fix
 	g186  gui_bumpfee_privacywarn-0.21+knots	725973ae6f9
 	15129 rpc_removeaddress-0.21				013625c373f	#21.2TODO#last=fdbd01b50e0 benthecarman/remove_watch_only_address #21.2TODO
 		# NOTE: Temporarily disabled! TODO: restore fixed
