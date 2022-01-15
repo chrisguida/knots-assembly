@@ -1,14 +1,15 @@
-timestamp 2022-01-12 08:03:26
+timestamp 2022-01-15 10:31:01
 lastapply no-merge
 
-#.. checked up to PR #24043 / gui #523
+#.. checked up to PR #24078 / gui #524
 
 checkout origin/master
-@22.x-syslibs
+@23.x-syslibs
 # BUILD BUGS:
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
 	23607 -													last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
+	24051 config_utils_drop_extra_deps
 	5872 subdir_incl_compat						a218f649f67
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
@@ -23,7 +24,7 @@ checkout origin/master
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	n/a   (delete_release_notes_fragments)
-@22.x-knotsfixes
+@23.x-knotsfixes
 # TESTS:
 	#23.xTODO: as needed only: -     lint_relaxer							f351877c154
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
@@ -145,8 +146,11 @@ checkout origin/master
 	# Needs work: 24038 marco/2201-lockstuff #23.xTODO
 	g508  -  # Prevent negative values of progressPerHour
 	review g509  hebasto/211217-unlock
+	# Needs review: 24066 whitslack/openrc-daemonwait
+	#23.xTODO: Needs review: 24067 -  # wallet: Actually treat (un)confirmed txs as (un)confirmed
+	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
 	n/a   (delete_release_notes_fragments)
-@22.x-knots
+@23.x-knots
 # PERFORMANCE:
 	23819 -  # tracing/block_connected: don't serialize block hash twice
 	23880 marco/2112-p2pAsync
@@ -188,7 +192,8 @@ checkout origin/master
 	# Needs review: 14035 Utxoscriptindex
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
-	# wait for Core?: 14707  # [RPC] Include coinbase transactions in receivedby RPCs
+	# 23.xTODO: wait for Core?: 14707  # [RPC] Include coinbase transactions in receivedby RPCs
+		# +#14707
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	g119  rm_send2self-mini						12909b036b0	last=aa744e4382e rm_send2self
 		# NOTE: Originally #15115
@@ -429,6 +434,7 @@ checkout origin/master
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
 	# Needs review: 24012 -  # rest: Use query parameters to control resource loading
 	# Needs review: 24043 sipa/202201_multi_a
+	# Needs review & BIP changes: 24058 kallewoof/202201-bip322
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -513,6 +519,7 @@ checkout origin/master
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
 	# Needs work: 22708 hebasto:210815-wayland
 	# TODO (needs concept review?): 23093 meshcollider:202109_keypoolrefill
+	#23.xTODO: Revert #24065 safely
 # Non-upstreamed functionality:
 	n/a   restore_feefilter_opt					bf9a6597726
 	TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
@@ -608,5 +615,5 @@ checkout origin/master
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
 
-@22.x-knots-android
+@23.x-knots-android
 	#23478

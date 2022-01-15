@@ -1,8 +1,8 @@
-timestamp 2022-01-12 08:03:26
+timestamp 2022-01-15 10:31:01
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24043 / gui #523 for fixes
+#.. checked up to PR #24078 / gui #524 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -66,6 +66,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=991498aaad9 guix_reltar_autogen_distclean
 	18902 fix_gitdir_again-21					9e6238975fe	last=e00422d1347 fix_gitdir_again
 		# NOTE: based directly on #18818
+	24048 hebasto/220112-m4
 	18427 2020mingwthrd-mini-21					f4f276a44ae	last=df5ece3e064 2020mingwthrd
 	(CHECK-LAST)	last=d9fd23bb08d 2020mingwthrd-mini
 	18490 bugfix_symcheck_pe_case-21			dae51d82243	last=24a69574ece bugfix_symcheck_pe_case
@@ -290,6 +291,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g508  fix_qt_progressrate_pr_g508-0.16
 	g516  qt_recvreq_show_eyeicon-0.14
 		# Diff-minimised
+	# Needs review: 24066 whitslack/openrc-daemonwait
+	#21.xTODO: Needs review: 24067 -  # wallet: Actually treat (un)confirmed txs as (un)confirmed
+	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
