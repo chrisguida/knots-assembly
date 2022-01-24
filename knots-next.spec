@@ -489,7 +489,7 @@ checkout origin/master
 		# Held back comment drop 974227bb457..88cc4810926
 	n/a   rpc_compat_error_index-22+knots		733deba4309
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
-	-     gui_bech32_errpos-22+knots			b0efb7af93b  # Latest code
+	g537  gui_bech32_errpos-22+knots			b0efb7af93b  # Latest code
 	17636 guisettings-0.21						b7ca66c8205	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)

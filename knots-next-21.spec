@@ -580,7 +580,7 @@ m	20832 rpc_validateaddress_error-0.21.1+k	0859c222db0
 	n/a   rpc_compat_error_index-0.21+knots		e8b159d62b3
 	(CHECK-LAST)	last=e480af6868c rpc_compat_error_index-22+knots
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
-	-     gui_bech32_errpos-0.21.1+knots		a4921198f16
+	g537  gui_bech32_errpos-0.21.1+knots		a4921198f16
 	(CHECK-LAST)	last=7532115c6d8 gui_bech32_errpos-22+knots
 NM	16807 bech32_error_detection-0.21+knots		c0339fe9c28	last=54e107add41 meshcollider/201909_bech32_error_detection
 NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
