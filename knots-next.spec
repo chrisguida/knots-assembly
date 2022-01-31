@@ -1,7 +1,7 @@
-timestamp 2022-01-15 10:31:01
+timestamp 2022-01-31 04:06:53
 lastapply no-merge
 
-#.. checked up to PR #24078 / gui #524
+#.. checked up to PR #24211 / gui #539
 
 checkout origin/master
 @23.x-syslibs
@@ -11,6 +11,8 @@ checkout origin/master
 	# Needs review: 23609 hebasto/211126-reduce
 	24051 config_utils_drop_extra_deps
 	5872 subdir_incl_compat						a218f649f67
+	24104 achow101/fix-fs-path-plus
+	Diff-minimise 24134 hebasto/220123-zmq
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
@@ -149,11 +151,22 @@ checkout origin/master
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	#23.xTODO: Needs review: 24067 -  # wallet: Actually treat (un)confirmed txs as (un)confirmed
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
+	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
+	24117 -  # index: make indices robust against init aborts
+	Diff-minimise 24133 fjahr/2022-01-index-fixups
+	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
+	24145 -  # Clear vTxHashes when mapTx is cleared
+	24168 hebasto/220126-dump
+	Just fix from 24192 -  # test: Fix feature_init intermittent issues
+	24195 -  # test: Fix failfast option for functional test runner
+	24201 -  # p2p: Avoid InitError when downgrading peers.dat
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
 	23819 -  # tracing/block_connected: don't serialize block hash twice
 	23880 marco/2112-p2pAsync
+	# Needs review: 24115 prusnak/armv8-shani
+	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 # SOFTFORK:
 	22016 Sjors/2021/05/versionbits_period_start	32dd1d34493	last=70d7e0812a7
 	# TODO: 21702 CheckTemplateVerify
@@ -251,6 +264,7 @@ checkout origin/master
 	18689 rpc_dumptxoutset_hr					63bd42e0546	last=65d0697fe34
 		# Fixed bugs (eg, scoping of ascii_types)
 		# NOTE: Moved rpc/client lines to avoid conflict with #20664
+		TODO: Rebase onto / Compat with #24202
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	19242 uaappend								2b7b1f97f42
@@ -281,7 +295,7 @@ checkout origin/master
 		# Re-enabled fetching blocks w/o already having header (from older version of PR)
 		# Moved code to avoid conflict with 22577
 		TODO: gcp 15f7d87c757 RPC: Ensure getblockfrompeer errors if the peer doesn't exist, even if we already have the block
-		TODO: +#23706+#23813
+		TODO: +#23706+#23813+#24155
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-22						237cdcaf3ee	last=1002e2d0d7f jonatack/setfeerate
@@ -409,7 +423,7 @@ checkout origin/master
 	# Needs careful review: 23397 hebasto/211030-contention
 	23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection
 	# Needs review/walletsafety checks: 23480 sipa/202110_untweakedtr
-	# Needs diff-minimisation and de-removal: 23508 ajtowns/202111-getforkinfo
+	# Needs diff-minimisation and de-removal: 23508 ajtowns/202111-getforkinfo +#24187
 	# Not worth it? 23510 -  # doc: Fixed dead link in build-unix.md
 	# Diff-minimised? 23512 marco/2111-policyTaprootActive
 	# Needs concept + review + BIP: 23531 prusnak/yggdrasil
@@ -435,6 +449,19 @@ checkout origin/master
 	# Needs review: 24012 -  # rest: Use query parameters to control resource loading
 	# Needs review: 24043 sipa/202201_multi_a
 	# Needs review & BIP changes: 24058 kallewoof/202201-bip322
+	# Needs review & softer deprecation: 24098 -  # rest: Use query parameters to control resource loading
+	# Needs concept + review: 24118 -  # Add 'sweep' RPC
+	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
+	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
+	24162 kallewoof/202201-deriveaddr-nochecksum
+		TODO: Use an options Object instead
+	24165 jonatack/protect-inbound-cjdns-peers-from-eviction
+	Review closer: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
+	24171 sdaftuar/2022-01-download-from-inbound
+	# Needs review: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
+	24198 -  # wallet, rpc: add wtxid in WalletTxToJSON
+	g526  jonatack/add-addr-fields-to-peer-details
+	g533  -  # gui: add more detailed address error message
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -520,6 +547,8 @@ checkout origin/master
 	# Needs work: 22708 hebasto:210815-wayland
 	# TODO (needs concept review?): 23093 meshcollider:202109_keypoolrefill
 	#23.xTODO: Revert #24065 safely
+	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
+	# Needs review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 # Non-upstreamed functionality:
 	n/a   restore_feefilter_opt					bf9a6597726
 	TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
@@ -556,6 +585,7 @@ checkout origin/master
 		FIXME: Add i686-pc-linux-gnu
 	TODO: revert #23927  rpc: Pruning nodes can not fetch blocks before syncing past their height
 	TODO: revert #24031  build: don't compress macOS DMG
+	TODO: revert #24142  Deprecate SubtractFeeFromOutputs
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			d61bb3c22e9
 	-     netperms_implicit_addr				3ab6318c892
@@ -568,6 +598,7 @@ checkout origin/master
 	-    1day_default_conftarget				b8136f8bc93
 	-     bytespersigopstrict-22+knots			efeaa4d511c
 	9749  unique_spk_mempool-22+knots			1e69a9eb689
+	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	-     bloom_default-0.21+knots				bfd460431a0
 	-     enforce_checkpoints					9bd94bf5d54
 	n/a   checkpoint_update-22					197ba14f3ca	last=531aaa286d3 checkpoint_update-0.21
@@ -599,7 +630,7 @@ checkout origin/master
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		9fa4d038aaa	# doc/{bips,files}
-	n/a  (bump_version=Knots:20220112)			bcc3f6e8502
+	n/a  (bump_version=Knots:20220131)			bcc3f6e8502
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=c22129a3cec)				b31ddd5021f  # release notes: write/update, including change log and credits
 			# check travis for misspellings

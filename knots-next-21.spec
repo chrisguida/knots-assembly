@@ -1,8 +1,8 @@
-timestamp 2022-01-15 10:31:01
+timestamp 2022-01-31 04:06:53
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24078 / gui #524 for fixes
+#.. checked up to PR #24211 / gui #539 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -29,6 +29,8 @@ checkout v0.21.2
 	# Needs review: 23609 hebasto/211126-reduce
 	21421 skip_stack_clash_windows-21
 	23947 config_summary_host_os-21
+	24104 achow101/fix-fs-path-plus
+	Diff-minimise 24134 hebasto/220123-zmq
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -294,6 +296,16 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	#21.xTODO: Needs review: 24067 -  # wallet: Actually treat (un)confirmed txs as (un)confirmed
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
+	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
+	24095 hebasto/220118-univalue
+	Diff-minimise 24113 jonatack/rpc_rawtransaction-test-followups
+	24117 -  # index: make indices robust against init aborts
+	Diff-minimise 24133 fjahr/2022-01-index-fixups
+	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
+	24145 -  # Clear vTxHashes when mapTx is cleared
+	24168 hebasto/220126-dump
+	Just fix from 24192 -  # test: Fix feature_init intermittent issues
+	24201 -  # p2p: Avoid InitError when downgrading peers.dat
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
@@ -370,6 +382,7 @@ m	17631 rest_blockfilter-0.21					36a9777315b	last=2b64fa3251a matt/2019-11-filt
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
 m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
+		TODO: Rebase onto / Compat with(?) #24202
 	(CHECK-LAST)	last=9427b409195 rpc_dumptxoutset_hr
 	18722 O_addrman_unordered_map-0.21+knots	008067709d9	last=a92485b2c25
 		# NOTE: Restored C++11 compatibility from d6e782174ec
@@ -410,7 +423,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
 		# +#23702
 		# NOTE: Forward-compatible with param rename in #23706
-		#21.xTODO: +#23706+#23813
+		#21.xTODO: +#23706+#23813+#24155
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	20391 rpc_setfeerate-0.21					aef134635d5	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
@@ -513,6 +526,11 @@ m	21260 rpcwallet_tx_in_mempool-21.1+knots		5e9dcde9997	last=46bf0b7b5d8
 	22372 multinotify-21						b002df55c73	last=041b1ed8b79 multinotify
 	g469  qt_psbt_b64-21+knots					65f1d080b90	last=d54f498f8ab achow101-g/b64-psbt-gui
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
+	# Needs review & MUCH softer deprecation: 24098 -  # rest: Use query parameters to control resource loading
+	# After merged+released a while? 24171 sdaftuar/2022-01-download-from-inbound
+	# Check if fixes anything: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
+	24198 -  # wallet, rpc: add wtxid in WalletTxToJSON
+	g526  jonatack/add-addr-fields-to-peer-details
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
@@ -614,6 +632,7 @@ NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our peer table width doesn't match Core's
 		# TODO: Each release, see if we need to bump setting name (and figure out back compat?)
+	# Needs review: (MAYBE JUST PART OF) g539  RandyMcMillan/1643263956-network-graph-issue-532
 # Non-upstreamed functionality:
 	-     gui_payreq_textedit-0.21				bfe154411de last=9cb216e6ff8 gui_payreq_textedit
 	-     rpc_mempoolentry_txhash				0b5a0196787
