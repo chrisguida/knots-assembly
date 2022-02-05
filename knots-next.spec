@@ -172,8 +172,6 @@ checkout origin/master
 # FUNCTIONALITY:
 	-     guix_linux_i686						d7cabad678b
 		FIXME: symbol __divmoddi4 from unsupported version GCC_7.0.0
-	TODO: Ensure external signing on all systems
-		see also #24254
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -548,7 +546,8 @@ checkout origin/master
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
 	# Needs work: 22708 hebasto:210815-wayland
 	# TODO (needs concept review?): 23093 meshcollider:202109_keypoolrefill
-	#23.xTODO: Revert #24065 safely
+	#23.xTODO: Revert #24065 safely (ie, Ensure external signing on all systems)
+		see also #24254
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 # Non-upstreamed functionality:
