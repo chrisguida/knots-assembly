@@ -1,7 +1,7 @@
-timestamp 2022-01-31 04:06:53
+timestamp 2022-02-05 10:30:34
 lastapply no-merge
 
-#.. checked up to PR #24211 / gui #539
+#.. checked up to PR #24274 / gui #543
 
 checkout origin/master
 @23.x-syslibs
@@ -160,6 +160,9 @@ checkout origin/master
 	Just fix from 24192 -  # test: Fix feature_init intermittent issues
 	24195 -  # test: Fix failfast option for functional test runner
 	24201 -  # p2p: Avoid InitError when downgrading peers.dat
+	Diff-minimise & check review comment of mine: 24231 -  # streams: Fix read-past-the-end and integer overflows
+	Needs review: 24266 hebasto/220204-dirs
+	OR Needs review: 24267 -  # util: if DataDir is a symbolic link, manually follow it
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -173,6 +176,8 @@ checkout origin/master
 # FUNCTIONALITY:
 	-     guix_linux_i686						d7cabad678b
 		FIXME: symbol __divmoddi4 from unsupported version GCC_7.0.0
+	TODO: Ensure external signing on all systems
+		see also #24254
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -295,7 +300,7 @@ checkout origin/master
 		# Re-enabled fetching blocks w/o already having header (from older version of PR)
 		# Moved code to avoid conflict with 22577
 		TODO: gcp 15f7d87c757 RPC: Ensure getblockfrompeer errors if the peer doesn't exist, even if we already have the block
-		TODO: +#23706+#23813+#24155
+		TODO: +#23706+#23813+#24155+#24226
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-22						237cdcaf3ee	last=1002e2d0d7f jonatack/setfeerate
@@ -460,8 +465,9 @@ checkout origin/master
 	24171 sdaftuar/2022-01-download-from-inbound
 	# Needs review: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
 	24198 -  # wallet, rpc: add wtxid in WalletTxToJSON
-	g526  jonatack/add-addr-fields-to-peer-details
+	g526  jonatack-g/add-addr-fields-to-peer-details
 	g533  -  # gui: add more detailed address error message
+	g543  RandyMcMillan-g/1643853831-peers-tab-add-duration-column
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -630,7 +636,7 @@ checkout origin/master
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		9fa4d038aaa	# doc/{bips,files}
-	n/a  (bump_version=Knots:20220131)			bcc3f6e8502
+	n/a  (bump_version=Knots:20220205)			bcc3f6e8502
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=c22129a3cec)				b31ddd5021f  # release notes: write/update, including change log and credits
 			# check travis for misspellings

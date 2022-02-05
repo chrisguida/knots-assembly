@@ -1,8 +1,8 @@
-timestamp 2022-01-31 04:06:53
+timestamp 2022-02-05 10:30:34
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24211 / gui #539 for fixes
+#.. checked up to PR #24274 / gui #543 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -31,6 +31,7 @@ checkout v0.21.2
 	23947 config_summary_host_os-21
 	24104 achow101/fix-fs-path-plus
 	Diff-minimise 24134 hebasto/220123-zmq
+	24240 theuni/fix-capnp-fetch
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -306,6 +307,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24168 hebasto/220126-dump
 	Just fix from 24192 -  # test: Fix feature_init intermittent issues
 	24201 -  # p2p: Avoid InitError when downgrading peers.dat
+	Diff-minimise & check review comment of mine: 24231 -  # streams: Fix read-past-the-end and integer overflows
+	24251 -  # Re-enable windows path tests disabled by #20744
+	TODO: Some equivalent to #24263
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
@@ -423,7 +427,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
 		# +#23702
 		# NOTE: Forward-compatible with param rename in #23706
-		#21.xTODO: +#23706+#23813+#24155
+		#21.xTODO: +#23706+#23813+#24155+#24226
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	20391 rpc_setfeerate-0.21					aef134635d5	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
