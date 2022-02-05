@@ -7,12 +7,9 @@ checkout origin/master
 @23.x-syslibs
 # BUILD BUGS:
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
-	23607 -													last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
 	24051 config_utils_drop_extra_deps
 	5872 subdir_incl_compat						a218f649f67
-	24104 achow101/fix-fs-path-plus
-	Diff-minimise 24134 hebasto/220123-zmq
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
@@ -75,7 +72,6 @@ checkout origin/master
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
 	# Needs review: 19434 promag:2020-06-remote-disconnect
-	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs review: g59   hebasto-g/200814-rpc
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
