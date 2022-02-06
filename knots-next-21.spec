@@ -77,7 +77,9 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	(CHECK-LAST)	last=137964d82dc p2p_log_categories
 	19832 hebasto/200829-log					d64d3aaa576	last=1816327e533
 	20845 net_logcategory_localdisconnect-0.21	11e46eb9473	last=fa55159b9ed marco/2101-netLogDisconnect
-	# Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
+	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
+		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
+		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
 	14968 laanwj/2018_12_http_bind_error		8ff26264445	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	(CHECK-LAST)	last=8520c437a0d http_bind_error
 	-     http_bind_error+extra-21				1d09d2dc41d	last=fd5353ed826 http_bind_error+extra
@@ -331,6 +333,8 @@ m	g275  gui_darkmode-0.21.2_pt1				9cd8d7e8a79
 		# Held back 31dbf0b677d..543bf745d38 - probably only applicable to master
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	14641 fundraw_minconf-0.21					b097763986a	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
+		# Duplicate: 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
+		TODO: Check ^ for fixes?
 	(CHECK-LAST)	last=4138cb304b8 fundraw_minconf
 m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !kallewoof/sign-show-fees
