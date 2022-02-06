@@ -189,7 +189,7 @@ TM	21907 listwalletdir_iterate_inf-0.19		1483674ad69
 	21944 fix_listwalletdir_rootdir-0.21+knots	0cb9e8948d1
 	22013 ignoreblockrelayfordnsskip-0.21		8216936b4d9
 	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
-	19315 rpc_addconnection-0.21				0ec207c9478
+	19315 rpc_addconnection-0.21				0ec207c9478	last=7d85d477730 rpc_addconnection_mainnet
 		# PARTIAL: Only the actual addconnection RPC method
 		# NOTE: Modified to allow use on non-regtest networks
 	22096 fix_p2p_addrfetch_ignoreselfadv-0.21+knots	54c07ed4488

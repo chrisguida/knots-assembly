@@ -405,6 +405,7 @@ checkout origin/master
 	20551 rpc_onetry_conntype					898fc5bf686
 		# NOTE: Originally based on #12674
 	10593 relax_invblk_punishment				f582f6c385f
+		TODO: gcp (& merge as fixups?) d2d3601cf80 QA: Use addconnection rather than addnode onetry
 	10350 filtered_witblock-22				1540619da62	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
