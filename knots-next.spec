@@ -115,16 +115,17 @@ checkout origin/master
 	g506  qt_qrcode_sizefixes
 	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	# Needs work: 24038 marco/2201-lockstuff #23.xTODO
-	review g509  hebasto/211217-unlock
+	#23.xTODO#review g509  hebasto/211217-unlock
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
-	24117 -  # index: make indices robust against init aborts
-	Diff-minimise 24133 fjahr/2022-01-index-fixups
+	24117 -  last=bfcd60f5d50 # index: make indices robust against init aborts
+	24133 coinstatsindex_check_muhash-23+knots				last=2fc159b0218 fjahr/2022-01-index-fixups
+		# Diff-minimised by omitting first comment-change commit
 	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
-	24145 -  # Clear vTxHashes when mapTx is cleared
-	24195 -  # test: Fix failfast option for functional test runner
-	24201 -  # p2p: Avoid InitError when downgrading peers.dat
+	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
+	24195 -													last=a0363589945  # test: Fix failfast option for functional test runner
+	24201 -													last=96c9d9c7efa  # p2p: Avoid InitError when downgrading peers.dat
 	Diff-minimise & check review comment of mine: 24231 -  # streams: Fix read-past-the-end and integer overflows
 	Needs review: 24266 hebasto/220204-dirs
 	OR Needs review: 24267 -  # util: if DataDir is a symbolic link, manually follow it
