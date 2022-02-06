@@ -271,7 +271,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 23365 -  # index: Fix backwards search for bestblock
 		# Followups in #23777
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
-		# + fix in #23434 ???
 	# Moved to Knots bips.md update in branding: 21925 + 23410 hebasto/211101-bips
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
 	# Needs review/diff-minimisation: 23486 marco/2111-rpcScript

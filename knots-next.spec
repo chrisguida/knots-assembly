@@ -109,7 +109,6 @@ checkout origin/master
 	-    gui_revert_g296						b6869ae3ee7
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
 	# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
-	Needs triage: 23434 jonatack/fix-regression-in-AddrManImpl-AddSingle
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
 	# Needs work: 23502 achow101/tr-low-fee-est
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
