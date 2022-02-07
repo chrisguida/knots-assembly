@@ -68,7 +68,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=991498aaad9 guix_reltar_autogen_distclean
 	18902 fix_gitdir_again-21					9e6238975fe	last=e00422d1347 fix_gitdir_again
 		# NOTE: based directly on #18818
-	24048 hebasto/220112-m4
+	24048 fix_pkgconf_missing-21
 	18427 2020mingwthrd-mini-21					f4f276a44ae	last=df5ece3e064 2020mingwthrd
 	(CHECK-LAST)	last=d9fd23bb08d 2020mingwthrd-mini
 	18490 bugfix_symcheck_pe_case-21			dae51d82243	last=24a69574ece bugfix_symcheck_pe_case
@@ -298,8 +298,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	#21.xTODO: Needs review: 24067 -  # wallet: Actually treat (un)confirmed txs as (un)confirmed
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
-	24095 hebasto/220118-univalue
-	Diff-minimise 24113 jonatack/rpc_rawtransaction-test-followups
+	24095 fix_settings_jsonfmt-21
 	24117 -  # index: make indices robust against init aborts
 	Diff-minimise 24133 fjahr/2022-01-index-fixups
 	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
