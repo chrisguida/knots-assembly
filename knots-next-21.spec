@@ -327,9 +327,8 @@ m	g275  gui_darkmode-0.21.2_pt1				9cd8d7e8a79
 		# Held back 31dbf0b677d..543bf745d38 - probably only applicable to master
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	14641 fundraw_minconf-0.21					b097763986a	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
-		# Duplicate: 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
-		TODO: Check ^ for fixes?
-	(CHECK-LAST)	last=4138cb304b8 fundraw_minconf
+		# Includes param rename (min_conf->minconf) and tests from #22049 (but not new maxconf param)
+	(CHECK-LAST)	last=9ab5d592fb8 fundraw_min_conf_deprecated-23+knots
 m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911

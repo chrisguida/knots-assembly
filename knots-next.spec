@@ -157,9 +157,8 @@ checkout origin/master
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	14641 fundraw_minconf						1699bed43a1	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
-		# Duplicate: 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
-		TODO: Check ^ for fixes?
+	22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
+		# Was #14641 (moved to Knots compat)
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
@@ -505,6 +504,7 @@ checkout origin/master
 	TODO: revert #24031  build: don't compress macOS DMG
 	TODO: revert #24142  Deprecate SubtractFeeFromOutputs
 # Non-upstreamed Knots compatibility:
+	14641 fundraw_min_conf_deprecated-23+knots				last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			d61bb3c22e9
 	-     netperms_implicit_addr				3ab6318c892
 	12674 rpc_onetry_nonpriv-22+knots			527c9a13cae
