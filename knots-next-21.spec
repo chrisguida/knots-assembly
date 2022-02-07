@@ -301,8 +301,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24095 fix_settings_jsonfmt-21
 	24117 fix_index_dontcommitduringinit-21					last=bfcd60f5d50  # index: make indices robust against init aborts
 		# NOTE: partial: coinstatsindex and feature_init test aren't in 21.x
-	Diff-minimise 24133 fjahr/2022-01-index-fixups
-	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
 	24145 -  # Clear vTxHashes when mapTx is cleared
 	24168 hebasto/220126-dump
 	Just fix from 24192 -  # test: Fix feature_init intermittent issues
