@@ -305,7 +305,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24168 fix_dumpbanlist_races-21
 	# TODO? 22762+24201 -  # p2p: Avoid InitError when downgrading peers.dat
 	#21.xTODO#Diff-minimise: 24231 -  # streams: Fix read-past-the-end and integer overflows
-	24251 -  # Re-enable windows path tests disabled by #20744
 	TODO: Some equivalent to #24263
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
