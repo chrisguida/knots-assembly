@@ -129,6 +129,7 @@ checkout origin/master
 	24231 origin-pull/24231/head^							last=fa65d441491  # streams: Fix read-past-the-end and integer overflows
 	Needs review: 24266 hebasto/220204-dirs
 	OR Needs review: 24267 -  # util: if DataDir is a symbolic link, manually follow it
+	TODO: 24263 or equivalent 24287 (needs --version copyright fix too!)
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
