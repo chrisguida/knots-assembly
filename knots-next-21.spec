@@ -303,8 +303,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: partial: coinstatsindex and feature_init test aren't in 21.x
 	24145 fix_mempool_clear_txhashes-21						last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
 	24168 fix_dumpbanlist_races-21
-	24201 -  # p2p: Avoid InitError when downgrading peers.dat
-	Diff-minimise & check review comment of mine: 24231 -  # streams: Fix read-past-the-end and integer overflows
+	# TODO? 22762+24201 -  # p2p: Avoid InitError when downgrading peers.dat
+	#21.xTODO#Diff-minimise: 24231 -  # streams: Fix read-past-the-end and integer overflows
 	24251 -  # Re-enable windows path tests disabled by #20744
 	TODO: Some equivalent to #24263
 	n/a   (delete_release_notes_fragments)
