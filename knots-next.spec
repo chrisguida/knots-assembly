@@ -125,8 +125,8 @@ checkout origin/master
 	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
 	24195 -													last=a0363589945  # test: Fix failfast option for functional test runner
-	24201 -													last=96c9d9c7efa  # p2p: Avoid InitError when downgrading peers.dat
-	Diff-minimise & check review comment of mine: 24231 -  # streams: Fix read-past-the-end and integer overflows
+	24201 -													last=2948297f4f1  # p2p: Avoid InitError when downgrading peers.dat
+	24231 origin-pull/24231/head^							last=fa65d441491  # streams: Fix read-past-the-end and integer overflows
 	Needs review: 24266 hebasto/220204-dirs
 	OR Needs review: 24267 -  # util: if DataDir is a symbolic link, manually follow it
 	n/a   (delete_release_notes_fragments)
