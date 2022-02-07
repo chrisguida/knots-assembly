@@ -29,9 +29,9 @@ checkout v0.21.2
 	# Needs review: 23609 hebasto/211126-reduce
 	21421 skip_stack_clash_windows-21
 	23947 config_summary_host_os-21
-	24104 achow101/fix-fs-path-plus
+	24104 boost1.78_compat-21								last=dc5d6b0d479 achow101/fix-fs-path-plus
 	Diff-minimise 24134 hebasto/220123-zmq
-	24240 theuni/fix-capnp-fetch
+	24240 cfields/fix-capnp-fetch
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
