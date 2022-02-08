@@ -534,7 +534,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# Check if fixes anything: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
 	24198 rpc_wtx_wtxid-21.1+knots							last=79d6764c133  # wallet, rpc: add wtxid in WalletTxToJSON
 		#21.xTODO# fix RPC help description
-	g526  jonatack/add-addr-fields-to-peer-details
+	g526  qt_peers_addrprocessed-21+knots
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
