@@ -33,8 +33,8 @@ checkout v0.21.2
 	24240 fix_capnp_fetch-21
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
-m	2241 sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
-m	5416  sys_libsecp256k1-0.21+knots			813a5353e1d	last=ad6c1063b16 sys_libsecp256k1
+	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
+	5416  sys_libsecp256k1-0.21+knots			813a5353e1d	last=ad6c1063b16 sys_libsecp256k1
 	n/a   sys_univalue_doc-21								last=fd17f3dc676 sys_univalue
 m	7485  sys_univalue_def-21					c393c7a7f51	last=20bd5eccd54 sys_univalue_def
 	13789 bugfix_asm_pragmas					e33b0f86575
@@ -46,7 +46,7 @@ m	7485  sys_univalue_def-21					c393c7a7f51	last=20bd5eccd54 sys_univalue_def
 		# Omitted "Don't make any wallets unless wallet is required": 45b4366f8ff 104a3a22564 6e06ca05880
 		# Diff-minimised
 	-     opt_bdb_extracare-0.21				65ea0f5ab4e	last=aa6a707d7ca opt_bdb_extracare
-m	20121 secp256k1_allow_bignum-21+knots		b2befc7fef1
+	20121 secp256k1_allow_bignum-21+knots		b2befc7fef1
 	20358 -										3e3443170a8	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					563aacf22be	last=836a3dc02c7 jonas/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
@@ -139,7 +139,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	19884 fixedseeds-0.21						35264ce4152
 		# +partial #21254 (bugfix only)
 	22798 doc_fix_pr22798-21.1					4ab4007c290
-m	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=ca5de4bf4ab
+	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=ca5de4bf4ab
 	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
 		# Held back additional tests
 	# Needs review: 20196 vasild/fix_GetListenPort
@@ -309,12 +309,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
-m	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	394e59e2f86	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
-m	22016 rpc_gbci_period_start-0.21.1+knots	b19116ccf14	last=1898b9be12c Sjors/2021/05/versionbits_period_start
+	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	394e59e2f86	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
+	22016 rpc_gbci_period_start-0.21.1+knots	b19116ccf14	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	(CHECK-LAST)	last=d6d1a1b47eb rpc_gbci_period_start-22+knots
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
-m	g275  gui_darkmode-0.21.2_pt1				9cd8d7e8a79
+	g275  gui_darkmode-0.21.2_pt1				9cd8d7e8a79
 		# NOTE: Fixed bug in gui#330 a simpler way b942216a1a7
 	g154  gui_darkmode-0.21						55019938d93
 	g366  gui_palettechange-0.21				ee70e2584ff
@@ -329,7 +329,7 @@ m	g275  gui_darkmode-0.21.2_pt1				9cd8d7e8a79
 	14641 fundraw_minconf-0.21					b097763986a	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 		# Includes param rename (min_conf->minconf) and tests from #22049 (but not new maxconf param)
 	(CHECK-LAST)	last=9ab5d592fb8 fundraw_min_conf_deprecated-23+knots
-m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
+	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
 	(CHECK-LAST)	last=8b77eb9d493 rpc_sign_show_fees
@@ -372,7 +372,7 @@ m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listuns
 		# NOTE: Didn't bother removing duplicate test
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
-m	17631 rest_blockfilter-0.21					36a9777315b	last=2b64fa3251a matt/2019-11-filter-rest
+	17631 rest_blockfilter-0.21					36a9777315b	last=2b64fa3251a matt/2019-11-filter-rest
 		# +#23213 + #23836 (partial)
 	(CHECK-LAST)	last=91feea1216a rest_blockfilter-22
 		# NOTE: Dropped unrelated extra commits
@@ -414,7 +414,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# Diff-minimised / doc changes left out
 		# Includes part of #20965 (GetNetworkNames)
 	21843 rpc_getnodeaddrs_by_network-0.21		5e0ead94982
-m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
+	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 		# + a4693f44cfe from #20685
 		# TODO: +21825 ? (needs 21560?)
 		#TODO: +21914
@@ -480,7 +480,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	21173 optimise_hexstr-0.21					211f7cf954e
-m	21260 rpcwallet_tx_in_mempool-21.1+knots	5e9dcde9997	last=46bf0b7b5d8
+	21260 rpcwallet_tx_in_mempool-21.1+knots	5e9dcde9997	last=46bf0b7b5d8
 	g213  gui_payrequest_copyaddr-0.18			3fbc3512e3c
 	g214  gui_payrequest_disablena-0.18+knots	88cfbc9641b
 	21327 p2p_ignore_tx_in_ibd-0.21				cb54eca2c0b	last=6aed8b7e9b2
@@ -532,9 +532,10 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# Needs review & MUCH softer deprecation: 24098 -  # rest: Use query parameters to control resource loading
 	# After merged+released a while? 24171 sdaftuar/2022-01-download-from-inbound
 	# Check if fixes anything: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
-	24198 rpc_wtx_wtxid-21.1+knots							last=79d6764c133  # wallet, rpc: add wtxid in WalletTxToJSON
+	24198 rpc_wtx_wtxid-0.20								last=79d6764c133  # wallet, rpc: add wtxid in WalletTxToJSON
 		#21.xTODO# fix RPC help description
 	g526  qt_peers_addrprocessed-21+knots
+	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
@@ -578,7 +579,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	13203 dsha256_power8-0.20					357397180c7	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		60c82d4c598
-m	15218 postibd_flush-21+knots				8858f44e523	last=d2ecb70d64  # validation: Flush stateafter initial sync
+	15218 postibd_flush-21+knots				8858f44e523	last=d2ecb70d64  # validation: Flush stateafter initial sync
 	(CHECK-LAST)	last=8faeb93d48d postibd_flush-22+knots
 	15428 tor_gui_pairing-0.21+knots			9b710f4ddfb	# latest code now
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 16cb2ae1fe0)
@@ -594,7 +595,7 @@ m	15218 postibd_flush-21+knots				8858f44e523	last=d2ecb70d64  # validation: Flu
 	17795 gui_console_ctrl_d					975064084f4
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning-0.21+knots		d001554bb8d	last=896eea449ad restore_vbits_warning
-m	20832 rpc_validateaddress_error-0.21.1+k	0859c222db0
+	20832 rpc_validateaddress_error-0.21.1+k	0859c222db0
 	16807 bech32_error_detection-0.21.1+knots	c08a0bcebf7	last=88cc4810926 meshcollider/201909_bech32_error_detection
 	(CHECK-LAST)	last=3bc568d6753 old_bech32_error_detection
 		# Held back rewrite 3bc568d6753..974227bb457 for now; when updating, add in #23577
@@ -640,7 +641,7 @@ NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
 # Non-upstreamed functionality:
 	-     gui_payreq_textedit-0.21				bfe154411de last=9cb216e6ff8 gui_payreq_textedit
 	-     rpc_mempoolentry_txhash				0b5a0196787
-m	-     walletnotify_w_win-0.21+knots			103ea74ed61	last=a291491d2fd walletnotify_w_win
+	-     walletnotify_w_win-0.21+knots			103ea74ed61	last=a291491d2fd walletnotify_w_win
 	(CHECK-LAST)	last=4c481517859 walletnotify_w_win-22+knots
 	14137 win_taskbar_progress-0.21+knots		cf8835a0b82	last=18eb4dbb8a
 	(CHECK-LAST)	last=f30b740b4ff win_taskbar_progress
@@ -656,7 +657,7 @@ m	-     walletnotify_w_win-0.21+knots			103ea74ed61	last=a291491d2fd walletnotif
 	g153 const_max_digits						32e16e210f2
 	 929 tbc									8aa517b2bd1
 	 553  bugfix_qt_uri_amount_parser-0.17		ce9be680833	last=e3ad5956dda bugfix_qt_uri_amount_parser
-m	-     mining_priority-0.21+knots			1e33269a0ae	last=58e2cab4b18 mining_priority
+	-     mining_priority-0.21+knots			1e33269a0ae	last=58e2cab4b18 mining_priority
 		# Didn't backport next_block_height passing (maybe consider when/if someday cs_main can be released)
 		# Didn't backport platform-independent double serialisation
 	5861 gui_restore_addresses					a81fd2b77ff
@@ -692,7 +693,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		# Held back git diff 19fd29ce45d..af4614fbd26 which is likely a noop
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		e0a236336e2
-m	7483  svg_icon-21.2+knots					10090268130	last=afaab080b87 svg_icon-22+knots
+	7483  svg_icon-21.2+knots					10090268130	last=afaab080b87 svg_icon-22+knots
 # BRANDING:
 	n/a   knots_branding-21						9db64a56d30	last=282420dea44 knots_branding-22
 	n/a   ver_dropzero-21.2+knots				0d04104e95d
