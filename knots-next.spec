@@ -381,6 +381,7 @@ checkout origin/master
 	24171 sdaftuar/2022-01-download-from-inbound
 	# Needs review: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
 	24198 -  # wallet, rpc: add wtxid in WalletTxToJSON
+		#23.xTODO# fix RPC help description
 	g533  -  # gui: add more detailed address error message
 	g543  RandyMcMillan-g/1643853831-peers-tab-add-duration-column
 # Non-progress functionality:
@@ -559,6 +560,7 @@ checkout origin/master
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
+		540190c138f for #24198
 	n/a  (cherrypick=59fae184489)				06a4bf467f6  # update manpages (build first)
 	n/a  (cherrypick=0b0a1a14592)				b2c9337cfd7  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts

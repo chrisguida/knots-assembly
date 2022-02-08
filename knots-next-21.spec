@@ -480,12 +480,12 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	21173 optimise_hexstr-0.21					211f7cf954e
-m	21260 rpcwallet_tx_in_mempool-21.1+knots		5e9dcde9997	last=46bf0b7b5d8
+m	21260 rpcwallet_tx_in_mempool-21.1+knots	5e9dcde9997	last=46bf0b7b5d8
 	g213  gui_payrequest_copyaddr-0.18			3fbc3512e3c
 	g214  gui_payrequest_disablena-0.18+knots	88cfbc9641b
 	21327 p2p_ignore_tx_in_ibd-0.21				cb54eca2c0b	last=6aed8b7e9b2
 	(CHECK-LAST)	last=704a7b03d53 p2p_ignore_tx_in_ibd-22
-	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
+m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	g205  gui_save_txview_reqview_columns-0.19	f5fcee6e0a3
 		# +gui#368
 		# NOTE: Diff minimised
@@ -532,7 +532,8 @@ m	21260 rpcwallet_tx_in_mempool-21.1+knots		5e9dcde9997	last=46bf0b7b5d8
 	# Needs review & MUCH softer deprecation: 24098 -  # rest: Use query parameters to control resource loading
 	# After merged+released a while? 24171 sdaftuar/2022-01-download-from-inbound
 	# Check if fixes anything: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
-	24198 -  # wallet, rpc: add wtxid in WalletTxToJSON
+	24198 rpc_wtx_wtxid-21.1+knots							last=79d6764c133  # wallet, rpc: add wtxid in WalletTxToJSON
+		#21.xTODO# fix RPC help description
 	g526  jonatack/add-addr-fields-to-peer-details
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
@@ -731,6 +732,7 @@ m	7483  svg_icon-21.2+knots					10090268130	last=afaab080b87 svg_icon-22+knots
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
+		540190c138f for #24198
 	n/a  (cherrypick=a76c71bf46b)				42a7a1b3d52  # update manpages (build first)
 	n/a  (cherrypick=3b34e884d32)				2d4f6166a4b  # translation update
 # NOTE: use git diff --minimal for patches!
