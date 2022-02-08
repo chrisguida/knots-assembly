@@ -623,7 +623,7 @@ NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
 	(CHECK-LAST)	last=e8bab0a4077 cli_getinfo_mw_total_balance
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
-	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
+m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	(CHECK-LAST)	last=363c4e02d3d wallet_rpc_lastprocessedblock-22+k
 	19117 rpc_getrpcwhitelist-21				f005cd98854	last=3a5869713b4 rpc_getrpcwhitelist
 		# NOTE: Was #18827 before any Knots merge
