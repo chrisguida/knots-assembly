@@ -227,8 +227,8 @@ checkout origin/master
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18689 rpc_dumptxoutset_hr					63bd42e0546	last=65d0697fe34
 		# Fixed bugs (eg, scoping of ascii_types)
-		# NOTE: Moved rpc/client lines to avoid conflict with #20664
-		TODO: Rebase onto / Compat with #24202
+		# NOTE: Rebased onto (but not compatible with) #24202
+		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202/files#r801191486
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	19242 uaappend								2b7b1f97f42

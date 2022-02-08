@@ -383,8 +383,10 @@ m	17631 rest_blockfilter-0.21					36a9777315b	last=2b64fa3251a matt/2019-11-filt
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
 m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
-		TODO: Rebase onto / Compat with(?) #24202
-	(CHECK-LAST)	last=9427b409195 rpc_dumptxoutset_hr
+		# Held back refactoring & test improvements 9427b409195...5d0c86d494a (in rpc_dumptxoutset_hr)
+		# TODO: Compat with(?) #24202
+		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202/files#r801191486
+	(CHECK-LAST)	last=5d0c86d494a rpc_dumptxoutset_hr
 	18722 O_addrman_unordered_map-0.21+knots	008067709d9	last=a92485b2c25
 		# NOTE: Restored C++11 compatibility from d6e782174ec
 	g125  intro_prune_size-0.21					9d324c49f67
