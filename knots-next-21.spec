@@ -345,7 +345,7 @@ m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listuns
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	(CHECK-LAST)	last=ae9739d64cc fee_histogram+pr15836_api
-	(CHECK-LAST)	last=2d2bae70ab5 origin-pull/21422/head
+	(CHECK-LAST)	last=4ca2da5bd28 origin-pull/21422/head
 	17463 gui_custom_sendyes					087d3e642af
 	15987 wallet_no_reuse-0.21+knots			952bb1fb9bc	last=63d1070f734 wallet_warn_reuse_gui
 		# NOTE: Uses older bloom filter implementation
@@ -360,7 +360,7 @@ m	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listuns
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 		# + docs from #23320 (left off refactor commit)
-	16795 rpc_inferred_output_descriptors-21	5d1bc19f6ca	last=5e256883651 instagibbs/decode_descriptor
+	16795 rpc_inferred_output_descriptors-21	5d1bc19f6ca	last=6498ba151b3 instagibbs/decode_descriptor
 	(CHECK-LAST)	last=19a6902d148 rpc_inferred_output_descriptors
 	18972 neutrino_whitelist-mini-21			dabdcf3f324	last=339fe189eb9
 	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
