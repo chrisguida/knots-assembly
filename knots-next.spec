@@ -61,8 +61,6 @@ checkout origin/master
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
-	g404  bugfix_qvalidlineedit					6174a01aa1a
-		# Was #18133
 	18194 bugfix_gui_edit_sendaddr-mini			39f0ee79b01	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
@@ -124,11 +122,8 @@ checkout origin/master
 		# Diff-minimised by omitting first comment-change commit
 	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
-	24195 -													last=a0363589945  # test: Fix failfast option for functional test runner
 	24201 -													last=2948297f4f1  # p2p: Avoid InitError when downgrading peers.dat
 	24231 origin-pull/24231/head^							last=fa65d441491  # streams: Fix read-past-the-end and integer overflows
-	Needs review: 24266 hebasto/220204-dirs
-	OR Needs review: 24267 -  # util: if DataDir is a symbolic link, manually follow it
 	TODO: 24263 or equivalent 24287 (needs --version copyright fix too!)
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
