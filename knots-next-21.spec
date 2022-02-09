@@ -424,9 +424,15 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	20275 list_unsupported_wallets-0.21+knots	45986c05cec	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
-		# +#23702
-		# NOTE: Forward-compatible with param rename in #23706
-		#21.xTODO: +#23706+#23813+#24155+#24226
+		# +#23702 +(doc from #23813) +#24226
+		# NOTE: Forward-compatible with peer_id param rename in #23706
+		#21.xTODO# TODO? Forward-compatibility with block_hash param rename in #23706 (bad idea, these changes conflict with other/standard param names)
+		#21.xTODO# TODO??? API change * 60243cac728 rpc: turn already downloaded into error in getblockfrompeer
+		#                           + * 34d5399211e rpc: more detailed errors for getblockfrompeer
+		# TODO: Find a way to get `476f63a081e test: Add test for getblockfrompeer on pruned nodes` w/o fastprune mode?
+	(CHECK-LAST)	last=476f63a081e origin-pull/23813/head
+	(CHECK-LAST)	last=4b3098817a6 origin-pull/24226/head
+	(CHECK-LAST)	last=f5e008774b5 getblockfrompeer_param_names
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	20391 rpc_setfeerate-0.21					aef134635d5	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
