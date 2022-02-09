@@ -350,7 +350,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	17463 gui_custom_sendyes					087d3e642af
 	15987 wallet_no_reuse-0.21+knots			952bb1fb9bc	last=63d1070f734 wallet_warn_reuse_gui
 		# NOTE: Uses older bloom filter implementation
-	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=c6e5a3b1974 getaddressinfo_txids
+	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=8719b084754 getaddressinfo_txids
 	18772 -										72084e6f2d7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	22918 rpc_getblock_prevouts_fees-0.21		ce365cd8a1c	last=5c34507ecbb
 	(CHECK-LAST)	last=80612d8aded rpc_getblock_prevouts_fees-22
@@ -611,6 +611,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=e480af6868c rpc_compat_error_index-22+knots
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	g537  gui_bech32_errpos-0.21.1+knots		a4921198f16
+	(CHECK-LAST)	last=abae86dce13 gui_bech32_errpos
 	(CHECK-LAST)	last=7532115c6d8 gui_bech32_errpos-22+knots
 NM	16807 bech32_error_detection-0.21+knots		c0339fe9c28	last=54e107add41 meshcollider/201909_bech32_error_detection
 NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
