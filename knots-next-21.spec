@@ -1,8 +1,8 @@
-timestamp 2022-02-05 10:30:34
+timestamp 2022-02-13 01:48:24
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24274 / gui #543 for fixes
+#.. checked up to PR #24327 / gui #547 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -31,6 +31,9 @@ checkout v0.21.2
 	23947 config_summary_host_os-21
 	24104 boost1.78_compat-21
 	24240 fix_capnp_fetch-21
+	24277 hebasto/220206-deploy
+	check 24291 marco/2202-fuzzNoBoost
+	24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -307,6 +310,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	#21.xTODO#Diff-minimise: 24231 -  # streams: Fix read-past-the-end and integer overflows
 	24239 -  # test: fix ceildiv division by using integers
 	24287 fix_genmanpages_tagver-0.19
+	24313 Sjors/2022/02/displayaddress
+		TODO: make sure this doesn't break compatibility
+	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
@@ -542,6 +548,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	24198 rpc_wtx_wtxid-0.20								last=79d6764c133  # wallet, rpc: add wtxid in WalletTxToJSON
 		#21.xTODO# fix RPC help description
 	g526  qt_peers_addrprocessed-21+knots
+	24307 -  # RPC: Return external_signer in getwalletinfo
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
@@ -673,6 +680,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	7219  rbf_opts-0.21+knots					6b8135375e9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
 	(CHECK-LAST)	last=8db545872f6 fullrbf-22+knots
 	12146 opt_wallet_segwit2					ffc242d52be
+		TODO: Make sure descriptor wallets default to non-segwit addresses
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			fbd5c1d14f4	# Latest code now

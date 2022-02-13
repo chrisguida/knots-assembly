@@ -1,7 +1,7 @@
-timestamp 2022-02-05 10:30:34
+timestamp 2022-02-13 01:48:24
 lastapply no-merge
 
-#.. checked up to PR #24274 / gui #543
+#.. checked up to PR #24327 / gui #547
 
 checkout origin/master
 @23.x-syslibs
@@ -10,6 +10,9 @@ checkout origin/master
 	# Needs review: 23609 hebasto/211126-reduce
 	24051 config_utils_drop_extra_deps
 	5872 subdir_incl_compat						a218f649f67
+	24277 hebasto/220206-deploy
+	24291 marco/2202-fuzzNoBoost
+	24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
@@ -125,6 +128,11 @@ checkout origin/master
 	24201 -													last=2948297f4f1  # p2p: Avoid InitError when downgrading peers.dat
 	24231 origin-pull/24231/head^							last=fa65d441491  # streams: Fix read-past-the-end and integer overflows
 	TODO: 24263 or equivalent 24287 (needs --version copyright fix too!)
+	24313 Sjors/2022/02/displayaddress
+		TODO: make sure this doesn't break compatibility
+	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
+	TODO: Ensure bug introduced in #24308 gets fixed
+	Needs review: g547  hebasto/220212-quit
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -489,6 +497,7 @@ checkout origin/master
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					901c180339a
 		TODO: Revert(?) #23731 - but maybe n/a since it's for descriptor wallets which are explicit for all types?
+		TODO: Make sure descriptor wallets default to non-segwit addresses (or Taproot??)
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			5b753d4e201	# Latest code now
@@ -545,7 +554,7 @@ checkout origin/master
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		9fa4d038aaa	# doc/{bips,files}
-	n/a  (bump_version=Knots:20220205)			bcc3f6e8502
+	n/a  (bump_version=Knots:20220213)			bcc3f6e8502
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=c22129a3cec)				b31ddd5021f  # release notes: write/update, including change log and credits
 			# check travis for misspellings
