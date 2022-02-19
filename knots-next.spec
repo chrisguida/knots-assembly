@@ -17,7 +17,7 @@ checkout origin/master
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
-		TODO: Make sure latest lib is compat (see gentoo overlay)
+		TODO: * 454f47936b5 (HEAD) configure: Check that libsecp256k1 is new enough and error clearly if not
 	-     sys_univalue
 	7485 sys_univalue_def						1d03ddd0d67
 	#23.xTODO: sys_minisketch
@@ -505,6 +505,7 @@ checkout origin/master
 	12146 opt_wallet_segwit2					901c180339a
 		TODO: Revert(?) #23731 - but maybe n/a since it's for descriptor wallets which are explicit for all types?
 		TODO: Make sure descriptor wallets default to non-segwit addresses (or Taproot??)
+		TODO: Make sure change is non-segwit too
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			5b753d4e201	# Latest code now

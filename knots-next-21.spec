@@ -40,6 +40,7 @@ checkout v0.21.2
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
 		TODO: Make sure latest lib is compat (see gentoo overlay)
 	5416  sys_libsecp256k1-0.21+knots			813a5353e1d	last=ad6c1063b16 sys_libsecp256k1
+		TODO: Make sure latest lib is compat (see gentoo overlay)
 	n/a   sys_univalue_doc-21								last=fd17f3dc676 sys_univalue
 m	7485  sys_univalue_def-21					c393c7a7f51	last=20bd5eccd54 sys_univalue_def
 	13789 bugfix_asm_pragmas					e33b0f86575
