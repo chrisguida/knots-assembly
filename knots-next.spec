@@ -10,14 +10,14 @@ checkout origin/master
 	# Needs review: 23609 hebasto/211126-reduce
 	24051 config_utils_drop_extra_deps
 	5872 subdir_incl_compat						a218f649f67
-	24277 hebasto/220206-deploy
-	24291 marco/2202-fuzzNoBoost
-	24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
-	24369 laanwj/2022-02-rseq
+	24291 marco/2202-fuzzNoBoost							last=fa2c8979e81
+	24295 -													last=faf7a61483a  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
+		# 24.xTODO: Can this go away?
+	24369 laanwj/2022-02-rseq								last=6c4fd36089d
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
-	TODO: Make sure latest lib is compat (see gentoo overlay)
+		TODO: Make sure latest lib is compat (see gentoo overlay)
 	-     sys_univalue
 	7485 sys_univalue_def						1d03ddd0d67
 	#23.xTODO: sys_minisketch
