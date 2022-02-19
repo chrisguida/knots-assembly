@@ -17,7 +17,6 @@ checkout origin/master
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
-		TODO: * 454f47936b5 (HEAD) configure: Check that libsecp256k1 is new enough and error clearly if not
 	-     sys_univalue
 	7485 sys_univalue_def						1d03ddd0d67
 	#23.xTODO: sys_minisketch
