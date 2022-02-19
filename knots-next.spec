@@ -1,7 +1,7 @@
-timestamp 2022-02-13 01:48:24
+timestamp 2022-02-19 01:27:21
 lastapply no-merge
 
-#.. checked up to PR #24327 / gui #547
+#.. checked up to PR #24385 / gui #553
 
 checkout origin/master
 @23.x-syslibs
@@ -13,9 +13,11 @@ checkout origin/master
 	24277 hebasto/220206-deploy
 	24291 marco/2202-fuzzNoBoost
 	24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
+	24369 laanwj/2022-02-rseq
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
+	TODO: Make sure latest lib is compat (see gentoo overlay)
 	-     sys_univalue
 	7485 sys_univalue_def						1d03ddd0d67
 	#23.xTODO: sys_minisketch
@@ -133,6 +135,11 @@ checkout origin/master
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
 	TODO: Ensure bug introduced in #24308 gets fixed
 	Needs review: g547  hebasto/220212-quit
+	Needs review: 24343 sipa/202202_trunittests
+	Needs work: 22087 -  # Validate port-options
+	Needs review: 24365 achow101/upgrade-disable-privkeys
+	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
+	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:

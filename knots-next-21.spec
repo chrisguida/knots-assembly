@@ -1,8 +1,8 @@
-timestamp 2022-02-13 01:48:24
+timestamp 2022-02-19 01:27:21
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24327 / gui #547 for fixes
+#.. checked up to PR #24385 / gui #553 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -34,6 +34,7 @@ checkout v0.21.2
 	24277 hebasto/220206-deploy
 	check 24291 marco/2202-fuzzNoBoost
 	24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
+	24369 laanwj/2022-02-rseq
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -299,6 +300,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# Diff-minimised
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	#21.xTODO: Needs review: 24067 -  # wallet: Actually treat (un)confirmed txs as (un)confirmed
+		# TODO: +gui#552 ?
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	24095 fix_settings_jsonfmt-21
@@ -313,6 +315,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24313 Sjors/2022/02/displayaddress
 		TODO: make sure this doesn't break compatibility
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
+	Needs review: 24343 sipa/202202_trunittests
+	Needs work: 22087 -  # Validate port-options
+	Needs review: 24365 achow101/upgrade-disable-privkeys
+	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
+	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
