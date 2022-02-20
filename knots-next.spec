@@ -131,7 +131,6 @@ checkout origin/master
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
-	TODO: Ensure bug introduced in #24308 gets fixed
 	Needs review: g547  hebasto/220212-quit
 	Needs review: 24343 sipa/202202_trunittests
 	Needs work: 22087 -  # Validate port-options
