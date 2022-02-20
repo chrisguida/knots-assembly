@@ -18,7 +18,7 @@ checkout origin/master
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
 	-     sys_univalue-23+knots
-	7485 sys_univalue_def						1d03ddd0d67
+	7485  sys_univalue_def-23+knots				1d03ddd0d67
 	#23.xTODO: sys_minisketch
 	13789 bugfix_asm_pragmas					2fffe355376
 	-     bugfix_asm_leveldb_check				74ba4e0ac1f
