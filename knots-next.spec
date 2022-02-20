@@ -131,7 +131,8 @@ checkout origin/master
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
-	Needs review: g547  hebasto/220212-quit
+	g547  hebasto-g/220212-quit								last=e7fc50681e9
+		#23.xTODO: QEvent::Quit undocumented - find alternative??
 	Needs review: 24343 sipa/202202_trunittests
 	Needs work: 22087 -  # Validate port-options
 	Needs review: 24365 achow101/upgrade-disable-privkeys
