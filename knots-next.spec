@@ -50,7 +50,7 @@ checkout origin/master
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
-	-     rpcarg_type_per_name					d40fdba46d8
+	-     rpcarg_type_per_name-23+knots			d40fdba46d8
 	-     bugfix_rpc_getbalance_hacky			b783debf686
 		#23.xTODO: Ensure bugs in #22929 get fixed
 	# FIX THE BELOW:
@@ -80,8 +80,7 @@ checkout origin/master
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-23+knots	d0fceeac30a	last=ca5de4bf4ab
-		# Based on last^ commit
+	19888 getblockstats_utxo_actual-23+knots	d0fceeac30a	last=ff1685124df
 		# Diff-minimised incl test changes
 	# Needs review: 20196 vasild/fix_GetListenPort
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
