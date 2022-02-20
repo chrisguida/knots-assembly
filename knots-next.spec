@@ -126,10 +126,10 @@ checkout origin/master
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
 	24201 -													last=772c9ba8ccf  # p2p: Avoid InitError when downgrading peers.dat
 		#23.xTODO: Ensure filename in ^ error gets corrected
-	24231 origin-pull/24231/head^							last=fa65d441491  # streams: Fix read-past-the-end and integer overflows
-	TODO: 24263 or equivalent 24287 (needs --version copyright fix too!)
-	24313 Sjors/2022/02/displayaddress
-		TODO: make sure this doesn't break compatibility
+	24231 origin-pull/24231/head^							last=fa1b89a6bdb  # streams: Fix read-past-the-end and integer overflows
+	#23.xTODO: 24263 or equivalent 24287 (needs --version copyright fix too!)
+	24313 Sjors/2022/02/displayaddress						last=803387f054d
+		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
 	TODO: Ensure bug introduced in #24308 gets fixed
 	Needs review: g547  hebasto/220212-quit

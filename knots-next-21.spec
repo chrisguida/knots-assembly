@@ -312,6 +312,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24168 fix_dumpbanlist_races-21
 	# TODO? 22762+24201 -  # p2p: Avoid InitError when downgrading peers.dat
 	#21.xTODO#Diff-minimise: 24231 -  # streams: Fix read-past-the-end and integer overflows
+		#TODO: Substitute for 24253 (removes broken unused methods)
 	24239 -  # test: fix ceildiv division by using integers
 	24287 fix_genmanpages_tagver-0.19
 	24313 Sjors/2022/02/displayaddress
