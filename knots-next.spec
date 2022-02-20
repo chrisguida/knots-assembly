@@ -120,12 +120,12 @@ checkout origin/master
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
-	24117 -  last=bfcd60f5d50 # index: make indices robust against init aborts
-	24133 coinstatsindex_check_muhash-23+knots				last=2fc159b0218 fjahr/2022-01-index-fixups
+	24133 coinstatsindex_check_muhash-23+knots				last=820c03aff52 fjahr/2022-01-index-fixups
 		# Diff-minimised by omitting first comment-change commit
 	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
-	24201 -													last=2948297f4f1  # p2p: Avoid InitError when downgrading peers.dat
+	24201 -													last=772c9ba8ccf  # p2p: Avoid InitError when downgrading peers.dat
+		#23.xTODO: Ensure filename in ^ error gets corrected
 	24231 origin-pull/24231/head^							last=fa65d441491  # streams: Fix read-past-the-end and integer overflows
 	TODO: 24263 or equivalent 24287 (needs --version copyright fix too!)
 	24313 Sjors/2022/02/displayaddress
