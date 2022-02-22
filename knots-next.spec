@@ -106,7 +106,7 @@ checkout origin/master
 	# Needs review & concept check: 23074 Package-aware fee estimation
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
 	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
-	-    gui_revert_g296						b6869ae3ee7
+	g557  gui_numeric_GBs						b6869ae3ee7
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
 	# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
@@ -117,7 +117,6 @@ checkout origin/master
 	# Needs work: 24038 marco/2201-lockstuff #23.xTODO
 	#23.xTODO#review g509  hebasto/211217-unlock
 	# Needs review: 24066 whitslack/openrc-daemonwait
-	TODO: Check correctness of 24072 -  # doc: fix wording of alertnotify to match behaviour
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	24133 coinstatsindex_check_muhash-23+knots				last=820c03aff52 fjahr/2022-01-index-fixups
 		# Diff-minimised by omitting first comment-change commit
@@ -437,6 +436,7 @@ checkout origin/master
 	17795 gui_console_ctrl_d					20a8f506a89
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					115213e2bd8
+		TODO: Check correctness of 24072 -  # doc: fix wording of alertnotify to match behaviour
 	MERGED: 16807 old_bech32_error_detection			09c2d5f6fd5	last=88cc4810926 meshcollider/201909_bech32_error_detection
 		# Held back rewrite 3bc568d6753..974227bb457 for now; when updating, add in #23577
 		# Held back comment drop 974227bb457..88cc4810926
