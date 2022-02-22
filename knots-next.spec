@@ -127,14 +127,15 @@ checkout origin/master
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
 	22087 -													last=508df36158c  # Validate port-options
 		#23.xTODO# Needs work & diff-minimising
-	Needs review: 24365 achow101/upgrade-disable-privkeys
-	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
-	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
+	24365 achow101/upgrade-disable-privkeys					last=c7376cc8d72
+		#23.xTODO# Needs review
+	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
+		#23.xTODO# Needs review
+	#23.xTODO# Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
-	23880 marco/2112-p2pAsync
-	# Needs review: 24115 prusnak/armv8-shani
+	23880 marco/2112-p2pAsync								last=fa61dd44f99
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 # SOFTFORK:
 	22016 Sjors/2021/05/versionbits_period_start	32dd1d34493	last=70d7e0812a7
