@@ -118,8 +118,6 @@ checkout origin/master
 	#23.xTODO#review g509  hebasto/211217-unlock
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
-	24133 coinstatsindex_check_muhash-23+knots				last=820c03aff52 fjahr/2022-01-index-fixups
-		# Diff-minimised by omitting first comment-change commit
 	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
 	24201 -													last=772c9ba8ccf  # p2p: Avoid InitError when downgrading peers.dat
@@ -127,7 +125,8 @@ checkout origin/master
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
-	Needs work: 22087 -  # Validate port-options
+	22087 -													last=508df36158c  # Validate port-options
+		#23.xTODO# Needs work & diff-minimising
 	Needs review: 24365 achow101/upgrade-disable-privkeys
 	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
 	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
