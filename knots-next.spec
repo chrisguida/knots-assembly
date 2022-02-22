@@ -13,7 +13,6 @@ checkout origin/master
 	24291 marco/2202-fuzzNoBoost							last=fa2c8979e81
 	24295 -													last=faf7a61483a  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 		# 24.xTODO: Can this go away?
-	24369 laanwj/2022-02-rseq								last=6c4fd36089d
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
@@ -118,7 +117,7 @@ checkout origin/master
 	# Needs work: 24038 marco/2201-lockstuff #23.xTODO
 	#23.xTODO#review g509  hebasto/211217-unlock
 	# Needs review: 24066 whitslack/openrc-daemonwait
-	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
+	TODO: Check correctness of 24072 -  # doc: fix wording of alertnotify to match behaviour
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	24133 coinstatsindex_check_muhash-23+knots				last=820c03aff52 fjahr/2022-01-index-fixups
 		# Diff-minimised by omitting first comment-change commit
@@ -126,13 +125,9 @@ checkout origin/master
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
 	24201 -													last=772c9ba8ccf  # p2p: Avoid InitError when downgrading peers.dat
 		#23.xTODO: Ensure filename in ^ error gets corrected
-	24231 origin-pull/24231/head^							last=fa1b89a6bdb  # streams: Fix read-past-the-end and integer overflows
-	#23.xTODO: 24263 or equivalent 24287 (needs --version copyright fix too!)
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
-	g547  hebasto-g/220212-quit								last=e7fc50681e9
-		#23.xTODO: QEvent::Quit undocumented - find alternative??
 	Needs work: 22087 -  # Validate port-options
 	Needs review: 24365 achow101/upgrade-disable-privkeys
 	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
@@ -140,7 +135,6 @@ checkout origin/master
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
-	23819 -  # tracing/block_connected: don't serialize block hash twice
 	23880 marco/2112-p2pAsync
 	# Needs review: 24115 prusnak/armv8-shani
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
