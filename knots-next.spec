@@ -133,7 +133,6 @@ checkout origin/master
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
 	g547  hebasto-g/220212-quit								last=e7fc50681e9
 		#23.xTODO: QEvent::Quit undocumented - find alternative??
-	Needs review: 24343 sipa/202202_trunittests
 	Needs work: 22087 -  # Validate port-options
 	Needs review: 24365 achow101/upgrade-disable-privkeys
 	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
