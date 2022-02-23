@@ -136,7 +136,6 @@ checkout origin/master
 	23880 marco/2112-p2pAsync								last=fa61dd44f99
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 # SOFTFORK:
-	22016 Sjors/2021/05/versionbits_period_start	32dd1d34493	last=1898b9be12c
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	-     guix_linux_i686						d7cabad678b
@@ -381,6 +380,7 @@ checkout origin/master
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
+	22016 rpc_gbci_period_start					32dd1d34493	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							a11d2d5c91d
 	9245 ionice									f3b535766d2
 	-    ionice_win								370875f21a3
