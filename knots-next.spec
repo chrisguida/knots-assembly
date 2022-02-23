@@ -130,14 +130,13 @@ checkout origin/master
 		#23.xTODO# Needs review
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 		#23.xTODO# Needs review
-	#23.xTODO# Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
 	23880 marco/2112-p2pAsync								last=fa61dd44f99
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 # SOFTFORK:
-	22016 Sjors/2021/05/versionbits_period_start	32dd1d34493	last=70d7e0812a7
+	22016 Sjors/2021/05/versionbits_period_start	32dd1d34493	last=1898b9be12c
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	-     guix_linux_i686						d7cabad678b
@@ -323,7 +322,6 @@ checkout origin/master
 	MERGED: 22513 rpcwallet_psbt_no_finalize-22+knots	51cac865a4d	last=a99ed898655 achow101/psbt-no-finalize
 		# Modified to use a new options object instead of an additional bool positional param
 	# Needs work: g471 -  # Add Wallet Restore in the GUI
-	# TODO? 22546 hebasto:210725-deploy
 	# Needs review: 22558 achow101/taproot-psbt
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
