@@ -115,7 +115,6 @@ checkout origin/master
 	g506  qt_qrcode_sizefixes
 	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	# Needs work: 24038 marco/2201-lockstuff #23.xTODO
-	#23.xTODO#review g509  hebasto/211217-unlock
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
@@ -318,8 +317,6 @@ checkout origin/master
 	g307  gui_peers_rowcolouropt-22				74d6f3d34c6	last=fdf80937d1c hebasto-g/210501-stripes
 		# Dropped formatting changes and avoided conflict with g216(optional_font)
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
-	# Needs review: 22340 -  # Use legacy relaying to download blocks in blocks-only mode
-		# NOTE: Rebased in 0e3b643ba55
 	# Too many TODOs: 22341 Sjors/2021/06/getxpub
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							05053cd7598
@@ -339,8 +336,6 @@ checkout origin/master
 	# Needs work: 23019 -  # rpc, wallet: Add listaddresses RPC
 	# Needs review: 23035 jonatack:getnodeaddresses-tried-and-reference_count
 	# Needs work: g410  benthecarman/uppercase-uri
-	MERGED: # Needs work: 23077 vasild/cjdns
-		# Followup in #23175
 	# Needs review: 23319 -  # rpc: Return fee and prevout (utxos) to getrawtransaction
 		# Rebase of 2c56d72acac in a662191612c w/ failing test :/ (had to replace hard-coded fee assumption too)
 	# Needs API review: 23330 JeremyRubin/header-fetch
@@ -570,5 +565,4 @@ checkout origin/master
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
 
-@23.x-knots-android
-	#23478
+# TODO: @23.x-knots-android
