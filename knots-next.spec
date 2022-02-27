@@ -108,7 +108,7 @@ checkout origin/master
 	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
 	g557  gui_numeric_GBs						b6869ae3ee7
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
-	# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
+	#23.xTODO# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
 	# Needs work: 23502 achow101/tr-low-fee-est
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
@@ -124,7 +124,7 @@ checkout origin/master
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
-	22087 -													last=508df36158c  # Validate port-options
+	22087 -													last=64bb1ad30a0  # Validate port-options
 		#23.xTODO# Needs work & diff-minimising
 	24365 achow101/upgrade-disable-privkeys					last=c7376cc8d72
 		#23.xTODO# Needs review
@@ -138,8 +138,7 @@ checkout origin/master
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
-	-     guix_linux_i686						d7cabad678b
-		FIXME: symbol __divmoddi4 from unsupported version GCC_7.0.0
+	24448 guix_linux_i686						d7cabad678b
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -498,6 +497,7 @@ checkout origin/master
 	-     gui_peers_no_net_column				42faba73091
 	22439 guix_in_gitian						6f8b29bd9f8	last=ebda0463748 achow101/guix-in-gitian
 		FIXME: Add i686-pc-linux-gnu
+		FIXME: assign_DISTNAME script is gone now
 	TODO: revert #23927  rpc: Pruning nodes can not fetch blocks before syncing past their height
 	TODO: revert #24031  build: don't compress macOS DMG
 	TODO: revert #24142  Deprecate SubtractFeeFromOutputs

@@ -267,7 +267,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO: 23268 prayank23/dns-seed-fqdn
 	# TODO: 23253 marco/2110-utilTxSeqId
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
-	# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
+	#21.xTODO# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
 	# n/a without #20764? 23324 netinfo_peer_count_all_reachable-22
 	# n/a without #19651: 23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
 	# Maybe just the docs from #23341 ?
@@ -323,6 +323,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: 24365 achow101/upgrade-disable-privkeys
 	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
 	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
+	TODO: Notate release binaries are GPL-3 due to #13177
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
