@@ -122,10 +122,8 @@ checkout origin/master
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
-	22087 -													last=c64877da343  # Validate port-options
+	22087 -													last=c9d4f114c61  # Validate port-options
 		#23.xTODO# Needs diff-minimising
-	24365 achow101/upgrade-disable-privkeys					last=c7376cc8d72
-		#23.xTODO# Needs review
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 		#23.xTODO# Needs review
 	n/a   (delete_release_notes_fragments)

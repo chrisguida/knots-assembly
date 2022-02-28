@@ -319,7 +319,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		TODO: make sure this doesn't break compatibility
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
 	24343 sipa/202202_trunittests
-	Needs work: 22087 -  # Validate port-options
+	Diff-minimise: 22087 -  # Validate port-options
 	Needs review: 24365 achow101/upgrade-disable-privkeys
 	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
 	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
