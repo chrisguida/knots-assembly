@@ -136,7 +136,7 @@ checkout origin/master
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
-	24448 guix_linux_i686						d7cabad678b
+	24448 guix_linux_i686_compat				d7cabad678b	last=c76ac9d57f2 guix_linux_i686
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
