@@ -119,13 +119,13 @@ checkout origin/master
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
-	24201 -													last=772c9ba8ccf  # p2p: Avoid InitError when downgrading peers.dat
+	24201 -													last=d41ed321535  # p2p: Avoid InitError when downgrading peers.dat
 		#23.xTODO: Ensure filename in ^ error gets corrected
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
-	22087 -													last=64bb1ad30a0  # Validate port-options
-		#23.xTODO# Needs work & diff-minimising
+	22087 -													last=c64877da343  # Validate port-options
+		#23.xTODO# Needs diff-minimising
 	24365 achow101/upgrade-disable-privkeys					last=c7376cc8d72
 		#23.xTODO# Needs review
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
