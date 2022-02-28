@@ -126,6 +126,7 @@ checkout origin/master
 		#23.xTODO# Needs diff-minimising
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 		#23.xTODO# Needs review
+	24453 fix_rpcdoc_changeaddr_STR
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -149,7 +150,7 @@ checkout origin/master
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
+	22049 rpc_fundtx_minmaxconf								last=7f4c9039f71  # rpc: allow specifying min chain depth for inputs in fund calls
 		# Was #14641 (moved to Knots compat)
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
