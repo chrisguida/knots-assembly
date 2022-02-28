@@ -352,7 +352,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
-	(CHECK-LAST)	last=8b77eb9d493 rpc_sign_show_fees
+	(CHECK-LAST)	last=1eef939edf1 rpc_sign_show_fees
 	g119  rm_send2self-mini-21					8a6ed938070	last=aa744e4382e rm_send2self
 		# NOTE: Originally #15115
 	(CHECK-LAST)	last=6328248b214 rm_send2self-mini
