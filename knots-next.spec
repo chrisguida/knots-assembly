@@ -119,8 +119,6 @@ checkout origin/master
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
-	24201 -													last=d41ed321535  # p2p: Avoid InitError when downgrading peers.dat
-		#23.xTODO: Ensure filename in ^ error gets corrected
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
