@@ -171,7 +171,7 @@ checkout origin/master
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
-	g119  rm_send2self-mini						12909b036b0	last=aa744e4382e rm_send2self
+	g119  rm_send2self-mini						12909b036b0	last=2bb4e307634 rm_send2self
 		# NOTE: Originally #15115
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
