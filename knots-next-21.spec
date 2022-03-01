@@ -367,7 +367,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=ae9739d64cc fee_histogram+pr15836_api
 	(CHECK-LAST)	last=4ca2da5bd28 origin-pull/21422/head
 	17463 gui_custom_sendyes					087d3e642af
-	15987 wallet_no_reuse-0.21+knots			952bb1fb9bc	last=63d1070f734 wallet_warn_reuse_gui
+	15987 wallet_no_reuse-0.21+knots			952bb1fb9bc	last=ef823cdebd7 wallet_warn_reuse_gui
 		# NOTE: Uses older bloom filter implementation
 	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=8719b084754 getaddressinfo_txids
 	18772 -										72084e6f2d7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data

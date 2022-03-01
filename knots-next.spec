@@ -196,7 +196,6 @@ checkout origin/master
 		# 			aka 4613c88c91f4f3846aa62c929ad73d1a3e6ac70e
 	22693 getaddressinfo_txids					a2dd1687f06
 	15987 wallet_warn_reuse_gui					3cd9339e389
-		FIXME: Resolve conflict with merged gui#441
 	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
