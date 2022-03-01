@@ -178,8 +178,7 @@ checkout origin/master
 	# Needs review: 15204 promag:2019-01-openexternalwallet
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
-	15423 tor_socks_port						07f2e143d73	last=d37d95a9ea2 tor_socks_port
-		# Held back 962f168a014..398df42f449
+	15423 tor_socks_port-23+knots				07f2e143d73	last=4314a216e31 tor_socks_port
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
