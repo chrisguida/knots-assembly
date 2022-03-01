@@ -192,7 +192,8 @@ checkout origin/master
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
-		https://twitter.com/RandyMcMillan/status/1490107008443457538?t=Qc4LO63rRuWxErtRel06EQ&s=19
+		# TODO: https://twitter.com/RandyMcMillan/status/1490107008443457538?t=Qc4LO63rRuWxErtRel06EQ&s=19
+		# 			aka 4613c88c91f4f3846aa62c929ad73d1a3e6ac70e
 	22693 getaddressinfo_txids					a2dd1687f06
 	15987 wallet_warn_reuse_gui					3cd9339e389
 		FIXME: Resolve conflict with merged gui#441
