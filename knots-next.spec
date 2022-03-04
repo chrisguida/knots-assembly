@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #24385 / gui #553
 
-checkout origin/master
+checkout origin/23.x
 @23.x-syslibs
 # BUILD BUGS:
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
@@ -81,7 +81,6 @@ checkout origin/master
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
 	19888 getblockstats_utxo_actual-23+knots	d0fceeac30a	last=ff1685124df
 		# Diff-minimised incl test changes
-	# Needs review: 20196 vasild/fix_GetListenPort
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
 	# Needs review: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
@@ -108,7 +107,6 @@ checkout origin/master
 	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
 	g557  gui_numeric_GBs						b6869ae3ee7
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
-	#23.xTODO# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
 	# Needs work: 23502 achow101/tr-low-fee-est
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
@@ -366,7 +364,6 @@ checkout origin/master
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
 	24162 kallewoof/202201-deriveaddr-nochecksum
 		TODO: Change example/nit
-	24165 jonatack/protect-inbound-cjdns-peers-from-eviction
 	Review closer: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
 	24171 sdaftuar/2022-01-download-from-inbound
 	# Needs review: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
