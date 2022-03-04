@@ -96,7 +96,7 @@ checkout origin/master
 	22417 bpchild_closefds						95725111d52	last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 	#23.xTODO# FIXME: When upgrading any guix to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
-	22834 vasild/onlynet^						22f55e6b0b5	last=0eea83a85ec vasild/onlynet
+	MERGED: 22834 vasild/onlynet^						22f55e6b0b5	last=0eea83a85ec vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
 		#23.xTODO: re-review and re-gcp 61c0c0f7bad net: Make OutboundConnectionAllowedTo more obviously correct
 	# Needs review: 22665 darosior:rbf_optin_nomempool
@@ -477,6 +477,7 @@ checkout origin/master
 	 559 accept_nonstdtxn						4f7dc7b3613
 	 929 tbc									3f84a3b048c
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
+		TODO: Check if we're using UCSUR or not
 	 553 bugfix_qt_uri_amount_parser			864d90dc093
 	-    mining_priority						aeb54b4fc8f  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					8f11d2dcae3
