@@ -324,6 +324,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
 	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
 	24453 fix_rpcdoc_changeaddr_STR
+	24479 bugfix_settings_numberval
 	TODO: Notate release binaries are GPL-3 due to #13177
 	n/a   (delete_release_notes_fragments)
 @21.x-knots

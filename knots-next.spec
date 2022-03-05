@@ -125,6 +125,7 @@ checkout origin/23.x
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 		#23.xTODO# Needs review
 	24453 fix_rpcdoc_changeaddr_STR
+	24479 bugfix_settings_numberval
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
