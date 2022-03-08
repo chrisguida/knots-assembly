@@ -1,8 +1,8 @@
-timestamp 2022-02-19 01:27:21
+timestamp 2022-03-08 06:47:28
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24385 / gui #553 for fixes
+#.. checked up to PR #24506 / gui #562 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -109,7 +109,8 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	#	FIXME: jnewbery found a bug :<
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
 	15103 lightsword/getentropy-weak			f969f7720ba	last=a7c7fee2e4 lightsword/getentropy-weak
-	# Needs review: 15191 practicalswift:cs_LastBlockFile
+	# Needs review: 24456 dongcarl/2022-02-kirby-p4
+		# NOTE: Was #15191 practicalswift:cs_LastBlockFile (never in Knots)
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 or 19420 (libevent cleanup)
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
@@ -323,9 +324,19 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: 24365 achow101/upgrade-disable-privkeys
 	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
 	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
-	24453 fix_rpcdoc_changeaddr_STR
-	24479 bugfix_settings_numberval
+	# Needs work: 24392 hebasto/220219-cmake
+	Diff-minimise 24397 hebasto/220220-boost
+	24401 hebasto/220220-signer
+	24406 -  # test: Fix Wambiguous-reversed-operator compiler warnings
+	24409 fanquake/24263_followups
+		NOTE: Care needed to ensure manpage generation doesn't break
 	TODO: Notate release binaries are GPL-3 due to #13177
+	Check if there's a real bug: 24415 hebasto/220222-boost
+	24434 hebasto/220224-word
+	24453 fix_rpcdoc_changeaddr_STR
+	Needs review: 24454 achow101/fix-input-weight-test
+	# Not worth it? 24469 ryanofsky/pr/testu
+	24479 bugfix_settings_numberval
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:

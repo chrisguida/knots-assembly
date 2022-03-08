@@ -1,7 +1,7 @@
-timestamp 2022-02-19 01:27:21
+timestamp 2022-03-08 06:47:28
 lastapply no-merge
 
-#.. checked up to PR #24385 / gui #553
+#.. checked up to PR #24506 / gui #562
 
 checkout origin/23.x
 @23.x-syslibs
@@ -57,7 +57,8 @@ checkout origin/23.x
 	#-     bugfix_rpc_getbalance_acctstar-0.17
 	#	FIXME: jnewbery found a bug :<
 	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
-	# Needs review: 15191 practicalswift:cs_LastBlockFile
+	# Needs review: 24456 dongcarl/2022-02-kirby-p4
+		# NOTE: Was #15191 practicalswift:cs_LastBlockFile (never in Knots)
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 or 19420 (libevent cleanup)
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
@@ -124,8 +125,18 @@ checkout origin/23.x
 		#23.xTODO# Needs diff-minimising
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 		#23.xTODO# Needs review
+	# Needs work: 24392 hebasto/220219-cmake
+	Check if there's a real bug: 24415 hebasto/220222-boost
+	Triage: 24428 fanquake/improve_bitcoin_wallet_return
+	Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24453 fix_rpcdoc_changeaddr_STR
+	Needs review: 24454 achow101/fix-input-weight-test
+	24462 Empact/2022-03-descriptor-pubkey-context
+	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval
+	Needs review: 24490 achow101/fix-wallet-tr-unique-descs
+	# Needs a real fix instead: 24502 glozow/2022-03-rejectlongchains
+	Needs review: g555  Sjors/2022/02/send_button
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -372,6 +383,11 @@ checkout origin/23.x
 		#23.xTODO# fix RPC help description
 	g533  -  # gui: add more detailed address error message
 	g543  RandyMcMillan-g/1643853831-peers-tab-add-duration-column
+	24408 -  # rpc: add rpc to get mempool txs spending specific prevouts
+	# Needs review: 24494 glozow/2022-03-minchange
+	# Needs concept ack: g553 w0xlt-5/change_error_background
+		# CAUTION: requires theming changes for gui#537
+	Needs work? g560 w0xlt-g/3_error_message_addr
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -499,6 +515,7 @@ checkout origin/23.x
 	TODO: revert #24031  build: don't compress macOS DMG
 	TODO: revert #24142  Deprecate SubtractFeeFromOutputs
 # Non-upstreamed Knots compatibility:
+	TODO: revert? #24505  wallet: Add a deprecation warning for newly created legacy wallets
 	14641 fundraw_min_conf_deprecated-23+knots				last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			d61bb3c22e9
 	-     netperms_implicit_addr				3ab6318c892
