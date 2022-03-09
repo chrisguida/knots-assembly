@@ -23,6 +23,7 @@ checkout origin/23.x
 	-     bugfix_asm_leveldb_check				74ba4e0ac1f
 	15155 test_external_bcli					0c5868df17b
 	-     opt_bdb_extracare						27c4d454903
+		FIXME: Are descriptors still experimental?
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	n/a   (delete_release_notes_fragments)
@@ -96,9 +97,6 @@ checkout origin/23.x
 	22417 bpchild_closefds						95725111d52	last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 	#23.xTODO# FIXME: When upgrading any guix to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
-	MERGED: 22834 vasild/onlynet^						22f55e6b0b5	last=0eea83a85ec vasild/onlynet
-		# Refactored to be less optimised in favour of being more obviously correct
-		#23.xTODO: re-review and re-gcp 61c0c0f7bad net: Make OutboundConnectionAllowedTo more obviously correct
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				162911e79ab
 	# Needs review: 22834 vasild/onlynet
@@ -121,7 +119,7 @@ checkout origin/23.x
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
-	22087 -													last=c9d4f114c61  # Validate port-options
+	22087 -													last=51155b512a7  # Validate port-options
 		#23.xTODO# Needs diff-minimising
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 		#23.xTODO# Needs review
