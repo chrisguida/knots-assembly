@@ -304,6 +304,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	#21.xTODO: Needs review: 24067 -  # wallet: Actually treat (un)confirmed txs as (un)confirmed
 		# TODO: +gui#552 ?
+		NOTE: bugfix_rpc_getbalance_hacky needs fix for MTP isfinal flag
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	24095 fix_settings_jsonfmt-21

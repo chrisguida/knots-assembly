@@ -52,7 +52,6 @@ checkout origin/23.x
 	# Needs bugfix: -     fsync_dir_win
 	-     rpcarg_type_per_name-23+knots			d40fdba46d8
 	-     bugfix_rpc_getbalance_hacky			b783debf686
-		#23.xTODO: Ensure bugs in #22929 get fixed
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
