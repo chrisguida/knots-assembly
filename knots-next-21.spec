@@ -52,6 +52,7 @@ m	7485  sys_univalue_def-21					c393c7a7f51	last=20bd5eccd54 sys_univalue_def
 		# Omitted "Don't make any wallets unless wallet is required": 45b4366f8ff 104a3a22564 6e06ca05880
 		# Diff-minimised
 	-     opt_bdb_extracare-0.21				65ea0f5ab4e	last=aa6a707d7ca opt_bdb_extracare
+		TODO: should this get promoted to non-experimental now that it's considered stable in 23.x?
 	20121 secp256k1_allow_bignum-21+knots		b2befc7fef1
 	20358 -										3e3443170a8	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					563aacf22be	last=836a3dc02c7 jonas/2020/12/getauxval

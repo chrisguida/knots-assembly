@@ -22,8 +22,6 @@ checkout origin/23.x
 	13789 bugfix_asm_pragmas					2fffe355376
 	-     bugfix_asm_leveldb_check				74ba4e0ac1f
 	15155 test_external_bcli					0c5868df17b
-	-     opt_bdb_extracare						27c4d454903
-		FIXME: Are descriptors still experimental?
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	n/a   (delete_release_notes_fragments)
