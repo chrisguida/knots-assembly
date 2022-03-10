@@ -54,7 +54,6 @@ checkout origin/23.x
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
 	#	FIXME: jnewbery found a bug :<
-	# Needs review: 14425 Net: Do not re-enable Onion network when it was disabled via onlynet
 	# Needs review: 24456 dongcarl/2022-02-kirby-p4
 		# NOTE: Was #15191 practicalswift:cs_LastBlockFile (never in Knots)
 	# Needs review: 15192 practicalswift:validation-cs_main
@@ -65,7 +64,6 @@ checkout origin/23.x
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 	18194 bugfix_gui_edit_sendaddr-mini			39f0ee79b01	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
-	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18729 intro_dont_change_user_prune			39b2462ba7b
 	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
@@ -93,35 +91,28 @@ checkout origin/23.x
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
 	22417 bpchild_closefds						95725111d52	last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
-	#23.xTODO# FIXME: When upgrading any guix to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				162911e79ab
-	# Needs review: 22834 vasild/onlynet
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review & concept check: 23074 Package-aware fee estimation
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
-	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
 	g557  gui_numeric_GBs						b6869ae3ee7
-	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
 	# Needs work: 23502 achow101/tr-low-fee-est
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
 	g506  qt_qrcode_sizefixes
-	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
-	# Needs work: 24038 marco/2201-lockstuff #23.xTODO
+	# Needs review: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	# Needs review: 24066 whitslack/openrc-daemonwait
-	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
-	# Needs work: 24138 -  # index: Commit MuHash and best block together for coinstatsindex
+	#23.xTODO# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
-	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
 	22087 -													last=51155b512a7  # Validate port-options
 		#23.xTODO# Needs diff-minimising
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
-		#23.xTODO# Needs review
+		#23.xTODO# Needs testing
 	# Needs work: 24392 hebasto/220219-cmake
-	Check if there's a real bug: 24415 hebasto/220222-boost
+	#23.xTODO# Check if there's a real bug: 24415 hebasto/220222-boost
 	Triage: 24428 fanquake/improve_bitcoin_wallet_return
 	Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24453 fix_rpcdoc_changeaddr_STR

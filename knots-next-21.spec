@@ -73,7 +73,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b aka depends_no_getrandom
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=991498aaad9 guix_reltar_autogen_distclean
-	18902 fix_gitdir_again-21					9e6238975fe	last=e00422d1347 fix_gitdir_again
+	18902 fix_gitdir_again-21					9e6238975fe	last=41debc1878d fix_gitdir_again
 		# NOTE: based directly on #18818
 	24048 fix_pkgconf_missing-21
 	18427 2020mingwthrd-mini-21					f4f276a44ae	last=df5ece3e064 2020mingwthrd
@@ -122,7 +122,6 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		# Was #18133
 	18194 bugfix_gui_edit_sendaddr-mini			2747e096a1e	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
-	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18335 -										dc0f3b960be	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18466 -										7963fb63fea	last=a5cfb40e27b  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
 	18729 intro_dont_change_user_prune			0af71102295
@@ -269,6 +268,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO: 23268 prayank23/dns-seed-fqdn
 	# TODO: 23253 marco/2110-utilTxSeqId
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
+		TODO: now part of (merged in master) #23304
 	#21.xTODO# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
 	# n/a without #20764? 23324 netinfo_peer_count_all_reachable-22
 	# n/a without #19651: 23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
@@ -307,7 +307,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# TODO: +gui#552 ?
 		NOTE: bugfix_rpc_getbalance_hacky needs fix for MTP isfinal flag
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
-	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
+	#21.xTODO# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	24095 fix_settings_jsonfmt-21
 	24117 fix_index_dontcommitduringinit-21					last=bfcd60f5d50  # index: make indices robust against init aborts
 		# NOTE: partial: coinstatsindex and feature_init test aren't in 21.x
