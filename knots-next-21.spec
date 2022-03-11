@@ -334,6 +334,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		NOTE: Care needed to ensure manpage generation doesn't break
 	TODO: Notate release binaries are GPL-3 due to #13177
 	Check if there's a real bug: 24415 hebasto/220222-boost
+	24428 fanquake/improve_bitcoin_wallet_return
 	24434 hebasto/220224-word
 	24453 fix_rpcdoc_changeaddr_STR
 	Needs review: 24454 achow101/fix-input-weight-test
