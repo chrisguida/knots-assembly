@@ -113,7 +113,7 @@ checkout origin/23.x
 		#23.xTODO# Needs testing
 	# Needs work: 24392 hebasto/220219-cmake
 	#23.xTODO# Check if there's a real bug: 24415 hebasto/220222-boost
-	24428 fanquake/improve_bitcoin_wallet_return
+	24428 fanquake/improve_bitcoin_wallet_return			last=dd532ee9c4d
 	Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24453 fix_rpcdoc_changeaddr_STR
 	Needs review: 24454 achow101/fix-input-weight-test
