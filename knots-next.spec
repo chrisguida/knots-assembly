@@ -114,15 +114,15 @@ checkout origin/23.x
 	# Needs work: 24392 hebasto/220219-cmake
 	#23.xTODO# Check if there's a real bug: 24415 hebasto/220222-boost
 	24428 fanquake/improve_bitcoin_wallet_return			last=dd532ee9c4d
-	Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
+	#23.xTODO# Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24453 fix_rpcdoc_changeaddr_STR
-	Needs review: 24454 achow101/fix-input-weight-test
-	24462 Empact/2022-03-descriptor-pubkey-context
+	#23.xTODO# Needs review: 24454 achow101/fix-input-weight-test
+	24462 Empact/2022-03-descriptor-pubkey-context			last=9b526727000
 	# Not worth it? 24469 ryanofsky/pr/testu
-	24479 bugfix_settings_numberval
-	Needs review: 24490 achow101/fix-wallet-tr-unique-descs
+	24479 bugfix_settings_numberval-23						last=33722279495 bugfix_settings_numberval
 	# Needs a real fix instead: 24502 glozow/2022-03-rejectlongchains
-	Needs review: g555  Sjors/2022/02/send_button
+	g555  Sjors-g/2022/02/send_button						last=86e3e2cda8f
+		#23.xTODO# Be sure this got merged upstream first (Needs review & diff is annoying)
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -356,6 +356,7 @@ checkout origin/23.x
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
 	# Needs review: 24043 sipa/202201_multi_a
+		# +#24490 achow101/fix-wallet-tr-unique-descs
 	# Needs review & BIP changes: 24058 kallewoof/202201-bip322
 	# Needs review & softer deprecation: 24098 -  # rest: Use query parameters to control resource loading
 	# Needs concept + review: 24118 -  # Add 'sweepwallet' RPC
