@@ -129,6 +129,7 @@ checkout origin/23.x
 	23880 marco/2112-p2pAsync								last=fa61dd44f99
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	n/a   rm_minisketch
+		#24.xTODO# Probably need to drop this
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -175,7 +176,7 @@ checkout origin/23.x
 	# Needs review: 15204 promag:2019-01-openexternalwallet
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
-	15423 tor_socks_port-23+knots				07f2e143d73	last=4314a216e31 tor_socks_port
+	15423 tor_socks_port						07f2e143d73
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
@@ -185,7 +186,7 @@ checkout origin/23.x
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ?
-	(CHECK-LAST)	last=4ca2da5bd28 origin-pull/21422/head
+	(CHECK-LAST)	last=288c4524fa0 origin-pull/21422/head
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
