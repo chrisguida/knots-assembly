@@ -121,7 +121,7 @@ checkout origin/23.x
 	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval-23						last=33722279495 bugfix_settings_numberval
 	# Needs a real fix instead: 24502 glozow/2022-03-rejectlongchains
-	g555  Sjors-g/2022/02/send_button						last=86e3e2cda8f
+	g555  Sjors-g/2022/02/send_button						last=2efdfb88aab
 		#23.xTODO# Be sure this got merged upstream first (Needs review & diff is annoying)
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
