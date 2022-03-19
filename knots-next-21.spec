@@ -1,8 +1,8 @@
-timestamp 2022-03-08 06:47:28
+timestamp 2022-03-19 02:24:29
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24506 / gui #562 for fixes
+#.. checked up to PR #24615 / gui #563 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -333,13 +333,17 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24409 fanquake/24263_followups
 		NOTE: Care needed to ensure manpage generation doesn't break
 	TODO: Notate release binaries are GPL-3 due to #13177
-	Check if there's a real bug: 24415 hebasto/220222-boost
+	Check if there's a real bug: 24523 promag/220222-boost
+		# NOTE: Was #24415 (never in Knots)
 	24428 fanquake/improve_bitcoin_wallet_return
 	24434 hebasto/220224-word
 	24453 fix_rpcdoc_changeaddr_STR
 	Needs review: 24454 achow101/fix-input-weight-test
 	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval
+	24521 hebasto/220310-boost
+	Needs review: 24538 glozow/2022-03-miner-prioritised
+	Check if silently partial-only: 24579 -  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:

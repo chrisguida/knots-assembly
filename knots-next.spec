@@ -1,7 +1,7 @@
-timestamp 2022-03-08 06:47:28
+timestamp 2022-03-19 02:24:29
 lastapply no-merge
 
-#.. checked up to PR #24506 / gui #562
+#.. checked up to PR #24615 / gui #563
 
 checkout origin/23.x
 @23.x-syslibs
@@ -112,7 +112,8 @@ checkout origin/23.x
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 		#23.xTODO# Needs testing
 	# Needs work: 24392 hebasto/220219-cmake
-	#23.xTODO# Check if there's a real bug: 24415 hebasto/220222-boost
+	#23.xTODO# Check if there's a real bug: 24523 promag/220222-boost
+		# NOTE: Was #24415 (never in Knots)
 	24428 fanquake/improve_bitcoin_wallet_return			last=dd532ee9c4d
 	#23.xTODO# Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24453 fix_rpcdoc_changeaddr_STR
@@ -123,6 +124,12 @@ checkout origin/23.x
 	# Needs a real fix instead: 24502 glozow/2022-03-rejectlongchains
 	g555  Sjors-g/2022/02/send_button						last=2efdfb88aab
 		#23.xTODO# Be sure this got merged upstream first (Needs review & diff is annoying)
+	24521 hebasto/220310-boost
+	Needs review: 24538 glozow/2022-03-miner-prioritised
+	Needs review/concept check: 24563 ajtowns:202203-fillpsbt
+	Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
+	Check if silently partial-only: 24579 -  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
+	24609 jonatack/maxtimeadjustment-outbound-peers-only
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -130,6 +137,8 @@ checkout origin/23.x
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	n/a   rm_minisketch
 		#24.xTODO# Probably need to drop this
+	24558 fanquake/no_boost_multi_index_serialization
+	# Needs review: 24589 -  # sha512.cpp improvements
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -377,6 +386,12 @@ checkout origin/23.x
 	# Needs concept ack: g553 w0xlt-5/change_error_background
 		# CAUTION: requires theming changes for gui#537
 	Needs work? g560 w0xlt-g/3_error_message_addr
+	Needs optionality/review: 24539 -  # Add a "tx output spender" index
+	Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
+	Needs review? 24552 prusnak/guix-attest-override-gpg
+	Needs work: 24615/24569/24556 guix on non-x86
+	# Needs work: 24584 -  # wallet: avoid mixing different OutputTypes during coin selection
+	24611 -  # Add fish completions
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -460,7 +475,7 @@ checkout origin/23.x
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
 	# Needs work: 22708 hebasto:210815-wayland
 	#23.xTODO: Revert #24065 safely (ie, Ensure external signing on all systems)
-		see also #24254
+		see also #24254, #24524(?)
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 # Non-upstreamed functionality:
