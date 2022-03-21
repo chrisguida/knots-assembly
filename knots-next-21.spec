@@ -386,7 +386,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	(CHECK-LAST)	last=ae9739d64cc fee_histogram+pr15836_api
-	(CHECK-LAST)	last=4ca2da5bd28 origin-pull/21422/head
+	(CHECK-LAST)	last=84418b05c31 origin-pull/21422/head
 	17463 gui_custom_sendyes					087d3e642af
 	g562  wallet_no_reuse-0.21+knots			952bb1fb9bc	last=ef823cdebd7 wallet_warn_reuse_gui
 		# NOTE: Was #15987
