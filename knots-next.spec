@@ -10,7 +10,6 @@ checkout origin/23.x
 	# Needs review: 23609 hebasto/211126-reduce
 	24051 config_utils_drop_extra_deps
 	5872 subdir_incl_compat						a218f649f67
-	24291 marco/2202-fuzzNoBoost							last=fa2c8979e81
 	24295 -													last=faf7a61483a  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 		# 24.xTODO: Can this go away?
 # SYSLIBS: (and old build bugs)

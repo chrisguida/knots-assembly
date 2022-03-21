@@ -32,7 +32,7 @@ checkout v0.21.2
 	24104 boost1.78_compat-21
 	24240 fix_capnp_fetch-21
 	24277 hebasto/220206-deploy
-	check 24291 marco/2202-fuzzNoBoost
+	check 24291 marco/2202-fuzzNoBoost (note PR edit history)
 	24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 	24369 laanwj/2022-02-rseq
 	TODO: get rid of -O0
