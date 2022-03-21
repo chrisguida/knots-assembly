@@ -124,12 +124,14 @@ checkout origin/23.x
 	# Needs a real fix instead: 24502 glozow/2022-03-rejectlongchains
 	g555  Sjors-g/2022/02/send_button						last=2efdfb88aab
 		#23.xTODO# Be sure this got merged upstream first (Needs review & diff is annoying)
-	24521 hebasto/220310-boost
-	Needs review: 24538 glozow/2022-03-miner-prioritised
-	Needs review/concept check: 24563 ajtowns:202203-fillpsbt
-	Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
-	Check if silently partial-only: 24579 -  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
-	24609 jonatack/maxtimeadjustment-outbound-peers-only
+	24521 fix_boostprocess_detect_cflags-23
+	# Needs review: 24538 glozow/2022-03-miner-prioritised
+	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
+	# Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
+	24579 fix_docs_rpc_gbci_gdi_pr24579-23					last=facd5d92e18  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
+	24609 fix_doc_maxtimeadj_outboundonly-23
+	24629 bugfix_rpc_prunebc_retval
+		#23.xTODO# Check upstream concept-ACK-or-NACK
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -137,7 +139,7 @@ checkout origin/23.x
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	n/a   rm_minisketch
 		#24.xTODO# Probably need to drop this
-	24558 fanquake/no_boost_multi_index_serialization
+	24558 disable_boost_multi_index_ser-23					last=49441752ea1 fanquake/no_boost_multi_index_serialization
 	# Needs review: 24589 -  # sha512.cpp improvements
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
@@ -211,14 +213,11 @@ checkout origin/23.x
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs review: 16981 LarryRuane:reindex-speedup
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
-	MERGED: 17211 achow101/fundtx-external-inputs
-		TODO: Move new param to options? (watch out for send RPC)
 	18972 neutrino_whitelist-mini				90b945d9f21	last=a3300c6b200 neutrino_whitelist
 		# NOTE: Diff-minimised
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
-	MERGED: g319  gui_openuri_pastebtn-22				ec5bceab101	last=dbde0558ce7
-		# NOTE: Used to be #17955
-		FIXME: Missing Alt+P shortcut key
+	g319  qt_openuri_pastebtn_shortcut-23		ec5bceab101
+		# NOTE: Used to be part of gui#319 (formerly #17955)
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-0.21+knots	65bdd6b4b43	last=19e28a41168 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
@@ -236,7 +235,9 @@ checkout origin/23.x
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 		# w/ 22807 ?
-	19463 prune_locks							05583647cd3	last=1ad45edbfeb prune_locks
+	# Needs review: 21726 -  # Improve Indices on pruned nodes via prune blockers
+	19463 prune_locks							05583647cd3
+	(CHECK-LAST)	last=ce081ba2b1a origin-pull/21726/head  # based on
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
@@ -408,6 +409,8 @@ checkout origin/23.x
 		# NOTE: Was #9849
 	10615 multiwallet_rpc-22+knots			a0cae660051	last=5a10f8307a5 multiwallet_rpc
 		TODO: adapt to #22541 being merged
+		FIXME: ./wallet/rpcwallet.h:25:6: warning: redundant redeclaration of ‘bool GetWalletRestrictionFromJSONRPCRequest(const JSONRPCRequest&, std::string&)’ in same scope [-Wredundant-decls]
+			./rpc/util.h:370:6: note: previous declaration of ‘bool GetWalletRestrictionFromJSONRPCRequest(const JSONRPCRequest&, std::string&)’
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-22+knots						27d1ffd6d18	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
@@ -486,6 +489,8 @@ checkout origin/23.x
 	-     rpc_mempoolentry_txhash				d995448a23d
 	-     walletnotify_w_win-22+knots			edd33a2d427	last=a291491d2fd walletnotify_w_win
 	14137 win_taskbar_progress					e9dc3bcac3d	last=18eb4dbb8a
+		FIXME: checking whether to build with QWinTaskbarProgress support... checking for Berkeley DB C++ headers... /usr/include/db4.8/
+			(no result? on jun)
 	-     restore_blockmaxsize					9db4529dde0
 	7107 qtnetworkport							d73a95d8da0	last=1f37c87 origin-pull/7107/head
 	7533  sendraw_force							960c792aa3c

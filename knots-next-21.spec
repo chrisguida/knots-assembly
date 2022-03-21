@@ -35,6 +35,7 @@ checkout v0.21.2
 	check 24291 marco/2202-fuzzNoBoost
 	24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 	24369 laanwj/2022-02-rseq
+	TODO: get rid of -O0
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -132,7 +133,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
 	19419 listwalletdir_skip_data-0.21+knots	ce14eff5578	last=3f9cc0cd736 Saibato/wallet_351
-	(CHECK-LAST)	last=559a7cb6188 listwalletdir_skip_data
+	(CHECK-LAST)	last=27be41dbc4e listwalletdir_skip_data
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
@@ -344,6 +345,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24521 hebasto/220310-boost
 	Needs review: 24538 glozow/2022-03-miner-prioritised
 	Check if silently partial-only: 24579 -  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
+	Check upstream concept-ACK-or-NACK: 24629 bugfix_rpc_prunebc_retval
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
@@ -417,7 +419,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=91feea1216a rest_blockfilter-22
 		# NOTE: Dropped unrelated extra commits
 	g319  gui_openuri_pastebtn-0.21				24178d81b5f	last=dbde0558ce7
-	(CHECK-LAST)	last=742a5de8f0b gui_openuri_pastebtn-22
+	(CHECK-LAST)	last=33258aef4cb qt_openuri_pastebtn_shortcut-23
 		# NOTE: Used to be #17955
 	18014 siphash_optimise_pr18014-0.21+knots	0c346e55ba0	last=19e28a41168 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
@@ -440,6 +442,9 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# +#23834 achow101/dump-checksum-size
 	19242 uaappend-21							c9099f45c3c	last=9552978b318 uaappend
 	19463 prune_locks-0.21						ce3e7443523	last=1ad45edbfeb prune_locks
+		FIXME: SetPruneLock won't delete a persistent->temporary change if sync=True
+		TODO: change default to temporary=true to match latest prune_locks branch?
+		# NOTE: Held back extra prune lock buffer
 	19762 ryanofsky/pr/named					3505e6dedbb	last=894c414dafb
 	19776 -										2d98f923dec	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	19873 mempressure-21						368b6daca5d last=b9da34cec33 mempressure
@@ -692,6 +697,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	-     walletnotify_w_win-0.21+knots			103ea74ed61	last=a291491d2fd walletnotify_w_win
 	(CHECK-LAST)	last=4c481517859 walletnotify_w_win-22+knots
 	14137 win_taskbar_progress-0.21+knots		cf8835a0b82	last=18eb4dbb8a
+		FIXME: checking whether to build with QWinTaskbarProgress support... checking for Berkeley DB C++ headers... /usr/include/db4.8/
+			(no result? on jun)
 	(CHECK-LAST)	last=f30b740b4ff win_taskbar_progress
 	-     restore_blockmaxsize-21				244ddb8587d	last=0df4a820dd6 restore_blockmaxsize
 	7107  qtnetworkport-21						1c31de03b71	last=1f37c87 origin-pull/7107/head
