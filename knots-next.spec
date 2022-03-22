@@ -12,6 +12,7 @@ checkout origin/23.x
 	5872 subdir_incl_compat						a218f649f67
 	24295 -													last=faf7a61483a  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 		# 24.xTODO: Can this go away?
+	24633 bugfix_suppresswarnings_regex
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
@@ -248,16 +249,14 @@ checkout origin/23.x
 	19873 mempressure							ef44bb829e6
 	# Needs work: g86   hebasto-g/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
-	g291  gui_trafficgraph_vert-0.21			6af482d58f7	last=1f373f93a60  # Enlarge Network Traffic Graph
-		# TODO: src/qt/forms/debugwindow.ui:696: Recieved ==> Received
+	g291  gui_trafficgraph_vert-0.21			6af482d58f7	last=500841e49d6  # Enlarge Network Traffic Graph
 		# WAS gui#90
 		# Removed dialog size change
+		# didn't bother with 1f373f93a60...500841e49d6 only changing widget names
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	MERGED: 20295 rpc_getblockfrompeer_wo_header-22		42a76849c19	last=9181e2e2179 Sjors/2020/11/getblockfrompeer
-		# Left out code movement
-		# Re-enabled fetching blocks w/o already having header (from older version of PR)
-		# Moved code to avoid conflict with 22577
+	-     rpc_getblockfrompeer_wo_header		42a76849c19
+		# Prior Knots bundled this in with #20295
 		TODO: gcp 15f7d87c757 RPC: Ensure getblockfrompeer errors if the peer doesn't exist, even if we already have the block
 		TODO: +#23706+#23813+#24155+#24226
 		TODO: Ensure blockhash+nodeid param names are supported (see #24294 / getblockfrompeer_param_names)
@@ -580,6 +579,7 @@ checkout origin/23.x
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		540190c138f for #24198
+		git stash show -p 35856571b90472274169ddf84d5b2ef06fdcae6e for #24629
 	n/a  (cherrypick=59fae184489)				06a4bf467f6  # update manpages (build first)
 	n/a  (cherrypick=0b0a1a14592)				b2c9337cfd7  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts

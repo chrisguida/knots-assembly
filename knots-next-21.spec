@@ -35,6 +35,7 @@ checkout v0.21.2
 	check 24291 marco/2202-fuzzNoBoost (note PR edit history)
 	24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 	24369 laanwj/2022-02-rseq
+	24633 bugfix_suppresswarnings_regex
 	TODO: get rid of -O0
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
@@ -469,6 +470,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	20275 list_unsupported_wallets-0.21+knots	45986c05cec	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
+		TODO: Add missing newline to RPC help (eab5561fba2...a01f1916c27)
 		# +#23702 +(doc from #23813) +#24226
 		# NOTE: Forward-compatible with peer_id param rename in #23706
 		#21.xTODO# TODO? Forward-compatibility with block_hash param rename in #23706 (bad idea, these changes conflict with other/standard param names)
@@ -479,6 +481,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	(CHECK-LAST)	last=4b3098817a6 origin-pull/24226/head
 	(CHECK-LAST)	last=f5e008774b5 getblockfrompeer_param_names
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
+	(CHECK-LAST)	last=a01f1916c27 rpc_getblockfrompeer_wo_header
 	20391 rpc_setfeerate-0.21					aef134635d5	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
 		# NOTE: Minimised tests to only add new ones
