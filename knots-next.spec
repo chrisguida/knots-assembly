@@ -132,6 +132,7 @@ checkout origin/23.x
 	24609 fix_doc_maxtimeadj_outboundonly-23
 	24629 bugfix_rpc_prunebc_retval
 		#23.xTODO# Check upstream concept-ACK-or-NACK
+	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:

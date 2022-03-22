@@ -347,6 +347,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: 24538 glozow/2022-03-miner-prioritised
 	Check if silently partial-only: 24579 -  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
 	Check upstream concept-ACK-or-NACK: 24629 bugfix_rpc_prunebc_retval
+	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
