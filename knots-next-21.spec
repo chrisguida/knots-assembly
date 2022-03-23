@@ -492,7 +492,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	20407 rpcauthfile-0.21+knots				389dda3a1a1	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 	(CHECK-LAST)	last=53383d94200 rpcauthfile
 		# NOTE: fixed bug, added multi-line support, and added tests
-	g149  intro_assumevalid						a434a92b063
+	g149  intro_assumevalid-21					a434a92b063	last=214d85737a5 intro_assumevalid
 	23549 rpc_scanblocks-0.21					5eaa6ce2ea6	last=e1c89184cd3 jamesob/2021-11-scanblocks
 	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	(CHECK-LAST)	last=fc381397e2b rpc_scanblocks
