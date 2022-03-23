@@ -133,7 +133,7 @@ checkout origin/23.x
 	24629 bugfix_rpc_prunebc_retval
 		#23.xTODO# Check upstream concept-ACK-or-NACK
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
-	FIXME: https://github.com/bitcoin-core/gui/issues/567
+	#23.xTODO# FIXME: https://github.com/bitcoin-core/gui/issues/567
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -261,7 +261,7 @@ checkout origin/23.x
 		# Prior Knots bundled this in with #20295
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
-	20391 rpc_setfeerate-22						237cdcaf3ee	last=1002e2d0d7f jonatack/setfeerate
+	20391 rpc_setfeerate-23						237cdcaf3ee	last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20407 rpcauthfile							aea95ce8fe7	last=ff5d7fa1e4c promag/2020-11-rpcauthfile

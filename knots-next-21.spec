@@ -485,6 +485,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	(CHECK-LAST)	last=a01f1916c27 rpc_getblockfrompeer_wo_header
 	20391 rpc_setfeerate-0.21					aef134635d5	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
+	(CHECK-LAST)	last=116199a46f4 rpc_setfeerate-23
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/upgradewallet-improvements
