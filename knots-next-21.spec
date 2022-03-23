@@ -494,6 +494,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# NOTE: fixed bug, added multi-line support, and added tests
 	g149  intro_assumevalid-21					a434a92b063	last=214d85737a5 intro_assumevalid
 		NOTE: 214d85737a5..81b24073040 =squashed to=> 253e500c9af
+		NOTE: 253e500c9af..476068f8581 is just refactoring old-Qt compat commits
 	23549 rpc_scanblocks-0.21					5eaa6ce2ea6	last=e1c89184cd3 jamesob/2021-11-scanblocks
 	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	(CHECK-LAST)	last=fc381397e2b rpc_scanblocks
