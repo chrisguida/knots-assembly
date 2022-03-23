@@ -133,6 +133,7 @@ checkout origin/23.x
 	24629 bugfix_rpc_prunebc_retval
 		#23.xTODO# Check upstream concept-ACK-or-NACK
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
+	FIXME: https://github.com/bitcoin-core/gui/issues/567
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -258,9 +259,6 @@ checkout origin/23.x
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	-     rpc_getblockfrompeer_wo_header		42a76849c19
 		# Prior Knots bundled this in with #20295
-		TODO: gcp 15f7d87c757 RPC: Ensure getblockfrompeer errors if the peer doesn't exist, even if we already have the block
-		TODO: +#23706+#23813+#24155+#24226
-		TODO: Ensure blockhash+nodeid param names are supported (see #24294 / getblockfrompeer_param_names)
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-22						237cdcaf3ee	last=1002e2d0d7f jonatack/setfeerate
@@ -528,9 +526,10 @@ checkout origin/23.x
 	-    preserve_unsupported_keyflags			d61bb3c22e9
 	-     netperms_implicit_addr				3ab6318c892
 	12674 rpc_onetry_nonpriv-22+knots			527c9a13cae
+	23.xTODO: Ensure blockhash+nodeid param names are supported by rpc_getblockfrompeer_wo_header (see #24294 / getblockfrompeer_param_names)
 	# TODO: add a bitcoinknots.conf ?
 	n/a   gui_peers_bump_setting_keys-22+k		94e73baadff
-		# TODO: Each release, see if we need to bump setting names for GUI states
+		#23.xTODO# Each release, see if we need to bump setting names for GUI states
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				b8136f8bc93
@@ -542,6 +541,7 @@ checkout origin/23.x
 	n/a   checkpoint_update-22					197ba14f3ca	last=531aaa286d3 checkpoint_update-0.21
 	10282 timebomb_knots						4c57977383e
 	-     rwconf_policy-22+knots				4c9a3ad0147
+		FIXME: https://github.com/bitcoinknots/bitcoin/issues/48
 		# Include Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
