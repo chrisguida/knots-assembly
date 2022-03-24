@@ -122,8 +122,6 @@ checkout origin/23.x
 	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval-23						last=33722279495 bugfix_settings_numberval
 	# Needs a real fix instead: 24502 glozow/2022-03-rejectlongchains
-	g555  Sjors-g/2022/02/send_button						last=2efdfb88aab
-		#23.xTODO# Be sure this got merged upstream first (Needs review & diff is annoying)
 	24521 fix_boostprocess_detect_cflags-23
 	# Needs review: 24538 glozow/2022-03-miner-prioritised
 	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
@@ -583,6 +581,7 @@ checkout origin/23.x
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		540190c138f for #24198
 		git stash show -p 35856571b90472274169ddf84d5b2ef06fdcae6e for #24629
+		need notes for #24636 ?
 	n/a  (cherrypick=59fae184489)				06a4bf467f6  # update manpages (build first)
 	n/a  (cherrypick=0b0a1a14592)				b2c9337cfd7  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts

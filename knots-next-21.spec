@@ -405,6 +405,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# Minimised diff (removed formatting changes)
 		# + docs from #23320 (left off refactor commit)
 	16795 rpc_inferred_output_descriptors-21	5d1bc19f6ca	last=6498ba151b3 instagibbs/decode_descriptor
+		FIXME: +#24636 (part or full depending on if the "desc" suppression is a bugfix)
 	(CHECK-LAST)	last=19a6902d148 rpc_inferred_output_descriptors
 	18972 neutrino_whitelist-mini-21			dabdcf3f324	last=339fe189eb9
 	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
