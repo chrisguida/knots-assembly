@@ -505,7 +505,8 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# NOTE: Was #20664
 	20702 rpc_getblocklocations-0.21			bc93fb1825b	last=9b03c654eb3
 	(CHECK-LAST)	last=b60fdcbc2dc rpc_getblocklocations
-	20827 ibd_prune_max-21						894af588353	last=24f3936337d ibd_prune_max
+	20827 ibd_prune_max-21						894af588353	last=e426bb1ab50 ibd_prune_max
+	(CHECK-LAST)	last=24f3936337d ibd_prune_max-22
 	g163  gui_peer_conntype-0.21				a39642a4ef4  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
 	g180  gui_peer_relay_detail-0.21+knots		18243adb3a3	last=79a2576af1e jonatack-g/peer-details-connection-type-followups
