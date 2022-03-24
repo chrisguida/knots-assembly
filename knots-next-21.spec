@@ -495,8 +495,11 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	g149  intro_assumevalid-21					a434a92b063	last=476068f8581 intro_assumevalid
 	(CHECK-LAST)	last=476068f8581 intro_assumevalid-23
 	23549 rpc_scanblocks-0.21					5eaa6ce2ea6	last=e1c89184cd3 jamesob/2021-11-scanblocks
+		# NOTE: Was #20664
+		# NOTE: Includes lots of additional fixes/doc improvements
+		# NOTE: Now includes #21426 (scantxoutset no longer experimental) too
 	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
-	(CHECK-LAST)	last=fc381397e2b rpc_scanblocks
+	(CHECK-LAST)	last=d28e8e4e277 rpc_scanblocks
 		# Held back insignificant comment/errormsg changes ab315e5294b...71b7cdb460e
 		# Added return value documentation (needed for QA to pass)
 		# NOTE: Was #20664
