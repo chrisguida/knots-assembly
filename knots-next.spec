@@ -1,7 +1,7 @@
-timestamp 2022-03-19 02:24:29
+timestamp 2022-03-25 12:25:43
 lastapply no-merge
 
-#.. checked up to PR #24615 / gui #563
+#.. checked up to PR #24663 / gui #569
 
 checkout origin/23.x
 @23.x-syslibs
@@ -132,6 +132,9 @@ checkout origin/23.x
 		#23.xTODO# Check upstream concept-ACK-or-NACK
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	#23.xTODO# FIXME: https://github.com/bitcoin-core/gui/issues/567
+	Needs review: 24630 -  # index: reset indexes when running reindex-chainstate
+	Needs triage & review: 24649 S3RK/wallet_correct_external_utxo
+	24659 fanquake/maybe_fix_24536
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -145,6 +148,7 @@ checkout origin/23.x
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	24448 guix_linux_i686_compat				d7cabad678b	last=c76ac9d57f2 guix_linux_i686
+		#24.xTODO# Revert #24639
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals

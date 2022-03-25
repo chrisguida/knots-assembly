@@ -1,8 +1,8 @@
-timestamp 2022-03-19 02:24:29
+timestamp 2022-03-25 12:25:43
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24615 / gui #563 for fixes
+#.. checked up to PR #24663 / gui #569 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -348,6 +348,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Check if silently partial-only: 24579 -  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
 	Check upstream concept-ACK-or-NACK: 24629 bugfix_rpc_prunebc_retval
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
+	Check applicability: 24626 -  # init: disallow reindex-chainstate when pruning
+	Needs review: 24630 -  # index: reset indexes when running reindex-chainstate
+	Needs triage: 24632 -  # print Warnings: only if warning returned
+	Needs triage & review: 24649 S3RK/wallet_correct_external_utxo
+	Triage: 24659 fanquake/maybe_fix_24536
+	Applicable? 20769 -  # net: fixes #20657 - Advertised address where nobody is listening
+		NOTE: Needs gui#568 too
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
