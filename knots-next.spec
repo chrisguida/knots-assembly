@@ -135,6 +135,7 @@ checkout origin/23.x
 	Needs review: 24630 -  # index: reset indexes when running reindex-chainstate
 	Needs triage & review: 24649 S3RK/wallet_correct_external_utxo
 	24659 fanquake/maybe_fix_24536
+	#24.xTODO# Fix for https://github.com/bitcoin/bitcoin/pull/19385
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
