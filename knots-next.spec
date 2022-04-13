@@ -1,7 +1,7 @@
-timestamp 2022-03-25 12:25:43
+timestamp 2022-04-13 02:43:18
 lastapply no-merge
 
-#.. checked up to PR #24663 / gui #569
+#.. checked up to PR #24840 / gui #581
 
 checkout origin/23.x
 @23.x-syslibs
@@ -16,6 +16,7 @@ checkout origin/23.x
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
+		TODO: Needs compat changes for newer/older versions? See also #24792
 	-     sys_univalue-23+knots
 	7485  sys_univalue_def-23+knots				1d03ddd0d67
 	#24.xTODO: sys_libminisketch
@@ -24,6 +25,11 @@ checkout origin/23.x
 	15155 test_external_bcli					0c5868df17b
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
+	# Diff-minimise? Need to test: g577 -             # Qt 6 (1/n)
+	# Only w/ rest of Qt6: g579 hebasto/220409-strut  # Qt 6 (2/n)
+	# Needs work? & test: g580 hebasto/220409-event   # Qt 6 (3/n)
+	# Needs review: 24813 hebasto/220409-appcheck     # Qt 6 (4/n)
+	# Needs work/splitting-up: 24798 hebasto/220406-qt6
 	n/a   (delete_release_notes_fragments)
 @23.x-knotsfixes
 # TESTS:
@@ -58,6 +64,7 @@ checkout origin/23.x
 		# NOTE: Was #15191 practicalswift:cs_LastBlockFile (never in Knots)
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 or 19420 (libevent cleanup)
+		# NOTE: 19420 requires #24681 ?
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
@@ -133,9 +140,22 @@ checkout origin/23.x
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	#23.xTODO# FIXME: https://github.com/bitcoin-core/gui/issues/567
 	Needs review: 24630 -  # index: reset indexes when running reindex-chainstate
+		Temporarily alternative: 24789
 	Needs triage & review: 24649 S3RK/wallet_correct_external_utxo
 	24659 fanquake/maybe_fix_24536
-	#24.xTODO# Fix for https://github.com/bitcoin/bitcoin/pull/19385
+	Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
+	24691 -  # Fix getpeerinfo doc
+	24716 laanwj/2022-03-rpc-getrawtransaction-assert
+		TODO: +#24721 ?
+	Triage: 24718 -  # rpc: getblock/getrawtransaction/decode*/gettxout fixups
+	Triage: 24722 -  # build: patch around qt duplicate symbol issue
+	Needs review: 24804 -  # Sanity assert GetAncestor() != nullptr where appropriate
+	24776 -  # docs: update /rest/chaininfo doc according to getblockchaininfo
+	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
+	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
+	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
+	24837 -  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
+	FIXME: Something to address gui#582
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -145,6 +165,11 @@ checkout origin/23.x
 		#24.xTODO# Probably need to drop this
 	24558 disable_boost_multi_index_ser-23					last=49441752ea1 fanquake/no_boost_multi_index_serialization
 	# Needs review: 24589 -  # sha512.cpp improvements
+	# Needs review: 24699 achow101/faster-available-coins
+	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
+	# Knots doesn't support MSVC builds: 24773 Enable AVX2 implementation of SHA256 for MSVC builds
+	# Needs review: 24814 -  # refactor: improve complexity of removing preselected coins
+	# Needs review: 24832 -  # index: Verify the block filter hash when reading the filter from disk.
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -262,6 +287,7 @@ checkout origin/23.x
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	-     rpc_getblockfrompeer_wo_header		42a76849c19
 		# Prior Knots bundled this in with #20295
+		See #24806
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-23						237cdcaf3ee	last=1002e2d0d7f jonatack/setfeerate
@@ -395,6 +421,9 @@ checkout origin/23.x
 	Needs work: 24615/24569/24556 guix on non-x86
 	# Needs work: 24584 -  # wallet: avoid mixing different OutputTypes during coin selection
 	24611 -  # Add fish completions
+	# Needs review: 24824 -  # net: create IP to ASN database from file - makeseeds.py
+	# Needs review + make part of sendrawtx: 24836 glozow/client-submitpackage
+	TODO? BIP 179 (tho... Lightning)
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -554,6 +583,7 @@ checkout origin/23.x
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
 	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
+	TODO: Check #24776
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		dc7e4b0d473
 	7483  svg_icon-22+knots						22cb29a7fa3

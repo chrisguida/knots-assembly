@@ -1,8 +1,8 @@
-timestamp 2022-03-25 12:25:43
+timestamp 2022-04-13 02:43:18
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24663 / gui #569 for fixes
+#.. checked up to PR #24840 / gui #581 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -116,6 +116,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		# NOTE: Was #15191 practicalswift:cs_LastBlockFile (never in Knots)
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 or 19420 (libevent cleanup)
+		# NOTE: 19420 requires #24681 ?
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
@@ -353,8 +354,22 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs triage: 24632 -  # print Warnings: only if warning returned
 	Needs triage & review: 24649 S3RK/wallet_correct_external_utxo
 	Triage: 24659 fanquake/maybe_fix_24536
+	Triage: 24690 hebasto/220328-sys
 	Applicable? 20769 -  # net: fixes #20657 - Advertised address where nobody is listening
 		NOTE: Needs gui#568 too
+	Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
+	24691 -  # Fix getpeerinfo doc
+	24716 laanwj/2022-03-rpc-getrawtransaction-assert
+		TODO: +#24721 ?
+	Triage: 24718 -  # rpc: getblock/getrawtransaction/decode*/gettxout fixups
+	Triage: 24722 -  # build: patch around qt duplicate symbol issue
+	TODO: Force inlining of functions with __m256i params in rc/crypto/sha256_avx2.cpp to fix #24727 (only when building with GCC - not MSVC or Clang!)
+	Needs review: 24804 -  # Sanity assert GetAncestor() != nullptr where appropriate
+	24776 -  # docs: update /rest/chaininfo doc according to getblockchaininfo
+	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
+	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
+	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
+	24837 -  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
@@ -480,6 +495,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
 		TODO: Add missing newline to RPC help (eab5561fba2...a01f1916c27)
+		See #24806
 		# +#23702 +(doc from #23813) +#24226
 		# NOTE: Forward-compatible with peer_id param rename in #23706
 		#21.xTODO# TODO? Forward-compatibility with block_hash param rename in #23706 (bad idea, these changes conflict with other/standard param names)
@@ -810,4 +826,6 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		540190c138f for #24198
 	n/a  (cherrypick=a76c71bf46b)				42a7a1b3d52  # update manpages (build first)
 	n/a  (cherrypick=3b34e884d32)				2d4f6166a4b  # translation update
+# EXTRA TESTS:
+	24797 -  # test: compare /chaininfo response with getblockchaininfo RPC
 # NOTE: use git diff --minimal for patches!
