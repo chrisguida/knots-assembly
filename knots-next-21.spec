@@ -360,7 +360,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
 	24716 laanwj/2022-03-rpc-getrawtransaction-assert
-		TODO: +#24721 ?
 	Triage: 24718 -  # rpc: getblock/getrawtransaction/decode*/gettxout fixups
 	Triage: 24722 -  # build: patch around qt duplicate symbol issue
 	TODO: Force inlining of functions with __m256i params in rc/crypto/sha256_avx2.cpp to fix #24727 (only when building with GCC - not MSVC or Clang!)

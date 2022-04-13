@@ -40,6 +40,7 @@ checkout origin/23.x
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	24205 jonatack/network-reachability-assertion-and-testing	last=58a14795b89
 	24687 qa_invalid_i2psam-23+knots
+	#23.xTODO# Revert pedantic RPC checks for production ; see #24695
 # FIXES:
 	18818 guix_reltar_autogen_distclean			e8914fe7cab	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						48e994efd24
@@ -144,8 +145,7 @@ checkout origin/23.x
 	24649 fix_wallet_utxos_not_external-23					last=3b83b8a3b03
 	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
-	24716 laanwj/2022-03-rpc-getrawtransaction-assert
-		TODO: +#24721 ?
+	24716 fix_doc_rpc_rawtx_pr24716-23
 	Triage: 24718 -  # rpc: getblock/getrawtransaction/decode*/gettxout fixups
 	Triage: 24722 -  # build: patch around qt duplicate symbol issue
 	Needs review: 24804 -  # Sanity assert GetAncestor() != nullptr where appropriate
