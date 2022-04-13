@@ -140,8 +140,7 @@ checkout origin/23.x
 		#23.xTODO# Check upstream concept-ACK-or-NACK
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	#23.xTODO# FIXME: https://github.com/bitcoin-core/gui/issues/567
-	Needs review: 24630 -  # index: reset indexes when running reindex-chainstate
-		Temporarily alternative: 24789
+	24630 reindexCS_resetindexes-23							last=cf531ba531c
 	Needs triage & review: 24649 S3RK/wallet_correct_external_utxo
 	Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 	24691 -  # Fix getpeerinfo doc
