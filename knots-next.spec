@@ -132,7 +132,6 @@ checkout origin/23.x
 	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval-23						last=33722279495 bugfix_settings_numberval
 	# Needs a real fix instead: 24502 glozow/2022-03-rejectlongchains
-	24521 fix_boostprocess_detect_cflags-23
 	# Needs review: 24538 glozow/2022-03-miner-prioritised
 	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
 	# Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
@@ -145,7 +144,6 @@ checkout origin/23.x
 	Needs review: 24630 -  # index: reset indexes when running reindex-chainstate
 		Temporarily alternative: 24789
 	Needs triage & review: 24649 S3RK/wallet_correct_external_utxo
-	24659 fanquake/maybe_fix_24536
 	Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 	24691 -  # Fix getpeerinfo doc
 	24716 laanwj/2022-03-rpc-getrawtransaction-assert
