@@ -136,7 +136,6 @@ checkout origin/23.x
 	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
 	# Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
 	24579 fix_docs_rpc_gbci_gdi_pr24579-23					last=facd5d92e18  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
-	24609 fix_doc_maxtimeadj_outboundonly-23
 	24629 bugfix_rpc_prunebc_retval
 		#23.xTODO# Check upstream concept-ACK-or-NACK
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
