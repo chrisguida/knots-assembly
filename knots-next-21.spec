@@ -357,8 +357,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 24690 hebasto/220328-sys
 	Applicable? 20769 -  # net: fixes #20657 - Advertised address where nobody is listening
 		NOTE: Needs gui#568 too
-	Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
-	24691 -  # Fix getpeerinfo doc
+	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
+		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
 	24716 laanwj/2022-03-rpc-getrawtransaction-assert
 		TODO: +#24721 ?
 	Triage: 24718 -  # rpc: getblock/getrawtransaction/decode*/gettxout fixups
