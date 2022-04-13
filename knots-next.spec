@@ -16,7 +16,6 @@ checkout origin/23.x
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							8cb438ae8ca
 	5416  sys_libsecp256k1						6bb55432d3d
-		TODO: Needs compat changes for newer/older versions? See also #24792
 	-     sys_univalue-23+knots
 	7485  sys_univalue_def-23+knots				1d03ddd0d67
 	#24.xTODO: sys_libminisketch
@@ -25,17 +24,22 @@ checkout origin/23.x
 	15155 test_external_bcli					0c5868df17b
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
+	# ---- BEGIN qt6 SUPPORT, TODO ----
+	# NOTE: Partial qt6 backport in WIP_qt6-23
 	# Diff-minimise? Need to test: g577 -             # Qt 6 (1/n)
 	# Only w/ rest of Qt6: g579 hebasto/220409-strut  # Qt 6 (2/n)
 	# Needs work? & test: g580 hebasto/220409-event   # Qt 6 (3/n)
 	# Needs review: 24813 hebasto/220409-appcheck     # Qt 6 (4/n)
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
+	# ---- END qt6 SUPPORT ----
 	n/a   (delete_release_notes_fragments)
 @23.x-knotsfixes
 # TESTS:
 	#23.xTODO: as needed only: -     lint_relaxer							f351877c154
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
+	24205 jonatack/network-reachability-assertion-and-testing	last=58a14795b89
+	24687 qa_invalid_i2psam-23+knots
 # FIXES:
 	18818 guix_reltar_autogen_distclean			e8914fe7cab	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						48e994efd24
@@ -114,8 +118,7 @@ checkout origin/23.x
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
-	22087 -													last=51155b512a7  # Validate port-options
-		#23.xTODO# Needs diff-minimising
+	22087 validate_port_opts-23+knots						last=1b6f8d3ea08  # Validate port-options
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 		#23.xTODO# Needs testing
 	# Needs work: 24392 hebasto/220219-cmake
