@@ -146,9 +146,9 @@ checkout origin/23.x
 	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
 	24716 fix_doc_rpc_rawtx_pr24716-23
-	Triage: 24718 -  # rpc: getblock/getrawtransaction/decode*/gettxout fixups
-	Triage: 24722 -  # build: patch around qt duplicate symbol issue
-	Needs review: 24804 -  # Sanity assert GetAncestor() != nullptr where appropriate
+	24718 fix_rpc_docs_pr24718-23+knots						last=68a041dd12b
+	#23.xTODO# Triage: 24722 -  # build: patch around qt duplicate symbol issue
+	#23.xTODO# Needs review & diff-minimising: 24804 -  # Sanity assert GetAncestor() != nullptr where appropriate
 	24776 -  # docs: update /rest/chaininfo doc according to getblockchaininfo
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
