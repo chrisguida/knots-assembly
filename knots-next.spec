@@ -149,7 +149,7 @@ checkout origin/23.x
 	24718 fix_rpc_docs_pr24718-23+knots						last=68a041dd12b
 	#23.xTODO# Triage: 24722 -  # build: patch around qt duplicate symbol issue
 	#23.xTODO# Needs review & diff-minimising: 24804 -  # Sanity assert GetAncestor() != nullptr where appropriate
-	24776 -  # docs: update /rest/chaininfo doc according to getblockchaininfo
+	24776 doc_update_rest_chaininfo-23						last=cff4fb37d7b
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
