@@ -368,6 +368,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Simply updating the docs (like older version of) if needed: 24776 -  # docs: update /rest/chaininfo doc according to getblockchaininfo
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
+		(Backport fix_noproxy_hack-23)
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	24837 -  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
 	# Simpler version of? 24845 -  # wallet: createTransaction, return proper error description for "too-long-mempool-chain" + introduce generic Result classes
