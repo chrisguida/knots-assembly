@@ -365,7 +365,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 24722 -  # build: patch around qt duplicate symbol issue
 	TODO: Force inlining of functions with __m256i params in rc/crypto/sha256_avx2.cpp to fix #24727 (only when building with GCC - not MSVC or Clang!)
 	Needs review: 24804 -  # Sanity assert GetAncestor() != nullptr where appropriate
-	24776 -  # docs: update /rest/chaininfo doc according to getblockchaininfo
+	Simply updating the docs (like older version of) if needed: 24776 -  # docs: update /rest/chaininfo doc according to getblockchaininfo
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
