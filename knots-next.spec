@@ -156,13 +156,14 @@ checkout origin/23.x
 	24776 doc_update_rest_chaininfo-23						last=1d95b5c7836
 		# Left off top commit with trivial rewording
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
-	-     fix_noproxy_hack-23
+	24837 fix_noproxy_hack-23^  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
+	-     fix_noproxy_hack-23								last=c2417785824 origin-pull/24830/head
 		# Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
+		# NOTE: Depends on #24837 to work right!
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
-	24837 -  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
 	# Simpler version of? 24845 -  # wallet: createTransaction, return proper error description for "too-long-mempool-chain" + introduce generic Result classes
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
-	24855 achow101/fix-setwalletflag-disabling
+	24855 fix_doc_rpc_setwalletflag_warnings-23
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
 	24859 -  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
 	#23.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime

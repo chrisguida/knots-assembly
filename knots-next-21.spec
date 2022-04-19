@@ -367,10 +367,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: 24804 -  # Sanity assert GetAncestor() != nullptr where appropriate
 	Simply updating the docs (like older version of) if needed: 24776 -  # docs: update /rest/chaininfo doc according to getblockchaininfo
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
+	24837 -  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
 	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
 		(Backport fix_noproxy_hack-23)
+		NOTE: Depends on #24837 to work right!
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
-	24837 -  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
 	# Simpler version of? 24845 -  # wallet: createTransaction, return proper error description for "too-long-mempool-chain" + introduce generic Result classes
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
 	24855 achow101/fix-setwalletflag-disabling
