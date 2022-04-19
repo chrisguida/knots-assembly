@@ -1,7 +1,7 @@
-timestamp 2022-04-13 02:43:18
+timestamp 2022-04-19 07:20:05
 lastapply no-merge
 
-#.. checked up to PR #24840 / gui #581
+#.. checked up to PR #24925 / gui #587
 
 checkout origin/23.x
 @23.x-syslibs
@@ -26,10 +26,14 @@ checkout origin/23.x
 	#Maybe restore: 7339  opt_libevent
 	# ---- BEGIN qt6 SUPPORT, TODO ----
 	# NOTE: Partial qt6 backport in WIP_qt6-23
-	# Diff-minimise? Need to test: g577 -             # Qt 6 (1/n)
-	# Only w/ rest of Qt6: g579 hebasto/220409-strut  # Qt 6 (2/n)
-	# Needs work? & test: g580 hebasto/220409-event   # Qt 6 (3/n)
-	# Needs review: 24813 hebasto/220409-appcheck     # Qt 6 (4/n)
+	# Diff-minimise? Need to test: g577 -                # Qt 6 (1/n)
+	# Only w/ rest of Qt6: g579 hebasto/220409-strut     # Qt 6 (2/n)
+	# Needs work? & test: g580 hebasto/220409-event      # Qt 6 (3/n)
+	# Needs review: 24813 hebasto/220409-appcheck        # Qt 6 (4/n)
+	# Only w/ rest of Qt6: g584 hebasto/220413-metatype  # Qt 6 (5/n)
+	# Needs review: g585 prusnak/qregexp-obsolete
+	# Needs review: g586 hebasto/220416-quit             # Qt 6 (6/n)
+	# Needed for Qt6?? g587 hebasto/220416-invoke510
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
 	# ---- END qt6 SUPPORT ----
 	n/a   (delete_release_notes_fragments)
@@ -154,7 +158,13 @@ checkout origin/23.x
 	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	24837 -  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
-	FIXME: Something to address gui#582
+	# Simpler version of? 24845 -  # wallet: createTransaction, return proper error description for "too-long-mempool-chain" + introduce generic Result classes
+	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
+	24855 achow101/fix-setwalletflag-disabling
+	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
+	24859 -  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
+	#23.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
+	# Needs review: 24912 mruddy/nchaintx_type
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -169,6 +179,8 @@ checkout origin/23.x
 	# Knots doesn't support MSVC builds: 24773 Enable AVX2 implementation of SHA256 for MSVC builds
 	# Needs review: 24814 -  # refactor: improve complexity of removing preselected coins
 	# Needs review: 24832 -  # index: Verify the block filter hash when reading the filter from disk.
+	24852 -  # util: optimize HexStr
+	# Needs work: 24901 -  # mempool: reduce lookups, insertions to cache in UpdateForDescendants
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -235,7 +247,7 @@ checkout origin/23.x
 	22693 getaddressinfo_txids					a2dd1687f06
 	g562  wallet_warn_reuse_gui					3cd9339e389
 		# NOTE: Was #15987
-	# Needs review/fixes? 16037 promag/2019-05-importwallet-pruned
+	# Needs review/fixes? 16037 / 24865 promag/2019-05-importwallet-pruned
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
@@ -423,6 +435,7 @@ checkout origin/23.x
 	# Needs review: 24824 -  # net: create IP to ASN database from file - makeseeds.py
 	# Needs review + make part of sendrawtx: 24836 glozow/client-submitpackage
 	TODO? BIP 179 (tho... Lightning)
+	# Needs work: 24897 w0xlt/silent_payment_021
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly

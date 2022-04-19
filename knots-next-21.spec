@@ -1,8 +1,8 @@
-timestamp 2022-04-13 02:43:18
+timestamp 2022-04-19 07:20:05
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24840 / gui #581 for fixes
+#.. checked up to PR #24925 / gui #587 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -60,6 +60,7 @@ m	7485  sys_univalue_def-21					c393c7a7f51	last=20bd5eccd54 sys_univalue_def
 	20594 conf_getauxval-0.21					563aacf22be	last=836a3dc02c7 jonas/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
 	23716 qa_own_ripemd160-21					a93adb92909
+	# TODO?? Qt6 support
 	n/a   (delete_release_notes_fragments)
 @21.x-knotsfixes
 # TESTS:
@@ -369,6 +370,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	24837 -  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
+	# Simpler version of? 24845 -  # wallet: createTransaction, return proper error description for "too-long-mempool-chain" + introduce generic Result classes
+	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
+	24855 achow101/fix-setwalletflag-disabling
+	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
+	24859 -  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
+	#21.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
+	# Needs review: 24912 mruddy/nchaintx_type
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
@@ -621,6 +629,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	g526  qt_peers_addrprocessed-21+knots
 	24307 -  # RPC: Return external_signer in getwalletinfo
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
+	# SENDING ONLY? Needs work: 24897 w0xlt/silent_payment_021
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
