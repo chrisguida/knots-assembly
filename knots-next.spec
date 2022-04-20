@@ -165,7 +165,7 @@ checkout origin/23.x
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
 	24855 fix_doc_rpc_setwalletflag_warnings-23
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
-	24859 -  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
+	24859 fix_wallet_badcreate_pr24859-23  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
 	#23.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
 	n/a   (delete_release_notes_fragments)

@@ -376,7 +376,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
 	24855 achow101/fix-setwalletflag-disabling
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
-	24859 -  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
+	24859 fix_wallet_badcreate_pr24859-21					last=e04ee884511 fix_wallet_badcreate_pr24859-23  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
 	#21.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
 	n/a   (delete_release_notes_fragments)
