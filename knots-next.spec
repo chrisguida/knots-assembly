@@ -175,14 +175,14 @@ checkout origin/23.x
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	n/a   rm_minisketch
 		#24.xTODO# Probably need to drop this
-	24558 disable_boost_multi_index_ser-23					last=49441752ea1 fanquake/no_boost_multi_index_serialization
+	24558 disable_boost_multi_index_ser-23					last=0d01272cd88 fanquake/no_boost_multi_index_serialization
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Needs review: 24699 achow101/faster-available-coins
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
 	# Knots doesn't support MSVC builds: 24773 Enable AVX2 implementation of SHA256 for MSVC builds
 	# Needs review: 24814 -  # refactor: improve complexity of removing preselected coins
 	# Needs review: 24832 -  # index: Verify the block filter hash when reading the filter from disk.
-	24852 -  # util: optimize HexStr
+	24852 optimise_hexstr_pr24852-23						last=5e61532e72c  # util: optimize HexStr
 	# Needs work: 24901 -  # mempool: reduce lookups, insertions to cache in UpdateForDescendants
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
