@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #24925 / gui #587
 
-checkout origin/23.x
+checkout v23.0
 @23.x-syslibs
 # BUILD BUGS:
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
@@ -241,7 +241,7 @@ checkout origin/23.x
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ?
-	(CHECK-LAST)	last=4af229650fe origin-pull/21422/head
+	(CHECK-LAST)	last=44273f5e73a origin-pull/21422/head
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
@@ -281,7 +281,7 @@ checkout origin/23.x
 		# w/ 22807 ?
 	# Needs review: 21726 -  # Improve Indices on pruned nodes via prune blockers
 	19463 prune_locks							05583647cd3
-	(CHECK-LAST)	last=ce081ba2b1a origin-pull/21726/head  # based on
+	(CHECK-LAST)	last=f37f2020eb3 origin-pull/21726/head  # based on
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
