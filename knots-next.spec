@@ -301,7 +301,6 @@ checkout v23.0
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	-     rpc_getblockfrompeer_wo_header		42a76849c19
 		# Prior Knots bundled this in with #20295
-		See #24806
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-23						237cdcaf3ee	last=1002e2d0d7f jonatack/setfeerate
@@ -321,9 +320,11 @@ checkout v23.0
 		# NOTE: Fixed +x on test/functional/rpc_getblocklocations.py
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							fae2ccbd3f9
-	g363  qt_peers_directionarrow-22+knots		63d06a67ec1	last=217d1051c8b qt_peers_directionarrow
+	g543  qt_peers_age_column-23  # peers-tab: add connection age column to tableview
+		# NOTE: Left off top commit enabling ResizeToContents; instead, calculated size is added in local g363-included commit
+	g363  qt_peers_directionarrow-23+knots		63d06a67ec1	last=4e2fe6b9878 qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
-		TODO: 21.x aligns the direction column on the right side
+		# TODO: Should align the direction column on the right side, but Qt ignores alignment for icons :/
 	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	# Needs work: 15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 		# Was included in 0.21.1 broken(!)
@@ -423,7 +424,6 @@ checkout v23.0
 	24198 -  # wallet, rpc: add wtxid in WalletTxToJSON
 		#23.xTODO# fix RPC help description
 	g533  -  # gui: add more detailed address error message
-	g543  RandyMcMillan-g/1643853831-peers-tab-add-duration-column
 	24408 -  # rpc: add rpc to get mempool txs spending specific prevouts
 	# Needs review: 24494 glozow/2022-03-minchange
 	# Needs concept ack: g553 w0xlt-5/change_error_background
@@ -576,6 +576,7 @@ checkout v23.0
 	-     netperms_implicit_addr				3ab6318c892
 	12674 rpc_onetry_nonpriv-22+knots			527c9a13cae
 	23.xTODO: Ensure blockhash+nodeid param names are supported by rpc_getblockfrompeer_wo_header (see #24294 / getblockfrompeer_param_names)
+		See #24806
 	# TODO: add a bitcoinknots.conf ?
 	n/a   gui_peers_bump_setting_keys-22+k		94e73baadff
 		#23.xTODO# Each release, see if we need to bump setting names for GUI states
