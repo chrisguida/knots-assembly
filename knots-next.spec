@@ -332,7 +332,7 @@ checkout v23.0
 	# ---- BEGIN HWI SUPPORT, TODO ----
 	21576 rpc_bumpfee_signer-23					b8b2d2d9baa	last=ea8f5db52b9 Sjors/2021/04/signer_bumpfee
 		# Simply dropped misc comment changes in first commit
-	21928 Sjors/2021/05/hww-toggle				c1697fa9595	last=9fcf3025aae
+	21928 rpc_hww_toggle-23						c1697fa9595	last=1af20831806 Sjors/2021/05/hww-toggle
 	# ---- END HWI SUPPORT ----
 	# TODO: 17355 -  # gui: grey out used address in address book
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
@@ -343,8 +343,8 @@ checkout v23.0
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
-	21260 -										3fedb585da1	last=46bf0b7b5d8  # rpcwallet_tx_in_mempool-0.21
-		TODO: Merge fixes from rpcwallet_tx_in_mempool-21.1+knots
+	21260 rpcwallet_tx_in_mempool-23+knots		3fedb585da1	last=46bf0b7b5d8
+		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
