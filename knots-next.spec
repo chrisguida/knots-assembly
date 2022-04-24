@@ -358,7 +358,7 @@ checkout v23.0
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
 	22072 -										98ae86d5a81	last=602f4da9178  # autoreindex-0.21
-	22159 marco/2106-buildPattern				6c70dc6bc61	last=fa14c6818f4 marco/2106-buildPattern
+	22159 conf_append_cxxflags-23				6c70dc6bc61	last=fa14c6818f4 marco/2106-buildPattern
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	g307  gui_peers_rowcolouropt-22				74d6f3d34c6	last=fdf80937d1c hebasto-g/210501-stripes
 		# Dropped formatting changes and avoided conflict with g216(optional_font)
