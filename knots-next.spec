@@ -331,8 +331,9 @@ checkout v23.0
 	# Needs work: 15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
+	24118 rpc_sendall-23
 	# ---- BEGIN HWI SUPPORT, TODO ----
-	21576 rpc_bumpfee_signer-23					b8b2d2d9baa	last=ea8f5db52b9 Sjors/2021/04/signer_bumpfee
+	21576 rpc_bumpfee_signer-23+knots			b8b2d2d9baa	last=2c07cfacd17 Sjors/2021/04/signer_bumpfee
 		# Simply dropped misc comment changes in first commit
 	21928 rpc_hww_toggle-23						c1697fa9595	last=1af20831806 Sjors/2021/05/hww-toggle
 	# ---- END HWI SUPPORT ----
@@ -415,7 +416,6 @@ checkout v23.0
 		# +#24490 achow101/fix-wallet-tr-unique-descs
 	# Needs review & BIP changes: 24058 kallewoof/202201-bip322
 	# Needs review & softer deprecation: 24098 -  # rest: Use query parameters to control resource loading
-	# Needs concept + review: 24118 -  # Add 'sweepwallet' RPC
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
 	24162 kallewoof/202201-deriveaddr-nochecksum
