@@ -375,7 +375,7 @@ checkout v23.0
 	# Needs review: 22558 achow101/taproot-psbt
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
-	22751 kallewoof/202108-analyzerawtransaction		364c0507238	last=b269f1bb0d6  # simulaterawtx
+	22751 simulaterawtransaction-23				364c0507238	last=bd520345f7a kallewoof/202108-analyzerawtransaction
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
 	# TODO: 22778 jnewbery:2021-02-tx-relay-init
@@ -387,9 +387,8 @@ checkout v23.0
 	# Needs review: 23319 -  # rpc: Return fee and prevout (utxos) to getrawtransaction
 		# Rebase of 2c56d72acac in a662191612c w/ failing test :/ (had to replace hard-coded fee assumption too)
 	# Needs API review: 23330 JeremyRubin/header-fetch
-	23362 importfromcoldcard-22					ba52f717337	last=8076f8d4c2a hebasto/211025-cc
-		# Needed fs::Path{To,From}String rebasing
-		# Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
+	23362 importfromcoldcard-23					ba52f717337	last=8076f8d4c2a hebasto/211025-cc
+		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
 	23387 greenaddress/dump_fee_estimates		ec0f6c01a85	last=d5b41e6b2ed  # savefeeestimates
 	# Needs fixes: g457 shaavan:peer-table-splitter
