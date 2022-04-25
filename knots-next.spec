@@ -92,7 +92,7 @@ checkout v23.0
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-23+knots	d0fceeac30a	last=ff1685124df
+	19888 getblockstats_utxo_actual-23+knots	d0fceeac30a	last=a04cfab8111
 		# Diff-minimised incl test changes
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
@@ -281,7 +281,8 @@ checkout v23.0
 		# w/ 22807 ?
 	# Needs review: 21726 -  # Improve Indices on pruned nodes via prune blockers
 	19463 prune_locks							05583647cd3
-	(CHECK-LAST)	last=f37f2020eb3 origin-pull/21726/head  # based on
+	(CHECK-LAST)	last=b5712ecb50d origin-pull/21726/head  # based on
+		# Skipped f37f2020eb3...b5712ecb50d due to bad rebase
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
