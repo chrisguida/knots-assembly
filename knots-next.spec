@@ -168,6 +168,7 @@ checkout v23.0
 	24859 fix_wallet_badcreate_pr24859-23  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
 	#23.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
+	#23.xTODO# Fix #24980
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -367,8 +368,8 @@ checkout v23.0
 	# Too many TODOs: 22341 Sjors/2021/06/getxpub
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							05053cd7598
-	MERGED: 22513 rpcwallet_psbt_no_finalize-22+knots	51cac865a4d	last=a99ed898655 achow101/psbt-no-finalize
-		# Modified to use a new options object instead of an additional bool positional param
+	24963 rpc_walletprocesspsbt_options-23					last=31ffd7782bf rpc_walletprocesspsbt_options
+		# Diff-minimised
 	# Needs work: g471 -  # Add Wallet Restore in the GUI
 	# Needs review: 22558 achow101/taproot-psbt
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
