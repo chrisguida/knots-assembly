@@ -282,8 +282,7 @@ checkout v23.0
 		# w/ 22807 ?
 	# Needs review: 21726 -  # Improve Indices on pruned nodes via prune blockers
 	19463 prune_locks							05583647cd3
-	(CHECK-LAST)	last=b5712ecb50d origin-pull/21726/head  # based on
-		# Skipped f37f2020eb3...b5712ecb50d due to bad rebase
+	(CHECK-LAST)	last=71c3f0356c0 origin-pull/21726/head  # based on
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
