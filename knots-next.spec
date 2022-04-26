@@ -392,13 +392,13 @@ checkout v23.0
 	23387 greenaddress/dump_fee_estimates		ec0f6c01a85	last=d5b41e6b2ed  # savefeeestimates
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs concept review: 23395 -  # util: Add -shutdownnotify option
-	23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection
+	# Needs work/review: 23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection
 	# Needs review/walletsafety checks: 23480 sipa/202110_untweakedtr
 	# Needs concept + review + BIP: 23531 prusnak/yggdrasil
 	# Needs review/deps: 23544 Sjors/2021/11/no_descriptors
 	# Needs work: 23578 Sjors/2021/11/taproot_signer
 	# Needs work: 23611 fanquake/lto_in_depends
-	Review: 23624 -  # zmq: add rawmempooltx publisher
+	# Needs review: 23624 -  # zmq: add rawmempooltx publisher
 	g469  achow101-g/b64-psbt-gui
 	g473  rebroad-g/NonLinearTraffic
 	# Needs work: g484 rebroad-g/RetainNetworkGraphOnIntervalChange
