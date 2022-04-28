@@ -399,14 +399,14 @@ checkout v23.0
 	# Needs work: 23578 Sjors/2021/11/taproot_signer
 	# Needs work: 23611 fanquake/lto_in_depends
 	# Needs review: 23624 -  # zmq: add rawmempooltx publisher
-	g469  achow101-g/b64-psbt-gui							last=d54f498f8ab achow101-g/b64-psbt-gui
-	g473  rebroad-g/NonLinearTraffic						last=4c7657f43b6
+	g469  qt_loadpsbt_b64-23								last=2c3ee4c3478 achow101-g/b64-psbt-gui
+	g473  rebroad-g/NonLinearTraffic						last=ad431ff5d18
 	# Needs work: g484 rebroad-g/RetainNetworkGraphOnIntervalChange
 	# Needs concept (performance hit?): 23662 theStack:202112-rpc-improve_getreceivedby_performance
 	g492  qt_traffic_tooltip-23+knots						last=6c139ebf710 rebroad-g/NetworkGraphTooltip
 		# Left off top commit which breaks behaviour
-	g497  qt_fontsel
-	-     qt_fontsel_qrcodes
+	g497  qt_fontsel-23+knots								last=ca6e29df02e qt_fontsel
+	-     qt_fontsel_qrcodes-23+knots						last=3bfdd05fcfd qt_fontsel_qrcodes
 		TODO: Add tor_gui_pairing support
 	TODO: qt_fontsel_console
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
