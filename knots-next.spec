@@ -157,7 +157,7 @@ checkout v23.0
 		# Left off top commit with trivial rewording
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	24837 fix_noproxy_hack-23^  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
-	-     fix_noproxy_hack-23								last=c2417785824 origin-pull/24830/head
+	-     fix_noproxy_hack-23								last=1d4122dfefc origin-pull/24830/head
 		# Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
 		# NOTE: Depends on #24837 to work right!
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
@@ -399,11 +399,12 @@ checkout v23.0
 	# Needs work: 23578 Sjors/2021/11/taproot_signer
 	# Needs work: 23611 fanquake/lto_in_depends
 	# Needs review: 23624 -  # zmq: add rawmempooltx publisher
-	g469  achow101-g/b64-psbt-gui
-	g473  rebroad-g/NonLinearTraffic
+	g469  achow101-g/b64-psbt-gui							last=d54f498f8ab achow101-g/b64-psbt-gui
+	g473  rebroad-g/NonLinearTraffic						last=4c7657f43b6
 	# Needs work: g484 rebroad-g/RetainNetworkGraphOnIntervalChange
 	# Needs concept (performance hit?): 23662 theStack:202112-rpc-improve_getreceivedby_performance
-	g492  rebroad-g/NetworkGraphTooltip
+	g492  qt_traffic_tooltip-23+knots						last=6c139ebf710 rebroad-g/NetworkGraphTooltip
+		# Left off top commit which breaks behaviour
 	g497  qt_fontsel
 	-     qt_fontsel_qrcodes
 		TODO: Add tor_gui_pairing support
@@ -526,7 +527,7 @@ checkout v23.0
 	#23.xTODO: Revert #24065 safely (ie, Ensure external signing on all systems)
 		see also #24254, #24524(?)
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
-	# Needs review: g539  RandyMcMillan/1643263956-network-graph-issue-532
+	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 # Non-upstreamed functionality:
 	n/a   restore_feefilter_opt					bf9a6597726
 	TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
