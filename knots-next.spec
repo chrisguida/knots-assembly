@@ -421,8 +421,10 @@ checkout v23.0
 	24171 ibd_from_inbound_pr24171-23+knots					last=15c16876426 sdaftuar/2022-01-download-from-inbound
 	# Needs review: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
 	24198 rpc_wtx_wtxid-23+knots							last=7abd8b21ba3
-	g533  -  # gui: add more detailed address error message
-	24408 -  # rpc: add rpc to get mempool txs spending specific prevouts
+	# Needs work: g533  -  # gui: add more detailed address error message
+		# TODO: Maybe a button inside the lineedit to display the error message?
+	24408 rpc_gettxspendingprevout-23						last=8f9335f19ce
+		# Moved code around to avoid conflicts
 	# Needs review: 24494 glozow/2022-03-minchange
 	# Needs concept ack: g553 w0xlt-5/change_error_background
 		# CAUTION: requires theming changes for gui#537
