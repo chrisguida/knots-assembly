@@ -242,7 +242,7 @@ checkout v23.0
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ?
-	(CHECK-LAST)	last=1de334c5f70 origin-pull/21422/head
+	(CHECK-LAST)	last=f34072a4d4f origin-pull/21422/head
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
@@ -420,8 +420,7 @@ checkout v23.0
 	# Needs work/diff-minimisation: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
 	24171 ibd_from_inbound_pr24171-23+knots					last=15c16876426 sdaftuar/2022-01-download-from-inbound
 	# Needs review: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
-	24198 -  # wallet, rpc: add wtxid in WalletTxToJSON
-		#23.xTODO# fix RPC help description
+	24198 rpc_wtx_wtxid-23+knots							last=7abd8b21ba3
 	g533  -  # gui: add more detailed address error message
 	24408 -  # rpc: add rpc to get mempool txs spending specific prevouts
 	# Needs review: 24494 glozow/2022-03-minchange
