@@ -407,8 +407,7 @@ checkout v23.0
 		# Left off top commit which breaks behaviour
 	g497  qt_fontsel-23+knots								last=ca6e29df02e qt_fontsel
 	-     qt_fontsel_qrcodes-23+knots						last=3bfdd05fcfd qt_fontsel_qrcodes
-		TODO: Add tor_gui_pairing support
-	TODO: qt_fontsel_console
+	# TODO: qt_fontsel_console
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
 	# Needs review: 24043 sipa/202201_multi_a
@@ -482,6 +481,7 @@ checkout v23.0
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-22+knots				b0cfbb9f68f	last=16cb2ae1fe0 tor_gui_pairing-0.21+knots
 		FIXME: Revert 4a881554991 (buggy) in favour of g506
+		TODO: Add qt_fontsel_qrcodes support
 	15421 tor_subprocess-22+knots				db4dd219005	last=58c6cafd3a1 tor_subprocess
 	# TODO: tor guix bundle!
 	15633 nohbcbfornonwit						8e9e203c847
