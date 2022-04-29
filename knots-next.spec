@@ -242,7 +242,7 @@ checkout v23.0
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ?
-	(CHECK-LAST)	last=44273f5e73a origin-pull/21422/head
+	(CHECK-LAST)	last=1de334c5f70 origin-pull/21422/head
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
