@@ -428,8 +428,10 @@ checkout v23.0
 		# CAUTION: requires theming changes for gui#537
 	24408 rpc_gettxspendingprevout-23						last=8f9335f19ce
 		# Moved code around to avoid conflicts
+	# Needs work & complex test rebasing: 24539   # Add a "tx output spender" index
+		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
+		# NOTE: When rebasing post-#21726, need to restore AllowPrune func ?
 	# Needs review: 24494 glozow/2022-03-minchange
-	Needs optionality/review: 24539 -  # Add a "tx output spender" index
 	Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
 	Needs review? 24552 prusnak/guix-attest-override-gpg
 	Needs work: 24615/24569/24556 guix on non-x86
