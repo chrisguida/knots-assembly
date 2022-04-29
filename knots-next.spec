@@ -423,12 +423,12 @@ checkout v23.0
 	24198 rpc_wtx_wtxid-23+knots							last=7abd8b21ba3
 	# Needs work: g533  -  # gui: add more detailed address error message
 		# TODO: Maybe a button inside the lineedit to display the error message?
+	# OR: Needs work? g560 w0xlt-g/3_error_message_addr
+	# Needs concept ack: g553 w0xlt-5/change_error_background
+		# CAUTION: requires theming changes for gui#537
 	24408 rpc_gettxspendingprevout-23						last=8f9335f19ce
 		# Moved code around to avoid conflicts
 	# Needs review: 24494 glozow/2022-03-minchange
-	# Needs concept ack: g553 w0xlt-5/change_error_background
-		# CAUTION: requires theming changes for gui#537
-	Needs work? g560 w0xlt-g/3_error_message_addr
 	Needs optionality/review: 24539 -  # Add a "tx output spender" index
 	Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
 	Needs review? 24552 prusnak/guix-attest-override-gpg
