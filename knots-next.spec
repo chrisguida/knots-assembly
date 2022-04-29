@@ -416,10 +416,9 @@ checkout v23.0
 	# Needs review & softer deprecation: 24098 -  # rest: Use query parameters to control resource loading
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
-	24162 kallewoof/202201-deriveaddr-nochecksum
-		TODO: Change example/nit
-	Review closer: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
-	24171 sdaftuar/2022-01-download-from-inbound
+	24162 kallewoof/202201-deriveaddr-nochecksum			last=1345e8d817a kallewoof/202201-deriveaddr-nochecksum
+	# Needs work/diff-minimisation: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
+	24171 ibd_from_inbound_pr24171-23+knots					last=15c16876426 sdaftuar/2022-01-download-from-inbound
 	# Needs review: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
 	24198 -  # wallet, rpc: add wtxid in WalletTxToJSON
 		#23.xTODO# fix RPC help description
