@@ -645,7 +645,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	9245  ionice-21								d935e6fc4ab	last=bd42a85777d ionice
 	(CHECK-LAST)	last=6de915d6dc0 ionice-22
 		# NOTE: Left off deprioritisation of LoadExternalBlockFile, ReplayBlocks, RollforwardBlock(22.x?)
-	-     ionice_win-22							1c6f29b3e4f	last=b59bc253116 ionice_win
+	-     ionice_win-0.21						1c6f29b3e4f	last=352acd5b650 ionice_win
+	(CHECK-LAST)	last=b59bc253116 ionice_win-22
 	8501  old_stats_rpc-0.21					3eee2d40dbe	last=7af0ea43b2
 	(CHECK-LAST)	last=8cfab679cb2 old_stats_rpc-22
 		# Held back on old version due to conflict with GUI updates...
