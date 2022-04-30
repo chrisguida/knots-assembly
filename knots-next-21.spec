@@ -638,6 +638,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
+	(CHECK-LAST)	last=4674af58290 sort-multisigs-23
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	9152  sweepprivkeys-0.21					2aeaeeb1ba1	last=6fcb1e43426 sweepprivkeys
 	9245  ionice-21								d935e6fc4ab	last=6de915d6dc0 ionice

@@ -310,7 +310,7 @@ checkout v23.0
 	20407 rpcauthfile							aea95ce8fe7	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
-	g149  intro_assumevalid-23					aa633c92306	last=88863cf11c7 intro_assumevalid
+	g149  intro_assumevalid-23					aa633c92306	last=75aff9e0ff7 intro_assumevalid
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	23549 rpc_scanblocks						7c0065a63e4	last=e1c89184cd3 jamesob/2021-11-scanblocks
@@ -442,7 +442,7 @@ checkout v23.0
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
 	# Needs work: 24897 w0xlt/silent_payment_021
 # Non-progress functionality:
-	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting
+	8751  sort-multisigs-23						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					32dd1d34493	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							a11d2d5c91d
