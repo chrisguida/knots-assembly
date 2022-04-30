@@ -432,14 +432,14 @@ checkout v23.0
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
 		# NOTE: When rebasing post-#21726, need to restore AllowPrune func ?
 	# Needs review: 24494 glozow/2022-03-minchange
-	Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
-	Needs review? 24552 prusnak/guix-attest-override-gpg
-	Needs work: 24615/24569/24556 guix on non-x86
+	# Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
+	# Not worth it? 24552 prusnak/guix-attest-override-gpg
+	# Not worth it? 24615/24569/24556 guix on non-x86
 	# Needs work: 24584 -  # wallet: avoid mixing different OutputTypes during coin selection
-	24611 -  # Add fish completions
+	# Not worth it: 24611 -  # Add fish completions
 	# Needs review: 24824 -  # net: create IP to ASN database from file - makeseeds.py
 	# Needs review + make part of sendrawtx: 24836 glozow/client-submitpackage
-	TODO? BIP 179 (tho... Lightning)
+	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
 	# Needs work: 24897 w0xlt/silent_payment_021
 # Non-progress functionality:
 	8751  sort-multisigs-22						6923385f2e0	last=e11cb50a09  # multisig sorting

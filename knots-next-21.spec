@@ -523,7 +523,8 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# NOTE: Held back refactoring & unrelated changes
 	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/upgradewallet-improvements
 	20407 rpcauthfile-0.21+knots				389dda3a1a1	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
-	(CHECK-LAST)	last=53383d94200 rpcauthfile
+	(CHECK-LAST)	last=53383d94200 rpcauthfile-22
+	(CHECK-LAST)	last=9ea91885d34 rpcauthfile
 		# NOTE: fixed bug, added multi-line support, and added tests
 	g149  intro_assumevalid-21					a434a92b063	last=476068f8581 intro_assumevalid
 	(CHECK-LAST)	last=476068f8581 intro_assumevalid-23
@@ -537,7 +538,8 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# Added return value documentation (needed for QA to pass)
 		# NOTE: Was #20664
 	20702 rpc_getblocklocations-0.21			bc93fb1825b	last=9b03c654eb3
-	(CHECK-LAST)	last=b60fdcbc2dc rpc_getblocklocations
+	(CHECK-LAST)	last=b60fdcbc2dc rpc_getblocklocations-22
+	(CHECK-LAST)	last=df143989eba rpc_getblocklocations
 	20827 ibd_prune_max-21						894af588353	last=e426bb1ab50 ibd_prune_max
 	(CHECK-LAST)	last=24f3936337d ibd_prune_max-22
 	g163  gui_peer_conntype-0.21				a39642a4ef4  # jonatack-g/display-peer-conn-types
@@ -564,7 +566,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
 	#21.2TODO#(CHECK-LAST)	last=??? remove_watch_only_address-22
-	21319 getblock_optimise						def4cce130b
+	21319 getblock_optimise-21					def4cce130b	last=43882cf5240 getblock_optimise
 		# Context: 17529 rpc: Faster getblock using PureBlock
 	19763 p2p_no_relay_to_origin-0.21+knots		d2b73d2d218
 	20365 wallettool_create_descriptors-0.21+k	24eb0deabc3
@@ -575,6 +577,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		#TODO: minimise
 	21173 optimise_hexstr-0.21					211f7cf954e
 	21260 rpcwallet_tx_in_mempool-21.1+knots	5e9dcde9997	last=46bf0b7b5d8
+	(CHECK-LAST)	last=??? rpcwallet_tx_in_mempool-23+knots
 	g213  gui_payrequest_copyaddr-0.18			3fbc3512e3c
 	g214  gui_payrequest_disablena-0.18+knots	88cfbc9641b
 	21327 p2p_ignore_tx_in_ibd-0.21				cb54eca2c0b	last=6aed8b7e9b2
