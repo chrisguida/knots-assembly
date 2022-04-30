@@ -640,7 +640,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
 	(CHECK-LAST)	last=4674af58290 sort-multisigs-23
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
-	9152  sweepprivkeys-0.21					2aeaeeb1ba1	last=6fcb1e43426 sweepprivkeys
+	9152  sweepprivkeys-0.21					2aeaeeb1ba1	last=3309fcf0008 sweepprivkeys
+	(CHECK-LAST)	last=6fcb1e43426 sweepprivkeys-22
 	9245  ionice-21								d935e6fc4ab	last=6de915d6dc0 ionice
 		# NOTE: Left off deprioritisation of LoadExternalBlockFile, ReplayBlocks, RollforwardBlock(22.x?)
 	-     ionice_win-22							1c6f29b3e4f	last=b59bc253116 ionice_win
