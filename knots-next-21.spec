@@ -656,6 +656,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=aa3f38ecd79 old_stats_qt-23
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-0.21					5e32058f65a	last=07fc81109a
+	(CHECK-LAST)	last=??? dumpmasterprivkey-22
+	(CHECK-LAST)	last=??? dumpmasterprivkey-23
 	g444  gui_netwatch-0.21+knots				842149fff05	last=b227e4db46f gui_netwatch
 	(CHECK-LAST)	last=7f59a6deb52 gui_netwatch-22+knots
 		# NOTE: Was #9849
