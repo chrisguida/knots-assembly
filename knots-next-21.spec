@@ -662,8 +662,11 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=7f59a6deb52 gui_netwatch-22+knots
 	(CHECK-LAST)	last=05dd68089e0 gui_netwatch-23+knots
 		# NOTE: Was #9849
-	10615 multiwallet_rpc-0.21+knots			bae1509a9d1	last=5a10f8307a5 multiwallet_rpc
+	10615 multiwallet_rpc-0.21+knots			bae1509a9d1	last=ade18a8f119 multiwallet_rpc-23+knots
 	(CHECK-LAST)	last=d927c064439 multiwallet_rpc-22+knots
+		FIXME: de-duplicate GetWalletRestrictionFromJSONRPCRequest declaration in headers
+			./wallet/rpcwallet.h:25:6: warning: redundant redeclaration of ‘bool GetWalletRestrictionFromJSONRPCRequest(const JSONRPCRequest&, std::string&)’ in same scope [-Wredundant-decls]
+			./rpc/util.h:370:6: note: previous declaration of ‘bool GetWalletRestrictionFromJSONRPCRequest(const JSONRPCRequest&, std::string&)’
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-0.21+knots					a6b0a8894fb	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	(CHECK-LAST)	last=39cf88db90b zmq_wtx-22+knots

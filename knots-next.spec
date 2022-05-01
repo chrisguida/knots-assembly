@@ -455,10 +455,9 @@ checkout v23.0
 	9504 dumpmasterprivkey-23					e7951b8f304	last=07fc81109a
 	g444  gui_netwatch-23+knots					921c47226f3	last=36c0dfaefca gui_netwatch
 		# NOTE: Was #9849
-	10615 multiwallet_rpc-22+knots			a0cae660051	last=5a10f8307a5 multiwallet_rpc
-		TODO: adapt to #22541 being merged
-		FIXME: ./wallet/rpcwallet.h:25:6: warning: redundant redeclaration of ‘bool GetWalletRestrictionFromJSONRPCRequest(const JSONRPCRequest&, std::string&)’ in same scope [-Wredundant-decls]
-			./rpc/util.h:370:6: note: previous declaration of ‘bool GetWalletRestrictionFromJSONRPCRequest(const JSONRPCRequest&, std::string&)’
+	10615 multiwallet_rpc-23+knots				a0cae660051  # latest code now
+		# CAUTION: Be extra careful rebasing - diff/patch default context moves code around between RPC methods!
+		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-22+knots						27d1ffd6d18	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
