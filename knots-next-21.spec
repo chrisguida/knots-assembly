@@ -660,7 +660,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=??? dumpmasterprivkey-23
 	g444  gui_netwatch-0.21+knots				842149fff05	last=36c0dfaefca gui_netwatch
 	(CHECK-LAST)	last=7f59a6deb52 gui_netwatch-22+knots
-	(CHECK-LAST)	last=5e3762a6887 gui_netwatch-23+knots
+	(CHECK-LAST)	last=05dd68089e0 gui_netwatch-23+knots
 		# NOTE: Was #9849
 	10615 multiwallet_rpc-0.21+knots			bae1509a9d1	last=5a10f8307a5 multiwallet_rpc
 	(CHECK-LAST)	last=d927c064439 multiwallet_rpc-22+knots
