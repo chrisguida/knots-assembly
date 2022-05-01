@@ -649,9 +649,11 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=b59bc253116 ionice_win-22
 	8501  old_stats_rpc-0.21					3eee2d40dbe	last=7af0ea43b2
 	(CHECK-LAST)	last=8cfab679cb2 old_stats_rpc-22
+	(CHECK-LAST)	last=040565d1047 old_stats_rpc-23
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-0.21						65892ef0064	last=63fb11652f
 	(CHECK-LAST)	last=9b99d9c327b old_stats_qt-22
+	(CHECK-LAST)	last=aa3f38ecd79 old_stats_qt-23
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-0.21					5e32058f65a	last=07fc81109a
 	g444  gui_netwatch-0.21+knots				842149fff05	last=b227e4db46f gui_netwatch

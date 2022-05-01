@@ -448,9 +448,9 @@ checkout v23.0
 	9152 sweepprivkeys							a11d2d5c91d
 	9245 ionice									f3b535766d2
 	-    ionice_win								370875f21a3
-	8501  old_stats_rpc-22						2f51ef3fa07	last=7af0ea43b2
+	8501  old_stats_rpc-23						2f51ef3fa07	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
-	8550  old_stats_qt-22						48a7702ab96	last=63fb11652f
+	8550  old_stats_qt-23						48a7702ab96	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-22					e7951b8f304	last=07fc81109a
 	g444  gui_netwatch-22+knots					921c47226f3	last=b227e4db46f gui_netwatch
