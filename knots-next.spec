@@ -453,7 +453,7 @@ checkout v23.0
 	8550  old_stats_qt-23						48a7702ab96	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-23					e7951b8f304	last=07fc81109a
-	g444  gui_netwatch-22+knots					921c47226f3	last=b227e4db46f gui_netwatch
+	g444  gui_netwatch-22+knots					921c47226f3	last=a1583d3d037 gui_netwatch
 		# NOTE: Was #9849
 	10615 multiwallet_rpc-22+knots			a0cae660051	last=5a10f8307a5 multiwallet_rpc
 		TODO: adapt to #22541 being merged
