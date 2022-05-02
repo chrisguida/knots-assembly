@@ -478,9 +478,9 @@ checkout v23.0
 		# Fixed a minor bug in conf_target range check
 	11803 bugfix_dumpwallet_hdkeypath			48684964394
 	12965 scriptthreads							cc6dca5b8d6	last=dfab6c6866 jonas/2018/04/svt
-	13203 dsha256_power8-0.20					7a7804cd627	last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-23						7a7804cd627	last=3b402e0738 matt/2018-05-asm
 		# NOTE: Stripped out benchmark change
-	-     dsha256_power8-0.20_asm_pragmas		8ef3c1cb910
+	-     dsha256_power8_asm_pragmas-23			8ef3c1cb910
 	15218 postibd_flush-22+knots				5a11498f7df	last=d2ecb70d64  # validation: Flush state after initial sync
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-22+knots				b0cfbb9f68f	last=16cb2ae1fe0 tor_gui_pairing-0.21+knots
