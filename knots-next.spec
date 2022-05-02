@@ -484,9 +484,8 @@ checkout v23.0
 	-     dsha256_power8_asm_pragmas-23			8ef3c1cb910
 	15218 postibd_flush-23						5a11498f7df	last=d2ecb70d64  # validation: Flush state after initial sync
 		# TODO: Rewrite after #17487 is ready/safe to merge
-	15428 tor_gui_pairing-22+knots				b0cfbb9f68f	last=16cb2ae1fe0 tor_gui_pairing-0.21+knots
-		FIXME: Revert 4a881554991 (buggy) in favour of g506
-		TODO: Add qt_fontsel_qrcodes support
+	15428 tor_gui_pairing-23+knots				b0cfbb9f68f	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
+		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-22+knots				db4dd219005	last=58c6cafd3a1 tor_subprocess
 	# TODO: tor guix bundle!
 	15633 nohbcbfornonwit						8e9e203c847

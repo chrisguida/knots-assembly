@@ -701,7 +701,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	15218 postibd_flush-21+knots				8858f44e523	last=d2ecb70d64  # validation: Flush stateafter initial sync
 	(CHECK-LAST)	last=8faeb93d48d postibd_flush-22+knots
 	(CHECK-LAST)	last=6bd37fe1133 postibd_flush-23
-	15428 tor_gui_pairing-0.21+knots			9b710f4ddfb	# latest code now
+	15428 tor_gui_pairing-0.21+knots			9b710f4ddfb	last=5ad95e709c0 tor_gui_pairing-23+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 16cb2ae1fe0)
 	(CHECK-LAST)	last=4a881554991 tor_gui_pairing-22+knots
 	15421 tor_subprocess-0.21+knots				ccf77ea4de5	last=58c6cafd3a1 tor_subprocess
