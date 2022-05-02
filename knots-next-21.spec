@@ -671,9 +671,11 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	10554 zmq_wtx-0.21+knots					a6b0a8894fb	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	(CHECK-LAST)	last=39cf88db90b zmq_wtx-22+knots
 	(CHECK-LAST)	last=89134d1eb4c zmq_wtx-23+knots
-	20551 rpc_onetry_conntype-21				d7fcef7c236	last=7661ce6ddaf rpc_onetry_conntype
+	20551 rpc_onetry_conntype-21				d7fcef7c236	last=1c63b3ff236 rpc_onetry_conntype
+	(CHECK-LAST)	last=7661ce6ddaf rpc_onetry_conntype-22
 		# NOTE: Originally based on #12674
-	10593 relax_invblk_punishment-0.21+knots	d4765cc92bd	last=57903e3f34d relax_invblk_punishment
+	10593 relax_invblk_punishment-0.21+knots	d4765cc92bd	last=037db08a179 relax_invblk_punishment
+	(CHECK-LAST)	last=57903e3f34d relax_invblk_punishment-22
 	10350 filtered_witblock-0.21				4e1122ece17	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 	(CHECK-LAST)	last=6bf4092cb7b filtered_witblock-22
 		# NOTE: Don't bump protocol version!
