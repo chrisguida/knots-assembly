@@ -475,6 +475,7 @@ checkout v23.0
 	11750 coincontrol_multiselect				344d8477765	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
 	11770 rest_fee								c79b2dd3914	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+		# Fixed a minor bug in conf_target range check
 	11803 bugfix_dumpwallet_hdkeypath			48684964394
 	12965 scriptthreads							cc6dca5b8d6	last=dfab6c6866 jonas/2018/04/svt
 	13203 dsha256_power8-0.20					7a7804cd627	last=3b402e0738 matt/2018-05-asm
