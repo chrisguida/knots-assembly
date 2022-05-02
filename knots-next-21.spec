@@ -379,6 +379,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24859 fix_wallet_badcreate_pr24859-21					last=e04ee884511 fix_wallet_badcreate_pr24859-23  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
 	#21.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
+	TODO: Only half of 25051 fix_configure_def_enable_arm_asms
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
@@ -699,6 +700,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	-     dsha256_power8-0.20_asm_pragmas		60c82d4c598	last=99986de8b02 dsha256_power8_asm_pragmas-23
 	15218 postibd_flush-21+knots				8858f44e523	last=d2ecb70d64  # validation: Flush stateafter initial sync
 	(CHECK-LAST)	last=8faeb93d48d postibd_flush-22+knots
+	(CHECK-LAST)	last=6bd37fe1133 postibd_flush-23
 	15428 tor_gui_pairing-0.21+knots			9b710f4ddfb	# latest code now
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 16cb2ae1fe0)
 	(CHECK-LAST)	last=4a881554991 tor_gui_pairing-22+knots
