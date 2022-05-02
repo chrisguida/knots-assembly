@@ -687,7 +687,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	11770 rest_fee-0.21							1009e765049	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	(CHECK-LAST)	last=cec2e1bb857 rest_fee-22
 	(CHECK-LAST)	last=3d92d4ec907 rest_fee
-	11803 bugfix_dumpwallet_hdkeypath			280b1276bfb
+	11803 bugfix_dumpwallet_hdkeypath-0.20		280b1276bfb
+	(CHECK-LAST)	last=a6d25571113 bugfix_dumpwallet_hdkeypath
 	12965 scriptthreads-0.20					095986b847a	last=dfab6c6866 jonas/2018/04/svt
 	(CHECK-LAST)	last=f6052208ab0 scriptthreads
 		# Held back RPCResult NONE cuz undocumented is actually better
