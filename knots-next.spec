@@ -468,6 +468,7 @@ checkout v23.0
 	# Needs work: 24952 -  # rpc: Add sqlite format option for dumptxoutset
 	# Concept NACK? 25026 -  # rpc: Make pruneblockchain fetch old blocks if height is lower than pruned height
 	# Needs triage & review: 25038 glozow/package-rbf
+	# Needs licensing/review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 # Non-progress functionality:
 	8751  sort-multisigs-23						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
