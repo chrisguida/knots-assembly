@@ -1,8 +1,8 @@
-timestamp 2022-04-19 07:20:05
+timestamp 2022-05-08 06:19:32
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #24925 / gui #587 for fixes
+#.. checked up to PR #25086 / gui #595 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -229,6 +229,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	22591 missing_settings_err-0.21				b2631c36f28
 	22834 bugfix_onlynet-21						ffe8ea31150	last=0eea83a85ec vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
+		TODO: +#24991
 	(CHECK-LAST)	last=61c0c0f7bad bugfix_onlynet-22
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	22722 fix_estsfee_minrelay-21+knots			65397b3d6f1	last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
@@ -380,6 +381,17 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	#21.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
 	TODO: Only half of 25051 fix_configure_def_enable_arm_asms
+	24933 laanwj/2022-04-strerror-threadsafe
+	24957 mruddy/issue_23852_import_prune  # allow pruning to work during loadblock import
+	Diff-minimise: 24977 achow101/better-listdescriptors-docs
+	24984 mzumsande/202204_wallet_rescan
+	# Needs review: 24994 hebasto/220426-consensus
+	Needs care in 21.x (descriptors=False default): 25011 achow101/fix-legacy-createwallet-test
+	Needs review: 25019 -  # parse external signer master fp as bytes in ExternalSigner::SignTransaction
+	# Needs review: 25036 w0xlt/save_scan_progress
+	Needs review? 25074 -  # index: During sync, commit best block after indexing
+	Needs review: 25077 -  # Fix chain tip data race and corrupt rest response
+	g595  mruddy/issue_24953  # Avoid unclean exit due to permissions issues when setting start on system startup
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
@@ -507,6 +519,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		TODO: Add missing newline to RPC help (eab5561fba2...a01f1916c27)
 		See #24806
 		# +#23702 +(doc from #23813) +#24226
+		TODO: +#24944
 		# NOTE: Forward-compatible with peer_id param rename in #23706
 		#21.xTODO# TODO? Forward-compatibility with block_hash param rename in #23706 (bad idea, these changes conflict with other/standard param names)
 		#21.xTODO# TODO??? API change * 60243cac728 rpc: turn already downloaded into error in getblockfrompeer
@@ -663,6 +676,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=7f59a6deb52 gui_netwatch-22+knots
 	(CHECK-LAST)	last=05dd68089e0 gui_netwatch-23+knots
 		# NOTE: Was #9849
+		# NOTE: Includes #25050
 	10615 multiwallet_rpc-0.21+knots			bae1509a9d1	last=ade18a8f119 multiwallet_rpc-23+knots
 	(CHECK-LAST)	last=d927c064439 multiwallet_rpc-22+knots
 		FIXME: de-duplicate GetWalletRestrictionFromJSONRPCRequest declaration in headers
@@ -803,6 +817,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	11413 rpc_feemode_explicit_compat-0.21+knots	194343ec101 last=56553e0d43c rpc_feemode_explicit_compat-22
 	-     netperms_implicit_addr-0.21+knots		7d39ba69a9e	last=d1ce634b708 netperms_implicit_addr
 	12674 rpc_onetry_nonpriv-0.21+knots			7607b0cb005	last=054c2214369 rpc_onetry_nonpriv-22+knots
+	Maybe? 24963 rpc_walletprocesspsbt_options
 	# TODO: add a bitcoinknots.conf ?
 # POLICY:
 	-    1day_default_conftarget				3f1c8d8ab40

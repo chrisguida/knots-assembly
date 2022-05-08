@@ -1,7 +1,7 @@
-timestamp 2022-04-19 07:20:05
+timestamp 2022-05-08 06:19:32
 lastapply no-merge
 
-#.. checked up to PR #24925 / gui #587
+#.. checked up to PR #25086 / gui #595
 
 checkout v23.0
 @23.x-syslibs
@@ -34,6 +34,9 @@ checkout v23.0
 	# Needs review: g585 prusnak/qregexp-obsolete
 	# Needs review: g586 hebasto/220416-quit             # Qt 6 (6/n)
 	# Needed for Qt6?? g587 hebasto/220416-invoke510
+	# Only w/ rest: g589 hebasto/220420-walletmodel      # Qt 6 (7/n)
+	# Needs review/conceptack: g592 hebasto/220423-wildcard
+	# Needs review: g593 hebasto/220423-re
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
 	# ---- END qt6 SUPPORT ----
 	n/a   (delete_release_notes_fragments)
@@ -169,7 +172,22 @@ checkout v23.0
 	#23.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
 	25051 fix_configure_def_enable_arm_asms
-	#23.xTODO# Fix #24980
+	24933 laanwj/2022-04-strerror-threadsafe
+	24944 jonatack/getblockfrompeer-param-inputs
+	24957 mruddy/issue_23852_import_prune  # allow pruning to work during loadblock import
+	Just the static_assert: 24962 -  # prevector: enforce is_trivially_copyable_v
+	# Needs review: 24972 hebasto/220425-no-libtool
+	Diff-minimise: 24977 achow101/better-listdescriptors-docs
+	24984 mzumsande/202204_wallet_rescan
+	24991 vasild/onlynet_onion_with_listenonion_is_ok
+	# Needs review: 24994 hebasto/220426-consensus
+	25011 achow101/fix-legacy-createwallet-test
+	Needs review: 25019 -  # parse external signer master fp as bytes in ExternalSigner::SignTransaction
+	# Needs review: 25036 w0xlt/save_scan_progress
+	Alternative to 25037 build: Create noinst_LTLIBRARIES conditionally
+	Needs review? 25074 -  # index: During sync, commit best block after indexing
+	Needs review: 25077 -  # Fix chain tip data race and corrupt rest response
+	g595  mruddy/issue_24953  # Avoid unclean exit due to permissions issues when setting start on system startup
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -186,6 +204,9 @@ checkout v23.0
 	# Needs review: 24832 -  # index: Verify the block filter hash when reading the filter from disk.
 	24852 optimise_hexstr_pr24852-23						last=5e61532e72c  # util: optimize HexStr
 	# Needs work: 24901 -  # mempool: reduce lookups, insertions to cache in UpdateForDescendants
+	# Needs review: 24926 -  # mempool: use mapNextTx.lower_bound in removeRecursive
+	# Probably not worth it before BIP324, needs review and diff-minimising: 24946 -  # Unroll the ChaCha20 inner loop for performance
+	Part of 25013 -  # Remove cs_main from verifymessage, move msg utils to new file
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -302,6 +323,7 @@ checkout v23.0
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	-     rpc_getblockfrompeer_wo_header		42a76849c19
+		TODO: Check #24944 compatibility (type check)
 		# Prior Knots bundled this in with #20295
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
@@ -442,6 +464,10 @@ checkout v23.0
 	# Needs review + make part of sendrawtx: 24836 glozow/client-submitpackage
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
 	# Needs work: 24897 w0xlt/silent_payment_021
+	24950 -  # Add config option to set max debug log size
+	# Needs work: 24952 -  # rpc: Add sqlite format option for dumptxoutset
+	# Concept NACK? 25026 -  # rpc: Make pruneblockchain fetch old blocks if height is lower than pruned height
+	# Needs triage & review: 25038 glozow/package-rbf
 # Non-progress functionality:
 	8751  sort-multisigs-23						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -456,6 +482,7 @@ checkout v23.0
 	9504 dumpmasterprivkey-23					e7951b8f304	last=07fc81109a
 	g444  gui_netwatch-23+knots					921c47226f3	last=36c0dfaefca gui_netwatch
 		# NOTE: Was #9849
+		# NOTE: Includes #25050
 	10615 multiwallet_rpc-23+knots				a0cae660051  # latest code now
 		# CAUTION: Be extra careful rebasing - diff/patch default context moves code around between RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
@@ -553,6 +580,7 @@ checkout v23.0
 		TODO: Check if we're using UCSUR or not
 	 553 bugfix_qt_uri_amount_parser			864d90dc093
 	-    mining_priority						aeb54b4fc8f  # NOTE: now the latest code, rebased
+		#24.xTODO# Revert #24934 ?
 	5861 gui_restore_addresses					8f11d2dcae3
 	5891  qt_console_history_persist			189074c6a1a	last=0cd5fc301d6 qt_console_history_persist
 	7219  fullrbf-22+knots						5c5190476b9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
