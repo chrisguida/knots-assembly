@@ -126,7 +126,7 @@ checkout v23.0
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
-	22087 validate_port_opts-23+knots						last=1b6f8d3ea08  # Validate port-options
+	22087 validate_port_opts-23+knots						last=ce4652aaa01  # Validate port-options
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 		#23.xTODO# Needs testing
 	# Needs work: 24392 hebasto/220219-cmake
@@ -172,9 +172,9 @@ checkout v23.0
 	#23.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
 	25051 fix_configure_def_enable_arm_asms
-	24933 laanwj/2022-04-strerror-threadsafe
-	24944 jonatack/getblockfrompeer-param-inputs
-	24957 mruddy/issue_23852_import_prune  # allow pruning to work during loadblock import
+	24933 strerror_threadsafe-23
+	24944 rpc_getblockfrompeer_typecheck-23					last=a926025ca82 jonatack/getblockfrompeer-param-inputs
+	24957 fix_prune_during_loadblock-22						last=da8e95c0140 mruddy/issue_23852_import_prune
 	Just the static_assert: 24962 -  # prevector: enforce is_trivially_copyable_v
 	# Needs review: 24972 hebasto/220425-no-libtool
 	Diff-minimise: 24977 achow101/better-listdescriptors-docs
