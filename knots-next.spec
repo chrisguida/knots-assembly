@@ -208,7 +208,8 @@ checkout v23.0
 	# Needs work: 24901 -  # mempool: reduce lookups, insertions to cache in UpdateForDescendants
 	# Needs review: 24926 -  # mempool: use mapNextTx.lower_bound in removeRecursive
 	# Probably not worth it before BIP324, needs review and diff-minimising: 24946 -  # Unroll the ChaCha20 inner loop for performance
-	Part of 25013 -  # Remove cs_main from verifymessage, move msg utils to new file
+	25013 rpc_verifymsg_no_cs_main-21
+		# Diff-minimised
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -325,7 +326,6 @@ checkout v23.0
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
 	-     rpc_getblockfrompeer_wo_header		42a76849c19
-		TODO: Check #24944 compatibility (type check)
 		# Prior Knots bundled this in with #20295
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
