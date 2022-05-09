@@ -182,7 +182,7 @@ checkout v23.0
 		# Diff-minimised
 	24984 fix_wallet_race_attachingbb-22^
 	25088 fix_wallet_race_attachingbb-22					last=ba10b90915d fix_wallet_race_attachingbb
-	24991 vasild/onlynet_onion_with_listenonion_is_ok
+	24991 fix_onlylistenonion-23+knots						last=c313568a97b vasild/onlynet_onion_with_listenonion_is_ok
 	# Needs review: 24994 hebasto/220426-consensus
 	25011 achow101/fix-legacy-createwallet-test
 	Needs review: 25019 -  # parse external signer master fp as bytes in ExternalSigner::SignTransaction
