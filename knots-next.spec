@@ -175,10 +175,13 @@ checkout v23.0
 	24933 strerror_threadsafe-23
 	24944 rpc_getblockfrompeer_typecheck-23					last=a926025ca82 jonatack/getblockfrompeer-param-inputs
 	24957 fix_prune_during_loadblock-22						last=da8e95c0140 mruddy/issue_23852_import_prune
-	Just the static_assert: 24962 -  # prevector: enforce is_trivially_copyable_v
+	24962 prevector_trivially_copyable-0.15					last=11e79084845
+		# NOTE: Just the static assert
 	# Needs review: 24972 hebasto/220425-no-libtool
-	Diff-minimise: 24977 achow101/better-listdescriptors-docs
-	24984 mzumsande/202204_wallet_rescan
+	24977 rpcdoc_listdescs_active_internal-22
+		# Diff-minimised
+	24984 fix_wallet_race_attachingbb-22^
+	25088 fix_wallet_race_attachingbb-22					last=ba10b90915d fix_wallet_race_attachingbb
 	24991 vasild/onlynet_onion_with_listenonion_is_ok
 	# Needs review: 24994 hebasto/220426-consensus
 	25011 achow101/fix-legacy-createwallet-test
