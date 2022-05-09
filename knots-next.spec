@@ -185,7 +185,7 @@ checkout v23.0
 	25088 fix_wallet_race_attachingbb-22					last=ba10b90915d fix_wallet_race_attachingbb
 	24991 fix_onlylistenonion-23+knots						last=c313568a97b vasild/onlynet_onion_with_listenonion_is_ok
 	# Needs review: 24994 hebasto/220426-consensus
-	Needs review: 25019 -  # parse external signer master fp as bytes in ExternalSigner::SignTransaction
+	25019 extsign_caseinsensitive-23						last=2a22f034ca3
 	# Needs review: 25036 w0xlt/save_scan_progress
 	Alternative to 25037 build: Create noinst_LTLIBRARIES conditionally
 	Needs review? 25074 -  # index: During sync, commit best block after indexing
