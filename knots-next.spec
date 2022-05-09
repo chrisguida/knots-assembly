@@ -187,9 +187,8 @@ checkout v23.0
 	# Needs review: 24994 hebasto/220426-consensus
 	25019 extsign_caseinsensitive-23						last=2a22f034ca3
 	# Needs review: 25036 w0xlt/save_scan_progress
-	Alternative to 25037 build: Create noinst_LTLIBRARIES conditionally
-	Needs review? 25074 -  # index: During sync, commit best block after indexing
-	Needs review: 25077 -  # Fix chain tip data race and corrupt rest response
+	#23.xTODO# Needs review? 25074 -	last=75f53f1e1fc  # index: During sync, commit best block after indexing
+	25077 fix_dataraces_pr25077-23		last=fa35585c74c
 	g595  mruddy/issue_24953  # Avoid unclean exit due to permissions issues when setting start on system startup
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
