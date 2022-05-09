@@ -169,6 +169,7 @@ checkout v23.0
 	24855 fix_doc_rpc_setwalletflag_warnings-23
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
 	24859 fix_wallet_badcreate_pr24859-23  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
+		# +#25011 achow101/fix-legacy-createwallet-test
 	#23.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
 	25051 fix_configure_def_enable_arm_asms
@@ -184,7 +185,6 @@ checkout v23.0
 	25088 fix_wallet_race_attachingbb-22					last=ba10b90915d fix_wallet_race_attachingbb
 	24991 fix_onlylistenonion-23+knots						last=c313568a97b vasild/onlynet_onion_with_listenonion_is_ok
 	# Needs review: 24994 hebasto/220426-consensus
-	25011 achow101/fix-legacy-createwallet-test
 	Needs review: 25019 -  # parse external signer master fp as bytes in ExternalSigner::SignTransaction
 	# Needs review: 25036 w0xlt/save_scan_progress
 	Alternative to 25037 build: Create noinst_LTLIBRARIES conditionally
