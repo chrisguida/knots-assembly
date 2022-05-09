@@ -188,8 +188,8 @@ checkout v23.0
 	25019 extsign_caseinsensitive-23						last=2a22f034ca3
 	# Needs review: 25036 w0xlt/save_scan_progress
 	#23.xTODO# Needs review? 25074 -	last=75f53f1e1fc  # index: During sync, commit best block after indexing
-	25077 fix_dataraces_pr25077-23		last=fa35585c74c
-	g595  mruddy/issue_24953  # Avoid unclean exit due to permissions issues when setting start on system startup
+	25077 fix_dataraces_pr25077-23							last=fa35585c74c
+	g595  qt_handle_autostart_errors-0.15					last=0d9e61a8d98 mruddy/issue_24953
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
