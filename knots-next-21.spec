@@ -391,7 +391,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 25036 w0xlt/save_scan_progress
 	Needs review? 25074 -  # index: During sync, commit best block after indexing
 	Needs review: 25077 -  # Fix chain tip data race and corrupt rest response
-	g595  qt_handle_autostart_errors-0.15					last=0d9e61a8d98 mruddy/issue_24953
+	g595  qt_handle_autostart_errors-0.15					last=933d2eddadd mruddy/issue_24953
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
