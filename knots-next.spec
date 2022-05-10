@@ -451,7 +451,7 @@ checkout v23.0
 	# OR: Needs work? g560 w0xlt-g/3_error_message_addr
 	# Needs concept ack: g553 w0xlt-5/change_error_background
 		# CAUTION: requires theming changes for gui#537
-	24408 rpc_gettxspendingprevout-23						last=ad14372cab1
+	24408 rpc_gettxspendingprevout-23						last=41855703405
 		# Moved code around to avoid conflicts
 	# Needs work & complex test rebasing: 24539   # Add a "tx output spender" index
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
@@ -466,7 +466,7 @@ checkout v23.0
 	# Needs review + make part of sendrawtx: 24836 glozow/client-submitpackage
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
 	# Needs work: 24897 w0xlt/silent_payment_021
-	24950 -  # Add config option to set max debug log size
+	# Needs work: 24950 -  # Add config option to set max debug log size
 	# Needs work: 24952 -  # rpc: Add sqlite format option for dumptxoutset
 	# Concept NACK? 25026 -  # rpc: Make pruneblockchain fetch old blocks if height is lower than pruned height
 	# Needs triage & review: 25038 glozow/package-rbf

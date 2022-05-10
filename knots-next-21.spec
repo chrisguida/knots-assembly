@@ -728,7 +728,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d					975064084f4
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
-	15861 restore_vbits_warning-0.21+knots		d001554bb8d	last=896eea449ad restore_vbits_warning
+	15861 restore_vbits_warning-0.21+knots		d001554bb8d	last=abb8c8c2d6c restore_vbits_warning
+	(CHECK-LAST)	last=896eea449ad restore_vbits_warning-22
 	20832 rpc_validateaddress_error-0.21.1+k	0859c222db0
 	16807 bech32_error_detection-0.21.1+knots	c08a0bcebf7	last=88cc4810926 meshcollider/201909_bech32_error_detection
 	(CHECK-LAST)	last=3bc568d6753 old_bech32_error_detection
