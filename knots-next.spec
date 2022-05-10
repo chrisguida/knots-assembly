@@ -528,11 +528,7 @@ checkout v23.0
 	17795 gui_console_ctrl_d					20a8f506a89
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					115213e2bd8
-		TODO: Check correctness of 24072 -  # doc: fix wording of alertnotify to match behaviour
-	MERGED: 16807 old_bech32_error_detection			09c2d5f6fd5	last=88cc4810926 meshcollider/201909_bech32_error_detection
-		# Held back rewrite 3bc568d6753..974227bb457 for now; when updating, add in #23577
-		# Held back comment drop 974227bb457..88cc4810926
-	n/a   rpc_compat_error_index-22+knots		733deba4309
+	n/a   rpc_compat_error_index-23+knots		733deba4309
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	g537  gui_bech32_errpos-22+knots			b0efb7af93b  # Latest code
 	17636 guisettings-0.21						b7ca66c8205	last=187f9684e03 emilengler/2019-11-guisettings
