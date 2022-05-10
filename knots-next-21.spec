@@ -738,9 +738,9 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	n/a   rpc_compat_error_index-0.21+knots		e8b159d62b3	last=d919478f2fc rpc_compat_error_index-23+knots
 	(CHECK-LAST)	last=e480af6868c rpc_compat_error_index-22+knots
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
-	g537  gui_bech32_errpos-0.21.1+knots		a4921198f16
-	(CHECK-LAST)	last=abae86dce13 gui_bech32_errpos
+	g537  gui_bech32_errpos-0.21.1+knots		a4921198f16	last=abae86dce13 gui_bech32_errpos
 	(CHECK-LAST)	last=7532115c6d8 gui_bech32_errpos-22+knots
+	(CHECK-LAST)	last=??? gui_bech32_errpos-23+knots
 NM	16807 bech32_error_detection-0.21+knots		c0339fe9c28	last=54e107add41 meshcollider/201909_bech32_error_detection
 NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
 	17636 guisettings-0.21						aec700dd5c2	last=187f9684e03 emilengler/2019-11-guisettings
