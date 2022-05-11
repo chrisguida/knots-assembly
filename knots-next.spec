@@ -542,11 +542,10 @@ checkout v23.0
 	19089 cli_getinfo_mwbalances				539b445c55f	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
 	19092 cli_getinfo_mw_total_balance			5db2713785a	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	# ---- END IN SEQUENCE ----
-	18570 wallet_rpc_lastprocessedblock-22+k	76f79fc7494	last=1e868bbbb1b
+	18570 wallet_rpc_lastprocessedblock-23+k	76f79fc7494	last=1e868bbbb1b
 	19117 rpc_getrpcwhitelist					e889e17cb9c
 		# NOTE: Was #18827 before any Knots merge
-	-     getrpcwhitelist_wallets-22+knots		b54d2969e2d
-		TODO: Use .requires_wallet instead of manual creation of default wallet?
+	-     getrpcwhitelist_wallets-23+knots		b54d2969e2d
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	17167 whitelist_outgoing-mini-22+knots		569c4bc343f	last=81622ba1229 whitelist_outgoing
 		# NOTE: Originally #10594

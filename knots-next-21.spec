@@ -764,9 +764,12 @@ NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
 	# ---- END IN SEQUENCE ----
 m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	(CHECK-LAST)	last=363c4e02d3d wallet_rpc_lastprocessedblock-22+k
-	19117 rpc_getrpcwhitelist-21				f005cd98854	last=3a5869713b4 rpc_getrpcwhitelist
+	(CHECK-LAST)	last=dc58f8f46e6 wallet_rpc_lastprocessedblock-23+k
+	19117 rpc_getrpcwhitelist-21				f005cd98854	last=3fd323ca11f rpc_getrpcwhitelist
+	(CHECK-LAST)	last=3a5869713b4 rpc_getrpcwhitelist-22
 		# NOTE: Was #18827 before any Knots merge
-	-     getrpcwhitelist_wallets-0.21+knots	e2bae466a89	last=1e1d1e2e62c getrpcwhitelist_wallets-22+knots
+	-     getrpcwhitelist_wallets-0.21+knots	e2bae466a89	last=9c122c3f83c getrpcwhitelist_wallets-23+knots
+	(CHECK-LAST)	last=1e1d1e2e62c getrpcwhitelist_wallets-22+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	17167 whitelist_outgoing-mini-0.21+knots	d50c4c7d4af	last=81622ba1229 whitelist_outgoing
 	(CHECK-LAST)	last=9cf184186c9 whitelist_outgoing-mini-22+knots
