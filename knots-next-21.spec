@@ -755,9 +755,11 @@ NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
 		# NOTE: Diff-minimised
 	# ---- BEGIN IN SEQUENCE ----
 	19089 cli_getinfo_mwbalances-0.21+knots		98e3ae63888	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
-	(CHECK-LAST)	last=cd48a6982ca cli_getinfo_mwbalances
+	(CHECK-LAST)	last=cd48a6982ca cli_getinfo_mwbalances-22
+	(CHECK-LAST)	last=2b2d4c06e10 cli_getinfo_mwbalances
 	19092 cli_getinfo_mw_total_balance-0.21+knots	5672474d49e	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
-	(CHECK-LAST)	last=e8bab0a4077 cli_getinfo_mw_total_balance
+	(CHECK-LAST)	last=e8bab0a4077 cli_getinfo_mw_total_balance-22
+	(CHECK-LAST)	last=a65c48636bc cli_getinfo_mw_total_balance
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
 m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
