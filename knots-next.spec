@@ -110,6 +110,7 @@ checkout v23.0
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
 	22417 bpchild_closefds						95725111d52	last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
+		FIXME: This is assuming boost::process is available
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				162911e79ab
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
@@ -215,6 +216,8 @@ checkout v23.0
 # FUNCTIONALITY:
 	24448 guix_linux_i686_compat				d7cabad678b	last=c76ac9d57f2 guix_linux_i686
 		#24.xTODO# Revert #24639
+	25111 hww_windows-23+knots								last=0724b2e09ce hww_windows
+		# NOTE: Carries commit 209018f4275 for compaibility with #22417
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
