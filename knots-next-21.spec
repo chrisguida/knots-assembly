@@ -772,8 +772,9 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	-     getrpcwhitelist_wallets-0.21+knots	e2bae466a89	last=9c122c3f83c getrpcwhitelist_wallets-23+knots
 	(CHECK-LAST)	last=1e1d1e2e62c getrpcwhitelist_wallets-22+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
-	17167 whitelist_outgoing-mini-0.21+knots	d50c4c7d4af	last=81622ba1229 whitelist_outgoing
+	17167 whitelist_outgoing-mini-0.21+knots	d50c4c7d4af	last=36cc299baee whitelist_outgoing
 	(CHECK-LAST)	last=9cf184186c9 whitelist_outgoing-mini-22+knots
+	(CHECK-LAST)	last=27ad690c9d2 whitelist_outgoing-mini-23+knots
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
 	g165  gui_peers_splitter_ss-0.21+knots		b71e008e2cf

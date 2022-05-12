@@ -216,7 +216,7 @@ checkout v23.0
 # FUNCTIONALITY:
 	24448 guix_linux_i686_compat				d7cabad678b	last=c76ac9d57f2 guix_linux_i686
 		#24.xTODO# Revert #24639
-	25111 hww_windows-23+knots								last=d9eb2a1405e hww_windows
+	25111 hww_windows-23+knots								last=2a53dce0b66 hww_windows
 		# NOTE: Carries commit 209018f4275 for compaibility with #22417
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
@@ -550,7 +550,7 @@ checkout v23.0
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-23+knots		b54d2969e2d
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
-	17167 whitelist_outgoing-mini-22+knots		569c4bc343f	last=81622ba1229 whitelist_outgoing
+	17167 whitelist_outgoing-mini-23+knots		569c4bc343f	last=36cc299baee whitelist_outgoing
 		# NOTE: Originally #10594
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	-     wallettool_dump_warning-22+knots		1450e955bea
