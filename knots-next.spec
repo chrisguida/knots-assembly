@@ -553,7 +553,7 @@ checkout v23.0
 	17167 whitelist_outgoing-mini-23+knots		569c4bc343f	last=36cc299baee whitelist_outgoing
 		# NOTE: Originally #10594
 	# Needs purpose: 21815 prayank23:max-out-full-relay
-	-     wallettool_dump_warning-22+knots		1450e955bea
+	-     wallettool_dump_warning-23+knots		1450e955bea
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
 	# Needs work: 22708 hebasto:210815-wayland
 	#23.xTODO: Revert #24065 safely (ie, Ensure external signing on all systems)

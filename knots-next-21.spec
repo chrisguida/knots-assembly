@@ -482,6 +482,8 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# NOTE: Originally #18728
 	19136 achow101/export-descriptor			6dacc070a6a	last=de6b389d5db
 	19137 wallettool_dump-0.21+knots			a03a2b07990	last=23cac24dd3f achow101/dumpwalletrecords
+	(CHECK-LAST)	last=858f74a8dd5 wallettool_dump_warning-22+knots
+	(CHECK-LAST)	last=5009c359275 wallettool_dump_warning-23+knots
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
 		# NOTE: Changed to print warnings to stderr instead of stdout
 		# NOTE: Diff-minimised
