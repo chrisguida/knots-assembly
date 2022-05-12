@@ -565,8 +565,6 @@ checkout v23.0
 	-     rpc_mempoolentry_txhash				d995448a23d
 	-     walletnotify_w_win-23+knots			edd33a2d427	# Latest code now
 	14137 win_taskbar_progress					e9dc3bcac3d	last=18eb4dbb8a
-		FIXME: checking whether to build with QWinTaskbarProgress support... checking for Berkeley DB C++ headers... /usr/include/db4.8/
-			(no result? on jun)
 	-     restore_blockmaxsize					9db4529dde0
 	7107 qtnetworkport							d73a95d8da0	last=1f37c87 origin-pull/7107/head
 	7533  sendraw_force							960c792aa3c

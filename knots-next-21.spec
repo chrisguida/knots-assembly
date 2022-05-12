@@ -793,7 +793,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	14137 win_taskbar_progress-0.21+knots		cf8835a0b82	last=18eb4dbb8a
 		FIXME: checking whether to build with QWinTaskbarProgress support... checking for Berkeley DB C++ headers... /usr/include/db4.8/
 			(no result? on jun)
-	(CHECK-LAST)	last=f30b740b4ff win_taskbar_progress
+	(CHECK-LAST)	last=f30b740b4ff win_taskbar_progress-22
+	(CHECK-LAST)	last=8cacd81214f win_taskbar_progress
 	-     restore_blockmaxsize-21				244ddb8587d	last=0df4a820dd6 restore_blockmaxsize
 	7107  qtnetworkport-21						1c31de03b71	last=1f37c87 origin-pull/7107/head
 	(CHECK-LAST)	last=d855b377d6e qtnetworkport
