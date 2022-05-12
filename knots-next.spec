@@ -563,7 +563,7 @@ checkout v23.0
 	-     gui_payreq_textedit					55bd287346d
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				d995448a23d
-	-     walletnotify_w_win-22+knots			edd33a2d427	last=a291491d2fd walletnotify_w_win
+	-     walletnotify_w_win-23+knots			edd33a2d427	# Latest code now
 	14137 win_taskbar_progress					e9dc3bcac3d	last=18eb4dbb8a
 		FIXME: checking whether to build with QWinTaskbarProgress support... checking for Berkeley DB C++ headers... /usr/include/db4.8/
 			(no result? on jun)
