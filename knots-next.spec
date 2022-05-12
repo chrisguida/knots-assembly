@@ -556,13 +556,10 @@ checkout v23.0
 	-     wallettool_dump_warning-23+knots		1450e955bea
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
 	# Needs work: 22708 hebasto:210815-wayland
-	#23.xTODO: Revert #24065 safely (ie, Ensure external signing on all systems)
-		see also #24254, #24524(?)
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 # Non-upstreamed functionality:
 	n/a   restore_feefilter_opt					bf9a6597726
-	TODO: Determine whether #22260 (wallet Bech32m default) is good or should be reverted
 	-     gui_payreq_textedit					55bd287346d
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				d995448a23d
