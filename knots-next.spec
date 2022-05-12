@@ -108,9 +108,9 @@ checkout v23.0
 	g236  gui_init_walleterror_cont				9859a56089a
 	-     rpc_addconnection_mainnet				d7d29e53ba2
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
-	22417 bpchild_closefds						95725111d52	last=3b6153ba336 bpchild_closefds
+	22417 bpchild_closefds						95725111d52	last=4c19cea484b bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
-		FIXME: This is assuming boost::process is available
+		# NOTE: Currently uses ENABLE_EXTERNAL_SIGNER in place of USE_BOOST_PROCESS (not defined until #15421 merged)
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				162911e79ab
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
@@ -520,7 +520,7 @@ checkout v23.0
 		# TODO: Rewrite after #17487 is ready/safe to merge
 	15428 tor_gui_pairing-23+knots				b0cfbb9f68f	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-	#23.xTODO# 15421 tor_subprocess-22+knots				db4dd219005	last=58c6cafd3a1 tor_subprocess
+	15421 tor_subprocess-23+knots				db4dd219005	# Latest code now
 	# TODO: tor guix bundle!
 	15633 nohbcbfornonwit						8e9e203c847
 		# NOTE: added test fix from sdaftuar/test-15633-2
