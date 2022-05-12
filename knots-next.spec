@@ -216,7 +216,7 @@ checkout v23.0
 # FUNCTIONALITY:
 	24448 guix_linux_i686_compat				d7cabad678b	last=c76ac9d57f2 guix_linux_i686
 		#24.xTODO# Revert #24639
-	25111 hww_windows-23+knots								last=0724b2e09ce hww_windows
+	25111 hww_windows-23+knots								last=d9eb2a1405e hww_windows
 		# NOTE: Carries commit 209018f4275 for compaibility with #22417
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
