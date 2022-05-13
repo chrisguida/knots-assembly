@@ -795,9 +795,10 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 			(no result? on jun)
 	(CHECK-LAST)	last=f30b740b4ff win_taskbar_progress-22
 	(CHECK-LAST)	last=8cacd81214f win_taskbar_progress
-	-     restore_blockmaxsize-21				244ddb8587d	last=0df4a820dd6 restore_blockmaxsize
+	-     restore_blockmaxsize-21				244ddb8587d	last=d66d020e9d2 restore_blockmaxsize
+	(CHECK-LAST)		last=0df4a820dd6 restore_blockmaxsize-22
 	7107  qtnetworkport-21						1c31de03b71	last=1f37c87 origin-pull/7107/head
-	(CHECK-LAST)	last=d855b377d6e qtnetworkport
+	(CHECK-LAST)	last=27f05f10f07 qtnetworkport-23+knots
 	7533  sendraw_force-0.21					84c7abed1ab	last=074e22628db sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf-0.21							901121d0ce9	last=ad7812c9eb7 rwconf

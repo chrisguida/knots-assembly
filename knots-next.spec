@@ -566,7 +566,7 @@ checkout v23.0
 	-     walletnotify_w_win-23+knots			edd33a2d427	# Latest code now
 	14137 win_taskbar_progress					e9dc3bcac3d	last=18eb4dbb8a
 	-     restore_blockmaxsize					9db4529dde0
-	7107 qtnetworkport							d73a95d8da0	last=1f37c87 origin-pull/7107/head
+	7107  qtnetworkport-23+knots				d73a95d8da0	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force							960c792aa3c
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf								107ed46704d
