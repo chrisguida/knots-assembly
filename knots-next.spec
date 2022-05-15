@@ -569,7 +569,7 @@ checkout v23.0
 	7107  qtnetworkport-23+knots				d73a95d8da0	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force							960c792aa3c
 		# NOTE: partial re-PR in #20753 by Marco
-	11082 rwconf								107ed46704d
+	11082 rwconf-23+knots						107ed46704d # Latest code now
 	7510  rwconf_gui							7271f785252
 	 559 accept_nonstdtxn						4f7dc7b3613
 	 929 tbc									3f84a3b048c

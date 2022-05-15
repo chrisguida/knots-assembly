@@ -802,7 +802,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	7533  sendraw_force-0.21					84c7abed1ab	last=e815e853ae9 sendraw_force
 	(CHECK-LAST)	last=074e22628db sendraw_force-22
 		# NOTE: partial re-PR in #20753 by Marco
-	11082 rwconf-0.21							901121d0ce9	last=ffb28a43c35 rwconf
+	11082 rwconf-0.21							901121d0ce9	last=ffb28a43c35 rwconf-23+knots
 	(CHECK-LAST)	last=ad7812c9eb7 rwconf-22
 	7510  rwconf_gui-0.21						2df27d4a04e	last=5465696bf16 rwconf_gui
 		# NOTE: Missing cac3d7873a3 due to not having #15946 in 21.x
