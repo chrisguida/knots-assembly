@@ -392,6 +392,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review? 25074 -  # index: During sync, commit best block after indexing
 	Needs review: 25077 -  # Fix chain tip data race and corrupt rest response
 	g595  qt_handle_autostart_errors-0.15					last=933d2eddadd mruddy/issue_24953
+	g599  ts_20220515
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
@@ -804,7 +805,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf-0.21							901121d0ce9	last=ffb28a43c35 rwconf-23+knots
 	(CHECK-LAST)	last=ad7812c9eb7 rwconf-22
-	7510  rwconf_gui-0.21						2df27d4a04e	last=5465696bf16 rwconf_gui
+	7510  rwconf_gui-0.21						2df27d4a04e	last=a0bd0cef99d rwconf_gui-23+knots
+	(CHECK-LAST)	last=5465696bf16 rwconf_gui-22
 		# NOTE: Missing cac3d7873a3 due to not having #15946 in 21.x
 	559   accept_nonstdtxn-0.21					0d7a5178261	last=75b02a00617 accept_nonstdtxn
 	g153 const_max_digits						32e16e210f2
