@@ -191,7 +191,9 @@ checkout v23.0
 	#23.xTODO# Needs review? 25074 -	last=75f53f1e1fc  # index: During sync, commit best block after indexing
 	25077 fix_dataraces_pr25077-23							last=fa35585c74c
 	g595  qt_handle_autostart_errors-0.15					last=933d2eddadd mruddy-g/issue_24953
-	g599  ts_20220515
+	g599  ts_20220515-partial-23							last=5e23dabf265 ts_20220515
+		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
+		#24.xTODO# Update with other commits that are beneficial
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
