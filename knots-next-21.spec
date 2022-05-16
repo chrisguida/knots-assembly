@@ -805,7 +805,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf-0.21							901121d0ce9	last=ffb28a43c35 rwconf-23+knots
 	(CHECK-LAST)	last=ad7812c9eb7 rwconf-22
-	7510  rwconf_gui-0.21						2df27d4a04e	last=a0bd0cef99d rwconf_gui-23+knots
+	7510  rwconf_gui-0.21						2df27d4a04e	last=1ce12e499ac rwconf_gui-23+knots
 	(CHECK-LAST)	last=5465696bf16 rwconf_gui-22
 		# NOTE: Missing cac3d7873a3 due to not having #15946 in 21.x
 	559   accept_nonstdtxn-0.21					0d7a5178261	last=75b02a00617 accept_nonstdtxn
