@@ -808,7 +808,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	7510  rwconf_gui-0.21						2df27d4a04e	last=1ce12e499ac rwconf_gui-23+knots
 	(CHECK-LAST)	last=5465696bf16 rwconf_gui-22
 		# NOTE: Missing cac3d7873a3 due to not having #15946 in 21.x
-	559   accept_nonstdtxn-0.21					0d7a5178261	last=75b02a00617 accept_nonstdtxn
+	559   accept_nonstdtxn-0.21					0d7a5178261	last=70b0f3bf1ed accept_nonstdtxn
+	(CHECK-LAST)	last=75b02a00617 accept_nonstdtxn-22
 	g153 const_max_digits						32e16e210f2
 	 929 tbc									8aa517b2bd1
 	 553  bugfix_qt_uri_amount_parser-0.17		ce9be680833	last=e3ad5956dda bugfix_qt_uri_amount_parser
