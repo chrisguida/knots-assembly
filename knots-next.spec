@@ -32,6 +32,7 @@ checkout v23.0
 	# Needs review: 24813 hebasto/220409-appcheck        # Qt 6 (4/n)
 	# Only w/ rest of Qt6: g584 hebasto/220413-metatype  # Qt 6 (5/n)
 	# Needs review: g585 prusnak/qregexp-obsolete
+	# TODO: tbc uses QRegExpValidator
 	# Needs review: g586 hebasto/220416-quit             # Qt 6 (6/n)
 	# Needed for Qt6?? g587 hebasto/220416-invoke510
 	# Only w/ rest: g589 hebasto/220420-walletmodel      # Qt 6 (7/n)
@@ -577,7 +578,6 @@ checkout v23.0
 	 559 accept_nonstdtxn						4f7dc7b3613
 	 929 tbc									3f84a3b048c
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
-		TODO: Check if we're using UCSUR or not
 	 553 bugfix_qt_uri_amount_parser			864d90dc093
 	-    mining_priority						aeb54b4fc8f  # NOTE: now the latest code, rebased
 		#24.xTODO# Revert #24934 ?
@@ -638,6 +638,7 @@ checkout v23.0
 	n/a   tbc_font								552c253ac34
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
+		TODO: migrate to UCSUR
 # BRANDING:
 	n/a   knots_branding-22						2778d0743d1
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
