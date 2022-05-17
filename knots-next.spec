@@ -583,7 +583,7 @@ checkout v23.0
 		#24.xTODO# Revert #24934 ?
 	5861 gui_restore_addresses					8f11d2dcae3
 	5891  qt_console_history_persist			189074c6a1a	last=0cd5fc301d6 qt_console_history_persist
-	7219  fullrbf-22+knots						5c5190476b9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
+	7219  fullrbf-23+knots						5c5190476b9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					901c180339a
 		TODO: Revert(?) #23731 - but maybe n/a since it's for descriptor wallets which are explicit for all types?
