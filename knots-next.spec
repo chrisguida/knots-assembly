@@ -214,6 +214,7 @@ checkout v23.0
 	# Needs review: 24926 -  # mempool: use mapNextTx.lower_bound in removeRecursive
 	# Probably not worth it before BIP324, needs review and diff-minimising: 24946 -  # Unroll the ChaCha20 inner loop for performance
 	25013 rpc_verifymsg_no_cs_main-21
+	#23.xTODO# FIXME: #25146 - revert f3a17bbe5f7d23b6ecc20e363920492b50859dad ?
 		# Diff-minimised
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
@@ -351,6 +352,7 @@ checkout v23.0
 	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	20702 rpc_getblocklocations					aa48cd06cbd	last=9b03c654eb3
 		# NOTE: Fixed +x on test/functional/rpc_getblocklocations.py
+		# NOTE: Added necessary(?) cs_main locking
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							fae2ccbd3f9
 	g543  qt_peers_age_column-23  # peers-tab: add connection age column to tableview
@@ -421,7 +423,8 @@ checkout v23.0
 	23362 importfromcoldcard-23					ba52f717337	last=8076f8d4c2a hebasto/211025-cc
 		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 greenaddress/dump_fee_estimates		ec0f6c01a85	last=d5b41e6b2ed  # savefeeestimates
+	23387 rpc_savefeeestimates-23				ec0f6c01a85	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
+		# NOTE: Carries lock annotation fix aa096ebfb06
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs concept review: 23395 -  # util: Add -shutdownnotify option
 	# Needs work/review: 23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection
@@ -460,6 +463,7 @@ checkout v23.0
 		# CAUTION: requires theming changes for gui#537
 	24408 rpc_gettxspendingprevout-23						last=41855703405
 		# Moved code around to avoid conflicts
+		# NOTE: Includes test framework improvements from [partial] #24605 and #24637
 	# Needs work & complex test rebasing: 24539   # Add a "tx output spender" index
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
 		# NOTE: When rebasing post-#21726, need to restore AllowPrune func ?
