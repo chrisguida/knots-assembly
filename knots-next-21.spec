@@ -822,7 +822,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	5891  qt_console_history_persist-0.21+knots	831cc0d61d1	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-0.21+knots					6b8135375e9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
 	(CHECK-LAST)	last=8db545872f6 fullrbf-22+knots
-	(CHECK-LAST)	last=8d64bac17db fullrbf-23+knots
+	(CHECK-LAST)	last=149b286b44e fullrbf-23+knots
 	12146 opt_wallet_segwit2					ffc242d52be
 		TODO: Make sure descriptor wallets default to non-segwit addresses
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
