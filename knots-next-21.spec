@@ -814,7 +814,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	 929  tbc									8aa517b2bd1	last=04b14509103 tbc
 		TODO: Strip out new features??
 	 553  bugfix_qt_uri_amount_parser-0.17		ce9be680833	last=e3ad5956dda bugfix_qt_uri_amount_parser
-	-     mining_priority-0.21+knots			1e33269a0ae	last=58e2cab4b18 mining_priority
+	-     mining_priority-0.21+knots			1e33269a0ae	last=a45c4b94b1c mining_priority
+	(CHECK-LAST)	last=58e2cab4b18 mining_priority-22
 		# Didn't backport next_block_height passing (maybe consider when/if someday cs_main can be released)
 		# Didn't backport platform-independent double serialisation
 	5861 gui_restore_addresses					a81fd2b77ff
