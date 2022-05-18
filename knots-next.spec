@@ -594,16 +594,13 @@ checkout v23.0
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			5b753d4e201	# Latest code now
 	-     gui_request_payment_label-0.19		1bc559e14c5
-	-     gui_peers_sort_network-22				6c709ff6846
+	-     gui_peers_sort_network-23				6c709ff6846
 	-     gui_peers_no_net_column				42faba73091
-	22439 guix_in_gitian						6f8b29bd9f8	last=ebda0463748 achow101/guix-in-gitian
-		FIXME: Add i686-pc-linux-gnu
-		FIXME: assign_DISTNAME script is gone now
-	TODO: revert #23927  rpc: Pruning nodes can not fetch blocks before syncing past their height
-	TODO: revert #24031  build: don't compress macOS DMG
-	TODO: revert #24142  Deprecate SubtractFeeFromOutputs
+	22439 guix_in_gitian-23+knots				6f8b29bd9f8	last=ebda0463748 achow101/guix-in-gitian
+	#24.xTODO# revert #23927  rpc: Pruning nodes can not fetch blocks before syncing past their height
+	# TODO: revert #24031  build: don't compress macOS DMG
 # Non-upstreamed Knots compatibility:
-	TODO: revert? #24505  wallet: Add a deprecation warning for newly created legacy wallets
+	#24.xTODO# revert? #24505  wallet: Add a deprecation warning for newly created legacy wallets
 	14641 fundraw_min_conf_deprecated-23+knots				last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			d61bb3c22e9
 	-     netperms_implicit_addr				3ab6318c892

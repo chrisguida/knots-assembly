@@ -831,6 +831,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	-     gui_request_payment_label-0.19		803f33b7c43
 	-     gui_peers_sort_network-0.21+knots		0ea3b567d9c
 	(CHECK-LAST)	last=3ae2746dcf7 gui_peers_sort_network-22
+	(CHECK-LAST)	last=c22bbba9689 gui_peers_sort_network-23
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			bde74230139
 	-    mempool_knots014_compat-0.21+knots		ffc4f556b8a	last=1befffc0b48 mempool_dat_extensible
