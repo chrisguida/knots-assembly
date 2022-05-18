@@ -204,8 +204,8 @@ checkout v23.0
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
 	25106 rpc_dumptxoutset_fopen_check-23
 	# Needs triage/review: Maybe part of (see reference to #17167) 25156 -  # refactor: Introduce PeerManagerImpl::RejectIncomingTxs
-	25157 jonatack/update-time-in-rpcwait-and-netinfo
-		Diff-minimise?
+	25157 fix_bcli_negtime_pr25157-23
+		# Diff-minimised
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
@@ -316,9 +316,10 @@ checkout v23.0
 	# Needs work/review/completion: 18242 jonas/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
-	18689 rpc_dumptxoutset_hr					63bd42e0546	last=65d0697fe34
-		# Fixed bugs (eg, scoping of ascii_types)
-		# NOTE: Rebased onto (but not compatible with) #24202
+	24202 rpc_dumptxoutset_hr-23+knots			63bd42e0546	last=1053636ddd9
+	(CHECK-LAST)	last=65d0697fe34 origin-pull/18689/head
+		# Diff-minimised
+		# NOTE: Was #18689
 		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202/files#r801191486
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
