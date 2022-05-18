@@ -1,7 +1,7 @@
-timestamp 2022-05-08 06:19:32
+timestamp 2022-05-18 07:10:03
 lastapply no-merge
 
-#.. checked up to PR #25086 / gui #595
+#.. checked up to PR #25168 / gui #599
 
 checkout v23.0
 @23.x-syslibs
@@ -46,9 +46,12 @@ checkout v23.0
 	#23.xTODO: as needed only: -     lint_relaxer							f351877c154
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
+	25160 hebasto/220517-ci
 	24205 jonatack/network-reachability-assertion-and-testing	last=58a14795b89
 	24687 qa_invalid_i2psam-23+knots
-	#23.xTODO# Revert pedantic RPC checks for production ; see #24695 & #25161
+	25161 -  # rpc: Put undocumented JSON failure mode behind a runtime flag
+	# TODO? 25123 fjahr/202205-index-prune-fix
+	# TODO? 25124 -  # test: Fix intermittent race in p2p_unrequested_blocks.py
 # FIXES:
 	18818 guix_reltar_autogen_distclean			e8914fe7cab	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						48e994efd24
@@ -129,6 +132,7 @@ checkout v23.0
 	24313 Sjors/2022/02/displayaddress						last=803387f054d
 		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
 	22087 validate_port_opts-23+knots						last=ce4652aaa01  # Validate port-options
+	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 		#23.xTODO# Needs testing
 	# Needs work: 24392 hebasto/220219-cmake
@@ -195,6 +199,13 @@ checkout v23.0
 	g599  ts_20220515-partial-23							last=5e23dabf265 ts_20220515
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		#24.xTODO# Update with other commits that are beneficial
+	Just bugfix(es) from #25093 rpc: Check for omitted, but required parameters
+	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
+	25106 theStack/202205-rpc-check_fopen_retval_in_dumptxoutset
+	# Needs triage/review: Maybe part of (see reference to #17167) 25156 -  # refactor: Introduce PeerManagerImpl::RejectIncomingTxs
+	25157 jonatack/update-time-in-rpcwait-and-netinfo
+		Diff-minimise?
+	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -216,6 +227,7 @@ checkout v23.0
 	25013 rpc_verifymsg_no_cs_main-21
 	#23.xTODO# FIXME: #25146 - revert f3a17bbe5f7d23b6ecc20e363920492b50859dad ?
 		# Diff-minimised
+	# Needs review: g598  -  # Avoid recalculating the wallet balance - use model cache
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -483,6 +495,7 @@ checkout v23.0
 	# Needs triage & review: 25038 glozow/package-rbf
 	# Needs licensing/review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku
+	# TODO/diff-minimise? 25122 -  # rpc: getreceivedbylabel, return early if no addresses were found in the address book
 # Non-progress functionality:
 	8751  sort-multisigs-23						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -533,6 +546,7 @@ checkout v23.0
 	15633 nohbcbfornonwit						8e9e203c847
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
+		# NOTE: replaced by #20799 & #25147
 	# TODO: 16490 marco/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies

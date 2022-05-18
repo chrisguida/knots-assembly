@@ -1,8 +1,8 @@
-timestamp 2022-05-08 06:19:32
+timestamp 2022-05-18 07:10:03
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25086 / gui #595 for fixes
+#.. checked up to PR #25168 / gui #599 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -71,6 +71,8 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		# Held back unnecessary d4d8eb13cbb...598cf8bfb7b
 	17402 travis_ppc64							3f88efab27c	last=1d684f05341 elichai/2019-11-powerpc64
 	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20	4a97d761fcc
+	# TODO? 25123 fjahr/202205-index-prune-fix
+	# TODO? 25124 -  # test: Fix intermittent race in p2p_unrequested_blocks.py
 	n/a   knots_ci_tweaks-21					a30b2c8bb0f
 	#TODO: Can we get a minimum-dep-versions CI going??
 # FIXES:
@@ -328,6 +330,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
 	24343 sipa/202202_trunittests
 	Diff-minimise: 22087 -  # Validate port-options
+	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	Needs review: 24365 achow101/upgrade-disable-privkeys
 	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
 	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
@@ -386,6 +389,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24957 mruddy/issue_23852_import_prune  # allow pruning to work during loadblock import
 	Diff-minimise: 24977 achow101/better-listdescriptors-docs
 	24984 mzumsande/202204_wallet_rescan
+	25088 fix_wallet_race_attachingbb-22
 	# Needs review: 24994 hebasto/220426-consensus
 	Needs review: 25019 -  # parse external signer master fp as bytes in ExternalSigner::SignTransaction
 	# Needs review: 25036 w0xlt/save_scan_progress
@@ -393,6 +397,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: 25077 -  # Fix chain tip data race and corrupt rest response
 	g595  qt_handle_autostart_errors-0.15					last=933d2eddadd mruddy/issue_24953
 	g599  ts_20220515
+	Just bugfix(es) from #25093 rpc: Check for omitted, but required parameters
+	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
+	25106 theStack/202205-rpc-check_fopen_retval_in_dumptxoutset
+	# Needs triage/review: Maybe part of (see reference to #17167) 25156 -  # refactor: Introduce PeerManagerImpl::RejectIncomingTxs
+	25157 jonatack/update-time-in-rpcwait-and-netinfo
+		Diff-minimise?
+	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
