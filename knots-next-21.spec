@@ -823,7 +823,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	7219  rbf_opts-0.21+knots					6b8135375e9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
 	(CHECK-LAST)	last=8db545872f6 fullrbf-22+knots
 	(CHECK-LAST)	last=149b286b44e fullrbf-23+knots
-	12146 opt_wallet_segwit2					ffc242d52be
+	12146 opt_wallet_segwit2-0.1				ffc242d52be	last=6a939ab54c6 opt_wallet_segwit2
 		TODO: Make sure descriptor wallets default to non-segwit addresses
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?

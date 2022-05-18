@@ -590,9 +590,6 @@ checkout v23.0
 	7219  fullrbf-23+knots						5c5190476b9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					901c180339a
-		TODO: Revert(?) #23731 - but maybe n/a since it's for descriptor wallets which are explicit for all types?
-		TODO: Make sure descriptor wallets default to non-segwit addresses (or Taproot??)
-		TODO: Make sure change is non-segwit too
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			5b753d4e201	# Latest code now
@@ -623,10 +620,12 @@ checkout v23.0
 	9749  unique_spk_mempool-22+knots			1e69a9eb689
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	-     bloom_default-0.21+knots				bfd460431a0
+	-     wallet_avoid_newerchange
 	-     enforce_checkpoints					9bd94bf5d54
 	n/a   checkpoint_update-22					197ba14f3ca	last=531aaa286d3 checkpoint_update-0.21
 	10282 timebomb_knots						4c57977383e
 	-     rwconf_policy-22+knots				4c9a3ad0147
+		TODO: Make sure descriptor wallets default to non-segwit addresses (or Taproot??)
 		FIXME: https://github.com/bitcoinknots/bitcoin/issues/48
 		# Include Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
