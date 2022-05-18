@@ -46,10 +46,10 @@ checkout v23.0
 	#23.xTODO: as needed only: -     lint_relaxer							f351877c154
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
-	25160 hebasto/220517-ci
+	# TODO: 25160 hebasto/220517-ci
 	24205 jonatack/network-reachability-assertion-and-testing	last=58a14795b89
 	24687 qa_invalid_i2psam-23+knots
-	25161 -  # rpc: Put undocumented JSON failure mode behind a runtime flag
+	25161 rpcdoccheck_opt-22								last=b953ea6cc69  # rpc: Put undocumented JSON failure mode behind a runtime flag
 	# TODO? 25123 fjahr/202205-index-prune-fix
 	# TODO? 25124 -  # test: Fix intermittent race in p2p_unrequested_blocks.py
 # FIXES:
@@ -155,7 +155,7 @@ checkout v23.0
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	#23.xTODO# FIXME: https://github.com/bitcoin-core/gui/issues/567
 	24630 reindexCS_resetindexes-23							last=cf531ba531c
-	24649 fix_wallet_utxos_not_external-23					last=3b83b8a3b03
+	24649 fix_wallet_utxos_not_external-23					last=7832e9438f5
 	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
 	24716 fix_doc_rpc_rawtx_pr24716-23
@@ -199,9 +199,10 @@ checkout v23.0
 	g599  ts_20220515-partial-23							last=5e23dabf265 ts_20220515
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		#24.xTODO# Update with other commits that are beneficial
-	Just bugfix(es) from #25093 rpc: Check for omitted, but required parameters
+	-     rpcdoc_sendmany_dummy_opt-23
+		# Just the bugfix from #25093 rpc: Check for omitted, but required parameters
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
-	25106 theStack/202205-rpc-check_fopen_retval_in_dumptxoutset
+	25106 rpc_dumptxoutset_fopen_check-23
 	# Needs triage/review: Maybe part of (see reference to #17167) 25156 -  # refactor: Introduce PeerManagerImpl::RejectIncomingTxs
 	25157 jonatack/update-time-in-rpcwait-and-netinfo
 		Diff-minimise?
