@@ -48,7 +48,7 @@ checkout v23.0
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	24205 jonatack/network-reachability-assertion-and-testing	last=58a14795b89
 	24687 qa_invalid_i2psam-23+knots
-	#23.xTODO# Revert pedantic RPC checks for production ; see #24695
+	#23.xTODO# Revert pedantic RPC checks for production ; see #24695 & #25161
 # FIXES:
 	18818 guix_reltar_autogen_distclean			e8914fe7cab	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						48e994efd24
@@ -453,7 +453,7 @@ checkout v23.0
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
 	24162 rpc_deriveaddr_wo_checksum-23						last=97a69e232be kallewoof/202201-deriveaddr-nochecksum
 	# Needs work/diff-minimisation: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
-	24171 ibd_from_inbound_pr24171-23+knots					last=15c16876426 sdaftuar/2022-01-download-from-inbound
+	24171 ibd_from_inbound_pr24171-23+knots					last=48262a00f58 sdaftuar/2022-01-download-from-inbound
 	# Needs review: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
 	24198 rpc_wtx_wtxid-23+knots							last=7abd8b21ba3
 	# Needs work: g533  -  # gui: add more detailed address error message
@@ -495,7 +495,7 @@ checkout v23.0
 	8550  old_stats_qt-23						48a7702ab96	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-23					e7951b8f304	last=07fc81109a
-	g444  gui_netwatch-23+knots					921c47226f3	last=36c0dfaefca gui_netwatch
+	g444  gui_netwatch-23+knots					921c47226f3	last=524665c116a gui_netwatch
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
 	10615 multiwallet_rpc-23+knots				a0cae660051  # latest code now
