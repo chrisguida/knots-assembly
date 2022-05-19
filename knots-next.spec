@@ -667,7 +667,7 @@ checkout v23.0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		9fa4d038aaa	# doc/{bips,files}
-	n/a  (bump_version=Knots:20220213)			bcc3f6e8502
+	n/a  (bump_version=Knots:20220518)			bcc3f6e8502
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=c22129a3cec)				b31ddd5021f  # release notes: write/update, including change log and credits
 			# check travis for misspellings

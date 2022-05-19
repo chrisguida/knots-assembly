@@ -849,7 +849,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 		# NOTE: Load-only
 NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	11413 rpc_feemode_explicit_compat-0.21+knots	194343ec101 last=56553e0d43c rpc_feemode_explicit_compat-22
-	-     netperms_implicit_addr-0.21+knots		7d39ba69a9e	last=d1ce634b708 netperms_implicit_addr
+	-     netperms_implicit_addr-0.21+knots		7d39ba69a9e	last=075c281b273 netperms_implicit_addr
+	(CHECK-LAST)	last=d1ce634b708 netperms_implicit_addr-22+knots
 	12674 rpc_onetry_nonpriv-0.21+knots			7607b0cb005	last=054c2214369 rpc_onetry_nonpriv-22+knots
 	Maybe? 24963 rpc_walletprocesspsbt_options
 	# TODO: add a bitcoinknots.conf ?
