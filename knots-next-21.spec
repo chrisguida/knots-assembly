@@ -530,6 +530,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	20275 list_unsupported_wallets-0.21+knots	45986c05cec	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
+	(CHECK-LAST)	last= rpc_getblockfrompeer_nodeid_compat-23
 		TODO: Add missing newline to RPC help (eab5561fba2...a01f1916c27)
 		See #24806
 		# +#23702 +(doc from #23813) +#24226
@@ -851,7 +852,8 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	11413 rpc_feemode_explicit_compat-0.21+knots	194343ec101 last=56553e0d43c rpc_feemode_explicit_compat-22
 	-     netperms_implicit_addr-0.21+knots		7d39ba69a9e	last=075c281b273 netperms_implicit_addr
 	(CHECK-LAST)	last=d1ce634b708 netperms_implicit_addr-22+knots
-	12674 rpc_onetry_nonpriv-0.21+knots			7607b0cb005	last=054c2214369 rpc_onetry_nonpriv-22+knots
+	12674 rpc_onetry_nonpriv-0.21+knots			7607b0cb005	last=896995cd251 rpc_onetry_nonpriv-23+knots
+	(CHECK-LAST)	last=054c2214369 rpc_onetry_nonpriv-22+knots
 	Maybe? 24963 rpc_walletprocesspsbt_options
 	# TODO: add a bitcoinknots.conf ?
 # POLICY:

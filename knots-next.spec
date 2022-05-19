@@ -620,9 +620,8 @@ checkout v23.0
 	14641 fundraw_min_conf_deprecated-23+knots				last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			d61bb3c22e9
 	-     netperms_implicit_addr				3ab6318c892
-	12674 rpc_onetry_nonpriv-22+knots			527c9a13cae
-	23.xTODO: Ensure blockhash+nodeid param names are supported by rpc_getblockfrompeer_wo_header (see #24294 / getblockfrompeer_param_names)
-		See #24806
+	12674 rpc_onetry_nonpriv-23+knots			527c9a13cae
+	-     rpc_getblockfrompeer_nodeid_compat-23
 	# TODO: add a bitcoinknots.conf ?
 	n/a   gui_peers_bump_setting_keys-22+k		94e73baadff
 		#23.xTODO# Each release, see if we need to bump setting names for GUI states
