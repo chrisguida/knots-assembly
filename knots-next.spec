@@ -632,7 +632,7 @@ checkout v23.0
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				b8136f8bc93
-	-     bytespersigopstrict-22+knots			efeaa4d511c
+	-     bytespersigopstrict-23+knots			efeaa4d511c
 	9749  unique_spk_mempool-22+knots			1e69a9eb689
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	-     bloom_default-0.21+knots				bfd460431a0
