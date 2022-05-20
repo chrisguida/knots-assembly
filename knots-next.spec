@@ -207,8 +207,6 @@ checkout v23.0
 	25157 fix_bcli_negtime_pr25157-23
 		# Diff-minimised
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
-	Alternative to 25095 -  # rpc: Fix implicit-integer-sign-change in gettxout
-		Fixes crash
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:

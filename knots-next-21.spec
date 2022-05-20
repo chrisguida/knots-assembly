@@ -404,8 +404,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25157 jonatack/update-time-in-rpcwait-and-netinfo
 		Diff-minimise?
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
-	Alternative to 25095 -  # rpc: Fix implicit-integer-sign-change in gettxout
-		Fixes crash
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:
