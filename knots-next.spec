@@ -623,8 +623,12 @@ checkout v23.0
 	12674 rpc_onetry_nonpriv-23+knots			527c9a13cae
 	-     rpc_getblockfrompeer_nodeid_compat-23
 	# TODO: add a bitcoinknots.conf ?
-	n/a   gui_peers_bump_setting_keys-22+k		94e73baadff
-		#23.xTODO# Each release, see if we need to bump setting names for GUI states
+	n/a   gui_peers_bump_setting_keys-23+k		94e73baadff
+		#23.xTODO#24.xTODO# Each release, see if we need to bump setting names for GUI states
+		# git grep 'alue(.*State\|toByteArray\|saveState'
+		# Window position/size: leave alone
+		# Splitter position: leave alone? but syncronise with header columns appropriately
+		# Header columns: need a rename
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				b8136f8bc93
