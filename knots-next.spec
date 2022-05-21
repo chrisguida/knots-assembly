@@ -654,7 +654,6 @@ checkout v23.0
 	n/a   tbc_font								552c253ac34
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
-		TODO: migrate to UCSUR
 # BRANDING:
 	n/a   knots_branding-22						2778d0743d1
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
