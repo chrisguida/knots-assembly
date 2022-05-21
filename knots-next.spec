@@ -651,7 +651,6 @@ checkout v23.0
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		dc7e4b0d473
 	7483  svg_icon-23+knots						22cb29a7fa3
-		TODO: partial revert #23909 & pull earlier #23778 out of reflog
 	n/a   tbc_font								552c253ac34
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
