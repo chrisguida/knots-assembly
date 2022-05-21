@@ -872,7 +872,8 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		# Held back git diff 19fd29ce45d..af4614fbd26 which is likely a noop
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		e0a236336e2
-	7483  svg_icon-21.2+knots					10090268130	last=afaab080b87 svg_icon-22+knots
+	7483  svg_icon-21.2+knots					10090268130	last=64ed5a651d7 svg_icon-23+knots
+	(CHECK-LAST)	last=afaab080b87 svg_icon-22+knots
 # BRANDING:
 	n/a   knots_branding-21						9db64a56d30	last=282420dea44 knots_branding-22
 	n/a   ver_dropzero-21.2+knots				0d04104e95d
