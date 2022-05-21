@@ -640,10 +640,8 @@ checkout v23.0
 	-     enforce_checkpoints					9bd94bf5d54
 	n/a   checkpoint_update-23					197ba14f3ca	last=70996dfdd9b checkpoint_update-0.21
 	10282 timebomb_knots						4c57977383e
-	-     rwconf_policy-22+knots				4c9a3ad0147
-		TODO: Make sure descriptor wallets default to non-segwit addresses (or Taproot??)
-		FIXME: https://github.com/bitcoinknots/bitcoin/issues/48
-		# Include Knots policy changes for simplification of final rebase process
+	-     rwconf_policy-23+knots				4c9a3ad0147
+		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
