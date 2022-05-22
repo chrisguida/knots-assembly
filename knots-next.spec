@@ -127,21 +127,18 @@ checkout v23.0
 	g506  qt_qrcode_sizefixes
 	# Needs review: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	# Needs review: 24066 whitslack/openrc-daemonwait
-	#23.xTODO# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
+	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	24145 -													last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
-	24313 Sjors/2022/02/displayaddress						last=803387f054d
-		#23.xTODO: make sure this doesn't break compatibility (and fix review bugs)
+	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
+		# TODO: make sure this doesn't break compatibility (and fix review bugs)
 	22087 validate_port_opts-23+knots						last=ce4652aaa01  # Validate port-options
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	24371 -													last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
-		#23.xTODO# Needs testing
 	# Needs work: 24392 hebasto/220219-cmake
-	#23.xTODO# Check if there's a real bug: 24523 promag/220222-boost
-		# NOTE: Was #24415 (never in Knots)
 	24428 fanquake/improve_bitcoin_wallet_return			last=dd532ee9c4d
-	#23.xTODO# Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
+	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24453 fix_rpcdoc_changeaddr_STR
-	#23.xTODO# Needs review: 24454 achow101/fix-input-weight-test
+	24454 achow101/fix-input-weight-test
 	24462 Empact/2022-03-descriptor-pubkey-context			last=9b526727000
 	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval-23						last=33722279495 bugfix_settings_numberval
@@ -151,17 +148,15 @@ checkout v23.0
 	# Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
 	24579 fix_docs_rpc_gbci_gdi_pr24579-23					last=facd5d92e18  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
 	24629 bugfix_rpc_prunebc_retval
-		#23.xTODO# Check upstream concept-ACK-or-NACK
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
-	#23.xTODO# FIXME: https://github.com/bitcoin-core/gui/issues/567
+	g568  vasild-g/fListen
 	24630 reindexCS_resetindexes-23							last=cf531ba531c
 	24649 fix_wallet_utxos_not_external-23					last=7832e9438f5
 	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
 	24716 fix_doc_rpc_rawtx_pr24716-23
 	24718 fix_rpc_docs_pr24718-23+knots						last=68a041dd12b
-	#23.xTODO# Triage: 24722 -  # build: patch around qt duplicate symbol issue
-	#23.xTODO# Needs review & diff-minimising: 24804 -  # Sanity assert GetAncestor() != nullptr where appropriate
+	# Iff needed: 24722 -  # build: patch around qt duplicate symbol issue
 	24776 doc_update_rest_chaininfo-23						last=1d95b5c7836
 		# Left off top commit with trivial rewording
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
@@ -176,7 +171,6 @@ checkout v23.0
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
 	24859 fix_wallet_badcreate_pr24859-23  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
 		# +#25011 achow101/fix-legacy-createwallet-test
-	#23.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
 	25051 fix_configure_def_enable_arm_asms
 	24933 strerror_threadsafe-23
@@ -193,7 +187,7 @@ checkout v23.0
 	# Needs review: 24994 hebasto/220426-consensus
 	25019 extsign_caseinsensitive-23						last=2a22f034ca3
 	# Needs review: 25036 w0xlt/save_scan_progress
-	#23.xTODO# Needs review? 25074 -	last=75f53f1e1fc  # index: During sync, commit best block after indexing
+	25074 -													last=75f53f1e1fc  # index: During sync, commit best block after indexing
 	25077 fix_dataraces_pr25077-23							last=fa35585c74c
 	g595  qt_handle_autostart_errors-0.15					last=d932157eb79 mruddy-g/issue_24953
 	g599  ts_20220515-partial-23							last=5e23dabf265 ts_20220515
@@ -207,6 +201,9 @@ checkout v23.0
 	25157 fix_bcli_negtime_pr25157-23
 		# Diff-minimised
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
+	# Needs review: g605  hebasto/220522-splash
+		# NOTE: Simpler alternative in https://github.com/bitcoin/bitcoin/issues/25146#issuecomment-1129356954
+		# Less impact on Knots since we let the user proceed... and only affects builds w/ partial wallet support
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -226,8 +223,6 @@ checkout v23.0
 	# Needs review: 24926 -  # mempool: use mapNextTx.lower_bound in removeRecursive
 	# Probably not worth it before BIP324, needs review and diff-minimising: 24946 -  # Unroll the ChaCha20 inner loop for performance
 	25013 rpc_verifymsg_no_cs_main-21
-	#23.xTODO# FIXME: #25146 - revert f3a17bbe5f7d23b6ecc20e363920492b50859dad ?
-		# Diff-minimised
 	# Needs review: g598  -  # Avoid recalculating the wallet balance - use model cache
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
@@ -606,6 +601,7 @@ checkout v23.0
 	7219  fullrbf-23+knots						5c5190476b9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					901c180339a
+		# TODO: Split out legacy address preference to be more explicit
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			5b753d4e201	# Latest code now
@@ -624,7 +620,7 @@ checkout v23.0
 	-     rpc_getblockfrompeer_nodeid_compat-23
 	# TODO: add a bitcoinknots.conf ?
 	n/a   gui_peers_bump_setting_keys-23+k		94e73baadff
-		#23.xTODO#24.xTODO# Each release, see if we need to bump setting names for GUI states
+		#24.xTODO# Each release, see if we need to bump setting names for GUI states
 		# git grep 'alue(.*State\|toByteArray\|saveState'
 		# Window position/size: leave alone
 		# Splitter position: leave alone? but syncronise with header columns appropriately
