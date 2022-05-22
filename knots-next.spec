@@ -43,7 +43,7 @@ checkout v23.0
 	n/a   (delete_release_notes_fragments)
 @23.x-knotsfixes
 # TESTS:
-	#23.xTODO: as needed only: -     lint_relaxer							f351877c154
+	-     lint_relaxer							f351877c154
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
@@ -99,7 +99,7 @@ checkout v23.0
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-23+knots	d0fceeac30a	last=d41254ab469
+	19888 getblockstats_utxo_actual-23+knots	d0fceeac30a	last=884e7e1f95b
 		# Diff-minimised incl test changes
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
@@ -195,7 +195,7 @@ checkout v23.0
 	# Needs review: 25036 w0xlt/save_scan_progress
 	#23.xTODO# Needs review? 25074 -	last=75f53f1e1fc  # index: During sync, commit best block after indexing
 	25077 fix_dataraces_pr25077-23							last=fa35585c74c
-	g595  qt_handle_autostart_errors-0.15					last=933d2eddadd mruddy-g/issue_24953
+	g595  qt_handle_autostart_errors-0.15					last=d932157eb79 mruddy-g/issue_24953
 	g599  ts_20220515-partial-23							last=5e23dabf265 ts_20220515
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		#24.xTODO# Update with other commits that are beneficial
