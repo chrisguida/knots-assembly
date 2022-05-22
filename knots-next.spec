@@ -138,7 +138,7 @@ checkout v23.0
 	24428 fanquake/improve_bitcoin_wallet_return			last=dd532ee9c4d
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24453 fix_rpcdoc_changeaddr_STR
-	24454 achow101/fix-input-weight-test
+	# Too much diff to fix rare test failure: 24454 achow101/fix-input-weight-test
 	24462 Empact/2022-03-descriptor-pubkey-context			last=9b526727000
 	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval-23						last=33722279495 bugfix_settings_numberval
@@ -149,7 +149,6 @@ checkout v23.0
 	24579 fix_docs_rpc_gbci_gdi_pr24579-23					last=facd5d92e18  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
 	24629 bugfix_rpc_prunebc_retval
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
-	g568  vasild-g/fListen
 	24630 reindexCS_resetindexes-23							last=cf531ba531c
 	24649 fix_wallet_utxos_not_external-23					last=7832e9438f5
 	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
@@ -187,7 +186,7 @@ checkout v23.0
 	# Needs review: 24994 hebasto/220426-consensus
 	25019 extsign_caseinsensitive-23						last=2a22f034ca3
 	# Needs review: 25036 w0xlt/save_scan_progress
-	25074 -													last=75f53f1e1fc  # index: During sync, commit best block after indexing
+	25074 fix_idx_sync_consistency_pr25074-0.19				last=7171ebc7cbd
 	25077 fix_dataraces_pr25077-23							last=fa35585c74c
 	g595  qt_handle_autostart_errors-0.15					last=d932157eb79 mruddy-g/issue_24953
 	g599  ts_20220515-partial-23							last=5e23dabf265 ts_20220515
