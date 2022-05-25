@@ -1,8 +1,8 @@
-timestamp 2022-05-18 07:10:03
+timestamp 2022-05-25 12:21:50
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25168 / gui #599 for fixes
+#.. checked up to PR #25210 / gui #606 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -404,6 +404,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25157 jonatack/update-time-in-rpcwait-and-netinfo
 		Diff-minimise?
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
+	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:

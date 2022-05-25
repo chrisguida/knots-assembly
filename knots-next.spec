@@ -1,7 +1,7 @@
-timestamp 2022-05-18 07:10:03
+timestamp 2022-05-25 12:21:50
 lastapply no-merge
 
-#.. checked up to PR #25168 / gui #599
+#.. checked up to PR #25210 / gui #606
 
 checkout v23.0
 @23.x-syslibs
@@ -31,7 +31,7 @@ checkout v23.0
 	# Needs work? & test: g580 hebasto/220409-event      # Qt 6 (3/n)
 	# Needs review: 24813 hebasto/220409-appcheck        # Qt 6 (4/n)
 	# Only w/ rest of Qt6: g584 hebasto/220413-metatype  # Qt 6 (5/n)
-	# Needs review: g585 prusnak/qregexp-obsolete
+	# Needs review: g585 prusnak/qregexp-obsolete / g606 jarolrod/regexp-obsolete
 	# TODO: tbc uses QRegExpValidator
 	# Needs review: g586 hebasto/220416-quit             # Qt 6 (6/n)
 	# Needed for Qt6?? g587 hebasto/220416-invoke510
@@ -39,6 +39,7 @@ checkout v23.0
 	# Needs review/conceptack: g592 hebasto/220423-wildcard
 	# Needs review: g593 hebasto/220423-re
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
+	# Needs review: 25191 hebasto/220523-qt6-mac
 	# ---- END qt6 SUPPORT ----
 	n/a   (delete_release_notes_fragments)
 @23.x-knotsfixes
@@ -203,6 +204,7 @@ checkout v23.0
 	# Needs review: g605  hebasto/220522-splash
 		# NOTE: Simpler alternative in https://github.com/bitcoin/bitcoin/issues/25146#issuecomment-1129356954
 		# Less impact on Knots since we let the user proceed... and only affects builds w/ partial wallet support
+	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -492,6 +494,9 @@ checkout v23.0
 	# Needs licensing/review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku
 	# TODO/diff-minimise? 25122 -  # rpc: getreceivedbylabel, return early if no addresses were found in the address book
+	Needs nits/naming addressed: 25183 -  # rpc: Witness-only inputs for fundrawtransaction
+	# TODO: g602  ryanofsky-g/pr/qtsopt
+		# +gui#603 ?
 # Non-progress functionality:
 	8751  sort-multisigs-23						6923385f2e0	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -661,7 +666,7 @@ checkout v23.0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=0ed7b3b85d3f618838)		9fa4d038aaa	# doc/{bips,files}
-	n/a  (bump_version=Knots:20220518)			bcc3f6e8502
+	n/a  (bump_version=Knots:20220525)			bcc3f6e8502
 #	n/a  knots_historical_relnotes				61100a2
 	n/a  (cherrypick=c22129a3cec)				b31ddd5021f  # release notes: write/update, including change log and credits
 			# check travis for misspellings
