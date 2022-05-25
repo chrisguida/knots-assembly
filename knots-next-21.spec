@@ -876,7 +876,8 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	7483  svg_icon-21.2+knots					10090268130	last=64ed5a651d7 svg_icon-23+knots
 	(CHECK-LAST)	last=afaab080b87 svg_icon-22+knots
 # BRANDING:
-	n/a   knots_branding-21						9db64a56d30	last=282420dea44 knots_branding-22
+	n/a   knots_branding-21						9db64a56d30	last=16035761f8b knots_branding-23
+	(CHECK-LAST)	last=282420dea44 knots_branding-22
 	n/a   ver_dropzero-21.2+knots				0d04104e95d
 		# this should be 21.1.1 I guess? keeping 21.2.0 for now to match Core...
 		# TODO: bump ver properly when Core abandons it

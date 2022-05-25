@@ -655,7 +655,7 @@ checkout v23.0
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
-	n/a   knots_branding-22						2778d0743d1
+	n/a   knots_branding-23						2778d0743d1
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check there are no menu icons
 #FIXME: Check hidden_args has anything removed (possibly conditional)
