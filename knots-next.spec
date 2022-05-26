@@ -183,7 +183,7 @@ checkout v23.0
 		# Diff-minimised
 	24984 fix_wallet_race_attachingbb-22^
 	25088 fix_wallet_race_attachingbb-22					last=ba10b90915d fix_wallet_race_attachingbb
-	24991 fix_onlylistenonion-23+knots						last=c313568a97b vasild/onlynet_onion_with_listenonion_is_ok
+	24991 fix_onlylistenonion-23+knots						last=28ae912f501 vasild/onlynet_onion_with_listenonion_is_ok
 	# Needs review: 24994 hebasto/220426-consensus
 	25019 extsign_caseinsensitive-23						last=2a22f034ca3
 	# Needs review: 25036 w0xlt/save_scan_progress
@@ -494,7 +494,7 @@ checkout v23.0
 	# Needs licensing/review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku
 	# TODO/diff-minimise? 25122 -  # rpc: getreceivedbylabel, return early if no addresses were found in the address book
-	Needs nits/naming addressed: 25183 -  # rpc: Witness-only inputs for fundrawtransaction
+	25183 rpc_fundraw_segwitonly-23					last=1c5cfd84b3d
 	# TODO: g602  ryanofsky-g/pr/qtsopt
 		# +gui#603 ?
 # Non-progress functionality:
@@ -665,10 +665,11 @@ checkout v23.0
 # TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
-	n/a  (cherrypick=0ed7b3b85d3f618838)		9fa4d038aaa	# doc/{bips,files}
+	n/a  (cherrypick=165f473d4d068ee31a)		9fa4d038aaa	# doc/{bips,files}
 	n/a  (bump_version=Knots:20220525)			bcc3f6e8502
 #	n/a  knots_historical_relnotes				61100a2
-	n/a  (cherrypick=c22129a3cec)				b31ddd5021f  # release notes: write/update, including change log and credits
+	n/a   rm_historical_relnotes_from_dist
+	n/a  (cherrypick=7c9f28557be)				b31ddd5021f  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
@@ -677,10 +678,7 @@ checkout v23.0
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-		540190c138f for #24198
-		git stash show -p 35856571b90472274169ddf84d5b2ef06fdcae6e for #24629
-		need notes for #24636 ?
-	n/a  (cherrypick=59fae184489)				06a4bf467f6  # update manpages (build first)
+	n/a  (cherrypick=e176316e332)				06a4bf467f6  # update manpages (build first)
 	n/a  (cherrypick=0b0a1a14592)				b2c9337cfd7  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
