@@ -45,6 +45,10 @@ checkout v23.0
 @23.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							f351877c154
+		# Add back as needed:
+		#	* 16e78207523 Bugfix: lint: Tolerate explicit hidden-only args
+		#	* 76fc5a93eab QA: Don't require coverage of all RPC methods
+		#	* 041efdee0d3 lint/includes: Don't fail for new boost usage
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
@@ -205,7 +209,7 @@ checkout v23.0
 		# NOTE: Simpler alternative in https://github.com/bitcoin/bitcoin/issues/25146#issuecomment-1129356954
 		# Less impact on Knots since we let the user proceed... and only affects builds w/ partial wallet support
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
-	25216 -  # Doc: Fix parameter in hwm example block
+	25216 docfix_zmq_hwm_ex_pr25216-21  # Doc: Fix parameter in hwm example block
 	# Needs review: 25220 brunoerg/2022-05-fix-incorrect-warning-createmultisig
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
@@ -664,12 +668,10 @@ checkout v23.0
 # BRANDING:
 	n/a   knots_branding-23						2778d0743d1
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
-#FIXME: Check there are no menu icons
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #TODO: Check that we aren't deprecating anything in Core
 #TODO: verify src tarball includes rendered_icons incl nsis-header
-# TODO: Check build with -fno-common
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=165f473d4d068ee31a)		9fa4d038aaa	# doc/{bips,files}
