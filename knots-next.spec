@@ -679,7 +679,7 @@ checkout v23.0
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=e176316e332)				06a4bf467f6  # update manpages (build first)
-	n/a  (cherrypick=0b0a1a14592)				b2c9337cfd7  # translation update
+	n/a  (cherrypick=9b1226db50e)				b2c9337cfd7  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
 
