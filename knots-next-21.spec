@@ -2,7 +2,7 @@ timestamp 2022-05-25 12:21:50
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25210 / gui #606 for fixes
+#.. checked up to PR #25236 / gui #607 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -405,6 +405,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		Diff-minimise?
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
+	25216 -  # Doc: Fix parameter in hwm example block
+	# Needs review: 25220 brunoerg/2022-05-fix-incorrect-warning-createmultisig
+	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
+	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # SOFTFORK:

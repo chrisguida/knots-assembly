@@ -1,7 +1,7 @@
 timestamp 2022-05-25 12:21:50
 lastapply no-merge
 
-#.. checked up to PR #25210 / gui #606
+#.. checked up to PR #25236 / gui #607
 
 checkout v23.0
 @23.x-syslibs
@@ -205,6 +205,10 @@ checkout v23.0
 		# NOTE: Simpler alternative in https://github.com/bitcoin/bitcoin/issues/25146#issuecomment-1129356954
 		# Less impact on Knots since we let the user proceed... and only affects builds w/ partial wallet support
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
+	25216 -  # Doc: Fix parameter in hwm example block
+	# Needs review: 25220 brunoerg/2022-05-fix-incorrect-warning-createmultisig
+	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
+	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -225,6 +229,9 @@ checkout v23.0
 	# Probably not worth it before BIP324, needs review and diff-minimising: 24946 -  # Unroll the ChaCha20 inner loop for performance
 	25013 rpc_verifymsg_no_cs_main-21
 	# Needs review: g598  -  # Avoid recalculating the wallet balance - use model cache
+	# Needs review: 25221 -  # Improve CMedianFilter algorithm - useless? see comments
+	# Needs review: 25232 -  # rpc: Faster getblock API
+	# Needs review: 25236 -  # wallet: use vector instead of list for transactions
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -666,7 +673,7 @@ checkout v23.0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=165f473d4d068ee31a)		9fa4d038aaa	# doc/{bips,files}
-	n/a  (bump_version=Knots:20220525)			bcc3f6e8502
+	n/a  (bump_version=Knots:20220529)			bcc3f6e8502
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist
 	n/a  (cherrypick=7c9f28557be)				b31ddd5021f  # release notes: write/update, including change log and credits
