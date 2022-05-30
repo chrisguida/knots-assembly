@@ -7,6 +7,7 @@ timestamp 2022-05-25 12:21:50
 checkout v0.21.2
 @21.x-syslibs
 # BUILD BUGS:
+	21.xTODO: UN-bump the boost dep back to where it should be (21.2 had a bug requiring a much newer ver)
 	21882 fuzz32_llvm_workaround-0.21+knots		d83d545d869	last=e4c8bb62e4a hebasto/210507-fuzz32
 	20938 configure_latomic_checks-0.14^		5ad9c951c3c
 	21920 configure_latomic_checks-0.14			b155f1d63f9
