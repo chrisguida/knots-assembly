@@ -36,7 +36,6 @@ checkout v0.21.2
 		# NOTE: Inspired by first revision of #24291
 	# Not worth it: 24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 	24633 bugfix_suppresswarnings_regex
-	TODO: get rid of -O0
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
