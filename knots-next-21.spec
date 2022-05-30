@@ -31,8 +31,9 @@ checkout v0.21.2
 	23947 config_summary_host_os-21
 	24104 boost1.78_compat-21
 	24240 fix_capnp_fetch-21
-	24277 hebasto/220206-deploy
-	check 24291 marco/2202-fuzzNoBoost (note PR edit history)
+	# Not really needed: 24277 hebasto/220206-deploy
+	# Not needed: 2af9be1f1a4 build: Remove hexdump and libboost-test-dev dependencies when --enable-fuzz
+		# NOTE: Inspired by first revision of #24291
 	24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 	24369 laanwj/2022-02-rseq
 	24633 bugfix_suppresswarnings_regex
