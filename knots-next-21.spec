@@ -7,7 +7,6 @@ timestamp 2022-05-25 12:21:50
 checkout v0.21.2
 @21.x-syslibs
 # BUILD BUGS:
-	21.xTODO: UN-bump the boost dep back to where it should be (21.2 had a bug requiring a much newer ver)
 	21882 fuzz32_llvm_workaround-0.21+knots		d83d545d869	last=e4c8bb62e4a hebasto/210507-fuzz32
 	20938 configure_latomic_checks-0.14^		5ad9c951c3c
 	21920 configure_latomic_checks-0.14			b155f1d63f9
@@ -905,7 +904,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 #TODO: Make sure there's no \d'\d or 0b\d+ in C++ code: git grep '[0-9]'\''[0-9]\|\b0b[01]\+[^2-9][^0-9a-z]'
 #TODO: Make sure there's no Qt5.5 incompatibilities: git grep 'addAction(.*\[.*\]\s*{'
 #TODO: Make sure there's no -Wc++14-extensions triggered
-#TODO: Make sure there's no optional .has_value() (Boost 1.68 dep)
+TODO: Make sure there's no optional .has_value() (Boost 1.68 dep)
 #TODO: Make sure there's no 'build_bitcoin_util\b|natpmp'
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
 	n/a  knots_bips-21							95f1a0c7adb
