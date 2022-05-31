@@ -39,10 +39,7 @@ checkout v0.21.2
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
-		TODO: Make sure latest lib is compat (see gentoo overlay)
-	5416  sys_libsecp256k1-0.21+knots			813a5353e1d	last=ad6c1063b16 sys_libsecp256k1
-		TODO: * 4af281f7973 Adapt to new secp256k1_schnorrsig_verify ABI at startup, when building against system libsecp256k1
-		PREFER: * 7651dd850f6 (HEAD) Adapt to new secp256k1_schnorrsig_verify ABI at startup, when building against system libsecp256k1
+	5416  sys_libsecp256k1-0.21+knots			813a5353e1d	last=da31940ec9e sys_libsecp256k1
 	n/a   sys_univalue_doc-21								last=fd17f3dc676 sys_univalue
 m	7485  sys_univalue_def-21					c393c7a7f51	last=20bd5eccd54 sys_univalue_def
 	13789 bugfix_asm_pragmas					e33b0f86575
