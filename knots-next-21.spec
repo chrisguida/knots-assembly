@@ -40,8 +40,8 @@ checkout v0.21.2
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
 	5416  sys_libsecp256k1-0.21+knots			813a5353e1d	last=da31940ec9e sys_libsecp256k1
-	n/a   sys_univalue_doc-21								last=fd17f3dc676 sys_univalue
-m	7485  sys_univalue_def-21					c393c7a7f51	last=20bd5eccd54 sys_univalue_def
+	n/a   sys_univalue_doc-21								last=77c4f3e3af9 sys_univalue-23+knots
+m	7485  sys_univalue_def-21					c393c7a7f51	last=cf9e588e22f sys_univalue_def-23+knots
 	13789 bugfix_asm_pragmas					e33b0f86575
 	-     bugfix_asm_leveldb_check-0.20			15cb5704a2a	last=3ca799db25f bugfix_asm_leveldb_check
 	15155 test_external_bcli-21					3385d2476a3	last=06ec7f56dfb test_external_bcli
@@ -51,7 +51,7 @@ m	7485  sys_univalue_def-21					c393c7a7f51	last=20bd5eccd54 sys_univalue_def
 		# Omitted "Don't make any wallets unless wallet is required": 45b4366f8ff 104a3a22564 6e06ca05880
 		# Diff-minimised
 	-     opt_bdb_extracare-0.21				65ea0f5ab4e	last=aa6a707d7ca opt_bdb_extracare
-		TODO: should this get promoted to non-experimental now that it's considered stable in 23.x?
+		#21.xTODO# should this get promoted to non-experimental now that it's considered stable in 23.x?
 	20121 secp256k1_allow_bignum-21+knots		b2befc7fef1
 	20358 -										3e3443170a8	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
 	20594 conf_getauxval-0.21					563aacf22be	last=836a3dc02c7 jonas/2020/12/getauxval
@@ -64,8 +64,8 @@ m	7485  sys_univalue_def-21					c393c7a7f51	last=20bd5eccd54 sys_univalue_def
 TM	22279 fix_fuzz_baseencdec_pr22279-0.21		0c8d22592f5
 TM	22002 fix_fuzz_system_pr22002-0.21			4fd9b177451
 TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
-	-     lint_relaxer-0.21						8bfe42fe606	last=598cf8bfb7b lint_relaxer
-		# Held back unnecessary d4d8eb13cbb...598cf8bfb7b
+	-     lint_relaxer-0.21						8bfe42fe606	last=be7776a0ed6 lint_relaxer
+		# Held back unnecessary d4d8eb13cbb...be7776a0ed6
 	17402 travis_ppc64							3f88efab27c	last=1d684f05341 elichai/2019-11-powerpc64
 	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20	4a97d761fcc
 	# TODO? 25123 fjahr/202205-index-prune-fix
