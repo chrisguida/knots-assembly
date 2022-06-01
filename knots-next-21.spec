@@ -308,7 +308,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# Diff-minimised
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	24067 wallet_no_final_checks-21
-		# TODO: +gui#552 ?
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
 	#21.xTODO# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	24095 fix_settings_jsonfmt-21
@@ -319,7 +318,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO? 22762+24201 -  # p2p: Avoid InitError when downgrading peers.dat
 	#21.xTODO#Diff-minimise: 24231 -  # streams: Fix read-past-the-end and integer overflows
 		#TODO: Substitute for 24253 (removes broken unused methods)
-	24239 -  # test: fix ceildiv division by using integers
 	24287 fix_genmanpages_tagver-0.19
 	24313 Sjors/2022/02/displayaddress
 		TODO: make sure this doesn't break compatibility
