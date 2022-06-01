@@ -327,7 +327,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	22461 fix_descwallet_upgrade_noop-21
 	24365 fix_watchwallet_upgrade_noop-21
-	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
+	24371 fix_torcontrol_overread-0.15
 	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
 	# Needs work: 24392 hebasto/220219-cmake
 	Diff-minimise 24397 hebasto/220220-boost
