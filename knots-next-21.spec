@@ -319,11 +319,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	#21.xTODO#Diff-minimise: 24231 -  # streams: Fix read-past-the-end and integer overflows
 		#TODO: Substitute for 24253 (removes broken unused methods)
 	24287 fix_genmanpages_tagver-0.19
-	24313 Sjors/2022/02/displayaddress
-		TODO: make sure this doesn't break compatibility
+	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
+		# TODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
-	24343 sipa/202202_trunittests
-	Diff-minimise: 22087 -  # Validate port-options
+	22087 validate_port_opts-21								last=ce4652aaa01  # Validate port-options
+	(CHECK-LAST)	last=d7f85a72354 validate_port_opts-23+knots
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	Needs review: 24365 achow101/upgrade-disable-privkeys
 	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
@@ -700,6 +700,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	10554 zmq_wtx-0.21+knots					a6b0a8894fb	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	(CHECK-LAST)	last=39cf88db90b zmq_wtx-22+knots
 	(CHECK-LAST)	last=89134d1eb4c zmq_wtx-23+knots
+		TODO: add validation like #22087
 	20551 rpc_onetry_conntype-21				d7fcef7c236	last=1c63b3ff236 rpc_onetry_conntype
 	(CHECK-LAST)	last=7661ce6ddaf rpc_onetry_conntype-22
 		# NOTE: Originally based on #12674
