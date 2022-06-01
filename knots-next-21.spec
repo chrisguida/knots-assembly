@@ -325,7 +325,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	22087 validate_port_opts-21								last=ce4652aaa01  # Validate port-options
 	(CHECK-LAST)	last=d7f85a72354 validate_port_opts-23+knots
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
-	Needs review: 24365 achow101/upgrade-disable-privkeys
+	22461 fix_descwallet_upgrade_noop-21
+	24365 fix_watchwallet_upgrade_noop-21
 	Needs work: 24371 -  # util: Fix ReadBinaryFile reading beyond maxsize
 	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
 	# Needs work: 24392 hebasto/220219-cmake
