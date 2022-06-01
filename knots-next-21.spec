@@ -105,7 +105,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		#	1) Useless string change (inferior IMO)
 		#	2) Added tests which are annoying to merge
 	-     deprecated_param_names				1e916ec2f4b
-	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=19bc0668c59 bugfix_rpc_getbalance_hacky
+	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=e8a9f9c83eb bugfix_rpc_getbalance_hacky
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
@@ -273,7 +273,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review of backport-rewrite in qt_catch_rpc_index_overflow-0.18 [alt to g446  marco/2110-qtRpcCons]
 	# TODO: 23268 prayank23/dns-seed-fqdn
 	# TODO: 23253 marco/2110-utilTxSeqId
-	23304 wallet_derive_inactive_pr23304-23
+	23304 wallet_derive_inactive_pr23304-21
 	# n/a without #20764? 23324 netinfo_peer_count_all_reachable-22
 	# n/a without #19651: 23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
 	# Maybe just the docs from #23341 ?
@@ -307,9 +307,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g516  qt_recvreq_show_eyeicon-0.14
 		# Diff-minimised
 	# Needs review: 24066 whitslack/openrc-daemonwait
-	#21.xTODO: Needs review: 24067 -  # wallet: Actually treat (un)confirmed txs as (un)confirmed
+	24067 wallet_no_final_checks-21
 		# TODO: +gui#552 ?
-		NOTE: bugfix_rpc_getbalance_hacky needs fix for MTP isfinal flag
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
 	#21.xTODO# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	24095 fix_settings_jsonfmt-21
