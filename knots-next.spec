@@ -58,6 +58,7 @@ checkout v23.0
 	# TODO? 25124 -  # test: Fix intermittent race in p2p_unrequested_blocks.py
 # FIXES:
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
+		TODO: * 04febc9f129 Bugfix: guix: Set REFERENCE_DATETIME for make_release_tarball.sh
 	18902 fix_gitdir_again						fe1576ba2d8
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					06b2e2cae97	last=df5ece3e064 2020mingwthrd
