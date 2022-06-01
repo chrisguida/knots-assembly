@@ -229,7 +229,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	22591 missing_settings_err-0.21				b2631c36f28
 	22834 bugfix_onlynet-21						ffe8ea31150	last=0eea83a85ec vasild/onlynet
 		# Refactored to be less optimised in favour of being more obviously correct
-		TODO: +#24991
+		# NOTE: Rebase of final PR in dea312e08a6 net: respect -onlynet= when making outbound connections
+			# If updating, include #24991 too (included in Knots v23.0)
 	(CHECK-LAST)	last=61c0c0f7bad bugfix_onlynet-22
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	22722 fix_estsfee_minrelay-21+knots			65397b3d6f1	last=ea31caf6b4c  # rpc: update estimatesmartfee to return max of CBlockPolicyEstimator::estimateSmartFee, mempoollMinFee and minRelayTxFee
