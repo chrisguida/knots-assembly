@@ -328,13 +328,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	22461 fix_descwallet_upgrade_noop-21
 	24365 fix_watchwallet_upgrade_noop-21
 	24371 fix_torcontrol_overread-0.15
-	Maybe? Needs work: 24381 -  # test: Run symlink regression tests on Windows
+	# Not worth it? 24381 -  # test: Run symlink regression tests on Windows
 	# Needs work: 24392 hebasto/220219-cmake
-	Diff-minimise 24397 hebasto/220220-boost
-	24401 hebasto/220220-signer
-	24406 -  # test: Fix Wambiguous-reversed-operator compiler warnings
-	24409 fanquake/24263_followups
-		NOTE: Care needed to ensure manpage generation doesn't break
+	# Meh: 24406 -  # test: Fix Wambiguous-reversed-operator compiler warnings
+	# Not worth the effort? 24409 fanquake/24263_followups
+		# NOTE: Care needed to ensure manpage generation doesn't break
+		# NOTE: Might need #20468
 	TODO: Notate release binaries are GPL-3 due to #13177
 	Check if there's a real bug: 24523 promag/220222-boost
 		# NOTE: Was #24415 (never in Knots)
