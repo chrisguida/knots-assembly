@@ -75,7 +75,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b aka depends_no_getrandom
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=690985474a5 guix_reltar_autogen_distclean
-	18902 fix_gitdir_again-21					9e6238975fe	last=41debc1878d fix_gitdir_again
+	18902 fix_gitdir_again-21					9e6238975fe	last=dc420103874 fix_gitdir_again
 		# NOTE: based directly on #18818
 	24048 fix_pkgconf_missing-21
 	18427 2020mingwthrd-mini-21					f4f276a44ae	last=df5ece3e064 2020mingwthrd
@@ -105,7 +105,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		#	1) Useless string change (inferior IMO)
 		#	2) Added tests which are annoying to merge
 	-     deprecated_param_names				1e916ec2f4b
-	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=94b78bb1de8 bugfix_rpc_getbalance_hacky
+	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=19bc0668c59 bugfix_rpc_getbalance_hacky
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
@@ -149,8 +149,9 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	19884 fixedseeds-0.21						35264ce4152
 		# +partial #21254 (bugfix only)
 	22798 doc_fix_pr22798-21.1					4ab4007c290
-	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=ca5de4bf4ab
+	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=884e7e1f95b
 	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
+	(CHECK-LAST)	last=937d948b76f getblockstats_utxo_actual-23+knots
 		# Held back additional tests
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					df127c75a99	last=2e386cd3dd3
@@ -186,7 +187,7 @@ TM	g188  bugfix_psbt_binmode-0.21				79e220794d8	last=cc3971c9ff5 achow101-g/bin
 		# Diff-minimised
 	g217  gui_clickable_warning-0.11			21f8d05d194	last=67c59ae4793 jarolrod-g/warning-look-like-button
 	# Needs careful review: g219 hebasto-g/210223-toolbar
-	g236  gui_init_walleterror_cont-21			11342604e1e	last=fb3ea0ad3a8 gui_init_walleterror_cont
+	g236  gui_init_walleterror_cont-21			11342604e1e	last=cc85951352a gui_init_walleterror_cont
 		# NOTE: Held back refactoring 0b00fd650e1...fb3ea0ad3a8
 	# Complex: 21007 hebasto:210316-fork
 		# +21447 TODO
