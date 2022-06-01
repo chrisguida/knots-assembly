@@ -273,9 +273,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review of backport-rewrite in qt_catch_rpc_index_overflow-0.18 [alt to g446  marco/2110-qtRpcCons]
 	# TODO: 23268 prayank23/dns-seed-fqdn
 	# TODO: 23253 marco/2110-utilTxSeqId
-	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
-		TODO: now part of (merged in master) #23304
-	#21.xTODO# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
+	23304 wallet_derive_inactive_pr23304-23
 	# n/a without #20764? 23324 netinfo_peer_count_all_reachable-22
 	# n/a without #19651: 23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
 	# Maybe just the docs from #23341 ?
