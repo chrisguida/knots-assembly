@@ -77,7 +77,6 @@ checkout v23.0
 	# Needs bugfix: -     fsync_dir_win
 	-     rpcarg_type_per_name-23+knots			894b5b40dfc
 	-     bugfix_rpc_getbalance_hacky			60f5367f46a
-		FIXME: Assume should be CHECK_NONFATAL(this->chain().findBlock(tip_blockhash, interfaces::FoundBlock().mtpTime(tip_mtp)));
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
