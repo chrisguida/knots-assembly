@@ -343,7 +343,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Wait for #24409? Or at least until merged in Core...? 24428 fanquake/improve_bitcoin_wallet_return
 		# NOTE: rebase w/o 24409 in f41a608a397
 	24434 fix_english_addrmanerr_pr24434-21
-	24453 fix_rpcdoc_changeaddr_STR
+	24453 fix_rpcdoc_changeaddr_STR-21						last=e8272024ab6 fix_rpcdoc_changeaddr_STR
 	Needs review: 24454 achow101/fix-input-weight-test
 	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval
