@@ -25,11 +25,13 @@ checkout v0.21.2
 		# Fixed silent conflicts (bitcoin-util & natpmp not supported by 21.x)
 	24051 config_utils_drop_extra_deps-21+knots				last=98868633d1d config_utils_drop_extra_deps
 	22348 workaround_boost_issue96-21			db54924736a	last=67669ab425b hebasto/210627-boost
+	24523 boost1.78_workaround_narrowing-21
+		# NOTE: Was #24415 (never in Knots)
 	23607 evhttp_connection_get_peer_compat-21	a5d963d4635	last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
 	21421 skip_stack_clash_windows-21
 	23947 config_summary_host_os-21
-	24104 boost1.78_compat-21
+	24104 boost1.78_fs_compat-21
 	24240 fix_capnp_fetch-21
 	# Not really needed: 24277 hebasto/220206-deploy
 	# Not needed: 2af9be1f1a4 build: Remove hexdump and libboost-test-dev dependencies when --enable-fuzz
@@ -221,8 +223,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=171ac54ea47 fix_wallet_pr22359-22
 		# Semi-diff-minimised
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
-	22417 bpchild_closefds-0.21					ae04745f860	last=4c19cea484b bpchild_closefds
+	22417 bpchild_closefds-21+knots				ae04745f860	last=4c19cea484b bpchild_closefds
+	(CHECK-LAST)	last=9b9cdc9ae6f bpchild_closefds-0.21
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
+		# NOTE: Workaround for boost bug included; see also #24523
 	g379  qt_reset_bad_settingsjson-0.21		0952d0c615e
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
 	22577 fix_race_pr22577-0.21.1				40a6192ef6c	last=05e84aa550c fix_race_pr22577-22
@@ -336,8 +340,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Might need #20468
 	-     compat_llvm_divmoddi4-0.17
 		# Part of #24448 in Knots 23.0+
-	Check if there's a real bug: 24523 promag/220222-boost
-		# NOTE: Was #24415 (never in Knots)
 	24428 fanquake/improve_bitcoin_wallet_return
 	24434 hebasto/220224-word
 	24453 fix_rpcdoc_changeaddr_STR

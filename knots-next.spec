@@ -120,6 +120,7 @@ checkout v23.0
 	22417 bpchild_closefds						05121d01966	last=4c19cea484b bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 		# NOTE: Currently uses ENABLE_EXTERNAL_SIGNER in place of USE_BOOST_PROCESS (not defined until #15421 merged)
+		TODO: Drop mingw workaround from util/system.h since it's only used on non-Windows in the first place?
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				32caa7dec63
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
