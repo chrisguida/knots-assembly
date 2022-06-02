@@ -344,9 +344,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: rebase w/o 24409 in f41a608a397
 	24434 fix_english_addrmanerr_pr24434-21
 	24453 fix_rpcdoc_changeaddr_STR-21						last=e8272024ab6 fix_rpcdoc_changeaddr_STR
-	Needs review: 24454 achow101/fix-input-weight-test
 	# Not worth it? 24469 ryanofsky/pr/testu
-	24479 bugfix_settings_numberval
+	24479 bugfix_settings_numberval-0.20					last=33722279495 bugfix_settings_numberval
 	24521 hebasto/220310-boost
 	Needs review: 24538 glozow/2022-03-miner-prioritised
 	Check if silently partial-only: 24579 -  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
