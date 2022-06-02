@@ -334,7 +334,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Not worth the effort? 24409 fanquake/24263_followups
 		# NOTE: Care needed to ensure manpage generation doesn't break
 		# NOTE: Might need #20468
-	TODO: Notate release binaries are GPL-3 due to #13177
+	-     compat_llvm_divmoddi4-0.17
+		# Part of #24448 in Knots 23.0+
 	Check if there's a real bug: 24523 promag/220222-boost
 		# NOTE: Was #24415 (never in Knots)
 	24428 fanquake/improve_bitcoin_wallet_return
