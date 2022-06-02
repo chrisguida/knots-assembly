@@ -346,8 +346,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24453 fix_rpcdoc_changeaddr_STR-21						last=e8272024ab6 fix_rpcdoc_changeaddr_STR
 	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval-0.20					last=33722279495 bugfix_settings_numberval
-	24521 hebasto/220310-boost
-	Needs review: 24538 glozow/2022-03-miner-prioritised
+	24538 fix_miner_policy_modfee_pr24538-0.20
 	Check if silently partial-only: 24579 -  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
 	Check upstream concept-ACK-or-NACK: 24629 bugfix_rpc_prunebc_retval
 	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
