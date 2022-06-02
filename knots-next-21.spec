@@ -335,13 +335,14 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Not worth it? 24381 -  # test: Run symlink regression tests on Windows
 	# Needs work: 24392 hebasto/220219-cmake
 	# Meh: 24406 -  # test: Fix Wambiguous-reversed-operator compiler warnings
-	# Not worth the effort? 24409 fanquake/24263_followups
-		# NOTE: Care needed to ensure manpage generation doesn't break
-		# NOTE: Might need #20468
 	-     compat_llvm_divmoddi4-0.17
 		# Part of #24448 in Knots 23.0+
-	24428 fanquake/improve_bitcoin_wallet_return
-	24434 hebasto/220224-word
+	# Not worth the effort? 24409 fanquake/24263_followups  # Always output license/copyright info with -version
+		# NOTE: Care needed to ensure manpage generation doesn't break
+		# NOTE: Might need #20468
+	# Wait for #24409? Or at least until merged in Core...? 24428 fanquake/improve_bitcoin_wallet_return
+		# NOTE: rebase w/o 24409 in f41a608a397
+	24434 fix_english_addrmanerr_pr24434-21
 	24453 fix_rpcdoc_changeaddr_STR
 	Needs review: 24454 achow101/fix-input-weight-test
 	# Not worth it? 24469 ryanofsky/pr/testu
