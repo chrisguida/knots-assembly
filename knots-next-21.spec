@@ -151,6 +151,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	19884 fixedseeds-0.21						35264ce4152
 		# +partial #21254 (bugfix only)
 	22798 doc_fix_pr22798-21.1					4ab4007c290
+	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=884e7e1f95b
 	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
 	(CHECK-LAST)	last=937d948b76f getblockstats_utxo_actual-23+knots
@@ -347,8 +348,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval-0.20					last=33722279495 bugfix_settings_numberval
 	24538 fix_miner_policy_modfee_pr24538-0.20
-	Check upstream concept-ACK-or-NACK: 24629 bugfix_rpc_prunebc_retval
-	24640 fix_rpcdoc_gbci_pruneheight_desc-23				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
+	24629 bugfix_rpc_prunebc_retval-21						last=e593ae07c4f bugfix_rpc_prunebc_retval
 	Check applicability: 24626 -  # init: disallow reindex-chainstate when pruning
 	Needs review: 24630 -  # index: reset indexes when running reindex-chainstate
 	Needs triage: 24632 -  # print Warnings: only if warning returned
