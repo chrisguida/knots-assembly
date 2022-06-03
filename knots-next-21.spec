@@ -151,8 +151,6 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	19884 fixedseeds-0.21						35264ce4152
 		# +partial #21254 (bugfix only)
 	22798 doc_fix_pr22798-21.1					4ab4007c290
-	24716 fix_rpcdoc_blkchain_pr24716-21+knots
-	24640 fix_rpcdoc_gbci_pruneheight_desc-21+k				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=884e7e1f95b
 	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
 	(CHECK-LAST)	last=937d948b76f getblockstats_utxo_actual-23+knots
@@ -350,6 +348,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24479 bugfix_settings_numberval-0.20					last=33722279495 bugfix_settings_numberval
 	24538 fix_miner_policy_modfee_pr24538-0.20
 	24629 bugfix_rpc_prunebc_retval-21						last=e593ae07c4f bugfix_rpc_prunebc_retval
+	24640 fix_rpcdoc_gbci_pruneheight_desc-21+k				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	22684 qa_invalid_prune-21
 	24626 err_reidxCS_pruned-21
 	24630 reindexCS_resetindexes-21							last=cf531ba531c
@@ -358,9 +357,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g568  fix_listenonion_wo_listen-21
 	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
-	Triage: 24718 -  # rpc: getblock/getrawtransaction/decode*/gettxout fixups
-	Triage: 24722 -  # build: patch around qt duplicate symbol issue
-	TODO: Force inlining of functions with __m256i params in rc/crypto/sha256_avx2.cpp to fix #24727 (only when building with GCC - not MSVC or Clang!)
+	24716 fix_doc_rpc_rawtx_pr24716-21+knots
+	# Very annoying, needs care not to prematurely doc things; do draft on 21.2.1 tip #21.xTODO#: Triage: 24718 -  # rpc: getblock/getrawtransaction/decode*/gettxout fixups
+	# If needed: 24722 -  # build: patch around qt duplicate symbol issue (duplicate symbol 'lcQpaFonts()')
+	# Not needed unless Windows builds use GCC 10+ (21.x uses GCC 7): Force inlining of functions with __m256i params in rc/crypto/sha256_avx2.cpp to fix #24727 (only when building with GCC - not MSVC or Clang!)
 	Needs review: 24804 -  # Sanity assert GetAncestor() != nullptr where appropriate
 	Simply updating the docs (like older version of) if needed: 24776 -  # docs: update /rest/chaininfo doc according to getblockchaininfo
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
