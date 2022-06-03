@@ -151,6 +151,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	19884 fixedseeds-0.21						35264ce4152
 		# +partial #21254 (bugfix only)
 	22798 doc_fix_pr22798-21.1					4ab4007c290
+	24716 fix_rpcdoc_blkchain_pr24716-21+knots
 	24640 fix_rpcdoc_gbci_pruneheight_desc-21+k				last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=884e7e1f95b
 	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
@@ -357,7 +358,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g568  fix_listenonion_wo_listen-21
 	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
-	24716 laanwj/2022-03-rpc-getrawtransaction-assert
 	Triage: 24718 -  # rpc: getblock/getrawtransaction/decode*/gettxout fixups
 	Triage: 24722 -  # build: patch around qt duplicate symbol issue
 	TODO: Force inlining of functions with __m256i params in rc/crypto/sha256_avx2.cpp to fix #24727 (only when building with GCC - not MSVC or Clang!)
