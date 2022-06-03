@@ -351,7 +351,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24629 bugfix_rpc_prunebc_retval-21						last=e593ae07c4f bugfix_rpc_prunebc_retval
 	22684 qa_invalid_prune-21
 	24626 err_reidxCS_pruned-21
-	Needs review: 24630 -  # index: reset indexes when running reindex-chainstate
+	24630 reindexCS_resetindexes-21							last=cf531ba531c
+	(CHECK-LAST)	last=c37ab289c4b reindexCS_resetindexes-23
 	Needs triage: 24632 -  # print Warnings: only if warning returned
 	Needs triage & review: 24649 S3RK/wallet_correct_external_utxo
 	Triage: 24659 fanquake/maybe_fix_24536
