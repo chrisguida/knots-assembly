@@ -353,12 +353,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24626 err_reidxCS_pruned-21
 	24630 reindexCS_resetindexes-21							last=cf531ba531c
 	(CHECK-LAST)	last=c37ab289c4b reindexCS_resetindexes-23
-	Needs triage: 24632 -  # print Warnings: only if warning returned
-	Needs triage & review: 24649 S3RK/wallet_correct_external_utxo
-	Triage: 24659 fanquake/maybe_fix_24536
-	Triage: 24690 hebasto/220328-sys
-	Applicable? 20769 -  # net: fixes #20657 - Advertised address where nobody is listening
-		NOTE: Needs gui#568 too
+	20769 fix_listenonion_wo_listen-21^
+	g568  fix_listenonion_wo_listen-21
 	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
 	24716 laanwj/2022-03-rpc-getrawtransaction-assert
