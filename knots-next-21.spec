@@ -373,10 +373,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	# Simpler version of? 24845 -  # wallet: createTransaction, return proper error description for "too-long-mempool-chain" + introduce generic Result classes
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
-	24855 achow101/fix-setwalletflag-disabling
+	24855 fix_doc_rpc_setwalletflag_warnings-0.20
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
-	24859 fix_wallet_badcreate_pr24859-21					last=e04ee884511 fix_wallet_badcreate_pr24859-23  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
-		+Needs care in 21.x (descriptors=False default): 25011 achow101/fix-legacy-createwallet-test
+	24859 fix_wallet_badcreate_pr24859-21					last=e80b64b382f fix_wallet_badcreate_pr24859-23  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
+		# +#25011 achow101/fix-legacy-createwallet-test
 	#21.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
 	TODO: Only half of 25051 fix_configure_def_enable_arm_asms
