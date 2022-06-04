@@ -366,10 +366,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	-     doc_rest_chaininfo_update-21
 		# Inspired by #24776
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
-	24837 -  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
-	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
-		(Backport fix_noproxy_hack-23)
-		NOTE: Depends on #24837 to work right!
+	24837 fix_noproxy_hack-21^	# init: Prevent -noproxy and -proxy=0 from interacting with other settings
+	-     fix_noproxy_hack-21
+		# Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
+		# NOTE: Depends on #24837 to work right!
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	# Simpler version of? 24845 -  # wallet: createTransaction, return proper error description for "too-long-mempool-chain" + introduce generic Result classes
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
