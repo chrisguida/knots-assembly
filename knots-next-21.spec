@@ -363,7 +363,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Not needed unless Windows builds use GCC 10+ (21.x uses GCC 7): Force inlining of functions with __m256i params in rc/crypto/sha256_avx2.cpp to fix #24727 (only when building with GCC - not MSVC or Clang!)
 	24804 check_GetAncestor_rv-21
 		# NOTE: Diff-minimised, including keeping `int` type for nTimeDiff since we depend on 32-bit int anyway (and MTP can't be >31-bit right now)
-	Simply updating the docs (like older version of) if needed: 24776 -  # docs: update /rest/chaininfo doc according to getblockchaininfo
+	-     doc_rest_chaininfo_update-21
+		# Inspired by #24776
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	24837 -  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
 	Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
