@@ -178,6 +178,7 @@ checkout v23.0
 		# +#25011 achow101/fix-legacy-createwallet-test
 	# Needs review: 24912 mruddy/nchaintx_type
 	25051 fix_configure_def_enable_arm_asms		11428e651e7
+	25282 fix_configure_def_use_libevent
 	24933 strerror_threadsafe-23				b9ac343e025
 	24944 rpc_getblockfrompeer_typecheck-23		5df879f3a13	last=a926025ca82 jonatack/getblockfrompeer-param-inputs
 	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=da8e95c0140 mruddy/issue_23852_import_prune

@@ -379,7 +379,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# +#25011 achow101/fix-legacy-createwallet-test
 	#21.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
-	TODO: Only half of 25051 fix_configure_def_enable_arm_asms
+	25051 fix_configure_def_enable_arm_asms-21				last=7fd0860d12d fix_configure_def_enable_arm_asms
+		# NOTE: Only half is applicable to 21.x
+	25282 fix_configure_def_use_libevent
 	24933 laanwj/2022-04-strerror-threadsafe
 	24957 mruddy/issue_23852_import_prune  # allow pruning to work during loadblock import
 	Diff-minimise: 24977 achow101/better-listdescriptors-docs
