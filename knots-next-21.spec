@@ -385,7 +385,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24933 strerror_threadsafe-21							last=3c651702c68 strerror_threadsafe-23
 	24957 fix_prune_during_loadblock-0.20					last=da8e95c0140 mruddy/issue_23852_import_prune
 	(CHECK-LAST)	last=c86f129fd1d fix_prune_during_loadblock-22
-	Diff-minimise: 24977 achow101/better-listdescriptors-docs
 	24984 mzumsande/202204_wallet_rescan
 	25088 fix_wallet_race_attachingbb-22
 	# Needs review: 24994 hebasto/220426-consensus
@@ -513,6 +512,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	19776 -										2d98f923dec	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	19873 mempressure-21						368b6daca5d last=691e1d1dddd mempressure
 	20226 rpc_listdescriptors-0.21				e6939a88d7c	last=647b81b7093
+		TODO: +24977 rpcdoc_listdescs_active_internal-22
 	21277 listdescriptors_normalized-0.21+knots	21a08339968
 		# TODO: Drop 0.21.0 compatibility "desc" when return format is updated or 21329 is ready
 	g291  gui_trafficgraph_vert-0.21			7d40296136d	last=500841e49d6  # Enlarge Network Traffic Graph
