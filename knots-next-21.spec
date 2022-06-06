@@ -385,8 +385,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24933 strerror_threadsafe-21							last=3c651702c68 strerror_threadsafe-23
 	24957 fix_prune_during_loadblock-0.20					last=da8e95c0140 mruddy/issue_23852_import_prune
 	(CHECK-LAST)	last=c86f129fd1d fix_prune_during_loadblock-22
-	24984 mzumsande/202204_wallet_rescan
-	25088 fix_wallet_race_attachingbb-22
+	24984 fix_wallet_race_attachingbb-21^
+	25088 fix_wallet_race_attachingbb-21					last=ba10b90915d fix_wallet_race_attachingbb
+	(CHECK-LAST)	last=8fc36e243a7 fix_wallet_race_attachingbb-22
 	# Needs review: 24994 hebasto/220426-consensus
 	Needs review: 25019 -  # parse external signer master fp as bytes in ExternalSigner::SignTransaction
 	# Needs review: 25036 w0xlt/save_scan_progress
