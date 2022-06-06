@@ -381,9 +381,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 24912 mruddy/nchaintx_type
 	25051 fix_configure_def_enable_arm_asms-21				last=7fd0860d12d fix_configure_def_enable_arm_asms
 		# NOTE: Only half is applicable to 21.x
-	25282 fix_configure_def_use_libevent
-	24933 laanwj/2022-04-strerror-threadsafe
-	24957 mruddy/issue_23852_import_prune  # allow pruning to work during loadblock import
+	25282 fix_configure_def_use_libevent-21					last=f0f5cd79b5d fix_configure_def_use_libevent
+	24933 strerror_threadsafe-21							last=3c651702c68 strerror_threadsafe-23
+	24957 fix_prune_during_loadblock-0.20					last=da8e95c0140 mruddy/issue_23852_import_prune
+	(CHECK-LAST)	last=c86f129fd1d fix_prune_during_loadblock-22
 	Diff-minimise: 24977 achow101/better-listdescriptors-docs
 	24984 mzumsande/202204_wallet_rescan
 	25088 fix_wallet_race_attachingbb-22
