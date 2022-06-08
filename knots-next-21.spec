@@ -394,7 +394,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO: 25077 fix_dataraces_pr25077-21							last=fa35585c74c
 	#		(CHECK-LAST)	last=d300cd95c0a fix_dataraces_pr25077-23
 	# NOTE: Too convoluted to backport safely - partially done in fb7e7781d90
-	g595  qt_handle_autostart_errors-0.15					last=933d2eddadd mruddy/issue_24953
+	g595  qt_handle_autostart_errors-0.15					last=d932157eb79 mruddy-g/issue_24953
 	g599  ts_20220515
 	Just bugfix(es) from #25093 rpc: Check for omitted, but required parameters
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
