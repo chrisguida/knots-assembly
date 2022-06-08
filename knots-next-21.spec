@@ -389,10 +389,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25088 fix_wallet_race_attachingbb-21					last=ba10b90915d fix_wallet_race_attachingbb
 	(CHECK-LAST)	last=8fc36e243a7 fix_wallet_race_attachingbb-22
 	# Needs review: 24994 hebasto/220426-consensus
-	Needs review: 25019 -  # parse external signer master fp as bytes in ExternalSigner::SignTransaction
 	# Needs review: 25036 w0xlt/save_scan_progress
-	Needs review? 25074 -  # index: During sync, commit best block after indexing
-	Needs review: 25077 -  # Fix chain tip data race and corrupt rest response
+	25074 fix_idx_sync_consistency_pr25074-0.19				last=7171ebc7cbd
+	# TODO: 25077 fix_dataraces_pr25077-21							last=fa35585c74c
+	#		(CHECK-LAST)	last=d300cd95c0a fix_dataraces_pr25077-23
+	# NOTE: Too convoluted to backport safely - partially done in fb7e7781d90
 	g595  qt_handle_autostart_errors-0.15					last=933d2eddadd mruddy/issue_24953
 	g599  ts_20220515
 	Just bugfix(es) from #25093 rpc: Check for omitted, but required parameters
