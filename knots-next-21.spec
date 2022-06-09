@@ -395,7 +395,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	#		(CHECK-LAST)	last=d300cd95c0a fix_dataraces_pr25077-23
 	# NOTE: Too convoluted to backport safely - partially done in fb7e7781d90
 	g595  qt_handle_autostart_errors-0.15					last=d932157eb79 mruddy-g/issue_24953
-	g599  ts_20220515
+	g599  ts_20220515-21									last=5e23dabf265 ts_20220515
+		# NOTE: Part moved to gui#162 and tbc, below
 	Just bugfix(es) from #25093 rpc: Check for omitted, but required parameters
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
 	25106 theStack/202205-rpc-check_fopen_retval_in_dumptxoutset
@@ -591,6 +592,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots	9e73df68dc7
 		# NOTE: Left out Peers table column & misc formatting changes
+		TODO from gui#599: * f0dbac928f1 GUI: Support translating peer network names
 	20944 rpc_getmempoolinfo_total_fee-0.21		e0125b1b0d9	last=fa362064e38 marco/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
 		# +#23980 minor typo fix
@@ -826,11 +828,13 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	7510  rwconf_gui-0.21						2df27d4a04e	last=1ce12e499ac rwconf_gui-23+knots
 	(CHECK-LAST)	last=5465696bf16 rwconf_gui-22
 		# NOTE: Missing cac3d7873a3 due to not having #15946 in 21.x
+		TODO: * 11539fbed54 (rwconf_gui-23+knots) GUI: Re-word OutputType descriptions to give better advice
 	559   accept_nonstdtxn-0.21					0d7a5178261	last=70b0f3bf1ed accept_nonstdtxn
 	(CHECK-LAST)	last=75b02a00617 accept_nonstdtxn-22
 	g153 const_max_digits						32e16e210f2
 	 929  tbc									8aa517b2bd1	last=04b14509103 tbc
 		TODO: Strip out new features??
+		TODO (possibly silent conflicts) merge w/ gui#599
 	 553  bugfix_qt_uri_amount_parser-0.17		ce9be680833	last=e3ad5956dda bugfix_qt_uri_amount_parser
 	-     mining_priority-0.21+knots			1e33269a0ae	last=a284d6253ff mining_priority
 	(CHECK-LAST)	last=58e2cab4b18 mining_priority-22
