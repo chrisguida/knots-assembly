@@ -30,6 +30,8 @@ checkout v0.21.2
 	23607 evhttp_connection_get_peer_compat-21	a5d963d4635	last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
 	21421 skip_stack_clash_windows-21
+	23335 -  # include a missing <limits> header in fs.cpp
+		NOTE: Can we merge from #25318 ?
 	23947 config_summary_host_os-21
 	24104 boost1.78_fs_compat-21
 	24240 fix_capnp_fetch-21
@@ -196,7 +198,7 @@ TM	g188  bugfix_psbt_binmode-0.21				79e220794d8	last=cc3971c9ff5 achow101-g/bin
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
 	# TODO: Last commit? Diff-minimised somehow? 21560 laanwj/2021-03-torv3-hardcoded-seeds
 TM	21644 bugfix_addlocal_downloadbind-0.21		1ec9cfb310f
-	21752 -  # Clarify that feerates are per virtual size
+	21752 fix_feerates_kvB_pr21752-21
 	21822 bugfix_cli_pr21822-0.21				a212e7c0446
 TM	21907 listwalletdir_iterate_inf-0.19		1483674ad69
 	21944 fix_listwalletdir_rootdir-0.21+knots	0cb9e8948d1
@@ -401,7 +403,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		# NOTE: ts_20220515-21 is full* backport ddfc86cf878=5e23dabf265 (* see two gui#599 notes later in spec)
 		#21.xTODO# Update with other commits that are beneficial
-	Just bugfix(es) from #25093 rpc: Check for omitted, but required parameters
+	-     rpcdoc_sendmany_dummy_opt-0.20
+	(CHECK-LAST)	last=32cca184b79 rpcdoc_sendmany_dummy_opt-23
+		# Just the bugfix from #25093 rpc: Check for omitted, but required parameters
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
 	25106 theStack/202205-rpc-check_fopen_retval_in_dumptxoutset
 	# Needs triage/review: Maybe part of (see reference to #17167) 25156 -  # refactor: Introduce PeerManagerImpl::RejectIncomingTxs
