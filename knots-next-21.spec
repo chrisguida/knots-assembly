@@ -438,9 +438,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Originally #14066
 		# Held back 31dbf0b677d..543bf745d38 - probably only applicable to master
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	14641 fundraw_minconf-0.21					b097763986a	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
+m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
+	(CHECK-LAST)	last=cd52287b586 fundraw_minconf-0.21
+	(CHECK-LAST)	last=9834825c4b7 rpc_fundtx_minmaxconf-23+knots
+	(CHECK-LAST)	last=7f4c9039f71 origin-pull/22049/head
+	(CHECK-LAST)	last=9652e0a2faa rpc_fundtx_minmaxconf
+	(CHECK-LAST)	last=972a1feefa8 fundraw_min_conf_deprecated-23+knots
 		# Includes param rename (min_conf->minconf) and tests from #22049 (but not new maxconf param)
-	(CHECK-LAST)	last=9ab5d592fb8 fundraw_min_conf_deprecated-23+knots
 	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
