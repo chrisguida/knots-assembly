@@ -408,8 +408,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
 	25106 rpc_dumptxoutset_fopen_check-0.20					last=805443ff3f9 rpc_dumptxoutset_fopen_check-23
 	# Needs triage/review: Maybe part of (see reference to #17167) 25156 -  # refactor: Introduce PeerManagerImpl::RejectIncomingTxs
-	25157 jonatack/update-time-in-rpcwait-and-netinfo
-		Diff-minimise?
+	25157 fix_bcli_negtime_pr25157-21						last=fdc6e7cf753 fix_bcli_negtime_pr25157-23
+		# NOTE: Other half included in #21056 below
+		# Diff-minimised
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
 	25216 -  # Doc: Fix parameter in hwm example block
@@ -615,6 +616,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	20365 wallettool_create_descriptors-0.21+k	24eb0deabc3
 	21056 rpcwaittimeout-0.21					b26b2768222
 		# +#22327
+		TODO: + second commit from #25157 fix_bcli_negtime_pr25157-23
 	21141 walletnotify_blockhash-0.21			6ab2dc1a35a
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
