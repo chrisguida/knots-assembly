@@ -196,6 +196,7 @@ TM	g188  bugfix_psbt_binmode-0.21				79e220794d8	last=cc3971c9ff5 achow101-g/bin
 	# Needs #21007, complex: 21418 laanwj/2021-03-systemd-daemonwait
 	# TODO: Last commit? Diff-minimised somehow? 21560 laanwj/2021-03-torv3-hardcoded-seeds
 TM	21644 bugfix_addlocal_downloadbind-0.21		1ec9cfb310f
+	21752 -  # Clarify that feerates are per virtual size
 	21822 bugfix_cli_pr21822-0.21				a212e7c0446
 TM	21907 listwalletdir_iterate_inf-0.19		1483674ad69
 	21944 fix_listwalletdir_rootdir-0.21+knots	0cb9e8948d1
@@ -395,8 +396,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	#		(CHECK-LAST)	last=d300cd95c0a fix_dataraces_pr25077-23
 	# NOTE: Too convoluted to backport safely - partially done in fb7e7781d90
 	g595  qt_handle_autostart_errors-0.15					last=d932157eb79 mruddy-g/issue_24953
-	g599  ts_20220515-21									last=5e23dabf265 ts_20220515
-		# NOTE: Part moved to gui#162 and tbc, below
+	g599  ts_20220515-partial-21							last=5e23dabf265 ts_20220515
+	(CHECK-LAST)	last=3d7b977bbf0 ts_20220515-partial-23
+		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
+		# NOTE: ts_20220515-21 is full* backport ddfc86cf878=5e23dabf265 (* see two gui#599 notes later in spec)
+		#21.xTODO# Update with other commits that are beneficial
 	Just bugfix(es) from #25093 rpc: Check for omitted, but required parameters
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
 	25106 theStack/202205-rpc-check_fopen_retval_in_dumptxoutset
@@ -592,7 +596,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots	9e73df68dc7
 		# NOTE: Left out Peers table column & misc formatting changes
-		TODO from gui#599: * f0dbac928f1 GUI: Support translating peer network names
+		# if merging full gui#599: * f0dbac928f1 GUI: Support translating peer network names
 	20944 rpc_getmempoolinfo_total_fee-0.21		e0125b1b0d9	last=fa362064e38 marco/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
 		# +#23980 minor typo fix
@@ -834,7 +838,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	g153 const_max_digits						32e16e210f2
 	 929  tbc									8aa517b2bd1	last=04b14509103 tbc
 		TODO: Strip out new features??
-		TODO (possibly silent conflicts) merge w/ gui#599
+		# if merging full gui#599: deal with possibly silent conflicts
 	 553  bugfix_qt_uri_amount_parser-0.17		ce9be680833	last=e3ad5956dda bugfix_qt_uri_amount_parser
 	-     mining_priority-0.21+knots			1e33269a0ae	last=a284d6253ff mining_priority
 	(CHECK-LAST)	last=58e2cab4b18 mining_priority-22
