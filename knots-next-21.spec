@@ -413,7 +413,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# Diff-minimised
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
-	25216 -  # Doc: Fix parameter in hwm example block
+	25216 docfix_zmq_hwm_ex_pr25216-21  # Doc: Fix parameter in hwm example block
 	# Needs review: 25220 brunoerg/2022-05-fix-incorrect-warning-createmultisig
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
