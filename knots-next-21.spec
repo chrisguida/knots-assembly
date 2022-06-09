@@ -449,9 +449,9 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
 	(CHECK-LAST)	last=1eef939edf1 rpc_sign_show_fees
-	g119  rm_send2self-mini-21					8a6ed938070	last=5e4a5fdb872 rm_send2self
+	g119  rm_send2self-mini-21					8a6ed938070	last=2bb4e307634 rm_send2self
+	(CHECK-LAST)	last=251189a4d4a rm_send2self-mini
 		# NOTE: Originally #15115
-	(CHECK-LAST)	last=6328248b214 rm_send2self-mini
 	15423 tor_socks_port-0.21					109cf1f0e3b	last=4314a216e31 tor_socks_port
 		# Held back 962f168a014..398df42f449, da20c1e6d20 (not a bugfix)
 	15836 fee_histogram-21						69874bd7a2f	last=b94292a7cb jonas/2019/04/feeinfo
