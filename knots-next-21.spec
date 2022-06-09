@@ -30,8 +30,7 @@ checkout v0.21.2
 	23607 evhttp_connection_get_peer_compat-21	a5d963d4635	last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
 	21421 skip_stack_clash_windows-21
-	23335 -  # include a missing <limits> header in fs.cpp
-		NOTE: Can we merge from #25318 ?
+	23335 fanquake/0_21_backports^							last=efb9f00f07c fanquake/0_21_backports  # include a missing <limits> header in fs.cpp
 	23947 config_summary_host_os-21
 	24104 boost1.78_fs_compat-21
 	24240 fix_capnp_fetch-21
@@ -407,7 +406,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=32cca184b79 rpcdoc_sendmany_dummy_opt-23
 		# Just the bugfix from #25093 rpc: Check for omitted, but required parameters
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
-	25106 theStack/202205-rpc-check_fopen_retval_in_dumptxoutset
+	25106 rpc_dumptxoutset_fopen_check-0.20					last=805443ff3f9 rpc_dumptxoutset_fopen_check-23
 	# Needs triage/review: Maybe part of (see reference to #17167) 25156 -  # refactor: Introduce PeerManagerImpl::RejectIncomingTxs
 	25157 jonatack/update-time-in-rpcwait-and-netinfo
 		Diff-minimise?
