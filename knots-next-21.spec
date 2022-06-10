@@ -267,6 +267,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	23061 fix_argparse_persistmempool-21		f5b384e1cd6	last=60ef97c3e80 fix_argparse_persistmempool-22
 	# Needs review & concept check: 23074 Package-aware fee estimation
 	23106 fix_unlock_before_psbtsign-21			a1272dad525	last=aebd7bceaf3 fix_unlock_before_psbtsign-22
+	# ---- BEGIN IN SEQUENCE ----
+	23136 fix_qa_assert_feeamt_pr23136-21
+	22949 fix_fee_roundup_pr22949-21
+	24239 ceildiv_int_check-21
+	# ---- END IN SEQUENCE ----
 	23139 doc_fix_pr23139_txdesc-21.1			37349b7f46e
 	# Needs review: 23140 sipa/202109_addrmanbias
 	# Not sure about this: 23142 meshcollider:202109_no_assert_corruption
@@ -452,16 +457,16 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	g119  rm_send2self-mini-21					8a6ed938070	last=2bb4e307634 rm_send2self
 	(CHECK-LAST)	last=251189a4d4a rm_send2self-mini
 		# NOTE: Originally #15115
-	15423 tor_socks_port-0.21					109cf1f0e3b	last=4314a216e31 tor_socks_port
+	15423 tor_socks_port-0.21					109cf1f0e3b	last=b2774fc0bed tor_socks_port
 		# Held back 962f168a014..398df42f449, da20c1e6d20 (not a bugfix)
 	15836 fee_histogram-21						69874bd7a2f	last=b94292a7cb jonas/2019/04/feeinfo
+	(CHECK-LAST)	last=8cdfa4e2bea fee_histogram+pr15836_api
+	(CHECK-LAST)	last=f34072a4d4f origin-pull/21422/head
 		# Held back approach changes (that ignore CPFP) f2ca3d35ee9..47b5c3e03a7 - current approach is arguably buggy (see sipa's review on PR)
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 		# NOTE: Backported some features/test from #21422 (but not API incompatibilities)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
-	(CHECK-LAST)	last=ae9739d64cc fee_histogram+pr15836_api
-	(CHECK-LAST)	last=4af229650fe origin-pull/21422/head
 	17463 gui_custom_sendyes					087d3e642af
 	g562  wallet_no_reuse-0.21+knots			952bb1fb9bc	last=ef823cdebd7 wallet_warn_reuse_gui
 		# NOTE: Was #15987
