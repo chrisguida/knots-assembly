@@ -468,7 +468,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	17463 gui_custom_sendyes					087d3e642af
-	g562  wallet_no_reuse-0.21+knots			952bb1fb9bc	last=ef823cdebd7 wallet_warn_reuse_gui
+	g562  wallet_no_reuse-0.21+knots			952bb1fb9bc	last=776947e6cac wallet_warn_reuse_gui
 		# NOTE: Was #15987
 		# NOTE: Uses older bloom filter implementation
 	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=8719b084754 getaddressinfo_txids
@@ -482,9 +482,9 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 		# + docs from #23320 (left off refactor commit)
-	16795 rpc_inferred_output_descriptors-21	5d1bc19f6ca	last=6498ba151b3 instagibbs/decode_descriptor
-		FIXME: +#24636 (part or full depending on if the "desc" suppression is a bugfix)
-	(CHECK-LAST)	last=19a6902d148 rpc_inferred_output_descriptors
+m	16795 rpc_inferred_output_descriptors-21+k	5d1bc19f6ca
+		# NOTE: Includes custom refactoring to combine ScriptToUniv and ScriptPubKeyToUniv similar (but not identical) to master, to avoid possibly-incomplete backports
+		# +#24636
 	18972 neutrino_whitelist-mini-21			dabdcf3f324	last=339fe189eb9
 	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
 		# NOTE: Diff-minimised
