@@ -532,7 +532,8 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	19776 -										2d98f923dec	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	19873 mempressure-21						368b6daca5d last=691e1d1dddd mempressure
 	20226 rpc_listdescriptors-0.21				e6939a88d7c	last=647b81b7093
-		TODO: +24977 rpcdoc_listdescs_active_internal-22
+	(CHECK-LAST)	last=90b7bb0121c rpcdoc_listdescs_active_internal-22
+		# +#24977 [diff-minimised inline]
 	21277 listdescriptors_normalized-0.21+knots	21a08339968
 		# TODO: Drop 0.21.0 compatibility "desc" when return format is updated or 21329 is ready
 	g291  gui_trafficgraph_vert-0.21			7d40296136d	last=500841e49d6  # Enlarge Network Traffic Graph
