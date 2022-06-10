@@ -506,10 +506,10 @@ m	16795 rpc_inferred_output_descriptors-21+k	5d1bc19f6ca
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
 m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
+	(CHECK-LAST)	last=e4004c28d7e rpc_dumptxoutset_hr-23+knots
 		# Held back refactoring & test improvements 9427b409195...5d0c86d494a (in rpc_dumptxoutset_hr)
 		# TODO: Compat with(?) #24202
 		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202/files#r801191486
-	(CHECK-LAST)	last=5d0c86d494a rpc_dumptxoutset_hr
 	18722 O_addrman_unordered_map-0.21+knots	008067709d9	last=a92485b2c25
 		# NOTE: Restored C++11 compatibility from d6e782174ec
 	g125  intro_prune_size-0.21					9d324c49f67
@@ -524,10 +524,10 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# If bdb is reenabled, need #20267 49797c3ccfb
 		# +#23834 achow101/dump-checksum-size
 	19242 uaappend-21							c9099f45c3c	last=9552978b318 uaappend
-	19463 prune_locks-0.21						ce3e7443523	last=1ad45edbfeb prune_locks
-		FIXME: SetPruneLock won't delete a persistent->temporary change if sync=True
-		TODO: change default to temporary=true to match latest prune_locks branch?
-		# NOTE: Held back extra prune lock buffer
+	19463 prune_locks-0.21						ce3e7443523	last=276a5f9010c prune_locks
+		# TODO: change default to temporary=true to match latest prune_locks branch?
+		#		* 2554dc0ba3d Refactor PruneLockInfo.temporary to default to true
+		# NOTE: Held back extra prune lock buffer & rebasing on #21726
 	19762 ryanofsky/pr/named					3505e6dedbb	last=894c414dafb
 	19776 -										2d98f923dec	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	19873 mempressure-21						368b6daca5d last=691e1d1dddd mempressure
