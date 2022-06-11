@@ -574,7 +574,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	(CHECK-LAST)	last=116199a46f4 rpc_setfeerate-23
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
-	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/upgradewallet-improvements
+m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/upgradewallet-improvements
 	20407 rpcauthfile-0.21+knots				389dda3a1a1	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 	(CHECK-LAST)	last=53383d94200 rpcauthfile-22
 	(CHECK-LAST)	last=9ea91885d34 rpcauthfile
