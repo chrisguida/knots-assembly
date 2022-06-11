@@ -544,7 +544,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# Diff-minimised / doc changes left out
 		# Includes part of #20965 (GetNetworkNames)
 	21843 rpc_getnodeaddrs_by_network-0.21		5e0ead94982
-	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
+m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 		# + a4693f44cfe from #20685
 		# TODO: +21825 ? (needs 21560?)
 		#TODO: +21914
@@ -554,11 +554,11 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	20275 list_unsupported_wallets-0.21+knots	45986c05cec	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
-	(CHECK-LAST)	last= rpc_getblockfrompeer_nodeid_compat-23
-		TODO: Add missing newline to RPC help (eab5561fba2...a01f1916c27)
-		See #24806
+	(CHECK-LAST)	last=6d074a3f87c rpc_getblockfrompeer_nodeid_compat-23
+	(CHECK-LAST)	last=a926025ca82 jonatack/getblockfrompeer-param-inputs
+	(CHECK-LAST)	last=4fe12e61847 rpc_getblockfrompeer_typecheck-23
 		# +#23702 +(doc from #23813) +#24226
-		TODO: +#24944
+		# +#24944
 		# NOTE: Forward-compatible with peer_id param rename in #23706
 		#21.xTODO# TODO? Forward-compatibility with block_hash param rename in #23706 (bad idea, these changes conflict with other/standard param names)
 		#21.xTODO# TODO??? API change * 60243cac728 rpc: turn already downloaded into error in getblockfrompeer
