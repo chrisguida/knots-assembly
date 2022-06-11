@@ -579,8 +579,8 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	(CHECK-LAST)	last=53383d94200 rpcauthfile-22
 	(CHECK-LAST)	last=9ea91885d34 rpcauthfile
 		# NOTE: fixed bug, added multi-line support, and added tests
-	g149  intro_assumevalid-21					a434a92b063	last=476068f8581 intro_assumevalid
-	(CHECK-LAST)	last=476068f8581 intro_assumevalid-23
+	g149  intro_assumevalid-21					a434a92b063	last=75aff9e0ff7 intro_assumevalid
+	(CHECK-LAST)	last=de495ad2f11 intro_assumevalid-23
 	23549 rpc_scanblocks-0.21					5eaa6ce2ea6	last=e1c89184cd3 jamesob/2021-11-scanblocks
 		# NOTE: Was #20664
 		# NOTE: Includes lots of additional fixes/doc improvements
