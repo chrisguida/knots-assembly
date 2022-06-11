@@ -627,8 +627,9 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	19763 p2p_no_relay_to_origin-0.21+knots		d2b73d2d218
 	20365 wallettool_create_descriptors-0.21+k	24eb0deabc3
 	21056 rpcwaittimeout-0.21					b26b2768222
+	(CHECK-LAST)	last=fdc6e7cf753 fix_bcli_negtime_pr25157-23
 		# +#22327
-		TODO: + second commit from #25157 fix_bcli_negtime_pr25157-23
+		# + second commit from #25157 fix_bcli_negtime_pr25157-23
 	21141 walletnotify_blockhash-0.21			6ab2dc1a35a
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
