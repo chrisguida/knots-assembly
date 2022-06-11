@@ -581,12 +581,13 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 		# NOTE: fixed bug, added multi-line support, and added tests
 	g149  intro_assumevalid-21					a434a92b063	last=75aff9e0ff7 intro_assumevalid
 	(CHECK-LAST)	last=de495ad2f11 intro_assumevalid-23
-	23549 rpc_scanblocks-0.21					5eaa6ce2ea6	last=e1c89184cd3 jamesob/2021-11-scanblocks
+	25339 rpcdoc_scantxoutset_20220611a-21					last=c62b7c1ee0d rpcdoc_scantxoutset_20220611a
+	23549 rpc_scanblocks-21+knots				5eaa6ce2ea6	last=e1c89184cd3 jamesob/2021-11-scanblocks
+	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
+	(CHECK-LAST)	last=d28e8e4e277 rpc_scanblocks
 		# NOTE: Was #20664
 		# NOTE: Includes lots of additional fixes/doc improvements
 		# NOTE: Now includes #21426 (scantxoutset no longer experimental) too
-	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
-	(CHECK-LAST)	last=d28e8e4e277 rpc_scanblocks
 		# Held back insignificant comment/errormsg changes ab315e5294b...71b7cdb460e
 		# Added return value documentation (needed for QA to pass)
 		# NOTE: Was #20664
