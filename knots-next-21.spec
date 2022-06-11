@@ -554,6 +554,11 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	20275 list_unsupported_wallets-0.21+knots	45986c05cec	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
+	(CHECK-LAST)	last=06d1947a68e origin-pull/23813/head
+	(CHECK-LAST)	last=4b3098817a6 origin-pull/24226/head
+	(CHECK-LAST)	last=f5e008774b5 getblockfrompeer_param_names
+	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
+	(CHECK-LAST)	last=7f2c0d576d2 rpc_getblockfrompeer_wo_header
 	(CHECK-LAST)	last=6d074a3f87c rpc_getblockfrompeer_nodeid_compat-23
 	(CHECK-LAST)	last=a926025ca82 jonatack/getblockfrompeer-param-inputs
 	(CHECK-LAST)	last=4fe12e61847 rpc_getblockfrompeer_typecheck-23
@@ -564,11 +569,6 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 		#21.xTODO# TODO??? API change * 60243cac728 rpc: turn already downloaded into error in getblockfrompeer
 		#                           + * 34d5399211e rpc: more detailed errors for getblockfrompeer
 		# TODO: Find a way to get `476f63a081e test: Add test for getblockfrompeer on pruned nodes` w/o fastprune mode?
-	(CHECK-LAST)	last=476f63a081e origin-pull/23813/head
-	(CHECK-LAST)	last=4b3098817a6 origin-pull/24226/head
-	(CHECK-LAST)	last=f5e008774b5 getblockfrompeer_param_names
-	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
-	(CHECK-LAST)	last=a01f1916c27 rpc_getblockfrompeer_wo_header
 	20391 rpc_setfeerate-0.21					aef134635d5	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
 	(CHECK-LAST)	last=116199a46f4 rpc_setfeerate-23
