@@ -732,8 +732,9 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	20551 rpc_onetry_conntype-21				d7fcef7c236	last=1c63b3ff236 rpc_onetry_conntype
 	(CHECK-LAST)	last=7661ce6ddaf rpc_onetry_conntype-22
 		# NOTE: Originally based on #12674
-	10593 relax_invblk_punishment-0.21+knots	d4765cc92bd	last=037db08a179 relax_invblk_punishment
+	10593 relax_invblk_punishment-0.21+knots	d4765cc92bd	last=0971192425f relax_invblk_punishment
 	(CHECK-LAST)	last=57903e3f34d relax_invblk_punishment-22
+		# Held back 0971192425f QA: Use addconnection rather than addnode onetry
 	10350 filtered_witblock-0.21				4e1122ece17	last=3f388ddcd3 codeshark/MFWB_no_bump_2
 	(CHECK-LAST)	last=6bf4092cb7b filtered_witblock-22
 		# NOTE: Don't bump protocol version!
