@@ -138,6 +138,7 @@ checkout v23.0
 	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
 	22087 validate_port_opts-23+knots			5bdf4c61815	last=ce4652aaa01  # Validate port-options
+		TODO: gcp 8cf3236c281 Validate 'zmqpubrawtx' port number
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	24371 -										33eef441e53	last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
 	# Needs work: 24392 hebasto/220219-cmake
@@ -532,7 +533,7 @@ checkout v23.0
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset to wallet-restricted users for now
 	10554 zmq_wtx-23+knots						ad1bcb2928e	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
-		TODO: add validation like #22087
+		TODO: add validation like #22087 (gcp 86d091852f1)
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					edca5b8af00
 		# NOTE: Originally based on #12674
