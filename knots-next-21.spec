@@ -693,7 +693,6 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	24198 rpc_wtx_wtxid-0.20								last=7abd8b21ba3  # wallet, rpc: add wtxid in WalletTxToJSON
 	(CHECK-LAST)	last=954bc3e5e73 rpc_wtx_wtxid-23+knots
 	g526  qt_peers_addrprocessed-21+knots
-	24307 -  # RPC: Return external_signer in getwalletinfo
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 	# SENDING ONLY? Needs work: 24897 w0xlt/silent_payment_021
 # Non-progress functionality:
