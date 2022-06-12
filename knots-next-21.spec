@@ -718,9 +718,9 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	9504 dumpmasterprivkey-0.21					5e32058f65a	last=07fc81109a
 	(CHECK-LAST)	last=d6299945048 dumpmasterprivkey-22
 	(CHECK-LAST)	last=5e01bd283b8 dumpmasterprivkey-23
-	g444  gui_netwatch-0.21+knots				842149fff05	last=36c0dfaefca gui_netwatch
+	g444  gui_netwatch-0.21+knots				842149fff05	last=524665c116a gui_netwatch
 	(CHECK-LAST)	last=7f59a6deb52 gui_netwatch-22+knots
-	(CHECK-LAST)	last=05dd68089e0 gui_netwatch-23+knots
+	(CHECK-LAST)	last=9482300fab7 gui_netwatch-23+knots
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
 	10615 multiwallet_rpc-0.21+knots			bae1509a9d1	last=ade18a8f119 multiwallet_rpc-23+knots
