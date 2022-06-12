@@ -684,13 +684,14 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	22288 torcontrol_dnslookup-0.21				192658456c6	last=cdd51e8ee15
 		# Diff-minimised
 	22372 multinotify-21						b002df55c73	last=041b1ed8b79 multinotify
-	g469  qt_psbt_b64-21+knots					65f1d080b90	last=d54f498f8ab achow101-g/b64-psbt-gui
+	g469  qt_psbt_b64-21+knots					65f1d080b90	last=2c3ee4c3478 achow101-g/b64-psbt-gui
+	(CHECK-LAST)	last=5f7a4882e39 qt_loadpsbt_b64-23
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
 	# Needs review & MUCH softer deprecation: 24098 -  # rest: Use query parameters to control resource loading
 	# After merged+released a while? 24171 sdaftuar/2022-01-download-from-inbound
 	# Check if fixes anything: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
-	24198 rpc_wtx_wtxid-0.20								last=79d6764c133  # wallet, rpc: add wtxid in WalletTxToJSON
-		#21.xTODO# fix RPC help description
+	24198 rpc_wtx_wtxid-0.20								last=7abd8b21ba3  # wallet, rpc: add wtxid in WalletTxToJSON
+	(CHECK-LAST)	last=954bc3e5e73 rpc_wtx_wtxid-23+knots
 	g526  qt_peers_addrprocessed-21+knots
 	24307 -  # RPC: Return external_signer in getwalletinfo
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
