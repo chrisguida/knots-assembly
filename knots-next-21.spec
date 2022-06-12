@@ -647,7 +647,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# NOTE: gui#229 not applicable to backport
 	g206  gui_peers_relayinfo-0.21+knots		d5d383b9daa
 	g226  gui_peers_lastblocktx-0.21+knots		8482728d1e2
-	g230  gui_backup_formats-0.21+knots			6115edf25d3	last=4490d994755 gui_backup_formats
+	g230  gui_backup_formats-0.21+knots			6115edf25d3	last=835d49b30bc gui_backup_formats
+	(CHECK-LAST)	last=4490d994755 gui_backup_formats-22
 		# NOTE: To avoid conflict with wallettool_dump-0.21+knots, added 5ab50bc98db GUI: Omit DbDump option for backup of BDB wallets
 	21595 cli_addrinfo-0.21+knots				7c408353347
 		# NOTE: Adapted error message for Knots
@@ -656,7 +657,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
 	21780 rpc_maxmempool-0.21					9a2751a9347	last=040b280c661 rebroad/MaxMempoolRPC
-	(CHECK-LAST)	last=43eb542612e rpc_maxmempool
+	(CHECK-LAST)	last=a05a4fe9fcd rpc_maxmempool
+	(CHECK-LAST)	last=43eb542612e rpc_maxmempool-22
 		# + bugfix and applying limit immediately
 	22072 autoreindex-0.21						7fb696c631e	last=602f4da9178
 	22147 p2p_protect_last_outHB-0.21			995947de083
