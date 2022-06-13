@@ -549,6 +549,7 @@ checkout v23.0
 		# NOTE: deviated from PR
 	11770 rest_fee								1cc702fa199	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 		# Fixed a minor bug in conf_target range check
+		TODO: gcp 5d5b2fb8442 QA: Exercise REST interface in feature_fee_estimation
 	11803 bugfix_dumpwallet_hdkeypath			fea9d68f84d
 	12965 scriptthreads							0345cf11100	last=dfab6c6866 jonas/2018/04/svt
 	13203 dsha256_power8-23						7610e2e0b16	last=3b402e0738 matt/2018-05-asm
