@@ -782,7 +782,7 @@ m	15421 tor_subprocess-0.21+knots				ccf77ea4de5	last=58c6cafd3a1 tor_subprocess
 	(CHECK-LAST)	last=3bc568d6753 old_bech32_error_detection
 		# Held back rewrite 3bc568d6753..974227bb457 for now; when updating, add in #23577
 		# Held back comment drop 974227bb457..88cc4810926
-	n/a   rpc_compat_error_index-0.21+knots		e8b159d62b3	last=d919478f2fc rpc_compat_error_index-23+knots
+	n/a   rpc_compat_error_index-0.21+knots		e8b159d62b3	last=57e05a6f13c rpc_compat_error_index-23+knots
 	(CHECK-LAST)	last=e480af6868c rpc_compat_error_index-22+knots
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	g537  gui_bech32_errpos-0.21.1+knots		a4921198f16	last=abae86dce13 gui_bech32_errpos
