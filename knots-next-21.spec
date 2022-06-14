@@ -333,7 +333,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
-	22087 validate_port_opts-21								last=ce4652aaa01  # Validate port-options
+	22087 validate_port_opts-21								last=1dae86bfd22  # Validate port-options
 	(CHECK-LAST)	last=d7f85a72354 validate_port_opts-23+knots
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	22461 fix_descwallet_upgrade_noop-21
@@ -608,7 +608,6 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	(CHECK-LAST)	last=4d70dc134c2 qt_peers_directionarrow-22+knots
 	(CHECK-LAST)	last=6d169ee0c55 qt_peers_directionarrow-23+knots
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
-		FIXME: "Recv'd"
 	20916 rpc_testmempoolaccept_wtxid-0.21		c5b8eb0a8b4	last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots	9e73df68dc7
