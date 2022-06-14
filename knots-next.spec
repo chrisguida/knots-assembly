@@ -560,6 +560,7 @@ checkout v23.0
 	15428 tor_gui_pairing-23+knots				723c1c46950	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-23+knots				6992e4922ed	# Latest code now
+		TODO: gcp b0c7d431f30 Include -torcontrol in hidden_args when building without Boost Process
 	# TODO: tor guix bundle!
 	15633 nohbcbfornonwit						552d3dfab5b
 		# NOTE: added test fix from sdaftuar/test-15633-2
