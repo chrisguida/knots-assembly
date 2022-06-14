@@ -620,6 +620,13 @@ checkout v23.0
 	5861 gui_restore_addresses					d435b0e1596
 	5891  qt_console_history_persist			aaedbe6c41a	last=0cd5fc301d6 qt_console_history_persist
 	7219  fullrbf-23+knots						4eea3457d1a	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
+		149b286b44e (fullrbf-23+knots) rebased onto branch-23: 9e79f188695
+		9e79f188695 rebased onto master: 08ebca8e0fc
+		08ebca8e0fc..7e8cdb9eeea: Add fixups, diff-heavy refactoring, remove never-rebase
+		7e8cdb9eeea squash fixups (but not ^diff-heavy+removal): c6decd62837
+		NOTE: Above work still needs:
+			149b286b44e (fullrbf-23+knots) Advertise temporary REPLACE_BY_FEE service bit (when appropriate)
+			dd77f450ee4 Recognise temporary REPLACE_BY_FEE service bit
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					2a61c92f17e
 		# TODO: Split out legacy address preference to be more explicit

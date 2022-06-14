@@ -608,6 +608,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	(CHECK-LAST)	last=4d70dc134c2 qt_peers_directionarrow-22+knots
 	(CHECK-LAST)	last=6d169ee0c55 qt_peers_directionarrow-23+knots
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
+		FIXME: "Recv'd"
 	20916 rpc_testmempoolaccept_wtxid-0.21		c5b8eb0a8b4	last=fa0aa87071e marco/2101-wtxidTestmempool
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots	9e73df68dc7
