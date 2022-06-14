@@ -581,7 +581,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 		# NOTE: fixed bug, added multi-line support, and added tests
 	g149  intro_assumevalid-21					a434a92b063	last=75aff9e0ff7 intro_assumevalid
 	(CHECK-LAST)	last=de495ad2f11 intro_assumevalid-23
-	25339 rpcdoc_scantxoutset_20220611a-21					last=c62b7c1ee0d rpcdoc_scantxoutset_20220611a
+	25339 rpcdoc_scantxoutset_20220611a-21					last=7862c4ac4e7 rpcdoc_scantxoutset_20220611a
 	23549 rpc_scanblocks-21+knots				5eaa6ce2ea6	last=e1c89184cd3 jamesob/2021-11-scanblocks
 	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	(CHECK-LAST)	last=d28e8e4e277 rpc_scanblocks
@@ -743,7 +743,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	11750 coincontrol_multiselect				c4c8ec10f47	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
-	11770 rest_fee-0.21							1009e765049	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11770 rest_fee-21+knots						1009e765049	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	(CHECK-LAST)	last=5d5b2fb8442 rest_fee-0.21
 	(CHECK-LAST)	last=cec2e1bb857 rest_fee-22
 	(CHECK-LAST)	last=2c51873b614 rest_fee
 		# Fixed a minor bug in conf_target range check
@@ -755,7 +756,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=12e673a8c23 scriptthreads
 		# Held back RPCResult NONE cuz undocumented is actually better
 	13203 dsha256_power8-0.20					357397180c7	last=3b402e0738 matt/2018-05-asm
-	(CHECK-LAST)	last=a72483b8e14 dsha256_power8-0.23
+	(CHECK-LAST)	last=a72483b8e14 dsha256_power8-23
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		60c82d4c598	last=99986de8b02 dsha256_power8_asm_pragmas-23
 	15218 postibd_flush-21+knots				8858f44e523	last=d2ecb70d64  # validation: Flush stateafter initial sync
