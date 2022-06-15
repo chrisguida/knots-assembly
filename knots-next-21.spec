@@ -795,7 +795,7 @@ NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
 		# (and removed release notes)
 	17958 rpc_getgeneralinfo-0.21+knots			31332337e68	last=cdbd38df131  # getgeneralinfo RPC
 	(CHECK-LAST)	last=65f6caeebbd rpc_getgeneralinfo-22
-	(CHECK-LAST)	last=6e56e74e837 rpc_getgeneralinfo
+	(CHECK-LAST)	last=3b7c5bc7e2c rpc_getgeneralinfo
 	18223 blockfilter_v0-0.19					a1d7fc7821f	last=5561e7a0c79
 	(CHECK-LAST)	last=7f0131feac7 blockfilter_v0
 		# NOTE: Don't enable with -blockfilterindex=1
@@ -814,11 +814,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	(CHECK-LAST)	last=dc58f8f46e6 wallet_rpc_lastprocessedblock-23+k
 	19117 rpc_getrpcwhitelist-21				f005cd98854	last=3fd323ca11f rpc_getrpcwhitelist
 	(CHECK-LAST)	last=3a5869713b4 rpc_getrpcwhitelist-22
-		FIXME: de-duplicate GetWalletRestrictionFromJSONRPCRequest declaration in headers
-			./wallet/rpcwallet.h:25:6: warning: redundant redeclaration of ‘bool GetWalletRestrictionFromJSONRPCRequest(const JSONRPCRequest&, std::string&)’ in same scope [-Wredundant-decls]
-			./rpc/util.h:370:6: note: previous declaration of ‘bool GetWalletRestrictionFromJSONRPCRequest(const JSONRPCRequest&, std::string&)’
 		# NOTE: Was #18827 before any Knots merge
-	-     getrpcwhitelist_wallets-0.21+knots	e2bae466a89	last=9c122c3f83c getrpcwhitelist_wallets-23+knots
+	-     getrpcwhitelist_wallets-0.21+knots	e2bae466a89	last=fad1716d500 getrpcwhitelist_wallets-23+knots
 	(CHECK-LAST)	last=1e1d1e2e62c getrpcwhitelist_wallets-22+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	17167 whitelist_outgoing-mini-0.21+knots	d50c4c7d4af	last=36cc299baee whitelist_outgoing
