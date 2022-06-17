@@ -831,14 +831,11 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 # Non-upstreamed functionality:
 	-     gui_payreq_textedit-0.21				bfe154411de last=9cb216e6ff8 gui_payreq_textedit
 	-     rpc_mempoolentry_txhash-0.20			0b5a0196787	last=b011a9bf2c6 rpc_mempoolentry_txhash
-	-     walletnotify_w_win-0.21+knots			103ea74ed61	last=a291491d2fd walletnotify_w_win
+	-     walletnotify_w_win-0.21+knots			103ea74ed61	last=7b3c78aa40e walletnotify_w_win-23+knots
 	(CHECK-LAST)	last=4c481517859 walletnotify_w_win-22+knots
-	(CHECK-LAST)	last=7b3c78aa40e walletnotify_w_win-23+knots
 	14137 win_taskbar_progress-0.21+knots		cf8835a0b82	last=18eb4dbb8a
-		FIXME: checking whether to build with QWinTaskbarProgress support... checking for Berkeley DB C++ headers... /usr/include/db4.8/
-			(no result? on jun)
 	(CHECK-LAST)	last=f30b740b4ff win_taskbar_progress-22
-	(CHECK-LAST)	last=8cacd81214f win_taskbar_progress
+	(CHECK-LAST)	last=de45972a3f2 win_taskbar_progress
 	-     restore_blockmaxsize-21				244ddb8587d	last=d66d020e9d2 restore_blockmaxsize
 	(CHECK-LAST)		last=0df4a820dd6 restore_blockmaxsize-22
 	7107  qtnetworkport-21						1c31de03b71	last=1f37c87 origin-pull/7107/head
