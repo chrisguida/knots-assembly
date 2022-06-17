@@ -612,6 +612,7 @@ checkout v23.0
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf-23+knots						dbc972ce598 # Latest code now
 	7510  rwconf_gui-23+knots					7342e194bdb
+		FIXME: s/P2SH-SegWit/P2SH Segwit/ (dash->space & lowercase W)
 	 559 accept_nonstdtxn						2ad1e272d70
 	 929 tbc									65ace212fac
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
