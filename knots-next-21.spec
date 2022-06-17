@@ -852,8 +852,8 @@ m	559   accept_nonstdtxn-21+knots				0d7a5178261	last=70b0f3bf1ed accept_nonstdt
 	(CHECK-LAST)	last=d2a16fe9618 accept_nonstdtxn-0.21
 	(CHECK-LAST)	last=75b02a00617 accept_nonstdtxn-22
 	g153 const_max_digits						32e16e210f2
-	 929  tbc									8aa517b2bd1	last=04b14509103 tbc
-		TODO: Strip out new features??
+	 929  tbc-21+knots							8aa517b2bd1	last=ec29a85b5f6 tbc
+		# NOTE: Held back 6a4900bc4e6..ec29a85b5f6 (UCSUR output is a feature?; "fix" ec29a85b5f6 doesn't seem to affect anything)
 		# if merging full gui#599: deal with possibly silent conflicts
 	 553  bugfix_qt_uri_amount_parser-0.17		ce9be680833	last=e3ad5956dda bugfix_qt_uri_amount_parser
 	-     mining_priority-0.21+knots			1e33269a0ae	last=a284d6253ff mining_priority
