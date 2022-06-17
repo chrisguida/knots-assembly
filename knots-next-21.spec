@@ -856,7 +856,7 @@ m	559   accept_nonstdtxn-21+knots				0d7a5178261	last=70b0f3bf1ed accept_nonstdt
 		# NOTE: Held back 6a4900bc4e6..ec29a85b5f6 (UCSUR output is a feature?; "fix" ec29a85b5f6 doesn't seem to affect anything)
 		# if merging full gui#599: deal with possibly silent conflicts
 	 553  bugfix_qt_uri_amount_parser-0.17		ce9be680833	last=e3ad5956dda bugfix_qt_uri_amount_parser
-	-     mining_priority-0.21+knots			1e33269a0ae	last=a284d6253ff mining_priority
+m	-     mining_priority-0.21+knots			1e33269a0ae	last=a284d6253ff mining_priority
 	(CHECK-LAST)	last=58e2cab4b18 mining_priority-22
 		# Didn't backport next_block_height passing (maybe consider when/if someday cs_main can be released)
 		# Didn't backport platform-independent double serialisation
