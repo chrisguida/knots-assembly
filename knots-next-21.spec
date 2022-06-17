@@ -840,7 +840,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	(CHECK-LAST)		last=0df4a820dd6 restore_blockmaxsize-22
 	7107  qtnetworkport-21						1c31de03b71	last=1f37c87 origin-pull/7107/head
 	(CHECK-LAST)	last=061cd3f46cf qtnetworkport-23+knots
-	7533  sendraw_force-0.21					84c7abed1ab	last=8b4a4f9b2b4 sendraw_force
+m	7533  sendraw_force-21+knots				84c7abed1ab	last=8b4a4f9b2b4 sendraw_force
 	(CHECK-LAST)	last=074e22628db sendraw_force-22
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf-0.21							901121d0ce9	last=ffb28a43c35 rwconf-23+knots
