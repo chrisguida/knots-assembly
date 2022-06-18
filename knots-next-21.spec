@@ -1,8 +1,8 @@
-timestamp 2022-05-25 12:21:50
+timestamp 2022-06-18 10:52:32
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25236 / gui #607 for fixes
+#.. checked up to PR #25412 / gui #618 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -30,7 +30,7 @@ checkout v0.21.2
 	23607 evhttp_connection_get_peer_compat-21	a5d963d4635	last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
 	# Needs review: 23609 hebasto/211126-reduce
 	21421 skip_stack_clash_windows-21
-	23335 fanquake/0_21_backports^							last=efb9f00f07c fanquake/0_21_backports  # include a missing <limits> header in fs.cpp
+	23335 origin-pull/25318/head^							last=efb9f00f07c origin-pull/25318/head  # include a missing <limits> header in fs.cpp
 	23947 config_summary_host_os-21
 	24104 boost1.78_fs_compat-21
 	24240 fix_capnp_fetch-21
@@ -61,6 +61,7 @@ m	7485  sys_univalue_def-21					c393c7a7f51	last=cf9e588e22f sys_univalue_def-23
 	#Maybe restore: 7339  opt_libevent
 	23716 qa_own_ripemd160-21					a93adb92909
 	# TODO?? Qt6 support
+	# OpenBSD-only: 25332 fanquake/test_for_timingsafe_bcmp
 	n/a   (delete_release_notes_fragments)
 @21.x-knotsfixes
 # TESTS:
@@ -134,7 +135,6 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	18766 blocksonly_no_feeest-0.21				13b50d43699	last=4e28753f606
 		# diff-minimised
 		# HELD BACK 33ca3590243...4aaad74c4c8 due to refactor complication
-	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusnak/rpc-scantxoutset-reset-progress
 	19419 listwalletdir_skip_data-0.21+knots	ce14eff5578	last=3f9cc0cd736 Saibato/wallet_351
@@ -422,8 +422,27 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 25220 brunoerg/2022-05-fix-incorrect-warning-createmultisig
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
+	# Needs extra review (is it actually safe?): 25239 -  # wallet: 'CommitTransaction', remove extra wtx lookup and add exception for db write error
+		+(?) #25272
+	25256 -  # logging: fix logging empty thread name
+	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
+	25276 -  # doc: Fix typo in importdescriptors
+	# Meh? 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
+	# Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
+	TODO: defining HAVE_O_CLOEXEC 0 breaks LevelDB build without it
+	25320 -  # util: modify Win32LockedPageAllocator to query windows for limit
+	25333 -  # test: Fix out-of-range port collisions
+	Needs review: 25351 fjahr/202204-import-scan
+		# NOTE: Was #18964
+	Needs review: 25380 darosior/fee_estimator_disable_cpfp
+	Needs review: 25404 -  # p2p, doc: Use MAX_BLOCKS_TO_ANNOUNCE consistently
+	Ensure it isn't needed in 21.x: g613 laanwj/2022-06-qtconsole-includes
+	Triage: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
 	n/a   (delete_release_notes_fragments)
+	TODO: Check depends for fix-only updates
 @21.x-knots
+# PERFORMANCE:
+	# Needs work: 25383 -  # wallet: don't read db every time that a new 'WalletBatch' is created
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	394e59e2f86	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 	22016 rpc_gbci_period_start-0.21.1+knots	b19116ccf14	last=1898b9be12c Sjors/2021/05/versionbits_period_start
@@ -450,6 +469,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	(CHECK-LAST)	last=9652e0a2faa rpc_fundtx_minmaxconf
 	(CHECK-LAST)	last=972a1feefa8 fundraw_min_conf_deprecated-23+knots
 		# Includes param rename (min_conf->minconf) and tests from #22049 (but not new maxconf param)
+		TODO: See if #22049 fixes anything for this
 	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
@@ -562,6 +582,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	(CHECK-LAST)	last=6d074a3f87c rpc_getblockfrompeer_nodeid_compat-23
 	(CHECK-LAST)	last=a926025ca82 jonatack/getblockfrompeer-param-inputs
 	(CHECK-LAST)	last=4fe12e61847 rpc_getblockfrompeer_typecheck-23
+		TODO: +#25259 ?
 		# +#23702 +(doc from #23813) +#24226
 		# +#24944
 		# NOTE: Forward-compatible with peer_id param rename in #23706
@@ -693,6 +714,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	24198 rpc_wtx_wtxid-0.20								last=7abd8b21ba3  # wallet, rpc: add wtxid in WalletTxToJSON
 	(CHECK-LAST)	last=954bc3e5e73 rpc_wtx_wtxid-23+knots
 	g526  qt_peers_addrprocessed-21+knots
+	# Maybe? 25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 	# SENDING ONLY? Needs work: 24897 w0xlt/silent_payment_021
 # Non-progress functionality:
@@ -866,6 +888,8 @@ m	7219  rbf_opts-0.21+knots					6b8135375e9	last=c6decd62837 fullrbf # missing 9
 	(CHECK-LAST)	last=8db545872f6 fullrbf-22+knots
 	(CHECK-LAST)	last=149b286b44e fullrbf-23+knots
 		# NOTE: Held back "clean mempool" from b81235ee156 (not needed in 21.x?)
+		# NOTE: Re-PR'd as #25373
+		TODO: Compatibility with #25353 ?
 	12146 opt_wallet_segwit2-0.1				ffc242d52be	last=6a939ab54c6 opt_wallet_segwit2
 		TODO: Make sure descriptor wallets default to non-segwit addresses
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
@@ -933,6 +957,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 #TODO: Make sure there's no -Wc++14-extensions triggered
 TODO: Make sure there's no optional .has_value() (Boost 1.68 dep)
 #TODO: Make sure there's no 'build_bitcoin_util\b|natpmp'
+TODO: Run #25243 to pick up on missing bash completion updates
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
 	n/a  knots_bips-21							95f1a0c7adb
 	n/a  (bump_version=Knots:20210629)			27c16a89cc5  # DO NOT CHANGE for just fixes

@@ -1,7 +1,7 @@
-timestamp 2022-05-25 12:21:50
+timestamp 2022-06-18 10:52:32
 lastapply no-merge
 
-#.. checked up to PR #25236 / gui #607
+#.. checked up to PR #25412 / gui #618
 
 checkout v23.0
 @23.x-syslibs
@@ -41,6 +41,7 @@ checkout v23.0
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
 	# Needs review: 25191 hebasto/220523-qt6-mac
 	# ---- END qt6 SUPPORT ----
+	# OpenBSD-only: 25332 fanquake/test_for_timingsafe_bcmp
 @23.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							c6a96c5159d
@@ -93,7 +94,6 @@ checkout v23.0
 	18194 bugfix_gui_edit_sendaddr-mini			3e18bb2be29	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	18729 intro_dont_change_user_prune			bbc927c3c8e
-	# Needs fixes: 18964  # rpc, wallet: Scan mempool after import*
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19419 listwalletdir_skip_data				68bd18dadc7	last=3f9cc0cd736 Saibato/wallet_351
 		# NOTE: modified to use std::set and diff-minimise
@@ -216,6 +216,25 @@ checkout v23.0
 	# Needs review: 25220 brunoerg/2022-05-fix-incorrect-warning-createmultisig
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
+	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
+	FIXME: Is this really safe? Merged 25239 -  # wallet: 'CommitTransaction', remove extra wtx lookup and add exception for db write error
+		+(?) #25272
+	Merged 25256 -  # logging: fix logging empty thread name
+	Merged 25276 -  # doc: Fix typo in importdescriptors
+	# Meh? Merged 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
+	# MERGED; Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
+	TODO: defining HAVE_O_CLOEXEC 0 breaks LevelDB build without it
+	25314 -  # p2p: always set nTime for self-advertisements
+	25320 -  # util: modify Win32LockedPageAllocator to query windows for limit
+	Merged 25333 -  # test: Fix out-of-range port collisions
+	Needs review: 25351 fjahr/202204-import-scan
+		# NOTE: Was #18964
+	Possibly buggy: 25367 theStack/202206-contrib-fix_message_capture_out_of_bounds
+	Needs review: 25380 darosior/fee_estimator_disable_cpfp
+	Needs review (& Core merge?): 25394 fanquake/cache_bust_cxx_c_standard
+	Needs review: 25404 -  # p2p, doc: Use MAX_BLOCKS_TO_ANNOUNCE consistently
+	Merged g613 laanwj/2022-06-qtconsole-includes
+	Triage: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
 @23.x-knots
 # PERFORMANCE:
 	23880 marco/2112-p2pAsync					538a844566d	last=fa61dd44f99
@@ -238,6 +257,8 @@ checkout v23.0
 	# Needs review: 25221 -  # Improve CMedianFilter algorithm - useless? see comments
 	# Needs review: 25232 -  # rpc: Faster getblock API
 	# Needs review: 25236 -  # wallet: use vector instead of list for transactions
+	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
+	Needs work: 25383 -  # wallet: don't read db every time that a new 'WalletBatch' is created
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -262,6 +283,7 @@ checkout v23.0
 	22049 rpc_fundtx_minmaxconf-23+knots		e80afead907	last=7f4c9039f71  # rpc: allow specifying min chain depth for inputs in fund calls
 	(CHECK-LAST)	last=9652e0a2faa rpc_fundtx_minmaxconf
 		# Was #14641 (moved to Knots compat)
+		TODO: See if #22049 adds anything to this
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
@@ -370,7 +392,7 @@ checkout v23.0
 	g149  intro_assumevalid-23					01f67fb5b69	last=75aff9e0ff7 intro_assumevalid
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	25339 rpcdoc_scantxoutset_20220611a
+	Merged 25339 rpcdoc_scantxoutset_20220611a
 	23549 rpc_scanblocks						83bd74cf3d4	last=e1c89184cd3 jamesob/2021-11-scanblocks
 		# NOTE: Was #20664
 		# NOTE: Includes lots of additional fixes/doc improvements
@@ -512,6 +534,15 @@ checkout v23.0
 	25183 rpc_fundraw_segwitonly-23				68789264835	last=1c5cfd84b3d
 	# TODO: g602  ryanofsky-g/pr/qtsopt
 		# +gui#603 ?
+	Needs work? 25261 -  # rpc: fetch multiple headers in getblockheader()
+	n/a before 24.x (workaround for bug introduced by #20640): 25269 -  # wallet: re-activate the not triggered "AmountWithFeeExceedsBalance" error
+	25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
+	Needs review: 25287 -  # logging: threshold log level
+	Needs review: 25315 Empact/disk-space-check
+	Needs work?/review: 25344 -  # New extra_outputs argument for bumpfee/psbtbumpfee
+	Needs review: 25355 vasild/i2p_transient_outbound_addr
+	Needs concept review: 25366 w0xlt/desc_rpc
+	Needs work: 25412 brunoerg/2022-06-rest-deploymentinfo
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -596,6 +627,7 @@ checkout v23.0
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	-     wallettool_dump_warning-23+knots		6c8fdc9a690
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
+		# OR 25325 martinus:2022-06-very-not-scary-NodePoolResource
 	# Needs work: 22708 hebasto:210815-wayland
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
@@ -631,6 +663,7 @@ checkout v23.0
 			dd77f450ee4 Recognise temporary REPLACE_BY_FEE service bit
 		MISSING IN 22.x & 23.0? c10e54ecb54 (rbf_opts-0.21+knots) QA: feature_rbf: Test full-RBF service bit
 		# NOTE: Competing PR now in #25353
+		TODO: Compatibility with #25353 ?
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					2a61c92f17e
 		# TODO: Split out legacy address preference to be more explicit
