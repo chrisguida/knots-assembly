@@ -862,9 +862,10 @@ m	-     mining_priority-0.21+knots			1e33269a0ae	last=a284d6253ff mining_priorit
 		# Didn't backport platform-independent double serialisation
 	5861 gui_restore_addresses					a81fd2b77ff
 	5891  qt_console_history_persist-0.21+knots	831cc0d61d1	last=0cd5fc301d6 qt_console_history_persist
-	7219  rbf_opts-0.21+knots					6b8135375e9	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
+m	7219  rbf_opts-0.21+knots					6b8135375e9	last=c6decd62837 fullrbf # missing 91786d16ccc + revert34ae6640174
 	(CHECK-LAST)	last=8db545872f6 fullrbf-22+knots
 	(CHECK-LAST)	last=149b286b44e fullrbf-23+knots
+		# NOTE: Held back "clean mempool" from b81235ee156 (not needed in 21.x?)
 	12146 opt_wallet_segwit2-0.1				ffc242d52be	last=6a939ab54c6 opt_wallet_segwit2
 		TODO: Make sure descriptor wallets default to non-segwit addresses
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
@@ -907,6 +908,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 # BRANDING:
 	n/a   knots_branding-21						9db64a56d30	last=16035761f8b knots_branding-23
 	(CHECK-LAST)	last=282420dea44 knots_branding-22
+		TODO: Review security policy & report(s)
 	n/a   ver_dropzero-21.2+knots				0d04104e95d
 		# this should be 21.1.1 I guess? keeping 21.2.0 for now to match Core...
 		# TODO: bump ver properly when Core abandons it

@@ -625,10 +625,12 @@ checkout v23.0
 		149b286b44e (fullrbf-23+knots) rebased onto branch-23: 9e79f188695
 		9e79f188695 rebased onto master: 08ebca8e0fc
 		08ebca8e0fc..7e8cdb9eeea: Add fixups, diff-heavy refactoring, remove never-rebase
-		7e8cdb9eeea squash fixups (but not ^diff-heavy+removal): c6decd62837
+		7e8cdb9eeea squash fixups (but not ^diff-heavy+removal): c6decd62837 = #25373
 		NOTE: Above work still needs:
 			149b286b44e (fullrbf-23+knots) Advertise temporary REPLACE_BY_FEE service bit (when appropriate)
 			dd77f450ee4 Recognise temporary REPLACE_BY_FEE service bit
+		MISSING IN 22.x & 23.0? c10e54ecb54 (rbf_opts-0.21+knots) QA: feature_rbf: Test full-RBF service bit
+		# NOTE: Competing PR now in #25353
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					2a61c92f17e
 		# TODO: Split out legacy address preference to be more explicit
@@ -682,6 +684,7 @@ checkout v23.0
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
 	n/a   knots_branding-23						0ef366334de
+		TODO: Review security policy & report(s)
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
