@@ -424,6 +424,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
 	# Needs extra review (is it actually safe?): 25239 -  # wallet: 'CommitTransaction', remove extra wtx lookup and add exception for db write error
 		+(?) #25272
+		needs gui#260 to handle exceptions
 	25256 -  # logging: fix logging empty thread name
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
 	25276 -  # doc: Fix typo in importdescriptors

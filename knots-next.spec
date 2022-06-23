@@ -219,6 +219,7 @@ checkout v23.0
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
 	FIXME: Is this really safe? Merged 25239 -  # wallet: 'CommitTransaction', remove extra wtx lookup and add exception for db write error
 		+(?) #25272
+		needs gui#260 to handle exceptions
 	Merged 25256 -  # logging: fix logging empty thread name
 	Merged 25276 -  # doc: Fix typo in importdescriptors
 	# Meh? Merged 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
