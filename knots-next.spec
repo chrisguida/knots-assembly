@@ -217,9 +217,10 @@ checkout v23.0
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
+	TODO: Merged g260  qt_handle_exceptions_pr260-21						last=6a794f4737e qt_handle_exceptions_pr260-21-corepr
 	FIXME: Is this really safe? Merged 25239 -  # wallet: 'CommitTransaction', remove extra wtx lookup and add exception for db write error
-		+(?) #25272
-		needs gui#260 to handle exceptions
+		See 25239 wallet_committx_catch_db_write_err-21
+	# Needs review/work? 25272 wallet_sync_catch_db_write_err-21
 	Merged 25256 -  # logging: fix logging empty thread name
 	Merged 25276 -  # doc: Fix typo in importdescriptors
 	# Meh? Merged 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
