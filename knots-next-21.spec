@@ -425,9 +425,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g260  qt_handle_exceptions_pr260-21						last=6a794f4737e qt_handle_exceptions_pr260-21-corepr
 	25239 wallet_committx_catch_db_write_err-21
 	# Needs review/work? 25272 wallet_sync_catch_db_write_err-21
-	25256 -  # logging: fix logging empty thread name
+	25256 log_threadname_unknown-0.19
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
-	25276 -  # doc: Fix typo in importdescriptors
+	25276 fix_rpcdoc_importdesc_pr25276-21
 	# Meh? 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
 	# Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
 	TODO: defining HAVE_O_CLOEXEC 0 breaks LevelDB build without it
