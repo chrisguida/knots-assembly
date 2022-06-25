@@ -159,6 +159,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					df127c75a99	last=2e386cd3dd3
 	20234 fix_bind_any_pr20234-21  # net: don't bind on 0.0.0.0 if binds are restricted to Tor
+		# NOTE: Includes partial #25333
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
 	g121  fix_qt_early_sub_signals-21			ea2340e5824
@@ -433,7 +434,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Meh? 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
 	# Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
 	25320 impl_win_mlock_limit-0.17
-	25333 -  # test: Fix out-of-range port collisions
+	25333 qa_fix_port_collisions_pr25333-21
+		# NOTE: 1 out of 3 test changes here; others included with relevant PR(s)
 	Needs review: 25351 fjahr/202204-import-scan
 		# NOTE: Was #18964
 	Needs review: 25380 darosior/fee_estimator_disable_cpfp
