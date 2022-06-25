@@ -225,7 +225,6 @@ checkout v23.0
 	Merged 25276 -  # doc: Fix typo in importdescriptors
 	# Meh? Merged 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
 	# MERGED; Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
-	TODO: defining HAVE_O_CLOEXEC 0 breaks LevelDB build without it
 	25314 -  # p2p: always set nTime for self-advertisements
 	25320 -  # util: modify Win32LockedPageAllocator to query windows for limit
 	Merged 25333 -  # test: Fix out-of-range port collisions
@@ -237,6 +236,8 @@ checkout v23.0
 	Needs review: 25404 -  # p2p, doc: Use MAX_BLOCKS_TO_ANNOUNCE consistently
 	Merged g613 laanwj/2022-06-qtconsole-includes
 	Triage: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
+	25463 fix_leveldb_no_cloexec-0.20						last=a956806de2f fix_leveldb_no_cloexec
+		FIXME: Check if solved a different way!
 @23.x-knots
 # PERFORMANCE:
 	23880 marco/2112-p2pAsync					538a844566d	last=fa61dd44f99

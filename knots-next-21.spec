@@ -430,7 +430,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25276 fix_rpcdoc_importdesc_pr25276-21
 	# Meh? 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
 	# Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
-	TODO: defining HAVE_O_CLOEXEC 0 breaks LevelDB build without it
 	25320 -  # util: modify Win32LockedPageAllocator to query windows for limit
 	25333 -  # test: Fix out-of-range port collisions
 	Needs review: 25351 fjahr/202204-import-scan
@@ -439,6 +438,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: 25404 -  # p2p, doc: Use MAX_BLOCKS_TO_ANNOUNCE consistently
 	Ensure it isn't needed in 21.x: g613 laanwj/2022-06-qtconsole-includes
 	Triage: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
+	25463 fix_leveldb_no_cloexec-0.20						last=a956806de2f fix_leveldb_no_cloexec
 	n/a   (delete_release_notes_fragments)
 	TODO: Check depends for fix-only updates
 @21.x-knots
