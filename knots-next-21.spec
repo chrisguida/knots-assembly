@@ -158,6 +158,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 		# Held back additional tests
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					df127c75a99	last=2e386cd3dd3
+	20234 fix_bind_any_pr20234-21  # net: don't bind on 0.0.0.0 if binds are restricted to Tor
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
 	g121  fix_qt_early_sub_signals-21			ea2340e5824
@@ -411,6 +412,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=32cca184b79 rpcdoc_sendmany_dummy_opt-23
 		# Just the bugfix from #25093 rpc: Check for omitted, but required parameters
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
+		# NOTE: Fixes in #25312 & #25333
 	25106 rpc_dumptxoutset_fopen_check-0.20					last=805443ff3f9 rpc_dumptxoutset_fopen_check-23
 	# Needs triage/review: Maybe part of (see reference to #17167) 25156 -  # refactor: Introduce PeerManagerImpl::RejectIncomingTxs
 	25157 fix_bcli_negtime_pr25157-21						last=fdc6e7cf753 fix_bcli_negtime_pr25157-23
@@ -430,7 +432,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25276 fix_rpcdoc_importdesc_pr25276-21
 	# Meh? 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
 	# Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
-	25320 -  # util: modify Win32LockedPageAllocator to query windows for limit
+	25320 impl_win_mlock_limit-0.17
 	25333 -  # test: Fix out-of-range port collisions
 	Needs review: 25351 fjahr/202204-import-scan
 		# NOTE: Was #18964

@@ -226,7 +226,7 @@ checkout v23.0
 	# Meh? Merged 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
 	# MERGED; Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
 	25314 -  # p2p: always set nTime for self-advertisements
-	25320 -  # util: modify Win32LockedPageAllocator to query windows for limit
+	Merged 25320 -  # util: modify Win32LockedPageAllocator to query windows for limit
 	Merged 25333 -  # test: Fix out-of-range port collisions
 	Needs review: 25351 fjahr/202204-import-scan
 		# NOTE: Was #18964
