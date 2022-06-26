@@ -436,7 +436,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25320 impl_win_mlock_limit-0.17
 	25333 qa_fix_port_collisions_pr25333-21
 		# NOTE: 1 out of 3 test changes here; others included with relevant PR(s)
-	Needs review: 25351 fjahr/202204-import-scan
+	25351 wallet_import_scanmempool-21						last=abdaa251610 fjahr/202204-import-scan
 		# NOTE: Was #18964
 	Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	Needs review: 25404 -  # p2p, doc: Use MAX_BLOCKS_TO_ANNOUNCE consistently
