@@ -436,10 +436,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25320 impl_win_mlock_limit-0.17
 	25333 qa_fix_port_collisions_pr25333-21
 		# NOTE: 1 out of 3 test changes here; others included with relevant PR(s)
-	25351 wallet_import_scanmempool-21						last=abdaa251610 fjahr/202204-import-scan
+	25351 wallet_import_scanmempool-21						last=8f59d58549a fjahr/202204-import-scan
 		# NOTE: Was #18964
-	Needs review: 25380 darosior/fee_estimator_disable_cpfp
-	Needs review: 25404 -  # p2p, doc: Use MAX_BLOCKS_TO_ANNOUNCE consistently
+		#21.xTODO# Update abdaa251610...<current> once it settles and is sane
+	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
+		# NOTE: Tests need parts of #22539+#24817
+	25404 fix_p2p_maxblkann_pr25404-0.17					last=e357c895388
 	Ensure it isn't needed in 21.x: g613 laanwj/2022-06-qtconsole-includes
 	Triage: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
 	25463 fix_leveldb_no_cloexec-0.20						last=a956806de2f fix_leveldb_no_cloexec
