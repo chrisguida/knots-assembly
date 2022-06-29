@@ -442,8 +442,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 		# NOTE: Tests need parts of #22539+#24817
 	25404 fix_p2p_maxblkann_pr25404-0.17					last=e357c895388
-	Ensure it isn't needed in 21.x: g613 laanwj/2022-06-qtconsole-includes
-	Triage: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
+	# Bug doesn't affect Knots: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
 	25463 fix_leveldb_no_cloexec-0.20						last=a956806de2f fix_leveldb_no_cloexec
 	n/a   (delete_release_notes_fragments)
 	TODO: Check depends for fix-only updates
