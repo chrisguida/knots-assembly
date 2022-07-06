@@ -427,7 +427,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 25220 brunoerg/2022-05-fix-incorrect-warning-createmultisig
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
-	g260  qt_handle_exceptions_pr260-21						last=6a794f4737e qt_handle_exceptions_pr260-21-corepr
+	g260  qt_handle_exceptions_pr260-21						last=f735ab016b9 qt_handle_exceptions_pr260-21-corepr
 	25239 wallet_committx_catch_db_write_err-21
 	# Needs review/work? 25272 wallet_sync_catch_db_write_err-21
 	25256 log_threadname_unknown-0.19
@@ -438,7 +438,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25320 impl_win_mlock_limit-0.17
 	25333 qa_fix_port_collisions_pr25333-21
 		# NOTE: 1 out of 3 test changes here; others included with relevant PR(s)
-	25351 wallet_import_scanmempool-21						last=8f59d58549a fjahr/202204-import-scan
+	25351 wallet_import_scanmempool-21						last=1be79641893 fjahr/202204-import-scan
 		# NOTE: Was #18964
 		#21.xTODO# Update abdaa251610...<current> once it settles and is sane
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
@@ -446,9 +446,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25404 fix_p2p_maxblkann_pr25404-0.17					last=e357c895388
 	# Bug doesn't affect Knots: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
 	25463 fix_leveldb_no_cloexec-0.20						last=a956806de2f fix_leveldb_no_cloexec
-	25425 hebasto/220620-wsystem
+	25425 fix_wsystem_check-0.19
 	# Triage: 25454 sdaftuar/2022-06-single-getheaders
-	25456 -  # rpc: Use steady_clock for getrpcinfo durations
+	25456 getrpcinfo_steadyclock-21
 	# Not worth it? 25476 fjahr/2022-06-importdesctest
 	25495 -  # Revert "bnb: exit selection when best_waste is 0"
 	25497 S3RK/wallet_noninput_fees
