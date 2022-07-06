@@ -1,7 +1,7 @@
-timestamp 2022-06-18 10:52:32
+timestamp 2022-07-06 02:28:41
 lastapply no-merge
 
-#.. checked up to PR #25412 / gui #618
+#.. checked up to PR #25548 / gui #627
 
 checkout v23.0
 @23.x-syslibs
@@ -15,6 +15,7 @@ checkout v23.0
 	24633 bugfix_suppresswarnings_regex			fd8c81d4242
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
+		NOTE: Revert #25457 ?
 	5416  sys_libsecp256k1						f4a59d2a40f
 	-     sys_univalue-23+knots					5a04090dfe1
 	7485  sys_univalue_def-23+knots				30111aa138c
@@ -31,17 +32,18 @@ checkout v23.0
 	# Needs work? & test: g580 hebasto/220409-event      # Qt 6 (3/n)
 	# Needs review: 24813 hebasto/220409-appcheck        # Qt 6 (4/n)
 	# Only w/ rest of Qt6: g584 hebasto/220413-metatype  # Qt 6 (5/n)
-	# Needs review: g585 prusnak/qregexp-obsolete / g606 jarolrod/regexp-obsolete
+	# Only w/ rest: g620 -  # Replace QRegExp with QRegularExpression
 	# TODO: tbc uses QRegExpValidator
 	# Needs review: g586 hebasto/220416-quit             # Qt 6 (6/n)
 	# Needed for Qt6?? g587 hebasto/220416-invoke510
 	# Only w/ rest: g589 hebasto/220420-walletmodel      # Qt 6 (7/n)
-	# Needs review/conceptack: g592 hebasto/220423-wildcard
-	# Needs review: g593 hebasto/220423-re
+	# Needs review: g593 hebasto/220423-re               # Qt 6 (8/n)
+	# Only w/ rest: g623 hebasto/220622-qt6              # Qt 6 (9/n)
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
 	# Needs review: 25191 hebasto/220523-qt6-mac
 	# ---- END qt6 SUPPORT ----
 	# OpenBSD-only: 25332 fanquake/test_for_timingsafe_bcmp
+	n/a   (delete_release_notes_fragments)
 @23.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							c6a96c5159d
@@ -238,6 +240,16 @@ checkout v23.0
 	Triage: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
 	25463 fix_leveldb_no_cloexec-0.20						last=a956806de2f fix_leveldb_no_cloexec
 		FIXME: Check if solved a different way!
+	Merged 25424 hebasto/220620-cxxflags
+	Merged 25425 hebasto/220620-wsystem
+	Merged 25456 -  # rpc: Use steady_clock for getrpcinfo durations
+	Merged 25471 mzumsande/202206_gettxoutsetinfo_check
+	25495 -  # Revert "bnb: exit selection when best_waste is 0"
+	25548 readlink_overflow_check
+	Merged 25497 S3RK/wallet_noninput_fees
+	Merged 25506 1440000bytes/peertimeout-error-msg
+	25507 S3RK/correct_target_with_sffo
+	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
 	23880 marco/2112-p2pAsync					538a844566d	last=fa61dd44f99
@@ -262,6 +274,7 @@ checkout v23.0
 	# Needs review: 25236 -  # wallet: use vector instead of list for transactions
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
 	Needs work: 25383 -  # wallet: don't read db every time that a new 'WalletBatch' is created
+	Needs review: 25542 hebasto/220705-ltcg
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -436,7 +449,6 @@ checkout v23.0
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
 	g368  bugfix_gui_restored_columns_stretch	3b888b39d64
 	g230  gui_backup_formats					6a47e2cd43b
-	# TODO? 21413 glozow/2021-03-bypass-timelocks
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	21780 rpc_maxmempool						7ac16e22ad6	last=040b280c661 rebroad/MaxMempoolRPC
@@ -462,6 +474,7 @@ checkout v23.0
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
 	# TODO: 22778 jnewbery:2021-02-tx-relay-init
+		# IMPORTANT: Fixed in #25446
 	# Needs BIP? 22838 achow101:multipath-descs
 	# Needs review: 22919 -  # fees: skip pointless fee parameter calculation during IBD
 	# Needs work: 23019 -  # rpc, wallet: Add listaddresses RPC
@@ -546,6 +559,11 @@ checkout v23.0
 	Needs review: 25355 vasild/i2p_transient_outbound_addr
 	Needs concept review: 25366 w0xlt/desc_rpc
 	Needs work: 25412 brunoerg/2022-06-rest-deploymentinfo
+	Needs work? 25434 w0xlt/bypass-timelocks
+		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
+	Merged 25439 -  # rpc: Return incrementalrelayfee in getmempoolinfo
+	Maybe? Review: 25504 darosior/rpc_track_coins_by_descriptor
+	Needs review? g626 -  # gui: Showing Local Addresses in Node Window
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -645,6 +663,7 @@ checkout v23.0
 	7107  qtnetworkport-23+knots				c37c20d1ca7	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force							9746cd166d6
 		# NOTE: partial re-PR in #20753 by Marco
+		TODO: Compatibility with #25532 if merged
 	11082 rwconf-23+knots						dbc972ce598 # Latest code now
 	7510  rwconf_gui-23+knots					7342e194bdb
 		FIXME: s/P2SH-SegWit/P2SH Segwit/ (dash->space & lowercase W)
@@ -713,7 +732,7 @@ checkout v23.0
 	# Needs review: 22871 JeremyRubin:discourage-csv
 	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
-												7502bba0dc8n/a   (delete_release_notes_fragments)		dc7e4b0d473
+	n/a   (delete_release_notes_fragments)		7502bba0dc8
 	7483  svg_icon-23+knots						edbcba95282
 	n/a   tbc_font								9929a597b3d
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal

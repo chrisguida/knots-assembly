@@ -1,8 +1,8 @@
-timestamp 2022-06-18 10:52:32
+timestamp 2022-07-06 02:28:41
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25412 / gui #618 for fixes
+#.. checked up to PR #25548 / gui #627 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -39,6 +39,7 @@ checkout v0.21.2
 		# NOTE: Inspired by first revision of #24291
 	# Not worth it: 24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 	24633 bugfix_suppresswarnings_regex
+	# NOTE: WRONG FOR C++11: 25436 fanquake/libxkbcommon_gcc_12
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -60,6 +61,7 @@ m	7485  sys_univalue_def-21					c393c7a7f51	last=cf9e588e22f sys_univalue_def-23
 	20594 conf_getauxval-0.21					563aacf22be	last=836a3dc02c7 jonas/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
 	23716 qa_own_ripemd160-21					a93adb92909
+		# NOTE: Identical backport in #25538 now
 	# TODO?? Qt6 support
 	# OpenBSD-only: 25332 fanquake/test_for_timingsafe_bcmp
 	n/a   (delete_release_notes_fragments)
@@ -444,6 +446,15 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25404 fix_p2p_maxblkann_pr25404-0.17					last=e357c895388
 	# Bug doesn't affect Knots: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
 	25463 fix_leveldb_no_cloexec-0.20						last=a956806de2f fix_leveldb_no_cloexec
+	25425 hebasto/220620-wsystem
+	# Triage: 25454 sdaftuar/2022-06-single-getheaders
+	25456 -  # rpc: Use steady_clock for getrpcinfo durations
+	# Not worth it? 25476 fjahr/2022-06-importdesctest
+	25495 -  # Revert "bnb: exit selection when best_waste is 0"
+	25497 S3RK/wallet_noninput_fees
+	25548 readlink_overflow_check
+	# Not worth it? 25506 1440000bytes/peertimeout-error-msg
+	25507 S3RK/correct_target_with_sffo
 	n/a   (delete_release_notes_fragments)
 	TODO: Check depends for fix-only updates
 @21.x-knots
@@ -497,7 +508,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	g562  wallet_no_reuse-0.21+knots			952bb1fb9bc	last=776947e6cac wallet_warn_reuse_gui
 		# NOTE: Was #15987
 		# NOTE: Uses older bloom filter implementation
-	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=8719b084754 getaddressinfo_txids
+	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=2d3b9e24add getaddressinfo_txids
 	18772 -										72084e6f2d7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	22918 rpc_getblock_prevouts_fees-0.21		ce365cd8a1c	last=5c34507ecbb
 	(CHECK-LAST)	last=80612d8aded rpc_getblock_prevouts_fees-22
@@ -719,10 +730,12 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# Check if fixes anything: 24178 sdaftuar/2022-01-headers-response-requires-minchainwork
 	24198 rpc_wtx_wtxid-0.20								last=7abd8b21ba3  # wallet, rpc: add wtxid in WalletTxToJSON
 	(CHECK-LAST)	last=954bc3e5e73 rpc_wtx_wtxid-23+knots
+	# SENDING ONLY? Needs work: 24897 w0xlt/silent_payment_021
 	g526  qt_peers_addrprocessed-21+knots
 	# Maybe? 25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
+	25439 -  # rpc: Return incrementalrelayfee in getmempoolinfo
+	Maybe? Review: 25504 darosior/rpc_track_coins_by_descriptor
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
-	# SENDING ONLY? Needs work: 24897 w0xlt/silent_payment_021
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
