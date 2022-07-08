@@ -451,10 +451,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25456 getrpcinfo_steadyclock-21
 	# Not worth it? 25476 fjahr/2022-06-importdesctest
 	25495 fix_bnb_bestwaste0-0.20
-	25497 S3RK/wallet_noninput_fees
+	25497 wallet_manyinput_fees_pr25497-0.20
 	25548 readlink_overflow_check
 	# Not worth it? 25506 1440000bytes/peertimeout-error-msg
-	25507 S3RK/correct_target_with_sffo
+	# Either n/a or very difficult to backport: 25507 S3RK/correct_target_with_sffo
 	#21.xTODO# Check on #25561
 	n/a   (delete_release_notes_fragments)
 	TODO: Check depends for fix-only updates
