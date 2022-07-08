@@ -249,6 +249,7 @@ checkout v23.0
 	Merged 25497 S3RK/wallet_noninput_fees
 	Merged 25506 1440000bytes/peertimeout-error-msg
 	25507 S3RK/correct_target_with_sffo
+	#23.xTODO# Check on #25561
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
