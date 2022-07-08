@@ -457,7 +457,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Either n/a or very difficult to backport: 25507 S3RK/correct_target_with_sffo
 	#21.xTODO# Check on #25561
 	n/a   (delete_release_notes_fragments)
-	TODO: Check depends for fix-only updates
+	#21.xTODO# Check depends for fix-only updates
 @21.x-knots
 # PERFORMANCE:
 	# Needs work: 25383 -  # wallet: don't read db every time that a new 'WalletBatch' is created
@@ -468,7 +468,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=d6d1a1b47eb rpc_gbci_period_start-22+knots
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
-	g275  gui_darkmode-0.21.2_pt1				9cd8d7e8a79
+m	g275  gui_darkmode-0.21.2_pt1				9cd8d7e8a79
 		# NOTE: Fixed bug in gui#330 a simpler way b942216a1a7
 	g154  gui_darkmode-0.21						55019938d93
 	g366  gui_palettechange-0.21				ee70e2584ff
@@ -487,7 +487,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	(CHECK-LAST)	last=9652e0a2faa rpc_fundtx_minmaxconf
 	(CHECK-LAST)	last=972a1feefa8 fundraw_min_conf_deprecated-23+knots
 		# Includes param rename (min_conf->minconf) and tests from #22049 (but not new maxconf param)
-		TODO: See if #22049 fixes anything for this
+		TODO: See if #25375 fixes anything for this
 	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
