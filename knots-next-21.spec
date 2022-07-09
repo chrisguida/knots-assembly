@@ -511,7 +511,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	g562  wallet_no_reuse-0.21+knots			952bb1fb9bc	last=776947e6cac wallet_warn_reuse_gui
 		# NOTE: Was #15987
 		# NOTE: Uses older bloom filter implementation
-	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=2d3b9e24add getaddressinfo_txids
+	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=3ee478b9cba getaddressinfo_txids
 	18772 -										72084e6f2d7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	22918 rpc_getblock_prevouts_fees-0.21		ce365cd8a1c	last=5c34507ecbb
 	(CHECK-LAST)	last=80612d8aded rpc_getblock_prevouts_fees-22
@@ -600,11 +600,11 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	(CHECK-LAST)	last=7f2c0d576d2 rpc_getblockfrompeer_wo_header
 	(CHECK-LAST)	last=6d074a3f87c rpc_getblockfrompeer_nodeid_compat-23
-	(CHECK-LAST)	last=a926025ca82 jonatack/getblockfrompeer-param-inputs
+	(CHECK-LAST)	last=2ef5294a5bb jonatack/getblockfrompeer-param-inputs
 	(CHECK-LAST)	last=4fe12e61847 rpc_getblockfrompeer_typecheck-23
-		TODO: +#25259 ?
 		# +#23702 +(doc from #23813) +#24226
 		# +#24944
+		# +#25259
 		# NOTE: Forward-compatible with peer_id param rename in #23706
 		#21.xTODO# TODO? Forward-compatibility with block_hash param rename in #23706 (bad idea, these changes conflict with other/standard param names)
 		#21.xTODO# TODO??? API change * 60243cac728 rpc: turn already downloaded into error in getblockfrompeer
