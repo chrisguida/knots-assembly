@@ -299,8 +299,9 @@ checkout v23.0
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 	22049 rpc_fundtx_minmaxconf-23+knots		e80afead907	last=7f4c9039f71  # rpc: allow specifying min chain depth for inputs in fund calls
 	(CHECK-LAST)	last=9652e0a2faa rpc_fundtx_minmaxconf
+	(CHECK-LAST)	last=1e14aeacd3a origin-pull/25375/head
 		# Was #14641 (moved to Knots compat)
-		TODO: See if #25375 adds anything to this
+		# TODO: Once #25375 is merged, include its strings/tests
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
