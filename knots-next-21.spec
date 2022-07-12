@@ -501,7 +501,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 		# Held back 962f168a014..398df42f449, da20c1e6d20 (not a bugfix)
 	15836 fee_histogram-21						69874bd7a2f	last=b94292a7cb jonas/2019/04/feeinfo
 	(CHECK-LAST)	last=8cdfa4e2bea fee_histogram+pr15836_api
-	(CHECK-LAST)	last=f34072a4d4f origin-pull/21422/head
+	(CHECK-LAST)	last=b145137b151 origin-pull/21422/head
 		# Held back approach changes (that ignore CPFP) f2ca3d35ee9..47b5c3e03a7 - current approach is arguably buggy (see sipa's review on PR)
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 		# NOTE: Backported some features/test from #21422 (but not API incompatibilities)
@@ -623,7 +623,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	g149  intro_assumevalid-21					a434a92b063	last=75aff9e0ff7 intro_assumevalid
 	(CHECK-LAST)	last=de495ad2f11 intro_assumevalid-23
 	25339 rpcdoc_scantxoutset_20220611a-21					last=7862c4ac4e7 rpcdoc_scantxoutset_20220611a
-	23549 rpc_scanblocks-21+knots				5eaa6ce2ea6	last=e1c89184cd3 jamesob/2021-11-scanblocks
+	23549 rpc_scanblocks-21+knots				5eaa6ce2ea6	last=e5ec82a7e23 jamesob/2021-11-scanblocks
 	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	(CHECK-LAST)	last=d28e8e4e277 rpc_scanblocks
 		# NOTE: Was #20664
@@ -736,7 +736,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# SENDING ONLY? Needs work: 24897 w0xlt/silent_payment_021
 	g526  qt_peers_addrprocessed-21+knots
 	# Maybe? 25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
-	25439 -  # rpc: Return incrementalrelayfee in getmempoolinfo
+	25439 rpc_gmpi_incrementalrelayfee-21+knots
 	Maybe? Review: 25504 darosior/rpc_track_coins_by_descriptor
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
