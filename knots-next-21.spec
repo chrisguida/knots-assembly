@@ -737,7 +737,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	g526  qt_peers_addrprocessed-21+knots
 	# Maybe? 25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
 	25439 rpc_gmpi_incrementalrelayfee-21+knots
-	Maybe? Review: 25504 darosior/rpc_track_coins_by_descriptor
+	# Maybe? Tho pretty big conceptually... Review: 25504 darosior/rpc_track_coins_by_descriptor
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
