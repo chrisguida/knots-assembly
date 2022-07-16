@@ -259,6 +259,7 @@ checkout v23.0
 	25615 -  # rpc: add missing description in gettxout help text
 	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target
 	Needs review: g631 achow101/watchonly-disable-encryption
+	TODO: Fix bugs in gui#447 ?
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:

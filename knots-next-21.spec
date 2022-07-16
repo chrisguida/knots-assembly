@@ -314,6 +314,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs correctness verification (especially startingheight which changed in 22.x): Diff-minimised 23652 marco/2112-docOptPeer
 	# Needs review: 23673 hebasto/211204-native
 	23750 docfix_importdesc_range_no_label-21	397093e7779	last=65efbba45d8 darosior/no_label_range_descriptors
+	# Buggy? UI change too... g447  -  # Never disable HD status icon
 	g506  qt_qrcode_sizefixes					4724488fe3d
 	# idk? 23781 hebasto/211215-bptest
 	23858 fix_qa_scantxoutset_pr23858-21
@@ -465,7 +466,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	-     fix_rpcdoc_addresses_part20286-21+k
 	25615 fix_rpcdoc_gettxout_pr25615-21+k					last=743a84a5f6f
 	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target
-	Needs review: g631 achow101/watchonly-disable-encryption
+	g631 watchonly_no_encrypt-0.5							last=4c495413e13 achow101-g/watchonly-disable-encryption
 	n/a   (delete_release_notes_fragments)
 	#21.xTODO# Check depends for fix-only updates
 @21.x-knots
