@@ -40,7 +40,7 @@ checkout v0.21.2
 	# Not worth it: 24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 	24633 bugfix_suppresswarnings_regex
 	# NOTE: WRONG FOR C++11: 25436 fanquake/libxkbcommon_gcc_12
-	25605 fanquake/dmg_tools_new_paths
+	25605 dmg_tools_new_paths_pr25605-0.17					last=718d29af233 fanquake/dmg_tools_new_paths
 	# Needs review: 25612 fanquake/lto_improvements
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
@@ -459,10 +459,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Either n/a or very difficult to backport: 25507 S3RK/correct_target_with_sffo
 	#21.xTODO# Check on #25561
 	# Needs concept review: 25574 -  # validation: Skip VerifyDB checks of level >=3 if dbcache is too small
-	25590 achow101/sign-psbt-tr-wo-utxos
+	# Not applicable? Unsure... 25590 achow101/sign-psbt-tr-wo-utxos
 	# Needs work: 25595 instagibbs/verify_psbt_input
 	# Needs review: 25599 achow101/specifc-atomics-check
-	25615 -  # rpc: add missing description in gettxout help text
+	-     fix_rpcdoc_addresses_part20286-21+k
+	25615 fix_rpcdoc_gettxout_pr25615-21+k					last=743a84a5f6f
 	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target
 	Needs review: g631 achow101/watchonly-disable-encryption
 	n/a   (delete_release_notes_fragments)
