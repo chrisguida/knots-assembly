@@ -1,8 +1,8 @@
-timestamp 2022-07-06 02:28:41
+timestamp 2022-07-16 05:38:31
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25548 / gui #627 for fixes
+#.. checked up to PR #25625 / gui #631 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -40,6 +40,8 @@ checkout v0.21.2
 	# Not worth it: 24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 	24633 bugfix_suppresswarnings_regex
 	# NOTE: WRONG FOR C++11: 25436 fanquake/libxkbcommon_gcc_12
+	25605 fanquake/dmg_tools_new_paths
+	# Needs review: 25612 fanquake/lto_improvements
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -456,6 +458,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Not worth it? 25506 1440000bytes/peertimeout-error-msg
 	# Either n/a or very difficult to backport: 25507 S3RK/correct_target_with_sffo
 	#21.xTODO# Check on #25561
+	# Needs concept review: 25574 -  # validation: Skip VerifyDB checks of level >=3 if dbcache is too small
+	25590 achow101/sign-psbt-tr-wo-utxos
+	# Needs work: 25595 instagibbs/verify_psbt_input
+	# Needs review: 25599 achow101/specifc-atomics-check
+	25615 -  # rpc: add missing description in gettxout help text
+	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target
+	Needs review: g631 achow101/watchonly-disable-encryption
 	n/a   (delete_release_notes_fragments)
 	#21.xTODO# Check depends for fix-only updates
 @21.x-knots
@@ -911,7 +920,7 @@ m	7219  rbf_opts-0.21+knots					6b8135375e9	last=c6decd62837 fullrbf # missing 9
 	(CHECK-LAST)	last=149b286b44e fullrbf-23+knots
 		# NOTE: Held back "clean mempool" from b81235ee156 (not needed in 21.x?)
 		# NOTE: Re-PR'd as #25373
-		TODO: Compatibility with #25353 ?
+		TODO: Compatibility with #25353 ? +#25575
 	12146 opt_wallet_segwit2-0.1				ffc242d52be	last=6a939ab54c6 opt_wallet_segwit2
 		TODO: Make sure descriptor wallets default to non-segwit addresses
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)

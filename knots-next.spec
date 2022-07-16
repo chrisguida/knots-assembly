@@ -1,7 +1,7 @@
-timestamp 2022-07-06 02:28:41
+timestamp 2022-07-16 05:38:31
 lastapply no-merge
 
-#.. checked up to PR #25548 / gui #627
+#.. checked up to PR #25625 / gui #631
 
 checkout v23.0
 @23.x-syslibs
@@ -13,6 +13,8 @@ checkout v23.0
 	24295 -										f4ae5e430d7	last=faf7a61483a  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 		# 24.xTODO: Can this go away?
 	24633 bugfix_suppresswarnings_regex			fd8c81d4242
+	25605 fanquake/dmg_tools_new_paths
+	Needs review: 25612 fanquake/lto_improvements
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
 		NOTE: Revert #25457 ?
@@ -250,6 +252,13 @@ checkout v23.0
 	Merged 25506 1440000bytes/peertimeout-error-msg
 	25507 S3RK/correct_target_with_sffo
 	#23.xTODO# Check on #25561
+	Needs concept review: 25574 -  # validation: Skip VerifyDB checks of level >=3 if dbcache is too small
+	25590 achow101/sign-psbt-tr-wo-utxos
+	Needs work: 25595 instagibbs/verify_psbt_input
+	Needs review: 25599 achow101/specifc-atomics-check
+	25615 -  # rpc: add missing description in gettxout help text
+	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target
+	Needs review: g631 achow101/watchonly-disable-encryption
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -468,11 +477,13 @@ checkout v23.0
 	22372 multinotify							7edb7a43520
 	24963 rpc_walletprocesspsbt_options-23		7ebcda357a1	last=31ffd7782bf rpc_walletprocesspsbt_options
 		# Diff-minimised
-	# Needs work: g471 -  # Add Wallet Restore in the GUI
+	g471 -  # Add Wallet Restore in the GUI
+		TODO: +gui#629
 	# Needs review: 22558 achow101/taproot-psbt
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
 	22751 simulaterawtransaction-23				ba547c13c56	last=bd520345f7a kallewoof/202108-analyzerawtransaction
+		See new competing(?) PR #25621
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
 	# TODO: 22778 jnewbery:2021-02-tx-relay-init
@@ -563,6 +574,7 @@ checkout v23.0
 	Needs work: 25412 brunoerg/2022-06-rest-deploymentinfo
 	Needs work? 25434 w0xlt/bypass-timelocks
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
+		Also #25570 ?
 	Merged 25439 -  # rpc: Return incrementalrelayfee in getmempoolinfo
 	Maybe? Review: 25504 darosior/rpc_track_coins_by_descriptor
 	Needs review? g626 -  # gui: Showing Local Addresses in Node Window
@@ -686,8 +698,9 @@ checkout v23.0
 			149b286b44e (fullrbf-23+knots) Advertise temporary REPLACE_BY_FEE service bit (when appropriate)
 			dd77f450ee4 Recognise temporary REPLACE_BY_FEE service bit
 		MISSING IN 22.x & 23.0? c10e54ecb54 (rbf_opts-0.21+knots) QA: feature_rbf: Test full-RBF service bit
-		# NOTE: Competing PR now in #25353
+		# NOTE: Competing PR now in #25353 +#25575
 		TODO: Compatibility with #25353 ?
+		NOTE: #25600 has RBF service bit
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					2a61c92f17e
 		# TODO: Split out legacy address preference to be more explicit
@@ -722,6 +735,7 @@ checkout v23.0
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	-     bloom_default-0.21+knots				4910b8c3600
 	-     wallet_avoid_newerchange				a5e70c68636
+	Needs review: 25610 achow101/walletrbf-default-on
 	-     enforce_checkpoints					840dddd5a6e
 	n/a   checkpoint_update-23					ec23e329857	last=70996dfdd9b checkpoint_update-0.21
 	10282 timebomb_knots						28c6dff687b
