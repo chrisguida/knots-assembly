@@ -695,6 +695,8 @@ checkout v23.0
 		9e79f188695 rebased onto master: 08ebca8e0fc
 		08ebca8e0fc..7e8cdb9eeea: Add fixups, diff-heavy refactoring, remove never-rebase
 		7e8cdb9eeea squash fixups (but not ^diff-heavy+removal): c6decd62837 = #25373
+		eb6bb1e3528 squash the rest: fe474794513
+		fe474794513 rebased onto master: 5647bc061a2
 		NOTE: Above work still needs:
 			149b286b44e (fullrbf-23+knots) Advertise temporary REPLACE_BY_FEE service bit (when appropriate)
 			dd77f450ee4 Recognise temporary REPLACE_BY_FEE service bit
@@ -702,6 +704,8 @@ checkout v23.0
 		# NOTE: Competing PR now in #25353 +#25575
 		TODO: Compatibility with #25353 ?
 		NOTE: #25600 has RBF service bit
+		24.xTODO: Update doc/policy/mempool-replacement.md
+		NOTE: #25626 has -mempoolreplacement on Core - including new RPC getmempoolinfo values (be sure to backport as feature)
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					2a61c92f17e
 		# TODO: Split out legacy address preference to be more explicit

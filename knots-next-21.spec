@@ -917,12 +917,14 @@ m	-     mining_priority-0.21+knots			1e33269a0ae	last=a284d6253ff mining_priorit
 		# Didn't backport platform-independent double serialisation
 	5861 gui_restore_addresses					a81fd2b77ff
 	5891  qt_console_history_persist-0.21+knots	831cc0d61d1	last=0cd5fc301d6 qt_console_history_persist
-m	7219  rbf_opts-0.21+knots					6b8135375e9	last=c6decd62837 fullrbf # missing 91786d16ccc + revert34ae6640174
+m	7219  rbf_opts-0.21+knots					6b8135375e9	last=eb6bb1e3528 fullrbf # missing 91786d16ccc + revert34ae6640174
 	(CHECK-LAST)	last=8db545872f6 fullrbf-22+knots
 	(CHECK-LAST)	last=149b286b44e fullrbf-23+knots
+	(CHECK-LAST)	last=475d87b5342 mempoolreplacement_2022
 		# NOTE: Held back "clean mempool" from b81235ee156 (not needed in 21.x?)
 		# NOTE: Re-PR'd as #25373
-		TODO: Compatibility with #25353 ? +#25575
+		#21.xTODO# Compatibility with #25353 ? +#25575
+		# NOTE: Held back new getmempoolinfo RPC results (one before & after #25626)
 	12146 opt_wallet_segwit2-0.1				ffc242d52be	last=6a939ab54c6 opt_wallet_segwit2
 		TODO: Make sure descriptor wallets default to non-segwit addresses
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
