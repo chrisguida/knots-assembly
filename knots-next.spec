@@ -166,6 +166,7 @@ checkout v23.0
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
 	24716 fix_doc_rpc_rawtx_pr24716-23			66ba003125e
 	24718 fix_rpc_docs_pr24718-23+knots			1ce1a6ef90b	last=68a041dd12b
+	TODO: Check if verbosity|verbose still works with bool :/
 	# Iff needed: 24722 -  # build: patch around qt duplicate symbol issue
 	24776 doc_update_rest_chaininfo-23			66a904192bc	last=1d95b5c7836
 		# Left off top commit with trivial rewording
@@ -348,6 +349,7 @@ checkout v23.0
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ?
 		FIXME: f93da695638 Bugfix: QA: Ensure mempool_fee_histogram expected feerates rounded down
+		BUG: 'with_fee_histogram' compat param (as bool) will be rejected by type check
 	(CHECK-LAST)	last=f34072a4d4f origin-pull/21422/head
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
@@ -478,6 +480,7 @@ checkout v23.0
 	22372 multinotify							7edb7a43520
 	24963 rpc_walletprocesspsbt_options-23		7ebcda357a1	last=31ffd7782bf rpc_walletprocesspsbt_options
 		# Diff-minimised
+		BUG: 'sign' compat param will be rejected by type check
 	g471 -  # Add Wallet Restore in the GUI
 		TODO: +gui#629
 	# Needs review: 22558 achow101/taproot-psbt
@@ -724,6 +727,7 @@ checkout v23.0
 	-    preserve_unsupported_keyflags			2b802cfbcf9
 	-     netperms_implicit_addr				3ec6f62de90
 	12674 rpc_onetry_nonpriv-23+knots			1ac3b6f764a
+		BUG: 'privileged' compat param will be rejected by type check
 	-     rpc_getblockfrompeer_nodeid_compat-23	f41b36c5abe
 	# TODO: add a bitcoinknots.conf ?
 	n/a   gui_peers_bump_setting_keys-23+k		a71fc4dd708
