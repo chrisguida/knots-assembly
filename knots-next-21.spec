@@ -926,7 +926,6 @@ m	7219  rbf_opts-0.21+knots					6b8135375e9	last=eb6bb1e3528 fullrbf # missing 9
 		#21.xTODO# Compatibility with #25353 ? +#25575
 		# NOTE: Held back new getmempoolinfo RPC results (one before & after #25626)
 	12146 opt_wallet_segwit2-0.21				ffc242d52be	last=6a939ab54c6 opt_wallet_segwit2
-		TODO: Make sure descriptor wallets default to non-segwit addresses
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			fbd5c1d14f4	# Latest code now
@@ -944,11 +943,11 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	(CHECK-LAST)	last=d1ce634b708 netperms_implicit_addr-22+knots
 	12674 rpc_onetry_nonpriv-0.21+knots			7607b0cb005	last=896995cd251 rpc_onetry_nonpriv-23+knots
 	(CHECK-LAST)	last=054c2214369 rpc_onetry_nonpriv-22+knots
-	Maybe? 24963 rpc_walletprocesspsbt_options
+	# Maybe? 24963 rpc_walletprocesspsbt_options
 	# TODO: add a bitcoinknots.conf ?
 # POLICY:
 	-    1day_default_conftarget				3f1c8d8ab40
-	-     bytespersigopstrict-0.21+knots		c021176f67a	last=43d7d3889cf bytespersigopstrict-22+knots
+	-     bytespersigopstrict-0.21+knots		c021176f67a	last=43d7d3889cf bytespersigopstrict-23+knots
 	(CHECK-LAST)	last=712c7abc3a1 bytespersigopstrict-22+knots
 	9749  unique_spk_mempool-0.21+knots			52cb2331dee	last=7882096ddef unique_spk_mempool-23+knots
 	(CHECK-LAST)	last=36bb6460136 unique_spk_mempool-22+knots
