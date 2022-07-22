@@ -108,7 +108,7 @@ checkout v23.0
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-23+knots	02627b9a519	last=884e7e1f95b
+	19888 getblockstats_utxo_actual-23+knots	02627b9a519	last=7232bd27184
 		# Diff-minimised incl test changes
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review

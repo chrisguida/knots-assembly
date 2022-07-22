@@ -156,7 +156,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	19884 fixedseeds-0.21						35264ce4152
 		# +partial #21254 (bugfix only)
 	22798 doc_fix_pr22798-21.1					4ab4007c290
-	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=884e7e1f95b
+	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=7232bd27184
 	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
 	(CHECK-LAST)	last=937d948b76f getblockstats_utxo_actual-23+knots
 		# Held back additional tests
@@ -605,7 +605,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	20275 list_unsupported_wallets-0.21+knots	45986c05cec	last=f3d870fc227 ryanofsky/pr/exist
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
-	(CHECK-LAST)	last=06d1947a68e origin-pull/23813/head
+	(CHECK-LAST)	last=da1bd8e31dc origin-pull/23813/head
 	(CHECK-LAST)	last=22df64564bf origin-pull/24226/head
 	(CHECK-LAST)	last=f5e008774b5 getblockfrompeer_param_names
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
@@ -620,7 +620,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 		#21.xTODO# TODO? Forward-compatibility with block_hash param rename in #23706 (bad idea, these changes conflict with other/standard param names)
 		#21.xTODO# TODO??? API change * 60243cac728 rpc: turn already downloaded into error in getblockfrompeer
 		#                           + * 34d5399211e rpc: more detailed errors for getblockfrompeer
-		# TODO: Find a way to get `476f63a081e test: Add test for getblockfrompeer on pruned nodes` w/o fastprune mode?
+		# TODO: Find a way to get `da1bd8e31dc test: Add test for getblockfrompeer on pruned nodes` w/o fastprune mode?
 	20391 rpc_setfeerate-0.21					aef134635d5	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
 	(CHECK-LAST)	last=116199a46f4 rpc_setfeerate-23
