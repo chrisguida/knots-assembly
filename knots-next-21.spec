@@ -606,7 +606,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 		# Mostly rewritten?
 	20295 rpc_getblockfrompeer_wo_header-21		8f143502034	last=dce8c4c3811 Sjors/2020/11/getblockfrompeer
 	(CHECK-LAST)	last=06d1947a68e origin-pull/23813/head
-	(CHECK-LAST)	last=4b3098817a6 origin-pull/24226/head
+	(CHECK-LAST)	last=22df64564bf origin-pull/24226/head
 	(CHECK-LAST)	last=f5e008774b5 getblockfrompeer_param_names
 	(CHECK-LAST)	last=3fa0053aabf rpc_getblockfrompeer_wo_header-22
 	(CHECK-LAST)	last=7f2c0d576d2 rpc_getblockfrompeer_wo_header
@@ -634,7 +634,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	g149  intro_assumevalid-21					a434a92b063	last=75aff9e0ff7 intro_assumevalid
 	(CHECK-LAST)	last=de495ad2f11 intro_assumevalid-23
 	25339 rpcdoc_scantxoutset_20220611a-21					last=7862c4ac4e7 rpcdoc_scantxoutset_20220611a
-	23549 rpc_scanblocks-21+knots				5eaa6ce2ea6	last=e5ec82a7e23 jamesob/2021-11-scanblocks
+	23549 rpc_scanblocks-21+knots				5eaa6ce2ea6	last=bb553d4478b jamesob/2021-11-scanblocks
 	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	(CHECK-LAST)	last=d28e8e4e277 rpc_scanblocks
 		# NOTE: Was #20664
@@ -955,7 +955,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	-     enforce_checkpoints-0.21				09feeecfdfe	last=1de4af3f6c7 enforce_checkpoints
 	n/a   checkpoint_update-0.21				67bc16f3c2a	last=37271214dfe checkpoint_update-23
 		#21.xTODO# Add new checkpoint
-	10282 timebomb_knots-21						4d798a3f50b	last=8a98c44f042 timebomb_knots
+	10282 timebomb_knots-21						4d798a3f50b	last=1236785c1f7 timebomb_knots
 	-     rwconf_policy-0.21+knots				1d0a8a7bf36	last=ade5197bc55 rwconf_policy-23+knots
 	(CHECK-LAST)	last=f89126d2136 rwconf_policy-22+knots
 		# Include Knots policy changes for simplification of final rebase process
