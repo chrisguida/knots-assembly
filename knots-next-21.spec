@@ -429,7 +429,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 25220 brunoerg/2022-05-fix-incorrect-warning-createmultisig
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
-	g260  qt_handle_exceptions_pr260-21						last=f735ab016b9 qt_handle_exceptions_pr260-21-corepr
+	g260  qt_handle_exceptions_pr260-21						last=3609f2d1b0d qt_handle_exceptions_pr260-21-corepr
 	25239 wallet_committx_catch_db_write_err-21
 	# Needs review/work? 25272 wallet_sync_catch_db_write_err-21
 	25256 log_threadname_unknown-0.19
@@ -991,7 +991,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 #TODO: Make sure there's no \d'\d or 0b\d+ in C++ code: git grep '[0-9]'\''[0-9]\|\b0b[01]\+[^2-9][^0-9a-z]'
 #TODO: Make sure there's no Qt5.5 incompatibilities: git grep 'addAction(.*\[.*\]\s*{'
 #TODO: Make sure there's no -Wc++14-extensions triggered
-#21.xTODO# Make sure there's no optional .has_value() (Boost 1.68 dep) or std::optional (should be Optional typedef)
+#21.xTODO# Make sure there's no optional .has_value() (Boost 1.68 dep) or std::optional (should be Optional typedef) - git grep 'std::nullopt\|std::optional\|<optional>' - tolerated inside src/test/fuzz
 #TODO: Make sure there's no 'build_bitcoin_util\b|natpmp'
 #21.xTODO# Run #25243 to pick up on missing bash completion updates
 #21.xTODO# Check there are only [[noreturn]]s in: git grep '\[\[[a-z_]\+\]\]' src (nodiscard, maybe_unused, etc are C++17)
