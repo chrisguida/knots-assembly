@@ -333,8 +333,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24145 fix_mempool_clear_txhashes-21						last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
 	24168 fix_dumpbanlist_races-21
 	# TODO? 22762+24201 -  # p2p: Avoid InitError when downgrading peers.dat
-	#21.xTODO#Diff-minimise: 24231 -  # streams: Fix read-past-the-end and integer overflows
-		#TODO: Substitute for 24253 (removes broken unused methods)
+	24231 fix_datastream_overflows-21
+	24253 rm_broken_datastream_inserterase-0.17
 	24287 fix_genmanpages_tagver-0.19
 	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
@@ -991,9 +991,10 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 #TODO: Make sure there's no \d'\d or 0b\d+ in C++ code: git grep '[0-9]'\''[0-9]\|\b0b[01]\+[^2-9][^0-9a-z]'
 #TODO: Make sure there's no Qt5.5 incompatibilities: git grep 'addAction(.*\[.*\]\s*{'
 #TODO: Make sure there's no -Wc++14-extensions triggered
-#21.xTODO# Make sure there's no optional .has_value() (Boost 1.68 dep)
+#21.xTODO# Make sure there's no optional .has_value() (Boost 1.68 dep) or std::optional (should be Optional typedef)
 #TODO: Make sure there's no 'build_bitcoin_util\b|natpmp'
 #21.xTODO# Run #25243 to pick up on missing bash completion updates
+#21.xTODO# Check there are only [[noreturn]]s in: git grep '\[\[[a-z_]\+\]\]' src (nodiscard, maybe_unused, etc are C++17)
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
 	n/a  knots_bips-21							95f1a0c7adb
 	n/a  (bump_version=Knots:20210629)			27c16a89cc5  # DO NOT CHANGE for just fixes
