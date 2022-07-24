@@ -467,6 +467,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25615 fix_rpcdoc_gettxout_pr25615-21+k					last=743a84a5f6f
 	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target
 	g631 watchonly_no_encrypt-0.5							last=4c495413e13 achow101-g/watchonly-disable-encryption
+	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 	#21.xTODO# Check depends for fix-only updates
 @21.x-knots
@@ -962,12 +963,13 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		# Held back git diff 19fd29ce45d..af4614fbd26 which is likely a noop
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		e0a236336e2
-	7483  svg_icon-21.2+knots					10090268130	last=64ed5a651d7 svg_icon-23+knots
+	7483  svg_icon-21.2+knots					10090268130	last=75796f01b75 svg_icon-23+knots
 	(CHECK-LAST)	last=afaab080b87 svg_icon-22+knots
+		# NOTE: Held back guix support 64ed5a651d7...75796f01b75
 # BRANDING:
+	n/a   update_security_policy-21
 	n/a   knots_branding-21						9db64a56d30	last=16035761f8b knots_branding-23
 	(CHECK-LAST)	last=282420dea44 knots_branding-22
-		TODO: Review security policy & report(s)
 	n/a   ver_dropzero-21.2+knots				0d04104e95d
 		# this should be 21.1.1 I guess? keeping 21.2.0 for now to match Core...
 		# TODO: bump ver properly when Core abandons it

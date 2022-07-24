@@ -261,6 +261,7 @@ checkout v23.0
 	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target
 	Needs review: g631 achow101/watchonly-disable-encryption
 	TODO: Fix bugs in gui#447 ?
+	TODO: Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @23.x-knots
 # PERFORMANCE:
@@ -763,8 +764,9 @@ checkout v23.0
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
+	n/a   update_security_policy-21
+		TODO: Review security policy
 	n/a   knots_branding-23						0ef366334de
-		TODO: Review security policy & report(s)
 #FIXME: check there's no univalue push_back(bool) - see #20424 and stash 8724e2fae4
 #FIXME: Check hidden_args has anything removed (possibly conditional)
 #FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
