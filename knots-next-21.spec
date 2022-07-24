@@ -173,9 +173,9 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	# Needs concept review: 20583 marco/2012-walletSync
 	g152  gui_notify_setup_bg					dbff865256f
 	-     bugfix_gui_drop_abc_confusing_hack	6e1b3b65525
-	20805 copyright_2021-0.21					c69ba0b3e58
+	20805 copyright_2022-0.21					c69ba0b3e58
 		# NOTE: Diff-minimised
-		#21.xTODO: Bump in 2022+
+		#21.xTODO: Bump in 2023+
 	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
 	# Too messy? g164 hebasto-g/201224-signal
 		# +gui#375 fix
@@ -320,7 +320,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	23858 fix_qa_scantxoutset_pr23858-21
 	23937 fix_rpcdoc_dumptxoutset_pr23937-21
 	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
-	# Needs work: 24038 marco/2201-lockstuff #21.xTODO
 	g508  fix_qt_progressrate_pr_g508-0.16
 	g516  qt_recvreq_show_eyeicon-0.14
 		# Diff-minimised
@@ -992,9 +991,9 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 #TODO: Make sure there's no \d'\d or 0b\d+ in C++ code: git grep '[0-9]'\''[0-9]\|\b0b[01]\+[^2-9][^0-9a-z]'
 #TODO: Make sure there's no Qt5.5 incompatibilities: git grep 'addAction(.*\[.*\]\s*{'
 #TODO: Make sure there's no -Wc++14-extensions triggered
-TODO: Make sure there's no optional .has_value() (Boost 1.68 dep)
+#21.xTODO# Make sure there's no optional .has_value() (Boost 1.68 dep)
 #TODO: Make sure there's no 'build_bitcoin_util\b|natpmp'
-TODO: Run #25243 to pick up on missing bash completion updates
+#21.xTODO# Run #25243 to pick up on missing bash completion updates
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
 	n/a  knots_bips-21							95f1a0c7adb
 	n/a  (bump_version=Knots:20210629)			27c16a89cc5  # DO NOT CHANGE for just fixes
