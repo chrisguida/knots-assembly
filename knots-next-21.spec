@@ -371,7 +371,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
 	24716 fix_doc_rpc_rawtx_pr24716-21+knots
-	# Very annoying, needs care not to prematurely doc things; do draft on 21.2.1 tip #21.xTODO#: Triage: 24718 -  # rpc: getblock/getrawtransaction/decode*/gettxout fixups
 	# If needed: 24722 -  # build: patch around qt duplicate symbol issue (duplicate symbol 'lcQpaFonts()')
 	# Not needed unless Windows builds use GCC 10+ (21.x uses GCC 7): Force inlining of functions with __m256i params in rc/crypto/sha256_avx2.cpp to fix #24727 (only when building with GCC - not MSVC or Clang!)
 	24804 check_GetAncestor_rv-21
@@ -464,8 +463,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 25599 achow101/specifc-atomics-check
 	-     fix_rpcdoc_addresses_part20286-21+k
 	25615 fix_rpcdoc_gettxout_pr25615-21+k					last=743a84a5f6f
+		# NOTE: Part moved to #22918
 	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target
 	g631 watchonly_no_encrypt-0.5							last=4c495413e13 achow101-g/watchonly-disable-encryption
+	25691 docfix_getblock&asmhex-21+k						last=56d92447d0e docfix_getblock&asmhex
+		# NOTE: Parts moved to #22918 and #16795
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 	#21.xTODO# Check depends for fix-only updates
@@ -533,9 +535,11 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 		# Silenced warnings
 		# Minimised diff (removed formatting changes)
 		# + docs from #23320 (left off refactor commit)
+		# + doc fixes from #25615 & #25691
 m	16795 rpc_inferred_output_descriptors-21+k	5d1bc19f6ca
 		# NOTE: Includes custom refactoring to combine ScriptToUniv and ScriptPubKeyToUniv similar (but not identical) to master, to avoid possibly-incomplete backports
 		# +#24636
+		# + part of #25691 (implied in #22918 by this)
 	18972 neutrino_whitelist-mini-21			dabdcf3f324	last=339fe189eb9
 	(CHECK-LAST)	last=3f0d4ecbc58 neutrino_whitelist-mini
 		# NOTE: Diff-minimised
