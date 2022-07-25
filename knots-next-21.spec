@@ -389,7 +389,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
 	24859 fix_wallet_badcreate_pr24859-21					last=e80b64b382f fix_wallet_badcreate_pr24859-23  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
 		# +#25011 achow101/fix-legacy-createwallet-test
-	#21.xTODO# Anything fixed here? 24871 -  # refactor: Simplify GetTime
+	# Anything fixed here? Not AFAICT... 24871 -  # refactor: Simplify GetTime
 	# Needs review: 24912 mruddy/nchaintx_type
 	25051 fix_configure_def_enable_arm_asms-21				last=7fd0860d12d fix_configure_def_enable_arm_asms
 		# NOTE: Only half is applicable to 21.x
@@ -441,7 +441,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: 1 out of 3 test changes here; others included with relevant PR(s)
 	25351 wallet_import_scanmempool-21						last=1be79641893 fjahr/202204-import-scan
 		# NOTE: Was #18964
-		#21.xTODO# Update abdaa251610...<current> once it settles and is sane
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 		# NOTE: Tests need parts of #22539+#24817
 	25404 fix_p2p_maxblkann_pr25404-0.17					last=e357c895388
@@ -621,7 +620,6 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 		# +#24944
 		# +#25259
 		# NOTE: Forward-compatible with peer_id param rename in #23706
-		#21.xTODO# TODO? Forward-compatibility with block_hash param rename in #23706 (bad idea, these changes conflict with other/standard param names)
 		#21.xTODO# TODO??? API change * 60243cac728 rpc: turn already downloaded into error in getblockfrompeer
 		#                           + * 34d5399211e rpc: more detailed errors for getblockfrompeer
 		# TODO: Find a way to get `da1bd8e31dc test: Add test for getblockfrompeer on pruned nodes` w/o fastprune mode?
@@ -927,7 +925,10 @@ m	7219  rbf_opts-0.21+knots					6b8135375e9	last=eb6bb1e3528 fullrbf # missing 9
 	(CHECK-LAST)	last=475d87b5342 mempoolreplacement_2022
 		# NOTE: Held back "clean mempool" from b81235ee156 (not needed in 21.x?)
 		# NOTE: Re-PR'd as #25373
-		#21.xTODO# Compatibility with #25353 ? +#25575
+		# NOTE: Compatibility with #25353 -mempoolfullrbf option is in rwconf_policy
+		#21.xTODO# When/if adding minor features:
+			# aae66ab43d7 (#25353) Add 'fullrbf' return field to getmempoolinfo RPC
+			# f4f83f73a7f (#25626) Add 'replacement_policy' return field to getmempoolinfo RPC
 		# NOTE: Held back new getmempoolinfo RPC results (one before & after #25626)
 	12146 opt_wallet_segwit2-0.21				ffc242d52be	last=6a939ab54c6 opt_wallet_segwit2
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
@@ -964,6 +965,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	(CHECK-LAST)	last=f89126d2136 rwconf_policy-22+knots
 		# Include Knots policy changes for simplification of final rebase process
 		# Held back git diff 19fd29ce45d..af4614fbd26 which is likely a noop
+		# Added -mempoolfullrbf compatibility (see #25353)
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		e0a236336e2
 	7483  svg_icon-21.2+knots					10090268130	last=75796f01b75 svg_icon-23+knots
