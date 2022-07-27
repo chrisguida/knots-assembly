@@ -1,7 +1,7 @@
-timestamp 2022-07-16 05:38:31
+timestamp 2022-07-27 02:07:09
 lastapply no-merge
 
-#.. checked up to PR #25625 / gui #631
+#.. checked up to PR #25718 / gui #634
 
 checkout v23.0
 @23.x-syslibs
@@ -258,8 +258,22 @@ checkout v23.0
 	Needs work: 25595 instagibbs/verify_psbt_input
 	Needs review: 25599 achow101/specifc-atomics-check
 	25615 -  # rpc: add missing description in gettxout help text
-	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target
+	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target +#25641
 	Needs review: g631 achow101/watchonly-disable-encryption
+	Needs review: 25642 darosior/ext_key_derive_wrap_around
+	If applicable: 25663 -  # tracing: do not use coin after move in CCoinsViewCache::AddCoin
+	When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
+	Needs reivew: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
+	Needs review: 25679 achow101/fix-external-but-have-tx
+		# NOTE: Feels similar to #24649
+	Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
+	Needs review: 25687 hebasto/220723-export
+	Bad idea? 25688 fjahr/2022-07-torcontrol
+	Needs review: 25690 fjahr/2022-07-localaddr
+	Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
+	Merged 25700 -  # psbt: Fix unsigned integer overflow
+	25708 fanquake/win_qt_always_correct_ar
+	If fixing: g633 -  # qt: Fix shortcut ambiguities
 	TODO: Fix bugs in gui#447 ?
 	TODO: Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -295,6 +309,7 @@ checkout v23.0
 		#24.xTODO# Revert #24639
 	25111 hww_windows-23+knots					cd6a088a2ec	last=2a53dce0b66 hww_windows
 		# NOTE: Carries commit 209018f4275 for compaibility with #22417
+		# NOTE: Being replaced by #25696 ?
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -583,6 +598,9 @@ checkout v23.0
 	Merged 25439 -  # rpc: Return incrementalrelayfee in getmempoolinfo
 	Maybe? Review: 25504 darosior/rpc_track_coins_by_descriptor
 	Needs review? g626 -  # gui: Showing Local Addresses in Node Window
+	At least part of (RPC results) 25634 achow101/desc-import-unset-blank
+	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
+	Needs completion & review: 25718 fjahr/2022-07-allowinbound
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly

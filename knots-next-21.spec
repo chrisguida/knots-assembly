@@ -1,8 +1,8 @@
-timestamp 2022-07-16 05:38:31
+timestamp 2022-07-27 02:07:09
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25625 / gui #631 for fixes
+#.. checked up to PR #25718 / gui #634 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -464,10 +464,23 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	-     fix_rpcdoc_addresses_part20286-21+k
 	25615 fix_rpcdoc_gettxout_pr25615-21+k					last=743a84a5f6f
 		# NOTE: Part moved to #22918
-	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target
+	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target +#25641
 	g631 watchonly_no_encrypt-0.5							last=4c495413e13 achow101-g/watchonly-disable-encryption
+	Needs review: 25642 darosior/ext_key_derive_wrap_around
+	When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
+	Needs reivew: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
+	Needs review: 25679 achow101/fix-external-but-have-tx
+		# NOTE: Feels similar to #24649
+	Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
+	Needs review: 25687 hebasto/220723-export
+	Bad idea? 25688 fjahr/2022-07-torcontrol
+	Needs review: 25690 fjahr/2022-07-localaddr
 	25691 docfix_getblock&asmhex-21+k						last=56d92447d0e docfix_getblock&asmhex
 		# NOTE: Parts moved to #22918 and #16795
+	Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
+	25700 -  # psbt: Fix unsigned integer overflow
+	25708 fanquake/win_qt_always_correct_ar
+	If fixing: g633 -  # qt: Fix shortcut ambiguities
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 	#21.xTODO# Check depends for fix-only updates
@@ -930,7 +943,6 @@ m	7219  rbf_opts-0.21+knots					6b8135375e9	last=eb6bb1e3528 fullrbf # missing 9
 		#21.xTODO# When/if adding minor features:
 			# aae66ab43d7 (#25353) Add 'fullrbf' return field to getmempoolinfo RPC
 			# f4f83f73a7f (#25626) Add 'replacement_policy' return field to getmempoolinfo RPC
-		# NOTE: Held back new getmempoolinfo RPC results (one before & after #25626)
 	12146 opt_wallet_segwit2-0.21				ffc242d52be	last=6a939ab54c6 opt_wallet_segwit2
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
