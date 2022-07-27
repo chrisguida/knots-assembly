@@ -466,9 +466,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Part moved to #22918
 	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target +#25641
 	g631 watchonly_no_encrypt-0.5							last=4c495413e13 achow101-g/watchonly-disable-encryption
-	Needs review: 25642 darosior/ext_key_derive_wrap_around
-	When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
-	Needs reivew: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
+	# Needs review: 25642 darosior/ext_key_derive_wrap_around
+	# When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
+	# Needs review: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
 	Needs review: 25679 achow101/fix-external-but-have-tx
 		# NOTE: Feels similar to #24649
 	Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
@@ -481,6 +481,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25700 -  # psbt: Fix unsigned integer overflow
 	25708 fanquake/win_qt_always_correct_ar
 	If fixing: g633 -  # qt: Fix shortcut ambiguities
+	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 	#21.xTODO# Check depends for fix-only updates
