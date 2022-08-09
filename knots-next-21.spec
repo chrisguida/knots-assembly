@@ -1015,6 +1015,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 #TODO: Make sure there's no 'build_bitcoin_util\b|natpmp'
 #21.xTODO# Run #25243 to pick up on missing bash completion updates
 #21.xTODO# Check there are only [[noreturn]]s in: git grep '\[\[[a-z_]\+\]\]' src (nodiscard, maybe_unused, etc are C++17)
+#21.xTODO# Check on #21508
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
 	n/a  knots_bips-21							95f1a0c7adb
 	n/a  (bump_version=Knots:20210629)			27c16a89cc5  # DO NOT CHANGE for just fixes
