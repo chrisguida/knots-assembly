@@ -1,7 +1,7 @@
-timestamp 2022-07-27 02:07:09
+timestamp 2022-08-10 02:33:14
 lastapply no-merge
 
-#.. checked up to PR #25718 / gui #634
+#.. checked up to PR #25812 / gui #650
 
 checkout v23.0
 @23.x-syslibs
@@ -15,6 +15,7 @@ checkout v23.0
 	24633 bugfix_suppresswarnings_regex			fd8c81d4242
 	25605 fanquake/dmg_tools_new_paths
 	Needs review: 25612 fanquake/lto_improvements
+	Merged 25763 fanquake/depends_bdb_noWerror_format_security
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
 		NOTE: Revert #25457 ?
@@ -275,6 +276,13 @@ checkout v23.0
 	25708 fanquake/win_qt_always_correct_ar
 	If fixing: g633 -  # qt: Fix shortcut ambiguities
 	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
+	Needs review: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
+	25727 -  # util, config: error on startup if conf or reindex are set in config file
+	Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
+	Needs review: 25768 achow101/unify-resend-reaccept
+	Merged 25770 hebasto/220802-signer
+	25798 fanquake/fix_make_clean_and_distcheck
+	25812 achow101/psbt-hd-path-int-overflow
 	TODO: Fix bugs in gui#447 ?
 	TODO: Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -311,6 +319,7 @@ checkout v23.0
 	25111 hww_windows-23+knots					cd6a088a2ec	last=2a53dce0b66 hww_windows
 		# NOTE: Carries commit 209018f4275 for compaibility with #22417
 		# NOTE: Being replaced by #25696 ?
+		TODO: revert #25723 if needed
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
@@ -569,6 +578,7 @@ checkout v23.0
 	# Not worth it? 24552 prusnak/guix-attest-override-gpg
 	# Not worth it? 24615/24569/24556 guix on non-x86
 	# Needs work: 24584 -  # wallet: avoid mixing different OutputTypes during coin selection
+		# +#24584 ?
 	# Not worth it: 24611 -  # Add fish completions
 	# Needs review: 24824 -  # net: create IP to ASN database from file - makeseeds.py
 	# Needs review + make part of sendrawtx: 24836 glozow/client-submitpackage
@@ -601,6 +611,11 @@ checkout v23.0
 	Needs review? g626 -  # gui: Showing Local Addresses in Node Window
 	At least part of (RPC results) 25634 achow101/desc-import-unset-blank
 	Needs completion & review: 25718 fjahr/2022-07-allowinbound
+	Needs work: 25730 -  # RPC: listunspent, add "include immature coinbase" flag
+	Needs concept/review: 25742 -  # Use change amount as tiebreaker for SelectionResults
+	Needs concept/review: 25747 w0xlt/desc_file
+	Needs work: 25776 1440000bytes/bumpfee-inputs
+	Needs review.. or not? 25796 -  # rpc: add descriptorprocesspsbt rpc
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -689,6 +704,7 @@ checkout v23.0
 	# Needs work: 22708 hebasto:210815-wayland
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
+	Needs work? g650 -  # qt, refactor: Add Import to Wallet GUI
 # Non-upstreamed functionality:
 	n/a   restore_feefilter_opt					b0a928d3f25
 	-     gui_payreq_textedit					e2018a567ae
@@ -764,6 +780,7 @@ checkout v23.0
 	-     bloom_default-0.21+knots				4910b8c3600
 	-     wallet_avoid_newerchange				a5e70c68636
 	Needs review: 25610 achow101/walletrbf-default-on
+	24.xTODO: Revert #25725
 	-     enforce_checkpoints					840dddd5a6e
 	n/a   checkpoint_update-23					ec23e329857	last=70996dfdd9b checkpoint_update-0.21
 	10282 timebomb_knots						28c6dff687b
@@ -795,6 +812,7 @@ checkout v23.0
 	n/a  (cherrypick=165f473d4d068ee31a)		f6260178fc7	# doc/{bips,files}
 	n/a  (bump_version=Knots:20220529)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
+	TODO: Ensure NSIS doesn't bundle _Core_ relnotes either! See #25809
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
 	n/a  (cherrypick=7c9f28557be)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings

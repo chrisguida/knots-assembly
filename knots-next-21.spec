@@ -1,8 +1,8 @@
-timestamp 2022-07-27 02:07:09
+timestamp 2022-08-10 02:33:14
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25718 / gui #634 for fixes
+#.. checked up to PR #25812 / gui #650 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -42,6 +42,7 @@ checkout v0.21.2
 	# NOTE: WRONG FOR C++11: 25436 fanquake/libxkbcommon_gcc_12
 	25605 dmg_tools_new_paths_pr25605-0.17					last=718d29af233 fanquake/dmg_tools_new_paths
 	# Needs review: 25612 fanquake/lto_improvements
+	25763 fanquake/depends_bdb_noWerror_format_security
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
@@ -482,6 +483,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25708 fanquake/win_qt_always_correct_ar
 	If fixing: g633 -  # qt: Fix shortcut ambiguities
 	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
+	Needs review: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
+	25727 -  # util, config: error on startup if conf or reindex are set in config file
+	Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
+	Needs review: 25768 achow101/unify-resend-reaccept
+	If applicable: 25770 hebasto/220802-signer
+	If applicable: 25798 fanquake/fix_make_clean_and_distcheck
+	25812 achow101/psbt-hd-path-int-overflow
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 	#21.xTODO# Check depends for fix-only updates
@@ -1020,6 +1028,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	n/a  knots_bips-21							95f1a0c7adb
 	n/a  (bump_version=Knots:20210629)			27c16a89cc5  # DO NOT CHANGE for just fixes
 #	n/a  knots_historical_relnotes				61100a2
+	TODO: Ensure NSIS doesn't bundle _Core_ relnotes either! See #25809
 	n/a  (cherrypick=1c6a7f409ff)				f1e6ee7f195  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
@@ -1034,4 +1043,5 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	n/a  (cherrypick=3b34e884d32)				2d4f6166a4b  # translation update
 # EXTRA TESTS:
 	24797 -  # test: compare /chaininfo response with getblockchaininfo RPC
+	25733 fanquake/tidy_enable_bugprone_use_after_move
 # NOTE: use git diff --minimal for patches!
