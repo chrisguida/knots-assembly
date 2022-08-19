@@ -1,7 +1,7 @@
-timestamp 2022-08-10 02:33:14
+timestamp 2022-08-19 01:13:06
 lastapply no-merge
 
-#.. checked up to PR #25812 / gui #650
+#.. checked up to PR #25869 / gui #654
 
 checkout v23.0
 @23.x-syslibs
@@ -24,6 +24,7 @@ checkout v23.0
 	7485  sys_univalue_def-23+knots				30111aa138c
 	#24.xTODO: sys_libminisketch
 	13789 bugfix_asm_pragmas					5caf7787338
+	and/or 25852?
 	-     bugfix_asm_leveldb_check				34aa539cad5
 	15155 test_external_bcli					b020b0febcf
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
@@ -283,6 +284,13 @@ checkout v23.0
 	Merged 25770 hebasto/220802-signer
 	25798 fanquake/fix_make_clean_and_distcheck
 	25812 achow101/psbt-hd-path-int-overflow
+	Needs review? 25827 w0xlt/expr_rawtr
+	# Meh: 25854 -  # tracing.md trivial English fixes
+	Either 25856 or 25858 to fix PSBTs with empty tap_tree
+	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
+		# NOTE: Fixes Ctrl-C being caught/ignored
+	Needs review: 25869 -  # wallet: remove UNKNOWN type from OUTPUT_TYPES array
+	Needs work/concept: g653 achow101/show-bal-send
 	TODO: Fix bugs in gui#447 ?
 	TODO: Review security report(s)
 	n/a   (delete_release_notes_fragments)

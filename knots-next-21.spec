@@ -1,8 +1,8 @@
-timestamp 2022-08-10 02:33:14
+timestamp 2022-08-19 01:13:06
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25812 / gui #650 for fixes
+#.. checked up to PR #25869 / gui #654 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -50,6 +50,7 @@ checkout v0.21.2
 	n/a   sys_univalue_doc-21								last=77c4f3e3af9 sys_univalue-23+knots
 m	7485  sys_univalue_def-21					c393c7a7f51	last=cf9e588e22f sys_univalue_def-23+knots
 	13789 bugfix_asm_pragmas					e33b0f86575
+	and/or 25852?
 	-     bugfix_asm_leveldb_check-0.20			15cb5704a2a	last=3ca799db25f bugfix_asm_leveldb_check
 	15155 test_external_bcli-21					3385d2476a3	last=06ec7f56dfb test_external_bcli
 	20202 opt_bdb-0.21							4c0c81adb3a
@@ -490,6 +491,15 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	If applicable: 25770 hebasto/220802-signer
 	If applicable: 25798 fanquake/fix_make_clean_and_distcheck
 	25812 achow101/psbt-hd-path-int-overflow
+	Alternative to 25829 fanquake/fixup_19081
+	Diff-minimise 25838 hebasto/220813-mkspec
+		#21.xTODO# Test backport
+	# Meh: 25854 -  # tracing.md trivial English fixes
+	Either 25856 or 25858 to fix PSBTs with empty tap_tree
+	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
+		# NOTE: Fixes Ctrl-C being caught/ignored
+	Needs review: 25869 -  # wallet: remove UNKNOWN type from OUTPUT_TYPES array
+	Needs work/concept: g653 achow101/show-bal-send
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 	#21.xTODO# Check depends for fix-only updates
