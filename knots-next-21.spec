@@ -1,8 +1,8 @@
-timestamp 2022-08-19 01:13:06
+timestamp 2022-08-20 20:47:02
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25869 / gui #654 for fixes
+#.. checked up to PR #25888 / gui #654 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -500,6 +500,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Fixes Ctrl-C being caught/ignored
 	Needs review: 25869 -  # wallet: remove UNKNOWN type from OUTPUT_TYPES array
 	Needs work/concept: g653 achow101/show-bal-send
+	Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 	#21.xTODO# Check depends for fix-only updates
