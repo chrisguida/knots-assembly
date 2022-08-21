@@ -24,7 +24,7 @@ checkout v23.0
 	7485  sys_univalue_def-23+knots				30111aa138c
 	#24.xTODO: sys_libminisketch
 	13789 bugfix_asm_pragmas					5caf7787338
-	and/or 25852?
+		TODO: Post-#25852, consider gcp 93a525c9433 configure: For intrinsics checks, use pragmas to explicitly enable them for GCC and Clang if possible
 	-     bugfix_asm_leveldb_check				34aa539cad5
 	15155 test_external_bcli					b020b0febcf
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font

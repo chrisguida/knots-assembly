@@ -42,15 +42,15 @@ checkout v0.21.2
 	# NOTE: WRONG FOR C++11: 25436 fanquake/libxkbcommon_gcc_12
 	25605 dmg_tools_new_paths_pr25605-0.17					last=718d29af233 fanquake/dmg_tools_new_paths
 	# Needs review: 25612 fanquake/lto_improvements
-	25763 fanquake/depends_bdb_noWerror_format_security
+	25763 bdb_no_werror-21
+	25852 fix_intrinsic_check_userflags-0.20+k
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
 	5416  sys_libsecp256k1-0.21+knots			813a5353e1d	last=da31940ec9e sys_libsecp256k1
 	n/a   sys_univalue_doc-21								last=77c4f3e3af9 sys_univalue-23+knots
 m	7485  sys_univalue_def-21					c393c7a7f51	last=cf9e588e22f sys_univalue_def-23+knots
-	13789 bugfix_asm_pragmas					e33b0f86575
-	and/or 25852?
+	13789 bugfix_asm_pragmas-21+knots			e33b0f86575 last=14337d0d80b bugfix_asm_pragmas
 	-     bugfix_asm_leveldb_check-0.20			15cb5704a2a	last=3ca799db25f bugfix_asm_leveldb_check
 	15155 test_external_bcli-21					3385d2476a3	last=06ec7f56dfb test_external_bcli
 	20202 opt_bdb-0.21							4c0c81adb3a
