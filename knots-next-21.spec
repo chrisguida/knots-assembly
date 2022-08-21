@@ -476,13 +476,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
 	# Needs review: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
 	25687 depends_no_export_pkgconf-21
-	Bad idea? 25688 fjahr/2022-07-torcontrol
-	Needs review: 25690 fjahr/2022-07-localaddr
+	# Bad idea? 25688 fjahr/2022-07-torcontrol
+	# Needs review: 25690 fjahr/2022-07-localaddr
 	25691 docfix_getblock&asmhex-21+k						last=56d92447d0e docfix_getblock&asmhex
 		# NOTE: Parts moved to #22918 and #16795
-	Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
-	25700 -  # psbt: Fix unsigned integer overflow
-	25708 fanquake/win_qt_always_correct_ar
+	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
+	# Likely not applicable, and in any case only needed for LTO additions in 24.x? 25708 fanquake/win_qt_always_correct_ar
 	If fixing: g633 -  # qt: Fix shortcut ambiguities
 	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
 	Needs review: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth

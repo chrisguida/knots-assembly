@@ -270,9 +270,9 @@ checkout v23.0
 	Needs review: 25679 achow101/fix-external-but-have-tx
 		# NOTE: Feels similar to #24649
 	Needs review: 25687 hebasto/220723-export
-	Bad idea? 25688 fjahr/2022-07-torcontrol
-	Needs review: 25690 fjahr/2022-07-localaddr
-	Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
+	# Bad idea? 25688 fjahr/2022-07-torcontrol
+	# Needs review: 25690 fjahr/2022-07-localaddr
+	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
 	Merged 25700 -  # psbt: Fix unsigned integer overflow
 	25708 fanquake/win_qt_always_correct_ar
 	If fixing: g633 -  # qt: Fix shortcut ambiguities
