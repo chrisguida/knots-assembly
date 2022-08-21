@@ -203,7 +203,8 @@ checkout v23.0
 	# Needs review: 25036 w0xlt/save_scan_progress
 	25074 fix_idx_sync_consistency_pr25074-0.19	67f4b13deea	last=7171ebc7cbd
 	25077 fix_dataraces_pr25077-23				81a7ebc8f1c	last=fa35585c74c
-	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79 mruddy-g/issue_24953
+	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79
+		# Upstream mruddy-g/issue_24953 repo got deleted :/
 	g599  ts_20220515-partial-23				5a4ab415cfe	last=5e23dabf265 ts_20220515
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		#24.xTODO# Update with other commits that are beneficial
