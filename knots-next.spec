@@ -269,7 +269,6 @@ checkout v23.0
 	Needs review: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
 	Needs review: 25679 achow101/fix-external-but-have-tx
 		# NOTE: Feels similar to #24649
-	Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
 	Needs review: 25687 hebasto/220723-export
 	Bad idea? 25688 fjahr/2022-07-torcontrol
 	Needs review: 25690 fjahr/2022-07-localaddr
@@ -620,6 +619,7 @@ checkout v23.0
 	Maybe? Review: 25504 darosior/rpc_track_coins_by_descriptor
 	Needs review? g626 -  # gui: Showing Local Addresses in Node Window
 	At least part of (RPC results) 25634 achow101/desc-import-unset-blank
+	Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
 	Needs completion & review: 25718 fjahr/2022-07-allowinbound
 	Needs work: 25730 -  # RPC: listunspent, add "include immature coinbase" flag
 	Needs concept/review: 25742 -  # Use change amount as tiebreaker for SelectionResults
