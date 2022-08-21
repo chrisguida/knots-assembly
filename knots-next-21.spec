@@ -210,6 +210,7 @@ TM	21644 bugfix_addlocal_downloadbind-0.21		1ec9cfb310f
 	21822 bugfix_cli_pr21822-0.21				a212e7c0446
 TM	21907 listwalletdir_iterate_inf-0.19		1483674ad69
 	21944 fix_listwalletdir_rootdir-0.21+knots	0cb9e8948d1
+	21991 fanquake/libevent_2_1_12
 	22013 ignoreblockrelayfordnsskip-0.21		8216936b4d9
 	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
 	19315 rpc_addconnection-0.21				0ec207c9478	last=7d85d477730 rpc_addconnection_mainnet
@@ -322,6 +323,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# idk? 23781 hebasto/211215-bptest
 	23858 fix_qa_scantxoutset_pr23858-21
 	23937 fix_rpcdoc_dumptxoutset_pr23937-21
+	Partial? 23956+24134 ZMQ bugfix bump
 	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	g508  fix_qt_progressrate_pr_g508-0.16
 	g516  qt_recvreq_show_eyeicon-0.14
@@ -502,8 +504,27 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs work/concept: g653 achow101/show-bal-send
 	Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	#21.xTODO# Review security report(s)
-	n/a   (delete_release_notes_fragments)
+	-     miniupnpc_2.0.20180503-21
+	-     qt_5.9.9-21
 	#21.xTODO# Check depends for fix-only updates
+		# boost 1.70: not maintained :| (maybe bump to 1.71 for Ubuntu focal until 2030?)
+			# TODO
+		# libevent 2.1: upstream or Ubuntu jammy until 2032
+			# updated to Ubuntu jammy 2.1.12-stable-1build3
+		# miniupnpc 2.0: RHEL 7 until 2024
+			# updated to RHEL 7 2.0-3.el7
+		# qrencode 3.4: Debian stretch until 2027 or Ubuntu jammy [universe] until 2032
+			# updated to Debian stretch 3.4.4-1
+			# updated to Ubuntu jammy 3.4.4-1build1
+		# qt 5.9: copy patches from Ubuntu bionic 5.9.5 until 2028
+			# updated to Ubuntu bionic 5.9.5+dfsg-0ubuntu2.6
+				# TODO: Triage dead_key_symbols.diff
+				# TODO: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=884956 not-really-fixed in Ubuntu with hidpi_scale_at_192.diff
+		# sqlite 3.32: not maintained :| (maybe bump to 3.34 for Debian bullseye or RHEL 9 until 2031-2031?)
+			# TODO
+		# zeromq 4.3: upstream or Ubuntu jammy until 2032
+			# updated to Ubuntu jammy 4.3.4-2
+	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # PERFORMANCE:
 	# Needs work: 25383 -  # wallet: don't read db every time that a new 'WalletBatch' is created
