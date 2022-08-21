@@ -475,7 +475,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 25642 darosior/ext_key_derive_wrap_around
 	# When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
 	# Needs review: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
-	Needs review: 25687 hebasto/220723-export
+	25687 depends_no_export_pkgconf-21
 	Bad idea? 25688 fjahr/2022-07-torcontrol
 	Needs review: 25690 fjahr/2022-07-localaddr
 	25691 docfix_getblock&asmhex-21+k						last=56d92447d0e docfix_getblock&asmhex
