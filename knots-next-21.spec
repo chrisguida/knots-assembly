@@ -323,7 +323,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# idk? 23781 hebasto/211215-bptest
 	23858 fix_qa_scantxoutset_pr23858-21
 	23937 fix_rpcdoc_dumptxoutset_pr23937-21
-	Partial? 23956+24134 ZMQ bugfix bump
+	23956 zeromq_4.3.4-21
+		# +#24134 fixes
 	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	g508  fix_qt_progressrate_pr_g508-0.16
 	g516  qt_recvreq_show_eyeicon-0.14
