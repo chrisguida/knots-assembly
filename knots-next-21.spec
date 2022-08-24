@@ -453,6 +453,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25404 fix_p2p_maxblkann_pr25404-0.17					last=e357c895388
 	# Bug doesn't affect Knots: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
 	25463 fix_leveldb_no_cloexec-0.20						last=a956806de2f fix_leveldb_no_cloexec
+		# TODO: Remove if bumping to a fixed LevelDB?
 	25425 fix_wsystem_check-0.19
 	# Triage: 25454 sdaftuar/2022-06-single-getheaders
 	25456 getrpcinfo_steadyclock-21
@@ -504,10 +505,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	#21.xTODO# Review security report(s)
 	-     miniupnpc_2.0.20180503-21
 	-     qt_5.9.9-21
-	-     sqlite_3.32.3-21+knots
+	-     sqlite_3.32.3+-21+knots
 	#21.xTODO# Check depends for fix-only updates
-		# boost 1.70: not maintained :| (maybe bump to 1.71 for Ubuntu focal until 2030?)
-			# TODO
+		# boost 1.70: not maintained :| (maybe bump to 1.71 for Ubuntu focal until 2030? or just manually backport fixes in bionic's 1.65 and focal's 1.71?)
+			# updated to Ubuntu bionic 1.65.1.0ubuntu1 (no patches)
+			# updated to Ubuntu focal 1.71.0.0ubuntu2 (no patches)
+			# TODO: manually backport fixes between 1.70 and 1.71
 		# libevent 2.1: upstream or Ubuntu jammy until 2032
 			# updated to Ubuntu jammy 2.1.12-stable-1build3
 		# miniupnpc 2.0: RHEL 7 until 2024
@@ -519,10 +522,19 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 			# updated to Ubuntu bionic 5.9.5+dfsg-0ubuntu2.6
 				# TODO: Triage dead_key_symbols.diff
 				# TODO: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=884956 not-really-fixed in Ubuntu with hidpi_scale_at_192.diff
-		# sqlite 3.32: not maintained :| (maybe bump to 3.34 for Debian bullseye or RHEL 9 until 2031-2031?)
-			# TODO
+		# sqlite 3.32: Debian bullseye or RHEL 9 until 2031
+			# NOTE: Manually patched in fixes from 3.34.1 (which is what Debian/RHEL support)
+			# TODO Complex: * 86f477eda Catch fts5 index corruption caused by issuing 'delete' commands with incorrect data earlier in some cases. Also fix a couple of test script problems.
+			# updated to Debian bullseye 3.34.1-3 (no patches)
 		# zeromq 4.3: upstream or Ubuntu jammy until 2032
 			# updated to Ubuntu jammy 4.3.4-2
+	#21.xTODO# Check bundled for fix-only updates
+		# leveldb: nothing necessary for bump in bitcoin-core fork
+			# NOTE: Revert #25463 if bumping to an updated version
+		# crc32c: nothing necessary for bump in bitcoin-core fork or upstream
+		# libsecp256k1: NOT UPDATING (users should use system libsecp256k1)
+		# ctaes: nothing important as of 2022-08-24 / 8012b06
+		# univalue: nothing important as of 2022-08-24 / bitcoin-fork de4f73d / stable-1.0.x 76b474e / master d6715ee
 	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # PERFORMANCE:
