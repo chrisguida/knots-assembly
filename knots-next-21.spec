@@ -503,6 +503,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs work/concept: g653 achow101/show-bal-send
 	Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	#21.xTODO# Review security report(s)
+	-     boost_1.71fixes-21
 	-     miniupnpc_2.0.20180503-21
 	-     qt_5.9.9-21
 	-     sqlite_3.32.3+-21+knots
@@ -533,6 +534,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 			# NOTE: Revert #25463 if bumping to an updated version
 		# crc32c: nothing necessary for bump in bitcoin-core fork or upstream
 		# libsecp256k1: NOT UPDATING (users should use system libsecp256k1)
+			# at least check for no known critical issues?
+				# skimmed up to 694ce8f
 		# ctaes: nothing important as of 2022-08-24 / 8012b06
 		# univalue: nothing important as of 2022-08-24 / bitcoin-fork de4f73d / stable-1.0.x 76b474e / master d6715ee
 	n/a   (delete_release_notes_fragments)
@@ -1083,6 +1086,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		540190c138f for #24198
+		TODO: Merge in 202208-KnotsDepsPlan
 	n/a  (cherrypick=a76c71bf46b)				42a7a1b3d52  # update manpages (build first)
 	n/a  (cherrypick=3b34e884d32)				2d4f6166a4b  # translation update
 # EXTRA TESTS:
