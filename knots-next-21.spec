@@ -286,7 +286,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 23140 sipa/202109_addrmanbias
 	# Not sure about this: 23142 meshcollider:202109_no_assert_corruption
 	g430 gui_txlinks_g430-0.19					4241a5a7ac2	last=a3b35507ce7 gui_txlinks_g430-22
-		# NOTE: Left off trivial string change
 	g439 gui_hide_unused_icons-0.20				823c85e38d4
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
 	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
@@ -483,7 +482,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Parts moved to #22918 and #16795
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
 	# Likely not applicable, and in any case only needed for LTO additions in 24.x? 25708 fanquake/win_qt_always_correct_ar
-	If fixing: g633 -  # qt: Fix shortcut ambiguities
+	g633  qt_opts_ambig_shortcuts_pr633-0.19+k				last=5fde8fbe085
 	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
 	Needs review: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
 	25727 -  # util, config: error on startup if conf or reindex are set in config file
