@@ -1,7 +1,7 @@
-timestamp 2022-08-20 20:47:02
+timestamp 2022-08-26 23:37:35
 lastapply no-merge
 
-#.. checked up to PR #25888 / gui #654
+#.. checked up to PR #25941 / gui #655
 
 checkout origin/master
 @24.x-syslibs
@@ -275,6 +275,9 @@ checkout origin/master
 	Needs review: 25869 -  # wallet: remove UNKNOWN type from OUTPUT_TYPES array
 	Needs work/concept: g653 achow101/show-bal-send
 	Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
+	25914 -  # test: Fix intermittent issue in p2p_leak.py
+	Needs review: 25935 dist_bitcoinconf_as_example
+	Needs review: 25938 mzumsande/202208_fixed_cjdns
 	TODO: Fix bugs in gui#447 ?
 	TODO: Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -607,6 +610,12 @@ checkout origin/master
 	Needs concept/review: 25747 w0xlt/desc_file
 	Needs work: 25776 1440000bytes/bumpfee-inputs
 	Needs review.. or not? 25796 -  # rpc: add descriptorprocesspsbt rpc
+	Needs concept/review: 25907 achow101/upgrade-to-tr-2
+	Needs work: 25923 jonatack/2022-08-statestats
+	Needs review: 25931 Sjors/2022/08/sort-listdescriptors
+	Needs review: 25934 brunoerg/2022-08-add-label-listsinceblock
+	Needs concept & review: 25939 -  # rpc: In utxoupdatepsbt also look for the tx in the txindex
+	Needs review: g655 -  # Persist "mask values" in gui
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -697,6 +706,7 @@ checkout origin/master
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 	Needs work? g650 -  # qt, refactor: Add Import to Wallet GUI
 # Non-upstreamed functionality:
+	TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	n/a   restore_feefilter_opt					b0a928d3f25
 	-     gui_payreq_textedit					e2018a567ae
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(

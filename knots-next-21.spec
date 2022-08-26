@@ -1,8 +1,8 @@
-timestamp 2022-08-20 20:47:02
+timestamp 2022-08-26 23:37:35
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25888 / gui #654 for fixes
+#.. checked up to PR #25941 / gui #655 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -485,6 +485,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25727 reject_conf_in_conf-21+knots						last=019e02cb26d
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	# Needs review: 25768 achow101/unify-resend-reaccept
+	TODO: Ensure correct & diff minimise: 25775 glozow/2022-08-bip125-signal-only & 25902 followup
 	25829 dist_rpcauth-21
 		# NOTE: Partial: does not include installing example bitcoin.conf
 			# Rationale: 1) not originally included, 2) no bug in excluding, 3) static/trivial in 21.x anyway
@@ -495,6 +496,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Fixes Ctrl-C being caught/ignored
 	# Needs work/concept: g653 achow101/show-bal-send
 	#21.xTODO# Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
+	If applicable: 25914 -  # test: Fix intermittent issue in p2p_leak.py
+	Diff-minimise & C++11 compat: 25922 -  # wallet: trigger MaybeResendWalletTxs() every minute
+	25924 theStack/202208-rename_rescanwallet_to_rescanblockchain
+	As appropriate: 25925 theStack/202208-doc-add_new_descriptor_calls_to_docs
+	If applicable: Needs review: 25938 mzumsande/202208_fixed_cjdns
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @21.x-knots-lts-deps
@@ -820,6 +826,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	25439 rpc_gmpi_incrementalrelayfee-21+knots
 	# Maybe? Tho pretty big conceptually... Review: 25504 darosior/rpc_track_coins_by_descriptor
 	# Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
+	# Needs review: g655 -  # Persist "mask values" in gui
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
@@ -1041,6 +1048,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		# NOTE: Held back guix support 64ed5a651d7...75796f01b75
 # BRANDING:
 	n/a   update_security_policy-21
+		TODO: revise again (laanwj leaving); see #25910
 	n/a   knots_branding-21						9db64a56d30	last=16035761f8b knots_branding-23
 	(CHECK-LAST)	last=282420dea44 knots_branding-22
 	n/a   ver_dropzero-21.2+knots				0d04104e95d
@@ -1088,6 +1096,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		TODO: Merge in 202208-KnotsDepsPlan
 	n/a  (cherrypick=a76c71bf46b)				42a7a1b3d52  # update manpages (build first)
 	n/a  (cherrypick=3b34e884d32)				2d4f6166a4b  # translation update
+@21.x-knots-extratests
 # EXTRA TESTS:
 	24797 -  # test: compare /chaininfo response with getblockchaininfo RPC
 	25733 fanquake/tidy_enable_bugprone_use_after_move
