@@ -489,9 +489,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25727 reject_conf_in_conf-21+knots						last=019e02cb26d
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	# Needs review: 25768 achow101/unify-resend-reaccept
-	If applicable: 25798 fanquake/fix_make_clean_and_distcheck
-	25812 achow101/psbt-hd-path-int-overflow
-	Alternative to 25829 fanquake/fixup_19081
+	25829 dist_rpcauth-21
+		# NOTE: Partial: does not include installing example bitcoin.conf
+			# Rationale: 1) not originally included, 2) no bug in excluding, 3) static/trivial in 21.x anyway
 	Diff-minimise 25838 hebasto/220813-mkspec
 		#21.xTODO# Test backport
 	# Meh: 25854 -  # tracing.md trivial English fixes
