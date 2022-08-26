@@ -42,7 +42,6 @@ checkout v0.21.2
 	# NOTE: WRONG FOR C++11: 25436 fanquake/libxkbcommon_gcc_12
 	25605 dmg_tools_new_paths_pr25605-0.17					last=718d29af233 fanquake/dmg_tools_new_paths
 	# Needs review: 25612 fanquake/lto_improvements
-	25763 bdb_no_werror-21
 	25852 fix_intrinsic_check_userflags-0.20+k
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
@@ -499,6 +498,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @21.x-knots-lts-deps
+	25763 bdb_no_werror-21
 	-     boost_1.71fixes-21
 	21991 libevent_2.1.12-21
 	-     miniupnpc_2.0.20180503-21
