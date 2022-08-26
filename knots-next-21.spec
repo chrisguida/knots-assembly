@@ -491,12 +491,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 			# Rationale: 1) not originally included, 2) no bug in excluding, 3) static/trivial in 21.x anyway
 	# Too complex/risky, and depends-only fix doesn't affect gitian builds: 25838 hebasto/220813-mkspec
 	# Meh: 25854 -  # tracing.md trivial English fixes
-	#23.xTODO# Either 25856 or 25858 to fix PSBTs with empty tap_tree
+	#21.xTODO# Either 25856 or 25858 to fix PSBTs with empty tap_tree
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
 		# NOTE: Fixes Ctrl-C being caught/ignored
-	Needs review: 25869 -  # wallet: remove UNKNOWN type from OUTPUT_TYPES array
-	Needs work/concept: g653 achow101/show-bal-send
-	Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
+	# Needs work/concept: g653 achow101/show-bal-send
+	#21.xTODO# Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @21.x-knots-lts-deps
@@ -507,6 +506,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	-     sqlite_3.32.3+-21+knots
 	23956 zeromq_4.3.4-21
 		# +#24134 fixes
+		# NOTE: Dropped 72718ab1ace & f74c5c9241a; we don't support NetBSD, and the autotools in the gitian VM is too old to rebuild a working configure
 	#21.xTODO# Check depends for fix-only updates
 		# boost 1.70: not maintained :| (maybe bump to 1.71 for Ubuntu focal until 2030? or just manually backport fixes in bionic's 1.65 and focal's 1.71?)
 			# manually backported fixes between 1.70 and 1.71
