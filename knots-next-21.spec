@@ -210,7 +210,6 @@ TM	21644 bugfix_addlocal_downloadbind-0.21		1ec9cfb310f
 	21822 bugfix_cli_pr21822-0.21				a212e7c0446
 TM	21907 listwalletdir_iterate_inf-0.19		1483674ad69
 	21944 fix_listwalletdir_rootdir-0.21+knots	0cb9e8948d1
-	21991 libevent_2.1.12-21
 	22013 ignoreblockrelayfordnsskip-0.21		8216936b4d9
 	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
 	19315 rpc_addconnection-0.21				0ec207c9478	last=7d85d477730 rpc_addconnection_mainnet
@@ -322,8 +321,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# idk? 23781 hebasto/211215-bptest
 	23858 fix_qa_scantxoutset_pr23858-21
 	23937 fix_rpcdoc_dumptxoutset_pr23937-21
-	23956 zeromq_4.3.4-21
-		# +#24134 fixes
 	# Needs work: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	g508  fix_qt_progressrate_pr_g508-0.16
 	g516  qt_recvreq_show_eyeicon-0.14
@@ -501,10 +498,15 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs work/concept: g653 achow101/show-bal-send
 	Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	#21.xTODO# Review security report(s)
+	n/a   (delete_release_notes_fragments)
+@21.x-knots-lts-deps
 	-     boost_1.71fixes-21
+	21991 libevent_2.1.12-21
 	-     miniupnpc_2.0.20180503-21
 	-     qt_5.9.9-21
 	-     sqlite_3.32.3+-21+knots
+	23956 zeromq_4.3.4-21
+		# +#24134 fixes
 	#21.xTODO# Check depends for fix-only updates
 		# boost 1.70: not maintained :| (maybe bump to 1.71 for Ubuntu focal until 2030? or just manually backport fixes in bionic's 1.65 and focal's 1.71?)
 			# manually backported fixes between 1.70 and 1.71
@@ -536,7 +538,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 				# skimmed up to 694ce8f
 		# ctaes: nothing important as of 2022-08-24 / 8012b06
 		# univalue: nothing important as of 2022-08-24 / bitcoin-fork de4f73d / stable-1.0.x 76b474e / master d6715ee
-	n/a   (delete_release_notes_fragments)
 @21.x-knots
 # PERFORMANCE:
 	# Needs work: 25383 -  # wallet: don't read db every time that a new 'WalletBatch' is created
