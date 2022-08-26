@@ -3,8 +3,8 @@ lastapply no-merge
 
 #.. checked up to PR #25888 / gui #654
 
-checkout v23.0
-@23.x-syslibs
+checkout origin/master
+@24.x-syslibs
 # BUILD BUGS:
 	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
 	# Needs review: 23609 hebasto/211126-reduce
@@ -15,7 +15,6 @@ checkout v23.0
 	24633 bugfix_suppresswarnings_regex			fd8c81d4242
 	25605 fanquake/dmg_tools_new_paths
 	Needs review: 25612 fanquake/lto_improvements
-	Merged 25763 fanquake/depends_bdb_noWerror_format_security
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
 		NOTE: Revert #25457 ?
@@ -48,7 +47,7 @@ checkout v23.0
 	# ---- END qt6 SUPPORT ----
 	# OpenBSD-only: 25332 fanquake/test_for_timingsafe_bcmp
 	n/a   (delete_release_notes_fragments)
-@23.x-knotsfixes
+@24.x-knotsfixes
 # TESTS:
 	-     lint_relaxer							c6a96c5159d
 		# Add back as needed:
@@ -225,37 +224,23 @@ checkout v23.0
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
-	TODO: Merged g260  qt_handle_exceptions_pr260-21						last=6a794f4737e qt_handle_exceptions_pr260-21-corepr
 	FIXME: Is this really safe? Merged 25239 -  # wallet: 'CommitTransaction', remove extra wtx lookup and add exception for db write error
 		See 25239 wallet_committx_catch_db_write_err-21
 	# Needs review/work? 25272 wallet_sync_catch_db_write_err-21
-	Merged 25256 -  # logging: fix logging empty thread name
-	Merged 25276 -  # doc: Fix typo in importdescriptors
-	# Meh? Merged 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
-	# MERGED; Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
 	25314 -  # p2p: always set nTime for self-advertisements
-	Merged 25320 -  # util: modify Win32LockedPageAllocator to query windows for limit
-	Merged 25333 -  # test: Fix out-of-range port collisions
 	Needs review: 25351 fjahr/202204-import-scan
 		# NOTE: Was #18964
 	Possibly buggy: 25367 theStack/202206-contrib-fix_message_capture_out_of_bounds
 	Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	Needs review (& Core merge?): 25394 fanquake/cache_bust_cxx_c_standard
 	Needs review: 25404 -  # p2p, doc: Use MAX_BLOCKS_TO_ANNOUNCE consistently
-	Merged g613 laanwj/2022-06-qtconsole-includes
 	Triage: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
 	25463 fix_leveldb_no_cloexec-0.20						last=a956806de2f fix_leveldb_no_cloexec
 		FIXME: Check if solved a different way!
-	Merged 25424 hebasto/220620-cxxflags
-	Merged 25425 hebasto/220620-wsystem
-	Merged 25456 -  # rpc: Use steady_clock for getrpcinfo durations
-	Merged 25471 mzumsande/202206_gettxoutsetinfo_check
 	25495 -  # Revert "bnb: exit selection when best_waste is 0"
 	25548 readlink_overflow_check
-	Merged 25497 S3RK/wallet_noninput_fees
-	Merged 25506 1440000bytes/peertimeout-error-msg
 	25507 S3RK/correct_target_with_sffo
-	#23.xTODO# Check on #25561
+	#24.xTODO# Check on #25561
 	Needs concept review: 25574 -  # validation: Skip VerifyDB checks of level >=3 if dbcache is too small
 	25590 achow101/sign-psbt-tr-wo-utxos
 	Needs work: 25595 instagibbs/verify_psbt_input
@@ -273,7 +258,6 @@ checkout v23.0
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
-	Merged 25700 -  # psbt: Fix unsigned integer overflow
 	25708 fanquake/win_qt_always_correct_ar
 	If fixing: g633 -  # qt: Fix shortcut ambiguities
 	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
@@ -281,7 +265,6 @@ checkout v23.0
 	25727 -  # util, config: error on startup if conf or reindex are set in config file
 	Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	Needs review: 25768 achow101/unify-resend-reaccept
-	Merged 25770 hebasto/220802-signer
 	25798 fanquake/fix_make_clean_and_distcheck
 	25812 achow101/psbt-hd-path-int-overflow
 	Needs review? 25827 w0xlt/expr_rawtr
@@ -295,7 +278,7 @@ checkout v23.0
 	TODO: Fix bugs in gui#447 ?
 	TODO: Review security report(s)
 	n/a   (delete_release_notes_fragments)
-@23.x-knots
+@24.x-knots
 # PERFORMANCE:
 	23880 marco/2112-p2pAsync					538a844566d	last=fa61dd44f99
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
@@ -457,7 +440,6 @@ checkout v23.0
 	g149  intro_assumevalid-23					01f67fb5b69	last=75aff9e0ff7 intro_assumevalid
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	Merged 25339 rpcdoc_scantxoutset_20220611a
 	23549 rpc_scanblocks						83bd74cf3d4	last=e1c89184cd3 jamesob/2021-11-scanblocks
 		# NOTE: Was #20664
 		# NOTE: Includes lots of additional fixes/doc improvements
@@ -615,7 +597,6 @@ checkout v23.0
 	Needs work? 25434 w0xlt/bypass-timelocks
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
 		Also #25570 ?
-	Merged 25439 -  # rpc: Return incrementalrelayfee in getmempoolinfo
 	Maybe? Review: 25504 darosior/rpc_track_coins_by_descriptor
 	Needs review? g626 -  # gui: Showing Local Addresses in Node Window
 	At least part of (RPC results) 25634 achow101/desc-import-unset-blank
@@ -838,4 +819,4 @@ checkout v23.0
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
 
-# TODO: @23.x-knots-android
+# TODO: @24.x-knots-android
