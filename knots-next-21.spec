@@ -483,12 +483,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
 	# Likely not applicable, and in any case only needed for LTO additions in 24.x? 25708 fanquake/win_qt_always_correct_ar
 	g633  qt_opts_ambig_shortcuts_pr633-0.19+k				last=5fde8fbe085
-	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
-	Needs review: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
-	25727 -  # util, config: error on startup if conf or reindex are set in config file
-	Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
-	Needs review: 25768 achow101/unify-resend-reaccept
-	If applicable: 25770 hebasto/220802-signer
+	# Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
+		# Maybe too complex and unnecessary for LTS branch
+	# TODO, Not trivial backport: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
+	25727 reject_conf_in_conf-21+knots						last=019e02cb26d
+	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
+	# Needs review: 25768 achow101/unify-resend-reaccept
 	If applicable: 25798 fanquake/fix_make_clean_and_distcheck
 	25812 achow101/psbt-hd-path-int-overflow
 	Alternative to 25829 fanquake/fixup_19081
