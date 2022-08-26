@@ -492,10 +492,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25829 dist_rpcauth-21
 		# NOTE: Partial: does not include installing example bitcoin.conf
 			# Rationale: 1) not originally included, 2) no bug in excluding, 3) static/trivial in 21.x anyway
-	Diff-minimise 25838 hebasto/220813-mkspec
-		#21.xTODO# Test backport
+	# Too complex/risky, and depends-only fix doesn't affect gitian builds: 25838 hebasto/220813-mkspec
 	# Meh: 25854 -  # tracing.md trivial English fixes
-	Either 25856 or 25858 to fix PSBTs with empty tap_tree
+	#23.xTODO# Either 25856 or 25858 to fix PSBTs with empty tap_tree
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
 		# NOTE: Fixes Ctrl-C being caught/ignored
 	Needs review: 25869 -  # wallet: remove UNKNOWN type from OUTPUT_TYPES array
@@ -508,9 +507,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	-     sqlite_3.32.3+-21+knots
 	#21.xTODO# Check depends for fix-only updates
 		# boost 1.70: not maintained :| (maybe bump to 1.71 for Ubuntu focal until 2030? or just manually backport fixes in bionic's 1.65 and focal's 1.71?)
+			# manually backported fixes between 1.70 and 1.71
 			# updated to Ubuntu bionic 1.65.1.0ubuntu1 (no patches)
 			# updated to Ubuntu focal 1.71.0.0ubuntu2 (no patches)
-			# TODO: manually backport fixes between 1.70 and 1.71
 		# libevent 2.1: upstream or Ubuntu jammy until 2032
 			# updated to Ubuntu jammy 2.1.12-stable-1build3
 		# miniupnpc 2.0: RHEL 7 until 2024
