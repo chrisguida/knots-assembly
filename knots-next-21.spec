@@ -581,7 +581,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 		# Held back 962f168a014..398df42f449, da20c1e6d20 (not a bugfix)
 	15836 fee_histogram-21						69874bd7a2f	last=b94292a7cb jonas/2019/04/feeinfo
 	(CHECK-LAST)	last=8cdfa4e2bea fee_histogram+pr15836_api
-	(CHECK-LAST)	last=b145137b151 origin-pull/21422/head
+	(CHECK-LAST)	last=f2fb1f17444 origin-pull/21422/head
 		# Held back approach changes (that ignore CPFP) f2ca3d35ee9..47b5c3e03a7 - current approach is arguably buggy (see sipa's review on PR)
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 		# NOTE: Backported some features/test from #21422 (but not API incompatibilities)
@@ -819,7 +819,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# Maybe? 25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
 	25439 rpc_gmpi_incrementalrelayfee-21+knots
 	# Maybe? Tho pretty big conceptually... Review: 25504 darosior/rpc_track_coins_by_descriptor
-	Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
+	# Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
