@@ -485,7 +485,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25727 reject_conf_in_conf-21+knots						last=019e02cb26d
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	# Needs review: 25768 achow101/unify-resend-reaccept
-	TODO: Ensure correct & diff minimise: 25775 glozow/2022-08-bip125-signal-only & 25902 followup
 	25829 dist_rpcauth-21
 		# NOTE: Partial: does not include installing example bitcoin.conf
 			# Rationale: 1) not originally included, 2) no bug in excluding, 3) static/trivial in 21.x anyway
@@ -496,8 +495,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Fixes Ctrl-C being caught/ignored
 	# Needs work/concept: g653 achow101/show-bal-send
 	#21.xTODO# Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
-	If applicable: 25914 -  # test: Fix intermittent issue in p2p_leak.py
-	Diff-minimise & C++11 compat: 25922 -  # wallet: trigger MaybeResendWalletTxs() every minute
+	25922 wallet_resend_check_ea_min-21+knots
 	25924 theStack/202208-rename_rescanwallet_to_rescanblockchain
 	As appropriate: 25925 theStack/202208-doc-add_new_descriptor_calls_to_docs
 	If applicable: Needs review: 25938 mzumsande/202208_fixed_cjdns
