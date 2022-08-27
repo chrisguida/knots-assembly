@@ -496,7 +496,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs work/concept: g653 achow101/show-bal-send
 	#21.xTODO# Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	25922 wallet_resend_check_ea_min-21+knots
-	25924 theStack/202208-rename_rescanwallet_to_rescanblockchain
+	25924 docfix_rescanwallet_typo_pr25924-21+k
 	As appropriate: 25925 theStack/202208-doc-add_new_descriptor_calls_to_docs
 	If applicable: Needs review: 25938 mzumsande/202208_fixed_cjdns
 	#21.xTODO# Review security report(s)
