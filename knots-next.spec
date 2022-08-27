@@ -6,15 +6,11 @@ lastapply no-merge
 checkout origin/master
 @24.x-syslibs
 # BUILD BUGS:
-	# Not needed (depends only): 22380 fanquake/set_std_c_version_depends
 	# Needs review: 23609 hebasto/211126-reduce
 	24051 config_utils_drop_extra_deps			7aaf200af71
 	5872 subdir_incl_compat						3a646ac6a6b
 	24295 -										f4ae5e430d7	last=faf7a61483a  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 		# 24.xTODO: Can this go away?
-	24633 bugfix_suppresswarnings_regex			fd8c81d4242
-	25605 fanquake/dmg_tools_new_paths
-	Needs review: 25612 fanquake/lto_improvements
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
 		NOTE: Revert #25457 ?
@@ -30,22 +26,11 @@ checkout origin/master
 	#Maybe restore: 7339  opt_libevent
 	# ---- BEGIN qt6 SUPPORT, TODO ----
 	# NOTE: Partial qt6 backport in WIP_qt6-23
-	# Diff-minimise? Need to test: g577 -                # Qt 6 (1/n)
-	# Only w/ rest of Qt6: g579 hebasto/220409-strut     # Qt 6 (2/n)
-	# Needs work? & test: g580 hebasto/220409-event      # Qt 6 (3/n)
 	# Needs review: 24813 hebasto/220409-appcheck        # Qt 6 (4/n)
-	# Only w/ rest of Qt6: g584 hebasto/220413-metatype  # Qt 6 (5/n)
-	# Only w/ rest: g620 -  # Replace QRegExp with QRegularExpression
 	# TODO: tbc uses QRegExpValidator
-	# Needs review: g586 hebasto/220416-quit             # Qt 6 (6/n)
-	# Needed for Qt6?? g587 hebasto/220416-invoke510
-	# Only w/ rest: g589 hebasto/220420-walletmodel      # Qt 6 (7/n)
-	# Needs review: g593 hebasto/220423-re               # Qt 6 (8/n)
-	# Only w/ rest: g623 hebasto/220622-qt6              # Qt 6 (9/n)
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
 	# Needs review: 25191 hebasto/220523-qt6-mac
 	# ---- END qt6 SUPPORT ----
-	# OpenBSD-only: 25332 fanquake/test_for_timingsafe_bcmp
 	n/a   (delete_release_notes_fragments)
 @24.x-knotsfixes
 # TESTS:
@@ -57,11 +42,6 @@ checkout origin/master
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
-	24205 jonatack/network-reachability-assertion-and-testing	15ed2bbdbab	last=58a14795b89
-	24687 qa_invalid_i2psam-23+knots			4843201e194
-	25161 rpcdoccheck_opt-22					a41b7f80ae1	last=b953ea6cc69  # rpc: Put undocumented JSON failure mode behind a runtime flag
-	# TODO? 25123 fjahr/202205-index-prune-fix
-	# TODO? 25124 -  # test: Fix intermittent race in p2p_unrequested_blocks.py
 # FIXES:
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
 		TODO: * 04febc9f129 Bugfix: guix: Set REFERENCE_DATETIME for make_release_tarball.sh
@@ -131,77 +111,37 @@ checkout origin/master
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review & concept check: 23074 Package-aware fee estimation
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
-	g557  gui_numeric_GBs						3ccb4051124
-	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
 	# Needs work: 23502 achow101/tr-low-fee-est
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
 	g506  qt_qrcode_sizefixes					d036a08f614
 	# Needs review: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
-	24145 -										6544d22ffe8	last=9d65ad365c5  # Clear vTxHashes when mapTx is cleared
 	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
 	22087 validate_port_opts-23+knots			5bdf4c61815	last=ce4652aaa01  # Validate port-options
 		TODO: gcp 8cf3236c281 Validate 'zmqpubrawtx' port number
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
-	24371 -										33eef441e53	last=a84650ebd5a  # util: Fix ReadBinaryFile reading beyond maxsize
-	# Needs work: 24392 hebasto/220219-cmake
 	24428 fanquake/improve_bitcoin_wallet_return	73087e7c75b	last=dd532ee9c4d
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
-	24453 fix_rpcdoc_changeaddr_STR				33e2748cb54
-	# Too much diff to fix rare test failure: 24454 achow101/fix-input-weight-test
-	24462 Empact/2022-03-descriptor-pubkey-context	246398173a8	last=9b526727000
-	# Not worth it? 24469 ryanofsky/pr/testu
 	24479 bugfix_settings_numberval-23			1ae167e21ee	last=33722279495 bugfix_settings_numberval
-	# Needs a real fix instead: 24502 glozow/2022-03-rejectlongchains
-	# Needs review: 24538 glozow/2022-03-miner-prioritised
 	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
 	# Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
-	24579 fix_docs_rpc_gbci_gdi_pr24579-23		77500a088db	last=facd5d92e18  # doc: Fix getblockchaininfo/getdeploymentinfo RPC docs
-	24629 bugfix_rpc_prunebc_retval				9a5284f5a20
-	24640 fix_rpcdoc_gbci_pruneheight_desc-23	2b10a685263	last=06822f86545 fix_rpcdoc_gbci_pruneheight_desc
 	24630 reindexCS_resetindexes-23				03c460f3535	last=cf531ba531c
-	24649 fix_wallet_utxos_not_external-23		b62900abef2	last=7832e9438f5
-	# TODO: Triage along w/ KDE patches: 24668 prusnak/qt5-5.15.3
+	# TODO: Triage KDE patches for Qt5
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
-	24716 fix_doc_rpc_rawtx_pr24716-23			66ba003125e
 	24718 fix_rpc_docs_pr24718-23+knots			1ce1a6ef90b	last=68a041dd12b
 	TODO: Check if verbosity|verbose still works with bool :/
-	# Iff needed: 24722 -  # build: patch around qt duplicate symbol issue
-	24776 doc_update_rest_chaininfo-23			66a904192bc	last=1d95b5c7836
-		# Left off top commit with trivial rewording
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
-	24837 fix_noproxy_hack-23^					ec9e37a71ac  # init: Prevent -noproxy and -proxy=0 from interacting with other settings
-	-     fix_noproxy_hack-23					f9b37397a68	last=1d4122dfefc origin-pull/24830/head
-		# Simpler alternative to 24830 -  # init: Allow -proxy="" setting values
-		# NOTE: Depends on #24837 to work right!
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	# Simpler version of? 24845 -  # wallet: createTransaction, return proper error description for "too-long-mempool-chain" + introduce generic Result classes
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
-	24855 fix_doc_rpc_setwalletflag_warnings-23	a7f66d239dc
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
-	24859 fix_wallet_badcreate_pr24859-23		bbcf334f846  # wallet: Change wallet validation order (to avoid creating invalid wallet dbs)
-		# +#25011 achow101/fix-legacy-createwallet-test
 	# Needs review: 24912 mruddy/nchaintx_type
-	25051 fix_configure_def_enable_arm_asms		11428e651e7
-	25282 fix_configure_def_use_libevent
-	24933 strerror_threadsafe-23				b9ac343e025
-	24944 rpc_getblockfrompeer_typecheck-23		5df879f3a13	last=a926025ca82 jonatack/getblockfrompeer-param-inputs
 	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=da8e95c0140 mruddy/issue_23852_import_prune
-	24962 prevector_trivially_copyable-0.15		776900d2ca9	last=11e79084845
-		# NOTE: Just the static assert
 	# Needs review: 24972 hebasto/220425-no-libtool
-	24977 rpcdoc_listdescs_active_internal-22	d07831d5cc8
-		# Diff-minimised
-	24984 fix_wallet_race_attachingbb-22^		40e07b7a11b
-	25088 fix_wallet_race_attachingbb-22		f1ee3f8639c	last=ba10b90915d fix_wallet_race_attachingbb
 	24991 fix_onlylistenonion-23+knots			2853f5f49a9	last=28ae912f501 vasild/onlynet_onion_with_listenonion_is_ok
 	# Needs review: 24994 hebasto/220426-consensus
-	25019 extsign_caseinsensitive-23			7f768515ad9	last=2a22f034ca3
-	# Needs review: 25036 w0xlt/save_scan_progress
-	25074 fix_idx_sync_consistency_pr25074-0.19	67f4b13deea	last=7171ebc7cbd
-	25077 fix_dataraces_pr25077-23				81a7ebc8f1c	last=fa35585c74c
 	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
 	g599  ts_20220515-partial-23				5a4ab415cfe	last=5e23dabf265 ts_20220515
@@ -209,70 +149,35 @@ checkout origin/master
 		#24.xTODO# Update with other commits that are beneficial
 	-     rpcdoc_sendmany_dummy_opt-23			9ddbb6e5a61
 		# Just the bugfix from #25093 rpc: Check for omitted, but required parameters
-	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
-	25106 rpc_dumptxoutset_fopen_check-23		897d61af0bb
-	# Needs triage/review: Maybe part of (see reference to #17167) 25156 -  # refactor: Introduce PeerManagerImpl::RejectIncomingTxs
-	25157 fix_bcli_negtime_pr25157-23			08e7bc352dd
-		# Diff-minimised
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
 	# Needs review: g605  hebasto/220522-splash
 		# NOTE: Simpler alternative in https://github.com/bitcoin/bitcoin/issues/25146#issuecomment-1129356954
 		# Less impact on Knots since we let the user proceed... and only affects builds w/ partial wallet support
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
-	25216 docfix_zmq_hwm_ex_pr25216-21			da4717e7577  # Doc: Fix parameter in hwm example block
-	# Needs review: 25220 brunoerg/2022-05-fix-incorrect-warning-createmultisig
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
-	# Needs concept review: 25235 -  # GetExternalSigner(): fail if multiple signers are found
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
 	FIXME: Is this really safe? Merged 25239 -  # wallet: 'CommitTransaction', remove extra wtx lookup and add exception for db write error
 		See 25239 wallet_committx_catch_db_write_err-21
-	# Needs review/work? 25272 wallet_sync_catch_db_write_err-21
-	25314 -  # p2p: always set nTime for self-advertisements
-	Needs review: 25351 fjahr/202204-import-scan
-		# NOTE: Was #18964
 	Possibly buggy: 25367 theStack/202206-contrib-fix_message_capture_out_of_bounds
 	Needs review: 25380 darosior/fee_estimator_disable_cpfp
-	Needs review (& Core merge?): 25394 fanquake/cache_bust_cxx_c_standard
-	Needs review: 25404 -  # p2p, doc: Use MAX_BLOCKS_TO_ANNOUNCE consistently
-	Triage: g615 -  # If -prune=0 is set, Uncheck Prune on Intro page
-	25463 fix_leveldb_no_cloexec-0.20						last=a956806de2f fix_leveldb_no_cloexec
-		FIXME: Check if solved a different way!
-	25495 -  # Revert "bnb: exit selection when best_waste is 0"
 	25548 readlink_overflow_check
-	25507 S3RK/correct_target_with_sffo
 	#24.xTODO# Check on #25561
 	Needs concept review: 25574 -  # validation: Skip VerifyDB checks of level >=3 if dbcache is too small
-	25590 achow101/sign-psbt-tr-wo-utxos
 	Needs work: 25595 instagibbs/verify_psbt_input
-	Needs review: 25599 achow101/specifc-atomics-check
-	25615 -  # rpc: add missing description in gettxout help text
-	# Bug in fuzzer, not worth it? 25624 -  # fuzz: Fix assert bug in txorphan target +#25641
-	Needs review: g631 achow101/watchonly-disable-encryption
-	Needs review: 25642 darosior/ext_key_derive_wrap_around
-	If applicable: 25663 -  # tracing: do not use coin after move in CCoinsViewCache::AddCoin
 	When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
 	Needs review: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
-	Needs review: 25679 achow101/fix-external-but-have-tx
-		# NOTE: Feels similar to #24649
-	Needs review: 25687 hebasto/220723-export
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
-	25708 fanquake/win_qt_always_correct_ar
-	If fixing: g633 -  # qt: Fix shortcut ambiguities
+	g633 -  # qt: Fix shortcut ambiguities
 	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
-	Needs review: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
 	25727 -  # util, config: error on startup if conf or reindex are set in config file
 	Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	Needs review: 25768 achow101/unify-resend-reaccept
-	25798 fanquake/fix_make_clean_and_distcheck
-	25812 achow101/psbt-hd-path-int-overflow
-	Needs review? 25827 w0xlt/expr_rawtr
 	# Meh: 25854 -  # tracing.md trivial English fixes
 	Either 25856 or 25858 to fix PSBTs with empty tap_tree
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
 		# NOTE: Fixes Ctrl-C being caught/ignored
-	Needs review: 25869 -  # wallet: remove UNKNOWN type from OUTPUT_TYPES array
 	Needs work/concept: g653 achow101/show-bal-send
 	Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	25914 -  # test: Fix intermittent issue in p2p_leak.py
