@@ -13,11 +13,10 @@ checkout origin/master
 		# 24.xTODO: Can this go away?
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
-		NOTE: Revert #25457 ?
 	5416  sys_libsecp256k1						f4a59d2a40f
-	-     sys_univalue-23+knots					5a04090dfe1
-	7485  sys_univalue_def-23+knots				30111aa138c
-	#24.xTODO: sys_libminisketch
+	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
+	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
+	#25.xTODO: sys_libminisketch
 	13789 bugfix_asm_pragmas					5caf7787338
 		TODO: Post-#25852, consider gcp 86682ed205e configure: For intrinsics checks, use pragmas to explicitly enable them for GCC and Clang if possible
 	-     bugfix_asm_leveldb_check				34aa539cad5
@@ -191,7 +190,7 @@ checkout origin/master
 	23880 marco/2112-p2pAsync					538a844566d	last=fa61dd44f99
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	n/a   rm_minisketch							5ddaa57ea1b
-		#24.xTODO# Probably need to drop this
+		#25.xTODO# Probably need to drop this
 	24558 disable_boost_multi_index_ser-23		092cef4c7af	last=0d01272cd88 fanquake/no_boost_multi_index_serialization
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Needs review: 24699 achow101/faster-available-coins
