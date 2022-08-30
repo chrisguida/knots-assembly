@@ -14,12 +14,10 @@ checkout origin/master
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
 	5416  sys_libsecp256k1						f4a59d2a40f
-		TODO? gcp 5f93d66e4b1 Bugfix: build: Use system libsecp256k1 CFLAGS for libbitcoinconsensus when appropriate
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
 	#25.xTODO: sys_libminisketch
 	13789 bugfix_asm_pragmas					5caf7787338
-		TODO: Post-#25852, consider gcp 86682ed205e configure: For intrinsics checks, use pragmas to explicitly enable them for GCC and Clang if possible
 	-     bugfix_asm_leveldb_check				34aa539cad5
 	15155 test_external_bcli					b020b0febcf
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
