@@ -86,7 +86,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	#TODO: Can we get a minimum-dep-versions CI going??
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b aka depends_no_getrandom
-	18818 fix_gitian_src_202004-21				01cd0f44b87	last=690985474a5 guix_reltar_autogen_distclean
+	18818 fix_gitian_src_202004-21				01cd0f44b87	last=345f0b2283e guix_reltar_autogen_distclean
 	18902 fix_gitdir_again-21					9e6238975fe	last=dc420103874 fix_gitdir_again
 		# NOTE: based directly on #18818
 	24048 fix_pkgconf_missing-21
@@ -105,7 +105,9 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	-     http_bind_error+extra-21				1d09d2dc41d	last=fd5353ed826 http_bind_error+extra
 		# NOTE: Held back annotation in gdd 785429c2c7a fd5353ed826
 	9524 marco/Mf1701-qaPruning					e8a96411986	last=88883ae13d marco/Mf1701-qaPruning
-	10731 log_more_uacomment-21					fb6f182d5c4	last=fa16d94b095 log_more_uacomment
+	(CHECK-LAST)	last=b0c8dfaca2c rpc_pruneblkchain0
+	10731 log_more_uacomment-21					fb6f182d5c4	last=9d9e006f761 log_more_uacomment
+	(CHECK-LAST)	last=fa16d94b095 log_more_uacomment-22
 	14485 fadvise-0.20							ebbe8fe4097	last=3f2c08b8202 fadvise
 		# Was #12491
 	14501 fsync_dir								06128cecd60
@@ -139,7 +141,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		# NOTE: -mini is just missing the last commit :)
 	18335 -										dc0f3b960be	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18466 -										7963fb63fea	last=a5cfb40e27b  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
-	18729 intro_dont_change_user_prune			0af71102295
+	18729 intro_dont_change_user_prune-0.20		0af71102295	last=ae90e08d4f2 intro_dont_change_user_prune
 	18766 blocksonly_no_feeest-0.21				13b50d43699	last=4e28753f606
 		# diff-minimised
 		# HELD BACK 33ca3590243...4aaad74c4c8 due to refactor complication

@@ -18,7 +18,6 @@ checkout origin/master
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
 	#25.xTODO: sys_libminisketch
 	13789 bugfix_asm_pragmas					5caf7787338
-	-     bugfix_asm_leveldb_check				34aa539cad5
 	15155 test_external_bcli					b020b0febcf
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
@@ -32,7 +31,7 @@ checkout origin/master
 	n/a   (delete_release_notes_fragments)
 @24.x-knotsfixes
 # TESTS:
-	-     lint_relaxer							c6a96c5159d
+	#24.xTODO#-     lint_relaxer							c6a96c5159d
 		# Add back as needed:
 		#	* 16e78207523 Bugfix: lint: Tolerate explicit hidden-only args
 		#	* 76fc5a93eab QA: Don't require coverage of all RPC methods
@@ -42,7 +41,6 @@ checkout origin/master
 	# TODO: 25160 hebasto/220517-ci
 # FIXES:
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
-		TODO: * 04febc9f129 Bugfix: guix: Set REFERENCE_DATETIME for make_release_tarball.sh
 	18902 fix_gitdir_again						fe1576ba2d8
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					06b2e2cae97	last=df5ece3e064 2020mingwthrd
@@ -53,15 +51,14 @@ checkout origin/master
 	14968 http_bind_error						f61e704deeb	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					524a221b075
 		# NOTE: libevent-copied code up to date as of 2021-07-16 c29f1dbe116c88434e77721ca215b8d2082b247f
-	9524 marco/Mf1701-qaPruning					b327b038e9d	last=88883ae13d marco/Mf1701-qaPruning
+	9524  rpc_pruneblkchain0					b327b038e9d	last=88883ae13d marco/Mf1701-qaPruning
 	10731 log_more_uacomment					e94a07f681b
 	14485 fadvise								d13637180c8
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
-	-     rpcarg_type_per_name-23+knots			894b5b40dfc
+	-     rpcarg_type_per_name					894b5b40dfc
 	-     bugfix_rpc_getbalance_hacky			60f5367f46a
-		TODO? gcp c42f6440dd0 (bugfix_rpc_getbalance_hacky-0.21) Wallet: Reimplement checkFinalTx (correctly) for GetLegacyBalance
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
