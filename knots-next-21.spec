@@ -45,10 +45,9 @@ checkout v0.21.2
 	25852 fix_intrinsic_check_userflags-0.20+k
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
-	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=bd02e19eaf5 sys_leveldb-22+knots
-	(CHECK-LAST)	last=? sys_leveldb-23+knots
-	(CHECK-LAST)	last=? sys_leveldb
-		# NOTE: e02626bf8e0 =~ 1c6ae96f0a3 (rebased)
+	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=1c6ae96f0a3 sys_leveldb
+	(CHECK-LAST)	last=bd02e19eaf5 sys_leveldb-22+knots
+	(CHECK-LAST)	last=e02626bf8e0 sys_leveldb-23+knots
 	5416  sys_libsecp256k1-0.21+knots			813a5353e1d	last=6d7f62dca81 sys_libsecp256k1
 	(CHECK-LAST)	last=da31940ec9e sys_libsecp256k1-23+knots
 	n/a   sys_univalue_doc-21								last=77c4f3e3af9 sys_univalue-23+knots
