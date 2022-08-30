@@ -240,7 +240,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=171ac54ea47 fix_wallet_pr22359-22
 		# Semi-diff-minimised
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
-	22417 bpchild_closefds-21+knots				ae04745f860	last=a63ec352856 bpchild_closefds
+	22417 bpchild_closefds-21+knots				ae04745f860	last=2255d3bc827 bpchild_closefds
 	(CHECK-LAST)	last=9b9cdc9ae6f bpchild_closefds-0.21
 	(CHECK-LAST)	last=4c19cea484b bpchild_closefds-22
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
@@ -349,7 +349,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
 	22087 validate_port_opts-21								last=1dae86bfd22  # Validate port-options
-	(CHECK-LAST)	last=d7f85a72354 validate_port_opts-23+knots
+	(CHECK-LAST)	last=e006505695c validate_port_opts-23+knots
+	(CHECK-LAST)	last=361d247b3bc validate_port_opts-24+knots
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	22461 fix_descwallet_upgrade_noop-21
 	24365 fix_watchwallet_upgrade_noop-21

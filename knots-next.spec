@@ -99,10 +99,9 @@ checkout origin/master
 	g236  gui_init_walleterror_cont				3a6e53d4b5b
 	-     rpc_addconnection_mainnet				3f030489ee0
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
-	22417 bpchild_closefds						05121d01966	last=4c19cea484b bpchild_closefds
+	22417 bpchild_closefds						05121d01966
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 		# NOTE: Currently uses ENABLE_EXTERNAL_SIGNER in place of USE_BOOST_PROCESS (not defined until #15421 merged)
-		TODO: Drop mingw workaround from util/system.h since it's only used on non-Windows in the first place?
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				32caa7dec63
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
@@ -116,8 +115,7 @@ checkout origin/master
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
-	22087 validate_port_opts-23+knots			5bdf4c61815	last=ce4652aaa01  # Validate port-options
-		TODO: gcp 8cf3236c281 Validate 'zmqpubrawtx' port number
+	22087 validate_port_opts-24+knots			5bdf4c61815	last=1dae86bfd22  # Validate port-options
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	24428 fanquake/improve_bitcoin_wallet_return	73087e7c75b	last=dd532ee9c4d
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
