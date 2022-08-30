@@ -141,7 +141,8 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		# NOTE: -mini is just missing the last commit :)
 	18335 -										dc0f3b960be	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18466 -										7963fb63fea	last=a5cfb40e27b  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
-	18729 intro_dont_change_user_prune-0.20		0af71102295	last=ae90e08d4f2 intro_dont_change_user_prune
+	g658  intro_dont_change_user_prune-0.20		0af71102295	last=ae90e08d4f2 intro_dont_change_user_prune
+		# Was #18729
 	18766 blocksonly_no_feeest-0.21				13b50d43699	last=4e28753f606
 		# diff-minimised
 		# HELD BACK 33ca3590243...4aaad74c4c8 due to refactor complication
@@ -165,6 +166,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=7232bd27184
 	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
 	(CHECK-LAST)	last=937d948b76f getblockstats_utxo_actual-23+knots
+	(CHECK-LAST)	last=a339d3dec51 getblockstats_utxo_actual-24+knots
 		# Held back additional tests
 	# Needs review: 20196 vasild/fix_GetListenPort
 	g87   hebasto-g/200910-mono					df127c75a99	last=2e386cd3dd3
@@ -238,8 +240,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=171ac54ea47 fix_wallet_pr22359-22
 		# Semi-diff-minimised
 	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
-	22417 bpchild_closefds-21+knots				ae04745f860	last=4c19cea484b bpchild_closefds
+	22417 bpchild_closefds-21+knots				ae04745f860	last=a63ec352856 bpchild_closefds
 	(CHECK-LAST)	last=9b9cdc9ae6f bpchild_closefds-0.21
+	(CHECK-LAST)	last=4c19cea484b bpchild_closefds-22
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 		# NOTE: Workaround for boost bug included; see also #24523
 	g379  qt_reset_bad_settingsjson-0.21		0952d0c615e

@@ -74,7 +74,8 @@ checkout origin/master
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 	18194 bugfix_gui_edit_sendaddr-mini			3e18bb2be29	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
-	18729 intro_dont_change_user_prune			bbc927c3c8e
+	g658  intro_dont_change_user_prune			bbc927c3c8e
+		# Was #18729
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19419 listwalletdir_skip_data				68bd18dadc7	last=3f9cc0cd736 Saibato/wallet_351
 		# NOTE: modified to use std::set and diff-minimise
@@ -85,7 +86,7 @@ checkout origin/master
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-23+knots	02627b9a519	last=7232bd27184
+	19888 getblockstats_utxo_actual-24+knots	02627b9a519	last=7232bd27184
 		# Diff-minimised incl test changes
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
@@ -96,16 +97,12 @@ checkout origin/master
 	# Needs review & bug fixes: 21106 pstratem/2021-02-07-isinitialblockdownload-timeout
 	# Needs review: 21161 ajtowns/202102-fee-bug-medianval
 	g236  gui_init_walleterror_cont				3a6e53d4b5b
-		TODO? gcp d80490de57b Bugfix: wallet: Catch more wallet load errors during startup and prompt for continuing w/o the wallet
-		TODO? gcp f61af6f996f (gui_init_walleterror_cont-21) Wallet: When a wallet fails to load, clarify question on closing only that wallet
 	-     rpc_addconnection_mainnet				3f030489ee0
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
 	22417 bpchild_closefds						05121d01966	last=4c19cea484b bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 		# NOTE: Currently uses ENABLE_EXTERNAL_SIGNER in place of USE_BOOST_PROCESS (not defined until #15421 merged)
 		TODO: Drop mingw workaround from util/system.h since it's only used on non-Windows in the first place?
-		TODO? gcp 9b9cdc9ae6f (bpchild_closefds-0.21) util/system: Only include unistd.h & boost/process if FD_CLOEXEC is available
-		TODO? gcp 969dd1e4a8d (bpchild_closefds-21+knots) util/system.h: Include workaround for Boost 1.78 narrowing bug
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				32caa7dec63
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
