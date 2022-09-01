@@ -119,7 +119,8 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		#	1) Useless string change (inferior IMO)
 		#	2) Added tests which are annoying to merge
 	-     deprecated_param_names				1e916ec2f4b
-	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=e8a9f9c83eb bugfix_rpc_getbalance_hacky
+	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=5b7d4c9a9af bugfix_rpc_getbalance_hacky
+	(CHECK-LAST)	last=e8a9f9c83eb bugfix_rpc_getbalance_hacky-23
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
