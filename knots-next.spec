@@ -119,14 +119,13 @@ checkout origin/master
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	24428 fanquake/improve_bitcoin_wallet_return	73087e7c75b	last=dd532ee9c4d
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
-	24479 bugfix_settings_numberval-23			1ae167e21ee	last=33722279495 bugfix_settings_numberval
+	24479 bugfix_settings_numberval				1ae167e21ee
 	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
 	# Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
-	24630 reindexCS_resetindexes-23				03c460f3535	last=cf531ba531c
 	# TODO: Triage KDE patches for Qt5
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
-	24718 fix_rpc_docs_pr24718-23+knots			1ce1a6ef90b	last=68a041dd12b
-	TODO: Check if verbosity|verbose still works with bool :/
+	24718 fix_rpc_docs_pr24718-24+knots			1ce1a6ef90b	last=68a041dd12b
+	# TODO? 25976 qa_rpc_getblock_verbose
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	# Simpler version of? 24845 -  # wallet: createTransaction, return proper error description for "too-long-mempool-chain" + introduce generic Result classes
