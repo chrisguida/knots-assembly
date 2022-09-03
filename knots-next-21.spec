@@ -419,8 +419,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# NOTE: Too convoluted to backport safely - partially done in fb7e7781d90
 	g595  qt_handle_autostart_errors-0.15					last=d932157eb79
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
-	g599  ts_20220515-partial-21							last=5e23dabf265 ts_20220515
+	g599  ts_20220515-partial-21							last=7ec30cf0127 ts_20220515
 	(CHECK-LAST)	last=3d7b977bbf0 ts_20220515-partial-23
+	(CHECK-LAST)	last=eda73090c7f ts_20220515-partial-24
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		# NOTE: ts_20220515-21 is full* backport ddfc86cf878=5e23dabf265 (* see two gui#599 notes later in spec)
 		#21.xTODO# Update with other commits that are beneficial

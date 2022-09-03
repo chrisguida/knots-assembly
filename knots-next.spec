@@ -134,11 +134,11 @@ checkout origin/master
 	# Needs review: 24912 mruddy/nchaintx_type
 	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=da8e95c0140 mruddy/issue_23852_import_prune
 	# Needs review: 24972 hebasto/220425-no-libtool
-	24991 fix_onlylistenonion-23+knots			2853f5f49a9	last=28ae912f501 vasild/onlynet_onion_with_listenonion_is_ok
+	24991 vasild/onlynet_onion_with_listenonion_is_ok	2853f5f49a9	last=28ae912f501 vasild/onlynet_onion_with_listenonion_is_ok
 	# Needs review: 24994 hebasto/220426-consensus
 	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
-	g599  ts_20220515-partial-23				5a4ab415cfe	last=5e23dabf265 ts_20220515
+	g599  ts_20220515-partial-24				5a4ab415cfe	last=7ec30cf0127 ts_20220515
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		#24.xTODO# Update with other commits that are beneficial
 	-     rpcdoc_sendmany_dummy_opt-23			9ddbb6e5a61
