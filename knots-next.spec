@@ -150,8 +150,6 @@ checkout origin/master
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
-	FIXME: Is this really safe? Merged 25239 -  # wallet: 'CommitTransaction', remove extra wtx lookup and add exception for db write error
-		See 25239 wallet_committx_catch_db_write_err-21
 	Possibly buggy: 25367 theStack/202206-contrib-fix_message_capture_out_of_bounds
 	Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	25548 readlink_overflow_check
