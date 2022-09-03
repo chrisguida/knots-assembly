@@ -536,6 +536,8 @@ checkout origin/master
 	Needs review: 25934 brunoerg/2022-08-add-label-listsinceblock
 	Needs concept & review: 25939 -  # rpc: In utxoupdatepsbt also look for the tx in the txindex
 	Needs review: g655 -  # Persist "mask values" in gui
+	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
+		# TODO: When Core merges it, we can add GUI in Knots right away
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
