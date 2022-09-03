@@ -150,20 +150,17 @@ checkout origin/master
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
-	Possibly buggy: 25367 theStack/202206-contrib-fix_message_capture_out_of_bounds
-	Needs review: 25380 darosior/fee_estimator_disable_cpfp
+	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	25548 readlink_overflow_check
 	#24.xTODO# Check on #25561
-	Needs concept review: 25574 -  # validation: Skip VerifyDB checks of level >=3 if dbcache is too small
-	Needs work: 25595 instagibbs/verify_psbt_input
-	When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
-	Needs review: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
+	# Needs concept review: 25574 -  # validation: Skip VerifyDB checks of level >=3 if dbcache is too small
+	# Needs work: 25595 instagibbs/verify_psbt_input
+	# When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
+	25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
-	g633 -  # qt: Fix shortcut ambiguities
-		TODO? gcp 87575ab21f6 qt: Fix shortcut ambiguities
-		TODO? gcp 33cae118b59 qt: Add colon to third party URLS data field
+	g633 -													last=5fde8fbe085  # qt: Fix shortcut ambiguities
 	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
 	25727 -  # util, config: error on startup if conf or reindex are set in config file
 	Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
