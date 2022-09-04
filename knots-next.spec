@@ -171,9 +171,10 @@ checkout origin/master
 	#24.xTODO# Needs work/concept: g653 achow101/show-bal-send
 	25880 -													last=7c8c4e47137  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	25914 -													last=fa2aae597c4  # test: Fix intermittent issue in p2p_leak.py
-	Needs review: 25935 dist_bitcoinconf_as_example
-	Needs review: 25938 mzumsande/202208_fixed_cjdns
+	#24.xTODO# Needs review: 25935 dist_bitcoinconf_as_example
+	# Needs review: 25938 mzumsande/202208_fixed_cjdns
 	TODO: Fix bugs in gui#447 ?
+	TODO: fix gui#661
 	TODO: Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @24.x-knots
