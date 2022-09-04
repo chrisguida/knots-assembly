@@ -156,22 +156,21 @@ checkout origin/master
 	# Needs concept review: 25574 -  # validation: Skip VerifyDB checks of level >=3 if dbcache is too small
 	# Needs work: 25595 instagibbs/verify_psbt_input
 	# When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
-	25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
+	25678 -													last=37b2b5bee84  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
-	g633 -													last=5fde8fbe085  # qt: Fix shortcut ambiguities
-	Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
-	25727 -  # util, config: error on startup if conf or reindex are set in config file
-	Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
-	Needs review: 25768 achow101/unify-resend-reaccept
+	g633  -													last=5fde8fbe085  # qt: Fix shortcut ambiguities
+	25727 -													last=019e02cb26d  # util, config: error on startup if conf or reindex are set in config file
+	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
+	# Needs review: 25768 achow101/unify-resend-reaccept
 	# Meh: 25854 -  # tracing.md trivial English fixes
-	Either 25856 or 25858 to fix PSBTs with empty tap_tree
+	# Needs review: Either 25856 or 25858 to fix PSBTs with empty tap_tree
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
 		# NOTE: Fixes Ctrl-C being caught/ignored
-	Needs work/concept: g653 achow101/show-bal-send
-	Needs work: 25880 -  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
-	25914 -  # test: Fix intermittent issue in p2p_leak.py
+	#24.xTODO# Needs work/concept: g653 achow101/show-bal-send
+	25880 -													last=7c8c4e47137  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
+	25914 -													last=fa2aae597c4  # test: Fix intermittent issue in p2p_leak.py
 	Needs review: 25935 dist_bitcoinconf_as_example
 	Needs review: 25938 mzumsande/202208_fixed_cjdns
 	TODO: Fix bugs in gui#447 ?
