@@ -173,8 +173,7 @@ checkout origin/master
 	25914 -													last=fa2aae597c4  # test: Fix intermittent issue in p2p_leak.py
 	#24.xTODO# Needs review: 25935 dist_bitcoinconf_as_example
 	# Needs review: 25938 mzumsande/202208_fixed_cjdns
-	TODO: Fix bugs in gui#447 ?
-	TODO: fix gui#661
+	26005 fix_wallet_copyfail_nullresult
 	TODO: Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @24.x-knots
