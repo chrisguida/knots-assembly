@@ -177,7 +177,6 @@ checkout origin/master
 	n/a   (delete_release_notes_fragments)
 @24.x-knots
 # PERFORMANCE:
-	23880 marco/2112-p2pAsync					538a844566d	last=fa61dd44f99
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	n/a   rm_minisketch							5ddaa57ea1b
 		#25.xTODO# Probably need to drop this
