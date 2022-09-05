@@ -178,7 +178,7 @@ checkout origin/master
 @24.x-knots
 # PERFORMANCE:
 	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
-	n/a   rm_minisketch							5ddaa57ea1b
+	n/a   rm_minisketch-24+k					5ddaa57ea1b	last=4e2d2910342 rm_minisketch-23+k
 		#25.xTODO# Probably need to drop this
 	24558 disable_boost_multi_index_ser-23		092cef4c7af	last=0d01272cd88 fanquake/no_boost_multi_index_serialization
 	# Needs review: 24589 -  # sha512.cpp improvements
