@@ -181,6 +181,7 @@ checkout origin/master
 			# Holding back in hopes of potential RPC+GUI unification
 		# But not sure it's worth breaking RPC?
 	#24.xTODO# FIXME: Taproot wallets CRASH - see #26015; possible fix in #26021
+	# FIXME: workaround #26025 / https://github.com/llvm/llvm-project/issues/57587 ?
 	#24.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @24.x-knots
