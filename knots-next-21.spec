@@ -510,6 +510,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25924 docfix_rescanwallet_typo_pr25924-21+k
 	# TODO Partial: 25925 theStack/202208-doc-add_new_descriptor_calls_to_docs
 		# But whole doc needs revising for Knots? :/
+	FIXME: Taproot wallets CRASH - see #26015
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @21.x-knots-lts-deps

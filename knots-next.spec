@@ -173,6 +173,14 @@ checkout origin/master
 	#24.xTODO# Needs review: 25935 dist_bitcoinconf_as_example
 	# Needs review: 25938 mzumsande/202208_fixed_cjdns
 	26005 fix_wallet_copyfail_nullresult
+	g662  qt_fix_txview_202209
+		FIXME: rebase on gui#368
+	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
+	# FIXME: watchonly indicator is confusing.
+		# See * c2436937613 Bugfix: GUI/Wallet: Decompose watch-only flag for each logical transaction
+			# Holding back in hopes of potential RPC+GUI unification
+		# But not sure it's worth breaking RPC?
+	FIXME: Taproot wallets CRASH - see #26015
 	#24.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @24.x-knots
