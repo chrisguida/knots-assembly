@@ -180,7 +180,7 @@ checkout origin/master
 		# See * c2436937613 Bugfix: GUI/Wallet: Decompose watch-only flag for each logical transaction
 			# Holding back in hopes of potential RPC+GUI unification
 		# But not sure it's worth breaking RPC?
-	FIXME: Taproot wallets CRASH - see #26015
+	#24.xTODO# FIXME: Taproot wallets CRASH - see #26015; possible fix in #26021
 	#24.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @24.x-knots
