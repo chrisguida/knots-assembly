@@ -134,7 +134,7 @@ checkout origin/master
 	# Needs review: 24912 mruddy/nchaintx_type
 	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=da8e95c0140 mruddy/issue_23852_import_prune
 	# Needs review: 24972 hebasto/220425-no-libtool
-	24991 vasild/onlynet_onion_with_listenonion_is_ok	2853f5f49a9	last=28ae912f501 vasild/onlynet_onion_with_listenonion_is_ok
+	24991 vasild/onlynet_onion_with_listenonion_is_ok	2853f5f49a9	last=2d0b4e4ff66 vasild/onlynet_onion_with_listenonion_is_ok
 	# Needs review: 24994 hebasto/220426-consensus
 	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
