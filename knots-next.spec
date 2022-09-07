@@ -125,7 +125,6 @@ checkout origin/master
 	# TODO: Triage KDE patches for Qt5
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
 	24718 fix_rpc_docs_pr24718-24+knots			1ce1a6ef90b	last=68a041dd12b
-	# TODO? 25976 qa_rpc_getblock_verbose
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	# Simpler version of? 24845 -  # wallet: createTransaction, return proper error description for "too-long-mempool-chain" + introduce generic Result classes
@@ -156,14 +155,12 @@ checkout origin/master
 	# Needs concept review: 25574 -  # validation: Skip VerifyDB checks of level >=3 if dbcache is too small
 	# Needs work: 25595 instagibbs/verify_psbt_input
 	# When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
-	25678 -													last=37b2b5bee84  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
 	g633  -													last=5fde8fbe085  # qt: Fix shortcut ambiguities
 	25727 -													last=019e02cb26d  # util, config: error on startup if conf or reindex are set in config file
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
-	# Needs review: 25768 achow101/unify-resend-reaccept
 	# Meh: 25854 -  # tracing.md trivial English fixes
 	# Needs review: Either 25856 or 25858 to fix PSBTs with empty tap_tree
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
@@ -515,7 +512,6 @@ checkout origin/master
 	Needs review: 25287 -  # logging: threshold log level
 	Needs review: 25315 Empact/disk-space-check
 	Needs work?/review: 25344 -  # New extra_outputs argument for bumpfee/psbtbumpfee
-	Needs review: 25355 vasild/i2p_transient_outbound_addr
 	Needs concept review: 25366 w0xlt/desc_rpc
 	Needs work: 25412 brunoerg/2022-06-rest-deploymentinfo
 	Needs work? 25434 w0xlt/bypass-timelocks
@@ -533,7 +529,6 @@ checkout origin/master
 	Needs review.. or not? 25796 -  # rpc: add descriptorprocesspsbt rpc
 	Needs concept/review: 25907 achow101/upgrade-to-tr-2
 	Needs work: 25923 jonatack/2022-08-statestats
-	Needs review: 25931 Sjors/2022/08/sort-listdescriptors
 	Needs review: 25934 brunoerg/2022-08-add-label-listsinceblock
 	Needs concept & review: 25939 -  # rpc: In utxoupdatepsbt also look for the tx in the txindex
 	Needs review: g655 -  # Persist "mask values" in gui

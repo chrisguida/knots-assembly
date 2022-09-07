@@ -481,7 +481,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g631 watchonly_no_encrypt-0.5							last=4c495413e13 achow101-g/watchonly-disable-encryption
 	# Needs review: 25642 darosior/ext_key_derive_wrap_around
 	# When translations exist, or correct mistaken old translations: 25666 -  # refactor: wallet, do not translate init options names
-	# Needs review: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
+	Merged: 25678 -  # p2p: skip querying dns seeds if -onlynet disables IPv4 and IPv6
 	25687 depends_no_export_pkgconf-21
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
@@ -495,7 +495,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO, Not trivial backport: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
 	25727 reject_conf_in_conf-21+knots						last=019e02cb26d
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
-	# Needs review: 25768 achow101/unify-resend-reaccept
+	Merged: 25768 achow101/unify-resend-reaccept
 	25829 dist_rpcauth-21
 		# NOTE: Partial: does not include installing example bitcoin.conf
 			# Rationale: 1) not originally included, 2) no bug in excluding, 3) static/trivial in 21.x anyway
