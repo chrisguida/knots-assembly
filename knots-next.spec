@@ -1,7 +1,7 @@
-timestamp 2022-08-26 23:37:35
+timestamp 2022-09-10 23:43:26
 lastapply no-merge
 
-#.. checked up to PR #25941 / gui #655
+#.. checked up to PR #26059 / gui #665
 
 checkout origin/master
 @24.x-syslibs
@@ -172,12 +172,23 @@ checkout origin/master
 	26005 fix_wallet_copyfail_nullresult
 	g662  qt_fix_txview_202209
 		FIXME: rebase on gui#368
+	Needs work: 25950 theStack/202208-test-fix_high_timeout_values
+	Needs work/review: 25964 fanquake/fixup_mingw_cflags
+	Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
+	26005 fix_wallet_copyfail_nullresult
+	#24.xTODO# FIXME: Taproot wallets CRASH - see #26015; possible fix in #26021
+	Needs review: 26024 -  # wallet: fix sendall creates tx that fails tx-size check
+	Needs review: 26032 Sjors/2022/09/external-signer-feerate
+	Needs work & minimising: 26039 -  # rpc: Return RPC_TYPE_ERROR, not RPC_MISC_ERROR on type mismatch (1/2)
+	Needs review: 26053 furszy/2022_rpc_wallet_fix_help_add_inputs
+	g664 hebasto/220907-gb
+	g665 w0xlt/load_wallet_signal
+	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
 		# See * c2436937613 Bugfix: GUI/Wallet: Decompose watch-only flag for each logical transaction
 			# Holding back in hopes of potential RPC+GUI unification
 		# But not sure it's worth breaking RPC?
-	#24.xTODO# FIXME: Taproot wallets CRASH - see #26015; possible fix in #26021
 	# FIXME: workaround #26025 / https://github.com/llvm/llvm-project/issues/57587 ?
 	#24.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -205,6 +216,10 @@ checkout origin/master
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
 	Needs work: 25383 -  # wallet: don't read db every time that a new 'WalletBatch' is created
 	Needs review: 25542 hebasto/220705-ltcg
+	Needs review: 25957 theStack/202208-speedup_descriptor_wallet_rescan_with_block_filters
+	# Needs review: 25968 sipa/202208_headerssync_optimize
+	# Consider: 25985 fanquake/revert_slow_macos_sqlite
+	Needs review: 26008 achow101/improve-many-desc-ismine
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -517,7 +532,6 @@ checkout origin/master
 	Needs work? 25434 w0xlt/bypass-timelocks
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
 		Also #25570 ?
-	Maybe? Review: 25504 darosior/rpc_track_coins_by_descriptor
 	Needs review? g626 -  # gui: Showing Local Addresses in Node Window
 	At least part of (RPC results) 25634 achow101/desc-import-unset-blank
 	Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
@@ -534,6 +548,9 @@ checkout origin/master
 	Needs review: g655 -  # Persist "mask values" in gui
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
+	Needs work/review/concept: 25943 -  # rpc: Add a parameter to sendrawtransaction which sets a maximum burned output for OP_RETURN transactions.
+	Needs concept & review: 26026 -  # log: Colorize logs
+		and/or #26052
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly

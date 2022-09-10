@@ -1,8 +1,8 @@
-timestamp 2022-08-26 23:37:35
+timestamp 2022-09-10 23:43:26
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #25941 / gui #655 for fixes
+#.. checked up to PR #26059 / gui #665 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -203,6 +203,7 @@ TM	g188  bugfix_psbt_binmode-0.21				79e220794d8	last=cc3971c9ff5 achow101-g/bin
 	21192 bugfix_netinfo_tooverbose-0.21		23d1eb26651	last=882ce25132e laanwj/2021-02-netinfo-verbosity
 	g204  bugfix_gui_rm_old_fixer-0.18			b787e27bb7e	last=3913d1e8c1f
 		# Diff-minimised
+		TODO: Check if gui#662 is needed
 	g217  gui_clickable_warning-0.11			21f8d05d194	last=67c59ae4793 jarolrod-g/warning-look-like-button
 	# Needs careful review: g219 hebasto-g/210223-toolbar
 	g236  gui_init_walleterror_cont-21			11342604e1e	last=6cbea59a35c gui_init_walleterror_cont
@@ -490,7 +491,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
 	# Likely not applicable, and in any case only needed for LTO additions in 24.x? 25708 fanquake/win_qt_always_correct_ar
 	g633  qt_opts_ambig_shortcuts_pr633-0.19+k				last=5fde8fbe085
-	# Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention
+	# Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention + #25960 + #25968? + #25978
 		# Maybe too complex and unnecessary for LTS branch
 	# TODO, Not trivial backport: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
 	25727 reject_conf_in_conf-21+knots						last=019e02cb26d
@@ -510,7 +511,20 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25924 docfix_rescanwallet_typo_pr25924-21+k
 	# TODO Partial: 25925 theStack/202208-doc-add_new_descriptor_calls_to_docs
 		# But whole doc needs revising for Knots? :/
-	FIXME: Taproot wallets CRASH - see #26015
+	25964 fanquake/fixup_mingw_cflags
+	Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
+	25983 hebasto/220902-httpmutex
+		See #26034 for backport as far as 22.x
+	If fixes 21.x: 25990 -  # test: apply fixed feerate to avoid variable dynamic fees in wallet_groups.py
+	If applicable: 26005 fix_wallet_copyfail_nullresult
+	If applicable: 26009 fanquake/remove_boost_libtest
+	FIXME: Taproot wallets CRASH - see #26015; possible fix in #26021
+	Needs review: 26032 Sjors/2022/09/external-signer-feerate
+	Needs work & minimising: 26039 -  # rpc: Return RPC_TYPE_ERROR, not RPC_MISC_ERROR on type mismatch (1/2)
+	Needs review: 26053 furszy/2022_rpc_wallet_fix_help_add_inputs
+	g664 hebasto/220907-gb
+	g665 w0xlt/load_wallet_signal
+	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @21.x-knots-lts-deps
@@ -557,6 +571,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 @21.x-knots
 # PERFORMANCE:
 	# Needs work: 25383 -  # wallet: don't read db every time that a new 'WalletBatch' is created
+	# Consider: 25985 fanquake/revert_slow_macos_sqlite
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	394e59e2f86	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 	22016 rpc_gbci_period_start-0.21.1+knots	b19116ccf14	last=1898b9be12c Sjors/2021/05/versionbits_period_start
@@ -783,6 +798,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# +gui#368
 		# NOTE: Diff minimised
 		# NOTE: gui#229 not applicable to backport
+		TODO: Check if gui#662 is needed
 	g206  gui_peers_relayinfo-0.21+knots		d5d383b9daa
 	g226  gui_peers_lastblocktx-0.21+knots		8482728d1e2
 	g230  gui_backup_formats-0.21+knots			6115edf25d3	last=835d49b30bc gui_backup_formats
@@ -835,6 +851,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# Maybe? 25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
 	25439 rpc_gmpi_incrementalrelayfee-21+knots
 	# Maybe? Tho pretty big conceptually... Review: 25504 darosior/rpc_track_coins_by_descriptor
+		# +#26037
 	# Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
 	# Needs review: g655 -  # Persist "mask values" in gui
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
