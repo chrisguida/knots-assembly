@@ -174,11 +174,8 @@ checkout origin/master
 	Needs work/review: 25964 fanquake/fixup_mingw_cflags
 	Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	26005 fix_wallet_copyfail_nullresult
-	Needs review: 26024 -  # wallet: fix sendall creates tx that fails tx-size check
 	Needs review: 26032 Sjors/2022/09/external-signer-feerate
 	Needs work & minimising: 26039 -  # rpc: Return RPC_TYPE_ERROR, not RPC_MISC_ERROR on type mismatch (1/2)
-	Needs review: 26053 furszy/2022_rpc_wallet_fix_help_add_inputs
-	g664 hebasto/220907-gb
 	g665 w0xlt/load_wallet_signal
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -187,6 +184,7 @@ checkout origin/master
 			# Holding back in hopes of potential RPC+GUI unification
 		# But not sure it's worth breaking RPC?
 	# FIXME: workaround #26025 / https://github.com/llvm/llvm-project/issues/57587 ?
+	TODO: coincontrol sort is backward ? (all columns!)
 	#24.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @24.x-knots

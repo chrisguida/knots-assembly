@@ -525,6 +525,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g664 hebasto/220907-gb
 	g665 w0xlt/load_wallet_signal
 	
+	TODO: coincontrol sort is backward ? (all columns!)
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @21.x-knots-lts-deps
