@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #26059 / gui #665
 
-checkout origin/master
+checkout origin/24.x
 @24.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
@@ -167,7 +167,6 @@ checkout origin/master
 	25880 -													last=7c8c4e47137  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	#24.xTODO# Needs review: 25935 dist_bitcoinconf_as_example
 	# Needs review: 25938 mzumsande/202208_fixed_cjdns
-	26005 fix_wallet_copyfail_nullresult
 	g662  qt_fix_txview_202209
 		FIXME: rebase on gui#368
 	Needs work: 25950 theStack/202208-test-fix_high_timeout_values
@@ -177,6 +176,7 @@ checkout origin/master
 	Needs review: 26032 Sjors/2022/09/external-signer-feerate
 	Needs work & minimising: 26039 -  # rpc: Return RPC_TYPE_ERROR, not RPC_MISC_ERROR on type mismatch (1/2)
 	g665 w0xlt/load_wallet_signal
+	Is fix or feature? 26067 -  # util: improve bitcoin-wallet exit codes
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.

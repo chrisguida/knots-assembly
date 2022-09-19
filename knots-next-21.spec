@@ -524,6 +524,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: 26053 furszy/2022_rpc_wallet_fix_help_add_inputs
 	g664 hebasto/220907-gb
 	g665 w0xlt/load_wallet_signal
+	Is fix or feature? 26067 -  # util: improve bitcoin-wallet exit codes
 	
 	TODO: coincontrol sort is backward ? (all columns!)
 	#21.xTODO# Review security report(s)
