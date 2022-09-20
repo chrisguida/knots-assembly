@@ -1,7 +1,7 @@
-timestamp 2022-09-10 23:43:26
+timestamp 2022-09-20 14:00:13
 lastapply no-merge
 
-#.. checked up to PR #26059 / gui #665
+#.. checked up to PR #26140 / gui #669
 
 checkout origin/24.x
 @24.x-syslibs
@@ -11,6 +11,7 @@ checkout origin/24.x
 	5872 subdir_incl_compat						3a646ac6a6b
 	24295 -										f4ae5e430d7	last=faf7a61483a  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 		# 24.xTODO: Can this go away?
+	If useful: 26099 fanquake/bench_duplicate_linking
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
 	5416  sys_libsecp256k1						f4a59d2a40f
@@ -116,7 +117,8 @@ checkout origin/24.x
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
 	22087 validate_port_opts-24+knots			5bdf4c61815	last=1dae86bfd22  # Validate port-options
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
-	24428 fanquake/improve_bitcoin_wallet_return	73087e7c75b	last=dd532ee9c4d
+	26067 -										73087e7c75b	last=dd532ee9c4d  # util: improve bitcoin-wallet exit codes
+		# NOTE: Was #24428
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24479 bugfix_settings_numberval				1ae167e21ee
 	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
@@ -177,6 +179,14 @@ checkout origin/24.x
 	Needs work & minimising: 26039 -  # rpc: Return RPC_TYPE_ERROR, not RPC_MISC_ERROR on type mismatch (1/2)
 	g665 w0xlt/load_wallet_signal
 	Is fix or feature? 26067 -  # util: improve bitcoin-wallet exit codes
+	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
+	Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
+	26116 -  # rpc: Allow importmulti watchonly imports with locked wallet
+	26124 fanquake/24.0rc2_backports						last=59b154ac443 fanquake/24.0rc2_backports
+	26130 fix_descrwallet_signmsg_deadlck
+	26132 -  # wallet: Fix nNextResend data race in ResubmitWalletTransactions
+	Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
+	Needs triage & review: g666 furszy/2022_gui_safe_connect_qtimer
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -210,7 +220,7 @@ checkout origin/24.x
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
-		#24.xTODO# Revert #24639
+		TODO: Revert #24639, #26075
 	25111 hww_windows-23+knots					cd6a088a2ec	last=2a53dce0b66 hww_windows
 		# NOTE: Carries commit 209018f4275 for compaibility with #22417
 		# NOTE: Being replaced by #25696 ?
@@ -511,6 +521,10 @@ checkout origin/24.x
 	Needs work/review/concept: 25943 -  # rpc: Add a parameter to sendrawtransaction which sets a maximum burned output for OP_RETURN transactions.
 	Needs concept & review: 26026 -  # log: Colorize logs
 		and/or #26052
+	Needs work? 26077 fanquake/guix_shell_over_environment
+	Needs review: 26088 -  # init: Add option for rpccookie permissions
+	Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
+	Needs work: 26131 jamesob/jamesob-22-09-log-rpc-port
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -588,6 +602,7 @@ checkout origin/24.x
 	19092 cli_getinfo_mw_total_balance			91193606e68	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock-23+k	c363d978f97	last=1e868bbbb1b
+		TODO: Bump to #26094 (at least check for fixes)
 	19117 rpc_getrpcwhitelist					bdbf8ecf130
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-23+knots		7a2a3bc75cd
@@ -717,7 +732,7 @@ checkout origin/24.x
 	n/a  (cherrypick=165f473d4d068ee31a)		f6260178fc7	# doc/{bips,files}
 	n/a  (bump_version=Knots:20220529)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
-	TODO: Ensure NSIS doesn't bundle _Core_ relnotes either! See #25809
+	TODO: Ensure NSIS doesn't bundle _Core_ relnotes either! See #25809; also see #26139
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
 	n/a  (cherrypick=7c9f28557be)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
@@ -729,6 +744,7 @@ checkout origin/24.x
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=e176316e332)				dd99e2b4305  # update manpages (build first)
+		BELOW TODO: ensure 26117 is fixed
 	n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!

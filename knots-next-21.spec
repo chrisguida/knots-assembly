@@ -1,8 +1,8 @@
-timestamp 2022-09-10 23:43:26
+timestamp 2022-09-20 14:00:13
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26059 / gui #665 for fixes
+#.. checked up to PR #26140 / gui #669 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -43,6 +43,8 @@ checkout v0.21.2
 	25605 dmg_tools_new_paths_pr25605-0.17					last=718d29af233 fanquake/dmg_tools_new_paths
 	# Needs review: 25612 fanquake/lto_improvements
 	25852 fix_intrinsic_check_userflags-0.20+k
+	Check if needed and useful: 26086 fanquake/bitcoin_tx_prune_boost_cpp
+	If useful: 26099 fanquake/bench_duplicate_linking
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=1c6ae96f0a3 sys_leveldb
@@ -365,7 +367,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Not worth the effort? 24409 fanquake/24263_followups  # Always output license/copyright info with -version
 		# NOTE: Care needed to ensure manpage generation doesn't break
 		# NOTE: Might need #20468
-	# Wait for #24409? Or at least until merged in Core...? 24428 fanquake/improve_bitcoin_wallet_return
+	# Wait for #24409? Or at least until merged in Core...? 26067 -  # util: improve bitcoin-wallet exit codes
+		# NOTE: Was #24428
 		# NOTE: rebase w/o 24409 in f41a608a397
 	24434 fix_english_addrmanerr_pr24434-21
 	24453 fix_rpcdoc_changeaddr_STR-21						last=e8272024ab6 fix_rpcdoc_changeaddr_STR
@@ -496,7 +499,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO, Not trivial backport: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
 	25727 reject_conf_in_conf-21+knots						last=019e02cb26d
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
-	Merged: 25768 achow101/unify-resend-reaccept
+	Merged in master: 25768 achow101/unify-resend-reaccept
+		Fixed by #26132
 	25829 dist_rpcauth-21
 		# NOTE: Partial: does not include installing example bitcoin.conf
 			# Rationale: 1) not originally included, 2) no bug in excluding, 3) static/trivial in 21.x anyway
@@ -525,6 +529,16 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g664 hebasto/220907-gb
 	g665 w0xlt/load_wallet_signal
 	Is fix or feature? 26067 -  # util: improve bitcoin-wallet exit codes
+	Check for fixes in: 26069 furszy/2022_rpc_unify_error_type
+	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
+	Careful: 26089 fanquake/prune_unneeded_upnp_natpmp
+	Check if needed: 26091 -  # test: Fix syncwithvalidationinterfacequeue calls
+	Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
+	26116 -  # rpc: Allow importmulti watchonly imports with locked wallet
+	26119 -  # doc: Move -permitbaremultisig to the relay help category
+	26130 fix_descrwallet_signmsg_deadlck
+	Is needed? Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
+	Needs triage & review: g666 furszy/2022_gui_safe_connect_qtimer
 	
 	TODO: coincontrol sort is backward ? (all columns!)
 	#21.xTODO# Review security report(s)
@@ -856,6 +870,10 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# +#26037
 	# Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
 	# Needs review: g655 -  # Persist "mask values" in gui
+	Needs review: 26088 -  # init: Add option for rpccookie permissions
+	Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
+		Only if too few current fixed seeds are valid?
+	Needs work: 26131 jamesob/jamesob-22-09-log-rpc-port
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
@@ -974,6 +992,7 @@ NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
 m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	(CHECK-LAST)	last=363c4e02d3d wallet_rpc_lastprocessedblock-22+k
 	(CHECK-LAST)	last=dc58f8f46e6 wallet_rpc_lastprocessedblock-23+k
+		TODO: Bump to #26094 (at least check for fixes)
 	19117 rpc_getrpcwhitelist-21				f005cd98854	last=3fd323ca11f rpc_getrpcwhitelist
 	(CHECK-LAST)	last=3a5869713b4 rpc_getrpcwhitelist-22
 		# NOTE: Was #18827 before any Knots merge
@@ -1111,7 +1130,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	n/a  knots_bips-21							95f1a0c7adb
 	n/a  (bump_version=Knots:20210629)			27c16a89cc5  # DO NOT CHANGE for just fixes
 #	n/a  knots_historical_relnotes				61100a2
-	TODO: Ensure NSIS doesn't bundle _Core_ relnotes either! See #25809
+	TODO: Ensure NSIS doesn't bundle _Core_ relnotes either! See #25809; also see #26139
 	n/a  (cherrypick=1c6a7f409ff)				f1e6ee7f195  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
@@ -1124,6 +1143,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		540190c138f for #24198
 		TODO: Merge in 202208-KnotsDepsPlan
 	n/a  (cherrypick=a76c71bf46b)				42a7a1b3d52  # update manpages (build first)
+		BELOW TODO: ensure 26117 is fixed
 	n/a  (cherrypick=3b34e884d32)				2d4f6166a4b  # translation update
 @21.x-knots-extratests
 # EXTRA TESTS:
