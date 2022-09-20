@@ -44,7 +44,6 @@ checkout v0.21.2
 	# Needs review: 25612 fanquake/lto_improvements
 	25852 fix_intrinsic_check_userflags-0.20+k
 	Check if needed and useful: 26086 fanquake/bitcoin_tx_prune_boost_cpp
-	If useful: 26099 fanquake/bench_duplicate_linking
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=1c6ae96f0a3 sys_leveldb
