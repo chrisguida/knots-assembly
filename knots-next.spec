@@ -116,7 +116,7 @@ checkout origin/24.x
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
 	22087 validate_port_opts-24+knots			5bdf4c61815	last=1dae86bfd22  # Validate port-options
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
-	26067 -										73087e7c75b	last=dd532ee9c4d  # util: improve bitcoin-wallet exit codes
+	26067 -										73087e7c75b	last=fa2b8ae0a22  # util: improve bitcoin-wallet exit codes
 		# NOTE: Was #24428
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24479 bugfix_settings_numberval				1ae167e21ee
@@ -165,13 +165,14 @@ checkout origin/24.x
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
 		# NOTE: Fixes Ctrl-C being caught/ignored
 	#24.xTODO# Needs work/concept: g653 achow101/show-bal-send
-	25880 -													last=7c8c4e47137  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
+	25880 -													last=48e538510b3  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
+		#24.xTODO# Ensure compare-before-atomic-update review comment gets addressed
 	#24.xTODO# Needs review: 25935 dist_bitcoinconf_as_example
 	# Needs review: 25938 mzumsande/202208_fixed_cjdns
 	g662  qt_fix_txview_202209
-		FIXME: rebase on gui#368
-	Needs work: 25950 theStack/202208-test-fix_high_timeout_values
-	Needs work/review: 25964 fanquake/fixup_mingw_cflags
+		# Includes gui#368
+	# Needs work: 25950 theStack/202208-test-fix_high_timeout_values
+	25964 fanquake/fixup_mingw_cflags						last=1a332c78dbc
 	Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	26005 fix_wallet_copyfail_nullresult
 	Needs review: 26032 Sjors/2022/09/external-signer-feerate
@@ -405,7 +406,7 @@ checkout origin/24.x
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
-	g368  bugfix_gui_restored_columns_stretch	3b888b39d64
+	# Included in gui#662 above: g368  bugfix_gui_restored_columns_stretch	3b888b39d64
 	g230  gui_backup_formats					6a47e2cd43b
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges

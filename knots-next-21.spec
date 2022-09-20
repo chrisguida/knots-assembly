@@ -515,6 +515,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# TODO Partial: 25925 theStack/202208-doc-add_new_descriptor_calls_to_docs
 		# But whole doc needs revising for Knots? :/
 	25964 fanquake/fixup_mingw_cflags
+		TODO: Ensure it actually works with this & 21.x-knots-lts-deps miniupnpc versions; and that _WIN32_WINNT is the version we want for 21.x
 	Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	25983 hebasto/220902-httpmutex
 		See #26034 for backport as far as 22.x
