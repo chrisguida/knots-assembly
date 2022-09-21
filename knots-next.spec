@@ -165,8 +165,7 @@ checkout origin/24.x
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
 		# NOTE: Fixes Ctrl-C being caught/ignored
 	#24.xTODO# Needs work/concept: g653 achow101/show-bal-send
-	25880 -													last=48e538510b3  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
-		#24.xTODO# Ensure compare-before-atomic-update review comment gets addressed
+	25880 -													last=4b0dbc0f3eb  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	#24.xTODO# Needs review: 25935 dist_bitcoinconf_as_example
 	# Needs review: 25938 mzumsande/202208_fixed_cjdns
 	g662  qt_fix_txview_202209
