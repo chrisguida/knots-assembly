@@ -164,7 +164,7 @@ checkout origin/24.x
 	# Needs review: Either 25856 or 25858 to fix PSBTs with empty tap_tree
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
 		# NOTE: Fixes Ctrl-C being caught/ignored
-	#24.xTODO# Needs work/concept: g653 achow101/show-bal-send
+	#24.xTODO# Needs work/concept: g653 achow101-g/show-bal-send
 	25880 -													last=4b0dbc0f3eb  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	#24.xTODO# Needs review: 25935 dist_bitcoinconf_as_example
 	# Needs review: 25938 mzumsande/202208_fixed_cjdns
@@ -177,7 +177,7 @@ checkout origin/24.x
 		# Diff-minimised
 	25737 rpc_type_error-24+knots							last=e68d3807979
 		# Diff-minimised, including leaving off top commit
-	g665 w0xlt/load_wallet_signal
+	g665 w0xlt-g/load_wallet_signal
 	Is fix or feature? 26067 -  # util: improve bitcoin-wallet exit codes
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
@@ -186,7 +186,7 @@ checkout origin/24.x
 	26130 fix_descrwallet_signmsg_deadlck
 	26132 -  # wallet: Fix nNextResend data race in ResubmitWalletTransactions
 	Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
-	Needs triage & review: g666 furszy/2022_gui_safe_connect_qtimer
+	Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.

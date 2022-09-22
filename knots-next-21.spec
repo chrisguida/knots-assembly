@@ -526,8 +526,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: 26032 Sjors/2022/09/external-signer-feerate
 	Needs work & minimising: 26039 -  # rpc: Return RPC_TYPE_ERROR, not RPC_MISC_ERROR on type mismatch (1/2) OR #25737
 	Needs review: 26053 furszy/2022_rpc_wallet_fix_help_add_inputs
-	g664 hebasto/220907-gb
-	g665 w0xlt/load_wallet_signal
+	g664 hebasto-g/220907-gb
+	g665 w0xlt-g/load_wallet_signal
 	Is fix or feature? 26067 -  # util: improve bitcoin-wallet exit codes
 	Check for fixes in: 26069 furszy/2022_rpc_unify_error_type
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
@@ -538,7 +538,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	26119 -  # doc: Move -permitbaremultisig to the relay help category
 	26130 fix_descrwallet_signmsg_deadlck
 	Is needed? Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
-	Needs triage & review: g666 furszy/2022_gui_safe_connect_qtimer
+	Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	
 	TODO: coincontrol sort is backward ? (all columns!)
 	#21.xTODO# Review security report(s)
