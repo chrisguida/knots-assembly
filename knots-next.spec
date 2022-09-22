@@ -173,10 +173,9 @@ checkout origin/24.x
 	# Needs work: 25950 theStack/202208-test-fix_high_timeout_values
 	25964 fanquake/fixup_mingw_cflags						last=1a332c78dbc
 	#24.xTODO# Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
-	26005 fix_wallet_copyfail_nullresult
 	26032 wallet_extsigner_feerate_nogrind-24+k				last=a58038ac5bb Sjors/2022/09/external-signer-feerate
 		# Diff-minimised
-	Needs work & minimising: 26039 -  # rpc: Return RPC_TYPE_ERROR, not RPC_MISC_ERROR on type mismatch (1/2)
+	Needs work & minimising: 26039 -  # rpc: Return RPC_TYPE_ERROR, not RPC_MISC_ERROR on type mismatch (1/2) OR #25737
 	g665 w0xlt/load_wallet_signal
 	Is fix or feature? 26067 -  # util: improve bitcoin-wallet exit codes
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
