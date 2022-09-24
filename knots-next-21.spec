@@ -354,7 +354,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	22087 validate_port_opts-21								last=1dae86bfd22  # Validate port-options
 	(CHECK-LAST)	last=e006505695c validate_port_opts-23+knots
 	(CHECK-LAST)	last=361d247b3bc validate_port_opts-24+knots
-	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	22461 fix_descwallet_upgrade_noop-21
 	24365 fix_watchwallet_upgrade_noop-21
 	24371 fix_torcontrol_overread-0.15
@@ -366,9 +365,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Not worth the effort? 24409 fanquake/24263_followups  # Always output license/copyright info with -version
 		# NOTE: Care needed to ensure manpage generation doesn't break
 		# NOTE: Might need #20468
-	# Wait for #24409? Or at least until released by Core...? In Knots now... Diff-minimise? 26067 -  # util: improve bitcoin-wallet exit codes
-		# NOTE: Was #24428
-		# NOTE: rebase w/o 24409 in f41a608a397
 	24434 fix_english_addrmanerr_pr24434-21
 	24453 fix_rpcdoc_changeaddr_STR-21						last=e8272024ab6 fix_rpcdoc_changeaddr_STR
 	# Not worth it? 24469 ryanofsky/pr/testu
@@ -434,6 +430,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
 		# NOTE: Fixes in #25312 & #25333
 	25106 rpc_dumptxoutset_fopen_check-0.20					last=805443ff3f9 rpc_dumptxoutset_fopen_check-23
+	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Needs triage/review: Maybe part of (see reference to #17167) 25156 -  # refactor: Introduce PeerManagerImpl::RejectIncomingTxs
 	25157 fix_bcli_negtime_pr25157-21						last=fdc6e7cf753 fix_bcli_negtime_pr25157-23
 		# NOTE: Other half included in #21056 below
@@ -528,7 +525,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: 26053 furszy/2022_rpc_wallet_fix_help_add_inputs
 	g664 hebasto-g/220907-gb
 	g665 w0xlt-g/load_wallet_signal
-	Is fix or feature? 26067 -  # util: improve bitcoin-wallet exit codes
+	# Wait for #24409? Or at least until released by Core...? In Knots now... Diff-minimise? 26067 -  # util: improve bitcoin-wallet exit codes
+		# NOTE: Was #24428
+		# NOTE: rebase w/o 24409 in f41a608a397
 	Check for fixes in: 26069 furszy/2022_rpc_unify_error_type
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	Careful: 26089 fanquake/prune_unneeded_upnp_natpmp

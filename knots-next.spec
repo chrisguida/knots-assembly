@@ -115,9 +115,6 @@ checkout origin/24.x
 	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
 	22087 validate_port_opts-24+knots			5bdf4c61815	last=1dae86bfd22  # Validate port-options
-	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
-	26067 -										73087e7c75b	last=fa2b8ae0a22  # util: improve bitcoin-wallet exit codes
-		# NOTE: Was #24428
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24479 bugfix_settings_numberval				1ae167e21ee
 	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
@@ -141,6 +138,7 @@ checkout origin/24.x
 		#24.xTODO# Update with other commits that are beneficial
 	-     rpcdoc_sendmany_dummy_opt-23			9ddbb6e5a61
 		# Just the bugfix from #25093 rpc: Check for omitted, but required parameters
+	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
 	# Needs review: g605  hebasto/220522-splash
 		# NOTE: Simpler alternative in https://github.com/bitcoin/bitcoin/issues/25146#issuecomment-1129356954
@@ -173,12 +171,15 @@ checkout origin/24.x
 	# Needs work: 25950 theStack/202208-test-fix_high_timeout_values
 	#24.xTODO# 25964 fanquake/fixup_mingw_cflags						last=1a332c78dbc
 	#24.xTODO# Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
-	26032 wallet_extsigner_feerate_nogrind-24+k				last=a58038ac5bb Sjors/2022/09/external-signer-feerate
+	26032 wallet_extsigner_feerate_nogrind-24+k				last=b133ab9b1ee Sjors/2022/09/external-signer-feerate
 		# Diff-minimised
+		#24.xTODO# Remake on latest branch after review is addressed
 	25737 rpc_type_error-24+knots							last=e68d3807979
 		# Diff-minimised, including leaving off top commit
 	g665 w0xlt-g/load_wallet_signal							last=b8b59ff9fea
-	Diff-minimise? 26067 -  # util: improve bitcoin-wallet exit codes
+	26067 -										73087e7c75b	last=fa2b8ae0a22  # util: improve bitcoin-wallet exit codes
+		# NOTE: Was #24428
+		#24.xTODO# Diff-minimise??
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
 	26116 -  # rpc: Allow importmulti watchonly imports with locked wallet
