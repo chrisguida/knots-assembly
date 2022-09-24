@@ -181,7 +181,7 @@ checkout origin/24.x
 		# NOTE: Was #24428
 		#24.xTODO# Diff-minimise??
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
-	Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
+	#24.xTODO# Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
 	26116 -  # rpc: Allow importmulti watchonly imports with locked wallet
 	26124 fanquake/24.0rc2_backports						last=59b154ac443 fanquake/24.0rc2_backports
 	26130 fix_descrwallet_signmsg_deadlck
@@ -678,6 +678,7 @@ checkout origin/24.x
 	TODO: * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		See #25922, backported with this in 21.x
 # Non-upstreamed Knots compatibility:
+	TODO: -netinfo and other version checks might need to be more flexible?
 	#24.xTODO# revert? #24505  wallet: Add a deprecation warning for newly created legacy wallets
 	14641 fundraw_min_conf_deprecated-23+knots	67bb2fae2cb	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			2b802cfbcf9
