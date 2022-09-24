@@ -182,8 +182,9 @@ checkout origin/24.x
 		#24.xTODO# Diff-minimise??
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	#24.xTODO# Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
-	26116 -  # rpc: Allow importmulti watchonly imports with locked wallet
-	26124 fanquake/24.0rc2_backports						last=59b154ac443 fanquake/24.0rc2_backports
+	26116 -													last=2c03465dfa1  # rpc: Allow importmulti watchonly imports with locked wallet
+	26124 fanquake/24.0rc2_backports^						last=59b154ac443 fanquake/24.0rc2_backports
+	26149 fanquake/24.0rc2_backports						last=9dfccb40acc fanquake/24.0rc2_backports
 	26130 fix_descrwallet_signmsg_deadlck
 	26132 -  # wallet: Fix nNextResend data race in ResubmitWalletTransactions
 	Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
