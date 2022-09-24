@@ -177,8 +177,8 @@ checkout origin/24.x
 		# Diff-minimised
 	25737 rpc_type_error-24+knots							last=e68d3807979
 		# Diff-minimised, including leaving off top commit
-	g665 w0xlt-g/load_wallet_signal
-	Is fix or feature? 26067 -  # util: improve bitcoin-wallet exit codes
+	g665 w0xlt-g/load_wallet_signal							last=b8b59ff9fea
+	Diff-minimise? 26067 -  # util: improve bitcoin-wallet exit codes
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
 	26116 -  # rpc: Allow importmulti watchonly imports with locked wallet

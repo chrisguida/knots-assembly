@@ -366,7 +366,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Not worth the effort? 24409 fanquake/24263_followups  # Always output license/copyright info with -version
 		# NOTE: Care needed to ensure manpage generation doesn't break
 		# NOTE: Might need #20468
-	# Wait for #24409? Or at least until merged in Core...? 26067 -  # util: improve bitcoin-wallet exit codes
+	# Wait for #24409? Or at least until released by Core...? In Knots now... Diff-minimise? 26067 -  # util: improve bitcoin-wallet exit codes
 		# NOTE: Was #24428
 		# NOTE: rebase w/o 24409 in f41a608a397
 	24434 fix_english_addrmanerr_pr24434-21
