@@ -183,12 +183,11 @@ checkout origin/24.x
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	#24.xTODO# Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
 	26116 -													last=2c03465dfa1  # rpc: Allow importmulti watchonly imports with locked wallet
-	26124 fanquake/24.0rc2_backports^						last=59b154ac443 fanquake/24.0rc2_backports
+	26124 fanquake/24.0rc2_backports^						last=9dfccb40acc fanquake/24.0rc2_backports
 	26149 fanquake/24.0rc2_backports						last=9dfccb40acc fanquake/24.0rc2_backports
 	26130 fix_descrwallet_signmsg_deadlck
-	26132 -  # wallet: Fix nNextResend data race in ResubmitWalletTransactions
-	Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
-	Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
+	# Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
+	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -196,7 +195,6 @@ checkout origin/24.x
 			# Holding back in hopes of potential RPC+GUI unification
 		# But not sure it's worth breaking RPC?
 	# FIXME: workaround #26025 / https://github.com/llvm/llvm-project/issues/57587 ?
-	TODO: coincontrol sort is backward ? (all columns!)
 	#24.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @24.x-knots
