@@ -205,17 +205,15 @@ checkout origin/24.x
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
 	# Knots doesn't support MSVC builds: 24773 Enable AVX2 implementation of SHA256 for MSVC builds
-	# Needs review: 24814 -  # refactor: improve complexity of removing preselected coins
 	# Needs work: 24901 -  # mempool: reduce lookups, insertions to cache in UpdateForDescendants
 	# Needs review: 24926 -  # mempool: use mapNextTx.lower_bound in removeRecursive
-	# Needs review: 25221 -  # Improve CMedianFilter algorithm - useless? see comments
 	# Needs review: 25232 -  # rpc: Faster getblock API
 	# Needs review: 25236 -  # wallet: use vector instead of list for transactions
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
-	Needs review: 25957 theStack/202208-speedup_descriptor_wallet_rescan_with_block_filters
+	# Needs review: 25957 theStack/202208-speedup_descriptor_wallet_rescan_with_block_filters
 	# Needs review: 25968 sipa/202208_headerssync_optimize
-	# Consider: 25985 fanquake/revert_slow_macos_sqlite
-	Needs review: 26008 achow101/improve-many-desc-ismine
+	#24.xTODO# Consider: 25985 fanquake/revert_slow_macos_sqlite
+	#24.xTODO# Needs review: 26008 achow101/improve-many-desc-ismine
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
