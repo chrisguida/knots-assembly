@@ -189,7 +189,7 @@ checkout origin/24.x
 	# Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
-	26143 brunoerg/2022-10-fix-rest-test
+	26143 fix_qa_rest_pr26143-24
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
 	#24.xTODO# Needs review: 26172 LarryRuane/2022-09-fix-received_new_header
 	
