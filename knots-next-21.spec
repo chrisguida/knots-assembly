@@ -1,8 +1,8 @@
-timestamp 2022-09-20 14:00:13
+timestamp 2022-09-25 12:05:34
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26140 / gui #669 for fixes
+#.. checked up to PR #26179 / gui #669 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -492,6 +492,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g633  qt_opts_ambig_shortcuts_pr633-0.19+k				last=5fde8fbe085
 	# Needs review: 25717 sdaftuar/2022-02-headers-dos-prevention + #25960 + #25968? + #25978
 		# Maybe too complex and unnecessary for LTS branch
+		# Fixed in #26172
 	# TODO, Not trivial backport: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
 	25727 reject_conf_in_conf-21+knots						last=019e02cb26d
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
@@ -538,6 +539,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	26130 fix_descrwallet_signmsg_deadlck
 	Is needed? Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
 	Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
+	If applicable: Needs work: 26142 hebasto/220920-package
+	If applicable: 26143 brunoerg/2022-10-fix-rest-test
+	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
 	
 	TODO: coincontrol sort is backward ? (all columns!)
 	#21.xTODO# Review security report(s)
@@ -873,6 +877,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 		Only if too few current fixed seeds are valid?
 	Needs work: 26131 jamesob/jamesob-22-09-log-rpc-port
+	Minimised as applicable: 26162 Sjors/2022/09/taproot
+	IF IN KNOTS: Needs review: 26174 w0xlt/list_address_book
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting

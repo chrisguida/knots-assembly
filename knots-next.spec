@@ -1,7 +1,7 @@
-timestamp 2022-09-20 14:00:13
+timestamp 2022-09-25 12:05:34
 lastapply no-merge
 
-#.. checked up to PR #26140 / gui #669
+#.. checked up to PR #26179 / gui #669
 
 checkout origin/24.x
 @24.x-syslibs
@@ -188,6 +188,10 @@ checkout origin/24.x
 	26130 fix_descrwallet_signmsg_deadlck
 	# Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
+	#24.xTODO# Needs work: 26142 hebasto/220920-package
+	26143 brunoerg/2022-10-fix-rest-test
+	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
+	#24.xTODO# Needs review: 26172 LarryRuane/2022-09-fix-received_new_header
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -523,6 +527,7 @@ checkout origin/24.x
 	Needs review: 26088 -  # init: Add option for rpccookie permissions
 	Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	Needs work: 26131 jamesob/jamesob-22-09-log-rpc-port
+	Minimised: 26162 Sjors/2022/09/taproot
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -615,6 +620,7 @@ checkout origin/24.x
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 	Needs work? g650 -  # qt, refactor: Add Import to Wallet GUI
+	Needs review: 26174 w0xlt/list_address_book
 # Non-upstreamed functionality:
 	TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	n/a   restore_feefilter_opt					b0a928d3f25
