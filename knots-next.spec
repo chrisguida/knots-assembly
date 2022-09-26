@@ -185,7 +185,6 @@ checkout origin/24.x
 	26116 -													last=2c03465dfa1  # rpc: Allow importmulti watchonly imports with locked wallet
 	26124 fanquake/24.0rc2_backports^						last=9dfccb40acc fanquake/24.0rc2_backports
 	26149 fanquake/24.0rc2_backports						last=9dfccb40acc fanquake/24.0rc2_backports
-	26130 fix_descrwallet_signmsg_deadlck
 	# Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
@@ -222,12 +221,9 @@ checkout origin/24.x
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
-		TODO: Revert #24639, #26075
-	25111 hww_windows-23+knots					cd6a088a2ec	last=2a53dce0b66 hww_windows
+	25111 hww_windows-24+knots					cd6a088a2ec	last=625ef695528 hww_windows
 		# NOTE: Carries commit 209018f4275 for compaibility with #22417
 		# NOTE: Being replaced by #25696 ?
-		TODO: revert #25723 if needed
-	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
