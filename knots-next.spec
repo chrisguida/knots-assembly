@@ -237,14 +237,11 @@ checkout origin/24.x
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	22049 rpc_fundtx_minmaxconf-23+knots		e80afead907	last=7f4c9039f71  # rpc: allow specifying min chain depth for inputs in fund calls
-	(CHECK-LAST)	last=9652e0a2faa rpc_fundtx_minmaxconf
+	22049 rpc_fundtx_minmaxconf				e80afead907	last=7f4c9039f71  # rpc: allow specifying min chain depth for inputs in fund calls
 	(CHECK-LAST)	last=1e14aeacd3a origin-pull/25375/head
 		# Was #14641 (moved to Knots compat)
+		# Includes fix for typo "maxconfs" in error msg
 		# TODO: Once #25375 is merged, include its strings/tests
-		TODO? gcp 46de5347b7a RPC/Wallet: Deprecate FundTransaction min_conf (14641) and replace with minconf from 22049
-		TODO? gcp 1d8db4ee846 QA: Minor updates for testing minconf parameter in fund calls
-		TODO? gcp cd52287b586 (fundraw_minconf-0.21) RPC/Wallet: Check for negative min_conf in FundTransaction
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
@@ -679,7 +676,7 @@ checkout origin/24.x
 # Non-upstreamed Knots compatibility:
 	TODO: -netinfo and other version checks might need to be more flexible?
 	#24.xTODO# revert? #24505  wallet: Add a deprecation warning for newly created legacy wallets
-	14641 fundraw_min_conf_deprecated-23+knots	67bb2fae2cb	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
+	14641 fundraw_min_conf_deprecated-24+knots	67bb2fae2cb	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			2b802cfbcf9
 	-     netperms_implicit_addr				3ec6f62de90
 	12674 rpc_onetry_nonpriv-23+knots			1ac3b6f764a
