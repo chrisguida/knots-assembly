@@ -185,7 +185,6 @@ checkout origin/24.x
 	26116 -													last=2c03465dfa1  # rpc: Allow importmulti watchonly imports with locked wallet
 	26124 fanquake/24.0rc2_backports^						last=bcfd86a2bdd fanquake/24.0rc2_backports
 	26149 fanquake/24.0rc2_backports						last=bcfd86a2bdd fanquake/24.0rc2_backports
-	# Needs review: 26138 -  # test: Avoid race in disconnect_nodes helper
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
 	26143 fix_qa_rest_pr26143-24
