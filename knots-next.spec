@@ -176,6 +176,7 @@ checkout origin/24.x
 		#24.xTODO# Remake on latest branch after review is addressed
 	25737 rpc_type_error-24+knots							last=e68d3807979
 		# Diff-minimised, including leaving off top commit
+		FIXME: Check for https://github.com/bitcoin/bitcoin/pull/26147#discussion_r983741878
 	g665 w0xlt-g/load_wallet_signal							last=b8b59ff9fea
 	26067 -										73087e7c75b	last=fa2b8ae0a22  # util: improve bitcoin-wallet exit codes
 		# NOTE: Was #24428
