@@ -1,8 +1,8 @@
-timestamp 2022-09-25 12:05:34
+timestamp 2022-10-03 22:29:56
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26179 / gui #669 for fixes
+#.. checked up to PR #26240 / gui #669 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -497,7 +497,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	25727 reject_conf_in_conf-21+knots						last=019e02cb26d
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	Merged in master: 25768 achow101/unify-resend-reaccept
-		Fixed by #26132
+		Fixed by #26132 and #26205
 	25829 dist_rpcauth-21
 		# NOTE: Partial: does not include installing example bitcoin.conf
 			# Rationale: 1) not originally included, 2) no bug in excluding, 3) static/trivial in 21.x anyway
@@ -542,8 +542,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	If applicable: Needs work: 26142 hebasto/220920-package
 	If applicable: 26143 brunoerg/2022-10-fix-rest-test
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
+	Partial: Needs review: 26186 -  # rpc: Sanitize label name in various RPCs with tests
+	Needs review & backport checking: 26188 vasild/fix_coinstatsindex_initial_sync
+	Needs review: 26203 -  # wallet: Use correct effective value when checking target
+	If applicable: 26212 -  # contrib: Fix capture_output in getcoins.py
+	As needed: 26213 -  # univalue: Remove confusing getBool/isTrue/isFalse
 	
-	TODO: coincontrol sort is backward ? (all columns!)
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @21.x-knots-lts-deps
@@ -701,6 +705,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# TODO: change default to temporary=true to match latest prune_locks branch?
 		#		* 2554dc0ba3d Refactor PruneLockInfo.temporary to default to true
 		# NOTE: Held back extra prune lock buffer & rebasing on #21726
+		TODO: Check if any fix from #26215 is needed
 	19762 ryanofsky/pr/named					3505e6dedbb	last=894c414dafb
 	19776 -										2d98f923dec	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	19873 mempressure-21						368b6daca5d last=691e1d1dddd mempressure

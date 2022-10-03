@@ -1,7 +1,7 @@
-timestamp 2022-09-25 12:05:34
+timestamp 2022-10-03 22:29:56
 lastapply no-merge
 
-#.. checked up to PR #26179 / gui #669
+#.. checked up to PR #26240 / gui #669
 
 checkout origin/24.x
 @24.x-syslibs
@@ -184,13 +184,19 @@ checkout origin/24.x
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	#24.xTODO# Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
 	26116 -													last=2c03465dfa1  # rpc: Allow importmulti watchonly imports with locked wallet
-	26124 fanquake/24.0rc2_backports^						last=bcfd86a2bdd fanquake/24.0rc2_backports
-	26149 fanquake/24.0rc2_backports						last=bcfd86a2bdd fanquake/24.0rc2_backports
+	26124 fanquake/24.0rc2_backports^^^						last=bcfd86a2bdd fanquake/24.0rc2_backports  # docs: Add 371 to bips.md
+	26149 fanquake/24.0rc2_backports^^						last=bcfd86a2bdd fanquake/24.0rc2_backports  # Fix assert failure in miniscript string parsing
+	26172 fanquake/24.0rc2_backports^  # p2p: ProcessHeadersMessage(): fix received_new_header
+	26212 fanquake/24.0rc2_backports   # contrib: Fix capture_output in getcoins.py 
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
 	26143 fix_qa_rest_pr26143-24
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
-	#24.xTODO# Needs review: 26172 LarryRuane/2022-09-fix-received_new_header
+	Partial: Needs review: 26186 -  # rpc: Sanitize label name in various RPCs with tests
+	Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
+	Needs review: 26203 -  # wallet: Use correct effective value when checking target
+	Needs review & diff-minimisation: 26205 stickies-v/n25768-follow-ups
+	If needed: 26215 ryanofsky/pr/untilsync
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -521,6 +527,10 @@ checkout origin/24.x
 	Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	Needs work: 26131 jamesob/jamesob-22-09-log-rpc-port
 	Minimised: 26162 Sjors/2022/09/taproot
+	Compatibility with: 26194 w0xlt/next_index_listdescriptors
+	TODO: sendrawtransaction to a specific node bypassing mempool
+		See https://github.com/bitcoinknots/bitcoin/issues/50
+	26207 andrewtoth/rest-verbose-mempool
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -728,6 +738,7 @@ checkout origin/24.x
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 	n/a  (cherrypick=165f473d4d068ee31a)		f6260178fc7	# doc/{bips,files}
+		TODO: Check #26231
 	n/a  (bump_version=Knots:20220529)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	TODO: Ensure NSIS doesn't bundle _Core_ relnotes either! See #25809; also see #26139
