@@ -195,10 +195,10 @@ checkout origin/24.x
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
 	26186 rpc_label_sanitize-22								last=8b716611b1b  # rpc: Sanitize label name in various RPCs with tests
 		# Leaving off refactor
-	Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
+	26215 fix_index_race_pr26215-24							last=dd2ef55a86b ryanofsky/pr/untilsync
+	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
 	Needs review: 26203 -  # wallet: Use correct effective value when checking target
 	Needs review & diff-minimisation: 26205 stickies-v/n25768-follow-ups
-	If needed: 26215 ryanofsky/pr/untilsync
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
