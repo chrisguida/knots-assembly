@@ -193,7 +193,7 @@ checkout origin/24.x
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
 	26143 fix_qa_rest_pr26143-24
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
-	26186 origin-pull/26186/head^							last=8b716611b1b  # rpc: Sanitize label name in various RPCs with tests
+	26186 rpc_label_sanitize-22								last=8b716611b1b  # rpc: Sanitize label name in various RPCs with tests
 		# Leaving off refactor
 	Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
 	Needs review: 26203 -  # wallet: Use correct effective value when checking target
