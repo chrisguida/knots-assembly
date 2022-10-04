@@ -177,7 +177,7 @@ checkout origin/24.x
 		#24.xTODO# Remake on latest branch after review is addressed
 	25737 rpc_type_error-24+knots							last=e68d3807979
 		# Diff-minimised, including leaving off top commit
-		FIXME: Check for https://github.com/bitcoin/bitcoin/pull/26147#discussion_r983741878
+		#24.xTODO# FIXME: Check for https://github.com/bitcoin/bitcoin/pull/26147#discussion_r983741878
 	g665 w0xlt-g/load_wallet_signal							last=b8b59ff9fea
 	26067 -										73087e7c75b	last=fa2b8ae0a22  # util: improve bitcoin-wallet exit codes
 		# NOTE: Was #24428
@@ -185,15 +185,16 @@ checkout origin/24.x
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	#24.xTODO# Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
 	26116 -													last=2c03465dfa1  # rpc: Allow importmulti watchonly imports with locked wallet
-	26124 fanquake/24.0rc2_backports^^^						last=bcfd86a2bdd fanquake/24.0rc2_backports  # docs: Add 371 to bips.md
-	26149 fanquake/24.0rc2_backports^^						last=bcfd86a2bdd fanquake/24.0rc2_backports  # Fix assert failure in miniscript string parsing
-	26172 fanquake/24.0rc2_backports^  # p2p: ProcessHeadersMessage(): fix received_new_header
-	26212 fanquake/24.0rc2_backports   # contrib: Fix capture_output in getcoins.py 
+	26124 fanquake/24.0rc2_backports^^^						last=1db89aa9cc0 fanquake/24.0rc2_backports  # docs: Add 371 to bips.md
+	26149 fanquake/24.0rc2_backports^^						last=1db89aa9cc0 fanquake/24.0rc2_backports  # Fix assert failure in miniscript string parsing
+	26172 fanquake/24.0rc2_backports^						last=1db89aa9cc0 fanquake/24.0rc2_backports  # p2p: ProcessHeadersMessage(): fix received_new_header
+	26212 fanquake/24.0rc2_backports						last=1db89aa9cc0 fanquake/24.0rc2_backports  # contrib: Fix capture_output in getcoins.py
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
 	26143 fix_qa_rest_pr26143-24
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
-	Partial: Needs review: 26186 -  # rpc: Sanitize label name in various RPCs with tests
+	26186 origin-pull/26186/head^							last=8b716611b1b  # rpc: Sanitize label name in various RPCs with tests
+		# Leaving off refactor
 	Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
 	Needs review: 26203 -  # wallet: Use correct effective value when checking target
 	Needs review & diff-minimisation: 26205 stickies-v/n25768-follow-ups
