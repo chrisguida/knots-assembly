@@ -114,8 +114,7 @@ checkout origin/24.x
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
 	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
-	22087 validate_port_opts-24+knots			5bdf4c61815	last=7a7eb909598  # Validate port-options
-		# Just diff-minimised
+	22087 validate_port_opts-24					5bdf4c61815	last=04526787b5f  # Validate port-options
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24479 bugfix_settings_numberval				1ae167e21ee
 	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
