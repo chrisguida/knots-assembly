@@ -197,8 +197,9 @@ checkout origin/24.x
 		# Leaving off refactor
 	26215 fix_index_race_pr26215-24							last=dd2ef55a86b ryanofsky/pr/untilsync
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
-	Needs review: 26203 -  # wallet: Use correct effective value when checking target
-	Needs review & diff-minimisation: 26205 stickies-v/n25768-follow-ups
+	26270 fix_wallet_nextresend_only_relaying
+	(CHECK-LAST)	last=b01682a812f stickies-v/n25768-follow-ups
+		# Based on bugfix part of #26205 stickies-v/n25768-follow-ups
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
