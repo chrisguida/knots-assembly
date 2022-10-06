@@ -197,7 +197,7 @@ checkout origin/24.x
 	26215 fix_index_race_pr26215-24+knots					last=8891949bdcb ryanofsky/pr/untilsync
 		# Diff-minimised
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
-	26270 fix_wallet_nextresend_only_relaying
+	26270 fix_wallet_nextresend_only_relaying-24			last=a44e9e23b8c fix_wallet_nextresend_only_relaying
 	(CHECK-LAST)	last=b01682a812f stickies-v/n25768-follow-ups
 		# Based on bugfix part of #26205 stickies-v/n25768-follow-ups
 	
