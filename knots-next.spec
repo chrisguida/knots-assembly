@@ -194,7 +194,8 @@ checkout origin/24.x
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
 	26186 rpc_label_sanitize-22								last=8b716611b1b  # rpc: Sanitize label name in various RPCs with tests
 		# Leaving off refactor
-	26215 fix_index_race_pr26215-24							last=dd2ef55a86b ryanofsky/pr/untilsync
+	26215 fix_index_race_pr26215-24+knots					last=8891949bdcb ryanofsky/pr/untilsync
+		# Diff-minimised
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
 	26270 fix_wallet_nextresend_only_relaying
 	(CHECK-LAST)	last=b01682a812f stickies-v/n25768-follow-ups
