@@ -1,8 +1,8 @@
-timestamp 2022-10-03 22:29:56
+timestamp 2022-10-27 05:33:45
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26240 / gui #669 for fixes
+#.. checked up to PR #26399 / gui #676 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -545,8 +545,25 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Partial: Needs review: 26186 -  # rpc: Sanitize label name in various RPCs with tests
 	Needs review & backport checking: 26188 vasild/fix_coinstatsindex_initial_sync
 	Needs review: 26203 -  # wallet: Use correct effective value when checking target
+		Backport to 24.x in #26242
 	If applicable: 26212 -  # contrib: Fix capture_output in getcoins.py
 	As needed: 26213 -  # univalue: Remove confusing getBool/isTrue/isFalse
+	If applicable: 26248 -  # net: Set relay in version msg to peers with relay permission in -blocksonly mode
+	Needs review: 26260 -  # rpc: Set best header after reconsiderblock
+	26275 -  # Fix crash on deriveaddresses when index is 2147483647 (2^31-1)
+	Needs minimisation of just a fix? 26289 stickies-v/mempool-use-result
+	Needs review: 26316 andrewtoth/block-read-shared-mutex
+	If applicable: Needs work? 26328 jonatack/update-netinfo-relaytxes-help
+	Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
+	Needs review: 26343 mzumsande/202210_addrfetch_servicebits
+	Needs review: 26347 -  # wallet: ensure the wallet is unlocked when needed for rescanning
+	Needs review: 26349 w0xlt/issue_26338
+	If relevant: 26355 -  # p2p: Handle IsContinuationOfLowWorkHeadersSync return value correctly when new headers sync is started
+		Followups in #26387
+	If needed: 26380 -  # Revert "test: check importing wallets when blocks are pruned throw an error"
+	Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
+	Needs review: g673 jonatack/2022-09-display-fallback-for-gui-peers-version-and-user-agent
+	If applicable: g676 jonatack/update-peers-transaction-relay-label-and-tooltip
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -769,6 +786,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 		# Held back insignificant comment/errormsg changes ab315e5294b...71b7cdb460e
 		# Added return value documentation (needed for QA to pass)
 		# NOTE: Was #20664
+		TODO: Consider #26325
 	20702 rpc_getblocklocations-0.21			bc93fb1825b	last=9b03c654eb3
 	(CHECK-LAST)	last=b60fdcbc2dc rpc_getblocklocations-22
 	(CHECK-LAST)	last=18389bc711a rpc_getblocklocations
@@ -885,6 +903,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Needs work: 26131 jamesob/jamesob-22-09-log-rpc-port
 	Minimised as applicable: 26162 Sjors/2022/09/taproot
 	IF IN KNOTS: Needs review: 26174 w0xlt/list_address_book
+	26280 -  # rpc: Return coinbase flag in scantxoutset
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting

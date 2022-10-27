@@ -1,7 +1,7 @@
-timestamp 2022-10-03 22:29:56
+timestamp 2022-10-27 05:33:45
 lastapply no-merge
 
-#.. checked up to PR #26240 / gui #669
+#.. checked up to PR #26399 / gui #676
 
 checkout origin/24.x
 @24.x-syslibs
@@ -197,9 +197,25 @@ checkout origin/24.x
 	26215 fix_index_race_pr26215-24+knots					last=8891949bdcb ryanofsky/pr/untilsync
 		# Diff-minimised
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
-	26270 fix_wallet_nextresend_only_relaying-24			last=a44e9e23b8c fix_wallet_nextresend_only_relaying
-	(CHECK-LAST)	last=b01682a812f stickies-v/n25768-follow-ups
-		# Based on bugfix part of #26205 stickies-v/n25768-follow-ups
+	26248 -  # net: Set relay in version msg to peers with relay permission in -blocksonly mode
+	Needs review: 26260 -  # rpc: Set best header after reconsiderblock
+	26275 -  # Fix crash on deriveaddresses when index is 2147483647 (2^31-1)
+	Diff-minimise? 26282 jamesob/2022-10-fix-au-wallet
+	Needs minimisation of just a fix? 26289 stickies-v/mempool-use-result
+	Needs review: 26316 andrewtoth/block-read-shared-mutex
+	Needs work? 26325 -  # rpc: Return accurate results for scanblocks
+	Needs work? 26328 jonatack/update-netinfo-relaytxes-help
+	Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
+	Needs review: 26343 mzumsande/202210_addrfetch_servicebits
+	26344 achow101/fix-sendall-watchonly
+	Needs review: 26349 w0xlt/issue_26338
+	26355 -  # p2p: Handle IsContinuationOfLowWorkHeadersSync return value correctly when new headers sync is started
+		Backported in #26382
+		Followups in #26387
+	If needed: 26380 -  # Revert "test: check importing wallets when blocks are pruned throw an error"
+	Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
+	Needs review: g673 jonatack/2022-09-display-fallback-for-gui-peers-version-and-user-agent
+	g676 jonatack/update-peers-transaction-relay-label-and-tooltip
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -224,8 +240,12 @@ checkout origin/24.x
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
 	# Needs review: 25957 theStack/202208-speedup_descriptor_wallet_rescan_with_block_filters
 	# Needs review: 25968 sipa/202208_headerssync_optimize
-	#24.xTODO# Consider: 25985 fanquake/revert_slow_macos_sqlite
 	#24.xTODO# Needs review: 26008 achow101/improve-many-desc-ismine
+	# Needs work/deps: 26308 -  # rpc/rest/zmq: reduce LOCK(cs_main) scope: ~6 times as many requests per second
+		# Was #21006 (never in Knots)
+	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
+	26375 andrewtoth/no-read-zmq
+	Needs review: 26396 -  # net: Avoid SetTxRelay for feeler connections
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -387,7 +407,6 @@ checkout origin/24.x
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 		# TODO: Should align the direction column on the right side, but Qt ignores alignment for icons :/
 		TODO? gcp 7992ff04a5e (qt_peers_directionarrow-0.21+knots) GUI/Peers: Shorted "Received" header to "Recv'd" so it fits the column
-	# Needs review: 21006 -  # rpc: reduce LOCK(cs_min) scope in rest_block: ~5 times as many requests per second
 	# Needs work: 15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
@@ -534,6 +553,7 @@ checkout origin/24.x
 	TODO: sendrawtransaction to a specific node bypassing mempool
 		See https://github.com/bitcoinknots/bitcoin/issues/50
 	26207 andrewtoth/rest-verbose-mempool
+	26280 -  # rpc: Return coinbase flag in scantxoutset
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -627,6 +647,7 @@ checkout origin/24.x
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 	Needs work? g650 -  # qt, refactor: Add Import to Wallet GUI
 	Needs review: 26174 w0xlt/list_address_book
+	Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 # Non-upstreamed functionality:
 	TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	n/a   restore_feefilter_opt					b0a928d3f25
@@ -683,6 +704,7 @@ checkout origin/24.x
 	-     gui_peers_no_net_column				6d7c55fa917
 	22439 guix_in_gitian-23+knots				b3670947f2d	last=ebda0463748 achow101/guix-in-gitian
 	#24.xTODO# revert #23927  rpc: Pruning nodes can not fetch blocks before syncing past their height
+		or?? 26395 fix to 23927
 	# TODO: revert #24031  build: don't compress macOS DMG
 	TODO: * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		See #25922, backported with this in 21.x
@@ -724,6 +746,8 @@ checkout origin/24.x
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
 	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
+	Needs review/options: 26348 -  # Make P2SH redeem script "IF .. PUSH <x> ELSE ... PUSH <y> ENDIF CHECKMULTISIG .. " standard
+	Needs refactoring to only happen for -acceptnonstdtxn(?): 26398 instagibbs/relax_too_small_tx_equality
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		7502bba0dc8
 	7483  svg_icon-23+knots						edbcba95282
