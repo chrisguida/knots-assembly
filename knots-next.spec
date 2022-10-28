@@ -159,7 +159,6 @@ checkout origin/24.x
 	25727 -													last=019e02cb26d  # util, config: error on startup if conf or reindex are set in config file
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	# Meh: 25854 -  # tracing.md trivial English fixes
-	# Needs review: Either 25856 or 25858 to fix PSBTs with empty tap_tree
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
 		# NOTE: Fixes Ctrl-C being caught/ignored
 	#24.xTODO# Needs work/concept: g653 achow101-g/show-bal-send
@@ -184,18 +183,12 @@ checkout origin/24.x
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	#24.xTODO# Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
 	26116 -													last=2c03465dfa1  # rpc: Allow importmulti watchonly imports with locked wallet
-	26124 fanquake/24.0rc2_backports^^^						last=1db89aa9cc0 fanquake/24.0rc2_backports  # docs: Add 371 to bips.md
-	26149 fanquake/24.0rc2_backports^^						last=1db89aa9cc0 fanquake/24.0rc2_backports  # Fix assert failure in miniscript string parsing
-	26172 fanquake/24.0rc2_backports^						last=1db89aa9cc0 fanquake/24.0rc2_backports  # p2p: ProcessHeadersMessage(): fix received_new_header
-	26212 fanquake/24.0rc2_backports						last=1db89aa9cc0 fanquake/24.0rc2_backports  # contrib: Fix capture_output in getcoins.py
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
 	26143 fix_qa_rest_pr26143-24
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
 	26186 rpc_label_sanitize-22								last=8b716611b1b  # rpc: Sanitize label name in various RPCs with tests
 		# Leaving off refactor
-	26215 fix_index_race_pr26215-24+knots					last=8891949bdcb ryanofsky/pr/untilsync
-		# Diff-minimised
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
 	26248 -  # net: Set relay in version msg to peers with relay permission in -blocksonly mode
 	Needs review: 26260 -  # rpc: Set best header after reconsiderblock
@@ -209,9 +202,7 @@ checkout origin/24.x
 	Needs review: 26343 mzumsande/202210_addrfetch_servicebits
 	26344 achow101/fix-sendall-watchonly
 	Needs review: 26349 w0xlt/issue_26338
-	26355 -  # p2p: Handle IsContinuationOfLowWorkHeadersSync return value correctly when new headers sync is started
-		Backported in #26382
-		Followups in #26387
+	Consider 26387 (followups to #26355)
 	If needed: 26380 -  # Revert "test: check importing wallets when blocks are pruned throw an error"
 	Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
 	Needs review: g673 jonatack/2022-09-display-fallback-for-gui-peers-version-and-user-agent
@@ -781,6 +772,7 @@ checkout origin/24.x
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 	n/a  (cherrypick=e176316e332)				dd99e2b4305  # update manpages (build first)
 		BELOW TODO: ensure 26117 is fixed
+		TODO: update bitcoin conf (like d68b6abeb84)
 	n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
