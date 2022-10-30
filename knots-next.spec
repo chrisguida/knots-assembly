@@ -162,7 +162,7 @@ checkout origin/24.x
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except
 		# NOTE: Fixes Ctrl-C being caught/ignored
 	#24.xTODO# Needs work/concept: g653 achow101-g/show-bal-send
-	25880 -													last=4b0dbc0f3eb  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
+	25880 -													last=39b93649c4b  # p2p: Increase BLOCK_STALLING_TIMEOUT timeout during IBD
 	#24.xTODO# Needs review: 25935 dist_bitcoinconf_as_example
 	# Needs review: 25938 mzumsande/202208_fixed_cjdns
 	g662  qt_fix_txview_202209
@@ -190,7 +190,7 @@ checkout origin/24.x
 	26186 rpc_label_sanitize-22								last=8b716611b1b  # rpc: Sanitize label name in various RPCs with tests
 		# Leaving off refactor
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
-	26248 -  # net: Set relay in version msg to peers with relay permission in -blocksonly mode
+	26248 p2p_relay_exception_in_msg-24
 	Needs review: 26260 -  # rpc: Set best header after reconsiderblock
 	26275 -  # Fix crash on deriveaddresses when index is 2147483647 (2^31-1)
 	Diff-minimise? 26282 jamesob/2022-10-fix-au-wallet
