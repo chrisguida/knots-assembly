@@ -85,7 +85,7 @@ checkout origin/24.x
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	19888 getblockstats_utxo_actual-24+knots	02627b9a519	last=7232bd27184
+	19888 getblockstats_utxo_actual-24+knots	02627b9a519	last=d885bb2f6ea
 		# Diff-minimised incl test changes
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
@@ -128,7 +128,7 @@ checkout origin/24.x
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
 	# Needs review: 24912 mruddy/nchaintx_type
-	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=da8e95c0140 mruddy/issue_23852_import_prune
+	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=347664ec718 mruddy/issue_23852_import_prune
 	# Needs review: 24972 hebasto/220425-no-libtool
 	# Needs review: 24994 hebasto/220426-consensus
 	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79
@@ -156,7 +156,7 @@ checkout origin/24.x
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
 	g633  -													last=5fde8fbe085  # qt: Fix shortcut ambiguities
-	25727 -													last=019e02cb26d  # util, config: error on startup if conf or reindex are set in config file
+	25727 -													last=deba6fe3158  # util, config: error on startup if conf or reindex are set in config file
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	# Meh: 25854 -  # tracing.md trivial English fixes
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except

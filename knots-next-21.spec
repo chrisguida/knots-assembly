@@ -165,7 +165,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	19884 fixedseeds-0.21						35264ce4152
 		# +partial #21254 (bugfix only)
 	22798 doc_fix_pr22798-21.1					4ab4007c290
-	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=7232bd27184
+	19888 getblockstats_utxo_actual-21.1+knots	2a7f36a8d4a	last=d885bb2f6ea
 	(CHECK-LAST)	last=6fb4286f0eb getblockstats_utxo_actual-22+knots
 	(CHECK-LAST)	last=937d948b76f getblockstats_utxo_actual-23+knots
 	(CHECK-LAST)	last=a339d3dec51 getblockstats_utxo_actual-24+knots
@@ -405,7 +405,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Only half is applicable to 21.x
 	25282 fix_configure_def_use_libevent-21					last=f0f5cd79b5d fix_configure_def_use_libevent
 	24933 strerror_threadsafe-21							last=3c651702c68 strerror_threadsafe-23
-	24957 fix_prune_during_loadblock-0.20					last=da8e95c0140 mruddy/issue_23852_import_prune
+	24957 fix_prune_during_loadblock-0.20					last=347664ec718 mruddy/issue_23852_import_prune
 	(CHECK-LAST)	last=c86f129fd1d fix_prune_during_loadblock-22
 	24984 fix_wallet_race_attachingbb-21^
 	25088 fix_wallet_race_attachingbb-21					last=ba10b90915d fix_wallet_race_attachingbb
@@ -494,7 +494,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# Maybe too complex and unnecessary for LTS branch
 		# Fixed in #26172
 	# TODO, Not trivial backport: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
-	25727 reject_conf_in_conf-21+knots						last=019e02cb26d
+	25727 reject_conf_in_conf-21+knots						last=deba6fe3158
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	Merged in master: 25768 achow101/unify-resend-reaccept
 		Fixed by #26132 and #26205
