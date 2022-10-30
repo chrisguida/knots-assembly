@@ -156,7 +156,7 @@ checkout origin/24.x
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
 	g633  -													last=5fde8fbe085  # qt: Fix shortcut ambiguities
-	25727 -													last=deba6fe3158  # util, config: error on startup if conf or reindex are set in config file
+	25727 reject_conf_in_conf-23							last=deba6fe3158  # util, config: error on startup if conf or reindex are set in config file
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	# Meh: 25854 -  # tracing.md trivial English fixes
 	# Needs work/concept: 25867 -  # lint: enable E722 do not use bare except

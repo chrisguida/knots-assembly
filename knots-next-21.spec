@@ -495,6 +495,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# Fixed in #26172
 	# TODO, Not trivial backport: 25720 sdaftuar/2022-07-reduce-headers-sync-bandwidth
 	25727 reject_conf_in_conf-21+knots						last=deba6fe3158
+	(CHECK-LAST)	last=01cbf92c7e7 reject_conf_in_conf-23
 	# Needs review: 25729 -  # wallet: Check max transaction weight in CoinSelection
 	Merged in master: 25768 achow101/unify-resend-reaccept
 		Fixed by #26132 and #26205
