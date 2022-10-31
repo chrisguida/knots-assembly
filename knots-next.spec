@@ -192,7 +192,6 @@ checkout origin/24.x
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
 	26248 p2p_relay_exception_in_msg-24
 	#24.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
-	26275 -  # Fix crash on deriveaddresses when index is 2147483647 (2^31-1)
 	Diff-minimise? 26282 jamesob/2022-10-fix-au-wallet
 	Needs minimisation of just a fix? 26289 stickies-v/mempool-use-result
 	Needs review: 26316 andrewtoth/block-read-shared-mutex
@@ -200,8 +199,6 @@ checkout origin/24.x
 	Needs work? 26328 jonatack/update-netinfo-relaytxes-help
 	Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
 	Needs review: 26343 mzumsande/202210_addrfetch_servicebits
-	26344 achow101/fix-sendall-watchonly
-	Needs review: 26349 w0xlt/issue_26338
 	Consider 26387 (followups to #26355)
 	If needed: 26380 -  # Revert "test: check importing wallets when blocks are pruned throw an error"
 	Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
