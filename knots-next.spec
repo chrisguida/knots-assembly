@@ -128,7 +128,7 @@ checkout origin/24.x
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
 	# Needs review: 24912 mruddy/nchaintx_type
-	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=347664ec718 mruddy/issue_23852_import_prune
+	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=2f62704430b mruddy/issue_23852_import_prune
 	# Needs review: 24972 hebasto/220425-no-libtool
 	# Needs review: 24994 hebasto/220426-consensus
 	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79
@@ -191,7 +191,7 @@ checkout origin/24.x
 		# Leaving off refactor
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
 	26248 p2p_relay_exception_in_msg-24
-	Needs review: 26260 -  # rpc: Set best header after reconsiderblock
+	#24.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
 	26275 -  # Fix crash on deriveaddresses when index is 2147483647 (2^31-1)
 	Diff-minimise? 26282 jamesob/2022-10-fix-au-wallet
 	Needs minimisation of just a fix? 26289 stickies-v/mempool-use-result
