@@ -192,7 +192,8 @@ checkout origin/24.x
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
 	26248 p2p_relay_exception_in_msg-24
 	#24.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
-	Diff-minimise? 26282 jamesob/2022-10-fix-au-wallet
+	# Not relevant until assumeutxo is possible: 26282 jamesob/2022-10-fix-au-wallet
+		# NOTE: Minimised form in 8526805f6f9
 	Needs minimisation of just a fix? 26289 stickies-v/mempool-use-result
 	Needs review: 26316 andrewtoth/block-read-shared-mutex
 	Needs work? 26325 -  # rpc: Return accurate results for scanblocks
