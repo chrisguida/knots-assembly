@@ -565,6 +565,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
 	Needs review: g673 jonatack/2022-09-display-fallback-for-gui-peers-version-and-user-agent
 	If applicable: g676 jonatack/update-peers-transaction-relay-label-and-tooltip
+		+g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)

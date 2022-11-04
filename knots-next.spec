@@ -200,9 +200,9 @@ checkout origin/24.x
 	#24.xTODO# Needs work? 26328 jonatack/update-netinfo-relaytxes-help
 	#24.xTODO# Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
 	#24.xTODO# Needs review: 26343 mzumsande/202210_addrfetch_servicebits
-	If needed: 26380 -  # Revert "test: check importing wallets when blocks are pruned throw an error"
-	Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
-	Needs review: g673 jonatack/2022-09-display-fallback-for-gui-peers-version-and-user-agent
+	#24.xTODO# Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
+	g673 qt_peers_fallback_versionua-24
+	g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
 	g676 jonatack/update-peers-transaction-relay-label-and-tooltip
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
