@@ -128,7 +128,7 @@ checkout origin/24.x
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
 	# Needs review: 24912 mruddy/nchaintx_type
-	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=2f62704430b mruddy/issue_23852_import_prune
+	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=488682e7851 mruddy/issue_23852_import_prune
 	# Needs review: 24972 hebasto/220425-no-libtool
 	# Needs review: 24994 hebasto/220426-consensus
 	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79
@@ -194,13 +194,12 @@ checkout origin/24.x
 	#24.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
 	# Not relevant until assumeutxo is possible: 26282 jamesob/2022-10-fix-au-wallet
 		# NOTE: Minimised form in 8526805f6f9
-	Needs minimisation of just a fix? 26289 stickies-v/mempool-use-result
-	Needs review: 26316 andrewtoth/block-read-shared-mutex
-	Needs work? 26325 -  # rpc: Return accurate results for scanblocks
-	Needs work? 26328 jonatack/update-netinfo-relaytxes-help
-	Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
-	Needs review: 26343 mzumsande/202210_addrfetch_servicebits
-	Consider 26387 (followups to #26355)
+	# Needs review & not a bug in practice: Just the fix from: 26289 stickies-v/mempool-use-result
+	#24.xTODO# Needs review: 26316 andrewtoth/block-read-shared-mutex
+	#24.xTODO# Needs work? 26325 -  # rpc: Return accurate results for scanblocks
+	#24.xTODO# Needs work? 26328 jonatack/update-netinfo-relaytxes-help
+	#24.xTODO# Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
+	#24.xTODO# Needs review: 26343 mzumsande/202210_addrfetch_servicebits
 	If needed: 26380 -  # Revert "test: check importing wallets when blocks are pruned throw an error"
 	Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
 	Needs review: g673 jonatack/2022-09-display-fallback-for-gui-peers-version-and-user-agent

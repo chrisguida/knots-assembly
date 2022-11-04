@@ -560,7 +560,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: 26347 -  # wallet: ensure the wallet is unlocked when needed for rescanning
 	Needs review: 26349 w0xlt/issue_26338
 	If relevant: 26355 -  # p2p: Handle IsContinuationOfLowWorkHeadersSync return value correctly when new headers sync is started
-		Followups in #26387
+		Followups in #26387 (not included in 24.x)
 	If needed: 26380 -  # Revert "test: check importing wallets when blocks are pruned throw an error"
 	Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
 	Needs review: g673 jonatack/2022-09-display-fallback-for-gui-peers-version-and-user-agent
