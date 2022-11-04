@@ -147,7 +147,6 @@ checkout origin/24.x
 	# Needs review: 25227 -  # Return empty vector on invalid hex encoding
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
-	25548 readlink_overflow_check
 	#24.xTODO# Check on #25561
 	# Needs concept review: 25574 -  # validation: Skip VerifyDB checks of level >=3 if dbcache is too small
 	# Needs work: 25595 instagibbs/verify_psbt_input
