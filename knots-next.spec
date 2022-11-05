@@ -213,7 +213,7 @@ checkout origin/24.x
 	# Needs work/review: 26421 fanquake/fix_macos_zeromq_older_ubuntu AND/OR 26422
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
 	# Relevant? 26448 mzumsande/202211_fix_sendtxrcncl
-	26449 theStack/202211-rpc_doc_add_missing_bech32m_for_changetype_params
+	26449 rpcdoc_change_type_bech32m_pr26449-23
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -242,7 +242,7 @@ checkout origin/24.x
 	# Needs work/deps: 26308 -  # rpc/rest/zmq: reduce LOCK(cs_main) scope: ~6 times as many requests per second
 		# Was #21006 (never in Knots)
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
-	26375 andrewtoth/no-read-zmq
+	26375 zmq_optimise_duplread-24							last=7b631dc9b19 andrewtoth/no-read-zmq
 	Needs review: 26396 -  # net: Avoid SetTxRelay for feeler connections
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify

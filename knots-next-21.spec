@@ -571,7 +571,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Meh? 26424 -  # doc: correct deriveaddresses RPC name
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
 	# Relevant? 26448 mzumsande/202211_fix_sendtxrcncl
-	If applicable: 26449 theStack/202211-rpc_doc_add_missing_bech32m_for_changetype_params
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
