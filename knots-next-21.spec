@@ -1,8 +1,8 @@
-timestamp 2022-10-27 05:33:45
+timestamp 2022-11-05 08:14:17
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26399 / gui #676 for fixes
+#.. checked up to PR #26459 / gui #677 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -566,6 +566,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: g673 jonatack/2022-09-display-fallback-for-gui-peers-version-and-user-agent
 	If applicable: g676 jonatack/update-peers-transaction-relay-label-and-tooltip
 		+g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
+	# Relevant? 26404 mzumsande/202210_testfix_blockfrompeer
+	If applicable: 26418 achow101/fix-psbt-multia
+	Meh? 26424 -  # doc: correct deriveaddresses RPC name
+	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
+	# Relevant? 26448 mzumsande/202211_fix_sendtxrcncl
+	If applicable: 26449 theStack/202211-rpc_doc_add_missing_bech32m_for_changetype_params
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -1159,6 +1165,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 #21.xTODO# Check there are only [[noreturn]]s in: git grep '\[\[[a-z_]\+\]\]' src (nodiscard, maybe_unused, etc are C++17)
 #21.xTODO# Check on #21508
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
+		TODO: If applicable, #26443
 	n/a  knots_bips-21							95f1a0c7adb
 	n/a  (bump_version=Knots:20210629)			27c16a89cc5  # DO NOT CHANGE for just fixes
 #	n/a  knots_historical_relnotes				61100a2

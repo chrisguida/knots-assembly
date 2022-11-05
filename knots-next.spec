@@ -1,7 +1,7 @@
-timestamp 2022-10-27 05:33:45
+timestamp 2022-11-05 08:14:17
 lastapply no-merge
 
-#.. checked up to PR #26399 / gui #676
+#.. checked up to PR #26459 / gui #677
 
 checkout origin/24.x
 @24.x-syslibs
@@ -181,6 +181,7 @@ checkout origin/24.x
 		#24.xTODO# Diff-minimise??
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	#24.xTODO# Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
+		# NOTE: Included in backport PR #26457
 	26116 -													last=2c03465dfa1  # rpc: Allow importmulti watchonly imports with locked wallet
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
@@ -197,12 +198,22 @@ checkout origin/24.x
 	#24.xTODO# Needs review: 26316 andrewtoth/block-read-shared-mutex
 	#24.xTODO# Needs work? 26325 -  # rpc: Return accurate results for scanblocks
 	#24.xTODO# Needs work? 26328 jonatack/update-netinfo-relaytxes-help
+		# NOTE: Included in backport PR #26457
 	#24.xTODO# Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
 	#24.xTODO# Needs review: 26343 mzumsande/202210_addrfetch_servicebits
 	#24.xTODO# Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
 	g673 qt_peers_fallback_versionua-24
 	g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
 	#24.xTODO# Is correct? g676 jonatack-g/update-peers-transaction-relay-label-and-tooltip
+		# NOTE: Included in backport PR #26457
+	# Relevant? 26404 mzumsande/202210_testfix_blockfrompeer
+	# Relevant? 26417 mzumsande/202210_testfix_indexprune
+	#24.xTODO# 26418 achow101/fix-psbt-multia
+		# NOTE: Included in backport PR #26452
+	# Needs work/review: 26421 fanquake/fix_macos_zeromq_older_ubuntu AND/OR 26422
+	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
+	# Relevant? 26448 mzumsande/202211_fix_sendtxrcncl
+	26449 theStack/202211-rpc_doc_add_missing_bech32m_for_changetype_params
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -408,6 +419,7 @@ checkout origin/24.x
 		# TODO: diff-minimise??
 	21319 getblock_optimise						bcf986d0d05
 		# Context: 17529 rpc: Faster getblock using PureBlock
+	Make CRCs optional: 26415 andrewtoth/read-raw-block
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
@@ -541,6 +553,8 @@ checkout origin/24.x
 		See https://github.com/bitcoinknots/bitcoin/issues/50
 	26207 andrewtoth/rest-verbose-mempool
 	26280 -  # rpc: Return coinbase flag in scantxoutset
+	Needs work: 26441 brunoerg/2022-10-whitelist-rpc
+	Needs option: 26454 petertodd/2022-feebump-without-optin
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -735,6 +749,8 @@ checkout origin/24.x
 	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
 	Needs review/options: 26348 -  # Make P2SH redeem script "IF .. PUSH <x> ELSE ... PUSH <y> ENDIF CHECKMULTISIG .. " standard
 	Needs refactoring to only happen for -acceptnonstdtxn(?): 26398 instagibbs/relax_too_small_tx_equality
+	# Problematic: 26403 instagibbs/ephemeral-anchors
+	Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		7502bba0dc8
 	7483  svg_icon-23+knots						edbcba95282
