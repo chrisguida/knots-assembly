@@ -202,7 +202,7 @@ checkout origin/24.x
 	#24.xTODO# Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
 	g673 qt_peers_fallback_versionua-24
 	g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
-	g676 jonatack/update-peers-transaction-relay-label-and-tooltip
+	#24.xTODO# Is correct? g676 jonatack-g/update-peers-transaction-relay-label-and-tooltip
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
