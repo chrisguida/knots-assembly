@@ -1,8 +1,8 @@
-timestamp 2022-11-05 08:14:17
+timestamp 2022-11-07 23:26:35
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26459 / gui #677 for fixes
+#.. checked up to PR #26462 / gui #677 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -571,6 +571,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Meh? 26424 -  # doc: correct deriveaddresses RPC name
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
 	# Relevant? 26448 mzumsande/202211_fix_sendtxrcncl
+	Needs work: 26462 theStack/202211-wallet_fix_crash_on_descriptor_wallet_load
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
