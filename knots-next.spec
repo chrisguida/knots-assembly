@@ -1,7 +1,7 @@
-timestamp 2022-11-07 23:26:35
+timestamp 2022-11-07 23:43:51
 lastapply no-merge
 
-#.. checked up to PR #26462 / gui #677
+#.. checked up to PR #26467 / gui #677
 
 checkout origin/24.x
 @24.x-syslibs
@@ -556,6 +556,7 @@ checkout origin/24.x
 	26280 -  # rpc: Return coinbase flag in scantxoutset
 	Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 	Needs option: 26454 petertodd/2022-feebump-without-optin
+	Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
