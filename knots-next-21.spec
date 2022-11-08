@@ -643,10 +643,10 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	(CHECK-LAST)	last=cd52287b586 fundraw_minconf-0.21
 	(CHECK-LAST)	last=9834825c4b7 rpc_fundtx_minmaxconf-23+knots
 	(CHECK-LAST)	last=7f4c9039f71 origin-pull/22049/head
-	(CHECK-LAST)	last=17b5bdea359 rpc_fundtx_minmaxconf
+	(CHECK-LAST)	last=4485a0bbbb7 rpc_fundtx_minmaxconf-24
 	(CHECK-LAST)	last=972a1feefa8 fundraw_min_conf_deprecated-23+knots
 	(CHECK-LAST)	last=b5c60e131d3 fundraw_min_conf_deprecated-24+knots
-	(CHECK-LAST)	last=1e14aeacd3a origin-pull/25375/head
+	(CHECK-LAST)	last=f38eb81191e origin-pull/25375/head
 		# Includes param rename (min_conf->minconf) and tests from #22049 (but not new maxconf param)
 		# TODO: Once #25375 is merged, include its strings/tests
 		# NOTE: Backported #25375 (minus sendall RPC, not in Knots 21.x) in b289e97b8f0

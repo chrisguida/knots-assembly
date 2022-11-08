@@ -265,7 +265,7 @@ checkout origin/24.x
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	25375 rpc_fundtx_minmaxconf				e80afead907	last=1e14aeacd3a  # rpc: allow specifying min chain depth for inputs in fund calls
+	25375 rpc_fundtx_minmaxconf-24				e80afead907	last=f38eb81191e  # rpc: allow specifying min chain depth for inputs in fund calls
 	(CHECK-LAST)	last=7f4c9039f71 origin-pull/22049/head
 		# Was #14641 (moved to Knots compat)
 		# Was #22049
