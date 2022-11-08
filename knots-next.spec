@@ -214,7 +214,7 @@ checkout origin/24.x
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
 	# Relevant? 26448 mzumsande/202211_fix_sendtxrcncl
 	26449 rpcdoc_change_type_bech32m_pr26449-23
-	Needs work: 26462 theStack/202211-wallet_fix_crash_on_descriptor_wallet_load
+	#24.xTODO# Needs work: 26462 theStack/202211-wallet_fix_crash_on_descriptor_wallet_load
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -244,7 +244,7 @@ checkout origin/24.x
 		# Was #21006 (never in Knots)
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
 	26375 zmq_optimise_duplread-24							last=7b631dc9b19 andrewtoth/no-read-zmq
-	Needs review: 26396 -  # net: Avoid SetTxRelay for feeler connections
+	26396 net_feeler_no_txrelay-24
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
