@@ -265,11 +265,11 @@ checkout origin/24.x
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	22049 rpc_fundtx_minmaxconf				e80afead907	last=7f4c9039f71  # rpc: allow specifying min chain depth for inputs in fund calls
-	(CHECK-LAST)	last=1e14aeacd3a origin-pull/25375/head
+	25375 rpc_fundtx_minmaxconf				e80afead907	last=1e14aeacd3a  # rpc: allow specifying min chain depth for inputs in fund calls
+	(CHECK-LAST)	last=7f4c9039f71 origin-pull/22049/head
 		# Was #14641 (moved to Knots compat)
+		# Was #22049
 		# Includes fix for typo "maxconfs" in error msg
-		# TODO: Once #25375 is merged, include its strings/tests
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
