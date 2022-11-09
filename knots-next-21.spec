@@ -653,7 +653,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# NOTE: Originally #12911
-	(CHECK-LAST)	last=1eef939edf1 rpc_sign_show_fees
+	(CHECK-LAST)	last=691a2af4e59 rpc_sign_show_fees
 	g119  rm_send2self-mini-21					8a6ed938070	last=2bb4e307634 rm_send2self
 	(CHECK-LAST)	last=251189a4d4a rm_send2self-mini
 		# NOTE: Originally #15115
