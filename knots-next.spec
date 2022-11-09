@@ -290,14 +290,11 @@ checkout origin/24.x
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
 	g119  rm_send2self-mini						5f0c6043003	last=2bb4e307634 rm_send2self
 		# NOTE: Originally #15115
-		TODO? gcp 1c73f0e94e3 (rm_send2self-mini-21) Bugfix: GUI: Correct format specifier for Date sort key
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review: 15204 promag:2019-01-openexternalwallet
 	# WIP: 15307 jnewbery/wallet_tool_zaptxs_salvage
 	# Needs review: 15414 [wallet] allow adding pubkeys from imported private keys to keypool
-	Merged: 15423 tor_socks_port						ef0037b9519
-		TODO: gcp d0f18ffbc6f torcontrol: Fallback to 127.0.0.1 if resolving the torcontrol-provided host fails
 	# Needs review: 15424 Sjors:2019/02/wallet_tool_remove_metadata
 	# Needs review/finalisation: 15493 rfc: Add -printconfig arg to bitcoind
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
