@@ -301,13 +301,10 @@ checkout origin/24.x
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram+pr15836_api				d001a8627f4	last=b94292a7cb jonas/2019/04/feeinfo
+	(CHECK-LAST)	last=f2fb1f17444 origin-pull/21422/head
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ?
-		FIXME: f93da695638 Bugfix: QA: Ensure mempool_fee_histogram expected feerates rounded down
-		BUG: 'with_fee_histogram' compat param (as bool) will be rejected by type check
-		TODO? gcp f93da695638 (fee_histogram-21) Bugfix: QA: Ensure mempool_fee_histogram expected feerates rounded down
-	(CHECK-LAST)	last=f34072a4d4f origin-pull/21422/head
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
