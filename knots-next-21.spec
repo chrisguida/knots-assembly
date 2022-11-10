@@ -671,7 +671,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	g562  wallet_no_reuse-0.21+knots			952bb1fb9bc	last=776947e6cac wallet_warn_reuse_gui
 		# NOTE: Was #15987
 		# NOTE: Uses older bloom filter implementation
-	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=3ee478b9cba getaddressinfo_txids
+	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=c507f7c58d7 getaddressinfo_txids
 	18772 -										72084e6f2d7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	22918 rpc_getblock_prevouts_fees-0.21		ce365cd8a1c	last=5c34507ecbb
 	(CHECK-LAST)	last=80612d8aded rpc_getblock_prevouts_fees-22
