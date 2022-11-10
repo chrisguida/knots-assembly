@@ -326,7 +326,7 @@ checkout origin/24.x
 	-     qt_openuri_pastebtn_shortcut-23		055826bebb2
 		# NOTE: Used to be part of gui#319 (formerly #17955)
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
-	18014 siphash_optimise_pr18014-0.21+knots	0bb929ebf49	last=19e28a41168 elichai/2020-01-siphash
+	18014 siphash_optimise_pr18014-0.21+knots	0bb929ebf49	last=409c2e34522 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
 	# Needs work/review/completion: 18242 jonas/2020/03/net_v2

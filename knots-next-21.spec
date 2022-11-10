@@ -668,11 +668,11 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	17463 gui_custom_sendyes					087d3e642af
-	g562  wallet_no_reuse-0.21+knots			952bb1fb9bc	last=b31682dbc4d wallet_warn_reuse_gui
+	g562  wallet_no_reuse-0.21+knots			952bb1fb9bc	last=627aa679d26 wallet_warn_reuse_gui
 		# NOTE: Was #15987
 		# NOTE: Uses older bloom filter implementation
-	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=e44956bef58 getaddressinfo_txids
-		TODO: backport bccbdc0a7e771aeb370a839118c4181932597d31 ?
+	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=c4f88f41453 getaddressinfo_txids
+		TODO: backport bccbdc0a7e771aeb370a839118c4181932597d31 + 94931090134 ?
 	18772 -										72084e6f2d7 last=66d012ad7f9  # rpc: calculate fees in getblock using BlockUndo data
 	22918 rpc_getblock_prevouts_fees-0.21		ce365cd8a1c	last=5c34507ecbb
 	(CHECK-LAST)	last=80612d8aded rpc_getblock_prevouts_fees-22
@@ -705,7 +705,7 @@ m	16795 rpc_inferred_output_descriptors-21+k	5d1bc19f6ca
 	g319  gui_openuri_pastebtn-0.21				24178d81b5f	last=dbde0558ce7
 	(CHECK-LAST)	last=33258aef4cb qt_openuri_pastebtn_shortcut-23
 		# NOTE: Used to be #17955
-	18014 siphash_optimise_pr18014-0.21+knots	0c346e55ba0	last=19e28a41168 elichai/2020-01-siphash
+	18014 siphash_optimise_pr18014-0.21+knots	0c346e55ba0	last=409c2e34522 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
 m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
