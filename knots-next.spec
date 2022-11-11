@@ -332,11 +332,11 @@ checkout origin/24.x
 	# Needs work/review/completion: 18242 jonas/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
-	24202 rpc_dumptxoutset_hr-23+knots			196de74322c	last=1053636ddd9
+	24202 rpc_dumptxoutset_hr					196de74322c	last=1053636ddd9
 	(CHECK-LAST)	last=65d0697fe34 origin-pull/18689/head
 		# Diff-minimised
 		# NOTE: Was #18689
-		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202/files#r801191486
+		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202#discussion_r801191486
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	19242 uaappend								c6fa3b51229
