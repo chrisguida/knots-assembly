@@ -733,7 +733,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		#		* 2554dc0ba3d Refactor PruneLockInfo.temporary to default to true
 		# NOTE: Held back extra prune lock buffer & rebasing on #21726
 		TODO: Check if any fix from #26215 is needed
-	19762 ryanofsky/pr/named					3505e6dedbb	last=894c414dafb
+	19762 ryanofsky/pr/named					3505e6dedbb	last=fa15c9b843b
 	19776 -										2d98f923dec	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	19873 mempressure-21						368b6daca5d last=691e1d1dddd mempressure
 	20226 rpc_listdescriptors-0.21				e6939a88d7c	last=647b81b7093
