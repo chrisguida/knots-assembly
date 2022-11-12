@@ -344,7 +344,6 @@ checkout origin/24.x
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 		# w/ 22807 ?
 	19463 prune_locks							120c96e9b59
-		TODO? gcp 5630127ef8c (prune_locks-0.21) Bugfix: blockstorage: Delete persistent lock updating to temporary in UpdatePruneLock even with sync=true
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
