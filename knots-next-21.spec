@@ -735,7 +735,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		TODO: Check if any fix from #26215 is needed
 	19762 ryanofsky/pr/named					3505e6dedbb	last=fa15c9b843b
 	19776 -										2d98f923dec	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
-	19873 mempressure-21						368b6daca5d last=691e1d1dddd mempressure
+	19873 mempressure-21						368b6daca5d last=f409894a139 mempressure
 	20226 rpc_listdescriptors-0.21				e6939a88d7c	last=647b81b7093
 	(CHECK-LAST)	last=90b7bb0121c rpcdoc_listdescs_active_internal-22
 		# +#24977 [diff-minimised inline]

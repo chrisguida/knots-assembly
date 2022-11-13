@@ -353,6 +353,7 @@ checkout origin/24.x
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 	19873 mempressure							a6c4444899c
+	# Needs review/testing: - maxmem_coins_cache
 	# Needs work: g86   hebasto-g/200902-tor
 	# Needs work: 20172 hebasto/201016-tor
 	g291  gui_trafficgraph_vert-0.21			30a7f0f9263	last=500841e49d6  # Enlarge Network Traffic Graph
