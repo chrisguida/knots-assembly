@@ -1,7 +1,7 @@
-timestamp 2022-11-07 23:43:51
+timestamp 2022-11-14 23:41:14
 lastapply no-merge
 
-#.. checked up to PR #26467 / gui #677
+#.. checked up to PR #26499 / gui #677
 
 checkout origin/24.x
 @24.x-syslibs
@@ -212,6 +212,8 @@ checkout origin/24.x
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
 	# Relevant? 26448 mzumsande/202211_fix_sendtxrcncl
 	#24.xTODO# Needs work: 26462 theStack/202211-wallet_fix_crash_on_descriptor_wallet_load
+	# Needs conceptual/review: 26471 -  # Don't share mempool with dbcache in -blocksonly mode
+	#24.xTODO# Needs review: 26477 jamesob/2022-11-fix-maxtipage
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -242,6 +244,7 @@ checkout origin/24.x
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
 	26375 zmq_optimise_duplread-24							last=7b631dc9b19 andrewtoth/no-read-zmq
 	26396 net_feeler_no_txrelay-24
+	# Needs review: 26486 sipa/202211_batchnotfound
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -347,6 +350,7 @@ checkout origin/24.x
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	19762 rpc_named_and_pos-22					48e58c13311	last=ce881493438 ryanofsky/pr/named
+	# Needs work: 26485 ryanofsky/pr/nonly
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 	19873 mempressure							a6c4444899c
@@ -547,6 +551,8 @@ checkout origin/24.x
 	Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 	Needs option: 26454 petertodd/2022-feebump-without-optin
 	Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
+	Needs triage for Knots & review: 26487 -  # log: improve some validation log messages to include hashPrevBlock
+	Needs work: 26495 -  # contrib: Speed up systemd boot
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -701,6 +707,7 @@ checkout origin/24.x
 	# TODO: revert #24031  build: don't compress macOS DMG
 	TODO: * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		See #25922, backported with this in 21.x
+	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
 # Non-upstreamed Knots compatibility:
 	TODO: -netinfo and other version checks might need to be more flexible?
 	#24.xTODO# revert? #24505  wallet: Add a deprecation warning for newly created legacy wallets

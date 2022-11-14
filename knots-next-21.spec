@@ -1,8 +1,8 @@
-timestamp 2022-11-07 23:43:51
+timestamp 2022-11-14 23:41:14
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26467 / gui #677 for fixes
+#.. checked up to PR #26499 / gui #677 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -572,6 +572,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
 	# Relevant? 26448 mzumsande/202211_fix_sendtxrcncl
 	Needs work: 26462 theStack/202211-wallet_fix_crash_on_descriptor_wallet_load
+	# Needs conceptual/review: 26471 -  # Don't share mempool with dbcache in -blocksonly mode
+		# TODO: Ensure defaults to same behaviour for 21.x
+	If applicable: Needs review: 26477 jamesob/2022-11-fix-maxtipage
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
