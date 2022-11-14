@@ -362,11 +362,10 @@ checkout origin/24.x
 		# didn't bother with 1f373f93a60...500841e49d6 only changing widget names
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	-     rpc_getblockfrompeer_wo_header		b89d300855f
+	24226 Sjors/2022/02/dontfetcholdblocks
+		# Knots 21.x bundles this in with #20295
+	-     rpc_getblockfrompeer_wo_header-24+k	b89d300855f
 		# Prior Knots bundled this in with #20295
-		TODO? gcp 008f768dbea Bugfix: RPC/blockchain: Add missing newline to getblockfrompeer help
-		TODO? gcp e796abe55ee test: check pre-segwit peer error in `getblockfrompeer` RPC
-		TODO? gcp cbf6569da3a (rpc_getblockfrompeer_wo_header-21) rpc: warn that nodes ignore requests for old stale blocks
 	TODO? * 61a204efbe1 rpc: Add note on guarantees to getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
