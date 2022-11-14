@@ -362,7 +362,7 @@ checkout origin/24.x
 		# didn't bother with 1f373f93a60...500841e49d6 only changing widget names
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
-	24226 Sjors/2022/02/dontfetcholdblocks
+	24226 Sjors/2022/02/dontfetcholdblocks					last=f39d9269ebb
 		# Knots 21.x bundles this in with #20295
 	-     rpc_getblockfrompeer_wo_header-24+k	b89d300855f
 		# Prior Knots bundled this in with #20295
