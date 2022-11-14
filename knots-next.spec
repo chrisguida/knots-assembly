@@ -208,12 +208,9 @@ checkout origin/24.x
 		# NOTE: Included in backport PR #26457
 	# Relevant? 26404 mzumsande/202210_testfix_blockfrompeer
 	# Relevant? 26417 mzumsande/202210_testfix_indexprune
-	#24.xTODO# 26418 achow101/fix-psbt-multia
-		# NOTE: Included in backport PR #26452
 	# Needs work/review: 26421 fanquake/fix_macos_zeromq_older_ubuntu AND/OR 26422
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
 	# Relevant? 26448 mzumsande/202211_fix_sendtxrcncl
-	26449 rpcdoc_change_type_bech32m_pr26449-23
 	#24.xTODO# Needs work: 26462 theStack/202211-wallet_fix_crash_on_descriptor_wallet_load
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
