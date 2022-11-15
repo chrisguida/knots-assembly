@@ -369,7 +369,7 @@ checkout origin/24.x
 		# Prior Knots bundled this in with #20295
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
-	20391 rpc_setfeerate-23						7fd4e8a1563	last=1002e2d0d7f jonatack/setfeerate
+	20391 rpc_setfeerate-24						7fd4e8a1563	last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 	20407 rpcauthfile							accabd6d59e	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
