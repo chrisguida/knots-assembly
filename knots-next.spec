@@ -367,7 +367,6 @@ checkout origin/24.x
 		# Knots 21.x bundles this in with #20295
 	-     rpc_getblockfrompeer_wo_header-24+k	b89d300855f
 		# Prior Knots bundled this in with #20295
-	TODO? * 61a204efbe1 rpc: Add note on guarantees to getblockfrompeer
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-23						7fd4e8a1563	last=1002e2d0d7f jonatack/setfeerate

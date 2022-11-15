@@ -772,6 +772,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	(CHECK-LAST)	last=2ef5294a5bb jonatack/getblockfrompeer-param-inputs
 	(CHECK-LAST)	last=4fe12e61847 rpc_getblockfrompeer_typecheck-23
 		# +#23702 +(doc from #23813) +#24226
+		FIXME: Consider reverting/removing 61a204efbe1: fetching enough old blocks may make a block file that gets pruned before the current height https://github.com/bitcoin/bitcoin/pull/23813#discussion_r1022184258
 		# +#24944
 		# +#25259
 		# NOTE: Forward-compatible with peer_id param rename in #23706
