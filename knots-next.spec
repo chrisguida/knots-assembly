@@ -375,7 +375,7 @@ checkout origin/24.x
 	20407 rpcauthfile							accabd6d59e	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
-	g149  intro_assumevalid-23					01f67fb5b69	last=75aff9e0ff7 intro_assumevalid
+	g149  intro_assumevalid						01f67fb5b69	last=75aff9e0ff7
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	23549 rpc_scanblocks						83bd74cf3d4	last=e1c89184cd3 jamesob/2021-11-scanblocks
