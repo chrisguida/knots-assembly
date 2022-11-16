@@ -806,7 +806,8 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 		TODO: Consider #26325
 	20702 rpc_getblocklocations-0.21			bc93fb1825b	last=9b03c654eb3
 	(CHECK-LAST)	last=b60fdcbc2dc rpc_getblocklocations-22
-	(CHECK-LAST)	last=18389bc711a rpc_getblocklocations
+	(CHECK-LAST)	last=05b618ead44 rpc_getblocklocations
+		FIXME: Check range of nblocks (implicit int->size_t conversion)
 	20827 ibd_prune_max-21						894af588353	last=e426bb1ab50 ibd_prune_max
 	(CHECK-LAST)	last=24f3936337d ibd_prune_max-22
 	g163  gui_peer_conntype-0.21				a39642a4ef4  # jonatack-g/display-peer-conn-types

@@ -388,6 +388,7 @@ checkout origin/24.x
 	20702 rpc_getblocklocations					1f12d13fadf	last=9b03c654eb3
 		# NOTE: Fixed +x on test/functional/rpc_getblocklocations.py
 		# NOTE: Added necessary(?) cs_main locking
+		# NOTE: Fixed typo in RPC example doc
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							7135a8a2aec
 	Merged: g543  qt_peers_age_column-23				0bdf2c4b51a  # peers-tab: add connection age column to tableview
