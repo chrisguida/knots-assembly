@@ -378,16 +378,10 @@ checkout origin/24.x
 	g149  intro_assumevalid						01f67fb5b69	last=75aff9e0ff7
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	23549 rpc_scanblocks						83bd74cf3d4	last=e1c89184cd3 jamesob/2021-11-scanblocks
-		# NOTE: Was #20664
-		# NOTE: Includes lots of additional fixes/doc improvements
-		TODO? gcp 0c06258c1e9 RPC/blockchain: Unify result documentation language between scantxoutset and scanblocks
-		TODO? gcp 4281973214f RPC/blockchain: Consolidate scan_result_* RPCResults and strings between scan{txoutset,blocks} help
-		TODO? gcp 0a8858dbf8f Revert "RPC/blockchain: Document scantxoutset status key when no ongoing scan"
-		TODO? gcp 731d77a7e8d RPC/blockchain: Trivially improve scanblocks doc for relevant_blocks
-		TODO? gcp 4fbe38f4ebf Bugfix: RPC/blockchain: Document scanblocks only requires scanobjects for "start" action
-		TODO? gcp d4e89bd7e33 (rpc_scanblocks-21+knots) rpc: remove scantxoutset EXPERIMENTAL warning
+	23549 rpc_scanblocks-24+knots				83bd74cf3d4	last=e1c89184cd3 jamesob/2021-11-scanblocks
 	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
+		# NOTE: Was #20664
+		# +#26508
 	20702 rpc_getblocklocations					1f12d13fadf	last=9b03c654eb3
 		# NOTE: Fixed +x on test/functional/rpc_getblocklocations.py
 		# NOTE: Added necessary(?) cs_main locking

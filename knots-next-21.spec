@@ -796,6 +796,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	23549 rpc_scanblocks-21+knots				5eaa6ce2ea6	last=bb553d4478b jamesob/2021-11-scanblocks
 	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 	(CHECK-LAST)	last=d28e8e4e277 rpc_scanblocks
+	(CHECK-LAST)	last=d28e8e4e277 rpc_scanblocks-24+knots
 		# NOTE: Was #20664
 		# NOTE: Includes lots of additional fixes/doc improvements
 		# NOTE: Now includes #21426 (scantxoutset no longer experimental) too
