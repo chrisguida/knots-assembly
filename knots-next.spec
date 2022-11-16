@@ -380,7 +380,7 @@ checkout origin/24.x
 	g149  intro_assumevalid						01f67fb5b69	last=cf940f0e5f5
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	23549 rpc_scanblocks-24+knots				83bd74cf3d4	last=e1c89184cd3 jamesob/2021-11-scanblocks
+	23549 rpc_scanblocks-24+knots				83bd74cf3d4	last=626b7c8493e jamesob/2021-11-scanblocks
 	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
 		# NOTE: Was #20664
 		# +#26508
