@@ -182,6 +182,7 @@ checkout origin/24.x
 	# If BSD depends support matters: 26073 fanquake/_BSD_bdb_compilation
 	#24.xTODO# Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
 		# NOTE: Included in backport PR #26457
+		#24.xTODO# Check if these fixes are correct; see https://github.com/bitcoin/bitcoin/pull/26457#pullrequestreview-1181641835
 	26116 -													last=2c03465dfa1  # rpc: Allow importmulti watchonly imports with locked wallet
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
@@ -546,6 +547,8 @@ checkout origin/24.x
 	Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
 	Needs triage for Knots & review: 26487 -  # log: improve some validation log messages to include hashPrevBlock
 	Needs work: 26495 -  # contrib: Speed up systemd boot
+	TODO: Simplify [initial] wallet creation
+		See: https://twitter.com/susewang/status/1591115373465972737?t=FGNyW1PSmjpT0u-lR7lNiw&s=19
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
