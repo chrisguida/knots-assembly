@@ -226,9 +226,11 @@ checkout origin/24.x
 	n/a   (delete_release_notes_fragments)
 @24.x-knots
 # PERFORMANCE:
-	# Needs reivew: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	n/a   rm_minisketch-24+k					5ddaa57ea1b	last=4e2d2910342 rm_minisketch-23+k
 		#25.xTODO# Probably need to drop this
+	16981 reindex_speedup_pr16981-24+knots
+		# Left out new benchmark
+	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
 	# Knots doesn't support MSVC builds: 24773 Enable AVX2 implementation of SHA256 for MSVC builds
@@ -319,7 +321,6 @@ checkout origin/24.x
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
-	# Needs review: 16981 LarryRuane:reindex-speedup
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
 	18972 neutrino_whitelist-mini				b2999f33de0	last=a3300c6b200 neutrino_whitelist
 		# NOTE: Diff-minimised
@@ -376,7 +377,7 @@ checkout origin/24.x
 	20407 rpcauthfile							accabd6d59e	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
-	g149  intro_assumevalid						01f67fb5b69	last=75aff9e0ff7
+	g149  intro_assumevalid						01f67fb5b69	last=cf940f0e5f5
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	23549 rpc_scanblocks-24+knots				83bd74cf3d4	last=e1c89184cd3 jamesob/2021-11-scanblocks
