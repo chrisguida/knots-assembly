@@ -391,12 +391,11 @@ checkout origin/24.x
 		# NOTE: Fixed typo in RPC example doc
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							7135a8a2aec
-	Merged: g543  qt_peers_age_column-23				0bdf2c4b51a  # peers-tab: add connection age column to tableview
-		# NOTE: Left off top commit enabling ResizeToContents; instead, calculated size is added in local g363-included commit
 	g363  qt_peers_directionarrow-23+knots		418d63d0c21	last=4e2fe6b9878 qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 		# TODO: Should align the direction column on the right side, but Qt ignores alignment for icons :/
 		TODO? gcp 7992ff04a5e (qt_peers_directionarrow-0.21+knots) GUI/Peers: Shorted "Received" header to "Recv'd" so it fits the column
+		TODO: Revert 51708c4516c (from gui#543) gui: peersWidget - ResizeToContents Age and IP/Netmask columns
 	# Needs work: 15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
