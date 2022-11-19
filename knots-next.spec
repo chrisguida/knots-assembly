@@ -1,7 +1,7 @@
-timestamp 2022-11-14 23:41:14
+timestamp 2022-11-19 21:44:29
 lastapply no-merge
 
-#.. checked up to PR #26499 / gui #677
+#.. checked up to PR #26535 / gui #681
 
 checkout origin/24.x
 @24.x-syslibs
@@ -207,6 +207,7 @@ checkout origin/24.x
 	g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
 	#24.xTODO# Is correct? g676 jonatack-g/update-peers-transaction-relay-label-and-tooltip
 		# NOTE: Included in backport PR #26457
+		+g681 jonatack/relaytxes-tooltip-fix
 	# Relevant? 26404 mzumsande/202210_testfix_blockfrompeer
 	# Relevant? 26417 mzumsande/202210_testfix_indexprune
 	# Needs work/review: 26421 fanquake/fix_macos_zeromq_older_ubuntu AND/OR 26422
@@ -215,6 +216,13 @@ checkout origin/24.x
 	#24.xTODO# Needs work: 26462 theStack/202211-wallet_fix_crash_on_descriptor_wallet_load
 	# Needs conceptual/review: 26471 -  # Don't share mempool with dbcache in -blocksonly mode
 	#24.xTODO# Needs review: 26477 jamesob/2022-11-fix-maxtipage
+	Needs work: 26512 -  # init: Evaluate sysperms before config file
+	Needs review: 26515 mzumsande/202211_getpeerinfo_allornothing and/or 26516?
+		See also for testing: 26519 -  # test: Add getpeerinfo test for missing version message
+	Fix only? Needs review: 26532 furszy/2022_wallet_fix_ckeys_checksum
+	Needs review & concept for backport: 26533 andrewtoth/scan-and-unlink-pruned-files
+	Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
+	Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.

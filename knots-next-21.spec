@@ -1,8 +1,8 @@
-timestamp 2022-11-14 23:41:14
+timestamp 2022-11-19 21:44:29
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26499 / gui #677 for fixes
+#.. checked up to PR #26535 / gui #681 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -566,6 +566,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: g673 jonatack/2022-09-display-fallback-for-gui-peers-version-and-user-agent
 	If applicable: g676 jonatack/update-peers-transaction-relay-label-and-tooltip
 		+g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
+		+g681 jonatack/relaytxes-tooltip-fix
 	# Relevant? 26404 mzumsande/202210_testfix_blockfrompeer
 	If applicable: 26418 achow101/fix-psbt-multia
 	Meh? 26424 -  # doc: correct deriveaddresses RPC name
@@ -575,6 +576,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs conceptual/review: 26471 -  # Don't share mempool with dbcache in -blocksonly mode
 		# TODO: Ensure defaults to same behaviour for 21.x
 	If applicable: Needs review: 26477 jamesob/2022-11-fix-maxtipage
+	Needs work: 26512 -  # init: Evaluate sysperms before config file
+	If applicable: Needs review: 26515 mzumsande/202211_getpeerinfo_allornothing and/or 26516?
+	Fix only? Needs review: 26532 furszy/2022_wallet_fix_ckeys_checksum
+	Needs review & concept for backport: 26533 andrewtoth/scan-and-unlink-pruned-files
+	Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
+	If applicable: Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
+	If applicable: g680 -  # Fixes MacOS 13 segfault by preventing certain notifications after main window is destroyed
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -803,7 +811,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 		# Held back insignificant comment/errormsg changes ab315e5294b...71b7cdb460e
 		# Added return value documentation (needed for QA to pass)
 		# NOTE: Was #20664
-		TODO: Consider #26325
+		TODO: Consider #26325 & #26508
 	20702 rpc_getblocklocations-0.21			bc93fb1825b	last=9b03c654eb3
 	(CHECK-LAST)	last=b60fdcbc2dc rpc_getblocklocations-22
 	(CHECK-LAST)	last=05b618ead44 rpc_getblocklocations
@@ -1199,4 +1207,5 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 # EXTRA TESTS:
 	24797 -  # test: compare /chaininfo response with getblockchaininfo RPC
 	25733 fanquake/tidy_enable_bugprone_use_after_move
+	26519 -  # test: Add getpeerinfo test for missing version message
 # NOTE: use git diff --minimal for patches!
