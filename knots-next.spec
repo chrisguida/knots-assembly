@@ -1,7 +1,7 @@
-timestamp 2022-11-19 21:44:29
+timestamp 2022-11-28 23:40:38
 lastapply no-merge
 
-#.. checked up to PR #26535 / gui #681
+#.. checked up to PR #26594 / gui #682
 
 checkout origin/24.x
 @24.x-syslibs
@@ -107,6 +107,7 @@ checkout origin/24.x
 	# Needs review & concept check: 23074 Package-aware fee estimation
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
 	# Needs work: 23502 achow101/tr-low-fee-est
+		# "rebase" in #26573 for post-#26567 (yet unmerged) refactor
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
 	g506  qt_qrcode_sizefixes					d036a08f614
 	# Needs review: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
@@ -223,6 +224,12 @@ checkout origin/24.x
 	Needs review & concept for backport: 26533 andrewtoth/scan-and-unlink-pruned-files
 	Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
+	Important? Needs review: 26559 furszy/2022_v24_wallet_sad
+		See also: #26560
+	Needs review: 26569 -  # p2p: Ensure transaction announcements are only queued for fully connected peers
+	26584 -  # cli: include local ("unroutable") peers in -netinfo table
+	26594 achow101/fix-migratewallet-cleanup-segfault
+	Needs review: g682 -  # Don't directly delete abandoned txes from GUI
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -559,6 +566,9 @@ checkout origin/24.x
 	Needs work: 26495 -  # contrib: Speed up systemd boot
 	TODO: Simplify [initial] wallet creation
 		See: https://twitter.com/susewang/status/1591115373465972737?t=FGNyW1PSmjpT0u-lR7lNiw&s=19
+	Needs review & triage: 26551 ajtowns/202211-orphanguardians
+	26558 -  # doc: add tr() descriptor example to deriveaddresses
+	26576 brunoerg/2022-11-disconnectnode-subnet
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -693,6 +703,8 @@ checkout origin/24.x
 		NOTE: Competing PR now in #25353 +#25575
 		TODO: Compatibility with #25353 ?
 		NOTE: #25600 has RBF service bit
+			Maintained in https://github.com/petertodd/bitcoin/tree/full-rbf-v24.0
+			Don't send to outgoing peers? Options, options...
 		24.xTODO: Update doc/policy/mempool-replacement.md
 		NOTE: #25626 has -mempoolreplacement on Core - including new RPC getmempoolinfo values (be sure to backport as feature)
 		TODO? gcp c10e54ecb54 QA: feature_rbf: Test full-RBF service bit

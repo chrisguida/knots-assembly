@@ -1,8 +1,8 @@
-timestamp 2022-11-19 21:44:29
+timestamp 2022-11-28 23:40:38
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26535 / gui #681 for fixes
+#.. checked up to PR #26594 / gui #682 for fixes
 
 checkout v0.21.2
 @21.x-syslibs
@@ -315,6 +315,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
 	# Needs review/diff-minimisation: 23486 marco/2111-rpcScript
 	# Needs work: 23502 achow101/tr-low-fee-est
+		# See also #28573
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
 	# Needs review: 23628 -  # Check descriptors returned by external signers
 	# Needs review: 23631 -  # p2p: Don't use timestamps from inbound peers for Adjusted Time
@@ -583,6 +584,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	If applicable: Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
 	If applicable: g680 -  # Fixes MacOS 13 segfault by preventing certain notifications after main window is destroyed
+	If applicable: Important? Needs review: 26559 furszy/2022_v24_wallet_sad
+		See also: #26560
+	If applicable: 26584 -  # cli: include local ("unroutable") peers in -netinfo table
+	If applicable: Needs review: g682 -  # Don't directly delete abandoned txes from GUI
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -1110,6 +1115,7 @@ m	7219  rbf_opts-0.21+knots					6b8135375e9	last=eb6bb1e3528 fullrbf # missing 9
 		#21.xTODO# When/if adding minor features:
 			# aae66ab43d7 (#25353) Add 'fullrbf' return field to getmempoolinfo RPC
 			# f4f83f73a7f (#25626) Add 'replacement_policy' return field to getmempoolinfo RPC
+		FIXME: Adapt to 24.x changes - make advertising optional??
 	12146 opt_wallet_segwit2-0.21				ffc242d52be	last=6a939ab54c6 opt_wallet_segwit2
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
