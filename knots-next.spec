@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #26594 / gui #682
 
-checkout origin/24.x
+checkout v24.0
 @24.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
@@ -231,7 +231,7 @@ checkout origin/24.x
 		#24.xTODO# See also: #26560 which has the real current version
 	26569 fix_p2p_tx_ann_pr26569-24							last=959cc24fcd1  # p2p: Ensure transaction announcements are only queued for fully connected peers
 		# NOTE: Left out lock-grabbing possibly-aborting Assume check (2nd commit)
-	26584 -  # cli: include local ("unroutable") peers in -netinfo table
+	26584 netinfo_unroutable-24								last=c0c45165e31
 	26594 achow101/fix-migratewallet-cleanup-segfault
 	Needs review: g682 -  # Don't directly delete abandoned txes from GUI
 	
