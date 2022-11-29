@@ -223,12 +223,14 @@ checkout origin/24.x
 		#24.xTODO# See also for testing: 26519 -  # test: Add getpeerinfo test for missing version message
 	26532 fix_wallet_checksumrewrite-22						last=13d97608297 furszy/2022_wallet_fix_ckeys_checksum
 		# NOTE: only the actual fix (included test needs non-trivial refactoring)
-	Needs review & concept for backport: 26533 andrewtoth/scan-and-unlink-pruned-files
-	Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
-	Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
-	Important? Needs review: 26559 furszy/2022_v24_wallet_sad
-		See also: #26560
-	Needs review: 26569 -  # p2p: Ensure transaction announcements are only queued for fully connected peers
+	# Needs review & concept for backport: 26533 andrewtoth/scan-and-unlink-pruned-files
+	#24.xTODO# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
+	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
+	g680 hebasto/221117-24.1-gui-bp							last=39af5f21646 hebasto/221117-24.1-gui-bp  # Fixes MacOS 13 segfault by preventing certain notifications after main window is destroyed
+	#24.xTODO# Important! Needs review: 26559 furszy/2022_v24_wallet_sad
+		#24.xTODO# See also: #26560 which has the real current version
+	26569 fix_p2p_tx_ann_pr26569-24							last=959cc24fcd1  # p2p: Ensure transaction announcements are only queued for fully connected peers
+		# NOTE: Left out lock-grabbing possibly-aborting Assume check (2nd commit)
 	26584 -  # cli: include local ("unroutable") peers in -netinfo table
 	26594 achow101/fix-migratewallet-cleanup-segfault
 	Needs review: g682 -  # Don't directly delete abandoned txes from GUI
