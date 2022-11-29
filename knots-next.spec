@@ -218,10 +218,11 @@ checkout origin/24.x
 	#24.xTODO# Needs work: 26462 theStack/202211-wallet_fix_crash_on_descriptor_wallet_load
 	# Needs conceptual/review: 26471 -  # Don't share mempool with dbcache in -blocksonly mode
 	#24.xTODO# Needs review: 26477 jamesob/2022-11-fix-maxtipage
-	Needs work: 26512 -  # init: Evaluate sysperms before config file
-	Needs review: 26515 mzumsande/202211_getpeerinfo_allornothing and/or 26516?
-		See also for testing: 26519 -  # test: Add getpeerinfo test for missing version message
-	Fix only? Needs review: 26532 furszy/2022_wallet_fix_ckeys_checksum
+	#24.xTODO# Needs work: 26512 -  # init: Evaluate sysperms before config file
+	#24.xTODO# Needs review: 26515 mzumsande/202211_getpeerinfo_allornothing and/or 26516?
+		#24.xTODO# See also for testing: 26519 -  # test: Add getpeerinfo test for missing version message
+	26532 fix_wallet_checksumrewrite-22						last=13d97608297 furszy/2022_wallet_fix_ckeys_checksum
+		# NOTE: only the actual fix (included test needs non-trivial refactoring)
 	Needs review & concept for backport: 26533 andrewtoth/scan-and-unlink-pruned-files
 	Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
