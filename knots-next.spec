@@ -129,7 +129,8 @@ checkout origin/24.x
 	# Needs work: 24851 -  # init: ignore BIP-30 verification in DisconnectBlock for problematic blocks
 	# Needs review: 24858 mruddy/issue_21379  # reindex, log, test: incorrect blk file size calculation during reindex results in undesirable blk file malformedness
 	# Needs review: 24912 mruddy/nchaintx_type
-	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=488682e7851 mruddy/issue_23852_import_prune
+	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=734355b4707 mruddy/issue_23852_import_prune
+		# NOTE: Silent conflict with later (but merged in master first) #16981, addressed in #16981 branch
 	# Needs review: 24972 hebasto/220425-no-libtool
 	# Needs review: 24994 hebasto/220426-consensus
 	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79
@@ -206,9 +207,9 @@ checkout origin/24.x
 	#24.xTODO# Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
 	g673 qt_peers_fallback_versionua-24
 	g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
-	#24.xTODO# Is correct? g676 jonatack-g/update-peers-transaction-relay-label-and-tooltip
+	g676 fix_qt_txrelay_desc-22
 		# NOTE: Included in backport PR #26457
-		+g681 jonatack/relaytxes-tooltip-fix
+		#+g681 jonatack/relaytxes-tooltip-fix
 	# Relevant? 26404 mzumsande/202210_testfix_blockfrompeer
 	# Relevant? 26417 mzumsande/202210_testfix_indexprune
 	# Needs work/review: 26421 fanquake/fix_macos_zeromq_older_ubuntu AND/OR 26422
@@ -245,6 +246,7 @@ checkout origin/24.x
 		#25.xTODO# Probably need to drop this
 	16981 reindex_speedup_pr16981-24+knots
 		# Left out new benchmark
+		TODO # NOTE: Silent conflict with earlier #24957, addressed in that PR upstream, but out of order here
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations

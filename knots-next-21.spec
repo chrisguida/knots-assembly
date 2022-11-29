@@ -565,9 +565,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	If needed: 26380 -  # Revert "test: check importing wallets when blocks are pruned throw an error"
 	Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
 	Needs review: g673 jonatack/2022-09-display-fallback-for-gui-peers-version-and-user-agent
-	If applicable: g676 jonatack/update-peers-transaction-relay-label-and-tooltip
-		+g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
-		+g681 jonatack/relaytxes-tooltip-fix
+	If applicable: g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
 	# Relevant? 26404 mzumsande/202210_testfix_blockfrompeer
 	If applicable: 26418 achow101/fix-psbt-multia
 	Meh? 26424 -  # doc: correct deriveaddresses RPC name
@@ -875,6 +873,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# NOTE: gui#229 not applicable to backport
 		TODO: Check if gui#662 is needed
 	g206  gui_peers_relayinfo-0.21+knots		d5d383b9daa
+		TODO: +g676 jonatack/update-peers-transaction-relay-label-and-tooltip
+		TODO: +g681 jonatack/relaytxes-tooltip-fix
 	g226  gui_peers_lastblocktx-0.21+knots		8482728d1e2
 	g230  gui_backup_formats-0.21+knots			6115edf25d3	last=835d49b30bc gui_backup_formats
 	(CHECK-LAST)	last=4490d994755 gui_backup_formats-22
