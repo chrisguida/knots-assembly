@@ -232,8 +232,8 @@ checkout v24.0
 	26569 fix_p2p_tx_ann_pr26569-24							last=152a42a3344  # p2p: Ensure transaction announcements are only queued for fully connected peers
 		# NOTE: Left out lock-grabbing possibly-aborting Assume check (2nd commit)
 	26584 netinfo_unroutable-24								last=c0c45165e31
-	26594 achow101/fix-migratewallet-cleanup-segfault
-	Needs review: g682 -  # Don't directly delete abandoned txes from GUI
+	26594 achow101/fix-migratewallet-cleanup-segfault		last=0c340e93e16
+	g682 fix_qt_abandon_disappearance-17					last=e75d2276324  # Don't directly delete abandoned txes from GUI
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -249,7 +249,7 @@ checkout v24.0
 		#25.xTODO# Probably need to drop this
 	16981 reindex_speedup_pr16981-24+knots
 		# Left out new benchmark
-		TODO # NOTE: Silent conflict with earlier #24957, addressed in that PR upstream, but out of order here
+		# NOTE: Silent conflict with earlier #24957, addressed in that PR upstream, but out of order (ie, in this branch) here
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
