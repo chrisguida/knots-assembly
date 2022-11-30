@@ -371,7 +371,7 @@ checkout v24.0
 	# Needs work: g27   # top to bottom UI layout
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
-	19762 rpc_named_and_pos-22					48e58c13311	last=c31e1635558 ryanofsky/pr/named
+	19762 rpc_named_and_pos-24					48e58c13311	last=d8b12a75dbf ryanofsky/pr/named
 	# Needs work: 26485 ryanofsky/pr/nonly
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
