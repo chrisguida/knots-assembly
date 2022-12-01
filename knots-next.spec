@@ -419,7 +419,7 @@ checkout v24.0
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
 	# ---- BEGIN HWI SUPPORT, TODO ----
-	21576 rpc_bumpfee_signer-23+knots			bc251bca880	last=2c07cfacd17 Sjors/2021/04/signer_bumpfee
+	21576 rpc_bumpfee_signer-24+knots			bc251bca880	last=2c07cfacd17 Sjors/2021/04/signer_bumpfee
 		# Simply dropped misc comment changes in first commit
 	21928 rpc_hww_toggle-23						d4e05c2df25	last=1af20831806 Sjors/2021/05/hww-toggle
 	# ---- END HWI SUPPORT ----
