@@ -229,7 +229,7 @@ checkout v24.0
 	g680 hebasto/221117-24.1-gui-bp							last=39af5f21646 hebasto/221117-24.1-gui-bp  # Fixes MacOS 13 segfault by preventing certain notifications after main window is destroyed
 	#24.xTODO# Important! Needs review: 26559 furszy/2022_v24_wallet_sad
 		#24.xTODO# See also: #26560 which has the real current version
-	26569 fix_p2p_tx_ann_pr26569-24							last=152a42a3344  # p2p: Ensure transaction announcements are only queued for fully connected peers
+	26569 fix_p2p_tx_ann_pr26569-24							last=8f2dac54096  # p2p: Ensure transaction announcements are only queued for fully connected peers
 		# NOTE: Left out lock-grabbing possibly-aborting Assume check (2nd commit)
 	26584 netinfo_unroutable-24								last=c0c45165e31
 	26594 achow101/fix-migratewallet-cleanup-segfault		last=0c340e93e16
