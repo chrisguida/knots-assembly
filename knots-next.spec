@@ -231,9 +231,10 @@ checkout v24.0
 		#24.xTODO# See also: #26560 which has the real current version
 	26569 fix_p2p_tx_ann_pr26569-24							last=8f2dac54096  # p2p: Ensure transaction announcements are only queued for fully connected peers
 		# NOTE: Left out lock-grabbing possibly-aborting Assume check (2nd commit)
-	26584 netinfo_unroutable-24								last=c0c45165e31
-	26594 achow101/fix-migratewallet-cleanup-segfault		last=0c340e93e16
-	g682 fix_qt_abandon_disappearance-17					last=e75d2276324  # Don't directly delete abandoned txes from GUI
+	26584 netinfo_unroutable-24								last=4ed39087290
+		# Held back c0c45165e31...4ed39087290 refactoring for now
+	26594 achow101/fix-migratewallet-cleanup-segfault		last=5e65a216d1f
+	g682  fix_qt_abandon_disappearance-17					last=e75d2276324  # Don't directly delete abandoned txes from GUI
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -429,7 +430,7 @@ checkout v24.0
 		# TODO: diff-minimise??
 	21319 getblock_optimise						bcf986d0d05
 		# Context: 17529 rpc: Faster getblock using PureBlock
-	Make CRCs optional: 26415 andrewtoth/read-raw-block
+	# Make CRCs optional: 26415 andrewtoth/read-raw-block
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
