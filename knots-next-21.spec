@@ -864,6 +864,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	21173 optimise_hexstr-0.21					211f7cf954e
 	21260 rpcwallet_tx_in_mempool-21.1+knots	5e9dcde9997	last=46bf0b7b5d8
 	(CHECK-LAST)	last=ee0a735e6c1 rpcwallet_tx_in_mempool-23+knots
+	(CHECK-LAST)	last=faba549c582 rpcwallet_tx_in_mempool-24+knots
 	g213  gui_payrequest_copyaddr-0.18			3fbc3512e3c
 	g214  gui_payrequest_disablena-0.18+knots	88cfbc9641b
 	21327 p2p_ignore_tx_in_ibd-0.21				cb54eca2c0b	last=6aed8b7e9b2
@@ -878,8 +879,9 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		TODO: +g676 jonatack/update-peers-transaction-relay-label-and-tooltip
 		TODO: +g681 jonatack/relaytxes-tooltip-fix
 	g226  gui_peers_lastblocktx-0.21+knots		8482728d1e2
-	g230  gui_backup_formats-0.21+knots			6115edf25d3	last=835d49b30bc gui_backup_formats
+	g230  gui_backup_formats-0.21+knots			6115edf25d3	last=7a2e4fb8d1a gui_backup_formats
 	(CHECK-LAST)	last=4490d994755 gui_backup_formats-22
+	(CHECK-LAST)	last=835d49b30bc gui_backup_formats-23
 		# NOTE: To avoid conflict with wallettool_dump-0.21+knots, added 5ab50bc98db GUI: Omit DbDump option for backup of BDB wallets
 	21595 cli_addrinfo-0.21+knots				7c408353347
 		# NOTE: Adapted error message for Knots

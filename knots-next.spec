@@ -434,7 +434,7 @@ checkout v24.0
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
-	21260 rpcwallet_tx_in_mempool-23+knots		00751692d11	last=46bf0b7b5d8
+	21260 rpcwallet_tx_in_mempool-24+knots		00751692d11	last=46bf0b7b5d8
 		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
