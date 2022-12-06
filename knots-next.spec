@@ -447,10 +447,10 @@ checkout v24.0
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
-	22072 -										a2f94dca829	last=602f4da9178  # autoreindex-0.21
+	22072 autoreindex							a2f94dca829	last=602f4da9178
 	22159 conf_append_cxxflags-23				fd74eb4a20a	last=fa14c6818f4 marco/2106-buildPattern
 	# Not useful: g358  jarolrod-g/themedlabel-forms
-	g307  gui_peers_rowcolouropt-22				b94a0f57896	last=fdf80937d1c hebasto-g/210501-stripes
+	g307  gui_peers_rowcolouropt				b94a0f57896	last=fdf80937d1c hebasto-g/210501-stripes
 		# Dropped formatting changes and avoided conflict with g216(optional_font)
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
 	# Too many TODOs: 22341 Sjors/2021/06/getxpub

@@ -895,6 +895,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=a05a4fe9fcd rpc_maxmempool-23
 		# + bugfix and applying limit immediately
 	22072 autoreindex-0.21						7fb696c631e	last=602f4da9178
+	(CHECK-LAST)	last=069ccfcbc4e autoreindex
 	22147 p2p_protect_last_outHB-0.21			995947de083
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
 	22159 conf_append_cxxflags-0.10				b9c4f0c218e	last=fa14c6818f4 marco/2106-buildPattern
@@ -905,6 +906,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	g293  gui_peers_services_wordwrap-0.18		a9065accdaa
 	g298  gui_peers_altrowcolor-0.21+knots_pt1	281357e21fe
 	g307  gui_peers_altrowcolor-0.21+knots		81f3be93772	last=fdf80937d1c hebasto-g/210501-stripes
+	(CHECK-LAST)	last=d27878e2ca6 gui_peers_rowcolouropt
 	(CHECK-LAST)	last=84206370984 gui_peers_rowcolouropt-22
 	g309  gui_neticon_peerstab-0.18				f19b2295109
 		# NOTE: Fixed Qt5.5 compatibility
