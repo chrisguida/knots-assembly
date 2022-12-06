@@ -343,7 +343,7 @@ checkout v24.0
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
-	18972 neutrino_whitelist-mini				b2999f33de0	last=a3300c6b200 neutrino_whitelist
+	18972 neutrino_whitelist-mini				b2999f33de0	last=af0400e052a neutrino_whitelist
 		# NOTE: Diff-minimised
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	-     qt_openuri_pastebtn_shortcut-23		055826bebb2
@@ -458,7 +458,7 @@ checkout v24.0
 	22372 multinotify							7edb7a43520
 	24963 rpc_walletprocesspsbt_options-23		7ebcda357a1	last=31ffd7782bf rpc_walletprocesspsbt_options
 		# Diff-minimised
-		BUG: 'sign' compat param will be rejected by type check
+		#25.xTODO# BUG: 'sign' compat param will be rejected by type check
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
 	Merged: 22751 simulaterawtransaction-23				ba547c13c56	last=bd520345f7a kallewoof/202108-analyzerawtransaction
