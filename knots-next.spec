@@ -461,8 +461,7 @@ checkout v24.0
 		#25.xTODO# BUG: 'sign' compat param will be rejected by type check
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
-	Merged: 22751 simulaterawtransaction-23				ba547c13c56	last=bd520345f7a kallewoof/202108-analyzerawtransaction
-		See new competing(?) PR #25621
+	# TODO? 25621 -  # rpc/wallet: Add details and duplicate section for simulaterawtransaction
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
 	# Needs BIP? 22838 achow101:multipath-descs
