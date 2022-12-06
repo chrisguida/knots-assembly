@@ -289,7 +289,7 @@ checkout v24.0
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	25375 rpc_fundtx_minmaxconf-24				e80afead907	last=f38eb81191e  # rpc: allow specifying min chain depth for inputs in fund calls
+	25375 rpc_fundtx_minmaxconf-24				e80afead907	last=18e277fcf26  # rpc: allow specifying min chain depth for inputs in fund calls
 	(CHECK-LAST)	last=7f4c9039f71 origin-pull/22049/head
 		# Was #14641 (moved to Knots compat)
 		# Was #22049
@@ -683,6 +683,7 @@ checkout v24.0
 		TODO: Compatibility with #25532 if merged
 	11082 rwconf-23+knots						dbc972ce598 # Latest code now
 	7510  rwconf_gui-23+knots					7342e194bdb
+		TODO: maxmempool & others are no longer GetArg'd at runtime!
 		TODO? gcp 0c9ffa1de8c (rwconf_gui-0.21) GUI/Options: Add tooltips for addresstype choices
 		FIXME: s/P2SH-SegWit/P2SH Segwit/ (dash->space & lowercase W)
 	 559 accept_nonstdtxn						2ad1e272d70

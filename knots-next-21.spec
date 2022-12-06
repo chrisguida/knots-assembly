@@ -890,8 +890,9 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	# Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
 	21780 rpc_maxmempool-0.21					9a2751a9347	last=040b280c661 rebroad/MaxMempoolRPC
-	(CHECK-LAST)	last=a05a4fe9fcd rpc_maxmempool
+	(CHECK-LAST)	last=6d95d708bf3 rpc_maxmempool
 	(CHECK-LAST)	last=43eb542612e rpc_maxmempool-22
+	(CHECK-LAST)	last=a05a4fe9fcd rpc_maxmempool-23
 		# + bugfix and applying limit immediately
 	22072 autoreindex-0.21						7fb696c631e	last=602f4da9178
 	22147 p2p_protect_last_outHB-0.21			995947de083
