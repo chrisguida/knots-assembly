@@ -488,8 +488,8 @@ checkout v24.0
 	# Needs work: g484 rebroad-g/RetainNetworkGraphOnIntervalChange
 	g492  qt_traffic_tooltip-23+knots			190259f05c2	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
 		# Left off top commit which breaks behaviour
-	g497  qt_fontsel-23+knots					63f1348f70c	last=ca6e29df02e qt_fontsel
-	-     qt_fontsel_qrcodes-23+knots			b9996e59773	last=3bfdd05fcfd qt_fontsel_qrcodes
+	g497  qt_fontsel-24+knots					63f1348f70c	last=6b01b4b685b qt_fontsel
+	-     qt_fontsel_qrcodes-24+knots			b9996e59773	 # latest code now
 	# TODO: qt_fontsel_console
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
