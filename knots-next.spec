@@ -1,7 +1,7 @@
-timestamp 2022-11-28 23:40:38
+timestamp 2022-12-07 09:10:49
 lastapply no-merge
 
-#.. checked up to PR #26594 / gui #682
+#.. checked up to PR #26649 / gui #684
 
 checkout v24.0.1
 @24.x-syslibs
@@ -229,6 +229,12 @@ checkout v24.0.1
 	26584 netinfo_unroutable-24								last=4ed39087290
 		# Held back c0c45165e31...4ed39087290 refactoring for now
 	g682  fix_qt_abandon_disappearance-17					last=e75d2276324  # Don't directly delete abandoned txes from GUI
+	# Not worth it? 26611 achow101/coin-sel-dont-assert
+	26618 -  # rpc: Prevent unloading a wallet when rescanning
+	Needs review: 26628 ryanofsky/pr/nmult
+	Needs review: 26643 achow101/move-fee-underpay-check
+	Needs review: 26646 glozow/package-single-tx-result
+	Needs review: g684  -  # Improve 'Requested Payments History' Multiselect
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -567,6 +573,10 @@ checkout v24.0.1
 	Needs review & triage: 26551 ajtowns/202211-orphanguardians
 	26558 -  # doc: add tr() descriptor example to deriveaddresses
 	26576 brunoerg/2022-11-disconnectnode-subnet
+	Needs review: 26595 achow101/migratewallet-by-name-and-passphrase
+	# Waiting for Core or BIP: 26626 achow101/desc-key-list-expr
+	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
+	26645 -  # util: Include full version id in bug reports
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly

@@ -1,8 +1,8 @@
-timestamp 2022-11-28 23:40:38
+timestamp 2022-12-07 09:10:49
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26594 / gui #682 for fixes
+#.. checked up to PR #26649 / gui #684 for fixes
 
 TODO: Make sure latest branches are checked in here
 
@@ -588,6 +588,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		See also: #26560
 	If applicable: 26584 -  # cli: include local ("unroutable") peers in -netinfo table
 	If applicable: Needs review: g682 -  # Don't directly delete abandoned txes from GUI
+	# Not worth it? 26611 achow101/coin-sel-dont-assert
+	26618 -  # rpc: Prevent unloading a wallet when rescanning
+	Needs review: 26628 ryanofsky/pr/nmult
+	If applicable: Needs review: 26643 achow101/move-fee-underpay-check
+	If applicable: Needs review: 26646 glozow/package-single-tx-result
+	Needs review: g684  -  # Improve 'Requested Payments History' Multiselect
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -943,6 +949,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Minimised as applicable: 26162 Sjors/2022/09/taproot
 	IF IN KNOTS: Needs review: 26174 w0xlt/list_address_book
 	26280 -  # rpc: Return coinbase flag in scantxoutset
+	26645 -  # util: Include full version id in bug reports
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
