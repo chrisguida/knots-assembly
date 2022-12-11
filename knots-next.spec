@@ -57,7 +57,7 @@ checkout v24.0.1
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
-	-     rpcarg_type_per_name					894b5b40dfc
+	-     rpcarg_type_per_name-24				894b5b40dfc	last=60de8d45b81 rpcarg_type_per_name
 	-     bugfix_rpc_getbalance_hacky			60f5367f46a
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
@@ -230,7 +230,7 @@ checkout v24.0.1
 		# Held back c0c45165e31...4ed39087290 refactoring for now
 	g682  fix_qt_abandon_disappearance-17					last=e75d2276324  # Don't directly delete abandoned txes from GUI
 	# Not worth it? 26611 achow101/coin-sel-dont-assert
-	26618 -  # rpc: Prevent unloading a wallet when rescanning
+	26618 unloadwallet_rescanning_err-23					last=b13902d2e45
 	Needs review: 26628 ryanofsky/pr/nmult
 	Needs review: 26643 achow101/move-fee-underpay-check
 	Needs review: 26646 glozow/package-single-tx-result
@@ -374,6 +374,7 @@ checkout v24.0.1
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	19762 rpc_named_and_pos-24					48e58c13311	last=d8b12a75dbf ryanofsky/pr/named
 	# Needs work: 26485 ryanofsky/pr/nonly
+		# CAUTION: May cause conflicts w/ compatibility options
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 	19873 mempressure							a6c4444899c
