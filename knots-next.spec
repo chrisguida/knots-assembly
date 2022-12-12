@@ -190,7 +190,7 @@ checkout v24.0.1
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
 	26143 fix_qa_rest_pr26143-24
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
-	26186 rpc_label_sanitize-22								last=8b716611b1b  # rpc: Sanitize label name in various RPCs with tests
+	26186 rpc_label_sanitise-23								last=21b429632d1  # rpc: Sanitize label name in various RPCs with tests
 		# Leaving off refactor
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
 	26248 p2p_relay_exception_in_msg-24
@@ -547,6 +547,7 @@ checkout v24.0.1
 	Needs concept/review: 25907 achow101/upgrade-to-tr-2
 	Needs work: 25923 jonatack/2022-08-statestats
 	Needs review: 25934 brunoerg/2022-08-add-label-listsinceblock
+		FIXME: Add #26186 fix 55815c26515..21b429632d1
 	Needs concept & review: 25939 -  # rpc: In utxoupdatepsbt also look for the tx in the txindex
 	Needs review: g655 -  # Persist "mask values" in gui
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
