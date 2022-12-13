@@ -226,11 +226,11 @@ checkout v24.0.1
 	# Needs review & concept for backport: 26533 andrewtoth/scan-and-unlink-pruned-files
 	#24.xTODO# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
-	26584 netinfo_unroutable-24								last=4ed39087290
-		# Held back c0c45165e31...4ed39087290 refactoring for now
+	26584 netinfo_unroutable-24								last=0d0994a2e2e
+		# Held back c0c45165e31...0d0994a2e2e refactoring for now (maybe should be done later in functionality?)
 	g682  fix_qt_abandon_disappearance-17					last=e75d2276324  # Don't directly delete abandoned txes from GUI
 	# Not worth it? 26611 achow101/coin-sel-dont-assert
-	26618 unloadwallet_rescanning_err-23					last=b13902d2e45
+	26618 unloadwallet_rescanning_err-23					last=109cbb819dd
 	Needs review: 26628 ryanofsky/pr/nmult
 	Needs review: 26643 achow101/move-fee-underpay-check
 	Needs review: 26646 glozow/package-single-tx-result
@@ -810,6 +810,7 @@ checkout v24.0.1
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
+		TODO: 109cbb819dd doc: Add release notes for #26618
 	n/a  (cherrypick=e176316e332)				dd99e2b4305  # update manpages (build first)
 		BELOW TODO: ensure 26117 is fixed
 		TODO: update bitcoin conf (like d68b6abeb84)
