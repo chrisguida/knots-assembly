@@ -226,8 +226,8 @@ checkout v24.0.1
 	# Needs review & concept for backport: 26533 andrewtoth/scan-and-unlink-pruned-files
 	#24.xTODO# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
-	26584 netinfo_unroutable-24								last=0d0994a2e2e
-		# Held back c0c45165e31...0d0994a2e2e refactoring for now (maybe should be done later in functionality?)
+	26584 netinfo_unroutable-24								last=d7156fc820c
+		# Held back [removed in PR] c0c45165e31...bf69a136776 refactoring for now (maybe should be done later in functionality?)
 	g682  fix_qt_abandon_disappearance-17					last=e75d2276324  # Don't directly delete abandoned txes from GUI
 	# Not worth it? 26611 achow101/coin-sel-dont-assert
 	26618 unloadwallet_rescanning_err-23					last=109cbb819dd
