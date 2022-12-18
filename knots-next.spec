@@ -190,7 +190,7 @@ checkout v24.0.1
 	#24.xTODO# Needs work: 26142 hebasto/220920-package
 	26143 fix_qa_rest_pr26143-24
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
-	26186 rpc_label_sanitise-23								last=21b429632d1  # rpc: Sanitize label name in various RPCs with tests
+	26186 rpc_label_sanitise-23								last=b119bb84250  # rpc: Sanitize label name in various RPCs with tests
 		# Leaving off refactor
 	# Needs review: 26188 vasild/fix_coinstatsindex_initial_sync
 	26248 p2p_relay_exception_in_msg-24
