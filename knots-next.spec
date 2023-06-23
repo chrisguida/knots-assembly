@@ -1,7 +1,7 @@
 timestamp 2022-12-07 09:10:49
 lastapply no-merge
 
-#.. checked up to PR #27489 / gui #684
+#.. checked up to PR #27489 / gui #723
 
 checkout v25.0
 @24.x-syslibs
@@ -191,6 +191,9 @@ checkout v25.0
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
 	Needs review: 27411 mzumsande/202303_advertise_nets
 	Alternative to: 27434 pinheadmz/chaintips-invalid
+	Needs review: g696 -  # Switch RPCConsole wallet selection to the one most recently opened/restored/created
+	Needs work? g719 theStack-g/gui-nuke_cc_dust_label
+	Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -530,6 +533,10 @@ checkout v25.0
 	Needs review: 27375 pinheadmz/tor-unix-domain-socket
 	Needs work: 27409 ryanofsky/pr/1data
 	27460 MarcoFalke/2304-import-mempool-rpc-
+	Needs review: g692 -  # Debug Console implementation of generate method
+	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
+	Ensure Ctrl-L clears debug console (see g#702 for inspiration)
+	Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
