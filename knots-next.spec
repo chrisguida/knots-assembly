@@ -1,7 +1,7 @@
 timestamp 2022-12-07 09:10:49
 lastapply no-merge
 
-#.. checked up to PR #27489 / gui #723
+#.. checked up to PR #27489 / gui #740
 
 checkout v25.0
 @24.x-syslibs
@@ -194,6 +194,7 @@ checkout v25.0
 	Needs review: g696 -  # Switch RPCConsole wallet selection to the one most recently opened/restored/created
 	Needs work? g719 theStack-g/gui-nuke_cc_dust_label
 	Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
+	Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -537,6 +538,7 @@ checkout v25.0
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
 	Ensure Ctrl-L clears debug console (see g#702 for inspiration)
 	Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
+	Needs review? g740 -  # Show own outputs on PSBT signing window
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly

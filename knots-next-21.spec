@@ -2,7 +2,7 @@ timestamp 2022-12-07 09:10:49
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #27489 / gui #723 for fixes
+#.. checked up to PR #27489 / gui #740 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -620,6 +620,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Needs review: g696 -  # Switch RPCConsole wallet selection to the one most recently opened/restored/created
 	Triage & Needs work? g719 theStack-g/gui-nuke_cc_dust_label
 	Triage & Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
+	Triage & Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -978,6 +979,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	26645 -  # util: Include full version id in bug reports
 	Triage: Needs work: 27409 ryanofsky/pr/1data
 	Ensure Ctrl-L clears debug console (see g#702 for inspiration)
+	Triage: Needs review? g740 -  # Show own outputs on PSBT signing window
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
