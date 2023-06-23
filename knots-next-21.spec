@@ -2,7 +2,8 @@ timestamp 2022-12-07 09:10:49
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #26649 / gui #684 for fixes
+#.. checked up to PR #27489 / gui #684 for fixes
+TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#FIXME for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
 
@@ -157,7 +158,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
-	# Needs review: 19434 promag:2020-06-remote-disconnect
+	# Needs review: 19434 promag:2020-06-remote-disconnect OR 27245 fjahr/202303-pr19434
 	# TODO: g18   hebasto-g/200701-peer
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs review: g59   hebasto-g/200814-rpc
@@ -341,7 +342,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review: 24066 whitslack/openrc-daemonwait
 	24067 wallet_no_final_checks-21
 	# Needs work: 24072 -  # doc: fix wording of alertnotify to match behaviour
-	#21.xTODO# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
+	#21.xTODO# Needs review: 24090 RandyMcMillan/1642450390-issue-24049 / now #27386
 	24095 fix_settings_jsonfmt-21
 	24117 fix_index_dontcommitduringinit-21					last=bfcd60f5d50  # index: make indices robust against init aborts
 		# NOTE: partial: coinstatsindex and feature_init test aren't in 21.x
@@ -594,6 +595,28 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	If applicable: Needs review: 26643 achow101/move-fee-underpay-check
 	If applicable: Needs review: 26646 glozow/package-single-tx-result
 	Needs review: g684  -  # Improve 'Requested Payments History' Multiselect
+	Needs review? 26728 achow101/wallet-knows-master-key
+	Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
+	Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
+	26828 andrewtoth/assumeutxo-remove-fix
+	Just fixes from? 26836 furszy/2022_wallet_finish_addressbook_encapsulation
+	Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
+	Needs review: 26950 fanquake:check_for_SecureZeroMemory
+	SECURITY Needs review: 26964 willcl-ark/2023-01-cookie-bind
+	If needed for below: 27850 pinheadmz/blockstore-tests
+	Triage: 27039 pinheadmz/reindex-read-only
+	Triage: Needs review: 27071 vasild/lookup_subnet_cjdns
+	Triage if we Need a fix for #26176 (Opening macOS DMG does not open Finder window)
+	Triage 27231 jonatack/2023-03-logging-fixes-and-test-coverage
+	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
+	Triage: Only f73782a from #27279 (see #27474 for 24.x backport)
+	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
+	Triage 27303 pinheadmz/cache-conf-file
+	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
+	Needs review: 27411 mzumsande/202303_advertise_nets
+	Alternative to: 27434 pinheadmz/chaintips-invalid
+	Triage: 27468 (see #27474 for 24.x backport; #27468 for regression test)
+	Triage: 27473 (see #27474 for 24.x backport)
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -950,6 +973,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	IF IN KNOTS: Needs review: 26174 w0xlt/list_address_book
 	26280 -  # rpc: Return coinbase flag in scantxoutset
 	26645 -  # util: Include full version id in bug reports
+	Triage: Needs work: 27409 ryanofsky/pr/1data
+
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
 	8751  sort-multisigs-0.21					0cd85c73c6f	last=e11cb50a09  # multisig sorting
@@ -1080,6 +1105,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	(CHECK-LAST)	last=27ad690c9d2 whitelist_outgoing-mini-23+knots
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
+		Being replaced with #27114
 	g165  gui_peers_splitter_ss-0.21+knots		b71e008e2cf
 		# +g194 Save/restore RPCConsole geometry only for window
 		# NOTE: Changed setting name since our peer table width doesn't match Core's

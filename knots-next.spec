@@ -1,7 +1,7 @@
 timestamp 2022-12-07 09:10:49
 lastapply no-merge
 
-#.. checked up to PR #26649 / gui #684
+#.. checked up to PR #27489 / gui #684
 
 checkout v25.0
 @24.x-syslibs
@@ -38,6 +38,7 @@ checkout v25.0
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
+	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 # FIXES:
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						fe1576ba2d8
@@ -79,7 +80,7 @@ checkout v25.0
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
-	# Needs review: 19434 promag:2020-06-remote-disconnect
+	# Needs review: 19434 promag:2020-06-remote-disconnect OR 27245 fjahr/202303-pr19434
 	# Needs review: g59   hebasto-g/200814-rpc
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
@@ -111,7 +112,7 @@ checkout v25.0
 	g506  qt_qrcode_sizefixes					d036a08f614
 	# Needs review: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	# Needs review: 24066 whitslack/openrc-daemonwait
-	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049
+	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049 / now #27386
 	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
 		# TODO: make sure this doesn't break compatibility (and fix review bugs)
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
@@ -171,6 +172,25 @@ checkout v25.0
 	#24.xTODO# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
 	Needs review: g684  -  # Improve 'Requested Payments History' Multiselect
+	Needs review? 26728 achow101/wallet-knows-master-key
+	Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
+	Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
+	26828 andrewtoth/assumeutxo-remove-fix
+	Just fixes from? 26836 furszy/2022_wallet_finish_addressbook_encapsulation
+	Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
+	Needs review: 26950 fanquake:check_for_SecureZeroMemory
+	SECURITY Needs review: 26964 willcl-ark/2023-01-cookie-bind
+	If needed for below: 27850 pinheadmz/blockstore-tests
+	27039 pinheadmz/reindex-read-only
+	Needs review: 27071 vasild/lookup_subnet_cjdns
+	Need a fix for #26176 (Opening macOS DMG does not open Finder window)
+	27231 jonatack/2023-03-logging-fixes-and-test-coverage
+	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
+	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
+	Triage 27303 pinheadmz/cache-conf-file
+	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
+	Needs review: 27411 mzumsande/202303_advertise_nets
+	Alternative to: 27434 pinheadmz/chaintips-invalid
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -201,6 +221,12 @@ checkout v25.0
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
 	26375 zmq_optimise_duplread-24							last=7b631dc9b19 andrewtoth/no-read-zmq
 	# Needs review: 26486 sipa/202211_batchnotfound
+	# Opt-in & needs review: 26951 pstratem/2023-01-23-gcsfilter
+	# Needs review: 26966 furszy/2022_parallelize_blockfilter_index_2
+	# Needs review: 27006 furszy/2022_reduce_cs_main_scope_blockindex_nfile
+	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
+	Needs review? 27334 -  # util: implement noexcept move assignment & move ctor for prevector
+	Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -488,6 +514,22 @@ checkout v25.0
 	26576 brunoerg/2022-11-disconnectnode-subnet
 	# Waiting for Core or BIP: 26626 achow101/desc-key-list-expr
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
+	Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
+	# Needs work: 26938 brunoerg/2023-01-avoid-as
+	27511 -  # rpc: Add test-only RPC getaddrmaninfo for new/tried table address count
+	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
+	26990 -  # cli: add validation to cli side commands besides when it's used with -rpcwallet
+	# Needs review: 27034 furszy/2022_rpc_importaddress_descriptors_compatible
+	Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
+	Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
+	Needs review: 27213 amitiuttarwar/2023-03-network-outbounds
+	Needs concept/review: 27216 pinheadmz/used-addr-ui
+	# Needs review (and Core merge first?): 27255 darosior/tapminiscript
+	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
+	Diff-minimise: 27351 apoelstra/2023-03--codex32
+	Needs review: 27375 pinheadmz/tor-unix-domain-socket
+	Needs work: 27409 ryanofsky/pr/1data
+	27460 MarcoFalke/2304-import-mempool-rpc-
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -572,6 +614,7 @@ checkout v25.0
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	17167 whitelist_outgoing-mini-23+knots		7f46d1a059e	last=36cc299baee whitelist_outgoing
 		# NOTE: Originally #10594
+		Being replaced with #27114
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	-     wallettool_dump_warning-23+knots		6c8fdc9a690
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
@@ -582,6 +625,8 @@ checkout v25.0
 	Needs work? g650 -  # qt, refactor: Add Import to Wallet GUI
 	Needs review: 26174 w0xlt/list_address_book
 	Needs concept review: 26365 -  # wallet: GetEffectiveBalance
+	# TODO: 26674 -  # Add reindex=auto flag to automatically reindex corrupt data
+	Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 # Non-upstreamed functionality:
 	TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	n/a   restore_feefilter_opt					b0a928d3f25
@@ -671,6 +716,7 @@ checkout v25.0
 	-     bloom_default-0.21+knots				4910b8c3600
 	-     wallet_avoid_newerchange				a5e70c68636
 	24.xTODO: Revert #25725
+	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     enforce_checkpoints					840dddd5a6e
 	n/a   checkpoint_update-23					ec23e329857	last=70996dfdd9b checkpoint_update-0.21
 	10282 timebomb_knots						28c6dff687b
