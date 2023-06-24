@@ -40,7 +40,6 @@ checkout v0.21.2
 	# Not really needed: 24277 hebasto/220206-deploy
 	# Not needed: 2af9be1f1a4 build: Remove hexdump and libboost-test-dev dependencies when --enable-fuzz
 		# NOTE: Inspired by first revision of #24291
-	# Not worth it: 24295 -  # Remove std::move from fs wrapper to work around -D_LIBCPP_DEBUG=1 bug
 	24633 bugfix_suppresswarnings_regex
 	# NOTE: WRONG FOR C++11: 25436 fanquake/libxkbcommon_gcc_12
 	25605 dmg_tools_new_paths_pr25605-0.17					last=718d29af233 fanquake/dmg_tools_new_paths
