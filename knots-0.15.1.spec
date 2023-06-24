@@ -16,7 +16,7 @@ m	7339 opt_libevent-0.15						c151287c2f
 	7142 travis_qt4								2aa48dfe11
 	-    travis_nolibevent						f7502f2cba
 # FIXES:
-	9524 marco/Mf1701-qaPruning					f3cbbc60c6
+	9524 MarcoFalke/Mf1701-qaPruning					f3cbbc60c6
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						6af558251f
 	11026 bugfix_acceptnonstd_def				a5ebe4f877
@@ -37,7 +37,7 @@ TM	11332 bugfix_customfeeradio-0.15			10e3cd04b2
 	n/a  def_sse4_sha256						bf9540b1f4
 m	7061 wallet_rescan_rpc-0.15+knots			a2a32be9a9	last=7a91ceb5e0
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -73,7 +73,7 @@ m	10275 gettx-with-blockhash-0.15+knots		8f338e0578	last=4d15dce560	# [rpc] Allo
 m	10554 zmq_wtx								e700ad2d22	last=ed4fd266f7	# ZMQ: add publishers for wallet transactions.
 m	10593 relax_invblk_punishment-0.15			b8f7d06a62	last=c36864368a relax_invblk_punishment
 m	10594 whitelist_outgoing-0.15				82b021688b	last=416f9b9541 whitelist_outgoing
-m	10350 filtered_witblock-0.15				a493278023	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+m	10350 filtered_witblock-0.15				a493278023	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 	10729 scriptex								8e6403dde7
 	10730 scriptflag_strings-mini				1e4295e36e	last=97cae3915f
 	n/a   script_debugger-mini					0afed0460e	last=8d1ff9f035 script_debugger
@@ -91,7 +91,7 @@ m	10350 filtered_witblock-0.15				a493278023	last=3f388ddcd3 codeshark/MFWB_no_b
 	-     rpc_mempoolentry_txhash				e731a14670
 	11203 rpc_mempoolentry_wtxid-0.15+knots					last=617c459c6c
 	11256 rpc_mempoolentry_weight-0.15+knots				last=d4b0d81b58
-	# Needs review: 11281 jonas/2017/09/rescan_locks
+	# Needs review: 11281 jonasschnelli/2017/09/rescan_locks
 	11316 gui_sendbalance-0.11
 	11370 qa_getblkchaininfo-0.15							last=f6ffb14367
 	11367 rpc_blkchaininfo_disksize-0.15+knots				last=b7dfc6c4b8

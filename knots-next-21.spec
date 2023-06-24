@@ -68,7 +68,7 @@ TM	-     bugfix_asm_leveldb_check-0.20			15cb5704a2a	last=3ca799db25f bugfix_asm
 		#21.xTODO# should this get promoted to non-experimental now that it's considered stable in 23.x?
 	20121 secp256k1_allow_bignum-21+knots		b2befc7fef1
 	20358 -										3e3443170a8	last=330cb33985d  # src/randomenv.cpp: fix build on uclibc
-	20594 conf_getauxval-0.21					563aacf22be	last=836a3dc02c7 jonas/2020/12/getauxval
+	20594 conf_getauxval-0.21					563aacf22be	last=836a3dc02c7 jonasschnelli/2020/12/getauxval
 	#Maybe restore: 7339  opt_libevent
 	23716 qa_own_ripemd160-21					a93adb92909
 		# NOTE: Identical backport in #25538 now
@@ -101,7 +101,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	17828 p2p_log_categories-21					6ed22dedbde	last=04960621582 practicalswift/log-categories
 	(CHECK-LAST)	last=137964d82dc p2p_log_categories
 	19832 hebasto/200829-log					d64d3aaa576	last=1816327e533
-	20845 net_logcategory_localdisconnect-0.21	11e46eb9473	last=fa55159b9ed marco/2101-netLogDisconnect
+	20845 net_logcategory_localdisconnect-0.21	11e46eb9473	last=fa55159b9ed MarcoFalke/2101-netLogDisconnect
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
@@ -109,7 +109,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	(CHECK-LAST)	last=8520c437a0d http_bind_error
 	-     http_bind_error+extra-21				1d09d2dc41d	last=fd5353ed826 http_bind_error+extra
 		# NOTE: Held back annotation in gdd 785429c2c7a fd5353ed826
-	9524 marco/Mf1701-qaPruning					e8a96411986	last=88883ae13d marco/Mf1701-qaPruning
+	9524 MarcoFalke/Mf1701-qaPruning					e8a96411986	last=88883ae13d MarcoFalke/Mf1701-qaPruning
 	(CHECK-LAST)	last=b0c8dfaca2c rpc_pruneblkchain0
 	10731 log_more_uacomment-21					fb6f182d5c4	last=f89cd1133c3 log_more_uacomment
 	(CHECK-LAST)	last=fa16d94b095 log_more_uacomment-22
@@ -184,7 +184,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	# Needs review: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch				34dfe668f49
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
-	# Needs concept review: 20583 marco/2012-walletSync
+	# Needs concept review: 20583 MarcoFalke/2012-walletSync
 	g152  gui_notify_setup_bg					dbff865256f
 	-     bugfix_gui_drop_abc_confusing_hack	6e1b3b65525
 	20805 copyright_2022-0.21					c69ba0b3e58
@@ -246,7 +246,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	22359 fix_wallet_pr22359-0.21				6e658b9f2fd	last=fa6fd3dd6a4
 	(CHECK-LAST)	last=171ac54ea47 fix_wallet_pr22359-22
 		# Semi-diff-minimised
-	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
+	# Needs review: 22362 MarcoFalke/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds-21+knots				ae04745f860	last=2255d3bc827 bpchild_closefds
 	(CHECK-LAST)	last=9b9cdc9ae6f bpchild_closefds-0.21
 	(CHECK-LAST)	last=4c19cea484b bpchild_closefds-22
@@ -275,7 +275,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	19851 abstract_parseopcode-21				9cf7454f577  # needed for 22875
 	22875 parseopcode_threadsafe-21				ad627dc37a2	last=7b481f015a0
 	(CHECK-LAST)	last=34fd8e3992c parseopcode_threadsafe-22
-	22879 fix_addrman_err_format-21				2340bf42de5	last=fab0b55cf06 marco/2109-testPeersDat
+	22879 fix_addrman_err_format-21				2340bf42de5	last=fab0b55cf06 MarcoFalke/2109-testPeersDat
 	(CHECK-LAST)	last=0a3ec03ea33 fix_addrman_err_format-22
 	22895 fix_RBFD_lock_pr22895-0.16			c36be3256af	last=94c04681edb fix_RBFD_lock_pr22895-22
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
@@ -302,10 +302,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g439 gui_hide_unused_icons-0.20				823c85e38d4
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
 	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
-	# Needs review: 23227 marco/2110-ToIntegral
-	# Needs review of backport-rewrite in qt_catch_rpc_index_overflow-0.18 [alt to g446  marco/2110-qtRpcCons]
+	# Needs review: 23227 MarcoFalke/2110-ToIntegral
+	# Needs review of backport-rewrite in qt_catch_rpc_index_overflow-0.18 [alt to g446  MarcoFalke/2110-qtRpcCons]
 	# TODO: 23268 prayank23/dns-seed-fqdn
-	# TODO: 23253 marco/2110-utilTxSeqId
+	# TODO: 23253 MarcoFalke/2110-utilTxSeqId
 	23304 wallet_derive_inactive_pr23304-21
 	# n/a without #20764? 23324 netinfo_peer_count_all_reachable-22
 	# n/a without #19651: 23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
@@ -316,8 +316,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# Followups in #23777
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 	# Moved to Knots bips.md update in branding: 21925 + 23410 hebasto/211101-bips
-	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
-	# Needs review/diff-minimisation: 23486 marco/2111-rpcScript
+	# Needs work/diff-minimisation: 23418 MarcoFalke/2111-txPoolPrioOverflow
+	# Needs review/diff-minimisation: 23486 MarcoFalke/2111-rpcScript
 	# Needs work: 23502 achow101/tr-low-fee-est
 		# See also #28573
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
@@ -328,7 +328,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Embedded font not in 21.x! g477  gui477_fix_mac_console_font-0.13  # Monospaced output in Console on macOS
 	23644 wtx_timercvd_noadjust-21				f254b23b7d0
 		# Diff-miniised
-	# Needs correctness verification (especially startingheight which changed in 22.x): Diff-minimised 23652 marco/2112-docOptPeer
+	# Needs correctness verification (especially startingheight which changed in 22.x): Diff-minimised 23652 MarcoFalke/2112-docOptPeer
 	# Needs review: 23673 hebasto/211204-native
 	23750 docfix_importdesc_range_no_label-21	397093e7779	last=65efbba45d8 darosior/no_label_range_descriptors
 	# Buggy? UI change too... g447  -  # Never disable HD status icon
@@ -747,7 +747,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 		# NOTE: Originally #15115
 	15423 tor_socks_port-0.21					109cf1f0e3b	last=b2774fc0bed tor_socks_port
 		# Held back 962f168a014..398df42f449, da20c1e6d20 (not a bugfix)
-	15836 fee_histogram-21						69874bd7a2f	last=b94292a7cb jonas/2019/04/feeinfo
+	15836 fee_histogram-21						69874bd7a2f	last=b94292a7cb jonasschnelli/2019/04/feeinfo
 	(CHECK-LAST)	last=8cdfa4e2bea fee_histogram+pr15836_api
 	(CHECK-LAST)	last=f2fb1f17444 origin-pull/21422/head
 		# Held back approach changes (that ignore CPFP) f2ca3d35ee9..47b5c3e03a7 - current approach is arguably buggy (see sipa's review on PR)
@@ -786,7 +786,7 @@ m	16795 rpc_inferred_output_descriptors-21+k	5d1bc19f6ca
 		# NOTE: Didn't bother removing duplicate test
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
-	17631 rest_blockfilter-0.21					36a9777315b	last=2b64fa3251a matt/2019-11-filter-rest
+	17631 rest_blockfilter-0.21					36a9777315b	last=2b64fa3251a TheBlueMatt/2019-11-filter-rest
 		# +#23213 + #23836 (partial)
 	(CHECK-LAST)	last=91feea1216a rest_blockfilter-22
 		# NOTE: Dropped unrelated extra commits
@@ -879,7 +879,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	(CHECK-LAST)	last=de495ad2f11 intro_assumevalid-23
 	25339 rpcdoc_scantxoutset_20220611a-21					last=7862c4ac4e7 rpcdoc_scantxoutset_20220611a
 	23549 rpc_scanblocks-21+knots				5eaa6ce2ea6	last=bb553d4478b jamesob/2021-11-scanblocks
-	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
+	(CHECK-LAST)	last=71b7cdb460e jonasschnelli/2020/12/filterblocks_rpc
 	(CHECK-LAST)	last=d28e8e4e277 rpc_scanblocks
 	(CHECK-LAST)	last=d28e8e4e277 rpc_scanblocks-24+knots
 		# NOTE: Was #20664
@@ -908,12 +908,12 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	(CHECK-LAST)	last=4d70dc134c2 qt_peers_directionarrow-22+knots
 	(CHECK-LAST)	last=6d169ee0c55 qt_peers_directionarrow-23+knots
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
-	20916 rpc_testmempoolaccept_wtxid-0.21		c5b8eb0a8b4	last=fa0aa87071e marco/2101-wtxidTestmempool
+	20916 rpc_testmempoolaccept_wtxid-0.21		c5b8eb0a8b4	last=fa0aa87071e MarcoFalke/2101-wtxidTestmempool
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots	9e73df68dc7
 		# NOTE: Left out Peers table column & misc formatting changes
 		# if merging full gui#599: * f0dbac928f1 GUI: Support translating peer network names
-	20944 rpc_getmempoolinfo_total_fee-0.21		e0125b1b0d9	last=fa362064e38 marco/2101-rpcMempoolTotalFee
+	20944 rpc_getmempoolinfo_total_fee-0.21		e0125b1b0d9	last=fa362064e38 MarcoFalke/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
 		# +#23980 minor typo fix
 	g186  gui_bumpfee_privacywarn-0.21+knots	725973ae6f9
@@ -970,7 +970,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=069ccfcbc4e autoreindex
 	22147 p2p_protect_last_outHB-0.21			995947de083
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
-	22159 conf_append_cxxflags-0.10				b9c4f0c218e	last=fa14c6818f4 marco/2106-buildPattern
+	22159 conf_append_cxxflags-0.10				b9c4f0c218e	last=fa14c6818f4 MarcoFalke/2106-buildPattern
 	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers
 	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
 	g281  gui_console_fontsize_shortcuts-0.21+k	a9ed8095ab9
@@ -1066,7 +1066,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	10593 relax_invblk_punishment-0.21+knots	d4765cc92bd	last=0971192425f relax_invblk_punishment
 	(CHECK-LAST)	last=57903e3f34d relax_invblk_punishment-22
 		# Held back 0971192425f QA: Use addconnection rather than addnode onetry
-	10350 filtered_witblock-0.21				4e1122ece17	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.21				4e1122ece17	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 	(CHECK-LAST)	last=6bf4092cb7b filtered_witblock-22
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
@@ -1082,11 +1082,11 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# Added functional tests: 5d5b2fb8442 QA: Exercise REST interface in feature_fee_estimation
 	11803 bugfix_dumpwallet_hdkeypath-0.20		280b1276bfb
 	(CHECK-LAST)	last=a6d25571113 bugfix_dumpwallet_hdkeypath
-	12965 scriptthreads-0.20					095986b847a	last=dfab6c6866 jonas/2018/04/svt
+	12965 scriptthreads-0.20					095986b847a	last=dfab6c6866 jonasschnelli/2018/04/svt
 	(CHECK-LAST)	last=f6052208ab0 scriptthreads-22
 	(CHECK-LAST)	last=12e673a8c23 scriptthreads
 		# Held back RPCResult NONE cuz undocumented is actually better
-	13203 dsha256_power8-0.20					357397180c7	last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.20					357397180c7	last=3b402e0738 TheBlueMatt/2018-05-asm
 	(CHECK-LAST)	last=a72483b8e14 dsha256_power8-23
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		60c82d4c598	last=99986de8b02 dsha256_power8_asm_pragmas-23
@@ -1101,7 +1101,7 @@ m	15421 tor_subprocess-0.21+knots				ccf77ea4de5	last=58c6cafd3a1 tor_subprocess
 	15633 nohbcbfornonwit-0.21+knots			f81d53ce8c5	last=f5e4f1650fe nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
-	# TODO: 16490 marco/1907-rpcMempoolWhyReplacable
+	# TODO: 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d					975064084f4

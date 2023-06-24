@@ -20,11 +20,11 @@ checkout v0.14.0
 	9495 - #JeremyRubin:checkqueue-control-lock
 	9497 - #JeremyRubin:checkqueue-tests
 	# broken: 9522 achow101/fix-decoderawtx
-	9524 marco/Mf1701-qaPruning
+	9524 MarcoFalke/Mf1701-qaPruning
 	9549 - #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
 	9622 listsinceblock_removedtxs-0.14					last=561b2cf
 		# Holding back 44be568..d453b37 "allow_partial" ugliness
-	9481 jonas/2017/01/fee_warning
+	9481 jonasschnelli/2017/01/fee_warning
 # FUNCTIONALITY:
 	 559 accept_nonstdtxn						ef78424
 	 929 tbc									71afd77
@@ -32,7 +32,7 @@ checkout v0.14.0
 	5861 gui_restore_addresses					beb0845
 	5891 qt_console_history_persist				4c61f10
 	5916 keyorigin-0.14							96b7b0c
-	7061 jonas_rpc_rescan-0.14					7d87b7b last=d1aa8a9 jonas/2015/11/wallet_rescan_rpc
+	7061 jonas_rpc_rescan-0.14					7d87b7b last=d1aa8a9 jonasschnelli/2015/11/wallet_rescan_rpc
 	7107 qtnetworkport							92af35b	last=1f37c87 origin-pull/7107/head
 	9592 - #ryanofsky:pr/grbf
 	9672 rpc_rbf								0cafb83	# WAS 7159 with last=b64ebaf
@@ -42,7 +42,7 @@ checkout v0.14.0
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	8384 -										9f0194a
 	-    trivial_blockmaxsize_mainnet			4079db4
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists

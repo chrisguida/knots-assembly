@@ -21,7 +21,7 @@ checkout v0.16.1
 	13105 test_failfast-0.16
 	-    travis_nolibevent						b1459695b2
 # FIXES:
-	9524 marco/Mf1701-qaPruning					98b97a8e8a
+	9524 MarcoFalke/Mf1701-qaPruning					98b97a8e8a
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						de542996ff
 	10731 log_more_uacomment					3963e0f61a
@@ -60,7 +60,7 @@ checkout v0.16.1
 	13192 bugfix_p2p_sendheaders-0.16
 # FUNCTIONALITY:
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -69,7 +69,7 @@ checkout v0.16.1
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys+sort_multisigs			b7cfb4f153	last=127ec180bd sweepprivkeys
 NM	12196 sweepprivkeys+scantxoutset			0bb54a08ab
-	12196 sweepprivkeys+scantxoutset						last=be98b2d9a8 jonas/2017/12/utxo_sweep
+	12196 sweepprivkeys+scantxoutset						last=be98b2d9a8 jonasschnelli/2017/12/utxo_sweep
 		# modified to remove scan-by-address garbage
 		# held back feature removals
 	9245 ionice									ee401959ec
@@ -99,7 +99,7 @@ m	8501 old_stats_rpc-0.16						f1433a2ba2	last=7af0ea43b2
 	12674 rpc_onetry_nonpriv					fd8db57b0e
 	10593 relax_invblk_punishment				11759c2d01
 	10594 whitelist_outgoing					bf1b027d2d
-	10350 filtered_witblock-0.16				0c6010bf23	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.16				0c6010bf23	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	10729 scriptex								cb3bbbad7f
 m	10730 scriptflag_strings-mini-0.16			0365f306bb	last=e2e183bc1f
@@ -156,7 +156,7 @@ m	12240 rpc_mempool_fees-0.16					d33e09676c	last=7de1de7da4  # [rpc] Introduced
 	# TODO ? 12792 w/ renamed param
 	12818 gui_feebump_select-0.16							last=90c614cb8b
 	12911 signrawtx_showfees-0.16							last=b7159aa585 kallewoof/sign-show-fees
-	12965 scriptthreads-0.16+knots							last=dfab6c6866 jonas/2018/04/svt
+	12965 scriptthreads-0.16+knots							last=dfab6c6866 jonasschnelli/2018/04/svt
 	# TODO ADD ONLY 13008 # rpc: Rename size to vsize in mempool related calls
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	# Needs fixes: 13072 ajtowns/signmultisig
@@ -173,10 +173,10 @@ m	12240 rpc_mempool_fees-0.16					d33e09676c	last=7de1de7da4  # [rpc] Introduced
 	13438 dsha256_selftest-0.16
 	13386 dsha256_shani-0.16								last=66b2cf1ccf sipa/201806_shani
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.16								last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.16								last=3b402e0738 TheBlueMatt/2018-05-asm
 	# TODO: Possible performance concern 13310 promag/2018-05-replayblocks-progress
 	13339 walletnotify_w-0.16								last=cef0327afd promag/2018-05-walletnotify
-	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c marco/Mf1806-rpcBlockHeader
+	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c MarcoFalke/Mf1806-rpcBlockHeader
 		# held back removal of duplicate-header submission check
 # Non-upstreamed functionality:
 m	-     restore_blockmaxsize					5498f1f3ee

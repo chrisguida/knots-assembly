@@ -25,11 +25,11 @@ TM	8845 pr8845-0.13							8bb0fe0  # Don't return the address of a P2SH of a P2S
 NM	1918 mempool_req							3a08a55
 	5861 gui_restore_addresses					35cde1a
 	8877 qt_console_history_filter-0.13knots	fa0bf1e	last=8562792
-	5891 qt_console_history_persist				a2b2278	last=d8a8f1b jonas/2015/03/qt_console_update
+	5891 qt_console_history_persist				a2b2278	last=d8a8f1b jonasschnelli/2015/03/qt_console_update
 	5916 keyorigin-0.13							35b635a
 	6996 preciousblock							6038b90	last=5805ac8
 	#+9097a
-	7061 jonas_rpc_rescan						2cc569b last=d1aa8a9 jonas/2015/11/wallet_rescan_rpc
+	7061 jonas_rpc_rescan						2cc569b last=d1aa8a9 jonasschnelli/2015/11/wallet_rescan_rpc
 	7107 qtnetworkport							8045526	last=1f37c87 origin-pull/7107/head
 	7159 rpc_rbf-0.13.x							eabea64	last=b64ebaf
 	8601 walletrbf-knots-0.13.x					52f96e7
@@ -47,7 +47,7 @@ NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because
 	7948 bip9_softforks_since-0.13				1c2fb91  # RPC: augment getblockchaininfo bip9_softforks data
 	8371 UI-out-of-sync-0.13					9c177ab
 	#+8805
-	#+8821 marco/Mf1609-qtSyncReindex
+	#+8821 MarcoFalke/Mf1609-qtSyncReindex
 	#+8985
 	#+8906
 	# TODO: +9218 (but needs networkactive first..)
@@ -67,7 +67,7 @@ NM	7551 importmulti-old-0.13.x-knots			ccd9553	# holding back PR updates because
 	7783 qt_console_nested-0.13-knots
 	#+9329
 	# not ready? 7871 origin-pull/7871/head		         # Manual block file pruning.
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists

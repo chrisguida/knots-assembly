@@ -20,12 +20,12 @@ checkout v0.17.1
 # TESTS:
 	13724 symbol_check-0.17
 	14036 travis_sanitizers-0.17
-	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
+	# TODO why was this closed??? 14080 MarcoFalke/Mf1808-travisSanThread
 	-     lint_relaxer
 # FIXES:
 	14968 http_bind_error-0.17								last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra-0.17
-	9524 marco/Mf1701-qaPruning					891509bbdf
+	9524 MarcoFalke/Mf1701-qaPruning					891509bbdf
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						938ce42c1a
 	10731 log_more_uacomment-0.17.1				71ccec6290	last=aaba5976bd log_more_uacomment
@@ -64,7 +64,7 @@ checkout v0.17.1
 	14066 gitian_power64-0.17								last=02ba4890bb gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -95,7 +95,7 @@ checkout v0.17.1
 	12674 rpc_onetry_nonpriv					dd2a168c2a
 	10593 relax_invblk_punishment				e7398a9b8d
 	10594 whitelist_outgoing					20d5c10ce0
-	10350 filtered_witblock-0.17				e3c0fcef0a	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.17				e3c0fcef0a	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	10729 scriptex								a6d4274f12
 	10730 scriptflag_strings-mini-0.17			98813105ab	last=e2e183bc1f
@@ -127,19 +127,19 @@ checkout v0.17.1
 	# TODO ? 12792 w/ renamed param
 	12818 -										a1c7d44271  # [qt] TransactionView: highlight replacement tx after fee bump
 	12911 signrawtx_showfees-0.17				613381e9c4	last=4cd8db17d5 kallewoof/sign-show-fees
-	12965 scriptthreads-0.17					ec38b2650d	last=dfab6c6866 jonas/2018/04/svt
+	12965 scriptthreads-0.17					ec38b2650d	last=dfab6c6866 jonasschnelli/2018/04/svt
 	13008 rpc_mempool_vsize-0.17+knots						last=3bc922d79c  # rpc: Rename size to vsize in mempool related calls
 		# NOTE: Minified & made deprecation softer
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	13152 rpc_getnodeaddress-0.17							last=a2eb6f5405
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.17					6a93a81e3e	last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.17					6a93a81e3e	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		7d916e293f
 	# TODO: Possible performance concern 13310 promag/2018-05-replayblocks-progress
 	13339 walletnotify_w-0.17					10c0ad0430	last=71d70632ee promag/2018-05-walletnotify
 		# held back cef0327afd..71d70632ee Windows porting due to copyright issues (and bugs?)
-	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c marco/Mf1806-rpcBlockHeader
+	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c MarcoFalke/Mf1806-rpcBlockHeader
 		# held back removal of duplicate-header submission check
 	# Needs work: 13541 wallet/rpc: sendrawtransaction maxfeerate
 	# Needs work: 13756 wallet: -avoidreuse feature for improved privacy

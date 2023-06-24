@@ -15,7 +15,7 @@ checkout v0.18.0
 	15155 test_external_bcli
 @0.18.x-knots
 # TESTS:
-	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
+	# TODO why was this closed??? 14080 MarcoFalke/Mf1808-travisSanThread
 	-     lint_relaxer							e05acaeb4c
 	# Needs review: 15134 practicalswift:unsigned-char
 	15888 test_wallet_implicitsegwit
@@ -24,7 +24,7 @@ checkout v0.18.0
 	15913 bugfix_nowallet_avoidpspends-0.18
 	14968 laanwj/2018_12_http_bind_error		a557a2af18
 	-     http_bind_error+extra					8261704f7f
-	9524 marco/Mf1701-qaPruning					0482515b41
+	9524 MarcoFalke/Mf1701-qaPruning					0482515b41
 	10731 log_more_uacomment					d5d543625c
 	14485 fadvise								ff6b7f3165
 		# Was #12491
@@ -58,7 +58,7 @@ checkout v0.18.0
 	14066 gitian_power64-0.18					177d8f6828	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -88,7 +88,7 @@ checkout v0.18.0
 	12674 rpc_onetry_nonpriv					ea03333e2d
 	10593 relax_invblk_punishment				0ff280e5a8
 	10594 whitelist_outgoing					2de5c391b3
-	10350 filtered_witblock-0.17				1ec90f1975	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.17				1ec90f1975	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -117,13 +117,13 @@ checkout v0.18.0
 	12763 rpcwhitelist-0.17						6f33a8130a	last=8c45d93b0e
 	# TODO ? 12792 w/ renamed param
 	12911 signrawtx_showfees-0.18				c244e05b04	last=bba2e57c76 kallewoof/sign-show-fees
-	12965 scriptthreads-0.18					ae31010942	last=dfab6c6866 jonas/2018/04/svt
+	12965 scriptthreads-0.18					ae31010942	last=dfab6c6866 jonasschnelli/2018/04/svt
 	15637 rpc_mempool_vsize-0.18+knots			c38dd8b58e	last=e16b6a7188  # rpc: Rename size to vsize in mempool related calls
 		# NOTE: Minified & made deprecation softer
 		# NOTE: was #13008
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.17					93c1f69e72	last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.17					93c1f69e72	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		c93d46a320
 	13339 walletnotify_w-0.18					835d6f86c2	last=71d70632ee promag/2018-05-walletnotify
@@ -200,14 +200,14 @@ checkout v0.18.0
 		# NOTE: Probably dialogs should be closed, not simply hidden
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
-	15836 mempoolinfo_feehistogram-0.18						last=c97a9ddd4a jonas/2019/04/feeinfo
+	15836 mempoolinfo_feehistogram-0.18						last=c97a9ddd4a jonasschnelli/2019/04/feeinfo
 	15861 restore_vbits_warning
 	# Complex rebase: 15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
 	# Needs concept ACK and review: 15873 Rpc removemempoolentry
 	# Needs concept ACK and review: 15886 hebasto:20190424-send-confirmation-dialog
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
-	15932 rpc_getblock_relax_lock-0.18						last=fab00a5cb9 marco/1905-rpcBlockNoLock
-	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac marco/1904-rpcWalletBalances
+	15932 rpc_getblock_relax_lock-0.18						last=fab00a5cb9 MarcoFalke/1905-rpcBlockNoLock
+	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac MarcoFalke/1904-rpcWalletBalances
 		# NOTE: excluded various refactoring and deprecation
 # Non-upstreamed functionality:
 	-     restore_blockmaxsize					3c5d43ee60

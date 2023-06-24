@@ -19,7 +19,7 @@ m	9359 test_wallet_immature-0.14				441ef55	last=7ed143c	# Add test for CWalletT
 	9495 -										9669767 #JeremyRubin:checkqueue-control-lock
 	9497 -										35bc768 #JeremyRubin:checkqueue-tests
 	# broken: 9522 achow101/fix-decoderawtx
-	9524 marco/Mf1701-qaPruning					abdaa7e
+	9524 MarcoFalke/Mf1701-qaPruning					abdaa7e
 	9549 -										745f70a #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
 	9622 listsinceblock_removedtxs-0.14			913fd86	last=5d352044ca
 		# Hold back (eg 44be568..d453b37) any new "allow_partial" ugliness
@@ -47,7 +47,7 @@ NM	10234 list_banned_correctly-0.14			408c686
 	5861 gui_restore_addresses					1f836fd
 	5891 qt_console_history_persist				debb57d
 	5916 keyorigin-0.14							ffe6c36
-	7061 jonas_rpc_rescan-0.14					31b0b95 last=0092c0662c jonas/2015/11/wallet_rescan_rpc
+	7061 jonas_rpc_rescan-0.14					31b0b95 last=0092c0662c jonasschnelli/2015/11/wallet_rescan_rpc
 		# Skipping 0092c0662c which removes -rescan functionality
 	7107 qtnetworkport							bba5bf2	last=1f37c87 origin-pull/7107/head
 	9592 gui_rbf_checkbox-0.14					3c75e07
@@ -59,7 +59,7 @@ m	9672 rpc_rbf-0.14+k							b1a0e12	last=9a5a1d7d45  # WAS 7159 with last=b64eba
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	8384 txinerr_witness-0.14+k					eb29869
 	-    trivial_blockmaxsize_mainnet			d538944
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists

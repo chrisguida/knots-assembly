@@ -17,7 +17,7 @@ TM	17450 bugfix_pr17450-0.19					9042cd5b937
 TM	17654 boost_1_72_compat-0.19				a3dca843b30
 @0.19.x-knots
 # TESTS:
-	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
+	# TODO why was this closed??? 14080 MarcoFalke/Mf1808-travisSanThread
 	-     lint_relaxer							e13ddc3a1fd
 	15888 test_wallet_implicitsegwit			957748c8dd9
 	17402 travis_ppc64-0.19						efca75db899	last=1d684f05341 elichai/2019-11-powerpc64
@@ -29,7 +29,7 @@ NM	17828 log_categories_validation-0.19+knots	062f5b03c1e
 	14968 laanwj/2018_12_http_bind_error		efc4cc2d518	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					99a135b79a6
 	18287 fix_libevent_win_ipv6-0.15						last=e918138fd5b fix_libevent_win_ipv6
-	9524 marco/Mf1701-qaPruning					4d044e0fc41	last=88883ae13d marco/Mf1701-qaPruning
+	9524 MarcoFalke/Mf1701-qaPruning					4d044e0fc41	last=88883ae13d MarcoFalke/Mf1701-qaPruning
 	10731 log_more_uacomment					b3ed643d9f8
 	14485 fadvise								bd7a97d3112
 		# Was #12491
@@ -56,7 +56,7 @@ NM	17828 log_categories_validation-0.19+knots	062f5b03c1e
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool (only affects nodes with a min fee %1000!=0)
-	16525 rpc_unsigned_txver-0.18				913ca0a80b6	last=e80259f197 matt/2019-07-unsigned-tx-ver
+	16525 rpc_unsigned_txver-0.18				913ca0a80b6	last=e80259f197 TheBlueMatt/2019-07-unsigned-tx-ver
 	17180 sendamount_tooltip-0.11				394636c0e15
 		# JeremyCrookshank:sendamounttooltip
 		# + 17226 promag:2019-10-payamount-tooltip
@@ -86,7 +86,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	18224 pr18224-0.19.1  # Make AnalyzePSBT next role calculation simple, correct
 	18225 fix_empty_parsemoney-0.15
 		# NOTE: Dropped refactor/first commit
-	18228 pr18228-0.19										last=faf6f156ffd marco/2002-testFixRace
+	18228 pr18228-0.19										last=faf6f156ffd MarcoFalke/2002-testFixRace
 	# Needs clarity? 18232 WIP test: Check that wait_until returns if time point is in the past
 	18271 wrkarnd_boost_wait_until
 # FUNCTIONALITY:
@@ -98,7 +98,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	14066 gitian_power64						ec80f3746ff
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -132,7 +132,7 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 	10594 whitelist_outgoing-mini-0.19+knots	accd958dccb	last=b7463a900cd whitelist_outgoing
 		#TODO: Split this up?
-	10350 filtered_witblock-0.19				7aefa53696c	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.19				7aefa53696c	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -161,10 +161,10 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	12763 rpcwhitelist-0.19						aa69598d0ec
 	# TODO ? 12792 w/ renamed param
 	12911 signrawtx_showfees-0.19				1f3ed3a36fe	last=47b2ba29df2 kallewoof/sign-show-fees
-	12965 scriptthreads-0.19					8c5b5701f54	last=dfab6c6866 jonas/2018/04/svt
+	12965 scriptthreads-0.19					8c5b5701f54	last=dfab6c6866 jonasschnelli/2018/04/svt
 	# Needs review are care (new index): 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.17					31bd050ce45	last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.17					31bd050ce45	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		8b1f3eaf99b
 	13339 walletnotify_w-0.19					fc814dc1301	last=4e9efac678a promag/2018-05-walletnotify
@@ -226,10 +226,10 @@ TM	17728 fix_scantxoutset_args-0.19			5c99a4a16d8
 	17795 gui_console_ctrl_d-0.19+knots			90ae0210bd5
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
-	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
+	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f MarcoFalke/1904-walletFastRescan
 		# TODO: Minify and test well
 		# NOTE: Needs #17366
-	15836 fee_histogram-0.19					24c56bc2676	last=b94292a7cb jonas/2019/04/feeinfo
+	15836 fee_histogram-0.19					24c56bc2676	last=b94292a7cb jonasschnelli/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 	15861 restore_vbits_warning					63d1f20f662
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
@@ -298,7 +298,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 		# NOTE: Held back 250d56ae226 itself since it demands users actively involved in index state
 	16463 bip174_xpub-0.19+knots							last=63f705bb9d2 achow101/bip174-xpub
 		# NOTE: Diff-minimised
-	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
+	# TODO: Support Knots policies: Minimised 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
 	17492 gui_bump_psbt-0.19								last=3c30d7118a5 instagibbs/gui_bump_psbt
 	17509 gui_saveload_psbt-0.19+knots						last=f48130c331c Sjors/2019/11/gui-psbt-save
@@ -306,7 +306,7 @@ m	15987 wallet_no_reuse-0.19+knots			9f8e1c9c80d	last=391c5d9a972 wallet_no_reus
 	18027 gui_psbt_opts_dialog-0.19+knots					last=3e7ca1e8577 gwillen/feature-psbt-ops-dialog
 		# NOTE: Dropped changes to error strings
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
-	17631 rest_blockfilter-0.19					e8d30213c37	last=3ab6abcc4dd matt/2019-11-filter-rest
+	17631 rest_blockfilter-0.19					e8d30213c37	last=3ab6abcc4dd TheBlueMatt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	17636 guisettings_opt-0.19					59a6abab328	last=5266efa964b emilengler/2019-11-guisettings
 	# Needs work & concept ACK: rpc: Make __cookie__ user immune to rpcwhitelist #17815

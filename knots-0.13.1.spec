@@ -25,10 +25,10 @@ TM	8492 conf_only_bench						f532bf1
 NM	1918 mempool_req							ef56cf7
 	5861 gui_restore_addresses					af1e94d
 	8877 qt_console_history_filter
-m	5891 qt_console_history_persist				48813e2	last=d8a8f1b jonas/2015/03/qt_console_update
+m	5891 qt_console_history_persist				48813e2	last=d8a8f1b jonasschnelli/2015/03/qt_console_update
 	5916 keyorigin-0.13							81857a0
 	6996 preciousblock							c22f014	last=5805ac8
-	7061 jonas_rpc_rescan						67870be last=d1aa8a9 jonas/2015/11/wallet_rescan_rpc
+	7061 jonas_rpc_rescan						67870be last=d1aa8a9 jonasschnelli/2015/11/wallet_rescan_rpc
 	7107 qtnetworkport							1585f8a	last=1f37c87 origin-pull/7107/head
 	7159 rpc_rbf-0.13.x							d0163a6	last=b64ebaf
 	8601 walletrbf-knots-0.13.x					7fdb4e6
@@ -42,18 +42,18 @@ NM	7551 importmulti-old-0.13.x-knots			e74933f	# holding back PR updates because
 			# grab merged one by rebroad
 	# breaks history filter: 7783 qt_console_nested-0.13
 	8456 bumpfee-0.13									last=8e969e3  # [RPC] Simplified bumpfee command.
-	# needs string cleanup: 8182 jonas/2016/04/qt_rbf_set_new
+	# needs string cleanup: 8182 jonasschnelli/2016/04/qt_rbf_set_new
 	7948 bip9_softforks_since-0.13						# RPC: augment getblockchaininfo bip9_softforks data
 	8371 UI-out-of-sync-0.13
 	#+8805
-	#+8821 marco/Mf1609-qtSyncReindex
+	#+8821 MarcoFalke/Mf1609-qtSyncReindex
 	# not ready: 8889 overlay_theme
-	# needs de-blobbing: 8550 jonas/2016/08/stats_qt
+	# needs de-blobbing: 8550 jonasschnelli/2016/08/stats_qt
 	8384 pr8384-0.13
 	# not ready? 7871 origin-pull/7871/head							# Manual block file pruning.
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
-	# untested: 8501 jonas/2016/08/stats_rpc
+	# untested: 8501 jonasschnelli/2016/08/stats_rpc
 	8517 hd_gui-0.13
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists

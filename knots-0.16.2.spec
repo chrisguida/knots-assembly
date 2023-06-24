@@ -24,7 +24,7 @@ TM	12859 incl_memory							7a8558fdd5
 	13105 test_failfast-0.16					14caa2b18f
 	-    travis_nolibevent						c40fd4e5b0
 # FIXES:
-	9524 marco/Mf1701-qaPruning					8b4de6cfe6
+	9524 MarcoFalke/Mf1701-qaPruning					8b4de6cfe6
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						5ce08dd859
 	10731 log_more_uacomment					22401d478b
@@ -67,7 +67,7 @@ TM	13192 bugfix_p2p_sendheaders-0.16			fa7f49cca1
 	# Needs review: 13674 Qt: Fix for bitcoin-qt becoming unresponsive during shutdown (issue #13217)
 # FUNCTIONALITY:
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -76,7 +76,7 @@ TM	13192 bugfix_p2p_sendheaders-0.16			fa7f49cca1
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys+sort_multisigs			b2ce8aae14	last=127ec180bd sweepprivkeys
 NM	12196 sweepprivkeys+scantxoutset			1ff7bfeb7e
-	12196 sweepprivkeys+scantxoutset			c048354fef						last=be98b2d9a8 jonas/2017/12/utxo_sweep
+	12196 sweepprivkeys+scantxoutset			c048354fef						last=be98b2d9a8 jonasschnelli/2017/12/utxo_sweep
 		# modified to remove scan-by-address garbage
 		# held back feature removals
 	9245 ionice									250ed07696
@@ -106,7 +106,7 @@ m	8501 old_stats_rpc-0.16						e0cf24c0f8	last=7af0ea43b2
 	12674 rpc_onetry_nonpriv					a2b002f2cb
 	10593 relax_invblk_punishment				2c47a86875
 	10594 whitelist_outgoing					3d69144480
-	10350 filtered_witblock-0.16				330e646dc0	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.16				330e646dc0	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	10729 scriptex								4556dd6628
 m	10730 scriptflag_strings-mini-0.16			5d75779e76	last=e2e183bc1f
@@ -163,7 +163,7 @@ m	12240 rpc_mempool_fees-0.16					20e64d6b07	last=7de1de7da4  # [rpc] Introduced
 	# TODO ? 12792 w/ renamed param
 	12818 gui_feebump_select-0.16				63745c7be5	last=90c614cb8b
 	12911 signrawtx_showfees-0.16				1bf2a1ee4f	last=b7159aa585 kallewoof/sign-show-fees
-	12965 scriptthreads-0.16+knots				00c2ae90f5	last=dfab6c6866 jonas/2018/04/svt
+	12965 scriptthreads-0.16+knots				00c2ae90f5	last=dfab6c6866 jonasschnelli/2018/04/svt
 	# TODO ADD ONLY 13008 # rpc: Rename size to vsize in mempool related calls
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	# Needs fixes: 13072 ajtowns/signmultisig
@@ -180,11 +180,11 @@ m	13191 dsha256_64-0.16+knots					816e2f1228
 	13438 dsha256_selftest-0.16					b5fe11969b
 m	13386 dsha256_shani-0.16+knots				0f5ea68849	last=66b2cf1ccf sipa/201806_shani
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-m	13203 dsha256_power8-0.16+knots				eef4629013	last=3b402e0738 matt/2018-05-asm
+m	13203 dsha256_power8-0.16+knots				eef4629013	last=3b402e0738 TheBlueMatt/2018-05-asm
 	-     bugfix_asm_opt_and_pragmas-0.16+knots
 	# TODO: Possible performance concern 13310 promag/2018-05-replayblocks-progress
 	13339 walletnotify_w-0.16					de556050f8	last=cef0327afd promag/2018-05-walletnotify
-	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c marco/Mf1806-rpcBlockHeader
+	# broken? 13399 rpc_submitheader-0.16								last=fa7d7dd34c MarcoFalke/Mf1806-rpcBlockHeader
 		# held back removal of duplicate-header submission check
 	13537 gui_peertable_inout-0.10
 	# Needs work: 13541 wallet/rpc: sendrawtransaction maxfeerate

@@ -19,11 +19,11 @@ checkout v0.14.1
 	9495 -										0765be7 #JeremyRubin:checkqueue-control-lock
 	9497 -										2c02ce5 #JeremyRubin:checkqueue-tests
 	# broken: 9522 achow101/fix-decoderawtx
-	9524 marco/Mf1701-qaPruning					023c03b
+	9524 MarcoFalke/Mf1701-qaPruning					023c03b
 	9549 -										a5779d5 #practicalswift:avoid-potential-null-pointer-dereference-in-markblockasinflight
 	9622 listsinceblock_removedtxs-0.14			9e7ad7b	last=a8c56bf
 		# Hold back (eg 44be568..d453b37) any new "allow_partial" ugliness
-	9481 jonas/2017/01/fee_warning				4980c9c
+	9481 jonasschnelli/2017/01/fee_warning				4980c9c
 	10156 bugfix_restore_onscreen-0.14					last=b0c302b
 	10196 prioritisetx_gbtcache-0.14					last=6a61424
 	10234 list_banned_correctly-0.14					last=ea2c925
@@ -35,7 +35,7 @@ checkout v0.14.1
 	5861 gui_restore_addresses					6ccb9f0
 	5891 qt_console_history_persist				ce204cf
 	5916 keyorigin-0.14							630aec0
-	7061 jonas_rpc_rescan-0.14					784407e last=d1aa8a9 jonas/2015/11/wallet_rescan_rpc
+	7061 jonas_rpc_rescan-0.14					784407e last=d1aa8a9 jonasschnelli/2015/11/wallet_rescan_rpc
 	7107 qtnetworkport							4ec5d79	last=1f37c87 origin-pull/7107/head
 	9592 -										f06d849 #ryanofsky:pr/grbf
 	9672 rpc_rbf								e97099b	# WAS 7159 with last=b64ebaf
@@ -45,7 +45,7 @@ checkout v0.14.1
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	8384 -										9ba797f
 	-    trivial_blockmaxsize_mainnet			bde01d5
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists

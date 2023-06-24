@@ -55,7 +55,7 @@ checkout v22.0
 	14968 http_bind_error						e75ff7b9323	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					81ed4fe33fa
 		# NOTE: libevent-copied code up to date as of 2021-07-16 c29f1dbe116c88434e77721ca215b8d2082b247f
-	9524 marco/Mf1701-qaPruning					ae3444d7950	last=88883ae13d marco/Mf1701-qaPruning
+	9524 MarcoFalke/Mf1701-qaPruning					ae3444d7950	last=88883ae13d MarcoFalke/Mf1701-qaPruning
 	10731 log_more_uacomment					3cee4ceb1b1
 	14485 fadvise								e87f5a4c952
 		# Was #12491
@@ -100,7 +100,7 @@ checkout v22.0
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
 	# Needs review: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
-	# Needs concept review: 20583 marco/2012-walletSync
+	# Needs concept review: 20583 MarcoFalke/2012-walletSync
 	g152  gui_notify_setup_bg					e7a792e44b6
 	-     bugfix_gui_drop_abc_confusing_hack	c0f258de92f
 	# Needs review: g201  jonatack-g/inbound-block-relay
@@ -112,7 +112,7 @@ checkout v22.0
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
 	22359 fix_wallet_pr22359-22					3244e0d002f	last=fa6fd3dd6a4
 		# Semi-diff-minimised
-	# Needs review: 22362 marco/2106-addrdb  # Drop (only) invalid entries when reading banlist
+	# Needs review: 22362 MarcoFalke/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds									last=3b6153ba336 bpchild_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 	g379  qt_reset_bad_settingsjson-0.21
@@ -132,7 +132,7 @@ checkout v22.0
 	# TODO? 22836 sipa:202108_bipvec5
 	# Not worth added build overhead? 22840 fanquake:fix_depends_lib_optimisation
 	22875 parseopcode_threadsafe-22							last=d5e006c84a1
-	22879 fix_addrman_err_format-22							last=fab0b55cf06	marco/2109-testPeersDat
+	22879 fix_addrman_err_format-22							last=fab0b55cf06	MarcoFalke/2109-testPeersDat
 	22895 fix_RBFD_lock_pr22895-22
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review: 22929 S3RK/fix_19856
@@ -155,11 +155,11 @@ checkout v22.0
 	23148 fix_guix_ppc64_linkerpath-22
 		# Just the fix itself
 	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
-	# Needs review: 23227 marco/2110-ToIntegral
-	# Needs review of backport-rewrite in qt_catch_rpc_index_overflow-0.18 [alt to g446  marco/2110-qtRpcCons]
+	# Needs review: 23227 MarcoFalke/2110-ToIntegral
+	# Needs review of backport-rewrite in qt_catch_rpc_index_overflow-0.18 [alt to g446  MarcoFalke/2110-qtRpcCons]
 	# TODO: 23268 prayank23/dns-seed-fqdn
 	-    gui_revert_g296
-	# TODO: 23253 marco/2110-utilTxSeqId
+	# TODO: 23253 MarcoFalke/2110-utilTxSeqId
 	# Needs careful work: 23277 -  # wallet: Add size check on meta.key_origin.path
 	# Needs care/review: 23304 achow101/inactivehd-derive-keypath-string
 	23324 netinfo_peer_count_all_reachable-22
@@ -171,7 +171,7 @@ checkout v22.0
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 		# + fix in #23434 ???
 	23410 doc_bips_380to386-22
-	# Needs work/diff-minimisation: 23418 marco/2111-txPoolPrioOverflow
+	# Needs work/diff-minimisation: 23418 MarcoFalke/2111-txPoolPrioOverflow
 @22.x-knots
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics	fe4dfbf3f33	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
@@ -182,7 +182,7 @@ checkout v22.0
 	-     guix_linux_i686
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -205,7 +205,7 @@ checkout v22.0
 	18479 rpc_sign_show_fees					4d67400f273	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# Dropped rel notes file
 		# NOTE: Originally #12911
-	# Needs review and care (new index): 13014 jonas/2018/04/txindex_prune
+	# Needs review and care (new index): 13014 jonasschnelli/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs work: 13989 add avx512 instrinsic
 	# Needs review: 13990 WIP: allow fee estimation to work with lower fees
@@ -229,7 +229,7 @@ checkout v22.0
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
-	15836 fee_histogram+pr15836_api				82829beb890	last=b94292a7cb jonas/2019/04/feeinfo
+	15836 fee_histogram+pr15836_api				82829beb890	last=b94292a7cb jonasschnelli/2019/04/feeinfo
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ?
@@ -260,7 +260,7 @@ checkout v22.0
 	17034 psbt_ver_proprietary_xpub-22-mini		8cfa229a8e4	last=7f066240654 achow101/bip174-extensions
 		# NOTE: Diff-minimised
 		# NOTE: Now includes 16463 bip174_xpub-0.21+knots				8e6f8d3cc9c	last=9926a387eab achow101/bip174-xpub
-	17631 rest_blockfilter-22					31a7b2798a2	last=2b64fa3251a matt/2019-11-filter-rest
+	17631 rest_blockfilter-22					31a7b2798a2	last=2b64fa3251a TheBlueMatt/2019-11-filter-rest
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	g319  gui_openuri_pastebtn-22				3cb5fcd37dd	last=dbde0558ce7
 		# NOTE: Used to be #17955
@@ -268,7 +268,7 @@ checkout v22.0
 	18014 siphash_optimise_pr18014-0.21+knots	996d632f395	last=19e28a41168 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
-	# Needs work/review/completion: 18242 jonas/2020/03/net_v2
+	# Needs work/review/completion: 18242 jonasschnelli/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
 	18689 rpc_dumptxoutset_hr					86a235cbd1f	last=65d0697fe34
@@ -299,7 +299,7 @@ checkout v22.0
 		# WAS gui#90
 		# Removed dialog size change
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
-	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
+	# Needs review and diff-minimisation: 20273 jonasschnelli/2020/10/client_rpc_nested
 	20295 rpc_getblockfrompeer_wo_header-22		947c37b0b52	last=9181e2e2179 Sjors/2020/11/getblockfrompeer
 		# Left out code movement
 		# Re-enabled fetching blocks w/o already having header (from older version of PR)
@@ -314,7 +314,7 @@ checkout v22.0
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid						8979d48f938
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	20664 rpc_scanblocks						ad927cbdb4c	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
+	20664 rpc_scanblocks						ad927cbdb4c	last=71b7cdb460e jonasschnelli/2020/12/filterblocks_rpc
 		# Added return value documentation (needed for QA to pass)
 	20702 rpc_getblocklocations					8db5bda17bd	last=9b03c654eb3
 		# NOTE: Fixed +x on test/functional/rpc_getblocklocations.py
@@ -366,7 +366,7 @@ checkout v22.0
 	# Needs review/optionality: 22009 achow101:cs-waste-2
 	# Duplicate (of #14641): 22049 -  # rpc: allow specifying min chain depth for inputs in fund calls
 	22072 -										66d83231979	last=602f4da9178  # autoreindex-0.21
-	22159 marco/2106-buildPattern				deede4f8965	last=fa14c6818f4 marco/2106-buildPattern
+	22159 MarcoFalke/2106-buildPattern				deede4f8965	last=fa14c6818f4 MarcoFalke/2106-buildPattern
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	g307  gui_peers_rowcolouropt-22				7d9f56d4c76	last=fdf80937d1c hebasto-g/210501-stripes
 		# Dropped formatting changes and avoided conflict with g216(optional_font)
@@ -465,7 +465,7 @@ checkout v22.0
 	20551 rpc_onetry_conntype					7a1723439c5
 		# NOTE: Originally based on #12674
 	10593 relax_invblk_punishment				040052148d5
-	10350 filtered_witblock-22				5cb7a4a645a	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-22				5cb7a4a645a	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -474,8 +474,8 @@ checkout v22.0
 		# NOTE: deviated from PR
 	11770 rest_fee								d2f6a3d7d5d	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	11803 bugfix_dumpwallet_hdkeypath			3b64c7195f0
-	12965 scriptthreads							8d959f05d3c	last=dfab6c6866 jonas/2018/04/svt
-	13203 dsha256_power8-0.20					9703ce00ee9	last=3b402e0738 matt/2018-05-asm
+	12965 scriptthreads							8d959f05d3c	last=dfab6c6866 jonasschnelli/2018/04/svt
+	13203 dsha256_power8-0.20					9703ce00ee9	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		6ceb71baa4c
 	15218 postibd_flush-22+knots				84b38613864	last=d2ecb70d64  # validation: Flush state after initial sync
@@ -486,7 +486,7 @@ checkout v22.0
 	15633 nohbcbfornonwit						c48ce12aa19
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
-	# TODO: 16490 marco/1907-rpcMempoolWhyReplacable
+	# TODO: 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d					ca0940d77b6

@@ -17,7 +17,7 @@ checkout v0.16.0
 # TESTS:
 	-    travis_nolibevent						2f096f65f4
 # FIXES:
-	9524 marco/Mf1701-qaPruning					8d37c7a0bb
+	9524 MarcoFalke/Mf1701-qaPruning					8d37c7a0bb
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						b62c04406f
 	10731 log_more_uacomment					9104b40f1d
@@ -37,7 +37,7 @@ checkout v0.16.0
 	12573 bugfix_no_clz-0.16  # Fix compilation when compiler do not support __builtin_clz*
 # FUNCTIONALITY:
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -45,7 +45,7 @@ checkout v0.16.0
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	# NOWHERE NEAR READY: 9806 UTXO index stuff
 	9152 sweepprivkeys+sort_multisigs			435a063f0e	last=127ec180bd sweepprivkeys
-	12196 sweepprivkeys+scantxoutset						last=3835de0da4 jonas/2017/12/utxo_sweep
+	12196 sweepprivkeys+scantxoutset						last=3835de0da4 jonasschnelli/2017/12/utxo_sweep
 	9245 ionice									63041adffd
 	-    ionice_win								9df27e8828
 	8501 old_stats_rpc-0.16						828af4e879	last=7af0ea43b2
@@ -73,7 +73,7 @@ checkout v0.16.0
 	12674 rpc_onetry_nonpriv
 	10593 relax_invblk_punishment				ee052bf276
 	10594 whitelist_outgoing					ede93391aa
-	10350 filtered_witblock-0.16				ee55b7d144	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.16				ee55b7d144	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	10729 scriptex								7ece29590e
 	10730 scriptflag_strings-mini				b828bc08be	last=97cae3915f

@@ -18,7 +18,7 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	19403 bugfix_conf_builtin_clzl-0.18
 @0.20.x-knots
 # TESTS:
-	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
+	# TODO why was this closed??? 14080 MarcoFalke/Mf1808-travisSanThread
 	-     lint_relaxer							09b7b255efc
 	17402 travis_ppc64							d0067dcca3c	last=1d684f05341 elichai/2019-11-powerpc64
 	19613 travis_s390x-0.20
@@ -37,7 +37,7 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	-     http_bind_error+extra					f25e88208ce
 	18287 fix_libevent_win_ipv6^				03032b55cd6
 	19375 fix_libevent_win_ipv6
-	9524 marco/Mf1701-qaPruning					0ad35cc88a2	last=88883ae13d marco/Mf1701-qaPruning
+	9524 MarcoFalke/Mf1701-qaPruning					0ad35cc88a2	last=88883ae13d MarcoFalke/Mf1701-qaPruning
 	10731 log_more_uacomment					36c7b301c97
 	18437 -										1a5f2f6a5c3	last=182dbdf0f4b  # util: Detect posix_fallocate() instead of assuming
 	14485 fadvise-0.20+knots					b7068aab4f8	last=c063994a14f fadvise
@@ -64,7 +64,7 @@ TM	19097 bugfix_incl_qpainterpath-0.9			d72c1f3d70e
 	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
-	16525 rpc_unsigned_txver-0.18				0151d9080c1	last=e80259f197 matt/2019-07-unsigned-tx-ver
+	16525 rpc_unsigned_txver-0.18				0151d9080c1	last=e80259f197 TheBlueMatt/2019-07-unsigned-tx-ver
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 TM	17946 fix_gbt_buried						e6943a490bd
 	18095 -													last=6307dfa87e3  # Fix crashes and infinite loop in ListWalletDir()
@@ -127,7 +127,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 		# NOTE: Carries a commit from master #14066 to avoid bogus .plt security check on PPC64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -165,7 +165,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 	10594 whitelist_outgoing-mini-0.20+knots	676ef353c36	last=d465ea1e057 whitelist_outgoing
 		#TODO: Split this up?
-	10350 filtered_witblock-0.20				5037388e063	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.20				5037388e063	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -195,10 +195,10 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	# TODO ? 12792 w/ renamed param
 	12911 rpc_sign_show_fees					ce78032ef16	last=47b2ba29df2 kallewoof/sign-show-fees
 		# NOTE: Rebased as #18479
-	12965 scriptthreads-0.20					5f86447e430	last=dfab6c6866 jonas/2018/04/svt
+	12965 scriptthreads-0.20					5f86447e430	last=dfab6c6866 jonasschnelli/2018/04/svt
 	# Needs review are care (new index): 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.20					7691f5158af	last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.20					7691f5158af	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		ffc9d72e968
 	-     walletnotify_w_win					38280d4cc6c
@@ -247,10 +247,10 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	17795 gui_console_ctrl_d-0.20+knots			eddf1f619de
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
-	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
+	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f MarcoFalke/1904-walletFastRescan
 		# TODO: Minify and test well
 		# OR: 19116 pstratem:2020-05-29-generate-pubkeys
-	15836 fee_histogram-0.20					9b05c8a0fc2	last=b94292a7cb jonas/2019/04/feeinfo
+	15836 fee_histogram-0.20					9b05c8a0fc2	last=b94292a7cb jonasschnelli/2019/04/feeinfo
 		# NOTE: removed extraneous Bitcoin-Qt.* files
 	15861 restore_vbits_warning-0.20			8fd53f63921 last=9de382aae41 restore_vbits_warning
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
@@ -310,7 +310,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 		# NOTE: Excluded refactor
 	16463 bip174_xpub-0.20+knots				7b77b36f9c0	last=ee0dd3ae1fc achow101/bip174-xpub
 		# NOTE: Diff-minimised by excluding moveonly
-	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
+	# TODO: Support Knots policies: Minimised 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
 	17509 gui_saveload_psbt-0.20+knots			271b7bcf47d	last=764bfe4cba3 Sjors/2019/11/gui-psbt-save
 		# NOTE: Minified
@@ -318,7 +318,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 		# NOTE: Dropped changes to error strings (at least some re-implemented on my own), and unrelated 931dd476085
 		# NOTE: Held back efde5525704->11a0ffb29d1 because it shouldn't matter
 	# Needs review: 17529 rpc: Faster getblock using PureBlock
-	17631 rest_blockfilter-0.20					abb826147d7	last=16d8d2da598 matt/2019-11-filter-rest
+	17631 rest_blockfilter-0.20					abb826147d7	last=16d8d2da598 TheBlueMatt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	17636 guisettings-0.20						b868facc15f	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
@@ -370,7 +370,7 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
-	# Not needed: 18781 getrandomduration-0.20							last=0000ea32656 marco/2004-randDur
+	# Not needed: 18781 getrandomduration-0.20							last=0000ea32656 MarcoFalke/2004-randDur
 		# GetRandMicros seems just as well...
 	18991 p2p_getaddr_cache-0.20+knots			02f431379b0	last=3bd67ba5a4e  # Cache responses to GETADDR to prevent topology leaks
 		# NOTE: Reordered test_runner to avoid conflict
@@ -385,10 +385,10 @@ NM	19243 misbehaving_limit-0.20				c325a9422b8	last=7f1e47de55e misbehaving_limi
 	19142 verifydb_lv4_interrupt-0.20			0ac5c96446e
 		# Diff-minimised
 NM	19191 p2p_permission_download-0.20+knots	294b7500ff1
-	19191 p2p_permission_download-0.20.1+knots				last=fa0540cd46e marco/2006-netPerDow
+	19191 p2p_permission_download-0.20.1+knots				last=fa0540cd46e MarcoFalke/2006-netPerDow
 		# IMPORTANT: Avoid conflicts with PF_ADDR or other permission flags (moved to 1<<18)
 		# Held back 111109a1e79...fa0540cd46e (help doc updates)
-	19204 p2p_ibd_noinv-0.20					4dadc1acfe2	last=fa525e4d1cf marco/2006-netInvWaste
+	19204 p2p_ibd_noinv-0.20					4dadc1acfe2	last=fa525e4d1cf MarcoFalke/2006-netInvWaste
 		# NOTE: Dropped refactors, and diff-minimised
 	19242 uaappend								e51b897ef57
 	# Needs review: 19271 andrewtoth:warm-coinscache

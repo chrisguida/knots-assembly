@@ -17,7 +17,7 @@ checkout v0.19.0.1
 	17654 boost_1_72_compat-0.19
 @0.19.x-knots
 # TESTS:
-	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
+	# TODO why was this closed??? 14080 MarcoFalke/Mf1808-travisSanThread
 	-     lint_relaxer							72bfd12414
 	15888 test_wallet_implicitsegwit			e5db67d94a
 	17402 travis_ppc64-0.18									last=1d684f05341 elichai/2019-11-powerpc64
@@ -27,7 +27,7 @@ checkout v0.19.0.1
 	17828 log_categories_validation-0.19+knots				last=443e105f7ae practicalswift/log-categories
 	14968 laanwj/2018_12_http_bind_error		9d197f0974	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					af253f6c66
-	9524 marco/Mf1701-qaPruning					1be48502ae	last=88883ae13d marco/Mf1701-qaPruning
+	9524 MarcoFalke/Mf1701-qaPruning					1be48502ae	last=88883ae13d MarcoFalke/Mf1701-qaPruning
 	10731 log_more_uacomment					ee1783a25a
 	14485 fadvise								a4db9bcd5b
 		# Was #12491
@@ -54,7 +54,7 @@ checkout v0.19.0.1
 	# Needs review: 16161 util: Fix compilation errors in support/lockedpool.cpp
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
-	16525 rpc_unsigned_txver-0.18                           363d2b8910      last=e80259f197 matt/2019-07-unsigned-tx-ver
+	16525 rpc_unsigned_txver-0.18                           363d2b8910      last=e80259f197 TheBlueMatt/2019-07-unsigned-tx-ver
 	# Worth the diff? 16963 promag:2019-09-fix-loadwallet-signal-uniqueptr
 	# Needs reivew: 17156 achow101:psbt-fuzz-fix
 	17180 sendamount_tooltip-0.11
@@ -78,7 +78,7 @@ checkout v0.19.0.1
 	14066 gitian_power64						6d990c68b6
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -112,7 +112,7 @@ checkout v0.19.0.1
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 #TODO: Split this up
 	10594 whitelist_outgoing-mini-0.19+knots	f886df3bd1	last=b7463a900cd whitelist_outgoing
-	10350 filtered_witblock-0.19				7cb073403f	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.19				7cb073403f	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -141,10 +141,10 @@ checkout v0.19.0.1
 	12763 rpcwhitelist-0.19						68d8b186de
 	# TODO ? 12792 w/ renamed param
 	12911 signrawtx_showfees-0.19				7035643906	last=345f8f9d1b1 kallewoof/sign-show-fees
-	12965 scriptthreads-0.19					874c6e06f8	last=dfab6c6866 jonas/2018/04/svt
+	12965 scriptthreads-0.19					874c6e06f8	last=dfab6c6866 jonasschnelli/2018/04/svt
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.17					9e854a5fe2	last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.17					9e854a5fe2	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		8b4a5fb58f
 	13339 walletnotify_w-0.19					98d4181322	last=56d2307446b promag/2018-05-walletnotify
@@ -205,10 +205,10 @@ checkout v0.19.0.1
 	17795 gui_console_ctrl_d-0.19+knots
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
-	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f marco/1904-walletFastRescan
+	# NEEDS FIXES: 15845 wallet_fastrescan-0.19							last=faee7b6581f MarcoFalke/1904-walletFastRescan
 		# TODO: Minify and test well
 		# NOTE: Needs #17366
-	15836 jonas/2019/04/feeinfo					a3f20f5696	last=b94292a7cb jonas/2019/04/feeinfo
+	15836 jonasschnelli/2019/04/feeinfo					a3f20f5696	last=b94292a7cb jonasschnelli/2019/04/feeinfo
 	15861 restore_vbits_warning					37a59ac37c
 	# Needs concept ACK and review: 15873 or 16523 Rpc removemempoolentry
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
@@ -270,13 +270,13 @@ checkout v0.19.0.1
 		# Should balances be forced monospace normally just for masking??
 	16442 neutrino-0.19+knots								last=459aead0e66
 	# TODO: Diff-minimise: 16463 achow101:bip174-xpub
-	# TODO: Support Knots policies: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
+	# TODO: Support Knots policies: Minimised 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	# TODO: Rework 17132 over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# Needs review: 17428 p2p: Try to preserve outbound block-relay-only connections during restart
 	# TODO: 17492 instagibbs/gui_bump_psbt
 	# Needs review/undraft: 17509 gui: save and load PSBT
 	# TODO 17529 rpc: Faster getblock using PureBlock
-	17631 rest_blockfilter-0.19								last=3ab6abcc4dd matt/2019-11-filter-rest
+	17631 rest_blockfilter-0.19								last=3ab6abcc4dd TheBlueMatt/2019-11-filter-rest
 		# NOTE: Dropped unrelated extra commits
 	17636 guisettings_opt-0.19								last=5266efa964b emilengler/2019-11-guisettings
 	# Needs work: rpc: Make __cookie__ user immune to rpcwhitelist #17815

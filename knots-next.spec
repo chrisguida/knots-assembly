@@ -53,7 +53,7 @@ checkout v25.0
 	14968 http_bind_error						f61e704deeb	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					524a221b075
 		# NOTE: libevent-copied code up to date as of 2021-07-16 c29f1dbe116c88434e77721ca215b8d2082b247f
-	9524  rpc_pruneblkchain0					b327b038e9d	last=88883ae13d marco/Mf1701-qaPruning
+	9524  rpc_pruneblkchain0					b327b038e9d	last=88883ae13d MarcoFalke/Mf1701-qaPruning
 	10731 log_more_uacomment					e94a07f681b
 	14485 fadvise								d13637180c8
 		# Was #12491
@@ -277,7 +277,7 @@ checkout v25.0
 		# NOTE: Carries commit 209018f4275 for compaibility with #22417
 		# NOTE: Being replaced by #25696 ?
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -303,7 +303,7 @@ checkout v25.0
 	18479 rpc_sign_show_fees					58494ba48db	last=47b2ba29df2 !kallewoof/sign-show-fees
 		# Dropped rel notes file
 		# NOTE: Originally #12911
-	# Needs review and care (new index): 13014 jonas/2018/04/txindex_prune
+	# Needs review and care (new index): 13014 jonasschnelli/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs work: 13989 add avx512 instrinsic
 	# Needs review: 13990 WIP: allow fee estimation to work with lower fees
@@ -324,7 +324,7 @@ checkout v25.0
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
-	15836 fee_histogram+pr15836_api				d001a8627f4	last=b94292a7cb jonas/2019/04/feeinfo
+	15836 fee_histogram+pr15836_api				d001a8627f4	last=b94292a7cb jonasschnelli/2019/04/feeinfo
 	(CHECK-LAST)	last=f2fb1f17444 origin-pull/21422/head
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
@@ -351,7 +351,7 @@ checkout v25.0
 	18014 siphash_optimise_pr18014-0.21+knots	0bb929ebf49	last=409c2e34522 elichai/2020-01-siphash
 		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
 		# NOTE: Dropped benchmarks & diff-minimised
-	# Needs work/review/completion: 18242 jonas/2020/03/net_v2
+	# Needs work/review/completion: 18242 jonasschnelli/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
 	24202 rpc_dumptxoutset_hr					196de74322c	last=1053636ddd9
@@ -385,7 +385,7 @@ checkout v25.0
 		# Removed dialog size change
 		# didn't bother with 1f373f93a60...500841e49d6 only changing widget names
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
-	# Needs review and diff-minimisation: 20273 jonas/2020/10/client_rpc_nested
+	# Needs review and diff-minimisation: 20273 jonasschnelli/2020/10/client_rpc_nested
 	-     rpc_getblockfrompeer_wo_header-24+k	b89d300855f
 		# Prior Knots bundled this in with #20295
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
@@ -400,7 +400,7 @@ checkout v25.0
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	MERGED 23549 rpc_scanblocks-24+knots				83bd74cf3d4	last=626b7c8493e jamesob/2021-11-scanblocks
-	(CHECK-LAST)	last=71b7cdb460e jonas/2020/12/filterblocks_rpc
+	(CHECK-LAST)	last=71b7cdb460e jonasschnelli/2020/12/filterblocks_rpc
 		# NOTE: Was #20664
 		# +#26508 (MERGED)
 	20702 rpc_getblocklocations					1f12d13fadf	last=9b03c654eb3
@@ -446,7 +446,7 @@ checkout v25.0
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
 	22072 autoreindex							a2f94dca829	last=602f4da9178
-	22159 conf_append_cxxflags-23				fd74eb4a20a	last=fa14c6818f4 marco/2106-buildPattern
+	22159 conf_append_cxxflags-23				fd74eb4a20a	last=fa14c6818f4 MarcoFalke/2106-buildPattern
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	g307  gui_peers_rowcolouropt				b94a0f57896	last=fdf80937d1c hebasto-g/210501-stripes
 		# Dropped formatting changes and avoided conflict with g216(optional_font)
@@ -625,7 +625,7 @@ checkout v25.0
 		# REBASING NOTE: Ensure any new types get added ? (unless we want to deprecate this...)
 	10593 relax_invblk_punishment				432fae20806
 		# Squash "QA: Use addconnection rather than addnode onetry" ?
-	10350 filtered_witblock-22				abf017ad612	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-22				abf017ad612	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -636,8 +636,8 @@ checkout v25.0
 		# Fixed a minor bug in conf_target range check
 		TODO: gcp 5d5b2fb8442 QA: Exercise REST interface in feature_fee_estimation | 71375ee91ac
 	11803 bugfix_dumpwallet_hdkeypath			fea9d68f84d
-	12965 scriptthreads							0345cf11100	last=dfab6c6866 jonas/2018/04/svt
-	13203 dsha256_power8-23						7610e2e0b16	last=3b402e0738 matt/2018-05-asm
+	12965 scriptthreads							0345cf11100	last=dfab6c6866 jonasschnelli/2018/04/svt
+	13203 dsha256_power8-23						7610e2e0b16	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8_asm_pragmas-23			3ba39b15ebb
 	15218 postibd_flush-23						e194bb9b731	last=d2ecb70d64  # validation: Flush state after initial sync
@@ -652,7 +652,7 @@ checkout v25.0
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
 		NOTE: replaced by #20799 & #25147
-	# TODO: 16490 marco/1907-rpcMempoolWhyReplacable
+	# TODO: 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d					bf517f7cdd2

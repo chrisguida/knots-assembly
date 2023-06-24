@@ -17,7 +17,7 @@ checkout v0.18.1
 	16564 raii_event_test_fix-0.14							last=9a19c9ada5
 @0.18.x-knots
 # TESTS:
-	# TODO why was this closed??? 14080 marco/Mf1808-travisSanThread
+	# TODO why was this closed??? 14080 MarcoFalke/Mf1808-travisSanThread
 	-     lint_relaxer							7206a1000d
 	# Needs review: 15134 practicalswift:unsigned-char
 	15888 test_wallet_implicitsegwit			4d67b75415
@@ -26,7 +26,7 @@ checkout v0.18.1
 NM	15913 bugfix_nowallet_avoidpspends-0.18		e4d1fde05d
 	14968 laanwj/2018_12_http_bind_error		547767d717
 	-     http_bind_error+extra					ecd0e8da29
-	9524 marco/Mf1701-qaPruning					178af41a49
+	9524 MarcoFalke/Mf1701-qaPruning					178af41a49
 	10731 log_more_uacomment					a4d5169930
 	14485 fadvise								49cf3fced8
 		# Was #12491
@@ -65,14 +65,14 @@ NM	15600 lockedpool_dontdump					616c756d2e
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	16212 bugfix_rm_addrdb_tmpfile-0.17
 	# Needs review AND CARE MERGING: 16507 instagibbs:feefilter_match_mempool
-	16525 rpc_unsigned_txver-0.18							last=e80259f197 matt/2019-07-unsigned-tx-ver
+	16525 rpc_unsigned_txver-0.18							last=e80259f197 TheBlueMatt/2019-07-unsigned-tx-ver
 	16578 qapp_dummy_argv-0.18.1
 	16826 escape_wallet_name-0.18.1
 # FUNCTIONALITY:
 	14066 gitian_power64-0.18					2cffda4afd	last=0c0550a01f gitian_power64
 	# not ready/deterministic: 13827 NSIS depends build
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -103,7 +103,7 @@ m	8751 sort-multisigs-0.18					423894f629	last=e11cb50a09  # multisig sorting
 	10593 relax_invblk_punishment				ff31141b72
 m	10594 whitelist_outgoing-0.18				9ed15cac6c
 		# 0.19 TODO: Revert 16555
-	10350 filtered_witblock-0.17				461d614dbc	last=3f388ddcd3 codeshark/MFWB_no_bump_2
+	10350 filtered_witblock-0.17				461d614dbc	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -137,13 +137,13 @@ m	12096 bumpfee_reduce_output-0.18			848577505c	last=086313c8b1 kallewoof/better
 	12763 rpcwhitelist-0.17						1beed551c4	last=8c45d93b0e
 	# TODO ? 12792 w/ renamed param
 	12911 signrawtx_showfees-0.18				36a7196e0d	last=bba2e57c76 kallewoof/sign-show-fees
-	12965 scriptthreads-0.18					21b59a99f0	last=dfab6c6866 jonas/2018/04/svt
+	12965 scriptthreads-0.18					21b59a99f0	last=dfab6c6866 jonasschnelli/2018/04/svt
 	15637 rpc_mempool_vsize-0.18+knots			51d7f34669	last=e16b6a7188  # rpc: Rename size to vsize in mempool related calls
 		# NOTE: Minified & made deprecation softer
 		# NOTE: was #13008
 	# Maybe? 13014 jonasschnelli:2018/04/txindex_prune
 	# Skip due to changing upstream code too much: 13442 sipa/201806_sse4intrin
-	13203 dsha256_power8-0.17					db181f3987	last=3b402e0738 matt/2018-05-asm
+	13203 dsha256_power8-0.17					db181f3987	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.17_asm_pragmas		9e09a78f24
 	13339 walletnotify_w-0.18					11f3777ed3	last=15a0ad0bb4 promag/2018-05-walletnotify
@@ -221,18 +221,18 @@ m	14641 fundraw_minconf-0.18					0bea20be04	last=a3991b7c0b promag/2018-11-fundr
 		# NOTE: Probably dialogs should be closed, not simply hidden
 	# Needs fixes, then careful review of (and drop last commit from) 15761 achow101:upgradewallet-rpc
 	# Needs review: 15845 MarcoFalke:1904-walletFastRescan
-	15836 mempoolinfo_feehistogram-0.18			e9eccaafe7	last=b94292a7cb jonas/2019/04/feeinfo
+	15836 mempoolinfo_feehistogram-0.18			e9eccaafe7	last=b94292a7cb jonasschnelli/2019/04/feeinfo
 	15861 restore_vbits_warning					1e8243e594
 	# Complex rebase: 15870 MarcoFalke:1904-walletRescanPruned (w/ modifications?)
 	# Needs concept ACK and review: 15873 Rpc removemempoolentry
 	# Needs concept ACK and review: 15886 hebasto:20190424-send-confirmation-dialog
 		# NOTE: +16826 fix
 	# Needs rebasing without settings.json and review: 15937 Add loadwallet and createwallet load_on_startup options
-	15932 rpc_getblock_relax_lock-0.18			8e5a518c6f	last=faea56400d marco/1905-rpcBlockNoLock
+	15932 rpc_getblock_relax_lock-0.18			8e5a518c6f	last=faea56400d MarcoFalke/1905-rpcBlockNoLock
 		# NOTE: Held back lock annotations/asserts in case other callers don't respect the expectations
 	15623 expose_readundo-0.18
 	14802 getblockstats_wo_txindex-0.18  # rpc: faster getblockstats using BlockUndo data
-	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac marco/1904-rpcWalletBalances
+	# Needs backport of other stuff: 15930 rpc_getbalances-0.18								last=eeee1497ac MarcoFalke/1904-rpcWalletBalances
 		# NOTE: excluded various refactoring and deprecation
 	# Needs QA/reivew: 15946 jonasschnelli:2019/05/prune_blockfilter
 	15986 gdi_checksum-0.18
@@ -303,7 +303,7 @@ m	-     gui_wallet_displayname-0.18+knots		11c8ba9186	# Latest code now
 	# NEEDS FIXUP/REPLACE 16432 qt: Add privacy to the Overview page
 	# Requires complex FlatFile refactoring: Parts of? 14121+16442 Neutrino
 	# Needs review: 16463 achow101:bip174-xpub
-	# Needs to be rational: Minimised 16490 marco/1907-rpcMempoolWhyReplacable
+	# Needs to be rational: Minimised 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	# TODO: Needs work? 16492 rpc: Add feeRate argument to bumpFee RPC
 	# 0.19 TODO: Semi-Revert 15711+16497 (leave it default for Segwit wallets)
 # POLICY:

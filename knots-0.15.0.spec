@@ -16,7 +16,7 @@ checkout v0.15.0
 	7142 travis_qt4								52982f061b
 	-    travis_nolibevent
 # FIXES:
-	9524 marco/Mf1701-qaPruning					ac18ebe9fa
+	9524 MarcoFalke/Mf1701-qaPruning					ac18ebe9fa
 	#10529? systemd stuff
 	10595 gbt_nosegwit_fix						b356af91e7
 	11026 bugfix_acceptnonstd_def
@@ -31,7 +31,7 @@ checkout v0.15.0
 	n/a  def_sse4_sha256
 	7061 wallet_rescan_rpc-0.15					edf97337e6	last=bf6f25373a
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
-	# needs UI improvements!? 7949 jonas/2016/04/rpc_signals
+	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
 	#8549 jmcorgan/zmq_mempool
 			# check if issue mentioned in 7753 still exists
@@ -65,7 +65,7 @@ checkout v0.15.0
 	10554 zmq_wtx											last=d358230d10	# ZMQ: add publishers for wallet transactions.
 	10593 relax_invblk_punishment				47b17f1421
 	10594 whitelist_outgoing					c4bd7ca174
-	10350 codeshark/MFWB_no_bump_2							# Added support for MSG_FILTERED_WITNESS_BLOCK messages
+	10350 CodeShark/MFWB_no_bump_2							# Added support for MSG_FILTERED_WITNESS_BLOCK messages
 	10729 scriptex
 	10730 scriptflag_strings-mini							last=97cae3915f
 	n/a   script_debugger-mini								last=8d1ff9f035 script_debugger
