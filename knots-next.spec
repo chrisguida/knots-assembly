@@ -693,6 +693,7 @@ checkout v25.0
 	Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# TODO: 26674 -  # Add reindex=auto flag to automatically reindex corrupt data
 	Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
+	Explicitly requested: 27446
 # Non-upstreamed functionality:
 	TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	n/a   restore_feefilter_opt					b0a928d3f25
