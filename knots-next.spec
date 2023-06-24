@@ -1,7 +1,7 @@
-timestamp 2022-12-07 09:10:49
+timestamp 2023-06-24 02:55:21
 lastapply no-merge
 
-#.. checked up to PR #27489 / gui #740
+#.. checked up to PR #27957 / gui #740
 
 checkout v25.0
 @24.x-syslibs
@@ -39,6 +39,8 @@ checkout v25.0
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
+	Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
+	27542 theStack/test-test_runner_add_ripemd160_module
 # FIXES:
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						fe1576ba2d8
@@ -67,7 +69,7 @@ checkout v25.0
 		# NOTE: Was #15191 practicalswift:cs_LastBlockFile (never in Knots)
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 or 19420 (libevent cleanup)
-	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
+	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted -OR- 27539 Empact/2023-04-minimum-file-descriptor-18911
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
@@ -80,7 +82,7 @@ checkout v25.0
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
-	# Needs review: 19434 promag:2020-06-remote-disconnect OR 27245 fjahr/202303-pr19434
+	# Needs review: 19434 promag:2020-06-remote-disconnect OR 27245 fjahr/202303-pr19434 OR 27909
 	# Needs review: g59   hebasto-g/200814-rpc
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
@@ -183,7 +185,7 @@ checkout v25.0
 	If needed for below: 27850 pinheadmz/blockstore-tests
 	27039 pinheadmz/reindex-read-only
 	Needs review: 27071 vasild/lookup_subnet_cjdns
-	Need a fix for #26176 (Opening macOS DMG does not open Finder window)
+	Need a fix for #26176 (Opening macOS DMG does not open Finder window) -- revert #24031 ?
 	27231 jonatack/2023-03-logging-fixes-and-test-coverage
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
@@ -195,6 +197,41 @@ checkout v25.0
 	Needs work? g719 theStack-g/gui-nuke_cc_dust_label
 	Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
+	27556 furszy/2023_wallet_db_deadlock
+	Needs review: 27557 pinheadmz/async-getaddrinfo
+	27577 mzumsande/202304_seednode_fixedseed_interaction
+	27591 glozow/2023-05-mempool-vsize
+	# Needs review: 27601 furszy/2023_wallet_double_change_output
+	Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
+	Allow toggling on mainnet (and by default off?): 27622 -  # Fee estimation: avoid serving stale fee estimate
+	27626 instagibbs/2023-05-parallel-block-downloads
+		+27743
+		NOTE: BACKPORTS IN #27752
+	TODO: Actually fix the bug removed in #27673
+	Needs review: 27684 hebasto/230516-punish OR ???
+	27708 furszy/2023_main_exit_failure
+	Triage: 27717 hebasto/230522-util
+	If needed? 27720 furszy/2023_index_init_race_bugfix
+	27724 fanquake/25_x_backport_27724
+	Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
+	Fix only: 27735 MarcoFalke/2305-mempool-legacy-wallet-
+	Fix only: 27746 sdaftuar/2023-05-assumeutxo-validation-improvements
+	27747 -  # rpc: Use 'byte'/'bytes' for bech32(m) validation error message
+	Needs review: 27804 -  # init: deduplicate added connections
+	27814 -  # Blocking arguments -nohelp, -noh, and -no?
+	27815 -  # CLI: Only one Request Handler can be specified.
+	Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
+	# Needs review: 27823 mzumsande/202306_feature_init_fix
+	Needs review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
+	27846 -  # [coinselection] Increase SRD target by change_fee
+	27853 brunoerg/2023-06-bugfix-rest-deploymentinfo (backport in #27887)
+	Triage: 27862 ryanofsky/pr/assumeabort
+	27863 brunoerg/2023-06-net-netgroup-continue
+	Triage: 27892 MarcoFalke/2306-translate-copy-
+	Triage: 27905 mzumsande/202306_dirty_blockindex
+	Needs review: 27912 -  # net: run disconnect in I2P thread
+	Some good fix for 27915
+	Triage: 27930 -  # util: Don't derive secure_allocator from std::allocator
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -231,6 +268,7 @@ checkout v25.0
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	Needs review? 27334 -  # util: implement noexcept move assignment & move ctor for prevector
 	Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
+	Needs review? 27675 ajtowns/202305-droprecentinvbloom
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -401,6 +439,7 @@ checkout v25.0
 	# Included in gui#662 above: g368  bugfix_gui_restored_columns_stretch	3b888b39d64
 	g230  gui_backup_formats					6a47e2cd43b
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
+		# +27797 ?
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	21780 rpc_maxmempool						7ac16e22ad6	last=040b280c661 rebroad/MaxMempoolRPC
 		# + bugfix and applying limit immediately
@@ -532,6 +571,7 @@ checkout v25.0
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	Diff-minimise: 27351 apoelstra/2023-03--codex32
 	Needs review: 27375 pinheadmz/tor-unix-domain-socket
+	Needs review? 27679 pinheadmz/zmq-unix-domain-socket
 	Needs work: 27409 ryanofsky/pr/1data
 	27460 MarcoFalke/2304-import-mempool-rpc-
 	Needs review: g692 -  # Debug Console implementation of generate method
@@ -539,6 +579,23 @@ checkout v25.0
 	Ensure Ctrl-L clears debug console (see g#702 for inspiration)
 	Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
 	Needs review? g740 -  # Show own outputs on PSBT signing window
+	27501 glozow/2023-04-clear-prioritisation
+	Self-review: 27509 vasild/relay_tx_to_priv_nets
+	# Needs review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
+	27554 hebasto/230502-toolwallet
+	# Needs review: 27596 jamesob/assumeutxo
+	27600 pinheadmz/whitebind-evict
+	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
+	27761 mzumsande/202305_log_more_ips
+	27770 furszy/2023_rpc_getblockfileinfo
+	27801 ryanofsky/pr/sqtrace
+	Partial: Needs review? 27278 Sjors/2023/05/saw-header
+	Needs review: 27827 josibake/silent-payments-base-pr-slim-down
+	Needs review & maybe removing an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
+	Needs review: 27837 furszy/2023_introduce_block_request_tracker
+	Needs review: 27854 -  # [WIP] add a stratum v2 template provider
+	Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
+	Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -655,6 +712,7 @@ checkout v25.0
 		TODO? gcp 0c9ffa1de8c (rwconf_gui-0.21) GUI/Options: Add tooltips for addresstype choices
 		FIXME: s/P2SH-SegWit/P2SH Segwit/ (dash->space & lowercase W)
 	 559 accept_nonstdtxn						2ad1e272d70
+		 Compare to #27578
 	 929 tbc									65ace212fac
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			f110cdc6b5d
@@ -703,6 +761,7 @@ checkout v25.0
 # Non-upstreamed Knots compatibility:
 	TODO: -netinfo and other version checks might need to be more flexible?
 	#24.xTODO# revert? #24505  wallet: Add a deprecation warning for newly created legacy wallets
+	#26.xTODO# revert? #27869  wallet: Give deprecation warning when loading a legacy wallet
 	14641 fundraw_min_conf_deprecated-24+knots	67bb2fae2cb	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			2b802cfbcf9
 	-     netperms_implicit_addr				3ec6f62de90
@@ -726,6 +785,10 @@ checkout v25.0
 	-     wallet_avoid_newerchange				a5e70c68636
 	24.xTODO: Revert #25725
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
+	TODO: Adapt existing limits to apply to Taproot?
+	TODO: Match ord spam as datacarrier?
+	TODO: Ordisrespector equivalent (Ordislow??)
+	Consider opt-in: 27926 -  # policy: make unstructured annex standard
 	-     enforce_checkpoints					840dddd5a6e
 	n/a   checkpoint_update-23					ec23e329857	last=70996dfdd9b checkpoint_update-0.21
 	10282 timebomb_knots						28c6dff687b

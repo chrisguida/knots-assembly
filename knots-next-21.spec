@@ -1,8 +1,8 @@
-timestamp 2022-12-07 09:10:49
+timestamp 2023-06-24 02:55:21
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #27489 / gui #740 for fixes
+#.. checked up to PR #27957 / gui #740 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -86,6 +86,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	21785 fix_intrmttnt_qa_p2p_addr_relay-0.20	4a97d761fcc
 	# TODO? 25123 fjahr/202205-index-prune-fix
 	# TODO? 25124 -  # test: Fix intermittent race in p2p_unrequested_blocks.py
+	Triage: Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
 	n/a   knots_ci_tweaks-21					a30b2c8bb0f
 	#TODO: Can we get a minimum-dep-versions CI going??
 # FIXES:
@@ -136,7 +137,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	# Needs review: 15192 practicalswift:validation-cs_main
 	# Needs review: 15363 or 19420 (libevent cleanup)
 		# NOTE: 19420 requires #24681 ?
-	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted
+	# NEEDS REVIEW: 16003 init: an incorrect amount of file descriptors is requested, and a different amount is also asserted -OR- 27539 Empact/2023-04-minimum-file-descriptor-18911
 	# Needs review: 16050 promag:2019-05-importmulti-update
 	# Likely impossible: 16199 fix coinjoin sends in RPC
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
@@ -158,7 +159,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
-	# Needs review: 19434 promag:2020-06-remote-disconnect OR 27245 fjahr/202303-pr19434
+	# Needs review: 19434 promag:2020-06-remote-disconnect OR 27245 fjahr/202303-pr19434 OR 27909
 	# TODO: g18   hebasto-g/200701-peer
 	# Needs review: 19645 ariard:2020-08-wtxid-replacement
 	# Needs review: g59   hebasto-g/200814-rpc
@@ -621,6 +622,44 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage & Needs work? g719 theStack-g/gui-nuke_cc_dust_label
 	Triage & Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	Triage & Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
+	Triage: 27556 furszy/2023_wallet_db_deadlock
+	Triage & Needs review: 27557 pinheadmz/async-getaddrinfo
+	Triage: 27577 mzumsande/202304_seednode_fixedseed_interaction
+	Triage: 27591 glozow/2023-05-mempool-vsize
+	Triage & # Needs review: 27601 furszy/2023_wallet_double_change_output
+	Triage & Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
+	Triage: 27608 (see #27624 for 23.x backport)
+	Triage: 27610 (see #27624 for 23.x backport)
+	Triage: Allow toggling on mainnet (and by default off?): 27622 -  # Fee estimation: avoid serving stale fee estimate
+	Test well: 27626 instagibbs/2023-05-parallel-block-downloads
+		+27743
+		NOTE: BACKPORTS IN #27752
+	Triage: TODO: Actually fix the bug removed in #27673
+	Triage: Needs review: 27684 hebasto/230516-punish OR ???
+	Triage: 27708 furszy/2023_main_exit_failure
+	Triage: 27717 hebasto/230522-util
+	Triage: If needed? 27720 furszy/2023_index_init_race_bugfix
+	Triage: 27724 -  # build: disable boost multi index safe mode in debug mode
+	Triage: 27727 MarcoFalke/2305-rpc-bech32-; backports in #27756 (23.x), #27755 (24.x), and #27750 (25.x)
+		+27747
+	Triage: Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
+	Triage: Fix only: 27735 MarcoFalke/2305-mempool-legacy-wallet-
+	Triage: Fix only: 27746 sdaftuar/2023-05-assumeutxo-validation-improvements
+	Triage: Needs review: 27804 -  # init: deduplicate added connections
+	Triage: 27814 -  # Blocking arguments -nohelp, -noh, and -no?
+	Triage/reduce?: 27815 -  # CLI: Only one Request Handler can be specified.
+	Triage & Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
+	# Triage & Needs review: 27823 mzumsande/202306_feature_init_fix
+	Triage & Needs review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
+	Triage: 27846 -  # [coinselection] Increase SRD target by change_fee
+	Triage: 27853 brunoerg/2023-06-bugfix-rest-deploymentinfo (25.x backport in #27887)
+	Triage: 27862 ryanofsky/pr/assumeabort
+	Triage: 27863 brunoerg/2023-06-net-netgroup-continue
+	Triage: 27892 MarcoFalke/2306-translate-copy-
+	Triage: 27905 mzumsande/202306_dirty_blockindex
+	Triage & Needs review: 27912 -  # net: run disconnect in I2P thread
+	Some good fix for 27915
+	Triage: 27930 -  # util: Don't derive secure_allocator from std::allocator
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -980,6 +1019,11 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Triage: Needs work: 27409 ryanofsky/pr/1data
 	Ensure Ctrl-L clears debug console (see g#702 for inspiration)
 	Triage: Needs review? g740 -  # Show own outputs on PSBT signing window
+	27501 glozow/2023-04-clear-prioritisation
+	27554 hebasto/230502-toolwallet
+	27278 jamesob/2023-03-log-new-headers
+	Partial: Needs review? 27826 Sjors/2023/05/saw-header
+	Triage: Needs review: 27827 josibake/silent-payments-base-pr-slim-down
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
@@ -1189,6 +1233,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	9749  unique_spk_mempool-0.21+knots			52cb2331dee	last=7882096ddef unique_spk_mempool-23+knots
 	(CHECK-LAST)	last=36bb6460136 unique_spk_mempool-22+knots
 	-     bloom_default-0.21+knots				ab9afbc6fee
+	TODO: Adapt existing limits to apply to Taproot?
 	-     enforce_checkpoints-0.21				09feeecfdfe	last=1de4af3f6c7 enforce_checkpoints
 	n/a   checkpoint_update-0.21				67bc16f3c2a	last=37271214dfe checkpoint_update-23
 		#21.xTODO# Add new checkpoint
