@@ -741,6 +741,7 @@ checkout v25.0
 		TODO? gcp c10e54ecb54 QA: feature_rbf: Test full-RBF service bit
 		TODO? rename to match Core?
 		TODO? gcp a57bf40ca0c Document -mempoolreplacement=fee,-optin configuration
+		FIXME: why remove never-RBF option??
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					2a61c92f17e
 		# TODO: Split out legacy address preference to be more explicit
