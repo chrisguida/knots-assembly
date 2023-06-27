@@ -108,7 +108,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	(CHECK-LAST)	last=8520c437a0d http_bind_error
 	-     http_bind_error+extra-21				1d09d2dc41d	last=fd5353ed826 http_bind_error+extra
 		# NOTE: Held back annotation in gdd 785429c2c7a fd5353ed826
-	9524 MarcoFalke/Mf1701-qaPruning					e8a96411986	last=88883ae13d MarcoFalke/Mf1701-qaPruning
+	 9524 MarcoFalke/Mf1701-qaPruning					e8a96411986	last=88883ae13d
 	(CHECK-LAST)	last=b0c8dfaca2c rpc_pruneblkchain0
 	10731 log_more_uacomment-21					fb6f182d5c4	last=f89cd1133c3 log_more_uacomment
 	(CHECK-LAST)	last=fa16d94b095 log_more_uacomment-22
@@ -409,7 +409,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Only half is applicable to 21.x
 	25282 fix_configure_def_use_libevent-21					last=f0f5cd79b5d fix_configure_def_use_libevent
 	24933 strerror_threadsafe-21							last=3c651702c68 strerror_threadsafe-23
-	24957 fix_prune_during_loadblock-0.20					last=347664ec718 mruddy/issue_23852_import_prune
+	24957 fix_prune_during_loadblock-0.20					last=347664ec718
 	(CHECK-LAST)	last=c86f129fd1d fix_prune_during_loadblock-22
 	24984 fix_wallet_race_attachingbb-21^
 	25088 fix_wallet_race_attachingbb-21					last=ba10b90915d fix_wallet_race_attachingbb
@@ -621,7 +621,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage & Needs work? g719 theStack-g/gui-nuke_cc_dust_label
 	Triage & Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	Triage & Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
-	Triage: 27556 furszy/2023_wallet_db_deadlock
+	Triage: 27556 -  # wallet: fix deadlock in bdb read write operation
 	Triage & Needs review: 27557 pinheadmz/async-getaddrinfo
 	Triage: 27577 mzumsande/202304_seednode_fixedseed_interaction
 	Triage: 27591 glozow/2023-05-mempool-vsize
@@ -635,7 +635,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		NOTE: BACKPORTS IN #27752
 	Triage: TODO: Actually fix the bug removed in #27673
 	Triage: Needs review: 27684 hebasto/230516-punish OR ???
-	Triage: 27708 furszy/2023_main_exit_failure
+	Triage: 27708 -  # Return EXIT_FAILURE on post-init fatal errors
 	Triage: 27717 hebasto/230522-util
 	Triage: If needed? 27720 furszy/2023_index_init_race_bugfix
 	Triage: 27724 -  # build: disable boost multi index safe mode in debug mode
@@ -969,7 +969,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=069ccfcbc4e autoreindex
 	22147 p2p_protect_last_outHB-0.21			995947de083
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
-	22159 conf_append_cxxflags-0.10				b9c4f0c218e	last=fa14c6818f4 MarcoFalke/2106-buildPattern
+	22159 conf_append_cxxflags-0.10				b9c4f0c218e	last=fa14c6818f4
 	# TODO, Ugly Hack w/ conflicts: g256  hebasto-g/210323-peers
 	# Preferred simpler fix in gui#275: g330  jarolrod-g/prompt-icon-colorized
 	g281  gui_console_fontsize_shortcuts-0.21+k	a9ed8095ab9
@@ -1018,8 +1018,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Triage: Needs work: 27409 ryanofsky/pr/1data
 	Ensure Ctrl-L clears debug console (see g#702 for inspiration)
 	Triage: Needs review? g740 -  # Show own outputs on PSBT signing window
-	27501 glozow/2023-04-clear-prioritisation
-	27554 hebasto/230502-toolwallet
+	27501 -  # mempool / rpc: add getprioritisedtransactions, delete a mapDeltas entry when delta==0
+	27554 -  # test: Treat bitcoin-wallet binary in the same way as others
 	27278 jamesob/2023-03-log-new-headers
 	Partial: Needs review? 27826 Sjors/2023/05/saw-header
 	Triage: Needs review: 27827 josibake/silent-payments-base-pr-slim-down

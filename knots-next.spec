@@ -37,8 +37,8 @@ checkout v25.0
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
-	Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
-	27542 theStack/test-test_runner_add_ripemd160_module
+	#25.xTODO# Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
+	27542 -  # test: add ripemd160 to test framework modules list
 # FIXES:
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						fe1576ba2d8
@@ -51,7 +51,7 @@ checkout v25.0
 	14968 http_bind_error						f61e704deeb	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					524a221b075
 		# NOTE: libevent-copied code up to date as of 2021-07-16 c29f1dbe116c88434e77721ca215b8d2082b247f
-	9524  rpc_pruneblkchain0					b327b038e9d	last=88883ae13d MarcoFalke/Mf1701-qaPruning
+	 9524  rpc_pruneblkchain0					b327b038e9d	last=88883ae13d
 	10731 log_more_uacomment					e94a07f681b
 	14485 fadvise								d13637180c8
 		# Was #12491
@@ -125,7 +125,7 @@ checkout v25.0
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	# Needs review: 24912 mruddy/nchaintx_type
-	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=734355b4707 mruddy/issue_23852_import_prune
+	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=734355b4707
 		# NOTE: Silent conflict with later (but merged in master first) #16981, addressed in #16981 branch
 	# Needs review: 24972 hebasto/220425-no-libtool
 	# Needs review: 24994 hebasto/220426-consensus
@@ -195,7 +195,7 @@ checkout v25.0
 	Needs work? g719 theStack-g/gui-nuke_cc_dust_label
 	Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
-	27556 furszy/2023_wallet_db_deadlock
+	27556 -  # wallet: fix deadlock in bdb read write operation
 	Needs review: 27557 pinheadmz/async-getaddrinfo
 	27577 mzumsande/202304_seednode_fixedseed_interaction
 	27591 glozow/2023-05-mempool-vsize
@@ -207,10 +207,10 @@ checkout v25.0
 		NOTE: BACKPORTS IN #27752
 	TODO: Actually fix the bug removed in #27673
 	Needs review: 27684 hebasto/230516-punish OR ???
-	27708 furszy/2023_main_exit_failure
+	27708 -  # Return EXIT_FAILURE on post-init fatal errors
 	Triage: 27717 hebasto/230522-util
 	If needed? 27720 furszy/2023_index_init_race_bugfix
-	27724 fanquake/25_x_backport_27724
+	27724 origin-pull/27725/head  # build: disable boost multi index safe mode
 	Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	Fix only: 27735 MarcoFalke/2305-mempool-legacy-wallet-
 	Fix only: 27746 sdaftuar/2023-05-assumeutxo-validation-improvements
@@ -444,7 +444,7 @@ checkout v25.0
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
 	22072 autoreindex							a2f94dca829	last=602f4da9178
-	22159 conf_append_cxxflags-23				fd74eb4a20a	last=fa14c6818f4 MarcoFalke/2106-buildPattern
+	22159 conf_append_cxxflags-23				fd74eb4a20a	last=fa14c6818f4
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	g307  gui_peers_rowcolouropt				b94a0f57896	last=fdf80937d1c hebasto-g/210501-stripes
 		# Dropped formatting changes and avoided conflict with g216(optional_font)
@@ -488,7 +488,7 @@ checkout v25.0
 	# Needs review & BIP changes: 24058 kallewoof/202201-bip322
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
-	24162 rpc_deriveaddr_wo_checksum-23			b53beb352aa	last=97a69e232be kallewoof/202201-deriveaddr-nochecksum
+	24162 rpc_deriveaddr_wo_checksum-23			b53beb352aa	last=97a69e232be
 	# Needs work/diff-minimisation: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
 	Merged: 24198 rpc_wtx_wtxid-23+knots				847b30e73d3	last=7abd8b21ba3
 		TODO? gcp 1ad918ff517 (rpc_wtx_wtxid-0.20) RPC/Wallet: Provide an actual description of wtxid field
@@ -577,14 +577,14 @@ checkout v25.0
 	Ensure Ctrl-L clears debug console (see g#702 for inspiration)
 	Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
 	Needs review? g740 -  # Show own outputs on PSBT signing window
-	27501 glozow/2023-04-clear-prioritisation
+	27501 -  # mempool / rpc: add getprioritisedtransactions, delete a mapDeltas entry when delta==0
 	Self-review: 27509 vasild/relay_tx_to_priv_nets
 	# Needs review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
-	27554 hebasto/230502-toolwallet
+	27554 -  # test: Treat bitcoin-wallet binary in the same way as others
 	# Needs review: 27596 jamesob/assumeutxo
 	27600 pinheadmz/whitebind-evict
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
-	27761 mzumsande/202305_log_more_ips
+	27761 -  # p2p: Log addresses of stalling peers
 	27770 furszy/2023_rpc_getblockfileinfo
 	27801 ryanofsky/pr/sqtrace
 	Partial: Needs review? 27278 Sjors/2023/05/saw-header
