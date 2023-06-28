@@ -38,7 +38,7 @@ checkout v25.0
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	#25.xTODO# Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
-	27542 -  # test: add ripemd160 to test framework modules list
+	27542 qa_runtest_ripemd160-23  # test: add ripemd160 to test framework modules list
 # FIXES:
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						fe1576ba2d8
@@ -57,7 +57,7 @@ checkout v25.0
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
-	-     rpcarg_type_per_name-24				894b5b40dfc	last=60de8d45b81 rpcarg_type_per_name
+	-     rpcarg_type_per_name					894b5b40dfc
 	-     bugfix_rpc_getbalance_hacky			60f5367f46a
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
