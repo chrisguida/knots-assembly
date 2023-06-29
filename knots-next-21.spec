@@ -535,6 +535,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	FIXME: Taproot wallets CRASH - see #26015; possible fix in #26021
 	Needs review: 26032 Sjors/2022/09/external-signer-feerate
 	Needs work & minimising: 26039 -  # rpc: Return RPC_TYPE_ERROR, not RPC_MISC_ERROR on type mismatch (1/2) OR #25737
+		Fix in #26213 (but maybe too much fixed/strict?)
 	Needs review: 26053 furszy/2022_rpc_wallet_fix_help_add_inputs
 	g664 hebasto-g/220907-gb
 	g665 w0xlt-g/load_wallet_signal

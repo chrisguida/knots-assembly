@@ -148,9 +148,6 @@ checkout v25.0
 	g662  qt_fix_txview_202209
 		# Includes gui#368
 	#24.xTODO# Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
-	MERGED 25737 rpc_type_error-24+knots							last=e68d3807979
-		# Diff-minimised, including leaving off top commit
-		#24.xTODO# FIXME: Check for https://github.com/bitcoin/bitcoin/pull/26147#discussion_r983741878
 	MERGED Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
 		# NOTE: Included in backport PR #26457
 		#24.xTODO# Check if these fixes are correct; see https://github.com/bitcoin/bitcoin/pull/26457#pullrequestreview-1181641835
