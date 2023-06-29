@@ -148,9 +148,6 @@ checkout v25.0
 	g662  qt_fix_txview_202209
 		# Includes gui#368
 	#24.xTODO# Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
-	MERGED Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
-		# NOTE: Included in backport PR #26457
-		#24.xTODO# Check if these fixes are correct; see https://github.com/bitcoin/bitcoin/pull/26457#pullrequestreview-1181641835
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
 	#24.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock

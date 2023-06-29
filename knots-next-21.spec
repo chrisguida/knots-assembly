@@ -547,6 +547,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Careful: 26089 fanquake/prune_unneeded_upnp_natpmp
 	Check if needed: 26091 -  # test: Fix syncwithvalidationinterfacequeue calls
 	Needs review? Are all fixes? 26109 jonatack/2022-09-getpeerinfo-netinfo-updates
+       # NOTE: Included in backport PR #26457
+       #21.xTODO# Check if these fixes are correct; see https://github.com/bitcoin/bitcoin/pull/26457#pullrequestreview-1181641835
 	26116 -  # rpc: Allow importmulti watchonly imports with locked wallet
 	26119 -  # doc: Move -permitbaremultisig to the relay help category
 	26130 fix_descrwallet_signmsg_deadlck
