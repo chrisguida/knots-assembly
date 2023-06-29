@@ -126,7 +126,8 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		#	1) Useless string change (inferior IMO)
 		#	2) Added tests which are annoying to merge
 	-     deprecated_param_names				1e916ec2f4b
-	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=5b7d4c9a9af bugfix_rpc_getbalance_hacky
+	-     bugfix_rpc_getbalance_hacky-0.21		1413e85f702	last=e6408204500 bugfix_rpc_getbalance_hacky
+	(CHECK-LAST)	last=5b7d4c9a9af bugfix_rpc_getbalance_hacky-24
 	(CHECK-LAST)	last=e8a9f9c83eb bugfix_rpc_getbalance_hacky-23
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
@@ -149,7 +150,8 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		# NOTE: -mini is just missing the last commit :)
 	18335 -										dc0f3b960be	last=8dd5946c0b7  # bitcoin-cli: print useful error if bitcoind rpc work queue exceeded
 	18466 -										7963fb63fea	last=a5cfb40e27b  # rpc: fix invalid parameter error codes for {sign,verify}message RPCs
-	g658  intro_dont_change_user_prune-0.20		0af71102295	last=ae90e08d4f2 intro_dont_change_user_prune
+	g658  intro_dont_change_user_prune-0.20		0af71102295	last=??? intro_dont_change_user_prune
+	(CHECK-LAST)	last=ae90e08d4f2 intro_dont_change_user_prune-24
 		# Was #18729
 	18766 blocksonly_no_feeest-0.21				13b50d43699	last=4e28753f606
 		# diff-minimised
@@ -187,7 +189,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	20448 unloadwallet_namematch				34dfe668f49
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
 	# Needs concept review: 20583 MarcoFalke/2012-walletSync
-	g152  gui_notify_setup_bg					dbff865256f
+	g152  gui_notify_setup_bg-0.10				dbff865256f	last=4436094508e gui_notify_setup_bg
 	-     bugfix_gui_drop_abc_confusing_hack	6e1b3b65525
 	20805 copyright_2022-0.21					c69ba0b3e58
 		# NOTE: Diff-minimised
@@ -227,7 +229,8 @@ TM	21907 listwalletdir_iterate_inf-0.19		1483674ad69
 	21944 fix_listwalletdir_rootdir-0.21+knots	0cb9e8948d1
 	22013 ignoreblockrelayfordnsskip-0.21		8216936b4d9
 	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
-	19315 rpc_addconnection-0.21				0ec207c9478	last=7d85d477730 rpc_addconnection_mainnet
+	19315 rpc_addconnection-0.21				0ec207c9478	last=87511fc2357 rpc_addconnection_mainnet
+	(CHECK-LAST)	last=7d85d477730 rpc_addconnection_mainnet-22
 		# PARTIAL: Only the actual addconnection RPC method
 		# NOTE: Modified to allow use on non-regtest networks
 	22096 fix_p2p_addrfetch_ignoreselfadv-0.21+knots	54c07ed4488
@@ -249,9 +252,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=171ac54ea47 fix_wallet_pr22359-22
 		# Semi-diff-minimised
 	# Needs review: 22362 MarcoFalke/2106-addrdb  # Drop (only) invalid entries when reading banlist
-	22417 bpchild_closefds-21+knots				ae04745f860	last=2255d3bc827 bpchild_closefds
+	22417 bpchild_closefds-21+knots				ae04745f860	last=bc8a2010501 bpchild_closefds
 	(CHECK-LAST)	last=9b9cdc9ae6f bpchild_closefds-0.21
 	(CHECK-LAST)	last=4c19cea484b bpchild_closefds-22
+	(CHECK-LAST)	last=2255d3bc827 bpchild_closefds-24
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 		# NOTE: Workaround for boost bug included; see also #24523
 	g379  qt_reset_bad_settingsjson-0.21		0952d0c615e
@@ -425,9 +429,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# NOTE: Too convoluted to backport safely - partially done in fb7e7781d90
 	g595  qt_handle_autostart_errors-0.15					last=d932157eb79
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
-	g599  ts_20220515-partial-21							last=7ec30cf0127 ts_20220515
+	g599  ts_20220515-partial-21							last=d9411324066 ts_20220515
 	(CHECK-LAST)	last=3d7b977bbf0 ts_20220515-partial-23
 	(CHECK-LAST)	last=eda73090c7f ts_20220515-partial-24
+	(CHECK-LAST)	last=f4fe307b84b ts_20220515-partial-25
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		# NOTE: ts_20220515-21 is full* backport ddfc86cf878=5e23dabf265 (* see two gui#599 notes later in spec)
 		#21.xTODO# Update with other commits that are beneficial

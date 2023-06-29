@@ -85,8 +85,6 @@ checkout v25.0
 	# Needs review: 19793 ryanofsky/pr/badsalv
 	# Needs concept/review/triage? 19876 -  # wallet: Fix wallet loading race during node start
 	# Needs review: 19880 -  # fix CTxMemPool::TrimToSize to put only confirmed coins in pvNoSpendsRemaining
-	MERGED 19888 getblockstats_utxo_actual-24+knots	02627b9a519	last=d885bb2f6ea
-		# Diff-minimised incl test changes
 	# Needs work, not important: 20383 practicalswift/signed-integer-malformed-mempool-dat-and-rpc
 		#TODO: diff-minimise, review
 	# Needs review: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
@@ -121,17 +119,17 @@ checkout v25.0
 	# Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
 	# TODO: Triage KDE patches for Qt5
 		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
-	24718 fix_rpc_docs_pr24718-24+knots			1ce1a6ef90b	last=68a041dd12b
+	24718 fix_rpc_docs_pr24718-25+knots			1ce1a6ef90b	last=68a041dd12b
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	# Needs review: 24912 mruddy/nchaintx_type
-	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=734355b4707
+	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=c4981e7f63a
 		# NOTE: Silent conflict with later (but merged in master first) #16981, addressed in #16981 branch
 	# Needs review: 24972 hebasto/220425-no-libtool
 	# Needs review: 24994 hebasto/220426-consensus
 	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
-	g599  ts_20220515-partial-24				5a4ab415cfe	last=7ec30cf0127 ts_20220515
+	g599  ts_20220515-partial-25				5a4ab415cfe	last=d9411324066 ts_20220515
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		#24.xTODO# Update with other commits that are beneficial
 	-     rpcdoc_sendmany_dummy_opt-23			9ddbb6e5a61
@@ -816,12 +814,13 @@ checkout v25.0
 	n/a   update_security_policy-21
 		TODO: Review security policy
 	n/a   knots_branding-23						0ef366334de
-#FIXME: Check hidden_args has anything removed (possibly conditional)
-#FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
-#TODO: Check that we aren't deprecating anything in Core
-#TODO: verify src tarball includes rendered_icons incl nsis-header
-# TODO: Check net_permissions.h for overlapping NetPermissionFlags
-# TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
+FIXME: Check hidden_args has anything removed (possibly conditional)
+FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
+TODO: Check that we aren't deprecating anything in Core
+TODO: verify src tarball includes rendered_icons incl nsis-header
+TODO: Check net_permissions.h for overlapping NetPermissionFlags
+TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
+TODO: Check #26039 doesn't break anything
 	n/a  (cherrypick=165f473d4d068ee31a)		f6260178fc7	# doc/{bips,files}
 		TODO: Check #26231
 	n/a  (bump_version=Knots:20220529)			3d04837ba68
