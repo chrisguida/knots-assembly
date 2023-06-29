@@ -606,7 +606,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	If applicable: Needs review: 26646 glozow/package-single-tx-result
 	Needs review: g684  -  # Improve 'Requested Payments History' Multiselect
 	Needs review? 26728 achow101/wallet-knows-master-key
-	Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
 	Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
 	26828 andrewtoth/assumeutxo-remove-fix
 	Just fixes from? 26836 furszy/2022_wallet_finish_addressbook_encapsulation
@@ -636,6 +635,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 27577 mzumsande/202304_seednode_fixedseed_interaction
 	Triage: 27591 glozow/2023-05-mempool-vsize
 	Triage & # Needs review: 27601 furszy/2023_wallet_double_change_output
+	Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
 	Triage & Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
 	Triage: 27608 (see #27624 for 23.x backport)
 	Triage: 27610 (see #27624 for 23.x backport)

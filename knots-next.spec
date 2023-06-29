@@ -151,21 +151,19 @@ checkout v25.0
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
 	#24.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
-	MERGED # Needs review & not a bug in practice: Just the fix from: 26289 stickies-v/mempool-use-result
 	#24.xTODO# Needs review: 26316 andrewtoth/block-read-shared-mutex
 	#24.xTODO# Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
 	#24.xTODO# Needs review: 26343 mzumsande/202210_addrfetch_servicebits
 	#24.xTODO# Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
-	g677 fix_qt_peers_na-24+knots							last=cfe5bbe6ccd fix_qt_peers_na
+	g677 fix_qt_peers_na
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
 	#24.xTODO# Needs work: 26512 -  # init: Evaluate sysperms before config file
 	#24.xTODO# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
-	Needs review: g684  -  # Improve 'Requested Payments History' Multiselect
-	Needs review? 26728 achow101/wallet-knows-master-key
-	Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
-	Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
-	26828 andrewtoth/assumeutxo-remove-fix
+	#25.xTODO# Needs review: g684  -  # Improve 'Requested Payments History' Multiselect
+	#25.xTODO# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
+	#25.xTODO# Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
+	26828 andrewtoth/assumeutxo-remove-fix					last=0e21b56a44d
 	Just fixes from? 26836 furszy/2022_wallet_finish_addressbook_encapsulation
 	Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
 	Needs review: 26950 fanquake:check_for_SecureZeroMemory
@@ -190,6 +188,7 @@ checkout v25.0
 	27577 mzumsande/202304_seednode_fixedseed_interaction
 	27591 glozow/2023-05-mempool-vsize
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
+	Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
 	Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
 	Allow toggling on mainnet (and by default off?): 27622 -  # Fee estimation: avoid serving stale fee estimate
 	27626 instagibbs/2023-05-parallel-block-downloads
@@ -806,6 +805,7 @@ checkout v25.0
 	n/a   update_security_policy-21
 		TODO: Review security policy
 	n/a   knots_branding-23						0ef366334de
+FIXME: Check that fix of https://github.com/bitcoin-core/gui/pull/658#discussion_r1018131577 didn't break a later branch
 FIXME: Check hidden_args has anything removed (possibly conditional)
 FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 TODO: Check that we aren't deprecating anything in Core
