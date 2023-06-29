@@ -436,9 +436,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		# NOTE: ts_20220515-21 is full* backport ddfc86cf878=5e23dabf265 (* see two gui#599 notes later in spec)
 		#21.xTODO# Update with other commits that are beneficial
-	-     rpcdoc_sendmany_dummy_opt-0.20
+	25093 rpcdoc_sendmany_dummy_opt-0.20
 	(CHECK-LAST)	last=32cca184b79 rpcdoc_sendmany_dummy_opt-23
-		# Just the bugfix from #25093 rpc: Check for omitted, but required parameters
 	# Needs review/triage: 25096 -  # [net] Minor improvements to addr caching
 		# NOTE: Fixes in #25312 & #25333
 	25106 rpc_dumptxoutset_fopen_check-0.20					last=805443ff3f9 rpc_dumptxoutset_fopen_check-23

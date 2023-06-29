@@ -132,8 +132,6 @@ checkout v25.0
 	g599  ts_20220515-partial-25				5a4ab415cfe	last=d9411324066 ts_20220515
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		#24.xTODO# Update with other commits that are beneficial
-	-     rpcdoc_sendmany_dummy_opt-23			9ddbb6e5a61
-		# Just the bugfix from #25093 rpc: Check for omitted, but required parameters
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
