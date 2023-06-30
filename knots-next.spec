@@ -164,15 +164,15 @@ checkout v25.0
 	#25.xTODO# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
 	#25.xTODO# Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
 	26828 andrewtoth/assumeutxo-remove-fix					last=0e21b56a44d
-	Just fixes from? 26836 furszy/2022_wallet_finish_addressbook_encapsulation
-	Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
-	Needs review: 26950 fanquake:check_for_SecureZeroMemory
-	SECURITY Needs review: 26964 willcl-ark/2023-01-cookie-bind
-	If needed for below: 27850 pinheadmz/blockstore-tests
-	27039 pinheadmz/reindex-read-only
-	Needs review: 27071 vasild/lookup_subnet_cjdns
-	Need a fix for #26176 (Opening macOS DMG does not open Finder window) -- revert #24031 ?
-	27231 jonatack/2023-03-logging-fixes-and-test-coverage
+	-     fix_migratewallet_send_labels-24					last=993fc0520aa furszy/2022_wallet_finish_addressbook_encapsulation
+		# Just fix(es) from #26836
+	#25.xTODO# Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
+	#25.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
+	#25.xTODO# SECURITY Needs review: 26964 willcl-ark/2023-01-cookie-bind
+	#25.xTODO# Needs bugfix? (https://github.com/bitcoin/bitcoin/pull/27039/files#r1247267535) 27039 pinheadmz/reindex-read-only
+	#25.xTODO# Needs work/review: 27071 vasild/lookup_subnet_cjdns
+	#25.xTODO# Needs work: 27231 jonatack/2023-03-logging-fixes-and-test-coverage
+		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
 	Triage 27303 pinheadmz/cache-conf-file
@@ -743,7 +743,7 @@ checkout v25.0
 	22439 guix_in_gitian-23+knots				b3670947f2d	last=ebda0463748 achow101/guix-in-gitian
 	#24.xTODO# revert #23927  rpc: Pruning nodes can not fetch blocks before syncing past their height
 		or?? 26395 fix to 23927
-	# TODO: revert #24031  build: don't compress macOS DMG
+	#25.xTODO# revert #24031  build: don't compress macOS DMG -- FIXES #26176
 	TODO: * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
