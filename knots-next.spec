@@ -178,20 +178,21 @@ checkout v25.0
 	27302 ignoredconf_err_def0-25
 		# NOTE: Changed default for -allowignoredconf to 0 for compatibility
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
-	Needs review: 27411 mzumsande/202303_advertise_nets
-	Alternative to: 27434 pinheadmz/chaintips-invalid
-	Needs review: g696 -  # Switch RPCConsole wallet selection to the one most recently opened/restored/created
-	Needs work? g719 theStack-g/gui-nuke_cc_dust_label
-	Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
-	Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
-	27556 -  # wallet: fix deadlock in bdb read write operation
-	Needs review: 27557 pinheadmz/async-getaddrinfo
-	27577 mzumsande/202304_seednode_fixedseed_interaction
-	27591 glozow/2023-05-mempool-vsize
+	27411 p2p_selfadv_privacy_pr27411-25					last=e7cf8657e11 mzumsande/202303_advertise_nets
+	#25.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
+	g696 qt_rpcconsole_switch_wallet_opened-25				last=5781f45ff32
+	g719 theStack-g/gui-nuke_cc_dust_label					last=394300c1886
+	#25.xTODO# Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
+	#25.xTODO# Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
+	# Not needed in 25.x? 27556 -  # wallet: fix deadlock in bdb read write operation
+	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
+	27577 seednode_delay_fixedseeds-24
+	27591 rpc_mempoolvsize-25								last=60bde2dac05 glozow/2023-05-mempool-vsize
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
-	Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
-	Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
-	Allow toggling on mainnet (and by default off?): 27622 -  # Fee estimation: avoid serving stale fee estimate
+	#25.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
+	#25.xTODO# Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
+	27622 fee_est_stalecheck-25+knots
+		# Modified to allow on mainnet, and enable by default
 	27626 instagibbs/2023-05-parallel-block-downloads
 		+27743
 		NOTE: BACKPORTS IN #27752
