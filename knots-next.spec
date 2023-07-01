@@ -175,7 +175,8 @@ checkout v25.0
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
-	Triage 27303 pinheadmz/cache-conf-file
+	27302 ignoredconf_err_def0-25
+		# NOTE: Changed default for -allowignoredconf to 0 for compatibility
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
 	Needs review: 27411 mzumsande/202303_advertise_nets
 	Alternative to: 27434 pinheadmz/chaintips-invalid
