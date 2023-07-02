@@ -40,6 +40,13 @@ checkout v25.0
 	#25.xTODO# Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
 	27542 qa_runtest_ripemd160-23  # test: add ripemd160 to test framework modules list
 # FIXES:
+	27727 725c3dc2dd1  # rpc: Fix invalid bech32 handling
+	27724 cda3fe28083  # build: disable boost multi index safe mode
+	27777 de56daab417  # ci: Prune dangling images on RESTART_CI_DOCKER_BEFORE_RUN
+	27844 6f7a0ae58b8  # ci: Use podman stop over podman kill
+	27853 d845a3ed218  # rest: bugfix, fix crash error when calling /deploymentinfo
+	27886 642b5dd1b4f  # ci: Switch to `amd64` container in "ARM" task
+	#--- ^ core/25.x merges, in sequence
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						fe1576ba2d8
 		# NOTE: based directly on #18818
@@ -193,15 +200,14 @@ checkout v25.0
 	#25.xTODO# Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
 	27622 fee_est_stalecheck-25+knots
 		# Modified to allow on mainnet, and enable by default
-	27626 instagibbs/2023-05-parallel-block-downloads
-		+27743
-		NOTE: BACKPORTS IN #27752
+	27626 fanquake/25_x_backport_cmpt_blk					last=b8ad3220a90 fanquake/25_x_backport_cmpt_blk
+		# +#27743
+		# NOTE: Builds on top of core/25.x branch post v25.0
 	TODO: Actually fix the bug removed in #27673
 	Needs review: 27684 hebasto/230516-punish OR ???
 	27708 -  # Return EXIT_FAILURE on post-init fatal errors
 	Triage: 27717 hebasto/230522-util
 	If needed? 27720 furszy/2023_index_init_race_bugfix
-	27724 origin-pull/27725/head  # build: disable boost multi index safe mode
 	Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	Fix only: 27735 MarcoFalke/2305-mempool-legacy-wallet-
 	Fix only: 27746 sdaftuar/2023-05-assumeutxo-validation-improvements
@@ -213,7 +219,6 @@ checkout v25.0
 	# Needs review: 27823 mzumsande/202306_feature_init_fix
 	Needs review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	27846 -  # [coinselection] Increase SRD target by change_fee
-	27853 brunoerg/2023-06-bugfix-rest-deploymentinfo (backport in #27887)
 	Triage: 27862 ryanofsky/pr/assumeabort
 	27863 brunoerg/2023-06-net-netgroup-continue
 	Triage: 27892 MarcoFalke/2306-translate-copy-
