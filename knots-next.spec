@@ -208,9 +208,11 @@ checkout v25.0
 	#25.xTODO# Needs review: 27684 hebasto/230516-punish OR ???
 	27708 postinit_exit_failure_code-25
 	27717 test_util_env-0.16
-	If needed? 27720 furszy/2023_index_init_race_bugfix
-	Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
-	Fix only: 27735 MarcoFalke/2305-mempool-legacy-wallet-
+	# If needed? 27720 furszy/2023_index_init_race_bugfix
+	#25.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
+	-     fix_qa_mempool_packages_legacywallet-25
+		# Fix-only alternative to #27735 MarcoFalke/2305-mempool-legacy-wallet-
+		# Bug affects 23.x+ only, regressed in #23371 which made MiniWallet require Taproot (which legacy wallets don't support)
 	Fix only: 27746 sdaftuar/2023-05-assumeutxo-validation-improvements
 	27747 -  # rpc: Use 'byte'/'bytes' for bech32(m) validation error message
 	Needs review: 27804 -  # init: deduplicate added connections

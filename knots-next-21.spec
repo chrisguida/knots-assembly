@@ -653,7 +653,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 27727 MarcoFalke/2305-rpc-bech32-; backports in #27756 (23.x), #27755 (24.x), and #27750 (25.x)
 		+27747
 	Triage: Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
-	Triage: Fix only: 27735 MarcoFalke/2305-mempool-legacy-wallet-
 	Triage: Fix only: 27746 sdaftuar/2023-05-assumeutxo-validation-improvements
 	Triage: Needs review: 27804 -  # init: deduplicate added connections
 	Triage: 27814 -  # Blocking arguments -nohelp, -noh, and -no?
