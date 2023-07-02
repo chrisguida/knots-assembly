@@ -203,10 +203,11 @@ checkout v25.0
 	27626 fanquake/25_x_backport_cmpt_blk					last=b8ad3220a90 fanquake/25_x_backport_cmpt_blk
 		# +#27743
 		# NOTE: Builds on top of core/25.x branch post v25.0
-	TODO: Actually fix the bug removed in #27673
-	Needs review: 27684 hebasto/230516-punish OR ???
-	27708 -  # Return EXIT_FAILURE on post-init fatal errors
-	Triage: 27717 hebasto/230522-util
+	n/a   fix_div0_connecttip_loadblocks_log-25
+		# Affected code removed in #27673
+	#25.xTODO# Needs review: 27684 hebasto/230516-punish OR ???
+	27708 postinit_exit_failure_code-25
+	27717 test_util_env-0.16
 	If needed? 27720 furszy/2023_index_init_race_bugfix
 	Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	Fix only: 27735 MarcoFalke/2305-mempool-legacy-wallet-

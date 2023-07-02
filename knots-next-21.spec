@@ -643,10 +643,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Test well: 27626 instagibbs/2023-05-parallel-block-downloads
 		+27743
 		NOTE: BACKPORTS IN #27752
-	Triage: TODO: Actually fix the bug removed in #27673
+	Triage: n/a   fix_div0_connecttip_loadblocks_log-25
+		# Affected code removed in #27673
 	Triage: Needs review: 27684 hebasto/230516-punish OR ???
 	Triage: 27708 -  # Return EXIT_FAILURE on post-init fatal errors
-	Triage: 27717 hebasto/230522-util
+	27717 test_util_env-0.16
 	Triage: If needed? 27720 furszy/2023_index_init_race_bugfix
 	Triage: 27724 -  # build: disable boost multi index safe mode in debug mode
 	Triage: 27727 MarcoFalke/2305-rpc-bech32-; backports in #27756 (23.x), #27755 (24.x), and #27750 (25.x)
