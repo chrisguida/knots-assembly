@@ -40,7 +40,8 @@ checkout v25.0
 	#25.xTODO# Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
 	27542 qa_runtest_ripemd160-23  # test: add ripemd160 to test framework modules list
 # FIXES:
-	27727 725c3dc2dd1  # rpc: Fix invalid bech32 handling
+	27727 fix_decodedest_err_bytes_plural-25  # rpc: Fix invalid bech32 handling
+		# +#27747
 	27724 cda3fe28083  # build: disable boost multi index safe mode
 	27777 de56daab417  # ci: Prune dangling images on RESTART_CI_DOCKER_BEFORE_RUN
 	27844 6f7a0ae58b8  # ci: Use podman stop over podman kill
@@ -213,8 +214,6 @@ checkout v25.0
 	-     fix_qa_mempool_packages_legacywallet-25
 		# Fix-only alternative to #27735 MarcoFalke/2305-mempool-legacy-wallet-
 		# Bug affects 23.x+ only, regressed in #23371 which made MiniWallet require Taproot (which legacy wallets don't support)
-	Fix only: 27746 sdaftuar/2023-05-assumeutxo-validation-improvements
-	27747 -  # rpc: Use 'byte'/'bytes' for bech32(m) validation error message
 	Needs review: 27804 -  # init: deduplicate added connections
 	27814 -  # Blocking arguments -nohelp, -noh, and -no?
 	27815 -  # CLI: Only one Request Handler can be specified.
