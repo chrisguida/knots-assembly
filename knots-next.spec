@@ -131,8 +131,7 @@ checkout v25.0
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	# Needs review: 24912 mruddy/nchaintx_type
-	24957 fix_prune_during_loadblock-22			c2e6976a79f	last=c4981e7f63a
-		# NOTE: Silent conflict with later (but merged in master first) #16981, addressed in #16981 branch
+	24957 -										c2e6976a79f	last=c4981e7f63a  # fix_prune_during_loadblock-22
 	# Needs review: 24972 hebasto/220425-no-libtool
 	# Needs review: 24994 hebasto/220426-consensus
 	g595  qt_handle_autostart_errors-0.15		e467470fa8b	last=d932157eb79
