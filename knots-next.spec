@@ -214,13 +214,13 @@ checkout v25.0
 	-     fix_qa_mempool_packages_legacywallet-25
 		# Fix-only alternative to #27735 MarcoFalke/2305-mempool-legacy-wallet-
 		# Bug affects 23.x+ only, regressed in #23371 which made MiniWallet require Taproot (which legacy wallets don't support)
-	Needs review: 27804 -  # init: deduplicate added connections
-	27814 -  # Blocking arguments -nohelp, -noh, and -no?
-	27815 -  # CLI: Only one Request Handler can be specified.
-	Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
+	# Needs review: 27804 -  # init: deduplicate added connections
+	27814 forbid_nohelp-0.19								last=bfc2bb6a270
+	27815 cli_forbid_multihelper-22							last=244e6c8db81
+	# Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
 	# Needs review: 27823 mzumsande/202306_feature_init_fix
-	Needs review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
-	27846 -  # [coinselection] Increase SRD target by change_fee
+	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
+	27846 fix_wallet_SRD_target_change-25
 	Triage: 27862 ryanofsky/pr/assumeabort
 	27863 brunoerg/2023-06-net-netgroup-continue
 	Triage: 27892 MarcoFalke/2306-translate-copy-

@@ -656,9 +656,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 27804 -  # init: deduplicate added connections
 	Triage: 27814 -  # Blocking arguments -nohelp, -noh, and -no?
 	Triage/reduce?: 27815 -  # CLI: Only one Request Handler can be specified.
+		NOTE: Requires adapting in -addrinfo merged below (#21595)
 	Triage & Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
 	# Triage & Needs review: 27823 mzumsande/202306_feature_init_fix
-	Triage & Needs review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
+	Triage & Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	Triage: 27846 -  # [coinselection] Increase SRD target by change_fee
 	Triage: 27853 brunoerg/2023-06-bugfix-rest-deploymentinfo (25.x backport in #27887)
 	Triage: 27862 ryanofsky/pr/assumeabort
