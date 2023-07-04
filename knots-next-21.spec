@@ -87,8 +87,8 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	# TODO? 25123 fjahr/202205-index-prune-fix
 	# TODO? 25124 -  # test: Fix intermittent race in p2p_unrequested_blocks.py
 	Triage: Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
-	28027 achow101/2023-07-test-wallet-back-compat-updates
-	28028 MarcoFalke/2307-test-stderr-
+	Needs review: 28027 achow101/2023-07-test-wallet-back-compat-updates
+	Needs review: 28028 MarcoFalke/2307-test-stderr-
 	n/a   knots_ci_tweaks-21					a30b2c8bb0f
 	#TODO: Can we get a minimum-dep-versions CI going??
 # FIXES:
@@ -676,7 +676,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 27981 sipa/202306_pushback
 	Triage: Needs work: 27991 fanquake/instrument_libsecp
 	Triage: Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
-	Triage: Needs work? 22087 -  # exclude ipc scheme from port check
+	Triage: Needs work? 28020 -  # exclude ipc scheme from port check
 	Triage: # If needed: 28026 furszy/2023_fix_index_timeout
 	Triage: Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
 	

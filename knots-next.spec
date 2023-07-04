@@ -40,8 +40,8 @@ checkout v25.0
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	#25.xTODO# Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
 	27542 qa_runtest_ripemd160-23  # test: add ripemd160 to test framework modules list
-	28027 achow101/2023-07-test-wallet-back-compat-updates
-	28028 MarcoFalke/2307-test-stderr-
+	#25.xTODO# Needs review: 28027 achow101/2023-07-test-wallet-back-compat-updates
+	#25.xTODO# Needs review: 28028 MarcoFalke/2307-test-stderr-
 # FIXES:
 	27727 fix_decodedest_err_bytes_plural-25  # rpc: Fix invalid bech32 handling
 		# +#27747
@@ -190,14 +190,14 @@ checkout v25.0
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
 	27411 p2p_selfadv_privacy_pr27411-25					last=e7cf8657e11 mzumsande/202303_advertise_nets
 	#25.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
-	g696 qt_rpcconsole_switch_wallet_opened-25				last=5781f45ff32
-	g719 theStack-g/gui-nuke_cc_dust_label					last=394300c1886
+	g696 qt_rpcconsole_switch_wallet_opened-25				last=99c0eb9701e
+	g719 theStack-g/gui-nuke_cc_dust_label					last=a582b4141f0
 	#25.xTODO# Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	#25.xTODO# Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
 	# Not needed in 25.x? 27556 -  # wallet: fix deadlock in bdb read write operation
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
 	27577 seednode_delay_fixedseeds-24
-		Check #28016
+		#25.xTODO# Check #28016
 	27591 rpc_mempoolvsize-25								last=60bde2dac05 glozow/2023-05-mempool-vsize
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
 	#25.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
@@ -227,16 +227,17 @@ checkout v25.0
 	27863 net_continue_peerhunt_pr27863-24
 	27905 fix_FMWC_dirty_index-23
 	#25.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
-	Some good fix for 27915 (#27920?)
-	Triage: 27930 -  # util: Don't derive secure_allocator from std::allocator
-	Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
+	#25.xTODO# Some good fix for 27915 (#27920? partial backport in d319eef6e46)
+	#25.xTODO# Triage: 27930 -  # util: Don't derive secure_allocator from std::allocator
+	#25.xTODO# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 MarcoFalke/2306-byte-span-
-	Needs review: 27981 sipa/202306_pushback
-	Needs work: 27991 fanquake/instrument_libsecp
-	Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
-	Needs work?: 22087 -  # exclude ipc scheme from port check
+	#25.xTODO# Needs review: 27981 sipa/202306_pushback
+	#25.xTODO# Needs work: 27991 fanquake/instrument_libsecp
+	#25.xTODO# Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
+	28020 fix_zmq_ipc_noportcheck-25						last=0b1762c90d1  # exclude ipc scheme from port check
+		#25.xTODO# Maybe rewrite without `rfind`
 	# If needed: 28026 furszy/2023_fix_index_timeout
-	Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
+	#25.xTODO# Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
