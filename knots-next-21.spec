@@ -1,8 +1,8 @@
-timestamp 2023-06-24 02:55:21
+timestamp 2023-07-04 03:28:28
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #27957 / gui #740 for fixes
+#.. checked up to PR #28028 / gui #744 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -87,6 +87,8 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	# TODO? 25123 fjahr/202205-index-prune-fix
 	# TODO? 25124 -  # test: Fix intermittent race in p2p_unrequested_blocks.py
 	Triage: Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
+	28027 achow101/2023-07-test-wallet-back-compat-updates
+	28028 MarcoFalke/2307-test-stderr-
 	n/a   knots_ci_tweaks-21					a30b2c8bb0f
 	#TODO: Can we get a minimum-dep-versions CI going??
 # FIXES:
@@ -634,6 +636,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 27556 -  # wallet: fix deadlock in bdb read write operation
 	Triage & Needs review: 27557 pinheadmz/async-getaddrinfo
 	Triage: 27577 mzumsande/202304_seednode_fixedseed_interaction
+		Check #28016
 	Triage: 27591 glozow/2023-05-mempool-vsize
 	Triage & # Needs review: 27601 furszy/2023_wallet_double_change_output
 	Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
@@ -667,8 +670,15 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 27863 brunoerg/2023-06-net-netgroup-continue
 	Triage: 27905 mzumsande/202306_dirty_blockindex
 	Triage & Needs review: 27912 -  # net: run disconnect in I2P thread
-	Some good fix for 27915
+	Some good fix for 27915 (#27920?)
 	Triage: 27930 -  # util: Don't derive secure_allocator from std::allocator
+	Triage: Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
+	Triage: Needs review: 27981 sipa/202306_pushback
+	Triage: Needs work: 27991 fanquake/instrument_libsecp
+	Triage: Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
+	Triage: Needs work? 22087 -  # exclude ipc scheme from port check
+	Triage: # If needed: 28026 furszy/2023_fix_index_timeout
+	Triage: Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
