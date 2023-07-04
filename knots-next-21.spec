@@ -679,6 +679,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs work? 28020 -  # exclude ipc scheme from port check
 	Triage: # If needed: 28026 furszy/2023_fix_index_timeout
 	Triage: Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
+	Triage: 28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)

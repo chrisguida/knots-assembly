@@ -238,6 +238,8 @@ checkout v25.0
 		#25.xTODO# Maybe rewrite without `rfind`
 	# If needed: 28026 furszy/2023_fix_index_timeout
 	#25.xTODO# Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
+	28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
+		# Just diff-minimised
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -249,11 +251,8 @@ checkout v25.0
 	n/a   (delete_release_notes_fragments)
 @24.x-knots
 # PERFORMANCE:
-	n/a   rm_minisketch-24+k					5ddaa57ea1b	last=4e2d2910342 rm_minisketch-23+k
-		#25.xTODO# Probably need to drop this
-	MERGED 16981 reindex_speedup_pr16981-24+knots
-		# Left out new benchmark
-		# NOTE: Silent conflict with earlier #24957, addressed in that PR upstream, but out of order (ie, in this branch) here
+	n/a   rm_minisketch-25+k					5ddaa57ea1b	last=4e2d2910342 rm_minisketch-23+k
+		#26.xTODO# Probably need to drop this
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
@@ -266,7 +265,7 @@ checkout v25.0
 	# Needs review: 25968 sipa/202208_headerssync_optimize
 	#24.xTODO# Needs review: 26008 achow101/improve-many-desc-ismine
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
-	26375 zmq_optimise_duplread-24							last=7b631dc9b19 andrewtoth/no-read-zmq
+	26375 zmq_optimise_duplread-25+k						last=7b631dc9b19 andrewtoth/no-read-zmq
 	# Needs review: 26486 sipa/202211_batchnotfound
 	# Opt-in & needs review: 26951 pstratem/2023-01-23-gcsfilter
 	# Needs review: 26966 furszy/2022_parallelize_blockfilter_index_2
