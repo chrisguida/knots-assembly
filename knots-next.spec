@@ -271,9 +271,9 @@ checkout v25.0
 	# Needs review: 26966 furszy/2022_parallelize_blockfilter_index_2
 	# Needs review: 27006 furszy/2022_reduce_cs_main_scope_blockindex_nfile
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
-	Needs review? 27334 -  # util: implement noexcept move assignment & move ctor for prevector
-	Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
-	Needs review? 27675 ajtowns/202305-droprecentinvbloom
+	27334 -												last=bfb9291a866  # util: implement noexcept move assignment & move ctor for prevector
+	#25.xTODO# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
+	# Needs review? 27675 ajtowns/202305-droprecentinvbloom
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
