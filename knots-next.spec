@@ -8,6 +8,7 @@ checkout v25.0
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						3a646ac6a6b
+	# If needed (MSVC only?): 27892 MarcoFalke/2306-translate-copy-
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
 	5416  sys_libsecp256k1						f4a59d2a40f
@@ -220,11 +221,9 @@ checkout v25.0
 	# Needs review: 27823 mzumsande/202306_feature_init_fix
 	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	27846 fix_wallet_SRD_target_change-25
-	Triage: 27862 ryanofsky/pr/assumeabort
-	27863 brunoerg/2023-06-net-netgroup-continue
-	Triage: 27892 MarcoFalke/2306-translate-copy-
-	Triage: 27905 mzumsande/202306_dirty_blockindex
-	Needs review: 27912 -  # net: run disconnect in I2P thread
+	27863 net_continue_peerhunt_pr27863-24
+	27905 fix_FMWC_dirty_index-23
+	#25.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
 	Some good fix for 27915
 	Triage: 27930 -  # util: Don't derive secure_allocator from std::allocator
 	

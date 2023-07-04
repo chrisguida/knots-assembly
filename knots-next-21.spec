@@ -46,6 +46,7 @@ checkout v0.21.2
 	# Needs review: 25612 fanquake/lto_improvements
 	25852 fix_intrinsic_check_userflags-0.20+k
 	Check if needed and useful: 26086 fanquake/bitcoin_tx_prune_boost_cpp
+	# Triage: If needed (MSVC only?): 27892 MarcoFalke/2306-translate-copy-
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=1c6ae96f0a3 sys_leveldb
@@ -664,7 +665,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 27853 brunoerg/2023-06-bugfix-rest-deploymentinfo (25.x backport in #27887)
 	Triage: 27862 ryanofsky/pr/assumeabort
 	Triage: 27863 brunoerg/2023-06-net-netgroup-continue
-	Triage: 27892 MarcoFalke/2306-translate-copy-
 	Triage: 27905 mzumsande/202306_dirty_blockindex
 	Triage & Needs review: 27912 -  # net: run disconnect in I2P thread
 	Some good fix for 27915
