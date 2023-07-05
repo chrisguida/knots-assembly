@@ -1118,6 +1118,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=4a881554991 tor_gui_pairing-22+knots
 m	15421 tor_subprocess-0.21+knots				ccf77ea4de5	last=58c6cafd3a1 tor_subprocess
 	(CHECK-LAST)	last=1fae7eff568 tor_subprocess-22+knots
+		TODO: Add boost_171_177_workarounds
+			# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
 	15633 nohbcbfornonwit-0.21+knots			f81d53ce8c5	last=f5e4f1650fe nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!

@@ -142,6 +142,8 @@ checkout v25.0
 	g599  ts_20220515-partial-25				5a4ab415cfe	last=d9411324066 ts_20220515
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		#24.xTODO# Update with other commits that are beneficial
+	-     boost_171_177_workarounds
+		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
@@ -174,7 +176,7 @@ checkout v25.0
 	#25.xTODO# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
 	#25.xTODO# Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
 	26828 andrewtoth/assumeutxo-remove-fix					last=0e21b56a44d
-	-     fix_migratewallet_send_labels-24					last=993fc0520aa furszy/2022_wallet_finish_addressbook_encapsulation
+	-     fix_migratewallet_send_labels-24					last=575b92d7619 furszy/2022_wallet_finish_addressbook_encapsulation
 		# Just fix(es) from #26836
 	#25.xTODO# Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
 	#25.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
@@ -278,9 +280,6 @@ checkout v25.0
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
 	24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
-	REPLACEMENT MERGED 25111 hww_windows-24+knots					cd6a088a2ec	last=625ef695528 hww_windows
-		# NOTE: Carries commit 209018f4275 for compaibility with #22417
-		# NOTE: Being replaced by #25696 ?
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
