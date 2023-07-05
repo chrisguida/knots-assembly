@@ -293,18 +293,13 @@ checkout v25.0
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	MERGED 25375 rpc_fundtx_minmaxconf-24				e80afead907	last=18e277fcf26  # rpc: allow specifying min chain depth for inputs in fund calls
-	(CHECK-LAST)	last=7f4c9039f71 origin-pull/22049/head
-		# Was #14641 (moved to Knots compat)
-		# Was #22049
-		# Includes fix for typo "maxconfs" in error msg
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
 		# NOTE: Latest version is rebased for adding inputs, with serious issues
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	# TODO ? 12792 w/ renamed param
-	18479 rpc_sign_show_fees					58494ba48db	last=47b2ba29df2 !kallewoof/sign-show-fees
+	18479 rpc_sign_show_fees					58494ba48db	last=47b2ba29df2 !origin-pull/12911/head
 		# Dropped rel notes file
 		# NOTE: Originally #12911
 	# Needs review and care (new index): 13014 jonasschnelli/2018/04/txindex_prune
@@ -316,7 +311,7 @@ checkout v25.0
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
-	g119  rm_send2self-mini						5f0c6043003	last=2bb4e307634 rm_send2self
+	g119  rm_send2self-mini						5f0c6043003	last=099dbe4224e rm_send2self
 		# NOTE: Originally #15115
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks

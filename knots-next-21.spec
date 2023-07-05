@@ -759,11 +759,11 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 		# TODO: Once #25375 is merged, include its strings/tests
 		# NOTE: Backported #25375 (minus sendall RPC, not in Knots 21.x) in b289e97b8f0
 	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
-	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !kallewoof/sign-show-fees
+	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !origin-pull/12911/head
 		# NOTE: Originally #12911
-	(CHECK-LAST)	last=691a2af4e59 rpc_sign_show_fees
-	g119  rm_send2self-mini-21					8a6ed938070	last=2bb4e307634 rm_send2self
-	(CHECK-LAST)	last=251189a4d4a rm_send2self-mini
+	(CHECK-LAST)	last=ac2d457500e rpc_sign_show_fees
+	g119  rm_send2self-mini-21					8a6ed938070	last=099dbe4224e rm_send2self
+	(CHECK-LAST)	last=39fa4ba47e6 rm_send2self-mini
 		# NOTE: Originally #15115
 	15423 tor_socks_port-0.21					109cf1f0e3b	last=b2774fc0bed tor_socks_port
 		# Held back 962f168a014..398df42f449, da20c1e6d20 (not a bugfix)
