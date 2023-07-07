@@ -324,10 +324,11 @@ checkout v25.0
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram+pr15836_api				d001a8627f4	last=b94292a7cb jonasschnelli/2019/04/feeinfo
-	(CHECK-LAST)	last=f2fb1f17444 origin-pull/21422/head
+	(CHECK-LAST)	last=c5e53d0d21f origin-pull/21422/head
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
-		# TODO: Replace with #21422 API ?
+		# TODO: Replace with #21422 API ? (or not, since it's been abandoned...)
+		# TODO: Drop ec2326304e0 since it's not needed with changes made in 998c34d27e7
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
@@ -817,6 +818,7 @@ checkout v25.0
 	n/a   update_security_policy-21
 		TODO: Review security policy
 	n/a   knots_branding-23						0ef366334de
+FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 FIXME: Check that fix of https://github.com/bitcoin-core/gui/pull/658#discussion_r1018131577 didn't break a later branch
 FIXME: Check hidden_args has anything removed (possibly conditional)
 FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
