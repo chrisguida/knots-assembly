@@ -342,7 +342,7 @@ checkout v25.0
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
-	18972 neutrino_whitelist-mini				b2999f33de0	last=af0400e052a neutrino_whitelist
+	18972 neutrino_whitelist-mini				b2999f33de0	last=cd82acd5931 neutrino_whitelist
 		# NOTE: Diff-minimised
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	-     qt_openuri_pastebtn_shortcut-23		055826bebb2

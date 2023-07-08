@@ -797,7 +797,7 @@ m	16795 rpc_inferred_output_descriptors-21+k	5d1bc19f6ca
 		# +#24636
 		# + part of #25691 (implied in #22918 by this)
 	18972 neutrino_whitelist-mini-21			dabdcf3f324	last=339fe189eb9
-	(CHECK-LAST)	last=0728aa87490 neutrino_whitelist-mini
+	(CHECK-LAST)	last=513465c7d6a neutrino_whitelist-mini
 		# NOTE: Diff-minimised
 	17034 psbt_ver_proprietary_xpub-0.21		0cbd65dd17d	last=81521173ba8 achow101/bip174-extensions
 		# +#23975
@@ -818,7 +818,7 @@ m	16795 rpc_inferred_output_descriptors-21+k	5d1bc19f6ca
 		# NOTE: Dropped benchmarks & diff-minimised
 m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	(CHECK-LAST)	last=e4004c28d7e rpc_dumptxoutset_hr-23+knots
-	(CHECK-LAST)	last=bc5c5426e87 rpc_dumptxoutset_hr
+	(CHECK-LAST)	last=a0acbce5122 rpc_dumptxoutset_hr
 		# Held back refactoring & test improvements 9427b409195...5d0c86d494a (in rpc_dumptxoutset_hr)
 		# TODO: Compat with(?) #24202
 		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202/files#r801191486
@@ -843,7 +843,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		TODO: Check if any fix from #26215 is needed
 	19762 ryanofsky/pr/named					3505e6dedbb	last=fa15c9b843b
 	19776 -										2d98f923dec	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
-	19873 mempressure-21						368b6daca5d last=f409894a139 mempressure
+	19873 mempressure-21						368b6daca5d last=27d43142a0d mempressure
 	20226 rpc_listdescriptors-0.21				e6939a88d7c	last=647b81b7093
 	(CHECK-LAST)	last=90b7bb0121c rpcdoc_listdescs_active_internal-22
 		# +#24977 [diff-minimised inline]
