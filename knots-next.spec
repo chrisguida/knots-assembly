@@ -1,7 +1,7 @@
-timestamp 2023-07-04 03:28:28
+timestamp 2023-07-09 06:10:32
 lastapply no-merge
 
-#.. checked up to PR #28028 / gui #744
+#.. checked up to PR #28056 / gui #744
 
 checkout v25.0
 @24.x-syslibs
@@ -176,8 +176,9 @@ checkout v25.0
 	#25.xTODO# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
 	#25.xTODO# Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
 	26828 andrewtoth/assumeutxo-remove-fix					last=0e21b56a44d
-	-     fix_migratewallet_send_labels-24					last=575b92d7619 furszy/2022_wallet_finish_addressbook_encapsulation
+	28038 fix_migratewallet_send_labels-24					last=575b92d7619 furszy/2022_wallet_finish_addressbook_encapsulation
 		# Just fix(es) from #26836
+		TODO: Migrate to #28038 (and include second fix); included in backport #28047
 	#25.xTODO# Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
 	#25.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
 	#25.xTODO# SECURITY Needs review: 26964 willcl-ark/2023-01-cookie-bind
@@ -243,6 +244,7 @@ checkout v25.0
 	28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err-25					last=017ab85cecc fix_getblockfrompeer_rereq_err
+	Needs work: 28056 -  # rpc: doc: Added longpollid and data params to template_request
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -598,6 +600,7 @@ checkout v25.0
 	Needs review: 27854 -  # [WIP] add a stratum v2 template provider
 	Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
+	# Needs review: 28052 MarcoFalke/2306-fs_stuff-
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
