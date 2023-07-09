@@ -884,6 +884,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 		#21.xTODO# TODO??? API change * 60243cac728 rpc: turn already downloaded into error in getblockfrompeer
 		#                           + * 34d5399211e rpc: more detailed errors for getblockfrompeer
 		# TODO: Find a way to get `da1bd8e31dc test: Add test for getblockfrompeer on pruned nodes` w/o fastprune mode?
+		TODO: +#28055 fix_getblockfrompeer_rereq_err
 	20391 rpc_setfeerate-0.21					aef134635d5	last=1002e2d0d7f jonatack/setfeerate
 	(CHECK-LAST)	last=4c0bc142de7 rpc_setfeerate-22
 	(CHECK-LAST)	last=116199a46f4 rpc_setfeerate-23

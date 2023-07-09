@@ -388,6 +388,8 @@ checkout v25.0
 	# Needs review and diff-minimisation: 20273 jonasschnelli/2020/10/client_rpc_nested
 	-     rpc_getblockfrompeer_wo_header-24+k	b89d300855f
 		# Prior Knots bundled this in with #20295
+		TODO: test "Already requested from this peer" error
+		TODO: allow fetching future blocks in prune mode
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-24						7fd4e8a1563	last=1002e2d0d7f jonatack/setfeerate
