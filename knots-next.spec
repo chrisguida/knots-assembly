@@ -242,6 +242,7 @@ checkout v25.0
 	#25.xTODO# Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
 	28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
+	28055 fix_getblockfrompeer_rereq_err-25					last=017ab85cecc fix_getblockfrompeer_rereq_err
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -386,10 +387,9 @@ checkout v25.0
 		# didn't bother with 1f373f93a60...500841e49d6 only changing widget names
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonasschnelli/2020/10/client_rpc_nested
-	-     rpc_getblockfrompeer_wo_header-24+k	b89d300855f
+	-     rpc_getblockfrompeer_future
+	-     rpc_getblockfrompeer_wo_header		b89d300855f
 		# Prior Knots bundled this in with #20295
-		TODO: test "Already requested from this peer" error
-		TODO: allow fetching future blocks in prune mode
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-24						7fd4e8a1563	last=1002e2d0d7f jonatack/setfeerate
