@@ -1,8 +1,8 @@
-timestamp 2023-07-09 06:10:32
+timestamp 2023-07-18 09:20:09
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28056 / gui #744 for fixes
+#.. checked up to PR #28100 / gui #744 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -681,6 +681,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
 	Triage: 28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 	Triage: Needs work: 28056 -  # rpc: doc: Added longpollid and data params to template_request
+	Triage: Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
+	Triage: Fix only: 28076 MarcoFalke/2307-fs-lint-
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -1304,6 +1306,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 #21.xTODO# Run #25243 to pick up on missing bash completion updates
 #21.xTODO# Check there are only [[noreturn]]s in: git grep '\[\[[a-z_]\+\]\]' src (nodiscard, maybe_unused, etc are C++17)
 #21.xTODO# Check on #21508
+Triage: TODO: Ensure std::filesystem isn't introduced (see #28076)
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
 		TODO: If applicable, #26443
 	n/a  knots_bips-21							95f1a0c7adb

@@ -1,7 +1,7 @@
-timestamp 2023-07-09 06:10:32
+timestamp 2023-07-18 09:20:09
 lastapply no-merge
 
-#.. checked up to PR #28056 / gui #744
+#.. checked up to PR #28100 / gui #744
 
 checkout v25.0
 @24.x-syslibs
@@ -244,7 +244,10 @@ checkout v25.0
 	28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err-25					last=017ab85cecc fix_getblockfrompeer_rereq_err
-	Needs work: 28056 -  # rpc: doc: Added longpollid and data params to template_request
+	28056 -  # rpc: doc: Added longpollid and data params to template_request
+	Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
+	Fix only: 28076 MarcoFalke/2307-fs-lint-
+	Needs review: 28077 vasild/i2p_accept_issue22759
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -600,7 +603,7 @@ checkout v25.0
 	Needs review: 27854 -  # [WIP] add a stratum v2 template provider
 	Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
-	# Needs review: 28052 MarcoFalke/2306-fs_stuff-
+	# Needs review: 28060+28052 MarcoFalke/2306-fs_stuff-
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -832,6 +835,7 @@ TODO: verify src tarball includes rendered_icons incl nsis-header
 TODO: Check net_permissions.h for overlapping NetPermissionFlags
 TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 TODO: Check #26039 doesn't break anything
+TODO: Ensure std::filesystem isn't introduced (see #28076)
 	n/a  (cherrypick=165f473d4d068ee31a)		f6260178fc7	# doc/{bips,files}
 		TODO: Check #26231
 	n/a  (bump_version=Knots:20220529)			3d04837ba68
