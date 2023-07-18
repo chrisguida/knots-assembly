@@ -245,10 +245,11 @@ checkout v25.0
 		# using backport in #28047
 		# NOTE: Builds on top of #27646 backport
 	28055 fix_getblockfrompeer_rereq_err-25					last=017ab85cecc fix_getblockfrompeer_rereq_err
-	28056 -  # rpc: doc: Added longpollid and data params to template_request
-	Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
-	Fix only: 28076 MarcoFalke/2307-fs-lint-
-	Needs review: 28077 vasild/i2p_accept_issue22759
+	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
+	#25.xTODO# Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
+	28076 no_std_fs_directly-25+k							last=fac98ac2fcf MarcoFalke/2307-fs-lint-
+		# Fix-only, diff-minimised
+	#25.xTODO# Needs review: 28077 vasild/i2p_accept_issue22759
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.

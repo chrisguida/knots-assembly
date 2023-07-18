@@ -680,7 +680,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: # If needed: 28026 furszy/2023_fix_index_timeout
 	Triage: Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
 	Triage: 28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
-	Triage: Needs work: 28056 -  # rpc: doc: Added longpollid and data params to template_request
+	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
 	Triage: Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
 	Triage: Fix only: 28076 MarcoFalke/2307-fs-lint-
 	
