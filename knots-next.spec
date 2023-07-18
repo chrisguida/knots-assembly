@@ -176,9 +176,6 @@ checkout v25.0
 	#25.xTODO# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
 	#25.xTODO# Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
 	26828 andrewtoth/assumeutxo-remove-fix					last=0e21b56a44d
-	28038 fix_migratewallet_send_labels-24					last=575b92d7619 furszy/2022_wallet_finish_addressbook_encapsulation
-		# Just fix(es) from #26836
-		TODO: Migrate to #28038 (and include second fix); included in backport #28047
 	#25.xTODO# Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
 	#25.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
 	#25.xTODO# SECURITY Needs review: 26964 willcl-ark/2023-01-cookie-bind
@@ -243,6 +240,10 @@ checkout v25.0
 	#25.xTODO# Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
 	28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
+	28038 fanquake/further_25_x_backports					last=37d9cc657cf !fanquake/further_25_x_backports
+		# Just fix(es) from #26836
+		# using backport in #28047
+		# NOTE: Builds on top of #27646 backport
 	28055 fix_getblockfrompeer_rereq_err-25					last=017ab85cecc fix_getblockfrompeer_rereq_err
 	28056 -  # rpc: doc: Added longpollid and data params to template_request
 	Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
