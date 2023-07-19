@@ -421,11 +421,7 @@ checkout v25.0
 	# Needs work: 15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
-	# ---- BEGIN HWI SUPPORT, TODO ----
-	MERGED 21576 rpc_bumpfee_signer-24+knots			bc251bca880	last=2c07cfacd17 Sjors/2021/04/signer_bumpfee
-		# Simply dropped misc comment changes in first commit
-	21928 rpc_hww_toggle-23						d4e05c2df25	last=1af20831806 Sjors/2021/05/hww-toggle
-	# ---- END HWI SUPPORT ----
+	21928 rpc_hww_toggle-25						d4e05c2df25	last=1af20831806 Sjors/2021/05/hww-toggle
 	# TODO: 17355 -  # gui: grey out used address in address book
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
 	# TODO: 21283 achow101/psbt2
