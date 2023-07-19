@@ -408,10 +408,6 @@ checkout v25.0
 	g149  intro_assumevalid						01f67fb5b69	last=cf940f0e5f5
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
-	MERGED 23549 rpc_scanblocks-24+knots				83bd74cf3d4	last=626b7c8493e jamesob/2021-11-scanblocks
-	(CHECK-LAST)	last=71b7cdb460e jonasschnelli/2020/12/filterblocks_rpc
-		# NOTE: Was #20664
-		# +#26508 (MERGED)
 	20702 rpc_getblocklocations					1f12d13fadf	last=9b03c654eb3
 		# NOTE: Fixed +x on test/functional/rpc_getblocklocations.py
 		# NOTE: Added necessary(?) cs_main locking
