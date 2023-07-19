@@ -414,7 +414,7 @@ checkout v25.0
 		# NOTE: Fixed typo in RPC example doc
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
 	20827 ibd_prune_max							7135a8a2aec
-	g363  qt_peers_directionarrow-24+knots		418d63d0c21	last=93c3b455994 qt_peers_directionarrow
+	g363  qt_peers_directionarrow-25+knots		418d63d0c21	last=727a2f83cca qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 		# WHEN REMOVING/MERGED UPSTREAM: Reverted 51708c4516c (from gui#543) - also preserve for Knots
 		# TODO: Should align the direction column on the right side, but Qt ignores alignment for icons :/

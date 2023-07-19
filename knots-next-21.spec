@@ -920,7 +920,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	(CHECK-LAST)	last=05b618ead44 rpc_getblocklocations
 		FIXME: Check range of nblocks (implicit int->size_t conversion)
 		FIXME: gcp 1693dc78e9a
-	20827 ibd_prune_max-21						894af588353	last=eeb6041ffb7 ibd_prune_max
+	20827 ibd_prune_max-21						894af588353	last=1d23d9515e9 ibd_prune_max
 	(CHECK-LAST)	last=24f3936337d ibd_prune_max-22
 	g163  gui_peer_conntype-0.21				a39642a4ef4  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
@@ -930,9 +930,10 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 		# NOTE: Left off final doxygen commit
 	g179  gui_peers_conntype-0.21+knots			5a9d8b41bf9	last=be4cf4832f1 jonatack-g/add-peers-dir-and-type-columns
 		# NOTE: Held back 9f76ba6597c...be4cf4832f1 (no real change once we add gui#363 on top)
-	g363  qt_peers_directionarrow-0.21+knots	c76a8d4f215	last=93c3b455994 qt_peers_directionarrow
+	g363  qt_peers_directionarrow-0.21+knots	c76a8d4f215	last=727a2f83cca qt_peers_directionarrow
 	(CHECK-LAST)	last=4d70dc134c2 qt_peers_directionarrow-22+knots
 	(CHECK-LAST)	last=6d169ee0c55 qt_peers_directionarrow-23+knots
+	(CHECK-LAST)	last=6d169ee0c55 qt_peers_directionarrow-25+knots
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 	20916 rpc_testmempoolaccept_wtxid-0.21		c5b8eb0a8b4	last=fa0aa87071e MarcoFalke/2101-wtxidTestmempool
 		# Diff-minimised
