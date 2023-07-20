@@ -482,8 +482,9 @@ checkout v25.0
 	# Needs review: 23624 -  # zmq: add rawmempooltx publisher
 	g473  rebroad-g/NonLinearTraffic			d5f647c9615	last=ad431ff5d18
 	# Needs work: g484 rebroad-g/RetainNetworkGraphOnIntervalChange
-	g492  qt_traffic_tooltip-23+knots			190259f05c2	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
-		# Left off top commit which breaks behaviour
+	g492  qt_traffic_tooltip					190259f05c2	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
+		# Left off top commit which breaks behaviour, fixed some nits
+		# Rebased on top of gui#473
 	g497  qt_fontsel-24+knots					63f1348f70c	last=6b01b4b685b qt_fontsel
 	-     qt_fontsel_qrcodes-24+knots			b9996e59773	 # latest code now
 	# TODO: qt_fontsel_console
