@@ -1005,7 +1005,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	g293  gui_peers_services_wordwrap-0.18		a9065accdaa
 	g298  gui_peers_altrowcolor-0.21+knots_pt1	281357e21fe
 	g307  gui_peers_altrowcolor-0.21+knots		81f3be93772	last=fdf80937d1c hebasto-g/210501-stripes
-	(CHECK-LAST)	last=d27878e2ca6 gui_peers_rowcolouropt
+	(CHECK-LAST)	last=dc89007d2c3 gui_peers_rowcolouropt
 	(CHECK-LAST)	last=84206370984 gui_peers_rowcolouropt-22
 	g309  gui_neticon_peerstab-0.18				f19b2295109
 		# NOTE: Fixed Qt5.5 compatibility
@@ -1018,7 +1018,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	g362  kbshortcuts_context-0.21+knots		979ab82059f	last=e4c916a0ea0 kbshortcuts_context
 	22288 torcontrol_dnslookup-0.21				192658456c6	last=cdd51e8ee15
 		# Diff-minimised
-	22372 multinotify-21						b002df55c73	last=c8add77da7e multinotify
+	22372 multinotify-21						b002df55c73	last=2c4cbac9334 multinotify
 	g469  qt_psbt_b64-21+knots					65f1d080b90	last=2c3ee4c3478 achow101-g/b64-psbt-gui
 	(CHECK-LAST)	last=5f7a4882e39 qt_loadpsbt_b64-23
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness

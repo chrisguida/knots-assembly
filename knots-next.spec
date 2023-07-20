@@ -469,7 +469,7 @@ checkout v25.0
 	# Needs review: 23035 jonatack:getnodeaddresses-tried-and-reference_count
 	# Needs work: g410  benthecarman/uppercase-uri
 	# Needs API review: 23330 JeremyRubin/header-fetch
-	23362 importfromcoldcard-23					8d8aa6dc195	last=8076f8d4c2a hebasto/211025-cc
+	23362 importfromcoldcard					8d8aa6dc195	last=8076f8d4c2a hebasto/211025-cc
 		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
 	23387 rpc_savefeeestimates					d2ca24d7dc1	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
