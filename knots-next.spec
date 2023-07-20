@@ -428,11 +428,11 @@ checkout v25.0
 		# TODO: diff-minimise??
 	21319 getblock_optimise						bcf986d0d05
 		# Context: 17529 rpc: Faster getblock using PureBlock
-	# Make CRCs optional: 26415 andrewtoth/read-raw-block
+	#25.xTODO# Needs review: 26415 andrewtoth/read-raw-block
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
-	21260 rpcwallet_tx_in_mempool-24+knots		00751692d11	last=46bf0b7b5d8
+	21260 rpcwallet_tx_in_mempool-25+knots		00751692d11	last=46bf0b7b5d8
 		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
