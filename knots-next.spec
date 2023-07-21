@@ -240,13 +240,14 @@ checkout v25.0
 	#25.xTODO# Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
 	28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
-	28038 fanquake/further_25_x_backports					last=37d9cc657cf !fanquake/further_25_x_backports
+	28038 fanquake/further_25_x_backports^^^				last=37d9cc657cf !fanquake/further_25_x_backports^^^
 		# Just fix(es) from #26836
 		# using backport in #28047
 		# NOTE: Builds on top of #27646 backport
 	28055 fix_getblockfrompeer_rereq_err-25					last=017ab85cecc fix_getblockfrompeer_rereq_err
 	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
-	#25.xTODO# Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
+	28067 fanquake/further_25_x_backports^					last=513ca0a7117 !fanquake/further_25_x_backports^
+		# using backport in #28047, building on top of #28038 backport
 	28076 no_std_fs_directly-25+k							last=fac98ac2fcf MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 	#25.xTODO# Needs review: 28077 vasild/i2p_accept_issue22759
@@ -485,8 +486,8 @@ checkout v25.0
 	g492  qt_traffic_tooltip					190259f05c2	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
-	g497  qt_fontsel-24+knots					63f1348f70c	last=6b01b4b685b qt_fontsel
-	-     qt_fontsel_qrcodes-24+knots			b9996e59773	 # latest code now
+	g497  qt_fontsel-25+knots					63f1348f70c	last=a17fd33edd1 qt_fontsel
+	-     qt_fontsel_qrcodes-25+knots			b9996e59773	 # latest code now
 	# TODO: qt_fontsel_console
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
