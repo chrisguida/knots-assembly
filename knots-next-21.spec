@@ -683,6 +683,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
 	Triage: Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
 	Triage: Fix only: 28076 MarcoFalke/2307-fs-lint-
+	Triage: 28123 fix_nonstring_onelinedesc
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)

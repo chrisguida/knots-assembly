@@ -248,9 +248,10 @@ checkout v25.0
 	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
 	28067 fanquake/further_25_x_backports^					last=513ca0a7117 !fanquake/further_25_x_backports^
 		# using backport in #28047, building on top of #28038 backport
-	28076 no_std_fs_directly-25+k							last=fac98ac2fcf MarcoFalke/2307-fs-lint-
+	28076 no_std_fs_directly-25+k							last=fa6b0d9b9b5 MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 	#25.xTODO# Needs review: 28077 vasild/i2p_accept_issue22759
+	28123 fix_nonstring_onelinedesc-25						last=889b504292a fix_nonstring_onelinedesc
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -494,7 +495,8 @@ checkout v25.0
 	# Needs review & BIP changes: 24058 kallewoof/202201-bip322
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
-	24162 rpc_deriveaddr_wo_checksum-23			b53beb352aa	last=97a69e232be
+	24162 rpc_deriveaddr_wo_checksum-25			b53beb352aa	last=97a69e232be
+		# +RPC doc fix
 	# Needs work/diff-minimisation: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
 	Merged: 24198 rpc_wtx_wtxid-23+knots				847b30e73d3	last=7abd8b21ba3
 		TODO? gcp 1ad918ff517 (rpc_wtx_wtxid-0.20) RPC/Wallet: Provide an actual description of wtxid field
