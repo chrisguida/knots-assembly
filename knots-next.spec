@@ -251,7 +251,7 @@ checkout v25.0
 	28076 no_std_fs_directly-25+k							last=fa6b0d9b9b5 MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 	#25.xTODO# Needs review: 28077 vasild/i2p_accept_issue22759
-	28123 fix_nonstring_onelinedesc-25						last=889b504292a fix_nonstring_onelinedesc
+	28123 fix_nonstring_onelinedesc-25						last=5e3e83b0055 fix_nonstring_onelinedesc
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -457,9 +457,8 @@ checkout v25.0
 	# Too many TODOs: 22341 Sjors/2021/06/getxpub
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							7edb7a43520
-	24963 rpc_walletprocesspsbt_options-23		7ebcda357a1	last=31ffd7782bf rpc_walletprocesspsbt_options
+	24963 rpc_walletprocesspsbt_options-25		7ebcda357a1	last=baf99a9c789 rpc_walletprocesspsbt_options
 		# Diff-minimised
-		#25.xTODO# BUG: 'sign' compat param will be rejected by type check
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
 	# TODO? 25621 -  # rpc/wallet: Add details and duplicate section for simulaterawtransaction
@@ -498,8 +497,6 @@ checkout v25.0
 	24162 rpc_deriveaddr_wo_checksum-25			b53beb352aa	last=97a69e232be
 		# +RPC doc fix
 	# Needs work/diff-minimisation: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
-	Merged: 24198 rpc_wtx_wtxid-23+knots				847b30e73d3	last=7abd8b21ba3
-		TODO? gcp 1ad918ff517 (rpc_wtx_wtxid-0.20) RPC/Wallet: Provide an actual description of wtxid field
 	# Needs work: g533  -  # gui: add more detailed address error message
 		# TODO: Maybe a button inside the lineedit to display the error message?
 	# OR: Needs work? g560 w0xlt-g/3_error_message_addr
@@ -519,10 +516,11 @@ checkout v25.0
 	# Needs triage & review: 25038 glozow/package-rbf
 	# Needs licensing/review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku
-	25183 rpc_fundraw_segwitonly-23				68789264835	last=1c5cfd84b3d
-	Merged: # TODO: g602  ryanofsky-g/pr/qtsopt
-		# +gui#603 ?
-	Needs work? 25261 -  # rpc: fetch multiple headers in getblockheader()
+	25183 rpc_fundraw_segwitonly				68789264835	last=9e7fd5c0fe3
+		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
+		# Fixed tests with inspiration from 9e7fd5c0fe3
+		# TODO: update without breaking compatibility? (new code looks buggy tho - needs rewrite?) (also, filtering by "input type" doesn't really make sense, though segwit filtering does)
+	# Needs concept: 25261 -  # rpc: fetch multiple headers in getblockheader()
 	25269 -  # wallet: re-activate the not triggered "AmountWithFeeExceedsBalance" error
 	25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
 	Needs review: 25287 -  # logging: threshold log level
@@ -835,6 +833,7 @@ TODO: Check net_permissions.h for overlapping NetPermissionFlags
 TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
 TODO: Check #26039 doesn't break anything
 TODO: Ensure std::filesystem isn't introduced (see #28076)
+#26.xTODO# options args should be OBJ_NAMED_PARAMS type now
 	n/a  (cherrypick=165f473d4d068ee31a)		f6260178fc7	# doc/{bips,files}
 		TODO: Check #26231
 	n/a  (bump_version=Knots:20220529)			3d04837ba68
