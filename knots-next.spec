@@ -150,6 +150,7 @@ checkout v25.0
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	#24.xTODO# Check on #25561
+	25634 fix_wallet_blank_unset_pr25634-25
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
@@ -252,8 +253,8 @@ checkout v25.0
 		# Fix-only, diff-minimised
 	#25.xTODO# Needs review: 28077 vasild/i2p_accept_issue22759
 	28123 fix_nonstring_onelinedesc-25						last=5e3e83b0055 fix_nonstring_onelinedesc
-	Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
-	Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
+	#25.xTODO# Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
+	#25.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -523,15 +524,15 @@ checkout v25.0
 		# Fixed tests with inspiration from 9e7fd5c0fe3
 		# TODO: update without breaking compatibility? (new code looks buggy tho - needs rewrite?) (also, filtering by "input type" doesn't really make sense, though segwit filtering does)
 	# Needs concept: 25261 -  # rpc: fetch multiple headers in getblockheader()
-	25269 -  # wallet: re-activate the not triggered "AmountWithFeeExceedsBalance" error
-	25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
-	Needs review: 25287 -  # logging: threshold log level
-	Needs concept review: 25366 w0xlt/desc_rpc
-	Needs work? 25434 w0xlt/bypass-timelocks
+	#25.xTODO# 25269 -  # wallet: re-activate the not triggered "AmountWithFeeExceedsBalance" error
+	# Needs concept review: 25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
+		# Concept unsure: Hides logline by default; but maybe we want that with more info included?
+	# TODO: 25366 w0xlt/desc_rpc
+		# Besides the private key issue (removed; conceptual issues), RPC doc also has "addresses" where there would be a single address (in a details Object)
+	# Needs work: 25434 w0xlt/bypass-timelocks
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
-		Also #25570 ?
-	Needs review? g626 -  # gui: Showing Local Addresses in Node Window
-	At least part of (RPC results) 25634 achow101/desc-import-unset-blank
+		# Also #25570 ?
+	g626 qt_node_localaddrs-25								last=c47f01bf25e
 	Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
 	Needs completion & review: 25718 fjahr/2022-07-allowinbound
 	Needs concept/review: 25742 -  # Use change amount as tiebreaker for SelectionResults
