@@ -1,7 +1,7 @@
-timestamp 2023-07-18 09:20:09
+timestamp 2023-07-25 07:10:42
 lastapply no-merge
 
-#.. checked up to PR #28100 / gui #744
+#.. checked up to PR #28152 / gui #747
 
 checkout v25.0
 @24.x-syslibs
@@ -252,6 +252,8 @@ checkout v25.0
 		# Fix-only, diff-minimised
 	#25.xTODO# Needs review: 28077 vasild/i2p_accept_issue22759
 	28123 fix_nonstring_onelinedesc-25						last=5e3e83b0055 fix_nonstring_onelinedesc
+	Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
+	Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -594,13 +596,14 @@ checkout v25.0
 	27770 furszy/2023_rpc_getblockfileinfo
 	27801 ryanofsky/pr/sqtrace
 	Partial: Needs review? 27278 Sjors/2023/05/saw-header
-	Needs review: 27827 josibake/silent-payments-base-pr-slim-down
+	# Needs review & BIP finality: 27827 josibake/silent-payments-base-pr-slim-down
 	Needs review & maybe removing an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
 	Needs review: 27837 furszy/2023_introduce_block_request_tracker
 	Needs review: 27854 -  # [WIP] add a stratum v2 template provider
 	Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 	# Needs review: 28060+28052 MarcoFalke/2306-fs_stuff-
+	If a clear win: 28101 -  # init: changing -torcontrol help to specify that a default port is used
 # Non-progress functionality:
 	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly

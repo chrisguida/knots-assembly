@@ -1,8 +1,8 @@
-timestamp 2023-07-18 09:20:09
+timestamp 2023-07-25 07:10:42
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28100 / gui #744 for fixes
+#.. checked up to PR #28152 / gui #747 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -684,6 +684,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
 	Triage: Fix only: 28076 MarcoFalke/2307-fs-lint-
 	Triage: 28123 fix_nonstring_onelinedesc
+	Triage: Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
+	Triage: Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -1052,6 +1054,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	27278 jamesob/2023-03-log-new-headers
 	Partial: Needs review? 27826 Sjors/2023/05/saw-header
 	Triage: Needs review: 27827 josibake/silent-payments-base-pr-slim-down
+	If a clear win: 28101 -  # init: changing -torcontrol help to specify that a default port is used
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
