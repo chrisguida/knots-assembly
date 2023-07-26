@@ -1039,6 +1039,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# +#26037
 	# Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
 	# Needs review: g655 -  # Persist "mask values" in gui
+	-     guix_shell_compat-24
+		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
 	Needs review: 26088 -  # init: Add option for rpccookie permissions
 	Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 		Only if too few current fixed seeds are valid?

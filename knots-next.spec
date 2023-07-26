@@ -462,6 +462,7 @@ checkout v25.0
 	22372 multinotify							7edb7a43520
 	24963 rpc_walletprocesspsbt_options-25		7ebcda357a1	last=baf99a9c789 rpc_walletprocesspsbt_options
 		# Diff-minimised
+		#26.xTODO# Add to descriptorprocesspsbt
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
 	# TODO? 25621 -  # rpc/wallet: Add details and duplicate section for simulaterawtransaction
@@ -533,22 +534,21 @@ checkout v25.0
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
 		# Also #25570 ?
 	g626 qt_node_localaddrs-25								last=c47f01bf25e
-	Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
-	Needs completion & review: 25718 fjahr/2022-07-allowinbound
-	Needs concept/review: 25742 -  # Use change amount as tiebreaker for SelectionResults
-	Needs concept/review: 25747 w0xlt/desc_file
-	Needs work: 25776 1440000bytes/bumpfee-inputs
-	Needs review.. or not? 25796 -  # rpc: add descriptorprocesspsbt rpc
-	Needs concept/review: 25907 achow101/upgrade-to-tr-2
-	Needs work: 25923 jonatack/2022-08-statestats
-	Needs concept & review: 25939 -  # rpc: In utxoupdatepsbt also look for the tx in the txindex
-	Needs review: g655 -  # Persist "mask values" in gui
+	#25.xTODO# Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
+	# Needs completion & review: 25718 fjahr/2022-07-allowinbound
+	# Needs concept/review: 25747 w0xlt/desc_file
+	# Needs work: 25776 1440000bytes/bumpfee-inputs
+	# TODO: 25796 -  # rpc: add descriptorprocesspsbt rpc
+		# Needs refactors in #25939 and #24963
+	# Needs concept/review: 25907 achow101/upgrade-to-tr-2
+	# Needs work: 25923 jonatack/2022-08-statestats
+	# TODO: 25939 -  # rpc: In utxoupdatepsbt also look for the tx in the txindex
+		# Untested backport of last commit only c11660a2ee8 (unsure if first commit is move-only or needed in some capacity; this backport still refactors quite a bit)
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
-	MERGED Needs work/review/concept: 25943 -  # rpc: Add a parameter to sendrawtransaction which sets a maximum burned output for OP_RETURN transactions.
-	Needs concept & review: 26026 -  # log: Colorize logs
-		and/or #26052
-	Needs work? 26077 fanquake/guix_shell_over_environment
+	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
+	-     guix_shell_compat-24
+		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
 	Needs review: 26088 -  # init: Add option for rpccookie permissions
 	Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	Minimised: 26162 Sjors/2022/09/taproot
@@ -583,6 +583,7 @@ checkout v25.0
 	27460 MarcoFalke/2304-import-mempool-rpc-
 	Needs review: g692 -  # Debug Console implementation of generate method
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
+	Needs review: g701 achow101/persist-mask-value
 	Ensure Ctrl-L clears debug console (see g#702 for inspiration)
 	Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
 	Needs review? g740 -  # Show own outputs on PSBT signing window
