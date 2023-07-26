@@ -549,7 +549,8 @@ checkout v25.0
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
 	-     guix_shell_compat-24
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
-	Needs review: 26088 -  # init: Add option for rpccookie permissions
+	26088 rpccookieperms-25+knots
+		# Param syntax check & log when option is being used
 	Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	Minimised: 26162 Sjors/2022/09/taproot
 	Compatibility with: MERGED 26194 w0xlt/next_index_listdescriptors
