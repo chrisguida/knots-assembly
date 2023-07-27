@@ -1047,6 +1047,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Needs work: 26131 jamesob/jamesob-22-09-log-rpc-port
 	Minimised as applicable: 26162 Sjors/2022/09/taproot
 	IF IN KNOTS: Needs review: 26174 w0xlt/list_address_book
+	Compatibility with: MERGED 26194 w0xlt/next_index_listdescriptors
 	26280 -  # rpc: Return coinbase flag in scantxoutset
 	26645 -  # util: Include full version id in bug reports
 	Triage: Needs work: 27409 ryanofsky/pr/1data

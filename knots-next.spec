@@ -551,11 +551,10 @@ checkout v25.0
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
 	26088 rpccookieperms-25+knots
 		# Param syntax check & log when option is being used
-	Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
-	Minimised: 26162 Sjors/2022/09/taproot
-	Compatibility with: MERGED 26194 w0xlt/next_index_listdescriptors
-	TODO: sendrawtransaction to a specific node bypassing mempool
-		See https://github.com/bitcoinknots/bitcoin/issues/50
+	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
+	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
+	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
+		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 	Needs option: 26454 petertodd/2022-feebump-without-optin
 	Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
