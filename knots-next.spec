@@ -614,7 +614,7 @@ checkout v25.0
 	# Needs review: 28060+28052 MarcoFalke/2306-fs_stuff-
 	# Copyright issue: If a clear win: 28101 -  # init: changing -torcontrol help to specify that a default port is used
 # Non-progress functionality:
-	8751  sort-multisigs-23						c42c63f0c5c	last=e11cb50a09  # multisig sorting
+	8751  sort-multisigs-25						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					614547cdc59	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							7b2398d7c36
