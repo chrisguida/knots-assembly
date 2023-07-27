@@ -1190,6 +1190,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	17167 whitelist_outgoing-mini-0.21+knots	d50c4c7d4af	last=36cc299baee whitelist_outgoing
 	(CHECK-LAST)	last=9cf184186c9 whitelist_outgoing-mini-22+knots
 	(CHECK-LAST)	last=27ad690c9d2 whitelist_outgoing-mini-23+knots
+	(CHECK-LAST)	last= whitelist_outgoing-mini-25+knots
 		# NOTE: d756d0a01a6 needs legacyWhitelisted in minified version!
 		# NOTE: Originally #10594
 		Being replaced with #27114

@@ -255,6 +255,7 @@ checkout v25.0
 	28123 fix_nonstring_onelinedesc-25						last=5e3e83b0055 fix_nonstring_onelinedesc
 	#25.xTODO# Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
 	#25.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
+	#26.xTODO# Ensure bug introduced by #26467 is fixed: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -555,25 +556,31 @@ checkout v25.0
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
-	Needs work: 26441 brunoerg/2022-10-whitelist-rpc
-	Needs option: 26454 petertodd/2022-feebump-without-optin
-	Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
-	Needs work: 26495 -  # contrib: Speed up systemd boot
-	TODO: Simplify [initial] wallet creation
-		See: https://twitter.com/susewang/status/1591115373465972737?t=FGNyW1PSmjpT0u-lR7lNiw&s=19
-	26576 brunoerg/2022-11-disconnectnode-subnet
+	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=1e09c265a95
+		# NOTE: Originally #10594, then #17167
+		# Left off test framework refactoring in last commit
+	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
+		# CAUTION: neutrino whitelisting interaction
+	# Needs option/work: 26454 petertodd/2022-feebump-without-optin
+	# Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
+		# MERGED(26.x) WITH SERIOUS BUG: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
+	# Needs work: 26495 -  # contrib: Speed up systemd boot
+	# TODO: Simplify [initial] wallet creation
+		# See: https://twitter.com/susewang/status/1591115373465972737?t=FGNyW1PSmjpT0u-lR7lNiw&s=19
+	26576 brunoerg/2022-11-disconnectnode-subnet^			last=23f4c2cb452
 	# Waiting for Core or BIP: 26626 achow101/desc-key-list-expr
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
-	Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
+	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
-	27511 -  # rpc: Add test-only RPC getaddrmaninfo for new/tried table address count
+	27511 rpc_getaddrmaninfo-24								last=69abfd3db10
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
-	26990 -  # cli: add validation to cli side commands besides when it's used with -rpcwallet
-	# Needs review: 27034 furszy/2022_rpc_importaddress_descriptors_compatible
-	Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
-	Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
-	Needs review: 27213 amitiuttarwar/2023-03-network-outbounds
-	Needs concept/review: 27216 pinheadmz/used-addr-ui
+	26990 -													last=a870f5affcf  # cli: add validation to cli side commands besides when it's used with -rpcwallet
+	27034 rpc_importaddr_for_descwallet-25+k				last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
+		# Diff-minimised & tweaked to avoid breaking #23362
+	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
+	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
+	# TODO: 27213 amitiuttarwar/2023-03-network-outbounds
+	27216 rpc_getaddressinfo_isactive-24					last=85f83339dda pinheadmz/used-addr-ui
 	# Needs review (and Core merge first?): 27255 darosior/tapminiscript
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	Diff-minimise: 27351 apoelstra/2023-03--codex32
@@ -688,9 +695,6 @@ checkout v25.0
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-23+knots		7a2a3bc75cd
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
-	17167 whitelist_outgoing-mini-23+knots		7f46d1a059e	last=36cc299baee whitelist_outgoing
-		# NOTE: Originally #10594
-		Being replaced with #27114
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	-     wallettool_dump_warning-23+knots		6c8fdc9a690
 	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
@@ -855,6 +859,8 @@ TODO: Ensure std::filesystem isn't introduced (see #28076)
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		TODO: 109cbb819dd doc: Add release notes for #26618
+		TODO: 26576 brunoerg/2022-11-disconnectnode-subnet
+		TODO: 27216 pinheadmz/used-addr-ui
 	n/a  (cherrypick=e176316e332)				dd99e2b4305  # update manpages (build first)
 		BELOW TODO: ensure 26117 is fixed
 		TODO: update bitcoin conf (like d68b6abeb84)
