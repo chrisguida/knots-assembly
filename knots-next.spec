@@ -191,6 +191,8 @@ checkout v25.0
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
 	27411 p2p_selfadv_privacy_pr27411-25					last=e7cf8657e11 mzumsande/202303_advertise_nets
 	#25.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
+	27501 rpc_getprioritisedtransactions-25
+	27554 -  # test: Treat bitcoin-wallet binary in the same way as others
 	g696 qt_rpcconsole_switch_wallet_opened-25				last=99c0eb9701e
 	g719 theStack-g/gui-nuke_cc_dust_label					last=a582b4141f0
 	#25.xTODO# Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
@@ -585,20 +587,18 @@ checkout v25.0
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-25+knots									last=38ddc11450b apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed
-	Needs review: 27375 pinheadmz/tor-unix-domain-socket
-	Needs review? 27679 pinheadmz/zmq-unix-domain-socket
-	Needs work: 27409 ryanofsky/pr/1data
-	27460 MarcoFalke/2304-import-mempool-rpc-
-	Needs review: g692 -  # Debug Console implementation of generate method
+	# Needs review: 27375 pinheadmz/tor-unix-domain-socket
+	# Needs review? 27679 pinheadmz/zmq-unix-domain-socket
+		# Duplicates #28020 with a different URI format
+	# Needs work: 27409 ryanofsky/pr/1data
+	# TODO trivial? 27460 MarcoFalke/2304-import-mempool-rpc-
+	# Needs review: g692 -  # Debug Console implementation of generate method
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
-	Needs review: g701 achow101/persist-mask-value
-	Ensure Ctrl-L clears debug console (see g#702 for inspiration)
-	Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
-	Needs review? g740 -  # Show own outputs on PSBT signing window
-	27501 -  # mempool / rpc: add getprioritisedtransactions, delete a mapDeltas entry when delta==0
-	Self-review: 27509 vasild/relay_tx_to_priv_nets
-	# Needs review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
-	27554 -  # test: Treat bitcoin-wallet binary in the same way as others
+		# Careful, could end up paying "added change" to a destination -.-
+	# Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
+	g740  qt_psbtdlg_ismine-21
+	#25.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
+	# Needs concept/review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs review: 27596 jamesob/assumeutxo
 	27600 pinheadmz/whitebind-evict
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction

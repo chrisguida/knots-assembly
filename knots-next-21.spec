@@ -630,6 +630,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Alternative to: 27434 pinheadmz/chaintips-invalid
 	Triage: 27468 (see #27474 for 24.x backport; #27468 for regression test)
 	Triage: 27473 (see #27474 for 24.x backport)
+	27501 -  # mempool / rpc: add getprioritisedtransactions, delete a mapDeltas entry when delta==0
+		At least the bugfix!
+	27554 -  # test: Treat bitcoin-wallet binary in the same way as others
 	Needs review: g696 -  # Switch RPCConsole wallet selection to the one most recently opened/restored/created
 	Triage & Needs work? g719 theStack-g/gui-nuke_cc_dust_label
 	Triage & Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
@@ -1053,8 +1056,6 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Triage: Needs work: 27409 ryanofsky/pr/1data
 	Ensure Ctrl-L clears debug console (see g#702 for inspiration)
 	Triage: Needs review? g740 -  # Show own outputs on PSBT signing window
-	27501 -  # mempool / rpc: add getprioritisedtransactions, delete a mapDeltas entry when delta==0
-	27554 -  # test: Treat bitcoin-wallet binary in the same way as others
 	27278 jamesob/2023-03-log-new-headers
 	Partial: Needs review? 27826 Sjors/2023/05/saw-header
 	Triage: Needs review: 27827 josibake/silent-payments-base-pr-slim-down
