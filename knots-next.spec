@@ -583,7 +583,8 @@ checkout v25.0
 	27216 rpc_getaddressinfo_isactive-24					last=85f83339dda pinheadmz/used-addr-ui
 	# Needs review (and Core merge first?): 27255 darosior/tapminiscript
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
-	Diff-minimise: 27351 apoelstra/2023-03--codex32
+	27351 codex32-25+knots									last=38ddc11450b apoelstra/2023-03--codex32
+		# Diff-minimised, doc bug fixed
 	Needs review: 27375 pinheadmz/tor-unix-domain-socket
 	Needs review? 27679 pinheadmz/zmq-unix-domain-socket
 	Needs work: 27409 ryanofsky/pr/1data
