@@ -192,7 +192,7 @@ checkout v25.0
 	27411 p2p_selfadv_privacy_pr27411-25					last=e7cf8657e11 mzumsande/202303_advertise_nets
 	#25.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
 	27501 rpc_getprioritisedtransactions-25
-	27554 -  # test: Treat bitcoin-wallet binary in the same way as others
+	27554 qa_bcwallet_envvar-25
 	g696 qt_rpcconsole_switch_wallet_opened-25				last=99c0eb9701e
 	g719 theStack-g/gui-nuke_cc_dust_label					last=a582b4141f0
 	#25.xTODO# Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
