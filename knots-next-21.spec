@@ -1104,6 +1104,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	10554 zmq_wtx-0.21+knots					a6b0a8894fb	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 	(CHECK-LAST)	last=39cf88db90b zmq_wtx-22+knots
 	(CHECK-LAST)	last=71689c52c52 zmq_wtx-23+knots
+	(CHECK-LAST)	last=bc3dd51021b zmq_wtx-25+knots
 	20551 rpc_onetry_conntype-21				d7fcef7c236	last=1c63b3ff236 rpc_onetry_conntype
 	(CHECK-LAST)	last=7661ce6ddaf rpc_onetry_conntype-22
 		# NOTE: Originally based on #12674

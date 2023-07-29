@@ -634,10 +634,8 @@ checkout v25.0
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
 		# NOTE: Temporarily squashed to obfuscate security fixes (2023-07-28)
-	10554 zmq_wtx-23+knots						ad1bcb2928e	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-25+knots						ad1bcb2928e	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
-		TODO? gcp 8509de1d91d Bugfix: doc/zmq: Minor typo
-		TODO: add validation like (MERGED) #22087 (gcp 86d091852f1 / 08778898b0a)
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					edca5b8af00
 		# NOTE: Originally based on #12674
