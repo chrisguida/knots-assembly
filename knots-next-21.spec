@@ -1134,8 +1134,10 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=f6052208ab0 scriptthreads-22
 	(CHECK-LAST)	last=12e673a8c23 scriptthreads
 		# Held back RPCResult NONE cuz undocumented is actually better
+		FIXME: Check if there's an off-by-one in nScriptThreads vs script_threads (and that it all actually works)
 	13203 dsha256_power8-0.20					357397180c7	last=3b402e0738 TheBlueMatt/2018-05-asm
 	(CHECK-LAST)	last=a72483b8e14 dsha256_power8-23
+	(CHECK-LAST)	last=3a1ad464f2e dsha256_power8-25
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8-0.20_asm_pragmas		60c82d4c598	last=99986de8b02 dsha256_power8_asm_pragmas-23
 	15218 postibd_flush-21+knots				8858f44e523	last=d2ecb70d64  # validation: Flush stateafter initial sync

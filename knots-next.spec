@@ -656,7 +656,7 @@ checkout v25.0
 		# Updated to match estimatesmartfee RPC changes
 	11803 bugfix_dumpwallet_hdkeypath			fea9d68f84d
 	12965 scriptthreads							0345cf11100	last=dfab6c6866 jonasschnelli/2018/04/svt
-	13203 dsha256_power8-23						7610e2e0b16	last=3b402e0738 TheBlueMatt/2018-05-asm
+	13203 dsha256_power8-25						7610e2e0b16	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8_asm_pragmas-23			3ba39b15ebb
 	15218 postibd_flush-23						e194bb9b731	last=d2ecb70d64  # validation: Flush state after initial sync
