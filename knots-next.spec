@@ -663,9 +663,7 @@ checkout v25.0
 		#26.xTODO# Rewrite post-#17487 (now merged)
 	15428 tor_gui_pairing-25+knots				723c1c46950	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-	15421 tor_subprocess-23+knots				6992e4922ed	# Latest code now
-		TODO: gcp e545fa438bb Revert Boost Process workaround for mingw-w64 compiler, in context where mingw-w64 compiler never builds
-		TODO: gcp b0c7d431f30 Include -torcontrol in hidden_args when building without Boost Process
+	15421 tor_subprocess-25+knots				6992e4922ed	# Latest code now
 	# TODO: tor guix bundle!
 	15633 nohbcbfornonwit						552d3dfab5b
 		# NOTE: added test fix from sdaftuar/test-15633-2
