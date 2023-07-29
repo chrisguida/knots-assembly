@@ -625,8 +625,8 @@ checkout v25.0
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-25						b784f359eea	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
-	9504 dumpmasterprivkey-23					95035ce6202	last=07fc81109a
-	g444  gui_netwatch-23+knots					a44e7b33409	last=524665c116a gui_netwatch
+	9504  dumpmasterprivkey-25					95035ce6202	last=07fc81109a
+	g444  gui_netwatch-25+knots					a44e7b33409	 # Latest code now
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
 	10615 multiwallet_rpc-23+knots				664cc4b0fb1  # latest code now
