@@ -642,7 +642,8 @@ checkout v25.0
 		# REBASING NOTE: Ensure any new types get added ? (unless we want to deprecate this...)
 	10593 relax_invblk_punishment				432fae20806
 		# Squash "QA: Use addconnection rather than addnode onetry" ?
-	10350 filtered_witblock-22				abf017ad612	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
+		# FIXME: HandleFewUnconnectingHeaders sends getheaders _and_ disconnects??
+	10350 filtered_witblock-25				abf017ad612	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f

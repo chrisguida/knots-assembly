@@ -1105,14 +1105,16 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=39cf88db90b zmq_wtx-22+knots
 	(CHECK-LAST)	last=71689c52c52 zmq_wtx-23+knots
 	(CHECK-LAST)	last=bc3dd51021b zmq_wtx-25+knots
-	20551 rpc_onetry_conntype-21				d7fcef7c236	last=1c63b3ff236 rpc_onetry_conntype
+	20551 rpc_onetry_conntype-21				d7fcef7c236	last=f3e6badeeb4 rpc_onetry_conntype
 	(CHECK-LAST)	last=7661ce6ddaf rpc_onetry_conntype-22
 		# NOTE: Originally based on #12674
 	10593 relax_invblk_punishment-0.21+knots	d4765cc92bd	last=0971192425f relax_invblk_punishment
 	(CHECK-LAST)	last=57903e3f34d relax_invblk_punishment-22
+	(CHECK-LAST)	last=0971192425f relax_invblk_punishment-23
 		# Held back 0971192425f QA: Use addconnection rather than addnode onetry
 	10350 filtered_witblock-0.21				4e1122ece17	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 	(CHECK-LAST)	last=6bf4092cb7b filtered_witblock-22
+	(CHECK-LAST)	last=478e92981cc filtered_witblock-25
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -1122,7 +1124,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	11770 rest_fee-21+knots						1009e765049	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
 	(CHECK-LAST)	last=5d5b2fb8442 rest_fee-0.21
 	(CHECK-LAST)	last=cec2e1bb857 rest_fee-22
-	(CHECK-LAST)	last=2c51873b614 rest_fee
+	(CHECK-LAST)	last=2c51873b614 rest_fee-23
+	(CHECK-LAST)	last=8f4b72a2951 rest_fee
 		# Fixed a minor bug in conf_target range check
 		# Added functional tests: 5d5b2fb8442 QA: Exercise REST interface in feature_fee_estimation
 	11803 bugfix_dumpwallet_hdkeypath-0.20		280b1276bfb
