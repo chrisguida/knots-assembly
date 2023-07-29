@@ -600,7 +600,8 @@ checkout v25.0
 	#25.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
 	# Needs concept/review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs review: 27596 jamesob/assumeutxo
-	27600 p2p_forceinbound-25+knots							last=c8ce23745a2 pinheadmz/whitebind-evict
+	27600 p2p_forceinbound-25+knots							last=8585fe3f80e pinheadmz/whitebind-evict
+		# Held back top anti-feature commit c8ce23745a2...8585fe3f80e
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
 	27761 p2p_log_stalling_ip-22
 	27770 rpc_getblockfileinfo-25+knots						last=5110139d397 furszy/2023_rpc_getblockfileinfo
@@ -620,9 +621,9 @@ checkout v25.0
 	9152 sweepprivkeys							7b2398d7c36
 	9245 ionice									0a0ecc14783
 	-    ionice_win								c5ef9ca0e30
-	8501  old_stats_rpc-23						9936cf72d91	last=7af0ea43b2
+	8501  old_stats_rpc-25						9936cf72d91	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
-	8550  old_stats_qt-23						b784f359eea	last=63fb11652f
+	8550  old_stats_qt-25						b784f359eea	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-23					95035ce6202	last=07fc81109a
 	g444  gui_netwatch-23+knots					a44e7b33409	last=524665c116a gui_netwatch

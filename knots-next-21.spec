@@ -1068,21 +1068,25 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=8db63499737 sort-multisigs-23
 	(CHECK-LAST)	last=d353a124a49 sort-multisigs-25
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
-	9152  sweepprivkeys-0.21					2aeaeeb1ba1	last=a9e729a4cc4 sweepprivkeys
+	9152  sweepprivkeys-0.21					2aeaeeb1ba1	last=724b597973c sweepprivkeys
 	(CHECK-LAST)	last=6fcb1e43426 sweepprivkeys-22
 	(CHECK-LAST)	last=ba17ce68d20 sweepprivkeys-23
-	9245  ionice-21								d935e6fc4ab	last=b4647b23813 ionice
+	9245  ionice-21								d935e6fc4ab	last=abb0e433efa ionice
 	(CHECK-LAST)	last=6de915d6dc0 ionice-22
+	(CHECK-LAST)	last=b4647b23813 ionice-24
 		# NOTE: Left off deprioritisation of LoadExternalBlockFile, ReplayBlocks, RollforwardBlock(22.x?)
-	-     ionice_win-0.21						1c6f29b3e4f	last=65dcf0dc11c ionice_win
+	-     ionice_win-0.21						1c6f29b3e4f	last=b19d30dc8c5 ionice_win
 	(CHECK-LAST)	last=b59bc253116 ionice_win-22
+	(CHECK-LAST)	last=65dcf0dc11c ionice_win-23
 	8501  old_stats_rpc-0.21					3eee2d40dbe	last=7af0ea43b2
 	(CHECK-LAST)	last=8cfab679cb2 old_stats_rpc-22
 	(CHECK-LAST)	last=040565d1047 old_stats_rpc-23
+	(CHECK-LAST)	last=6d5ac5aea11 old_stats_rpc-25
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-0.21						65892ef0064	last=63fb11652f
 	(CHECK-LAST)	last=9b99d9c327b old_stats_qt-22
 	(CHECK-LAST)	last=aa3f38ecd79 old_stats_qt-23
+	(CHECK-LAST)	last=07558897347 old_stats_qt-25
 		# Held back on old version due to conflict with RPC updates...
 	9504 dumpmasterprivkey-0.21					5e32058f65a	last=07fc81109a
 	(CHECK-LAST)	last=d6299945048 dumpmasterprivkey-22
