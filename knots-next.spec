@@ -661,7 +661,7 @@ checkout v25.0
 	-     dsha256_power8_asm_pragmas-25			3ba39b15ebb
 	15218 postibd_flush-25						e194bb9b731	last=d2ecb70d64  # validation: Flush state after initial sync
 		#26.xTODO# Rewrite post-#17487 (now merged)
-	15428 tor_gui_pairing-23+knots				723c1c46950	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
+	15428 tor_gui_pairing-25+knots				723c1c46950	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-23+knots				6992e4922ed	# Latest code now
 		TODO: gcp e545fa438bb Revert Boost Process workaround for mingw-w64 compiler, in context where mingw-w64 compiler never builds
