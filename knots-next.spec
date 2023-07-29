@@ -658,9 +658,9 @@ checkout v25.0
 	12965 scriptthreads							0345cf11100	last=dfab6c6866 jonasschnelli/2018/04/svt
 	13203 dsha256_power8-25						7610e2e0b16	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
-	-     dsha256_power8_asm_pragmas-23			3ba39b15ebb
-	15218 postibd_flush-23						e194bb9b731	last=d2ecb70d64  # validation: Flush state after initial sync
-		TODO: Rewrite post-#17487 (now merged)
+	-     dsha256_power8_asm_pragmas-25			3ba39b15ebb
+	15218 postibd_flush-25						e194bb9b731	last=d2ecb70d64  # validation: Flush state after initial sync
+		#26.xTODO# Rewrite post-#17487 (now merged)
 	15428 tor_gui_pairing-23+knots				723c1c46950	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-23+knots				6992e4922ed	# Latest code now
