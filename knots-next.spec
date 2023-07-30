@@ -683,8 +683,7 @@ checkout v25.0
 		# NOTE: Diff-minimised
 	19089 cli_getinfo_mwbalances				03994a2e5e3	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
 	19092 cli_getinfo_mw_total_balance			91193606e68	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
-	18570 wallet_rpc_lastprocessedblock-23+k	c363d978f97	last=1e868bbbb1b
-		TODO: Bump to #26094 (at least check for fixes)
+	26094 wallet_rpc_lastprocessedblock-25+k	c363d978f97	last=710b83938ab
 	19117 rpc_getrpcwhitelist					bdbf8ecf130
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-23+knots		7a2a3bc75cd

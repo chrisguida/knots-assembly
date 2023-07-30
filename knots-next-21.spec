@@ -1197,6 +1197,7 @@ NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
 m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	(CHECK-LAST)	last=363c4e02d3d wallet_rpc_lastprocessedblock-22+k
 	(CHECK-LAST)	last=dc58f8f46e6 wallet_rpc_lastprocessedblock-23+k
+	(CHECK-LAST)	last= wallet_rpc_lastprocessedblock-25+k (based on #26094)
 		TODO: Bump to #26094 (at least check for fixes)
 	19117 rpc_getrpcwhitelist-21				f005cd98854	last=3fd323ca11f rpc_getrpcwhitelist
 	(CHECK-LAST)	last=3a5869713b4 rpc_getrpcwhitelist-22
