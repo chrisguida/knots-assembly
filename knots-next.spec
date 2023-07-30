@@ -681,10 +681,8 @@ checkout v25.0
 	18223 blockfilter_v0						b2b9c2f14a5	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
-	# ---- BEGIN IN SEQUENCE ----
 	19089 cli_getinfo_mwbalances				03994a2e5e3	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
 	19092 cli_getinfo_mw_total_balance			91193606e68	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
-	# ---- END IN SEQUENCE ----
 	18570 wallet_rpc_lastprocessedblock-23+k	c363d978f97	last=1e868bbbb1b
 		TODO: Bump to #26094 (at least check for fixes)
 	19117 rpc_getrpcwhitelist					bdbf8ecf130
