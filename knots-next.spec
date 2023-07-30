@@ -665,10 +665,6 @@ checkout v25.0
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-25+knots				6992e4922ed	# Latest code now
 	# TODO: tor guix bundle!
-	15633 nohbcbfornonwit						552d3dfab5b
-		# NOTE: added test fix from sdaftuar/test-15633-2
-		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
-		NOTE: replaced by #20799 & #25147
 	# TODO: 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
@@ -677,7 +673,7 @@ checkout v25.0
 	15861 restore_vbits_warning					5c81646f647
 	n/a   rpc_compat_error_index-23+knots		84cf91ccb21
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
-	g537  gui_bech32_errpos-23+knots			5bdd6ed25cb last=539beeaae85 gui_bech32_errpos
+	g537  gui_bech32_errpos-25+knots			5bdd6ed25cb last=539beeaae85 gui_bech32_errpos
 	17636 guisettings-0.21						c8db2908604	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
