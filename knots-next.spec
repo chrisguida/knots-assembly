@@ -558,11 +558,13 @@ checkout v25.0
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
+	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
 	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=1e09c265a95
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring in last commit
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
+	27446 benthecarman/configure-signet-blockitme
 	# Needs option/work: 26454 petertodd/2022-feebump-without-optin
 	# Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
 		# MERGED(26.x) WITH SERIOUS BUG: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
@@ -619,6 +621,7 @@ checkout v25.0
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					614547cdc59	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							7b2398d7c36
+	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
 	9245 ionice									0a0ecc14783
 	-    ionice_win								c5ef9ca0e30
 	8501  old_stats_rpc-25						9936cf72d91	last=7af0ea43b2
@@ -659,8 +662,7 @@ checkout v25.0
 	13203 dsha256_power8-25						7610e2e0b16	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8_asm_pragmas-25			3ba39b15ebb
-	15218 postibd_flush-25						e194bb9b731	last=d2ecb70d64  # validation: Flush state after initial sync
-		#26.xTODO# Rewrite post-#17487 (now merged)
+	15218 postibd_flush-25						e194bb9b731	last=9c27c626cf3
 	15428 tor_gui_pairing-25+knots				723c1c46950	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-25+knots				6992e4922ed	# Latest code now
@@ -689,18 +691,13 @@ checkout v25.0
 	-     getrpcwhitelist_wallets-25+knots		7a2a3bc75cd
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
-	-     wallettool_dump_warning-23+knots		6c8fdc9a690
-	# Needs careful review: 22702 martinus:2019-08-bulkpoolallocator
-		# OR 25325 martinus:2022-06-very-not-scary-NodePoolResource
+	-     wallettool_dump_warning-25+knots		6c8fdc9a690
 	# Needs work: 22708 hebasto:210815-wayland
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
-	Needs work? g650 -  # qt, refactor: Add Import to Wallet GUI
-	Needs review: 26174 w0xlt/list_address_book
-	Needs concept review: 26365 -  # wallet: GetEffectiveBalance
-	# TODO: 26674 -  # Add reindex=auto flag to automatically reindex corrupt data
-	Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	Explicitly requested: 27446
+	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
+	#25.xTODO# 26674 -  # Add reindex=auto flag to automatically reindex corrupt data
+	#26.xTODO# Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 # Non-upstreamed functionality:
 	TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	n/a   restore_feefilter_opt					b0a928d3f25
