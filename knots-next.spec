@@ -564,7 +564,7 @@ checkout v25.0
 		# Left off test framework refactoring in last commit
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
-	27446 benthecarman/configure-signet-blockitme
+	27446 benthecarman/configure-signet-blockitme			last=d8434da3c14
 	# Needs option/work: 26454 petertodd/2022-feebump-without-optin
 	# Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
 		# MERGED(26.x) WITH SERIOUS BUG: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
@@ -699,15 +699,15 @@ checkout v25.0
 	#25.xTODO# 26674 -  # Add reindex=auto flag to automatically reindex corrupt data
 	#26.xTODO# Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 # Non-upstreamed functionality:
-	TODO: Revert #25898 ? (Dropped WSL1 compatibility)
+	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	n/a   restore_feefilter_opt					b0a928d3f25
 	-     gui_payreq_textedit					e2018a567ae
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				5ba35244a0b
-	-     walletnotify_w_win-23+knots			2d3f0b887c9	# Latest code now
+	-     walletnotify_w_win-25+knots			2d3f0b887c9	# Latest code now
 	14137 win_taskbar_progress					6b06461d6b8	last=18eb4dbb8a
 	-     restore_blockmaxsize					ed77d9b99c2
-	7107  qtnetworkport-23+knots				c37c20d1ca7	last=1f37c87d8f2 origin-pull/7107/head
+	7107  qtnetworkport-25+knots				c37c20d1ca7	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force							9746cd166d6
 		# NOTE: partial re-PR in #20753 by Marco
 		TODO: Compatibility with #25532 if merged
@@ -800,6 +800,7 @@ checkout v25.0
 	10282 timebomb_knots						28c6dff687b
 	-     rwconf_policy-23+knots				85b37875e50
 		# Includes Knots policy changes for simplification of final rebase process
+	    TODO: Undo incorrect: // Limit weight to between 4K and DEFAULT_BLOCK_MAX_WEIGHT for sanity:
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
 		TODO? gcp 3281bf5d1ae Add compatibility with -mempoolfullrbf option
