@@ -723,8 +723,7 @@ checkout v25.0
 		# TODO: Compatibility with #25532 if merged
 	11082 rwconf-25+knots						dbc972ce598 # Latest code now
 	7510  rwconf_gui-25+knots					7342e194bdb
-	 559 accept_nonstdtxn						2ad1e272d70
-		 Compare to #27578
+	559   accept_nonstdtxn-25+knots				2ad1e272d70
 	 929 tbc									65ace212fac
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			f110cdc6b5d

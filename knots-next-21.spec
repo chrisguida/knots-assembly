@@ -1246,9 +1246,10 @@ m	7533  sendraw_force-21+knots				84c7abed1ab	last=8b4a4f9b2b4 sendraw_force
 	(CHECK-LAST)	last=5465696bf16 rwconf_gui-22
 	(CHECK-LAST)	last=11539fbed54 rwconf_gui-23+knots
 		# NOTE: Missing cac3d7873a3 due to not having #15946 in 21.x
-m	559   accept_nonstdtxn-21+knots				0d7a5178261	last=70b0f3bf1ed accept_nonstdtxn
+m	559   accept_nonstdtxn-21+knots				0d7a5178261	last=2e2ecd0eeab accept_nonstdtxn
 	(CHECK-LAST)	last=d2a16fe9618 accept_nonstdtxn-0.21
 	(CHECK-LAST)	last=75b02a00617 accept_nonstdtxn-22
+	(CHECK-LAST)	last=f9cf9320e2d accept_nonstdtxn-25+knots
 	g153 const_max_digits						32e16e210f2
 	 929  tbc-21+knots							8aa517b2bd1	last=ec29a85b5f6 tbc
 		# NOTE: Held back 6a4900bc4e6..ec29a85b5f6 (UCSUR output is a feature?; "fix" ec29a85b5f6 doesn't seem to affect anything)
