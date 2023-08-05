@@ -710,12 +710,9 @@ checkout v25.0
 	7107  qtnetworkport-25+knots				c37c20d1ca7	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force							9746cd166d6
 		# NOTE: partial re-PR in #20753 by Marco
-		TODO: Compatibility with #25532 if merged
-	11082 rwconf-23+knots						dbc972ce598 # Latest code now
-	7510  rwconf_gui-23+knots					7342e194bdb
-		TODO: maxmempool & others are no longer GetArg'd at runtime!
-		TODO? gcp 0c9ffa1de8c (rwconf_gui-0.21) GUI/Options: Add tooltips for addresstype choices
-		FIXME: s/P2SH-SegWit/P2SH Segwit/ (dash->space & lowercase W)
+		# TODO: Compatibility with #25532 if merged
+	11082 rwconf-25+knots						dbc972ce598 # Latest code now
+	7510  rwconf_gui-25+knots					7342e194bdb
 	 559 accept_nonstdtxn						2ad1e272d70
 		 Compare to #27578
 	 929 tbc									65ace212fac
@@ -799,6 +796,7 @@ checkout v25.0
 	n/a   checkpoint_update-23					ec23e329857	last=70996dfdd9b checkpoint_update-0.21
 	10282 timebomb_knots						28c6dff687b
 	-     rwconf_policy-23+knots				85b37875e50
+		TODO: maxmempool & others are no longer GetArg'd at runtime!
 		# Includes Knots policy changes for simplification of final rebase process
 	    TODO: Undo incorrect: // Limit weight to between 4K and DEFAULT_BLOCK_MAX_WEIGHT for sanity:
 		#TODO: Add segwit wallet stuff?
