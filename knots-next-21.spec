@@ -1,8 +1,8 @@
-timestamp 2023-07-25 07:10:42
+timestamp 2023-08-05 05:08:40
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28152 / gui #747 for fixes
+#.. checked up to PR #28222 / gui #747 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -690,6 +690,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 28123 fix_nonstring_onelinedesc
 	Triage: Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
 	Triage: Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
+	Triage: Needs review: 28192 Sjors/2023/07/parse-hd-keypath
+	# Windows-only functional test fix: 28204 hebasto/230802-sqlite
+	Triage: Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)

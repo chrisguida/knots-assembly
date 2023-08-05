@@ -1,7 +1,7 @@
-timestamp 2023-07-25 07:10:42
+timestamp 2023-08-05 05:08:40
 lastapply no-merge
 
-#.. checked up to PR #28152 / gui #747
+#.. checked up to PR #28222 / gui #747
 
 checkout v25.0
 @24.x-syslibs
@@ -258,6 +258,9 @@ checkout v25.0
 	#25.xTODO# Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
 	#25.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	#26.xTODO# Ensure bug introduced by #26467 is fixed: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
+	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
+	# Windows-only functional test fix: 28204 hebasto/230802-sqlite
+	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -461,6 +464,7 @@ checkout v25.0
 		# Dropped formatting changes and avoided conflict with g216(optional_font)
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
 	# Too many TODOs: 22341 Sjors/2021/06/getxpub
+		# NOTE: Might require #28192
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							7edb7a43520
 	24963 rpc_walletprocesspsbt_options-25		7ebcda357a1	last=baf99a9c789 rpc_walletprocesspsbt_options
@@ -554,6 +558,7 @@ checkout v25.0
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
 	26088 rpccookieperms-25+knots
 		# Param syntax check & log when option is being used
+		TODO: Replace with #28167 ?
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
@@ -584,6 +589,7 @@ checkout v25.0
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
 	# TODO: 27213 amitiuttarwar/2023-03-network-outbounds
+		# NOTE: Rel notes in #28189
 	27216 rpc_getaddressinfo_isactive-24					last=85f83339dda pinheadmz/used-addr-ui
 	# Needs review (and Core merge first?): 27255 darosior/tapminiscript
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
@@ -608,6 +614,8 @@ checkout v25.0
 	27761 p2p_log_stalling_ip-22
 	27770 rpc_getblockfileinfo-25+knots						last=5110139d397 furszy/2023_rpc_getblockfileinfo
 	27801 sqlite_trace-24									last=ff9d961bf38 ryanofsky/pr/sqtrace
+	# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
+	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 	# Needs review & BIP finality: 27827 josibake/silent-payments-base-pr-slim-down
 	# Needs work & maybe removing an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
 	# Needs review: 27837 furszy/2023_introduce_block_request_tracker
@@ -615,7 +623,9 @@ checkout v25.0
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 	# Needs review: 28060+28052 MarcoFalke/2306-fs_stuff-
-	# Copyright issue: If a clear win: 28101 -  # init: changing -torcontrol help to specify that a default port is used
+	#25.xTODO# Copyright issue? If a clear win: 28101 -  # init: changing -torcontrol help to specify that a default port is used
+	#26.xTODO# Needs work/deps: 28196 sipa/202307_bip324_transport
+	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
 # Non-progress functionality:
 	8751  sort-multisigs-25						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
