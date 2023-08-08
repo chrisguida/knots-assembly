@@ -564,10 +564,10 @@ checkout v25.0
 	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=166088d1e7b
+	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=d54e7dad751
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring in last commit
-		# Held back 1e09c265a95...166088d1e7b for now (ugly)
+		# Held back 1e09c265a95...d54e7dad751 for now (ugly diff)
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme			last=d8434da3c14
