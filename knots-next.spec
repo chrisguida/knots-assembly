@@ -251,7 +251,7 @@ checkout v25.0
 	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
 	28067 fanquake/further_25_x_backports^					last=513ca0a7117 !fanquake/further_25_x_backports^
 		# using backport in #28047, building on top of #28038 backport
-	28076 no_std_fs_directly-25+k							last=fa6b0d9b9b5 MarcoFalke/2307-fs-lint-
+	28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 	#25.xTODO# Needs review: 28077 vasild/i2p_accept_issue22759
 	28123 fix_nonstring_onelinedesc-25						last=5e3e83b0055 fix_nonstring_onelinedesc
@@ -564,9 +564,10 @@ checkout v25.0
 	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=1e09c265a95
+	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=166088d1e7b
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring in last commit
+		# Held back 1e09c265a95...166088d1e7b for now (ugly)
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme			last=d8434da3c14
@@ -728,7 +729,6 @@ checkout v25.0
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			f110cdc6b5d
 	-    mining_priority						79de7fcebc8  # NOTE: now the latest code, rebased
-		#24.xTODO# Revert #24934 ?
 	5861 gui_restore_addresses					d435b0e1596
 	5891  qt_console_history_persist			aaedbe6c41a	last=0cd5fc301d6 qt_console_history_persist
 	7219  fullrbf-23+knots						4eea3457d1a	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
