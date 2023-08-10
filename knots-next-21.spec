@@ -1,8 +1,8 @@
-timestamp 2023-08-05 05:08:40
+timestamp 2023-08-10 05:41:46
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28222 / gui #747 for fixes
+#.. checked up to PR #28252 / gui #747 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -693,6 +693,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 28192 Sjors/2023/07/parse-hd-keypath
 	# Windows-only functional test fix: 28204 hebasto/230802-sqlite
 	Triage: Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
+	28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)

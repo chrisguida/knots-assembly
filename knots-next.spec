@@ -1,7 +1,7 @@
-timestamp 2023-08-05 05:08:40
+timestamp 2023-08-10 05:41:46
 lastapply no-merge
 
-#.. checked up to PR #28222 / gui #747
+#.. checked up to PR #28252 / gui #747
 
 checkout v25.0
 @24.x-syslibs
@@ -261,6 +261,8 @@ checkout v25.0
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
 	# Windows-only functional test fix: 28204 hebasto/230802-sqlite
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
+	28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
+	#25.xTODO# Triage (also 21.x) #28248
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -295,6 +297,8 @@ checkout v25.0
 	27334 -												last=bfb9291a866  # util: implement noexcept move assignment & move ctor for prevector
 	#25.xTODO# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 	# Needs review? 27675 ajtowns/202305-droprecentinvbloom
+	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
+	# Needs review? 28233 andrewtoth/sync-on-periodic
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -618,6 +622,7 @@ checkout v25.0
 	# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 	# Needs review & BIP finality: 27827 josibake/silent-payments-base-pr-slim-down
+	# Needs review & concept: 28241 Sjors/2023/08/silent-index
 	# Needs work & maybe removing an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
 	# Needs review: 27837 furszy/2023_introduce_block_request_tracker
 	# Needs work: 27854 -  # [WIP] add a stratum v2 template provider
