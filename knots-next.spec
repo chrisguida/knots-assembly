@@ -261,7 +261,7 @@ checkout v25.0
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
 	# Windows-only functional test fix: 28204 hebasto/230802-sqlite
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
-	28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
+	#25.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	#25.xTODO# Triage (also 21.x) #28248
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -560,8 +560,8 @@ checkout v25.0
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
 	-     guix_shell_compat-24
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
-	28167 rpccookieperms-25+knots							last=a8e92784ba3 willcl-ark/2023-07-rpccookie-perms
-		# Was #26088 (not in a Knots release); held back cc0d0aeca68...a8e92784ba3
+	28167 rpccookieperms-25+knots							last=b4b0d2adc91 willcl-ark/2023-07-rpccookie-perms
+		# Was #26088 (not in a Knots release); held back cc0d0aeca68...b4b0d2adc91
 		# Added: Param syntax check & log when option is being used
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
@@ -736,29 +736,8 @@ checkout v25.0
 	-    mining_priority						79de7fcebc8  # NOTE: now the latest code, rebased
 	5861 gui_restore_addresses					d435b0e1596
 	5891  qt_console_history_persist			aaedbe6c41a	last=0cd5fc301d6 qt_console_history_persist
-	7219  fullrbf-23+knots						4eea3457d1a	last=5d58ebcc60f fullrbf # missing 91786d16ccc + revert34ae6640174
-		149b286b44e (fullrbf-23+knots) rebased onto branch-23: 9e79f188695
-		9e79f188695 rebased onto master: 08ebca8e0fc
-		08ebca8e0fc..7e8cdb9eeea: Add fixups, diff-heavy refactoring, remove never-rebase
-		7e8cdb9eeea squash fixups (but not ^diff-heavy+removal): c6decd62837 = #25373
-		eb6bb1e3528 squash the rest: fe474794513
-		fe474794513 rebased onto master: 5647bc061a2
-		NOTE: Above work still needs:
-			149b286b44e (fullrbf-23+knots) Advertise temporary REPLACE_BY_FEE service bit (when appropriate)
-			dd77f450ee4 Recognise temporary REPLACE_BY_FEE service bit
-		MISSING IN 22.x & 23.0? c10e54ecb54 (rbf_opts-0.21+knots) QA: feature_rbf: Test full-RBF service bit
-			aka 7f5e66db399 Bugfix: Enable full RBF service bit by default
-		NOTE: Competing PR now in #25353 +#25575
-		TODO: Compatibility with #25353 ?
-		NOTE: #25600 has RBF service bit
-			Maintained in https://github.com/petertodd/bitcoin/tree/full-rbf-v24.0
-			Don't send to outgoing peers? Options, options...
-		24.xTODO: Update doc/policy/mempool-replacement.md
-		NOTE: #25626 has -mempoolreplacement on Core - including new RPC getmempoolinfo values (be sure to backport as feature)
-		TODO? gcp c10e54ecb54 QA: feature_rbf: Test full-RBF service bit
-		TODO? rename to match Core?
-		TODO? gcp a57bf40ca0c Document -mempoolreplacement=fee,-optin configuration
-		FIXME: why remove never-RBF option??
+	7219  rbf_opts-25+knots						4eea3457d1a	# Latest code now
+	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					2a61c92f17e
 		# TODO: Split out legacy address preference to be more explicit
@@ -865,6 +844,7 @@ TODO: Ensure std::filesystem isn't introduced (see #28076)
 		TODO: 26576 brunoerg/2022-11-disconnectnode-subnet
 		TODO: 27216 pinheadmz/used-addr-ui
 		TODO: 27600 pinheadmz/whitebind-evict
+		TODO: Mention Bugfix: Enable full RBF service bit by default
 	n/a  (cherrypick=e176316e332)				dd99e2b4305  # update manpages (build first)
 		BELOW TODO: ensure 26117 is fixed
 		TODO: update bitcoin conf (like d68b6abeb84)
