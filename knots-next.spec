@@ -750,14 +750,15 @@ checkout v25.0
 	-     rpc_getblockfrompeer_wo_header		b89d300855f
 		# Prior Knots bundled this in with #20295
 	#25.xTODO# revert #24031  build: don't compress macOS DMG -- FIXES #26176
-	TODO: * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
-		See #25922, backported with this in 21.x
+	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
+		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
 # Non-upstreamed Knots compatibility:
-	TODO: -netinfo and other version checks might need to be more flexible?
-	#24.xTODO# revert? #24505  wallet: Add a deprecation warning for newly created legacy wallets
-	#26.xTODO# revert? #27869  wallet: Give deprecation warning when loading a legacy wallet
-	14641 fundraw_min_conf_deprecated-24+knots	67bb2fae2cb	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
+	# TODO: -netinfo and other version checks might need to be more flexible?
+	-     wallet_undeprecate_legacy-25
+		# Effectively reverts #24505
+		#26.xTODO# revert? #27869  wallet: Give deprecation warning when loading a legacy wallet
+	14641 fundraw_min_conf_deprecated-25+knots	67bb2fae2cb	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			2b802cfbcf9
 	-     netperms_implicit_addr				3ec6f62de90
 	12674 rpc_onetry_nonpriv-23+knots			1ac3b6f764a

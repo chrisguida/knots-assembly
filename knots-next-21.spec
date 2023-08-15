@@ -1287,7 +1287,7 @@ m	7219  rbf_opts-0.21+knots					6b8135375e9	last=eb6bb1e3528 fullrbf # missing 9
 		# NOTE: Load-only
 NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	11413 rpc_feemode_explicit_compat-0.21+knots	194343ec101 last=56553e0d43c rpc_feemode_explicit_compat-22
-	-     netperms_implicit_addr-0.21+knots		7d39ba69a9e	last=075c281b273 netperms_implicit_addr
+	-     netperms_implicit_addr-0.21+knots		7d39ba69a9e	last=e4402815c4d netperms_implicit_addr
 	(CHECK-LAST)	last=d1ce634b708 netperms_implicit_addr-22+knots
 	12674 rpc_onetry_nonpriv-0.21+knots			7607b0cb005	last=896995cd251 rpc_onetry_nonpriv-23+knots
 	(CHECK-LAST)	last=054c2214369 rpc_onetry_nonpriv-22+knots
