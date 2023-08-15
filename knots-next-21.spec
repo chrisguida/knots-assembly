@@ -1273,7 +1273,7 @@ m	7219  rbf_opts-0.21+knots					6b8135375e9	last=eb6bb1e3528 fullrbf # missing 9
 			# aae66ab43d7 (#25353) Add 'fullrbf' return field to getmempoolinfo RPC
 			# f4f83f73a7f (#25626) Add 'replacement_policy' return field to getmempoolinfo RPC
 		FIXME: Adapt to 24.x changes - make advertising optional??
-	12146 opt_wallet_segwit2-0.21				ffc242d52be	last=6a939ab54c6 opt_wallet_segwit2
+	12146 opt_wallet_segwit2-0.21				ffc242d52be	last=67725950be9 opt_wallet_segwit2
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			fbd5c1d14f4	# Latest code now

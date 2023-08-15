@@ -409,9 +409,6 @@ checkout v25.0
 		# didn't bother with 1f373f93a60...500841e49d6 only changing widget names
 	# TODO: Can we support addnode RPC w/ explicit proxy for the one connection?
 	# Needs review and diff-minimisation: 20273 jonasschnelli/2020/10/client_rpc_nested
-	-     rpc_getblockfrompeer_future
-	-     rpc_getblockfrompeer_wo_header		b89d300855f
-		# Prior Knots bundled this in with #20295
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-25						7fd4e8a1563	last=1002e2d0d7f jonatack/setfeerate
@@ -586,7 +583,7 @@ checkout v25.0
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
-	27511 rpc_getaddrmaninfo-24								last=69abfd3db10
+	27511 rpc_getaddrmaninfo-24								last=6605c43b73a
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 -													last=a870f5affcf  # cli: add validation to cli side commands besides when it's used with -rpcwallet
 	27034 rpc_importaddr_for_descwallet-25+k				last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
@@ -748,8 +745,10 @@ checkout v25.0
 	-     gui_peers_sort_network-23				d851c7b5730
 	-     gui_peers_no_net_column				6d7c55fa917
 	22439 guix_in_gitian-23+knots				b3670947f2d	last=ebda0463748 achow101/guix-in-gitian
-	#24.xTODO# revert #23927  rpc: Pruning nodes can not fetch blocks before syncing past their height
-		or?? 26395 fix to 23927
+	-     rpc_getblockfrompeer_future
+		# Revert of #23927
+	-     rpc_getblockfrompeer_wo_header		b89d300855f
+		# Prior Knots bundled this in with #20295
 	#25.xTODO# revert #24031  build: don't compress macOS DMG -- FIXES #26176
 	TODO: * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		See #25922, backported with this in 21.x
