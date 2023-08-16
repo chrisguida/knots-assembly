@@ -762,11 +762,10 @@ checkout v25.0
 	-    preserve_unsupported_keyflags			2b802cfbcf9
 	-     netperms_implicit_addr				3ec6f62de90
 	12674 rpc_onetry_nonpriv-25+knots			1ac3b6f764a
-		BUG: 'privileged' compat param will be rejected by type check
-	-     rpc_getblockfrompeer_nodeid_compat-23	f41b36c5abe
+	-     rpc_getblockfrompeer_nodeid_compat	f41b36c5abe
 	# TODO: add a bitcoinknots.conf ?
-	n/a   gui_peers_bump_setting_keys-23+k		a71fc4dd708
-		#24.xTODO# Each release, see if we need to bump setting names for GUI states
+	n/a   gui_peers_bump_setting_keys-25+k		a71fc4dd708
+		#26.xTODO# Each release, see if we need to bump setting names for GUI states
 		# git grep 'alue(.*State\|toByteArray\|saveState'
 		# Window position/size: leave alone
 		# Splitter position: leave alone? but syncronise with header columns appropriately

@@ -889,6 +889,7 @@ m	20254 i2p_static-21+knots					24dc32b1e18	last=8b4a3714b91 vasild/i2p_static
 	(CHECK-LAST)	last=6ecde0711d5 rpc_getblockfrompeer_wo_header
 	(CHECK-LAST)	last=44516225c2d rpc_getblockfrompeer_wo_header-24+k
 	(CHECK-LAST)	last=6d074a3f87c rpc_getblockfrompeer_nodeid_compat-23
+	(CHECK-LAST)	last=ef1c43e51df rpc_getblockfrompeer_nodeid_compat
 	(CHECK-LAST)	last=2ef5294a5bb jonatack/getblockfrompeer-param-inputs
 	(CHECK-LAST)	last=4fe12e61847 rpc_getblockfrompeer_typecheck-23
 		# +#23702 +(doc from #23813) +#24226
@@ -1293,6 +1294,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	12674 rpc_onetry_nonpriv-0.21+knots			7607b0cb005	last=87f22fc9661 rpc_onetry_nonpriv-25+knots
 	(CHECK-LAST)	last=054c2214369 rpc_onetry_nonpriv-22+knots
 	# Maybe? 24963 rpc_walletprocesspsbt_options
+	TODO: gui_peers_bump_setting_keys equivalent?
 	# TODO: add a bitcoinknots.conf ?
 # POLICY:
 	-    1day_default_conftarget				3f1c8d8ab40
