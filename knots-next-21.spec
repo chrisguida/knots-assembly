@@ -1298,8 +1298,9 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	# TODO: add a bitcoinknots.conf ?
 # POLICY:
 	-    1day_default_conftarget				3f1c8d8ab40
-	-     bytespersigopstrict-0.21+knots		c021176f67a	last=43d7d3889cf bytespersigopstrict-23+knots
+	-     bytespersigopstrict-0.21+knots		c021176f67a	last=0cfa0880376 bytespersigopstrict-25+knots
 	(CHECK-LAST)	last=712c7abc3a1 bytespersigopstrict-22+knots
+	(CHECK-LAST)	last=43d7d3889cf bytespersigopstrict-23+knots
 	9749  unique_spk_mempool-0.21+knots			52cb2331dee	last=7882096ddef unique_spk_mempool-23+knots
 	(CHECK-LAST)	last=36bb6460136 unique_spk_mempool-22+knots
 	-     bloom_default-0.21+knots				ab9afbc6fee
