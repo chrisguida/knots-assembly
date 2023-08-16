@@ -632,7 +632,6 @@ checkout v25.0
 # Non-progress functionality:
 	8751  sort-multisigs-25						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
-		FIXME: MISCOMMIT ADDED OLD FILE
 	22016 rpc_gbci_period_start					614547cdc59	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							7b2398d7c36
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
