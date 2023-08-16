@@ -686,7 +686,7 @@ checkout v25.0
 	17795 gui_console_ctrl_d					bf517f7cdd2
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					5c81646f647
-	n/a   rpc_compat_error_index-23+knots		84cf91ccb21
+	n/a   rpc_compat_error_index-25+knots		84cf91ccb21
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	g537  gui_bech32_errpos-25+knots			5bdd6ed25cb last=539beeaae85 gui_bech32_errpos
 	17636 guisettings-0.21						c8db2908604	last=187f9684e03 emilengler/2019-11-guisettings
