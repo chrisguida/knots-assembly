@@ -583,7 +583,7 @@ checkout v25.0
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
-	27511 rpc_getaddrmaninfo-24								last=6605c43b73a
+	27511 rpc_getaddrmaninfo-24								last=6d7fd9fb9b3
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 -													last=a870f5affcf  # cli: add validation to cli side commands besides when it's used with -rpcwallet
 	27034 rpc_importaddr_for_descwallet-25+k				last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
@@ -632,6 +632,7 @@ checkout v25.0
 # Non-progress functionality:
 	8751  sort-multisigs-25						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
+		FIXME: MISCOMMIT ADDED OLD FILE
 	22016 rpc_gbci_period_start					614547cdc59	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							7b2398d7c36
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
@@ -761,7 +762,7 @@ checkout v25.0
 	14641 fundraw_min_conf_deprecated-25+knots	67bb2fae2cb	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			2b802cfbcf9
 	-     netperms_implicit_addr				3ec6f62de90
-	12674 rpc_onetry_nonpriv-23+knots			1ac3b6f764a
+	12674 rpc_onetry_nonpriv-25+knots			1ac3b6f764a
 		BUG: 'privileged' compat param will be rejected by type check
 	-     rpc_getblockfrompeer_nodeid_compat-23	f41b36c5abe
 	# TODO: add a bitcoinknots.conf ?
