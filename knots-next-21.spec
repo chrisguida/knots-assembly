@@ -1306,8 +1306,9 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	(CHECK-LAST)	last=7882096ddef unique_spk_mempool-23+knots
 	-     bloom_default-0.21+knots				ab9afbc6fee
 	TODO: Adapt existing limits to apply to Taproot?
-	-     enforce_checkpoints-0.21				09feeecfdfe	last=1de4af3f6c7 enforce_checkpoints
-	n/a   checkpoint_update-0.21				67bc16f3c2a	last=37271214dfe checkpoint_update-23
+	-     enforce_checkpoints-0.21				09feeecfdfe	last=86dfb334158 enforce_checkpoints
+	n/a   checkpoint_update-0.21				67bc16f3c2a	last=a382b8620eb checkpoint_update-25
+	(CHECK-LAST)	last=37271214dfe checkpoint_update-23
 		#21.xTODO# Add new checkpoint
 	10282 timebomb_knots-21						4d798a3f50b	last=1236785c1f7 timebomb_knots
 	-     rwconf_policy-0.21+knots				1d0a8a7bf36	last=6a06b3f2b3b rwconf_policy-23+knots

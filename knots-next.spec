@@ -595,7 +595,7 @@ checkout v25.0
 	27216 rpc_getaddressinfo_isactive-24					last=85f83339dda pinheadmz/used-addr-ui
 	# Needs review (and Core merge first?): 27255 darosior/tapminiscript
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
-	27351 codex32-25+knots									last=38ddc11450b apoelstra/2023-03--codex32
+	27351 codex32-25+knots									last=91771366a3d apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed
 	# Needs review: 27375 pinheadmz/tor-unix-domain-socket
 	# Needs review? 27679 pinheadmz/zmq-unix-domain-socket
@@ -780,12 +780,12 @@ checkout v25.0
 	-     wallet_avoid_newerchange				a5e70c68636
 	#26.xTODO# Revert #25725
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
-	TODO: Adapt existing limits to apply to Taproot?
-	TODO: Match ord spam as datacarrier?
-	TODO: Ordisrespector equivalent (Ordislow??)
-	Consider opt-in: 27926 -  # policy: make unstructured annex standard
+	#25.xTODO# Adapt existing limits to apply to Taproot?
+	#25.xTODO# Match ord spam as datacarrier?
+	#25.xTODO# Ordisrespector equivalent (Ordislow??)
+	#25.xTODO# Consider opt-in: 27926 -  # policy: make unstructured annex standard
 	-     enforce_checkpoints					840dddd5a6e
-	n/a   checkpoint_update-23					ec23e329857	last=70996dfdd9b checkpoint_update-0.21
+	n/a   checkpoint_update-25					ec23e329857	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
 	10282 timebomb_knots						28c6dff687b
 	-     rwconf_policy-23+knots				85b37875e50
 		TODO: maxmempool & others are no longer GetArg'd at runtime!
