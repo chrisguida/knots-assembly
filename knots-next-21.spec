@@ -1310,7 +1310,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	n/a   checkpoint_update-0.21				67bc16f3c2a	last=a382b8620eb checkpoint_update-25
 	(CHECK-LAST)	last=37271214dfe checkpoint_update-23
 		#21.xTODO# Add new checkpoint
-	10282 timebomb_knots-21						4d798a3f50b	last=1236785c1f7 timebomb_knots
+	10282 timebomb_knots-21						4d798a3f50b	last=7612a464d3a timebomb_knots
 	-     rwconf_policy-0.21+knots				1d0a8a7bf36	last=6a06b3f2b3b rwconf_policy-23+knots
 	(CHECK-LAST)	last=f89126d2136 rwconf_policy-22+knots
 		# Include Knots policy changes for simplification of final rebase process

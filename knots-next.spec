@@ -675,7 +675,7 @@ checkout v25.0
 	13203 dsha256_power8-25						7610e2e0b16	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8_asm_pragmas-25			3ba39b15ebb
-	15218 postibd_flush-25						e194bb9b731	last=9c27c626cf3
+	15218 postibd_flush-25						e194bb9b731	last=03774d26f93
 	15428 tor_gui_pairing-25+knots				723c1c46950	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-25+knots				6992e4922ed	# Latest code now
