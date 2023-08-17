@@ -774,11 +774,11 @@ checkout v25.0
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	-    1day_default_conftarget				d3686b812ea
 	-     bytespersigopstrict-25+knots			1a34431caca
-	9749  unique_spk_mempool-23+knots			68175ac94c1
+	9749  unique_spk_mempool-25+knots			68175ac94c1
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	-     bloom_default-0.21+knots				4910b8c3600
 	-     wallet_avoid_newerchange				a5e70c68636
-	24.xTODO: Revert #25725
+	#26.xTODO# Revert #25725
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	TODO: Adapt existing limits to apply to Taproot?
 	TODO: Match ord spam as datacarrier?
