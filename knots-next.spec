@@ -1,7 +1,7 @@
-timestamp 2023-08-10 05:41:46
+timestamp 2023-08-19 08:27:30
 lastapply no-merge
 
-#.. checked up to PR #28252 / gui #747
+#.. checked up to PR #28296 / gui #749
 
 checkout v25.0
 @24.x-syslibs
@@ -234,7 +234,7 @@ checkout v25.0
 	#25.xTODO# Triage: 27930 -  # util: Don't derive secure_allocator from std::allocator
 	#25.xTODO# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 MarcoFalke/2306-byte-span-
-	#25.xTODO# Needs review: 27981 sipa/202306_pushback
+	27981 sipa/202306_pushback
 	#25.xTODO# Needs work: 27991 fanquake/instrument_libsecp
 	#25.xTODO# Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
 	28020 fix_zmq_ipc_noportcheck-25						last=0b1762c90d1  # exclude ipc scheme from port check
@@ -265,6 +265,7 @@ checkout v25.0
 	#25.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	#25.xTODO# Triage #28248
 	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
+	g749 furszy/2023_gui_start_minimized
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -301,6 +302,7 @@ checkout v25.0
 	# Needs review? 27675 ajtowns/202305-droprecentinvbloom
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
 	# Needs review? 28233 andrewtoth/sync-on-periodic
+	# Needs review: 28280 andrewtoth/sync-dirty
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -604,7 +606,8 @@ checkout v25.0
 	# Needs review? 27679 pinheadmz/zmq-unix-domain-socket
 		# Duplicates #28020 with a different URI format
 	# Needs work: 27409 ryanofsky/pr/1data
-	# TODO trivial? 27460 MarcoFalke/2304-import-mempool-rpc-
+	27460 MarcoFalke/2304-import-mempool-rpc-
+		+28289
 	# Needs review: g692 -  # Debug Console implementation of generate method
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
 		# Careful, could end up paying "added change" to a destination -.-

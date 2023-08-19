@@ -1,8 +1,8 @@
-timestamp 2023-08-10 05:41:46
+timestamp 2023-08-19 08:27:30
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28252 / gui #747 for fixes
+#.. checked up to PR #28296 / gui #749 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -697,6 +697,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	Triage: #28248
 	Triage: FIXME: curl RPCdoc examples use wrong content type!
+	g749 furszy/2023_gui_start_minimized
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
