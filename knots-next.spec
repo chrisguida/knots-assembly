@@ -615,7 +615,7 @@ checkout v25.0
 	# Needs review: 27596 jamesob/assumeutxo
 	27600 p2p_forceinbound-25+knots							last=8585fe3f80e pinheadmz/whitebind-evict
 		# Held back top anti-feature commit c8ce23745a2...8585fe3f80e
-		FIXME: net_permissions conflict with neutrino whitelisting
+		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
 	27761 p2p_log_stalling_ip-22
 	27770 rpc_getblockfileinfo-25+knots						last=5110139d397 furszy/2023_rpc_getblockfileinfo
@@ -823,8 +823,8 @@ checkout v25.0
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure std::filesystem isn't introduced (see #28076)
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
-	n/a  (cherrypick=165f473d4d068ee31a)		f6260178fc7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20220529)			3d04837ba68
+	n/a  (cherrypick=03030eb46b36f57e51)		f6260178fc7	# doc/{bips,files}
+	n/a  (bump_version=Knots:20230810)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	TODO: Ensure NSIS doesn't bundle _Core_ relnotes either! See #25809; also see #26139
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
