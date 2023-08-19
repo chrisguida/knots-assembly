@@ -686,7 +686,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
 	Triage: Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
-	Triage: Fix only: 28076 MarcoFalke/2307-fs-lint-
+	# Not a fix: 28076 MarcoFalke/2307-fs-lint-
+		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
 	Triage: 28123 fix_nonstring_onelinedesc
 	Triage: Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
 	Triage: Needs review: 28126 furszy/2023_bugfix_wallet_importaddress

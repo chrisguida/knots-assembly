@@ -251,8 +251,9 @@ checkout v25.0
 	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
 	28067 fanquake/further_25_x_backports^					last=513ca0a7117 !fanquake/further_25_x_backports^
 		# using backport in #28047, building on top of #28038 backport
-	28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
+	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
+		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
 	#25.xTODO# Needs review: 28077 vasild/i2p_accept_issue22759
 	28123 fix_nonstring_onelinedesc-25						last=5e3e83b0055 fix_nonstring_onelinedesc
 	#25.xTODO# Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
@@ -561,6 +562,7 @@ checkout v25.0
 	28167 rpccookieperms-25+knots							last=b4b0d2adc91 willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release); held back cc0d0aeca68...b4b0d2adc91
 		# Added: Param syntax check & log when option is being used
+		# NOTE: If #28076 gets merged, adapt std::filesystem usage
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
@@ -613,6 +615,7 @@ checkout v25.0
 	# Needs review: 27596 jamesob/assumeutxo
 	27600 p2p_forceinbound-25+knots							last=8585fe3f80e pinheadmz/whitebind-evict
 		# Held back top anti-feature commit c8ce23745a2...8585fe3f80e
+		FIXME: net_permissions conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
 	27761 p2p_log_stalling_ip-22
 	27770 rpc_getblockfileinfo-25+knots						last=5110139d397 furszy/2023_rpc_getblockfileinfo
@@ -811,19 +814,16 @@ checkout v25.0
 # BRANDING:
 	n/a   knots_branding-25						0ef366334de
 		#26.xTODO# Review security policy
-FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
-FIXME: Check that fix of https://github.com/bitcoin-core/gui/pull/658#discussion_r1018131577 didn't break a later branch
-FIXME: Check hidden_args has anything removed (possibly conditional)
-FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
-TODO: Check that we aren't deprecating anything in Core
-TODO: verify src tarball includes rendered_icons incl nsis-header
-TODO: Check net_permissions.h for overlapping NetPermissionFlags
-TODO: Check calls to RPCConsole::clear(bool) get expected behaviour
-TODO: Check #26039 doesn't break anything
-TODO: Ensure std::filesystem isn't introduced (see #28076)
-#26.xTODO# options args should be OBJ_NAMED_PARAMS type now
+# FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
+# FIXME: Check hidden_args has anything removed (possibly conditional)
+#25.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
+# TODO: Check that we aren't deprecating anything in Core
+#25.xTODO# verify src tarball includes rendered_icons incl nsis-header
+# TODO: Check net_permissions.h for overlapping NetPermissionFlags
+# TODO: Check #26039 doesn't break anything
+# TODO: Ensure std::filesystem isn't introduced (see #28076)
+#26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 	n/a  (cherrypick=165f473d4d068ee31a)		f6260178fc7	# doc/{bips,files}
-		TODO: Check #26231
 	n/a  (bump_version=Knots:20220529)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	TODO: Ensure NSIS doesn't bundle _Core_ relnotes either! See #25809; also see #26139
