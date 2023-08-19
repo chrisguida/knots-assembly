@@ -14,7 +14,7 @@ checkout v25.0
 	5416  sys_libsecp256k1						f4a59d2a40f
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
-	#25.xTODO: sys_libminisketch
+	#26.xTODO: sys_libminisketch
 	13789 bugfix_asm_pragmas					5caf7787338
 	15155 test_external_bcli					b020b0febcf
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
@@ -803,14 +803,14 @@ checkout v25.0
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		7502bba0dc8
-	7483  svg_icon-23+knots						edbcba95282
+	7483  svg_icon-25+knots						edbcba95282
+		#25.xTODO# TEST IN CI & GUIX
 	n/a   tbc_font								9929a597b3d
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
-	n/a   update_security_policy-21
-		TODO: Review security policy
-	n/a   knots_branding-23						0ef366334de
+	n/a   knots_branding-25						0ef366334de
+		#26.xTODO# Review security policy
 FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 FIXME: Check that fix of https://github.com/bitcoin-core/gui/pull/658#discussion_r1018131577 didn't break a later branch
 FIXME: Check hidden_args has anything removed (possibly conditional)

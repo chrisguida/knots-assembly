@@ -1321,13 +1321,14 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		# Added -mempoolfullrbf compatibility (see #25353)
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		e0a236336e2
-	7483  svg_icon-21.2+knots					10090268130	last=75796f01b75 svg_icon-23+knots
+	7483  svg_icon-21.2+knots					10090268130	last=75796f01b75 svg_icon-25+knots
 	(CHECK-LAST)	last=afaab080b87 svg_icon-22+knots
+	(CHECK-LAST)	last=75796f01b75 svg_icon-23+knots
 		# NOTE: Held back guix support 64ed5a651d7...75796f01b75
 # BRANDING:
 	n/a   update_security_policy-21
 		# Includes (part of #23450) remove Jonas, #23466 keyserver, #25850 remove laanwj, #25910 add achow101
-	n/a   knots_branding-21						9db64a56d30	last=16035761f8b knots_branding-23
+	n/a   knots_branding-21						9db64a56d30	last=16035761f8b knots_branding-25
 	(CHECK-LAST)	last=282420dea44 knots_branding-22
 	n/a   ver_dropzero-21.2+knots				0d04104e95d
 		# this should be 21.1.1 I guess? keeping 21.2.0 for now to match Core...
