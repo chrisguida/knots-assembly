@@ -262,7 +262,8 @@ checkout v25.0
 	# Windows-only functional test fix: 28204 hebasto/230802-sqlite
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
 	#25.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
-	#25.xTODO# Triage (also 21.x) #28248
+	#25.xTODO# Triage #28248
+	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -786,23 +787,20 @@ checkout v25.0
 	#25.xTODO# Consider opt-in: 27926 -  # policy: make unstructured annex standard
 	-     enforce_checkpoints					840dddd5a6e
 	n/a   checkpoint_update-25					ec23e329857	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
+		#26.xTODO# Add new checkpoint
 	10282 timebomb_knots						28c6dff687b
-	-     rwconf_policy-23+knots				85b37875e50
-		TODO: maxmempool & others are no longer GetArg'd at runtime!
+	-     rwconf_policy-25+knots				85b37875e50
 		# Includes Knots policy changes for simplification of final rebase process
-	    TODO: Undo incorrect: // Limit weight to between 4K and DEFAULT_BLOCK_MAX_WEIGHT for sanity:
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
-		TODO? gcp 3281bf5d1ae Add compatibility with -mempoolfullrbf option
-		TODO? gcp 8a228791457 (rwconf_policy-0.21+knots) GUI/Options: When changing mempoolreplacement, update config file with mempoolfullrbf too
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
 	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
-	Needs review/options: 26348 -  # Make P2SH redeem script "IF .. PUSH <x> ELSE ... PUSH <y> ENDIF CHECKMULTISIG .. " standard
-	Needs refactoring to only happen for -acceptnonstdtxn(?): 26398 instagibbs/relax_too_small_tx_equality
+	# Needs review/options: 26348 -  # Make P2SH redeem script "IF .. PUSH <x> ELSE ... PUSH <y> ENDIF CHECKMULTISIG .. " standard
+	# Needs refactoring to only happen for -acceptnonstdtxn(?): 26398 instagibbs/relax_too_small_tx_equality
 	# Problematic: 26403 instagibbs/ephemeral-anchors
-	Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
+	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		7502bba0dc8
 	7483  svg_icon-23+knots						edbcba95282

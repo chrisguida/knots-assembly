@@ -694,6 +694,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Windows-only functional test fix: 28204 hebasto/230802-sqlite
 	Triage: Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
 	28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
+	Triage: #28248
+	Triage: FIXME: curl RPCdoc examples use wrong content type!
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -1311,8 +1313,9 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	(CHECK-LAST)	last=37271214dfe checkpoint_update-23
 		#21.xTODO# Add new checkpoint
 	10282 timebomb_knots-21						4d798a3f50b	last=7612a464d3a timebomb_knots
-	-     rwconf_policy-0.21+knots				1d0a8a7bf36	last=6a06b3f2b3b rwconf_policy-23+knots
+	-     rwconf_policy-0.21+knots				1d0a8a7bf36	last=6a06b3f2b3b rwconf_policy-25+knots
 	(CHECK-LAST)	last=f89126d2136 rwconf_policy-22+knots
+	(CHECK-LAST)	last=6a06b3f2b3b rwconf_policy-23+knots
 		# Include Knots policy changes for simplification of final rebase process
 		# Held back git diff 19fd29ce45d..af4614fbd26 which is likely a noop
 		# Added -mempoolfullrbf compatibility (see #25353)
