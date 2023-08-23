@@ -1,7 +1,7 @@
-timestamp 2023-08-19 08:27:30
+timestamp 2023-08-23 05:43:17
 lastapply no-merge
 
-#.. checked up to PR #28296 / gui #749
+#.. checked up to PR #28328 / gui #749
 
 checkout v25.0
 @24.x-syslibs
@@ -266,6 +266,7 @@ checkout v25.0
 	#25.xTODO# Triage #28248
 	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
 	g749 fix_qt_min_walletloading-25						last=32db15450a9 furszy/2023_gui_start_minimized
+	#25.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
