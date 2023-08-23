@@ -589,7 +589,7 @@ checkout v25.0
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
-	27511 rpc_getaddrmaninfo-24								last=6d7fd9fb9b3
+	27511 rpc_getaddrmaninfo-24								last=3803efb6f63
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 -													last=a870f5affcf  # cli: add validation to cli side commands besides when it's used with -rpcwallet
 	27034 rpc_importaddr_for_descwallet-25+k				last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
@@ -607,8 +607,8 @@ checkout v25.0
 	# Needs review? 27679 pinheadmz/zmq-unix-domain-socket
 		# Duplicates #28020 with a different URI format
 	# Needs work: 27409 ryanofsky/pr/1data
-	27460 MarcoFalke/2304-import-mempool-rpc-
-		+28289
+	# TODO (non-trivial): 27460 MarcoFalke/2304-import-mempool-rpc-
+		#+28289
 	# Needs review: g692 -  # Debug Console implementation of generate method
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
 		# Careful, could end up paying "added change" to a destination -.-
@@ -683,7 +683,7 @@ checkout v25.0
 	13203 dsha256_power8-25						7610e2e0b16	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8_asm_pragmas-25			3ba39b15ebb
-	15218 postibd_flush-25						e194bb9b731	last=03774d26f93
+	15218 postibd_flush-25						e194bb9b731	last=5d852ac058d
 	15428 tor_gui_pairing-25+knots				723c1c46950	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-25+knots				6992e4922ed	# Latest code now
@@ -830,7 +830,6 @@ checkout v25.0
 	n/a  (cherrypick=03030eb46b36f57e51)		f6260178fc7	# doc/{bips,files}
 	n/a  (bump_version=Knots:20230810)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
-	TODO: Ensure NSIS doesn't bundle _Core_ relnotes either! See #25809; also see #26139
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
 	n/a  (cherrypick=7c9f28557be)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
