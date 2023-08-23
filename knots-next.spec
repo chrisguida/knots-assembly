@@ -234,7 +234,7 @@ checkout v25.0
 	#25.xTODO# Triage: 27930 -  # util: Don't derive secure_allocator from std::allocator
 	#25.xTODO# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 MarcoFalke/2306-byte-span-
-	27981 sipa/202306_pushback
+	27981 fix_p2p_stalling_pr27981
 	#25.xTODO# Needs work: 27991 fanquake/instrument_libsecp
 	#25.xTODO# Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
 	28020 fix_zmq_ipc_noportcheck-25						last=0b1762c90d1  # exclude ipc scheme from port check
@@ -265,7 +265,7 @@ checkout v25.0
 	#25.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	#25.xTODO# Triage #28248
 	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
-	g749 furszy/2023_gui_start_minimized
+	g749 fix_qt_min_walletloading-25						last=32db15450a9 furszy/2023_gui_start_minimized
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
