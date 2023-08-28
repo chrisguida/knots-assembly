@@ -332,7 +332,7 @@ checkout v25.0
 	18479 rpc_sign_show_fees					58494ba48db	last=47b2ba29df2 !origin-pull/12911/head
 		# Dropped rel notes file
 		# NOTE: Originally #12911
-		TODO: "feerate" fails to account for sigops (see 21d85b5c0e)
+		#25.xTODO# FIXME: "feerate" fails to account for sigops (see 21d85b5c0e)
 	# Needs review and care (new index): 13014 jonasschnelli/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs work: 13989 add avx512 instrinsic
@@ -373,7 +373,7 @@ checkout v25.0
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
-	18972 neutrino_whitelist-mini				b2999f33de0	last=cd82acd5931 neutrino_whitelist
+	18972 neutrino_whitelist-mini				b2999f33de0	last=21a7f5ad0cb neutrino_whitelist
 		# NOTE: Diff-minimised
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	-     qt_openuri_pastebtn_shortcut-23		055826bebb2
@@ -592,7 +592,7 @@ checkout v25.0
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
-	27511 rpc_getaddrmaninfo-24								last=3803efb6f63
+	27511 rpc_getaddrmaninfo-24								last=e4f9b4097e8
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 -													last=a870f5affcf  # cli: add validation to cli side commands besides when it's used with -rpcwallet
 	27034 rpc_importaddr_for_descwallet-25+k				last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
@@ -687,7 +687,7 @@ checkout v25.0
 	13203 dsha256_power8-25						7610e2e0b16	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 	-     dsha256_power8_asm_pragmas-25			3ba39b15ebb
-	15218 postibd_flush-25						e194bb9b731	last=5d852ac058d
+	15218 postibd_flush-25						e194bb9b731	last=0c7ee166463
 	15428 tor_gui_pairing-25+knots				723c1c46950	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-25+knots				6992e4922ed	# Latest code now
@@ -733,7 +733,7 @@ checkout v25.0
 	14137 win_taskbar_progress					6b06461d6b8	last=18eb4dbb8a
 	-     restore_blockmaxsize					ed77d9b99c2
 	7107  qtnetworkport-25+knots				c37c20d1ca7	last=1f37c87d8f2 origin-pull/7107/head
-	7533  sendraw_force							9746cd166d6
+	7533  sendraw_force-25+knots				9746cd166d6 last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532 if merged
 	11082 rwconf-25+knots						dbc972ce598 # Latest code now
