@@ -201,7 +201,7 @@ checkout v25.0
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
 	27577 seednode_delay_fixedseeds-24
 		#25.xTODO# Check #28016
-	27591 rpc_mempoolvsize-25								last=60bde2dac05 glozow/2023-05-mempool-vsize
+	# Needs concept review: 27591 rpc_mempoolvsize-25								last=60bde2dac05 glozow/2023-05-mempool-vsize
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
 	#25.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
 	#25.xTODO# Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
@@ -267,6 +267,8 @@ checkout v25.0
 	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
 	g749 fix_qt_min_walletloading-25						last=32db15450a9 furszy/2023_gui_start_minimized
 	#25.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
+	28345 fix_bytespersigop_checks
+		TODO: Diff-minimise and fix remaining issues
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -761,7 +763,6 @@ checkout v25.0
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
-	TODO: Evaluate if UPnP/NAT-PMP defaults need changing (see also #26896)
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-25
@@ -798,6 +799,7 @@ checkout v25.0
 		#26.xTODO# Add new checkpoint
 	10282 timebomb_knots						28c6dff687b
 	-     rwconf_policy-25+knots				85b37875e50
+		FIXME: Ensure we drop #27591
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
@@ -841,16 +843,11 @@ checkout v25.0
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-		TODO: 109cbb819dd doc: Add release notes for #26618
-		TODO: 26576 brunoerg/2022-11-disconnectnode-subnet
-		TODO: 27216 pinheadmz/used-addr-ui
-		TODO: 27600 pinheadmz/whitebind-evict
-		TODO: Mention Bugfix: Enable full RBF service bit by default
 	n/a  (cherrypick=e176316e332)				dd99e2b4305  # update manpages (build first)
-		BELOW TODO: ensure 26117 is fixed
 		TODO: update bitcoin conf (like d68b6abeb84)
 	n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
+		BELOW TODO: ensure 26117 is fixed
 # NOTE: use git diff --minimal for patches!
 
 # TODO: @24.x-knots-android

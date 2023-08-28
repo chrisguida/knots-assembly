@@ -699,6 +699,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: FIXME: curl RPCdoc examples use wrong content type!
 	g749 furszy/2023_gui_start_minimized
 	Triage: Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
+	28345 fix_bytespersigop_checks
+		TODO: Diff-minimise and fix remaining issues
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -818,6 +820,7 @@ m	16795 rpc_inferred_output_descriptors-21+k	5d1bc19f6ca
 	18972 neutrino_whitelist-mini-21			dabdcf3f324	last=339fe189eb9
 	(CHECK-LAST)	last=513465c7d6a neutrino_whitelist-mini
 		# NOTE: Diff-minimised
+		TODO (PART OF):  4de205ba055 fixup! net: Add blockfilters white{bind,list} permission flag
 	17034 psbt_ver_proprietary_xpub-0.21		0cbd65dd17d	last=81521173ba8 achow101/bip174-extensions
 		# +#23975
 	(CHECK-LAST)	last=634c311b833 psbt_ver_proprietary_xpub-22-mini
