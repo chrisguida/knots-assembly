@@ -782,6 +782,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !origin-pull/12911/head
 		# NOTE: Originally #12911
+		TODO: "feerate" fails to account for sigops (see 21d85b5c0e)
 	(CHECK-LAST)	last=ac2d457500e rpc_sign_show_fees
 	g119  rm_send2self-mini-21					8a6ed938070	last=099dbe4224e rm_send2self
 	(CHECK-LAST)	last=39fa4ba47e6 rm_send2self-mini
@@ -1085,6 +1086,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	9152  sweepprivkeys-0.21					2aeaeeb1ba1	last=724b597973c sweepprivkeys
 	(CHECK-LAST)	last=6fcb1e43426 sweepprivkeys-22
 	(CHECK-LAST)	last=ba17ce68d20 sweepprivkeys-23
+		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
 	9245  ionice-21								d935e6fc4ab	last=abb0e433efa ionice
 	(CHECK-LAST)	last=6de915d6dc0 ionice-22
 	(CHECK-LAST)	last=b4647b23813 ionice-24
@@ -1364,6 +1366,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 #21.xTODO# Check there are only [[noreturn]]s in: git grep '\[\[[a-z_]\+\]\]' src (nodiscard, maybe_unused, etc are C++17)
 #21.xTODO# Check on #21508
 Triage: TODO: Ensure std::filesystem isn't introduced (see #28076)
+TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
 		TODO: If applicable, #26443
 	n/a  knots_bips-21							95f1a0c7adb

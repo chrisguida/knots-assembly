@@ -267,8 +267,8 @@ checkout v25.0
 	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
 	g749 fix_qt_min_walletloading-25						last=32db15450a9 furszy/2023_gui_start_minimized
 	#25.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
-	28345 fix_bytespersigop_checks
-		TODO: Diff-minimise and fix remaining issues
+	28345 fix_bytespersigop_checks-25						last=fef601e2a4d fix_bytespersigop_checks
+		# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually when assembly done
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -332,6 +332,7 @@ checkout v25.0
 	18479 rpc_sign_show_fees					58494ba48db	last=47b2ba29df2 !origin-pull/12911/head
 		# Dropped rel notes file
 		# NOTE: Originally #12911
+		TODO: "feerate" fails to account for sigops (see 21d85b5c0e)
 	# Needs review and care (new index): 13014 jonasschnelli/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs work: 13989 add avx512 instrinsic
@@ -644,6 +645,7 @@ checkout v25.0
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					614547cdc59	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							7b2398d7c36
+		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
 	9245 ionice									0a0ecc14783
 	-    ionice_win								c5ef9ca0e30
@@ -830,6 +832,7 @@ checkout v25.0
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure std::filesystem isn't introduced (see #28076)
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
+TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
 	n/a  (bump_version=Knots:20230810)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
