@@ -312,8 +312,8 @@ checkout v25.0
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
 	# Needs review? 28233 andrewtoth/sync-on-periodic
 	# Needs review: 28280 andrewtoth/sync-dirty
-	Needs work: 28358 Sjors/2023/08/double-your-coins---cache
-		Check interaction with mempressure
+	-     dbcache_1TB-0.13
+		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
@@ -650,7 +650,7 @@ checkout v25.0
 	#26.xTODO# Needs work/deps: 28196 sipa/202307_bip324_transport
 	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
 	# Needs work: 28331 sipa/202308_bip324_integration
-	28414 pinheadmz/psbt-final-process
+	28414 rpcwallet_processpsbt_finalhex-25+knots			last=e3d484b603a pinheadmz/psbt-final-process
 # Non-progress functionality:
 	8751  sort-multisigs-25						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -802,7 +802,7 @@ checkout v25.0
 	28408 match_more_datacarrier-25+knots					last=c49ed98678a match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		#25.xTODO# Add tests and make sure boundaries are correct
-	TODO: #28400-based match_more_datacarrier?
+	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-25+knots
 		#25.xTODO# Add tests and make sure boundaries are correct
 	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
@@ -852,10 +852,10 @@ checkout v25.0
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20230810)			3d04837ba68
+	n/a  (bump_version=Knots:20230905)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a  (cherrypick=c9ae9c5451b)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=e245d62565b)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
