@@ -1,8 +1,8 @@
-timestamp 2023-08-23 05:43:17
+timestamp 2023-09-05 09:37:33
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28328 / gui #749 for fixes
+#.. checked up to PR #28419 / gui #749 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -47,6 +47,8 @@ checkout v0.21.2
 	25852 fix_intrinsic_check_userflags-0.20+k
 	Check if needed and useful: 26086 fanquake/bitcoin_tx_prune_boost_cpp
 	# Triage: If needed (MSVC only?): 27892 MarcoFalke/2306-translate-copy-
+	Triage: # Depends-only, do we care? 28097 fanquake/xcb_proto_1_15_2
+		# NOTE: 24.x Backport in #28410
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=1c6ae96f0a3 sys_leveldb
@@ -701,6 +703,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks
 		TODO: Diff-minimise and fix remaining issues
+	Triage: Needs review? 28340 -  # security: restrict abis in bitcoind.service
+	Triage: Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
+	Triage: Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)

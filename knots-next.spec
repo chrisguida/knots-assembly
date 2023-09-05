@@ -1,7 +1,7 @@
-timestamp 2023-08-23 05:43:17
+timestamp 2023-09-05 09:37:33
 lastapply no-merge
 
-#.. checked up to PR #28328 / gui #749
+#.. checked up to PR #28419 / gui #749
 
 checkout v25.0
 @24.x-syslibs
@@ -9,6 +9,8 @@ checkout v25.0
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						3a646ac6a6b
 	# If needed (MSVC only?): 27892 MarcoFalke/2306-translate-copy-
+	# Depends-only, do we care? 28097 fanquake/xcb_proto_1_15_2
+		# NOTE: Backport in #28047
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
 	5416  sys_libsecp256k1						f4a59d2a40f
@@ -270,6 +272,9 @@ checkout v25.0
 	#25.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks-25						last=6cd57e509c2 fix_bytespersigop_checks
 		# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually when assembly done
+	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
+	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
+	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -307,6 +312,9 @@ checkout v25.0
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
 	# Needs review? 28233 andrewtoth/sync-on-periodic
 	# Needs review: 28280 andrewtoth/sync-dirty
+	Needs work: 28358 Sjors/2023/08/double-your-coins---cache
+		Check interaction with mempressure
+	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -641,6 +649,8 @@ checkout v25.0
 	#25.xTODO# Copyright issue? If a clear win: 28101 -  # init: changing -torcontrol help to specify that a default port is used
 	#26.xTODO# Needs work/deps: 28196 sipa/202307_bip324_transport
 	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
+	# Needs work: 28331 sipa/202308_bip324_integration
+	28414 pinheadmz/psbt-final-process
 # Non-progress functionality:
 	8751  sort-multisigs-25						c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -791,7 +801,11 @@ checkout v25.0
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	28408 match_more_datacarrier-25+knots					last=c49ed98678a match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
+		#25.xTODO# Add tests and make sure boundaries are correct
+	TODO: #28400-based match_more_datacarrier?
 	-     datacarriercost-25+knots
+		#25.xTODO# Add tests and make sure boundaries are correct
+	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	-     bloom_default-0.21+knots				4910b8c3600
 	-     wallet_avoid_newerchange				a5e70c68636
 	#26.xTODO# Revert #25725
