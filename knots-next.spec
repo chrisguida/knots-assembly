@@ -202,6 +202,7 @@ checkout v25.0
 	27577 seednode_delay_fixedseeds-24
 		#25.xTODO# Check #28016
 	# Needs concept review: 27591 rpc_mempoolvsize-25								last=60bde2dac05 glozow/2023-05-mempool-vsize
+		# When restoring, revert part of bfab6ac4791 in relnotes
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
 	#25.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
 	#25.xTODO# Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
@@ -267,7 +268,7 @@ checkout v25.0
 	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
 	g749 fix_qt_min_walletloading-25						last=32db15450a9 furszy/2023_gui_start_minimized
 	#25.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
-	28345 fix_bytespersigop_checks-25						last=fef601e2a4d fix_bytespersigop_checks
+	28345 fix_bytespersigop_checks-25						last=6cd57e509c2 fix_bytespersigop_checks
 		# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually when assembly done
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -788,6 +789,9 @@ checkout v25.0
 	-     bytespersigopstrict-25+knots			1a34431caca
 	9749  unique_spk_mempool-25+knots			68175ac94c1
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
+	28408 match_more_datacarrier-25+knots					last=c49ed98678a match_more_datacarrier
+		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
+	-     datacarriercost-25+knots
 	-     bloom_default-0.21+knots				4910b8c3600
 	-     wallet_avoid_newerchange				a5e70c68636
 	#26.xTODO# Revert #25725
@@ -795,13 +799,13 @@ checkout v25.0
 	#25.xTODO# Adapt existing limits to apply to Taproot?
 	#25.xTODO# Match ord spam as datacarrier?
 	#25.xTODO# Ordisrespector equivalent (Ordislow??)
+	#25.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 	#25.xTODO# Consider opt-in: 27926 -  # policy: make unstructured annex standard
 	-     enforce_checkpoints					840dddd5a6e
 	n/a   checkpoint_update-25					ec23e329857	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
 		#26.xTODO# Add new checkpoint
 	10282 timebomb_knots						28c6dff687b
 	-     rwconf_policy-25+knots				85b37875e50
-		FIXME: Ensure we drop #27591
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
@@ -832,12 +836,12 @@ checkout v25.0
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure std::filesystem isn't introduced (see #28076)
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
-TODO: Ensure 83aa95039d0 doesn't expose any new bugs
+# TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
 	n/a  (bump_version=Knots:20230810)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a  (cherrypick=5ba4726b9c6)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=f801e60e1c2)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
@@ -853,4 +857,4 @@ TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 		BELOW TODO: ensure 26117 is fixed
 # NOTE: use git diff --minimal for patches!
 
-# TODO: @24.x-knots-android
+# TODO: @25.x-knots-android
