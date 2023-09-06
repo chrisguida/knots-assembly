@@ -677,7 +677,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 27905 mzumsande/202306_dirty_blockindex
 	Triage & Needs review: 27912 -  # net: run disconnect in I2P thread
 	Some good fix for 27915 (#27920?)
-	Triage: 27930 -  # util: Don't derive secure_allocator from std::allocator
 	Triage: Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	Triage: Needs review: 27981 sipa/202306_pushback
 	Triage: Needs work: 27991 fanquake/instrument_libsecp

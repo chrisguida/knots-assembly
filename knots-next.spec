@@ -40,10 +40,10 @@ checkout v25.0
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
-	#25.xTODO# Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
+	27529 theStack/test-fix_feature_addrman_on_big_endian_systems
 	27542 qa_runtest_ripemd160-23  # test: add ripemd160 to test framework modules list
-	#25.xTODO# Needs review: 28027 achow101/2023-07-test-wallet-back-compat-updates
-	#25.xTODO# Needs review: 28028 MarcoFalke/2307-test-stderr-
+	28027 achow101/2023-07-test-wallet-back-compat-updates
+	28028 MarcoFalke/2307-test-stderr-
 # FIXES:
 	27727 fix_decodedest_err_bytes_plural-25  # rpc: Fix invalid bech32 handling
 		# +#27747
@@ -184,7 +184,7 @@ checkout v25.0
 	#25.xTODO# SECURITY Needs review: 26964 willcl-ark/2023-01-cookie-bind
 	#25.xTODO# Needs bugfix? (https://github.com/bitcoin/bitcoin/pull/27039/files#r1247267535) 27039 pinheadmz/reindex-read-only
 	#25.xTODO# Needs work/review: 27071 vasild/lookup_subnet_cjdns
-	#25.xTODO# Needs work: 27231 jonatack/2023-03-logging-fixes-and-test-coverage
+	27231 jonatack/2023-03-logging-fixes-and-test-coverage
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
@@ -234,11 +234,10 @@ checkout v25.0
 	27905 fix_FMWC_dirty_index-23
 	#25.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
 	#25.xTODO# Some good fix for 27915 (#27920? partial backport in d319eef6e46)
-	#25.xTODO# Triage: 27930 -  # util: Don't derive secure_allocator from std::allocator
-	#25.xTODO# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
+	# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 MarcoFalke/2306-byte-span-
 	27981 fix_p2p_stalling_pr27981
-	#25.xTODO# Needs work: 27991 fanquake/instrument_libsecp
+	# Needs work: 27991 fanquake/instrument_libsecp
 	#25.xTODO# Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
 	28020 fix_zmq_ipc_noportcheck-25						last=0b1762c90d1  # exclude ipc scheme from port check
 		#25.xTODO# Maybe rewrite without `rfind`
@@ -307,7 +306,7 @@ checkout v25.0
 	# Needs review: 27006 furszy/2022_reduce_cs_main_scope_blockindex_nfile
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	27334 -												last=bfb9291a866  # util: implement noexcept move assignment & move ctor for prevector
-	#25.xTODO# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
+	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 	# Needs review? 27675 ajtowns/202305-droprecentinvbloom
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
 	# Needs review? 28233 andrewtoth/sync-on-periodic
@@ -804,6 +803,7 @@ checkout v25.0
 		#25.xTODO# Add tests and make sure boundaries are correct
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-25+knots
+	ADD THIS TO GUI POLICY
 		#25.xTODO# Add tests and make sure boundaries are correct
 	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	-     bloom_default-0.21+knots				4910b8c3600
@@ -811,7 +811,6 @@ checkout v25.0
 	#26.xTODO# Revert #25725
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	#25.xTODO# Adapt existing limits to apply to Taproot?
-	#25.xTODO# Match ord spam as datacarrier?
 	#25.xTODO# Ordisrespector equivalent (Ordislow??)
 	#25.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 	#25.xTODO# Consider opt-in: 27926 -  # policy: make unstructured annex standard
