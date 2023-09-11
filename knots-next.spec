@@ -558,7 +558,8 @@ checkout v25.0
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
 		# Also #25570 ?
 	g626 qt_node_localaddrs-25								last=c47f01bf25e
-	#25.xTODO# Needs work & applicability check: 25680 -  # rpc, docs: Add note for commands that supports only legacy wallets
+	25680 rpcdoc_legacywalletonly-25+knots
+		# Reverted importaddress note change since old one was better and gets replaced later in #27034 anyway
 	# Needs completion & review: 25718 fjahr/2022-07-allowinbound
 	# Needs concept/review: 25747 w0xlt/desc_file
 	# Needs work: 25776 1440000bytes/bumpfee-inputs
@@ -651,7 +652,7 @@ checkout v25.0
 	# Needs work: 28331 sipa/202308_bip324_integration
 	28414 rpcwallet_processpsbt_finalhex-25+knots			last=e3d484b603a pinheadmz/psbt-final-process
 # Non-progress functionality:
-	8751  sort-multisigs-25						c42c63f0c5c	last=e11cb50a09  # multisig sorting
+	8751  sort-multisigs-25+knots				c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					614547cdc59	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							7b2398d7c36
