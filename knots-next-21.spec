@@ -1,8 +1,8 @@
-timestamp 2023-09-05 09:37:33
+timestamp 2023-09-11 05:43:41
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28419 / gui #749 for fixes
+#.. checked up to PR #28451 / gui #755 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -705,6 +705,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review? 28340 -  # security: restrict abis in bitcoind.service
 	Triage: Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	Triage: Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
+	Triage: 28427 furszy/2023_index_coinstats_fix_reverseblock
+	Triage: g751  furszy/2023_gui_fix_appbar_crash
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -753,6 +755,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 # PERFORMANCE:
 	# Needs work: 25383 -  # wallet: don't read db every time that a new 'WalletBatch' is created
 	# Consider: 25985 fanquake/revert_slow_macos_sqlite
+	Triage: Needs concept review? 28429 jonatack/2023-09-bip61-and-unknown-p2p-messages
+	Triage: 28430 -  # fix: unnecessary continuation after finding mutation
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	394e59e2f86	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 	22016 rpc_gbci_period_start-0.21.1+knots	b19116ccf14	last=1898b9be12c Sjors/2021/05/versionbits_period_start

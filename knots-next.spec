@@ -1,7 +1,7 @@
-timestamp 2023-09-05 09:37:33
+timestamp 2023-09-11 05:43:41
 lastapply no-merge
 
-#.. checked up to PR #28419 / gui #749
+#.. checked up to PR #28451 / gui #755
 
 checkout v25.0
 @24.x-syslibs
@@ -274,6 +274,10 @@ checkout v25.0
 	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
+	28427 furszy/2023_index_coinstats_fix_reverseblock
+	g751  furszy/2023_gui_fix_appbar_crash
+	g752  -  # Modify command line help to show support for BIP21 URIs
+		FIXME: Include BIP20?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -314,6 +318,8 @@ checkout v25.0
 	-     dbcache_1TB-0.13
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
+	Needs concept review? 28429 jonatack/2023-09-bip61-and-unknown-p2p-messages
+	28430 -  # fix: unnecessary continuation after finding mutation
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -651,6 +657,8 @@ checkout v25.0
 	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
 	# Needs work: 28331 sipa/202308_bip324_integration
 	28414 rpcwallet_processpsbt_finalhex-25+knots			last=e3d484b603a pinheadmz/psbt-final-process
+	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
+	#26.xTODO# hebasto-g/230911-bip324-peer-details
 # Non-progress functionality:
 	8751  sort-multisigs-25+knots				c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -851,7 +859,7 @@ checkout v25.0
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20230905)			3d04837ba68
+	n/a  (bump_version=Knots:20230911)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
 	n/a  (cherrypick=99a94138161)				500a43eca75  # release notes: write/update, including change log and credits
