@@ -276,9 +276,9 @@ checkout v25.0
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	28427 fix_idx_coinstats_reorg_fail-22					last=c0bf6679120 furszy/2023_index_coinstats_fix_reverseblock
 		# Left off tip adding nodiscard attributes
-	g751  fix_mac_crash_during_shutdown_gui751-23			last=e14cc8fc69c furszy-g/2023_gui_fix_appbar_crash
-	g752  -  # Modify command line help to show support for BIP21 URIs
-		FIXME: Include BIP20?
+	g751  fix_mac_crash_during_shutdown_gui751-24			last=c08fe9992b5 furszy-g/2023_gui_fix_appbar_crash
+	g752  fix_qt_cmdhelp_mention_uri-0.17
+		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
