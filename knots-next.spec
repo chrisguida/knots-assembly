@@ -274,8 +274,9 @@ checkout v25.0
 	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
-	28427 furszy/2023_index_coinstats_fix_reverseblock
-	g751  furszy/2023_gui_fix_appbar_crash
+	28427 fix_idx_coinstats_reorg_fail-22					last=c0bf6679120 furszy/2023_index_coinstats_fix_reverseblock
+		# Left off tip adding nodiscard attributes
+	g751  fix_mac_crash_during_shutdown_gui751-23			last=e14cc8fc69c furszy-g/2023_gui_fix_appbar_crash
 	g752  -  # Modify command line help to show support for BIP21 URIs
 		FIXME: Include BIP20?
 	
