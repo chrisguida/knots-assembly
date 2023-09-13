@@ -755,7 +755,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 # PERFORMANCE:
 	# Needs work: 25383 -  # wallet: don't read db every time that a new 'WalletBatch' is created
 	# Consider: 25985 fanquake/revert_slow_macos_sqlite
-	Triage: Needs concept review? 28429 jonatack/2023-09-bip61-and-unknown-p2p-messages
 	Triage: 28430 -  # fix: unnecessary continuation after finding mutation
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	394e59e2f86	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics

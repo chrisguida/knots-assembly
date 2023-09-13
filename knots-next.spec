@@ -319,7 +319,6 @@ checkout v25.0
 	-     dbcache_1TB-0.13
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
-	Needs concept review? 28429 jonatack/2023-09-bip61-and-unknown-p2p-messages
 	28430 -  # fix: unnecessary continuation after finding mutation
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
