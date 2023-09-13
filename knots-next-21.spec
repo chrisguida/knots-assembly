@@ -1,8 +1,8 @@
-timestamp 2023-09-11 05:43:41
+timestamp 2023-09-13 04:21:42
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28451 / gui #755 for fixes
+#.. checked up to PR #28470 / gui #755 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -707,6 +707,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	Triage: 28427 furszy/2023_index_coinstats_fix_reverseblock
 	Triage: g751  furszy/2023_gui_fix_appbar_crash
+	Triage: 28452 sipa/202309_really_no_memory
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -1082,6 +1083,10 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Partial: Needs review? 27826 Sjors/2023/05/saw-header
 	Triage: Needs review: 27827 josibake/silent-payments-base-pr-slim-down
 	If a clear win: 28101 -  # init: changing -torcontrol help to specify that a default port is used
+	Triage: # Needs review: 28459 fanquake/mbranch_protection_arm_darwin
+	Triage: # Needs review: 28461 fanquake/windows_ssp_roundup
+	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
+		# Why not just increase inbound capacity to max anyway?
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:

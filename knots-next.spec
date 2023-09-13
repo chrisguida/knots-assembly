@@ -1,7 +1,7 @@
-timestamp 2023-09-11 05:43:41
+timestamp 2023-09-13 04:21:42
 lastapply no-merge
 
-#.. checked up to PR #28451 / gui #755
+#.. checked up to PR #28470 / gui #755
 
 checkout v25.0
 @24.x-syslibs
@@ -279,6 +279,7 @@ checkout v25.0
 	g751  fix_mac_crash_during_shutdown_gui751-24			last=c08fe9992b5 furszy-g/2023_gui_fix_appbar_crash
 	g752  fix_qt_cmdhelp_mention_uri-0.17
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
+	28452 sipa/202309_really_no_memory
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -644,6 +645,7 @@ checkout v25.0
 	27801 sqlite_trace-24									last=ff9d961bf38 ryanofsky/pr/sqtrace
 	# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
+		# Note alternative (approach NACK'd) in #28453
 	# Needs review & BIP finality: 27827 josibake/silent-payments-base-pr-slim-down
 	# Needs review & concept: 28241 Sjors/2023/08/silent-index
 	# Needs work & maybe removing an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
@@ -659,6 +661,10 @@ checkout v25.0
 	28414 rpcwallet_processpsbt_finalhex-25+knots			last=e3d484b603a pinheadmz/psbt-final-process
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	#26.xTODO# hebasto-g/230911-bip324-peer-details
+	# Needs review: 28459 fanquake/mbranch_protection_arm_darwin
+	# Needs review: 28461 fanquake/windows_ssp_roundup
+	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
+		# Why not just increase inbound capacity to max anyway?
 # Non-progress functionality:
 	8751  sort-multisigs-25+knots				c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -859,7 +865,7 @@ checkout v25.0
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20230911)			3d04837ba68
+	n/a  (bump_version=Knots:20230913)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
 	n/a  (cherrypick=99a94138161)				500a43eca75  # release notes: write/update, including change log and credits
