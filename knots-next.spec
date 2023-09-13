@@ -276,10 +276,10 @@ checkout v25.0
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	28427 fix_idx_coinstats_reorg_fail-22					last=c0bf6679120 furszy/2023_index_coinstats_fix_reverseblock
 		# Left off tip adding nodiscard attributes
-	g751  fix_mac_crash_during_shutdown_gui751-24			last=c08fe9992b5 furszy-g/2023_gui_fix_appbar_crash
+	g751  fix_mac_crash_during_shutdown_gui751-24			last=bae209e3879 furszy-g/2023_gui_fix_appbar_crash
 	g752  fix_qt_cmdhelp_mention_uri-0.17
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
-	28452 sipa/202309_really_no_memory
+	28452 fix_hss_freemem-24								last=3fcd7fc7ff5 sipa/202309_really_no_memory
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -320,7 +320,7 @@ checkout v25.0
 	-     dbcache_1TB-0.13
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
-	28430 -  # fix: unnecessary continuation after finding mutation
+	28430 opti_merkle_mutation-0.17						last=42b25bbd939
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 # FUNCTIONALITY:
@@ -658,7 +658,8 @@ checkout v25.0
 	#26.xTODO# Needs work/deps: 28196 sipa/202307_bip324_transport
 	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
 	# Needs work: 28331 sipa/202308_bip324_integration
-	28414 rpcwallet_processpsbt_finalhex-25+knots			last=e3d484b603a pinheadmz/psbt-final-process
+	28414 rpcwallet_processpsbt_finalhex-25+knots			last=2e249b92276 pinheadmz/psbt-final-process
+		# Left out test refactoring to use the new feature & relnotes
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	#26.xTODO# hebasto-g/230911-bip324-peer-details
 	# Needs review: 28459 fanquake/mbranch_protection_arm_darwin
@@ -676,7 +677,7 @@ checkout v25.0
 	-    ionice_win								c5ef9ca0e30
 	8501  old_stats_rpc-25						9936cf72d91	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
-	8550  old_stats_qt-25						b784f359eea	last=63fb11652f
+	8550  old_stats_qt-25+knots					b784f359eea	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9504  dumpmasterprivkey-25					95035ce6202	last=07fc81109a
 	g444  gui_netwatch-25+knots					a44e7b33409	 # Latest code now
@@ -868,7 +869,7 @@ checkout v25.0
 	n/a  (bump_version=Knots:20230913)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a  (cherrypick=99a94138161)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=e8310380fe3)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while read g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less
