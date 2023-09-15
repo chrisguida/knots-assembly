@@ -42,8 +42,8 @@ checkout v25.0
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	27529 fix_addrman_test_bigendian-23
 	27542 qa_runtest_ripemd160-23  # test: add ripemd160 to test framework modules list
-	#25.xTODO# 28027 achow101/2023-07-test-wallet-back-compat-updates
-	#25.xTODO# 28028 MarcoFalke/2307-test-stderr-
+	# TODO: 28027 achow101/2023-07-test-wallet-back-compat-updates
+	# TODO: 28028 MarcoFalke/2307-test-stderr-
 # FIXES:
 	27727 fix_decodedest_err_bytes_plural-25  # rpc: Fix invalid bech32 handling
 		# +#27747
@@ -143,7 +143,7 @@ checkout v25.0
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
 	g599  ts_20220515-partial-25				5a4ab415cfe	last=d9411324066 ts_20220515
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
-		#24.xTODO# Update with other commits that are beneficial
+		#26.xTODO# Update with other commits that are beneficial
 	-     boost_171_177_workarounds
 		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
@@ -151,37 +151,34 @@ checkout v25.0
 	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
-	#24.xTODO# Check on #25561
+	#25.xTODO# Check on #25561
 	25634 fix_wallet_blank_unset_pr25634-25
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
 	g633  -													last=5fde8fbe085  # qt: Fix shortcut ambiguities
 	# Meh: 25854 -  # tracing.md trivial English fixes
-	#24.xTODO# Needs review: 25935 dist_bitcoinconf_as_example
 	# Needs review: 25938 mzumsande/202208_fixed_cjdns
 	g662  qt_fix_txview_202209
 		# Includes gui#368
-	#24.xTODO# Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
+	#25.xTODO# Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
-	#24.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
-	#24.xTODO# Needs review: 26316 andrewtoth/block-read-shared-mutex
-	#24.xTODO# Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
-	#24.xTODO# Needs review: 26343 mzumsande/202210_addrfetch_servicebits
-	#24.xTODO# Needs work/review: 26399 -  # Fix #24049: signed integer overflow in SeenLocal
+	#25.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
+	# TODO: Needs review: 26316 andrewtoth/block-read-shared-mutex
+	#25.xTODO# Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
+	# TODO: Needs work? 26343 mzumsande/202210_addrfetch_servicebits
+	#26.xTODO# Sane fix for #24049
 	g677 fix_qt_peers_na
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
-	#24.xTODO# Needs work: 26512 -  # init: Evaluate sysperms before config file
-	#24.xTODO# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
+	#26.xTODO# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
-	#25.xTODO# Needs review: g684  -  # Improve 'Requested Payments History' Multiselect
-	#25.xTODO# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
-	#25.xTODO# Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
+	g684  qt_reqs_multiselect_pr684-25+knots				last=a6f567590b7
+	# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
+	#26.xTODO# Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
 	26828 andrewtoth/assumeutxo-remove-fix					last=0e21b56a44d
-	#25.xTODO# Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
-	#25.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
-	#25.xTODO# SECURITY Needs review: 26964 willcl-ark/2023-01-cookie-bind
+	#26.xTODO# Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
+	#26.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
 	#25.xTODO# Needs bugfix? (https://github.com/bitcoin/bitcoin/pull/27039/files#r1247267535) 27039 pinheadmz/reindex-read-only
 	#25.xTODO# Needs work/review: 27071 vasild/lookup_subnet_cjdns
 	#25.xTODO# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
@@ -197,7 +194,7 @@ checkout v25.0
 	27554 qa_bcwallet_envvar-25
 	g696 qt_rpcconsole_switch_wallet_opened-25				last=99c0eb9701e
 	g719 theStack-g/gui-nuke_cc_dust_label					last=a582b4141f0
-	#25.xTODO# Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
+	# TODO: Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	#25.xTODO# Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
 	# Not needed in 25.x? 27556 -  # wallet: fix deadlock in bdb read write operation
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo

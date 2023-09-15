@@ -617,7 +617,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Just fixes from? 26836 furszy/2022_wallet_finish_addressbook_encapsulation
 	Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
 	Needs review: 26950 fanquake:check_for_SecureZeroMemory
-	SECURITY Needs review: 26964 willcl-ark/2023-01-cookie-bind
 	If needed for below: 27850 pinheadmz/blockstore-tests
 	Triage: 27039 pinheadmz/reindex-read-only
 	Triage: Needs review: 27071 vasild/lookup_subnet_cjdns
