@@ -31,7 +31,7 @@ checkout v25.0
 	n/a   (delete_release_notes_fragments)
 @24.x-knotsfixes
 # TESTS:
-	#24.xTODO#-     lint_relaxer							c6a96c5159d
+	#25.xTODO#-     lint_relaxer							c6a96c5159d
 		# Add back as needed:
 		#	* 16e78207523 Bugfix: lint: Tolerate explicit hidden-only args
 		#	* 76fc5a93eab QA: Don't require coverage of all RPC methods
@@ -203,8 +203,9 @@ checkout v25.0
 	# Needs concept review: 27591 rpc_mempoolvsize-25								last=60bde2dac05 glozow/2023-05-mempool-vsize
 		# When restoring, revert part of bfab6ac4791 in relnotes
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
-	#25.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
-	#25.xTODO# Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
+	#26.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
+	#26.xTODO# Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
+		# Maybe not useful with #27675 ?  https://github.com/bitcoin/bitcoin/pull/27602#issuecomment-1682070095
 	27622 fee_est_stalecheck-25+knots
 		# Modified to allow on mainnet, and enable by default
 	27626 fanquake/25_x_backport_cmpt_blk					last=b8ad3220a90 fanquake/25_x_backport_cmpt_blk
@@ -216,7 +217,7 @@ checkout v25.0
 	27708 postinit_exit_failure_code-25
 	27717 test_util_env-0.16
 	# If needed? 27720 furszy/2023_index_init_race_bugfix
-	#25.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
+	#26.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	-     fix_qa_mempool_packages_legacywallet-25
 		# Fix-only alternative to #27735 MarcoFalke/2305-mempool-legacy-wallet-
 		# Bug affects 23.x+ only, regressed in #23371 which made MiniWallet require Taproot (which legacy wallets don't support)
@@ -229,17 +230,19 @@ checkout v25.0
 	27846 fix_wallet_SRD_target_change-25
 	27863 net_continue_peerhunt_pr27863-24
 	27905 fix_FMWC_dirty_index-23
-	#25.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
+	#26.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
 	#25.xTODO# Some good fix for 27915 (#27920? partial backport in d319eef6e46)
 	# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 MarcoFalke/2306-byte-span-
 	27981 fix_p2p_stalling_pr27981
 	# Needs work: 27991 fanquake/instrument_libsecp
-	#25.xTODO# Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
+	#26.xTODO# Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
 	28020 fix_zmq_ipc_noportcheck-25						last=0b1762c90d1  # exclude ipc scheme from port check
-		#25.xTODO# Maybe rewrite without `rfind`
+		#26.xTODO# Maybe rewrite without `rfind`
+		# NOTE: #27679 also implements this, possibly with unix: prefix instead?
 	# If needed: 28026 furszy/2023_fix_index_timeout
-	#25.xTODO# Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
+	#26.xTODO# Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
+		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28038 fanquake/further_25_x_backports^^^				last=37d9cc657cf !fanquake/further_25_x_backports^^^
@@ -253,10 +256,10 @@ checkout v25.0
 	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
-	#25.xTODO# Needs review: 28077 vasild/i2p_accept_issue22759
+	28077 vasild/i2p_accept_issue22759
 	28123 fix_nonstring_onelinedesc-25						last=5e3e83b0055 fix_nonstring_onelinedesc
-	#25.xTODO# Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
-	#25.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
+	#26.xTODO# Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
+	#26.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	#26.xTODO# Ensure bug introduced by #26467 is fixed: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
 	# Windows-only functional test fix: 28204 hebasto/230802-sqlite
@@ -265,7 +268,7 @@ checkout v25.0
 	#25.xTODO# Triage #28248
 	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
 	g749 fix_qt_min_walletloading-25						last=32db15450a9 furszy/2023_gui_start_minimized
-	#25.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
+	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks-25						last=6cd57e509c2 fix_bytespersigop_checks
 		# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually when assembly done
 	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
@@ -284,7 +287,7 @@ checkout v25.0
 			# Holding back in hopes of potential RPC+GUI unification
 		# But not sure it's worth breaking RPC?
 	# FIXME: workaround #26025 / https://github.com/llvm/llvm-project/issues/57587 ?
-	#24.xTODO# Review security report(s)
+	#25.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 @24.x-knots
 # PERFORMANCE:
@@ -300,9 +303,10 @@ checkout v25.0
 	# Needs review: 25236 -  # wallet: use vector instead of list for transactions
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
 	# Needs review: 25968 sipa/202208_headerssync_optimize
-	#24.xTODO# Needs review: 26008 achow101/improve-many-desc-ismine
+	#26.xTODO# Needs review: 26008 achow101/improve-many-desc-ismine
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
 	26375 zmq_optimise_duplread-25+k						last=7b631dc9b19 andrewtoth/no-read-zmq
+	#26.xTODO# Needs review: 26415 andrewtoth/read-raw-block
 	# Needs review: 26486 sipa/202211_batchnotfound
 	# Opt-in & needs review: 26951 pstratem/2023-01-23-gcsfilter
 	# Needs review: 26966 furszy/2022_parallelize_blockfilter_index_2
@@ -310,7 +314,7 @@ checkout v25.0
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	27334 -												last=bfb9291a866  # util: implement noexcept move assignment & move ctor for prevector
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
-	# Needs review? 27675 ajtowns/202305-droprecentinvbloom
+	27675 ajtowns/202305-droprecentinvbloom
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
 	# Needs review? 28233 andrewtoth/sync-on-periodic
 	# Needs review: 28280 andrewtoth/sync-dirty
@@ -460,7 +464,6 @@ checkout v25.0
 		# TODO: diff-minimise??
 	21319 getblock_optimise						bcf986d0d05
 		# Context: 17529 rpc: Faster getblock using PureBlock
-	#25.xTODO# Needs review: 26415 andrewtoth/read-raw-block
 	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
 		#TODO: minimise
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
@@ -479,6 +482,8 @@ checkout v25.0
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
 	22072 autoreindex							a2f94dca829	last=602f4da9178
+	(CHECK-LAST)	last=6d7052863a5 origin-pull/26674/head
+		# TODO: Migrate to #26674 (basically identical logic as of 6d7052863a5) ?
 	22159 conf_append_cxxflags-23				fd74eb4a20a	last=fa14c6818f4
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	g307  gui_peers_rowcolouropt				b94a0f57896	last=fdf80937d1c hebasto-g/210501-stripes
@@ -553,7 +558,7 @@ checkout v25.0
 		# Fixed tests with inspiration from 9e7fd5c0fe3
 		# TODO: update without breaking compatibility? (new code looks buggy tho - needs rewrite?) (also, filtering by "input type" doesn't really make sense, though segwit filtering does)
 	# Needs concept: 25261 -  # rpc: fetch multiple headers in getblockheader()
-	#25.xTODO# 25269 -  # wallet: re-activate the not triggered "AmountWithFeeExceedsBalance" error
+	#26.xTODO# 25269 -  # wallet: re-activate the not triggered "AmountWithFeeExceedsBalance" error
 	# Needs concept review: 25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
 		# Concept unsure: Hides logline by default; but maybe we want that with more info included?
 	# TODO: 25366 w0xlt/desc_rpc
@@ -630,7 +635,7 @@ checkout v25.0
 		# Careful, could end up paying "added change" to a destination -.-
 	# Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
 	g740  qt_psbtdlg_ismine-21
-	#25.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
+	#26.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
 	# Needs concept/review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs review: 27596 jamesob/assumeutxo
 	27600 p2p_forceinbound-25+knots							last=8585fe3f80e pinheadmz/whitebind-evict
@@ -651,7 +656,7 @@ checkout v25.0
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 	# Needs review: 28060+28052 MarcoFalke/2306-fs_stuff-
-	#25.xTODO# Copyright issue? If a clear win: 28101 -  # init: changing -torcontrol help to specify that a default port is used
+	28101 -  # init: changing -torcontrol help to specify that a default port is used
 	#26.xTODO# Needs work/deps: 28196 sipa/202307_bip324_transport
 	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
 	# Needs work: 28331 sipa/202308_bip324_integration
@@ -744,7 +749,6 @@ checkout v25.0
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
-	#25.xTODO# 26674 -  # Add reindex=auto flag to automatically reindex corrupt data
 	#26.xTODO# Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 # Non-upstreamed functionality:
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
@@ -825,7 +829,6 @@ checkout v25.0
 	#25.xTODO# Adapt existing limits to apply to Taproot?
 	#25.xTODO# Ordisrespector equivalent (Ordislow??)
 	#25.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
-	#25.xTODO# Consider opt-in: 27926 -  # policy: make unstructured annex standard
 	-     enforce_checkpoints					840dddd5a6e
 	n/a   checkpoint_update-25					ec23e329857	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
 		#26.xTODO# Add new checkpoint

@@ -681,8 +681,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs work: 27991 fanquake/instrument_libsecp
 	Triage: Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
 	Triage: Needs work? 28020 -  # exclude ipc scheme from port check
+		# NOTE: #27679 also implements this, possibly with unix: prefix instead?
 	Triage: # If needed: 28026 furszy/2023_fix_index_timeout
 	Triage: Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
+		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	Triage: 28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
 	Triage: Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
@@ -1024,6 +1026,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# + bugfix and applying limit immediately
 	22072 autoreindex-0.21						7fb696c631e	last=602f4da9178
 	(CHECK-LAST)	last=069ccfcbc4e autoreindex
+	(CHECK-LAST)	last=6d7052863a5 origin-pull/26674/head
+		# TODO: Migrate to #26674 (basically identical logic as of 6d7052863a5) ?
 	22147 p2p_protect_last_outHB-0.21			995947de083
 	# AFTER CORE RELEASES: (PR unknown) taproot descriptors +22156? +22166?
 	22159 conf_append_cxxflags-0.10				b9c4f0c218e	last=fa14c6818f4
