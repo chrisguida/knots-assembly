@@ -269,9 +269,11 @@ checkout v25.0
 	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
 	g749 fix_qt_min_walletloading-25						last=32db15450a9 furszy/2023_gui_start_minimized
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
+	28471 fix_pkg_eval_sigops_pr28471-25+knots
+		# NOTE: Left off first commit for now since it would just get reverted in #28345
+		#25.xTODO# Check if this was the right approach
 	28345 fix_bytespersigop_checks-25						last=6b6554b8dc1 fix_bytespersigop_checks
 		# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually when assembly done
-		# NOTE: Includes 341f4ea3fc3 which is moved to #28471 in master
 	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
