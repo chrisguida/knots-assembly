@@ -256,7 +256,7 @@ checkout v25.0
 	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
-	28077 vasild/i2p_accept_issue22759
+	28077 fix_i2p_accept_flood-24							last=ffa90fceae9 vasild/i2p_accept_issue22759
 	28123 fix_nonstring_onelinedesc-25						last=5e3e83b0055 fix_nonstring_onelinedesc
 	#26.xTODO# Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
 	#26.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
@@ -314,7 +314,7 @@ checkout v25.0
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	27334 -												last=bfb9291a866  # util: implement noexcept move assignment & move ctor for prevector
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
-	27675 ajtowns/202305-droprecentinvbloom
+	# TODO: 27675 ajtowns/202305-droprecentinvbloom
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
 	# Needs review? 28233 andrewtoth/sync-on-periodic
 	# Needs review: 28280 andrewtoth/sync-dirty
@@ -656,7 +656,7 @@ checkout v25.0
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 	# Needs review: 28060+28052 MarcoFalke/2306-fs_stuff-
-	28101 -  # init: changing -torcontrol help to specify that a default port is used
+	28101 torcontrol_help_defport-23						last=9a84200cfc9
 	#26.xTODO# Needs work/deps: 28196 sipa/202307_bip324_transport
 	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
 	# Needs work: 28331 sipa/202308_bip324_integration
