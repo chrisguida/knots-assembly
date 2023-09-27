@@ -271,7 +271,7 @@ checkout v25.0
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28471 fix_pkg_eval_sigops_pr28471-25+knots
 		# NOTE: Left off first commit for now since it would just get reverted in #28345
-	28345 fix_bytespersigop_checks-25						last=0c78cd8c8e1 fix_bytespersigop_checks
+	28345 fix_bytespersigop_checks-25						last=78a256505f3 fix_bytespersigop_checks
 		# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually when assembly done
 	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
@@ -691,7 +691,8 @@ checkout v25.0
 		# CAUTION: Be extra careful rebasing - diff/patch default context might accidentally move code around between different RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
-		# NOTE: Temporarily squashed to obfuscate security fixes (2023-07-28)
+		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
+		#26.xTODO# Add dc244382e5d QA: rpc_users: Test rpcauth wallet restrictions
 	10554 zmq_wtx-25+knots						ad1bcb2928e	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
@@ -716,6 +717,7 @@ checkout v25.0
 	12965 scriptthreads							0345cf11100	last=dfab6c6866 jonasschnelli/2018/04/svt
 	13203 dsha256_power8-25						7610e2e0b16	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
+		#26.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-25			3ba39b15ebb
 	15218 postibd_flush-25						e194bb9b731	last=0c7ee166463
 	15428 tor_gui_pairing-25+knots				723c1c46950	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
