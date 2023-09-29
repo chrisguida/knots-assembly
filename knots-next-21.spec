@@ -652,6 +652,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Test well: 27626 instagibbs/2023-05-parallel-block-downloads
 		+27743
 		NOTE: BACKPORTS IN #27752
+	27631 fix_qa_feature_taproot_pr27631-21
 	Triage: n/a   fix_div0_connecttip_loadblocks_log-25
 		# Affected code removed in #27673
 	Triage: Needs review: 27684 hebasto/230516-punish OR ???

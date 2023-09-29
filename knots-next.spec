@@ -211,6 +211,7 @@ checkout v25.0
 	27626 fanquake/25_x_backport_cmpt_blk					last=b8ad3220a90 fanquake/25_x_backport_cmpt_blk
 		# +#27743
 		# NOTE: Builds on top of core/25.x branch post v25.0
+	27631 fix_qa_feature_taproot_pr27631-21
 	n/a   fix_div0_connecttip_loadblocks_log-25
 		# Affected code removed in #27673
 	#25.xTODO# Needs review: 27684 hebasto/230516-punish OR ???
@@ -640,8 +641,8 @@ checkout v25.0
 	#26.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
 	# Needs concept/review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs review: 27596 jamesob/assumeutxo
-	27600 p2p_forceinbound-25+knots							last=8585fe3f80e pinheadmz/whitebind-evict
-		# Held back top anti-feature commit c8ce23745a2...8585fe3f80e
+	27600 p2p_forceinbound-25+knots							last=fb2ff0dc807 pinheadmz/whitebind-evict
+		# Excluded top-commit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
 	27761 p2p_log_stalling_ip-22
@@ -774,6 +775,7 @@ checkout v25.0
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			f110cdc6b5d
 	-    mining_priority						79de7fcebc8  # NOTE: now the latest code, rebased
+		#25.xTODO# FIXME: Lots of lock warnings from clang!
 	5861 gui_restore_addresses					d435b0e1596
 	5891  qt_console_history_persist			aaedbe6c41a	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-25+knots						4eea3457d1a	# Latest code now
@@ -819,9 +821,8 @@ checkout v25.0
 	-     bytespersigopstrict-25+knots			1a34431caca
 	9749  unique_spk_mempool-25+knots			68175ac94c1
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	28408 match_more_datacarrier-25+knots					last=c49ed98678a match_more_datacarrier
+	28408 match_more_datacarrier-25+knots					last=abd19ad480f match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
-		#25.xTODO# Add tests and make sure boundaries are correct
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-25+knots
 		#25.xTODO# Add tests and make sure boundaries are correct
