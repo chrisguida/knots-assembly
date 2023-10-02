@@ -1,8 +1,8 @@
-timestamp 2023-09-13 04:21:42
+timestamp 2023-10-02 10:27:20
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28470 / gui #755 for fixes
+#.. checked up to PR #28561 / gui #762 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -710,6 +710,18 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 28427 furszy/2023_index_coinstats_fix_reverseblock
 	Triage: g751  furszy/2023_gui_fix_appbar_crash
 	Triage: 28452 sipa/202309_really_no_memory
+	Triage: # Non-trivial? (but only affects testnet?) 28472 instagibbs/2023-09-immutible-m_limit
+	Triage: #26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
+	Triage: #26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
+	Triage: # Needs review: 28514 -  # wallet: Fix wallet directory initialization
+	Triage: 28542 fanquake/backport_28452  # wallet: Check last block and conflict height are valid in MarkConflicted
+	Triage: # Needs review: 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
+	Triage: # Needs review: 28551 stickies-v/2023-09/http-use-conn-counter
+	Triage: 28554 -  # bugfix: throw an error if an invalid block height is passed to getnetworkhashps RPC
+	Triage: g757  -  # Add wallet name to address book page title
+		TODO: diff-minimise
+	Triage: g758  -  # Update Node window title with the chain type
+	Triage: # Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -765,6 +777,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=5e04731447b rpc_gbci_period_start
 	(CHECK-LAST)	last=d6d1a1b47eb rpc_gbci_period_start-22+knots
 	# TODO: 21702 CheckTemplateVerify
+	Triage: TODO: 28550 jamesob/2023-09-covtools-softfork
 # FUNCTIONALITY:
 m	g275  gui_darkmode-0.21.2_pt1				9cd8d7e8a79
 		# NOTE: Fixed bug in gui#330 a simpler way b942216a1a7

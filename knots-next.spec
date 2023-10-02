@@ -1,7 +1,7 @@
-timestamp 2023-09-13 04:21:42
+timestamp 2023-10-02 10:27:20
 lastapply no-merge
 
-#.. checked up to PR #28470 / gui #755
+#.. checked up to PR #28561 / gui #762
 
 checkout v25.0
 @24.x-syslibs
@@ -288,6 +288,16 @@ checkout v25.0
 	g752  fix_qt_cmdhelp_mention_uri-0.17
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
 	# Non-trivial? (but only affects testnet?) 28472 instagibbs/2023-09-immutible-m_limit
+	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
+	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
+	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
+	# Needs review: 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
+	# Needs review: 28551 stickies-v/2023-09/http-use-conn-counter
+	28554 -  # bugfix: throw an error if an invalid block height is passed to getnetworkhashps RPC
+	g757  -  # Add wallet name to address book page title
+		TODO: diff-minimise
+	g758  -  # Update Node window title with the chain type
+	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -332,6 +342,7 @@ checkout v25.0
 	28430 opti_merkle_mutation-0.17						last=42b25bbd939
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
+	# TODO: 28550 jamesob/2023-09-covtools-softfork
 # FUNCTIONALITY:
 	24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
@@ -348,7 +359,7 @@ checkout v25.0
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
-		# NOTE: Latest version is rebased for adding inputs, with serious issues
+		# NOTE: Latest version is rebased for adding inputs, with serious issues (see #28505 for hacky "fix")
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
@@ -472,8 +483,6 @@ checkout v25.0
 		# TODO: diff-minimise??
 	21319 getblock_optimise						bcf986d0d05
 		# Context: 17529 rpc: Faster getblock using PureBlock
-	# Needs API finalisation: 21158 -  # lib: Add Taproot support to libconsensus
-		#TODO: minimise
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
 	21260 rpcwallet_tx_in_mempool-25+knots		00751692d11	last=46bf0b7b5d8
 		# Includes squashed fixes for RPC doc
@@ -665,17 +674,21 @@ checkout v25.0
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 	# Needs review: 28060+28483+28052 MarcoFalke/2306-fs_stuff-
 	28101 torcontrol_help_defport-23						last=9a84200cfc9
-	#26.xTODO# Needs work/deps: 28196 sipa/202307_bip324_transport
+	#26.xTODO# Needs work/deps: 28196+28489+28525 sipa/202307_bip324_transport
 	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
 	# Needs work: 28331 sipa/202308_bip324_integration
 	28414 rpcwallet_processpsbt_finalhex-25+knots			last=2e249b92276 pinheadmz/psbt-final-process
 		# Left out test refactoring to use the new feature & relnotes
+	28492 -  # RPC: descriptorprocesspsbt returns hex encoded tx if complete
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	#26.xTODO# hebasto-g/230911-bip324-peer-details
 	# Needs review: 28459 fanquake/mbranch_protection_arm_darwin
 	# Needs review: 28461 fanquake/windows_ssp_roundup
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
+	28523 0xB10C/2023-09-verbose-getaddrmaninfo
+	# Needs API finalisation: 28539 brunoerg:2023-09-taproot-libconsensus
+		#TODO: minimise
 # Non-progress functionality:
 	8751  sort-multisigs-25+knots				c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -877,10 +890,10 @@ checkout v25.0
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20230913)			3d04837ba68
+	n/a  (bump_version=Knots:20231002)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a  (cherrypick=1271bb79fb5)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=f373905feff)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
