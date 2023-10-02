@@ -50,12 +50,12 @@ checkout v25.0
 	27844 6f7a0ae58b8  # ci: Use podman stop over podman kill
 	27853 d845a3ed218  # rest: bugfix, fix crash error when calling /deploymentinfo
 	27886 642b5dd1b4f  # ci: Switch to `amd64` container in "ARM" task
+	27626 cdd3de08e30  # Parallel compact block downloads
+	27743 8825983716a  # Unconditionally return when compact block status == READ_STATUS_FAILED
 	28038 fanquake/further_25_x_backports^^^				last=37d9cc657cf !fanquake/further_25_x_backports^^^
 		# Just fix(es) from #26836
 		# using backport in #28047
 		# NOTE: Builds on top of #27646 backport
-	28055 fix_getblockfrompeer_rereq_err-25					last=017ab85cecc fix_getblockfrompeer_rereq_err
-	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
 	28067 fanquake/further_25_x_backports^					last=513ca0a7117 !fanquake/further_25_x_backports^
 		# using backport in #28047, building on top of #28038 backport
 	28097 ecc74cd4f3b  # depends: xcb-proto 1.15.2 (Depends-only: do we care?)
@@ -65,7 +65,7 @@ checkout v25.0
 	28125 c36770cefd0  # wallet: bugfix, disallow migration of invalid scripts
 	27622 910c36253e4  # Fee estimation: avoid serving stale fee estimate
 	27834 5e51a9cc724  # ci: Nuke Android APK task, Use credits for tsan
-	28542 fanquake/backport_28452  # wallet: Check last block and conflict height are valid in MarkConflicted
+	28542 fanquake/backport_28452							last=b3517cb1b54 !fanquake/backport_28452  # wallet: Check last block and conflict height are valid in MarkConflicted
 	#--- ^ #28487 (25.1 "final") backports, in sequence
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						fe1576ba2d8
@@ -222,9 +222,6 @@ checkout v25.0
 		# Maybe not useful with #27675 ?  https://github.com/bitcoin/bitcoin/pull/27602#issuecomment-1682070095
 	-     fee_est_stalecheck-25+knots
 		# Modifications to #27622 to allow on mainnet, and enable by default
-	27626 fanquake/25_x_backport_cmpt_blk					last=b8ad3220a90 fanquake/25_x_backport_cmpt_blk
-		# +#27743
-		# NOTE: Builds on top of core/25.x branch post v25.0
 	27631 fix_qa_feature_taproot_pr27631-21
 	n/a   fix_div0_connecttip_loadblocks_log-25
 		# Affected code removed in #27673
@@ -260,6 +257,8 @@ checkout v25.0
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
+	28055 fix_getblockfrompeer_rereq_err-25					last=017ab85cecc fix_getblockfrompeer_rereq_err
+	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
 	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
