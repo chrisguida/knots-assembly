@@ -283,6 +283,7 @@ checkout v25.0
 	g752  fix_qt_cmdhelp_mention_uri-0.17
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
 	28452 fix_hss_freemem-24								last=3fcd7fc7ff5 sipa/202309_really_no_memory
+	# Non-trivial? (but only affects testnet?) 28472 instagibbs/2023-09-immutible-m_limit
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
