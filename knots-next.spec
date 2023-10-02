@@ -746,6 +746,7 @@ checkout v25.0
 	26094 wallet_rpc_lastprocessedblock-25+k	c363d978f97	last=710b83938ab
 	19117 rpc_getrpcwhitelist					bdbf8ecf130
 		# NOTE: Was #18827 before any Knots merge
+		#26.xTODO# Extend dc244382e5d test
 	-     getrpcwhitelist_wallets-25+knots		7a2a3bc75cd
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
