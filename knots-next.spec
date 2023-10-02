@@ -9,8 +9,6 @@ checkout v25.0
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						3a646ac6a6b
 	# If needed (MSVC only?): 27892 MarcoFalke/2306-translate-copy-
-	# Depends-only, do we care? 28097 fanquake/xcb_proto_1_15_2
-		# NOTE: Backport in #28047
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							a96a241ab69
 	5416  sys_libsecp256k1						f4a59d2a40f
@@ -52,7 +50,23 @@ checkout v25.0
 	27844 6f7a0ae58b8  # ci: Use podman stop over podman kill
 	27853 d845a3ed218  # rest: bugfix, fix crash error when calling /deploymentinfo
 	27886 642b5dd1b4f  # ci: Switch to `amd64` container in "ARM" task
+	28038 fanquake/further_25_x_backports^^^				last=37d9cc657cf !fanquake/further_25_x_backports^^^
+		# Just fix(es) from #26836
+		# using backport in #28047
+		# NOTE: Builds on top of #27646 backport
+	28055 fix_getblockfrompeer_rereq_err-25					last=017ab85cecc fix_getblockfrompeer_rereq_err
+	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
+	28067 fanquake/further_25_x_backports^					last=513ca0a7117 !fanquake/further_25_x_backports^
+		# using backport in #28047, building on top of #28038 backport
+	28097 ecc74cd4f3b  # depends: xcb-proto 1.15.2 (Depends-only: do we care?)
+	-     887cbfcc937  # qt: 25.1rc1 translations update
 	#--- ^ core/25.x merges, in sequence
+	28452 2c51a07c085  # Do not use std::vector = {} to release memory
+	28125 c36770cefd0  # wallet: bugfix, disallow migration of invalid scripts
+	27622 910c36253e4  # Fee estimation: avoid serving stale fee estimate
+	27834 5e51a9cc724  # ci: Nuke Android APK task, Use credits for tsan
+	28542 fanquake/backport_28452  # wallet: Check last block and conflict height are valid in MarkConflicted
+	#--- ^ #28487 (25.1 "final") backports, in sequence
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						fe1576ba2d8
 		# NOTE: based directly on #18818
@@ -206,8 +220,8 @@ checkout v25.0
 	#26.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
 	#26.xTODO# Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
 		# Maybe not useful with #27675 ?  https://github.com/bitcoin/bitcoin/pull/27602#issuecomment-1682070095
-	27622 fee_est_stalecheck-25+knots
-		# Modified to allow on mainnet, and enable by default
+	-     fee_est_stalecheck-25+knots
+		# Modifications to #27622 to allow on mainnet, and enable by default
 	27626 fanquake/25_x_backport_cmpt_blk					last=b8ad3220a90 fanquake/25_x_backport_cmpt_blk
 		# +#27743
 		# NOTE: Builds on top of core/25.x branch post v25.0
@@ -246,20 +260,11 @@ checkout v25.0
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
-	28038 fanquake/further_25_x_backports^^^				last=37d9cc657cf !fanquake/further_25_x_backports^^^
-		# Just fix(es) from #26836
-		# using backport in #28047
-		# NOTE: Builds on top of #27646 backport
-	28055 fix_getblockfrompeer_rereq_err-25					last=017ab85cecc fix_getblockfrompeer_rereq_err
-	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
-	28067 fanquake/further_25_x_backports^					last=513ca0a7117 !fanquake/further_25_x_backports^
-		# using backport in #28047, building on top of #28038 backport
 	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
 	28077 fix_i2p_accept_flood-24							last=ffa90fceae9 vasild/i2p_accept_issue22759
 	28123 fix_nonstring_onelinedesc-25						last=5e3e83b0055 fix_nonstring_onelinedesc
-	#26.xTODO# Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
 	#26.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	#26.xTODO# Ensure bug introduced by #26467 is fixed: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
@@ -282,7 +287,6 @@ checkout v25.0
 	g751  fix_mac_crash_during_shutdown_gui751-24			last=bae209e3879 furszy-g/2023_gui_fix_appbar_crash
 	g752  fix_qt_cmdhelp_mention_uri-0.17
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
-	28452 fix_hss_freemem-24								last=3fcd7fc7ff5 sipa/202309_really_no_memory
 	# Non-trivial? (but only affects testnet?) 28472 instagibbs/2023-09-immutible-m_limit
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -659,7 +663,7 @@ checkout v25.0
 	# Needs work: 27854 -  # [WIP] add a stratum v2 template provider
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
-	# Needs review: 28060+28052 MarcoFalke/2306-fs_stuff-
+	# Needs review: 28060+28483+28052 MarcoFalke/2306-fs_stuff-
 	28101 torcontrol_help_defport-23						last=9a84200cfc9
 	#26.xTODO# Needs work/deps: 28196 sipa/202307_bip324_transport
 	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
