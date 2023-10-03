@@ -65,7 +65,10 @@ checkout v25.0
 	28125 c36770cefd0  # wallet: bugfix, disallow migration of invalid scripts
 	27622 910c36253e4  # Fee estimation: avoid serving stale fee estimate
 	27834 5e51a9cc724  # ci: Nuke Android APK task, Use credits for tsan
-	28542 fanquake/backport_28452							last=b3517cb1b54 !fanquake/backport_28452  # wallet: Check last block and conflict height are valid in MarkConflicted
+	28542 b3517cb1b54  # wallet: Check last block and conflict height are valid in MarkConflicted
+	28543 a6683945ca3  # build, macos: Fix `qt` package build with new Xcode 15 linker
+	28571 e270f3f8578  # depends: fix unusable memory_resource in macos qt build
+	g751  fanquake/backport_28452							last=f31899d19a0 !fanquake/backport_28452  # macOS, do not process actions during shutdown
 	#--- ^ #28487 (25.1 "final") backports, in sequence
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						fe1576ba2d8
@@ -283,7 +286,6 @@ checkout v25.0
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	28427 fix_idx_coinstats_reorg_fail-22					last=c0bf6679120 furszy/2023_index_coinstats_fix_reverseblock
 		# Left off tip adding nodiscard attributes
-	g751  fix_mac_crash_during_shutdown_gui751-24			last=bae209e3879 furszy-g/2023_gui_fix_appbar_crash
 	g752  fix_qt_cmdhelp_mention_uri-0.17
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
 	# Non-trivial? (but only affects testnet?) 28472 instagibbs/2023-09-immutible-m_limit
@@ -292,11 +294,13 @@ checkout v25.0
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs review: 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
 	# Needs review: 28551 stickies-v/2023-09/http-use-conn-counter
-	28554 fix_rpc_getnetworkhashps_heightchk-25				last=1fd37153564
+	28554 fix_rpc_getnetworkhashps_heightchk-25				last=565ad11dd1e
+		# diff-minimised
 	g757  qt_addrbook_walletname-0.18						last=9fc21cfd3bd
 		# diff-minimised
 	g758  qt_nodewindow_chainname-22						last=9d37886a3b6
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
+	# Needs review: 28564 fix_conf_fuzzbin_main
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -608,10 +612,10 @@ checkout v25.0
 	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=d54e7dad751
+	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=89460f993dd
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring in last commit
-		# Held back 1e09c265a95...d54e7dad751 for now (ugly diff)
+		# Held back 1e09c265a95...89460f993dd for now (ugly diff)
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme			last=d8434da3c14
@@ -685,7 +689,7 @@ checkout v25.0
 	# Needs review: 28461 fanquake/windows_ssp_roundup
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
-	28523 rpc_getrawaddrman-25+knots						last=352d5eb2a9e 0xB10C/2023-09-verbose-getaddrmaninfo
+	# TODO (build failure / missing dep?): 28523 rpc_getrawaddrman-25+knots						last=352d5eb2a9e 0xB10C/2023-09-verbose-getaddrmaninfo
 	# Needs API finalisation: 28539 brunoerg:2023-09-taproot-libconsensus
 		#TODO: minimise
 # Non-progress functionality:
@@ -892,7 +896,7 @@ checkout v25.0
 	n/a  (bump_version=Knots:20231002)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a  (cherrypick=f373905feff)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=0847853657c)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
