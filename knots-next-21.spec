@@ -1202,7 +1202,8 @@ m	15421 tor_subprocess-0.21+knots				ccf77ea4de5	last=58c6cafd3a1 tor_subprocess
 	# TODO: 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
-	17795 gui_console_ctrl_d					975064084f4
+	17795 gui_console_ctrl_d-0.21				975064084f4
+	(CHECK-LAST)	last=d34bb77d1e4 gui_console_ctrl_d-25+knots
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning-0.21+knots		d001554bb8d	last=c6d1e2e1b99 restore_vbits_warning
 	(CHECK-LAST)	last=896eea449ad restore_vbits_warning-22

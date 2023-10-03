@@ -292,10 +292,10 @@ checkout v25.0
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs review: 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
 	# Needs review: 28551 stickies-v/2023-09/http-use-conn-counter
-	28554 -  # bugfix: throw an error if an invalid block height is passed to getnetworkhashps RPC
-	g757  -  # Add wallet name to address book page title
-		TODO: diff-minimise
-	g758  -  # Update Node window title with the chain type
+	28554 fix_rpc_getnetworkhashps_heightchk-25				last=1fd37153564
+	g757  qt_addrbook_walletname-0.18						last=9fc21cfd3bd
+		# diff-minimised
+	g758  qt_nodewindow_chainname-22						last=9d37886a3b6
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -678,14 +678,14 @@ checkout v25.0
 	# Needs work: 28331 sipa/202308_bip324_integration
 	28414 rpcwallet_processpsbt_finalhex-25+knots			last=2e249b92276 pinheadmz/psbt-final-process
 		# Left out test refactoring to use the new feature & relnotes
-	28492 -  # RPC: descriptorprocesspsbt returns hex encoded tx if complete
+	# Extends #25796, TODO: 28492 -  # RPC: descriptorprocesspsbt returns hex encoded tx if complete
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	#26.xTODO# hebasto-g/230911-bip324-peer-details
 	# Needs review: 28459 fanquake/mbranch_protection_arm_darwin
 	# Needs review: 28461 fanquake/windows_ssp_roundup
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
-	28523 0xB10C/2023-09-verbose-getaddrmaninfo
+	28523 rpc_getrawaddrman-25+knots						last=352d5eb2a9e 0xB10C/2023-09-verbose-getaddrmaninfo
 	# Needs API finalisation: 28539 brunoerg:2023-09-taproot-libconsensus
 		#TODO: minimise
 # Non-progress functionality:
@@ -745,7 +745,7 @@ checkout v25.0
 	# TODO: 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
-	17795 gui_console_ctrl_d					bf517f7cdd2
+	17795 gui_console_ctrl_d-25+knots			bf517f7cdd2
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					5c81646f647
 	n/a   rpc_compat_error_index-25+knots		84cf91ccb21
