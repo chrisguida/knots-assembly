@@ -3,8 +3,8 @@ lastapply no-merge
 
 #.. checked up to PR #28561 / gui #762
 
-checkout v25.0
-@24.x-syslibs
+checkout core/25.x
+@25.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						3a646ac6a6b
@@ -27,7 +27,7 @@ checkout v25.0
 	# Needs review: 25191 hebasto/220523-qt6-mac
 	# ---- END qt6 SUPPORT ----
 	n/a   (delete_release_notes_fragments)
-@24.x-knotsfixes
+@25.x-knotsfixes
 # TESTS:
 	#25.xTODO#-     lint_relaxer							c6a96c5159d
 		# Add back as needed:
@@ -43,33 +43,6 @@ checkout v25.0
 	# TODO: 28027 achow101/2023-07-test-wallet-back-compat-updates
 	# TODO: 28028 MarcoFalke/2307-test-stderr-
 # FIXES:
-	27727 fix_decodedest_err_bytes_plural-25  # rpc: Fix invalid bech32 handling
-		# +#27747
-	27724 cda3fe28083  # build: disable boost multi index safe mode
-	27777 de56daab417  # ci: Prune dangling images on RESTART_CI_DOCKER_BEFORE_RUN
-	27844 6f7a0ae58b8  # ci: Use podman stop over podman kill
-	27853 d845a3ed218  # rest: bugfix, fix crash error when calling /deploymentinfo
-	27886 642b5dd1b4f  # ci: Switch to `amd64` container in "ARM" task
-	27626 cdd3de08e30  # Parallel compact block downloads
-	27743 8825983716a  # Unconditionally return when compact block status == READ_STATUS_FAILED
-	28038 fanquake/further_25_x_backports^^^				last=37d9cc657cf !fanquake/further_25_x_backports^^^
-		# Just fix(es) from #26836
-		# using backport in #28047
-		# NOTE: Builds on top of #27646 backport
-	28067 fanquake/further_25_x_backports^					last=513ca0a7117 !fanquake/further_25_x_backports^
-		# using backport in #28047, building on top of #28038 backport
-	28097 ecc74cd4f3b  # depends: xcb-proto 1.15.2 (Depends-only: do we care?)
-	-     887cbfcc937  # qt: 25.1rc1 translations update
-	#--- ^ core/25.x merges, in sequence
-	28452 2c51a07c085  # Do not use std::vector = {} to release memory
-	28125 c36770cefd0  # wallet: bugfix, disallow migration of invalid scripts
-	27622 910c36253e4  # Fee estimation: avoid serving stale fee estimate
-	27834 5e51a9cc724  # ci: Nuke Android APK task, Use credits for tsan
-	28542 b3517cb1b54  # wallet: Check last block and conflict height are valid in MarkConflicted
-	28543 a6683945ca3  # build, macos: Fix `qt` package build with new Xcode 15 linker
-	28571 e270f3f8578  # depends: fix unusable memory_resource in macos qt build
-	g751  fanquake/backport_28452							last=f31899d19a0 !fanquake/backport_28452  # macOS, do not process actions during shutdown
-	#--- ^ #28487 (25.1 "final") backports, in sequence
 	18818 guix_reltar_autogen_distclean			04ef73ac671	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						fe1576ba2d8
 		# NOTE: based directly on #18818
@@ -236,6 +209,7 @@ checkout v25.0
 	-     fix_qa_mempool_packages_legacywallet-25
 		# Fix-only alternative to #27735 MarcoFalke/2305-mempool-legacy-wallet-
 		# Bug affects 23.x+ only, regressed in #23371 which made MiniWallet require Taproot (which legacy wallets don't support)
+	27747 fix_decodedest_err_bytes_plural-25
 	# Needs review: 27804 -  # init: deduplicate added connections
 	27814 forbid_nohelp-0.19								last=bfc2bb6a270
 	27815 cli_forbid_multihelper-22							last=244e6c8db81
@@ -293,7 +267,6 @@ checkout v25.0
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs review: 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
-	# Needs review: 28551 stickies-v/2023-09/http-use-conn-counter
 	28554 fix_rpc_getnetworkhashps_heightchk-25				last=565ad11dd1e
 		# diff-minimised
 	g757  qt_addrbook_walletname-0.18						last=9fc21cfd3bd
