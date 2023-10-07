@@ -722,6 +722,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		TODO: diff-minimise
 	Triage: g758  -  # Update Node window title with the chain type
 	Triage: # Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
+	Triage: Needs review: 28564 fix_conf_fuzzbin_main
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -731,6 +732,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	21991 libevent_2.1.12-21
 	-     miniupnpc_2.0.20180503-21
 	-     qt_5.9.9-21
+		TODO: bump
 	-     sqlite_3.32.3+-21+knots
 	23956 zeromq_4.3.4-21
 		# +#24134 fixes

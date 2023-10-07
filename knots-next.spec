@@ -310,7 +310,10 @@ checkout v25.0
 	# FIXME: workaround #26025 / https://github.com/llvm/llvm-project/issues/57587 ?
 	#25.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
-@24.x-knots
+#@25.x-knots-lts-deps
+	28561 hebasto/231002-qt5.15.10
+	-     depends_qt5kde
+@25.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-25+k					5ddaa57ea1b	last=4e2d2910342 rm_minisketch-23+k
 		#26.xTODO# Probably need to drop this
