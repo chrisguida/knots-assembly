@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #28561 / gui #762
 
-checkout core/25.x
+checkout v25.1
 @25.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
@@ -29,11 +29,8 @@ checkout core/25.x
 	n/a   (delete_release_notes_fragments)
 @25.x-knotsfixes
 # TESTS:
-	#25.xTODO#-     lint_relaxer							c6a96c5159d
-		# Add back as needed:
-		#	* 16e78207523 Bugfix: lint: Tolerate explicit hidden-only args
-		#	* 76fc5a93eab QA: Don't require coverage of all RPC methods
-		#	* 041efdee0d3 lint/includes: Don't fail for new boost usage
+	-     lint_relaxer							c6a96c5159d
+	-     ci_knots-25
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
@@ -120,8 +117,6 @@ checkout core/25.x
 	24479 bugfix_settings_numberval				1ae167e21ee
 	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
 	# Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
-	# TODO: Triage KDE patches for Qt5
-		# NOTE: WIP list of KDE patches in 202204-KDEQtPatchesForBitcoin
 	24718 fix_rpc_docs_pr24718-25+knots			1ce1a6ef90b	last=68a041dd12b
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
@@ -274,6 +269,7 @@ checkout core/25.x
 	g758  qt_nodewindow_chainname-22						last=9d37886a3b6
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	# Needs review: 28564 fix_conf_fuzzbin_main
+	28662 fix_202310_fuzz_missing_rpcs-23					last=8ad6b773ca5 fix_202310_fuzz_missing_rpcs
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -284,8 +280,7 @@ checkout core/25.x
 	#25.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@25.x-knots-lts-deps
-	28561 hebasto/231002-qt5.15.10
-		TODO: diff-minimise
+	28561 depends_qt_update-25.1+knots
 	#26.xTODO# FIXME -     depends_qt5kde
 @25.x-knots
 # PERFORMANCE:
@@ -761,7 +756,7 @@ checkout core/25.x
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				5ba35244a0b
 	-     walletnotify_w_win-25+knots			2d3f0b887c9	# Latest code now
-	14137 win_taskbar_progress					6b06461d6b8	last=18eb4dbb8a
+	14137 win_taskbar_progress-25.1+knots		6b06461d6b8	last=18eb4dbb8a
 	-     restore_blockmaxsize					ed77d9b99c2
 	7107  qtnetworkport-25+knots				c37c20d1ca7	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force-25+knots				9746cd166d6 last=2627c0937f8 sendraw_force
