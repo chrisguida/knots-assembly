@@ -234,7 +234,7 @@ checkout v25.1
 	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
-	28077 fix_i2p_accept_flood-24							last=ffa90fceae9 vasild/i2p_accept_issue22759
+	28077 fix_i2p_accept_flood-24							last=5c8e15c451e vasild/i2p_accept_issue22759
 	28123 fix_nonstring_onelinedesc-25						last=5e3e83b0055 fix_nonstring_onelinedesc
 	#26.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	#26.xTODO# Ensure bug introduced by #26467 is fixed: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
@@ -262,14 +262,15 @@ checkout v25.1
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs review: 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
-	28554 fix_rpc_getnetworkhashps_heightchk-25				last=565ad11dd1e
+	28554 fix_rpc_getnetworkhashps_heightchk-25				last=435ff29c5be
 		# diff-minimised
-	g757  qt_addrbook_walletname-0.18						last=9fc21cfd3bd
+	g757  qt_addrbook_walletname-0.18						last=58c9b50a952
 		# diff-minimised
 	g758  qt_nodewindow_chainname-22						last=9d37886a3b6
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	# Needs review: 28564 fix_conf_fuzzbin_main
 	28662 fix_202310_fuzz_missing_rpcs-23					last=8ad6b773ca5 fix_202310_fuzz_missing_rpcs
+		#26.xTODO# n/a, remove this
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -630,7 +631,7 @@ checkout v25.1
 	#26.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
 	# Needs concept/review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs review: 27596 jamesob/assumeutxo
-	27600 p2p_forceinbound-25+knots							last=fb2ff0dc807 pinheadmz/whitebind-evict
+	27600 p2p_forceinbound-25+knots							last=311902f2cf9 pinheadmz/whitebind-evict
 		# Excluded top-commit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
@@ -868,7 +869,7 @@ checkout v25.1
 	n/a  (bump_version=Knots:20231002)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a  (cherrypick=0847853657c)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=735d2b4d8bb)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
