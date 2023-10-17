@@ -285,7 +285,8 @@ checkout core/25.x
 	n/a   (delete_release_notes_fragments)
 #@25.x-knots-lts-deps
 	28561 hebasto/231002-qt5.15.10
-	-     depends_qt5kde
+		TODO: diff-minimise
+	#26.xTODO# FIXME -     depends_qt5kde
 @25.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-25+k					5ddaa57ea1b	last=4e2d2910342 rm_minisketch-23+k
@@ -608,7 +609,7 @@ checkout core/25.x
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
 	27511 rpc_getaddrmaninfo-24								last=28bac81a346
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
-	26990 -													last=a870f5affcf  # cli: add validation to cli side commands besides when it's used with -rpcwallet
+	26990 bcli_validation-24								last=11e0a80b19a
 	27034 rpc_importaddr_for_descwallet-25+k				last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
@@ -712,7 +713,7 @@ checkout core/25.x
 		# Added new tests in feature_fee_estimation
 		# Updated to match estimatesmartfee RPC changes
 	11803 bugfix_dumpwallet_hdkeypath			fea9d68f84d
-	12965 scriptthreads							0345cf11100	last=dfab6c6866 jonasschnelli/2018/04/svt
+	12965 scriptthreads-25+knots				0345cf11100	last=dfab6c6866 jonasschnelli/2018/04/svt
 	13203 dsha256_power8-25						7610e2e0b16	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 		#26.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
