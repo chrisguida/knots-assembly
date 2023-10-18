@@ -1,8 +1,8 @@
-timestamp 2023-10-02 10:27:20
+timestamp 2023-10-18 06:50:55
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28561 / gui #762 for fixes
+#.. checked up to PR #28674 / gui #767 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -669,6 +669,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		NOTE: Requires adapting in -addrinfo merged below (#21595)
 	Triage & Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
 	# Triage & Needs review: 27823 mzumsande/202306_feature_init_fix
+		#+28612
 	Triage & Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	Triage: 27846 -  # [coinselection] Increase SRD target by change_fee
 	Triage: 27853 brunoerg/2023-06-bugfix-rest-deploymentinfo (25.x backport in #27887)
@@ -723,6 +724,15 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: g758  -  # Update Node window title with the chain type
 	Triage: # Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	Triage: Needs review: 28564 fix_conf_fuzzbin_main
+	Triage: 28587 sipa/202310_no_hybrid_descriptors
+	Triage: 28602 achow101/migrate-hybrid-keys
+	Triage: 28609 achow101/reload-all-migrated
+	Triage: Needs review? 28610 achow101/migrate-avoidreuse
+	Triage: #26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
+	Triage: Needs review? 28649 vasild/reliable_socks5_handshake
+	Triage: 28672 fanquake/move_stack_reuse_core_flags
+	Triage: g765  furszy-g/2023_gui_fix_crash_wallet_list
+	Triage: g766  theStack-g/202310-gui-fix_input_size_estimation_for_taproot_spends
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -737,6 +747,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	23956 zeromq_4.3.4-21
 		# +#24134 fixes
 		# NOTE: Dropped 72718ab1ace & f74c5c9241a; we don't support NetBSD, and the autotools in the gitian VM is too old to rebuild a working configure
+		TODO: Bump to 28627 fanquake/zeromq_4_3_5
 	#21.xTODO# Check depends for fix-only updates
 		# boost 1.70: not maintained :| (maybe bump to 1.71 for Ubuntu focal until 2030? or just manually backport fixes in bionic's 1.65 and focal's 1.71?)
 			# manually backported fixes between 1.70 and 1.71

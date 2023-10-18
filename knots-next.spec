@@ -1,7 +1,7 @@
-timestamp 2023-10-02 10:27:20
+timestamp 2023-10-18 06:50:55
 lastapply no-merge
 
-#.. checked up to PR #28561 / gui #762
+#.. checked up to PR #28674 / gui #767
 
 checkout v25.1
 @25.x-syslibs
@@ -210,6 +210,7 @@ checkout v25.1
 	27815 cli_forbid_multihelper-22							last=244e6c8db81
 	# Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
 	# Needs review: 27823 mzumsande/202306_feature_init_fix
+		#+28612
 	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	27846 fix_wallet_SRD_target_change-25
 	27863 net_continue_peerhunt_pr27863-24
@@ -271,6 +272,15 @@ checkout v25.1
 	# Needs review: 28564 fix_conf_fuzzbin_main
 	28662 fix_202310_fuzz_missing_rpcs-23					last=8ad6b773ca5 fix_202310_fuzz_missing_rpcs
 		#26.xTODO# n/a, remove this
+	28587 sipa/202310_no_hybrid_descriptors
+	28602 achow101/migrate-hybrid-keys
+	28609 achow101/reload-all-migrated
+	Needs review? 28610 achow101/migrate-avoidreuse
+	#26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
+	Needs review? 28649 vasild/reliable_socks5_handshake
+	28672 fanquake/move_stack_reuse_core_flags
+	g765  furszy-g/2023_gui_fix_crash_wallet_list
+	g766  theStack-g/202310-gui-fix_input_size_estimation_for_taproot_spends
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -283,6 +293,7 @@ checkout v25.1
 #@25.x-knots-lts-deps
 	28561 depends_qt_update-25.1+knots
 	#26.xTODO# FIXME -     depends_qt5kde
+	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 @25.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-25+k					5ddaa57ea1b	last=4e2d2910342 rm_minisketch-23+k
@@ -316,6 +327,8 @@ checkout v25.1
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 opti_merkle_mutation-0.17						last=42b25bbd939
+	28592 ajtowns/202310-txrelayrate
+		#26.xTODO# Make configurable? Or is that even sane?
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -536,6 +549,7 @@ checkout v25.1
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
 		# NOTE: When rebasing post-#21726, need to restore AllowPrune func ?
 	# Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
+		# Triage: +28577+28588+28634+partof(28645)
 	# Not worth it? 24615/24569/24556 guix on non-x86
 	# Needs review: 24824 -  # net: create IP to ASN database from file - makeseeds.py
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
@@ -604,6 +618,7 @@ checkout v25.1
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
 	27511 rpc_getaddrmaninfo-24								last=28bac81a346
+	28565 -  # rpc: getaddrmaninfo followups
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 bcli_validation-24								last=11e0a80b19a
 	27034 rpc_importaddr_for_descwallet-25+k				last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
@@ -614,6 +629,7 @@ checkout v25.1
 		# NOTE: Rel notes in #28189
 	27216 rpc_getaddressinfo_isactive-24					last=85f83339dda pinheadmz/used-addr-ui
 	# Needs review (and Core merge first?): 27255 darosior/tapminiscript
+		#+28651
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-25+knots									last=91771366a3d apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed
@@ -623,6 +639,7 @@ checkout v25.1
 	# Needs work: 27409 ryanofsky/pr/1data
 	# TODO (non-trivial): 27460 MarcoFalke/2304-import-mempool-rpc-
 		#+28289
+		# relnotes from 28637
 	# Needs review: g692 -  # Debug Console implementation of generate method
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
 		# Careful, could end up paying "added change" to a destination -.-
@@ -631,6 +648,9 @@ checkout v25.1
 	#26.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
 	# Needs concept/review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs review: 27596 jamesob/assumeutxo
+		#+ just the very minor fix from #28562 (82e48d20)
+		#+ Needs concept & review: 28569
+		#+ Triage: 28589+28590+28608+28625+partof(28645)+28647+28652+28659+28666+28669+28670
 	27600 p2p_forceinbound-25+knots							last=311902f2cf9 pinheadmz/whitebind-evict
 		# Excluded top-commit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
@@ -798,6 +818,8 @@ checkout v25.1
 	-     wallet_undeprecate_legacy-25
 		# Effectively reverts #24505
 		#26.xTODO# revert? #27869  wallet: Give deprecation warning when loading a legacy wallet
+		#26.xTODO# revert? #28597  wallet: No BDB creation, unless -deprecatedrpc=create_bdb
+		#26.xTODO# revert? gui#764  Remove legacy wallet creation
 	14641 fundraw_min_conf_deprecated-25+knots	67bb2fae2cb	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			2b802cfbcf9
 	-     netperms_implicit_addr				3ec6f62de90
@@ -866,7 +888,7 @@ checkout v25.1
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20231002)			3d04837ba68
+	n/a  (bump_version=Knots:20231018)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
 	n/a  (cherrypick=735d2b4d8bb)				500a43eca75  # release notes: write/update, including change log and credits
