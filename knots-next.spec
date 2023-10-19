@@ -276,11 +276,11 @@ checkout v25.1
 	# Needs backport review: 28602 achow101/migrate-hybrid-keys
 		# Backport in descr_disallow_hybrid_and_uncompr_pubkeys-25.1 (#28677)
 	# TODO: 28609 achow101/reload-all-migrated
-	Needs review? 28610 achow101/migrate-avoidreuse
+	# Needs review? 28610 achow101/migrate-avoidreuse
 	#26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
 	# Needs review/simplification: 28649 vasild/reliable_socks5_handshake
 	g765  fix_qt_walletlist_at_shutdown-24
-	g766  theStack-g/202310-gui-fix_input_size_estimation_for_taproot_spends
+	g766  qt_cc_input_sizes_taproot-0.13
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -327,7 +327,7 @@ checkout v25.1
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 opti_merkle_mutation-0.17						last=42b25bbd939
-	28592 ajtowns/202310-txrelayrate
+	28592 txrelayrate_14txps-21
 		#26.xTODO# Make configurable? Or is that even sane?
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
