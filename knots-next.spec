@@ -616,7 +616,7 @@ checkout v25.1
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
-	27511 rpc_getaddrmaninfo-24^							last=28bac81a346
+	27511 rpc_getaddrmaninfo-24^
 	28565 rpc_getaddrmaninfo-24
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 bcli_validation-24								last=11e0a80b19a
@@ -655,7 +655,7 @@ checkout v25.1
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
 	27761 p2p_log_stalling_ip-22
-	27770 rpc_getblockfileinfo-25+knots						last=5110139d397 furszy/2023_rpc_getblockfileinfo
+	27770 rpc_getblockfileinfo-25+knots						last=5090771f326 furszy/2023_rpc_getblockfileinfo
 	27801 sqlite_trace-24									last=ff9d961bf38 ryanofsky/pr/sqtrace
 	# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
