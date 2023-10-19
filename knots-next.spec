@@ -599,10 +599,9 @@ checkout v25.1
 	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=89460f993dd
+	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=51618c9c8a8
 		# NOTE: Originally #10594, then #17167
-		# Left off test framework refactoring in last commit
-		# Held back 1e09c265a95...89460f993dd for now (ugly diff)
+		# Left off test framework refactoring commit
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme			last=d8434da3c14
@@ -617,8 +616,8 @@ checkout v25.1
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
-	27511 rpc_getaddrmaninfo-24								last=28bac81a346
-	28565 -  # rpc: getaddrmaninfo followups
+	27511 rpc_getaddrmaninfo-24^							last=28bac81a346
+	28565 rpc_getaddrmaninfo-24
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 bcli_validation-24								last=11e0a80b19a
 	27034 rpc_importaddr_for_descwallet-25+k				last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
@@ -900,6 +899,7 @@ checkout v25.1
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
+		TODO: bf589a50a0d6a7b94f1ba1ddf24a1497fd35ad44 for #28565
 	n/a  (cherrypick=e176316e332)				dd99e2b4305  # update manpages (build first)
 		TODO: update bitcoin conf (like d68b6abeb84)
 	n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
