@@ -272,14 +272,14 @@ checkout v25.1
 	# Needs review: 28564 fix_conf_fuzzbin_main
 	28662 fix_202310_fuzz_missing_rpcs-23					last=8ad6b773ca5 fix_202310_fuzz_missing_rpcs
 		#26.xTODO# n/a, remove this
-	28587 sipa/202310_no_hybrid_descriptors
-	28602 achow101/migrate-hybrid-keys
-	28609 achow101/reload-all-migrated
+	28587 descr_disallow_hybrid_pubkeys-24
+	# Needs backport review: 28602 achow101/migrate-hybrid-keys
+		# Backport in descr_disallow_hybrid_and_uncompr_pubkeys-25.1 (#28677)
+	# TODO: 28609 achow101/reload-all-migrated
 	Needs review? 28610 achow101/migrate-avoidreuse
 	#26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
-	Needs review? 28649 vasild/reliable_socks5_handshake
-	28672 fanquake/move_stack_reuse_core_flags
-	g765  furszy-g/2023_gui_fix_crash_wallet_list
+	# Needs review/simplification: 28649 vasild/reliable_socks5_handshake
+	g765  fix_qt_walletlist_at_shutdown-24
 	g766  theStack-g/202310-gui-fix_input_size_estimation_for_taproot_spends
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -629,7 +629,7 @@ checkout v25.1
 		# NOTE: Rel notes in #28189
 	27216 rpc_getaddressinfo_isactive-24					last=85f83339dda pinheadmz/used-addr-ui
 	# Needs review (and Core merge first?): 27255 darosior/tapminiscript
-		#+28651
+		#+28651+remainingof(28602)
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-25+knots									last=91771366a3d apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed
