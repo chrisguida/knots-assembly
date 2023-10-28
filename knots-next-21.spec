@@ -738,7 +738,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
 	Triage: 28695 -  # net: Sanity check private keys received from SAM proxy
 	Triage: # Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
-	Triage: 28728 -  # wallet: [bugfix] Mark CNoDestination and PubKeyDestination constructor explicit
 	Triage: 28733 maaku/allow-spaces-in-path
 	Triage: # Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
 	Triage: g773 achow101-g/gui-skip-encryption-check-for-watchonly

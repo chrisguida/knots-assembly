@@ -287,7 +287,6 @@ checkout v25.1
 	28693 fix_trace_incl_config-22
 	28695 fix_i2p_sam_sanitychk-25							last=adb5d6b8df5
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
-	28728 -  # wallet: [bugfix] Mark CNoDestination and PubKeyDestination constructor explicit
 	28733 maaku/allow-spaces-in-path
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
 	g773 achow101-g/gui-skip-encryption-check-for-watchonly
