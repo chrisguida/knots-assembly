@@ -279,13 +279,13 @@ checkout v25.1
 	# Needs review? 28610 achow101/migrate-avoidreuse
 	#26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
 	# Needs review/simplification: 28649 vasild/reliable_socks5_handshake
-	g765  fix_qt_walletlist_at_shutdown-24
-		FIXME: +gui#770
+	# BUGGY: g765  fix_qt_walletlist_at_shutdown-24
+		# FIXME: +gui#770
 	g766  qt_cc_input_sizes_taproot-0.13
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
-	Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
-	28693 hebasto/231020-trace
-	28695 -  # net: Sanity check private keys received from SAM proxy
+	# TODO: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
+	28693 fix_trace_incl_config-22
+	28695 fix_i2p_sam_sanitychk-25							last=adb5d6b8df5
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	28728 -  # wallet: [bugfix] Mark CNoDestination and PubKeyDestination constructor explicit
 	28733 maaku/allow-spaces-in-path

@@ -736,7 +736,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: g766  theStack-g/202310-gui-fix_input_size_estimation_for_taproot_spends
 	Triage: # Needs review & triage: 28678 sipa/202310_miniscript_assume
 	Triage: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
-	Triage: 28693 hebasto/231020-trace
 	Triage: 28695 -  # net: Sanity check private keys received from SAM proxy
 	Triage: # Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	Triage: 28728 -  # wallet: [bugfix] Mark CNoDestination and PubKeyDestination constructor explicit
