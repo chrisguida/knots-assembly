@@ -1,7 +1,7 @@
-timestamp 2023-10-18 06:50:55
+timestamp 2023-10-28 04:10:07
 lastapply no-merge
 
-#.. checked up to PR #28674 / gui #767
+#.. checked up to PR #28748 / gui #773
 
 checkout v25.1
 @25.x-syslibs
@@ -280,7 +280,17 @@ checkout v25.1
 	#26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
 	# Needs review/simplification: 28649 vasild/reliable_socks5_handshake
 	g765  fix_qt_walletlist_at_shutdown-24
+		FIXME: +gui#770
 	g766  qt_cc_input_sizes_taproot-0.13
+	# Needs review & triage: 28678 sipa/202310_miniscript_assume
+	Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
+	28693 hebasto/231020-trace
+	28695 -  # net: Sanity check private keys received from SAM proxy
+	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
+	28728 -  # wallet: [bugfix] Mark CNoDestination and PubKeyDestination constructor explicit
+	28733 maaku/allow-spaces-in-path
+	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
+	g773 achow101-g/gui-skip-encryption-check-for-watchonly
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -649,7 +659,7 @@ checkout v25.1
 	# Needs review: 27596 jamesob/assumeutxo
 		#+ just the very minor fix from #28562 (82e48d20)
 		#+ Needs concept & review: 28569
-		#+ Triage: 28589+28590+28608+28625+partof(28645)+28647+28652+28659+28666+28669+28670
+		#+ Triage: 28589+28590+28608+28625+partof(28645)+28647+28652+28659+28666+28669+28670+28698
 	27600 p2p_forceinbound-25+knots							last=311902f2cf9 pinheadmz/whitebind-evict
 		# Excluded top-commit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
@@ -819,6 +829,7 @@ checkout v25.1
 		#26.xTODO# revert? #27869  wallet: Give deprecation warning when loading a legacy wallet
 		#26.xTODO# revert? #28597  wallet: No BDB creation, unless -deprecatedrpc=create_bdb
 		#26.xTODO# revert? gui#764  Remove legacy wallet creation
+		#26.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
 	14641 fundraw_min_conf_deprecated-25+knots	67bb2fae2cb	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			2b802cfbcf9
 	-     netperms_implicit_addr				3ec6f62de90

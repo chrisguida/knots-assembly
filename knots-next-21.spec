@@ -1,8 +1,8 @@
-timestamp 2023-10-18 06:50:55
+timestamp 2023-10-28 04:10:07
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28674 / gui #767 for fixes
+#.. checked up to PR #28748 / gui #773 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -732,7 +732,17 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review? 28649 vasild/reliable_socks5_handshake
 	Triage: 28672 fanquake/move_stack_reuse_core_flags
 	Triage: g765  furszy-g/2023_gui_fix_crash_wallet_list
+		FIXME: +gui#770
 	Triage: g766  theStack-g/202310-gui-fix_input_size_estimation_for_taproot_spends
+	Triage: # Needs review & triage: 28678 sipa/202310_miniscript_assume
+	Triage: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
+	Triage: 28693 hebasto/231020-trace
+	Triage: 28695 -  # net: Sanity check private keys received from SAM proxy
+	Triage: # Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
+	Triage: 28728 -  # wallet: [bugfix] Mark CNoDestination and PubKeyDestination constructor explicit
+	Triage: 28733 maaku/allow-spaces-in-path
+	Triage: # Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
+	Triage: g773 achow101-g/gui-skip-encryption-check-for-watchonly
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
