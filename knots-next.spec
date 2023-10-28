@@ -287,9 +287,9 @@ checkout v25.1
 	28693 fix_trace_incl_config-22
 	28695 fix_i2p_sam_sanitychk-25							last=adb5d6b8df5
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
-	28733 maaku/allow-spaces-in-path
+	28733 fix_depends_PATH_w_spaces-22						last=92f7e7f3633 maaku/allow-spaces-in-path
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
-	g773 achow101-g/gui-skip-encryption-check-for-watchonly
+	g773 fix_qt_unlock_watchonly-0.20						last=517c7f9cba3 achow101-g/gui-skip-encryption-check-for-watchonly
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -608,7 +608,7 @@ checkout v25.1
 	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=51618c9c8a8
+	27114 whitelist_outgoing-mini-25+knots		7f46d1a059e	last=d69747ab656
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring commit
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
@@ -897,10 +897,10 @@ checkout v25.1
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20231018)			3d04837ba68
+	n/a  (bump_version=Knots:20231028)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a  (cherrypick=b0902ef08f6)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=e39b2a5057d)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
