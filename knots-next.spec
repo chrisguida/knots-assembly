@@ -263,8 +263,8 @@ checkout v25.1
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs review: 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
-	28554 fix_rpc_getnetworkhashps_heightchk-25				last=435ff29c5be
-		# diff-minimised
+	28554 fix_rpc_getnetworkhashps_heightchk-25				last=9ac114e5cd9
+		# diff-minimised & kept compatible
 	g757  qt_addrbook_walletname-0.18						last=58c9b50a952
 		# diff-minimised
 	g758  qt_nodewindow_chainname-22						last=9d37886a3b6
@@ -285,7 +285,7 @@ checkout v25.1
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	# TODO: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
 	28693 fix_trace_incl_config-22
-	28695 fix_i2p_sam_sanitychk-25							last=adb5d6b8df5
+	28695 fix_i2p_sam_sanitychk-25							last=5cf4d266d9b
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	28733 fix_depends_PATH_w_spaces-22						last=92f7e7f3633 maaku/allow-spaces-in-path
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
@@ -300,7 +300,7 @@ checkout v25.1
 	#25.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@25.x-knots-lts-deps
-	28561 depends_qt_update-25.1+knots
+	#26.xTODO# FIXME 28561 depends_qt_update-25.1+knots
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 @25.x-knots
