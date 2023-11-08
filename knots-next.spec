@@ -151,7 +151,7 @@ checkout v25.1
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
 	#25.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
 	# TODO: Needs review: 26316 andrewtoth/block-read-shared-mutex
-	#25.xTODO# Needs review: 26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
+	26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
 	# TODO: Needs work? 26343 mzumsande/202210_addrfetch_servicebits
 	#26.xTODO# Sane fix for #24049
 	g677 fix_qt_peers_na
@@ -165,7 +165,7 @@ checkout v25.1
 	#26.xTODO# Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
 	#26.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
 	#25.xTODO# Needs bugfix? (https://github.com/bitcoin/bitcoin/pull/27039/files#r1247267535) 27039 pinheadmz/reindex-read-only
-	#25.xTODO# Needs work/review: 27071 vasild/lookup_subnet_cjdns
+	#25.xTODO# Needs bugfix: 27071 vasild/lookup_subnet_cjdns
 	#25.xTODO# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
@@ -798,7 +798,7 @@ checkout v25.1
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			f110cdc6b5d
 	-    mining_priority						79de7fcebc8  # NOTE: now the latest code, rebased
-		#25.xTODO# FIXME: Lots of lock warnings from clang!
+		#25.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 	5861 gui_restore_addresses					d435b0e1596
 	5891  qt_console_history_persist			aaedbe6c41a	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-25+knots						4eea3457d1a	# Latest code now
