@@ -1,8 +1,8 @@
-timestamp 2023-10-28 04:10:07
+timestamp 2023-11-08 05:53:07
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28748 / gui #773 for fixes
+#.. checked up to PR #28825 / gui #775 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -741,6 +741,18 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 28733 maaku/allow-spaces-in-path
 	Triage: # Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
 	Triage: g773 achow101-g/gui-skip-encryption-check-for-watchonly
+	Triage: g774 theStack-g/202310-gui-fix_mask_values_crash_in_transaction_view
+		# backport in #28768
+	Triage: # Not worth it? 28771 achow101/lcov-opts
+	Triage: # Not worth it? 28774 vasild/avoid_returning_reference_to_mutex_guarded_member
+	Triage: # Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
+	Triage: # -- Needs review: g775 -  # gui: add used balance to overview page
+	Triage: # Needs review: 28780 -  # log: torcontrol opt checks
+	Triage: # Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
+	Triage: 28784 -  # rpc: keep .cookie file if it was not generated
+	Triage: # Needs review: 28791 maaku/fix-assumeutxos-core-dump
+	Triage: # Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
+	Triage: Needs concept or alternative: 28824 willcl-ark/asm-full-hex
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)

@@ -1,7 +1,7 @@
-timestamp 2023-10-28 04:10:07
+timestamp 2023-11-08 05:53:07
 lastapply no-merge
 
-#.. checked up to PR #28748 / gui #773
+#.. checked up to PR #28825 / gui #775
 
 checkout v25.1
 @25.x-syslibs
@@ -290,6 +290,18 @@ checkout v25.1
 	28733 fix_depends_PATH_w_spaces-22						last=92f7e7f3633 maaku/allow-spaces-in-path
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
 	g773 fix_qt_unlock_watchonly-0.20						last=517c7f9cba3 achow101-g/gui-skip-encryption-check-for-watchonly
+	g774 theStack-g/202310-gui-fix_mask_values_crash_in_transaction_view
+		# backport in #28768
+	# Not worth it? 28771 achow101/lcov-opts
+	# Not worth it? 28774 vasild/avoid_returning_reference_to_mutex_guarded_member
+	# Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
+	# -- Needs review: g775 -  # gui: add used balance to overview page
+	# Needs review: 28780 -  # log: torcontrol opt checks
+	# Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
+	28784 -  # rpc: keep .cookie file if it was not generated
+	# Needs review: 28791 maaku/fix-assumeutxos-core-dump
+	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
+	Needs concept or alternative: 28824 willcl-ark/asm-full-hex
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -301,6 +313,7 @@ checkout v25.1
 	n/a   (delete_release_notes_fragments)
 #@25.x-knots-lts-deps
 	#26.xTODO# FIXME 28561 depends_qt_update-25.1+knots
+		# Also #28769
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 @25.x-knots
@@ -338,6 +351,7 @@ checkout v25.1
 	28430 opti_merkle_mutation-0.17						last=42b25bbd939
 	28592 txrelayrate_14txps-21
 		#26.xTODO# Make configurable? Or is that even sane?
+	28799 theStack/202311-wallet-avoid_repeated_desc_str_id_calculation
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -558,7 +572,7 @@ checkout v25.1
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
 		# NOTE: When rebasing post-#21726, need to restore AllowPrune func ?
 	# Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
-		# Triage: +28577+28588+28634+partof(28645)
+		# Triage: +28577+28588+28634+partof(28645)+28805
 	# Not worth it? 24615/24569/24556 guix on non-x86
 	# Needs review: 24824 -  # net: create IP to ASN database from file - makeseeds.py
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
@@ -693,6 +707,7 @@ checkout v25.1
 	# TODO (build failure / missing dep?): 28523 rpc_getrawaddrman-25+knots						last=352d5eb2a9e 0xB10C/2023-09-verbose-getaddrmaninfo
 	# Needs API finalisation: 28539 brunoerg:2023-09-taproot-libconsensus
 		#TODO: minimise
+	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
 # Non-progress functionality:
 	8751  sort-multisigs-25+knots				c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -897,7 +912,7 @@ checkout v25.1
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20231028)			3d04837ba68
+	n/a  (bump_version=Knots:20231108)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
 	n/a  (cherrypick=e39b2a5057d)				500a43eca75  # release notes: write/update, including change log and credits
