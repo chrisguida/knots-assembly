@@ -151,7 +151,7 @@ checkout v25.1
 	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
 	#25.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
 	# TODO: Needs review: 26316 andrewtoth/block-read-shared-mutex
-	26331 -  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
+	26331 -  												last=ed52e71176f  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
 	# TODO: Needs work? 26343 mzumsande/202210_addrfetch_servicebits
 	#26.xTODO# Sane fix for #24049
 	g677 fix_qt_peers_na
@@ -290,18 +290,19 @@ checkout v25.1
 	28733 fix_depends_PATH_w_spaces-22						last=92f7e7f3633 maaku/allow-spaces-in-path
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
 	g773 fix_qt_unlock_watchonly-0.20						last=517c7f9cba3 achow101-g/gui-skip-encryption-check-for-watchonly
-	g774 theStack-g/202310-gui-fix_mask_values_crash_in_transaction_view
-		# backport in #28768
+	g774 fanquake/backports_25_2^							last=84d9504d8aa fanquake/backports_25_2
+		# using 25.x backport in #28768
 	# Not worth it? 28771 achow101/lcov-opts
 	# Not worth it? 28774 vasild/avoid_returning_reference_to_mutex_guarded_member
 	# Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
 	# -- Needs review: g775 -  # gui: add used balance to overview page
 	# Needs review: 28780 -  # log: torcontrol opt checks
 	# Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
-	28784 -  # rpc: keep .cookie file if it was not generated
+	28784 fix_keep_notmy_cookie-23							last=ad37ad4651e
 	# Needs review: 28791 maaku/fix-assumeutxos-core-dump
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
-	Needs concept or alternative: 28824 willcl-ark/asm-full-hex
+	28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
+		# FIXME: disambiguate opcodes too?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -351,7 +352,7 @@ checkout v25.1
 	28430 opti_merkle_mutation-0.17						last=42b25bbd939
 	28592 txrelayrate_14txps-21
 		#26.xTODO# Make configurable? Or is that even sane?
-	28799 theStack/202311-wallet-avoid_repeated_desc_str_id_calculation
+	28799 wallet_cache_descriptor_id-25
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -915,7 +916,7 @@ checkout v25.1
 	n/a  (bump_version=Knots:20231108)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a  (cherrypick=e39b2a5057d)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a  (cherrypick=5b485c5377a)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
