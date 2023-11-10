@@ -884,6 +884,7 @@ checkout v25.1
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
+		#26.xTODO# fix corepolicy default in --help to be 0 instead of 'false'
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
@@ -925,11 +926,10 @@ checkout v25.1
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=e176316e332)				dd99e2b4305  # update manpages (build first)
-		TODO: update bitcoin conf (like d68b6abeb84)
-	n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
+	n/a  (cherrypick=e6607718243)				dd99e2b4305  # update manpages (build first)
+		# also example bitcoin.conf
+	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
-		BELOW TODO: ensure 26117 is fixed
 # NOTE: use git diff --minimal for patches!
 
 # TODO: @25.x-knots-android
