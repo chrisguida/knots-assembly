@@ -290,7 +290,7 @@ checkout v25.1
 	28733 fix_depends_PATH_w_spaces-22						last=92f7e7f3633 maaku/allow-spaces-in-path
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
 	g773 fix_qt_unlock_watchonly-0.20						last=517c7f9cba3 achow101-g/gui-skip-encryption-check-for-watchonly
-	g774 fanquake/backports_25_2^							last=84d9504d8aa fanquake/backports_25_2
+	g774 fanquake/backports_25_2^							last=84d9504d8aa fanquake/backports_25_2  # Fix crash on selecting "Mask values" in transaction view
 		# using 25.x backport in #28768
 	# Not worth it? 28771 achow101/lcov-opts
 	# Not worth it? 28774 vasild/avoid_returning_reference_to_mutex_guarded_member
@@ -298,7 +298,7 @@ checkout v25.1
 	# -- Needs review: g775 -  # gui: add used balance to overview page
 	# Needs review: 28780 -  # log: torcontrol opt checks
 	# Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
-	28784 fix_keep_notmy_cookie-23							last=ad37ad4651e
+	28784 fix_keep_notmy_cookie-23							last=d95dde9441f
 	# Needs review: 28791 maaku/fix-assumeutxos-core-dump
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
@@ -352,7 +352,7 @@ checkout v25.1
 	28430 opti_merkle_mutation-0.17						last=42b25bbd939
 	28592 txrelayrate_14txps-21
 		#26.xTODO# Make configurable? Or is that even sane?
-	28799 wallet_cache_descriptor_id-25
+	# Needs fixing rebase: 28799 wallet_cache_descriptor_id-25
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -643,7 +643,7 @@ checkout v25.1
 	27511 rpc_getaddrmaninfo-24^
 	28565 rpc_getaddrmaninfo-24
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
-	26990 bcli_validation-24								last=11e0a80b19a
+	26990 bcli_validation-24								last=755320f75f2
 	27034 rpc_importaddr_for_descwallet-25+k				last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
@@ -674,8 +674,8 @@ checkout v25.1
 		#+ just the very minor fix from #28562 (82e48d20)
 		#+ Needs concept & review: 28569
 		#+ Triage: 28589+28590+28608+28625+partof(28645)+28647+28652+28659+28666+28669+28670+28698
-	27600 p2p_forceinbound-25+knots							last=311902f2cf9 pinheadmz/whitebind-evict
-		# Excluded top-commit anti-feature (& rel notes)
+	27600 p2p_forceinbound-25+knots							last=8c2026848da pinheadmz/whitebind-evict
+		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
 	27761 p2p_log_stalling_ip-22
@@ -916,7 +916,7 @@ checkout v25.1
 	n/a  (bump_version=Knots:20231108)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a  (cherrypick=5b485c5377a)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=8c64c7300bd)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
