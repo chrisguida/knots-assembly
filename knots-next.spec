@@ -1,7 +1,7 @@
-timestamp 2023-11-08 05:53:07
+timestamp 2023-11-11 05:24:32
 lastapply no-merge
 
-#.. checked up to PR #28825 / gui #775
+#.. checked up to PR #28851 / gui #775
 
 checkout v25.1
 @25.x-syslibs
@@ -303,6 +303,9 @@ checkout v25.1
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
+	# Needs review: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
+	# Needs review & triage: 28846 fanquake/fixup_multiprocess_arm64
+	# Needs review & triage: 28848 instagibbs/2023-11-submitpackage-results
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -573,7 +576,7 @@ checkout v25.1
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
 		# NOTE: When rebasing post-#21726, need to restore AllowPrune func ?
 	# Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
-		# Triage: +28577+28588+28634+partof(28645)+28805
+		# Triage: +28577+28588+28634+partof(28645)+28805+28849
 	# Not worth it? 24615/24569/24556 guix on non-x86
 	# Needs review: 24824 -  # net: create IP to ASN database from file - makeseeds.py
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
@@ -673,7 +676,7 @@ checkout v25.1
 	# Needs review: 27596 jamesob/assumeutxo
 		#+ just the very minor fix from #28562 (82e48d20)
 		#+ Needs concept & review: 28569
-		#+ Triage: 28589+28590+28608+28625+partof(28645)+28647+28652+28659+28666+28669+28670+28698
+		#+ Triage: 28589+28590+28608+28625+partof(28645)+28647+28652+28659+28666+28669+28670+28698+28835+28838
 	27600 p2p_forceinbound-25+knots							last=8c2026848da pinheadmz/whitebind-evict
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
@@ -914,7 +917,7 @@ checkout v25.1
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20231108)			3d04837ba68
+	n/a  (bump_version=Knots:20231111)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
 	n/a   (cherrypick=8c64c7300bd)				500a43eca75  # release notes: write/update, including change log and credits
