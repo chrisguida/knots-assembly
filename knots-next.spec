@@ -840,6 +840,7 @@ checkout v25.1
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
+	#26.xTODO# Needs concept acceptance: -     gbt_skip_validity_test
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-25
@@ -922,7 +923,7 @@ checkout v25.1
 	n/a  (bump_version=Knots:20231111)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a   (cherrypick=cd830c1d65d)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=9db5d23d559)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
