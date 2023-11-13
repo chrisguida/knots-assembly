@@ -876,7 +876,9 @@ checkout v25.1
 	-     wallet_avoid_newerchange				a5e70c68636
 	#26.xTODO# Revert #25725
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
-	#25.xTODO# Adapt existing limits to apply to Taproot?
+	-     maxscriptsize-25+knots
+	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
+	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
 	#25.xTODO# Ordisrespector equivalent (Ordislow??)
 	#25.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 	-     enforce_checkpoints					840dddd5a6e
