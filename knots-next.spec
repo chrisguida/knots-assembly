@@ -1,7 +1,7 @@
-timestamp 2023-11-11 05:24:32
+timestamp 2023-11-15 23:49:11
 lastapply no-merge
 
-#.. checked up to PR #28851 / gui #775
+#.. checked up to PR #28886 / gui #777
 
 checkout v25.1
 @25.x-syslibs
@@ -307,6 +307,10 @@ checkout v25.1
 	# Needs review: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
 	# Needs review & triage: 28846 fanquake/fixup_multiprocess_arm64
 	# Needs review & triage: 28848 instagibbs/2023-11-submitpackage-results
+	28858 fanquake/man_par_drop_negative
+	# Needs review: 28868 achow101/test-migration-watchonly-spendable
+	28874 fanquake/redundant_upnp_ifdef
+	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -716,6 +720,7 @@ checkout v25.1
 	# Needs API finalisation: 28539 brunoerg:2023-09-taproot-libconsensus
 		#TODO: minimise
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
+	# Needs work: g777 -  # gui: getrawtransaction implementation
 # Non-progress functionality:
 	8751  sort-multisigs-25+knots				c42c63f0c5c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -840,11 +845,12 @@ checkout v25.1
 		# Revert of #23927
 	-     rpc_getblockfrompeer_wo_header		b89d300855f
 		# Prior Knots bundled this in with #20295
-	#25.xTODO# revert #24031  build: don't compress macOS DMG -- FIXES #26176
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
 	#26.xTODO# Needs concept acceptance: -     gbt_skip_validity_test
+	# Needs concept & writing: default UPnP/NAT-PMP to enabled
+		# NOTE: Need to revert #28874 conditionals
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-25
@@ -906,7 +912,6 @@ checkout v25.1
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		7502bba0dc8
 	7483  svg_icon-25+knots						edbcba95282
-		#25.xTODO# TEST IN CI & GUIX
 	n/a   tbc_font								9929a597b3d
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
@@ -925,7 +930,7 @@ checkout v25.1
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		f6260178fc7	# doc/{bips,files}
-	n/a  (bump_version=Knots:20231111)			3d04837ba68
+	n/a  (bump_version=Knots:20231115)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
 	n/a   (cherrypick=9db5d23d559)				500a43eca75  # release notes: write/update, including change log and credits

@@ -1,8 +1,8 @@
-timestamp 2023-11-11 05:24:32
+timestamp 2023-11-15 23:49:11
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28851 / gui #775 for fixes
+#.. checked up to PR #28886 / gui #777 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -756,6 +756,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: # Needs review: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
 	Triage: # Needs review & triage: 28846 fanquake/fixup_multiprocess_arm64
 	Triage: # Needs review & triage: 28848 instagibbs/2023-11-submitpackage-results
+	Triage: 28858 fanquake/man_par_drop_negative
+	Triage: # Needs review: 28868 achow101/test-migration-watchonly-spendable
+	Triage: 28874 fanquake/redundant_upnp_ifdef
+	Triage: # Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
