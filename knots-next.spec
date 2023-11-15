@@ -45,6 +45,7 @@ checkout v25.1
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					06b2e2cae97	last=df5ece3e064 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				5ef693738d0
+	-     fix_dmg_openfinder-24
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
@@ -360,7 +361,10 @@ checkout v25.1
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
 # FUNCTIONALITY:
-	24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
+	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
+		# test2: export of symbol _IO_stdin_used not allowed!
+		# test2: libutil.so.1 is not in ALLOWED_LIBRARIES!
+		#'test2: failed EXPORTED_SYMBOLS LIBRARY_DEPENDENCIES
 	# not ready: 8889 overlay_theme-0.13								last=f8a28dc
 	# needs UI improvements!? 7949 jonasschnelli/2016/04/rpc_signals
 	# TODO: Just forgetaddress from #8488
@@ -912,8 +916,9 @@ checkout v25.1
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #25.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
+#26.xTODO# Check macOS zip impact on tuffy font etc
 # TODO: Check that we aren't deprecating anything in Core
-#25.xTODO# verify src tarball includes rendered_icons incl nsis-header
+# TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure std::filesystem isn't introduced (see #28076)
