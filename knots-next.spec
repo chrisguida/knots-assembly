@@ -302,14 +302,15 @@ checkout v25.1
 	28784 fix_keep_notmy_cookie-23							last=d95dde9441f
 	# Needs review: 28791 maaku/fix-assumeutxos-core-dump
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
-	28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
+	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
 	# Needs review: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
 	# Needs review & triage: 28846 fanquake/fixup_multiprocess_arm64
 	# Needs review & triage: 28848 instagibbs/2023-11-submitpackage-results
-	28858 fanquake/man_par_drop_negative
+	28858 fix_doc_par_opt-21
 	# Needs review: 28868 achow101/test-migration-watchonly-spendable
-	28874 fanquake/redundant_upnp_ifdef
+	-     fix_doc_upnp_def_post26896										last=372cd23f64e fanquake/redundant_upnp_ifdef
+		# Alternative to #28874
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -933,7 +934,7 @@ checkout v25.1
 	n/a  (bump_version=Knots:20231115)			3d04837ba68
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		91954f0400c
-	n/a   (cherrypick=9db5d23d559)				500a43eca75  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=b5582b97bbf)				500a43eca75  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -942,7 +943,8 @@ checkout v25.1
 		# remove changelog entries that were in Knots already
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
-	n/a  (cherrypick=e6607718243)				dd99e2b4305  # update manpages (build first)
+		# When re-added, #28824 notes in 9db5d23d559
+	n/a  (cherrypick=ecb1be05c43)				dd99e2b4305  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
