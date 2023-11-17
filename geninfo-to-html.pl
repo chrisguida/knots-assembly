@@ -19,7 +19,7 @@ use HTTP::Request;
 use JSON::PP;
 use LWP;
 
-my $cachedir = dirname(__FILE__) . "/getinfo-to-html-cache/";
+my $cachedir = dirname(__FILE__) . "/geninfo-to-html-cache/";
 
 warn "Remember to wipe cache if PRs might have been merged!\n";
 
