@@ -3,12 +3,11 @@ lastapply no-merge
 
 #.. checked up to PR #28886 / gui #777
 
-checkout v25.1
+checkout v26.0rc2
 @25.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						0d2f1ba753f
-	# If needed (MSVC only?): 27892 MarcoFalke/2306-translate-copy-
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							0a46aec36d8
 	5416  sys_libsecp256k1						38be3bf3130
@@ -35,10 +34,6 @@ checkout v25.1
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
-	27529 fix_addrman_test_bigendian-23			c756bc5f522
-	27542 qa_runtest_ripemd160-23				4a3d2af646d  # test: add ripemd160 to test framework modules list
-	# TODO: 28027 achow101/2023-07-test-wallet-back-compat-updates
-	# TODO: 28028 MarcoFalke/2307-test-stderr-
 # FIXES:
 	18818 guix_reltar_autogen_distclean			97b04fc017d	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						148d95ab845
@@ -106,7 +101,7 @@ checkout v25.1
 	# Needs review & concept check: 23074 Package-aware fee estimation
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
 	# Needs work: 23502 achow101/tr-low-fee-est
-		# "rebase" in #26573 for post-#26567 (yet unmerged) refactor
+		# "rebase" in #26573 for post-#26567 refactor
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
 	g506  qt_qrcode_sizefixes					d7f460d3617
 	# Needs review: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
@@ -122,7 +117,6 @@ checkout v25.1
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	# Needs review: 24912 mruddy/nchaintx_type
-	24957 -										8a14e2f29aa	last=c4981e7f63a  # fix_prune_during_loadblock-22
 	# Needs review: 24972 hebasto/220425-no-libtool
 	# Needs review: 24994 hebasto/220426-consensus
 	g595  qt_handle_autostart_errors-0.15		2139b932588	last=d932157eb79
@@ -133,12 +127,9 @@ checkout v25.1
 	-     boost_171_177_workarounds				ed3f6565587
 		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
-	# Needs concept ACK/review: 25158 -  # rpc, wallet: add abandoned field for all categories of transaction in ListTransaction
-	# Needs review: 25193 -  # indexes: Read the locator's top block during init, allow interaction with reindex-chainstate
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	#25.xTODO# Check on #25561
-	25634 fix_wallet_blank_unset_pr25634-25		56dd750db4d
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
@@ -149,10 +140,8 @@ checkout v25.1
 		# Includes gui#368
 	#25.xTODO# Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
-	# Needs review: 26152 -  # Bump unconfirmed ancestor transactions to target feerate
 	#25.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
 	# TODO: Needs review: 26316 andrewtoth/block-read-shared-mutex
-	26331 -										b54d824dcfe			last=ed52e71176f  # Implement CCoinsViewErrorCatcher::HaveCoin and check disk space periodically
 	# TODO: Needs work? 26343 mzumsande/202210_addrfetch_servicebits
 	#26.xTODO# Sane fix for #24049
 	g677 fix_qt_peers_na						8ae7771bb00
@@ -162,67 +151,42 @@ checkout v25.1
 	g684  qt_reqs_multiselect_pr684-25+knots	7385341a1a5	last=a6f567590b7
 	# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
 	#26.xTODO# Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
-	26828 andrewtoth/assumeutxo-remove-fix		ba39d51b130	last=0e21b56a44d
 	#26.xTODO# Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
 	#26.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
 	#25.xTODO# Needs bugfix? (https://github.com/bitcoin/bitcoin/pull/27039/files#r1247267535) 27039 pinheadmz/reindex-read-only
-	#25.xTODO# Needs bugfix: 27071 vasild/lookup_subnet_cjdns
 	#25.xTODO# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
-	27302 ignoredconf_err_def0-25				0e56163487d
+	MERGED: 27302 ignoredconf_err_def0-25				0e56163487d
 		# NOTE: Changed default for -allowignoredconf to 0 for compatibility
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
-	27411 p2p_selfadv_privacy_pr27411-25		f193e80eb14	last=e7cf8657e11 mzumsande/202303_advertise_nets
 	#25.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
-	27501 rpc_getprioritisedtransactions-25		0c202be5a81
-	27554 qa_bcwallet_envvar-25					3d5317af145
-	g696 qt_rpcconsole_switch_wallet_opened-25	d62fd3e7496	last=99c0eb9701e
-	g719 theStack-g/gui-nuke_cc_dust_label		3ae28adf15e	last=a582b4141f0
 	# TODO: Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
-	#25.xTODO# Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
-	# Not needed in 25.x? 27556 -  # wallet: fix deadlock in bdb read write operation
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
-	27577 seednode_delay_fixedseeds-24			f9548883814
+	MERGED: 27577 seednode_delay_fixedseeds-24			f9548883814
 		#25.xTODO# Check #28016
 	# Needs concept review: 27591 rpc_mempoolvsize-25								last=60bde2dac05 glozow/2023-05-mempool-vsize
 		# When restoring, revert part of bfab6ac4791 in relnotes
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
 	#26.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
 	#26.xTODO# Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
-		# Maybe not useful with #27675 ?  https://github.com/bitcoin/bitcoin/pull/27602#issuecomment-1682070095
-	-     fee_est_stalecheck-25+knots			a6816286044
+		TODO: # Maybe not useful with (NOW MERGED) #27675 ?  https://github.com/bitcoin/bitcoin/pull/27602#issuecomment-1682070095
+	~MERGED: -     fee_est_stalecheck-25+knots			a6816286044
 		# Modifications to #27622 to allow on mainnet, and enable by default
-	27631 fix_qa_feature_taproot_pr27631-21		76f1bf79d09
-	n/a   fix_div0_connecttip_loadblocks_log-25	284c24ba57e
-		# Affected code removed in #27673
 	#25.xTODO# Needs review: 27684 hebasto/230516-punish OR ???
-	27708 postinit_exit_failure_code-25			1cd6d7f8ed3
-	27717 test_util_env-0.16					a61c3f399a3
-	# If needed? 27720 furszy/2023_index_init_race_bugfix
 	#26.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
-	-     fix_qa_mempool_packages_legacywallet-25	0cde3d29dc4
-		# Fix-only alternative to #27735 MarcoFalke/2305-mempool-legacy-wallet-
-		# Bug affects 23.x+ only, regressed in #23371 which made MiniWallet require Taproot (which legacy wallets don't support)
-	27747 fix_decodedest_err_bytes_plural-25	3b5ec18b443
 	# Needs review: 27804 -  # init: deduplicate added connections
 	27814 forbid_nohelp-0.19					1826b4ef7cf	last=bfc2bb6a270
 	27815 cli_forbid_multihelper-22				83731380072	last=244e6c8db81
 	# Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
-	# Needs review: 27823 mzumsande/202306_feature_init_fix
+	MERGED: # Needs review: 27823 mzumsande/202306_feature_init_fix
 		#+28612
 	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
-	27846 fix_wallet_SRD_target_change-25		567c5572f81
-	27863 net_continue_peerhunt_pr27863-24		7f5a48f51d4
-	27905 fix_FMWC_dirty_index-23				ddf385d0d3d
 	#26.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
-	#25.xTODO# Some good fix for 27915 (#27920? partial backport in d319eef6e46)
 	# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 MarcoFalke/2306-byte-span-
-	27981 fix_p2p_stalling_pr27981				0b6324946a8
 	# Needs work: 27991 fanquake/instrument_libsecp
-	#26.xTODO# Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
 	28020 fix_zmq_ipc_noportcheck-25			c9467913acb	last=0b1762c90d1  # exclude ipc scheme from port check
 		#26.xTODO# Maybe rewrite without `rfind`
 		# NOTE: #27679 also implements this, possibly with unix: prefix instead?
@@ -232,60 +196,44 @@ checkout v25.1
 	28029 fix_zmq_errhandling_202307-25+k		f7f772f2d5f	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err-25		2ea81f12689	last=017ab85cecc fix_getblockfrompeer_rereq_err
-	28056 rpcdoc_gbt_lpid_data-22				07a3a2f117c	last=f6a26196cfb
 	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
-	28077 fix_i2p_accept_flood-24				1a5f065d64b	last=5c8e15c451e vasild/i2p_accept_issue22759
-	28123 fix_nonstring_onelinedesc-25			3e7b01cf114	last=5e3e83b0055 fix_nonstring_onelinedesc
 	#26.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
-	#26.xTODO# Ensure bug introduced by #26467 is fixed: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
+	TODO: Ensure bug introduced by #26467 is fixed: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
-	# Windows-only functional test fix: 28204 hebasto/230802-sqlite
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
 	#25.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	#25.xTODO# Triage #28248
 	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
-	g749 fix_qt_min_walletloading-25			135771118df	last=32db15450a9 furszy/2023_gui_start_minimized
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
-	28471 fix_pkg_eval_sigops_pr28471-25+knots	6e34d1b4d9f
+	MERGED: 28471 fix_pkg_eval_sigops_pr28471-25+knots	6e34d1b4d9f
 		# NOTE: Left off first commit for now since it would just get reverted in #28345
 	28345 fix_bytespersigop_checks-25			1f3ef9a348b	last=78a256505f3 fix_bytespersigop_checks
 		# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually when assembly done
 	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
-	28427 fix_idx_coinstats_reorg_fail-22		974db480880	last=c0bf6679120 furszy/2023_index_coinstats_fix_reverseblock
-		# Left off tip adding nodiscard attributes
 	g752  fix_qt_cmdhelp_mention_uri-0.17		432f807d824
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
-	# Non-trivial? (but only affects testnet?) 28472 instagibbs/2023-09-immutible-m_limit
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs review: 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
 	28554 fix_rpc_getnetworkhashps_heightchk-25	9e1549c2ad7	last=9ac114e5cd9
 		# diff-minimised & kept compatible
-	g757  qt_addrbook_walletname-0.18			a81ccd26548	last=58c9b50a952
-		# diff-minimised
 	g758  qt_nodewindow_chainname-22			b42b1dab09d	last=9d37886a3b6
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	# Needs review: 28564 fix_conf_fuzzbin_main
 	28662 fix_202310_fuzz_missing_rpcs-23		7766c402f9b	last=8ad6b773ca5 fix_202310_fuzz_missing_rpcs
 		#26.xTODO# n/a, remove this
-	28587 descr_disallow_hybrid_pubkeys-24		b3e28088bac
-	# Needs backport review: 28602 achow101/migrate-hybrid-keys
-		# Backport in descr_disallow_hybrid_and_uncompr_pubkeys-25.1 (#28677)
-	# TODO: 28609 achow101/reload-all-migrated
 	# Needs review? 28610 achow101/migrate-avoidreuse
 	#26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
 	# Needs review/simplification: 28649 vasild/reliable_socks5_handshake
-	# BUGGY: g765  fix_qt_walletlist_at_shutdown-24
-		# FIXME: +gui#770
-	g766  qt_cc_input_sizes_taproot-0.13		612c15df82e
+	MERGED: # BUGGY: g765  fix_qt_walletlist_at_shutdown-24
+		MERGED: # FIXME: +gui#770
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
-	# TODO: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
-	28693 fix_trace_incl_config-22				f1ae3b28aa0
+	MERGED: # TODO: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
 	28695 fix_i2p_sam_sanitychk-25				37a1c3463d1	last=5cf4d266d9b
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	28733 fix_depends_PATH_w_spaces-22			4b1f2043949	last=92f7e7f3633 maaku/allow-spaces-in-path
@@ -322,7 +270,7 @@ checkout v25.1
 	#25.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)		407a2d32ac7
 #@25.x-knots-lts-deps
-	#26.xTODO# FIXME 28561 depends_qt_update-25.1+knots
+	MERGED: #26.xTODO# FIXME 28561 depends_qt_update-25.1+knots
 		# Also #28769
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
@@ -349,9 +297,7 @@ checkout v25.1
 	# Needs review: 26966 furszy/2022_parallelize_blockfilter_index_2
 	# Needs review: 27006 furszy/2022_reduce_cs_main_scope_blockindex_nfile
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
-	27334 -										3716cf23c3b	last=bfb9291a866  # util: implement noexcept move assignment & move ctor for prevector
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
-	# TODO: 27675 ajtowns/202305-droprecentinvbloom
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
 	# Needs review? 28233 andrewtoth/sync-on-periodic
 	# Needs review: 28280 andrewtoth/sync-dirty
@@ -384,7 +330,7 @@ checkout v25.1
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
-		# NOTE: Latest version is rebased for adding inputs, with serious issues (see #28505 for hacky "fix")
+		MERGED: # NOTE: Latest version is rebased for adding inputs, with serious issues (see #28505 for hacky "fix")
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
@@ -402,8 +348,6 @@ checkout v25.1
 	# Needs work: 14053 Add address-based index (attempt 4?)
 	# Needs IN-DEPTH review: 14079 Implement sighash cache in CHECKMULTISIG
 	# Needs review: 15093 rpc: Change importwallet to return additional errors
-	g119  rm_send2self-mini						2d98fdd4d12	last=099dbe4224e rm_send2self
-		# NOTE: Originally #15115
 	# n/a with #15115: 11471 gui_sendtoself_label-0.17				b0b4d9bbf3	last=c23bd2892b
 	# Needs review: 15169 sdaftuar:2018-12-parallel-mempool-scriptchecks
 	# Needs review: 15204 promag:2019-01-openexternalwallet
@@ -462,7 +406,7 @@ checkout v25.1
 	# Needs work: g27   # top to bottom UI layout
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
-	# Needs work: 26485 ryanofsky/pr/nonly
+	MERGED: # Needs work: 26485 ryanofsky/pr/nonly
 		# CAUTION: May cause conflicts w/ compatibility options
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
@@ -585,7 +529,7 @@ checkout v25.1
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
 		# NOTE: When rebasing post-#21726, need to restore AllowPrune func ?
 	# Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
-		# Triage: +28577+28588+28634+partof(28645)+28805+28849
+		SEMIMERGED: # Triage: +28577+28588+28634+partof(28645)+28805+28849
 	# Not worth it? 24615/24569/24556 guix on non-x86
 	# Needs review: 24824 -  # net: create IP to ASN database from file - makeseeds.py
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
@@ -610,17 +554,13 @@ checkout v25.1
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
 		# Also #25570 ?
 	g626 qt_node_localaddrs-25					ba5db54361f	last=c47f01bf25e
-	25680 rpcdoc_legacywalletonly-25+knots		7524bcb250c
-		# Reverted importaddress note change since old one was better and gets replaced later in #27034 anyway
 	# Needs completion & review: 25718 fjahr/2022-07-allowinbound
 	# Needs concept/review: 25747 w0xlt/desc_file
 	# Needs work: 25776 1440000bytes/bumpfee-inputs
-	# TODO: 25796 -  # rpc: add descriptorprocesspsbt rpc
-		# Needs refactors in #25939 and #24963
+	MERGED: # TODO: 25796 -  # rpc: add descriptorprocesspsbt rpc
+		# Needs refactors in (MERGED) #25939 and #24963
 	# Needs concept/review: 25907 achow101/upgrade-to-tr-2
 	# Needs work: 25923 jonatack/2022-08-statestats
-	# TODO: 25939 -  # rpc: In utxoupdatepsbt also look for the tx in the txindex
-		# Untested backport of last commit only c11660a2ee8 (unsure if first commit is move-only or needed in some capacity; this backport still refactors quite a bit)
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
@@ -642,7 +582,7 @@ checkout v25.1
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme	e3f13ae6a73	last=d8434da3c14
 	# Needs option/work: 26454 petertodd/2022-feebump-without-optin
-	# Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
+	MERGED: # Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
 		# MERGED(26.x) WITH SERIOUS BUG: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
 	# Needs work: 26495 -  # contrib: Speed up systemd boot
 	# TODO: Simplify [initial] wallet creation
@@ -652,19 +592,13 @@ checkout v25.1
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
-	27511 rpc_getaddrmaninfo-24^				0619a0108ce
-	28565 rpc_getaddrmaninfo-24					f44d64a288a
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 bcli_validation-24					def292e8c7b	last=755320f75f2
 	27034 rpc_importaddr_for_descwallet-25+k	05bd5f2f99b	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
-	# TODO: 27213 amitiuttarwar/2023-03-network-outbounds
-		# NOTE: Rel notes in #28189
 	27216 rpc_getaddressinfo_isactive-24		c951b6947f2	last=85f83339dda pinheadmz/used-addr-ui
-	# Needs review (and Core merge first?): 27255 darosior/tapminiscript
-		#+28651+remainingof(28602)
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-25+knots						d3f7295b1a7	last=91771366a3d apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed
@@ -672,27 +606,19 @@ checkout v25.1
 	# Needs review? 27679 pinheadmz/zmq-unix-domain-socket
 		# Duplicates #28020 with a different URI format
 	# Needs work: 27409 ryanofsky/pr/1data
-	# TODO (non-trivial): 27460 MarcoFalke/2304-import-mempool-rpc-
-		#+28289
-		# relnotes from 28637
 	# Needs review: g692 -  # Debug Console implementation of generate method
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
 		# Careful, could end up paying "added change" to a destination -.-
 	# Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
-	g740  qt_psbtdlg_ismine-21					cf437652a69
 	#26.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
 	# Needs concept/review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
-	# Needs review: 27596 jamesob/assumeutxo
-		#+ just the very minor fix from #28562 (82e48d20)
-		#+ Needs concept & review: 28569
-		#+ Triage: 28589+28590+28608+28625+partof(28645)+28647+28652+28659+28666+28669+28670+28698+28835+28838
+	MERGED: # Needs review: 27596 jamesob/assumeutxo
+		SEMIMERGED: #+ Triage: 28589+28590+28608+28625+partof(28645)+28647+28652+28659+28666+28669+28670+28698+28835+28838
 	27600 p2p_forceinbound-25+knots				431468d6648	last=8c2026848da pinheadmz/whitebind-evict
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
-	27761 p2p_log_stalling_ip-22				222ef8aabed
 	27770 rpc_getblockfileinfo-25+knots			c92323afe5a	last=5090771f326 furszy/2023_rpc_getblockfileinfo
-	27801 sqlite_trace-24						cddf19b7997	last=ff9d961bf38 ryanofsky/pr/sqtrace
 	# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 		# Note alternative (approach NACK'd) in #28453
@@ -703,23 +629,13 @@ checkout v25.1
 	# Needs work: 27854 -  # [WIP] add a stratum v2 template provider
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
-	# Needs review: 28060+28483+28052 MarcoFalke/2306-fs_stuff-
-	28101 torcontrol_help_defport-23			b1d438a241a	last=9a84200cfc9
-	#26.xTODO# Needs work/deps: 28196+28489+28525 sipa/202307_bip324_transport
+	SEMIMERGED: # Needs review: 28060+28483+28052 MarcoFalke/2306-fs_stuff-
 	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
-	# Needs work: 28331 sipa/202308_bip324_integration
-	28414 rpcwallet_processpsbt_finalhex-25+knots	bedaaa5aa67	last=2e249b92276 pinheadmz/psbt-final-process
-		# Left out test refactoring to use the new feature & relnotes
-	# Extends #25796, TODO: 28492 -  # RPC: descriptorprocesspsbt returns hex encoded tx if complete
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	#26.xTODO# hebasto-g/230911-bip324-peer-details
-	# Needs review: 28459 fanquake/mbranch_protection_arm_darwin
 	# Needs review: 28461 fanquake/windows_ssp_roundup
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
-	# TODO (build failure / missing dep?): 28523 rpc_getrawaddrman-25+knots						last=352d5eb2a9e 0xB10C/2023-09-verbose-getaddrmaninfo
-	# Needs API finalisation: 28539 brunoerg:2023-09-taproot-libconsensus
-		#TODO: minimise
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
 	# Needs work: g777 -  # gui: getrawtransaction implementation
 # Non-progress functionality:
@@ -794,7 +710,6 @@ checkout v25.1
 		# NOTE: Diff-minimised
 	19089 cli_getinfo_mwbalances				4ddff9c4717	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
 	19092 cli_getinfo_mw_total_balance			b8660118ea7	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
-	26094 wallet_rpc_lastprocessedblock-25+k	93c40df9f5f	last=710b83938ab
 	19117 rpc_getrpcwhitelist					d1443f02830
 		# NOTE: Was #18827 before any Knots merge
 		#26.xTODO# Extend dc244382e5d test
@@ -852,6 +767,7 @@ checkout v25.1
 	#26.xTODO# Needs concept acceptance: -     gbt_skip_validity_test
 	# Needs concept & writing: default UPnP/NAT-PMP to enabled
 		# NOTE: Need to revert #28874 conditionals
+	#26.xTODO# Look into making the patches tarball in guix
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-25			790a86f1ce2
