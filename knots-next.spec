@@ -177,8 +177,8 @@ checkout v26.0rc2
 	#25.xTODO# Needs review: 27684 hebasto/230516-punish OR ???
 	#26.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	# Needs review: 27804 -  # init: deduplicate added connections
-	27814 forbid_nohelp-0.19					1826b4ef7cf	last=bfc2bb6a270
-	27815 cli_forbid_multihelper-22				83731380072	last=244e6c8db81
+	27814 -										1826b4ef7cf	last=bfc2bb6a270  # forbid_nohelp-0.19
+	27815 -										83731380072	last=244e6c8db81  # cli_forbid_multihelper-22
 	# Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
 	MERGED: # Needs review: 27823 mzumsande/202306_feature_init_fix
 		#+28612
@@ -187,7 +187,7 @@ checkout v26.0rc2
 	# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 MarcoFalke/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
-	28020 fix_zmq_ipc_noportcheck-25			c9467913acb	last=0b1762c90d1  # exclude ipc scheme from port check
+	28020 -										c9467913acb	last=0b1762c90d1  # exclude ipc scheme from port check (fix_zmq_ipc_noportcheck-25)
 		#26.xTODO# Maybe rewrite without `rfind`
 		# NOTE: #27679 also implements this, possibly with unix: prefix instead?
 	# If needed: 28026 furszy/2023_fix_index_timeout
@@ -195,7 +195,7 @@ checkout v26.0rc2
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	28029 fix_zmq_errhandling_202307-25+k		f7f772f2d5f	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
-	28055 fix_getblockfrompeer_rereq_err-25		2ea81f12689	last=017ab85cecc fix_getblockfrompeer_rereq_err
+	28055 fix_getblockfrompeer_rereq_err		2ea81f12689
 	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
@@ -209,12 +209,13 @@ checkout v26.0rc2
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	MERGED: 28471 fix_pkg_eval_sigops_pr28471-25+knots	6e34d1b4d9f
 		# NOTE: Left off first commit for now since it would just get reverted in #28345
-	28345 fix_bytespersigop_checks-25			1f3ef9a348b	last=78a256505f3 fix_bytespersigop_checks
-		# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually when assembly done
+	NO MORE REBASE NEEDED? 28345 fix_bytespersigop_checks-25			1f3ef9a348b	last=78a256505f3 fix_bytespersigop_checks
+		NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually when assembly done
 	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	g752  fix_qt_cmdhelp_mention_uri-0.17		432f807d824
+		FIXME: Determine last=
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
@@ -222,11 +223,9 @@ checkout v26.0rc2
 	# Needs review: 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
 	28554 fix_rpc_getnetworkhashps_heightchk-25	9e1549c2ad7	last=9ac114e5cd9
 		# diff-minimised & kept compatible
-	g758  qt_nodewindow_chainname-22			b42b1dab09d	last=9d37886a3b6
+	g758  -										b42b1dab09d	last=9d37886a3b6  # qt_nodewindow_chainname-22
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	# Needs review: 28564 fix_conf_fuzzbin_main
-	28662 fix_202310_fuzz_missing_rpcs-23		7766c402f9b	last=8ad6b773ca5 fix_202310_fuzz_missing_rpcs
-		#26.xTODO# n/a, remove this
 	# Needs review? 28610 achow101/migrate-avoidreuse
 	#26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
 	# Needs review/simplification: 28649 vasild/reliable_socks5_handshake
@@ -234,7 +233,7 @@ checkout v26.0rc2
 		MERGED: # FIXME: +gui#770
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	MERGED: # TODO: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
-	28695 fix_i2p_sam_sanitychk-25				37a1c3463d1	last=5cf4d266d9b
+	28695 -										37a1c3463d1	last=5cf4d266d9b  # fix_i2p_sam_sanitychk-25
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	28733 fix_depends_PATH_w_spaces-22			4b1f2043949	last=92f7e7f3633 maaku/allow-spaces-in-path
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
@@ -304,8 +303,8 @@ checkout v26.0rc2
 	-     dbcache_1TB-0.13						340c00784b6
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
-	28430 opti_merkle_mutation-0.17				b48610240c4	last=42b25bbd939
-	28592 txrelayrate_14txps-21					8de082c7735
+	28430 -										b48610240c4	last=42b25bbd939  # opti_merkle_mutation-0.17
+	28592 -										8de082c7735  # txrelayrate_14txps-21
 		#26.xTODO# Make configurable? Or is that even sane?
 	# Needs fixing rebase: 28799 wallet_cache_descriptor_id-25
 # SOFTFORK:
