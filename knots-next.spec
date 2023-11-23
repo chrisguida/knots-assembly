@@ -566,6 +566,7 @@ checkout v26.0rc2
 	-     guix_shell_compat-24					e425aec3426
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
 	28167 rpccookieperms-25+knots				9213782194f	last=b4b0d2adc91 willcl-ark/2023-07-rpccookie-perms
+		TODO: See if upstream is suitable for a direct merge
 		# Was #26088 (not in a Knots release); held back cc0d0aeca68...b4b0d2adc91
 		# Added: Param syntax check & log when option is being used
 		# NOTE: If #28076 gets merged, adapt std::filesystem usage
@@ -594,12 +595,14 @@ checkout v26.0rc2
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 bcli_validation-24					def292e8c7b	last=755320f75f2
 	27034 rpc_importaddr_for_descwallet-25+k	05bd5f2f99b	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
+		TODO: See if upstream is suitable for a direct merge
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
 	27216 rpc_getaddressinfo_isactive-24		c951b6947f2	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-25+knots						d3f7295b1a7	last=91771366a3d apoelstra/2023-03--codex32
+		TODO: See if upstream is suitable for a direct merge
 		# Diff-minimised, doc bug fixed
 	# Needs review: 27375 pinheadmz/tor-unix-domain-socket
 	# Needs review? 27679 pinheadmz/zmq-unix-domain-socket
@@ -617,7 +620,7 @@ checkout v26.0rc2
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
-	27770 rpc_getblockfileinfo-25+knots			c92323afe5a	last=5090771f326 furszy/2023_rpc_getblockfileinfo
+	27770 furszy/2023_rpc_getblockfileinfo		c92323afe5a	last=5090771f326  # rpc_getblockfileinfo-25+knots
 	# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 		# Note alternative (approach NACK'd) in #28453
@@ -686,7 +689,7 @@ checkout v26.0rc2
 		# NOTE: Stripped out benchmark change
 		#26.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-25			43028d98ec0
-	15218 postibd_flush-25						6e1ffe36dc9	last=0c7ee166463
+	15218 -										6e1ffe36dc9	last=0c7ee166463  # postibd_flush-25
 	15428 tor_gui_pairing-25+knots				e3afcc98d21	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-25+knots				e4bc1dba681	# Latest code now
