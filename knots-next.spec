@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #28886 / gui #777
 
-checkout v26.0rc2
+checkout v26.0rc3
 @25.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
@@ -40,6 +40,7 @@ checkout v26.0rc2
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					92b38619a9c	last=df5ece3e064 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				cb2d1032bd6
+	TODO: revert macos ZIP only?
 	-     fix_dmg_openfinder-24					83c590fab1b
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
@@ -233,13 +234,10 @@ checkout v26.0rc2
 		MERGED: # FIXME: +gui#770
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	MERGED: # TODO: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
-	28695 -										37a1c3463d1	last=5cf4d266d9b  # fix_i2p_sam_sanitychk-25
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	28733 fix_depends_PATH_w_spaces-22			4b1f2043949	last=92f7e7f3633 maaku/allow-spaces-in-path
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
 	g773 fix_qt_unlock_watchonly-0.20			887878b37ac	last=517c7f9cba3 achow101-g/gui-skip-encryption-check-for-watchonly
-	g774 fanquake/backports_25_2^				2587bbad7ed	last=84d9504d8aa fanquake/backports_25_2  # Fix crash on selecting "Mask values" in transaction view
-		# using 25.x backport in #28768
 	# Not worth it? 28771 achow101/lcov-opts
 	# Not worth it? 28774 vasild/avoid_returning_reference_to_mutex_guarded_member
 	# Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
@@ -254,7 +252,6 @@ checkout v26.0rc2
 	# Needs review: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
 	# Needs review & triage: 28846 fanquake/fixup_multiprocess_arm64
 	# Needs review & triage: 28848 instagibbs/2023-11-submitpackage-results
-	28858 fix_doc_par_opt-21					7dde6536761
 	# Needs review: 28868 achow101/test-migration-watchonly-spendable
 	-     fix_doc_upnp_def_post26896			c5c82e96e5e	last=372cd23f64e fanquake/redundant_upnp_ifdef
 		# Alternative to #28874
