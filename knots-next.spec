@@ -166,18 +166,13 @@ checkout v26.0rc3
 		# When restoring, revert part of bfab6ac4791 in relnotes
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
 	#26.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
-	#26.xTODO# Needs review: 27602 -  # net processing: avoid serving non-announced txs as a result of a MEMPOOL message
-		TODO: # Maybe not useful with (NOW MERGED) #27675 ?  https://github.com/bitcoin/bitcoin/pull/27602#issuecomment-1682070095
-	~MERGED: -     fee_est_stalecheck-25+knots			a6816286044
-		# Modifications to #27622 to allow on mainnet, and enable by default
+	-     acceptstalefeeestimates_mainnet_opt
 	#25.xTODO# Needs review: 27684 hebasto/230516-punish OR ???
 	#26.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	# Needs review: 27804 -  # init: deduplicate added connections
 	27814 -										1826b4ef7cf	last=bfc2bb6a270  # forbid_nohelp-0.19
 	27815 -										83731380072	last=244e6c8db81  # cli_forbid_multihelper-22
 	# Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
-	MERGED: # Needs review: 27823 mzumsande/202306_feature_init_fix
-		#+28612
 	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	#26.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
 	# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
@@ -189,14 +184,13 @@ checkout v26.0rc3
 	# If needed: 28026 furszy/2023_fix_index_timeout
 	#26.xTODO# Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
-	28029 fix_zmq_errhandling_202307-25+k		f7f772f2d5f	last=07086589b27 fix_zmq_errhandling_202307
+	28029 fix_zmq_errhandling_202307-mini		f7f772f2d5f	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err		2ea81f12689
 	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
 		# Fix-only, diff-minimised
 		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
 	#26.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
-	TODO: Ensure bug introduced by #26467 is fixed: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
 	#25.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
@@ -205,8 +199,8 @@ checkout v26.0rc3
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	MERGED: 28471 fix_pkg_eval_sigops_pr28471-25+knots	6e34d1b4d9f
 		# NOTE: Left off first commit for now since it would just get reverted in #28345
-	NO MORE REBASE NEEDED? 28345 fix_bytespersigop_checks-25			1f3ef9a348b	last=78a256505f3 fix_bytespersigop_checks
-		NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually when assembly done
+	28345 fix_bytespersigop_checks-mini			1f3ef9a348b	last=78a256505f3 fix_bytespersigop_checks
+		#26.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done
 	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
