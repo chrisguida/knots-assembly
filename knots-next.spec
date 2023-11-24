@@ -236,7 +236,7 @@ checkout v26.0rc3
 	# Needs review & triage: 28846 fanquake/fixup_multiprocess_arm64
 	# Needs review & triage: 28848 instagibbs/2023-11-submitpackage-results
 	# Needs review: 28868 achow101/test-migration-watchonly-spendable
-	-     fix_doc_upnp_def_post26896			c5c82e96e5e	last=372cd23f64e fanquake/redundant_upnp_ifdef
+	-     fix_doc_upnp_def_post26896			c5c82e96e5e	last=92f88a96290 fanquake/redundant_upnp_ifdef
 		# Alternative to #28874
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	
@@ -249,14 +249,12 @@ checkout v26.0rc3
 	#25.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)		407a2d32ac7
 #@25.x-knots-lts-deps
-	MERGED: #26.xTODO# FIXME 28561 depends_qt_update-25.1+knots
-		# Also #28769
+	28769 depends_qt_update-26
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 @25.x-knots
 # PERFORMANCE:
-	n/a   rm_minisketch-25+k					56c089e915d	last=4e2d2910342 rm_minisketch-23+k
-		#26.xTODO# Probably need to drop this
+	n/a   rm_minisketch-26+k					56c089e915d
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
@@ -269,7 +267,7 @@ checkout v26.0rc3
 	# Needs review: 25968 sipa/202208_headerssync_optimize
 	#26.xTODO# Needs review: 26008 achow101/improve-many-desc-ismine
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
-	26375 zmq_optimise_duplread-25+k			76ce07a3470	last=7b631dc9b19 andrewtoth/no-read-zmq
+	26375 zmq_optimise_duplread-26+k			76ce07a3470	last=7b631dc9b19 andrewtoth/no-read-zmq
 	#26.xTODO# Needs review: 26415 andrewtoth/read-raw-block
 	# Needs review: 26486 sipa/202211_batchnotfound
 	# Opt-in & needs review: 26951 pstratem/2023-01-23-gcsfilter
