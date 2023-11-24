@@ -197,15 +197,12 @@ checkout v26.0rc3
 	#25.xTODO# Triage #28248
 	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
-	MERGED: 28471 fix_pkg_eval_sigops_pr28471-25+knots	6e34d1b4d9f
-		# NOTE: Left off first commit for now since it would just get reverted in #28345
 	28345 fix_bytespersigop_checks-mini			1f3ef9a348b	last=78a256505f3 fix_bytespersigop_checks
 		#26.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done
 	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
-	g752  fix_qt_cmdhelp_mention_uri-0.17		432f807d824
-		FIXME: Determine last=
+	g752  fix_qt_cmdhelp_mention_uri-0.17		432f807d824	last=07bb7068cf9
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
@@ -219,10 +216,7 @@ checkout v26.0rc3
 	# Needs review? 28610 achow101/migrate-avoidreuse
 	#26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
 	# Needs review/simplification: 28649 vasild/reliable_socks5_handshake
-	MERGED: # BUGGY: g765  fix_qt_walletlist_at_shutdown-24
-		MERGED: # FIXME: +gui#770
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
-	MERGED: # TODO: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	28733 fix_depends_PATH_w_spaces-22			4b1f2043949	last=92f7e7f3633 maaku/allow-spaces-in-path
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
