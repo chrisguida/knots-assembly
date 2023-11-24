@@ -58,7 +58,7 @@ checkout v0.21.2
 	(CHECK-LAST)	last=da31940ec9e sys_libsecp256k1-23+knots
 	n/a   sys_univalue_doc-21								last=77c4f3e3af9 sys_univalue-23+knots
 m	7485  sys_univalue_def-21					c393c7a7f51	last=cf9e588e22f sys_univalue_def-23+knots
-	13789 bugfix_asm_pragmas-21+knots			e33b0f86575 last=4edfd1e0d6c bugfix_asm_pragmas
+	13789 bugfix_asm_pragmas-21+knots			e33b0f86575 last=ea93c03a582 bugfix_asm_pragmas
 TM	-     bugfix_asm_leveldb_check-0.20			15cb5704a2a	last=3ca799db25f bugfix_asm_leveldb_check
 	15155 test_external_bcli-21					3385d2476a3	last=06ec7f56dfb test_external_bcli
 	20202 opt_bdb-0.21							4c0c81adb3a
@@ -116,7 +116,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 		# NOTE: Held back annotation in gdd 785429c2c7a fd5353ed826
 	 9524 MarcoFalke/Mf1701-qaPruning					e8a96411986	last=88883ae13d
 	(CHECK-LAST)	last=b0c8dfaca2c rpc_pruneblkchain0
-	10731 log_more_uacomment-21					fb6f182d5c4	last=5b3b93c9eaf log_more_uacomment
+	10731 log_more_uacomment-21					fb6f182d5c4	last=17389f85aa1 log_more_uacomment
 	(CHECK-LAST)	last=f89cd1133c3 log_more_uacomment-24
 	(CHECK-LAST)	last=fa16d94b095 log_more_uacomment-22
 	14485 fadvise-0.20							ebbe8fe4097	last=a81aaba24db fadvise
@@ -220,7 +220,7 @@ TM	g188  bugfix_psbt_binmode-0.21				79e220794d8	last=cc3971c9ff5 achow101-g/bin
 		TODO: Check if gui#662 is needed
 	g217  gui_clickable_warning-0.11			21f8d05d194	last=67c59ae4793 jarolrod-g/warning-look-like-button
 	# Needs careful review: g219 hebasto-g/210223-toolbar
-	g236  gui_init_walleterror_cont-21			11342604e1e	last=6cbea59a35c gui_init_walleterror_cont
+	g236  gui_init_walleterror_cont-21			11342604e1e	last=f562995b9c1 gui_init_walleterror_cont
 		# NOTE: Held back refactoring 0b00fd650e1...fb3ea0ad3a8
 	# Complex: 21007 hebasto:210316-fork
 		# +21447 TODO
@@ -234,7 +234,7 @@ TM	21907 listwalletdir_iterate_inf-0.19		1483674ad69
 	21944 fix_listwalletdir_rootdir-0.21+knots	0cb9e8948d1
 	22013 ignoreblockrelayfordnsskip-0.21		8216936b4d9
 	# Needs work: 22079 -  # zmq: Add support to listen on IPv6 addresses
-	19315 rpc_addconnection-0.21				0ec207c9478	last=87511fc2357 rpc_addconnection_mainnet
+	19315 rpc_addconnection-0.21				0ec207c9478	last=2fcf74eb45b rpc_addconnection_mainnet
 	(CHECK-LAST)	last=7d85d477730 rpc_addconnection_mainnet-22
 		# PARTIAL: Only the actual addconnection RPC method
 		# NOTE: Modified to allow use on non-regtest networks

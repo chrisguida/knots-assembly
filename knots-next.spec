@@ -28,8 +28,8 @@ checkout v26.0rc3
 	n/a   (delete_release_notes_fragments)
 @25.x-knotsfixes
 # TESTS:
-	-     lint_relaxer							3f26eac129a
-	-     ci_knots-25							998864d46e0
+	# As needed: -     lint_relaxer							3f26eac129a
+	#26.xTODO# -     ci_knots-25							998864d46e0
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
@@ -39,15 +39,13 @@ checkout v26.0rc3
 	18902 fix_gitdir_again						148d95ab845
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					92b38619a9c	last=df5ece3e064 2020mingwthrd
-	18490 bugfix_symcheck_pe_case				cb2d1032bd6
-	TODO: revert macos ZIP only?
-	-     fix_dmg_openfinder-24					83c590fab1b
+	# As needed: 18490 bugfix_symcheck_pe_case				cb2d1032bd6
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
 	14968 http_bind_error						5c0444cd6df	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					9478c8709f5
-		# NOTE: libevent-copied code up to date as of 2021-07-16 c29f1dbe116c88434e77721ca215b8d2082b247f
+		# NOTE: libevent-copied code up to date as of 2023-11-22 cfb2b89a1d0642abd6389913e237f49c662502e4
 	 9524  rpc_pruneblkchain0					243a7d11f38	last=88883ae13d
 	10731 log_more_uacomment					0b1f4bfaaa1
 	14485 fadvise								8abba8c0517
@@ -159,14 +157,11 @@ checkout v26.0rc3
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
-	MERGED: 27302 ignoredconf_err_def0-25				0e56163487d
-		# NOTE: Changed default for -allowignoredconf to 0 for compatibility
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
 	#25.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
 	# TODO: Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
-	MERGED: 27577 seednode_delay_fixedseeds-24			f9548883814
-		#25.xTODO# Check #28016
+	# Needs concept/review: 28016 -  # p2p: gives seednode priority over dnsseed if both are provided
 	# Needs concept review: 27591 rpc_mempoolvsize-25								last=60bde2dac05 glozow/2023-05-mempool-vsize
 		# When restoring, revert part of bfab6ac4791 in relnotes
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
@@ -827,6 +822,10 @@ checkout v26.0rc3
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		3f1e47e06ff
+	TODO: revert macos ZIP only? #28432
+		NOTE: reverting temporarily reintroduces .tiff file
+	-     fix_dmg_openfinder-24					83c590fab1b
+		TODO: Merge into above revert?
 	7483  svg_icon-25+knots						bbb36b36a96
 	n/a   tbc_font								cc499335148
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
