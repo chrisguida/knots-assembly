@@ -282,7 +282,7 @@ checkout v26.0rc3
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 -										b48610240c4	last=42b25bbd939  # opti_merkle_mutation-0.17
-	28592 -										8de082c7735  # txrelayrate_14txps-21
+	28592 -										8de082c7735 last=80489ba6e84  # txrelayrate_14txps-21
 		#26.xTODO# Make configurable? Or is that even sane?
 	# Needs fixing rebase: 28799 wallet_cache_descriptor_id-25
 # SOFTFORK:
@@ -306,8 +306,6 @@ checkout v26.0rc3
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
 	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
-	# Needs significant rebase work: 12096 bumpfee_reduce_output-0.18			a5f9f682a4	last=086313c8b1 kallewoof/better-bumpfee
-		MERGED: # NOTE: Latest version is rebased for adding inputs, with serious issues (see #28505 for hacky "fix")
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
