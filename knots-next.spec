@@ -439,6 +439,7 @@ checkout v26.0rc3
 		# +27797 ?
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	21780 rpc_maxmempool						c433f09baba	last=040b280c661 rebroad/MaxMempoolRPC
+		FIXME: accidentally changed from MB to bytes?
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
@@ -792,6 +793,7 @@ checkout v26.0rc3
 		#26.xTODO# Add new checkpoint
 	10282 timebomb_knots						e3778785186
 	-     rwconf_policy-25+knots				e3ba2d1e080
+		FIXME: full rbf not default??
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
