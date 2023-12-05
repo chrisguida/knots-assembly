@@ -1,7 +1,7 @@
-timestamp 2023-11-15 23:49:11
+timestamp 2023-12-05 03:31:40
 lastapply no-merge
 
-#.. checked up to PR #28886 / gui #777
+#.. checked up to PR #28997 / gui #777
 
 checkout v26.0rc3
 @25.x-syslibs
@@ -15,6 +15,7 @@ checkout v26.0rc3
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
 	#26.xTODO: sys_libminisketch
 	13789 bugfix_asm_pragmas					52874632dc1
+		# Should revert #28893 if merged?
 	15155 test_external_bcli					0f88ee0361c
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
@@ -239,6 +240,15 @@ checkout v26.0rc3
 	-     fix_doc_upnp_def_post26896			c5c82e96e5e	last=92f88a96290 fanquake/redundant_upnp_ifdef
 		# Alternative to #28874
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
+	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
+	# Needs work: 28920 furszy/2023_wallet_birhtime_update
+	28936 petertodd/2023-11-change-dns-seed
+	28944 ishaanam/sendall_anti_fee_sniping
+	28946 willcl-ark/fix-pidfile-delete
+	FIXME: real fix for issues in #28967 (OR #28981?)
+	Needs review (very minor fix): 28976 achow101/migrate-blank
+	Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
+	# Needs review: 28994 furszy/2023_wallet_sffo_skip_bnb
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -285,6 +295,10 @@ checkout v26.0rc3
 	28592 -										8de082c7735 last=80489ba6e84  # txrelayrate_14txps-21
 		#26.xTODO# Make configurable? Or is that even sane?
 	# Needs fixing rebase: 28799 wallet_cache_descriptor_id-25
+	# Needs review: 28923 theStack/202311-add_SignTransaction_benchmark
+	# Needs review: 28945 martinus/2023-11-improve-ccoinsviewcache-reallocatecache
+	# Needs review: 28955 furszy/2023_index_blockfilter_cache_header
+	# Needs review: 28987 furszy/2023_wallet_zaptx
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -503,7 +517,7 @@ checkout v26.0rc3
 		# CAUTION: requires theming changes for gui#537
 	# Needs work & complex test rebasing: 24539   # Add a "tx output spender" index
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
-		# NOTE: When rebasing post-#21726, need to restore AllowPrune func ?
+		# NOTE: When rebasing (now that #21726 is merged), need to restore AllowPrune func ?
 	# Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
 		SEMIMERGED: # Triage: +28577+28588+28634+partof(28645)+28805+28849
 	# Not worth it? 24615/24569/24556 guix on non-x86
@@ -590,7 +604,6 @@ checkout v26.0rc3
 		# Careful, could end up paying "added change" to a destination -.-
 	# Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
 	#26.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
-	# Needs concept/review: 27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	MERGED: # Needs review: 27596 jamesob/assumeutxo
 		SEMIMERGED: #+ Triage: 28589+28590+28608+28625+partof(28645)+28647+28652+28659+28666+28669+28670+28698+28835+28838
 	27600 p2p_forceinbound-25+knots				431468d6648	last=8c2026848da pinheadmz/whitebind-evict
@@ -606,6 +619,7 @@ checkout v26.0rc3
 	# Needs work & maybe removing an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
 	# Needs review: 27837 furszy/2023_introduce_block_request_tracker
 	# Needs work: 27854 -  # [WIP] add a stratum v2 template provider
+		# OR #28983
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 	SEMIMERGED: # Needs review: 28060+28483+28052 MarcoFalke/2306-fs_stuff-
@@ -617,6 +631,11 @@ checkout v26.0rc3
 		# Why not just increase inbound capacity to max anyway?
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
 	# Needs work: g777 -  # gui: getrawtransaction implementation
+	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats
+		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
+	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
+	# Needs review: 28950 instagibbs/2023-11-submitpackage-max-fee-burn
+	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
 # Non-progress functionality:
 	8751  sort-multisigs-25+knots				426c7c11321	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -808,7 +827,7 @@ checkout v26.0rc3
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		3f1e47e06ff
-	TODO: revert macos ZIP only? #28432
+	TODO: revert macos ZIP only? #28432 #28932 #28973
 		NOTE: reverting temporarily reintroduces .tiff file
 	-     fix_dmg_openfinder-24					83c590fab1b
 		TODO: Merge into above revert?
@@ -831,7 +850,7 @@ checkout v26.0rc3
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		ab6d532443f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20231115)			decc35f238b
+	n/a  (bump_version=Knots:20231205)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
 	n/a   (cherrypick=b5582b97bbf)				5961e01c91d  # release notes: write/update, including change log and credits

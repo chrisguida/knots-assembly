@@ -1,8 +1,8 @@
-timestamp 2023-11-15 23:49:11
+timestamp 2023-12-05 03:31:40
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28886 / gui #777 for fixes
+#.. checked up to PR #28997 / gui #777 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -757,10 +757,24 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: # Needs review & triage: 28846 fanquake/fixup_multiprocess_arm64
 	Triage: # Needs review & triage: 28848 instagibbs/2023-11-submitpackage-results
 	Triage: 28858 fanquake/man_par_drop_negative
+		# 26.x backport in #28872
 	Triage: # Needs review: 28868 achow101/test-migration-watchonly-spendable
 	Triage: 28874 fanquake/redundant_upnp_ifdef
 	Triage: # Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	Triage: 28913
+	Triage: Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
+	Triage: 28895 jonatack/2023-11-do-not-make-automatic-outbound-connection-to-addnode-peers
+		# 26.x backport in #28872
+	Triage: 28913 martinus/2023-11-fix-pool-allocation-alignment-on-ARM
+		# 26.x backport in #28872
+	Triage: 28919 hebasto/231120-crc-arm64
+		# 26.x backport in #28872
+	Triage: Needs work: 28920 furszy/2023_wallet_birhtime_update
+	28936 petertodd/2023-11-change-dns-seed
+	Triage: 28944 ishaanam/sendall_anti_fee_sniping
+	Triage: 28946 willcl-ark/fix-pidfile-delete
+	FIXME: real fix for issues in #28967
+	Triage: Needs review: 28994 furszy/2023_wallet_sffo_skip_bnb
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
