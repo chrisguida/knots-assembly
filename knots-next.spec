@@ -4,7 +4,7 @@ lastapply no-merge
 #.. checked up to PR #28997 / gui #777
 
 checkout v26.0rc3
-@25.x-syslibs
+@26.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						0d2f1ba753f
@@ -27,7 +27,7 @@ checkout v26.0rc3
 	# Needs review: 25191 hebasto/220523-qt6-mac
 	# ---- END qt6 SUPPORT ----
 	n/a   (delete_release_notes_fragments)
-@25.x-knotsfixes
+@26.x-knotsfixes
 # TESTS:
 	# As needed: -     lint_relaxer							3f26eac129a
 	#26.xTODO# -     ci_knots-25							998864d46e0
@@ -129,7 +129,7 @@ checkout v26.0rc3
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
-	#25.xTODO# Check on #25561
+	#26.xTODO# Check on #25561
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
@@ -138,9 +138,9 @@ checkout v26.0rc3
 	# Needs review: 25938 mzumsande/202208_fixed_cjdns
 	g662  qt_fix_txview_202209					2f064e8f664
 		# Includes gui#368
-	#25.xTODO# Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
+	#26.xTODO# Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
-	#25.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
+	#26.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
 	# TODO: Needs review: 26316 andrewtoth/block-read-shared-mutex
 	# TODO: Needs work? 26343 mzumsande/202210_addrfetch_servicebits
 	#26.xTODO# Sane fix for #24049
@@ -153,13 +153,13 @@ checkout v26.0rc3
 	#26.xTODO# Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
 	#26.xTODO# Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
 	#26.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
-	#25.xTODO# Needs bugfix? (https://github.com/bitcoin/bitcoin/pull/27039/files#r1247267535) 27039 pinheadmz/reindex-read-only
-	#25.xTODO# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
+	#26.xTODO# Needs bugfix? (https://github.com/bitcoin/bitcoin/pull/27039/files#r1247267535) 27039 pinheadmz/reindex-read-only
+	#26.xTODO# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
-	#25.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
+	#26.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
 	# TODO: Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
 	# Needs concept/review: 28016 -  # p2p: gives seednode priority over dnsseed if both are provided
@@ -168,7 +168,7 @@ checkout v26.0rc3
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
 	#26.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
 	-     acceptstalefeeestimates_mainnet_opt
-	#25.xTODO# Needs review: 27684 hebasto/230516-punish OR ???
+	#26.xTODO# Needs review: 27684 hebasto/230516-punish OR ???
 	#26.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	# Needs review: 27804 -  # init: deduplicate added connections
 	27814 -										1826b4ef7cf	last=bfc2bb6a270  # forbid_nohelp-0.19
@@ -194,9 +194,9 @@ checkout v26.0rc3
 	#26.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
-	#25.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
-	#25.xTODO# Triage #28248
-	#25.xTODO# FIXME: curl RPCdoc examples use wrong content type!
+	#26.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
+	#26.xTODO# Triage #28248
+	#26.xTODO# FIXME: curl RPCdoc examples use wrong content type!
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks-mini			1f3ef9a348b	last=78a256505f3 fix_bytespersigop_checks
 		#26.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done
@@ -256,13 +256,13 @@ checkout v26.0rc3
 			# Holding back in hopes of potential RPC+GUI unification
 		# But not sure it's worth breaking RPC?
 	# FIXME: workaround #26025 / https://github.com/llvm/llvm-project/issues/57587 ?
-	#25.xTODO# Review security report(s)
+	#26.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)		407a2d32ac7
-#@25.x-knots-lts-deps
+#@26.x-knots-lts-deps
 	28769 depends_qt_update-26
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
-@25.x-knots
+@26.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					56c089e915d
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
@@ -327,7 +327,7 @@ checkout v26.0rc3
 	18479 rpc_sign_show_fees					7e29fa92470	last=47b2ba29df2 !origin-pull/12911/head
 		# Dropped rel notes file
 		# NOTE: Originally #12911
-		#25.xTODO# FIXME: "feerate" fails to account for sigops (see 21d85b5c0e)
+		#26.xTODO# FIXME: "feerate" fails to account for sigops (see 21d85b5c0e)
 	# Needs review and care (new index): 13014 jonasschnelli/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs work: 13989 add avx512 instrinsic
@@ -563,7 +563,7 @@ checkout v26.0rc3
 		# NOTE: If #28076 gets merged, adapt std::filesystem usage
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
-	#25.xTODO# sendrawtransaction to a specific node bypassing mempool
+	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
 	27114 whitelist_outgoing-mini-25+knots		024d8fc86d6	last=d69747ab656
@@ -740,7 +740,7 @@ checkout v26.0rc3
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			1e5df93d93b
 	-    mining_priority						b48599f6d5f  # NOTE: now the latest code, rebased
-		#25.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
+		#26.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 	5861 gui_restore_addresses					643e6f6ba1e
 	5891  qt_console_history_persist			bcdfddecdb9	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-25+knots						ef5614bee75	# Latest code now
@@ -796,7 +796,7 @@ checkout v26.0rc3
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-25+knots				06ff2c34e3b
-		#25.xTODO# Add tests and make sure boundaries are correct
+		#26.xTODO# Add tests and make sure boundaries are correct
 	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	-     bloom_default-0.21+knots				edc9ff33c65
 	-     wallet_avoid_newerchange				bacea8923d4
@@ -805,8 +805,8 @@ checkout v26.0rc3
 	-     maxscriptsize-25+knots				98c0265003e
 	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
-	#25.xTODO# Ordisrespector equivalent (Ordislow??)
-	#25.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
+	#26.xTODO# Ordisrespector equivalent (Ordislow??)
+	#26.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 	-     enforce_checkpoints					271ea89d048
 	n/a   checkpoint_update-25					ecdd83d1986	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
 		#26.xTODO# Add new checkpoint
@@ -840,7 +840,7 @@ checkout v26.0rc3
 		#26.xTODO# Review security policy
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
-#25.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
+#26.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #26.xTODO# Check macOS zip impact on tuffy font etc
 # TODO: Check that we aren't deprecating anything in Core
 # TODO: verify src tarball includes rendered_icons incl nsis-header
@@ -869,4 +869,4 @@ checkout v26.0rc3
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
 
-# TODO: @25.x-knots-android
+# TODO: @26.x-knots-android
