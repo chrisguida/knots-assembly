@@ -205,6 +205,7 @@ checkout v26.0rc3
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	g752  fix_qt_cmdhelp_mention_uri-0.17		432f807d824	last=07bb7068cf9
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
+	28486 hebasto/230914-winsock
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
@@ -228,7 +229,8 @@ checkout v26.0rc3
 	# -- Needs review: g775 -  # gui: add used balance to overview page
 	# Needs review: 28780 -  # log: torcontrol opt checks
 	# Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
-	28784 fix_keep_notmy_cookie-23				2362f3c6d63	last=d95dde9441f
+	28784 fix_keep_notmy_cookie-26+knots		2362f3c6d63	last=7cb9367157e
+		# Reverted regression from d95dde9441f...7cb9367157e
 	# Needs review: 28791 maaku/fix-assumeutxos-core-dump
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
@@ -242,10 +244,10 @@ checkout v26.0rc3
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
 	# Needs work: 28920 furszy/2023_wallet_birhtime_update
-	28936 petertodd/2023-11-change-dns-seed
-	28944 ishaanam/sendall_anti_fee_sniping
-	28946 willcl-ark/fix-pidfile-delete
-	FIXME: real fix for issues in #28967 (OR #28981?)
+	28936 dnsseed_petertoddnet-25
+	28944 sendall_antifeesniping-25							last=f348eadadd6 ishaanam/sendall_anti_fee_sniping
+	28946 fix_keep_notmy_pidfile-26+knots
+	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	Needs review (very minor fix): 28976 achow101/migrate-blank
 	Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
 	# Needs review: 28994 furszy/2023_wallet_sffo_skip_bnb

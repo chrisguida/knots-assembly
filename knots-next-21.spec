@@ -712,6 +712,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: g751  furszy/2023_gui_fix_appbar_crash
 	Triage: 28452 sipa/202309_really_no_memory
 	Triage: # Non-trivial? (but only affects testnet?) 28472 instagibbs/2023-09-immutible-m_limit
+	Triage: 28486 hebasto/230914-winsock
 	Triage: #26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	Triage: #26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	Triage: # Needs review: 28514 -  # wallet: Fix wallet directory initialization
