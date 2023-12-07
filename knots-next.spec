@@ -205,7 +205,7 @@ checkout v26.0rc3
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	g752  fix_qt_cmdhelp_mention_uri-0.17		432f807d824	last=07bb7068cf9
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
-	28486 hebasto/230914-winsock
+	28486 hebasto/230914-winsock							last=ddd8661c7a7
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
@@ -799,6 +799,7 @@ checkout v26.0rc3
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-25+knots				06ff2c34e3b
 		#26.xTODO# Add tests and make sure boundaries are correct
+	TODO: filter runes?? https://rodarmor.com/blog/runes/
 	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	-     bloom_default-0.21+knots				edc9ff33c65
 	-     wallet_avoid_newerchange				bacea8923d4
