@@ -205,7 +205,7 @@ checkout v26.0rc3
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	g752  fix_qt_cmdhelp_mention_uri-0.17		432f807d824	last=07bb7068cf9
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
-	28486 hebasto/230914-winsock							last=ddd8661c7a7
+	28486 fix_test_winsock_init-26
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
@@ -245,11 +245,11 @@ checkout v26.0rc3
 	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
 	# Needs work: 28920 furszy/2023_wallet_birhtime_update
 	28936 dnsseed_petertoddnet-25
-	28944 sendall_antifeesniping-25							last=f348eadadd6 ishaanam/sendall_anti_fee_sniping
+	28944 sendall_antifeesniping-25							last=a5ef4e226a8 ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
-	Needs review (very minor fix): 28976 achow101/migrate-blank
-	Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
+	# Needs review (very minor fix): 28976 achow101/migrate-blank
+	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
 	# Needs review: 28994 furszy/2023_wallet_sffo_skip_bnb
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -374,8 +374,8 @@ checkout v26.0rc3
 	-     qt_openuri_pastebtn_shortcut-23		15cacac70c7
 		# NOTE: Used to be part of gui#319 (formerly #17955)
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
-	18014 siphash_optimise_pr18014-0.21+knots	bb93ccc5895	last=409c2e34522 elichai/2020-01-siphash
-		# NOTE: Held back 9ed348ddea3...19e28a41168 (theoretical bug doesn't affect us)
+	18014 siphash_optimise_pr18014-26+knots		bb93ccc5895	last=409c2e34522 elichai/2020-01-siphash
+	(CHECK-LAST)	last=5622dd16ecf siphash_optimise_pr18014-26
 		# NOTE: Dropped benchmarks & diff-minimised
 	# Needs work/review/completion: 18242 jonasschnelli/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
@@ -530,8 +530,8 @@ checkout v26.0rc3
 	# Needs work: 24952 -  # rpc: Add sqlite format option for dumptxoutset
 	# Concept NACK? 25026 -  # rpc: Make pruneblockchain fetch old blocks if height is lower than pruned height
 	# Needs triage & review: 25038 glozow/package-rbf
-	# Needs licensing/review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
-		# Caution: Has a bug per call w/ maaku
+	Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
+		# Caution: Has a bug per call w/ maaku ???
 	25183 rpc_fundraw_segwitonly				56cc6aaef2a	last=9e7fd5c0fe3
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
 		# Fixed tests with inspiration from 9e7fd5c0fe3
@@ -638,6 +638,7 @@ checkout v26.0rc3
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
 	# Needs review: 28950 instagibbs/2023-11-submitpackage-max-fee-burn
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
+	TODO: GUI block template view
 # Non-progress functionality:
 	8751  sort-multisigs-25+knots				426c7c11321	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -800,6 +801,10 @@ checkout v26.0rc3
 	-     datacarriercost-25+knots				06ff2c34e3b
 		#26.xTODO# Add tests and make sure boundaries are correct
 	TODO: filter runes?? https://rodarmor.com/blog/runes/
+	TODO: CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666
+	TODO: Discount privacy txs?
+	TODO: Whitelist Whirlpool Tx0 and/or BIP47?
+	TODO: Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	-     bloom_default-0.21+knots				edc9ff33c65
 	-     wallet_avoid_newerchange				bacea8923d4
@@ -835,6 +840,7 @@ checkout v26.0rc3
 	-     fix_dmg_openfinder-24					83c590fab1b
 		TODO: Merge into above revert?
 	7483  svg_icon-25+knots						bbb36b36a96
+		Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 	n/a   tbc_font								cc499335148
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
