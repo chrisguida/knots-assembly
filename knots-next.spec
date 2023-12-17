@@ -1,7 +1,7 @@
-timestamp 2023-12-05 03:31:40
+timestamp 2023-12-17 18:46:33
 lastapply no-merge
 
-#.. checked up to PR #28997 / gui #777
+#.. checked up to PR #29102 / gui #782
 
 checkout v26.0rc3
 @26.x-syslibs
@@ -128,6 +128,7 @@ checkout v26.0rc3
 		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
+		#+29065
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	#26.xTODO# Check on #25561
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
@@ -243,14 +244,23 @@ checkout v26.0rc3
 		# Alternative to #28874
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
-	# Needs work: 28920 furszy/2023_wallet_birhtime_update
+	28920 furszy/2023_wallet_birhtime_update
+		26.x backport in #29011
 	28936 dnsseed_petertoddnet-25
 	28944 sendall_antifeesniping-25							last=a5ef4e226a8 ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	# Needs review (very minor fix): 28976 achow101/migrate-blank
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
-	# Needs review: 28994 furszy/2023_wallet_sffo_skip_bnb
+	28994 furszy/2023_wallet_sffo_skip_bnb
+		26.x backport in #29011 (after CI commit we don't have)
+	Needs review? 28998 0xB10C/2023-12-addpeeraddress-return-error
+	29003 mzumsande/202312_fix_getrawtx_crash
+		26.x backport in #29011 (after CI commit we don't have)
+	29022 -  # Make bitcoin-tx replaceable value optional
+	Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
+	# MSVC: 29044 hebasto/231209-msvc-qt
+	g780  -  # Fix: Ensure 'Transaction View' remains disabled if no wallet is selected
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -301,9 +311,11 @@ checkout v26.0rc3
 	# Needs review: 28945 martinus/2023-11-improve-ccoinsviewcache-reallocatecache
 	# Needs review: 28955 furszy/2023_index_blockfilter_cache_header
 	# Needs review: 28987 furszy/2023_wallet_zaptx
+	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
+	# TODO: 29050 stevenroose/txhash
 # FUNCTIONALITY:
 	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
 		# test2: export of symbol _IO_stdin_used not allowed!
@@ -638,7 +650,11 @@ checkout v26.0rc3
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
 	# Needs review: 28950 instagibbs/2023-11-submitpackage-max-fee-burn
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
+	Needs review? 29016 niftynei/nifty/listmempoolentry
+	Needs review? 29054 achow101/descriptor-sethdseed
+	Needs review? 29058 mzumsande/202312_manual_bip324
 	TODO: GUI block template view
+	TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
 # Non-progress functionality:
 	8751  sort-multisigs-25+knots				426c7c11321	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -735,7 +751,7 @@ checkout v26.0rc3
 	7107  qtnetworkport-25+knots				9c7dec6c224	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force-25+knots				e2a858f12ef last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
-		# TODO: Compatibility with #25532 if merged
+		# TODO: Compatibility with #25532,#29060 if merged
 	11082 rwconf-25+knots						0e725308ae7 # Latest code now
 	7510  rwconf_gui-25+knots					8547325ff36
 	559   accept_nonstdtxn-25+knots				f84d8616fa1
@@ -831,7 +847,8 @@ checkout v26.0rc3
 	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
 	# Needs review/options: 26348 -  # Make P2SH redeem script "IF .. PUSH <x> ELSE ... PUSH <y> ENDIF CHECKMULTISIG .. " standard
 	# Needs refactoring to only happen for -acceptnonstdtxn(?): 26398 instagibbs/relax_too_small_tx_equality
-	# Problematic: 26403 instagibbs/ephemeral-anchors
+	# Needs review/concept: 29001 instagibbs/2023-12-ephemeral-anchors
+		# Problematic: 26403 instagibbs/ephemeral-anchors
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		3f1e47e06ff
@@ -859,7 +876,7 @@ checkout v26.0rc3
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		ab6d532443f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20231205)			decc35f238b
+	n/a  (bump_version=Knots:20231217)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
 	n/a   (cherrypick=b5582b97bbf)				5961e01c91d  # release notes: write/update, including change log and credits

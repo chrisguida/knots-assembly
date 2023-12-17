@@ -1,8 +1,8 @@
-timestamp 2023-12-05 03:31:40
+timestamp 2023-12-17 18:46:33
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #28997 / gui #777 for fixes
+#.. checked up to PR #29102 / gui #782 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -462,6 +462,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review/work? 25272 wallet_sync_catch_db_write_err-21
 	25256 log_threadname_unknown-0.19
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
+		#+29065
 	25276 fix_rpcdoc_importdesc_pr25276-21
 	# Meh? 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
 	# Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
@@ -770,12 +771,21 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# 26.x backport in #28872
 	Triage: 28919 hebasto/231120-crc-arm64
 		# 26.x backport in #28872
-	Triage: Needs work: 28920 furszy/2023_wallet_birhtime_update
+	Triage: 28920 furszy/2023_wallet_birhtime_update
+		26.x backport in #29011
 	28936 petertodd/2023-11-change-dns-seed
 	Triage: 28944 ishaanam/sendall_anti_fee_sniping
 	Triage: 28946 willcl-ark/fix-pidfile-delete
 	FIXME: real fix for issues in #28967
-	Triage: Needs review: 28994 furszy/2023_wallet_sffo_skip_bnb
+	Triage: 28994 furszy/2023_wallet_sffo_skip_bnb
+		26.x backport in #29011 (after CI commit we don't have)
+	Triage: Needs review? 28998 0xB10C/2023-12-addpeeraddress-return-error
+	Triage: 29003 mzumsande/202312_fix_getrawtx_crash
+		26.x backport in #29011 (after CI commit we don't have)
+	Triage: 29022 -  # Make bitcoin-tx replaceable value optional
+	Triage: Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
+	Triage: # MSVC: 29044 hebasto/231209-msvc-qt
+	Triage: g780  -  # Fix: Ensure 'Transaction View' remains disabled if no wallet is selected
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
