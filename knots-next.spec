@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #29102 / gui #782
 
-checkout v26.0rc3
+checkout v26.0
 @26.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
@@ -244,23 +244,22 @@ checkout v26.0rc3
 		# Alternative to #28874
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
-	28920 furszy/2023_wallet_birhtime_update
-		26.x backport in #29011
+	28920 fix_wallet_def_birthtime-26						last=7e90b5938f4 !fanquake/26_1_backports^^
+		# Diff-minimised by dropping leading refactor commit (and rebasing around it)
 	28936 dnsseed_petertoddnet-25
 	28944 sendall_antifeesniping-25							last=a5ef4e226a8 ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	# Needs review (very minor fix): 28976 achow101/migrate-blank
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
-	28994 furszy/2023_wallet_sffo_skip_bnb
-		26.x backport in #29011 (after CI commit we don't have)
-	Needs review? 28998 0xB10C/2023-12-addpeeraddress-return-error
-	29003 mzumsande/202312_fix_getrawtx_crash
-		26.x backport in #29011 (after CI commit we don't have)
-	29022 -  # Make bitcoin-tx replaceable value optional
-	Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
+	28994 fix_wallet_sffo_skip_bnb-26
+		# Diff-minimised
+	# Needs review? 28998 0xB10C/2023-12-addpeeraddress-return-error
+	29003 fix_rpc_getrawtx_v3_unconf-26
+	29022 fix_btx_replacable_blank-21
+	# Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
 	# MSVC: 29044 hebasto/231209-msvc-qt
-	g780  -  # Fix: Ensure 'Transaction View' remains disabled if no wallet is selected
+	g780  fix_qt_txview_prG780-25							last=b2e531e70a8
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.

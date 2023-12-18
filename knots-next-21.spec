@@ -782,7 +782,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review? 28998 0xB10C/2023-12-addpeeraddress-return-error
 	Triage: 29003 mzumsande/202312_fix_getrawtx_crash
 		26.x backport in #29011 (after CI commit we don't have)
-	Triage: 29022 -  # Make bitcoin-tx replaceable value optional
+	Triage: 29022 fix_btx_replacable_blank-21
 	Triage: Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
 	Triage: # MSVC: 29044 hebasto/231209-msvc-qt
 	Triage: g780  -  # Fix: Ensure 'Transaction View' remains disabled if no wallet is selected
