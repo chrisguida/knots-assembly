@@ -371,7 +371,7 @@ checkout v26.0
 		# TODO: Check gui#320 for usability
 		# TODO: https://twitter.com/RandyMcMillan/status/1490107008443457538?t=Qc4LO63rRuWxErtRel06EQ&s=19
 		# 			aka 4613c88c91f4f3846aa62c929ad73d1a3e6ac70e
-	22693 getaddressinfo_txids					21208b9b577
+	22693 getaddressinfo_txids-26+k				21208b9b577	last=cd4e5ddaf7f getaddressinfo_txids
 	g562  wallet_warn_reuse_gui					937e84ba2fe
 		# NOTE: Was #15987
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
