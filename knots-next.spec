@@ -244,7 +244,7 @@ checkout v26.0
 		# Alternative to #28874
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
-	28920 fix_wallet_def_birthtime-26						last=7e90b5938f4 !fanquake/26_1_backports^^
+	28920 fix_wallet_def_birthtime-26						last=3704e3a04c5 !fanquake/26_1_backports^^
 		# Diff-minimised by dropping leading refactor commit (and rebasing around it)
 	28936 dnsseed_petertoddnet-25
 	28944 sendall_antifeesniping-25							last=a5ef4e226a8 ishaanam/sendall_anti_fee_sniping
@@ -371,7 +371,8 @@ checkout v26.0
 		# TODO: Check gui#320 for usability
 		# TODO: https://twitter.com/RandyMcMillan/status/1490107008443457538?t=Qc4LO63rRuWxErtRel06EQ&s=19
 		# 			aka 4613c88c91f4f3846aa62c929ad73d1a3e6ac70e
-	22693 getaddressinfo_txids-26+k				21208b9b577	last=cd4e5ddaf7f getaddressinfo_txids
+	22693 getaddressinfo_txids-26+k				21208b9b577	last=03e8a66fc44 getaddressinfo_txids
+		# NOTE: cd4e5ddaf7f...03e8a66fc44 simply squashes bugfix into 1st commit
 	g562  wallet_warn_reuse_gui					937e84ba2fe
 		# NOTE: Was #15987
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
