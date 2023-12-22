@@ -260,6 +260,7 @@ checkout v26.0
 	# Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
 	# MSVC: 29044 hebasto/231209-msvc-qt
 	g780  fix_qt_txview_prG780-25							last=b2e531e70a8
+	TODO: UX fix for ASICBoost triggering softfork warnings https://github.com/bitcoinknots/bitcoin/issues/49
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -816,6 +817,7 @@ checkout v26.0
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-25+knots				06ff2c34e3b
 		#26.xTODO# Add tests and make sure boundaries are correct
+	TODO: bare p2pk filter
 	TODO: filter runes?? https://rodarmor.com/blog/runes/
 	TODO: CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666
 	TODO: Discount privacy txs?

@@ -786,6 +786,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
 	Triage: # MSVC: 29044 hebasto/231209-msvc-qt
 	Triage: g780  -  # Fix: Ensure 'Transaction View' remains disabled if no wallet is selected
+	Triage: TODO: UX fix for ASICBoost triggering softfork warnings https://github.com/bitcoinknots/bitcoin/issues/49
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -955,6 +956,8 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		#		* 2554dc0ba3d Refactor PruneLockInfo.temporary to default to true
 		# NOTE: Held back extra prune lock buffer & rebasing on #21726
 		TODO: Check if any fix from #26215 is needed
+		TODO: * c67c712911b Bugfix: RPC: blockchain: Actually include "temporary" flag in listprunelocks result
+
 	19762 ryanofsky/pr/named					3505e6dedbb	last=fa15c9b843b
 	19776 -										2d98f923dec	last=343dc4760fd  # net, rpc: expose high bandwidth mode state via getpeerinfo
 	19873 mempressure-21						368b6daca5d last=27d43142a0d mempressure
