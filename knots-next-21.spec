@@ -786,7 +786,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
 	Triage: # MSVC: 29044 hebasto/231209-msvc-qt
 	Triage: g780  -  # Fix: Ensure 'Transaction View' remains disabled if no wallet is selected
-	Triage: TODO: UX fix for ASICBoost triggering softfork warnings https://github.com/bitcoinknots/bitcoin/issues/49
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -1277,6 +1276,7 @@ m	15421 tor_subprocess-0.21+knots				ccf77ea4de5	last=58c6cafd3a1 tor_subprocess
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning-0.21+knots		d001554bb8d	last=c6d1e2e1b99 restore_vbits_warning
 	(CHECK-LAST)	last=896eea449ad restore_vbits_warning-22
+		TODO: UX fix for ASICBoost triggering softfork warnings https://github.com/bitcoinknots/bitcoin/issues/49
 	20832 rpc_validateaddress_error-0.21.1+k	0859c222db0
 	16807 bech32_error_detection-0.21.1+knots	c08a0bcebf7	last=88cc4810926 meshcollider/201909_bech32_error_detection
 	(CHECK-LAST)	last=3bc568d6753 old_bech32_error_detection
