@@ -260,6 +260,7 @@ checkout v26.0
 	# Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
 	# MSVC: 29044 hebasto/231209-msvc-qt
 	g780  fix_qt_txview_prG780-25							last=b2e531e70a8
+	29141 fix_rpcauth_blank
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -424,9 +425,10 @@ checkout v26.0
 	# Needs review and diff-minimisation: 20273 jonasschnelli/2020/10/client_rpc_nested
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
-	20391 rpc_setfeerate-25						6753f320098	last=1002e2d0d7f jonatack/setfeerate
+	20391 rpc_setfeerate-26						6753f320098	last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
+		# TODO? Reduce internal changes and move to Knots compat??
 	20407 rpcauthfile							e7f3fe121b0	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
