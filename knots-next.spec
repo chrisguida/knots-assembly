@@ -247,7 +247,7 @@ checkout v26.0
 	28920 fix_wallet_def_birthtime-26						last=3704e3a04c5 !fanquake/26_1_backports^^
 		# Diff-minimised by dropping leading refactor commit (and rebasing around it)
 	28936 dnsseed_petertoddnet-25
-	28944 sendall_antifeesniping-25							last=a5ef4e226a8 ishaanam/sendall_anti_fee_sniping
+	28944 sendall_antifeesniping-25							last=d76f8805152 ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	# Needs review (very minor fix): 28976 achow101/migrate-blank
@@ -409,8 +409,6 @@ checkout v26.0
 	# Needs work: g27   # top to bottom UI layout
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
-	MERGED: # Needs work: 26485 ryanofsky/pr/nonly
-		# CAUTION: May cause conflicts w/ compatibility options
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 	19873 mempressure							8c38e853e2a
@@ -658,6 +656,7 @@ checkout v26.0
 # Non-progress functionality:
 	8751  sort-multisigs-25+knots				426c7c11321	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
+		CAUTION: Ensure compat options don't break from #26485 (MERGED)
 	22016 rpc_gbci_period_start					165e1fb17df	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							3496e755b78
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
