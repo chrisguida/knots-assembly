@@ -786,6 +786,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
 	Triage: # MSVC: 29044 hebasto/231209-msvc-qt
 	Triage: g780  -  # Fix: Ensure 'Transaction View' remains disabled if no wallet is selected
+	TODO: Update dashjr dns seed address dnsseed.bitcoin.dashjr-list-of-p2p-nodes-maybe-malware.us
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)

@@ -261,6 +261,7 @@ checkout v26.0
 	# MSVC: 29044 hebasto/231209-msvc-qt
 	g780  fix_qt_txview_prG780-25							last=b2e531e70a8
 	29141 fix_rpcauth_blank
+	TODO: Update dashjr dns seed address dnsseed.bitcoin.dashjr-list-of-p2p-nodes-maybe-malware.us
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
