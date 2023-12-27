@@ -261,12 +261,12 @@ checkout v26.0
 	# MSVC: 29044 hebasto/231209-msvc-qt
 	g780  fix_qt_txview_prG780-25							last=b2e531e70a8
 	29141 fix_rpcauth_blank
-	Needs review: 29112 achow101/sqlite-concurrent-writes
+	#26.xTODO# Needs review: 29112 achow101/sqlite-concurrent-writes
 	# Needs review: achow101/fix-double-keypath
-	Needs review: 29127 maaku/hardened-macos-runtime
+	# Needs review: 29127 maaku/hardened-macos-runtime
 	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
-	29144 furszy/2023_empty_settings_file
-	TODO: Update dashjr dns seed address dnsseed.bitcoin.dashjr-list-of-p2p-nodes-maybe-malware.us
+	29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
+	29145 dnsseed_dashjr_2024
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.

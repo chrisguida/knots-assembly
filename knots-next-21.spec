@@ -789,7 +789,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 29112 achow101/sqlite-concurrent-writes
 	Triage: Needs review: achow101/fix-double-keypath
 	Triage: Needs review: 29127 maaku/hardened-macos-runtime
-	TODO: Update dashjr dns seed address dnsseed.bitcoin.dashjr-list-of-p2p-nodes-maybe-malware.us
+	29145 dnsseed_dashjr_2024
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
