@@ -490,7 +490,7 @@ checkout v26.0
 		# NOTE: Might require #28192
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							bfa6e78d5ba
-	24963 rpc_walletprocesspsbt_options-26		754b7e7a923	last=0ee10ae535f rpc_walletprocesspsbt_options
+	24963 rpc_walletprocesspsbt_options-26		754b7e7a923	last=72d9cbe7a64 rpc_walletprocesspsbt_options
 		# Diff-minimised
 		#26.xTODO# Add to descriptorprocesspsbt
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
@@ -546,7 +546,7 @@ checkout v26.0
 	# Needs work: 24952 -  # rpc: Add sqlite format option for dumptxoutset
 	# Concept NACK? 25026 -  # rpc: Make pruneblockchain fetch old blocks if height is lower than pruned height
 	# Needs triage & review: 25038 glozow/package-rbf
-	Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
+	#26.xTODO# Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku ???
 	25183 rpc_fundraw_segwitonly				56cc6aaef2a	last=9e7fd5c0fe3
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
