@@ -474,7 +474,6 @@ checkout v26.0
 		# +27797 ?
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
 	21780 rpc_maxmempool						c433f09baba	last=040b280c661 rebroad/MaxMempoolRPC
-		FIXME: accidentally changed from MB to bytes?
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
@@ -490,7 +489,7 @@ checkout v26.0
 		# NOTE: Might require #28192
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							bfa6e78d5ba
-	24963 rpc_walletprocesspsbt_options-25		754b7e7a923	last=baf99a9c789 rpc_walletprocesspsbt_options
+	24963 rpc_walletprocesspsbt_options-26		754b7e7a923	last=0ee10ae535f rpc_walletprocesspsbt_options
 		# Diff-minimised
 		#26.xTODO# Add to descriptorprocesspsbt
 	# Needs review: 22563 vasild/addrman_per_group_bucketing

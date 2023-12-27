@@ -1114,7 +1114,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=a05a4fe9fcd rpc_maxmempool-23
 		# + bugfix and applying limit immediately
 	22072 autoreindex-0.21						7fb696c631e	last=602f4da9178
-	(CHECK-LAST)	last=069ccfcbc4e autoreindex
+	(CHECK-LAST)	last=4836fec43a1 autoreindex
 	(CHECK-LAST)	last=6d7052863a5 origin-pull/26674/head
 		# TODO: Migrate to #26674 (basically identical logic as of 6d7052863a5) ?
 	22147 p2p_protect_last_outHB-0.21			995947de083
