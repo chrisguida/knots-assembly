@@ -1039,7 +1039,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	(CHECK-LAST)	last=05b618ead44 rpc_getblocklocations
 		FIXME: Check range of nblocks (implicit int->size_t conversion)
 		FIXME: gcp 1693dc78e9a
-	20827 ibd_prune_max-21						894af588353	last=1d23d9515e9 ibd_prune_max
+	20827 ibd_prune_max-21						894af588353	last=d298ff8b62b ibd_prune_max
 	(CHECK-LAST)	last=24f3936337d ibd_prune_max-22
 	g163  gui_peer_conntype-0.21				a39642a4ef4  # jonatack-g/display-peer-conn-types
 		# NOTE: Stripped unrelated string changes
@@ -1083,6 +1083,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	21260 rpcwallet_tx_in_mempool-21.1+knots	5e9dcde9997	last=46bf0b7b5d8
 	(CHECK-LAST)	last=ee0a735e6c1 rpcwallet_tx_in_mempool-23+knots
 	(CHECK-LAST)	last=faba549c582 rpcwallet_tx_in_mempool-24+knots
+	(CHECK-LAST)	last=faba549c582 rpcwallet_tx_in_mempool-26+knots
 	g213  gui_payrequest_copyaddr-0.18			3fbc3512e3c
 	g214  gui_payrequest_disablena-0.18+knots	88cfbc9641b
 	21327 p2p_ignore_tx_in_ibd-0.21				cb54eca2c0b	last=6aed8b7e9b2

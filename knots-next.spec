@@ -318,7 +318,7 @@ checkout v26.0
 	# Needs review: 28955 furszy/2023_index_blockfilter_cache_header
 	# Needs review: 28987 furszy/2023_wallet_zaptx
 	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
-	Needs backport-safety review: 29114 -  # util: Faster std::byte (pre)vector (un)serialize
+	# Needs backport: 29114 -  # util: Faster std::byte (pre)vector (un)serialize
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -463,7 +463,7 @@ checkout v26.0
 	21319 getblock_optimise						e788404b696
 		# Context: 17529 rpc: Faster getblock using PureBlock
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
-	21260 rpcwallet_tx_in_mempool-25+knots		922505dfe54	last=46bf0b7b5d8
+	21260 rpcwallet_tx_in_mempool-26+knots		922505dfe54	last=46bf0b7b5d8
 		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
@@ -850,6 +850,7 @@ checkout v26.0
 	n/a   checkpoint_update-25					ecdd83d1986	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
 		#26.xTODO# Add new checkpoint
 	10282 timebomb_knots						e3778785186
+		FIXME: <cstdint> in clientversion.h
 	-     rwconf_policy-25+knots				e3ba2d1e080
 		FIXME: full rbf not default??
 		# Includes Knots policy changes for simplification of final rebase process
