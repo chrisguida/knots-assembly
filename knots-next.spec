@@ -239,6 +239,7 @@ checkout v26.0
 	# Needs review: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
 	# Needs review & triage: 28846 fanquake/fixup_multiprocess_arm64
 	# Needs review & triage: 28848 instagibbs/2023-11-submitpackage-results
+	28849 fix_qa_v2t_pr28849-26
 	# Needs review: 28868 achow101/test-migration-watchonly-spendable
 	-     fix_doc_upnp_def_post26896			c5c82e96e5e	last=92f88a96290 fanquake/redundant_upnp_ifdef
 		# Alternative to #28874
@@ -537,8 +538,6 @@ checkout v26.0
 	# Needs work & complex test rebasing: 24539   # Add a "tx output spender" index
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
 		# NOTE: When rebasing (now that #21726 is merged), need to restore AllowPrune func ?
-	# Needs review: 24545 -  # BIP324: Enable v2 P2P encrypted transport
-		SEMIMERGED: # Triage: +28577+28588+28634+partof(28645)+28805+28849
 	# Not worth it? 24615/24569/24556 guix on non-x86
 	# Needs review: 24824 -  # net: create IP to ASN database from file - makeseeds.py
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
@@ -911,3 +910,7 @@ checkout v26.0
 # NOTE: use git diff --minimal for patches!
 
 # TODO: @26.x-knots-android
+
+@26.x-knots-extratests
+	28805 qa_v2t_pr28805-26
+
