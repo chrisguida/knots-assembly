@@ -247,7 +247,7 @@ checkout v26.0
 	28920 fix_wallet_def_birthtime-26						last=3704e3a04c5 !fanquake/26_1_backports^^
 		# Diff-minimised by dropping leading refactor commit (and rebasing around it)
 	28936 dnsseed_petertoddnet-25
-	28944 sendall_antifeesniping-25							last=d76f8805152 ishaanam/sendall_anti_fee_sniping
+	28944 sendall_antifeesniping-25							last=c8de459de6d ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	# Needs review (very minor fix): 28976 achow101/migrate-blank
@@ -506,9 +506,8 @@ checkout v26.0
 	23362 importfromcoldcard					d3edfcd2e9d	last=8076f8d4c2a hebasto/211025-cc
 		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 rpc_savefeeestimates-25+knots			b68bf580f9b	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
-	(CHECK-LAST)	last=12d00272c71 rpc_savefeeestimates
-		# NOTE: Carries lock annotation fix aa096ebfb06
+	23387 rpc_savefeeestimates					b68bf580f9b	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
+		# NOTE: Carries lock annotation fix aa096ebfb06 (FlushFeeEstimates lock on m_cs_fee_estimator)
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work/review: 23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection
 	# Needs concept + review + BIP: 23531 prusnak/yggdrasil
