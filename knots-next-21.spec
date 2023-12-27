@@ -1,8 +1,8 @@
-timestamp 2023-12-17 18:46:33
+timestamp 2023-12-27 00:04:26
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #29102 / gui #782 for fixes
+#.. checked up to PR #29144 / gui #782 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -198,7 +198,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	-     bugfix_gui_drop_abc_confusing_hack	6e1b3b65525
 	20805 copyright_2022-0.21					c69ba0b3e58
 		# NOTE: Diff-minimised
-		#21.xTODO: Bump in 2023+
+		TODO: Bump in 2023+
 	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
 	# Too messy? g164 hebasto-g/201224-signal
 		# +gui#375 fix
@@ -786,6 +786,9 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
 	Triage: # MSVC: 29044 hebasto/231209-msvc-qt
 	Triage: g780  -  # Fix: Ensure 'Transaction View' remains disabled if no wallet is selected
+	Triage: Needs review: 29112 achow101/sqlite-concurrent-writes
+	Triage: Needs review: achow101/fix-double-keypath
+	Triage: Needs review: 29127 maaku/hardened-macos-runtime
 	TODO: Update dashjr dns seed address dnsseed.bitcoin.dashjr-list-of-p2p-nodes-maybe-malware.us
 	
 	#21.xTODO# Review security report(s)
@@ -1015,7 +1018,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	20407 rpcauthfile-0.21+knots				389dda3a1a1	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 	(CHECK-LAST)	last=53383d94200 rpcauthfile-22
 	(CHECK-LAST)	last=84513428151 rpcauthfile-24
-	(CHECK-LAST)	last=004e3f8cee4 rpcauthfile
+	(CHECK-LAST)	last=004e3f8cee4 rpcauthfile-26+knots
 		# NOTE: fixed bug, added multi-line support, and added tests
 	g149  intro_assumevalid-21					a434a92b063	last=cf940f0e5f5 intro_assumevalid
 	(CHECK-LAST)	last=de495ad2f11 intro_assumevalid-23

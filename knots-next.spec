@@ -1,7 +1,7 @@
-timestamp 2023-12-17 18:46:33
+timestamp 2023-12-27 00:04:26
 lastapply no-merge
 
-#.. checked up to PR #29102 / gui #782
+#.. checked up to PR #29144 / gui #782
 
 checkout v26.0
 @26.x-syslibs
@@ -261,6 +261,11 @@ checkout v26.0
 	# MSVC: 29044 hebasto/231209-msvc-qt
 	g780  fix_qt_txview_prG780-25							last=b2e531e70a8
 	29141 fix_rpcauth_blank
+	Needs review: 29112 achow101/sqlite-concurrent-writes
+	# Needs review: achow101/fix-double-keypath
+	Needs review: 29127 maaku/hardened-macos-runtime
+	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
+	29144 furszy/2023_empty_settings_file
 	TODO: Update dashjr dns seed address dnsseed.bitcoin.dashjr-list-of-p2p-nodes-maybe-malware.us
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -313,6 +318,7 @@ checkout v26.0
 	# Needs review: 28955 furszy/2023_index_blockfilter_cache_header
 	# Needs review: 28987 furszy/2023_wallet_zaptx
 	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
+	Needs backport-safety review: 29114 -  # util: Faster std::byte (pre)vector (un)serialize
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -430,7 +436,7 @@ checkout v26.0
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 		# TODO? Reduce internal changes and move to Knots compat??
-	20407 rpcauthfile							e7f3fe121b0	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
+	20407 rpcauthfile-26+knots					e7f3fe121b0	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid						bf059f29d0c	last=cf940f0e5f5
@@ -654,6 +660,11 @@ checkout v26.0
 	Needs review? 29016 niftynei/nifty/listmempoolentry
 	Needs review? 29054 achow101/descriptor-sethdseed
 	Needs review? 29058 mzumsande/202312_manual_bip324
+	29117 achow101/dump-without-making-wallet
+	Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
+	Needs review or minimal impact: 29130 achow101/createwalletdescriptor-without-new-records
+	Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
+	
 	TODO: GUI block template view
 	TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
 # Non-progress functionality:
@@ -868,6 +879,7 @@ checkout v26.0
 # BRANDING:
 	n/a   knots_branding-25						0cb94913043
 		#26.xTODO# Review security policy
+		TODO: bump copyright year?
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #26.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
@@ -880,7 +892,7 @@ checkout v26.0
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a  (cherrypick=ee7ef94595a7793b6e)		ab6d532443f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20231217)			decc35f238b
+	n/a  (bump_version=Knots:20231227)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
 	n/a   (cherrypick=b5582b97bbf)				5961e01c91d  # release notes: write/update, including change log and credits
