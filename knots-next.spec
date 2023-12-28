@@ -492,9 +492,9 @@ checkout v26.0
 		# NOTE: Might require #28192
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							bfa6e78d5ba
-	24963 rpc_walletprocesspsbt_options-26		754b7e7a923	last=72d9cbe7a64 rpc_walletprocesspsbt_options
-		# Diff-minimised
-		#26.xTODO# Add to descriptorprocesspsbt
+	24963 rpc_walletprocesspsbt_options-26		754b7e7a923	last=f43f3c61056 rpc_walletprocesspsbt_options
+		# Diff-minimised (and uses merge for rpcarg_type_per_name)
+	-     rpc_descriptorprocesspsbt_opts-26+k
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
 	# TODO? 25621 -  # rpc/wallet: Add details and duplicate section for simulaterawtransaction
@@ -567,8 +567,6 @@ checkout v26.0
 	# Needs completion & review: 25718 fjahr/2022-07-allowinbound
 	# Needs concept/review: 25747 w0xlt/desc_file
 	# Needs work: 25776 1440000bytes/bumpfee-inputs
-	MERGED: # TODO: 25796 -  # rpc: add descriptorprocesspsbt rpc
-		# Needs refactors in (MERGED) #25939 and #24963
 	# Needs concept/review: 25907 achow101/upgrade-to-tr-2
 	# Needs work: 25923 jonatack/2022-08-statestats
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
