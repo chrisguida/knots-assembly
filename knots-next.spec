@@ -268,6 +268,8 @@ checkout v26.0
 	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
 	29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
 	29145 dnsseed_dashjr_2024
+		#26.xTODO# Decide about changing to another domain
+	29147 guix_attachable_sigs
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -842,6 +844,8 @@ checkout v26.0
 	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
 	#26.xTODO# Ordisrespector equivalent (Ordislow??)
+	#26.xTODO# Spam filter for stuff like https://mempool.space/tx/4ec38548aa67f6a2efbbc3cf34ab49dc5c275d9701ab0b58696baee9f555c45a
+	#26.xTODO# Exemptions for Samourai: https://code.samourai.io/whirlpool/Whirlpool/-/blob/whirlpool/ARCHITECTURE.md#2-create-tx0
 	#26.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 	-     enforce_checkpoints					271ea89d048
 	n/a   checkpoint_update-25					ecdd83d1986	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21

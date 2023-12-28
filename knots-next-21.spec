@@ -790,6 +790,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: achow101/fix-double-keypath
 	Triage: Needs review: 29127 maaku/hardened-macos-runtime
 	29145 dnsseed_dashjr_2024
+	Triage: 29147 guix_attachable_sigs
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -1423,6 +1424,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	(CHECK-LAST)	last=7882096ddef unique_spk_mempool-23+knots
 	-     bloom_default-0.21+knots				ab9afbc6fee
 	TODO: Adapt existing limits to apply to Taproot?
+	TODO: Updated spam filters?
 	-     enforce_checkpoints-0.21				09feeecfdfe	last=86dfb334158 enforce_checkpoints
 	n/a   checkpoint_update-0.21				67bc16f3c2a	last=a382b8620eb checkpoint_update-25
 	(CHECK-LAST)	last=37271214dfe checkpoint_update-23
