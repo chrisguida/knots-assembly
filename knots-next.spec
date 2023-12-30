@@ -492,7 +492,7 @@ checkout v26.0
 		# NOTE: Might require #28192
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							bfa6e78d5ba
-	24963 rpc_walletprocesspsbt_options-26		754b7e7a923	last=f43f3c61056 rpc_walletprocesspsbt_options
+	24963 rpc_walletprocesspsbt_options-26		754b7e7a923	last=88c06dac4fc rpc_walletprocesspsbt_options
 		# Diff-minimised (and uses merge for rpcarg_type_per_name)
 	-     rpc_descriptorprocesspsbt_opts-26+k
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
@@ -842,6 +842,7 @@ checkout v26.0
 	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
 	#26.xTODO# Ordisrespector equivalent (Ordislow??)
+	#26.xTODO# Adaptive dust limit based on current fee rate?
 	#26.xTODO# Spam filter for stuff like https://mempool.space/tx/4ec38548aa67f6a2efbbc3cf34ab49dc5c275d9701ab0b58696baee9f555c45a
 	#26.xTODO# Exemptions for Samourai: https://code.samourai.io/whirlpool/Whirlpool/-/blob/whirlpool/ARCHITECTURE.md#2-create-tx0
 	#26.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
