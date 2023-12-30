@@ -492,7 +492,7 @@ checkout v26.0
 		# NOTE: Might require #28192
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							bfa6e78d5ba
-	24963 rpc_walletprocesspsbt_options-26		754b7e7a923	last=88c06dac4fc rpc_walletprocesspsbt_options
+	24963 rpc_walletprocesspsbt_options-26		754b7e7a923	last=f43f992b731 rpc_walletprocesspsbt_options
 		# Diff-minimised (and uses merge for rpcarg_type_per_name)
 	-     rpc_descriptorprocesspsbt_opts-26+k
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
