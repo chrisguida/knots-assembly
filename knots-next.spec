@@ -582,9 +582,10 @@ checkout v26.0
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-25+knots		024d8fc86d6	last=d69747ab656
+	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=0b8147375da
 		# NOTE: Originally #10594, then #17167
-		# Left off test framework refactoring commit
+		# Left off test framework refactoring commit (caf5ff0c5a8) and reverted gArgs caching refactor (ab6c001ec96)
+		# Also includes change of default from incoming to in+out
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme	e3f13ae6a73	last=d8434da3c14
@@ -822,6 +823,10 @@ checkout v26.0
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	28408 match_more_datacarrier-25+knots		699f8a809eb	last=abd19ad480f match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
+		# Revise byte counting to consider input/output waste
+		TODO: Check docs for accuracy
+	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
+	#26.xTODO# Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-25+knots				06ff2c34e3b
 		#26.xTODO# Add tests and make sure boundaries are correct
@@ -890,6 +895,7 @@ checkout v26.0
 # TODO: Ensure std::filesystem isn't introduced (see #28076)
 #26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
+#26.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=ee7ef94595a7793b6e)		ab6d532443f	# doc/{bips,files}
 	n/a  (bump_version=Knots:20231227)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2

@@ -1476,6 +1476,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 #21.xTODO# Check on #21508
 Triage: TODO: Ensure std::filesystem isn't introduced (see #28076)
 TODO: Ensure 83aa95039d0 doesn't expose any new bugs
+TODO: git grep noban_tx_relay (needs #27114; refactor to avoid is easy with extra_args)
 	n/a  (cherrypick=e0968d0328b2877330)		fbd68408390	# doc/{bips,files}
 		TODO: If applicable, #26443
 	n/a  knots_bips-21							95f1a0c7adb
