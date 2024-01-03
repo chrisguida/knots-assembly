@@ -590,8 +590,6 @@ checkout v26.0
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme	e3f13ae6a73	last=d8434da3c14
 	# Needs option/work: 26454 petertodd/2022-feebump-without-optin
-	MERGED: # Needs work/compat: 26467 achow101/bumpfee-choose-change-txout
-		# MERGED(26.x) WITH SERIOUS BUG: https://github.com/bitcoin/bitcoin/pull/26467#discussion_r1269177446
 	# Needs work: 26495 -  # contrib: Speed up systemd boot
 	# TODO: Simplify [initial] wallet creation
 		# See: https://twitter.com/susewang/status/1591115373465972737?t=FGNyW1PSmjpT0u-lR7lNiw&s=19
