@@ -1,7 +1,7 @@
-timestamp 2023-12-27 00:04:26
+timestamp 2024-01-03 22:16:57
 lastapply no-merge
 
-#.. checked up to PR #29144 / gui #782
+#.. checked up to PR #29172 / gui #782
 
 checkout v26.0
 @26.x-syslibs
@@ -270,6 +270,7 @@ checkout v26.0
 	29145 dnsseed_dashjr_2024
 		#26.xTODO# Decide about changing to another domain
 	29147 guix_attachable_sigs
+	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -322,6 +323,8 @@ checkout v26.0
 	# Needs review: 28987 furszy/2023_wallet_zaptx
 	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
 	# Needs backport: 29114 -  # util: Faster std::byte (pre)vector (un)serialize
+	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
+	29169 fanquake/libsecp256k1_0_4_1
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -658,6 +661,7 @@ checkout v26.0
 	Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
 	Needs review or minimal impact: 29130 achow101/createwalletdescriptor-without-new-records
 	Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
+	Needs review? 29163 LarryRuane/2024-01-help-detailed
 	
 	TODO: GUI block template view
 	TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -895,7 +899,7 @@ checkout v26.0
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #26.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=ee7ef94595a7793b6e)		ab6d532443f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20231227)			decc35f238b
+	n/a  (bump_version=Knots:20240103)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
 	n/a   (cherrypick=b5582b97bbf)				5961e01c91d  # release notes: write/update, including change log and credits
