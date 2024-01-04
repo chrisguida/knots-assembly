@@ -621,8 +621,6 @@ checkout v26.0
 		# Careful, could end up paying "added change" to a destination -.-
 	# Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
 	#26.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
-	MERGED: # Needs review: 27596 jamesob/assumeutxo
-		SEMIMERGED: #+ Triage: 28589+28590+28608+28625+partof(28645)+28647+28652+28659+28666+28669+28670+28698+28835+28838
 	27600 p2p_forceinbound-25+knots				431468d6648	last=8c2026848da pinheadmz/whitebind-evict
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
