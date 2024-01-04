@@ -476,7 +476,6 @@ checkout v26.0
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
 	# Included in gui#662 above: g368  bugfix_gui_restored_columns_stretch	3b888b39d64
 	g230  gui_backup_formats					d42a7ed5b4a
-		FIXME: src/wallet/dump.cpp:DumpWallet closes the wallet!
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 		# +27797 ?
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
@@ -655,15 +654,16 @@ checkout v26.0
 	29016 rpc_listmempooltxs-26+knots						last=07008477b81 niftynei/nifty/listmempoolentry
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	#26.xTODO# 29058 mzumsande/202312_manual_bip324
-	29117 achow101/dump-without-making-wallet
+	29117 wallettool_dump_just_db-26+knots					last=d83bea42d1f achow101/dump-without-making-wallet
 		# Omitted first commit that could be dangerous
-	Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
-	Needs review or minimal impact: 29130 achow101/createwalletdescriptor-without-new-records
-	Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
-	Needs review? 29163 LarryRuane/2024-01-help-detailed
+	#26.xTODO# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
+	# Needs review or minimal impact: 29130 achow101/createwalletdescriptor-without-new-records
+	# Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
+	29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
+		# Left off top commit changing rpc_help test behaviour
 	
-	TODO: GUI block template view
-	TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
+	# TODO: GUI block template view
+	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
 # Non-progress functionality:
 	8751  sort-multisigs-25+knots				426c7c11321	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
