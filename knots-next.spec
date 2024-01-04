@@ -324,7 +324,7 @@ checkout v26.0
 	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
 	# Needs backport: 29114 -  # util: Faster std::byte (pre)vector (un)serialize
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
-	29169 fanquake/libsecp256k1_0_4_1
+	# Too big a diff: 29169 fanquake/libsecp256k1_0_4_1
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -602,9 +602,9 @@ checkout v26.0
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
-	26990 bcli_validation-24					def292e8c7b	last=755320f75f2
-	27034 rpc_importaddr_for_descwallet-25+k	05bd5f2f99b	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
-		TODO: See if upstream is suitable for a direct merge
+	26990 bcli_validation-24					def292e8c7b	last=4cf728617fa
+		# Didn't bother rebasing for 755320f75f2...4cf728617fa comment changes
+	27034 rpc_importaddr_for_descwallet-26+k	05bd5f2f99b	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
@@ -826,14 +826,14 @@ checkout v26.0
 	28408 match_more_datacarrier-25+knots		699f8a809eb	last=abd19ad480f match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# Revise byte counting to consider input/output waste
-		TODO: Check docs for accuracy
+		TODO: Check docs for accuracy; REVERT AT LEAST PART OF #27832
 	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	#26.xTODO# Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-25+knots				06ff2c34e3b
 		#26.xTODO# Add tests and make sure boundaries are correct
 	TODO: bare p2pk filter
-	TODO: filter runes?? https://rodarmor.com/blog/runes/
+	TODO: filter runes?? https://rodarmor.com/blog/runes/ https://github.com/ordinals-wallet/rune/blob/main/src/rune.rs
 	TODO: CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666
 	TODO: Discount privacy txs?
 	TODO: Whitelist Whirlpool Tx0 and/or BIP47?
