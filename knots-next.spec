@@ -271,6 +271,7 @@ checkout v26.0
 		#26.xTODO# Decide about changing to another domain
 	29147 guix_attachable_sigs
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
+	29184 rpc_scanblocks_ffp_named
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -665,9 +666,8 @@ checkout v26.0
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
 # Non-progress functionality:
-	8751  sort-multisigs-25+knots				426c7c11321	last=e11cb50a09  # multisig sorting
+	8751  sort-multisigs-26+knots				426c7c11321	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
-		CAUTION: Ensure compat options don't break from #26485 (MERGED)
 	22016 rpc_gbci_period_start					165e1fb17df	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							3496e755b78
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
