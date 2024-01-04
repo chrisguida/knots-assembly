@@ -476,6 +476,7 @@ checkout v26.0
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
 	# Included in gui#662 above: g368  bugfix_gui_restored_columns_stretch	3b888b39d64
 	g230  gui_backup_formats					d42a7ed5b4a
+		FIXME: src/wallet/dump.cpp:DumpWallet closes the wallet!
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 		# +27797 ?
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
@@ -637,7 +638,7 @@ checkout v26.0
 		# OR #28983
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
-	SEMIMERGED: # Needs review: 28060+28483+28052 MarcoFalke/2306-fs_stuff-
+	#26.xTODO# Make disabled by default: 28052 MarcoFalke/2306-fs_stuff-
 	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	#26.xTODO# hebasto-g/230911-bip324-peer-details
@@ -651,10 +652,11 @@ checkout v26.0
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
 	# Needs review: 28950 instagibbs/2023-11-submitpackage-max-fee-burn
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
-	Needs review? 29016 niftynei/nifty/listmempoolentry
-	Needs review? 29054 achow101/descriptor-sethdseed
-	Needs review? 29058 mzumsande/202312_manual_bip324
+	29016 rpc_listmempooltxs-26+knots						last=07008477b81 niftynei/nifty/listmempoolentry
+	# Needs review? 29054 achow101/descriptor-sethdseed
+	#26.xTODO# 29058 mzumsande/202312_manual_bip324
 	29117 achow101/dump-without-making-wallet
+		# Omitted first commit that could be dangerous
 	Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
 	Needs review or minimal impact: 29130 achow101/createwalletdescriptor-without-new-records
 	Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor

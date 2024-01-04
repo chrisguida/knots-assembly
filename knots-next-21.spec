@@ -1104,6 +1104,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=4490d994755 gui_backup_formats-22
 	(CHECK-LAST)	last=835d49b30bc gui_backup_formats-23
 		# NOTE: To avoid conflict with wallettool_dump-0.21+knots, added 5ab50bc98db GUI: Omit DbDump option for backup of BDB wallets
+		FIXME: src/wallet/dump.cpp:DumpWallet closes the wallet!
 	21595 cli_addrinfo-0.21+knots				7c408353347
 		# NOTE: Adapted error message for Knots
 	21602 rpc_listbanned_deltas-0.21			3462d5598d1
