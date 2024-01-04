@@ -245,7 +245,7 @@ checkout v26.0
 		# Alternative to #28874
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
-	28920 fix_wallet_def_birthtime-26						last=3704e3a04c5 !fanquake/26_1_backports^^
+	28920 fix_wallet_def_birthtime-26						last=b06b14e68d8 !fanquake/26_1_backports^^^
 		# Diff-minimised by dropping leading refactor commit (and rebasing around it)
 	28936 dnsseed_petertoddnet-25
 	28944 sendall_antifeesniping-25							last=c8de459de6d ishaanam/sendall_anti_fee_sniping
@@ -621,11 +621,11 @@ checkout v26.0
 		# Careful, could end up paying "added change" to a destination -.-
 	# Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
 	#26.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
-	27600 p2p_forceinbound-25+knots				431468d6648	last=8c2026848da pinheadmz/whitebind-evict
+	27600 p2p_forceinbound-26+knots				431468d6648	last=8c2026848da pinheadmz/whitebind-evict
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
-	27770 furszy/2023_rpc_getblockfileinfo		c92323afe5a	last=5090771f326  # rpc_getblockfileinfo-25+knots
+	27770 rpc_getblockfileinfo-26+knots			c92323afe5a	last=5090771f326 furszy/2023_rpc_getblockfileinfo
 	# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 		# Note alternative (approach NACK'd) in #28453
