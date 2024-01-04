@@ -608,11 +608,10 @@ checkout v26.0
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
-	27216 rpc_getaddressinfo_isactive-24		c951b6947f2	last=85f83339dda pinheadmz/used-addr-ui
+	27216 rpc_getaddressinfo_isactive			c951b6947f2	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
-	27351 codex32-25+knots						d3f7295b1a7	last=91771366a3d apoelstra/2023-03--codex32
-		TODO: See if upstream is suitable for a direct merge
-		# Diff-minimised, doc bug fixed
+	27351 codex32-26+knots						d3f7295b1a7	last=91771366a3d apoelstra/2023-03--codex32
+		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs review: 27375 pinheadmz/tor-unix-domain-socket
 	# Needs review? 27679 pinheadmz/zmq-unix-domain-socket
 		# Duplicates #28020 with a different URI format
