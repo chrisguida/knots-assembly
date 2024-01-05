@@ -678,17 +678,17 @@ checkout v26.0
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-26+knots					f6b1eae17b3	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
-	9504  dumpmasterprivkey-25					19bad943fb4	last=07fc81109a
-	g444  gui_netwatch-25+knots					88124b8f99f	 # Latest code now
+	9504  rpc_dumpmasterprivkey					19bad943fb4	last=07fc81109a
+	g444  gui_netwatch-26+knots					88124b8f99f	 # Latest code now
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
-	10615 multiwallet_rpc-25+knots				f6d2ab6df60  # latest code now
+	10615 multiwallet_rpc-26+knots				f6d2ab6df60  # latest code now
 		# CAUTION: Be extra careful rebasing - diff/patch default context might accidentally move code around between different RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
 		#26.xTODO# Add dc244382e5d QA: rpc_users: Test rpcauth wallet restrictions
-	10554 zmq_wtx-25+knots						e2c665fd588	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-26+knots						e2c665fd588	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					08c473e6264
