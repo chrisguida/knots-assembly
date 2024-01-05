@@ -533,7 +533,7 @@ checkout v26.0
 	# Needs review & BIP changes: 24058 kallewoof/202201-bip322
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
-	24162 rpc_deriveaddr_wo_checksum-25			3fc3c2c3516	last=97a69e232be
+	24162 rpc_deriveaddr_wo_checksum-26			3fc3c2c3516	last=97a69e232be
 		# +RPC doc fix
 	# Needs work/diff-minimisation: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
 	# Needs work: g533  -  # gui: add more detailed address error message
@@ -894,7 +894,7 @@ checkout v26.0
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure std::filesystem isn't introduced (see #28076)
-#26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type
+#26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type: git grep '"options.*OBJ,'
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #26.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=ee7ef94595a7793b6e)		ab6d532443f	# doc/{bips,files}
