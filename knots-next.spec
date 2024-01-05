@@ -674,9 +674,9 @@ checkout v26.0
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
 	9245 ionice									7f38312c696
 	-    ionice_win								8f3ad020ec5
-	8501  old_stats_rpc-25						68a8c2448c0	last=7af0ea43b2
+	8501  old_stats_rpc-26						68a8c2448c0	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
-	8550  old_stats_qt-25+knots					f6b1eae17b3	last=63fb11652f
+	8550  old_stats_qt-26+knots					f6b1eae17b3	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
 	9504  dumpmasterprivkey-25					19bad943fb4	last=07fc81109a
 	g444  gui_netwatch-25+knots					88124b8f99f	 # Latest code now
