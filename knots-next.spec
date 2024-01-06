@@ -586,7 +586,7 @@ checkout v26.0
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=0b8147375da
+	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=72013c25ada
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring commit (caf5ff0c5a8) and reverted gArgs caching refactor (ab6c001ec96)
 		# Also includes change of default from incoming to in+out
@@ -709,20 +709,20 @@ checkout v26.0
 		# Added new tests in feature_fee_estimation
 		# Updated to match estimatesmartfee RPC changes
 	11803 bugfix_dumpwallet_hdkeypath			53f47aa30a3
-	12965 scriptthreads-25+knots				399b678256e	last=dfab6c6866 jonasschnelli/2018/04/svt
+	12965 scriptthreads-26+knots				399b678256e	last=dfab6c6866 jonasschnelli/2018/04/svt
 	13203 dsha256_power8-25						bbf85ccc673	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 		#26.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-25			43028d98ec0
 	15218 -										6e1ffe36dc9	last=0c7ee166463  # postibd_flush-25
-	15428 tor_gui_pairing-25+knots				e3afcc98d21	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
+	15428 tor_gui_pairing-26+knots				e3afcc98d21	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-	15421 tor_subprocess-25+knots				e4bc1dba681	# Latest code now
+	15421 tor_subprocess-26+knots				e4bc1dba681	# Latest code now
 	# TODO: tor guix bundle!
 	# TODO: 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
-	17795 gui_console_ctrl_d-25+knots			3aa167a262c
+	17795 gui_console_ctrl_d-26+knots			3aa167a262c
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					0e50a093ee5
 		TODO: UX fix for ASICBoost triggering softfork warnings https://github.com/bitcoinknots/bitcoin/issues/49
@@ -848,6 +848,7 @@ checkout v26.0
 	#26.xTODO# Ordisrespector equivalent (Ordislow??)
 	#26.xTODO# Adaptive dust limit based on current fee rate?
 	#26.xTODO# Spam filter for stuff like https://mempool.space/tx/4ec38548aa67f6a2efbbc3cf34ab49dc5c275d9701ab0b58696baee9f555c45a
+	#26.xTODO# Whitelisting model for non-SPK scripts
 	#26.xTODO# Exemptions for Samourai: https://code.samourai.io/whirlpool/Whirlpool/-/blob/whirlpool/ARCHITECTURE.md#2-create-tx0
 	#26.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 	-     enforce_checkpoints					271ea89d048
