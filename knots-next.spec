@@ -725,7 +725,6 @@ checkout v26.0
 	17795 gui_console_ctrl_d-26+knots			3aa167a262c
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					0e50a093ee5
-		TODO: UX fix for ASICBoost triggering softfork warnings https://github.com/bitcoinknots/bitcoin/issues/49
 	n/a   rpc_compat_error_index-25+knots		5538e18b331
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	g537  gui_bech32_errpos-25+knots			04919d68d86 last=539beeaae85 gui_bech32_errpos
