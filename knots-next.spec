@@ -586,7 +586,8 @@ checkout v26.0
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=72013c25ada
+	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=6175a2ee096
+		# Held back 72013c25ada...6175a2ee096 for convenience (identical final states)
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring commit (caf5ff0c5a8) and reverted gArgs caching refactor (ab6c001ec96)
 		# Also includes change of default from incoming to in+out
@@ -727,7 +728,7 @@ checkout v26.0
 	15861 restore_vbits_warning					0e50a093ee5
 	n/a   rpc_compat_error_index-25+knots		5538e18b331
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
-	g537  gui_bech32_errpos-25+knots			04919d68d86 last=539beeaae85 gui_bech32_errpos
+	g537  gui_bech32_errpos-26+knots			04919d68d86 last=539beeaae85 gui_bech32_errpos
 	17636 guisettings-0.21						bbdf707df8d	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
