@@ -949,7 +949,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	19137 wallettool_dump-0.21+knots			a03a2b07990	last=23cac24dd3f achow101/dumpwalletrecords
 	(CHECK-LAST)	last=858f74a8dd5 wallettool_dump_warning-22+knots
 	(CHECK-LAST)	last=5009c359275 wallettool_dump_warning-23+knots
-	(CHECK-LAST)	last=5aac1c78539 wallettool_dump_warning-25+knots
+	(CHECK-LAST)	last=6086f6443b5 wallettool_dump_warning-25+knots
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
 		# NOTE: Changed to print warnings to stderr instead of stdout
 		# NOTE: Diff-minimised
@@ -1347,7 +1347,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 # Non-upstreamed functionality:
 	-     gui_payreq_textedit-0.21				bfe154411de last=79b7acbf7ec gui_payreq_textedit
 	-     rpc_mempoolentry_txhash-0.20			0b5a0196787	last=f72fb60b048 rpc_mempoolentry_txhash
-	-     walletnotify_w_win-0.21+knots			103ea74ed61	last=a03bca904fa walletnotify_w_win-25+knots
+	-     walletnotify_w_win-0.21+knots			103ea74ed61	last=622b88bd923 walletnotify_w_win-26+knots
 	(CHECK-LAST)	last=4c481517859 walletnotify_w_win-22+knots
 	14137 win_taskbar_progress-0.21+knots		cf8835a0b82	last=18eb4dbb8a
 	(CHECK-LAST)	last=f30b740b4ff win_taskbar_progress-22

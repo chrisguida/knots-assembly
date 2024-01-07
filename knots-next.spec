@@ -756,8 +756,9 @@ checkout v26.0
 	-     gui_payreq_textedit					05e5f19a79d
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				0a1184aeef3
-	-     walletnotify_w_win-25+knots			a65f55575ca	# Latest code now
-	14137 win_taskbar_progress-25.1+knots		7d894071ff8	last=18eb4dbb8a
+	-     walletnotify_w_win-26+knots			a65f55575ca	# Latest code now
+	14137 win_taskbar_progress-26+knots		7d894071ff8	last=18eb4dbb8a
+		#26.xTODO# Verify bugfix_symcheck_pe_case isn't needed for guix
 	-     restore_blockmaxsize					be451f1b478
 	7107  qtnetworkport-25+knots				9c7dec6c224	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force-25+knots				e2a858f12ef last=2627c0937f8 sendraw_force
