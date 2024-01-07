@@ -40,7 +40,7 @@ checkout v26.0
 	18902 fix_gitdir_again						148d95ab845
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					92b38619a9c	last=df5ece3e064 2020mingwthrd
-	# As needed: 18490 bugfix_symcheck_pe_case				cb2d1032bd6
+	18490 bugfix_symcheck_pe_case				cb2d1032bd6
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
@@ -758,7 +758,6 @@ checkout v26.0
 	-     rpc_mempoolentry_txhash				0a1184aeef3
 	-     walletnotify_w_win-26+knots			a65f55575ca	# Latest code now
 	14137 win_taskbar_progress-26+knots		7d894071ff8	last=18eb4dbb8a
-		#26.xTODO# Verify bugfix_symcheck_pe_case isn't needed for guix
 	-     restore_blockmaxsize					be451f1b478
 	7107  qtnetworkport-25+knots				9c7dec6c224	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force-25+knots				e2a858f12ef last=2627c0937f8 sendraw_force
