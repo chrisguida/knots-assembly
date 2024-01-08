@@ -759,8 +759,8 @@ checkout v26.0
 	-     walletnotify_w_win-26+knots			a65f55575ca	# Latest code now
 	14137 win_taskbar_progress-26+knots		7d894071ff8	last=18eb4dbb8a
 	-     restore_blockmaxsize					be451f1b478
-	7107  qtnetworkport-25+knots				9c7dec6c224	last=1f37c87d8f2 origin-pull/7107/head
-	7533  sendraw_force-25+knots				e2a858f12ef last=2627c0937f8 sendraw_force
+	7107  qtnetworkport-26+knots				9c7dec6c224	last=1f37c87d8f2 origin-pull/7107/head
+	7533  sendraw_force-26+knots				e2a858f12ef last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 	11082 rwconf-25+knots						0e725308ae7 # Latest code now
@@ -833,6 +833,7 @@ checkout v26.0
 		#26.xTODO# Add tests and make sure boundaries are correct
 	TODO: bare p2pk filter
 	TODO: filter runes?? https://rodarmor.com/blog/runes/ https://github.com/ordinals-wallet/rune/blob/main/src/rune.rs
+	TODO: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
 	TODO: CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666
 	TODO: Discount privacy txs?
 	TODO: Whitelist Whirlpool Tx0 and/or BIP47?
