@@ -178,7 +178,7 @@ checkout v26.0
 	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	#26.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
 	# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
-	# Needs work: 27973 MarcoFalke/2306-byte-span-
+	# Needs work: 27973 maflcko/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
 	28020 -										c9467913acb	last=0b1762c90d1  # exclude ipc scheme from port check (fix_zmq_ipc_noportcheck-25)
 		#26.xTODO# Maybe rewrite without `rfind`
@@ -189,9 +189,9 @@ checkout v26.0
 	28029 fix_zmq_errhandling_202307-mini		f7f772f2d5f	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err		2ea81f12689
-	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a MarcoFalke/2307-fs-lint-
+	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a maflcko/2307-fs-lint-
 		# Fix-only, diff-minimised
-		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
+		# "I don't think anything here is a bug fix" -maflcko, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
 	#26.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
@@ -375,7 +375,7 @@ checkout v26.0
 	# not ready: 9745 [RPC] Getting confirmations command
 	# needs updating: 10200 sdaftuar:2017-04-dont-mine-recent-tx
 	# Needs copyright header: 17311 RandyMcMillan:fix-background-svg
-	# Needs fixing/review: 17303 MarcoFalke:1910-p2pNoRemovedTxs
+	# Needs fixing/review: 17303 maflcko:1910-p2pNoRemovedTxs
 	# Needs review: 17332 sdaftuar:2019-10-no-checkpoints-cleanedup
 	# Needs concept + ???: 15341 promag/2019-01-bumpfee-changeaddress
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
@@ -668,8 +668,8 @@ checkout v26.0
 		# OR #28983
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
-	#26.xTODO# Make disabled by default: 28052 MarcoFalke/2306-fs_stuff-
-	# Needs review? 28207 MarcoFalke/2308-xor-memepool-
+	#26.xTODO# Make disabled by default: 28052 maflcko/2306-fs_stuff-
+	# Needs review? 28207 maflcko/2308-xor-memepool-
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	#26.xTODO# hebasto-g/230911-bip324-peer-details
 	# Needs review: 28461 fanquake/windows_ssp_roundup
@@ -755,7 +755,7 @@ checkout v26.0
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-26+knots				e4bc1dba681	# Latest code now
 	# TODO: tor guix bundle!
-	# TODO: 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
+	# TODO: 16490 maflcko/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d-26+knots			3aa167a262c

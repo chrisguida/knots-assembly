@@ -46,7 +46,7 @@ checkout v0.21.2
 	# Needs review: 25612 fanquake/lto_improvements
 	25852 fix_intrinsic_check_userflags-0.20+k
 	Check if needed and useful: 26086 fanquake/bitcoin_tx_prune_boost_cpp
-	# Triage: If needed (MSVC only?): 27892 MarcoFalke/2306-translate-copy-
+	# Triage: If needed (MSVC only?): 27892 maflcko/2306-translate-copy-
 	Triage: # Depends-only, do we care? 28097 fanquake/xcb_proto_1_15_2
 		# NOTE: 24.x Backport in #28410
 # SYSLIBS: (and old build bugs)
@@ -90,7 +90,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	# TODO? 25124 -  # test: Fix intermittent race in p2p_unrequested_blocks.py
 	Triage: Needs review? 27529 theStack/test-fix_feature_addrman_on_big_endian_systems
 	Needs review: 28027 achow101/2023-07-test-wallet-back-compat-updates
-	Needs review: 28028 MarcoFalke/2307-test-stderr-
+	Needs review: 28028 maflcko/2307-test-stderr-
 	n/a   knots_ci_tweaks-21					a30b2c8bb0f
 	#TODO: Can we get a minimum-dep-versions CI going??
 # FIXES:
@@ -105,7 +105,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	17828 p2p_log_categories-21					6ed22dedbde	last=04960621582 practicalswift/log-categories
 	(CHECK-LAST)	last=137964d82dc p2p_log_categories
 	19832 hebasto/200829-log					d64d3aaa576	last=1816327e533
-	20845 net_logcategory_localdisconnect-0.21	11e46eb9473	last=fa55159b9ed MarcoFalke/2101-netLogDisconnect
+	20845 net_logcategory_localdisconnect-0.21	11e46eb9473	last=fa55159b9ed maflcko/2101-netLogDisconnect
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
@@ -114,7 +114,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	-     http_bind_error+extra-21				1d09d2dc41d	last=78ccf6a12ce http_bind_error+extra
 	(CHECK-LAST)	last=fd5353ed826 http_bind_error+extra-22
 		# NOTE: Held back annotation in gdd 785429c2c7a fd5353ed826
-	 9524 MarcoFalke/Mf1701-qaPruning					e8a96411986	last=88883ae13d
+	9524  maflcko/Mf1701-qaPruning				e8a96411986	last=88883ae13d
 	(CHECK-LAST)	last=b0c8dfaca2c rpc_pruneblkchain0
 	10731 log_more_uacomment-21					fb6f182d5c4	last=17389f85aa1 log_more_uacomment
 	(CHECK-LAST)	last=f89cd1133c3 log_more_uacomment-24
@@ -193,7 +193,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	# Needs review: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
 	20448 unloadwallet_namematch				34dfe668f49
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
-	# Needs concept review: 20583 MarcoFalke/2012-walletSync
+	# Needs concept review: 20583 maflcko/2012-walletSync
 	g152  gui_notify_setup_bg-0.10				dbff865256f	last=4436094508e gui_notify_setup_bg
 	-     bugfix_gui_drop_abc_confusing_hack	6e1b3b65525
 	20805 copyright_2022-0.21					c69ba0b3e58
@@ -257,7 +257,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	22359 fix_wallet_pr22359-0.21				6e658b9f2fd	last=fa6fd3dd6a4
 	(CHECK-LAST)	last=171ac54ea47 fix_wallet_pr22359-22
 		# Semi-diff-minimised
-	# Needs review: 22362 MarcoFalke/2106-addrdb  # Drop (only) invalid entries when reading banlist
+	# Needs review: 22362 maflcko/2106-addrdb  # Drop (only) invalid entries when reading banlist
 	22417 bpchild_closefds-21+knots				ae04745f860	last=bc8a2010501 bpchild_closefds
 	(CHECK-LAST)	last=9b9cdc9ae6f bpchild_closefds-0.21
 	(CHECK-LAST)	last=4c19cea484b bpchild_closefds-22
@@ -279,7 +279,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=73a5d927f34 fix_estsfee_minrelay-22
 	23027 bugfix_util_test_config-0.20			c1acc532685	last=41ff6c343e9 bugfix_util_test_config
 	22781 fix_ishdenabled-0.21					bd8c4aa3b30
-	# Needs review (& diff minimisation?): 22817 MarcoFalke:2108-testRaceConnect
+	# Needs review (& diff minimisation?): 22817 maflcko:2108-testRaceConnect
 	# n/a without #21565: 22820 fix_config_qtinputsupport-22
 	# Needs review: 22834 vasild:onlynet
 	# TODO? 22836 sipa:202108_bipvec5
@@ -287,7 +287,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	19851 abstract_parseopcode-21				9cf7454f577  # needed for 22875
 	22875 parseopcode_threadsafe-21				ad627dc37a2	last=7b481f015a0
 	(CHECK-LAST)	last=34fd8e3992c parseopcode_threadsafe-22
-	22879 fix_addrman_err_format-21				2340bf42de5	last=fab0b55cf06 MarcoFalke/2109-testPeersDat
+	22879 fix_addrman_err_format-21				2340bf42de5	last=fab0b55cf06 maflcko/2109-testPeersDat
 	(CHECK-LAST)	last=0a3ec03ea33 fix_addrman_err_format-22
 	22895 fix_RBFD_lock_pr22895-0.16			c36be3256af	last=94c04681edb fix_RBFD_lock_pr22895-22
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
@@ -314,10 +314,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	g439 gui_hide_unused_icons-0.20				823c85e38d4
 	# Needs careful review: 23169 -  # Initialize all members in FastRandomContext
 	# Needs review: 23197 jonatack/fix-netaddress-UB-and-banman-fuzz-crash
-	# Needs review: 23227 MarcoFalke/2110-ToIntegral
-	# Needs review of backport-rewrite in qt_catch_rpc_index_overflow-0.18 [alt to g446  MarcoFalke/2110-qtRpcCons]
+	# Needs review: 23227 maflcko/2110-ToIntegral
+	# Needs review of backport-rewrite in qt_catch_rpc_index_overflow-0.18 [alt to g446  maflcko/2110-qtRpcCons]
 	# TODO: 23268 prayank23/dns-seed-fqdn
-	# TODO: 23253 MarcoFalke/2110-utilTxSeqId
+	# TODO: 23253 maflcko/2110-utilTxSeqId
 	23304 wallet_derive_inactive_pr23304-21
 	# n/a without #20764? 23324 netinfo_peer_count_all_reachable-22
 	# n/a without #19651: 23333 theStack/202110-wallet-fix_getwalletinfo_segfault_after_importing_descriptor
@@ -328,8 +328,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# Followups in #23777
 	# Needs review + diff minimisation: 23380 jnewbery:2021-10-addrman-add-logging
 	# Moved to Knots bips.md update in branding: 21925 + 23410 hebasto/211101-bips
-	# Needs work/diff-minimisation: 23418 MarcoFalke/2111-txPoolPrioOverflow
-	# Needs review/diff-minimisation: 23486 MarcoFalke/2111-rpcScript
+	# Needs work/diff-minimisation: 23418 maflcko/2111-txPoolPrioOverflow
+	# Needs review/diff-minimisation: 23486 maflcko/2111-rpcScript
 	# Needs work: 23502 achow101/tr-low-fee-est
 		# See also #28573
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
@@ -340,7 +340,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Embedded font not in 21.x! g477  gui477_fix_mac_console_font-0.13  # Monospaced output in Console on macOS
 	23644 wtx_timercvd_noadjust-21				f254b23b7d0
 		# Diff-miniised
-	# Needs correctness verification (especially startingheight which changed in 22.x): Diff-minimised 23652 MarcoFalke/2112-docOptPeer
+	# Needs correctness verification (especially startingheight which changed in 22.x): Diff-minimised 23652 maflcko/2112-docOptPeer
 	# Needs review: 23673 hebasto/211204-native
 	23750 docfix_importdesc_range_no_label-21	397093e7779	last=65efbba45d8 darosior/no_label_range_descriptors
 	# Buggy? UI change too... g447  -  # Never disable HD status icon
@@ -662,7 +662,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	27717 test_util_env-0.16
 	Triage: If needed? 27720 furszy/2023_index_init_race_bugfix
 	Triage: 27724 -  # build: disable boost multi index safe mode in debug mode
-	Triage: 27727 MarcoFalke/2305-rpc-bech32-; backports in #27756 (23.x), #27755 (24.x), and #27750 (25.x)
+	Triage: 27727 maflcko/2305-rpc-bech32-; backports in #27756 (23.x), #27755 (24.x), and #27750 (25.x)
 		+27747
 	Triage: Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	Triage: Needs review: 27804 -  # init: deduplicate added connections
@@ -692,8 +692,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
 	Triage: Needs review? 28067 furszy/2023_wallet_infer_watchonly_sh_script
-	# Not a fix: 28076 MarcoFalke/2307-fs-lint-
-		# "I don't think anything here is a bug fix" -MarcoFalke, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
+	# Not a fix: 28076 maflcko/2307-fs-lint-
+		# "I don't think anything here is a bug fix" -maflcko, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
 	Triage: 28123 fix_nonstring_onelinedesc
 	Triage: Needs review: 28125 furszy/2023_wallet_bugfix_migration_invalid_scripts
 	Triage: Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
@@ -1084,12 +1084,12 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	(CHECK-LAST)	last=6d169ee0c55 qt_peers_directionarrow-23+knots
 	(CHECK-LAST)	last=6d169ee0c55 qt_peers_directionarrow-25+knots
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
-	20916 rpc_testmempoolaccept_wtxid-0.21		c5b8eb0a8b4	last=fa0aa87071e MarcoFalke/2101-wtxidTestmempool
+	20916 rpc_testmempoolaccept_wtxid-0.21		c5b8eb0a8b4	last=fa0aa87071e maflcko/2101-wtxidTestmempool
 		# Diff-minimised
 	g162  gui_peers_detail_network-0.21+knots	9e73df68dc7
 		# NOTE: Left out Peers table column & misc formatting changes
 		# if merging full gui#599: * f0dbac928f1 GUI: Support translating peer network names
-	20944 rpc_getmempoolinfo_total_fee-0.21		e0125b1b0d9	last=fa362064e38 MarcoFalke/2101-rpcMempoolTotalFee
+	20944 rpc_getmempoolinfo_total_fee-0.21		e0125b1b0d9	last=fa362064e38 maflcko/2101-rpcMempoolTotalFee
 		# NOTE: Minor code rearranging to avoid conflicts
 		# +#23980 minor typo fix
 	g186  gui_bumpfee_privacywarn-0.21+knots	725973ae6f9
@@ -1305,7 +1305,7 @@ m	15421 tor_subprocess-0.21+knots				ccf77ea4de5	last=58c6cafd3a1 tor_subprocess
 	15633 nohbcbfornonwit-0.21+knots			f81d53ce8c5	last=f5e4f1650fe nohbcbfornonwit
 		# NOTE: added test fix from sdaftuar/test-15633-2
 		# NOTE: 2020-06, upstream was deleted, and origin-pull is NOT up to date!
-	# TODO: 16490 MarcoFalke/1907-rpcMempoolWhyReplacable
+	# TODO: 16490 maflcko/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support Knots policies
 	17795 gui_console_ctrl_d-0.21				975064084f4
