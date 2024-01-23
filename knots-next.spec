@@ -273,13 +273,10 @@ checkout v26.0
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29184 rpc_scanblocks_ffp_named
 	29175 fix_rpc_estmode_unset_case-24						last=51fdb4819eb
-	29176 maflcko/2401-wallet-fix-a-bug-
-		# 26.x backport in #29011
-	Triage: 29177 hebasto/240104-atomic
-	29179 glozow/2024-01-test-reorg-rescan
-		# Backport in #29209
-	Triage: 29192 sipa/202401_serfloat_weaken_test
-	29195 hebasto/240107-clang
+	29176 fix_wallet_EraseRecords_uaf-25
+	29177 fix_conf_latomic_check-25
+	# Triage: 29192 sipa/202401_serfloat_weaken_test
+	29195 fix_clang_extwarns_pr29195-24
 	Triage: 29211 brunoerg/2024-01-fuzz-fix-connman
 	https://github.com/bitcoin-core/crc32c-subtree/pull/6
 	29230 jonatack/2024-01-fix-loglevel-help
@@ -959,4 +956,5 @@ checkout v26.0
 
 @26.x-knots-extratests
 	28805 qa_v2t_pr28805-26
+	29179 glozow/2024-01-test-reorg-rescan
 
