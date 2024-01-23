@@ -1,7 +1,7 @@
-timestamp 2024-01-03 22:16:57
+timestamp 2024-01-23 04:33:34
 lastapply no-merge
 
-#.. checked up to PR #29172 / gui #782
+#.. checked up to PR #29292 / gui #790
 
 checkout v26.0
 @26.x-syslibs
@@ -128,7 +128,7 @@ checkout v26.0
 		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
-		#+29065
+		#+29065+29272
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	#26.xTODO# Check on #25561
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
@@ -232,7 +232,8 @@ checkout v26.0
 	# Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
 	28784 fix_keep_notmy_cookie-26+knots		2362f3c6d63	last=7cb9367157e
 		# Reverted regression from d95dde9441f...7cb9367157e
-	# Needs review: 28791 maaku/fix-assumeutxos-core-dump
+	28791 maaku/fix-assumeutxos-core-dump
+		# 26.x backport in #29209
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
@@ -264,7 +265,8 @@ checkout v26.0
 	29141 fix_rpcauth_blank
 	#26.xTODO# Needs review: 29112 achow101/sqlite-concurrent-writes
 	# Needs review: achow101/fix-double-keypath
-	# Needs review: 29127 maaku/hardened-macos-runtime
+	29127 maaku/hardened-macos-runtime
+		# 26.x backport in #29209
 	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
 	29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
 	29145 dnsseed_dashjr_2024
@@ -272,6 +274,26 @@ checkout v26.0
 	29147 guix_attachable_sigs
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29184 rpc_scanblocks_ffp_named
+	29175 -  # rpc: validate fee estimation mode case insensitive
+	29176 maflcko/2401-wallet-fix-a-bug-
+		# 26.x backport in #29011
+	Triage: 29177 hebasto/240104-atomic
+	29179 glozow/2024-01-test-reorg-rescan
+		# Backport in #29209
+	Triage: 29192 sipa/202401_serfloat_weaken_test
+	29195 hebasto/240107-clang
+	Triage: 29211 brunoerg/2024-01-fuzz-fix-connman
+	https://github.com/bitcoin-core/crc32c-subtree/pull/6
+	29230 jonatack/2024-01-fix-loglevel-help
+	29237 -  # depends: Allow PATH with spaces in directory names.
+	Triage: 29243 achow101/fix-win-failed-wallet-restore
+	29249 fanquake/nm_gen_id
+	Triage: 29253 furszy/2024_wallet_db_dangling_txn
+	29262 maflcko/2401-rpc-race-
+	Triage part of: 29275 maflcko/2401-prev-it-
+	Needs review: 29284 sipa/202401_better_block_tiebreak
+	Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
+	Needs review? g788  -  # debugwindow: update session ID tooltip
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -326,10 +348,19 @@ checkout v26.0
 	# Needs backport: 29114 -  # util: Faster std::byte (pre)vector (un)serialize
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
 	# Too big a diff: 29169 fanquake/libsecp256k1_0_4_1
+	# Not worth it (kernel only): 29180 theuni/kernel-sha2-optims
+	29200 jonatack/2024-01-i2p-use-both-encryption-types
+		# 26.x backport in #29209
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
 	# TODO: 29050 stevenroose/txhash
+	# TODO: 29198 reardencode/lnhance
+	# TODO: 29221 -  # Implement 64 bit arithmetic op codes in the Script interpreter
+	# TODO: 29247 -  # Reenable OP_CAT
+	# TODO: 29269 -  # Add OP_INTERNALKEY for Tapscript
+	# TODO: 29270 -  # Implement OP_CHECKSIGFROMSTACK(VERIFY)
+	# TODO: 29280 -  # Implement OP_CHECKTEMPLATEVERIFY
 # FUNCTIONALITY:
 	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
 		# test2: export of symbol _IO_stdin_used not allowed!
@@ -656,6 +687,7 @@ checkout v26.0
 	29016 rpc_listmempooltxs-26+knots						last=07008477b81 niftynei/nifty/listmempoolentry
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	#26.xTODO# 29058 mzumsande/202312_manual_bip324
+		# +#29212 bugfix
 	29117 wallettool_dump_just_db-26+knots					last=d83bea42d1f achow101/dump-without-making-wallet
 		# Omitted first commit that could be dangerous
 	#26.xTODO# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
@@ -663,6 +695,11 @@ checkout v26.0
 	# Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
 	29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
 		# Left off top commit changing rpc_help test behaviour
+	29227 glozow/2024-01-mempool-load-logs
+		# 26.x backport in #29209
+	29239 sipa/202401_default_addnode_bip324
+	Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
+	Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -825,7 +862,7 @@ checkout v26.0
 	28408 match_more_datacarrier-25+knots		699f8a809eb	last=abd19ad480f match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# Revise byte counting to consider input/output waste
-		TODO: Check docs for accuracy; REVERT AT LEAST PART OF #27832
+		TODO: Check docs for accuracy; REVERT AT LEAST PART OF #27832 (eg #29173)
 	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	#26.xTODO# Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
@@ -880,13 +917,14 @@ checkout v26.0
 		TODO: Merge into above revert?
 	7483  svg_icon-25+knots						bbb36b36a96
 		Consider: https://github.com/bitcoinknots/bitcoin/pull/54
+		FIXME: Make configure error if source doesn't have rendered icon and can't generate
 	n/a   tbc_font								cc499335148
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
 	n/a   knots_branding-25						0cb94913043
 		#26.xTODO# Review security policy
-		TODO: bump copyright year?
+		TODO: bump copyright year? #29222
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #26.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail

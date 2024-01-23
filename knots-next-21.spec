@@ -1,8 +1,8 @@
-timestamp 2024-01-03 22:16:57
+timestamp 2024-01-23 04:33:34
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #29172 / gui #782 for fixes
+#.. checked up to PR #29292 / gui #790 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -199,6 +199,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 	20805 copyright_2022-0.21					c69ba0b3e58
 		# NOTE: Diff-minimised
 		TODO: Bump in 2023+
+		(#29222)
 	# Needs careful review: 20966 banlist.json (TorV3 bans fix)
 	# Too messy? g164 hebasto-g/201224-signal
 		# +gui#375 fix
@@ -462,7 +463,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Needs review/work? 25272 wallet_sync_catch_db_write_err-21
 	25256 log_threadname_unknown-0.19
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
-		#+29065
+		#+29065+29272
 	25276 fix_rpcdoc_importdesc_pr25276-21
 	# Meh? 25288 -  # test: Reliably don't start itself (lint-all.py runs all tests twice)
 	# Simpler alternative to? 25294 -  # test: Fix wait_for_debug_log UnicodeDecodeError
@@ -752,7 +753,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: # Needs review: 28780 -  # log: torcontrol opt checks
 	Triage: # Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
 	Triage: 28784 -  # rpc: keep .cookie file if it was not generated
-	Triage: # Needs review: 28791 maaku/fix-assumeutxos-core-dump
+	Triage: 28791 maaku/fix-assumeutxos-core-dump
+		# 26.x backport in #29209
 	Triage: # Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	Triage: Needs concept or alternative: 28824 willcl-ark/asm-full-hex
 	Triage: # Needs review: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
@@ -788,10 +790,29 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: g780  -  # Fix: Ensure 'Transaction View' remains disabled if no wallet is selected
 	Triage: Needs review: 29112 achow101/sqlite-concurrent-writes
 	Triage: Needs review: achow101/fix-double-keypath
-	Triage: Needs review: 29127 maaku/hardened-macos-runtime
+	Triage: 29127 maaku/hardened-macos-runtime
+		# 26.x backport in #29209
 	29145 dnsseed_dashjr_2024
 	Triage: 29147 guix_attachable_sigs
 	Triage: Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
+	Triage: 29175 -  # rpc: validate fee estimation mode case insensitive
+	Triage: 29176 maflcko/2401-wallet-fix-a-bug-
+		# 26.x backport in #29011
+	Triage: 29177 hebasto/240104-atomic
+	Triage: 29179 glozow/2024-01-test-reorg-rescan
+		# Backport in #29209
+	Triage: 29192 sipa/202401_serfloat_weaken_test
+	Triage: 29195 hebasto/240107-clang
+	Triage: 29211 brunoerg/2024-01-fuzz-fix-connman
+	Triage: https://github.com/bitcoin-core/crc32c-subtree/pull/6
+	Triage: 29230 jonatack/2024-01-fix-loglevel-help
+	Triage: 29237 -  # depends: Allow PATH with spaces in directory names.
+	Triage: 29243 achow101/fix-win-failed-wallet-restore
+	Triage: 29253 furszy/2024_wallet_db_dangling_txn
+	Triage: 29262 maflcko/2401-rpc-race-
+	Triage part of: 29275 maflcko/2401-prev-it-
+	Triage: Needs review: 29284 sipa/202401_better_block_tiebreak
+	Triage: Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -850,6 +871,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=d6d1a1b47eb rpc_gbci_period_start-22+knots
 	# TODO: 21702 CheckTemplateVerify
 	Triage: TODO: 28550 jamesob/2023-09-covtools-softfork
+	Triage: TODO: 29050 stevenroose/txhash
+	Triage: TODO: 29198 reardencode/lnhance
+	Triage: TODO: 29221 -  # Implement 64 bit arithmetic op codes in the Script interpreter
+	Triage: TODO: 29247 -  # Reenable OP_CAT
+	Triage: TODO: 29269 -  # Add OP_INTERNALKEY for Tapscript
+	Triage: TODO: 29270 -  # Implement OP_CHECKSIGFROMSTACK(VERIFY)
+	Triage: TODO: 29280 -  # Implement OP_CHECKTEMPLATEVERIFY
 # FUNCTIONALITY:
 m	g275  gui_darkmode-0.21.2_pt1				9cd8d7e8a79
 		# NOTE: Fixed bug in gui#330 a simpler way b942216a1a7
