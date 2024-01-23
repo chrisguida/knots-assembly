@@ -805,7 +805,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 29195 hebasto/240107-clang
 	Triage: 29211 brunoerg/2024-01-fuzz-fix-connman
 	Triage: https://github.com/bitcoin-core/crc32c-subtree/pull/6
-	Triage: 29230 jonatack/2024-01-fix-loglevel-help
 	Triage: 29237 -  # depends: Allow PATH with spaces in directory names.
 	Triage: 29243 achow101/fix-win-failed-wallet-restore
 	Triage: 29253 furszy/2024_wallet_db_dangling_txn

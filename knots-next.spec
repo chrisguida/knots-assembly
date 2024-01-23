@@ -277,9 +277,7 @@ checkout v26.0
 	29177 fix_conf_latomic_check-25
 	# Triage: 29192 sipa/202401_serfloat_weaken_test
 	29195 fix_clang_extwarns_pr29195-24
-	Triage: 29211 brunoerg/2024-01-fuzz-fix-connman
-	https://github.com/bitcoin-core/crc32c-subtree/pull/6
-	29230 jonatack/2024-01-fix-loglevel-help
+	#26.xTODO# https://github.com/bitcoin-core/crc32c-subtree/pull/6
 	29237 -  # depends: Allow PATH with spaces in directory names.
 	Triage: 29243 achow101/fix-win-failed-wallet-restore
 	29249 fanquake/nm_gen_id
