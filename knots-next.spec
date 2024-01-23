@@ -232,8 +232,7 @@ checkout v26.0
 	# Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
 	28784 fix_keep_notmy_cookie-26+knots		2362f3c6d63	last=7cb9367157e
 		# Reverted regression from d95dde9441f...7cb9367157e
-	28791 maaku/fix-assumeutxos-core-dump
-		# 26.x backport in #29209
+	28791 fix_assumeutxo_pr28791-26
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
@@ -265,16 +264,15 @@ checkout v26.0
 	29141 fix_rpcauth_blank
 	#26.xTODO# Needs review: 29112 achow101/sqlite-concurrent-writes
 	# Needs review: achow101/fix-double-keypath
-	29127 maaku/hardened-macos-runtime
-		# 26.x backport in #29209
+	29127 mac_hardened_runtime-22
 	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
-	29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
+	# Needs work? 29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
 	29145 dnsseed_dashjr_2024
 		#26.xTODO# Decide about changing to another domain
 	29147 guix_attachable_sigs
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29184 rpc_scanblocks_ffp_named
-	29175 -  # rpc: validate fee estimation mode case insensitive
+	29175 fix_rpc_estmode_unset_case-24						last=51fdb4819eb
 	29176 maflcko/2401-wallet-fix-a-bug-
 		# 26.x backport in #29011
 	Triage: 29177 hebasto/240104-atomic
