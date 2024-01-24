@@ -221,7 +221,6 @@ checkout v26.0
 	# Needs review/simplification: 28649 vasild/reliable_socks5_handshake
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
-	28733 fix_depends_PATH_w_spaces-22			4b1f2043949	last=92f7e7f3633 maaku/allow-spaces-in-path
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
 	g773 fix_qt_unlock_watchonly-0.20			887878b37ac	last=517c7f9cba3 achow101-g/gui-skip-encryption-check-for-watchonly
 	# Not worth it? 28771 achow101/lcov-opts
@@ -278,8 +277,10 @@ checkout v26.0
 	# Triage: 29192 sipa/202401_serfloat_weaken_test
 	29195 fix_clang_extwarns_pr29195-24
 	#26.xTODO# https://github.com/bitcoin-core/crc32c-subtree/pull/6
-	29237 -  # depends: Allow PATH with spaces in directory names.
-	Triage: 29243 achow101/fix-win-failed-wallet-restore
+	29237 fix_depends_PATH_w_spaces-26			4b1f2043949
+	(CHECK-LAST)	last=92f7e7f3633 maaku/allow-spaces-in-path
+		# Was: 28733 fix_depends_PATH_w_spaces-22
+	29243 fix_wallet_cleanup_handler_pr29243-23
 	29249 fanquake/nm_gen_id
 	Triage: 29253 furszy/2024_wallet_db_dangling_txn
 	29262 maflcko/2401-rpc-race-

@@ -741,7 +741,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Retain support for old value too? 28685 fjahr/2023-10-au-weird-fix
 	Triage: 28695 -  # net: Sanity check private keys received from SAM proxy
 	Triage: # Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
-	Triage: 28733 maaku/allow-spaces-in-path
 	Triage: # Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
 	Triage: g773 achow101-g/gui-skip-encryption-check-for-watchonly
 	Triage: g774 theStack-g/202310-gui-fix_mask_values_crash_in_transaction_view
@@ -806,6 +805,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 29211 brunoerg/2024-01-fuzz-fix-connman
 	Triage: https://github.com/bitcoin-core/crc32c-subtree/pull/6
 	Triage: 29237 -  # depends: Allow PATH with spaces in directory names.
+		# Was?: 28733 maaku/allow-spaces-in-path
 	Triage: 29243 achow101/fix-win-failed-wallet-restore
 	Triage: 29253 furszy/2024_wallet_db_dangling_txn
 	Triage: 29262 maflcko/2401-rpc-race-
