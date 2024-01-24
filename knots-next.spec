@@ -287,7 +287,7 @@ checkout v26.0
 	# Triage part of: 29275 maflcko/2401-prev-it-
 	#26.xTODO# Needs review: 29284 sipa/202401_better_block_tiebreak
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
-	g788  -													last=3bf00e13609  # debugwindow: update session ID tooltip
+	g788  qt_peers_sessionid_tooltip_prg788-26				last=3bf00e13609  # debugwindow: update session ID tooltip
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -343,8 +343,7 @@ checkout v26.0
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
 	# Too big a diff: 29169 fanquake/libsecp256k1_0_4_1
 	# Not worth it (kernel only): 29180 theuni/kernel-sha2-optims
-	29200 jonatack/2024-01-i2p-use-both-encryption-types
-		# 26.x backport in #29209
+	29200 i2p_ecies_x25519-25
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
