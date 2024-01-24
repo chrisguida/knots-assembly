@@ -281,13 +281,13 @@ checkout v26.0
 	(CHECK-LAST)	last=92f7e7f3633 maaku/allow-spaces-in-path
 		# Was: 28733 fix_depends_PATH_w_spaces-22
 	29243 fix_wallet_cleanup_handler_pr29243-23
-	29249 fanquake/nm_gen_id
-	Triage: 29253 furszy/2024_wallet_db_dangling_txn
-	29262 maflcko/2401-rpc-race-
-	Triage part of: 29275 maflcko/2401-prev-it-
-	Needs review: 29284 sipa/202401_better_block_tiebreak
-	Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
-	Needs review? g788  -  # debugwindow: update session ID tooltip
+	29249 depends_gen_id_nm-25
+	# Needs review: 29253 furszy/2024_wallet_db_dangling_txn
+	29262 fix_rpc_loadtxoutset_race-26
+	# Triage part of: 29275 maflcko/2401-prev-it-
+	#26.xTODO# Needs review: 29284 sipa/202401_better_block_tiebreak
+	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
+	g788  -													last=3bf00e13609  # debugwindow: update session ID tooltip
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
