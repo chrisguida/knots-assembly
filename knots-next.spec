@@ -602,9 +602,9 @@ checkout v26.0
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
 	-     guix_shell_compat-24					e425aec3426
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
-	28167 rpccookieperms-26+knots				9213782194f	last=f15f4b3c4b4 willcl-ark/2023-07-rpccookie-perms
+	28167 rpccookieperms-26+knots				9213782194f	last=78f59b4a26b willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
-		# Added: Fix permissions stringification & log when option is being used
+		# Added lots of improvements
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
