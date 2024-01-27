@@ -690,7 +690,7 @@ checkout v26.0
 	29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
 		# Left off top commit changing rpc_help test behaviour
 	29227 mempool_load_log_progress-24
-	29239 sipa/202401_default_addnode_bip324
+	29239 rpc_addnode_v2t_default-26
 	Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
 	Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
 	
