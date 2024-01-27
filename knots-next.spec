@@ -247,7 +247,7 @@ checkout v26.0
 	28920 fix_wallet_def_birthtime-26						last=b06b14e68d8 !fanquake/26_1_backports^^^
 		# Diff-minimised by dropping leading refactor commit (and rebasing around it)
 	28936 dnsseed_petertoddnet-25
-	28944 sendall_antifeesniping-25							last=c8de459de6d ishaanam/sendall_anti_fee_sniping
+	28944 sendall_antifeesniping-25							last=ed5cc12474a ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	# Needs review (very minor fix): 28976 achow101/migrate-blank
@@ -271,7 +271,7 @@ checkout v26.0
 	29147 guix_attachable_sigs
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29184 rpc_scanblocks_ffp_named
-	29175 fix_rpc_estmode_unset_case-24						last=51fdb4819eb
+	29175 fix_rpc_estmode_unset_case-24						last=be8ae64b82e
 	29176 fix_wallet_EraseRecords_uaf-25
 	29177 fix_conf_latomic_check-25
 	# Triage: 29192 sipa/202401_serfloat_weaken_test
@@ -602,7 +602,7 @@ checkout v26.0
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
 	-     guix_shell_compat-24					e425aec3426
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
-	28167 rpccookieperms-26+knots				9213782194f	last=78f59b4a26b willcl-ark/2023-07-rpccookie-perms
+	28167 rpccookieperms-26+knots				9213782194f	last=68a4a988e98 willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
@@ -610,8 +610,9 @@ checkout v26.0
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=6175a2ee096
+	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=1d0216ed322
 		# Held back 72013c25ada...6175a2ee096 for convenience (identical final states)
+		# Held back 6175a2ee096...1d0216ed322 for being stupid (limit whitelisting to manual outbound peers)
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring commit (caf5ff0c5a8) and reverted gArgs caching refactor (ab6c001ec96)
 		# Also includes change of default from incoming to in+out
@@ -628,8 +629,8 @@ checkout v26.0
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
-	26990 bcli_validation-24					def292e8c7b	last=4cf728617fa
-		# Didn't bother rebasing for 755320f75f2...4cf728617fa comment changes
+	26990 bcli_validation-24					def292e8c7b	last=fa48d460334
+		# Didn't bother rebasing for 755320f75f2...fa48d460334 trivial changes
 	27034 rpc_importaddr_for_descwallet-26+k	05bd5f2f99b	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
@@ -688,8 +689,7 @@ checkout v26.0
 	# Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
 	29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
 		# Left off top commit changing rpc_help test behaviour
-	29227 glozow/2024-01-mempool-load-logs
-		# 26.x backport in #29209
+	29227 mempool_load_log_progress-24
 	29239 sipa/202401_default_addnode_bip324
 	Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
 	Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
