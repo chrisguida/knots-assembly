@@ -691,8 +691,8 @@ checkout v26.0
 		# Left off top commit changing rpc_help test behaviour
 	29227 mempool_load_log_progress-24
 	29239 rpc_addnode_v2t_default-26
-	Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
-	Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
+	# Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
+	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -749,6 +749,8 @@ checkout v26.0
 	15428 tor_gui_pairing-26+knots				e3afcc98d21	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-26+knots				e4bc1dba681	# Latest code now
+	FIXME: fix automatic tor outbound using subprocess
+	FIXME: -netinfo doesn't show tor if inbound-only?
 	# TODO: tor guix bundle!
 	# TODO: 16490 maflcko/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
