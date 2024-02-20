@@ -1,7 +1,7 @@
-timestamp 2024-01-23 04:33:34
+timestamp 2024-02-20 22:30:01
 lastapply no-merge
 
-#.. checked up to PR #29292 / gui #790
+#.. checked up to PR #29458 / gui #797
 
 checkout v26.1rc1
 @26.x-syslibs
@@ -259,6 +259,7 @@ checkout v26.1rc1
 	# Needs review: achow101/fix-double-keypath
 	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
 	# Needs work? 29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
+		#+29301
 	29145 dnsseed_dashjr_2024
 		#26.xTODO# Decide about changing to another domain
 	29147 guix_attachable_sigs
@@ -279,6 +280,16 @@ checkout v26.1rc1
 	#26.xTODO# Needs review: 29284 sipa/202401_better_block_tiebreak
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  qt_peers_sessionid_tooltip_prg788-26				last=3bf00e13609  # debugwindow: update session ID tooltip
+	29302 marcofleon/2024/01/clarify-documentation
+	Needs review: 29307 vasild/AutoFile_error_check
+	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
+	Needs review: 29357 hebasto/240131-fopen-x
+	Needs review: 29362 hebasto/240201-objcxx
+	29367 achow101/set-descriptors-flag-migrated-blank
+	29434 maflcko/2402-rpc-UB-
+	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
+	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
+	g797  hebasto/240219-fix-796
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -294,6 +305,7 @@ checkout v26.1rc1
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 @26.x-knots
 # PERFORMANCE:
+	# Needs review: 29412 dergoegge/2024-01-mut-blocks
 	n/a   rm_minisketch-26+k					56c089e915d
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
@@ -334,6 +346,8 @@ checkout v26.1rc1
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
 	# Too big a diff: 29169 fanquake/libsecp256k1_0_4_1
 	# Not worth it (kernel only): 29180 theuni/kernel-sha2-optims
+	29436 brunoerg/2024-02-addrman-select-networks
+	Needs review: 29458 -  # optimization: Speed up TryParseHex by 300%
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -651,7 +665,7 @@ checkout v26.1rc1
 	# Needs work & maybe removing an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
 	# Needs review: 27837 furszy/2023_introduce_block_request_tracker
 	# Needs work: 27854 -  # [WIP] add a stratum v2 template provider
-		# OR #28983
+		# OR #28983 OR #29432
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 	#26.xTODO# Make disabled by default: 28052 maflcko/2306-fs_stuff-
@@ -682,6 +696,11 @@ checkout v26.1rc1
 	29239 rpc_addnode_v2t_default-26
 	# Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
 	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
+	29347 sipa/202401_gogogo_bip324
+		+#29452 ?
+	29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
+	# Needs review: 29415 vasild/private_broadcast
+	Needs review?? 29418 vasild/getnetmsgstats
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -839,6 +858,7 @@ checkout v26.1rc1
 		# Header columns: need a rename
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
+	29309 -  # Add a -permitbarepubkey option
 	-    1day_default_conftarget				2c1b1d3e046
 	-     bytespersigopstrict-25+knots			2de1a1eb574
 	9749  unique_spk_mempool-25+knots			f5263caec05
@@ -880,6 +900,7 @@ checkout v26.1rc1
 		FIXME: <cstdint> in clientversion.h
 	-     rwconf_policy-25+knots				e3ba2d1e080
 		FIXME: full rbf not default??
+		TODO: Set permitbarepubkey=0 (and add to GUI)
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
