@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #29292 / gui #790
 
-checkout v26.0
+checkout v26.1rc1
 @26.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
@@ -231,7 +231,6 @@ checkout v26.0
 	# Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
 	28784 fix_keep_notmy_cookie-26+knots		2362f3c6d63	last=7cb9367157e
 		# Reverted regression from d95dde9441f...7cb9367157e
-	28791 fix_assumeutxo_pr28791-26
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
@@ -244,18 +243,13 @@ checkout v26.0
 		# Alternative to #28874
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
-	28920 fix_wallet_def_birthtime-26						last=b06b14e68d8 !fanquake/26_1_backports^^^
-		# Diff-minimised by dropping leading refactor commit (and rebasing around it)
 	28936 dnsseed_petertoddnet-25
 	28944 sendall_antifeesniping-25							last=ed5cc12474a ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	# Needs review (very minor fix): 28976 achow101/migrate-blank
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
-	28994 fix_wallet_sffo_skip_bnb-26
-		# Diff-minimised
 	# Needs review? 28998 0xB10C/2023-12-addpeeraddress-return-error
-	29003 fix_rpc_getrawtx_v3_unconf-26
 	29022 fix_btx_replacable_blank-21
 	# Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
 	# MSVC: 29044 hebasto/231209-msvc-qt
@@ -263,7 +257,6 @@ checkout v26.0
 	29141 fix_rpcauth_blank
 	#26.xTODO# Needs review: 29112 achow101/sqlite-concurrent-writes
 	# Needs review: achow101/fix-double-keypath
-	29127 mac_hardened_runtime-22
 	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
 	# Needs work? 29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
 	29145 dnsseed_dashjr_2024
@@ -272,10 +265,8 @@ checkout v26.0
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29184 rpc_scanblocks_ffp_named
 	29175 fix_rpc_estmode_unset_case-24						last=be8ae64b82e
-	29176 fix_wallet_EraseRecords_uaf-25
 	29177 fix_conf_latomic_check-25
 	# Triage: 29192 sipa/202401_serfloat_weaken_test
-	29195 fix_clang_extwarns_pr29195-24
 	#26.xTODO# https://github.com/bitcoin-core/crc32c-subtree/pull/6
 	29237 fix_depends_PATH_w_spaces-26			4b1f2043949
 	(CHECK-LAST)	last=92f7e7f3633 maaku/allow-spaces-in-path
@@ -343,7 +334,6 @@ checkout v26.0
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
 	# Too big a diff: 29169 fanquake/libsecp256k1_0_4_1
 	# Not worth it (kernel only): 29180 theuni/kernel-sha2-optims
-	29200 i2p_ecies_x25519-25
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -689,7 +679,6 @@ checkout v26.0
 	# Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
 	29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
 		# Left off top commit changing rpc_help test behaviour
-	29227 mempool_load_log_progress-24
 	29239 rpc_addnode_v2t_default-26
 	# Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
 	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
@@ -956,5 +945,4 @@ checkout v26.0
 
 @26.x-knots-extratests
 	28805 qa_v2t_pr28805-26
-	29179 glozow/2024-01-test-reorg-rescan
 
