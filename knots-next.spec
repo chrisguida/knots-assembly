@@ -606,7 +606,7 @@ checkout v26.1rc1
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
 	-     guix_shell_compat-24					e425aec3426
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
-	28167 rpccookieperms-26+knots				9213782194f	last=68a4a988e98 willcl-ark/2023-07-rpccookie-perms
+	28167 rpccookieperms-26+knots				9213782194f	last=ce9df2aba3e willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
@@ -614,12 +614,13 @@ checkout v26.1rc1
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=1d0216ed322
-		# Held back 72013c25ada...6175a2ee096 for convenience (identical final states)
-		# Held back 6175a2ee096...1d0216ed322 for being stupid (limit whitelisting to manual outbound peers)
+	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=c10f5283501
 		# NOTE: Originally #10594, then #17167
-		# Left off test framework refactoring commit (caf5ff0c5a8) and reverted gArgs caching refactor (ab6c001ec96)
+		# Left off test framework refactoring commit (08c1af96e6f) and reverted gArgs caching refactor (ab6c001ec96)
+		# Non-trivial revert of 5883a8911a5 net: store `-whitelist{force}relay` values in `CConnman`
 		# Also includes change of default from incoming to in+out
+		# Made 'out' apply to non-manual outgoing too (backward compat)
+		# Restored older functional test (not sure why PR removed it)
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme	e3f13ae6a73	last=d8434da3c14
