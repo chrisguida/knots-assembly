@@ -335,7 +335,7 @@ checkout v26.1rc1
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 -										b48610240c4	last=42b25bbd939  # opti_merkle_mutation-0.17
-	28592 -										8de082c7735 last=80489ba6e84  # txrelayrate_14txps-21
+	28592 txrelayrate_14txps-26					8de082c7735 last=22c2b52c122
 		#26.xTODO# Make configurable? Or is that even sane?
 	# Needs fixing rebase: 28799 wallet_cache_descriptor_id-25
 	# Needs review: 28923 theStack/202311-add_SignTransaction_benchmark
@@ -347,7 +347,7 @@ checkout v26.1rc1
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
 	# Too big a diff: 29169 fanquake/libsecp256k1_0_4_1
 	# Not worth it (kernel only): 29180 theuni/kernel-sha2-optims
-	29436 brunoerg/2024-02-addrman-select-networks
+	29436 addrman_select_networks-26						last=7edb07ca800 brunoerg/2024-02-addrman-select-networks
 	Needs review: 29458 -  # optimization: Speed up TryParseHex by 300%
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
