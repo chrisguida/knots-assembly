@@ -932,6 +932,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 		# TODO: Replace with #21422 ? See also git diff b1f9af22425..9d16921553b -w
 	17463 gui_custom_sendyes					087d3e642af
 	g562  wallet_no_reuse-0.21+knots			952bb1fb9bc	last=627aa679d26 wallet_warn_reuse_gui
+	(CHECK-LAST)	last=627aa679d26 wallet_warn_reuse_gui-26
 		# NOTE: Was #15987
 		# NOTE: Uses older bloom filter implementation
 	22693 rpc_gai_txids-0.21+knots				69259a6ade8	last=b510d2c3e32 getaddressinfo_txids
