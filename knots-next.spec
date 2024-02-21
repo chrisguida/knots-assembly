@@ -249,7 +249,8 @@ checkout v26.1rc1
 		#27.xTODO# Rebase to pick up test change
 	28946 fix_keep_notmy_pidfile-26+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
-	# Needs review (very minor fix): 28976 achow101/migrate-blank
+	28976 fix_wallet_migrate_blank-26
+		#+29367
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
 	# Needs review? 28998 0xB10C/2023-12-addpeeraddress-return-error
 	29022 fix_btx_replacable_blank-21
@@ -286,7 +287,6 @@ checkout v26.1rc1
 	29307 AutoFile_error_check-26							last=55439903212 vasild/AutoFile_error_check
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	#26.xTODO# Needs review: 29357 hebasto/240131-fopen-x
-	29367 achow101/set-descriptors-flag-migrated-blank
 	29434 maflcko/2402-rpc-UB-
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
