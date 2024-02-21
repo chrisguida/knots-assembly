@@ -8,6 +8,7 @@ checkout v26.1rc1
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						0d2f1ba753f
+	29362 fix_objcxxflags_pr29362-26						last=17861b9cd59 hebasto/240201-objcxx
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							0a46aec36d8
 	5416  sys_libsecp256k1						38be3bf3130
@@ -204,7 +205,7 @@ checkout v26.1rc1
 	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
-	g752  fix_qt_cmdhelp_mention_uri-0.17		432f807d824	last=07bb7068cf9
+	g752  fix_qt_cmdhelp_mention_uri-0.17		432f807d824	last=ede5014c445
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
 	28486 fix_test_winsock_init-26
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
@@ -244,7 +245,8 @@ checkout v26.1rc1
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
 	28936 dnsseed_petertoddnet-25
-	28944 sendall_antifeesniping-25							last=ed5cc12474a ishaanam/sendall_anti_fee_sniping
+	28944 sendall_antifeesniping-25							last=f765c859d70 ishaanam/sendall_anti_fee_sniping
+		#27.xTODO# Rebase to pick up test change
 	28946 fix_keep_notmy_pidfile-26+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	# Needs review (very minor fix): 28976 achow101/migrate-blank
@@ -280,11 +282,10 @@ checkout v26.1rc1
 	#26.xTODO# Needs review: 29284 sipa/202401_better_block_tiebreak
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  qt_peers_sessionid_tooltip_prg788-26				last=3bf00e13609  # debugwindow: update session ID tooltip
-	29302 marcofleon/2024/01/clarify-documentation
-	Needs review: 29307 vasild/AutoFile_error_check
+	29302 clarifydoc_rpc_wtx_replace-25
+	29307 AutoFile_error_check-26							last=55439903212 vasild/AutoFile_error_check
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
-	Needs review: 29357 hebasto/240131-fopen-x
-	Needs review: 29362 hebasto/240201-objcxx
+	#26.xTODO# Needs review: 29357 hebasto/240131-fopen-x
 	29367 achow101/set-descriptors-flag-migrated-blank
 	29434 maflcko/2402-rpc-UB-
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
