@@ -822,7 +822,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# If this fixes a bug, move it out of performance in -next too
 	Triage: Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	Triage: Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
-	Triage: g797  hebasto/240219-fix-796
+	Triage: g797  hebasto-g/240219-fix-796
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)

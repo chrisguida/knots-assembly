@@ -287,10 +287,10 @@ checkout v26.1rc1
 	29307 AutoFile_error_check-26							last=55439903212 vasild/AutoFile_error_check
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	#26.xTODO# Needs review: 29357 hebasto/240131-fopen-x
-	29434 maflcko/2402-rpc-UB-
+	29434 fix_rpc_feerate_overflow-26
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
-	g797  hebasto/240219-fix-796
+	g797  fix_qa_guibug796-25
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
