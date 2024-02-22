@@ -697,8 +697,8 @@ checkout v26.1rc1
 	29239 rpc_addnode_v2t_default-26
 	# Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
 	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
-	29347 sipa/202401_gogogo_bip324
-		+#29452 ?
+	29347 net_v2t_default-26
+		# +Rewrote doc update in #29452
 	29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 	Needs review?? 29418 vasild/getnetmsgstats
