@@ -754,12 +754,12 @@ checkout v26.1rc1
 		# NOTE: Stripped out benchmark change
 		#26.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-25			43028d98ec0
-	15218 -										6e1ffe36dc9	last=0c7ee166463  # postibd_flush-25
+	15218 postibd_flush-26						6e1ffe36dc9	last=59287114753
 	15428 tor_gui_pairing-26+knots				e3afcc98d21	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-26+knots				e4bc1dba681	# Latest code now
-	FIXME: fix automatic tor outbound using subprocess
-	FIXME: -netinfo doesn't show tor if inbound-only?
+		# FIXME: fix automatic tor outbound using subprocess
+		# FIXME: -netinfo doesn't show tor if inbound-only?
 	# TODO: tor guix bundle!
 	# TODO: 16490 maflcko/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
