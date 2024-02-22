@@ -699,9 +699,9 @@ checkout v26.1rc1
 	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
 	29347 net_v2t_default-26
 		# +Rewrote doc update in #29452
-	29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
+	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
-	Needs review?? 29418 vasild/getnetmsgstats
+	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
