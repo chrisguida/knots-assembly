@@ -845,7 +845,7 @@ checkout v26.1rc1
 	14641 fundraw_min_conf_deprecated-25+knots	9b6d7ab7821	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			7cfe7d551eb
 	-     netperms_implicit_addr				36690d788bb
-	12674 rpc_onetry_nonpriv-25+knots			ecaf5bf309f
+	# IMPOSSIBLE with v2transport param: 12674 rpc_onetry_nonpriv-25+knots			ecaf5bf309f
 	-     rpc_getblockfrompeer_nodeid_compat	55b3579eb4c
 	# TODO: add a bitcoinknots.conf ?
 	n/a   gui_peers_bump_setting_keys-25+k		793aa1d84db
@@ -856,7 +856,7 @@ checkout v26.1rc1
 		# Header columns: need a rename
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
-	29309 -  # Add a -permitbarepubkey option
+	29309 permitbarepubkey-26+knots							last=8c1114aa61c
 	-    1day_default_conftarget				2c1b1d3e046
 	-     bytespersigopstrict-25+knots			2de1a1eb574
 	9749  unique_spk_mempool-25+knots			f5263caec05
@@ -954,6 +954,7 @@ checkout v26.1rc1
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
+		TODO: rpc_onetry_nonpriv is no longer possible to maintain compatibility with, document it
 	n/a  (cherrypick=ecb1be05c43)				aed49ce8989  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
