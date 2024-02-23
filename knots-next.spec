@@ -944,7 +944,7 @@ checkout v26.1rc1
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #26.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=ee7ef94595a7793b6e)		ab6d532443f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240103)			decc35f238b
+	n/a  (bump_version=Knots:20240220)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
 	n/a   (cherrypick=b5582b97bbf)				5961e01c91d  # release notes: write/update, including change log and credits
