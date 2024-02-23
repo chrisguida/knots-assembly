@@ -814,7 +814,7 @@ checkout v26.1rc1
 		#26.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 	5861 gui_restore_addresses					643e6f6ba1e
 	5891  qt_console_history_persist			bcdfddecdb9	last=0cd5fc301d6 qt_console_history_persist
-	7219  rbf_opts-25+knots						ef5614bee75	# Latest code now
+	7219  rbf_opts-26+knots						ef5614bee75	# Latest code now
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					72915ef061e
@@ -839,12 +839,9 @@ checkout v26.1rc1
 	#26.xTODO# Look into making the patches tarball in guix
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
-	-     wallet_undeprecate_legacy-25			790a86f1ce2
-		# Effectively reverts #24505
-		#26.xTODO# revert? #27869  wallet: Give deprecation warning when loading a legacy wallet
-		#26.xTODO# revert? #28597  wallet: No BDB creation, unless -deprecatedrpc=create_bdb
-		#26.xTODO# revert? gui#764  Remove legacy wallet creation
-		#26.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
+	-     wallet_undeprecate_legacy-26			790a86f1ce2
+		# Effectively reverts #24505, #27869, #28597, and gui#764
+		#27.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
 	14641 fundraw_min_conf_deprecated-25+knots	9b6d7ab7821	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			7cfe7d551eb
 	-     netperms_implicit_addr				36690d788bb

@@ -1421,6 +1421,8 @@ m	-     mining_priority-0.21+knots			1e33269a0ae	last=a284d6253ff mining_priorit
 	(CHECK-LAST)	last=58e2cab4b18 mining_priority-22
 		# Didn't backport next_block_height passing (maybe consider when/if someday cs_main can be released)
 		# Didn't backport platform-independent double serialisation
+		FIXME: Ensure format is compatible with latest
+		FIXME: fclose check invisibly merged in 78f55efac9b
 	5861 gui_restore_addresses-0.16				a81fd2b77ff	last=3ad197c5c69 gui_restore_addresses
 	5891  qt_console_history_persist-0.21+knots	831cc0d61d1	last=0cd5fc301d6 qt_console_history_persist
 m	7219  rbf_opts-0.21+knots					6b8135375e9	last=eb6bb1e3528 fullrbf # missing 91786d16ccc + revert34ae6640174
