@@ -754,7 +754,7 @@ checkout v26.1rc1
 		# NOTE: Stripped out benchmark change
 		#26.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-25			43028d98ec0
-	15218 postibd_flush-26						6e1ffe36dc9	last=59287114753
+	15218 postibd_flush-26						6e1ffe36dc9	last=5275d3c6353
 	15428 tor_gui_pairing-26+knots				e3afcc98d21	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-26+knots				e4bc1dba681	# Latest code now
@@ -804,9 +804,9 @@ checkout v26.1rc1
 	7533  sendraw_force-26+knots				e2a858f12ef last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
-	11082 rwconf-25+knots						0e725308ae7 # Latest code now
-	7510  rwconf_gui-25+knots					8547325ff36
-	559   accept_nonstdtxn-25+knots				f84d8616fa1
+	11082 rwconf-26+knots						0e725308ae7 # Latest code now
+	7510  rwconf_gui-26+knots					8547325ff36
+	559   accept_nonstdtxn						f84d8616fa1
 	 929 tbc									10d83963b58
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			1e5df93d93b
