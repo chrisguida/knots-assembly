@@ -862,22 +862,20 @@ checkout v26.1rc1
 	-     bytespersigopstrict-26+knots			2de1a1eb574
 	9749  unique_spk_mempool-26+knots			f5263caec05
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	28408 match_more_datacarrier-26+knots		699f8a809eb	last=abd19ad480f match_more_datacarrier
+	28408 match_more_datacarrier-26+knots		699f8a809eb	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# Revise byte counting to consider input/output waste
-		TODO: Check docs for accuracy; REVERT AT LEAST PART OF #27832 (eg #29173)
 	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	#26.xTODO# Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-25+knots				06ff2c34e3b
 		#26.xTODO# Add tests and make sure boundaries are correct
-	TODO: bare p2pk filter
-	TODO: filter runes?? https://rodarmor.com/blog/runes/ https://github.com/ordinals-wallet/rune/blob/main/src/rune.rs
-	TODO: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
-	TODO: CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666
-	TODO: Discount privacy txs?
-	TODO: Whitelist Whirlpool Tx0 and/or BIP47?
-	TODO: Procedural approve/deny/discount/penalize policy scripting?
+	#26.xTODO# filter runes?? https://rodarmor.com/blog/runes/ https://github.com/ordinals-wallet/rune/blob/main/src/rune.rs
+	#26.xTODO# filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
+	#26.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666
+	#26.xTODO# Discount privacy txs?
+	#26.xTODO# Whitelist Whirlpool Tx0 and/or BIP47?
+	#26.xTODO# Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	-     bloom_default-0.21+knots				edc9ff33c65
 	-     wallet_avoid_newerchange				bacea8923d4
