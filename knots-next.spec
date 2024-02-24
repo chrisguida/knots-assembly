@@ -692,7 +692,8 @@ checkout v26.1rc1
 	#26.xTODO# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
 	# Needs review or minimal impact: 29130 achow101/createwalletdescriptor-without-new-records
 	# Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
-	29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
+	# Needs final interface: 29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
+	# or (newer): 29163 rpc_helpdetail-24									last=56830469303 LarryRuane/2024-01-help-detailed
 		# Left off top commit changing rpc_help test behaviour
 	29239 rpc_addnode_v2t_default-26
 	# Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
@@ -858,10 +859,10 @@ checkout v26.1rc1
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-26+knots							last=8c1114aa61c
 	-    1day_default_conftarget				2c1b1d3e046
-	-     bytespersigopstrict-25+knots			2de1a1eb574
-	9749  unique_spk_mempool-25+knots			f5263caec05
+	-     bytespersigopstrict-26+knots			2de1a1eb574
+	9749  unique_spk_mempool-26+knots			f5263caec05
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	28408 match_more_datacarrier-25+knots		699f8a809eb	last=abd19ad480f match_more_datacarrier
+	28408 match_more_datacarrier-26+knots		699f8a809eb	last=abd19ad480f match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# Revise byte counting to consider input/output waste
 		TODO: Check docs for accuracy; REVERT AT LEAST PART OF #27832 (eg #29173)
