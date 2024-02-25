@@ -868,7 +868,7 @@ checkout v26.1rc1
 	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	#26.xTODO# Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
-	-     datacarriercost-25+knots				06ff2c34e3b
+	-     datacarriercost-26+knots				06ff2c34e3b
 		#26.xTODO# Add tests and make sure boundaries are correct
 	#26.xTODO# filter runes?? https://rodarmor.com/blog/runes/ https://github.com/ordinals-wallet/rune/blob/main/src/rune.rs
 	#26.xTODO# filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
@@ -877,11 +877,11 @@ checkout v26.1rc1
 	#26.xTODO# Whitelist Whirlpool Tx0 and/or BIP47?
 	#26.xTODO# Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
-	-     bloom_default-0.21+knots				edc9ff33c65
+	-     bloom_default-0.26					edc9ff33c65
 	-     wallet_avoid_newerchange				bacea8923d4
 	#26.xTODO# Revert #25725
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
-	-     maxscriptsize-25+knots				98c0265003e
+	-     maxscriptsize-26+knots				98c0265003e
 	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
 	#26.xTODO# Ordisrespector equivalent (Ordislow??)
