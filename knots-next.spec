@@ -891,7 +891,7 @@ checkout v26.1rc1
 	#26.xTODO# Exemptions for Samourai: https://code.samourai.io/whirlpool/Whirlpool/-/blob/whirlpool/ARCHITECTURE.md#2-create-tx0
 	#26.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 	-     enforce_checkpoints					271ea89d048
-	n/a   checkpoint_update-25					ecdd83d1986	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
+	n/a   checkpoint_update-26					ecdd83d1986	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
 		#26.xTODO# Add new checkpoint
 	10282 timebomb_knots						e3778785186
 		FIXME: <cstdint> in clientversion.h
