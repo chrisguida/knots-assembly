@@ -347,7 +347,7 @@ checkout v26.1rc1
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
 	# Too big a diff: 29169 fanquake/libsecp256k1_0_4_1
 	# Not worth it (kernel only): 29180 theuni/kernel-sha2-optims
-	29436 addrman_select_networks-26						last=7edb07ca800 brunoerg/2024-02-addrman-select-networks
+	# Needs more careful review: 29436 addrman_select_networks-26						last=7edb07ca800 brunoerg/2024-02-addrman-select-networks
 	# Needs review: 29458 -  # optimization: Speed up TryParseHex by 300%
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
@@ -614,7 +614,7 @@ checkout v26.1rc1
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=c10f5283501
+	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=231e1797023
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring commit (08c1af96e6f) and reverted gArgs caching refactor (ab6c001ec96)
 		# Non-trivial revert of 5883a8911a5 net: store `-whitelist{force}relay` values in `CConnman`
