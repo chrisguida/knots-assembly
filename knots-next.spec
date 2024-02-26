@@ -894,7 +894,6 @@ checkout v26.1rc1
 	n/a   checkpoint_update-26					ecdd83d1986	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
 		#26.xTODO# Add new checkpoint
 	10282 timebomb_knots						e3778785186
-		FIXME: <cstdint> in clientversion.h
 	-     rwconf_policy-25+knots				e3ba2d1e080
 		FIXME: full rbf not default??
 		TODO: Set permitbarepubkey=0 (and add to GUI)
