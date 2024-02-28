@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #29458 / gui #797
 
-checkout v26.1rc1
+checkout core/26.x
 @26.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
@@ -230,8 +230,8 @@ checkout v26.1rc1
 	# -- Needs review: g775 -  # gui: add used balance to overview page
 	# Needs review: 28780 -  # log: torcontrol opt checks
 	# Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
-	28784 fix_keep_notmy_cookie-26+knots		2362f3c6d63	last=7cb9367157e
-		# Reverted regression from d95dde9441f...7cb9367157e
+	-     fix_keep_notmy_cookie-26.1+knots		2362f3c6d63
+		# Originally part of #28784, but regressed in d95dde9441f...7cb9367157e
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
