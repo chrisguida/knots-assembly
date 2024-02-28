@@ -614,7 +614,7 @@ checkout v26.1rc1
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
-	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=231e1797023
+	27114 whitelist_outgoing-mini-26+knots		024d8fc86d6	last=0a533613fb4
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring commit (08c1af96e6f) and reverted gArgs caching refactor (ab6c001ec96)
 		# Non-trivial revert of 5883a8911a5 net: store `-whitelist{force}relay` values in `CConnman`
