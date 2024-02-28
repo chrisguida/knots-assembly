@@ -895,12 +895,9 @@ checkout v26.1rc1
 		#26.xTODO# Add new checkpoint
 	10282 timebomb_knots						e3778785186
 	-     rwconf_policy-26+knots				e3ba2d1e080
-		FIXME: full rbf not default??
-		TODO: Set permitbarepubkey=0 (and add to GUI)
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
-		#26.xTODO# fix corepolicy default in --help to be 0 instead of 'false'
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
