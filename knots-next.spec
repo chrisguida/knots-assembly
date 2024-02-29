@@ -931,10 +931,10 @@ checkout core/26.x
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure std::filesystem isn't introduced (see #28076)
-#26.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type: git grep '"options.*OBJ,'
+#27.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type: git grep '"options.*OBJ,'
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
-#26.xTODO# git grep noban_tx_relay (needs #27114)
-	n/a  (cherrypick=ee7ef94595a7793b6e)		ab6d532443f	# doc/{bips,files}
+#27.xTODO# git grep noban_tx_relay (needs #27114)
+	n/a  (cherrypick=4de10e83babc036d91)		ab6d532443f	# doc/{bips,files}
 	n/a  (bump_version=Knots:20240220)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
