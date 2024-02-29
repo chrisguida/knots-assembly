@@ -909,10 +909,10 @@ checkout core/26.x
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		3f1e47e06ff
-	TODO: revert macos ZIP only? #28432 #28932 #28973
-		NOTE: reverting temporarily reintroduces .tiff file
-	-     fix_dmg_openfinder-24					83c590fab1b
-		TODO: Merge into above revert?
+	n/a   macos_dmg-26.1
+		# Reverts #28432, and includes fix_dmg_openfinder
+		#27.xTODO# revert macos ZIP only: #28932 #28973
+		# NOTE: temporarily reintroduces .tiff file
 	7483  svg_icon-25+knots						bbb36b36a96
 		Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 		FIXME: Make configure error if source doesn't have rendered icon and can't generate
