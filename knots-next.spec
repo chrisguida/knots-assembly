@@ -913,10 +913,9 @@ checkout core/26.x
 		# Reverts #28432, and includes fix_dmg_openfinder
 		#27.xTODO# revert macos ZIP only: #28932 #28973
 		# NOTE: temporarily reintroduces .tiff file
-	7483  svg_icon-25+knots						bbb36b36a96
-		Consider: https://github.com/bitcoinknots/bitcoin/pull/54
-		FIXME: Make configure error if source doesn't have rendered icon and can't generate
-	n/a   tbc_font								cc499335148
+	7483  svg_icon-26.1+knots					bbb36b36a96
+		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
+	n/a   tbc_font-26.1+knots					cc499335148
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
