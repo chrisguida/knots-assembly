@@ -247,7 +247,7 @@ checkout core/26.x
 	28936 dnsseed_petertoddnet-25
 	28944 sendall_antifeesniping-25							last=f765c859d70 ishaanam/sendall_anti_fee_sniping
 		#27.xTODO# Rebase to pick up test change
-	28946 fix_keep_notmy_pidfile-26+knots
+	28946 fix_keep_notmy_pidfile-26.1+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	28976 fix_wallet_migrate_blank-26
 		#+29367
@@ -919,7 +919,7 @@ checkout core/26.x
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
-	n/a   knots_branding-25						0cb94913043
+	n/a   knots_branding-26						0cb94913043
 		#26.xTODO# Review security policy
 		TODO: bump copyright year? #29222
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
