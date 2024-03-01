@@ -263,7 +263,7 @@ checkout core/26.x
 	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
 	# Needs work? 29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
 		#+29301
-	29145 dnsseed_dashjr_2024
+	# 29145 dnsseed_dashjr_2024
 		#26.xTODO# Decide about changing to another domain
 	29147 guix_attachable_sigs
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
@@ -938,7 +938,7 @@ checkout core/26.x
 	n/a  (bump_version=Knots:20240220)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
-	n/a   (cherrypick=b5582b97bbf)				5961e01c91d  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=87cad9e4791)				5961e01c91d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -948,7 +948,6 @@ checkout core/26.x
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
-		TODO: rpc_onetry_nonpriv is no longer possible to maintain compatibility with, document it
 	n/a  (cherrypick=ecb1be05c43)				aed49ce8989  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
