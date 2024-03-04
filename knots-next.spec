@@ -245,8 +245,7 @@ checkout core/26.x
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
 	28936 dnsseed_petertoddnet-25
-	28944 sendall_antifeesniping-25							last=f765c859d70 ishaanam/sendall_anti_fee_sniping
-		#27.xTODO# Rebase to pick up test change
+	28944 sendall_antifeesniping-26							last=f765c859d70 ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26.1+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	28976 fix_wallet_migrate_blank-26
@@ -698,6 +697,7 @@ checkout core/26.x
 	29239 rpc_addnode_v2t_default-26
 	# Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
 	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
+	28805 qafix_v2t_pr28805-26
 	29347 net_v2t_default-26
 		# +Rewrote doc update in #29452
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
@@ -877,7 +877,7 @@ checkout core/26.x
 	#26.xTODO# Whitelist Whirlpool Tx0 and/or BIP47?
 	#26.xTODO# Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
-	-     bloom_default-0.26					edc9ff33c65
+	-     bloom_default-0.26+knots				edc9ff33c65
 	-     wallet_avoid_newerchange				bacea8923d4
 	#26.xTODO# Revert #25725
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)

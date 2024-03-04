@@ -50,6 +50,7 @@ checkout v0.21.2
 	Triage: # Depends-only, do we care? 28097 fanquake/xcb_proto_1_15_2
 		# NOTE: 24.x Backport in #28410
 	Triage: Needs review: 29362 hebasto/240201-objcxx
+	missing cstdint includes: #25068 (partial?), iwyu??
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=1c6ae96f0a3 sys_leveldb
