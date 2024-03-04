@@ -1,8 +1,8 @@
-timestamp 2024-02-20 22:30:01
+timestamp 2024-03-04 19:15:01
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #29458 / gui #797 for fixes
+#.. checked up to PR #29553 / gui #801 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -772,7 +772,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# 26.x backport in #28872
 	Triage: 28913 martinus/2023-11-fix-pool-allocation-alignment-on-ARM
 		# 26.x backport in #28872
-	Triage: 28919 hebasto/231120-crc-arm64
+	Triage: 29493 fanquake/update_crc32_subtree
+	After ^, Triage: 28919 hebasto/231120-crc-arm64
 		# 26.x backport in #28872
 	Triage: 28920 furszy/2023_wallet_birhtime_update
 		26.x backport in #29011
@@ -805,7 +806,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 29192 sipa/202401_serfloat_weaken_test
 	Triage: 29195 hebasto/240107-clang
 	Triage: 29211 brunoerg/2024-01-fuzz-fix-connman
-	Triage: https://github.com/bitcoin-core/crc32c-subtree/pull/6
 	Triage: 29237 -  # depends: Allow PATH with spaces in directory names.
 		# Was?: 28733 maaku/allow-spaces-in-path
 	Triage: 29243 achow101/fix-win-failed-wallet-restore
@@ -817,13 +817,19 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 29302 marcofleon/2024/01/clarify-documentation
 	Triage: Needs review: 29307 vasild/AutoFile_error_check
 	Triage: Needs review: 29331 -  # redeclare nChainTx to use uint64_t
-	Triage: Needs review: 29357 hebasto/240131-fopen-x
+	Triage: 29357 hebasto/240131-fopen-x
+		# NOTE: Included in backport #29509
 	Triage: 29434 maflcko/2402-rpc-UB-
 	Triage: 29436 brunoerg/2024-02-addrman-select-networks
 		# If this fixes a bug, move it out of performance in -next too
 	Triage: Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	Triage: Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
 	Triage: g797  hebasto-g/240219-fix-796
+	Triage: 29480 hebasto/240226-log-rand
+	Triage: 29510 -  # wallet: getrawchangeaddress and getnewaddress failures should not affect keypools for descriptor wallets
+		# NOTE: NOT YET Included in backport #29509
+	Triage: Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
+	Triage: g801  furszy/2024_gui_dont_access_nullptr_clientmodel
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)

@@ -1,7 +1,7 @@
-timestamp 2024-02-20 22:30:01
+timestamp 2024-03-04 19:15:01
 lastapply no-merge
 
-#.. checked up to PR #29458 / gui #797
+#.. checked up to PR #29553 / gui #801
 
 checkout core/26.x
 @26.x-syslibs
@@ -127,6 +127,7 @@ checkout core/26.x
 		#26.xTODO# Update with other commits that are beneficial
 	-     boost_171_177_workarounds				ed3f6565587
 		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
+	#27.xTODO# Check if we need to revert #29489 (related to hww_windows???)
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
 		#+29065+29272
@@ -270,7 +271,6 @@ checkout core/26.x
 	29175 fix_rpc_estmode_unset_case-24						last=be8ae64b82e
 	29177 fix_conf_latomic_check-25
 	# Triage: 29192 sipa/202401_serfloat_weaken_test
-	#26.xTODO# https://github.com/bitcoin-core/crc32c-subtree/pull/6
 	29237 fix_depends_PATH_w_spaces-26			4b1f2043949
 	(CHECK-LAST)	last=92f7e7f3633 maaku/allow-spaces-in-path
 		# Was: 28733 fix_depends_PATH_w_spaces-22
@@ -285,11 +285,18 @@ checkout core/26.x
 	29302 clarifydoc_rpc_wtx_replace-25
 	29307 AutoFile_error_check-26							last=55439903212 vasild/AutoFile_error_check
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
-	#26.xTODO# Needs review: 29357 hebasto/240131-fopen-x
+	29357 hebasto/240131-fopen-x
+		# NOTE: Included in backport #29509
 	29434 fix_rpc_feerate_overflow-26
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
 	g797  fix_qa_guibug796-25
+	29480 hebasto/240226-log-rand
+	29493 fanquake/update_crc32_subtree
+	29510 -  # wallet: getrawchangeaddress and getnewaddress failures should not affect keypools for descriptor wallets
+		# NOTE: NOT YET Included in backport #29509
+	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
+	g801  furszy/2024_gui_dont_access_nullptr_clientmodel
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -306,6 +313,7 @@ checkout core/26.x
 @26.x-knots
 # PERFORMANCE:
 	# Needs review: 29412 dergoegge/2024-01-mut-blocks
+		# +#29524 ? +#29549 ?
 	n/a   rm_minisketch-26+k					56c089e915d
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
@@ -348,6 +356,8 @@ checkout core/26.x
 	# Not worth it (kernel only): 29180 theuni/kernel-sha2-optims
 	# Needs more careful review: 29436 addrman_select_networks-26						last=7edb07ca800 brunoerg/2024-02-addrman-select-networks
 	# Needs review: 29458 -  # optimization: Speed up TryParseHex by 300%
+	# Needs review: 29473 -  # optimization: Speed up Base58 encoding by 400% by 64-bit preliminary byte packing
+	# Needs review: 29491 fjahr/2024-02-batch-validation-updated
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -695,14 +705,18 @@ checkout core/26.x
 	# or (newer): 29163 rpc_helpdetail-24									last=56830469303 LarryRuane/2024-01-help-detailed
 		# Left off top commit changing rpc_help test behaviour
 	29239 rpc_addnode_v2t_default-26
-	# Needs concept & review: 29264 instagibbs/2024-01-max-tx-weight
 	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
 	28805 qafix_v2t_pr28805-26
+	29511 -  # test: Fix intermittent failure in rpc_net.py --v2transport
 	29347 net_v2t_default-26
 		# +Rewrote doc update in #29452
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
+	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
+	# Needs review: 29519 mzumsande/202202_fix_assumeutxo_block_download
+	29530 -  # rpc/net: Adds misbehaving_score to getpeerinfo
+	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -792,6 +806,8 @@ checkout core/26.x
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	#26.xTODO# Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
+	# Needs concept & review: 29523 -  # Wallet: Add max_tx_weight to transaction funding options (take 2)
+		# WAS (never in Knots): #29264 instagibbs/2024-01-max-tx-weight
 # Non-upstreamed functionality:
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	n/a   restore_feefilter_opt					5919d15479a
@@ -935,7 +951,7 @@ checkout core/26.x
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		ab6d532443f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240220)			decc35f238b
+	n/a  (bump_version=Knots:20240304)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
 	n/a   (cherrypick=5b5f220f174)				5961e01c91d  # release notes: write/update, including change log and credits
