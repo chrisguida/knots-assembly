@@ -649,7 +649,8 @@ checkout core/26.x
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
-	27216 rpc_getaddressinfo_isactive			c951b6947f2	last=85f83339dda pinheadmz/used-addr-ui
+	27216 rpc_getaddressinfo_isactive-26+knots	c951b6947f2	last=85f83339dda pinheadmz/used-addr-ui
+	(CHECK-LAST)	last=c232385a07b rpc_getaddressinfo_isactive
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-26+knots						d3f7295b1a7	last=91771366a3d apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
@@ -707,7 +708,7 @@ checkout core/26.x
 	29239 rpc_addnode_v2t_default-26
 	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
 	28805 qafix_v2t_pr28805-26
-	29511 -  # test: Fix intermittent failure in rpc_net.py --v2transport
+	29511 qafix_v2t_pr29511-26  # test: Fix intermittent failure in rpc_net.py --v2transport
 	29347 net_v2t_default-26
 		# +Rewrote doc update in #29452
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
