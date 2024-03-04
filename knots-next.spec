@@ -285,18 +285,18 @@ checkout core/26.x
 	29302 clarifydoc_rpc_wtx_replace-25
 	29307 AutoFile_error_check-26							last=55439903212 vasild/AutoFile_error_check
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
-	29357 hebasto/240131-fopen-x
-		# NOTE: Included in backport #29509
+	29357 origin-pull/29509/head							last=4ac0eb543d0 !origin-pull/29509/head  # test: Drop x modifier in fsbridge::fopen call for MinGW builds
 	29434 fix_rpc_feerate_overflow-26
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
 	g797  fix_qa_guibug796-25
-	29480 hebasto/240226-log-rand
-	29493 fanquake/update_crc32_subtree
-	29510 -  # wallet: getrawchangeaddress and getnewaddress failures should not affect keypools for descriptor wallets
+	29480 log_rand_during_init-0.20							last=88468a8afcd
+		# Needs careful backport (basically rewritten)
+	29493 subtree_update_crc32c-24
+	29510 fix_reservedest_failure_pr29510-24
 		# NOTE: NOT YET Included in backport #29509
 	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
-	g801  furszy/2024_gui_dont_access_nullptr_clientmodel
+	g801  fix_qt_clientmodel_during_shutdown_prg801-21
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.

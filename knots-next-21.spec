@@ -825,11 +825,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	Triage: Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
 	Triage: g797  hebasto-g/240219-fix-796
-	Triage: 29480 hebasto/240226-log-rand
+	Triage: 29480 log_rand_during_init-0.20							last=88468a8afcd
+		# Needs careful backport (basically rewritten)
 	Triage: 29510 -  # wallet: getrawchangeaddress and getnewaddress failures should not affect keypools for descriptor wallets
 		# NOTE: NOT YET Included in backport #29509
 	Triage: Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
-	Triage: g801  furszy/2024_gui_dont_access_nullptr_clientmodel
+	Triage: g801  fix_qt_clientmodel_during_shutdown_prg801-21
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
