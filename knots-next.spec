@@ -716,7 +716,7 @@ checkout core/26.x
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
 	# Needs review: 29519 mzumsande/202202_fix_assumeutxo_block_download
-	29530 -  # rpc/net: Adds misbehaving_score to getpeerinfo
+	29530 rpc_getpeerinfo_misbehaving_score-26
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
 	
 	# TODO: GUI block template view
