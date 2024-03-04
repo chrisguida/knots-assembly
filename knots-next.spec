@@ -956,6 +956,5 @@ checkout core/26.x
 
 # TODO: @26.x-knots-android
 
-@26.x-knots-extratests
-	28805 qa_v2t_pr28805-26
+#@26.x-knots-extratests
 
