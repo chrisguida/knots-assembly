@@ -295,6 +295,8 @@ checkout core/26.x
 	29493 subtree_update_crc32c-24
 	29510 fix_reservedest_failure_pr29510-24
 		# NOTE: NOT YET Included in backport #29509
+	28805 qafix_v2t_pr28805-26
+	29511 qafix_v2t_pr29511-26  # test: Fix intermittent failure in rpc_net.py --v2transport
 	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
 	g801  fix_qt_clientmodel_during_shutdown_prg801-21
 	
@@ -682,7 +684,6 @@ checkout core/26.x
 	#26.xTODO# Make disabled by default: 28052 maflcko/2306-fs_stuff-
 	# Needs review? 28207 maflcko/2308-xor-memepool-
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
-	#26.xTODO# hebasto-g/230911-bip324-peer-details
 	# Needs review: 28461 fanquake/windows_ssp_roundup
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
@@ -707,8 +708,6 @@ checkout core/26.x
 		# Left off top commit changing rpc_help test behaviour
 	29239 rpc_addnode_v2t_default-26
 	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
-	28805 qafix_v2t_pr28805-26
-	29511 qafix_v2t_pr29511-26  # test: Fix intermittent failure in rpc_net.py --v2transport
 	29347 net_v2t_default-26
 		# +Rewrote doc update in #29452
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
@@ -896,7 +895,6 @@ checkout core/26.x
 	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	-     bloom_default-0.26+knots				edc9ff33c65
 	-     wallet_avoid_newerchange				bacea8923d4
-	#26.xTODO# Revert #25725
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-26+knots				98c0265003e
 	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
@@ -910,6 +908,7 @@ checkout core/26.x
 	-     enforce_checkpoints					271ea89d048
 	n/a   checkpoint_update-26					ecdd83d1986	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
 		#26.xTODO# Add new checkpoint
+		#27.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	10282 timebomb_knots						e3778785186
 	-     rwconf_policy-26+knots				e3ba2d1e080
 		# Includes Knots policy changes for simplification of final rebase process
@@ -955,7 +954,7 @@ checkout core/26.x
 	n/a  (bump_version=Knots:20240304)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
-	n/a   (cherrypick=5b5f220f174)				5961e01c91d  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=7c5385e11cf)				5961e01c91d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
