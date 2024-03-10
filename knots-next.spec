@@ -50,6 +50,7 @@ checkout core/26.x
 		# NOTE: libevent-copied code up to date as of 2023-11-22 cfb2b89a1d0642abd6389913e237f49c662502e4
 	 9524  rpc_pruneblkchain0					243a7d11f38	last=88883ae13d
 	10731 log_more_uacomment					0b1f4bfaaa1
+	29614 bufferedfile_fclose
 	14485 fadvise								8abba8c0517
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
@@ -296,7 +297,6 @@ checkout core/26.x
 	29510 fix_reservedest_failure_pr29510-24
 		# NOTE: NOT YET Included in backport #29509
 	28805 qafix_v2t_pr28805-26
-	29511 qafix_v2t_pr29511-26  # test: Fix intermittent failure in rpc_net.py --v2transport
 	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
 	g801  fix_qt_clientmodel_during_shutdown_prg801-21
 	
