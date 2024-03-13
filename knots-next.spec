@@ -30,7 +30,8 @@ checkout core/26.x
 	n/a   (delete_release_notes_fragments)
 @26.x-knotsfixes
 # TESTS:
-	# As needed: -     lint_relaxer							3f26eac129a
+	29441 ci_parallel_pr29441-26
+	-     lint_relaxer-26+knots					3f26eac129a
 	#26.xTODO# -     ci_knots-25							998864d46e0
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
@@ -180,6 +181,7 @@ checkout core/26.x
 	# Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
 	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	#26.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
+	27935 brunoerg/2023-06-fuzz-banman-ban (or 31c2edefc48 + 24593f22186)
 	# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 maflcko/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
@@ -695,6 +697,7 @@ checkout core/26.x
 	# Needs review: 28950 instagibbs/2023-11-submitpackage-max-fee-burn
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
 	29016 rpc_listmempooltxs-26+knots						last=07008477b81 niftynei/nifty/listmempoolentry
+		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	#26.xTODO# 29058 mzumsande/202312_manual_bip324
 		# +#29212 bugfix
