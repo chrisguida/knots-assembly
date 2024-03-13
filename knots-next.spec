@@ -51,8 +51,8 @@ checkout v26.1rc2
 		# NOTE: libevent-copied code up to date as of 2023-11-22 cfb2b89a1d0642abd6389913e237f49c662502e4
 	 9524  rpc_pruneblkchain0					243a7d11f38	last=88883ae13d
 	10731 log_more_uacomment					0b1f4bfaaa1
-	29614 bufferedfile_fclose
-	14485 fadvise								8abba8c0517
+	29614 bufferedfile_fclose-26							last=0fa3a0c893a bufferedfile_fclose
+	14485 fadvise-26+knots						8abba8c0517	last=289e88b3133 fadvise
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
@@ -181,7 +181,7 @@ checkout v26.1rc2
 	# Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
 	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	#26.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
-	27935 brunoerg/2023-06-fuzz-banman-ban (or 31c2edefc48 + 24593f22186)
+	27935 qafix_banman_conditionalcmp-23
 	# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 maflcko/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
@@ -249,7 +249,7 @@ checkout v26.1rc2
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
 	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
 	28936 dnsseed_petertoddnet-25
-	28944 sendall_antifeesniping-26							last=f765c859d70 ishaanam/sendall_anti_fee_sniping
+	28944 sendall_antifeesniping-26							last=fa1fa351584 ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26.1+knots
 	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
 	28976 fix_wallet_migrate_blank-26
@@ -648,7 +648,7 @@ checkout v26.1rc2
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
-	27216 rpc_getaddressinfo_isactive-26+knots	c951b6947f2	last=85f83339dda pinheadmz/used-addr-ui
+	27216 rpc_getaddressinfo_isactive-26.2		c951b6947f2	last=85f83339dda pinheadmz/used-addr-ui
 	(CHECK-LAST)	last=c232385a07b rpc_getaddressinfo_isactive
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-26+knots						d3f7295b1a7	last=91771366a3d apoelstra/2023-03--codex32
@@ -952,7 +952,7 @@ checkout v26.1rc2
 	n/a  (bump_version=Knots:20240304)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
-	n/a   (cherrypick=7c5385e11cf)				5961e01c91d  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=2de3951e8b3)				5961e01c91d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -962,7 +962,7 @@ checkout v26.1rc2
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
-	n/a  (cherrypick=018dcdfb884)				aed49ce8989  # update manpages (build first)
+	n/a  (cherrypick=f49b96f963f)				aed49ce8989  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
