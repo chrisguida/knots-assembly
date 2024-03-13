@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #29553 / gui #801
 
-checkout core/26.x
+checkout v26.1rc2
 @26.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
@@ -288,7 +288,6 @@ checkout core/26.x
 	29302 clarifydoc_rpc_wtx_replace-25
 	29307 AutoFile_error_check-26							last=55439903212 vasild/AutoFile_error_check
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
-	29357 origin-pull/29509/head							last=4ac0eb543d0 !origin-pull/29509/head  # test: Drop x modifier in fsbridge::fopen call for MinGW builds
 	29434 fix_rpc_feerate_overflow-26
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
@@ -296,8 +295,6 @@ checkout core/26.x
 	29480 log_rand_during_init-0.20							last=88468a8afcd
 		# Needs careful backport (basically rewritten)
 	29493 subtree_update_crc32c-24
-	29510 fix_reservedest_failure_pr29510-24
-		# NOTE: NOT YET Included in backport #29509
 	28805 qafix_v2t_pr28805-26
 	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
 	g801  fix_qt_clientmodel_during_shutdown_prg801-21
@@ -316,8 +313,6 @@ checkout core/26.x
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 @26.x-knots
 # PERFORMANCE:
-	# Needs review: 29412 dergoegge/2024-01-mut-blocks
-		# +#29524 ? +#29549 ?
 	n/a   rm_minisketch-26+k					56c089e915d
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
