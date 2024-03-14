@@ -14,7 +14,7 @@ checkout v26.1rc2
 	5416  sys_libsecp256k1						38be3bf3130
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
-	#26.xTODO: sys_libminisketch
+	#27.xTODO: sys_libminisketch
 	13789 bugfix_asm_pragmas					52874632dc1
 		# Should revert #28893 if merged?
 	15155 test_external_bcli					0f88ee0361c
@@ -30,9 +30,9 @@ checkout v26.1rc2
 	n/a   (delete_release_notes_fragments)
 @26.x-knotsfixes
 # TESTS:
+	#27.xTODO# -     ci_knots-25							998864d46e0
 	29441 ci_parallel_pr29441-26
 	-     lint_relaxer-26+knots					3f26eac129a
-	#26.xTODO# -     ci_knots-25							998864d46e0
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
@@ -189,7 +189,7 @@ checkout v26.1rc2
 		#26.xTODO# Maybe rewrite without `rfind`
 		# NOTE: #27679 also implements this, possibly with unix: prefix instead?
 	# If needed: 28026 furszy/2023_fix_index_timeout
-	#26.xTODO# Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
+	g742 qt_err_fixg741_in_g742-21
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	28029 fix_zmq_errhandling_202307-mini		f7f772f2d5f	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
@@ -222,7 +222,7 @@ checkout v26.1rc2
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	# Needs review: 28564 fix_conf_fuzzbin_main
 	# Needs review? 28610 achow101/migrate-avoidreuse
-	#26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
+	#27.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
 	# Needs review/simplification: 28649 vasild/reliable_socks5_handshake
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
@@ -261,7 +261,8 @@ checkout v26.1rc2
 	# MSVC: 29044 hebasto/231209-msvc-qt
 	g780  fix_qt_txview_prG780-25							last=b2e531e70a8
 	29141 fix_rpcauth_blank
-	#26.xTODO# Needs review: 29112 achow101/sqlite-concurrent-writes
+	29253 fix_wallet_dbguard_pr29253-26
+	29112 fix_wallet_single_batch_only-26+knots
 	# Needs review: achow101/fix-double-keypath
 	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
 	# Needs work? 29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
@@ -279,7 +280,6 @@ checkout v26.1rc2
 		# Was: 28733 fix_depends_PATH_w_spaces-22
 	29243 fix_wallet_cleanup_handler_pr29243-23
 	29249 depends_gen_id_nm-25
-	# Needs review: 29253 furszy/2024_wallet_db_dangling_txn
 	29262 fix_rpc_loadtxoutset_race-26
 	# Triage part of: 29275 maflcko/2401-prev-it-
 	#26.xTODO# Needs review: 29284 sipa/202401_better_block_tiebreak
@@ -298,6 +298,8 @@ checkout v26.1rc2
 	28805 qafix_v2t_pr28805-26
 	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
 	g801  fix_qt_clientmodel_during_shutdown_prg801-21
+	-     rpc_loadtxoutset_hide-26
+		#27.xTODO# This should probably be removed
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -324,10 +326,10 @@ checkout v26.1rc2
 	# Needs review: 25236 -  # wallet: use vector instead of list for transactions
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
 	# Needs review: 25968 sipa/202208_headerssync_optimize
-	#26.xTODO# Needs review: 26008 achow101/improve-many-desc-ismine
+	#27.xTODO# Needs review: 26008 achow101/improve-many-desc-ismine
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
 	26375 zmq_optimise_duplread-26+k			76ce07a3470	last=7b631dc9b19 andrewtoth/no-read-zmq
-	#26.xTODO# Needs review: 26415 andrewtoth/read-raw-block
+	#27.xTODO# Needs review: 26415 andrewtoth/read-raw-block
 	# Needs review: 26486 sipa/202211_batchnotfound
 	# Opt-in & needs review: 26951 pstratem/2023-01-23-gcsfilter
 	# Needs review: 26966 furszy/2022_parallelize_blockfilter_index_2
@@ -962,6 +964,7 @@ checkout v26.1rc2
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
+		#27.xTODO# Include the deleted notes from 0bc1f4b5c7b
 	n/a  (cherrypick=f49b96f963f)				aed49ce8989  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update

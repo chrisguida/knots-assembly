@@ -690,7 +690,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs work? 28020 -  # exclude ipc scheme from port check
 		# NOTE: #27679 also implements this, possibly with unix: prefix instead?
 	Triage: # If needed: 28026 furszy/2023_fix_index_timeout
-	Triage: Needs review: g742 john-moffett-g/2023_06_ExitOnLooseArgument
+	Triage: g742 qt_err_fixg741_in_g742-21
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	Triage: 28029 fix_zmq_errhandling_202307-25+k					last=07086589b27 fix_zmq_errhandling_202307
 	28056 rpcdoc_gbt_lpid_data-22							last=f6a26196cfb
