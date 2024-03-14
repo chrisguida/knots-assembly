@@ -769,7 +769,7 @@ checkout v26.1rc2
 		# NOTE: Stripped out benchmark change
 		#26.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-25			43028d98ec0
-	15218 postibd_flush-26						6e1ffe36dc9	last=5275d3c6353
+	15218 postibd_flush-26						6e1ffe36dc9	last=363f3258b00
 	15428 tor_gui_pairing-26+knots				e3afcc98d21	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-26+knots				e4bc1dba681	# Latest code now
@@ -954,7 +954,7 @@ checkout v26.1rc2
 	n/a  (bump_version=Knots:20240304)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
-	n/a   (cherrypick=2de3951e8b3)				5961e01c91d  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=0da74aa3775)				5961e01c91d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -965,7 +965,6 @@ checkout v26.1rc2
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#27.xTODO# Include the deleted notes from 0bc1f4b5c7b
-		TODO: Elaborate on "vsize" bug - more RPCs are impacted than documented I think
 	n/a  (cherrypick=f49b96f963f)				aed49ce8989  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
