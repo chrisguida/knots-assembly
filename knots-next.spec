@@ -1,7 +1,7 @@
-timestamp 2024-03-04 19:15:01
+timestamp 2024-03-14 21:52:39
 lastapply no-merge
 
-#.. checked up to PR #29553 / gui #801
+#.. checked up to PR #29652 / gui #803
 
 checkout v26.1rc2
 @26.x-syslibs
@@ -32,6 +32,7 @@ checkout v26.1rc2
 # TESTS:
 	#27.xTODO# -     ci_knots-25							998864d46e0
 	29441 ci_parallel_pr29441-26
+	# If needed: 29610 hebasto/240309-homebrew  # ci: Fix "macOS native" job
 	-     lint_relaxer-26+knots					3f26eac129a
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
@@ -282,7 +283,6 @@ checkout v26.1rc2
 	29249 depends_gen_id_nm-25
 	29262 fix_rpc_loadtxoutset_race-26
 	# Triage part of: 29275 maflcko/2401-prev-it-
-	#26.xTODO# Needs review: 29284 sipa/202401_better_block_tiebreak
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  qt_peers_sessionid_tooltip_prg788-26				last=3bf00e13609  # debugwindow: update session ID tooltip
 	29302 clarifydoc_rpc_wtx_replace-25
@@ -300,6 +300,13 @@ checkout v26.1rc2
 	g801  fix_qt_clientmodel_during_shutdown_prg801-21
 	-     rpc_loadtxoutset_hide-26
 		#27.xTODO# This should probably be removed
+	Triage: 29586 furszy/2024_wallet_migration_empty_wallet_backup_name
+	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
+	# Nothing to fix: 29615 theStack/202403-test-fix_GetSigOpCount_accurate_counting_bip16
+	# Compatibility break, needs review: 29612 fjahr/2024-03-pr26045-reopen
+	#26.xTODO# Needs work? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
+	#26.xTODO# Needs review: 29652 ryanofsky/pr/noloc
+	g803  hebasto-g/240305-appname
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -359,6 +366,10 @@ checkout v26.1rc2
 	# Needs review: 29458 -  # optimization: Speed up TryParseHex by 300%
 	# Needs review: 29473 -  # optimization: Speed up Base58 encoding by 400% by 64-bit preliminary byte packing
 	# Needs review: 29491 fjahr/2024-02-batch-validation-updated
+	# Needs review: 29578 brunoerg/2024-03-addrman-getaddr
+	# Needs review: 29602 -  # refactor: Optimize IsSpace function for common non-whitespace characters
+	29606 -  # refactor: Reserve memory for ToLower/ToUpper conversions
+	# Worth doing? Needs review: 29607 -  # refactor: Reduce memory copying operations in bech32 encoding/decoding
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -656,6 +667,7 @@ checkout v26.1rc2
 	27351 codex32-26+knots						d3f7295b1a7	last=91771366a3d apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs review: 27375 pinheadmz/tor-unix-domain-socket
+		#+29649
 	# Needs review? 27679 pinheadmz/zmq-unix-domain-socket
 		# Duplicates #28020 with a different URI format
 	# Needs work: 27409 ryanofsky/pr/1data
@@ -717,6 +729,7 @@ checkout v26.1rc2
 	# Needs review: 29519 mzumsande/202202_fix_assumeutxo_block_download
 	29530 rpc_getpeerinfo_misbehaving_score-26
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
+	29585 fanquake/list_other_pages_in_man
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -752,6 +765,7 @@ checkout v26.1rc2
 	10593 relax_invblk_punishment				77906ca1d59
 		# Squash "QA: Use addconnection rather than addnode onetry" ?
 		# FIXME: HandleFewUnconnectingHeaders sends getheaders _and_ disconnects??
+		# TODO: Consider rebasing on #29575 ?
 	10350 filtered_witblock-25				18dcc385a7e	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
@@ -854,6 +868,7 @@ checkout v26.1rc2
 	# Needs concept & writing: default UPnP/NAT-PMP to enabled
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
+	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			790a86f1ce2
@@ -951,7 +966,7 @@ checkout v26.1rc2
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		ab6d532443f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240304)			decc35f238b
+	n/a  (bump_version=Knots:20240314)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
 	n/a   (cherrypick=0da74aa3775)				5961e01c91d  # release notes: write/update, including change log and credits
