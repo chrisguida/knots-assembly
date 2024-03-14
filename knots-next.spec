@@ -51,7 +51,7 @@ checkout v26.1rc2
 		# NOTE: libevent-copied code up to date as of 2023-11-22 cfb2b89a1d0642abd6389913e237f49c662502e4
 	 9524  rpc_pruneblkchain0					243a7d11f38	last=88883ae13d
 	10731 log_more_uacomment					0b1f4bfaaa1
-	29614 bufferedfile_fclose-26							last=0fa3a0c893a bufferedfile_fclose
+	29614 bufferedfile_fclose-26							last=aec5e0f558a bufferedfile_fclose
 	14485 fadvise-26+knots						8abba8c0517	last=289e88b3133 fadvise
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
@@ -965,6 +965,7 @@ checkout v26.1rc2
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#27.xTODO# Include the deleted notes from 0bc1f4b5c7b
+		TODO: Elaborate on "vsize" bug - more RPCs are impacted than documented I think
 	n/a  (cherrypick=f49b96f963f)				aed49ce8989  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
