@@ -9,6 +9,7 @@ checkout v26.1rc2
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						0d2f1ba753f
 	29362 fix_objcxxflags_pr29362-26						last=17861b9cd59 hebasto/240201-objcxx
+	-     fix_evhttp_util_nodep-25
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							0a46aec36d8
 	5416  sys_libsecp256k1						38be3bf3130
@@ -30,7 +31,7 @@ checkout v26.1rc2
 	n/a   (delete_release_notes_fragments)
 @26.x-knotsfixes
 # TESTS:
-	#27.xTODO# -     ci_knots-25							998864d46e0
+	-     ci_knots-26							998864d46e0
 	29441 ci_parallel_pr29441-26
 	# If needed: 29610 hebasto/240309-homebrew  # ci: Fix "macOS native" job
 	-     lint_relaxer-26+knots					3f26eac129a
@@ -297,10 +298,10 @@ checkout v26.1rc2
 	29493 subtree_update_crc32c-24
 	28805 qafix_v2t_pr28805-26
 	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
-	g801  fix_qt_clientmodel_during_shutdown_prg801-21
+	g801  fix_qt_clntmdl_at_shutdown_prg801-21
 	-     rpc_loadtxoutset_hide-26
 		#27.xTODO# This should probably be removed
-	Triage: 29586 furszy/2024_wallet_migration_empty_wallet_backup_name
+	29586 wallet_migrate_null_walletname_bak-26
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	# Nothing to fix: 29615 theStack/202403-test-fix_GetSigOpCount_accurate_counting_bip16
 	# Compatibility break, needs review: 29612 fjahr/2024-03-pr26045-reopen
