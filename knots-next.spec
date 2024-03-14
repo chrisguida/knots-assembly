@@ -696,7 +696,7 @@ checkout v26.1rc2
 	29016 rpc_listmempooltxs-26+knots						last=07008477b81 niftynei/nifty/listmempoolentry
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
-	#26.xTODO# 29058 mzumsande/202312_manual_bip324
+	29058 v2t_manual_netinfo_pr29058-26
 		# +#29212 bugfix
 	29117 wallettool_dump_just_db-26+knots					last=d83bea42d1f achow101/dump-without-making-wallet
 		# Omitted first commit that could be dangerous
@@ -767,7 +767,7 @@ checkout v26.1rc2
 	12965 scriptthreads-26+knots				399b678256e	last=dfab6c6866 jonasschnelli/2018/04/svt
 	13203 dsha256_power8-25						bbf85ccc673	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
-		#26.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
+		#27.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-25			43028d98ec0
 	15218 postibd_flush-26						6e1ffe36dc9	last=363f3258b00
 	15428 tor_gui_pairing-26+knots				e3afcc98d21	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
@@ -866,7 +866,7 @@ checkout v26.1rc2
 	-     rpc_getblockfrompeer_nodeid_compat	55b3579eb4c
 	# TODO: add a bitcoinknots.conf ?
 	n/a   gui_peers_bump_setting_keys-25+k		793aa1d84db
-		#26.xTODO# Each release, see if we need to bump setting names for GUI states
+		#27.xTODO# Each release, see if we need to bump setting names for GUI states
 		# git grep 'alue(.*State\|toByteArray\|saveState'
 		# Window position/size: leave alone
 		# Splitter position: leave alone? but syncronise with header columns appropriately
