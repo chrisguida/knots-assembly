@@ -307,7 +307,7 @@ checkout v26.1rc2
 	# Compatibility break, needs review: 29612 fjahr/2024-03-pr26045-reopen
 	#26.xTODO# Needs work? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
 	#26.xTODO# Needs review: 29652 ryanofsky/pr/noloc
-	g803  hebasto-g/240305-appname
+	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -369,7 +369,7 @@ checkout v26.1rc2
 	# Needs review: 29491 fjahr/2024-02-batch-validation-updated
 	# Needs review: 29578 brunoerg/2024-03-addrman-getaddr
 	# Needs review: 29602 -  # refactor: Optimize IsSpace function for common non-whitespace characters
-	29606 -  # refactor: Reserve memory for ToLower/ToUpper conversions
+	29606 opti_ToLowerUpper_reserve-23
 	# Worth doing? Needs review: 29607 -  # refactor: Reduce memory copying operations in bech32 encoding/decoding
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
@@ -730,7 +730,7 @@ checkout v26.1rc2
 	# Needs review: 29519 mzumsande/202202_fix_assumeutxo_block_download
 	29530 rpc_getpeerinfo_misbehaving_score-26
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
-	29585 fanquake/list_other_pages_in_man
+	29585 manpage_see_also-23								last=7c3ac598dd9 fanquake/list_other_pages_in_man
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
