@@ -308,6 +308,8 @@ checkout v26.1rc2
 	#26.xTODO# Needs work? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
 	#26.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
+	29657 fix_netinfo_v2t_safety-26+knots					last=c3e632b4415 fix_netinfo_v2t_safety
+	29658 fix_qt_help_on_console_x_newline
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -730,7 +732,8 @@ checkout v26.1rc2
 	# Needs review: 29519 mzumsande/202202_fix_assumeutxo_block_download
 	29530 rpc_getpeerinfo_misbehaving_score-26
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
-	29585 manpage_see_also-23								last=7c3ac598dd9 fanquake/list_other_pages_in_man
+	29585 manpage_see_also-23+knots							last=7c3ac598dd9 fanquake/list_other_pages_in_man
+		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -970,7 +973,7 @@ checkout v26.1rc2
 	n/a  (bump_version=Knots:20240314)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
-	n/a   (cherrypick=0da74aa3775)				5961e01c91d  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=8f29b920d5c)				5961e01c91d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
