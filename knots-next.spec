@@ -13,6 +13,7 @@ checkout v26.1rc2
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							0a46aec36d8
 	5416  sys_libsecp256k1						38be3bf3130
+	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
 	#27.xTODO: sys_libminisketch
@@ -873,6 +874,7 @@ checkout v26.1rc2
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
 	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748
+	-     dustrelayfeedynamic-26+knots
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			790a86f1ce2
