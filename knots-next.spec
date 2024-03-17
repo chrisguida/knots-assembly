@@ -34,7 +34,8 @@ checkout v26.1rc2
 # TESTS:
 	-     ci_knots-26							998864d46e0
 	29441 ci_parallel_pr29441-26
-	# If needed: 29610 hebasto/240309-homebrew  # ci: Fix "macOS native" job
+	29610 CIfix_macos_python_hack_pr29610-26.1
+	28372 fix_fuzz_coinsel_pr28372-26
 	-     lint_relaxer-26+knots					3f26eac129a
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
@@ -309,7 +310,6 @@ checkout v26.1rc2
 	#26.xTODO# Needs work? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
 	#26.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
-	29657 fix_netinfo_v2t_safety-26+knots					last=c3e632b4415 fix_netinfo_v2t_safety
 	29658 fix_qt_help_on_console_x_newline
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -713,7 +713,7 @@ checkout v26.1rc2
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	29058 v2t_manual_netinfo_pr29058-26
-		# +#29212 bugfix
+		# +#29212+#29657 bugfixes
 	29117 wallettool_dump_just_db-26+knots					last=d83bea42d1f achow101/dump-without-making-wallet
 		# Omitted first commit that could be dangerous
 	#26.xTODO# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
@@ -874,7 +874,6 @@ checkout v26.1rc2
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
 	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748
-	-     dustrelayfeedynamic-26+knots
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			790a86f1ce2
@@ -892,12 +891,13 @@ checkout v26.1rc2
 		# Window position/size: leave alone
 		# Splitter position: leave alone? but syncronise with header columns appropriately
 		# Header columns: need a rename
-# POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-26+knots							last=8c1114aa61c
+# POLICY:
 	-    1day_default_conftarget				2c1b1d3e046
 	-     bytespersigopstrict-26+knots			2de1a1eb574
 	9749  unique_spk_mempool-26+knots			f5263caec05
+	-     dustrelayfeedynamic-26+knots
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	28408 match_more_datacarrier-26+knots		699f8a809eb	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
@@ -907,6 +907,7 @@ checkout v26.1rc2
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-26+knots				06ff2c34e3b
 		#26.xTODO# Add tests and make sure boundaries are correct
+	-     acceptnonstddatacarrier-26.1+knots
 	#26.xTODO# filter runes?? https://rodarmor.com/blog/runes/ https://github.com/ordinals-wallet/rune/blob/main/src/rune.rs
 	#26.xTODO# filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
 	#26.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666
@@ -920,7 +921,7 @@ checkout v26.1rc2
 	-     maxscriptsize-26+knots				98c0265003e
 	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
-	#26.xTODO# Ordisrespector equivalent (Ordislow??)
+	#27.xTODO# Ordislow??
 	#26.xTODO# Adaptive dust limit based on current fee rate?
 	#26.xTODO# Spam filter for stuff like https://mempool.space/tx/4ec38548aa67f6a2efbbc3cf34ab49dc5c275d9701ab0b58696baee9f555c45a
 	#26.xTODO# Whitelisting model for non-SPK scripts
@@ -935,6 +936,7 @@ checkout v26.1rc2
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
+		TODO new options since 6a83f2c9340
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
