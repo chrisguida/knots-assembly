@@ -897,8 +897,7 @@ checkout v26.1rc2
 	-    1day_default_conftarget				2c1b1d3e046
 	-     bytespersigopstrict-26+knots			2de1a1eb574
 	9749  unique_spk_mempool-26+knots			f5263caec05
-	-     dustrelayfeedynamic-26+knots
-		TODO: rename to dustdynamic since relayfee isn't actually relevant?
+	-     dustdynamic-26+knots
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	28408 match_more_datacarrier-26+knots		699f8a809eb	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
@@ -923,7 +922,6 @@ checkout v26.1rc2
 	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
 	#27.xTODO# Ordislow??
-	#26.xTODO# Adaptive dust limit based on current fee rate?
 	#26.xTODO# Spam filter for stuff like https://mempool.space/tx/4ec38548aa67f6a2efbbc3cf34ab49dc5c275d9701ab0b58696baee9f555c45a
 	#26.xTODO# Whitelisting model for non-SPK scripts
 	#26.xTODO# Exemptions for Samourai: https://code.samourai.io/whirlpool/Whirlpool/-/blob/whirlpool/ARCHITECTURE.md#2-create-tx0
