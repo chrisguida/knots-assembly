@@ -898,6 +898,7 @@ checkout v26.1rc2
 	-     bytespersigopstrict-26+knots			2de1a1eb574
 	9749  unique_spk_mempool-26+knots			f5263caec05
 	-     dustrelayfeedynamic-26+knots
+		TODO: rename to dustdynamic since relayfee isn't actually relevant?
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	28408 match_more_datacarrier-26+knots		699f8a809eb	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
@@ -936,7 +937,9 @@ checkout v26.1rc2
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
-		TODO new options since 6a83f2c9340
+		TODO: add dustrelayfeedynamic-26+knots
+		TODO: add acceptnonstddatacarrier-26.1+knots
+		FIXME: check kB/MB are correct and not kvB/MvB... both optionsdialog AND init docs
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
