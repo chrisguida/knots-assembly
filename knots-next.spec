@@ -312,6 +312,7 @@ checkout v26.1rc2
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
 	29658 fix_qt_help_on_console_x_newline
 	* 960cc52869f Bugfix: init: For first-run disk space check, advise user of correct pruned size rather than full blockchain size
+	TODO: QScrollArea for GUI Options dialog?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -847,6 +848,7 @@ checkout v26.1rc2
 		* c443c28d37f Bugfix: GUI/Options: Correctly set prune-prev
 		* 3ecdcd3dd3d Bugfix: GUI/Options: Handle PruneTristate manually
 		* 34b65d1989c Bugfix: GUI/Options: Prune size field should be disabled for manual-prune checkbox state
+		* 4b69c72e006 Bugfix: GUI/Options: Correct maxuploadtarget label to use MiB
 	559   accept_nonstdtxn						f84d8616fa1
 	 929 tbc									10d83963b58
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
@@ -940,10 +942,8 @@ checkout v26.1rc2
 	-     rwconf_policy-26+knots				e3ba2d1e080
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
-		#TODO: final rebase (fix blockmax{size,weight})
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
-		TODO: add acceptnonstddatacarrier-26.1+knots
-		FIXME: check kB/MB are correct and not kvB/MvB... both optionsdialog AND init docs
+		#TODO: squash fixups
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
