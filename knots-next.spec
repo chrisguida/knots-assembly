@@ -311,6 +311,7 @@ checkout v26.1rc2
 	#26.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
 	29658 fix_qt_help_on_console_x_newline
+	* 960cc52869f Bugfix: init: For first-run disk space check, advise user of correct pruned size rather than full blockchain size
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -841,7 +842,11 @@ checkout v26.1rc2
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 	11082 rwconf-26+knots						0e725308ae7 # Latest code now
+		* 15e5a66b590 Bugfix: rwconf: Update internal setting when modifying file
 	7510  rwconf_gui-26+knots					8547325ff36
+		* c443c28d37f Bugfix: GUI/Options: Correctly set prune-prev
+		* 3ecdcd3dd3d Bugfix: GUI/Options: Handle PruneTristate manually
+		* 34b65d1989c Bugfix: GUI/Options: Prune size field should be disabled for manual-prune checkbox state
 	559   accept_nonstdtxn						f84d8616fa1
 	 929 tbc									10d83963b58
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
@@ -874,6 +879,7 @@ checkout v26.1rc2
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
 	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748
+	TODO: bump dbcache to 1 TB on systems we can detect memory pressure!
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			790a86f1ce2
@@ -891,9 +897,9 @@ checkout v26.1rc2
 		# Window position/size: leave alone
 		# Splitter position: leave alone? but syncronise with header columns appropriately
 		# Header columns: need a rename
+# POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-26+knots							last=8c1114aa61c
-# POLICY:
 	-    1day_default_conftarget				2c1b1d3e046
 	-     bytespersigopstrict-26+knots			2de1a1eb574
 	9749  unique_spk_mempool-26+knots			f5263caec05
@@ -935,7 +941,7 @@ checkout v26.1rc2
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: final rebase (fix blockmax{size,weight})
-		TODO: add dustrelayfeedynamic-26+knots
+		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		TODO: add acceptnonstddatacarrier-26.1+knots
 		FIXME: check kB/MB are correct and not kvB/MvB... both optionsdialog AND init docs
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
@@ -966,6 +972,7 @@ checkout v26.1rc2
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #26.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #26.xTODO# Check macOS zip impact on tuffy font etc
+	FIXME: macOS can't even run builds?!
 # TODO: Check that we aren't deprecating anything in Core
 # TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
