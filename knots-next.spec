@@ -311,8 +311,8 @@ checkout v26.1rc2
 	#26.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
 	29658 fix_qt_help_on_console_x_newline
-	* 960cc52869f Bugfix: init: For first-run disk space check, advise user of correct pruned size rather than full blockchain size
-	TODO: QScrollArea for GUI Options dialog?
+	29678 fix_init_lowdisk_warning_reqd
+	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -843,12 +843,11 @@ checkout v26.1rc2
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 	11082 rwconf-26+knots						0e725308ae7 # Latest code now
-		* 15e5a66b590 Bugfix: rwconf: Update internal setting when modifying file
+		#27.xTODO# Squash fixes
+		#27.xTODO# Deprecate with settings.json better?
 	7510  rwconf_gui-26+knots					8547325ff36
-		* c443c28d37f Bugfix: GUI/Options: Correctly set prune-prev
-		* 3ecdcd3dd3d Bugfix: GUI/Options: Handle PruneTristate manually
-		* 34b65d1989c Bugfix: GUI/Options: Prune size field should be disabled for manual-prune checkbox state
-		* 4b69c72e006 Bugfix: GUI/Options: Correct maxuploadtarget label to use MiB
+		#27.xTODO# Squash fixes
+		#27.xTODO# ? blockreconstructionextratxn
 	559   accept_nonstdtxn						f84d8616fa1
 	 929 tbc									10d83963b58
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
@@ -881,7 +880,7 @@ checkout v26.1rc2
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
 	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748
-	TODO: bump dbcache to 1 TB on systems we can detect memory pressure!
+	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			790a86f1ce2
