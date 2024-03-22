@@ -1,8 +1,8 @@
-timestamp 2024-03-14 21:52:39
+timestamp 2024-03-22 23:39:39
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #29652 / gui #803 for fixes
+#.. checked up to PR #29708 / gui #808 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -795,7 +795,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: achow101/fix-double-keypath
 	Triage: 29127 maaku/hardened-macos-runtime
 		# 26.x backport in #29209
-	29145 dnsseed_dashjr_2024
+	29691 dnsseed_dashjr_2024
 	Triage: 29147 guix_attachable_sigs
 	Triage: Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	Triage: 29175 -  # rpc: validate fee estimation mode case insensitive
@@ -836,6 +836,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs work? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
 	Triage: Needs review: 29652 ryanofsky/pr/noloc
 	Triage: g803  hebasto-g/240305-appname
+	Triage: 29658 fix_qt_help_on_console_x_newline
+	Triage: Needs review: 29664 mzumsande/202403_near_tip_stalling
+	Triage: Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
+	Triage: 29678 fix_init_lowdisk_warning_reqd
+	Triage: # Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
+	Triage: TODO: QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -1235,6 +1241,9 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
 	Triage: 29585 fanquake/list_other_pages_in_man
+	Triage: s/Core/Knots: 29686 willcl-ark/manpage-desc
+	Triage: 29687 willcl-ark/improve-cli-error
+	Triage: Check GCC version: 29695 fanquake/gcc_12_branch_protection_default
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:

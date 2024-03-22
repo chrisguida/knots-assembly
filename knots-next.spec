@@ -1,7 +1,7 @@
-timestamp 2024-03-14 21:52:39
+timestamp 2024-03-22 23:39:39
 lastapply no-merge
 
-#.. checked up to PR #29652 / gui #803
+#.. checked up to PR #29708 / gui #808
 
 checkout v26.1rc2
 @26.x-syslibs
@@ -271,7 +271,7 @@ checkout v26.1rc2
 	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
 	# Needs work? 29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
 		#+29301
-	# 29145 dnsseed_dashjr_2024
+	# 29691 dnsseed_dashjr_2024
 		#26.xTODO# Decide about changing to another domain
 	29147 guix_attachable_sigs
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
@@ -311,7 +311,10 @@ checkout v26.1rc2
 	#26.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
 	29658 fix_qt_help_on_console_x_newline
+	Needs review: 29664 mzumsande/202403_near_tip_stalling
+	Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
 	29678 fix_init_lowdisk_warning_reqd
+	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -737,6 +740,10 @@ checkout v26.1rc2
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
 	29585 manpage_see_also-23+knots							last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
+	# Needs review & wallet compat check: 29675 achow101/musig2
+	s/Core/Knots: 29686 willcl-ark/manpage-desc
+	29687 willcl-ark/improve-cli-error
+	Check GCC version: 29695 fanquake/gcc_12_branch_protection_default
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -861,6 +868,7 @@ checkout v26.1rc2
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					72915ef061e
 		# TODO: Split out legacy address preference to be more explicit
+		#27.xTODO# Revert gui#808 ??
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			5b622bc241a	# Latest code now
@@ -981,7 +989,7 @@ checkout v26.1rc2
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		ab6d532443f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240314)			decc35f238b
+	n/a  (bump_version=Knots:20240322)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
 	n/a   (cherrypick=8f29b920d5c)				5961e01c91d  # release notes: write/update, including change log and credits
