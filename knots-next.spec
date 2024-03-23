@@ -979,7 +979,7 @@ checkout v26.1rc2
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #26.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #26.xTODO# Check macOS zip impact on tuffy font etc
-	FIXME: macOS can't even run builds?!
+#	FIXME: macOS can't even run builds?!
 # TODO: Check that we aren't deprecating anything in Core
 # TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
@@ -992,7 +992,7 @@ checkout v26.1rc2
 	n/a  (bump_version=Knots:20240322)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
-	n/a   (cherrypick=8f29b920d5c)				5961e01c91d  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=c38a888a0c7)				5961e01c91d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1003,7 +1003,7 @@ checkout v26.1rc2
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#27.xTODO# Include the deleted notes from 0bc1f4b5c7b
-	n/a  (cherrypick=f49b96f963f)				aed49ce8989  # update manpages (build first)
+	n/a  (cherrypick=7ad214abd50)				aed49ce8989  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
