@@ -311,8 +311,8 @@ checkout v26.1rc2
 	#26.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
 	29658 fix_qt_help_on_console_x_newline
-	Needs review: 29664 mzumsande/202403_near_tip_stalling
-	Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
+	#26.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
+	# Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
 	29678 fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
@@ -741,9 +741,9 @@ checkout v26.1rc2
 	29585 manpage_see_also-23+knots							last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
 	# Needs review & wallet compat check: 29675 achow101/musig2
-	s/Core/Knots: 29686 willcl-ark/manpage-desc
-	29687 willcl-ark/improve-cli-error
-	Check GCC version: 29695 fanquake/gcc_12_branch_protection_default
+	29686 manpage_desc-23+knots								last=5e751cd522d willcl-ark/manpage-desc
+	29687 bcli_err_noconn_helphint-0.17						last=69d6fd676e9 willcl-ark/improve-cli-error
+	29695 gcc_branch_protection_default-26					last=7850c5fe20a fanquake/gcc_12_branch_protection_default
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
