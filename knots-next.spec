@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #29724 / gui #808
 
-checkout v26.1rc2
+checkout core/26.x
 @26.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
@@ -34,7 +34,6 @@ checkout v26.1rc2
 # TESTS:
 	-     ci_knots-26							998864d46e0
 	29441 ci_parallel_pr29441-26
-	29610 CIfix_macos_python_hack_pr29610-26.1
 	28372 fix_fuzz_coinsel_pr28372-26
 	-     lint_relaxer-26+knots					3f26eac129a
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
