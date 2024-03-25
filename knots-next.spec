@@ -1,7 +1,7 @@
-timestamp 2024-03-22 23:39:39
+timestamp 2024-03-25 17:26:53
 lastapply no-merge
 
-#.. checked up to PR #29708 / gui #808
+#.. checked up to PR #29724 / gui #808
 
 checkout v26.1rc2
 @26.x-syslibs
@@ -315,6 +315,7 @@ checkout v26.1rc2
 	# Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
 	29678 fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
+	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -713,6 +714,7 @@ checkout v26.1rc2
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
 	# Needs review: 28950 instagibbs/2023-11-submitpackage-max-fee-burn
+		# +#29722 ?
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
 	29016 rpc_listmempooltxs-26+knots						last=07008477b81 niftynei/nifty/listmempoolentry
 		# Includes typo fixup in comment that annoys linter
@@ -989,7 +991,7 @@ checkout v26.1rc2
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		ab6d532443f	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240322)			decc35f238b
+	n/a  (bump_version=Knots:20240325)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
 	n/a   (cherrypick=74960fcd840)				5961e01c91d  # release notes: write/update, including change log and credits
