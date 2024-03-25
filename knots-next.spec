@@ -1004,7 +1004,7 @@ checkout v26.1
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#27.xTODO# Include the deleted notes from 0bc1f4b5c7b
-	n/a  (cherrypick=7ad214abd50)				aed49ce8989  # update manpages (build first)
+	n/a  (cherrypick=9383c3f9013)				aed49ce8989  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
