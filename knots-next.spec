@@ -713,7 +713,7 @@ checkout v26.1rc2
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
-	# Needs review: 28950 instagibbs/2023-11-submitpackage-max-fee-burn
+	#27.xTODO# 28950 instagibbs/2023-11-submitpackage-max-fee-burn
 		# +#29722 ?
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
 	29016 rpc_listmempooltxs-26+knots						last=07008477b81 niftynei/nifty/listmempoolentry
