@@ -742,7 +742,7 @@ checkout v26.1
 	29585 manpage_see_also-23+knots							last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
 	# Needs review & wallet compat check: 29675 achow101/musig2
-	29686 manpage_desc-23+knots								last=5e751cd522d willcl-ark/manpage-desc
+	29686 manpage_desc-26+knots								last=b680c1c6ffd willcl-ark/manpage-desc
 	29687 bcli_err_noconn_helphint-0.17						last=69d6fd676e9 willcl-ark/improve-cli-error
 	29695 gcc_branch_protection_default-26					last=7850c5fe20a fanquake/gcc_12_branch_protection_default
 	
@@ -973,7 +973,7 @@ checkout v26.1
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
-	n/a   knots_branding-26						0cb94913043
+	n/a   knots_branding-26.1					0cb94913043
 		#26.xTODO# Review security policy
 	n/a   copyright_2024-26
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
@@ -993,7 +993,7 @@ checkout v26.1
 	n/a  (bump_version=Knots:20240325)			decc35f238b
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		85dde742552
-	n/a   (cherrypick=9e415a9ec21)				5961e01c91d  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=742f570227c)				5961e01c91d  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
