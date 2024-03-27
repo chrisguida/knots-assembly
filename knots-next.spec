@@ -963,19 +963,19 @@ checkout v26.1
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)
-	n/a   macos_dmg-26.1						cad6edda673
+	n/a   macos_dmg-26.1						0e7b5c41e2b
 		# Reverts #28432, and includes fix_dmg_openfinder
 		#27.xTODO# revert macos ZIP only: #28932 #28973
 		# NOTE: temporarily reintroduces .tiff file
-	7483  svg_icon-26.1+knots					9c78663655e
+	7483  svg_icon-26.1+knots					150372f5a56
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
-	n/a   tbc_font-26.1+knots					345a8933980
+	n/a   tbc_font-26.1+knots					3e2980f4680
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
-	n/a   knots_branding-26.1					252ba389c53
+	n/a   knots_branding-26.1					b396a654153
 		#26.xTODO# Review security policy
-	n/a   copyright_2024-26						65cde7d8521
+	n/a   copyright_2024-26						5ab446fdeba
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #26.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
@@ -989,11 +989,11 @@ checkout v26.1
 #27.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type: git grep '"options.*OBJ,'
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
-	n/a  (cherrypick=4de10e83babc036d91)		0c211bd67c2	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240325)			6a7ef5bf3cd
+	n/a  (cherrypick=4de10e83babc036d91)		8e45daf3a64	# doc/{bips,files}
+	n/a  (bump_version=Knots:20240325)			86f61417c58
 #	n/a  knots_historical_relnotes				61100a2
-	n/a   rm_historical_relnotes_from_dist		ed40136d939
-	n/a   (cherrypick=742f570227c)				cbe9a872365  # release notes: write/update, including change log and credits
+	n/a   rm_historical_relnotes_from_dist		82ce67629be
+	n/a   (cherrypick=742f570227c)				2062c931cf2  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1004,7 +1004,7 @@ checkout v26.1
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#27.xTODO# Include the deleted notes from 0bc1f4b5c7b
-	n/a  (cherrypick=9383c3f9013)				6697d319f2a  # update manpages (build first)
+	n/a  (cherrypick=9383c3f9013)				656aacb935e  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
