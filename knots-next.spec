@@ -272,7 +272,7 @@ checkout v26.1
 		#+29301
 	# 29691 dnsseed_dashjr_2024
 		#26.xTODO# Decide about changing to another domain
-	29147 guix_attachable_sigs					ad4fe4b83a4
+	# Needs work if possible: 29147 guix_attachable_sigs					ad4fe4b83a4
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29184 rpc_scanblocks_ffp_named				7ac02daeb5f
 	29175 fix_rpc_estmode_unset_case-24			60ffe7000f6	last=be8ae64b82e
@@ -967,6 +967,7 @@ checkout v26.1
 		# Reverts #28432, and includes fix_dmg_openfinder
 		#27.xTODO# revert macos ZIP only: #28932 #28973
 		# NOTE: temporarily reintroduces .tiff file
+		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
 	7483  svg_icon-26.1+knots					150372f5a56
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 	n/a   tbc_font-26.1+knots					3e2980f4680
