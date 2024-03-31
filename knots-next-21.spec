@@ -843,6 +843,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: # Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	Triage: Needs work: 29720 maflcko/2403-rpc-int-wrap-
 	Triage: TODO: QScrollArea and/or QTreeWidget for GUI Options dialog?
+	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
+	TODO: Move deleted gitian docs back into this repo
 	
 	#21.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
@@ -853,6 +855,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	-     miniupnpc_2.0.20180503-21
 	-     qt_5.9.9-21
 		TODO: bump
+		FIXME: 404 Fetching qtwinextras-opensource-src-5.9.8.tar.xz from https://download.qt.io/archive/qt/5.9/5.9.8/submodules
 	-     sqlite_3.32.3+-21+knots
 	23956 zeromq_4.3.4-21
 		# +#24134 fixes
@@ -1468,6 +1471,7 @@ m	7219  rbf_opts-0.21+knots					6b8135375e9	last=eb6bb1e3528 fullrbf # missing 9
 	-     gui_peers_sort_network-0.21+knots		0ea3b567d9c
 	(CHECK-LAST)	last=3ae2746dcf7 gui_peers_sort_network-22
 	(CHECK-LAST)	last=c22bbba9689 gui_peers_sort_network-23
+	TODO: migrate to guix or at least its signature format?
 # Non-upstreamed Knots compatibility:
 	-    preserve_unsupported_keyflags			bde74230139
 	-    mempool_knots014_compat-0.21+knots		ffc4f556b8a	last=1befffc0b48 mempool_dat_extensible

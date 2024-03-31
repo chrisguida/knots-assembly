@@ -272,7 +272,7 @@ checkout v26.1
 		#+29301
 	# 29691 dnsseed_dashjr_2024
 		#26.xTODO# Decide about changing to another domain
-	# Needs work if possible: 29147 guix_attachable_sigs					ad4fe4b83a4
+	TODO: Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29184 rpc_scanblocks_ffp_named				7ac02daeb5f
 	29175 fix_rpc_estmode_unset_case-24			60ffe7000f6	last=be8ae64b82e
@@ -639,6 +639,7 @@ checkout v26.1
 	28167 rpccookieperms-26+knots				c71f2dbd112	last=ce9df2aba3e willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
+		FIXME: breaks if .cookie.tmp is read-only already
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
@@ -885,7 +886,7 @@ checkout v26.1
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
 	#26.xTODO# Needs concept acceptance: -     gbt_skip_validity_test
-	# Needs concept & writing: default UPnP/NAT-PMP to enabled
+	#27.xTODO# Needs concept & writing: default UPnP/NAT-PMP to enabled
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
 	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748
