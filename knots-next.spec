@@ -339,9 +339,9 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	29892 fix_uv_float_test_pr29892-26
 		# 27.x rebase in #29888
 	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
-	g812  furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
-	Needs work: g813  willcl-ark-g/2024-03-proxy-validate
-	Needs review: g815  -  # Bugfix on TransactionsView - Disable if privacy mode is set during wallet selection
+	g812  fix_qt_feebump_psbt-25							last=671b7a32516 furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
+	g813  fix_qt_proxy_port_in_ip-26						last=10c5275ba45 willcl-ark-g/2024-03-proxy-validate
+	g815  fix_qt_privacy_before_open-25						last=d3da5025f61
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
