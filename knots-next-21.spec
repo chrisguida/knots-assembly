@@ -1,8 +1,8 @@
-timestamp 2024-03-22 23:39:39
+timestamp 2024-04-21 03:10:31
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #29708 / gui #808 for fixes
+#.. checked up to PR #29926 / gui #817 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -51,6 +51,7 @@ checkout v0.21.2
 		# NOTE: 24.x Backport in #28410
 	Triage: Needs review: 29362 hebasto/240201-objcxx
 	missing cstdint includes: #25068 (partial?), iwyu??
+	Triage: 29859 hebasto/240412-atomic
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=1c6ae96f0a3 sys_leveldb
@@ -95,6 +96,10 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	Needs review: 28028 maflcko/2307-test-stderr-
 	n/a   knots_ci_tweaks-21					a30b2c8bb0f
 	#TODO: Can we get a minimum-dep-versions CI going??
+	Triage: As needed: 29740 -  # ci: Print tsan errors to stderr
+	Triage: 29753 furszy/2024_test_fix_p2p_node_network_failure
+	Triage: 29788 maflcko/2404-ci-bcfcc-
+	Triage: 29832 fanquake/revert_29788
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b aka depends_no_getrandom
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=345f0b2283e guix_reltar_autogen_distclean
@@ -842,6 +847,26 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 29678 fix_init_lowdisk_warning_reqd
 	Triage: # Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	Triage: Needs work: 29720 maflcko/2403-rpc-int-wrap-
+	Triage: 29726 mzumsande/202403_assumeutxo_reindex_fix
+	Triage: 29747 fanquake/fix_qt_debug_link
+	Triage: # Needs review: 29770 fjahr/2024-03-check-undo-index
+	29776 -  # ThreadSanitizer: Fix #29767
+	Triage: Needs review: 29796 fanquake/depends_0g_debug_flags
+	Triage: Needs review: 29798 vasild/logging_cleanup
+	Triage (bug or API change?): 29845 stickies-v/2024-04/make-warnings-arr
+	Triage: 29850 laanwj/2024-04-dnsseeds-up-to-32
+	Triage: 29853 darosior/2404_miniscript_crash
+		# 26.x backport in #29854
+	Triage: 29855 achow101/psbt-check-outpoint
+	Triage: 29867 furszy/2024_index_fix_race
+	Triage: Not worth it? 29870 maflcko/2404-rpc-SighashFromStr-
+	Triage: Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
+	Triage: 29892 maflcko/2404-fix-float-univalue-test-
+		# 27.x rebase in #29888
+	Triage: Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
+	Triage: g812  furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
+	Triage: Needs work: g813  willcl-ark-g/2024-03-proxy-validate
+	Triage: Needs review: g815  -  # Bugfix on TransactionsView - Disable if privacy mode is set during wallet selection
 	Triage: TODO: QScrollArea and/or QTreeWidget for GUI Options dialog?
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
 	TODO: Move deleted gitian docs back into this repo
@@ -856,6 +881,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	-     qt_5.9.9-21
 		TODO: bump
 		FIXME: 404 Fetching qtwinextras-opensource-src-5.9.8.tar.xz from https://download.qt.io/archive/qt/5.9/5.9.8/submodules
+		TODO: see #29732
 	-     sqlite_3.32.3+-21+knots
 	23956 zeromq_4.3.4-21
 		# +#24134 fixes

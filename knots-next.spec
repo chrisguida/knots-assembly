@@ -1,7 +1,7 @@
-timestamp 2024-03-25 17:26:53
-lastapply no-merge
+timestamp 2024-04-21 03:10:31
+#lastapply no-merge
 
-#.. checked up to PR #29724 / gui #808
+#.. checked up to PR #29926 / gui #817
 
 checkout v26.1
 @26.x-syslibs
@@ -10,6 +10,7 @@ checkout v26.1
 	5872 subdir_incl_compat						517e84c15db
 	29362 fix_objcxxflags_pr29362-26			1f0ca2cea82	last=17861b9cd59 hebasto/240201-objcxx
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
+	29859 hebasto/240412-atomic
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							0003d8e6021
 	5416  sys_libsecp256k1						e7e2b68d62d
@@ -29,6 +30,7 @@ checkout v26.1
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
 	# Needs review: 25191 hebasto/220523-qt6-mac
 	# ---- END qt6 SUPPORT ----
+	#28.xTODO# Revert #29904
 	n/a   (delete_release_notes_fragments)
 @26.x-knotsfixes
 # TESTS:
@@ -40,6 +42,10 @@ checkout v26.1
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
+	# As needed: 29740 -  # ci: Print tsan errors to stderr
+	# Triage: 29753 furszy/2024_test_fix_p2p_node_network_failure
+	# Triage: 29788 maflcko/2404-ci-bcfcc-
+	# Triage: 29832 fanquake/revert_29788
 # FIXES:
 	18818 guix_reltar_autogen_distclean			abb7cab32a2	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						f52f72a54e6
@@ -254,7 +260,8 @@ checkout v26.1
 	28936 dnsseed_petertoddnet-25				caea91e4230
 	28944 sendall_antifeesniping-26				ddfcbbe7ca4	last=fa1fa351584 ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26.1+knots		89ad002b483
-	# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE
+	FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE, revert the removal?
+		See also #29868
 	28976 fix_wallet_migrate_blank-26			c6906c5a12d
 		#+29367
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
@@ -270,8 +277,7 @@ checkout v26.1
 	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
 	# Needs work? 29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
 		#+29301
-	# 29691 dnsseed_dashjr_2024
-		#26.xTODO# Decide about changing to another domain
+	29691 dnsseed_dashjr_2024
 	TODO: Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29184 rpc_scanblocks_ffp_named				7ac02daeb5f
@@ -315,6 +321,26 @@ checkout v26.1
 	29678 fix_init_lowdisk_warning_reqd			30d27f3262d
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
+	29726 mzumsande/202403_assumeutxo_reindex_fix
+	29747 fanquake/fix_qt_debug_link
+	# Needs review: 29770 fjahr/2024-03-check-undo-index
+	29776 -  # ThreadSanitizer: Fix #29767
+	# Needs review: 29796 fanquake/depends_0g_debug_flags
+	# Needs review: 29798 vasild/logging_cleanup
+	Triage (bug or API change?): 29845 stickies-v/2024-04/make-warnings-arr
+	29850 laanwj/2024-04-dnsseeds-up-to-32
+	29853 darosior/2404_miniscript_crash
+		# 26.x backport in #29854
+	29855 achow101/psbt-check-outpoint
+	29867 furszy/2024_index_fix_race
+	# Not worth it? 29870 maflcko/2404-rpc-SighashFromStr-
+	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
+	29892 maflcko/2404-fix-float-univalue-test-
+		# 27.x rebase in #29888
+	Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
+	g812  furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
+	Needs work: g813  willcl-ark-g/2024-03-proxy-validate
+	Needs review: g815  -  # Bugfix on TransactionsView - Disable if privacy mode is set during wallet selection
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -326,12 +352,13 @@ checkout v26.1
 	#26.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@26.x-knots-lts-deps
-	28769 depends_qt_update-26					63cc0f35014
+	29732 depends_qt_update-26					63cc0f35014
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 @26.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					b92706599a3
+		# When removing this, check for fix in #29823
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
@@ -379,6 +406,7 @@ checkout v26.1
 	# Needs review: 29602 -  # refactor: Optimize IsSpace function for common non-whitespace characters
 	29606 opti_ToLowerUpper_reserve-23			4f197d27657
 	# Worth doing? Needs review: 29607 -  # refactor: Reduce memory copying operations in bech32 encoding/decoding
+	# Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -715,6 +743,7 @@ checkout v26.1
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
 	#27.xTODO# 28950 instagibbs/2023-11-submitpackage-max-fee-burn
 		# +#29722 ?
+		# +#29735
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
 	29016 rpc_listmempooltxs-26+knots			bcaf7a32356	last=07008477b81 niftynei/nifty/listmempoolentry
 		# Includes typo fixup in comment that annoys linter
@@ -746,6 +775,7 @@ checkout v26.1
 	29686 manpage_desc-26+knots					b3535f27d4d	last=b680c1c6ffd willcl-ark/manpage-desc
 	29687 bcli_err_noconn_helphint-0.17			e27092a66cb	last=69d6fd676e9 willcl-ark/improve-cli-error
 	29695 gcc_branch_protection_default-26		3e24fd46b02	last=7850c5fe20a fanquake/gcc_12_branch_protection_default
+	# TODO: Configurable 29873 glozow/2024-04-truc-25k
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -805,6 +835,7 @@ checkout v26.1
 	15421 tor_subprocess-26+knots				2e6a0cceb02	# Latest code now
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
+		#28.xTODO# Revert #29844 if still using boost::process?
 	# TODO: tor guix bundle!
 	# TODO: 16490 maflcko/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
@@ -858,6 +889,7 @@ checkout v26.1
 		#27.xTODO# Squash fixes
 		#27.xTODO# ? blockreconstructionextratxn
 	559   accept_nonstdtxn						ab8c7ff698f
+		#28.xTODO# Revert or redefine #29843 if it got merged
 	 929 tbc									6d8b2d9b727
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			56eefe15c33
@@ -889,7 +921,7 @@ checkout v26.1
 	#27.xTODO# Needs concept & writing: default UPnP/NAT-PMP to enabled
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
-	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748
+	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748 #29787 #29797
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
@@ -931,11 +963,12 @@ checkout v26.1
 	#26.xTODO# Discount privacy txs?
 	#26.xTODO# Whitelist Whirlpool Tx0 and/or BIP47?
 	#26.xTODO# Procedural approve/deny/discount/penalize policy scripting?
-	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
+	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	-     bloom_default-0.26+knots				e2c643655bb
 	-     wallet_avoid_newerchange				b0ac39239a8
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-26+knots				3aa3a1504ce
+		# Alternate to(?) #29769
 	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
 	#27.xTODO# Ordislow??
@@ -966,7 +999,7 @@ checkout v26.1
 	n/a   (delete_release_notes_fragments)
 	n/a   macos_dmg-26.1						0e7b5c41e2b
 		# Reverts #28432, and includes fix_dmg_openfinder
-		#27.xTODO# revert macos ZIP only: #28932 #28973
+		#27.xTODO# revert macos ZIP only: #28932 #28973 #29733
 		# NOTE: temporarily reintroduces .tiff file
 		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
 	7483  svg_icon-26.1+knots					150372f5a56
@@ -992,7 +1025,7 @@ checkout v26.1
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		8e45daf3a64	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240325)			86f61417c58
+	n/a  (bump_version=Knots:20240421)			86f61417c58
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		82ce67629be
 	n/a   (cherrypick=742f570227c)				2062c931cf2  # release notes: write/update, including change log and credits
