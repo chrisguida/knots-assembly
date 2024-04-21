@@ -10,7 +10,7 @@ checkout v26.1
 	5872 subdir_incl_compat						517e84c15db
 	29362 fix_objcxxflags_pr29362-26			1f0ca2cea82	last=17861b9cd59 hebasto/240201-objcxx
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
-	29859 hebasto/240412-atomic
+	29859 fix_ac_atomic_double-22
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							0003d8e6021
 	5416  sys_libsecp256k1						e7e2b68d62d
@@ -260,8 +260,8 @@ checkout v26.1
 	28936 dnsseed_petertoddnet-25				caea91e4230
 	28944 sendall_antifeesniping-26				ddfcbbe7ca4	last=fa1fa351584 ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26.1+knots		89ad002b483
-	FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE, revert the removal?
-		See also #29868
+	#27.xTODO# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE, revert the removal?
+		# See also #29868
 	28976 fix_wallet_migrate_blank-26			c6906c5a12d
 		#+29367
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
@@ -278,7 +278,9 @@ checkout v26.1
 	# Needs work? 29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
 		#+29301
 	29691 dnsseed_dashjr_2024
-	TODO: Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
+NM	29147 guix_attachable_sigs					ad4fe4b83a4
+	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
+		# GPG discourages clearsign signatures!
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29184 rpc_scanblocks_ffp_named				7ac02daeb5f
 	29175 fix_rpc_estmode_unset_case-24			60ffe7000f6	last=be8ae64b82e
@@ -321,15 +323,15 @@ checkout v26.1
 	29678 fix_init_lowdisk_warning_reqd			30d27f3262d
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
-	29726 mzumsande/202403_assumeutxo_reindex_fix
-	29747 fanquake/fix_qt_debug_link
+	29726 fix_assumeutxo_reindex_pr29726-26
+	29747 fix_depends_qt_mingw_dbg_link-24
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
-	29776 -  # ThreadSanitizer: Fix #29767
+	#27.xTODO# 29776 -  # ThreadSanitizer: Fix #29767
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
 	# Needs review: 29798 vasild/logging_cleanup
-	Triage (bug or API change?): 29845 stickies-v/2024-04/make-warnings-arr
-	29850 laanwj/2024-04-dnsseeds-up-to-32
-	29853 darosior/2404_miniscript_crash
+	-     fix_rpc_warnings_all-21
+	29850 dnsseed_maxips_32-26								last=f2e3662e57e laanwj/2024-04-dnsseeds-up-to-32
+	29853 fix_psbt_sign_insane_pr29853-26					last=bdf2ef2c94c darosior/2404_miniscript_crash
 		# 26.x backport in #29854
 	29855 achow101/psbt-check-outpoint
 	29867 furszy/2024_index_fix_race
@@ -775,6 +777,8 @@ checkout v26.1
 	29686 manpage_desc-26+knots					b3535f27d4d	last=b680c1c6ffd willcl-ark/manpage-desc
 	29687 bcli_err_noconn_helphint-0.17			e27092a66cb	last=69d6fd676e9 willcl-ark/improve-cli-error
 	29695 gcc_branch_protection_default-26		3e24fd46b02	last=7850c5fe20a fanquake/gcc_12_branch_protection_default
+	# API change: 29845 stickies-v/2024-04/make-warnings-arr
+		# When merged upstream, adapt deprecaterpc to behave like fix_rpc_warnings_all-21
 	# TODO: Configurable 29873 glozow/2024-04-truc-25k
 	
 	# TODO: GUI block template view

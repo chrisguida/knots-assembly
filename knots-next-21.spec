@@ -850,10 +850,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 29726 mzumsande/202403_assumeutxo_reindex_fix
 	Triage: 29747 fanquake/fix_qt_debug_link
 	Triage: # Needs review: 29770 fjahr/2024-03-check-undo-index
-	29776 -  # ThreadSanitizer: Fix #29767
+	Triage: 29776 -  # ThreadSanitizer: Fix #29767
 	Triage: Needs review: 29796 fanquake/depends_0g_debug_flags
 	Triage: Needs review: 29798 vasild/logging_cleanup
-	Triage (bug or API change?): 29845 stickies-v/2024-04/make-warnings-arr
+	-     fix_rpc_warnings_all-21
 	Triage: 29850 laanwj/2024-04-dnsseeds-up-to-32
 	Triage: 29853 darosior/2404_miniscript_crash
 		# 26.x backport in #29854
@@ -1274,6 +1274,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Triage: s/Core/Knots: 29686 willcl-ark/manpage-desc
 	Triage: 29687 willcl-ark/improve-cli-error
 	Triage: Check GCC version: 29695 fanquake/gcc_12_branch_protection_default
+	Triage: API change: 29845 stickies-v/2024-04/make-warnings-arr
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
