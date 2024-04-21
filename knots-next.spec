@@ -326,20 +326,19 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	29726 fix_assumeutxo_reindex_pr29726-26
 	29747 fix_depends_qt_mingw_dbg_link-24
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
-	#27.xTODO# 29776 -  # ThreadSanitizer: Fix #29767
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
 	# Needs review: 29798 vasild/logging_cleanup
 	-     fix_rpc_warnings_all-21
 	29850 dnsseed_maxips_32-26								last=f2e3662e57e laanwj/2024-04-dnsseeds-up-to-32
 	29853 fix_psbt_sign_insane_pr29853-26					last=bdf2ef2c94c darosior/2404_miniscript_crash
 		# 26.x backport in #29854
-	29855 achow101/psbt-check-outpoint
-	29867 furszy/2024_index_fix_race
+	29855 psbt_nonwit_utxo_chkearly-24						last=9e13ccc50ee achow101/psbt-check-outpoint
+	#27.xTODO# 29867 furszy/2024_index_fix_race
 	# Not worth it? 29870 maflcko/2404-rpc-SighashFromStr-
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
-	29892 maflcko/2404-fix-float-univalue-test-
+	29892 fix_uv_float_test_pr29892-26
 		# 27.x rebase in #29888
-	Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
+	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
 	g812  furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
 	Needs work: g813  willcl-ark-g/2024-03-proxy-validate
 	Needs review: g815  -  # Bugfix on TransactionsView - Disable if privacy mode is set during wallet selection
