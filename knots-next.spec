@@ -665,10 +665,10 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
 	-     guix_shell_compat-24					ab9cba5d14e
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
-	28167 rpccookieperms-26+knots				c71f2dbd112	last=ce9df2aba3e willcl-ark/2023-07-rpccookie-perms
+	28167 rpccookieperms-26+knots				c71f2dbd112	last=805577312c9 willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
-		FIXME: breaks if .cookie.tmp is read-only already
+		#27.xTODO# Update ce9df2aba3e...805577312c9
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
