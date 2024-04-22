@@ -694,8 +694,8 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
-	26990 bcli_validation-24					23c007c9848	last=fa48d460334
-		# Didn't bother rebasing for 755320f75f2...fa48d460334 trivial changes
+	26990 bcli_validation-24					23c007c9848	last=cf7dd3564a3
+		# Didn't bother rebasing for 755320f75f2...cf7dd3564a3 trivial changes
 	27034 rpc_importaddr_for_descwallet-26+k	928ada5ba75	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
@@ -950,6 +950,8 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	-     bytespersigopstrict-26+knots			7eacb2ea5fe
 	9749  unique_spk_mempool-26+knots			f4b30359526
 	-     dustdynamic-26+knots					ce97a41ded3
+		TODO: Add multiplier since 3x seems implicit in history
+		FIXME: https://github.com/bitcoinknots/bitcoin/pull/76
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	28408 match_more_datacarrier-26+knots		8af1ff082de	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
@@ -1010,6 +1012,8 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	n/a   tbc_font-26.1+knots					3e2980f4680
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
+	FIXME: https://github.com/bitcoinknots/bitcoin/issues/77
+	TODO: https://github.com/bitcoinknots/bitcoin/pull/78
 # BRANDING:
 	n/a   knots_branding-26.1					b396a654153
 		#26.xTODO# Review security policy
