@@ -805,8 +805,6 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
-		#26.xTODO# Add dc244382e5d QA: rpc_users: Test rpcauth wallet restrictions
-		FIXME: https://github.com/bitcoinknots/bitcoin/issues/77
 	10554 zmq_wtx-26+knots						d49b4295009	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
