@@ -950,8 +950,6 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	-     bytespersigopstrict-26+knots			7eacb2ea5fe
 	9749  unique_spk_mempool-26+knots			f4b30359526
 	-     dustdynamic-26+knots					ce97a41ded3
-		TODO: Add multiplier since 3x seems implicit in history
-		FIXME: https://github.com/bitcoinknots/bitcoin/pull/76
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	28408 match_more_datacarrier-26+knots		8af1ff082de	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
