@@ -330,7 +330,7 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	# Needs review: 29798 vasild/logging_cleanup
 	-     fix_rpc_warnings_all-21
 	29850 dnsseed_maxips_32-26								last=f2e3662e57e laanwj/2024-04-dnsseeds-up-to-32
-	29853 fix_psbt_sign_insane_pr29853-26					last=bdf2ef2c94c darosior/2404_miniscript_crash
+	29853 fix_psbt_sign_insane_pr29853-26					last=4d8d21320eb darosior/2404_miniscript_crash
 		# 26.x backport in #29854
 	29855 psbt_nonwit_utxo_chkearly-24						last=9e13ccc50ee achow101/psbt-check-outpoint
 	#27.xTODO# 29867 furszy/2024_index_fix_race
@@ -795,6 +795,7 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-26+knots					0f1a63d6813	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
+		FIXME: Missing some way to identify what colours are what
 	9504  rpc_dumpmasterprivkey					76293657eb4	last=07fc81109a
 	g444  gui_netwatch-26+knots					b2b5285817a	 # Latest code now
 		# NOTE: Was #9849
@@ -805,6 +806,7 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
 		#26.xTODO# Add dc244382e5d QA: rpc_users: Test rpcauth wallet restrictions
+		FIXME: https://github.com/bitcoinknots/bitcoin/issues/77
 	10554 zmq_wtx-26+knots						d49b4295009	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
@@ -984,7 +986,7 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 		#26.xTODO# Add new checkpoint
 		#27.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	10282 timebomb_knots						4d81fce30ea
-	-     rwconf_policy-26+knots				904069a7087
+m	-     rwconf_policy-26+knots				904069a7087
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
@@ -1010,7 +1012,6 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	n/a   tbc_font-26.1+knots					3e2980f4680
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
-	FIXME: https://github.com/bitcoinknots/bitcoin/issues/77
 	TODO: https://github.com/bitcoinknots/bitcoin/pull/78
 # BRANDING:
 	n/a   knots_branding-26.1					b396a654153
