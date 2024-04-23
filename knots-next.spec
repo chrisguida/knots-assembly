@@ -795,12 +795,11 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-26+knots					0f1a63d6813	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
-		FIXME: Missing some way to identify what colours are what
 	9504  rpc_dumpmasterprivkey					76293657eb4	last=07fc81109a
 	g444  gui_netwatch-26+knots					b2b5285817a	 # Latest code now
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
-	10615 multiwallet_rpc-26+knots				6cc32909e76  # latest code now
+m	10615 multiwallet_rpc-26+knots				6cc32909e76  # latest code now
 		# CAUTION: Be extra careful rebasing - diff/patch default context might accidentally move code around between different RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
@@ -926,6 +925,7 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	#26.xTODO# Look into making the patches tarball in guix
 	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748 #29787 #29797
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
+	# TODO: CAT-21 filter https://github.com/bitcoinknots/bitcoin/pull/78
 # Non-upstreamed Knots compatibility:
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			5ea94d4b2a7
@@ -1010,7 +1010,6 @@ m	-     rwconf_policy-26+knots				904069a7087
 	n/a   tbc_font-26.1+knots					3e2980f4680
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
-	TODO: https://github.com/bitcoinknots/bitcoin/pull/78
 # BRANDING:
 	n/a   knots_branding-26.1					b396a654153
 		#26.xTODO# Review security policy
