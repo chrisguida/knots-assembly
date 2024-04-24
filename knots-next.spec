@@ -209,7 +209,7 @@ checkout v26.1
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
 	#26.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	#26.xTODO# Triage #28248
-	29946 jsonrpc_content_type-26+mini									last=3e908b15094 jsonrpc_content_type
+	29946 jsonrpc_content_type-26+mini									last=f90a84d6150 jsonrpc_content_type
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks-mini			3a5b055db95	last=78a256505f3 fix_bytespersigop_checks
 		#26.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done
@@ -258,12 +258,12 @@ checkout v26.1
 	28946 fix_keep_notmy_pidfile-26.1+knots		89ad002b483
 	#27.xTODO# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE, revert the removal?
 		# See also #29868
-	28976 fix_wallet_migrate_blank-26			c6906c5a12d
+m	28976 fix_wallet_migrate_blank-26+knots		c6906c5a12d
 		#+29367
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
-	28998 0xB10C/2023-12-addpeeraddress-return-error
+	28998 rpc_addpeeraddress_return_error-26
 	29022 fix_btx_replacable_blank-21			27def4d1a03
-	29027 brunoerg/2023-12-descriptor-fix-key-error
+	29027 fix_wallet_keyparsecheck_pr29027-26
 	# MSVC: 29044 hebasto/231209-msvc-qt
 	g780  fix_qt_txview_prG780-25				13649359c92	last=b2e531e70a8
 	29141 fix_rpcauth_blank						88b92aedd0a
@@ -305,7 +305,7 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	g801  fix_qt_clntmdl_at_shutdown_prg801-21	dd9451c8136
 	-     rpc_loadtxoutset_hide-26				314d7eb1121
 		#27.xTODO# This should probably be removed
-	29586 wallet_migrate_null_walletname_bak-26	92bf9fcbfdb
+m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	# Nothing to fix: 29615 theStack/202403-test-fix_GetSigOpCount_accurate_counting_bip16
 	# Compatibility break, needs review: 29612 fjahr/2024-03-pr26045-reopen
