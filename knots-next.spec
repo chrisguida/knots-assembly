@@ -735,7 +735,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# Why not just increase inbound capacity to max anyway?
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
 	# Needs work: g777 -  # gui: getrawtransaction implementation
-	Part of? 28885 -  # getprioritisedtransactions modifiedfee
+	28885 rpc_getpriotxs_modfee-26
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
@@ -801,7 +801,7 @@ m	10615 multiwallet_rpc-26+knots				6cc32909e76  # latest code now
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
-	10554 zmq_wtx-26+knots						d49b4295009	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+m	10554 zmq_wtx-26+knots						d49b4295009	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					fbd17480071
@@ -875,7 +875,8 @@ m	10615 multiwallet_rpc-26+knots				6cc32909e76  # latest code now
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				6711c26fd13
 	-     walletnotify_w_win-26+knots			088c51be7de	# Latest code now
-	14137 win_taskbar_progress-26+knots		627aa6c1a01	last=18eb4dbb8a
+m	14137 win_taskbar_progress-26+knots		627aa6c1a01	last=18eb4dbb8a
+		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					02b941a9e2c
 	7107  qtnetworkport-26+knots				4125b0549c1	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force-26+knots				6d78f45660e last=2627c0937f8 sendraw_force
@@ -892,7 +893,7 @@ m	10615 multiwallet_rpc-26+knots				6cc32909e76  # latest code now
 	 929 tbc									6d8b2d9b727
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			56eefe15c33
-	-    mining_priority						44a853aa740  # NOTE: now the latest code, rebased
+m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 		#26.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 	5861 gui_restore_addresses					a61636484e8
 	5891  qt_console_history_persist			d04b9ab0d76	last=0cd5fc301d6 qt_console_history_persist
