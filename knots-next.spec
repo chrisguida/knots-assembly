@@ -195,8 +195,7 @@ checkout v26.1
 	# Needs work: 27973 maflcko/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
 	28020 -										e0950f80af4	last=0b1762c90d1  # exclude ipc scheme from port check (fix_zmq_ipc_noportcheck-25)
-		#26.xTODO# Maybe rewrite without `rfind`
-		TODO: Add unix: scheme for compatibility with 28.x merged #27679
+	-     zmq_unix_uri_compat-25
 	g742 qt_err_fixg741_in_g742-21				283dd824f29
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	28029 fix_zmq_errhandling_202307-mini		ff29765ca5c	last=07086589b27 fix_zmq_errhandling_202307
