@@ -250,12 +250,9 @@ checkout v26.1
 	# libmultiprocess (not supported by Knots yet): 28846 fanquake/fixup_multiprocess_arm64
 	28848 fix_rpc_submitpkg_all_results-26
 	28849 fix_qa_v2t_pr28849-26					75ca2d299d9
-	28868 achow101/test-migration-watchonly-spendable
-		TODO: gcp 5995b3f58e5^^^^..5995b3f58e5
+	28868 fix_wallet_migrate_pr28868-26
 	-     fix_doc_upnp_def_post26896			2f978e55cf2	last=92f88a96290 fanquake/redundant_upnp_ifdef
 		# Alternative to #28874
-	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
-	# Needs review & triage: 28894 furszy/2023_wallet_batch_keypool_creation
 	28936 dnsseed_petertoddnet-25				caea91e4230
 	28944 sendall_antifeesniping-26				ddfcbbe7ca4	last=fa1fa351584 ishaanam/sendall_anti_fee_sniping
 	28946 fix_keep_notmy_pidfile-26.1+knots		89ad002b483
@@ -264,16 +261,15 @@ checkout v26.1
 	28976 fix_wallet_migrate_blank-26			c6906c5a12d
 		#+29367
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
-	# Needs review? 28998 0xB10C/2023-12-addpeeraddress-return-error
+	28998 0xB10C/2023-12-addpeeraddress-return-error
 	29022 fix_btx_replacable_blank-21			27def4d1a03
-	# Needs review: 29027 brunoerg/2023-12-descriptor-fix-key-error
+	29027 brunoerg/2023-12-descriptor-fix-key-error
 	# MSVC: 29044 hebasto/231209-msvc-qt
 	g780  fix_qt_txview_prG780-25				13649359c92	last=b2e531e70a8
 	29141 fix_rpcauth_blank						88b92aedd0a
 	29253 fix_wallet_dbguard_pr29253-26			e8f0fe413c9
 	29112 fix_wallet_single_batch_only-26+knots	9fae003bc41
-	# Needs review: achow101/fix-double-keypath
-	# Needs work (drop goto): 29143 -  # wallet: add meaningful error message and fix test
+	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work? 29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
 		#+29301
 	29691 dnsseed_dashjr_2024
@@ -389,6 +385,7 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	28592 txrelayrate_14txps-26					c1590438439 last=22c2b52c122
 		#26.xTODO# Make configurable? Or is that even sane?
 	# Needs fixing rebase: 28799 wallet_cache_descriptor_id-25
+	# Diff-minimise? 28894 furszy/2023_wallet_batch_keypool_creation
 	# Needs review: 28923 theStack/202311-add_SignTransaction_benchmark
 	# Needs review: 28945 martinus/2023-11-improve-ccoinsviewcache-reallocatecache
 	# Needs review: 28955 furszy/2023_index_blockfilter_cache_header
@@ -738,6 +735,7 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 		# Why not just increase inbound capacity to max anyway?
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
 	# Needs work: g777 -  # gui: getrawtransaction implementation
+	Part of? 28885 -  # getprioritisedtransactions modifiedfee
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
