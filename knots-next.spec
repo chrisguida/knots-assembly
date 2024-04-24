@@ -349,7 +349,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	n/a   (delete_release_notes_fragments)
 #@26.x-knots-lts-deps
 	29732 depends_qt_update-26					63cc0f35014
-		TODO: Bump to #29732 (including intermediate changes to depends qt pkg?)
+		# Do we need #29650 "depends: drop 1 qt determinism patch" ?
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 @26.x-knots
@@ -711,7 +711,6 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
 		# Careful, could end up paying "added change" to a destination -.-
 	# Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
-	#26.xTODO# Self-review: 27509 vasild/relay_tx_to_priv_nets
 	27600 p2p_forceinbound-26+knots				1e2ad0b6718	last=8c2026848da pinheadmz/whitebind-evict
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
