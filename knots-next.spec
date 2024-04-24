@@ -143,7 +143,7 @@ checkout v26.1
 	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
 		#+29065+29272
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
-	#26.xTODO# Check on #25561
+	#27.xTODO# Check on #25561
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
@@ -164,15 +164,15 @@ checkout v26.1
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
 	g684  qt_reqs_multiselect_pr684-25+knots	f99627c7e9e	last=a6f567590b7
 	# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
-	#26.xTODO# Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
-	#26.xTODO# Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
+	#26.xTODO# Needs backport? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
+	#26.xTODO# Too minor? 26903 pstratem/2023-01-17-baseindex-commit-error
 	#26.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
-	#26.xTODO# Needs bugfix? (https://github.com/bitcoin/bitcoin/pull/27039/files#r1247267535) 27039 pinheadmz/reindex-read-only
+	27039 fix_reindex_readonly_blkfiles-26
 	#26.xTODO# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
-	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
+		# CAUTION: Even merged, this appears to possibly show a higher balance than the user actually has for sure??
 	#26.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
 	# TODO: Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
@@ -196,8 +196,7 @@ checkout v26.1
 	# Needs work: 27991 fanquake/instrument_libsecp
 	28020 -										e0950f80af4	last=0b1762c90d1  # exclude ipc scheme from port check (fix_zmq_ipc_noportcheck-25)
 		#26.xTODO# Maybe rewrite without `rfind`
-		# NOTE: #27679 also implements this, possibly with unix: prefix instead?
-	# If needed: 28026 furszy/2023_fix_index_timeout
+		TODO: Add unix: scheme for compatibility with 28.x merged #27679
 	g742 qt_err_fixg741_in_g742-21				283dd824f29
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	28029 fix_zmq_errhandling_202307-mini		ff29765ca5c	last=07086589b27 fix_zmq_errhandling_202307
@@ -211,11 +210,11 @@ checkout v26.1
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
 	#26.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	#26.xTODO# Triage #28248
-	#26.xTODO# FIXME: curl RPCdoc examples use wrong content type!
+	29946 jsonrpc_content_type-26+mini									last=3e908b15094 jsonrpc_content_type
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks-mini			3a5b055db95	last=78a256505f3 fix_bytespersigop_checks
 		#26.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done
-	# Needs review? 28340 -  # security: restrict abis in bitcoind.service
+	28340 -													last=0244416aacb  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	g752  fix_qt_cmdhelp_mention_uri-0.17		d92f860eb75	last=ede5014c445
@@ -224,15 +223,15 @@ checkout v26.1
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
-	# Needs review: 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
+	# QA only? 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
 	28554 fix_rpc_getnetworkhashps_heightchk-25	c323b19a1c9	last=9ac114e5cd9
 		# diff-minimised & kept compatible
 	g758  -										2d172db9cfe	last=9d37886a3b6  # qt_nodewindow_chainname-22
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
-	# Needs review: 28564 fix_conf_fuzzbin_main
-	# Needs review? 28610 achow101/migrate-avoidreuse
+	28564 fix_conf_fuzzbin_main
+	28610 fix_wallet_migrate_entireaddrbook-26
 	#27.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
-	# Needs review/simplification: 28649 vasild/reliable_socks5_handshake
+	28649 reliable_socks5_pr28649-26
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
@@ -242,17 +241,18 @@ checkout v26.1
 	# Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
 	# -- Needs review: g775 -  # gui: add used balance to overview page
 	# Needs review: 28780 -  # log: torcontrol opt checks
-	# Needs review: 28782 -  # test: Add missing sync on send_version in peer_connect
+	# As needed: 28782 -  # test: Add missing sync on send_version in peer_connect
 	-     fix_keep_notmy_cookie-26.1+knots		85b8a29a6f9
 		# Originally part of #28784, but regressed in d95dde9441f...7cb9367157e
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
-	# Needs review: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
-	# Needs review & triage: 28846 fanquake/fixup_multiprocess_arm64
-	# Needs review & triage: 28848 instagibbs/2023-11-submitpackage-results
+	# TODO: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
+	# libmultiprocess (not supported by Knots yet): 28846 fanquake/fixup_multiprocess_arm64
+	28848 fix_rpc_submitpkg_all_results-26
 	28849 fix_qa_v2t_pr28849-26					75ca2d299d9
-	# Needs review: 28868 achow101/test-migration-watchonly-spendable
+	28868 achow101/test-migration-watchonly-spendable
+		TODO: gcp 5995b3f58e5^^^^..5995b3f58e5
 	-     fix_doc_upnp_def_post26896			2f978e55cf2	last=92f88a96290 fanquake/redundant_upnp_ifdef
 		# Alternative to #28874
 	# Needs triage & review: 28885 -  # refactor: followup to getprioritisedtransactions and delete a mapDeltas entry when delta==0
@@ -1045,6 +1045,7 @@ m	-     rwconf_policy-26+knots				904069a7087
 	n/a  (cherrypick=9383c3f9013)				656aacb935e  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
+		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
 
