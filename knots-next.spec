@@ -349,6 +349,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	n/a   (delete_release_notes_fragments)
 #@26.x-knots-lts-deps
 	29732 depends_qt_update-26					63cc0f35014
+		TODO: Bump to #29732 (including intermediate changes to depends qt pkg?)
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 @26.x-knots
