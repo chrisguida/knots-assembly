@@ -467,6 +467,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ? (or not, since it's been abandoned...)
 		# TODO: Drop ec2326304e0 since it's not needed with changes made in 998c34d27e7
+		FIXME: * 276e7b0bebb fixup! test: Add mempool fee histogram test coverage
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
@@ -668,6 +669,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# Added lots of improvements
 		#27.xTODO# Update ce9df2aba3e...805577312c9
 		FIXME: * 939e5abb365 fixup! rpccookieperms: Default to u+rw
+		FIXME: * bbd28ea8271 fixup! Bugfix: RPC: Attempt to delete cookie tmp before creating it
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
