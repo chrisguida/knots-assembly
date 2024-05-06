@@ -828,7 +828,7 @@ m	10554 zmq_wtx-26+knots						d49b4295009	last=ed4fd266f7  # ZMQ: add publishers
 		# NOTE: Stripped out benchmark change
 		#27.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-25			1cfb7ab889d
-	15218 postibd_flush-26						498b596975a	last=363f3258b00
+	15218 postibd_flush-26						498b596975a	last=011d9b70f37
 	15428 tor_gui_pairing-26+knots				886b59ce089	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-26+knots				2e6a0cceb02	# Latest code now
@@ -945,7 +945,7 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 		# Header columns: need a rename
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
-	29309 permitbarepubkey-26+knots				311b5dac493	last=8c1114aa61c
+	29309 permitbarepubkey-26+knots				311b5dac493	last=ffc6c0b8385
 	-    1day_default_conftarget				70a1ae492f4
 	-     bytespersigopstrict-26+knots			7eacb2ea5fe
 	9749  unique_spk_mempool-26+knots			f4b30359526
@@ -990,7 +990,6 @@ m	-     rwconf_policy-26+knots				904069a7087
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#TODO: squash fixups
-		TODO: implement rejecttokens GUI
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
