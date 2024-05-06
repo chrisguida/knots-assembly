@@ -229,7 +229,6 @@ checkout v26.1
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main
 	28610 fix_wallet_migrate_entireaddrbook-26
-		FIXME: * 9fa5635d0b8 QA/test_framework: Add `create_outpoints` helper
 	#27.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
 	28649 reliable_socks5_pr28649-26
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
@@ -467,7 +466,6 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ? (or not, since it's been abandoned...)
 		# TODO: Drop ec2326304e0 since it's not needed with changes made in 998c34d27e7
-		FIXME: * 276e7b0bebb fixup! test: Add mempool fee histogram test coverage
 	# TODO: 22891 prayank23/mempool-getinfo
 	# Totally broken: g108 jonas-g/2020/03/mempool_graph									last=42b451ebf1e
 		# TODO: Check gui#320 for usability
@@ -668,8 +666,6 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
 		#27.xTODO# Update ce9df2aba3e...805577312c9
-		FIXME: * 939e5abb365 fixup! rpccookieperms: Default to u+rw
-		FIXME: * bbd28ea8271 fixup! Bugfix: RPC: Attempt to delete cookie tmp before creating it
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
@@ -807,7 +803,6 @@ m	10615 multiwallet_rpc-26+knots				6cc32909e76  # latest code now
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
 m	10554 zmq_wtx-26+knots						d49b4295009	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
-		FIXME: * ce35f3e37ba fixup! ZMQ: add publishers of wallet tx
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					fbd17480071
 		# NOTE: Originally based on #12674
