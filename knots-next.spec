@@ -871,6 +871,7 @@ m	10554 zmq_wtx-26+knots						d49b4295009	last=ed4fd266f7  # ZMQ: add publishers
 	#26.xTODO# Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 	# Needs concept & review: 29523 -  # Wallet: Add max_tx_weight to transaction funding options (take 2)
 		# WAS (never in Knots): #29264 instagibbs/2024-01-max-tx-weight
+	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	n/a   restore_feefilter_opt					d290d8e695b
@@ -962,7 +963,8 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 	-     datacarriercost-26+knots				f46022f8b0e
 		#26.xTODO# Add tests and make sure boundaries are correct
 	-     acceptnonstddatacarrier-26.1+knots	0f62c3e320a
-	#26.xTODO# filter runes?? https://rodarmor.com/blog/runes/ https://github.com/ordinals-wallet/rune/blob/main/src/rune.rs
+	-     rejecttokens-26.1+knots
+		# Currently filters just Runes
 	#26.xTODO# filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
 	#26.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666
 	#26.xTODO# Discount privacy txs?
@@ -991,6 +993,7 @@ m	-     rwconf_policy-26+knots				904069a7087
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#TODO: squash fixups
+		TODO: implement rejecttokens GUI
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
