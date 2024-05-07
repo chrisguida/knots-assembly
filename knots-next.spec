@@ -1,7 +1,7 @@
-timestamp 2024-04-21 03:10:31
+timestamp 2024-05-07 17:59:11
 #lastapply no-merge
 
-#.. checked up to PR #29926 / gui #817
+#.. checked up to PR #30054 / gui #819
 
 checkout v26.1
 @26.x-syslibs
@@ -337,6 +337,13 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	g812  fix_qt_feebump_psbt-25							last=671b7a32516 furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
 	g813  fix_qt_proxy_port_in_ip-26						last=10c5275ba45 willcl-ark-g/2024-03-proxy-validate
 	g815  fix_qt_privacy_before_open-25						last=d3da5025f61
+	# Not worth it? 29963 hebasto/240425-guess-cc
+	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
+	29985 laanwj/2024-04-qt-gzip-time64
+		# 27.x backport in #29888
+	30007 achow101/my-dns-seed
+	g819  willcl-ark/signmessage-error-fix
+	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -352,6 +359,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# Do we need #29650 "depends: drop 1 qt determinism patch" ?
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
+	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 @26.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					b92706599a3
@@ -405,6 +413,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	29606 opti_ToLowerUpper_reserve-23			4f197d27657
 	# Worth doing? Needs review: 29607 -  # refactor: Reduce memory copying operations in bech32 encoding/decoding
 	# Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
+	Needs testing? 30039 -  # dbwrapper: Bump LevelDB max file size to 128 MiB to avoid system slowdown from high disk cache flush rate
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -415,6 +424,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	# TODO: 29269 -  # Add OP_INTERNALKEY for Tapscript
 	# TODO: 29270 -  # Implement OP_CHECKSIGFROMSTACK(VERIFY)
 	# TODO: 29280 -  # Implement OP_CHECKTEMPLATEVERIFY
+	# TODO? 30018 -  # Implement BIP 118 validation (SIGHASH_ANYPREVOUT)
 # FUNCTIONALITY:
 	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
 		# test2: export of symbol _IO_stdin_used not allowed!
@@ -614,7 +624,8 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	# TODO: qt_fontsel_console
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
-	# Needs review & BIP changes: 24058 kallewoof/202201-bip322
+	#27.xTODO?# Needs review & BIP changes: 24058 kallewoof/202201-bip322
+		# TODO: Revert gui#819
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
 	24162 rpc_deriveaddr_wo_checksum-26			4c330c66447	last=97a69e232be
@@ -716,7 +727,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
 	27770 rpc_getblockfileinfo-26+knots			117a6101d43	last=5090771f326 furszy/2023_rpc_getblockfileinfo
-	# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
+	#27.xTODO# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 		# Note alternative (approach NACK'd) in #28453
 	# Needs review & BIP finality: 27827 josibake/silent-payments-base-pr-slim-down
@@ -776,9 +787,17 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	# API change: 29845 stickies-v/2024-04/make-warnings-arr
 		# When merged upstream, adapt deprecaterpc to behave like fix_rpc_warnings_all-21
 	# TODO: Configurable 29873 glozow/2024-04-truc-25k
+	29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
+		# Extend to other options?
+		# TODO: Fix datacarriersize description
+	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
+	Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
+	# TODO: Extend IsUnspendable safely
+		# eg based on https://github.com/bitcoin/bitcoin/pull/29981
+	# TODO: IPv6 Pinholing (see #30005)
 # Non-progress functionality:
 	8751  sort-multisigs-26+knots				f86de773630	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
@@ -927,6 +946,7 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 	# TODO: CAT-21 filter https://github.com/bitcoinknots/bitcoin/pull/78
 # Non-upstreamed Knots compatibility:
+	#28.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			5ea94d4b2a7
 		# Effectively reverts #24505, #27869, #28597, and gui#764
@@ -1029,7 +1049,7 @@ m	-     rwconf_policy-26+knots				904069a7087
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		8e45daf3a64	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240421)			86f61417c58
+	n/a  (bump_version=Knots:20240507)			86f61417c58
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		82ce67629be
 	n/a   (cherrypick=742f570227c)				2062c931cf2  # release notes: write/update, including change log and credits

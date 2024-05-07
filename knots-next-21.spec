@@ -1,8 +1,8 @@
-timestamp 2024-04-21 03:10:31
+timestamp 2024-05-07 17:59:11
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #29926 / gui #817 for fixes
+#.. checked up to PR #30054 / gui #819 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -867,6 +867,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: g812  furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
 	Triage: Needs work: g813  willcl-ark-g/2024-03-proxy-validate
 	Triage: Needs review: g815  -  # Bugfix on TransactionsView - Disable if privacy mode is set during wallet selection
+	Triage: # Not worth it? 29963 hebasto/240425-guess-cc
+	Triage: # Needs broader testing: 29984 laanwj/2024-04-iff-loopback
+	Triage: 29985 laanwj/2024-04-qt-gzip-time64
+	   # 27.x backport in #29888
+	Triage: 30007 achow101/my-dns-seed
+	Triage: g819  willcl-ark/signmessage-error-fix
+	
 	Triage: TODO: QScrollArea and/or QTreeWidget for GUI Options dialog?
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
 	TODO: Move deleted gitian docs back into this repo
@@ -883,6 +890,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		FIXME: 404 Fetching qtwinextras-opensource-src-5.9.8.tar.xz from https://download.qt.io/archive/qt/5.9/5.9.8/submodules
 		TODO: see #29732
 	-     sqlite_3.32.3+-21+knots
+		TODO: Bump to #29991 fanquake/sqlite_3_45_3
 	23956 zeromq_4.3.4-21
 		# +#24134 fixes
 		# NOTE: Dropped 72718ab1ace & f74c5c9241a; we don't support NetBSD, and the autotools in the gitian VM is too old to rebuild a working configure
@@ -937,6 +945,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: TODO: 29269 -  # Add OP_INTERNALKEY for Tapscript
 	Triage: TODO: 29270 -  # Implement OP_CHECKSIGFROMSTACK(VERIFY)
 	Triage: TODO: 29280 -  # Implement OP_CHECKTEMPLATEVERIFY
+	Triage: TODO? 30018 -  # Implement BIP 118 validation (SIGHASH_ANYPREVOUT)
 # FUNCTIONALITY:
 m	g275  gui_darkmode-0.21.2_pt1				9cd8d7e8a79
 		# NOTE: Fixed bug in gui#330 a simpler way b942216a1a7
@@ -1275,6 +1284,9 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Triage: 29687 willcl-ark/improve-cli-error
 	Triage: Check GCC version: 29695 fanquake/gcc_12_branch_protection_default
 	Triage: API change: 29845 stickies-v/2024-04/make-warnings-arr
+	Triage: 29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
+		# Extend to other options?
+		# TODO: Fix datacarriersize description
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
