@@ -993,12 +993,11 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 		# GUI component & default-on moved into rwconf_policy below
 		#26.xTODO# TODO: Add test(s) and default-on policy change below
 	#27.xTODO# NO APPARENT USAGE: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
-	#26.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666 - INSCRIPTION-WRAPPED: https://mempool.space/tx/130c79034450163f36fcde8e27f96904dc42e535f28aacd5af3b9a18d0b1c7f9
+	#27.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666 - INSCRIPTION-WRAPPED: https://mempool.space/tx/130c79034450163f36fcde8e27f96904dc42e535f28aacd5af3b9a18d0b1c7f9
 	#26.xTODO# All-ASCII data storage (inefficient)
 	# TODO: Stacks (OP_RETURN X2... - most are 80 bytes long, some 55, few 19)
-	#26.xTODO# Discount privacy txs?
-	#26.xTODO# Whitelist Whirlpool Tx0 and/or BIP47?
-	#26.xTODO# Procedural approve/deny/discount/penalize policy scripting?
+	#27.xTODO# Discount privacy txs?
+	#27.xTODO# Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	-     bloom_default-0.26+knots				e2c643655bb
 	-     wallet_avoid_newerchange				b0ac39239a8
@@ -1010,7 +1009,6 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 	#27.xTODO# Ordislow??
 	#26.xTODO# Spam filter for stuff like https://mempool.space/tx/4ec38548aa67f6a2efbbc3cf34ab49dc5c275d9701ab0b58696baee9f555c45a
 	#26.xTODO# Whitelisting model for non-SPK scripts
-	#26.xTODO# Exemptions for Samourai: https://code.samourai.io/whirlpool/Whirlpool/-/blob/whirlpool/ARCHITECTURE.md#2-create-tx0
 	#26.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 	-     enforce_checkpoints					213828c8f08
 	n/a   checkpoint_update-26					4bfc10082b2	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
