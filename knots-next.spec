@@ -675,10 +675,10 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
 	-     guix_shell_compat-24					ab9cba5d14e
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
-	28167 rpccookieperms-26+knots				c71f2dbd112	last=805577312c9 willcl-ark/2023-07-rpccookie-perms
+	28167 rpccookieperms-26+knots				c71f2dbd112	last=740f3438595 willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
-		#27.xTODO# Update ce9df2aba3e...805577312c9
+		#27.xTODO# Update ce9df2aba3e...740f3438595
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
@@ -789,9 +789,11 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	# API change: 29845 stickies-v/2024-04/make-warnings-arr
 		# When merged upstream, adapt deprecaterpc to behave like fix_rpc_warnings_all-21
 	# TODO: Configurable 29873 glozow/2024-04-truc-25k
-	29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
+	#26.xTODO# 29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
 		# Extend to other options?
 		# TODO: Fix datacarriersize description
+		# TODO:  b02aab950af RPC/Mempool: getmempoolinfo: Return many more mempool options
+		# Concept fixup: new RPC method entirely since they don't change often?
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
 	
@@ -912,6 +914,7 @@ m	14137 win_taskbar_progress-26+knots		627aa6c1a01	last=18eb4dbb8a
 		#27.xTODO# ? blockreconstructionextratxn
 	559   accept_nonstdtxn						ab8c7ff698f
 		#28.xTODO# Revert or redefine #29843 if it got merged
+		#27.xTODO# FIXME: Also bypasses other policies
 	 929 tbc									6d8b2d9b727
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			56eefe15c33
