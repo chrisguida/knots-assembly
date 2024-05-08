@@ -740,7 +740,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# OR #28983 OR #29432
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
-	#26.xTODO# Make disabled by default: 28052 maflcko/2306-fs_stuff-
+	#27.xTODO# Make disabled by default: 28052 maflcko/2306-fs_stuff-
 	# Needs review? 28207 maflcko/2308-xor-memepool-
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	# Needs review: 28461 fanquake/windows_ssp_roundup
@@ -992,8 +992,10 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
 		#26.xTODO# TODO: Add test(s) and default-on policy change below
-	#26.xTODO# filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
-	#26.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666
+	#27.xTODO# NO APPARENT USAGE: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
+	#26.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666 - INSCRIPTION-WRAPPED: https://mempool.space/tx/130c79034450163f36fcde8e27f96904dc42e535f28aacd5af3b9a18d0b1c7f9
+	#26.xTODO# All-ASCII data storage (inefficient)
+	# TODO: Stacks (OP_RETURN X2... - most are 80 bytes long, some 55, few 19)
 	#26.xTODO# Discount privacy txs?
 	#26.xTODO# Whitelist Whirlpool Tx0 and/or BIP47?
 	#26.xTODO# Procedural approve/deny/discount/penalize policy scripting?
