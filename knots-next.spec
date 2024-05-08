@@ -795,7 +795,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# TODO:  b02aab950af RPC/Mempool: getmempoolinfo: Return many more mempool options
 		# Concept fixup: new RPC method entirely since they don't change often?
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
-	Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
+	#27.xTODO# Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -894,7 +894,7 @@ m	10554 zmq_wtx-26+knots						d49b4295009	last=ed4fd266f7  # ZMQ: add publishers
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
-	n/a   restore_feefilter_opt					d290d8e695b
+m	n/a   restore_feefilter_opt					d290d8e695b
 	-     gui_payreq_textedit					ef74992265d
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				6711c26fd13
