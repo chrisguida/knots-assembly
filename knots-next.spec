@@ -949,7 +949,8 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 	#26.xTODO# Look into making the patches tarball in guix
 	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748 #29787 #29797
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
-	# TODO: CAT-21 filter https://github.com/bitcoinknots/bitcoin/pull/78
+# Non-upstreamed policy options (default off):
+	#27.xTODO# Try using #29086 to rebase policy options up here?
 # Non-upstreamed Knots compatibility:
 	#28.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
@@ -987,6 +988,10 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 	-     acceptnonstddatacarrier-26.1+knots	0f62c3e320a
 	-     rejecttokens-26.1+knots
 		# Currently filters just Runes
+	k78   rejectparasites-26.1+knots						last=bab2f5cc21a
+		# Currently filters just CAT-21
+		# GUI component & default-on moved into rwconf_policy below
+		#26.xTODO# TODO: Add test(s) and default-on policy change below
 	#26.xTODO# filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
 	#26.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666
 	#26.xTODO# Discount privacy txs?
