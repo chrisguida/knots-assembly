@@ -413,7 +413,9 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	29606 opti_ToLowerUpper_reserve-23			4f197d27657
 	# Worth doing? Needs review: 29607 -  # refactor: Reduce memory copying operations in bech32 encoding/decoding
 	# Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
-	Needs testing? 30039 -  # dbwrapper: Bump LevelDB max file size to 128 MiB to avoid system slowdown from high disk cache flush rate
+	30059 dbfilesize_param
+	30039 dbfilesize_128									last=3e32d23c9e0
+		# Note: Upstream PR uses std::max with LevelDB's current default, in case LevelDB changes theirs to larger
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
