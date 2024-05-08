@@ -871,8 +871,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: # Needs broader testing: 29984 laanwj/2024-04-iff-loopback
 	Triage: 29985 laanwj/2024-04-qt-gzip-time64
 	   # 27.x backport in #29888
-	Triage: 30007 achow101/my-dns-seed
-	Triage: g819  willcl-ark/signmessage-error-fix
+	Triage: Wait for confirmation: 30007 achow101/my-dns-seed
+	Triage: g819  qt_signmsg_msgs_legacyonly-0.20					last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	
 	Triage: TODO: QScrollArea and/or QTreeWidget for GUI Options dialog?
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)

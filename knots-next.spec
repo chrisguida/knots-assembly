@@ -339,10 +339,10 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	g815  fix_qt_privacy_before_open-25						last=d3da5025f61
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
-	29985 laanwj/2024-04-qt-gzip-time64
-		# 27.x backport in #29888
-	30007 achow101/my-dns-seed
-	g819  willcl-ark/signmessage-error-fix
+	29985 fix_depends_qt_zlib_t64-26
+		#27.xTODO# 27.x backport in #29888
+	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
+	g819  qt_signmsg_msgs_legacyonly-0.20					last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
