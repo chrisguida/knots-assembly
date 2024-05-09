@@ -991,10 +991,10 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 	-     acceptnonstddatacarrier-26.1+knots	0f62c3e320a
 	-     rejecttokens-26.1+knots
 		# Currently filters just Runes
-	k78   rejectparasites-26.1+knots						last=bab2f5cc21a
+	k78   rejectparasites-26.1+knots						last=d978324923a
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
-		#26.xTODO# TODO: Add test(s) and default-on policy change below
+		# Rewrote unit test to be more comprehensive
 	#27.xTODO# NO APPARENT USAGE: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
 	#27.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666 - INSCRIPTION-WRAPPED: https://mempool.space/tx/130c79034450163f36fcde8e27f96904dc42e535f28aacd5af3b9a18d0b1c7f9
 	#26.xTODO# All-ASCII data storage (inefficient)
@@ -1065,7 +1065,7 @@ m	-     rwconf_policy-26+knots				904069a7087
 	n/a  (bump_version=Knots:20240507)			86f61417c58
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		82ce67629be
-	n/a   (cherrypick=d5ef54738da)				2062c931cf2  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=eddfb529510)				2062c931cf2  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
