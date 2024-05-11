@@ -343,6 +343,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		#27.xTODO# 27.x backport in #29888
 	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
 	g819  qt_signmsg_msgs_legacyonly-0.20					last=fb9f150759b willcl-ark-g/signmessage-error-fix
+	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -359,7 +360,6 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	n/a   (delete_release_notes_fragments)
 #@26.x-knots-lts-deps
 	29732 depends_qt_update-26					63cc0f35014
-		# Do we need #29650 "depends: drop 1 qt determinism patch" ?
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
@@ -682,6 +682,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
 		#27.xTODO# Update ce9df2aba3e...740f3438595
+		FIXME: Check that a read-only cookie file doesn't break things for now? https://github.com/bitcoinknots/bitcoin/issues/80
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
@@ -882,7 +883,6 @@ m	10554 zmq_wtx-26+knots						d49b4295009	last=ed4fd266f7  # ZMQ: add publishers
 	19092 cli_getinfo_mw_total_balance			25e83e77085	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	19117 rpc_getrpcwhitelist					be13c235041
 		# NOTE: Was #18827 before any Knots merge
-		#26.xTODO# Extend dc244382e5d test
 	-     getrpcwhitelist_wallets-26+knots		c9dc53d57c6
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
@@ -905,6 +905,7 @@ m	n/a   restore_feefilter_opt					d290d8e695b
 m	14137 win_taskbar_progress-26+knots		627aa6c1a01	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					02b941a9e2c
+		#27.xTODO# FIXME: 5f3f3c321ed fixup! Restore blockmaxsize option, allowing to limit mined blocks by byte size
 	7107  qtnetworkport-26+knots				4125b0549c1	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force-26+knots				6d78f45660e last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
@@ -923,6 +924,7 @@ m	14137 win_taskbar_progress-26+knots		627aa6c1a01	last=18eb4dbb8a
 	 553 bugfix_qt_uri_amount_parser			56eefe15c33
 m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 		#26.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
+		#26.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
 	5861 gui_restore_addresses					a61636484e8
 	5891  qt_console_history_persist			d04b9ab0d76	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-26+knots						4bf5224aafc	# Latest code now
@@ -945,8 +947,7 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
-	#26.xTODO# Needs concept acceptance: -     gbt_skip_validity_test
-		# BUG: Unchecked template gets cached and won't be checked by subsequent calls even if they lack skip_validity_test option
+	#26.xTODO# Needs concept acceptance & testing: -     gbt_rpc_options-26.1+knots
 	#27.xTODO# Needs concept & writing: default UPnP/NAT-PMP to enabled
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
@@ -1041,6 +1042,7 @@ m	-     rwconf_policy-26+knots				904069a7087
 		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
 	7483  svg_icon-26.1+knots					150372f5a56
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
+		FIXME: build tools required for non-gui - https://github.com/bitcoinknots/bitcoin/issues/79
 	n/a   tbc_font-26.1+knots					3e2980f4680
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
