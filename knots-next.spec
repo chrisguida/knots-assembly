@@ -346,7 +346,9 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	g819  qt_signmsg_msgs_legacyonly-0.20					last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
-	30085 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
+	28155 net_addnode_improve_pr28155-26
+	30085 fix_cjdns_addnode_detect-26+knots					last=d0b047494c2 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
+	-     fix_cjdns_addnode_detect2-26+knots				last=7e886d0b51a jonatack/2024-05-fix-cjdns-detection-in-AddNode
 	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
