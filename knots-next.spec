@@ -291,7 +291,8 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  qt_peers_sessionid_tooltip_prg788-26	0e12e864287	last=3bf00e13609  # debugwindow: update session ID tooltip
 	29302 clarifydoc_rpc_wtx_replace-25			772801a30fd
-	29307 AutoFile_error_check-26				655a08f7bea	last=55439903212 vasild/AutoFile_error_check
+	29307 AutoFile_error_check-26				655a08f7bea	last=b44c33ac93b vasild/AutoFile_error_check
+		# NOTE: Held back 55439903212...b44c33ac93b due to crashing CI
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	29434 fix_rpc_feerate_overflow-26			4b9186929fc
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
@@ -625,7 +626,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
 	g497  qt_fontsel-25+knots					105c3363473	last=a17fd33edd1 qt_fontsel
-	-     qt_fontsel_qrcodes-25+knots			3ab9a0b9892	 # latest code now
+	g820  qt_fontsel_qrcodes-25+knots			3ab9a0b9892	last=833cf3f27bf qt_fontsel_qrcodes
 	# TODO: qt_fontsel_console
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
@@ -682,7 +683,6 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
 		#27.xTODO# Update ce9df2aba3e...740f3438595
-		FIXME: Check that a read-only cookie file doesn't break things for now? https://github.com/bitcoinknots/bitcoin/issues/80
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
@@ -1042,7 +1042,6 @@ m	-     rwconf_policy-26+knots				904069a7087
 		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
 	7483  svg_icon-26.1+knots					150372f5a56
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
-		FIXME: build tools required for non-gui - https://github.com/bitcoinknots/bitcoin/issues/79
 	n/a   tbc_font-26.1+knots					3e2980f4680
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
