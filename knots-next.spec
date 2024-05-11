@@ -1,7 +1,7 @@
-timestamp 2024-05-07 17:59:11
+timestamp 2024-05-11 17:37:58
 #lastapply no-merge
 
-#.. checked up to PR #30054 / gui #819
+#.. checked up to PR #30088 / gui #820
 
 checkout v26.1
 @26.x-syslibs
@@ -344,6 +344,9 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		#27.xTODO# 27.x backport in #29888
 	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
 	g819  qt_signmsg_msgs_legacyonly-0.20					last=fb9f150759b willcl-ark-g/signmessage-error-fix
+	# Needs review: 30065 sr-gi/2024-05-fdcount
+	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
+	30085 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
 	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
@@ -800,6 +803,8 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# Concept fixup: new RPC method entirely since they don't change often?
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	#27.xTODO# Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
+	30062 brunoerg/2024-04-asmap-getrawaddrman
+	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -1063,7 +1068,7 @@ m	-     rwconf_policy-26+knots				904069a7087
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		8e45daf3a64	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240507)			86f61417c58
+	n/a  (bump_version=Knots:20240511)			86f61417c58
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		82ce67629be
 	n/a   (cherrypick=eddfb529510)				2062c931cf2  # release notes: write/update, including change log and credits

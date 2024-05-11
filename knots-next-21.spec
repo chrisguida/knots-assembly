@@ -1,8 +1,8 @@
-timestamp 2024-05-07 17:59:11
+timestamp 2024-05-11 17:37:58
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30054 / gui #819 for fixes
+#.. checked up to PR #30088 / gui #820 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -873,6 +873,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	   # 27.x backport in #29888
 	Triage: Wait for confirmation: 30007 achow101/my-dns-seed
 	Triage: g819  qt_signmsg_msgs_legacyonly-0.20					last=fb9f150759b willcl-ark-g/signmessage-error-fix
+	Triage: Needs review: 30065 sr-gi/2024-05-fdcount
+	Triage: Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
+	Triage: 30085 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
+	Triage: Needs review: 30088 fix_gbt_stale_cache_use
 	
 	Triage: TODO: QScrollArea and/or QTreeWidget for GUI Options dialog?
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
