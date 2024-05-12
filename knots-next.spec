@@ -348,7 +348,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
 	28155 net_addnode_improve_pr28155-26
 	30085 fix_cjdns_addnode_detect-26+knots					last=d0b047494c2 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
-	-     fix_cjdns_addnode_detect2-26+knots				last=7e886d0b51a jonatack/2024-05-fix-cjdns-detection-in-AddNode
+	-     fix_cjdns_addnode_detect2-26+knots				last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
 	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
@@ -805,7 +805,8 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 		# Concept fixup: new RPC method entirely since they don't change often?
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	#27.xTODO# Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
-	30062 brunoerg/2024-04-asmap-getrawaddrman
+	30062 rpc_getrawaddrman_asmap-26						last=f80c47c3e83 brunoerg/2024-04-asmap-getrawaddrman
+		#27.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	
 	# TODO: GUI block template view
@@ -1006,6 +1007,7 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 	#27.xTODO# NO APPARENT USAGE: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
 	#27.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666 - INSCRIPTION-WRAPPED: https://mempool.space/tx/130c79034450163f36fcde8e27f96904dc42e535f28aacd5af3b9a18d0b1c7f9
 	#26.xTODO# All-ASCII data storage (inefficient)
+	#27.xTODO# If any input is dust, limit output count to < input count? (or lower?)
 	# TODO: Stacks (OP_RETURN X2... - most are 80 bytes long, some 55, few 19)
 	#27.xTODO# Discount privacy txs?
 	#27.xTODO# Procedural approve/deny/discount/penalize policy scripting?
