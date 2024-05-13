@@ -291,8 +291,8 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  qt_peers_sessionid_tooltip_prg788-26	0e12e864287	last=3bf00e13609  # debugwindow: update session ID tooltip
 	29302 clarifydoc_rpc_wtx_replace-25			772801a30fd
-	29307 AutoFile_error_check-26				655a08f7bea	last=b44c33ac93b vasild/AutoFile_error_check
-		# NOTE: Held back 55439903212...b44c33ac93b due to crashing CI
+	29307 AutoFile_error_check-26				655a08f7bea	last=13f540d60b5 vasild/AutoFile_error_check
+		# NOTE: Held back 55439903212...13f540d60b5 due to crashing CI
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	29434 fix_rpc_feerate_overflow-26			4b9186929fc
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
