@@ -291,7 +291,7 @@ NM	29147 guix_attachable_sigs					ad4fe4b83a4
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  qt_peers_sessionid_tooltip_prg788-26	0e12e864287	last=3bf00e13609  # debugwindow: update session ID tooltip
 	29302 clarifydoc_rpc_wtx_replace-25			772801a30fd
-	29307 AutoFile_error_check-26				655a08f7bea	last=13f540d60b5 vasild/AutoFile_error_check
+	29307 AutoFile_error_check-26				655a08f7bea	last=661b7d84b54 vasild/AutoFile_error_check
 		# NOTE: Held back 55439903212...13f540d60b5 due to crashing CI
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	29434 fix_rpc_feerate_overflow-26			4b9186929fc
@@ -350,7 +350,7 @@ m	29586 wallet_migrate_null_walletname_bak-26+k	92bf9fcbfdb
 	30085 fix_cjdns_addnode_detect-26+knots					last=d0b047494c2 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
 	-     fix_cjdns_addnode_detect2-26+knots				last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
 	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
-	30094 willcl-ark/move-univalue-only
+	30094 rf_rpc_move_unival_pr30094-24						last=b77bad309e9 willcl-ark/move-univalue-only
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -1074,7 +1074,7 @@ m	-     rwconf_policy-26+knots				904069a7087
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		8e45daf3a64	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240511)			86f61417c58
+	n/a  (bump_version=Knots:20240513)			86f61417c58
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		82ce67629be
 	n/a   (cherrypick=eddfb529510)				2062c931cf2  # release notes: write/update, including change log and credits
@@ -1088,7 +1088,7 @@ m	-     rwconf_policy-26+knots				904069a7087
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#27.xTODO# Include the deleted notes from 0bc1f4b5c7b
-	n/a  (cherrypick=8556dd9f2b3)				656aacb935e  # update manpages (build first)
+	n/a  (cherrypick=a9d626e7f61)				656aacb935e  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
