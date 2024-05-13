@@ -1077,7 +1077,7 @@ m	-     rwconf_policy-26+knots				904069a7087
 	n/a  (bump_version=Knots:20240513)			86f61417c58
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		82ce67629be
-	n/a   (cherrypick=eddfb529510)				2062c931cf2  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=42c37917892)				2062c931cf2  # release notes: write/update, including change log and credits
 			# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge \d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1088,7 +1088,7 @@ m	-     rwconf_policy-26+knots				904069a7087
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#27.xTODO# Include the deleted notes from 0bc1f4b5c7b
-	n/a  (cherrypick=a9d626e7f61)				656aacb935e  # update manpages (build first)
+	n/a  (cherrypick=928f49526a6)				656aacb935e  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
