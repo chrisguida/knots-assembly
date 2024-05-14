@@ -3,14 +3,13 @@ lastapply no-merge
 
 #.. checked up to PR #30095 / gui #820
 
-checkout v27.0
+checkout core/27.x
 @27.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
 	29362 fix_objcxxflags_pr29362-26			1f0ca2cea82	last=17861b9cd59 hebasto/240201-objcxx
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
-	29859 fix_ac_atomic_double-22				be89cb46852
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
 	5416  sys_libsecp256k1						259dcb7e012
@@ -232,7 +231,6 @@ checkout v27.0
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
 	29141 fix_rpcauth_blank						25e07bdf5f2
 	# Needs review: 29124 achow101/fix-double-keypath
-	29691 dnsseed_dashjr_2024					5029faa1646
 NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
@@ -264,28 +262,20 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
 	29726 fix_assumeutxo_reindex_pr29726-26		02fd519df55
-	29747 fix_depends_qt_mingw_dbg_link-24		16e26c1e59e
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
 	# Needs review: 29798 vasild/logging_cleanup
 	-     fix_rpc_warnings_all-21				1786b3c3d4e
 	29850 dnsseed_maxips_32-26					1d00999f660	last=f2e3662e57e laanwj/2024-04-dnsseeds-up-to-32
-	29853 fix_psbt_sign_insane_pr29853-26		3aa8a37ef81	last=4d8d21320eb darosior/2404_miniscript_crash
-		# 26.x backport in #29854
 	29855 psbt_nonwit_utxo_chkearly-24			7ffd2428b17	last=9e13ccc50ee achow101/psbt-check-outpoint
 	#27.xTODO# 29867 furszy/2024_index_fix_race
-	# Not worth it? 29870 maflcko/2404-rpc-SighashFromStr-
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
-	29892 fix_uv_float_test_pr29892-26			67ec9e25705
-		# 27.x rebase in #29888
 	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
 	g812  fix_qt_feebump_psbt-25				b087fc70270	last=671b7a32516 furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
 	g813  fix_qt_proxy_port_in_ip-26			fff5939bc49	last=10c5275ba45 willcl-ark-g/2024-03-proxy-validate
 	g815  fix_qt_privacy_before_open-25			5310d15a915	last=d3da5025f61
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
-	29985 fix_depends_qt_zlib_t64-26			abd7f86f19b
-		#27.xTODO# 27.x backport in #29888
 	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
 	g819  qt_signmsg_msgs_legacyonly-0.20		a5e0eac8f22	last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	# Needs review: 30065 sr-gi/2024-05-fdcount
