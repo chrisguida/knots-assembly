@@ -5,10 +5,12 @@ lastapply no-merge
 
 checkout core/27.x
 @27.x-syslibs
+	n/a origin-pull/30092/head	last=9867e72b995e4a838c8e8e0feb159a9bdee8b76f origin-pull/30092/head # TEMPORARY # DELETE #27.xTODO#
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
-	29362 fix_objcxxflags_pr29362-26			1f0ca2cea82	last=17861b9cd59 hebasto/240201-objcxx
+	29362 hebasto/240201-objcxx					1f0ca2cea82	last=17861b9cd59
+		#27.xTODO# FIXME: Address https://github.com/bitcoin/bitcoin/pull/29362#issuecomment-1964389168
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
@@ -222,9 +224,8 @@ checkout core/27.x
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
 	# TODO: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
-	-     fix_doc_upnp_def_post26896			1344300494a	last=92f88a96290 fanquake/redundant_upnp_ifdef
-		# Alternative to #28874
-	28944 sendall_antifeesniping-26				25c101b1f14	last=fa1fa351584 ishaanam/sendall_anti_fee_sniping
+	28874 fanquake/redundant_upnp_ifdef			1344300494a	last=92f88a96290
+	28944 ishaanam/sendall_anti_fee_sniping		25c101b1f14	last=fa1fa351584
 	27.xTODO: FIXME: real fix for issues in #28967 (MERGED) (OR #28981?) -- NOT A REAL BUG IN PRACTICE, revert the removal?
 		# See also #29868
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
@@ -235,15 +236,15 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
-	29175 fix_rpc_estmode_unset_case-24			43c05b45541	last=be8ae64b82e
+	29175 -										43c05b45541	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
-	g788  qt_peers_sessionid_tooltip_prg788-26	ce11132294a	last=3bf00e13609  # debugwindow: update session ID tooltip
+	g788  -										ce11132294a	last=3bf00e13609  # debugwindow: update session ID tooltip
 	29307 AutoFile_error_check-26				fbd4b3103c6	last=661b7d84b54 vasild/AutoFile_error_check
 		# NOTE: Held back 55439903212...13f540d60b5 due to crashing CI
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
-	29480 log_rand_during_init-0.20				36fadc3ace3	last=88468a8afcd
+	29480 -										36fadc3ace3	last=88468a8afcd  # log_rand_during_init-0.20
 		# Needs careful backport (basically rewritten)
 	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
 	-     rpc_loadtxoutset_hide-26				aa2c7fadfe0
@@ -273,7 +274,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
 	g812  fix_qt_feebump_psbt-25				b087fc70270	last=671b7a32516 furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
 	g813  fix_qt_proxy_port_in_ip-26			fff5939bc49	last=10c5275ba45 willcl-ark-g/2024-03-proxy-validate
-	g815  fix_qt_privacy_before_open-25			5310d15a915	last=d3da5025f61
+	g815  -										5310d15a915	last=d3da5025f61  # fix_qt_privacy_before_open-25
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
 	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
@@ -332,7 +333,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 -										c387269d617	last=42b25bbd939  # opti_merkle_mutation-0.17
-	28592 txrelayrate_14txps-26					ef7b0d1547e last=22c2b52c122
+	28592 -										ef7b0d1547e last=22c2b52c122  # txrelayrate_14txps-26
 		#26.xTODO# Make configurable? Or is that even sane?
 	# Needs review: 28923 theStack/202311-add_SignTransaction_benchmark
 	# Needs review: 28945 martinus/2023-11-improve-ccoinsviewcache-reallocatecache
@@ -419,7 +420,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# TODO: Check gui#320 for usability
 		# TODO: https://twitter.com/RandyMcMillan/status/1490107008443457538?t=Qc4LO63rRuWxErtRel06EQ&s=19
 		# 			aka 4613c88c91f4f3846aa62c929ad73d1a3e6ac70e
-	22693 getaddressinfo_txids-26				3a151159938	last=a00bc6f395e getaddressinfo_txids
+	22693 getaddressinfo_txids					3a151159938
 	g562  wallet_warn_reuse_gui-26				2d5e9c6f17f	last=8a915f3852c wallet_warn_reuse_gui
 		# NOTE: Was #15987
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
@@ -556,7 +557,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	g492  qt_traffic_tooltip					4b29a07c003	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
-	g820  qt_fontsel_qrcodes-25+knots			48513e20fb6	last=833cf3f27bf qt_fontsel_qrcodes
+	g820  qt_fontsel_qrcodes					48513e20fb6
+		FIXME: Merge in updates from qt_fontsel_qrcodes-25+knots (or vice-versa??)
 	# TODO: qt_fontsel_console
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
@@ -625,6 +627,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# Also includes change of default from incoming to in+out
 		# Made 'out' apply to non-manual outgoing too (backward compat)
 		# Restored older functional test (not sure why PR removed it)
+		TODO: Check rebase vs master
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme	06833764dc9	last=d8434da3c14
@@ -706,7 +709,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
 	# Needs review: 29519 mzumsande/202202_fix_assumeutxo_block_download
-	29530 rpc_getpeerinfo_misbehaving_score-26	710942fd596
+	29530 -										710942fd596  # rpc_getpeerinfo_misbehaving_score-26
+		TODO: Check rebase vs master divergence
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
 	29585 manpage_see_also-23+knots				75af99797c4	last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
@@ -911,6 +915,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	28408 match_more_datacarrier-26+knots		c33339e615d	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# Revise byte counting to consider input/output waste
+		TODO: Address master vs rebase divergence
 	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	#26.xTODO# Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy

@@ -50,6 +50,7 @@ checkout v0.21.2
 	Triage: # Depends-only, do we care? 28097 fanquake/xcb_proto_1_15_2
 		# NOTE: 24.x Backport in #28410
 	Triage: Needs review: 29362 hebasto/240201-objcxx
+		FIXME: Address https://github.com/bitcoin/bitcoin/pull/29362#issuecomment-1964389168
 	missing cstdint includes: #25068 (partial?), iwyu??
 	Triage: 29859 hebasto/240412-atomic
 # SYSLIBS: (and old build bugs)
