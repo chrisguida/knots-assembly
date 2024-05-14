@@ -96,8 +96,10 @@ sub prep_html {
 		my $sod = $sortorder{$ka} <=> $sortorder{$kb};
 		return $sod if $sod;
 		if ($ka eq 'PR') {
-			$aa += 1000000 if $aa =~ s/^g//;
-			$bb += 1000000 if $bb =~ s/^g//;
+			for ($aa, $bb) {
+				$_ += 1000000 if s/^g//;
+				$_ += 2000000 if s/^k//;
+			}
 			return $aa <=> $bb
 		}
 		0  # Stable sort
@@ -107,7 +109,7 @@ sub prep_html {
 	while ($_ = shift @to_process) {
 		my $line = $_;
 		push @threads, async {
-			if (s/^PR ((g)?(.*))//) {
+			if (s/^PR (([gk])?(.*))//) {
 				my ($prspec, $is_gui, $prnum) = @{^CAPTURE};
 				my $j;
 				if (-e "$cachedir/$prspec") {
@@ -121,8 +123,10 @@ sub prep_html {
 					$j = decode_json $content;
 				} else {
 					my $repo;
-					if (defined $is_gui) {
+					if ("g" eq $is_gui) {
 						$repo = "bitcoin-core/gui";
+					} elsif ("k" eq $is_gui) {
+						$repo = "bitcoinknots/bitcoin";
 					} else {
 						$repo = "bitcoin/bitcoin";
 					}
