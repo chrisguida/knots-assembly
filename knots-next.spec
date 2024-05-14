@@ -1,10 +1,10 @@
 timestamp 2024-05-13 17:22:02
-#lastapply no-merge
+lastapply no-merge
 
 #.. checked up to PR #30095 / gui #820
 
-checkout v26.1
-@26.x-syslibs
+checkout v27.0
+@27.x-syslibs
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
@@ -32,17 +32,14 @@ checkout v26.1
 	# ---- END qt6 SUPPORT ----
 	#28.xTODO# Revert #29904
 	n/a   (delete_release_notes_fragments)
-@26.x-knotsfixes
+@27.x-knotsfixes
 # TESTS:
 	-     ci_knots-26							fd493422771
-	29441 ci_parallel_pr29441-26				76d42a01e93
-	28372 fix_fuzz_coinsel_pr28372-26			373c5a19537
 	-     lint_relaxer-26+knots					2b540596402
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
-	# As needed: 29740 -  # ci: Print tsan errors to stderr
 	# Triage: 29753 furszy/2024_test_fix_p2p_node_network_failure
 	# Triage: 29788 maflcko/2404-ci-bcfcc-
 	# Triage: 29832 fanquake/revert_29788
@@ -81,8 +78,6 @@ checkout v26.1
 	# Needs review: 17543 wallet: undo conflicts properly in case of blocks disconnection
 	18194 bugfix_gui_edit_sendaddr-mini			96b24841992	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
-	g658  intro_dont_change_user_prune			03d9b5d9233
-		# Was #18729
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
 	19419 listwalletdir_skip_data				cd84aa231e1	last=3f9cc0cd736 Saibato/wallet_351
 		# NOTE: modified to use std::set and diff-minimise
@@ -100,7 +95,6 @@ checkout v26.1
 	-     bugfix_gui_drop_abc_confusing_hack	fb33db4b164
 	# Needs review: g201  jonatack-g/inbound-block-relay
 	# Needs review & bug fixes: 21106 pstratem/2021-02-07-isinitialblockdownload-timeout
-	# Needs review: 21161 ajtowns/202102-fee-bug-medianval
 	g236  gui_init_walleterror_cont				0308929148a
 	-     rpc_addconnection_mainnet				14216e91d04
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
@@ -138,10 +132,8 @@ checkout v26.1
 		#26.xTODO# Update with other commits that are beneficial
 	-     boost_171_177_workarounds				41ee93f9fcf
 		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
-	#27.xTODO# Check if we need to revert #29489 (related to hww_windows???)
+	27.xTODO: Check if we need to revert #29489 (related to hww_windows???)
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
-	# Not clear this fixes anything: 25273 achow101/use-preset-tx-things
-		#+29065+29272
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	#27.xTODO# Check on #25561
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
@@ -164,7 +156,6 @@ checkout v26.1
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
 	g684  qt_reqs_multiselect_pr684-25+knots	8d1b8e744ee	last=a6f567590b7
 	# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
-	#26.xTODO# Needs backport? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
 	#26.xTODO# Too minor? 26903 pstratem/2023-01-17-baseindex-commit-error
 	#26.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
 	27039 fix_reindex_readonly_blkfiles-26		7507b1364f9
@@ -190,20 +181,16 @@ checkout v26.1
 	# Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
 	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	#26.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
-	27935 qafix_banman_conditionalcmp-23		17fe217c93c
 	# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 maflcko/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
 	28020 -										c61732775d9	last=0b1762c90d1  # exclude ipc scheme from port check (fix_zmq_ipc_noportcheck-25)
 	-     zmq_unix_uri_compat-25				20ea6f034cd
-	g742 qt_err_fixg741_in_g742-21				58f215ef927
+	MERGED: g742 qt_err_fixg741_in_g742-21				58f215ef927
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	28029 fix_zmq_errhandling_202307-mini		9edad69540c	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err		9de16a02a53
-	# Not a fix: 28076 no_std_fs_directly-25+k							last=7777034e96a maflcko/2307-fs-lint-
-		# Fix-only, diff-minimised
-		# "I don't think anything here is a bug fix" -maflcko, https://github.com/bitcoin/bitcoin/pull/28076#issuecomment-1682450942
 	#26.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
@@ -216,94 +203,51 @@ checkout v26.1
 	28340 -										acede199ab6	last=0244416aacb  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
-	g752  fix_qt_cmdhelp_mention_uri-0.17		29c20c7c1f5	last=ede5014c445
+	MERGED: g752  fix_qt_cmdhelp_mention_uri-0.17		29c20c7c1f5	last=ede5014c445
 		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
-	28486 fix_test_winsock_init-26				218ede5b10b
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
-	# QA only? 28546 ryanofsky/pr/mig  # bugfix: watchonly wallets created after migration have incorrect height values
-	28554 fix_rpc_getnetworkhashps_heightchk-25	7d59444a3c5	last=9ac114e5cd9
+	MERGED: 28554 fix_rpc_getnetworkhashps_heightchk-25	7d59444a3c5	last=9ac114e5cd9
 		# diff-minimised & kept compatible
-	g758  -										4dbdc47cc9a	last=9d37886a3b6  # qt_nodewindow_chainname-22
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main					8a9699273cb
-	28610 fix_wallet_migrate_entireaddrbook-26	33fd20d72d3
 	#27.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
-	28649 reliable_socks5_pr28649-26			33163154b73
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
-	# Needs review/diff-minimising? 28737 -  # doc: Fix bugprone-lambda-function-name errors
-	g773 fix_qt_unlock_watchonly-0.20			9f392cdf6b6	last=517c7f9cba3 achow101-g/gui-skip-encryption-check-for-watchonly
-	# Not worth it? 28771 achow101/lcov-opts
-	# Not worth it? 28774 vasild/avoid_returning_reference_to_mutex_guarded_member
 	# Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
 	# -- Needs review: g775 -  # gui: add used balance to overview page
 	# Needs review: 28780 -  # log: torcontrol opt checks
-	# As needed: 28782 -  # test: Add missing sync on send_version in peer_connect
 	-     fix_keep_notmy_cookie-26.1+knots		91ebfad5931
 		# Originally part of #28784, but regressed in d95dde9441f...7cb9367157e
-	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
 	# TODO: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
-	# libmultiprocess (not supported by Knots yet): 28846 fanquake/fixup_multiprocess_arm64
-	28848 fix_rpc_submitpkg_all_results-26		906b8bd6bb6
-	28849 fix_qa_v2t_pr28849-26					29263fd50fa
-	28868 fix_wallet_migrate_pr28868-26			62b7e01a8c0
 	-     fix_doc_upnp_def_post26896			1344300494a	last=92f88a96290 fanquake/redundant_upnp_ifdef
 		# Alternative to #28874
-	28936 dnsseed_petertoddnet-25				e5eb2d7024d
 	28944 sendall_antifeesniping-26				25c101b1f14	last=fa1fa351584 ishaanam/sendall_anti_fee_sniping
-	28946 fix_keep_notmy_pidfile-26.1+knots		14a9af7659d
-	#27.xTODO# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE, revert the removal?
+	27.xTODO: FIXME: real fix for issues in #28967 (MERGED) (OR #28981?) -- NOT A REAL BUG IN PRACTICE, revert the removal?
 		# See also #29868
-	28976 fix_wallet_migrate_blank-26+knots		b4dfe3cbd0d
-		#+29367
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
-	29022 fix_btx_replacable_blank-21			b0d45d03bc0
-	29027 fix_wallet_keyparsecheck_pr29027-26	b8042ae8457
-	# MSVC: 29044 hebasto/231209-msvc-qt
-	g780  fix_qt_txview_prG780-25				87a06746a28	last=b2e531e70a8
 	29141 fix_rpcauth_blank						25e07bdf5f2
-	29253 fix_wallet_dbguard_pr29253-26			870ac94622d
-	29112 fix_wallet_single_batch_only-26+knots	2e19bf6c33f
 	# Needs review: 29124 achow101/fix-double-keypath
-	# Needs work? 29144 fix_init_empty_settingsjson-23					last=725a1fc7a7d furszy/2023_empty_settings_file
-		#+29301
 	29691 dnsseed_dashjr_2024					5029faa1646
 NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
-	29184 rpc_scanblocks_ffp_named				b19edb5a071
 	29175 fix_rpc_estmode_unset_case-24			43c05b45541	last=be8ae64b82e
-	29177 fix_conf_latomic_check-25				ed5766cc0d8
-	# Triage: 29192 sipa/202401_serfloat_weaken_test
-	29237 fix_depends_PATH_w_spaces-26			48c1e73e2bb
-	(CHECK-LAST)	last=92f7e7f3633 maaku/allow-spaces-in-path
-		# Was: 28733 fix_depends_PATH_w_spaces-22
-	29243 fix_wallet_cleanup_handler_pr29243-23	d9db329674f
-	29249 depends_gen_id_nm-25					74887fb7aa9
-	29262 fix_rpc_loadtxoutset_race-26			7a329e4716a
-	# Triage part of: 29275 maflcko/2401-prev-it-
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  qt_peers_sessionid_tooltip_prg788-26	ce11132294a	last=3bf00e13609  # debugwindow: update session ID tooltip
-	29302 clarifydoc_rpc_wtx_replace-25			bea205c3046
 	29307 AutoFile_error_check-26				fbd4b3103c6	last=661b7d84b54 vasild/AutoFile_error_check
 		# NOTE: Held back 55439903212...13f540d60b5 due to crashing CI
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
-	29434 fix_rpc_feerate_overflow-26			c4d52ee1912
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
-	g797  fix_qa_guibug796-25					66fffc1113d
 	29480 log_rand_during_init-0.20				36fadc3ace3	last=88468a8afcd
 		# Needs careful backport (basically rewritten)
-	29493 subtree_update_crc32c-24				59b09fa41a8
-	28805 qafix_v2t_pr28805-26					9eaddfae5b3
 	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
-	g801  fix_qt_clntmdl_at_shutdown_prg801-21	f00d9892c62
 	-     rpc_loadtxoutset_hide-26				aa2c7fadfe0
 		#27.xTODO# This should probably be removed
 	29586 wallet_migrate_null_walletname_bak-26+k	896efa03ef8
@@ -346,7 +290,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	g819  qt_signmsg_msgs_legacyonly-0.20		a5e0eac8f22	last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
-	28155 net_addnode_improve_pr28155-26		3862bff8ad4
 	30085 fix_cjdns_addnode_detect-26+knots		412c40493d3	last=d0b047494c2 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
 	-     fix_cjdns_addnode_detect2-26+knots	282d1ffcfdc	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
 	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
@@ -365,12 +308,11 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		#	ASSERT failure in QList<T>::operator[]: "index out of range", file /bitcoin/depends/x86_64-w64-mingw32/include/QtCore/qlist.h, line 575
 	#26.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
-#@26.x-knots-lts-deps
+#@27.x-knots-lts-deps
 	29732 depends_qt_update-26					b7d8f6e1c6a
 	#26.xTODO# FIXME -     depends_qt5kde
-	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
-@26.x-knots
+@27.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					fc085bc6726
 		# When removing this, check for fix in #29823
@@ -384,7 +326,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 25236 -  # wallet: use vector instead of list for transactions
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
 	# Needs review: 25968 sipa/202208_headerssync_optimize
-	#27.xTODO# Needs review: 26008 achow101/improve-many-desc-ismine
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
 	26375 zmq_optimise_duplread-26+k			3f9e56d77af	last=7b631dc9b19 andrewtoth/no-read-zmq
 	#27.xTODO# Needs review: 26415 andrewtoth/read-raw-block
@@ -403,17 +344,11 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	28430 -										c387269d617	last=42b25bbd939  # opti_merkle_mutation-0.17
 	28592 txrelayrate_14txps-26					ef7b0d1547e last=22c2b52c122
 		#26.xTODO# Make configurable? Or is that even sane?
-	# Needs fixing rebase: 28799 wallet_cache_descriptor_id-25
-	# Diff-minimise? 28894 furszy/2023_wallet_batch_keypool_creation
 	# Needs review: 28923 theStack/202311-add_SignTransaction_benchmark
 	# Needs review: 28945 martinus/2023-11-improve-ccoinsviewcache-reallocatecache
 	# Needs review: 28955 furszy/2023_index_blockfilter_cache_header
-	# Needs review: 28987 furszy/2023_wallet_zaptx
 	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
-	# Needs backport: 29114 -  # util: Faster std::byte (pre)vector (un)serialize
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
-	# Too big a diff: 29169 fanquake/libsecp256k1_0_4_1
-	# Not worth it (kernel only): 29180 theuni/kernel-sha2-optims
 	# Needs more careful review: 29436 addrman_select_networks-26						last=7edb07ca800 brunoerg/2024-02-addrman-select-networks
 	# Needs review: 29458 -  # optimization: Speed up TryParseHex by 300%
 	# Needs review: 29473 -  # optimization: Speed up Base58 encoding by 400% by 64-bit preliminary byte packing
@@ -561,7 +496,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# NOTE: Added necessary(?) cs_main locking
 		# NOTE: Fixed typo in RPC example doc
 	# Needs BIP final(?): 20726 sdaftuar:2020-12-negotiate-block-relay
-	20827 ibd_prune_max							7d229a8501e
 	g363  qt_peers_directionarrow-25+knots		181c62838e0	last=727a2f83cca qt_peers_directionarrow
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 		# WHEN REMOVING/MERGED UPSTREAM: Reverted 51708c4516c (from gui#543) - also preserve for Knots
@@ -632,7 +566,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	g492  qt_traffic_tooltip					4b29a07c003	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
-	g497  qt_fontsel-25+knots					08c27287393	last=a17fd33edd1 qt_fontsel
 	g820  qt_fontsel_qrcodes-25+knots			48513e20fb6	last=833cf3f27bf qt_fontsel_qrcodes
 	# TODO: qt_fontsel_console
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
@@ -647,7 +580,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work: g533  -  # gui: add more detailed address error message
 		# TODO: Maybe a button inside the lineedit to display the error message?
 	# OR: Needs work? g560 w0xlt-g/3_error_message_addr
-	# Needs concept ack: g553 w0xlt-5/change_error_background
+	MERGED: Needs concept ack: g553 w0xlt-5/change_error_background
 		# CAUTION: requires theming changes for gui#537
 	# Needs work & complex test rebasing: 24539   # Add a "tx output spender" index
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
@@ -685,7 +618,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# TODO: When Core merges it, we can add GUI in Knots right away
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
 	-     guix_shell_compat-24					47f28109275
-		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
+		MERGED # More compatible alternative to #26077 fanquake/guix_shell_over_environment (MERGED)
 	28167 rpccookieperms-26+knots				12bd173e987	last=740f3438595 willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
@@ -712,7 +645,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	26576 brunoerg/2022-11-disconnectnode-subnet^	24230aadd5e	last=23f4c2cb452
 	# Waiting for Core or BIP: 26626 achow101/desc-key-list-expr
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
-	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 bcli_validation-24					307b4498f70	last=cf7dd3564a3
@@ -750,16 +682,12 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work: 27854 -  # [WIP] add a stratum v2 template provider
 		# OR #28983 OR #29432
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
-	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 	#27.xTODO# Make disabled by default: 28052 maflcko/2306-fs_stuff-
-	# Needs review? 28207 maflcko/2308-xor-memepool-
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
-	# Needs review: 28461 fanquake/windows_ssp_roundup
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
 	# Needs work: g777 -  # gui: getrawtransaction implementation
-	28885 rpc_getpriotxs_modfee-26				3381e6e5f92
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
@@ -770,9 +698,9 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	29016 rpc_listmempooltxs-26+knots			4a5e8fb0a40	last=07008477b81 niftynei/nifty/listmempoolentry
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
-	29058 v2t_manual_netinfo_pr29058-26			d9acca60d04
+	MERGED: 29058 v2t_manual_netinfo_pr29058-26			d9acca60d04
 		# +#29212+#29657 bugfixes
-	29117 wallettool_dump_just_db-26+knots		f40437da913	last=d83bea42d1f achow101/dump-without-making-wallet
+	MERGED: 29117 wallettool_dump_just_db-26+knots		f40437da913	last=d83bea42d1f achow101/dump-without-making-wallet
 		# Omitted first commit that could be dangerous
 	#26.xTODO# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
 	# Needs review or minimal impact: 29130 achow101/createwalletdescriptor-without-new-records
@@ -780,10 +708,9 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs final interface: 29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
 	# or (newer): 29163 rpc_helpdetail-24									last=56830469303 LarryRuane/2024-01-help-detailed
 		# Left off top commit changing rpc_help test behaviour
-	29239 rpc_addnode_v2t_default-26			7df32c3009e
 	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
-	29347 net_v2t_default-26					0c6dcd7f813
-		# +Rewrote doc update in #29452
+	MERGED: 29347 net_v2t_default-26					0c6dcd7f813
+		MERGED # +Rewrote doc update in #29452 (MERGED)
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
@@ -961,7 +888,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#27.xTODO# Needs concept & writing: default UPnP/NAT-PMP to enabled
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
-	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748 #29787 #29797
+	27.xTODO: Restore libbitcoinconsensus? #29189(MERGED) #29748 #29787 #29797
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 # Non-upstreamed policy options (default off):
 	#27.xTODO# Try using #29086 to rebase policy options up here?
@@ -1048,7 +975,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	n/a   (delete_release_notes_fragments)
 	n/a   macos_dmg-26.1						b05c5f8afad
 		# Reverts #28432, and includes fix_dmg_openfinder
-		#27.xTODO# revert macos ZIP only: #28932 #28973 #29733
+		27.xTODO: revert macos ZIP only: #28932(MERGED) #28973(MERGED) #29733
 		# NOTE: temporarily reintroduces .tiff file
 		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
 	7483  svg_icon-26.1+knots					b695e9923cb
@@ -1069,7 +996,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check #26039 doesn't break anything
-# TODO: Ensure std::filesystem isn't introduced (see #28076)
+MERGED # TODO: Ensure std::filesystem isn't introduced (see #28076)
 #27.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type: git grep '"options.*OBJ,'
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
@@ -1096,7 +1023,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
 
-# TODO: @26.x-knots-android
+# TODO: @27.x-knots-android
 
-#@26.x-knots-extratests
+#@27.x-knots-extratests
 
