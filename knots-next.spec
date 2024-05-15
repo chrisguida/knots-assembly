@@ -58,7 +58,7 @@ checkout core/27.x
 		# NOTE: libevent-copied code up to date as of 2023-11-22 cfb2b89a1d0642abd6389913e237f49c662502e4
 	 9524  rpc_pruneblkchain0					79b87d35c9a	last=88883ae13d
 	10731 log_more_uacomment					de725342027
-	29614 bufferedfile_fclose-26				80841406c14	last=aec5e0f558a bufferedfile_fclose
+	29614 bufferedfile_fclose					80841406c14
 	14485 fadvise-26+knots						803e535fdd4	last=289e88b3133 fadvise
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
@@ -975,6 +975,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
 	7483  svg_icon-26.1+knots					b695e9923cb
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
+		FIXME: https://github.com/bitcoinknots/bitcoin/issues/79
 	n/a   tbc_font-26.1+knots					14adc77e64f
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/

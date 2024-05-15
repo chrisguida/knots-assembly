@@ -14,7 +14,7 @@ checkout v26.1
 	29859 fix_ac_atomic_double-22				be89cb46852
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
-	5416  sys_libsecp256k1						259dcb7e012
+	5416  sys_libsecp256k1-26					259dcb7e012	last=7c70b396b1d sys_libsecp256k1
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
@@ -1054,6 +1054,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
 	7483  svg_icon-26.1+knots					b695e9923cb
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
+		FIXME: https://github.com/bitcoinknots/bitcoin/issues/79
 	n/a   tbc_font-26.1+knots					14adc77e64f
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
