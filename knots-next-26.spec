@@ -198,6 +198,7 @@ checkout v26.1
 	28020 -										c61732775d9	last=0b1762c90d1  # exclude ipc scheme from port check (fix_zmq_ipc_noportcheck-25)
 	-     zmq_unix_uri_compat-25				20ea6f034cd
 	g742 qt_err_fixg741_in_g742-21				58f215ef927
+	(CHECK-LAST)	last=4fcbd58ba59 qt_ambig_uri_refs  # NOTE: also could impact #28554
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
 	28029 fix_zmq_errhandling_202307-mini		9edad69540c	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
@@ -228,7 +229,7 @@ checkout v26.1
 		# diff-minimised & kept compatible
 	g758  -										4dbdc47cc9a	last=9d37886a3b6  # qt_nodewindow_chainname-22
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
-	28564 fix_conf_fuzzbin_main					8a9699273cb
+	28564 fix_conf_fuzzbin_main-24				8a9699273cb	last=b228803dcff fix_conf_fuzzbin_main
 	28610 fix_wallet_migrate_entireaddrbook-26	33fd20d72d3
 	#27.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
 	28649 reliable_socks5_pr28649-26			33163154b73

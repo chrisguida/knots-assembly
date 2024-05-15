@@ -190,7 +190,7 @@ checkout core/27.x
 	28020 -										c61732775d9	last=0b1762c90d1  # exclude ipc scheme from port check (fix_zmq_ipc_noportcheck-25)
 	-     zmq_unix_uri_compat-25				20ea6f034cd
 	-     qt_ambig_uri_refs
-		# Prior to 27.x, was included with gui#742 qt_err_fixg741_in_g742-21
+		# Prior to 27.x, part was included with gui#742 qt_err_fixg741_in_g742-21
 	28029 fix_zmq_errhandling_202307-mini		9edad69540c	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err		9de16a02a53
@@ -209,8 +209,6 @@ checkout core/27.x
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
-	MERGED: 28554 fix_rpc_getnetworkhashps_heightchk-25	7d59444a3c5	last=9ac114e5cd9
-		# diff-minimised & kept compatible
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main					8a9699273cb
 	#27.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
