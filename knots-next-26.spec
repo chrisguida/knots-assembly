@@ -623,6 +623,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	24963 rpc_walletprocesspsbt_options-26		0a55cc0e87d	last=f43f992b731 rpc_walletprocesspsbt_options
 		# Diff-minimised (and uses merge for rpcarg_type_per_name)
 	-     rpc_descriptorprocesspsbt_opts-26+k	0a98dc634fe
+	(CHECK-LAST)	last=615033cfb8a rpc_descriptorprocesspsbt_opts-27.1+k
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
 	# TODO? 25621 -  # rpc/wallet: Add details and duplicate section for simulaterawtransaction

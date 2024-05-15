@@ -521,7 +521,7 @@ checkout core/27.x
 	22372 multinotify							5ce6b865aab
 	24963 rpc_walletprocesspsbt_options-26		0a55cc0e87d	last=f43f992b731 rpc_walletprocesspsbt_options
 		# Diff-minimised (and uses merge for rpcarg_type_per_name)
-	-     rpc_descriptorprocesspsbt_opts-26+k	0a98dc634fe
+	-     rpc_descriptorprocesspsbt_opts-27.1+k	0a98dc634fe
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
 	# TODO? 25621 -  # rpc/wallet: Add details and duplicate section for simulaterawtransaction
