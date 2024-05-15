@@ -267,8 +267,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#27.xTODO# 29867 furszy/2024_index_fix_race
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
 	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
-	g812  fix_qt_feebump_psbt-25				b087fc70270	last=671b7a32516 furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
-	g813  fix_qt_proxy_port_in_ip-26			fff5939bc49	last=10c5275ba45 willcl-ark-g/2024-03-proxy-validate
 	g815  -										5310d15a915	last=d3da5025f61  # fix_qt_privacy_before_open-25
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
@@ -279,7 +277,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	30085 fix_cjdns_addnode_detect-26+knots		412c40493d3	last=d0b047494c2 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
 	-     fix_cjdns_addnode_detect2-26+knots	282d1ffcfdc	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
 	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
-	30094 rf_rpc_move_unival_pr30094-24			62c15473e88	last=b77bad309e9 willcl-ark/move-univalue-only
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
