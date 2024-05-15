@@ -463,7 +463,7 @@ checkout core/27.x
 	# Needs review and diff-minimisation: 20273 jonasschnelli/2020/10/client_rpc_nested
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
-	20391 rpc_setfeerate-26						dcdc29186ec	last=1002e2d0d7f jonatack/setfeerate
+	20391 rpc_setfeerate-27+knots				dcdc29186ec	last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 		# TODO? Reduce internal changes and move to Knots compat??

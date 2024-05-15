@@ -527,8 +527,9 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work/review/completion: 18242 jonasschnelli/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
-	24202 rpc_dumptxoutset_hr					9d46cdf4b67	last=1053636ddd9
+	24202 rpc_dumptxoutset_hr-26				9d46cdf4b67	last=1053636ddd9
 	(CHECK-LAST)	last=65d0697fe34 origin-pull/18689/head
+	(CHECK-LAST)	last=ce9524f0b5d rpc_dumptxoutset_hr
 		# Diff-minimised
 		# NOTE: Was #18689
 		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202#discussion_r801191486
@@ -546,7 +547,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
-	19873 mempressure							f149e4f77de
+	19873 mempressure-26						f149e4f77de	last=1a01c955860 mempressure
 	# Needs review/testing: - maxmem_coins_cache
 		# TODO: Some way to override... see #26471 discussion
 	# Needs work: g86   hebasto-g/200902-tor
@@ -559,7 +560,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review and diff-minimisation: 20273 jonasschnelli/2020/10/client_rpc_nested
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
-	20391 rpc_setfeerate-26						dcdc29186ec	last=1002e2d0d7f jonatack/setfeerate
+	20391 rpc_setfeerate-26+knots				dcdc29186ec	last=1002e2d0d7f jonatack/setfeerate
+	(CHECK-LAST)	last=09c51e7f7df rpc_setfeerate-27+knots
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 		# TODO? Reduce internal changes and move to Knots compat??
