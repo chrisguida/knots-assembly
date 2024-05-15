@@ -189,8 +189,8 @@ checkout core/27.x
 	# Needs work: 27991 fanquake/instrument_libsecp
 	28020 -										c61732775d9	last=0b1762c90d1  # exclude ipc scheme from port check (fix_zmq_ipc_noportcheck-25)
 	-     zmq_unix_uri_compat-25				20ea6f034cd
-	MERGED: g742 qt_err_fixg741_in_g742-21				58f215ef927
-		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)
+	-     qt_ambig_uri_refs
+		# Prior to 27.x, was included with gui#742 qt_err_fixg741_in_g742-21
 	28029 fix_zmq_errhandling_202307-mini		9edad69540c	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err		9de16a02a53
@@ -206,8 +206,6 @@ checkout core/27.x
 	28340 -										acede199ab6	last=0244416aacb  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
-	MERGED: g752  fix_qt_cmdhelp_mention_uri-0.17		29c20c7c1f5	last=ede5014c445
-		# NOTE: Rewrote to be simpler and avoid BIP21 mention (Knots supports BIP20 too)
 	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
