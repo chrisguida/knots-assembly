@@ -257,7 +257,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	29678 fix_init_lowdisk_warning_reqd			0ab7aa47bbe
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
-	29726 fix_assumeutxo_reindex_pr29726-26		02fd519df55
+	29726 fix_assumeutxo_reindex_pr29726-27		02fd519df55
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
 	# Needs review: 29798 vasild/logging_cleanup

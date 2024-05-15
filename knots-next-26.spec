@@ -322,6 +322,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
 	29726 fix_assumeutxo_reindex_pr29726-26		02fd519df55
+	(CHECK-LAST)	last=acf242b0629 fix_assumeutxo_reindex_pr29726-27
 	29747 fix_depends_qt_mingw_dbg_link-24		16e26c1e59e
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
