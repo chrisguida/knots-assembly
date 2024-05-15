@@ -274,8 +274,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	g819  qt_signmsg_msgs_legacyonly-0.20		a5e0eac8f22	last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
-	30085 fix_cjdns_addnode_detect-26+knots		412c40493d3	last=d0b047494c2 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
-	-     fix_cjdns_addnode_detect2-26+knots	282d1ffcfdc	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
+	30085 fix_cjdns_addnode_detect-27			412c40493d3	last=d0b047494c2 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
+	-     fix_cjdns_addnode_detect2-27+knots	282d1ffcfdc	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
 	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
@@ -292,7 +292,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#26.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@27.x-knots-lts-deps
-	29732 depends_qt_update-26					b7d8f6e1c6a
+	29732 depends_qt_update-27					b7d8f6e1c6a
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 @27.x-knots

@@ -351,7 +351,9 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
 	28155 net_addnode_improve_pr28155-26		3862bff8ad4
 	30085 fix_cjdns_addnode_detect-26+knots		412c40493d3	last=d0b047494c2 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
+	(CHECK-LAST)	last=ac5c3179242 fix_cjdns_addnode_detect-27
 	-     fix_cjdns_addnode_detect2-26+knots	282d1ffcfdc	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
+	(CHECK-LAST)	last=9f05a705fc6 fix_cjdns_addnode_detect2-27
 	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
 	30094 rf_rpc_move_unival_pr30094-24			62c15473e88	last=b77bad309e9 willcl-ark/move-univalue-only
 	
@@ -370,6 +372,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	n/a   (delete_release_notes_fragments)
 #@26.x-knots-lts-deps
 	29732 depends_qt_update-26					b7d8f6e1c6a
+	(CHECK-LAST)	last=38fc092d97e depends_qt_update-27
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
