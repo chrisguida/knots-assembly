@@ -507,7 +507,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# TODO: https://twitter.com/RandyMcMillan/status/1490107008443457538?t=Qc4LO63rRuWxErtRel06EQ&s=19
 		# 			aka 4613c88c91f4f3846aa62c929ad73d1a3e6ac70e
 	22693 getaddressinfo_txids-26				3a151159938	last=a00bc6f395e getaddressinfo_txids
-	g562  wallet_warn_reuse_gui-26				2d5e9c6f17f	last=8a915f3852c wallet_warn_reuse_gui
+	g562  wallet_warn_reuse_gui-26				2d5e9c6f17f	last=25ea55c25d7 wallet_warn_reuse_gui
 		# NOTE: Was #15987
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
@@ -522,6 +522,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
 	18014 siphash_optimise_pr18014-26+knots		0364f7ce259	last=409c2e34522 elichai/2020-01-siphash
 	(CHECK-LAST)	last=5622dd16ecf siphash_optimise_pr18014-26
+	(CHECK-LAST)	last=21a3dd41987 siphash_optimise_pr18014-27+knots
 		# NOTE: Dropped benchmarks & diff-minimised
 	# Needs work/review/completion: 18242 jonasschnelli/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes

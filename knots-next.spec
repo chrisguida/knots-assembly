@@ -413,7 +413,7 @@ checkout core/27.x
 		# TODO: https://twitter.com/RandyMcMillan/status/1490107008443457538?t=Qc4LO63rRuWxErtRel06EQ&s=19
 		# 			aka 4613c88c91f4f3846aa62c929ad73d1a3e6ac70e
 	22693 getaddressinfo_txids					3a151159938
-	g562  wallet_warn_reuse_gui-26				2d5e9c6f17f	last=8a915f3852c wallet_warn_reuse_gui
+	g562  wallet_warn_reuse_gui					2d5e9c6f17f
 		# NOTE: Was #15987
 	# Needs review: 16066 promag:2019-05-ibd-avoid-mempool-estimator
 	# Needs review: 16145 promag:2019-06-prevent-idle-sleep-ibd
@@ -426,8 +426,7 @@ checkout core/27.x
 	-     qt_openuri_pastebtn_shortcut-23		63659cd720e
 		# NOTE: Used to be part of gui#319 (formerly #17955)
 	# Needs work/review: 17978 -  # gui: walletcontroller showProgressDialogue functional progressBar
-	18014 siphash_optimise_pr18014-26+knots		0364f7ce259	last=409c2e34522 elichai/2020-01-siphash
-	(CHECK-LAST)	last=5622dd16ecf siphash_optimise_pr18014-26
+	18014 siphash_optimise_pr18014-27+knots		0364f7ce259	last=409c2e34522 elichai/2020-01-siphash
 		# NOTE: Dropped benchmarks & diff-minimised
 	# Needs work/review/completion: 18242 jonasschnelli/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
@@ -795,6 +794,7 @@ checkout core/27.x
 	n/a   rpc_compat_error_index-25+knots		7b910f7f39b
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	g537  gui_bech32_errpos-26+knots			b6c9779c2c2 last=539beeaae85 gui_bech32_errpos
+		FIXME: Update after gui#553(MERGED)
 	17636 guisettings-0.21						db11c49ec9f	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
