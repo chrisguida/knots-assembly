@@ -133,7 +133,9 @@ checkout core/27.x
 		#26.xTODO# Update with other commits that are beneficial
 	-     boost_171_177_workarounds				41ee93f9fcf
 		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
-	27.xTODO: Check if we need to revert #29489 (related to hww_windows???)
+	-     hww_windows-27
+		# Reverts #29489 & #28967
+	# TODO: 29868 hebasto/231130-replace-bp
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	#27.xTODO# Check on #25561
@@ -226,8 +228,6 @@ checkout core/27.x
 	# TODO: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
 	28874 fanquake/redundant_upnp_ifdef			1344300494a	last=92f88a96290
 	28944 ishaanam/sendall_anti_fee_sniping		25c101b1f14	last=fa1fa351584
-	27.xTODO: FIXME: real fix for issues in #28967 (MERGED) (OR #28981?) -- NOT A REAL BUG IN PRACTICE, revert the removal?
-		# See also #29868
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
 	29141 fix_rpcauth_blank						25e07bdf5f2
