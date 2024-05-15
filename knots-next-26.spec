@@ -63,7 +63,9 @@ checkout v26.1
 	10731 log_more_uacomment					de725342027
 	29614 bufferedfile_fclose-26				80841406c14	last=aec5e0f558a bufferedfile_fclose
 	14485 fadvise-26+knots						803e535fdd4	last=289e88b3133 fadvise
+	(CHECK-LAST)	last=79e4722e62a fadvise-27+knots (after addressing FIXME below)
 		# Was #12491
+		FIXME: Non-trivial merge with bufferedfile_fclose-26 fails to actually close m_src (gdd fadvise-26+knots fadvise-27+knots)
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
 	-     rpcarg_type_per_name					5659f14cee6
@@ -309,6 +311,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	-     rpc_loadtxoutset_hide-26				aa2c7fadfe0
 		#27.xTODO# This should probably be removed
 	29586 wallet_migrate_null_walletname_bak-26+k	896efa03ef8
+	(CHECK-LAST)	last=8a16b8f6a4e wallet_migrate_null_walletname_bak-26
+	(CHECK-LAST)	last=6e242420273 wallet_migrate_null_walletname_bak-27
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	# Nothing to fix: 29615 theStack/202403-test-fix_GetSigOpCount_accurate_counting_bip16
 	# Compatibility break, needs review: 29612 fjahr/2024-03-pr26045-reopen
@@ -393,6 +397,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#27.xTODO# Needs review: 26008 achow101/improve-many-desc-ismine
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
 	26375 zmq_optimise_duplread-26+k			3f9e56d77af	last=7b631dc9b19 andrewtoth/no-read-zmq
+	(CHECK-LAST)	last=e24dbe6469b zmq_optimise_duplread-27+k
+		# Several improvements in Knots branch
 	#27.xTODO# Needs review: 26415 andrewtoth/read-raw-block
 	# Needs review: 26486 sipa/202211_batchnotfound
 	# Opt-in & needs review: 26951 pstratem/2023-01-23-gcsfilter

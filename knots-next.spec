@@ -59,7 +59,7 @@ checkout core/27.x
 	 9524  rpc_pruneblkchain0					79b87d35c9a	last=88883ae13d
 	10731 log_more_uacomment					de725342027
 	29614 bufferedfile_fclose					80841406c14
-	14485 fadvise-26+knots						803e535fdd4	last=289e88b3133 fadvise
+	14485 fadvise-27+knots						803e535fdd4	last=289e88b3133 fadvise
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
@@ -243,7 +243,7 @@ checkout core/27.x
 	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
 	-     rpc_loadtxoutset_hide-26				aa2c7fadfe0
 		#27.xTODO# This should probably be removed
-	29586 wallet_migrate_null_walletname_bak-26+k	896efa03ef8
+	29586 wallet_migrate_null_walletname_bak-27	896efa03ef8
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	# Nothing to fix: 29615 theStack/202403-test-fix_GetSigOpCount_accurate_counting_bip16
 	# Compatibility break, needs review: 29612 fjahr/2024-03-pr26045-reopen
@@ -309,7 +309,8 @@ checkout core/27.x
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
 	# Needs review: 25968 sipa/202208_headerssync_optimize
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
-	26375 zmq_optimise_duplread-26+k			3f9e56d77af	last=7b631dc9b19 andrewtoth/no-read-zmq
+	26375 zmq_optimise_duplread-27+k			3f9e56d77af	last=7b631dc9b19 andrewtoth/no-read-zmq
+		# Several improvements in Knots branch
 	#27.xTODO# Needs review: 26415 andrewtoth/read-raw-block
 	# Needs review: 26486 sipa/202211_batchnotfound
 	# Opt-in & needs review: 26951 pstratem/2023-01-23-gcsfilter
