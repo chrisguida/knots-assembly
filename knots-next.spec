@@ -217,7 +217,7 @@ checkout core/27.x
 	# Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
 	# -- Needs review: g775 -  # gui: add used balance to overview page
 	# Needs review: 28780 -  # log: torcontrol opt checks
-	-     fix_keep_notmy_cookie-26.1+knots		91ebfad5931
+	-     fix_keep_notmy_cookie					91ebfad5931
 		# Originally part of #28784, but regressed in d95dde9441f...7cb9367157e
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
@@ -235,8 +235,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	29175 -										43c05b45541	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  -										ce11132294a	last=3bf00e13609  # debugwindow: update session ID tooltip
-	29307 AutoFile_error_check-26				fbd4b3103c6	last=661b7d84b54 vasild/AutoFile_error_check
-		# NOTE: Held back 55439903212...13f540d60b5 due to crashing CI
+	29307 AutoFile_error_check-27				fbd4b3103c6	last=de23848eed5 vasild/AutoFile_error_check
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible

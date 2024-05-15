@@ -243,7 +243,7 @@ checkout v26.1
 	# -- Needs review: g775 -  # gui: add used balance to overview page
 	# Needs review: 28780 -  # log: torcontrol opt checks
 	# As needed: 28782 -  # test: Add missing sync on send_version in peer_connect
-	-     fix_keep_notmy_cookie-26.1+knots		91ebfad5931
+	-     fix_keep_notmy_cookie-26.1+knots		91ebfad5931	last=4842324b7d0 fix_keep_notmy_cookie
 		# Originally part of #28784, but regressed in d95dde9441f...7cb9367157e
 	# Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
