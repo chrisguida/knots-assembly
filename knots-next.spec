@@ -228,7 +228,6 @@ checkout core/27.x
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
 	29141 fix_rpcauth_blank						25e07bdf5f2
 	# Needs review: 29124 achow101/fix-double-keypath
-NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
