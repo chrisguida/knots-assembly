@@ -492,6 +492,9 @@ checkout core/27.x
 		# TODO: diff-minimise??
 	21319 getblock_optimise						74cb4fa735a
 		# Context: 17529 rpc: Faster getblock using PureBlock
+		ccdf6a8cdbd] fixup! RPC/Blockchain: Optimise getblock for simple disk->hex case
+		1e0dc2e58d0] fixup! RPC/Blockchain: Optimise getblock for simple disk->hex case
+		Maybe? 7fda71f7cd0] RPC/blockchain: Remove dead code for pre-segwit serialization from getblock
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
 	21260 rpcwallet_tx_in_mempool-26+knots		05c7e969f16	last=46bf0b7b5d8
 		# Includes squashed fixes for RPC doc
@@ -500,6 +503,7 @@ checkout core/27.x
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
 	# Included in gui#662 above: g368  bugfix_gui_restored_columns_stretch	3b888b39d64
 	g230  gui_backup_formats					4bda86eb3c8
+		c865dc6b795] fixup! interfaces/Wallet: Add DumpWallet format to backupWallet interface
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 		# +27797 ?
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
@@ -597,8 +601,6 @@ checkout core/27.x
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
-	-     guix_shell_compat-24					47f28109275
-		MERGED # More compatible alternative to #26077 fanquake/guix_shell_over_environment (MERGED)
 	28167 rpccookieperms-26+knots				12bd173e987	last=740f3438595 willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
