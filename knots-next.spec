@@ -5,7 +5,7 @@ lastapply no-merge
 
 checkout core/27.x
 @27.x-syslibs
-	n/a origin-pull/30092/head	last=9867e72b995e4a838c8e8e0feb159a9bdee8b76f origin-pull/30092/head # TEMPORARY # DELETE #27.xTODO#
+	n/a origin-pull/30092/head	last=1927f8b5f45 origin-pull/30092/head # TEMPORARY # DELETE #27.xTODO#
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
@@ -562,8 +562,6 @@ checkout core/27.x
 	# Needs work: g533  -  # gui: add more detailed address error message
 		# TODO: Maybe a button inside the lineedit to display the error message?
 	# OR: Needs work? g560 w0xlt-g/3_error_message_addr
-	MERGED: Needs concept ack: g553 w0xlt-5/change_error_background
-		# CAUTION: requires theming changes for gui#537
 	# Needs work & complex test rebasing: 24539   # Add a "tx output spender" index
 		# Partial rebase w/ stash at a1237c9a1851a8fc431467a0861c1d37b61566af
 		# NOTE: When rebasing (now that #21726 is merged), need to restore AllowPrune func ?
