@@ -597,10 +597,10 @@ checkout core/27.x
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
-	28167 rpccookieperms-26+knots				12bd173e987	last=740f3438595 willcl-ark/2023-07-rpccookie-perms
+	28167 rpccookieperms-27+knots				12bd173e987	last=740f3438595 willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
+		# Removed doc change
 		# Added lots of improvements
-		#27.xTODO# Update ce9df2aba3e...740f3438595
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
