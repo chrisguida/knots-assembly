@@ -548,8 +548,7 @@ checkout core/27.x
 	g492  qt_traffic_tooltip					4b29a07c003	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
-	g820  qt_fontsel_qrcodes					48513e20fb6
-		FIXME: Merge in updates from qt_fontsel_qrcodes-25+knots (or vice-versa??)
+	g820  qt_fontsel_qrcodes-27+knots			48513e20fb6	last=b14c9d0572e qt_fontsel_qrcodes
 	# TODO: qt_fontsel_console
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness

@@ -651,7 +651,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
 	g497  qt_fontsel-25+knots					08c27287393	last=a17fd33edd1 qt_fontsel
-	g820  qt_fontsel_qrcodes-25+knots			48513e20fb6	last=833cf3f27bf qt_fontsel_qrcodes
+	g820  qt_fontsel_qrcodes-25+knots			48513e20fb6	last=b14c9d0572e qt_fontsel_qrcodes
+	(CHECK-LAST)	last=2393def608d qt_fontsel_qrcodes-27+knots
 	# TODO: qt_fontsel_console
 	# Needs work? g505  -  # RPCConsole: add hidePeersDetail() button and functionality
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
