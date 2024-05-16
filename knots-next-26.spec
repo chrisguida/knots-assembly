@@ -598,7 +598,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# NOTE: Ensure default is actually true
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
 	# Included in gui#662 above: g368  bugfix_gui_restored_columns_stretch	3b888b39d64
-	g230  gui_backup_formats-24					4bda86eb3c8	last=46186403514 gui_backup_formats
+	g230  gui_backup_formats-24					4bda86eb3c8	last=15680a2e73d gui_backup_formats
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 		# +27797 ?
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
