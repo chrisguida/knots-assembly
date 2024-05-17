@@ -601,6 +601,7 @@ checkout core/27.x
 		# Was #26088 (not in a Knots release)
 		# Removed doc change
 		# Added lots of improvements
+		7db13137e38] fixup! rpccookieperms: Set permissions on temporary file, prior to writing the cookie
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
 	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
@@ -613,7 +614,6 @@ checkout core/27.x
 		# Also includes change of default from incoming to in+out
 		# Made 'out' apply to non-manual outgoing too (backward compat)
 		# Restored older functional test (not sure why PR removed it)
-		TODO: Check rebase vs master
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme	06833764dc9	last=d8434da3c14
@@ -622,6 +622,8 @@ checkout core/27.x
 	# TODO: Simplify [initial] wallet creation
 		# See: https://twitter.com/susewang/status/1591115373465972737?t=FGNyW1PSmjpT0u-lR7lNiw&s=19
 	26576 brunoerg/2022-11-disconnectnode-subnet^	24230aadd5e	last=23f4c2cb452
+		26f715ac8ec] fixup! rpc, p2p: allow `disconnectnode` with subnet
+		TODO: Abandoned upstream, move to non-upstream
 	# Waiting for Core or BIP: 26626 achow101/desc-key-list-expr
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
