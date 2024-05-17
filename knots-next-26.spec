@@ -745,9 +745,10 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
 	27216 rpc_getaddressinfo_isactive-26.2		d66317dddf5	last=85f83339dda pinheadmz/used-addr-ui
-	(CHECK-LAST)	last=c232385a07b rpc_getaddressinfo_isactive
+	(CHECK-LAST)	last=bb8a78beced rpc_getaddressinfo_isactive
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-26+knots						743b27d90b1	last=91771366a3d apoelstra/2023-03--codex32
+	(CHECK-LAST)	last=34b60740abb codex32-27+knots
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs review: 27375 pinheadmz/tor-unix-domain-socket
 		#+29649
