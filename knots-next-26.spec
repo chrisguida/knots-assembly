@@ -730,6 +730,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# TODO: Simplify [initial] wallet creation
 		# See: https://twitter.com/susewang/status/1591115373465972737?t=FGNyW1PSmjpT0u-lR7lNiw&s=19
 	26576 brunoerg/2022-11-disconnectnode-subnet^	24230aadd5e	last=23f4c2cb452
+	(CHECK-LAST)	last=23f4c2cb452 rpc_disconnectnode_subnet
 	# Waiting for Core or BIP: 26626 achow101/desc-key-list-expr
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs review: 26839 -  # Add support for RNDR/RNDRRS for AArch64 on Linux
