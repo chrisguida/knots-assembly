@@ -707,6 +707,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	-     guix_shell_compat-24					47f28109275
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
 	28167 rpccookieperms-26+knots				12bd173e987	last=740f3438595 willcl-ark/2023-07-rpccookie-perms
+	(CHECK-LAST)	last=??? rpccookieperms-27+knots
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
 		#27.xTODO# Update ce9df2aba3e...740f3438595
@@ -739,6 +740,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	26990 bcli_validation-24					307b4498f70	last=cf7dd3564a3
 		# Didn't bother rebasing for 755320f75f2...cf7dd3564a3 trivial changes
 	27034 rpc_importaddr_for_descwallet-26+k	7b19a88fb58	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
+	(CHECK-LAST)	last=f72496a06a9 rpc_importaddr_for_descwallet-27+k
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0

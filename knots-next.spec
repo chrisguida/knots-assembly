@@ -628,7 +628,7 @@ checkout core/27.x
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	26990 bcli_validation-24					307b4498f70	last=cf7dd3564a3
 		# Didn't bother rebasing for 755320f75f2...cf7dd3564a3 trivial changes
-	27034 rpc_importaddr_for_descwallet-26+k	7b19a88fb58	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
+	27034 rpc_importaddr_for_descwallet-27+k	7b19a88fb58	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	# Needs review & API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
