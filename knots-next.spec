@@ -645,7 +645,7 @@ checkout core/27.x
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
 		# Careful, could end up paying "added change" to a destination -.-
 	# Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
-	27600 p2p_forceinbound-26+knots				5aae9988b8c	last=8c2026848da pinheadmz/whitebind-evict
+	27600 p2p_forceinbound-27+knots				5aae9988b8c	last=8c2026848da pinheadmz/whitebind-evict
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
@@ -676,10 +676,7 @@ checkout core/27.x
 	29016 rpc_listmempooltxs-26+knots			4a5e8fb0a40	last=07008477b81 niftynei/nifty/listmempoolentry
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
-	MERGED: 29058 v2t_manual_netinfo_pr29058-26			d9acca60d04
-		# +#29212+#29657 bugfixes
-	MERGED: 29117 wallettool_dump_just_db-26+knots		f40437da913	last=d83bea42d1f achow101/dump-without-making-wallet
-		# Omitted first commit that could be dangerous
+	29657 fix_netinfo_v2t_safety-27
 	#26.xTODO# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
 	# Needs review or minimal impact: 29130 achow101/createwalletdescriptor-without-new-records
 	# Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor

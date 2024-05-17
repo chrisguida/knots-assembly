@@ -760,6 +760,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# Careful, could end up paying "added change" to a destination -.-
 	# Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
 	27600 p2p_forceinbound-26+knots				5aae9988b8c	last=8c2026848da pinheadmz/whitebind-evict
+	(CHECK-LAST)	last=c1a90cda6fa p2p_forceinbound-27+knots
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
@@ -795,6 +796,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	29058 v2t_manual_netinfo_pr29058-26			d9acca60d04
+	(CHECK-LAST)	last=072dd93ccb7 fix_netinfo_v2t_safety-27
 		# +#29212+#29657 bugfixes
 	29117 wallettool_dump_just_db-26+knots		f40437da913	last=d83bea42d1f achow101/dump-without-making-wallet
 		# Omitted first commit that could be dangerous
