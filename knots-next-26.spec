@@ -847,11 +847,11 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	8751  sort-multisigs-26+knots				251ac55512c	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					f04bc704bb1	last=1898b9be12c Sjors/2021/05/versionbits_period_start
-	9152 sweepprivkeys							fd4a7fa1c62
+	9152  sweepprivkeys-26+knots				fd4a7fa1c62	last=c3c1e3c06dc sweepprivkeys
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
-	9245 ionice									2b7034b45fd
-	-    ionice_win								e48b550c13c
+	9245  ionice-26								2b7034b45fd	last=07805b9e990 ionice
+	-     ionice_win-26							e48b550c13c	last=8f397d99cd2 ionice_win
 	8501  old_stats_rpc-26						83fd945defe	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-26+knots					7ce97c35256	last=63fb11652f
