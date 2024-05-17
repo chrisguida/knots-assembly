@@ -684,20 +684,17 @@ checkout core/27.x
 	# or (newer): 29163 rpc_helpdetail-24									last=56830469303 LarryRuane/2024-01-help-detailed
 		# Left off top commit changing rpc_help test behaviour
 	# Needs concept & review: 29278 -  # RPC: Wallet: Add maxfeerate and maxburnamount startup option
-	MERGED: 29347 net_v2t_default-26					0c6dcd7f813
-		MERGED # +Rewrote doc update in #29452 (MERGED)
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
 	# Needs review: 29519 mzumsande/202202_fix_assumeutxo_block_download
-	29530 -										710942fd596  # rpc_getpeerinfo_misbehaving_score-26
-		TODO: Check rebase vs master divergence
+	29530 -										710942fd596	last=87efb6f0cfd  # rpc_getpeerinfo_misbehaving_score-26
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
 	29585 manpage_see_also-23+knots				75af99797c4	last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
 	# Needs review & wallet compat check: 29675 achow101/musig2
-	29686 manpage_desc-26+knots					68c1d8fc43e	last=b680c1c6ffd willcl-ark/manpage-desc
+	29686 manpage_desc-27+knots					68c1d8fc43e	last=b680c1c6ffd willcl-ark/manpage-desc
 	29687 bcli_err_noconn_helphint-0.17			6dbf5463fe4	last=69d6fd676e9 willcl-ark/improve-cli-error
 	29695 gcc_branch_protection_default-26		d221bb9c051	last=7850c5fe20a fanquake/gcc_12_branch_protection_default
 	# API change: 29845 stickies-v/2024-04/make-warnings-arr
@@ -980,6 +977,7 @@ MERGED # TODO: Ensure std::filesystem isn't introduced (see #28076)
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
+		TODO: pull BIP 324 on-by-default change from net_v2t_default-26 (contra #29452)
 	n/a  (bump_version=Knots:20240513)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930

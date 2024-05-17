@@ -821,6 +821,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	29686 manpage_desc-26+knots					68c1d8fc43e	last=b680c1c6ffd willcl-ark/manpage-desc
+	(CHECK-LAST)	last=65283ac6f4c manpage_desc-27+knots
 	29687 bcli_err_noconn_helphint-0.17			6dbf5463fe4	last=69d6fd676e9 willcl-ark/improve-cli-error
 	29695 gcc_branch_protection_default-26		d221bb9c051	last=7850c5fe20a fanquake/gcc_12_branch_protection_default
 	# API change: 29845 stickies-v/2024-04/make-warnings-arr
