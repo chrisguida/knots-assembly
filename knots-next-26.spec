@@ -871,10 +871,10 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	(CHECK-LAST)	last=b3840fc028e zmq_wtx-27+knots
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
-	20551 rpc_onetry_conntype					6fea3acaa1e
+	20551 rpc_onetry_conntype-26+knots			6fea3acaa1e	last=9eba1eca8f3 rpc_onetry_conntype
 		# NOTE: Originally based on #12674
 		# REBASING NOTE: Ensure any new types get added ? (unless we want to deprecate this...)
-	10593 relax_invblk_punishment				5727ad7157d
+	10593 relax_invblk_punishment-26.1+knots	5727ad7157d	last=177bffa5e78 relax_invblk_punishment
 		# Squash "QA: Use addconnection rather than addnode onetry" ?
 		# FIXME: HandleFewUnconnectingHeaders sends getheaders _and_ disconnects??
 		# TODO: Consider rebasing on #29575 ?
