@@ -733,12 +733,12 @@ checkout core/27.x
 	g444  gui_netwatch-27+knots					3741a7820a6	 # Latest code now
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
-	10615 multiwallet_rpc-26+knots				e4ba0cf9c2d  # latest code now
+	10615 multiwallet_rpc-27+knots				e4ba0cf9c2d  # latest code now
 		# CAUTION: Be extra careful rebasing - diff/patch default context might accidentally move code around between different RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
-	10554 zmq_wtx-26+knots						9043c2cae9f	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	10554 zmq_wtx-27+knots						9043c2cae9f	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					6fea3acaa1e
