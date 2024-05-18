@@ -879,18 +879,22 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# FIXME: HandleFewUnconnectingHeaders sends getheaders _and_ disconnects??
 		# TODO: Consider rebasing on #29575 ?
 	10350 filtered_witblock-25				d0e319ed92a	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
+	(CHECK-LAST)	last=316844ce83f filtered_witblock-27
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	11750 coincontrol_multiselect				d2030802785	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
-	11770 rest_fee								3c32d6d5697	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11770 rest_fee-26							3c32d6d5697	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	(CHECK-LAST)	last=b071344ac04 rest_fee
 		# Fixed a minor bug in conf_target range check
 		# Added new tests in feature_fee_estimation
 		# Updated to match estimatesmartfee RPC changes
 	11803 bugfix_dumpwallet_hdkeypath			50f53bb1845
 	12965 scriptthreads-26+knots				f34fef58afc	last=dfab6c6866 jonasschnelli/2018/04/svt
+	(CHECK-LAST)	last=dfab6c6866 scriptthreads
+		TODO: Rewrote for 27.x, check if needed to fix anything
 	13203 dsha256_power8-25						4fb23e68f6e	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 		#27.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows

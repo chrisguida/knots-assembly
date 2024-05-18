@@ -748,7 +748,7 @@ checkout core/27.x
 		# Squash "QA: Use addconnection rather than addnode onetry" ?
 		# FIXME: HandleFewUnconnectingHeaders sends getheaders _and_ disconnects??
 		# TODO: Consider rebasing on #29575 ?
-	10350 filtered_witblock-25				d0e319ed92a	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
+	10350 filtered_witblock-27				d0e319ed92a	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
 		# NOTE: Don't bump protocol version!
 	# script debugger needs major reworking: 10729 scriptex								43b88be136
 	# script debugger needs major reworking: 10730 scriptflag_strings-mini-0.17			e54fc122c8	last=e2e183bc1f
@@ -760,7 +760,7 @@ checkout core/27.x
 		# Added new tests in feature_fee_estimation
 		# Updated to match estimatesmartfee RPC changes
 	11803 bugfix_dumpwallet_hdkeypath			50f53bb1845
-	12965 scriptthreads-26+knots				f34fef58afc	last=dfab6c6866 jonasschnelli/2018/04/svt
+	12965 scriptthreads-27+knots				f34fef58afc	last=dfab6c6866 jonasschnelli/2018/04/svt
 	13203 dsha256_power8-25						4fb23e68f6e	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 		#27.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
