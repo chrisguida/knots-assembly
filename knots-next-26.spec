@@ -853,11 +853,13 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	9245  ionice-26								2b7034b45fd	last=07805b9e990 ionice
 	-     ionice_win-26							e48b550c13c	last=8f397d99cd2 ionice_win
 	8501  old_stats_rpc-26						83fd945defe	last=7af0ea43b2
+	(CHECK-LAST)	last=5560cd011b4 old_stats_rpc-27
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-26+knots					7ce97c35256	last=63fb11652f
+	(CHECK-LAST)	last=9434da024e5 old_stats_qt-27+knots
 		# Held back on old version due to conflict with RPC updates...
 	9504  rpc_dumpmasterprivkey					c50695dd61e	last=07fc81109a
-	g444  gui_netwatch-26+knots					3741a7820a6	 # Latest code now
+	g444  gui_netwatch-26+knots					3741a7820a6	last=5ac68573293 gui_netwatch-27+knots
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
 	10615 multiwallet_rpc-26+knots				e4ba0cf9c2d  # latest code now
