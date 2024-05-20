@@ -862,7 +862,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	g444  gui_netwatch-26+knots					3741a7820a6	last=5ac68573293 gui_netwatch-27+knots
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
-	10615 multiwallet_rpc-26+knots				e4ba0cf9c2d	last=432371c985f multiwallet_rpc-27+knots
+	10615 multiwallet_rpc-26+knots				e4ba0cf9c2d	last=f5f762a6b84 multiwallet_rpc-27+knots
 		# CAUTION: Be extra careful rebasing - diff/patch default context might accidentally move code around between different RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now

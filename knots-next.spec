@@ -597,7 +597,7 @@ checkout core/27.x
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
-	28167 rpccookieperms-27+knots				12bd173e987	last=740f3438595 willcl-ark/2023-07-rpccookie-perms
+	28167 rpccookieperms-27+knots				12bd173e987	last=fba815a4e68 willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
 		# Removed doc change
 		# Added lots of improvements
@@ -694,7 +694,8 @@ checkout core/27.x
 	29585 manpage_see_also-23+knots				75af99797c4	last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
 	# Needs review & wallet compat check: 29675 achow101/musig2
-	29686 manpage_desc-27+knots					68c1d8fc43e	last=b680c1c6ffd willcl-ark/manpage-desc
+	29686 manpage_desc-27+knots					68c1d8fc43e	last=dd31cc01448 willcl-ark/manpage-desc
+		# Various fixups
 	29687 bcli_err_noconn_helphint-0.17			6dbf5463fe4	last=69d6fd676e9 willcl-ark/improve-cli-error
 	29695 gcc_branch_protection_default-26		d221bb9c051	last=7850c5fe20a fanquake/gcc_12_branch_protection_default
 	# API change: 29845 stickies-v/2024-04/make-warnings-arr
