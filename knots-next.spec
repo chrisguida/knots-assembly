@@ -761,11 +761,11 @@ checkout core/27.x
 		# Updated to match estimatesmartfee RPC changes
 	11803 bugfix_dumpwallet_hdkeypath			50f53bb1845
 	12965 scriptthreads-27+knots				f34fef58afc	last=dfab6c6866 jonasschnelli/2018/04/svt
-	13203 dsha256_power8-25						4fb23e68f6e	last=3b402e0738 TheBlueMatt/2018-05-asm
+	13203 dsha256_power8-27						4fb23e68f6e	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 		#27.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
-	-     dsha256_power8_asm_pragmas-25			6938e1bc6b4
-	15218 postibd_flush-26						b8a38fcf7b8	last=011d9b70f37
+	-     dsha256_power8_asm_pragmas-27			6938e1bc6b4
+	15218 postibd_flush-27						b8a38fcf7b8	last=011d9b70f37
 	15428 tor_gui_pairing-26+knots				9718528c5fd	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-26+knots				c875f9d58c9	# Latest code now

@@ -896,10 +896,13 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	(CHECK-LAST)	last=dfab6c6866 scriptthreads
 		TODO: Rewrote for 27.x, check if needed to fix anything
 	13203 dsha256_power8-25						4fb23e68f6e	last=3b402e0738 TheBlueMatt/2018-05-asm
+	(CHECK-LAST)	last=5fa767af29c dsha256_power8-27
 		# NOTE: Stripped out benchmark change
 		#27.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-25			6938e1bc6b4
+	(CHECK-LAST)	last=f368bdee5d8 dsha256_power8_asm_pragmas-27
 	15218 postibd_flush-26						b8a38fcf7b8	last=011d9b70f37
+	(CHECK-LAST)	last=58823fcbb21 postibd_flush-27
 	15428 tor_gui_pairing-26+knots				9718528c5fd	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-26+knots				c875f9d58c9	# Latest code now
