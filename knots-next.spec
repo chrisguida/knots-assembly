@@ -597,7 +597,7 @@ checkout core/27.x
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
-	28167 rpccookieperms-27+knots				12bd173e987	last=fba815a4e68 willcl-ark/2023-07-rpccookie-perms
+	28167 rpccookieperms-27+knots				12bd173e987	last=02e31263f3f willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
 		# Removed doc change
 		# Added lots of improvements
