@@ -769,7 +769,7 @@ checkout core/27.x
 	15218 postibd_flush-27						b8a38fcf7b8	last=011d9b70f37
 	15428 tor_gui_pairing-27+knots				9718528c5fd	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-	15421 tor_subprocess-26+knots				c875f9d58c9	# Latest code now
+	15421 tor_subprocess-27+knots				c875f9d58c9	# Latest code now
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
 		#28.xTODO# Revert #29844 if still using boost::process?
@@ -782,8 +782,7 @@ checkout core/27.x
 	15861 restore_vbits_warning					ee1a4df08e2
 	n/a   rpc_compat_error_index-25+knots		7b910f7f39b
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
-	g537  gui_bech32_errpos-26+knots			b6c9779c2c2 last=539beeaae85 gui_bech32_errpos
-		FIXME: Update after gui#553(MERGED)
+	g537  gui_bech32_errpos						b6c9779c2c2
 	17636 guisettings-0.21						db11c49ec9f	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)

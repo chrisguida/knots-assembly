@@ -906,7 +906,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	15428 tor_gui_pairing-26+knots				9718528c5fd	last=76ca37ea493 tor_gui_pairing-27+knots
 	(CHECK-LAST)	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-	15421 tor_subprocess-26+knots				c875f9d58c9	# Latest code now
+	15421 tor_subprocess-26+knots				c875f9d58c9	last=83610be4be0 tor_subprocess-27+knots
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
 		#28.xTODO# Revert #29844 if still using boost::process?
