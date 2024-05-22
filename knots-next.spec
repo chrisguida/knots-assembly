@@ -5,7 +5,7 @@ lastapply no-merge
 
 checkout core/27.x
 @27.x-syslibs
-	n/a origin-pull/30092/head	last=1927f8b5f45 origin-pull/30092/head # TEMPORARY # DELETE #27.xTODO#
+	n/a origin-pull/30092/head	last=116ef31a242 origin-pull/30092/head # TEMPORARY # DELETE #27.xTODO#
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
@@ -266,14 +266,14 @@ checkout core/27.x
 	#27.xTODO# 29867 furszy/2024_index_fix_race
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
 	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
-	g815  -										5310d15a915	last=d3da5025f61  # fix_qt_privacy_before_open-25
+	g815  -										5310d15a915	last=6c3b02717e2  # fix_qt_privacy_before_open-25
+		# Held back d3da5025f61...6c3b02717e2 due to overcomplication and race bug
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
 	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
 	g819  qt_signmsg_msgs_legacyonly-0.20		a5e0eac8f22	last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
-	30085 fix_cjdns_addnode_detect-27			412c40493d3	last=d0b047494c2 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
 	-     fix_cjdns_addnode_detect2-27+knots	282d1ffcfdc	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
 	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
 	
