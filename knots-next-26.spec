@@ -696,6 +696,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
 		# Also #25570 ?
 	g626 qt_node_localaddrs-25					9f3f724f687	last=c47f01bf25e
+	(CHECK-LAST)	last=c47f01bf25e qt_node_localaddrs-26
+		# NOTE: qt_node_localaddrs-26 didn't exist when Knots 26.x forked off
 	# Needs completion & review: 25718 fjahr/2022-07-allowinbound
 	# Needs concept/review: 25747 w0xlt/desc_file
 	# Needs work: 25776 1440000bytes/bumpfee-inputs

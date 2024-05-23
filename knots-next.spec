@@ -588,7 +588,7 @@ checkout core/27.x
 	# Needs work: 25434 w0xlt/bypass-timelocks
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
 		# Also #25570 ?
-	g626 qt_node_localaddrs-25					9f3f724f687	last=c47f01bf25e
+	g626 qt_node_localaddrs-26					9f3f724f687	last=56bdeb2aa05
 	# Needs completion & review: 25718 fjahr/2022-07-allowinbound
 	# Needs concept/review: 25747 w0xlt/desc_file
 	# Needs work: 25776 1440000bytes/bumpfee-inputs
@@ -597,7 +597,8 @@ checkout core/27.x
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
-	28167 rpccookieperms-27+knots				12bd173e987	last=02e31263f3f willcl-ark/2023-07-rpccookie-perms
+	28167 rpccookieperms-27+knots				12bd173e987	last=9b003059a88 willcl-ark/2023-07-rpccookie-perms
+		# Held back 02e31263f3f...9b003059a88 (introduced bug)
 		# Was #26088 (not in a Knots release)
 		# Removed doc change
 		# Added lots of improvements
@@ -769,6 +770,7 @@ checkout core/27.x
 	15218 postibd_flush-27						b8a38fcf7b8	last=011d9b70f37
 	15428 tor_gui_pairing-27+knots				9718528c5fd	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
+		#27.xTODO# Rebase getNetLocalAddresses interface to whatever gui#626 ends up using
 	15421 tor_subprocess-27+knots				c875f9d58c9	# Latest code now
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
