@@ -1,7 +1,7 @@
-timestamp 2024-05-13 17:22:02
+timestamp 2024-05-23 17:21:23
 #lastapply no-merge
 
-#.. checked up to PR #30095 / gui #820
+#.. checked up to PR #30161 / gui #820
 
 checkout v26.1
 @26.x-syslibs
@@ -358,8 +358,13 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	(CHECK-LAST)	last=ac5c3179242 fix_cjdns_addnode_detect-27
 	-     fix_cjdns_addnode_detect2-26+knots	282d1ffcfdc	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
 	(CHECK-LAST)	last=9f05a705fc6 fix_cjdns_addnode_detect2-27
-	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
 	30094 rf_rpc_move_unival_pr30094-24			62c15473e88	last=b77bad309e9 willcl-ark/move-univalue-only
+	30097 theuni/sha2asan
+	# Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl
+	# Needs review: 30132 TheCharlatan/preserveIndexOnRestart
+	# Needs review: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
+	30151 hebasto/240522-upnp-dl
+	# Needs review: 30155 mzumsande/202405_replay_blocks
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -439,6 +444,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	30039 dbfilesize_128						7ff0d1ee4a4	last=3e32d23c9e0
 		# Note: Upstream PR uses std::max with LevelDB's current default, in case LevelDB changes theirs to larger
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
+	30115 theuni/easy-univalue-moves
+	Maybe? 30120 fanquake/secp256k1_0_5_0
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -1115,7 +1122,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240513)			b6e90958caa
+	n/a  (bump_version=Knots:20240523)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits

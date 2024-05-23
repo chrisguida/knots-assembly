@@ -1,11 +1,11 @@
-timestamp 2024-05-13 17:22:02
+timestamp 2024-05-23 17:21:23
 lastapply no-merge
 
-#.. checked up to PR #30095 / gui #820
+#.. checked up to PR #30161 / gui #820
 
 checkout core/27.x
 @27.x-syslibs
-	n/a origin-pull/30092/head	last=116ef31a242 origin-pull/30092/head # TEMPORARY # DELETE #27.xTODO#
+	n/a origin-pull/30092/head	last=cb6def38554 origin-pull/30092/head # TEMPORARY # DELETE #27.xTODO#
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
@@ -275,7 +275,11 @@ checkout core/27.x
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
 	-     fix_cjdns_addnode_detect2-27+knots	282d1ffcfdc	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
-	#26.xTODO# Needs review: 30088 fix_gbt_stale_cache_use
+	# Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl
+	# Needs review: 30132 TheCharlatan/preserveIndexOnRestart
+	# Needs review: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
+	# Needs review: 30155 mzumsande/202405_replay_blocks
+	#28.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -345,6 +349,8 @@ checkout core/27.x
 	30039 dbfilesize_128						7ff0d1ee4a4	last=3e32d23c9e0
 		# Note: Upstream PR uses std::max with LevelDB's current default, in case LevelDB changes theirs to larger
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
+	30115 theuni/easy-univalue-moves
+	Maybe? 30120 fanquake/secp256k1_0_5_0
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -980,7 +986,7 @@ MERGED # TODO: Ensure std::filesystem isn't introduced (see #28076)
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
 		TODO: pull BIP 324 on-by-default change from net_v2t_default-26 (contra #29452)
-	n/a  (bump_version=Knots:20240513)			b6e90958caa
+	n/a  (bump_version=Knots:20240523)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits
