@@ -445,7 +445,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# Note: Upstream PR uses std::max with LevelDB's current default, in case LevelDB changes theirs to larger
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
 	30115 theuni/easy-univalue-moves
-	Maybe? 30120 fanquake/secp256k1_0_5_0
+	# Too much churn: 30120 fanquake/secp256k1_0_5_0
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork

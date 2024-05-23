@@ -167,6 +167,7 @@ checkout core/27.x
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
 		# CAUTION: Even merged, this appears to possibly show a higher balance than the user actually has for sure??
+		# TODO: Include fix/optimisation in #30115
 	#26.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
 	# TODO: Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
@@ -266,8 +267,8 @@ checkout core/27.x
 	#27.xTODO# 29867 furszy/2024_index_fix_race
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
 	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
-	g815  -										5310d15a915	last=6c3b02717e2  # fix_qt_privacy_before_open-25
-		# Held back d3da5025f61...6c3b02717e2 due to overcomplication and race bug
+	g815  -										5310d15a915	last=6180086515c  # fix_qt_privacy_before_open-25
+		# Held back d3da5025f61...6180086515c due to overcomplication and race bug
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
 	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
@@ -349,8 +350,8 @@ checkout core/27.x
 	30039 dbfilesize_128						7ff0d1ee4a4	last=3e32d23c9e0
 		# Note: Upstream PR uses std::max with LevelDB's current default, in case LevelDB changes theirs to larger
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
-	30115 theuni/easy-univalue-moves
-	Maybe? 30120 fanquake/secp256k1_0_5_0
+	30115 easy_uv_moves_pr30115-27
+	# Too much churn: 30120 fanquake/secp256k1_0_5_0
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
