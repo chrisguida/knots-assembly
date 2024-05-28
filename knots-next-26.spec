@@ -345,6 +345,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	g812  fix_qt_feebump_psbt-25				b087fc70270	last=671b7a32516 furszy-g/2024_gui_fix_create_unsigned_tx_fee_bump
 	g813  fix_qt_proxy_port_in_ip-26			fff5939bc49	last=10c5275ba45 willcl-ark-g/2024-03-proxy-validate
 	g815  fix_qt_privacy_before_open-25			5310d15a915	last=d3da5025f61
+		TODO: switch to simpler fix_qt_privacy_before_open-23 ?
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
 	29985 fix_depends_qt_zlib_t64-26			abd7f86f19b
@@ -845,6 +846,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	#27.xTODO# Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
 	30062 rpc_getrawaddrman_asmap-26			30fdc9e99c3	last=f80c47c3e83 brunoerg/2024-04-asmap-getrawaddrman
+		TODO: +#30183 iff API change is adopted (triage) - IF NOT, COPY BRANCH AND ROLL BACK
 		#27.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	

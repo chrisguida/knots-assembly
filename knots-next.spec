@@ -5,7 +5,7 @@ lastapply no-merge
 
 checkout core/27.x
 @27.x-syslibs
-	n/a origin-pull/30092/head	last=cb6def38554 origin-pull/30092/head # TEMPORARY # DELETE #27.xTODO#
+	n/a origin-pull/30092/head	last=22701a43464 origin-pull/30092/head # TEMPORARY # DELETE #27.xTODO#
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
@@ -267,8 +267,8 @@ checkout core/27.x
 	#27.xTODO# 29867 furszy/2024_index_fix_race
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
 	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
-	g815  -										5310d15a915	last=6180086515c  # fix_qt_privacy_before_open-25
-		# Held back d3da5025f61...6180086515c due to overcomplication and race bug
+	g815  fix_qt_privacy_before_open-23			5310d15a915	last=260d6eb9272
+		# Rewrote myself due to overcomplication and race bug in PR
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
 	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
@@ -596,7 +596,7 @@ checkout core/27.x
 	# Needs work: 25434 w0xlt/bypass-timelocks
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
 		# Also #25570 ?
-	g626 qt_node_localaddrs-26					9f3f724f687	last=56bdeb2aa05
+	g626 qt_node_localaddrs-26					9f3f724f687	last=ea576b65592
 	# Needs completion & review: 25718 fjahr/2022-07-allowinbound
 	# Needs concept/review: 25747 w0xlt/desc_file
 	# Needs work: 25776 1440000bytes/bumpfee-inputs
@@ -605,8 +605,7 @@ checkout core/27.x
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
-	28167 rpccookieperms-27+knots				12bd173e987	last=9b003059a88 willcl-ark/2023-07-rpccookie-perms
-		# Held back 02e31263f3f...9b003059a88 (introduced bug)
+	28167 rpccookieperms-27+knots				12bd173e987	last=9617e42a7b1 willcl-ark/2023-07-rpccookie-perms
 		# Was #26088 (not in a Knots release)
 		# Removed doc change
 		# Added lots of improvements
@@ -703,7 +702,7 @@ checkout core/27.x
 	29585 manpage_see_also-23+knots				75af99797c4	last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
 	# Needs review & wallet compat check: 29675 achow101/musig2
-	29686 manpage_desc-27+knots					68c1d8fc43e	last=dd31cc01448 willcl-ark/manpage-desc
+	29686 manpage_desc-27+knots					68c1d8fc43e	last=4452625133e willcl-ark/manpage-desc
 		# Various fixups
 	29687 bcli_err_noconn_helphint-0.17			6dbf5463fe4	last=69d6fd676e9 willcl-ark/improve-cli-error
 	29695 gcc_branch_protection_default-26		d221bb9c051	last=7850c5fe20a fanquake/gcc_12_branch_protection_default
@@ -717,7 +716,9 @@ checkout core/27.x
 		# Concept fixup: new RPC method entirely since they don't change often?
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	#27.xTODO# Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
-	30062 rpc_getrawaddrman_asmap-26			30fdc9e99c3	last=f80c47c3e83 brunoerg/2024-04-asmap-getrawaddrman
+	30062 rpc_getrawaddrman_asmap-26			30fdc9e99c3	last=1e54d61c469 brunoerg/2024-04-asmap-getrawaddrman
+	(CHECK-LAST)	last=eeaaac49a91 origin-pull/30183/head
+		# +#30183
 		#27.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	
