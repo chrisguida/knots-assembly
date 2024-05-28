@@ -1,7 +1,7 @@
-timestamp 2024-05-23 17:21:23
+timestamp 2024-05-28 19:52:45
 lastapply no-merge
 
-#.. checked up to PR #30161 / gui #820
+#.. checked up to PR #30186 / gui #820
 
 checkout core/27.x
 @27.x-syslibs
@@ -247,14 +247,14 @@ checkout core/27.x
 	29586 wallet_migrate_null_walletname_bak-27	896efa03ef8
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	# Nothing to fix: 29615 theStack/202403-test-fix_GetSigOpCount_accurate_counting_bip16
-	# Compatibility break, needs review: 29612 fjahr/2024-03-pr26045-reopen
+	# Compatibility break, needs review: 29612 fjahr/2024-03-pr26045-reopen (relnotes in #30167)
 	#26.xTODO# Needs work? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
 	#26.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
 	29658 fix_qt_help_on_console_x_newline		fd3a76e8ded
 	#26.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	# Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
-	29678 fix_init_lowdisk_warning_reqd			0ab7aa47bbe
+	29678 fix_init_lowdisk_warning_reqd-25		0ab7aa47bbe	last=847ad93f4dc fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
 	29726 fix_assumeutxo_reindex_pr29726-27		02fd519df55
@@ -281,6 +281,7 @@ checkout core/27.x
 	# Needs review: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	# Needs review: 30155 mzumsande/202405_replay_blocks
 	#28.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
+	# Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -987,7 +988,7 @@ MERGED # TODO: Ensure std::filesystem isn't introduced (see #28076)
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
 		TODO: pull BIP 324 on-by-default change from net_v2t_default-26 (contra #29452)
-	n/a  (bump_version=Knots:20240523)			b6e90958caa
+	n/a  (bump_version=Knots:20240528)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits

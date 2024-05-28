@@ -1,7 +1,7 @@
-timestamp 2024-05-23 17:21:23
+timestamp 2024-05-28 19:52:45
 #lastapply no-merge
 
-#.. checked up to PR #30161 / gui #820
+#.. checked up to PR #30186 / gui #820
 
 checkout v26.1
 @26.x-syslibs
@@ -322,7 +322,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	29658 fix_qt_help_on_console_x_newline		fd3a76e8ded
 	#26.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	# Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
-	29678 fix_init_lowdisk_warning_reqd			0ab7aa47bbe
+	29678 fix_init_lowdisk_warning_reqd-25		0ab7aa47bbe	last=847ad93f4dc fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
 	29726 fix_assumeutxo_reindex_pr29726-26		02fd519df55
@@ -365,6 +365,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	30151 hebasto/240522-upnp-dl
 	# Needs review: 30155 mzumsande/202405_replay_blocks
+	# Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -1122,7 +1123,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240523)			b6e90958caa
+	n/a  (bump_version=Knots:20240528)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits
