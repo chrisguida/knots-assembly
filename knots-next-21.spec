@@ -1433,7 +1433,8 @@ NM	-     gui_bech32_errpos-0.21+knots			ae0986b142d
 	(CHECK-LAST)	last=66dddec6601 cli_getinfo_mwbalances
 	19092 cli_getinfo_mw_total_balance-0.21+knots	5672474d49e	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	(CHECK-LAST)	last=e8bab0a4077 cli_getinfo_mw_total_balance-22
-	(CHECK-LAST)	last=71bfa1fb715 cli_getinfo_mw_total_balance
+	(CHECK-LAST)	last=71bfa1fb715 cli_getinfo_mw_total_balance-26
+	(CHECK-LAST)	last=614133144a1 cli_getinfo_mw_total_balance-27+knots
 		# Held back s/several/multiple (& comment changes) because why bother
 	# ---- END IN SEQUENCE ----
 m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b

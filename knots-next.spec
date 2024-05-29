@@ -801,7 +801,8 @@ checkout core/27.x
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	19089 cli_getinfo_mwbalances				c90a3ed14dc	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
-	19092 cli_getinfo_mw_total_balance			17c873148c5	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+	19092 cli_getinfo_mw_total_balance-27+knots	17c873148c5	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+	(CHECK-LAST)	last=71bfa1fb715 cli_getinfo_mw_total_balance-26
 	19117 rpc_getrpcwhitelist					3794f1f3c40
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-26+knots		60aaf990499
