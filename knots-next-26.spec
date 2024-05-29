@@ -349,7 +349,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
 	29985 fix_depends_qt_zlib_t64-26			abd7f86f19b
-		#27.xTODO# 27.x backport in #29888
 	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
 	g819  qt_signmsg_msgs_legacyonly-0.20		a5e0eac8f22	last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	# Needs review: 30065 sr-gi/2024-05-fdcount
@@ -962,8 +961,9 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	-     gui_payreq_textedit					20bbcf27d67
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash-25			b839336b5da	last=2f7b38db868 rpc_mempoolentry_txhash
-	-     walletnotify_w_win-26+knots			24f3d207098	# Latest code now
+	-     walletnotify_w_win-26+knots			24f3d207098	last=2bad09b2fe3 walletnotify_w_win-27+knots
 	14137 win_taskbar_progress-26+knots		1f4925cf5fc	last=18eb4dbb8a
+	(CHECK-LAST)	last=c64a26ef482 win_taskbar_progress-27.1+knots
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					d112238fc73
 		#27.xTODO# FIXME: 5f3f3c321ed fixup! Restore blockmaxsize option, allowing to limit mined blocks by byte size

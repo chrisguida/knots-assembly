@@ -823,8 +823,8 @@ checkout core/27.x
 	-     gui_payreq_textedit					20bbcf27d67
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				b839336b5da
-	-     walletnotify_w_win-26+knots			24f3d207098	# Latest code now
-	14137 win_taskbar_progress-26+knots		1f4925cf5fc	last=18eb4dbb8a
+	-     walletnotify_w_win-27+knots			24f3d207098	# Latest code now
+	14137 win_taskbar_progress-27.1+knots		1f4925cf5fc	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					d112238fc73
 		#27.xTODO# FIXME: 5f3f3c321ed fixup! Restore blockmaxsize option, allowing to limit mined blocks by byte size
