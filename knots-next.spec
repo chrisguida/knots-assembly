@@ -716,7 +716,7 @@ checkout core/27.x
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	#27.xTODO# Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
 	30062 rpc_getrawaddrman_asmap-26			30fdc9e99c3	last=1e54d61c469 brunoerg/2024-04-asmap-getrawaddrman
-	(CHECK-LAST)	last=eeaaac49a91 origin-pull/30183/head
+	(CHECK-LAST)	last=53f38f6fcee origin-pull/30183/head
 		# +#30183
 		#27.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees

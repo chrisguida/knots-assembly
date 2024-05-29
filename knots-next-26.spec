@@ -958,10 +958,10 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
-	n/a   restore_feefilter_opt					8e42311a7b0
+	n/a   restore_feefilter_opt-26				8e42311a7b0	last=e981b95fb61 restore_feefilter_opt
 	-     gui_payreq_textedit					20bbcf27d67
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
-	-     rpc_mempoolentry_txhash				b839336b5da
+	-     rpc_mempoolentry_txhash-25			b839336b5da	last=2f7b38db868 rpc_mempoolentry_txhash
 	-     walletnotify_w_win-26+knots			24f3d207098	# Latest code now
 	14137 win_taskbar_progress-26+knots		1f4925cf5fc	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash

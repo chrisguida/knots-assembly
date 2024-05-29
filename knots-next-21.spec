@@ -1465,7 +1465,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	# Needs review: (MAYBE JUST PART OF) g539  RandyMcMillan/1643263956-network-graph-issue-532
 # Non-upstreamed functionality:
 	-     gui_payreq_textedit-0.21				bfe154411de last=79b7acbf7ec gui_payreq_textedit
-	-     rpc_mempoolentry_txhash-0.20			0b5a0196787	last=f72fb60b048 rpc_mempoolentry_txhash
+	-     rpc_mempoolentry_txhash-0.20			0b5a0196787	last=2f7b38db868 rpc_mempoolentry_txhash
+	(CHECK-LAST)	last=f72fb60b048 rpc_mempoolentry_txhash-25
 	-     walletnotify_w_win-0.21+knots			103ea74ed61	last=622b88bd923 walletnotify_w_win-26+knots
 	(CHECK-LAST)	last=4c481517859 walletnotify_w_win-22+knots
 	14137 win_taskbar_progress-0.21+knots		cf8835a0b82	last=18eb4dbb8a
