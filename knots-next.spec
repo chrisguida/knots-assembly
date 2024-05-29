@@ -805,10 +805,10 @@ checkout core/27.x
 	(CHECK-LAST)	last=71bfa1fb715 cli_getinfo_mw_total_balance-26
 	19117 rpc_getrpcwhitelist					3794f1f3c40
 		# NOTE: Was #18827 before any Knots merge
-	-     getrpcwhitelist_wallets-26+knots		60aaf990499
+	-     getrpcwhitelist_wallets-27+knots		60aaf990499
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
-	-     wallettool_dump_warning-26+knots		c0ffbef6715
+	-     wallettool_dump_warning-27+knots		c0ffbef6715
 	# Needs work: 22708 hebasto:210815-wayland
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532

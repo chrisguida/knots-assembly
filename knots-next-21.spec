@@ -1058,6 +1058,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	(CHECK-LAST)	last=858f74a8dd5 wallettool_dump_warning-22+knots
 	(CHECK-LAST)	last=5009c359275 wallettool_dump_warning-23+knots
 	(CHECK-LAST)	last=6086f6443b5 wallettool_dump_warning-25+knots
+	(CHECK-LAST)	last=6086f6443b5 wallettool_dump_warning-27+knots
 		# NOTE: Disabled for BDB wallets since it doesn't dump/restore wallet id yet
 		# NOTE: Changed to print warnings to stderr instead of stdout
 		# NOTE: Diff-minimised
@@ -1445,7 +1446,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	19117 rpc_getrpcwhitelist-21				f005cd98854	last=d87cd4f47ed rpc_getrpcwhitelist
 	(CHECK-LAST)	last=3a5869713b4 rpc_getrpcwhitelist-22
 		# NOTE: Was #18827 before any Knots merge
-	-     getrpcwhitelist_wallets-0.21+knots	e2bae466a89	last=e58e7666948 getrpcwhitelist_wallets-25+knots
+	-     getrpcwhitelist_wallets-0.21+knots	e2bae466a89	last=e58e7666948 getrpcwhitelist_wallets-27+knots
+	(CHECK-LAST)	last=e58e7666948 getrpcwhitelist_wallets-25+knots
 	(CHECK-LAST)	last=1e1d1e2e62c getrpcwhitelist_wallets-22+knots
 	(CHECK-LAST)	last=fad1716d500 getrpcwhitelist_wallets-23+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
