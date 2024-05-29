@@ -5,7 +5,6 @@ lastapply no-merge
 
 checkout core/27.x
 @27.x-syslibs
-	n/a origin-pull/30092/head	last=22701a43464 origin-pull/30092/head # TEMPORARY # DELETE #27.xTODO#
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
@@ -702,7 +701,7 @@ checkout core/27.x
 	29585 manpage_see_also-23+knots				75af99797c4	last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
 	# Needs review & wallet compat check: 29675 achow101/musig2
-	29686 manpage_desc-27+knots					68c1d8fc43e	last=4452625133e willcl-ark/manpage-desc
+	29686 manpage_desc-27+knots					68c1d8fc43e	last=f6171a8f1da willcl-ark/manpage-desc
 		# Various fixups
 	29687 bcli_err_noconn_helphint-0.17			6dbf5463fe4	last=69d6fd676e9 willcl-ark/improve-cli-error
 	29695 gcc_branch_protection_default-26		d221bb9c051	last=7850c5fe20a fanquake/gcc_12_branch_protection_default
