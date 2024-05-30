@@ -827,7 +827,6 @@ checkout core/27.x
 	14137 win_taskbar_progress-27.1+knots		1f4925cf5fc	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					d112238fc73
-		#27.xTODO# FIXME: 5f3f3c321ed fixup! Restore blockmaxsize option, allowing to limit mined blocks by byte size
 	7107  qtnetworkport-27+knots				e4744fb01d5	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force-26+knots				041cf8be982 last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco

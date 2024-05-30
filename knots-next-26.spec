@@ -935,7 +935,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
 		# (and removed release notes)
 	17958 rpc_getgeneralinfo					9612ad2e42c	last=cdbd38df131  # getgeneralinfo RPC
-	18223 blockfilter_v0						013703ac225	last=5561e7a0c79
+	18223 blockfilter_v0-26						013703ac225	last=5561e7a0c79
+	(CHECK-LAST)	last=b85232d7462 blockfilter_v0
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	19089 cli_getinfo_mwbalances				c90a3ed14dc	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
@@ -965,7 +966,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	14137 win_taskbar_progress-26+knots		1f4925cf5fc	last=18eb4dbb8a
 	(CHECK-LAST)	last=c64a26ef482 win_taskbar_progress-27.1+knots
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
-	-     restore_blockmaxsize					d112238fc73
+	-     restore_blockmaxsize-25				d112238fc73	last=3029c19637c restore_blockmaxsize
 		#27.xTODO# FIXME: 5f3f3c321ed fixup! Restore blockmaxsize option, allowing to limit mined blocks by byte size
 	7107  qtnetworkport-26+knots				e4744fb01d5	last=1f37c87d8f2 origin-pull/7107/head
 	(CHECK-LAST)	last=07e7cb053d4 qtnetworkport-27+knots
