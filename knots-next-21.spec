@@ -1506,6 +1506,7 @@ m	559   accept_nonstdtxn-21+knots				0d7a5178261	last=2e2ecd0eeab accept_nonstdt
 	 553  bugfix_qt_uri_amount_parser-0.17		ce9be680833	last=4d1d8e41188 bugfix_qt_uri_amount_parser
 m	-     mining_priority-0.21+knots			1e33269a0ae	last=a284d6253ff mining_priority
 	(CHECK-LAST)	last=58e2cab4b18 mining_priority-22
+	(CHECK-LAST)	last=? mining_priority-26+knots
 		# Didn't backport next_block_height passing (maybe consider when/if someday cs_main can be released)
 		# Didn't backport platform-independent double serialisation
 		FIXME: Ensure format is compatible with latest

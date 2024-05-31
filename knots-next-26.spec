@@ -984,7 +984,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	 929 tbc									a39febb8c2c
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			4d55210514d
-	-    mining_priority-26+knots				51b430ca389 last=ea796fe8031 mining_priority
+	-     mining_priority-26+knots				51b430ca389 last=78eb474c565 mining_priority
 		#26.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 		#26.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
 	5861 gui_restore_addresses					b6ea305b748

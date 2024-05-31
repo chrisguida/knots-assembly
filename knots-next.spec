@@ -843,9 +843,11 @@ checkout core/27.x
 	 929 tbc									a39febb8c2c
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			4d55210514d
-	-    mining_priority-26+knots				51b430ca389 last=ea796fe8031 mining_priority
+	-     mining_priority						51b430ca389	# Latest code now
 		#26.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 		#26.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
+		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
+		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 	5861 gui_restore_addresses					b6ea305b748
 	5891  qt_console_history_persist			7170d2ce47a	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-26+knots						3bd712cb918	# Latest code now
