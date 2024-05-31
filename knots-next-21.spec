@@ -1483,7 +1483,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	(CHECK-LAST)	last=0f776fd3d7b qtnetworkport-26+knots
 m	7533  sendraw_force-21+knots				84c7abed1ab	last=8b4a4f9b2b4 sendraw_force
 	(CHECK-LAST)	last=074e22628db sendraw_force-22
-	(CHECK-LAST)	last=??? sendraw_force-25+knots  # equal to 2627c0937f8 sendraw_force
+	(CHECK-LAST)	last=??? sendraw_force-25+knots  # equal to 2627c0937f8 sendraw_force ?
+	(CHECK-LAST)	last=??? sendraw_force-27+knots
 		# NOTE: partial re-PR in #20753 by Marco
 	11082 rwconf-0.21							901121d0ce9	last=3e6f24bf30b rwconf-25+knots
 	(CHECK-LAST)	last=ad7812c9eb7 rwconf-22

@@ -828,7 +828,7 @@ checkout core/27.x
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					d112238fc73
 	7107  qtnetworkport-27+knots				e4744fb01d5	last=1f37c87d8f2 origin-pull/7107/head
-	7533  sendraw_force-26+knots				041cf8be982 last=2627c0937f8 sendraw_force
+	7533  sendraw_force-27+knots				041cf8be982 last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 	11082 rwconf-26+knots						7293f1dff4a # Latest code now
@@ -849,6 +849,7 @@ checkout core/27.x
 	5861 gui_restore_addresses					b6ea305b748
 	5891  qt_console_history_persist			7170d2ce47a	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-26+knots						3bd712cb918	# Latest code now
+		TODO: Update for TRUC
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					700efc65b56
@@ -986,6 +987,7 @@ MERGED # TODO: Ensure std::filesystem isn't introduced (see #28076)
 #27.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type: git grep '"options.*OBJ,'
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
+TODO: Check if any TX_MEMPOOL_POLICY added ought to change to TX_RECONSIDERABLE
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
 		TODO: pull BIP 324 on-by-default change from net_v2t_default-26 (contra #29452)
 	n/a  (bump_version=Knots:20240528)			b6e90958caa

@@ -971,6 +971,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	7107  qtnetworkport-26+knots				e4744fb01d5	last=1f37c87d8f2 origin-pull/7107/head
 	(CHECK-LAST)	last=07e7cb053d4 qtnetworkport-27+knots
 	7533  sendraw_force-26+knots				041cf8be982 last=2627c0937f8 sendraw_force
+	(CHECK-LAST)	last=324fa4666b9 sendraw_force-27+knots
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 	11082 rwconf-26+knots						7293f1dff4a # Latest code now
