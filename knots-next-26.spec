@@ -974,12 +974,10 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	(CHECK-LAST)	last=324fa4666b9 sendraw_force-27+knots
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
-	11082 rwconf-26+knots						7293f1dff4a # Latest code now
+	11082 rwconf-26+knots						7293f1dff4a	last=7c812c86d4b rwconf-27+knots
 		#27.xTODO# Squash fixes
 		#27.xTODO# Deprecate with settings.json better?
-	7510  rwconf_gui-26+knots					447a68a21e5
-		#27.xTODO# Squash fixes
-		#27.xTODO# ? blockreconstructionextratxn
+	7510  rwconf_gui-26+knots					447a68a21e5	last=68eb671c662 rwconf_gui-27+knots
 	559   accept_nonstdtxn						4e6a8cfa5c7
 		#28.xTODO# Revert or redefine #29843 if it got merged
 		#27.xTODO# FIXME: Also bypasses other policies

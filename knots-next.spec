@@ -831,10 +831,10 @@ checkout core/27.x
 	7533  sendraw_force-27+knots				041cf8be982 last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
-	11082 rwconf-26+knots						7293f1dff4a # Latest code now
+	11082 rwconf-27+knots						7293f1dff4a # Latest code now
 		#27.xTODO# Squash fixes
 		#27.xTODO# Deprecate with settings.json better?
-	7510  rwconf_gui-26+knots					447a68a21e5
+	7510  rwconf_gui-27+knots					447a68a21e5
 		#27.xTODO# Squash fixes
 		#27.xTODO# ? blockreconstructionextratxn
 	559   accept_nonstdtxn						4e6a8cfa5c7
