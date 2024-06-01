@@ -721,6 +721,7 @@ checkout core/27.x
 		#27.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	
+	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
 	# TODO: Extend IsUnspendable safely
@@ -786,7 +787,7 @@ checkout core/27.x
 	# TODO: tor guix bundle!
 	# TODO: 16490 maflcko/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
-	#	TODO: Support Knots policies
+	#	TODO: Support TRUC & Knots policies
 	17795 gui_console_ctrl_d-26+knots			03b3b3ef08f
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
 	15861 restore_vbits_warning					ee1a4df08e2
