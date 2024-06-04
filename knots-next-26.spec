@@ -216,7 +216,7 @@ checkout v26.1
 	#26.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	#26.xTODO# Triage #28248
 	29946 jsonrpc_content_type-26+mini			f0644e1b77c	last=f90a84d6150 jsonrpc_content_type
-		TODO: Update to #30215
+		# Rebased in Core as #30215 (merged unmodified)
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks-mini			39a0f361e17	last=78a256505f3 fix_bytespersigop_checks
 		#26.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done

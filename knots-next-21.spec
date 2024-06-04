@@ -714,7 +714,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	Triage: #28248
 	Triage: 29946 jsonrpc_content_type-26+mini			f0644e1b77c	last=f90a84d6150 jsonrpc_content_type
-		TODO: Update to #30215
+		# Rebased in Core as #30215 (merged unmodified)
 	g749 furszy/2023_gui_start_minimized
 	Triage: Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks
