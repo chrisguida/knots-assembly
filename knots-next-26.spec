@@ -1,7 +1,7 @@
-timestamp 2024-05-28 19:52:45
+timestamp 2024-06-04 17:30:54
 #lastapply no-merge
 
-#.. checked up to PR #30186 / gui #820
+#.. checked up to PR #30225 / gui #820
 
 checkout v26.1
 @26.x-syslibs
@@ -12,6 +12,7 @@ checkout v26.1
 		FIXME: Address https://github.com/bitcoin/bitcoin/pull/29362#issuecomment-1964389168
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
 	29859 fix_ac_atomic_double-22				be89cb46852
+	Triage: 30216 hebasto/240602-libevent
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
 	5416  sys_libsecp256k1-26					259dcb7e012	last=7c70b396b1d sys_libsecp256k1
@@ -47,6 +48,7 @@ checkout v26.1
 	# Triage: 29753 furszy/2024_test_fix_p2p_node_network_failure
 	# Triage: 29788 maflcko/2404-ci-bcfcc-
 	# Triage: 29832 fanquake/revert_29788
+	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
 # FIXES:
 	18818 guix_reltar_autogen_distclean			510ed993763	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						3bcab14451d
@@ -214,6 +216,7 @@ checkout v26.1
 	#26.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	#26.xTODO# Triage #28248
 	29946 jsonrpc_content_type-26+mini			f0644e1b77c	last=f90a84d6150 jsonrpc_content_type
+		TODO: Update to #30215
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks-mini			39a0f361e17	last=78a256505f3 fix_bytespersigop_checks
 		#26.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done
@@ -366,6 +369,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	30151 hebasto/240522-upnp-dl
 	# Needs review: 30155 mzumsande/202405_replay_blocks
 	# Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
+	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
+	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -383,9 +388,11 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 #@26.x-knots-lts-deps
 	29732 depends_qt_update-26					b7d8f6e1c6a
 	(CHECK-LAST)	last=38fc092d97e depends_qt_update-27
+		TODO: Bump to #30198
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
+	Triage: 30217 hebasto/240603-boost
 @26.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					fc085bc6726
@@ -1127,7 +1134,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240528)			b6e90958caa
+	n/a  (bump_version=Knots:20240604)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits

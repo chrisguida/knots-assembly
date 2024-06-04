@@ -1,7 +1,7 @@
-timestamp 2024-05-28 19:52:45
+timestamp 2024-06-04 17:30:54
 lastapply no-merge
 
-#.. checked up to PR #30186 / gui #820
+#.. checked up to PR #30225 / gui #820
 
 checkout core/27.x
 @27.x-syslibs
@@ -43,6 +43,7 @@ checkout core/27.x
 	# Triage: 29753 furszy/2024_test_fix_p2p_node_network_failure
 	# Triage: 29788 maflcko/2404-ci-bcfcc-
 	# Triage: 29832 fanquake/revert_29788
+	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
 # FIXES:
 	18818 guix_reltar_autogen_distclean			510ed993763	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						3bcab14451d
@@ -200,6 +201,7 @@ checkout core/27.x
 	#26.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	#26.xTODO# Triage #28248
 	29946 jsonrpc_content_type-26+mini			f0644e1b77c	last=f90a84d6150 jsonrpc_content_type
+		TODO: Update to #30215
 	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks-mini			39a0f361e17	last=78a256505f3 fix_bytespersigop_checks
 		#26.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done
@@ -281,6 +283,8 @@ checkout core/27.x
 	# Needs review: 30155 mzumsande/202405_replay_blocks
 	#28.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	# Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
+	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
+	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -297,6 +301,7 @@ checkout core/27.x
 	n/a   (delete_release_notes_fragments)
 #@27.x-knots-lts-deps
 	29732 depends_qt_update-27					b7d8f6e1c6a
+		TODO: Bump to #30198
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 @27.x-knots
@@ -994,7 +999,7 @@ MERGED # TODO: Ensure std::filesystem isn't introduced (see #28076)
 TODO: Check if any TX_MEMPOOL_POLICY added ought to change to TX_RECONSIDERABLE
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
 		TODO: pull BIP 324 on-by-default change from net_v2t_default-26 (contra #29452)
-	n/a  (bump_version=Knots:20240528)			b6e90958caa
+	n/a  (bump_version=Knots:20240604)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits

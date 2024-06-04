@@ -1,8 +1,8 @@
-timestamp 2024-05-28 19:52:45
+timestamp 2024-06-04 17:30:54
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30186 / gui #820 for fixes
+#.. checked up to PR #30225 / gui #820 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -53,6 +53,7 @@ checkout v0.21.2
 		FIXME: Address https://github.com/bitcoin/bitcoin/pull/29362#issuecomment-1964389168
 	missing cstdint includes: #25068 (partial?), iwyu??
 	Triage: 29859 hebasto/240412-atomic
+	Triage: 30216 hebasto/240602-libevent
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=1c6ae96f0a3 sys_leveldb
@@ -101,6 +102,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	Triage: 29753 furszy/2024_test_fix_p2p_node_network_failure
 	Triage: 29788 maflcko/2404-ci-bcfcc-
 	Triage: 29832 fanquake/revert_29788
+	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b aka depends_no_getrandom
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=345f0b2283e guix_reltar_autogen_distclean
@@ -711,7 +713,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
 	28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	Triage: #28248
-	Triage: FIXME: curl RPCdoc examples use wrong content type!
+	Triage: 29946 jsonrpc_content_type-26+mini			f0644e1b77c	last=f90a84d6150 jsonrpc_content_type
+		TODO: Update to #30215
 	g749 furszy/2023_gui_start_minimized
 	Triage: Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks
@@ -883,6 +886,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	Triage: Needs review: 30155 mzumsande/202405_replay_blocks
 	Triage: Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
+	Triage: Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
+	Triage: Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
 	
 	Triage: TODO: QScrollArea and/or QTreeWidget for GUI Options dialog?
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
@@ -899,6 +904,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		TODO: bump
 		FIXME: 404 Fetching qtwinextras-opensource-src-5.9.8.tar.xz from https://download.qt.io/archive/qt/5.9/5.9.8/submodules
 		TODO: see #29732
+		TODO: Bump to #30198
 	-     sqlite_3.32.3+-21+knots
 		TODO: Bump to #29991 fanquake/sqlite_3_45_3
 	23956 zeromq_4.3.4-21
