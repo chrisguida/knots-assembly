@@ -785,7 +785,7 @@ checkout core/27.x
 		# FIXME: -netinfo doesn't show tor if inbound-only?
 		#28.xTODO# Revert #29844 if still using boost::process?
 	# TODO: tor guix bundle!
-	# TODO: 16490 maflcko/1907-rpcMempoolWhyReplacable
+	#27.xTODO# 16490 maflcko/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support TRUC & Knots policies
 	17795 gui_console_ctrl_d-26+knots			03b3b3ef08f
@@ -852,7 +852,8 @@ checkout core/27.x
 	5861 gui_restore_addresses					b6ea305b748
 	5891  qt_console_history_persist			7170d2ce47a	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-26+knots						3bd712cb918	# Latest code now
-		TODO: Update for TRUC
+	-     truc_opts
+		# TODO... reject/optin/allow ?
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					700efc65b56
