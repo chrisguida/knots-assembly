@@ -865,7 +865,7 @@ checkout core/27.x
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					700efc65b56
 		# TODO: Split out legacy address preference to be more explicit
-		#27.xTODO# Revert gui#808 ??
+		#28.xTODO# Revert gui#808 ??
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname-0.19			d101fcd2f89	# Latest code now
@@ -884,10 +884,16 @@ checkout core/27.x
 	#27.xTODO# Needs concept & writing: default UPnP/NAT-PMP to enabled
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
-	27.xTODO: Restore libbitcoinconsensus? #29189(MERGED) #29748 #29787 #29797
+	-     undeprecate_libconsensus-27
+		#28.xTODO# Restore libbitcoinconsensus? #29748 #29787 #29797
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 # Non-upstreamed policy options (default off):
-	#27.xTODO# Try using #29086 to rebase policy options up here?
+	#28.xTODO# Try using #29086(MERGED)+#30232 to rebase policy options up here?
+	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
+	29309 permitbarepubkey-27+knots				95798904ec8	last=ffc6c0b8385
+	-     bytespersigopstrict-27+knots			ff70ccc811f
+	9749  unique_spk_mempool-27+knots			5cbe31047e3
+	-     dustdynamic-27+knots					9036dec2fb9
 # Non-upstreamed Knots compatibility:
 	#28.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
@@ -907,12 +913,7 @@ checkout core/27.x
 		# Splitter position: leave alone? but syncronise with header columns appropriately
 		# Header columns: need a rename
 # POLICY:
-	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
-	29309 permitbarepubkey-26+knots				95798904ec8	last=ffc6c0b8385
 	-    1day_default_conftarget				f5f988a0566
-	-     bytespersigopstrict-26+knots			ff70ccc811f
-	9749  unique_spk_mempool-26+knots			5cbe31047e3
-	-     dustdynamic-26+knots					9036dec2fb9
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	28408 match_more_datacarrier-26+knots		c33339e615d	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)

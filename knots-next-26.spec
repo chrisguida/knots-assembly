@@ -999,7 +999,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	7219  rbf_opts-26+knots						3bd712cb918	# Latest code now
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
-	12146 opt_wallet_segwit2					700efc65b56
+	12146 opt_wallet_segwit2-26.1+knots			700efc65b56	last=79bdfebe3f9 opt_wallet_segwit2
 		# TODO: Split out legacy address preference to be more explicit
 		#27.xTODO# Revert gui#808 ??
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
@@ -1045,10 +1045,11 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-26+knots				95798904ec8	last=ffc6c0b8385
+	(CHECK-LAST)	last=62533f58876 permitbarepubkey-27+knots
 	-    1day_default_conftarget				f5f988a0566
-	-     bytespersigopstrict-26+knots			ff70ccc811f
-	9749  unique_spk_mempool-26+knots			5cbe31047e3
-	-     dustdynamic-26+knots					9036dec2fb9
+	-     bytespersigopstrict-26+knots			ff70ccc811f	last=fe69581700c bytespersigopstrict-27+knots
+	9749  unique_spk_mempool-26+knots			5cbe31047e3	last=82a6f7effbd unique_spk_mempool-27+knots
+	-     dustdynamic-26+knots					9036dec2fb9	last=31e0c3b480b dustdynamic-27+knots
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	28408 match_more_datacarrier-26+knots		c33339e615d	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
