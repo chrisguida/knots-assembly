@@ -931,7 +931,7 @@ checkout v26.1
 	#26.xTODO# Whitelist Whirlpool Tx0 and/or BIP47?
 	#26.xTODO# Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 28334 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
-	-     bloom_default-0.26+knots				edc9ff33c65
+	-     bloom_default-26+knots				edc9ff33c65
 	-     wallet_avoid_newerchange				bacea8923d4
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-26+knots				98c0265003e

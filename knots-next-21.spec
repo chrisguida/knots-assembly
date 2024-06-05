@@ -1560,7 +1560,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 	9749  unique_spk_mempool-0.21+knots			52cb2331dee	last=2e3a780f5a7 unique_spk_mempool-27+knots
 	(CHECK-LAST)	last=36bb6460136 unique_spk_mempool-22+knots
 	(CHECK-LAST)	last=7882096ddef unique_spk_mempool-23+knots
-	-     bloom_default-0.21+knots				ab9afbc6fee
+	-     bloom_default-0.21+knots				ab9afbc6fee	last=??? bloom_default-27
 	TODO: Adapt existing limits to apply to Taproot?
 	TODO: Updated spam filters?
 	-     enforce_checkpoints-0.21				09feeecfdfe	last=86dfb334158 enforce_checkpoints

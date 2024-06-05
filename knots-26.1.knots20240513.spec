@@ -1014,7 +1014,7 @@ m	-    mining_priority-26+knots				44a853aa740 last=ea796fe8031 mining_priority
 	#27.xTODO# Discount privacy txs?
 	#27.xTODO# Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
-	-     bloom_default-0.26+knots				e2c643655bb
+	-     bloom_default-26+knots				e2c643655bb
 	-     wallet_avoid_newerchange				b0ac39239a8
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-26+knots				3aa3a1504ce

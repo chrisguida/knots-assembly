@@ -890,7 +890,7 @@ checkout core/27.x
 # Non-upstreamed policy options (default off):
 	#28.xTODO# Try using #29086(MERGED)+#30232 to rebase policy options up here?
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
-	29309 permitbarepubkey-27+knots				95798904ec8	last=ffc6c0b8385
+	29309 permitbarepubkey-27+knots				95798904ec8	last=1dfe27e49ab
 	-     bytespersigopstrict-27+knots			ff70ccc811f
 	9749  unique_spk_mempool-27+knots			5cbe31047e3
 	-     dustdynamic-27+knots					9036dec2fb9
@@ -902,10 +902,10 @@ checkout core/27.x
 	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	#26.xTODO# Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
-	-     acceptnonstddatacarrier-26.1+knots	8bcd075a027
-	-     rejecttokens-26.1+knots				e1c2f4d1456
+	-     acceptnonstddatacarrier-27+knots		8bcd075a027
+	-     rejecttokens-27+knots					e1c2f4d1456
 		# Currently filters just Runes
-	k78   rejectparasites-26.1+knots			1c1fcdba83a	last=d978324923a
+	k78   rejectparasites-27+knots				1c1fcdba83a	last=d978324923a
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
 		# Rewrote unit test to be more comprehensive
@@ -918,7 +918,7 @@ checkout core/27.x
 	#27.xTODO# Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
-	-     maxscriptsize-26+knots				0f59d45cfc0
+	-     maxscriptsize-27+knots				0f59d45cfc0
 		# Alternate to(?) #29769
 	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
@@ -947,7 +947,7 @@ checkout core/27.x
 # POLICY:
 	-    1day_default_conftarget				f5f988a0566
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	-     bloom_default-0.26+knots				eb63b3e2582
+	-     bloom_default-27						eb63b3e2582
 	-     wallet_avoid_newerchange				ba356b861f7
 	-     enforce_checkpoints					ea5691f019e
 	n/a   checkpoint_update-26					29127ba4642	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21

@@ -1044,7 +1044,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# Header columns: need a rename
 # POLICY:
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
-	29309 permitbarepubkey-26+knots				95798904ec8	last=ffc6c0b8385
+	29309 permitbarepubkey-26+knots				95798904ec8	last=1dfe27e49ab
 	(CHECK-LAST)	last=62533f58876 permitbarepubkey-27+knots
 	-    1day_default_conftarget				f5f988a0566
 	-     bytespersigopstrict-26+knots			ff70ccc811f	last=fe69581700c bytespersigopstrict-27+knots
@@ -1060,10 +1060,11 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     datacarriercost-26+knots				b22014a90b2	last=8265420c727 datacarriercost-27+knots
 		#26.xTODO# Add tests and make sure boundaries are correct
-	-     acceptnonstddatacarrier-26.1+knots	8bcd075a027
-	-     rejecttokens-26.1+knots				e1c2f4d1456
+	-     acceptnonstddatacarrier-26.1+knots	8bcd075a027	last=8c9287e2fae acceptnonstddatacarrier-27+knots
+	-     rejecttokens-26.1+knots				e1c2f4d1456	last=22b3ccf986f rejecttokens-27+knots
 		# Currently filters just Runes
 	k78   rejectparasites-26.1+knots			1c1fcdba83a	last=d978324923a
+	(CHECK-LAST)	last=7761f15b69c rejectparasites-27+knots
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
 		# Rewrote unit test to be more comprehensive
@@ -1075,10 +1076,10 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#27.xTODO# Discount privacy txs?
 	#27.xTODO# Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
-	-     bloom_default-0.26+knots				eb63b3e2582
+	-     bloom_default-26+knots				eb63b3e2582	last=d354ea94d62 bloom_default-27
 	-     wallet_avoid_newerchange				ba356b861f7
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
-	-     maxscriptsize-26+knots				0f59d45cfc0
+	-     maxscriptsize-26+knots				0f59d45cfc0	last=a5458fb4abd maxscriptsize-27+knots
 		# Alternate to(?) #29769
 	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
