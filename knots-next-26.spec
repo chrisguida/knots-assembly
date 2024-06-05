@@ -1052,6 +1052,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	-     dustdynamic-26+knots					9036dec2fb9	last=31e0c3b480b dustdynamic-27+knots
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	28408 match_more_datacarrier-26+knots		c33339e615d	last=4d2ec0671a3 match_more_datacarrier
+	(CHECK-LAST)	last=562e347b8b7 match_more_datacarrier-27+knots
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# Revise byte counting to consider input/output waste
 	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176

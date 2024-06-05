@@ -894,6 +894,9 @@ checkout core/27.x
 	-     bytespersigopstrict-27+knots			ff70ccc811f
 	9749  unique_spk_mempool-27+knots			5cbe31047e3
 	-     dustdynamic-27+knots					9036dec2fb9
+	28408 match_more_datacarrier-27+knots		c33339e615d	last=4d2ec0671a3 match_more_datacarrier
+		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
+		# Revise byte counting to consider input/output waste
 # Non-upstreamed Knots compatibility:
 	#28.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
@@ -915,10 +918,6 @@ checkout core/27.x
 # POLICY:
 	-    1day_default_conftarget				f5f988a0566
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	28408 match_more_datacarrier-26+knots		c33339e615d	last=4d2ec0671a3 match_more_datacarrier
-		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
-		# Revise byte counting to consider input/output waste
-		TODO: Address master vs rebase divergence
 	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	#26.xTODO# Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
@@ -960,6 +959,7 @@ checkout core/27.x
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#TODO: squash fixups
+		TODO: ParseDustDynamicOpt changed from unsigned to signed int
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
