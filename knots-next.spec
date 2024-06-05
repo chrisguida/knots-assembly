@@ -781,7 +781,7 @@ checkout core/27.x
 		# NOTE: Stripped out benchmark change
 		#27.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-27			6938e1bc6b4
-	15218 postibd_flush-27						b8a38fcf7b8	last=011d9b70f37
+	15218 postibd_flush-27						b8a38fcf7b8	last=9843f2ca591
 	15428 tor_gui_pairing-27+knots				9718528c5fd	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 		#27.xTODO# Rebase getNetLocalAddresses interface to whatever gui#626 ends up using
@@ -834,6 +834,8 @@ checkout core/27.x
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					d112238fc73
 	7107  qtnetworkport-27+knots				e4744fb01d5	last=1f37c87d8f2 origin-pull/7107/head
+	29306 truc_sibling_eviction-27+knots					last=1342a31f3ab glozow/2024-01-sibling-eviction
+	29873 truc_10k_vsize_limit-27+knots						last=154b2b2296e glozow/2024-04-truc-25k
 	7533  sendraw_force-27+knots				041cf8be982 last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
@@ -856,9 +858,9 @@ checkout core/27.x
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 	5861 gui_restore_addresses					b6ea305b748
 	5891  qt_console_history_persist			7170d2ce47a	last=0cd5fc301d6 qt_console_history_persist
-	7219  rbf_opts-26+knots						3bd712cb918	# Latest code now
-	-     truc_opts
-		# TODO... reject/optin/allow ?
+	7219  rbf_opts-27+knots						3bd712cb918	# Latest code now
+	-     truc_opts-27+knots
+		#28.xTODO# Check if default ought to be changed
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					700efc65b56
@@ -999,6 +1001,7 @@ MERGED # TODO: Ensure std::filesystem isn't introduced (see #28076)
 TODO: Check if any TX_MEMPOOL_POLICY added ought to change to TX_RECONSIDERABLE
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
 		TODO: pull BIP 324 on-by-default change from net_v2t_default-26 (contra #29452)
+		TODO: Add BIP 431 (like origin-pull/29496/head)
 	n/a  (bump_version=Knots:20240604)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
