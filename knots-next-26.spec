@@ -1058,7 +1058,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	#26.xTODO# Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
-	-     datacarriercost-26+knots				b22014a90b2
+	-     datacarriercost-26+knots				b22014a90b2	last=8265420c727 datacarriercost-27+knots
 		#26.xTODO# Add tests and make sure boundaries are correct
 	-     acceptnonstddatacarrier-26.1+knots	8bcd075a027
 	-     rejecttokens-26.1+knots				e1c2f4d1456
