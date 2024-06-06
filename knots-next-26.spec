@@ -1091,7 +1091,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	n/a   checkpoint_update-26					29127ba4642	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
 		#26.xTODO# Add new checkpoint
 		#27.xTODO# Revert #25725 (Remove mainnet checkpoints)
-	10282 timebomb_knots						345024a23c6
+		TODO: Update from checkpoint_update-27
+	10282 timebomb_knots-26.1					345024a23c6	last=e482c8caa0d timebomb_knots
 	-     rwconf_policy-26+knots				8d509aa8ca8
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?

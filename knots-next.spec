@@ -950,9 +950,8 @@ checkout core/27.x
 	-     bloom_default-27						eb63b3e2582
 	-     wallet_avoid_newerchange				ba356b861f7
 	-     enforce_checkpoints					ea5691f019e
-	n/a   checkpoint_update-26					29127ba4642	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
-		#26.xTODO# Add new checkpoint
-		#27.xTODO# Revert #25725 (Remove mainnet checkpoints)
+	n/a   checkpoint_update-27					29127ba4642	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
+		#28.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	10282 timebomb_knots						345024a23c6
 	-     rwconf_policy-26+knots				8d509aa8ca8
 		# Includes Knots policy changes for simplification of final rebase process
