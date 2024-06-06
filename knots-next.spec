@@ -953,7 +953,7 @@ checkout core/27.x
 	n/a   checkpoint_update-27					29127ba4642	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
 		#28.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	10282 timebomb_knots						345024a23c6
-	-     rwconf_policy-26+knots				8d509aa8ca8
+	-     rwconf_policy-27+knots				8d509aa8ca8
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
