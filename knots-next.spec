@@ -957,8 +957,6 @@ checkout core/27.x
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
-		#TODO: squash fixups
-		TODO: ParseDustDynamicOpt changed from unsigned to signed int
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
@@ -1017,6 +1015,7 @@ TODO: Check if any TX_MEMPOOL_POLICY added ought to change to TX_RECONSIDERABLE
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#27.xTODO# Include the deleted notes from 0bc1f4b5c7b
+		TODO: Document mempooltruc=accept default
 	n/a  (cherrypick=928f49526a6)				cc2146f5590  # update manpages (build first)
 		# also example bitcoin.conf
 	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
