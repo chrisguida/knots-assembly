@@ -130,7 +130,7 @@ checkout core/27.x
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
 	g599  ts_20220515-partial-25				2bee2521267	last=d9411324066 ts_20220515
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
-		#26.xTODO# Update with other commits that are beneficial
+		#28.xTODO# Update with other commits that are beneficial
 	-     boost_171_177_workarounds				41ee93f9fcf
 		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
 	-     hww_windows-27
@@ -147,22 +147,21 @@ checkout core/27.x
 	# Needs review: 25938 mzumsande/202208_fixed_cjdns
 	g662  qt_fix_txview_202209					85790d1e298
 		# Includes gui#368
-	#26.xTODO# Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
+	# TODO: Needs review: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
-	#26.xTODO# Needs review: 26260 -  # rpc: Set best header after reconsiderblock
+	# TODO: Needs review: 26260 -  # rpc: Set best header after reconsiderblock
 	# TODO: Needs review: 26316 andrewtoth/block-read-shared-mutex
 	# TODO: Needs work? 26343 mzumsande/202210_addrfetch_servicebits
-	#26.xTODO# Sane fix for #24049
+	# TODO: Sane fix for #24049
 	g677 fix_qt_peers_na						9a101d72211
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
-	#26.xTODO# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
+	# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
 	g684  qt_reqs_multiselect_pr684-25+knots	8d1b8e744ee	last=a6f567590b7
 	# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
-	#26.xTODO# Too minor? 26903 pstratem/2023-01-17-baseindex-commit-error
-	#26.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
+	#27.xTODO# Needs triage & review: 26950 fanquake:check_for_SecureZeroMemory
 	27039 fix_reindex_readonly_blkfiles-26		7507b1364f9
-	#26.xTODO# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
+	# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
@@ -175,16 +174,16 @@ checkout core/27.x
 	# Needs concept review: 27591 rpc_mempoolvsize-25								last=60bde2dac05 glozow/2023-05-mempool-vsize
 		# When restoring, revert part of bfab6ac4791 in relnotes
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
-	#26.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
+	#27.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
 	-     acceptstalefeeestimates_mainnet_opt	c868eff4234
-	#26.xTODO# Needs review: 27684 hebasto/230516-punish OR ???
-	#26.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
+	# Needs review: 27684 hebasto/230516-punish OR ???
+	#27.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	# Needs review: 27804 -  # init: deduplicate added connections
 	27814 -										5b7188dfc5d	last=bfc2bb6a270  # forbid_nohelp-0.19
 	27815 -										c6da3059a99	last=244e6c8db81  # cli_forbid_multihelper-22
 	# Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
 	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
-	#26.xTODO# Needs review: 27912 -  # net: run disconnect in I2P thread
+	# Needs review: 27912 -  # net: run disconnect in I2P thread
 	# Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	# Needs work: 27973 maflcko/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
@@ -195,21 +194,21 @@ checkout core/27.x
 	28029 fix_zmq_errhandling_202307-mini		9edad69540c	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err		9de16a02a53
-	#26.xTODO# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
+	# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
-	#26.xTODO# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
-	#26.xTODO# Triage #28248
+	# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
+	# Triage #28248
 	29946 jsonrpc_content_type-26+mini			f0644e1b77c	last=f90a84d6150 jsonrpc_content_type
 		# Rebased in Core as #30215 (merged unmodified)
-	#26.xTODO# Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
+	Part of (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks-mini			39a0f361e17	last=78a256505f3 fix_bytespersigop_checks
-		#26.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done
+		#27.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done
 	28340 -										acede199ab6	last=0244416aacb  # security: restrict abis in bitcoind.service
 	# Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
-	#26.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
-	#26.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
+	#28.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
+	#28.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main					8a9699273cb
@@ -249,8 +248,8 @@ checkout core/27.x
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	# Nothing to fix: 29615 theStack/202403-test-fix_GetSigOpCount_accurate_counting_bip16
 	# Compatibility break, needs review: 29612 fjahr/2024-03-pr26045-reopen (relnotes in #30167)
-	#26.xTODO# Needs work? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
-	#26.xTODO# Needs review: 29652 ryanofsky/pr/noloc
+	#27.xTODO# Needs review? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
+	#27.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
 	29658 fix_qt_help_on_console_x_newline		fd3a76e8ded
 	#26.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
