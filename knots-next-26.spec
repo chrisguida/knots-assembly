@@ -1114,7 +1114,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		#27.xTODO# revert macos ZIP only: #28932 #28973 #29733
 		# NOTE: temporarily reintroduces .tiff file
 		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
-	7483  svg_icon-26.1+knots					b695e9923cb
+	7483  svg_icon-26.1+knots					b695e9923cb	last=6813761c41f svg_icon-27+knots
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 		FIXME: https://github.com/bitcoinknots/bitcoin/issues/79
 	n/a   tbc_font-26.1+knots					14adc77e64f

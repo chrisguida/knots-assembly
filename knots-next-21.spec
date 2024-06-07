@@ -1576,9 +1576,10 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		# Added -mempoolfullrbf compatibility (see #25353)
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		e0a236336e2
-	7483  svg_icon-21.2+knots					10090268130	last=75796f01b75 svg_icon-25+knots
+	7483  svg_icon-21.2+knots					10090268130	last=75796f01b75 svg_icon-27+knots
 	(CHECK-LAST)	last=afaab080b87 svg_icon-22+knots
 	(CHECK-LAST)	last=75796f01b75 svg_icon-23+knots
+	(CHECL-LAST)	last=75796f01b75 svg_icon-25+knots
 		# NOTE: Held back guix support 64ed5a651d7...75796f01b75
 # BRANDING:
 	n/a   update_security_policy-21
