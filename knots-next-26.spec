@@ -1109,7 +1109,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)
-	n/a   macos_dmg-26.1						b05c5f8afad
+	n/a   macos_dmg-26.1						b05c5f8afad	last=38969ff1de0 macos_dmg-27
 		# Reverts #28432, and includes fix_dmg_openfinder
 		#27.xTODO# revert macos ZIP only: #28932 #28973 #29733
 		# NOTE: temporarily reintroduces .tiff file
