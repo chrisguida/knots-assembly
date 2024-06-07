@@ -975,7 +975,7 @@ checkout core/27.x
 	7483  svg_icon-27+knots						b695e9923cb
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 		FIXME: https://github.com/bitcoinknots/bitcoin/issues/79
-	n/a   tbc_font-26.1+knots					14adc77e64f
+	n/a   tbc_font-27+knots						14adc77e64f
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
