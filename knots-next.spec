@@ -887,6 +887,10 @@ checkout core/27.x
 	-     undeprecate_libconsensus-27
 		#28.xTODO# Restore libbitcoinconsensus? #29748 #29787 #29797
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
+	n/a   macos_dmg-27							b05c5f8afad
+		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder
+		#28.xTODO# revert macos ZIP only: #29733
+		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
 # Non-upstreamed policy options (default off):
 	#28.xTODO# Try using #29086(MERGED)+#30232 to rebase policy options up here?
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
@@ -968,12 +972,6 @@ checkout core/27.x
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)
-	n/a   macos_dmg-27							b05c5f8afad
-		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder
-		#28.xTODO# revert macos ZIP only: #29733
-		# NOTE: temporarily reintroduces .tiff file
-		FIXME: "temporary" .tiff is 0 bytes: restore file from 1bf915db993 (maybe Knots-ify?) somehow (tbc font like?); overhead to generate from SVG in all environments (macOS is different) is too much work
-		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
 	7483  svg_icon-26.1+knots					b695e9923cb
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 		FIXME: https://github.com/bitcoinknots/bitcoin/issues/79
