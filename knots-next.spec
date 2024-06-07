@@ -980,7 +980,6 @@ checkout core/27.x
 # BRANDING:
 	n/a   knots_branding-26.1					0136d7571df
 		#26.xTODO# Review security policy
-	n/a   copyright_2024-26						af40b27af69
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #26.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail

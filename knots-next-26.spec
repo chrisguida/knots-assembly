@@ -1121,7 +1121,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/
 # BRANDING:
-	n/a   knots_branding-26.1					0136d7571df
+	n/a   knots_branding-26.1					0136d7571df	last=4f217dc7a96 knots_branding-27
 		#26.xTODO# Review security policy
 	n/a   copyright_2024-26						af40b27af69
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases

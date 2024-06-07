@@ -1584,8 +1584,9 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 # BRANDING:
 	n/a   update_security_policy-21
 		# Includes (part of #23450) remove Jonas, #23466 keyserver, #25850 remove laanwj, #25910 add achow101
-	n/a   knots_branding-21						9db64a56d30	last=16035761f8b knots_branding-25
+	n/a   knots_branding-21						9db64a56d30	last=16035761f8b knots_branding-27
 	(CHECK-LAST)	last=282420dea44 knots_branding-22
+	(CHECK-LAST)	last=16035761f8b knots_branding-25
 	n/a   ver_dropzero-21.2+knots				0d04104e95d
 		# this should be 21.1.1 I guess? keeping 21.2.0 for now to match Core...
 		# TODO: bump ver properly when Core abandons it
