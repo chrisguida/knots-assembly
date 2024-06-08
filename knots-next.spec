@@ -167,7 +167,7 @@ checkout core/27.x
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
 		# CAUTION: Even merged, this appears to possibly show a higher balance than the user actually has for sure??
 		# TODO: Include fix/optimisation in #30115
-	#26.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
+	# Alternative to: 27434 pinheadmz/chaintips-invalid
 	# TODO: Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
 	# Needs concept/review: 28016 -  # p2p: gives seednode priority over dnsseed if both are provided
@@ -252,7 +252,7 @@ checkout core/27.x
 	#27.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
 	29658 fix_qt_help_on_console_x_newline		fd3a76e8ded
-	#26.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
+	#27.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	# Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
 	29678 fix_init_lowdisk_warning_reqd-25		0ab7aa47bbe	last=847ad93f4dc fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
@@ -285,7 +285,7 @@ checkout core/27.x
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
 	
-	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
+	#27.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -293,15 +293,15 @@ checkout core/27.x
 			# Holding back in hopes of potential RPC+GUI unification
 		# But not sure it's worth breaking RPC?
 	# FIXME: workaround #26025 / https://github.com/llvm/llvm-project/issues/57587 ?
-	#26.xTODO# FIXME: https://twitter.com/tchjntr/status/1788332365887995925
+	# FIXME: https://twitter.com/tchjntr/status/1788332365887995925
 		# weird bitcoin.conf results in:
 		#	ASSERT failure in QList<T>::operator[]: "index out of range", file /bitcoin/depends/x86_64-w64-mingw32/include/QtCore/qlist.h, line 575
-	#26.xTODO# Review security report(s)
+	#27.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@27.x-knots-lts-deps
 	30198 depends_qt_update-27					b7d8f6e1c6a
 		# Left out clang 18 patch (conflict-prone and shouldn't be needed)
-	#26.xTODO# FIXME -     depends_qt5kde
+	#27.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 @27.x-knots
 # PERFORMANCE:
@@ -335,7 +335,7 @@ checkout core/27.x
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 -										c387269d617	last=42b25bbd939  # opti_merkle_mutation-0.17
 	28592 -										ef7b0d1547e last=22c2b52c122  # txrelayrate_14txps-26
-		#26.xTODO# Make configurable? Or is that even sane?
+		# TODO: Make configurable? Or is that even sane?
 	# Needs review: 28923 theStack/202311-add_SignTransaction_benchmark
 	# Needs review: 28945 martinus/2023-11-improve-ccoinsviewcache-reallocatecache
 	# Needs review: 28955 furszy/2023_index_blockfilter_cache_header
@@ -392,7 +392,7 @@ checkout core/27.x
 	18479 rpc_sign_show_fees					b928d07b7ef	last=47b2ba29df2 !origin-pull/12911/head
 		# Dropped rel notes file
 		# NOTE: Originally #12911
-		#26.xTODO# FIXME: "feerate" fails to account for sigops (see 21d85b5c0e)
+		#27.xTODO# FIXME: "feerate" fails to account for sigops (see 21d85b5c0e)
 	# Needs review and care (new index): 13014 jonasschnelli/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs work: 13989 add avx512 instrinsic
@@ -584,14 +584,14 @@ checkout core/27.x
 	# Needs work: 24952 -  # rpc: Add sqlite format option for dumptxoutset
 	# Concept NACK? 25026 -  # rpc: Make pruneblockchain fetch old blocks if height is lower than pruned height
 	# Needs triage & review: 25038 glozow/package-rbf
-	#26.xTODO# Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
+	#27.xTODO# Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku ???
 	25183 rpc_fundraw_segwitonly				3ad552d43e5	last=9e7fd5c0fe3
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
 		# Fixed tests with inspiration from 9e7fd5c0fe3
 		# TODO: update without breaking compatibility? (new code looks buggy tho - needs rewrite?) (also, filtering by "input type" doesn't really make sense, though segwit filtering does)
 	# Needs concept: 25261 -  # rpc: fetch multiple headers in getblockheader()
-	#26.xTODO# 25269 -  # wallet: re-activate the not triggered "AmountWithFeeExceedsBalance" error
+	#27.xTODO# 25269 -  # wallet: re-activate the not triggered "AmountWithFeeExceedsBalance" error
 	# Needs concept review: 25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
 		# Concept unsure: Hides logline by default; but maybe we want that with more info included?
 	# TODO: 25366 w0xlt/desc_rpc
@@ -613,10 +613,10 @@ checkout core/27.x
 		# Removed doc change
 		# Added lots of improvements
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
-	#26.xTODO# Minimised: 26162 Sjors/2022/09/taproot
-	#26.xTODO# sendrawtransaction to a specific node bypassing mempool
+	# Minimised: 26162 Sjors/2022/09/taproot
+	#27.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
-	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
+	# Needs review: 26174 w0xlt/list_address_book
 	27114 whitelist_outgoing-mini-26+knots		bbf9ae1c2d8	last=0a533613fb4
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring commit (08c1af96e6f) and reverted gArgs caching refactor (ab6c001ec96)
@@ -688,7 +688,7 @@ checkout core/27.x
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	29657 fix_netinfo_v2t_safety-27
-	#26.xTODO# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
+	# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
 	# Needs review or minimal impact: 29130 achow101/createwalletdescriptor-without-new-records
 	# Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
 	# Needs final interface: 29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
@@ -712,7 +712,7 @@ checkout core/27.x
 	# API change: 29845 stickies-v/2024-04/make-warnings-arr
 		# When merged upstream, adapt deprecaterpc to behave like fix_rpc_warnings_all-21
 	# TODO: Configurable 29873 glozow/2024-04-truc-25k
-	#26.xTODO# 29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
+	#27.xTODO# 29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
 		# Extend to other options?
 		# TODO: Fix datacarriersize description
 		# TODO:  b02aab950af RPC/Mempool: getmempoolinfo: Return many more mempool options
@@ -818,7 +818,7 @@ checkout core/27.x
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
-	#26.xTODO# Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
+	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 	# Needs concept & review: 29523 -  # Wallet: Add max_tx_weight to transaction funding options (take 2)
 		# WAS (never in Knots): #29264 instagibbs/2024-01-max-tx-weight
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
@@ -851,8 +851,8 @@ checkout core/27.x
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			4d55210514d
 	-     mining_priority						51b430ca389	# Latest code now
-		#26.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
-		#26.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
+		#27.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
+		#27.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 	5861 gui_restore_addresses					b6ea305b748
@@ -879,10 +879,10 @@ checkout core/27.x
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
-	#26.xTODO# Needs concept acceptance & testing: -     gbt_rpc_options-26.1+knots
+	-     gbt_rpc_options-26.1+knots
 	#27.xTODO# Needs concept & writing: default UPnP/NAT-PMP to enabled
 		# NOTE: Need to revert #28874 conditionals
-	#26.xTODO# Look into making the patches tarball in guix
+	#27.xTODO# Look into making the patches tarball in guix
 	-     undeprecate_libconsensus-27
 		#28.xTODO# Restore libbitcoinconsensus? #29748 #29787 #29797
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
@@ -901,9 +901,9 @@ checkout core/27.x
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# Revise byte counting to consider input/output waste
 	-     datacarriercost-27+knots				b22014a90b2
-		#26.xTODO# Add tests and make sure boundaries are correct
-	#26.xTODO# Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
-	#26.xTODO# Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
+		#27.xTODO# Add tests and make sure boundaries are correct
+	# TODO: Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
+	# TODO: Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     acceptnonstddatacarrier-27+knots		8bcd075a027
 	-     rejecttokens-27+knots					e1c2f4d1456
@@ -914,7 +914,7 @@ checkout core/27.x
 		# Rewrote unit test to be more comprehensive
 	#27.xTODO# NO APPARENT USAGE: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
 	#27.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666 - INSCRIPTION-WRAPPED: https://mempool.space/tx/130c79034450163f36fcde8e27f96904dc42e535f28aacd5af3b9a18d0b1c7f9
-	#26.xTODO# All-ASCII data storage (inefficient)
+	# TODO? All-ASCII data storage (inefficient)
 	#27.xTODO# If any input is dust, limit output count to < input count? (or lower?)
 	# TODO: Stacks (OP_RETURN X2... - most are 80 bytes long, some 55, few 19)
 	#27.xTODO# Discount privacy txs?
@@ -923,12 +923,12 @@ checkout core/27.x
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-27+knots				0f59d45cfc0
 		# Alternate to(?) #29769
-	#26.xTODO# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
-	#26.xTODO# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
+	# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
+	# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
 	#27.xTODO# Ordislow??
-	#26.xTODO# Spam filter for stuff like https://mempool.space/tx/4ec38548aa67f6a2efbbc3cf34ab49dc5c275d9701ab0b58696baee9f555c45a
-	#26.xTODO# Whitelisting model for non-SPK scripts
-	#26.xTODO# -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
+	# TODO? Spam filter for stuff like https://mempool.space/tx/4ec38548aa67f6a2efbbc3cf34ab49dc5c275d9701ab0b58696baee9f555c45a
+	# TODO: Whitelisting model for non-SPK scripts
+	# TODO: -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 # Non-upstreamed Knots compatibility:
 	#28.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
@@ -953,7 +953,7 @@ checkout core/27.x
 	-     bloom_default-27						eb63b3e2582
 	-     wallet_avoid_newerchange				ba356b861f7
 	-     enforce_checkpoints					ea5691f019e
-	n/a   checkpoint_update-27					29127ba4642	#26.xTODO# last=70996dfdd9b checkpoint_update-0.21
+	n/a   checkpoint_update-27					29127ba4642
 		#28.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	10282 timebomb_knots						345024a23c6
 	-     rwconf_policy-27+knots				8d509aa8ca8
@@ -978,11 +978,11 @@ checkout core/27.x
 		# FIXME: Shouldn't be part of branding :/ But depends on the build-for-release-source code from svg_icon...
 # BRANDING:
 	n/a   knots_branding-26.1					0136d7571df
-		#26.xTODO# Review security policy
+		#27.xTODO# Review security policy
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
-#26.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
-#26.xTODO# Check macOS zip impact on tuffy font etc
+#27.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
+#27.xTODO# Check macOS zip impact on tuffy font etc
 #	FIXME: macOS can't even run builds?!
 # TODO: Check that we aren't deprecating anything in Core
 # TODO: verify src tarball includes rendered_icons incl nsis-header
@@ -1014,7 +1014,7 @@ TODO: Check if any TX_MEMPOOL_POLICY added ought to change to TX_RECONSIDERABLE
 		TODO: Document mempooltruc=accept default
 	n/a  (cherrypick=928f49526a6)				cc2146f5590  # update manpages (build first)
 		# also example bitcoin.conf
-	#26.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
+	#28.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
