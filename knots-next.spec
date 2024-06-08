@@ -8,8 +8,8 @@ checkout core/27.x
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
-	29362 hebasto/240201-objcxx					1f0ca2cea82	last=17861b9cd59
-		#27.xTODO# FIXME: Address https://github.com/bitcoin/bitcoin/pull/29362#issuecomment-1964389168
+	29577 fanquake/alternative_29362			1f0ca2cea82	last=17861b9cd59
+		# Was #29362 - build: Add missed definition for AM_OBJCXXFLAGS
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
@@ -17,7 +17,7 @@ checkout core/27.x
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
-	#27.xTODO: sys_libminisketch
+	#28.xTODO# sys_libminisketch
 	13789 bugfix_asm_pragmas					5de4b81c017
 		# Should revert #28893 if merged?
 	15155 test_external_bcli					f29878dc855
@@ -138,7 +138,7 @@ checkout core/27.x
 	# TODO: 29868 hebasto/231130-replace-bp
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
-	#27.xTODO# Check on #25561
+	# Check on #25561
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	# Needs review: 25698 -  # crypto: avoid potential buffer overread in ChaCha20::SetKey
@@ -212,7 +212,7 @@ checkout core/27.x
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main					8a9699273cb
-	#27.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
+	#28.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	# Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
@@ -236,14 +236,13 @@ checkout core/27.x
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  -										ce11132294a	last=3bf00e13609  # debugwindow: update session ID tooltip
 	29307 AutoFile_error_check-27				fbd4b3103c6	last=de23848eed5 vasild/AutoFile_error_check
-	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
 	29480 -										36fadc3ace3	last=88468a8afcd  # log_rand_during_init-0.20
 		# Needs careful backport (basically rewritten)
 	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
 	-     rpc_loadtxoutset_hide-26				aa2c7fadfe0
-		#27.xTODO# This should probably be removed
+		#28.xTODO# This should probably be removed if assumeutxo is supported on mainnet
 	29586 wallet_migrate_null_walletname_bak-27	896efa03ef8
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	# Nothing to fix: 29615 theStack/202403-test-fix_GetSigOpCount_accurate_counting_bip16
@@ -251,6 +250,7 @@ checkout core/27.x
 	#27.xTODO# Needs review? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
 	#27.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	# Meh, only test_bitcoin-qt: g803  hebasto-g/240305-appname
+	# Needs review: 29656 -  # redeclare nChainTx to use uint64_t
 	29658 fix_qt_help_on_console_x_newline		fd3a76e8ded
 	#27.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	# Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
@@ -264,7 +264,6 @@ checkout core/27.x
 	-     fix_rpc_warnings_all-21				1786b3c3d4e
 	29850 dnsseed_maxips_32-26					1d00999f660	last=f2e3662e57e laanwj/2024-04-dnsseeds-up-to-32
 	29855 psbt_nonwit_utxo_chkearly-24			7ffd2428b17	last=9e13ccc50ee achow101/psbt-check-outpoint
-	#27.xTODO# 29867 furszy/2024_index_fix_race
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
 	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
 	g815  fix_qt_privacy_before_open-23			5310d15a915	last=260d6eb9272
@@ -320,7 +319,7 @@ checkout core/27.x
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
 	26375 zmq_optimise_duplread-27+k			3f9e56d77af	last=7b631dc9b19 andrewtoth/no-read-zmq
 		# Several improvements in Knots branch
-	#27.xTODO# Needs review: 26415 andrewtoth/read-raw-block
+	26415 andrewtoth/read-raw-block
 	# Needs review: 26486 sipa/202211_batchnotfound
 	# Opt-in & needs review: 26951 pstratem/2023-01-23-gcsfilter
 	# Needs review: 26966 furszy/2022_parallelize_blockfilter_index_2
@@ -339,6 +338,7 @@ checkout core/27.x
 	# Needs review: 28923 theStack/202311-add_SignTransaction_benchmark
 	# Needs review: 28945 martinus/2023-11-improve-ccoinsviewcache-reallocatecache
 	# Needs review: 28955 furszy/2023_index_blockfilter_cache_header
+		# TODO: +#29867 furszy/2024_index_fix_race
 	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
 	# Needs more careful review: 29436 addrman_select_networks-26						last=7edb07ca800 brunoerg/2024-02-addrman-select-networks
@@ -722,7 +722,7 @@ checkout core/27.x
 	30062 rpc_getrawaddrman_asmap-26			30fdc9e99c3	last=1e54d61c469 brunoerg/2024-04-asmap-getrawaddrman
 	(CHECK-LAST)	last=53f38f6fcee origin-pull/30183/head
 		# +#30183
-		#27.xTODO# Try backporting tests
+		#28.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	
 	#28.xTODO# Support for sending tx with TRUC version
@@ -778,12 +778,11 @@ checkout core/27.x
 	12965 scriptthreads-27+knots				f34fef58afc	last=dfab6c6866 jonasschnelli/2018/04/svt
 	13203 dsha256_power8-27						4fb23e68f6e	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
-		#27.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
+		#28.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-27			6938e1bc6b4
 	15218 postibd_flush-27						b8a38fcf7b8	last=9843f2ca591
 	15428 tor_gui_pairing-27+knots				9718528c5fd	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-		#27.xTODO# Rebase getNetLocalAddresses interface to whatever gui#626 ends up using
 	15421 tor_subprocess-27+knots				c875f9d58c9	# Latest code now
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
@@ -839,14 +838,14 @@ checkout core/27.x
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 	11082 rwconf-27+knots						7293f1dff4a # Latest code now
-		#27.xTODO# Squash fixes
-		#27.xTODO# Deprecate with settings.json better?
+		#28.xTODO# Squash fixes
+		#28.xTODO# Deprecate with settings.json better?
 	7510  rwconf_gui-27+knots					447a68a21e5
-		#27.xTODO# Squash fixes
-		#27.xTODO# ? blockreconstructionextratxn
+		#28.xTODO# Squash fixes
+		#28.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 	559   accept_nonstdtxn						4e6a8cfa5c7
 		#28.xTODO# Revert or redefine #29843 if it got merged
-		#27.xTODO# FIXME: Also bypasses other policies
+		#27.xTODO# FIXME: Also bypasses other policies (at least disable those in the GUI when this is enabled?)
 	 929 tbc									a39febb8c2c
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			4d55210514d
@@ -912,20 +911,19 @@ checkout core/27.x
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
 		# Rewrote unit test to be more comprehensive
-	#27.xTODO# NO APPARENT USAGE: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
-	#27.xTODO# CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666 - INSCRIPTION-WRAPPED: https://mempool.space/tx/130c79034450163f36fcde8e27f96904dc42e535f28aacd5af3b9a18d0b1c7f9
+	# TODO: NO APPARENT USAGE: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
+	# TODO: CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666 - INSCRIPTION-WRAPPED: https://mempool.space/tx/130c79034450163f36fcde8e27f96904dc42e535f28aacd5af3b9a18d0b1c7f9
 	# TODO? All-ASCII data storage (inefficient)
-	#27.xTODO# If any input is dust, limit output count to < input count? (or lower?)
+	# TODO? If any input is dust, limit output count to < input count? (or lower?)
 	# TODO: Stacks (OP_RETURN X2... - most are 80 bytes long, some 55, few 19)
-	#27.xTODO# Discount privacy txs?
-	#27.xTODO# Procedural approve/deny/discount/penalize policy scripting?
+	# TODO? Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-27+knots				0f59d45cfc0
 		# Alternate to(?) #29769
 	# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
-	#27.xTODO# Ordislow??
+	# TODO? Ordislow??
 	# TODO? Spam filter for stuff like https://mempool.space/tx/4ec38548aa67f6a2efbbc3cf34ab49dc5c275d9701ab0b58696baee9f555c45a
 	# TODO: Whitelisting model for non-SPK scripts
 	# TODO: -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
@@ -934,7 +932,7 @@ checkout core/27.x
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			6549c6a9292
 		# Effectively reverts #24505, #27869, #28597, and gui#764
-		#27.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
+		#28.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
 	14641 fundraw_min_conf_deprecated-25+knots	1e16c81aeb5	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			d2e7d59122e
 	-     netperms_implicit_addr				2444ff67460
@@ -942,7 +940,7 @@ checkout core/27.x
 	-     rpc_getblockfrompeer_nodeid_compat	fdf41f50814
 	# TODO: add a bitcoinknots.conf ?
 	n/a   gui_peers_bump_setting_keys-25+k		8675ab9e396
-		#27.xTODO# Each release, see if we need to bump setting names for GUI states
+		#28.xTODO# Each release, see if we need to bump setting names for GUI states
 		# git grep 'alue(.*State\|toByteArray\|saveState'
 		# Window position/size: leave alone
 		# Splitter position: leave alone? but syncronise with header columns appropriately
@@ -982,13 +980,10 @@ checkout core/27.x
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #27.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
-#27.xTODO# Check macOS zip impact on tuffy font etc
-#	FIXME: macOS can't even run builds?!
 # TODO: Check that we aren't deprecating anything in Core
 # TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check #26039 doesn't break anything
-MERGED # TODO: Ensure std::filesystem isn't introduced (see #28076)
 #27.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type: git grep '"options.*OBJ,'
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)

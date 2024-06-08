@@ -10,6 +10,7 @@ checkout v26.1
 	5872 subdir_incl_compat						517e84c15db
 	29362 fix_objcxxflags_pr29362-26			1f0ca2cea82	last=17861b9cd59 hebasto/240201-objcxx
 		FIXME: Address https://github.com/bitcoin/bitcoin/pull/29362#issuecomment-1964389168
+		...by replacing with #29577?
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
 	29859 fix_ac_atomic_double-22				be89cb46852
 	Triage: 30216 hebasto/240602-libevent
