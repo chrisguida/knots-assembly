@@ -318,6 +318,8 @@ checkout core/27.x
 	# Needs review: 25968 sipa/202208_headerssync_optimize
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
 	26415 apis_read_raw_block-27
+		# Includes: 21319 getblock_optimise						74cb4fa735a
+			# Context: 17529 rpc: Faster getblock using PureBlock
 	# Unclear benefit: 26375 zmq_optimise_duplread-27+k			3f9e56d77af	last=7b631dc9b19 andrewtoth/no-read-zmq
 		# Several improvements in Knots branch
 		# Post-#26415, it's unclear if this is an improvement or potentially a performance loss: we either readback raw (from OS cache), or serialize CBlock
@@ -502,8 +504,6 @@ checkout core/27.x
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
 	# TODO: 21283 achow101/psbt2
 		# TODO: diff-minimise??
-	21319 getblock_optimise						74cb4fa735a
-		# Context: 17529 rpc: Faster getblock using PureBlock
 	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
 	21260 rpcwallet_tx_in_mempool-26+knots		05c7e969f16	last=46bf0b7b5d8
 		# Includes squashed fixes for RPC doc
@@ -749,7 +749,6 @@ checkout core/27.x
 	g444  gui_netwatch-27+knots					3741a7820a6	 # Latest code now
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
-		FIXME: retest without zmq_optimise_duplread
 	10615 multiwallet_rpc-27+knots				e4ba0cf9c2d  # latest code now
 		# CAUTION: Be extra careful rebasing - diff/patch default context might accidentally move code around between different RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
