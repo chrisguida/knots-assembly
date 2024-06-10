@@ -8,7 +8,7 @@ checkout core/27.x
 # BUILD BUGS:
 	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
-	29577 fanquake/alternative_29362			1f0ca2cea82	last=17861b9cd59
+	29577 fix_objcxxflags_pr29577-27			1f0ca2cea82
 		# Was #29362 - build: Add missed definition for AM_OBJCXXFLAGS
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
 # SYSLIBS: (and old build bugs)
@@ -201,7 +201,7 @@ checkout core/27.x
 	# Triage #28248
 	29946 jsonrpc_content_type-26+mini			f0644e1b77c	last=f90a84d6150 jsonrpc_content_type
 		# Rebased in Core as #30215 (merged unmodified)
-	Part of (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
+	# TODO: Part of (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks-mini			39a0f361e17	last=78a256505f3 fix_bytespersigop_checks
 		#27.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done
 	28340 -										acede199ab6	last=0244416aacb  # security: restrict abis in bitcoind.service
@@ -921,6 +921,7 @@ checkout core/27.x
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-27+knots				0f59d45cfc0
 		# Alternate to(?) #29769
+		FIXME: Document unit as bytes
 	# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
 	# TODO? Ordislow??
