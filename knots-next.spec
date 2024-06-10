@@ -317,9 +317,10 @@ checkout core/27.x
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
 	# Needs review: 25968 sipa/202208_headerssync_optimize
 	# Needs #26316 first & review: 26326 andrewtoth/remove-read-lock-in-net
-	26375 zmq_optimise_duplread-27+k			3f9e56d77af	last=7b631dc9b19 andrewtoth/no-read-zmq
+	26415 apis_read_raw_block-27
+	# Unclear benefit: 26375 zmq_optimise_duplread-27+k			3f9e56d77af	last=7b631dc9b19 andrewtoth/no-read-zmq
 		# Several improvements in Knots branch
-	26415 andrewtoth/read-raw-block
+		# Post-#26415, it's unclear if this is an improvement or potentially a performance loss: we either readback raw (from OS cache), or serialize CBlock
 	# Needs review: 26486 sipa/202211_batchnotfound
 	# Opt-in & needs review: 26951 pstratem/2023-01-23-gcsfilter
 	# Needs review: 26966 furszy/2022_parallelize_blockfilter_index_2
@@ -748,6 +749,7 @@ checkout core/27.x
 	g444  gui_netwatch-27+knots					3741a7820a6	 # Latest code now
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
+		FIXME: retest without zmq_optimise_duplread
 	10615 multiwallet_rpc-27+knots				e4ba0cf9c2d  # latest code now
 		# CAUTION: Be extra careful rebasing - diff/patch default context might accidentally move code around between different RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
