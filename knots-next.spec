@@ -879,9 +879,8 @@ checkout core/27.x
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
-	-     gbt_rpc_options-26.1+knots
-	#27.xTODO# Needs concept & writing: default UPnP/NAT-PMP to enabled
-		# NOTE: Need to revert #28874 conditionals
+	-     gbt_rpc_options-27+knots
+	-     mapport_default_on-27+knots
 	#27.xTODO# Look into making the patches tarball in guix
 	-     undeprecate_libconsensus-27
 		#28.xTODO# Restore libbitcoinconsensus? #29748 #29787 #29797
