@@ -1,8 +1,8 @@
-timestamp 2024-06-04 17:30:54
+timestamp 2024-06-12 20:27:14
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30225 / gui #820 for fixes
+#.. checked up to PR #30278 / gui #824 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -884,6 +884,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl
 	Triage: Needs review: 30132 TheCharlatan/preserveIndexOnRestart
 	Triage: Needs review: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
+	30151 hebasto/240522-upnp-dl
+		NOTE: 26.x Backport in #30260
 	Triage: Needs review: 30155 mzumsande/202405_replay_blocks
 	Triage: Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
 	Triage: Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
@@ -905,6 +907,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		FIXME: 404 Fetching qtwinextras-opensource-src-5.9.8.tar.xz from https://download.qt.io/archive/qt/5.9/5.9.8/submodules
 		TODO: see #29732
 		TODO: Bump to #30198
+		TODO: update with #30227
 	-     sqlite_3.32.3+-21+knots
 		TODO: Bump to #29991 fanquake/sqlite_3_45_3
 	23956 zeromq_4.3.4-21

@@ -1,7 +1,7 @@
-timestamp 2024-06-04 17:30:54
+timestamp 2024-06-12 20:27:14
 #lastapply no-merge
 
-#.. checked up to PR #30225 / gui #820
+#.. checked up to PR #30278 / gui #824
 
 checkout v26.1
 @26.x-syslibs
@@ -368,10 +368,16 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30132 TheCharlatan/preserveIndexOnRestart
 	# Needs review: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	30151 hebasto/240522-upnp-dl
+		NOTE: 26.x Backport in #30260
 	# Needs review: 30155 mzumsande/202405_replay_blocks
 	# Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
+	# Needs review: 30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
+	Triage: # No real impact? 30255 maflcko/2406-logError
+	# Needs review: 30265 achow101/fix-listwalletdir-migrated-wallets
+	# Needs work: g823 -  # wallet: Improve error log color in the console
+	# Needs work: g824 achow101-g/gui-migrate-unloaded
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -390,6 +396,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	29732 depends_qt_update-26					b7d8f6e1c6a
 	(CHECK-LAST)	last=38fc092d97e depends_qt_update-27
 		TODO: Bump to #30198
+		TODO: update with #30227
 	#26.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
@@ -455,6 +462,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
 	30115 theuni/easy-univalue-moves
 	# Too much churn: 30120 fanquake/secp256k1_0_5_0
+	30253 maflcko/2406-performance-for-range-copy
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -856,6 +864,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		TODO: +#30183 iff API change is adopted (triage) - IF NOT, COPY BRANCH AND ROLL BACK
 		#27.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
+	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -1139,7 +1148,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240604)			b6e90958caa
+	n/a  (bump_version=Knots:20240612)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits

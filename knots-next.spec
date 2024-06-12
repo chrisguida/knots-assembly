@@ -1,7 +1,7 @@
-timestamp 2024-06-04 17:30:54
+timestamp 2024-06-12 20:27:14
 lastapply no-merge
 
-#.. checked up to PR #30225 / gui #820
+#.. checked up to PR #30278 / gui #824
 
 checkout v27.1
 @27.x-syslibs
@@ -283,6 +283,11 @@ checkout v27.1
 	# Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
+	# Needs review: 30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
+	# No real impact? 30255 maflcko/2406-logError
+	# Needs review: 30265 achow101/fix-listwalletdir-migrated-wallets
+	# Needs work: g823 -  # wallet: Improve error log color in the console
+	# Needs work: g824 achow101-g/gui-migrate-unloaded
 	
 	#27.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -300,6 +305,7 @@ checkout v27.1
 #@27.x-knots-lts-deps
 	30198 depends_qt_update-27					b7d8f6e1c6a
 		# Left out clang 18 patch (conflict-prone and shouldn't be needed)
+		TODO: update with #30227
 	#27.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 @27.x-knots
@@ -359,6 +365,7 @@ checkout v27.1
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
 	30115 easy_uv_moves_pr30115-27
 	# Too much churn: 30120 fanquake/secp256k1_0_5_0
+	30253 maflcko/2406-performance-for-range-copy
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -725,6 +732,7 @@ checkout v27.1
 		# +#30183
 		#28.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
+	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
@@ -990,7 +998,7 @@ checkout v27.1
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
 		TODO: pull BIP 324 on-by-default change from net_v2t_default-26 (contra #29452)
 		TODO: Add BIP 431 (like origin-pull/29496/head)
-	n/a  (bump_version=Knots:20240604)			b6e90958caa
+	n/a  (bump_version=Knots:20240612)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits
