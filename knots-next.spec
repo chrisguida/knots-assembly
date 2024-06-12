@@ -305,7 +305,7 @@ checkout v27.1
 #@27.x-knots-lts-deps
 	30198 depends_qt_update-27					b7d8f6e1c6a
 		# Left out clang 18 patch (conflict-prone and shouldn't be needed)
-		TODO: update with #30227
+		# +#30227
 	#27.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 @27.x-knots
@@ -365,7 +365,7 @@ checkout v27.1
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
 	30115 easy_uv_moves_pr30115-27
 	# Too much churn: 30120 fanquake/secp256k1_0_5_0
-	30253 maflcko/2406-performance-for-range-copy
+	30253 opti_psbt_loop_pr30253-23
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -992,12 +992,9 @@ checkout v27.1
 # TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check #26039 doesn't break anything
-#27.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type: git grep '"options.*OBJ,'
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
-#27.xTODO# git grep noban_tx_relay (needs #27114)
-	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-		TODO: pull BIP 324 on-by-default change from net_v2t_default-26 (contra #29452)
-		TODO: Add BIP 431 (like origin-pull/29496/head)
+	n/a   (cherrypick=6e49826402a)				c73f86e10b9	# doc/{bips,files}
+		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=Knots:20240612)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930

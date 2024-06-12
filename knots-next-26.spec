@@ -462,7 +462,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
 	30115 theuni/easy-univalue-moves
 	# Too much churn: 30120 fanquake/secp256k1_0_5_0
-	30253 maflcko/2406-performance-for-range-copy
+	30253 opti_psbt_loop_pr30253-23
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
