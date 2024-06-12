@@ -781,7 +781,7 @@ checkout v27.1
 		# NOTE: Stripped out benchmark change
 		#28.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-27			6938e1bc6b4
-	15218 postibd_flush-27						b8a38fcf7b8	last=9843f2ca591
+	15218 postibd_flush-27						b8a38fcf7b8	last=8887d28a014
 	15428 tor_gui_pairing-27+knots				9718528c5fd	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-27+knots				c875f9d58c9	# Latest code now
@@ -987,7 +987,6 @@ checkout v27.1
 #27.xTODO# Ensure options arguments use new OBJ_NAMED_PARAMS type: git grep '"options.*OBJ,'
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
-TODO: Check if any TX_MEMPOOL_POLICY added ought to change to TX_RECONSIDERABLE
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
 		TODO: pull BIP 324 on-by-default change from net_v2t_default-26 (contra #29452)
 		TODO: Add BIP 431 (like origin-pull/29496/head)
