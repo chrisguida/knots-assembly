@@ -36,7 +36,7 @@ checkout v27.1
 # TESTS:
 	-     ci_knots-26							fd493422771
 	-     lint_relaxer-26+knots					2b540596402
-	TODO: Partially revert #28999: * 4317904a523 build: Disable -Wunreachable-code
+	-     nowarn_unreachable-code
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
@@ -709,8 +709,9 @@ checkout v27.1
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
 	# Needs review: 29519 mzumsande/202202_fix_assumeutxo_block_download
-	29530 -										710942fd596	last=87efb6f0cfd  # rpc_getpeerinfo_misbehaving_score-26
-		TODO: Needs fix for silent conflict with f33cd8869dd (#27114): 3a4ef30d880
+	29530 rpc_getpeerinfo_misbehaving_score-26	710942fd596	last=87efb6f0cfd
+		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
+			# (Silently conflicts with f33cd8869dd (#27114): fix in 3a4ef30d880)
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
 	29585 manpage_see_also-23+knots				75af99797c4	last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
@@ -748,7 +749,6 @@ checkout v27.1
 	22016 rpc_gbci_period_start					f04bc704bb1	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							fd4a7fa1c62
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
-		TODO: * 1dee937ac5e fixup! RPC: sweepprivkeys method to scan UTXO set and send to local wallet
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
 	9245 ionice									2b7034b45fd
 	-    ionice_win								e48b550c13c
@@ -767,7 +767,6 @@ checkout v27.1
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
 	10554 zmq_wtx-27+knots						9043c2cae9f	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
-		TODO: * 439c7fc67d9 fixup! ZMQ: add publishers of wallet tx
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					6fea3acaa1e
 		# NOTE: Originally based on #12674
@@ -800,7 +799,6 @@ checkout v27.1
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
 		#28.xTODO# Revert #29844 if still using boost::process?
-		TODO: * 15e06ed7ac8 fixup! torcontrol: Launch a private Tor instance when not already running
 	# TODO: tor guix bundle!
 	#27.xTODO# 16490 maflcko/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
@@ -872,9 +870,7 @@ checkout v27.1
 	5891  qt_console_history_persist			7170d2ce47a	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-27+knots						3bd712cb918	# Latest code now
 	-     truc_opts-27+knots
-		#28.xTODO# Check if default ought to be changed
-		TODO: Part A of * d86bd9b6371 fix between 300d8e67f9c and cbf3578af21
-		TODO: * 06aadbc4b97 fixup! Add mempooltruc=reject/accept/enforce option to enable TRUC support
+		#28.xTODO# Check if default/interaction values ought to be changed
 	# TODO? -     net_identify_librerelay
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
@@ -896,9 +892,7 @@ checkout v27.1
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
 	-     gbt_rpc_options-27+knots
-		TODO: * ed55bf3db5d fixup! RPC/Mining: Support overriding BlockAssembler options in RPC params
 	-     mapport_default_on-27+knots
-		TODO: * f3bbb1a118a fixup! Enable UPnP and NAT-PMP by default
 	#27.xTODO# Look into making the patches tarball in guix
 	-     undeprecate_libconsensus-27
 		#28.xTODO# Restore libbitcoinconsensus? #29748 #29787 #29797
@@ -907,7 +901,6 @@ checkout v27.1
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder
 		#28.xTODO# revert macos ZIP only: #29733
 		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
-		TODO: * 51bb81b6833 (knots/tmp) fixup! macdeployqtplus: Restore Finder background image
 # Non-upstreamed policy options (default off):
 	#28.xTODO# Try using #29086(MERGED)+#30232 to rebase policy options up here?
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
@@ -977,14 +970,6 @@ checkout v27.1
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
-		TODO: * 3c8aef0b0b8 Bugfix: GUI/OptionsDialog: Disable policy options that require rejectunknownscripts when the latter is disabled
-		TODO: * 145aaa4388c Bugfix: GUI/OptionsDialog: Properly disable dustdynamic labels when appropriate
-		TODO: * 1c516ef6b1c GUI/OptionsDialog: Move incrementalrelayfee directly below mempoolreplacement
-		TODO: * 02d5cd1fffa GUI/OptionsDialog: Move rejectspkreuse back to Mempool tab
-		TODO: * 7000ef5f68d GUI/OptionsDialog: Split spam filtering to a new tab
-		TODO: * 3beb1d0c5ca fixup! Default policy: Set mempooltruc=accept (corepolicy resets to reject)
-		TODO: Part B of * d86bd9b6371 fix between 300d8e67f9c and cbf3578af21
-		TODO: * da5f9a58bba Revert "P2SH tests: Avoid using bare multisig outputs"
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
@@ -1004,7 +989,6 @@ checkout v27.1
 # BRANDING:
 	n/a   knots_branding-27						0136d7571df
 		#27.xTODO# Review security policy
-		TODO: [qa_feature_settings_pkgname 197b5404b0f] QA: Expect PACKAGE_NAME rather than constant "Bitcoin Core"
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #27.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
