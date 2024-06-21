@@ -841,7 +841,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
 	# Needs review: 29519 mzumsande/202202_fix_assumeutxo_block_download
-	29530 rpc_getpeerinfo_misbehaving_score-26	710942fd596
+	29530 rpc_getpeerinfo_misbehaving_score-26	710942fd596	last=
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
 	29585 manpage_see_also-23+knots				75af99797c4	last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)

@@ -289,6 +289,7 @@ checkout v27.1
 	# Needs review: 30265 achow101/fix-listwalletdir-migrated-wallets
 	# Needs work: g823 -  # wallet: Improve error log color in the console
 	# Needs work: g824 achow101-g/gui-migrate-unloaded
+	-     detect_clang_bug96267
 	
 	#27.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
