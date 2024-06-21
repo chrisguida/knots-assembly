@@ -1,7 +1,7 @@
-timestamp 2024-06-12 20:27:14
+timestamp 2024-06-21 19:28:12
 lastapply no-merge
 
-#.. checked up to PR #30278 / gui #824
+#.. checked up to PR #30320 / gui #825
 
 checkout v27.1
 @27.x-syslibs
@@ -11,6 +11,7 @@ checkout v27.1
 	29577 fix_objcxxflags_pr29577-27			1f0ca2cea82
 		# Was #29362 - build: Add missed definition for AM_OBJCXXFLAGS
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
+	30283 theuni/fix-upnp-228
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
 	5416  sys_libsecp256k1						259dcb7e012
@@ -290,6 +291,7 @@ checkout v27.1
 	# Needs work: g823 -  # wallet: Improve error log color in the console
 	# Needs work: g824 achow101-g/gui-migrate-unloaded
 	-     detect_clang_bug96267
+	# Needs concept (anti-feature?): 30309 furszy/2024_wallet_max_weight
 	
 	#27.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -310,6 +312,7 @@ checkout v27.1
 		# +#30227
 	#27.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
+	# Needs review & relevance: 30301 theuni/miniupnp-228-bump
 @27.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					fc085bc6726
@@ -368,6 +371,7 @@ checkout v27.1
 	30115 easy_uv_moves_pr30115-27
 	# Too much churn: 30120 fanquake/secp256k1_0_5_0
 	30253 opti_psbt_loop_pr30253-23
+	# Needs review: 30317 -  # WIP Simplify SipHash
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -679,7 +683,7 @@ checkout v27.1
 	# Needs work & maybe removing an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
 	# Needs review: 27837 furszy/2023_introduce_block_request_tracker
 	# Needs work: 27854 -  # [WIP] add a stratum v2 template provider
-		# OR #28983 OR #29432
+		# OR #28983 OR #29432 OR #30315+???
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	#27.xTODO# Make disabled by default: 28052 maflcko/2306-fs_stuff-
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
@@ -737,6 +741,7 @@ checkout v27.1
 		#28.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
+	g825  theStack-g/gui_show_maxmempoolsize
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
@@ -990,6 +995,7 @@ checkout v27.1
 # BRANDING:
 	n/a   knots_branding-27						0136d7571df
 		#27.xTODO# Review security policy
+		# NOTE: Includes #30308
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #27.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
@@ -1000,7 +1006,7 @@ checkout v27.1
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a   (cherrypick=6e49826402a)				c73f86e10b9	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20240612)			b6e90958caa
+	n/a  (bump_version=Knots:20240621)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=32b8c854442)				f56f1ed1cd6  # release notes: write/update, including change log and credits

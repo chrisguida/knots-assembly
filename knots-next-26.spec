@@ -1,7 +1,7 @@
-timestamp 2024-06-12 20:27:14
+timestamp 2024-06-21 19:28:12
 #lastapply no-merge
 
-#.. checked up to PR #30278 / gui #824
+#.. checked up to PR #30320 / gui #825
 
 checkout v26.1
 @26.x-syslibs
@@ -14,6 +14,8 @@ checkout v26.1
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
 	29859 fix_ac_atomic_double-22				be89cb46852
 	Triage: 30216 hebasto/240602-libevent
+	Audit: 30283 fanquake/backport_upnp_api_fix
+		# 26.x backport in #30319
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
 	5416  sys_libsecp256k1-26					259dcb7e012	last=7c70b396b1d sys_libsecp256k1
@@ -378,6 +380,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30265 achow101/fix-listwalletdir-migrated-wallets
 	# Needs work: g823 -  # wallet: Improve error log color in the console
 	# Needs work: g824 achow101-g/gui-migrate-unloaded
+	-     detect_clang_bug96267
+	# Needs concept (anti-feature?): 30309 furszy/2024_wallet_max_weight
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -401,6 +405,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 	Triage: 30217 hebasto/240603-boost
+	# Needs review & relevance: 30301 theuni/miniupnp-228-bump
 @26.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					fc085bc6726
@@ -463,6 +468,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	30115 theuni/easy-univalue-moves
 	# Too much churn: 30120 fanquake/secp256k1_0_5_0
 	30253 opti_psbt_loop_pr30253-23
+	# Needs review: 30317 -  # WIP Simplify SipHash
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -799,7 +805,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work & maybe removing an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
 	# Needs review: 27837 furszy/2023_introduce_block_request_tracker
 	# Needs work: 27854 -  # [WIP] add a stratum v2 template provider
-		# OR #28983 OR #29432
+		# OR #28983 OR #29432 OR #30315+???
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 	#27.xTODO# Make disabled by default: 28052 maflcko/2306-fs_stuff-
@@ -865,6 +871,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		#27.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
+	g825  theStack-g/gui_show_maxmempoolsize
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -1148,7 +1155,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240612)			b6e90958caa
+	n/a  (bump_version=Knots:20240621)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits

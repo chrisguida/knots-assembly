@@ -1,8 +1,8 @@
-timestamp 2024-06-12 20:27:14
+timestamp 2024-06-21 19:28:12
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30278 / gui #824 for fixes
+#.. checked up to PR #30320 / gui #825 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -54,6 +54,8 @@ checkout v0.21.2
 	missing cstdint includes: #25068 (partial?), iwyu??
 	Triage: 29859 hebasto/240412-atomic
 	Triage: 30216 hebasto/240602-libevent
+	30283 fanquake/backport_upnp_api_fix
+		# 26.x backport in #30319
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=1c6ae96f0a3 sys_leveldb
@@ -890,6 +892,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
 	Triage: Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	Triage: Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
+	Triage: Needs review: 30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
+	Triage: # No real impact? 30255 maflcko/2406-logError
+	Triage: Needs review: 30265 achow101/fix-listwalletdir-migrated-wallets
+	Triage: Needs work: g823 -  # wallet: Improve error log color in the console
+	Triage: Needs work: g824 achow101-g/gui-migrate-unloaded
+	Triage: -     detect_clang_bug96267
+	Triage: Needs concept (anti-feature?): 30309 furszy/2024_wallet_max_weight
 	
 	Triage: TODO: QScrollArea and/or QTreeWidget for GUI Options dialog?
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
@@ -1308,6 +1317,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Triage: 29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
 		# Extend to other options?
 		# TODO: Fix datacarriersize description
+	Triage: g825  theStack-g/gui_show_maxmempoolsize
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
