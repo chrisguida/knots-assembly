@@ -46,6 +46,7 @@ checkout v27.1
 	# Triage: 29788 maflcko/2404-ci-bcfcc-
 	# Triage: 29832 fanquake/revert_29788
 	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
+	-     ci_i686mp_clang15
 # FIXES:
 	18818 guix_reltar_autogen_distclean			510ed993763	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						3bcab14451d
@@ -997,7 +998,7 @@ checkout v27.1
 		# NOTE: Includes #30308
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
-#27.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
+#28.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 # TODO: Check that we aren't deprecating anything in Core
 # TODO: verify src tarball includes rendered_icons incl nsis-header
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
@@ -1019,7 +1020,7 @@ checkout v27.1
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#28.xTODO# (when assumeutxo supported) Include the deleted notes from 0bc1f4b5c7b
-	n/a  (cherrypick=928f49526a6)				cc2146f5590  # update manpages (build first)
+	n/a  (cherrypick=b5c82fd8976)				cc2146f5590  # update manpages (build first)
 		# also example bitcoin.conf
 	#28.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
