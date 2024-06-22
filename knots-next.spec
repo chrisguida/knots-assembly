@@ -11,7 +11,7 @@ checkout v27.1
 	29577 fix_objcxxflags_pr29577-27			1f0ca2cea82
 		# Was #29362 - build: Add missed definition for AM_OBJCXXFLAGS
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
-	30283 theuni/fix-upnp-228
+	30283 upnp_228_compat-22
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
 	5416  sys_libsecp256k1						259dcb7e012
@@ -237,7 +237,7 @@ checkout v27.1
 	29175 -										43c05b45541	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  -										ce11132294a	last=3bf00e13609  # debugwindow: update session ID tooltip
-	29307 AutoFile_error_check-27				fbd4b3103c6	last=de23848eed5 vasild/AutoFile_error_check
+	29307 AutoFile_error_check-27				fbd4b3103c6	last=11be9f4103e vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
 	29480 -										36fadc3ace3	last=88468a8afcd  # log_rand_during_init-0.20
@@ -741,7 +741,7 @@ checkout v27.1
 		#28.xTODO# Try backporting tests
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
-	g825  theStack-g/gui_show_maxmempoolsize
+	g825  gui_show_maxmempoolsize-27						last=4a028cf54c0 theStack-g/gui_show_maxmempoolsize
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view

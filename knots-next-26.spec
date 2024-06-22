@@ -14,8 +14,8 @@ checkout v26.1
 	-     fix_evhttp_util_nodep-25				bff25d2f97f
 	29859 fix_ac_atomic_double-22				be89cb46852
 	Triage: 30216 hebasto/240602-libevent
-	Audit: 30283 fanquake/backport_upnp_api_fix
-		# 26.x backport in #30319
+	30283 upnp_228_compat-22
+		TODO: Is 26.x backport in #30319 more appropriate?
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
 	5416  sys_libsecp256k1-26					259dcb7e012	last=7c70b396b1d sys_libsecp256k1
