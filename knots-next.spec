@@ -863,7 +863,6 @@ checkout v27.1
 		#28.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 	559   accept_nonstdtxn						4e6a8cfa5c7
 		#28.xTODO# Revert or redefine #29843 if it got merged
-		#27.xTODO# FIXME: Also bypasses other policies (at least disable those in the GUI when this is enabled?)
 	 929 tbc									a39febb8c2c
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			4d55210514d
@@ -1009,7 +1008,7 @@ checkout v27.1
 	n/a  (bump_version=Knots:20240621)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
-	n/a   (cherrypick=32b8c854442)				f56f1ed1cd6  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=09d69b94ed0)				f56f1ed1cd6  # release notes: write/update, including change log and credits
 		# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
