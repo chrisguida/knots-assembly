@@ -990,7 +990,6 @@ checkout v27.1
 	n/a   (delete_release_notes_fragments)
 	7483  svg_icon-27+knots						ce085e1f011
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
-		TODO: WARNING: The convert command is deprecated in IMv7, use "magick"
 	n/a   tbc_font-27+knots						dc256947854
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/ But depends on the build-for-release-source code from svg_icon...
@@ -998,6 +997,7 @@ checkout v27.1
 	n/a   knots_branding-27						f4216e323e3
 		#27.xTODO# Review security policy
 		# NOTE: Includes #30308
+		TODO: remove "nsis-header.bmp: Generate from SVG" (moved to svg_icon)
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #28.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
