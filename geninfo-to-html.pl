@@ -109,7 +109,7 @@ sub prep_html {
 	while ($_ = shift @to_process) {
 		my $line = $_;
 		push @threads, async {
-			if (s/^PR (([gk])?(.*))//) {
+			if (s/^PR (([gk]?)(.*))//) {
 				my ($prspec, $is_gui, $prnum) = @{^CAPTURE};
 				my $j;
 				if (-e "$cachedir/$prspec") {

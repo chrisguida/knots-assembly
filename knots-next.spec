@@ -47,6 +47,7 @@ checkout v27.1
 	# Triage: 29832 fanquake/revert_29788
 	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
 	-     ci_i686mp_clang15						5cb9486bac2
+		FIXME: Needed in nowallet CI too: 690fc30bd09
 # FIXES:
 	18818 guix_reltar_autogen_distclean			1abd045d2e7	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						a35c4fe0bc8
@@ -989,6 +990,7 @@ checkout v27.1
 	n/a   (delete_release_notes_fragments)
 	7483  svg_icon-27+knots						ce085e1f011
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
+		TODO: WARNING: The convert command is deprecated in IMv7, use "magick"
 	n/a   tbc_font-27+knots						dc256947854
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/ But depends on the build-for-release-source code from svg_icon...
