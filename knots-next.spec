@@ -47,7 +47,6 @@ checkout v27.1
 	# Triage: 29832 fanquake/revert_29788
 	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
 	-     ci_i686mp_clang15						5cb9486bac2
-		FIXME: Needed in nowallet CI too: 690fc30bd09
 # FIXES:
 	18818 guix_reltar_autogen_distclean			1abd045d2e7	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						a35c4fe0bc8
@@ -228,7 +227,7 @@ checkout v27.1
 		# FIXME: disambiguate opcodes too?
 	# TODO: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
 	28874 fanquake/redundant_upnp_ifdef			e17e134e60e	last=92f88a96290
-	28944 ishaanam/sendall_anti_fee_sniping		53f5d9f75ba	last=fa1fa351584
+	28944 rpc_sendall_anti_fee_sniping-27		53f5d9f75ba	last=b11d00d54ed ishaanam/sendall_anti_fee_sniping
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
 	29141 fix_rpcauth_blank						72e05830e0c
@@ -1020,6 +1019,7 @@ checkout v27.1
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
+TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				d376f02a13e	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=Knots:20240706)			5ed55f388ba

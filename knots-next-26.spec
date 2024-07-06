@@ -266,6 +266,7 @@ checkout v26.1
 		# Alternative to #28874
 	28936 dnsseed_petertoddnet-25				e5eb2d7024d
 	28944 sendall_antifeesniping-26				25c101b1f14	last=fa1fa351584 ishaanam/sendall_anti_fee_sniping
+	(CHECK-LAST)	last=fa1fa351584 rpc_sendall_anti_fee_sniping-27
 	28946 fix_keep_notmy_pidfile-26.1+knots		14a9af7659d
 	#27.xTODO# FIXME: real fix for issues in #28967 (OR #28981?) -- NOT A REAL BUG IN PRACTICE, revert the removal?
 		# See also #29868
