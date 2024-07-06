@@ -872,6 +872,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
 	g825  theStack-g/gui_show_maxmempoolsize
+	g826  qt_opts_maximizewindow
+	g827  qt_opts_stretch
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)

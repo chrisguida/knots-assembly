@@ -1318,6 +1318,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# Extend to other options?
 		# TODO: Fix datacarriersize description
 	Triage: g825  theStack-g/gui_show_maxmempoolsize
+	Triage: g826  qt_opts_maximizewindow
+	Triage: g827  qt_opts_stretch
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:

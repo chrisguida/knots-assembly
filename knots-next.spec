@@ -744,6 +744,8 @@ checkout v27.1
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
 	g825  gui_show_maxmempoolsize-27			55c9327a70b	last=4a028cf54c0 theStack-g/gui_show_maxmempoolsize
+	g826  qt_opts_maximizewindow
+	g827  qt_opts_stretch
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
