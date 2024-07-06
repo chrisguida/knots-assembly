@@ -906,7 +906,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	Triage: Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	
-	Triage: TODO: QScrollArea and/or QTreeWidget for GUI Options dialog?
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
 	TODO: Move deleted gitian docs back into this repo
 	
@@ -1593,6 +1592,7 @@ NM	9422  mempool_dat_extensible_mod-0.21+knots	dc44eb1b7ae
 		# Include Knots policy changes for simplification of final rebase process
 		# Held back git diff 19fd29ce45d..af4614fbd26 which is likely a noop
 		# Added -mempoolfullrbf compatibility (see #25353)
+		Triage: #21.xTODO# QTreeWidget or similar for GUI Options dialog?
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		e0a236336e2
 	7483  svg_icon-21.2+knots					10090268130	last=75796f01b75 svg_icon-27+knots

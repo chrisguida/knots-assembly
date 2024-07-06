@@ -391,8 +391,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	
-	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
-	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
 		# See * c2436937613 Bugfix: GUI/Wallet: Decompose watch-only flag for each logical transaction
@@ -1130,6 +1128,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#TODO: squash fixups
+		#26.xTODO# QTreeWidget or similar for GUI Options dialog?
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv

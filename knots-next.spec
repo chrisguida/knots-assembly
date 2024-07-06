@@ -1,5 +1,5 @@
 timestamp 2024-07-06 17:54:48
-lastapply no-merge
+#lastapply no-merge
 
 #.. checked up to PR #30403 / gui #827
 
@@ -301,8 +301,6 @@ checkout v27.1
 	30357 willcl-ark/walletprocesspsbt-no-finalize
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
-	
-	#27.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -991,6 +989,7 @@ checkout v27.1
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
+		#27.xTODO# QTreeWidget or similar for GUI Options dialog?
 		#28.xTODO# Revert #30352 ?
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
