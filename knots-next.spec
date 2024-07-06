@@ -231,7 +231,7 @@ checkout v27.1
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
 	29141 fix_rpcauth_blank						72e05830e0c
-		TODO: reconcile with #30401
+		#27.xTODO# reconcile with #30401
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
@@ -239,7 +239,7 @@ checkout v27.1
 	29175 -										0aceb063e6b	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  -										f69aee8db7e	last=3bf00e13609  # debugwindow: update session ID tooltip
-	29307 AutoFile_error_check-27				5994df47907	last=11be9f4103e vasild/AutoFile_error_check
+	29307 AutoFile_error_check-27				5994df47907	last=ea89a6e3687 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
 	29480 -										e7a5160f328	last=88468a8afcd  # log_rand_during_init-0.20
@@ -296,8 +296,8 @@ checkout v27.1
 	# Needs concept (anti-feature?): 30309 furszy/2024_wallet_max_weight
 	g826  qt_opts_maximizewindow
 	g827  qt_opts_stretch
-	30355 ajtowns/202406-walletlogtrace
-	30357 willcl-ark/walletprocesspsbt-no-finalize
+	30355 fix_sqlite_trace_loglevel-26						last=46819f5df6d ajtowns/202406-walletlogtrace
+	30357 fix_psbt_falsecomplete_pr30357-25					last=7e36dca657c willcl-ark/walletprocesspsbt-no-finalize
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	
@@ -377,10 +377,10 @@ checkout v27.1
 	# Too much churn: 30120 fanquake/secp256k1_0_5_0
 	30253 opti_psbt_loop_pr30253-23				88bda158b6c
 	# Needs review: 30317 -  # WIP Simplify SipHash
-	30321 -  # rest: don't copy data when sending binary response
-	30324 -  # optimization: Moved repeated -printpriority fetching out of AddToBlock
+	30321 opti_rest_binary_copies-27+knots					last=1556d21599a
+	30324 opti_getarg_printpriority-26						last=323ce303086
 	# Needs review: 30325 -  # optimization: Switch CTxMemPool::CalculateDescendants from set to vector to reduce transaction hash calculations
-	Needs careful review: 30326 -  # optimization: Reduce cache lookups in CCoinsViewCache::FetchCoin
+	#26.xTODO# Needs more careful review: 30326 -  # optimization: Reduce cache lookups in CCoinsViewCache::FetchCoin
 	# Needs review: 30370 fjahr/2024-07-pr28945
 		# Was (never in Knots) #28945
 # SOFTFORK:

@@ -387,8 +387,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs concept (anti-feature?): 30309 furszy/2024_wallet_max_weight
 	g826  qt_opts_maximizewindow
 	g827  qt_opts_stretch
-	30355 ajtowns/202406-walletlogtrace
-	30357 willcl-ark/walletprocesspsbt-no-finalize
+	30355 fix_sqlite_trace_loglevel-26						last=46819f5df6d ajtowns/202406-walletlogtrace
+	30357 fix_psbt_falsecomplete_pr30357-25					last=7e36dca657c willcl-ark/walletprocesspsbt-no-finalize
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	
@@ -476,9 +476,10 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	30253 opti_psbt_loop_pr30253-23
 	# Needs review: 30317 -  # WIP Simplify SipHash
 	30321 -  # rest: don't copy data when sending binary response
-	30324 -  # optimization: Moved repeated -printpriority fetching out of AddToBlock
+	(CHECK-LAST)	last=- opti_rest_binary_copies-27+knots
+	30324 opti_getarg_printpriority-26						last=323ce303086
 	# Needs review: 30325 -  # optimization: Switch CTxMemPool::CalculateDescendants from set to vector to reduce transaction hash calculations
-	Needs careful review: 30326 -  # optimization: Reduce cache lookups in CCoinsViewCache::FetchCoin
+	#26.xTODO# Needs more careful review: 30326 -  # optimization: Reduce cache lookups in CCoinsViewCache::FetchCoin
 	# Needs review: 30370 fjahr/2024-07-pr28945
 		# Was (never in Knots) #28945
 # SOFTFORK:
