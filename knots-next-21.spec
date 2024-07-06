@@ -1,8 +1,8 @@
-timestamp 2024-06-21 19:28:12
+timestamp 2024-07-06 17:54:48
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30320 / gui #825 for fixes
+#.. checked up to PR #30403 / gui #827 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -899,6 +899,12 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs work: g824 achow101-g/gui-migrate-unloaded
 	Triage: -     detect_clang_bug96267
 	Triage: Needs concept (anti-feature?): 30309 furszy/2024_wallet_max_weight
+	Triage: g826  qt_opts_maximizewindow
+	Triage: g827  qt_opts_stretch
+	Triage: 30355 ajtowns/202406-walletlogtrace
+	Triage: 30357 willcl-ark/walletprocesspsbt-no-finalize
+	Triage: Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
+	Triage: Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	
 	Triage: TODO: QScrollArea and/or QTreeWidget for GUI Options dialog?
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
@@ -1318,8 +1324,6 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# Extend to other options?
 		# TODO: Fix datacarriersize description
 	Triage: g825  theStack-g/gui_show_maxmempoolsize
-	Triage: g826  qt_opts_maximizewindow
-	Triage: g827  qt_opts_stretch
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:

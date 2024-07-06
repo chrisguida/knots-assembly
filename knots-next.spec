@@ -1,7 +1,7 @@
-timestamp 2024-06-21 19:28:12
+timestamp 2024-07-06 17:54:48
 lastapply no-merge
 
-#.. checked up to PR #30320 / gui #825
+#.. checked up to PR #30403 / gui #827
 
 checkout v27.1
 @27.x-syslibs
@@ -170,7 +170,7 @@ checkout v27.1
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
 		# CAUTION: Even merged, this appears to possibly show a higher balance than the user actually has for sure??
-		# TODO: Include fix/optimisation in #30115
+		# TODO: Include fix/optimisation in #30115 & #30365
 	# Alternative to: 27434 pinheadmz/chaintips-invalid
 	# TODO: Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
@@ -232,6 +232,7 @@ checkout v27.1
 	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
 	29141 fix_rpcauth_blank						72e05830e0c
+		TODO: reconcile with #30401
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
@@ -294,6 +295,12 @@ checkout v27.1
 	# Needs work: g824 achow101-g/gui-migrate-unloaded
 	-     detect_clang_bug96267					b1fd3a60a76
 	# Needs concept (anti-feature?): 30309 furszy/2024_wallet_max_weight
+	g826  qt_opts_maximizewindow
+	g827  qt_opts_stretch
+	30355 ajtowns/202406-walletlogtrace
+	30357 willcl-ark/walletprocesspsbt-no-finalize
+	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
+	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	
 	#27.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -352,7 +359,6 @@ checkout v27.1
 	28592 -										ddb267e53f8 last=22c2b52c122  # txrelayrate_14txps-26
 		# TODO: Make configurable? Or is that even sane?
 	# Needs review: 28923 theStack/202311-add_SignTransaction_benchmark
-	# Needs review: 28945 martinus/2023-11-improve-ccoinsviewcache-reallocatecache
 	# Needs review: 28955 furszy/2023_index_blockfilter_cache_header
 		# TODO: +#29867 furszy/2024_index_fix_race
 	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
@@ -374,6 +380,12 @@ checkout v27.1
 	# Too much churn: 30120 fanquake/secp256k1_0_5_0
 	30253 opti_psbt_loop_pr30253-23				88bda158b6c
 	# Needs review: 30317 -  # WIP Simplify SipHash
+	30321 -  # rest: don't copy data when sending binary response
+	30324 -  # optimization: Moved repeated -printpriority fetching out of AddToBlock
+	# Needs review: 30325 -  # optimization: Switch CTxMemPool::CalculateDescendants from set to vector to reduce transaction hash calculations
+	Needs careful review: 30326 -  # optimization: Reduce cache lookups in CCoinsViewCache::FetchCoin
+	# Needs review: 30370 fjahr/2024-07-pr28945
+		# Was (never in Knots) #28945
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -744,8 +756,8 @@ checkout v27.1
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
 	g825  gui_show_maxmempoolsize-27			55c9327a70b	last=4a028cf54c0 theStack-g/gui_show_maxmempoolsize
-	g826  qt_opts_maximizewindow
-	g827  qt_opts_stretch
+	#27.xTODO# Needs concept? 30341 willcl-ark/psbt-strip-derivs-combine
+	#27.xTODO# Needs concept? 30381 willcl-ark/addnode-failure
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
@@ -979,6 +991,7 @@ checkout v27.1
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
+		#28.xTODO# Revert #30352 ?
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
@@ -1010,7 +1023,7 @@ checkout v27.1
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 	n/a   (cherrypick=6e49826402a)				d376f02a13e	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20240621)			5ed55f388ba
+	n/a  (bump_version=Knots:20240706)			5ed55f388ba
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		a5bdc6c9d94
 	n/a   (cherrypick=09d69b94ed0)				2227b137851  # release notes: write/update, including change log and credits

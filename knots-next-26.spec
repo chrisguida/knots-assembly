@@ -1,7 +1,7 @@
-timestamp 2024-06-21 19:28:12
+timestamp 2024-07-06 17:54:48
 #lastapply no-merge
 
-#.. checked up to PR #30320 / gui #825
+#.. checked up to PR #30403 / gui #827
 
 checkout v26.1
 @26.x-syslibs
@@ -181,6 +181,7 @@ checkout v26.1
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
 	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
 		# CAUTION: Even merged, this appears to possibly show a higher balance than the user actually has for sure??
+		# TODO: Include fix/optimisation in #30115 & #30365
 	#26.xTODO# Alternative to: 27434 pinheadmz/chaintips-invalid
 	# TODO: Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
@@ -277,6 +278,7 @@ checkout v26.1
 	# MSVC: 29044 hebasto/231209-msvc-qt
 	g780  fix_qt_txview_prG780-25				87a06746a28	last=b2e531e70a8
 	29141 fix_rpcauth_blank						25e07bdf5f2
+		TODO: reconcile with #30401
 	29253 fix_wallet_dbguard_pr29253-26			870ac94622d
 	29112 fix_wallet_single_batch_only-26+knots	2e19bf6c33f
 	# Needs review: 29124 achow101/fix-double-keypath
@@ -382,6 +384,12 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work: g824 achow101-g/gui-migrate-unloaded
 	-     detect_clang_bug96267
 	# Needs concept (anti-feature?): 30309 furszy/2024_wallet_max_weight
+	g826  qt_opts_maximizewindow
+	g827  qt_opts_stretch
+	30355 ajtowns/202406-walletlogtrace
+	30357 willcl-ark/walletprocesspsbt-no-finalize
+	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
+	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	
 	#26.xTODO# QScrollArea and/or QTreeWidget for GUI Options dialog?
 	
@@ -444,7 +452,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs fixing rebase: 28799 wallet_cache_descriptor_id-25
 	# Diff-minimise? 28894 furszy/2023_wallet_batch_keypool_creation
 	# Needs review: 28923 theStack/202311-add_SignTransaction_benchmark
-	# Needs review: 28945 martinus/2023-11-improve-ccoinsviewcache-reallocatecache
 	# Needs review: 28955 furszy/2023_index_blockfilter_cache_header
 	# Needs review: 28987 furszy/2023_wallet_zaptx
 	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
@@ -469,6 +476,12 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Too much churn: 30120 fanquake/secp256k1_0_5_0
 	30253 opti_psbt_loop_pr30253-23
 	# Needs review: 30317 -  # WIP Simplify SipHash
+	30321 -  # rest: don't copy data when sending binary response
+	30324 -  # optimization: Moved repeated -printpriority fetching out of AddToBlock
+	# Needs review: 30325 -  # optimization: Switch CTxMemPool::CalculateDescendants from set to vector to reduce transaction hash calculations
+	Needs careful review: 30326 -  # optimization: Reduce cache lookups in CCoinsViewCache::FetchCoin
+	# Needs review: 30370 fjahr/2024-07-pr28945
+		# Was (never in Knots) #28945
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -872,8 +885,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
 	g825  theStack-g/gui_show_maxmempoolsize
-	g826  qt_opts_maximizewindow
-	g827  qt_opts_stretch
+	#26.xTODO# Needs concept? 30341 willcl-ark/psbt-strip-derivs-combine
+	#26.xTODO# Needs concept? 30381 willcl-ark/addnode-failure
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -1157,7 +1170,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240621)			b6e90958caa
+	n/a  (bump_version=Knots:20240706)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits
