@@ -1,7 +1,7 @@
-timestamp 2024-07-06 17:54:48
+timestamp 2024-07-11 20:19:56
 #lastapply no-merge
 
-#.. checked up to PR #30403 / gui #827
+#.. checked up to PR #30434 / gui #827
 
 checkout v27.1
 @27.x-syslibs
@@ -300,6 +300,8 @@ checkout v27.1
 	30357 fix_psbt_falsecomplete_pr30357-25					last=7e36dca657c willcl-ark/walletprocesspsbt-no-finalize
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
+	# Needs review: 30410 mzumsande/202407_getblock_error
+	Partial? Needs review? 30429 maflcko/2407-rpc-no-assert
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -756,6 +758,7 @@ checkout v27.1
 	g825  gui_show_maxmempoolsize-27			55c9327a70b	last=4a028cf54c0 theStack-g/gui_show_maxmempoolsize
 	#27.xTODO# Needs concept? 30341 willcl-ark/psbt-strip-derivs-combine
 	#27.xTODO# Needs concept? 30381 willcl-ark/addnode-failure
+	# Needs review: 30433 fanquake/standard_branch_fedora
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
@@ -1023,7 +1026,7 @@ m	n/a   knots_branding-27						f4216e323e3
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				d376f02a13e	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20240706)			5ed55f388ba
+	n/a  (bump_version=Knots:20240711)			5ed55f388ba
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		a5bdc6c9d94
 	n/a   (cherrypick=09d69b94ed0)				2227b137851  # release notes: write/update, including change log and credits

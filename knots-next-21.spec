@@ -1,8 +1,8 @@
-timestamp 2024-07-06 17:54:48
+timestamp 2024-07-11 20:19:56
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30403 / gui #827 for fixes
+#.. checked up to PR #30434 / gui #827 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -905,6 +905,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 30357 willcl-ark/walletprocesspsbt-no-finalize
 	Triage: Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	Triage: Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
+	Triage: Needs review: 30410 mzumsande/202407_getblock_error
+	Triage: Partial? Needs review? 30429 maflcko/2407-rpc-no-assert
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
 	TODO: Move deleted gitian docs back into this repo
@@ -1323,6 +1325,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# Extend to other options?
 		# TODO: Fix datacarriersize description
 	Triage: g825  theStack-g/gui_show_maxmempoolsize
+	Triage: Needs review: 30433 fanquake/standard_branch_fedora
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:

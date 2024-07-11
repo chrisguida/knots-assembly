@@ -1,7 +1,7 @@
-timestamp 2024-07-06 17:54:48
+timestamp 2024-07-11 20:19:56
 #lastapply no-merge
 
-#.. checked up to PR #30403 / gui #827
+#.. checked up to PR #30434 / gui #827
 
 checkout v26.1
 @26.x-syslibs
@@ -391,6 +391,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	30357 fix_psbt_falsecomplete_pr30357-25					last=7e36dca657c willcl-ark/walletprocesspsbt-no-finalize
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
+	# Needs review: 30410 mzumsande/202407_getblock_error
+	Partial? Needs review? 30429 maflcko/2407-rpc-no-assert
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -887,6 +889,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	g825  theStack-g/gui_show_maxmempoolsize
 	#26.xTODO# Needs concept? 30341 willcl-ark/psbt-strip-derivs-combine
 	#26.xTODO# Needs concept? 30381 willcl-ark/addnode-failure
+	# Needs review: 30433 fanquake/standard_branch_fedora
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -1171,7 +1174,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240706)			b6e90958caa
+	n/a  (bump_version=Knots:20240711)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits
