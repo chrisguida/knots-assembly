@@ -633,7 +633,8 @@ checkout v27.1
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
-	28167 rpccookieperms-27+knots				a5c560a2caf	last=9617e42a7b1 willcl-ark/2023-07-rpccookie-perms
+	28167 rpccookieperms-27+knots				a5c560a2caf	last=73f0a6cbd0b willcl-ark/2023-07-rpccookie-perms
+		# Held back most of 9617e42a7b1..73f0a6cbd0b (func renames, refactoring; default to no-change/rely on umask)
 		# Was #26088 (not in a Knots release)
 		# Removed doc change
 		# Added lots of improvements
@@ -662,8 +663,8 @@ checkout v27.1
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
-	26990 bcli_validation-24					9f71106593c	last=cf7dd3564a3
-		# Didn't bother rebasing for 755320f75f2...cf7dd3564a3 trivial changes
+	26990 bcli_validation-24					9f71106593c	last=3d63fc976d6
+		# Didn't bother rebasing for 755320f75f2...3d63fc976d6 trivial changes
 	27034 rpc_importaddr_for_descwallet-27+k	f346bd3d24a	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
@@ -879,7 +880,7 @@ checkout v27.1
 	 929 tbc									175a77ccd6e
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 	 553 bugfix_qt_uri_amount_parser			948e66e65fe
-	-     mining_priority						0b54840a18f	# Latest code now
+m	-     mining_priority						0b54840a18f	# Latest code now
 		#27.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 		#27.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
@@ -909,7 +910,7 @@ checkout v27.1
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
-	-     gbt_rpc_options-27+knots				7f77f985de3
+m	-     gbt_rpc_options-27+knots				7f77f985de3
 	-     mapport_default_on-27+knots			cb5548f0a69
 	#27.xTODO# Look into making the patches tarball in guix
 	-     undeprecate_libconsensus-27			1fedee6aeeb
@@ -1007,10 +1008,10 @@ checkout v27.1
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/ But depends on the build-for-release-source code from svg_icon...
 # BRANDING:
-	n/a   knots_branding-27						f4216e323e3
+m	n/a   knots_branding-27						f4216e323e3
 		#27.xTODO# Review security policy
 		# NOTE: Includes #30308
-		TODO: remove "nsis-header.bmp: Generate from SVG" (moved to svg_icon)
+		#28.xTODO# remove "nsis-header.bmp: Generate from SVG" (moved to svg_icon)
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #28.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
@@ -1019,7 +1020,7 @@ checkout v27.1
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
-TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
+# TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				d376f02a13e	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=Knots:20240706)			5ed55f388ba
