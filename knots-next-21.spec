@@ -31,7 +31,6 @@ checkout v0.21.2
 	24523 boost1.78_workaround_narrowing-21
 		# NOTE: Was #24415 (never in Knots)
 	23607 evhttp_connection_get_peer_compat-21	a5d963d4635	last=c62d763fc31  # evhttp_connection_get_peer compatibility with possible-future libevent
-	# Needs review: 23609 hebasto/211126-reduce
 	21421 skip_stack_clash_windows-21
 	23335 origin-pull/25318/head^							last=efb9f00f07c origin-pull/25318/head  # include a missing <limits> header in fs.cpp
 	23947 config_summary_host_os-21

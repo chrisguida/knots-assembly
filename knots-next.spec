@@ -6,7 +6,6 @@ timestamp 2024-07-11 20:19:56
 checkout v27.1
 @27.x-syslibs
 # BUILD BUGS:
-	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						f41289db2b9
 	29577 fix_objcxxflags_pr29577-27			990080d6c6b
 		# Was #29362 - build: Add missed definition for AM_OBJCXXFLAGS
@@ -349,7 +348,7 @@ checkout v27.1
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
-	# Needs review? 28233 andrewtoth/sync-on-periodic
+	Needs review? 28233 andrewtoth/sync-on-periodic
 	# Needs review: 28280 andrewtoth/sync-dirty
 	-     dbcache_1TB-0.13						04fd19614ae
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)

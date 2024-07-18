@@ -6,7 +6,6 @@ timestamp 2024-07-11 20:19:56
 checkout v26.1
 @26.x-syslibs
 # BUILD BUGS:
-	# Needs review: 23609 hebasto/211126-reduce
 	5872 subdir_incl_compat						517e84c15db
 	29362 fix_objcxxflags_pr29362-26			1f0ca2cea82	last=17861b9cd59 hebasto/240201-objcxx
 		FIXME: Address https://github.com/bitcoin/bitcoin/pull/29362#issuecomment-1964389168
@@ -442,7 +441,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
-	# Needs review? 28233 andrewtoth/sync-on-periodic
+	Needs review? 28233 andrewtoth/sync-on-periodic
 	# Needs review: 28280 andrewtoth/sync-dirty
 	-     dbcache_1TB-0.13						781e77f8599
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
