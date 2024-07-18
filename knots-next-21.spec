@@ -1,8 +1,8 @@
-timestamp 2024-07-11 20:19:56
+timestamp 2024-07-18 18:12:28
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30434 / gui #827 for fixes
+#.. checked up to PR #30479 / gui #828 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -906,6 +906,14 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	Triage: Needs review: 30410 mzumsande/202407_getblock_error
 	Triage: Partial? Needs review? 30429 maflcko/2407-rpc-no-assert
+	Triage: 30435 mzumsande/202407_shutdown_order
+	Triage: 30436 -  # fix: Make TxidFromString() respect string_view length
+	Triage: 30444 maflcko/2407-rest-index
+	Triage: 30457 maflcko/2407-doc
+	Triage: Needs review: 30465 hebasto/240716-deps-cmake
+	Triage: Needs review: 30469 fjahr/2024-07-csi-overflow-2
+	Triage: Needs review: 30479 mzumsande/202407_fix_resetfailure
+	Triage: g828 -  # Rendering an amp characters in the wallet name for QMenu
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
 	TODO: Move deleted gitian docs back into this repo

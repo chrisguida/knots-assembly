@@ -1,7 +1,7 @@
-timestamp 2024-07-11 20:19:56
+timestamp 2024-07-18 18:12:28
 #lastapply no-merge
 
-#.. checked up to PR #30434 / gui #827
+#.. checked up to PR #30479 / gui #828
 
 checkout v27.1
 @27.x-syslibs
@@ -298,9 +298,18 @@ checkout v27.1
 	30355 fix_sqlite_trace_loglevel-26						last=46819f5df6d ajtowns/202406-walletlogtrace
 	30357 fix_psbt_falsecomplete_pr30357-25					last=7e36dca657c willcl-ark/walletprocesspsbt-no-finalize
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
-	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
+	30394 theStack/202407-p2p-fix_selfdetection_racecond
+		NOTE: Non-trivial 27.x backport in #30467
 	# Needs review: 30410 mzumsande/202407_getblock_error
 	Partial? Needs review? 30429 maflcko/2407-rpc-no-assert
+	30435 mzumsande/202407_shutdown_order
+	30436 -  # fix: Make TxidFromString() respect string_view length
+	30444 maflcko/2407-rest-index
+	30457 maflcko/2407-doc
+	# Needs review: 30465 hebasto/240716-deps-cmake
+	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
+	# Needs review: 30479 mzumsande/202407_fix_resetfailure
+	g828 -  # Rendering an amp characters in the wallet name for QMenu
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -384,6 +393,7 @@ checkout v27.1
 	#26.xTODO# Needs more careful review: 30326 -  # optimization: Reduce cache lookups in CCoinsViewCache::FetchCoin
 	# Needs review: 30370 fjahr/2024-07-pr28945
 		# Was (never in Knots) #28945
+	# Needs review? 30442 paplorinc/paplorinc/siphash
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -1025,7 +1035,7 @@ m	n/a   knots_branding-27						f4216e323e3
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				d376f02a13e	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20240711)			5ed55f388ba
+	n/a  (bump_version=Knots:20240718)			5ed55f388ba
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		a5bdc6c9d94
 	n/a   (cherrypick=09d69b94ed0)				2227b137851  # release notes: write/update, including change log and credits

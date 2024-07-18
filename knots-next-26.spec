@@ -1,7 +1,7 @@
-timestamp 2024-07-11 20:19:56
+timestamp 2024-07-18 18:12:28
 #lastapply no-merge
 
-#.. checked up to PR #30434 / gui #827
+#.. checked up to PR #30479 / gui #828
 
 checkout v26.1
 @26.x-syslibs
@@ -392,6 +392,14 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	# Needs review: 30410 mzumsande/202407_getblock_error
 	Partial? Needs review? 30429 maflcko/2407-rpc-no-assert
+	30435 mzumsande/202407_shutdown_order
+	Triage: 30436 -  # fix: Make TxidFromString() respect string_view length
+	30444 maflcko/2407-rest-index
+	30457 maflcko/2407-doc
+	# Needs review: 30465 hebasto/240716-deps-cmake
+	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
+	# Needs review: 30479 mzumsande/202407_fix_resetfailure
+	g828 -  # Rendering an amp characters in the wallet name for QMenu
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -483,6 +491,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#26.xTODO# Needs more careful review: 30326 -  # optimization: Reduce cache lookups in CCoinsViewCache::FetchCoin
 	# Needs review: 30370 fjahr/2024-07-pr28945
 		# Was (never in Knots) #28945
+	# Needs review? 30442 paplorinc/paplorinc/siphash
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -1173,7 +1182,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240711)			b6e90958caa
+	n/a  (bump_version=Knots:20240718)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits
