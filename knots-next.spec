@@ -328,7 +328,7 @@ checkout v27.1
 		# +#30227
 	#27.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
-	# Needs review & relevance: 30301 theuni/miniupnp-228-bump
+	30301 theuni/miniupnp-228-bump
 @27.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					d1168ba983b
@@ -925,6 +925,7 @@ m	-     mining_priority						0b54840a18f	# Latest code now
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
 m	-     gbt_rpc_options-27+knots				7f77f985de3
 	-     mapport_default_on-27+knots			cb5548f0a69
+		TODO: re-disable
 	#27.xTODO# Look into making the patches tarball in guix
 	-     undeprecate_libconsensus-27			1fedee6aeeb
 		#28.xTODO# Restore libbitcoinconsensus? #29748 #29787 #29797

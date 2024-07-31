@@ -421,7 +421,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review & relevance: 28627 fanquake/zeromq_4_3_5
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 	Triage: 30217 hebasto/240603-boost
-	# Needs review & relevance: 30301 theuni/miniupnp-228-bump
+	30301 theuni/miniupnp-228-bump
 @26.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					fc085bc6726
