@@ -203,6 +203,7 @@ TM	19362 rpc_scantxoutset_reset_progress-0.17	ad8d887d3af	last=8c4129b4540 prusn
 		#TODO: diff-minimise, review
 	g121  fix_qt_early_sub_signals-21			ea2340e5824
 	# Needs review: minimise g129 -  # qt: Fix Shortcut Ambiguities, Clean up text
+	20421 https://bitcoincore.org/en/2024/07/31/disclose-upnp-oom/
 	20448 unloadwallet_namematch				34dfe668f49
 	# Needs consideration.. why would we re-announce to the same peer?? 20561 sdaftuar:2020-12-moar-addrz
 	# Needs concept review: 20583 maflcko/2012-walletSync
@@ -270,6 +271,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=171ac54ea47 fix_wallet_pr22359-22
 		# Semi-diff-minimised
 	# Needs review: 22362 maflcko/2106-addrdb  # Drop (only) invalid entries when reading banlist
+	22387 https://bitcoincore.org/en/2024/07/31/disclose-addrman-int-overflow/
 	22417 bpchild_closefds-21+knots				ae04745f860	last=bc8a2010501 bpchild_closefds
 	(CHECK-LAST)	last=9b9cdc9ae6f bpchild_closefds-0.21
 	(CHECK-LAST)	last=4c19cea484b bpchild_closefds-22
