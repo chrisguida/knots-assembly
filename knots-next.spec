@@ -320,8 +320,8 @@ checkout v27.1
 	#28.xTODO# Triage: 30508 hebasto/240723-zmq-pc
 	#28.xTODO# If assumeutxo supported: 30516 fjahr/2024-07-au-blockheight-san
 	# Needs review: 30529 ryanofsky/pr/listset
-	Triage: 30489 theuni/depends-zmq-patch
-	30534 fanquake/no_bison_mac_win
+	# If needed? 30489 theuni/depends-zmq-patch
+	30534 guix_no_bison_macwin-25
 	# Needs review: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -341,7 +341,9 @@ checkout v27.1
 		# +#30227
 	#27.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
-	30301 theuni/miniupnp-228-bump
+	29707 dep_miniupnp_227-27
+		# Only the version bump
+	# Needs review: 30301 theuni/miniupnp-228-bump
 @27.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					d1168ba983b
@@ -370,7 +372,7 @@ checkout v27.1
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
-	Needs review? 28233 andrewtoth/sync-on-periodic
+	28233 opti_periodic_keep_cache-26
 	# Needs review: 28280 andrewtoth/sync-dirty
 	-     dbcache_1TB-0.13						04fd19614ae
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)

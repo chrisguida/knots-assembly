@@ -403,8 +403,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	g828 -  # Rendering an amp characters in the wallet name for QMenu
 	30485 fix_ldb_logging_pr30485-26						last=fa18fc70508 maflcko/2407-log-lint
 	# Needs review: 30529 ryanofsky/pr/listset
-	Triage: 30489 theuni/depends-zmq-patch
-	30534 fanquake/no_bison_mac_win
+	# If needed? 30489 theuni/depends-zmq-patch
+	30534 guix_no_bison_macwin-25
 	# Needs review: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -455,7 +455,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
-	Needs review? 28233 andrewtoth/sync-on-periodic
+	28233 opti_periodic_keep_cache-26
 	# Needs review: 28280 andrewtoth/sync-dirty
 	-     dbcache_1TB-0.13						781e77f8599
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
