@@ -289,7 +289,7 @@ checkout v27.1
 	# Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
-	30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
+	30245 fix_localonly_ipv6_proxy-22
 	# No real impact? 30255 maflcko/2406-logError
 	# Needs review: 30265 achow101/fix-listwalletdir-migrated-wallets
 	# Needs work: g823 -  # wallet: Improve error log color in the console
