@@ -887,8 +887,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 30085 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
 	Triage: 30094 willcl-ark/move-univalue-only
 	Triage: Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl
-	Triage: 30132 TheCharlatan/preserveIndexOnRestart
-	Triage: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
+	Triage: Non-trivial: 30132 TheCharlatan/preserveIndexOnRestart
+	Triage: Not used for Knots: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	30151 hebasto/240522-upnp-dl
 		NOTE: 26.x Backport in #30260
 	Triage: Needs review: 30155 mzumsande/202405_replay_blocks

@@ -282,8 +282,8 @@ checkout v27.1
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
 	-     fix_cjdns_addnode_detect2-27+knots	ea949daca10	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
 	# Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl
-	30132 TheCharlatan/preserveIndexOnRestart
-	30147 -  # contrib: Fixup verify-binaries OS platform parsing
+	# FIXME Non-trivial: 30132 TheCharlatan/preserveIndexOnRestart
+	# Not used for Knots: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	# Needs review: 30155 mzumsande/202405_replay_blocks
 	#28.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	# Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err

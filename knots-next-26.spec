@@ -370,8 +370,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	30094 rf_rpc_move_unival_pr30094-24			62c15473e88	last=b77bad309e9 willcl-ark/move-univalue-only
 	30097 theuni/sha2asan
 	# Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl
-	30132 TheCharlatan/preserveIndexOnRestart
-	30147 -  # contrib: Fixup verify-binaries OS platform parsing
+	# FIXME Non-trivial: 30132 TheCharlatan/preserveIndexOnRestart
+	# Not used for Knots: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	30151 hebasto/240522-upnp-dl
 		NOTE: 26.x Backport in #30260
 	# Needs review: 30155 mzumsande/202405_replay_blocks
