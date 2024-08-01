@@ -837,13 +837,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 29436 brunoerg/2024-02-addrman-select-networks
 		# If this fixes a bug, move it out of performance in -next too
 	Triage: Needs work: g792 -  # Correct tooltip wording for watch-only wallets
-	Triage: Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
+	Triage: g795 -  # Keep focus on "Hide" while ModalOverlay is visible
 	Triage: g797  hebasto-g/240219-fix-796
 	Triage: 29480 log_rand_during_init-0.20							last=88468a8afcd
 		# Needs careful backport (basically rewritten)
 	Triage: 29510 -  # wallet: getrawchangeaddress and getnewaddress failures should not affect keypools for descriptor wallets
 		# NOTE: NOT YET Included in backport #29509
-	Triage: Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
+	Triage: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
 	Triage: g801  fix_qt_clientmodel_during_shutdown_prg801-21
 	Triage: 29586 furszy/2024_wallet_migration_empty_wallet_backup_name
 	Triage: Needs work? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
@@ -854,8 +854,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
 	Triage: 29678 fix_init_lowdisk_warning_reqd
 	Triage: # Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
-	Triage: Needs work: 29720 maflcko/2403-rpc-int-wrap-
-		# +#30544
+	Triage: 29720 maflcko/2403-rpc-int-wrap-
+		+#30544
 	Triage: 29726 mzumsande/202403_assumeutxo_reindex_fix
 	Triage: 29747 fanquake/fix_qt_debug_link
 	Triage: # Needs review: 29770 fjahr/2024-03-check-undo-index
@@ -887,15 +887,15 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 30085 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
 	Triage: 30094 willcl-ark/move-univalue-only
 	Triage: Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl
-	Triage: Needs review: 30132 TheCharlatan/preserveIndexOnRestart
-	Triage: Needs review: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
+	Triage: 30132 TheCharlatan/preserveIndexOnRestart
+	Triage: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	30151 hebasto/240522-upnp-dl
 		NOTE: 26.x Backport in #30260
 	Triage: Needs review: 30155 mzumsande/202405_replay_blocks
 	Triage: Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
 	Triage: Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	Triage: Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
-	Triage: Needs review: 30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
+	Triage: 30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
 	Triage: # No real impact? 30255 maflcko/2406-logError
 	Triage: Needs review: 30265 achow101/fix-listwalletdir-migrated-wallets
 	Triage: Needs work: g823 -  # wallet: Improve error log color in the console
@@ -909,7 +909,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	Triage: Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	Triage: Needs review: 30410 mzumsande/202407_getblock_error
-	Triage: Partial? Needs review? 30429 maflcko/2407-rpc-no-assert
+	Triage: Partial? 30429 maflcko/2407-rpc-no-assert
 	Triage: 30435 mzumsande/202407_shutdown_order
 	Triage: 30436 -  # fix: Make TxidFromString() respect string_view length
 	Triage: 30444 maflcko/2407-rest-index

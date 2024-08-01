@@ -272,7 +272,7 @@ checkout v26.1
 		# See also #29868
 	28976 fix_wallet_migrate_blank-26+knots		b4dfe3cbd0d
 		#+29367
-	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
+	28979 ishaanam/sendall_ancestor_aware_funding
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
 	29022 fix_btx_replacable_blank-21			b0d45d03bc0
 	29027 fix_wallet_keyparsecheck_pr29027-26	b8042ae8457
@@ -309,13 +309,13 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	29434 fix_rpc_feerate_overflow-26			c4d52ee1912
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
-	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
+	g795 -  # Keep focus on "Hide" while ModalOverlay is visible
 	g797  fix_qa_guibug796-25					66fffc1113d
 	29480 log_rand_during_init-0.20				36fadc3ace3	last=88468a8afcd
 		# Needs careful backport (basically rewritten)
 	29493 subtree_update_crc32c-24				59b09fa41a8
 	28805 qafix_v2t_pr28805-26					9eaddfae5b3
-	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
+	29521 -  # cli: Detect port errors in rpcconnect and rpcport
 	g801  fix_qt_clntmdl_at_shutdown_prg801-21	f00d9892c62
 	-     rpc_loadtxoutset_hide-26				aa2c7fadfe0
 		#27.xTODO# This should probably be removed
@@ -333,8 +333,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
 	29678 fix_init_lowdisk_warning_reqd-25		0ab7aa47bbe	last=847ad93f4dc fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
-	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
-		# +#30544
+	29720 maflcko/2403-rpc-int-wrap-
+		+#30544
 	29726 fix_assumeutxo_reindex_pr29726-26		02fd519df55
 	(CHECK-LAST)	last=acf242b0629 fix_assumeutxo_reindex_pr29726-27
 	29747 fix_depends_qt_mingw_dbg_link-24		16e26c1e59e
@@ -359,7 +359,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
 	29985 fix_depends_qt_zlib_t64-26			abd7f86f19b
-	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
+	30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
 	g819  qt_signmsg_msgs_legacyonly-0.20		a5e0eac8f22	last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
@@ -371,15 +371,15 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	30094 rf_rpc_move_unival_pr30094-24			62c15473e88	last=b77bad309e9 willcl-ark/move-univalue-only
 	30097 theuni/sha2asan
 	# Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl
-	# Needs review: 30132 TheCharlatan/preserveIndexOnRestart
-	# Needs review: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
+	30132 TheCharlatan/preserveIndexOnRestart
+	30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	30151 hebasto/240522-upnp-dl
 		NOTE: 26.x Backport in #30260
 	# Needs review: 30155 mzumsande/202405_replay_blocks
 	# Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
-	# Needs review: 30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
+	30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
 	Triage: # No real impact? 30255 maflcko/2406-logError
 	# Needs review: 30265 achow101/fix-listwalletdir-migrated-wallets
 	# Needs work: g823 -  # wallet: Improve error log color in the console
@@ -393,7 +393,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	# Needs review: 30410 mzumsande/202407_getblock_error
-	Partial? Needs review? 30429 maflcko/2407-rpc-no-assert
+	Partial? 30429 maflcko/2407-rpc-no-assert
 	30435 mzumsande/202407_shutdown_order
 	Triage: 30436 -  # fix: Make TxidFromString() respect string_view length
 	30444 maflcko/2407-rest-index

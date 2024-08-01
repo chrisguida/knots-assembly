@@ -230,7 +230,7 @@ checkout v27.1
 	# TODO: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
 	28874 fanquake/redundant_upnp_ifdef			e17e134e60e	last=92f88a96290
 	28944 rpc_sendall_anti_fee_sniping-27		53f5d9f75ba	last=b11d00d54ed ishaanam/sendall_anti_fee_sniping
-	# Needs review: 28979 ishaanam/sendall_ancestor_aware_funding
+	28979 ishaanam/sendall_ancestor_aware_funding
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
 	29141 fix_rpcauth_blank						72e05830e0c
 		#27.xTODO# reconcile with #30401
@@ -243,10 +243,10 @@ checkout v27.1
 	g788  -										f69aee8db7e	last=3bf00e13609  # debugwindow: update session ID tooltip
 	29307 AutoFile_error_check-27				5994df47907	last=ea89a6e3687 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
-	# Needs review? g795 -  # Keep focus on "Hide" while ModalOverlay is visible
+	g795 -  # Keep focus on "Hide" while ModalOverlay is visible
 	29480 -										e7a5160f328	last=88468a8afcd  # log_rand_during_init-0.20
 		# Needs careful backport (basically rewritten)
-	# Needs review: 29521 -  # cli: Detect port errors in rpcconnect and rpcport
+	29521 -  # cli: Detect port errors in rpcconnect and rpcport
 	-     rpc_loadtxoutset_hide-26				9ee46a61c19
 		#28.xTODO# This should probably be removed if assumeutxo is supported on mainnet
 	29586 wallet_migrate_null_walletname_bak-27	1684c767a1b
@@ -262,8 +262,8 @@ checkout v27.1
 	# Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
 	29678 fix_init_lowdisk_warning_reqd-25		c154e3fe348	last=847ad93f4dc fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
-	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
-		# +#30544
+	29720 maflcko/2403-rpc-int-wrap-
+		+#30544
 	29726 fix_assumeutxo_reindex_pr29726-27		072ef5d78dd
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
@@ -277,20 +277,20 @@ checkout v27.1
 		# Rewrote myself due to overcomplication and race bug in PR
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
-	# Wait for confirmation: 30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
+	30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
 	g819  qt_signmsg_msgs_legacyonly-0.20		72e593d9e61	last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
 	-     fix_cjdns_addnode_detect2-27+knots	ea949daca10	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
 	# Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl
-	# Needs review: 30132 TheCharlatan/preserveIndexOnRestart
-	# Needs review: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
+	30132 TheCharlatan/preserveIndexOnRestart
+	30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	# Needs review: 30155 mzumsande/202405_replay_blocks
 	#28.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	# Not worth it? 30169 maflcko/2405-fuzz-stdlib-match-err
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
-	# Needs review: 30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
+	30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
 	# No real impact? 30255 maflcko/2406-logError
 	# Needs review: 30265 achow101/fix-listwalletdir-migrated-wallets
 	# Needs work: g823 -  # wallet: Improve error log color in the console
@@ -305,7 +305,7 @@ checkout v27.1
 	30394 theStack/202407-p2p-fix_selfdetection_racecond
 		NOTE: Non-trivial 27.x backport in #30467
 	# Needs review: 30410 mzumsande/202407_getblock_error
-	Partial? Needs review? 30429 maflcko/2407-rpc-no-assert
+	Partial? 30429 maflcko/2407-rpc-no-assert
 	30435 mzumsande/202407_shutdown_order
 	30436 -  # fix: Make TxidFromString() respect string_view length
 	30444 maflcko/2407-rest-index
