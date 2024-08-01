@@ -651,7 +651,7 @@ checkout v27.1
 	# Needs work: 25434 w0xlt/bypass-timelocks
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
 		# Also #25570 ?
-	g626 qt_node_localaddrs-26					2dd1abed1d0	last=ea576b65592
+	g626 qt_node_localaddrs-26					2dd1abed1d0	last=bb5bb2001cf
 	# Needs completion & review: 25718 fjahr/2022-07-allowinbound
 	# Needs concept/review: 25747 w0xlt/desc_file
 	# Needs work: 25776 1440000bytes/bumpfee-inputs
@@ -737,7 +737,7 @@ checkout v27.1
 		# +#29722 ?
 		# +#29735
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
-	28979 ishaanam/sendall_ancestor_aware_funding
+	28979 rpc_sendall_ancestor_aware-27+knots
 	29016 rpc_listmempooltxs-26+knots			02e19ccf01f	last=07008477b81 niftynei/nifty/listmempoolentry
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
@@ -785,8 +785,8 @@ checkout v27.1
 	#27.xTODO# Needs concept? 30341 willcl-ark/psbt-strip-derivs-combine
 	#27.xTODO# Needs concept? 30381 willcl-ark/addnode-failure
 	# Needs review: 30433 fanquake/standard_branch_fedora
-	30515 -  # rpc: add utxo's blockhash and number of confirmations to scantxoutset output
-	Needs review? g832 -  # Improve user dialog when signing multisig psbts
+	30515 rpc_scantxoutset_blockhashetc-26
+	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
@@ -816,7 +816,6 @@ checkout v27.1
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
-		TODO: document rpcauth change(s)
 	10554 zmq_wtx-27+knots						bd1b1f53841	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
@@ -930,7 +929,7 @@ m	-     mining_priority						0b54840a18f	# Latest code now
 		#28.xTODO# Revert gui#808 ??
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
-	-     gui_wallet_displayname-0.19			d9a0c847803	# Latest code now
+m	-     gui_wallet_displayname-0.19+knots		d9a0c847803	# Latest code now
 	-     gui_request_payment_label-0.19		5e50e86237d
 	-     gui_peers_sort_network-23				76596ac33cb
 	-     gui_peers_no_net_column				78762d27010
@@ -943,8 +942,8 @@ m	-     mining_priority						0b54840a18f	# Latest code now
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
 m	-     gbt_rpc_options-27+knots				7f77f985de3
-	-     mapport_default_on-27+knots			cb5548f0a69
-		TODO: re-disable
+NM	-     mapport_default_on-27+knots			cb5548f0a69
+		# Re-disabled in light of continued security issues
 	#27.xTODO# Look into making the patches tarball in guix
 	-     undeprecate_libconsensus-27			1fedee6aeeb
 		#28.xTODO# Restore libbitcoinconsensus? #29748 #29787 #29797
@@ -1070,6 +1069,7 @@ m	n/a   knots_branding-27						f4216e323e3
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		TODO: fac0c3d4bfc (origin-pull/30482/head, maflcko/2407-rest-txid) doc: Add release notes for two pull requests
+		TODO: Port mapping re-disabled by default
 		#28.xTODO# (when assumeutxo supported) Include the deleted notes from 0bc1f4b5c7b
 	n/a  (cherrypick=b5c82fd8976)				01ac32f90b6  # update manpages (build first)
 		# also example bitcoin.conf
