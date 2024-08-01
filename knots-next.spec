@@ -301,20 +301,21 @@ checkout v27.1
 	30355 fix_sqlite_trace_loglevel-26						last=46819f5df6d ajtowns/202406-walletlogtrace
 	30357 fix_psbt_falsecomplete_pr30357-25					last=7e36dca657c willcl-ark/walletprocesspsbt-no-finalize
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
-	30394 theStack/202407-p2p-fix_selfdetection_racecond
-		NOTE: Non-trivial 27.x backport in #30467
+	30394 fix_selfconnect_race_pr30394-26
+		# NOTE: Non-trivial backport of test taken from #30467
 	# Needs review: 30410 mzumsande/202407_getblock_error
-	Partial? 30429 maflcko/2407-rpc-no-assert
-	30435 mzumsande/202407_shutdown_order
-	30436 -  # fix: Make TxidFromString() respect string_view length
-	30444 maflcko/2407-rest-index
-	30457 maflcko/2407-doc
+	30435 fix_shutdown_order_pr30435-27
+	30436 fix_txidfromstring_length-27
+		# NOTE: Doesn't include fix for #28970 (not in Knots 27.x)
+	30444 rest_negative_chk_pr30444-27
+	30457 fix_rpc_getaddressinfo_opt_isscript-25
 	# Needs review: 30465 hebasto/240716-deps-cmake
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 	# Needs review: 30479 mzumsande/202407_fix_resetfailure
-	g828 -  # Rendering an amp characters in the wallet name for QMenu
-	Just bugfix from? 30482 maflcko/2407-rest-txid
-	Just bugfix from: 30485 maflcko/2407-log-lint
+	g828 fix_qt_menu_walletname_g828-0.19
+	30482 rest_chk_truncated_txid-27+knots
+		# Just the bugfix from, diff-minimised
+	30485 fix_ldb_logging_pr30485-26						last=fa18fc70508 maflcko/2407-log-lint
 	#28.xTODO# If assumeutxo supported: 30497 maflcko/2407-loadtxoutset-rpc-err
 	#28.xTODO# Triage: 30508 hebasto/240723-zmq-pc
 	#28.xTODO# If assumeutxo supported: 30516 fjahr/2024-07-au-blockheight-san
@@ -1066,6 +1067,7 @@ m	n/a   knots_branding-27						f4216e323e3
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
+		TODO: fac0c3d4bfc (origin-pull/30482/head, maflcko/2407-rest-txid) doc: Add release notes for two pull requests
 		#28.xTODO# (when assumeutxo supported) Include the deleted notes from 0bc1f4b5c7b
 	n/a  (cherrypick=b5c82fd8976)				01ac32f90b6  # update manpages (build first)
 		# also example bitcoin.conf

@@ -909,7 +909,6 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	Triage: Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
 	Triage: Needs review: 30410 mzumsande/202407_getblock_error
-	Triage: Partial? 30429 maflcko/2407-rpc-no-assert
 	Triage: 30435 mzumsande/202407_shutdown_order
 	Triage: 30436 -  # fix: Make TxidFromString() respect string_view length
 	Triage: 30444 maflcko/2407-rest-index

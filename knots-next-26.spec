@@ -390,9 +390,9 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	30355 fix_sqlite_trace_loglevel-26						last=46819f5df6d ajtowns/202406-walletlogtrace
 	30357 fix_psbt_falsecomplete_pr30357-25					last=7e36dca657c willcl-ark/walletprocesspsbt-no-finalize
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
-	# Needs review: 30394 theStack/202407-p2p-fix_selfdetection_racecond
+	30394 fix_selfconnect_race_pr30394-26
+		# NOTE: Non-trivial backport of test taken from #30467
 	# Needs review: 30410 mzumsande/202407_getblock_error
-	Partial? 30429 maflcko/2407-rpc-no-assert
 	30435 mzumsande/202407_shutdown_order
 	Triage: 30436 -  # fix: Make TxidFromString() respect string_view length
 	30444 maflcko/2407-rest-index
@@ -401,7 +401,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 	# Needs review: 30479 mzumsande/202407_fix_resetfailure
 	g828 -  # Rendering an amp characters in the wallet name for QMenu
-	Just bugfix from: 30485 maflcko/2407-log-lint
+	30485 fix_ldb_logging_pr30485-26						last=fa18fc70508 maflcko/2407-log-lint
 	# Needs review: 30529 ryanofsky/pr/listset
 	Triage: 30489 theuni/depends-zmq-patch
 	30534 fanquake/no_bison_mac_win
