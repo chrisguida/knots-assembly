@@ -1,7 +1,7 @@
-timestamp 2024-07-18 18:12:28
+timestamp 2024-08-01 00:06:00
 #lastapply no-merge
 
-#.. checked up to PR #30479 / gui #828
+#.. checked up to PR #30564 / gui #832
 
 checkout v26.1
 @26.x-syslibs
@@ -51,6 +51,7 @@ checkout v26.1
 	# Triage: 29788 maflcko/2404-ci-bcfcc-
 	# Triage: 29832 fanquake/revert_29788
 	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
+	30552 mzumsande/202407_test_defaultarg
 # FIXES:
 	18818 guix_reltar_autogen_distclean			510ed993763	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						3bcab14451d
@@ -333,6 +334,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	29678 fix_init_lowdisk_warning_reqd-25		0ab7aa47bbe	last=847ad93f4dc fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
+		# +#30544
 	29726 fix_assumeutxo_reindex_pr29726-26		02fd519df55
 	(CHECK-LAST)	last=acf242b0629 fix_assumeutxo_reindex_pr29726-27
 	29747 fix_depends_qt_mingw_dbg_link-24		16e26c1e59e
@@ -400,6 +402,11 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 	# Needs review: 30479 mzumsande/202407_fix_resetfailure
 	g828 -  # Rendering an amp characters in the wallet name for QMenu
+	Just bugfix from: 30485 maflcko/2407-log-lint
+	# Needs review: 30529 ryanofsky/pr/listset
+	Triage: 30489 theuni/depends-zmq-patch
+	30534 fanquake/no_bison_mac_win
+	# Needs review: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -898,6 +905,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#26.xTODO# Needs concept? 30341 willcl-ark/psbt-strip-derivs-combine
 	#26.xTODO# Needs concept? 30381 willcl-ark/addnode-failure
 	# Needs review: 30433 fanquake/standard_branch_fedora
+	30515 -  # rpc: add utxo's blockhash and number of confirmations to scantxoutset output
+	Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -1182,7 +1191,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240718)			b6e90958caa
+	n/a  (bump_version=Knots:20240801)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits

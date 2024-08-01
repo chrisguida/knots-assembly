@@ -1,7 +1,7 @@
-timestamp 2024-07-18 18:12:28
+timestamp 2024-08-01 00:06:00
 #lastapply no-merge
 
-#.. checked up to PR #30479 / gui #828
+#.. checked up to PR #30564 / gui #832
 
 checkout v27.1
 @27.x-syslibs
@@ -46,6 +46,9 @@ checkout v27.1
 	# Triage: 29832 fanquake/revert_29788
 	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
 	-     ci_i686mp_clang15						5cb9486bac2
+	#28.xTODO# Triage: Revert #30487 ?
+	30519 fanquake/tsan_LIBCPP_REMOVE_TRANSITIVE_INCLUDES
+	30552 mzumsande/202407_test_defaultarg
 # FIXES:
 	18818 guix_reltar_autogen_distclean			1abd045d2e7	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						a35c4fe0bc8
@@ -260,6 +263,7 @@ checkout v27.1
 	29678 fix_init_lowdisk_warning_reqd-25		c154e3fe348	last=847ad93f4dc fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs work: 29720 maflcko/2403-rpc-int-wrap-
+		# +#30544
 	29726 fix_assumeutxo_reindex_pr29726-27		072ef5d78dd
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
@@ -310,6 +314,15 @@ checkout v27.1
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 	# Needs review: 30479 mzumsande/202407_fix_resetfailure
 	g828 -  # Rendering an amp characters in the wallet name for QMenu
+	Just bugfix from? 30482 maflcko/2407-rest-txid
+	Just bugfix from: 30485 maflcko/2407-log-lint
+	#28.xTODO# If assumeutxo supported: 30497 maflcko/2407-loadtxoutset-rpc-err
+	#28.xTODO# Triage: 30508 hebasto/240723-zmq-pc
+	#28.xTODO# If assumeutxo supported: 30516 fjahr/2024-07-au-blockheight-san
+	# Needs review: 30529 ryanofsky/pr/listset
+	Triage: 30489 theuni/depends-zmq-patch
+	30534 fanquake/no_bison_mac_win
+	# Needs review: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -571,6 +584,7 @@ checkout v27.1
 	-     rpc_descriptorprocesspsbt_opts-27.1+k	e082decc6a5
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# Needs review: 22729 vasild/torbind
+		# +#30502
 	# TODO? 25621 -  # rpc/wallet: Add details and duplicate section for simulaterawtransaction
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command
 	# Only if Core merges (alternative makes more sense): 22776 kallewoof:202108-getbalances-tx
@@ -768,6 +782,8 @@ checkout v27.1
 	#27.xTODO# Needs concept? 30341 willcl-ark/psbt-strip-derivs-combine
 	#27.xTODO# Needs concept? 30381 willcl-ark/addnode-failure
 	# Needs review: 30433 fanquake/standard_branch_fedora
+	30515 -  # rpc: add utxo's blockhash and number of confirmations to scantxoutset output
+	Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
@@ -1004,7 +1020,7 @@ m	-     gbt_rpc_options-27+knots				7f77f985de3
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#27.xTODO# QTreeWidget or similar for GUI Options dialog?
-		#28.xTODO# Revert #30352 ?
+		#28.xTODO# Revert #30352 + #30562 ?
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
@@ -1037,7 +1053,7 @@ m	n/a   knots_branding-27						f4216e323e3
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				d376f02a13e	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20240718)			5ed55f388ba
+	n/a  (bump_version=Knots:20240801)			5ed55f388ba
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		a5bdc6c9d94
 	n/a   (cherrypick=09d69b94ed0)				2227b137851  # release notes: write/update, including change log and credits

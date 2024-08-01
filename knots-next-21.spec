@@ -1,8 +1,8 @@
-timestamp 2024-07-18 18:12:28
+timestamp 2024-08-01 00:06:00
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30479 / gui #828 for fixes
+#.. checked up to PR #30564 / gui #832 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -104,6 +104,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	Triage: 29788 maflcko/2404-ci-bcfcc-
 	Triage: 29832 fanquake/revert_29788
 	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
+	Triage: 30552 mzumsande/202407_test_defaultarg
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b aka depends_no_getrandom
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=345f0b2283e guix_reltar_autogen_distclean
@@ -854,6 +855,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 29678 fix_init_lowdisk_warning_reqd
 	Triage: # Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	Triage: Needs work: 29720 maflcko/2403-rpc-int-wrap-
+		# +#30544
 	Triage: 29726 mzumsande/202403_assumeutxo_reindex_fix
 	Triage: 29747 fanquake/fix_qt_debug_link
 	Triage: # Needs review: 29770 fjahr/2024-03-check-undo-index
@@ -916,6 +918,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 30469 fjahr/2024-07-csi-overflow-2
 	Triage: Needs review: 30479 mzumsande/202407_fix_resetfailure
 	Triage: g828 -  # Rendering an amp characters in the wallet name for QMenu
+	Triage: Just bugfix from: 30485 maflcko/2407-log-lint
+	Triage: Needs review: 30529 ryanofsky/pr/listset
+	Triage: 30489 theuni/depends-zmq-patch
+	Triage: Needs review: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
 	TODO: Move deleted gitian docs back into this repo
@@ -1336,6 +1342,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# TODO: Fix datacarriersize description
 	Triage: g825  theStack-g/gui_show_maxmempoolsize
 	Triage: Needs review: 30433 fanquake/standard_branch_fedora
+	Triage: 30515 -  # rpc: add utxo's blockhash and number of confirmations to scantxoutset output
+	Triage: 30534 fanquake/no_bison_mac_win
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
