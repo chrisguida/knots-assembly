@@ -1034,7 +1034,7 @@ NM	-     mapport_default_on-27+knots			cb5548f0a69
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)
-	7483  svg_icon-27+knots						ce085e1f011
+m	7483  svg_icon-27+knots						ce085e1f011
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 	n/a   tbc_font-27+knots						dc256947854
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
@@ -1058,7 +1058,7 @@ m	n/a   knots_branding-27						f4216e323e3
 	n/a  (bump_version=Knots:20240801)			5ed55f388ba
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		a5bdc6c9d94
-	n/a   (cherrypick=09d69b94ed0)				2227b137851  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=bd18588c33a)				2227b137851  # release notes: write/update, including change log and credits
 		# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1068,10 +1068,8 @@ m	n/a   knots_branding-27						f4216e323e3
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
-		TODO: fac0c3d4bfc (origin-pull/30482/head, maflcko/2407-rest-txid) doc: Add release notes for two pull requests
-		TODO: Port mapping re-disabled by default
 		#28.xTODO# (when assumeutxo supported) Include the deleted notes from 0bc1f4b5c7b
-	n/a  (cherrypick=b5c82fd8976)				01ac32f90b6  # update manpages (build first)
+	n/a  (cherrypick=7a47e2347b6)				01ac32f90b6  # update manpages (build first)
 		# also example bitcoin.conf
 	#28.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
