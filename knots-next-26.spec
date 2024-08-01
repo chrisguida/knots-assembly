@@ -51,7 +51,7 @@ checkout v26.1
 	# Triage: 29788 maflcko/2404-ci-bcfcc-
 	# Triage: 29832 fanquake/revert_29788
 	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
-	30552 mzumsande/202407_test_defaultarg
+	30552 qafix_msgtx_defarg-0.16
 # FIXES:
 	18818 guix_reltar_autogen_distclean			510ed993763	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						3bcab14451d
@@ -272,7 +272,6 @@ checkout v26.1
 		# See also #29868
 	28976 fix_wallet_migrate_blank-26+knots		b4dfe3cbd0d
 		#+29367
-	28979 ishaanam/sendall_ancestor_aware_funding
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
 	29022 fix_btx_replacable_blank-21			b0d45d03bc0
 	29027 fix_wallet_keyparsecheck_pr29027-26	b8042ae8457
@@ -309,13 +308,13 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	29434 fix_rpc_feerate_overflow-26			c4d52ee1912
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
-	g795 -  # Keep focus on "Hide" while ModalOverlay is visible
+	g795  -													last=992b1bbd5da  # Keep focus on "Hide" while ModalOverlay is visible
 	g797  fix_qa_guibug796-25					66fffc1113d
 	29480 log_rand_during_init-0.20				36fadc3ace3	last=88468a8afcd
 		# Needs careful backport (basically rewritten)
 	29493 subtree_update_crc32c-24				59b09fa41a8
 	28805 qafix_v2t_pr28805-26					9eaddfae5b3
-	29521 -  # cli: Detect port errors in rpcconnect and rpcport
+	29521 cli_check_portnum-23
 	g801  fix_qt_clntmdl_at_shutdown_prg801-21	f00d9892c62
 	-     rpc_loadtxoutset_hide-26				aa2c7fadfe0
 		#27.xTODO# This should probably be removed
@@ -333,8 +332,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
 	29678 fix_init_lowdisk_warning_reqd-25		0ab7aa47bbe	last=847ad93f4dc fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
-	29720 maflcko/2403-rpc-int-wrap-
-		+#30544
+	#28.xTODO# If assumeutxo supported: 29720 maflcko/2403-rpc-int-wrap-
+		# +#30544
 	29726 fix_assumeutxo_reindex_pr29726-26		02fd519df55
 	(CHECK-LAST)	last=acf242b0629 fix_assumeutxo_reindex_pr29726-27
 	29747 fix_depends_qt_mingw_dbg_link-24		16e26c1e59e
@@ -359,7 +358,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
 	29985 fix_depends_qt_zlib_t64-26			abd7f86f19b
-	30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
+	30007 dnsseed_achow101-25								last=2721d64989c achow101/my-dns-seed
 	g819  qt_signmsg_msgs_legacyonly-0.20		a5e0eac8f22	last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
@@ -854,6 +853,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# +#29722 ?
 		# +#29735
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
+	28979 ishaanam/sendall_ancestor_aware_funding
 	29016 rpc_listmempooltxs-26+knots			4a5e8fb0a40	last=07008477b81 niftynei/nifty/listmempoolentry
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed

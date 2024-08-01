@@ -47,8 +47,8 @@ checkout v27.1
 	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
 	-     ci_i686mp_clang15						5cb9486bac2
 	#28.xTODO# Triage: Revert #30487 ?
-	30519 fanquake/tsan_LIBCPP_REMOVE_TRANSITIVE_INCLUDES
-	30552 mzumsande/202407_test_defaultarg
+	30519 ci_tsan_pr30519-25  # ci: add _LIBCPP_REMOVE_TRANSITIVE_INCLUDES to TSAN (libc++) job
+	30552 qafix_msgtx_defarg-0.16
 # FIXES:
 	18818 guix_reltar_autogen_distclean			1abd045d2e7	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						a35c4fe0bc8
@@ -230,7 +230,6 @@ checkout v27.1
 	# TODO: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
 	28874 fanquake/redundant_upnp_ifdef			e17e134e60e	last=92f88a96290
 	28944 rpc_sendall_anti_fee_sniping-27		53f5d9f75ba	last=b11d00d54ed ishaanam/sendall_anti_fee_sniping
-	28979 ishaanam/sendall_ancestor_aware_funding
 	# FIXME: rpc_net test fails! 28998 rpc_addpeeraddress_return_error-26
 	29141 fix_rpcauth_blank						72e05830e0c
 		#27.xTODO# reconcile with #30401
@@ -241,12 +240,12 @@ checkout v27.1
 	29175 -										0aceb063e6b	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  -										f69aee8db7e	last=3bf00e13609  # debugwindow: update session ID tooltip
-	29307 AutoFile_error_check-27				5994df47907	last=ea89a6e3687 vasild/AutoFile_error_check
+	29307 AutoFile_error_check-27				5994df47907	last=4533445fd7d vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
-	g795 -  # Keep focus on "Hide" while ModalOverlay is visible
+	g795  -													last=992b1bbd5da  # Keep focus on "Hide" while ModalOverlay is visible
 	29480 -										e7a5160f328	last=88468a8afcd  # log_rand_during_init-0.20
 		# Needs careful backport (basically rewritten)
-	29521 -  # cli: Detect port errors in rpcconnect and rpcport
+	29521 cli_check_portnum-23
 	-     rpc_loadtxoutset_hide-26				9ee46a61c19
 		#28.xTODO# This should probably be removed if assumeutxo is supported on mainnet
 	29586 wallet_migrate_null_walletname_bak-27	1684c767a1b
@@ -262,8 +261,8 @@ checkout v27.1
 	# Diff-minimise (or not worth it?): 29671 fjahr/2024-03-pr26903-reopen
 	29678 fix_init_lowdisk_warning_reqd-25		c154e3fe348	last=847ad93f4dc fix_init_lowdisk_warning_reqd
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
-	29720 maflcko/2403-rpc-int-wrap-
-		+#30544
+	#28.xTODO# If assumeutxo supported: 29720 maflcko/2403-rpc-int-wrap-
+		# +#30544
 	29726 fix_assumeutxo_reindex_pr29726-27		072ef5d78dd
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
@@ -277,7 +276,7 @@ checkout v27.1
 		# Rewrote myself due to overcomplication and race bug in PR
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs broader testing: 29984 laanwj/2024-04-iff-loopback
-	30007 dnsseed_achow101-25								last=ee218aa9a9e achow101/my-dns-seed
+	30007 dnsseed_achow101-25								last=2721d64989c achow101/my-dns-seed
 	g819  qt_signmsg_msgs_legacyonly-0.20		72e593d9e61	last=fb9f150759b willcl-ark-g/signmessage-error-fix
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#27.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
@@ -735,6 +734,7 @@ checkout v27.1
 		# +#29722 ?
 		# +#29735
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
+	28979 ishaanam/sendall_ancestor_aware_funding
 	29016 rpc_listmempooltxs-26+knots			02e19ccf01f	last=07008477b81 niftynei/nifty/listmempoolentry
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
