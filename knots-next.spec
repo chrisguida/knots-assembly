@@ -651,7 +651,7 @@ checkout v27.1
 	# Needs work: 25434 w0xlt/bypass-timelocks
 		# NOTE: Was #21413 glozow/2021-03-bypass-timelocks (never in Knots)
 		# Also #25570 ?
-	g626 qt_node_localaddrs-26					2dd1abed1d0	last=bb5bb2001cf
+	g626 qt_node_localaddrs-26					2dd1abed1d0	last=189c987386a
 	# Needs completion & review: 25718 fjahr/2022-07-allowinbound
 	# Needs concept/review: 25747 w0xlt/desc_file
 	# Needs work: 25776 1440000bytes/bumpfee-inputs
@@ -1069,7 +1069,7 @@ m	n/a   knots_branding-27						f4216e323e3
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#28.xTODO# (when assumeutxo supported) Include the deleted notes from 0bc1f4b5c7b
-	n/a  (cherrypick=7a47e2347b6)				01ac32f90b6  # update manpages (build first)
+	n/a  (cherrypick=540426ee9cc)				01ac32f90b6  # update manpages (build first)
 		# also example bitcoin.conf
 	#28.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
