@@ -236,6 +236,7 @@ checkout v27.1
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
+		TODO: but windows has lots of problems with existing style...
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29175 -										732060336d2	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
@@ -323,6 +324,7 @@ checkout v27.1
 	# If needed? 30489 theuni/depends-zmq-patch
 	30534 guix_no_bison_macwin-25				bf4f446992f
 	# Needs review: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
+	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -787,6 +789,7 @@ checkout v27.1
 	# Needs review: 30433 fanquake/standard_branch_fedora
 	30515 rpc_scantxoutset_blockhashetc-26		3a723935d68
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
+	TODO: Some RPC way to report if settings are default?
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
@@ -906,6 +909,7 @@ checkout v27.1
 	7510  rwconf_gui-27+knots					dc0d41683c3
 		#28.xTODO# Squash fixes
 		#28.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
+		FIXME: turning on peerblockfilters after pruning has begun prevents starting at relaunch
 	559   accept_nonstdtxn						e023124323e
 		#28.xTODO# Revert or redefine #29843 if it got merged
 	 929 tbc									24523ecf145
@@ -942,6 +946,10 @@ checkout v27.1
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
 	-     gbt_rpc_options-27+knots				99864fe613b
+	TODO: pre-cache GBT call after new block?
+	TODO: RPC to get/set policy configs
+	-     miningcbtag-27+knots
+	-     blockview-27+knots
 NM	-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
 	#27.xTODO# Look into making the patches tarball in guix
