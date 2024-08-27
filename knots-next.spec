@@ -1,7 +1,7 @@
-timestamp 2024-08-01 00:06:00
+timestamp 2024-08-27 01:05:06
 #lastapply no-merge
 
-#.. checked up to PR #30564 / gui #832
+#.. checked up to PR #30720 / gui #832
 
 checkout v27.1
 @27.x-syslibs
@@ -11,6 +11,8 @@ checkout v27.1
 		# Was #29362 - build: Add missed definition for AM_OBJCXXFLAGS
 	-     fix_evhttp_util_nodep-25				23e0821ee70
 	30283 upnp_228_compat-22					2d213fc7c89
+	30633 fanquake/gcc_15_fixup
+		# 27.x backport in #30558
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							97b8727d34e
 	5416  sys_libsecp256k1						5bb4fd232d3
@@ -324,6 +326,14 @@ checkout v27.1
 	# If needed? 30489 theuni/depends-zmq-patch
 	30534 guix_no_bison_macwin-25				bf4f446992f
 	# Needs review: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
+	30577 brunoerg/2024-07-miniscript-tointegral
+	30621 furszy/2024_fix_blank_legacy_detection
+	Without renames: 30659 furszy/2024_wallet_shutdown
+	# Needs review: 30666 mzumsande/202404_invalidblock
+	# Needs (concept?) review? 30678 fjahr/2024-08-backup-best
+	# Needs work: 30679 tdb3/handle_invalid_rpcbind_port
+	# Needs review? 30684 furszy/2024_init_negated_args_err
+	Maybe simple rewrite? 30697 ismaelsadeeq/08-2024-prevent-race-condition-in-wallet
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -411,6 +421,9 @@ checkout v27.1
 	# Needs review: 30370 fjahr/2024-07-pr28945
 		# Was (never in Knots) #28945
 	# Needs review? 30442 paplorinc/paplorinc/siphash
+	# Needs review: 30610 sipa/202408_force_sync
+	# Needs review: 30611 andrewtoth/write-chainstate-every-hour
+	30675 -  # http: set TCP_NODELAY when creating HTTP server
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -556,7 +569,6 @@ checkout v27.1
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
 	# TODO: 21283 achow101/psbt2
 		# TODO: diff-minimise??
-	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
 	21260 rpcwallet_tx_in_mempool-26+knots		fdd855b6169	last=46bf0b7b5d8
 		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
@@ -727,6 +739,7 @@ checkout v27.1
 		# OR #28983 OR #29432 OR #30315+???
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	#27.xTODO# Make disabled by default: 28052 maflcko/2306-fs_stuff-
+		#+ #30607? +#30657 +#30669
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
@@ -789,6 +802,13 @@ checkout v27.1
 	# Needs review: 30433 fanquake/standard_branch_fedora
 	30515 rpc_scantxoutset_blockhashetc-26		3a723935d68
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
+	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
+		# Was #21224
+	Needs rewrite? 30635 Sjors/2024/08/waitforblock
+	# Needs review: 30685 hebasto/240820-control-flow
+	Needs review? 30708 jamesob/2024-08-getdescriptoractivity
+	Needs review? 30713 tdb3/relevant_blocks_in_scanblocks_status
+	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	TODO: Some RPC way to report if settings are default?
 	
 	#28.xTODO# Support for sending tx with TRUC version
@@ -923,6 +943,7 @@ checkout v27.1
 	5861 gui_restore_addresses					d23e2a5ce91
 	5891  qt_console_history_persist			5da2e77fab2	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-27+knots						556b082f984	# Latest code now
+		#28.xTODO# Revert #30594(partial) & #30592
 	-     truc_opts-27+knots					52ebfb386c8
 		#28.xTODO# Check if default/interaction values ought to be changed
 	# TODO? -     net_identify_librerelay
@@ -954,7 +975,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
 	#27.xTODO# Look into making the patches tarball in guix
 	-     undeprecate_libconsensus-27			d12a94481fb
-		#28.xTODO# Restore libbitcoinconsensus? #29748 #29787 #29797
+		#28.xTODO# Restore libbitcoinconsensus? #29748 #29787 #29797 #29648 #30590
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 	n/a   macos_dmg-27							d26ae740b99
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder

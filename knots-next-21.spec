@@ -1,8 +1,8 @@
-timestamp 2024-08-01 00:06:00
+timestamp 2024-08-27 01:05:06
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30564 / gui #832 for fixes
+#.. checked up to PR #30720 / gui #832 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -55,6 +55,8 @@ checkout v0.21.2
 	Triage: 30216 hebasto/240602-libevent
 	30283 fanquake/backport_upnp_api_fix
 		# 26.x backport in #30319
+	Triage: 30633 fanquake/gcc_15_fixup
+		# 27.x backport in #30558
 # SYSLIBS: (and old build bugs)
 	5872  subdir_incl_compat-0.10				9815be994a1	last=1490995c122 subdir_incl_compat
 	2241  sys_leveldb-21+knots					60cd0a8e2fb	last=1c6ae96f0a3 sys_leveldb
@@ -920,7 +922,16 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Just bugfix from: 30485 maflcko/2407-log-lint
 	Triage: Needs review: 30529 ryanofsky/pr/listset
 	Triage: 30489 theuni/depends-zmq-patch
+	Triage: 30534 fanquake/no_bison_mac_win
 	Triage: Needs review: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
+	Triage: 30577 brunoerg/2024-07-miniscript-tointegral
+	Triage: 30621 furszy/2024_fix_blank_legacy_detection
+	Triage: Without renames: 30659 furszy/2024_wallet_shutdown
+	Triage: Needs review: 30666 mzumsande/202404_invalidblock
+	Triage: Needs (concept?) review? 30678 fjahr/2024-08-backup-best
+	Triage: Needs work: 30679 tdb3/handle_invalid_rpcbind_port
+	Triage: Needs review? 30684 furszy/2024_init_negated_args_err
+	Triage: Maybe simple rewrite? 30697 ismaelsadeeq/08-2024-prevent-race-condition-in-wallet
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
 	TODO: Move deleted gitian docs back into this repo
@@ -982,6 +993,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	# Consider: 25985 fanquake/revert_slow_macos_sqlite
 	Triage: 28430 -  # fix: unnecessary continuation after finding mutation
 	Triage: 30115 theuni/easy-univalue-moves
+	30675 -  # http: set TCP_NODELAY when creating HTTP server
 # SOFTFORK:
 	21934 rpc_getblockchaininfo_lockedin_statistics-0.21.1	394e59e2f86	last=2b19f3443ef rpc_getblockchaininfo_lockedin_statistics
 	22016 rpc_gbci_period_start-0.21.1+knots	b19116ccf14	last=1898b9be12c Sjors/2021/05/versionbits_period_start
@@ -1333,6 +1345,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 		# Why not just increase inbound capacity to max anyway?
 	Triage: 29585 fanquake/list_other_pages_in_man
 	Triage: s/Core/Knots: 29686 willcl-ark/manpage-desc
+	Triage: Needs rewrite? 30635 Sjors/2024/08/waitforblock
+	Triage: Needs review: 30685 hebasto/240820-control-flow
 	Triage: 29687 willcl-ark/improve-cli-error
 	Triage: Check GCC version: 29695 fanquake/gcc_12_branch_protection_default
 	Triage: API change: 29845 stickies-v/2024-04/make-warnings-arr
@@ -1342,7 +1356,6 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Triage: g825  theStack-g/gui_show_maxmempoolsize
 	Triage: Needs review: 30433 fanquake/standard_branch_fedora
 	Triage: 30515 -  # rpc: add utxo's blockhash and number of confirmations to scantxoutset output
-	Triage: 30534 fanquake/no_bison_mac_win
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:

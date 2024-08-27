@@ -1,7 +1,7 @@
-timestamp 2024-08-01 00:06:00
+timestamp 2024-08-27 01:05:06
 #lastapply no-merge
 
-#.. checked up to PR #30564 / gui #832
+#.. checked up to PR #30720 / gui #832
 
 checkout v26.1
 @26.x-syslibs
@@ -15,6 +15,8 @@ checkout v26.1
 	Triage: 30216 hebasto/240602-libevent
 	30283 upnp_228_compat-22
 		TODO: Is 26.x backport in #30319 more appropriate?
+	30633 fanquake/gcc_15_fixup
+		# 27.x backport in #30558
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
 	5416  sys_libsecp256k1-26					259dcb7e012	last=7c70b396b1d sys_libsecp256k1
@@ -406,6 +408,14 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# If needed? 30489 theuni/depends-zmq-patch
 	30534 guix_no_bison_macwin-25
 	# Needs review: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
+	30577 brunoerg/2024-07-miniscript-tointegral
+	30621 furszy/2024_fix_blank_legacy_detection
+	Without renames: 30659 furszy/2024_wallet_shutdown
+	# Needs review: 30666 mzumsande/202404_invalidblock
+	# Needs (concept?) review? 30678 fjahr/2024-08-backup-best
+	# Needs work: 30679 tdb3/handle_invalid_rpcbind_port
+	# Needs review? 30684 furszy/2024_init_negated_args_err
+	Maybe simple rewrite? 30697 ismaelsadeeq/08-2024-prevent-race-condition-in-wallet
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -498,6 +508,9 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30370 fjahr/2024-07-pr28945
 		# Was (never in Knots) #28945
 	# Needs review? 30442 paplorinc/paplorinc/siphash
+	# Needs review: 30610 sipa/202408_force_sync
+	# Needs review: 30611 andrewtoth/write-chainstate-every-hour
+	30675 -  # http: set TCP_NODELAY when creating HTTP server
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -650,7 +663,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# TODO: diff-minimise??
 	21319 getblock_optimise-25					74cb4fa735a	last=8fd77528194 getblock_optimise
 		# Context: 17529 rpc: Faster getblock using PureBlock
-	# Needs review/optional? 21224 ariard:2021-02-halt-processing-unrequested
 	21260 rpcwallet_tx_in_mempool-26+knots		05c7e969f16	last=46bf0b7b5d8
 		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
@@ -838,6 +850,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review & compat checking: 27859 -  # Mempool: persist mempoolminfee accross restarts
 	# Needs review: Ensure fully optional (opt-in?): 27877 -  # wallet: Add CoinGrinder coin selection algorithm
 	#27.xTODO# Make disabled by default: 28052 maflcko/2306-fs_stuff-
+		#+ #30607? +#30657 +#30669
 	# Needs review? 28207 maflcko/2308-xor-memepool-
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	# Needs review: 28461 fanquake/windows_ssp_roundup
@@ -907,6 +920,14 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 30433 fanquake/standard_branch_fedora
 	30515 -  # rpc: add utxo's blockhash and number of confirmations to scantxoutset output
 	Needs review? g832 -  # Improve user dialog when signing multisig psbts
+	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
+		# Was #21224
+	Needs rewrite? 30635 Sjors/2024/08/waitforblock
+	# Needs review: 30685 hebasto/240820-control-flow
+	Needs review? 30708 jamesob/2024-08-getdescriptoractivity
+	Needs review? 30713 tdb3/relevant_blocks_in_scanblocks_status
+	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
+	TODO: Some RPC way to report if settings are default?
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -1072,7 +1093,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#27.xTODO# Needs concept & writing: default UPnP/NAT-PMP to enabled
 		# NOTE: Need to revert #28874 conditionals
 	#26.xTODO# Look into making the patches tarball in guix
-	#27.xTODO# Restore libbitcoinconsensus? #29189 #29748 #29787 #29797
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 # Non-upstreamed policy options (default off):
 	#27.xTODO# Try using #29086 to rebase policy options up here?
