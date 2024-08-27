@@ -382,8 +382,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	24231 fix_datastream_overflows-21
 	24253 rm_broken_datastream_inserterase-0.17
 	24287 fix_genmanpages_tagver-0.19
-	# Needs work: 24313 Sjors/2022/02/displayaddress						last=803387f054d
-		# TODO: make sure this doesn't break compatibility (and fix review bugs)
+	24313 Sjors/2022/02/displayaddress						last=803387f054d
+		TODO: make sure this doesn't break compatibility (and fix review bugs)
 	# Needs work/correctness: 24318 -  # doc: ZMQ documentation fix regarding topics
 	22087 validate_port_opts-21								last=1dae86bfd22  # Validate port-options
 	(CHECK-LAST)	last=e006505695c validate_port_opts-23+knots
@@ -635,7 +635,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	26828 andrewtoth/assumeutxo-remove-fix
 	Just fixes from? 26836 furszy/2022_wallet_finish_addressbook_encapsulation
 	Needs review: 26903 pstratem/2023-01-17-baseindex-commit-error
-	Needs review: 26950 fanquake:check_for_SecureZeroMemory
+	26950 fanquake:check_for_SecureZeroMemory
 	If needed for below: 27850 pinheadmz/blockstore-tests
 	Triage: 27039 pinheadmz/reindex-read-only
 	Triage: Needs review: 27071 vasild/lookup_subnet_cjdns
@@ -645,7 +645,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Only f73782a from #27279 (see #27474 for 24.x backport)
 	# Triage/Needs review 27295 brunoerg/2023-03-improv-deserialize-v2
 	Triage 27303 pinheadmz/cache-conf-file OR 27302 (used in Knots 25)
-	# Needs review: 27307 -  # wallet: track mempool conflicts with wallet transactions
+	Maybe? 27307 -  # wallet: track mempool conflicts with wallet transactions
 	Needs review: 27411 mzumsande/202303_advertise_nets
 	Alternative to: 27434 pinheadmz/chaintips-invalid
 	Triage: 27468 (see #27474 for 24.x backport; #27468 for regression test)
@@ -655,7 +655,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	27554 -  # test: Treat bitcoin-wallet binary in the same way as others
 	Needs review: g696 -  # Switch RPCConsole wallet selection to the one most recently opened/restored/created
 	Triage & Needs work? g719 theStack-g/gui-nuke_cc_dust_label
-	Triage & Needs work? g722 -  # Wallet : Allow user to navigate options while encrypting at creation
+	Triage: g722 -  # Wallet : Allow user to navigate options while encrypting at creation
 	Triage & Needs review? g739 achow101-g/gui-dont-blank-noprivkeys
 	Triage: 27556 -  # wallet: fix deadlock in bdb read write operation
 	Triage & Needs review: 27557 pinheadmz/async-getaddrinfo
@@ -697,7 +697,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 27905 mzumsande/202306_dirty_blockindex
 	Triage & Needs review: 27912 -  # net: run disconnect in I2P thread
 	Some good fix for 27915 (#27920?)
-	Triage: Needs review: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
+	Triage: 27969 -  # bumpfee: ignore WALLET_INCREMENTAL_RELAY_FEE when user specifies fee_rate
 	Triage: Needs review: 27981 sipa/202306_pushback
 	Triage: Needs work: 27991 fanquake/instrument_libsecp
 	Triage: Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
@@ -722,11 +722,11 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 29946 jsonrpc_content_type-26+mini			f0644e1b77c	last=f90a84d6150 jsonrpc_content_type
 		# Rebased in Core as #30215 (merged unmodified)
 	g749 furszy/2023_gui_start_minimized
-	Triage: Needs review (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
+	Triage: Part of (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
 	28345 fix_bytespersigop_checks
 		TODO: Diff-minimise and fix remaining issues
 	Triage: Needs review? 28340 -  # security: restrict abis in bitcoind.service
-	Triage: Needs review & diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
+	Triage: Needs diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
 	Triage: Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	Triage: 28427 furszy/2023_index_coinstats_fix_reverseblock
 	Triage: g751  furszy/2023_gui_fix_appbar_crash
@@ -774,7 +774,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# 26.x backport in #29209
 	Triage: # Meh? 28822 -  # test: Add missing wait for version to be sent in add_outbound_p2p_connection
 	Triage: Needs concept or alternative: 28824 willcl-ark/asm-full-hex
-	Triage: # Needs review: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
+	Triage: 28834 -  # net: Attempts to connect to all resolved addresses on addnode
 	Triage: # Needs review & triage: 28846 fanquake/fixup_multiprocess_arm64
 	Triage: # Needs review & triage: 28848 instagibbs/2023-11-submitpackage-results
 	Triage: 28858 fanquake/man_par_drop_negative
@@ -863,7 +863,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: # Needs review: 29770 fjahr/2024-03-check-undo-index
 	Triage: 29776 -  # ThreadSanitizer: Fix #29767
 	Triage: Needs review: 29796 fanquake/depends_0g_debug_flags
-	Triage: Needs review: 29798 vasild/logging_cleanup
+	Triage: 29798 vasild/logging_cleanup
 	-     fix_rpc_warnings_all-21
 	Triage: 29850 laanwj/2024-04-dnsseeds-up-to-32
 	Triage: 29853 darosior/2404_miniscript_crash
@@ -879,7 +879,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs work: g813  willcl-ark-g/2024-03-proxy-validate
 	Triage: Needs review: g815  -  # Bugfix on TransactionsView - Disable if privacy mode is set during wallet selection
 	Triage: # Not worth it? 29963 hebasto/240425-guess-cc
-	Triage: # Needs broader testing: 29984 laanwj/2024-04-iff-loopback
+	Triage: After broader testing: 29984 laanwj/2024-04-iff-loopback
 	Triage: 29985 laanwj/2024-04-qt-gzip-time64
 	   # 27.x backport in #29888
 	Triage: Wait for confirmation: 30007 achow101/my-dns-seed
@@ -888,7 +888,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
 	Triage: 30085 jonatack/2024-05-fix-cjdns-detection-in-GetAddedNodeInfo
 	Triage: 30094 willcl-ark/move-univalue-only
-	Triage: Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl
+	Triage: Might not apply to <=27.x (which lacks #30095): 30099 hebasto/240514-mingw-tl (replaced in 28.x with #30137)
 	Triage: Non-trivial: 30132 TheCharlatan/preserveIndexOnRestart
 	Triage: Not used for Knots: 30147 -  # contrib: Fixup verify-binaries OS platform parsing
 	30151 hebasto/240522-upnp-dl
@@ -899,7 +899,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
 	Triage: 30245 -  # net: Allow -proxy=[::1] on nodes with IPV6 lo only
 	Triage: # No real impact? 30255 maflcko/2406-logError
-	Triage: Needs review: 30265 achow101/fix-listwalletdir-migrated-wallets
+	Triage: 30265 achow101/fix-listwalletdir-migrated-wallets
 	Triage: Needs work: g823 -  # wallet: Improve error log color in the console
 	Triage: Needs work: g824 achow101-g/gui-migrate-unloaded
 	Triage: -     detect_clang_bug96267
@@ -923,7 +923,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 30529 ryanofsky/pr/listset
 	Triage: 30489 theuni/depends-zmq-patch
 	Triage: 30534 fanquake/no_bison_mac_win
-	Triage: Needs review: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
+	Triage: g831 pablomartin4btc-g/gui-bringToFront-wayland-workaround
 	Triage: 30577 brunoerg/2024-07-miniscript-tointegral
 	Triage: 30621 furszy/2024_fix_blank_legacy_detection
 	Triage: Without renames: 30659 furszy/2024_wallet_shutdown
