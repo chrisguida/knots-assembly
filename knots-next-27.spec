@@ -21,7 +21,6 @@ checkout v27.1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
 	#28.xTODO# sys_libminisketch
 	13789 bugfix_asm_pragmas					2dc1722f600
-		# Should revert #28893 if merged?
 	15155 test_external_bcli					37442ac71a2
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
@@ -32,7 +31,6 @@ checkout v27.1
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
 	# Needs review: 25191 hebasto/220523-qt6-mac
 	# ---- END qt6 SUPPORT ----
-	#28.xTODO# Revert #29904
 	n/a   (delete_release_notes_fragments)
 @27.x-knotsfixes
 # TESTS:
@@ -64,14 +62,14 @@ checkout v27.1
 	-     http_bind_error+extra					3194917f143
 		# NOTE: libevent-copied code up to date as of 2023-11-22 cfb2b89a1d0642abd6389913e237f49c662502e4
 	 9524  rpc_pruneblkchain0					62bc7893de2	last=88883ae13d
-	10731 log_more_uacomment					dc3babb6e24
+	10731 log_more_uacomment-26					dc3babb6e24	last=1852b4b8910 log_more_uacomment
 	29614 bufferedfile_fclose					88984d839a5
 	14485 fadvise-27+knots						66a302ecfce	last=289e88b3133 fadvise
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
 	-     rpcarg_type_per_name					7f56a80d34d
-	-     bugfix_rpc_getbalance_hacky			e9da9c1ce34
+	-     bugfix_rpc_getbalance_hacky-26		e9da9c1ce34	last=d23524372a0 bugfix_rpc_getbalance_hacky
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17

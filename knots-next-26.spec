@@ -26,7 +26,6 @@ checkout v26.1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
 	#27.xTODO: sys_libminisketch
 	13789 bugfix_asm_pragmas					5de4b81c017
-		# Should revert #28893 if merged?
 	15155 test_external_bcli					f29878dc855
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
@@ -68,7 +67,7 @@ checkout v26.1
 	-     http_bind_error+extra					8e1fe24ec0c
 		# NOTE: libevent-copied code up to date as of 2023-11-22 cfb2b89a1d0642abd6389913e237f49c662502e4
 	 9524  rpc_pruneblkchain0					79b87d35c9a	last=88883ae13d
-	10731 log_more_uacomment					de725342027
+	10731 log_more_uacomment-26					de725342027	last=1852b4b8910 log_more_uacomment
 	29614 bufferedfile_fclose-26				80841406c14	last=aec5e0f558a bufferedfile_fclose
 	14485 fadvise-26+knots						803e535fdd4	last=289e88b3133 fadvise
 	(CHECK-LAST)	last=79e4722e62a fadvise-27+knots (after addressing FIXME below)
@@ -77,7 +76,7 @@ checkout v26.1
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
 	-     rpcarg_type_per_name					5659f14cee6
-	-     bugfix_rpc_getbalance_hacky			18965ffe570
+	-     bugfix_rpc_getbalance_hacky-26		18965ffe570	last=d23524372a0 bugfix_rpc_getbalance_hacky
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17

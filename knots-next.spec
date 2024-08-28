@@ -17,7 +17,6 @@ checkout core/28.x
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
 	#28.xTODO# sys_libminisketch
 	13789 bugfix_asm_pragmas					2dc1722f600
-		TODO: Should revert #28893 ?
 	15155 test_external_bcli					37442ac71a2
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
@@ -28,18 +27,17 @@ checkout core/28.x
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
 	# Needs review: 25191 hebasto/220523-qt6-mac
 	# ---- END qt6 SUPPORT ----
-	TODO: Revert #29904
 	n/a   (delete_release_notes_fragments)
 @28.x-knotsfixes
 # TESTS:
-	-     ci_knots-26							e2099d64846
-	-     lint_relaxer-26+knots					6db3eb08b9d
-	-     nowarn_unreachable-code				51bbc98f621
+	# If needed: -     ci_knots-26							e2099d64846
+	# If needed: -     lint_relaxer-26+knots					6db3eb08b9d
+	# If needed: -     nowarn_unreachable-code				51bbc98f621
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
-	-     ci_i686mp_clang15						955f1eeed99
+	# If needed: -     ci_i686mp_clang15						955f1eeed99
 	#28.xTODO# Triage: Revert #30487 ?
 # FIXES:
 	18818 guix_reltar_autogen_distclean			c94474f3235	last=b5a164d9155 fix_gitian_src_202004
