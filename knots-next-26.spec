@@ -1,7 +1,7 @@
-timestamp 2024-08-27 01:05:06
+timestamp 2024-08-28 17:07:23
 #lastapply no-merge
 
-#.. checked up to PR #30720 / gui #832
+#.. checked up to PR #30743 / gui #833
 
 checkout v26.1
 @26.x-syslibs
@@ -17,6 +17,7 @@ checkout v26.1
 		TODO: Is 26.x backport in #30319 more appropriate?
 	30633 fanquake/gcc_15_fixup
 		# 27.x backport in #30558
+		# 26.x backport in #30722
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							492d15bf29d
 	5416  sys_libsecp256k1-26					259dcb7e012	last=7c70b396b1d sys_libsecp256k1
@@ -928,6 +929,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	Needs review? 30708 jamesob/2024-08-getdescriptoractivity
 	Needs review? 30713 tdb3/relevant_blocks_in_scanblocks_status
 	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
+	Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	TODO: Some RPC way to report if settings are default?
 	
 	# TODO: GUI block template view
@@ -1212,7 +1214,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240801)			b6e90958caa
+	n/a  (bump_version=Knots:20240828)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits

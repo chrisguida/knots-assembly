@@ -1,7 +1,7 @@
-timestamp 2024-08-27 01:05:06
+timestamp 2024-08-28 17:07:23
 #lastapply no-merge
 
-#.. checked up to PR #30720 / gui #832
+#.. checked up to PR #30743 / gui #833
 
 checkout v27.1
 @27.x-syslibs
@@ -807,6 +807,7 @@ checkout v27.1
 	Needs review? 30708 jamesob/2024-08-getdescriptoractivity
 	Needs review? 30713 tdb3/relevant_blocks_in_scanblocks_status
 	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
+	Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	TODO: Some RPC way to report if settings are default?
 	
 	#28.xTODO# Support for sending tx with TRUC version
@@ -1082,7 +1083,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20240801)			3164bc9d5cb
+	n/a  (bump_version=Knots:20240828)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits
