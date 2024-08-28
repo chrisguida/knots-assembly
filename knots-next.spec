@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #30720 / gui #832
 
-checkout core/master
+checkout core/28.x
 @28.x-syslibs
 # BUILD BUGS:
 	5872 subdir_incl_compat						f41289db2b9
@@ -208,7 +208,7 @@ checkout core/master
 		# Originally part of #28784, but regressed in d95dde9441f...7cb9367157e
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
-	28944 rpc_sendall_anti_fee_sniping-27		b2de75c9a45	last=b11d00d54ed ishaanam/sendall_anti_fee_sniping
+	28944 ishaanam/sendall_anti_fee_sniping		b2de75c9a45	last=b11d00d54ed  # rpc_sendall_anti_fee_sniping-27
 	29141 fix_rpcauth_blank						ea301cd9260
 		#28.xTODO# reconcile with #30401
 	# Needs review: 29124 achow101/fix-double-keypath
@@ -218,7 +218,7 @@ checkout core/master
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29175 -										732060336d2	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
-	29307 AutoFile_error_check-27				689b2cdc64b	last=4533445fd7d vasild/AutoFile_error_check
+	Rebase? 29307 AutoFile_error_check-27				689b2cdc64b	last=4533445fd7d vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	29480 -										63f3808fc0d	last=88468a8afcd  # log_rand_during_init-0.20
 		# Needs careful backport (basically rewritten)
@@ -240,7 +240,7 @@ checkout core/master
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#28.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
-	-     fix_cjdns_addnode_detect2-27+knots	285a22a37a7	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode
+	-     jonatack/2024-05-fix-cjdns-detection-in-AddNode	285a22a37a7	last=be4541abe59  # fix_cjdns_addnode_detect2-27+knots
 	# Needs review: 30155 mzumsande/202405_replay_blocks
 	#28.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
@@ -606,7 +606,7 @@ checkout core/master
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
-	26990 bcli_validation-24					9c3a202713a	last=3d63fc976d6
+	Maybe rebase? 26990 bcli_validation-24					9c3a202713a	last=3d63fc976d6
 		# Didn't bother rebasing for 755320f75f2...3d63fc976d6 trivial changes
 	27034 rpc_importaddr_for_descwallet-27+k	958c76fa136	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
@@ -752,7 +752,7 @@ checkout core/master
 		# NOTE: Stripped out benchmark change
 		#28.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-27			82181fbc222
-	15218 postibd_flush-27						06b45666f77	last=8887d28a014
+	15218 andrewtoth/flush-after-ibd			06b45666f77	last=8887d28a014  # postibd_flush-27
 	15428 tor_gui_pairing-27+knots				dadc8ab723e	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-27+knots				b9d6192ad19	# Latest code now
