@@ -8,7 +8,7 @@ checkout core/28.x
 # BUILD BUGS:
 	5872 subdir_incl_compat						f41289db2b9
 	-     fix_evhttp_util_nodep-25				23e0821ee70
-	30743 fanquake/libevent_non_gnu_c
+	30743 libevent_non_gnu_c-28								last=77fa5770b9f fanquake/libevent_non_gnu_c
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							97b8727d34e
 	5416  sys_libsecp256k1						5bb4fd232d3
@@ -862,6 +862,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	#28.xTODO# Look into making the patches tarball in guix
 	-     undeprecate_libconsensus-27			d12a94481fb
 		28.xTODO: Restore libbitcoinconsensus? #29748 #29787 #29797 #29648 #30590
+			Also needs part of sys_secp256k1
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 	n/a   macos_dmg-27							d26ae740b99
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder

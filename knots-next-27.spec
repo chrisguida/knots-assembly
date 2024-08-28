@@ -14,8 +14,8 @@ checkout v27.1
 	30633 fanquake/gcc_15_fixup
 		# 27.x backport in #30558
 # SYSLIBS: (and old build bugs)
-	2241  sys_leveldb							97b8727d34e
-	5416  sys_libsecp256k1						5bb4fd232d3
+	2241  sys_leveldb-26+knots					97b8727d34e	last=87e5c2dd815 sys_leveldb
+	5416  sys_libsecp256k1-27					5bb4fd232d3	last=4684e2971d0 sys_libsecp256k1
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c

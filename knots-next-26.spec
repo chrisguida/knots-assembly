@@ -19,7 +19,7 @@ checkout v26.1
 		# 27.x backport in #30558
 		# 26.x backport in #30722
 # SYSLIBS: (and old build bugs)
-	2241  sys_leveldb							492d15bf29d
+	2241  sys_leveldb-26+knots					492d15bf29d	last=87e5c2dd815 sys_leveldb
 	5416  sys_libsecp256k1-26					259dcb7e012	last=7c70b396b1d sys_libsecp256k1
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
