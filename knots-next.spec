@@ -182,9 +182,7 @@ checkout core/28.x
 	# Needs concept: 28205 theStack/202308-netprocessing-reallow_fetching_of_genesis_block
 	# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	# Triage #28248
-	29946 jsonrpc_content_type-26+mini			d4ad3db85ff	last=f90a84d6150 jsonrpc_content_type
-		MERGED: Rebased in Core as #30215 (merged unmodified)
-	28345 fix_bytespersigop_checks-mini			f3f4732db4a	last=78a256505f3 fix_bytespersigop_checks
+	28345 fix_bytespersigop_checks-mini			f3f4732db4a	last=6f627727739 fix_bytespersigop_checks
 		#28.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done; known issues: stash 172d7d7a9
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	#28.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee

@@ -211,7 +211,7 @@ checkout v27.1
 	29946 jsonrpc_content_type-26+mini			d4ad3db85ff	last=f90a84d6150 jsonrpc_content_type
 		# Rebased in Core as #30215 (merged unmodified)
 	TODO: Part of (wallet compat?) 28307 furszy/2023_invalid_segwit_redeem_script_limit
-	28345 fix_bytespersigop_checks-mini			f3f4732db4a	last=78a256505f3 fix_bytespersigop_checks
+	28345 fix_bytespersigop_checks-mini-26		f3f4732db4a	last=6f627727739 fix_bytespersigop_checks
 		#27.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done; known issues: stash 172d7d7a9
 	28340 -										d0a6cbda5ed	last=0244416aacb  # security: restrict abis in bitcoind.service
 	Needs diff-minimising: 28366 -  # Fix waste calculation in SelectionResult
