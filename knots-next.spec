@@ -206,7 +206,8 @@ checkout core/28.x
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
-		TODO: but windows has lots of problems with existing style...
+		#28.xTODO# but windows has lots of problems with existing style...
+		#28.xTODO# but deviating from Core signing may reduce participants?
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29175 -										732060336d2	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.

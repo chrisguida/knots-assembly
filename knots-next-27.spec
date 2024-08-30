@@ -227,7 +227,7 @@ checkout v27.1
 	# Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
 	# -- Needs review: g775 -  # gui: add used balance to overview page
 	# Needs review: 28780 -  # log: torcontrol opt checks
-	-     fix_keep_notmy_cookie					faa45a4509b
+	-     fix_keep_notmy_cookie-27				faa45a4509b	last=50b7a50a61c fix_keep_notmy_cookie
 		# Originally part of #28784, but regressed in d95dde9441f...7cb9367157e
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
