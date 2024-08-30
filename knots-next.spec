@@ -124,10 +124,9 @@ checkout core/28.x
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#28.xTODO# Update with other commits that are beneficial
-	-     boost_171_177_workarounds				efb08b49fda
-		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
-	-     hww_windows-27						e1f9c1bbde8
-		# Reverts #29489 & #28967
+	29868 hebasto/240414-win-subprocess						last=13c012f81f3
+		# Replaces: -     hww_windows-27						e1f9c1bbde8
+			# Reverts #29489 & #28967
 	# TODO: 29868 hebasto/231130-replace-bp
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
