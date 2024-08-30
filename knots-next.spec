@@ -120,9 +120,10 @@ checkout core/28.x
 	# Needs review: 24994 hebasto/220426-consensus
 	g595  qt_handle_autostart_errors-0.15		5c0f60b428f	last=d932157eb79
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
-	g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
-		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
-		#28.xTODO# Update with other commits that are beneficial
+	-   gui_psbt_error_msgbox
+		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
+			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
+			#28.xTODO# Update with other commits that are beneficial
 	-     boost_171_177_workarounds				efb08b49fda
 		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
 	-     hww_windows-27						e1f9c1bbde8

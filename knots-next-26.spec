@@ -146,6 +146,7 @@ checkout v26.1
 	g595  qt_handle_autostart_errors-0.15		3bf9249983b	last=d932157eb79
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
 	g599  ts_20220515-partial-25				2bee2521267	last=d9411324066 ts_20220515
+	(CHECK-LAST)	last=6d470565c4c gui_psbt_error_msgbox
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		#26.xTODO# Update with other commits that are beneficial
 	-     boost_171_177_workarounds				41ee93f9fcf

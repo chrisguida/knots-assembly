@@ -456,6 +456,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=3d7b977bbf0 ts_20220515-partial-23
 	(CHECK-LAST)	last=eda73090c7f ts_20220515-partial-24
 	(CHECK-LAST)	last=f4fe307b84b ts_20220515-partial-25
+	(CHECK-LAST)	last=6d470565c4c gui_psbt_error_msgbox
 		# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 		# NOTE: ts_20220515-21 is full* backport ddfc86cf878=5e23dabf265 (* see two gui#599 notes later in spec)
 		#21.xTODO# Update with other commits that are beneficial
