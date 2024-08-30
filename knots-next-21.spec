@@ -703,7 +703,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs work: 27991 fanquake/instrument_libsecp
 	Triage: Needs review (& extra care for wallet?): 27997 darosior/miniscript_non_satisfiable
 	Triage: Needs work? 28020 -  # exclude ipc scheme from port check
-		# NOTE: #27679 also implements this, possibly with unix: prefix instead?
+		# NOTE: #27679 implemented this with unix: prefix instead, but ipc:// was supported in Knots 25.1+ - see zmq_ipc_uri_compat
 	Triage: # If needed: 28026 furszy/2023_fix_index_timeout
 	Triage: g742 qt_err_fixg741_in_g742-21
 		# NOTE: Explicitly mentions BIP 21 (we support BIP 20)

@@ -209,6 +209,7 @@ checkout v26.1
 	# Needs work: 27973 maflcko/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
 	28020 -										c61732775d9	last=0b1762c90d1  # exclude ipc scheme from port check (fix_zmq_ipc_noportcheck-25)
+	(CHECK-LAST)	last= zmq_ipc_uri_compat
 	-     zmq_unix_uri_compat-25				20ea6f034cd
 	g742 qt_err_fixg741_in_g742-21				58f215ef927
 	(CHECK-LAST)	last=4fcbd58ba59 qt_ambig_uri_refs  # NOTE: also could impact #28554

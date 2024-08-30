@@ -172,8 +172,6 @@ checkout core/28.x
 	# Needs review: 27912 -  # net: run disconnect in I2P thread
 	# Needs work: 27973 maflcko/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
-	28020 -										af6f1fc637f	last=0b1762c90d1  # exclude ipc scheme from port check (fix_zmq_ipc_noportcheck-25)
-	-     zmq_unix_uri_compat-25				5046420859c
 	-     qt_ambig_uri_refs						aa00950ddee
 		# Prior to 27.x, part was included with gui#742 qt_err_fixg741_in_g742-21
 	28029 fix_zmq_errhandling_202307-mini		2c40a9537fb	last=07086589b27 fix_zmq_errhandling_202307
@@ -612,8 +610,6 @@ checkout core/28.x
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-27+knots						8ab2add6de2	last=91771366a3d apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
-	MERGED: 27679 pinheadmz/zmq-unix-domain-socket
-		# Duplicates #28020 with a different URI format
 	# Needs work: 27409 ryanofsky/pr/1data
 	# Needs review: g692 -  # Debug Console implementation of generate method
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
@@ -902,6 +898,8 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	# TODO: Whitelisting model for non-SPK scripts
 	# TODO: -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 # Non-upstreamed Knots compatibility:
+	-     zmq_ipc_uri_compat					af6f1fc637f	last=0b1762c90d1 origin-pull/28020/head
+		# Backward compatibility with #28020 URI format supported by Knots 25.1+
 	#28.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			5190456efbb
