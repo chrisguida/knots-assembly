@@ -195,7 +195,7 @@ checkout v26.1
 		# When restoring, revert part of bfab6ac4791 in relnotes
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
 	#26.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
-	-     acceptstalefeeestimates_mainnet_opt	c868eff4234
+	-     acceptstalefeeestimates_mainnet_opt-26	c868eff4234	last=a303cde2fd1 acceptstalefeeestimates_mainnet_opt
 	#26.xTODO# Needs review: 27684 hebasto/230516-punish OR ???
 	#26.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	# Needs review: 27804 -  # init: deduplicate added connections

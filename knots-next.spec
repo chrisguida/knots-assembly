@@ -154,9 +154,7 @@ checkout core/28.x
 	# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
 	# Not worth deviating from Core? 27277 Sjors/2022/03/log-tx-validation
-	MERGED: 27307 -  # wallet: track mempool conflicts with wallet transactions
-		# CAUTION: Even merged, this appears to possibly show a higher balance than the user actually has for sure??
-		# TODO: Include fix/optimisation in #30115 & #30365 (both merged)
+	# TODO: CAUTION: #27307 was merged, but "this appears to possibly show a higher balance than the user actually has for sure??" - investigate
 	# Alternative to: 27434 pinheadmz/chaintips-invalid
 	# Needs work/review: 27557 pinheadmz/async-getaddrinfo
 	# Needs concept review: 27591 rpc_mempoolvsize-25								last=60bde2dac05 glozow/2023-05-mempool-vsize
