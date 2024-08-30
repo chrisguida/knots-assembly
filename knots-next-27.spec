@@ -85,7 +85,8 @@ checkout v27.1
 	18194 bugfix_gui_edit_sendaddr-mini			6fc457d1891	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
-	19419 listwalletdir_skip_data				ad13fdc3544	last=3f9cc0cd736 Saibato/wallet_351
+	19419 listwalletdir_skip_data-26			ad13fdc3544	last=3f9cc0cd736 Saibato/wallet_351
+	(CHECK-LAST)	last=283cd1f0650 listwalletdir_skip_data
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions

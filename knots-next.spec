@@ -94,9 +94,8 @@ checkout core/28.x
 	g236  gui_init_walleterror_cont				98b54851815
 	-     rpc_addconnection_mainnet				bb10caddb8e
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
-	22417 bpchild_closefds						10578517720
-		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
-		# NOTE: Currently uses ENABLE_EXTERNAL_SIGNER in place of USE_BOOST_PROCESS (not defined until #15421 merged)
+	30756 subproc_closefds
+		# Replaces #22417 (Boost::Process variant)
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				2721ee51431
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated

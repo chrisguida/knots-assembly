@@ -94,7 +94,8 @@ checkout v26.1
 	g658  intro_dont_change_user_prune			03d9b5d9233
 		# Was #18729
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
-	19419 listwalletdir_skip_data				cd84aa231e1	last=3f9cc0cd736 Saibato/wallet_351
+	19419 listwalletdir_skip_data-26			cd84aa231e1	last=3f9cc0cd736 Saibato/wallet_351
+	(CHECK-LAST)	last=283cd1f0650 listwalletdir_skip_data
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
