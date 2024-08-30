@@ -112,7 +112,7 @@ checkout core/28.x
 	24479 bugfix_settings_numberval				cccb0d2a3d1
 	# Needs review/concept check: 24563 ajtowns:202203-fillpsbt
 	# Needs review/triage: 24571 -  # p2p: Prevent block index fingerprinting by sending additional getheaders messages
-	24718 fix_rpc_docs_pr24718-25+knots			fc65c373140	last=68a041dd12b
+	24718 fix_rpc_docs_pr24718-28+knots			fc65c373140	last=68a041dd12b
 	# Needs review: 24827 -  # net: Fix undefined behavior in socket address handling
 	# Needs review: 24835 -  # Revert "Do not consider blocked networks local"
 	# Needs review: 24912 mruddy/nchaintx_type
