@@ -449,6 +449,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 @26.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					fc085bc6726
+	(CHECK-LAST)	last=18043c411cc rm_minisketch-28+k
 		# When removing this, check for fix in #29823
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements

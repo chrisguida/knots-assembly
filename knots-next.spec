@@ -272,7 +272,7 @@ checkout core/28.x
 	# Needs review: 30301 theuni/miniupnp-228-bump
 @28.x-knots
 # PERFORMANCE:
-	n/a   rm_minisketch-26+k					219de7b0860
+	n/a   rm_minisketch-28+k					219de7b0860
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations

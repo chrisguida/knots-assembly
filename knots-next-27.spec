@@ -365,6 +365,7 @@ checkout v27.1
 @27.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-26+k					219de7b0860
+	(CHECK-LAST)	last=18043c411cc rm_minisketch-28+k
 		# When removing this, check for fix in #29823
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
