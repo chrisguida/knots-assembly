@@ -577,7 +577,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
-	15836 fee_histogram+pr15836_api				3944a11b9e9	last=b94292a7cb jonasschnelli/2019/04/feeinfo
+	15836 fee_histogram+pr15836_api-26			3944a11b9e9	last=b94292a7cb jonasschnelli/2019/04/feeinfo
+	(CHECK-LAST)	last=8cdfa4e2bea fee_histogram+pr15836_api
 	(CHECK-LAST)	last=c5e53d0d21f origin-pull/21422/head
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots

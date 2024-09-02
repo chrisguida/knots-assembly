@@ -1049,6 +1049,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 	15423 tor_socks_port-0.21					109cf1f0e3b	last=b2774fc0bed tor_socks_port
 		# Held back 962f168a014..398df42f449, da20c1e6d20 (not a bugfix)
 	15836 fee_histogram-21						69874bd7a2f	last=b94292a7cb jonasschnelli/2019/04/feeinfo
+	(CHECK-LAST)	last=8cdfa4e2bea fee_histogram+pr15836_api-26
 	(CHECK-LAST)	last=8cdfa4e2bea fee_histogram+pr15836_api
 	(CHECK-LAST)	last=f2fb1f17444 origin-pull/21422/head
 		# Held back approach changes (that ignore CPFP) f2ca3d35ee9..47b5c3e03a7 - current approach is arguably buggy (see sipa's review on PR)
