@@ -306,7 +306,7 @@ checkout core/28.x
 	# Needs review: 29491 fjahr/2024-02-batch-validation-updated
 	# Needs review: 29578 brunoerg/2024-03-addrman-getaddr
 	# Needs review: 29602 -  # refactor: Optimize IsSpace function for common non-whitespace characters
-	TODO: Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
+	# TODO: Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
 	30059 dbfilesize_param						69e46c848f5
 	30039 dbfilesize_128						1011fa8e307	last=3e32d23c9e0
 		# Note: Upstream PR uses std::max with LevelDB's current default, in case LevelDB changes theirs to larger
@@ -318,7 +318,7 @@ checkout core/28.x
 	# Needs review? 30442 paplorinc/paplorinc/siphash
 	# Needs review: 30610 sipa/202408_force_sync
 	# Needs review: 30611 andrewtoth/write-chainstate-every-hour
-	30675 -  # http: set TCP_NODELAY when creating HTTP server
+	30675 -													last=03d49d0f25a  # http: set TCP_NODELAY when creating HTTP server
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
