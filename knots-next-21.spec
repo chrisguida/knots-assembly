@@ -2,7 +2,7 @@ timestamp 2024-08-28 17:07:23
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30743 / gui #833 for fixes
+#.. checked up to PR #30791 / gui #833 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -279,6 +279,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last=9b9cdc9ae6f bpchild_closefds-0.21
 	(CHECK-LAST)	last=4c19cea484b bpchild_closefds-22
 	(CHECK-LAST)	last=2255d3bc827 bpchild_closefds-24
+	(CHECK-LAST)	last= subproc_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 		# NOTE: Workaround for boost bug included; see also #24523
 	g379  qt_reset_bad_settingsjson-0.21		0952d0c615e
@@ -947,6 +948,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	21991 libevent_2.1.12-21
 	-     miniupnpc_2.0.20180503-21
 		TODO: bump
+	Add in: 30774 fanquake/depends_qt_5_15_15
 	-     qt_5.9.9-21
 		TODO: bump
 		FIXME: 404 Fetching qtwinextras-opensource-src-5.9.8.tar.xz from https://download.qt.io/archive/qt/5.9/5.9.8/submodules
@@ -1536,6 +1538,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	(CHECK-LAST)	last=f30b740b4ff win_taskbar_progress-22
 	(CHECK-LAST)	last=de45972a3f2 win_taskbar_progress-26+knots
 	(CHECK-LAST)	last=de45972a3f2 win_taskbar_progress-27+knots
+		FIXME: Qt 5.15.15 bump
 	-     restore_blockmaxsize-21				244ddb8587d	last=3029c19637c restore_blockmaxsize
 	(CHECK-LAST)		last=0df4a820dd6 restore_blockmaxsize-22
 	(CHECK-LAST)		last=d66d020e9d2 restore_blockmaxsize-23

@@ -1,7 +1,7 @@
-timestamp 2024-08-28 17:07:23
+timestamp 2024-09-02 19:23:14
 lastapply no-merge
 
-#.. checked up to PR #30743 / gui #833
+#.. checked up to PR #30791 / gui #833
 
 checkout core/28.x
 @28.x-syslibs
@@ -267,6 +267,7 @@ checkout core/28.x
 	#28.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@28.x-knots-lts-deps
+	30774 fanquake/depends_qt_5_15_15
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 	# Needs review: 30301 theuni/miniupnp-228-bump
@@ -793,6 +794,7 @@ checkout core/28.x
 	-     walletnotify_w_win-27+knots			da83b15cf1c	# Latest code now
 	14137 win_taskbar_progress-27.1+knots		1b8c3e5b8e4	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
+		FIXME: Qt 5.15.15 bump
 	-     restore_blockmaxsize					eb03b17cdaf
 	7107  qtnetworkport-27+knots				6987290598f	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force-27+knots				af9a606041c last=2627c0937f8 sendraw_force
@@ -962,7 +964,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20240828)			3164bc9d5cb
+	n/a  (bump_version=Knots:20240902)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits

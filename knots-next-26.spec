@@ -1,7 +1,7 @@
-timestamp 2024-08-28 17:07:23
+timestamp 2024-09-02 19:23:14
 #lastapply no-merge
 
-#.. checked up to PR #30743 / gui #833
+#.. checked up to PR #30791 / gui #833
 
 checkout v26.1
 @26.x-syslibs
@@ -116,6 +116,7 @@ checkout v26.1
 	-     rpc_addconnection_mainnet				14216e91d04
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
 	22417 bpchild_closefds						f95414b7776
+	(CHECK-LAST)	last= subproc_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 		# NOTE: Currently uses ENABLE_EXTERNAL_SIGNER in place of USE_BOOST_PROCESS (not defined until #15421 merged)
 	# Needs review: 22665 darosior:rbf_optin_nomempool
@@ -435,6 +436,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	#26.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@26.x-knots-lts-deps
+	Add in: 30774 fanquake/depends_qt_5_15_15
 	29732 depends_qt_update-26					b7d8f6e1c6a
 	(CHECK-LAST)	last=38fc092d97e depends_qt_update-27
 		TODO: Bump to #30198
@@ -1054,6 +1056,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	14137 win_taskbar_progress-26+knots		1f4925cf5fc	last=18eb4dbb8a
 	(CHECK-LAST)	last=c64a26ef482 win_taskbar_progress-27.1+knots
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
+		FIXME: Qt 5.15.15 bump
 	-     restore_blockmaxsize-25				d112238fc73	last=3029c19637c restore_blockmaxsize
 		#27.xTODO# FIXME: 5f3f3c321ed fixup! Restore blockmaxsize option, allowing to limit mined blocks by byte size
 	7107  qtnetworkport-26+knots				e4744fb01d5	last=1f37c87d8f2 origin-pull/7107/head
@@ -1219,7 +1222,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 #27.xTODO# git grep noban_tx_relay (needs #27114)
 	n/a  (cherrypick=4de10e83babc036d91)		c73f86e10b9	# doc/{bips,files}
-	n/a  (bump_version=Knots:20240828)			b6e90958caa
+	n/a  (bump_version=Knots:20240902)			b6e90958caa
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		28f53e51930
 	n/a   (cherrypick=87fdade84dc)				f56f1ed1cd6  # release notes: write/update, including change log and credits
