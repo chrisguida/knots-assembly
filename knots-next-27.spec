@@ -302,7 +302,7 @@ checkout v27.1
 	30265 achow101/fix-listwalletdir-migrated-wallets
 	# Needs work: g823 -  # wallet: Improve error log color in the console
 	# Needs work: g824 achow101-g/gui-migrate-unloaded
-	-     detect_clang_bug96267					d59654cdd01
+	-     detect_clang_bug96267-27+knots		d59654cdd01	last=f032671adf9 detect_clang_bug96267
 	# Needs concept (anti-feature?): 30309 furszy/2024_wallet_max_weight
 	g826  qt_opts_maximizewindow				b13a6950122
 	g827  qt_opts_stretch						664129c84de

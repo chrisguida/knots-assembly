@@ -232,7 +232,7 @@ checkout core/28.x
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs review: 30065 sr-gi/2024-05-fdcount
 	#28.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
-	-     jonatack/2024-05-fix-cjdns-detection-in-AddNode	285a22a37a7	last=be4541abe59  # fix_cjdns_addnode_detect2-27+knots
+	-     jonatack/2024-05-fix-cjdns-detection-in-AddNode	285a22a37a7	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode  # fix_cjdns_addnode_detect2-27+knots
 	# Needs review: 30155 mzumsande/202405_replay_blocks
 	#28.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
