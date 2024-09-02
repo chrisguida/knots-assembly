@@ -7,7 +7,6 @@ checkout core/28.x
 @28.x-syslibs
 # BUILD BUGS:
 	5872 subdir_incl_compat						f41289db2b9
-	-     fix_evhttp_util_nodep-25				23e0821ee70
 	30743 libevent_non_gnu_c-28								last=77fa5770b9f fanquake/libevent_non_gnu_c
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							97b8727d34e
@@ -124,7 +123,7 @@ checkout core/28.x
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#28.xTODO# Update with other commits that are beneficial
-	29868 hebasto/240414-win-subprocess						last=13c012f81f3
+	29868 hww_windows-28									last=dc08930ec68 hebasto/240414-win-subprocess
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
 	# TODO: 29868 hebasto/231130-replace-bp
@@ -149,7 +148,7 @@ checkout core/28.x
 	# Needs work/review: 26426 fjahr/202210-coinstatsindex-overflow
 	# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
-	g684  qt_reqs_multiselect_pr684-25+knots	c2d076bab68	last=a6f567590b7
+	g684  qt_reqs_multiselect_pr684-28+knots	c2d076bab68	last=a6f567590b7
 	# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
 	# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories

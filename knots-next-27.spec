@@ -166,6 +166,7 @@ checkout v27.1
 	# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
 	g684  qt_reqs_multiselect_pr684-25+knots	c2d076bab68	last=a6f567590b7
+	(CHECK-LAST)	last=200d869e952 qt_reqs_multiselect_pr684-28+knots
 	# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
 	26950 fanquake/check_for_SecureZeroMemory
 	27039 fix_reindex_readonly_blkfiles-26		807e5d1abd3

@@ -176,6 +176,7 @@ checkout v26.1
 	#26.xTODO# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	# Needs review: 26535 mruddy/issue_2039_readonly_finalized_blk_files
 	g684  qt_reqs_multiselect_pr684-25+knots	8d1b8e744ee	last=a6f567590b7
+	(CHECK-LAST)	last=200d869e952 qt_reqs_multiselect_pr684-28+knots
 	# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
 	#26.xTODO# Needs backport? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
 	#26.xTODO# Too minor? 26903 pstratem/2023-01-17-baseindex-commit-error

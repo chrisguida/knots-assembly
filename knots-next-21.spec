@@ -631,6 +631,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	If applicable: Needs review: 26643 achow101/move-fee-underpay-check
 	If applicable: Needs review: 26646 glozow/package-single-tx-result
 	Needs review: g684  -  # Improve 'Requested Payments History' Multiselect
+	(CHECK-LAST)	last=200d869e952 qt_reqs_multiselect_pr684-28+knots
 	Needs review? 26728 achow101/wallet-knows-master-key
 	Needs review? 26762 hebasto/221228-queue  # Make CCheckQueue RAII-styled
 	26828 andrewtoth/assumeutxo-remove-fix
