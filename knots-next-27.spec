@@ -247,6 +247,7 @@ checkout v27.1
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	g788  -										4ed18b2f9d1	last=3bf00e13609  # debugwindow: update session ID tooltip
 	29307 AutoFile_error_check-27				689b2cdc64b	last=4533445fd7d vasild/AutoFile_error_check
+	(CHECK-LAST)	last= AutoFile_error_check-28
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	g795  -										c826054e30a	last=992b1bbd5da  # Keep focus on "Hide" while ModalOverlay is visible
 	29480 -										63f3808fc0d	last=88468a8afcd  # log_rand_during_init-0.20

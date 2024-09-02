@@ -834,6 +834,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	Triage: 29302 marcofleon/2024/01/clarify-documentation
 	Triage: Needs review: 29307 vasild/AutoFile_error_check
+	(CHECK-LAST)	last= AutoFile_error_check-28
 	Triage: Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	Triage: 29357 hebasto/240131-fopen-x
 		# NOTE: Included in backport #29509

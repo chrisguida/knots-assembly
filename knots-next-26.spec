@@ -311,6 +311,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	g788  qt_peers_sessionid_tooltip_prg788-26	ce11132294a	last=3bf00e13609  # debugwindow: update session ID tooltip
 	29302 clarifydoc_rpc_wtx_replace-25			bea205c3046
 	29307 AutoFile_error_check-26				fbd4b3103c6	last=661b7d84b54 vasild/AutoFile_error_check
+	(CHECK-LAST)	last= AutoFile_error_check-28
 		# NOTE: Held back 55439903212...13f540d60b5 due to crashing CI
 	#27.xTODO# Needs review: 29331 -  # redeclare nChainTx to use uint64_t
 	29434 fix_rpc_feerate_overflow-26			c4d52ee1912
