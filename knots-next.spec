@@ -283,9 +283,6 @@ checkout core/28.x
 	# Needs review: 25236 -  # wallet: use vector instead of list for transactions
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
 	# Needs review: 25968 sipa/202208_headerssync_optimize
-	MERGED: 26415 apis_read_raw_block-27				d2eed7c6adf
-		# Includes: 21319 getblock_optimise						74cb4fa735a
-			# Context: 17529 rpc: Faster getblock using PureBlock
 	# Unclear benefit: 26375 zmq_optimise_duplread-27+k			3f9e56d77af	last=7b631dc9b19 andrewtoth/no-read-zmq
 		# Several improvements in Knots branch
 		# Post-#26415(merged), it's unclear if this is an improvement or potentially a performance loss: we either readback raw (from OS cache), or serialize CBlock
@@ -959,6 +956,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
+TODO: Ensure rest.cpp includes <string> or no longer needs it (removed when #26415 merged)
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=Knots:20240902)			3164bc9d5cb
