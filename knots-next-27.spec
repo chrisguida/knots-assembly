@@ -275,7 +275,7 @@ checkout v27.1
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
 	Triage: 29798 vasild/logging_cleanup
-	-     fix_rpc_warnings_all-21				11d38164bdf
+	-     fix_rpc_warnings_all-21				11d38164bdf	last=e4e4a81317c fix_rpc_warnings_all-28
 	29850 dnsseed_maxips_32-26					562386600cb	last=f2e3662e57e laanwj/2024-04-dnsseeds-up-to-32
 	29855 psbt_nonwit_utxo_chkearly-24			d7a8d4da4b8	last=9e13ccc50ee achow101/psbt-check-outpoint
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs

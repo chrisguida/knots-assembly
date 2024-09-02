@@ -224,7 +224,7 @@ checkout core/28.x
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
-	-     fix_rpc_warnings_all-21				11d38164bdf
+	-     fix_rpc_warnings_all-28				11d38164bdf
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
 	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
 	g815  fix_qt_privacy_before_open-23			1f4dee95456	last=260d6eb9272
@@ -660,8 +660,6 @@ checkout core/28.x
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	29686 manpage_desc-27+knots					d65d8d596c8	last=f6171a8f1da willcl-ark/manpage-desc
 		# Various fixups
-	MERGED: API change: 29845 stickies-v/2024-04/make-warnings-arr
-		# When merged upstream, adapt deprecaterpc to behave like fix_rpc_warnings_all-21
 	#28.xTODO# 29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
 		# Extend to other options?
 		# TODO: Fix datacarriersize description

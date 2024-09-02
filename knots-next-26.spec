@@ -349,7 +349,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
 	Triage: 29798 vasild/logging_cleanup
-	-     fix_rpc_warnings_all-21				1786b3c3d4e
+	-     fix_rpc_warnings_all-21				1786b3c3d4e	last=e4e4a81317c fix_rpc_warnings_all-28
 	29850 dnsseed_maxips_32-26					1d00999f660	last=f2e3662e57e laanwj/2024-04-dnsseeds-up-to-32
 	29853 fix_psbt_sign_insane_pr29853-26		3aa8a37ef81	last=4d8d21320eb darosior/2404_miniscript_crash
 		# 26.x backport in #29854
