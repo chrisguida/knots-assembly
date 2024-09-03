@@ -1124,7 +1124,7 @@ m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 		# NOTE: Diff-minimised
 		# If bdb is reenabled, need #20267 49797c3ccfb
 		# +#23834 achow101/dump-checksum-size
-	19242 uaappend-21							c9099f45c3c	last=9552978b318 uaappend
+	19242 uaappend-21							c9099f45c3c	last=2f8aa8e5c05 uaappend
 	19463 prune_locks-0.21						ce3e7443523	last=b3a10bca9dd prune_locks
 		# TODO: change default to temporary=true to match latest prune_locks branch?
 		#		* 2554dc0ba3d Refactor PruneLockInfo.temporary to default to true

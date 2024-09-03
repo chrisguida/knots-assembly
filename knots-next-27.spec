@@ -526,7 +526,7 @@ checkout v27.1
 		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202#discussion_r801191486
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
-	19242 uaappend								6ae776378fe
+	19242 uaappend-22							6ae776378fe	last=2f8aa8e5c05 uaappend
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 		# w/ 22807 ?
