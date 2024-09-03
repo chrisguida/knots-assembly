@@ -7,7 +7,7 @@ checkout core/28.x
 @28.x-syslibs
 # BUILD BUGS:
 	5872 subdir_incl_compat						f41289db2b9
-	30743 libevent_non_gnu_c-28								last=77fa5770b9f fanquake/libevent_non_gnu_c
+	30743 libevent_non_gnu_c-28								last=55677540879 fanquake/libevent_non_gnu_c
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							97b8727d34e
 	5416  sys_libsecp256k1						5bb4fd232d3
@@ -437,7 +437,7 @@ checkout core/28.x
 	# Needs review and diff-minimisation: 20273 jonasschnelli/2020/10/client_rpc_nested
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
-	20391 rpc_setfeerate-27+knots				5df7a9c1191	last=1002e2d0d7f jonatack/setfeerate
+	20391 rpc_setfeerate-28+knots				5df7a9c1191	last=1002e2d0d7f jonatack/setfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 		# TODO? Reduce internal changes and move to Knots compat??
