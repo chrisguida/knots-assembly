@@ -530,7 +530,7 @@ checkout v27.1
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 		# w/ 22807 ?
-	19463 prune_locks							23cec9161c9
+	19463 prune_locks							23cec9161c9	last=11e1e09759e prune_locks
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
