@@ -487,7 +487,7 @@ checkout v27.1
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
 	15836 fee_histogram+pr15836_api-26			db1d17f316e	last=b94292a7cb jonasschnelli/2019/04/feeinfo
-	(CHECK-LAST)	last=8cdfa4e2bea fee_histogram+pr15836_api
+	(CHECK-LAST)	last=77d5685620b fee_histogram+pr15836_api
 	(CHECK-LAST)	last=c5e53d0d21f origin-pull/21422/head
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
@@ -506,7 +506,8 @@ checkout v27.1
 	# needs completion: 15876 [rpc] signer send and fee bump convenience methods
 	# TODO "WIP": 16698 [WIP] Mempool: rework rebroadcast logic to improve privacy
 	# Needs careful review: 17060 martinus:2019-09-more-compact-Coin
-	18972 neutrino_whitelist-mini				3616fb93a0d	last=ff459b5b55f neutrino_whitelist
+	18972 neutrino_whitelist-mini-26			3616fb93a0d	last=a0d0807abc2 neutrino_whitelist
+	(CHECK-LAST)	last=d3bcf469ce4 neutrino_whitelist-mini
 		# NOTE: Diff-minimised
 	# Needs work/review AND CONCEPT ACK: 17950 emilengler:2020-01-password-strength-checker
 	-     qt_openuri_pastebtn_shortcut-23		a1d46ed0c5e
