@@ -591,7 +591,8 @@ checkout v27.1
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 		# +27797 ?
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
-	21780 rpc_maxmempool						4c31471eb1a	last=040b280c661 rebroad/MaxMempoolRPC
+	21780 rpc_maxmempool-26						4c31471eb1a	last=040b280c661 rebroad/MaxMempoolRPC
+	(CHECK-LAST)	last=475d37d06d9 rpc_maxmempool
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
