@@ -581,6 +581,7 @@ checkout v27.1
 	# TODO: 21283 achow101/psbt2
 		# TODO: diff-minimise??
 	21260 rpcwallet_tx_in_mempool-26+knots		fdd855b6169	last=46bf0b7b5d8
+	(CHECK-LAST)	last=ac4327cbffc rpcwallet_tx_in_mempool-28+knots
 		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true

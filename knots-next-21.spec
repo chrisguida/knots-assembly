@@ -1257,6 +1257,7 @@ m	20403 upgradewallet_pr20403-0.21+knots		5a4416104d5	last=3eb6f8b2e61 jonatack/
 	(CHECK-LAST)	last=ee0a735e6c1 rpcwallet_tx_in_mempool-23+knots
 	(CHECK-LAST)	last=faba549c582 rpcwallet_tx_in_mempool-24+knots
 	(CHECK-LAST)	last=faba549c582 rpcwallet_tx_in_mempool-26+knots
+	(CHECK-LAST)	last=faba549c582 rpcwallet_tx_in_mempool-28+knots
 	g213  gui_payrequest_copyaddr-0.18			3fbc3512e3c
 	g214  gui_payrequest_disablena-0.18+knots	88cfbc9641b
 	21327 p2p_ignore_tx_in_ibd-0.21				cb54eca2c0b	last=6aed8b7e9b2

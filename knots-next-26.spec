@@ -679,6 +679,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	21319 getblock_optimise-25					74cb4fa735a	last=8fd77528194 getblock_optimise
 		# Context: 17529 rpc: Faster getblock using PureBlock
 	21260 rpcwallet_tx_in_mempool-26+knots		05c7e969f16	last=46bf0b7b5d8
+	(CHECK-LAST)	last=ac4327cbffc rpcwallet_tx_in_mempool-28+knots
 		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true

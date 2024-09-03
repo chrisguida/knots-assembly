@@ -464,7 +464,7 @@ checkout core/28.x
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
 	# TODO: 21283 achow101/psbt2
 		# TODO: diff-minimise??
-	21260 rpcwallet_tx_in_mempool-26+knots		fdd855b6169	last=46bf0b7b5d8
+	21260 rpcwallet_tx_in_mempool-28+knots		fdd855b6169	last=46bf0b7b5d8
 		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
@@ -880,6 +880,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	# TODO? All-ASCII data storage (inefficient)
 	# TODO? If any input is dust, limit output count to < input count? (or lower?)
 	# TODO: Stacks (OP_RETURN X2... - most are 80 bytes long, some 55, few 19)
+	TODO: "OLGA" file storage: https://github.com/mikeinspace/stamps/blob/main/OLGA.md https://github.com/CounterpartyXCP/Forum/blob/1e362f7f8668654d0241fe5b1f1c1c330a8b4368/cip-0033.md
 	# TODO? Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
