@@ -1104,6 +1104,7 @@ m	16795 rpc_inferred_output_descriptors-21+k	5d1bc19f6ca
 		# NOTE: Dropped benchmarks & diff-minimised
 m	18689 rpc_dumptxoutset_hr-21+knots			b79a47abcb6	last=65d0697fe34
 	(CHECK-LAST)	last=e4004c28d7e rpc_dumptxoutset_hr-23+knots
+	(CHECK-LAST)	last=a0acbce5122 rpc_dumptxoutset_hr-27
 	(CHECK-LAST)	last=a0acbce5122 rpc_dumptxoutset_hr
 		# Held back refactoring & test improvements 9427b409195...5d0c86d494a (in rpc_dumptxoutset_hr)
 		# TODO: Compat with(?) #24202

@@ -518,7 +518,8 @@ checkout v27.1
 	# Needs work/review/completion: 18242 jonasschnelli/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
-	24202 rpc_dumptxoutset_hr					c9897d1dfb6	last=1053636ddd9
+	24202 rpc_dumptxoutset_hr-27				c9897d1dfb6	last=1053636ddd9
+	(CHECK-LAST)	last=1248d0da227 rpc_dumptxoutset_hr
 	(CHECK-LAST)	last=65d0697fe34 origin-pull/18689/head
 		# Diff-minimised
 		# NOTE: Was #18689

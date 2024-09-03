@@ -613,6 +613,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs work? 18611 -  # cli: show default values in config args log
 	24202 rpc_dumptxoutset_hr-26				9d46cdf4b67	last=1053636ddd9
 	(CHECK-LAST)	last=65d0697fe34 origin-pull/18689/head
+	(CHECK-LAST)	last=ce9524f0b5d rpc_dumptxoutset_hr-27
 	(CHECK-LAST)	last=ce9524f0b5d rpc_dumptxoutset_hr
 		# Diff-minimised
 		# NOTE: Was #18689
