@@ -123,10 +123,10 @@ checkout core/28.x
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#28.xTODO# Update with other commits that are beneficial
-	29868 hww_windows-28									last=dc08930ec68 hebasto/240414-win-subprocess
+	29868 hww_windows-28									last=53d426e5633 hebasto/240414-win-subprocess
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
-	# TODO: 29868 hebasto/231130-replace-bp
+		# Held back dc08930ec68...53d426e5633 (interim fix of test for locales) #28.xTODO# Review
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	# Check on #25561
@@ -492,7 +492,7 @@ checkout core/28.x
 	22372 multinotify							a0e3d0a51f4
 	24963 rpc_walletprocesspsbt_options-26		262df2a313e	last=f43f992b731 rpc_walletprocesspsbt_options
 		# Diff-minimised (and uses merge for rpcarg_type_per_name)
-	-     rpc_descriptorprocesspsbt_opts-27.1+k	e8be2a13403
+	-     rpc_descriptorprocesspsbt_opts		e8be2a13403
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# TODO? 25621 -  # rpc/wallet: Add details and duplicate section for simulaterawtransaction
 	# Needs work: 22775 -  # rpc: Add option to list transactions from oldest to newest in listtransactions RPC command

@@ -144,7 +144,6 @@ checkout v27.1
 		# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
 	-     hww_windows-27						e1f9c1bbde8
 		# Reverts #29489 & #28967
-	# TODO: 29868 hebasto/231130-replace-bp
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	# Check on #25561
@@ -611,7 +610,7 @@ checkout v27.1
 	22372 multinotify							a0e3d0a51f4
 	24963 rpc_walletprocesspsbt_options-26		262df2a313e	last=f43f992b731 rpc_walletprocesspsbt_options
 		# Diff-minimised (and uses merge for rpcarg_type_per_name)
-	-     rpc_descriptorprocesspsbt_opts-27.1+k	e8be2a13403
+	-     rpc_descriptorprocesspsbt_opts-27.1+k	e8be2a13403	last=e756e98ddd0 rpc_descriptorprocesspsbt_opts
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	22729 vasild/torbind
 		+#30502
@@ -627,7 +626,8 @@ checkout v27.1
 	23362 importfromcoldcard					b1cb4ae6737	last=8076f8d4c2a hebasto/211025-cc
 		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 rpc_savefeeestimates					df02a63b8c4	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
+	23387 rpc_savefeeestimates-26				df02a63b8c4	last=d5b41e6b2ed greenaddress/dump_fee_estimates
+	(CHECK-LAST)	last=de573359edf rpc_savefeeestimates
 		# NOTE: Carries lock annotation fix aa096ebfb06 (FlushFeeEstimates lock on m_cs_fee_estimator)
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work/review: 23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection

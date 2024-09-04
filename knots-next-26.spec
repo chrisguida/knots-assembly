@@ -711,7 +711,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	22372 multinotify							5ce6b865aab
 	24963 rpc_walletprocesspsbt_options-26		0a55cc0e87d	last=f43f992b731 rpc_walletprocesspsbt_options
 		# Diff-minimised (and uses merge for rpcarg_type_per_name)
-	-     rpc_descriptorprocesspsbt_opts-26+k	0a98dc634fe
+	-     rpc_descriptorprocesspsbt_opts-26+k	0a98dc634fe	last=e756e98ddd0 rpc_descriptorprocesspsbt_opts
 	(CHECK-LAST)	last=615033cfb8a rpc_descriptorprocesspsbt_opts-27.1+k
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	22729 vasild/torbind
@@ -728,7 +728,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	23362 importfromcoldcard					141debe29d5	last=8076f8d4c2a hebasto/211025-cc
 		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 rpc_savefeeestimates					80e5a8d6375	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
+	23387 rpc_savefeeestimates-26				80e5a8d6375	last=d5b41e6b2ed greenaddress/dump_fee_estimates
+	(CHECK-LAST)	last=de573359edf rpc_savefeeestimates
 		# NOTE: Carries lock annotation fix aa096ebfb06 (FlushFeeEstimates lock on m_cs_fee_estimator)
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work/review: 23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection
