@@ -696,7 +696,8 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 	# Needs review: 21841 rebroad/SteadierFeefilter
 	22072 autoreindex-26						067c89d9d1f	last=602f4da9178
 	(CHECK-LAST)	last=6d7052863a5 origin-pull/26674/head
-	(CHECK-LAST)	last=43c9a1772e2 autoreindex
+	(CHECK-LAST)	last=43c9a1772e2 autoreindex-27
+	(CHECK-LAST)	last=342e6155314 autoreindex
 		# TODO: Migrate to #26674 (basically identical logic as of 6d7052863a5) ?
 	22159 conf_append_cxxflags-23				4d5c0ba83ca	last=fa14c6818f4
 	# Not useful: g358  jarolrod-g/themedlabel-forms

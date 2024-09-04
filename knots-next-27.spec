@@ -596,8 +596,9 @@ checkout v27.1
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
-	22072 autoreindex							54a46fbc8da	last=602f4da9178
+	22072 autoreindex-27						54a46fbc8da	last=602f4da9178
 	(CHECK-LAST)	last=6d7052863a5 origin-pull/26674/head
+	(CHECK-LAST)	last=342e6155314 autoreindex
 		# TODO: Migrate to #26674 (basically identical logic as of 6d7052863a5) ?
 	22159 conf_append_cxxflags-23				e80311c47e1	last=fa14c6818f4
 	# Not useful: g358  jarolrod-g/themedlabel-forms
