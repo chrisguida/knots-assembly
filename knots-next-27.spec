@@ -666,7 +666,8 @@ checkout v27.1
 	# Needs triage & review: 25038 glozow/package-rbf
 	#27.xTODO# Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku ???
-	25183 rpc_fundraw_segwitonly				1d474ea54b7	last=9e7fd5c0fe3
+	25183 rpc_fundraw_segwitonly-27				1d474ea54b7	last=9e7fd5c0fe3
+	(CHECK-LAST)	last=f7473e4b22d rpc_fundraw_segwitonly
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
 		# Fixed tests with inspiration from 9e7fd5c0fe3
 		# TODO: update without breaking compatibility? (new code looks buggy tho - needs rewrite?) (also, filtering by "input type" doesn't really make sense, though segwit filtering does)
