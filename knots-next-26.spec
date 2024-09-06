@@ -814,6 +814,7 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	#26.xTODO# Needs review: 26174 w0xlt/list_address_book
 	27114 whitelist_outgoing-mini-26+knots		bbf9ae1c2d8	last=0a533613fb4
+	(CHECK-LAST)	last=dbbb11e5603 whitelist_outgoing_auto
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring commit (08c1af96e6f) and reverted gArgs caching refactor (ab6c001ec96)
 		# Non-trivial revert of 5883a8911a5 net: store `-whitelist{force}relay` values in `CConnman`

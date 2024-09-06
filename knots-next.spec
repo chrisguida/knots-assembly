@@ -569,12 +569,7 @@ checkout core/28.x
 	#28.xTODO# sendrawtransaction to a specific node bypassing mempool
 		# See https://github.com/bitcoinknots/bitcoin/issues/50
 	# Needs review: 26174 w0xlt/list_address_book
-	MERGED: 27114 whitelist_outgoing-mini-26+knots		2222d5457dd	last=0a533613fb4
-		# NOTE: Originally #10594, then #17167
-		# Left off test framework refactoring commit (08c1af96e6f) and reverted gArgs caching refactor (ab6c001ec96)
-		# Non-trivial revert of 5883a8911a5 net: store `-whitelist{force}relay` values in `CConnman`
-		# Made 'out' apply to non-manual outgoing too (backward compat)
-		# Restored older functional test (not sure why PR removed it)
+	-     whitelist_outgoing_auto				2222d5457dd
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
 		# CAUTION: neutrino whitelisting interaction
 	27446 benthecarman/configure-signet-blockitme	58040862840	last=d8434da3c14
