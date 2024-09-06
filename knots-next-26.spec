@@ -817,7 +817,6 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# NOTE: Originally #10594, then #17167
 		# Left off test framework refactoring commit (08c1af96e6f) and reverted gArgs caching refactor (ab6c001ec96)
 		# Non-trivial revert of 5883a8911a5 net: store `-whitelist{force}relay` values in `CConnman`
-		# Also includes change of default from incoming to in+out
 		# Made 'out' apply to non-manual outgoing too (backward compat)
 		# Restored older functional test (not sure why PR removed it)
 	# Needs work: 26441 brunoerg/2022-10-whitelist-rpc
