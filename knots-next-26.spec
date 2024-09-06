@@ -802,6 +802,9 @@ NM	29147 guix_attachable_sigs					b7df3ed03fc
 		# More compatible alternative to #26077 fanquake/guix_shell_over_environment
 	28167 rpccookieperms-26+knots				12bd173e987	last=740f3438595 willcl-ark/2023-07-rpccookie-perms
 	(CHECK-LAST)	last=??? rpccookieperms-27+knots
+	(CHECK-LAST)	last= fix_rpccookieperms_early
+	(CHECK-LAST)	last= rpccookieperms_log_improvements-28+k
+	(CHECK-LAST)	last= rpccookieperms_octal_compat
 		# Was #26088 (not in a Knots release)
 		# Added lots of improvements
 		#27.xTODO# Update ce9df2aba3e...740f3438595

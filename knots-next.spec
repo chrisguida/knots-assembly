@@ -7,7 +7,6 @@ checkout core/28.x
 @28.x-syslibs
 # BUILD BUGS:
 	5872 subdir_incl_compat						f41289db2b9
-	30743 libevent_non_gnu_c-28								last=55677540879 fanquake/libevent_non_gnu_c
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							97b8727d34e
 	5416  sys_libsecp256k1						5bb4fd232d3
@@ -123,10 +122,9 @@ checkout core/28.x
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#28.xTODO# Update with other commits that are beneficial
-	29868 hww_windows-28									last=53d426e5633 hebasto/240414-win-subprocess
+	29868 hww_windows-28									last=5541ef02f71 hebasto/240414-win-subprocess
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
-		# Held back dc08930ec68...53d426e5633 (interim fix of test for locales) #28.xTODO# Review
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
 	# Needs review: 25380 darosior/fee_estimator_disable_cpfp
 	# Check on #25561
@@ -252,6 +250,7 @@ checkout core/28.x
 	# Needs (concept?) review? 30678 fjahr/2024-08-backup-best
 	# Needs work: 30679 tdb3/handle_invalid_rpcbind_port
 	# Needs review? 30684 furszy/2024_init_negated_args_err
+	-     fix_rpccookieperms_early
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -565,11 +564,6 @@ checkout core/28.x
 	# Needs Core release first (wallet format change): 25991 wallet_foreign_outputs_metadata
 		# TODO: When Core merges it, we can add GUI in Knots right away
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
-	MERGED: 28167 rpccookieperms-27+knots				c7b352f872e	last=73f0a6cbd0b willcl-ark/2023-07-rpccookie-perms
-		# Held back most of 9617e42a7b1..73f0a6cbd0b (func renames, refactoring; default to no-change/rely on umask)
-		# Was #26088 (not in a Knots release)
-		# Removed doc change
-		# Added lots of improvements
 	# Needs review: 26114 -  # net: Make AddrFetch connections to fixed seeds
 	# Minimised: 26162 Sjors/2022/09/taproot
 	#28.xTODO# sendrawtransaction to a specific node bypassing mempool
@@ -849,6 +843,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 		28.xTODO: Restore libbitcoinconsensus? #29748 #29787 #29797 #29648 #30590
 			Also needs part of sys_secp256k1
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
+	-     rpccookieperms_log_improvements-28+k
 	n/a   macos_dmg-27							d26ae740b99
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder
 		28.xTODO: revert macos ZIP only: #29733
@@ -893,6 +888,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	# TODO: Whitelisting model for non-SPK scripts
 	# TODO: -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 # Non-upstreamed Knots compatibility:
+	-     rpccookieperms_octal_compat
 	-     zmq_ipc_uri_compat					af6f1fc637f	last=0b1762c90d1 origin-pull/28020/head
 		# Backward compatibility with #28020 URI format supported by Knots 25.1+
 	#28.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
