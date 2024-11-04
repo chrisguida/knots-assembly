@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #30791 / gui #833
 
-checkout core/28.x
+checkout v28.0
 @28.x-syslibs
 # BUILD BUGS:
 	5872 subdir_incl_compat						f41289db2b9
@@ -39,6 +39,7 @@ checkout core/28.x
 	#28.xTODO# Triage: Revert #30487 ?
 # FIXES:
 	18818 guix_reltar_autogen_distclean			c94474f3235	last=b5a164d9155 fix_gitian_src_202004
+		#29.xTODO# Check GenerateBuildInfo.cmake ?
 	18902 fix_gitdir_again						9776ecce7e8
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					80273d0b65c	last=df5ece3e064 2020mingwthrd
