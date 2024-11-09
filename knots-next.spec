@@ -204,7 +204,7 @@ checkout v28.0
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29175 -										732060336d2	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
-	29307 AutoFile_error_check-28				689b2cdc64b	last=489c2477e7c vasild/AutoFile_error_check
+	29307 AutoFile_error_check-28				689b2cdc64b	last=dba78353868 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	29480 -										63f3808fc0d	last=88468a8afcd  # log_rand_during_init-0.20
 		# Needs careful backport (basically rewritten)
@@ -246,11 +246,11 @@ checkout v28.0
 	# Needs (concept?) review? 30678 fjahr/2024-08-backup-best
 	# Needs work: 30679 tdb3/handle_invalid_rpcbind_port
 	# Needs review? 30684 furszy/2024_init_negated_args_err
-	30794 -  # interpreter: use int32_t instead of int type for risczero compile
-	30807 furszy/2024_net_assumeUTXO_service
+	30794 -													last=bc52cda1f3c  # interpreter: use int32_t instead of int type for risczero compile
 	# Needs review: 30844 furszy/2024_rpc_wallet_sffo_duplicates
 	# Needs review: 30866 achow101/multipath-spkm-fuzz-crash
-	Needs review? 30909 fjahr/2024-09-au-guess
+	30909 fix_GVP_assumeutxo_pr30909-28						last=da299bea49c fjahr/2024-09-au-guess
+		# NOTE: Just the bugfix for now
 	Minimal: 30929 maflcko/2409-log-nl
 	30962 mzumsande/202409_assumeutxo_warning
 	Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
