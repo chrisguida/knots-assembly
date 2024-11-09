@@ -251,10 +251,10 @@ checkout v28.0
 	# Needs review: 30866 achow101/multipath-spkm-fuzz-crash
 	30909 fix_GVP_assumeutxo_pr30909-28						last=da299bea49c fjahr/2024-09-au-guess
 		# NOTE: Just the bugfix for now
-	Minimal: 30929 maflcko/2409-log-nl
-	30962 mzumsande/202409_assumeutxo_warning
-	Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
-	30979 fjahr/2024-09-asmap-seed-link
+	30929 log_enforce_newline-28							last=fa2b7d8d6b3 maflcko/2409-log-nl
+		# NOTE: Minimal, only to ensure new code backports correctly
+	# Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
+	30979 upd_asmap_uri-28
 	31013 laanwj/2024-10-mingw-posix-gcc
 		Backport in #31104
 	31064 TheCharlatan/patchCoinsDBCacheSizeInit
