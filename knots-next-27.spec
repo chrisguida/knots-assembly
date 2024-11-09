@@ -13,11 +13,6 @@ checkout v27.1
 	30283 upnp_228_compat-22					2d213fc7c89
 	30633 fanquake/gcc_15_fixup
 		# 27.x backport in #30558
-	Triage: g837 hebasto-g/240918-wallet-header
-	Triage: g838 hebasto-g/240929-qt6-locale
-	Triage: g839 hebasto-g/240929-qt6-test
-	Triage: g840 hebasto-g/241004-qanef
-	Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-26+knots					97b8727d34e	last=87e5c2dd815 sys_leveldb
 	5416  sys_libsecp256k1-27					5bb4fd232d3	last=4684e2971d0 sys_libsecp256k1
@@ -29,13 +24,6 @@ checkout v27.1
 	15155 test_external_bcli					37442ac71a2
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
-	# ---- BEGIN qt6 SUPPORT, TODO ----
-	# NOTE: Partial qt6 backport in WIP_qt6-23
-	# Needs review: 24813 hebasto/220409-appcheck        # Qt 6 (4/n)
-	# TODO: tbc uses QRegExpValidator
-	# Needs work/splitting-up: 24798 hebasto/220406-qt6
-	# Needs review: 25191 hebasto/220523-qt6-mac
-	# ---- END qt6 SUPPORT ----
 	n/a   (delete_release_notes_fragments)
 @27.x-knotsfixes
 # TESTS:

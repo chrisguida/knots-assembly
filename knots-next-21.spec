@@ -82,7 +82,6 @@ TM	-     bugfix_asm_leveldb_check-0.20			15cb5704a2a	last=3ca799db25f bugfix_asm
 	#Maybe restore: 7339  opt_libevent
 	23716 qa_own_ripemd160-21					a93adb92909
 		# NOTE: Identical backport in #25538 now
-	# TODO?? Qt6 support
 	# OpenBSD-only: 25332 fanquake/test_for_timingsafe_bcmp
 	n/a   (delete_release_notes_fragments)
 @21.x-knotsfixes

@@ -7,11 +7,8 @@ checkout v28.0
 @28.x-syslibs
 # BUILD BUGS:
 	5872 subdir_incl_compat						f41289db2b9
-	Triage: g837 hebasto-g/240918-wallet-header
-	Triage: g838 hebasto-g/240929-qt6-locale
-	Triage: g839 hebasto-g/240929-qt6-test
-	Triage: g840 hebasto-g/241004-qanef
-	Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
+	#29.xTODO# Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
+	#29.xTODO# If needed? 30997 hebasto/240928-qt6
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							97b8727d34e
 	5416  sys_libsecp256k1						5bb4fd232d3
@@ -23,14 +20,6 @@ checkout v28.0
 	15155 test_external_bcli					37442ac71a2
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
-	# ---- BEGIN qt6 SUPPORT, TODO ----
-	# NOTE: Partial qt6 backport in WIP_qt6-23
-	# Needs review: 24813 hebasto/220409-appcheck        # Qt 6 (4/n)
-	# TODO: tbc uses QRegExpValidator
-	# Needs work/splitting-up: 24798 hebasto/220406-qt6
-	# Needs review: 25191 hebasto/220523-qt6-mac
-	#29.xTODO# If needed? 30997 hebasto/240928-qt6
-	# ---- END qt6 SUPPORT ----
 	n/a   (delete_release_notes_fragments)
 @28.x-knotsfixes
 # TESTS:
@@ -839,6 +828,7 @@ checkout v28.0
 		#28.xTODO# Revert or redefine #29843 if it got merged
 	 929 tbc									24523ecf145
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
+		# TODO: Qt6 drops QRegExpValidator
 	 553 bugfix_qt_uri_amount_parser			41616f25bc5
 	-     mining_priority						80f9bb7e36f	# Latest code now
 		#28.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
