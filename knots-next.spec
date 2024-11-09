@@ -1,12 +1,17 @@
-timestamp 2024-09-02 19:23:14
+timestamp 2024-11-09 18:54:46
 lastapply no-merge
 
-#.. checked up to PR #30791 / gui #833
+#.. checked up to PR #31264 / gui #841
 
 checkout v28.0
 @28.x-syslibs
 # BUILD BUGS:
 	5872 subdir_incl_compat						f41289db2b9
+	Triage: g837 hebasto-g/240918-wallet-header
+	Triage: g838 hebasto-g/240929-qt6-locale
+	Triage: g839 hebasto-g/240929-qt6-test
+	Triage: g840 hebasto-g/241004-qanef
+	Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb							97b8727d34e
 	5416  sys_libsecp256k1						5bb4fd232d3
@@ -24,6 +29,7 @@ checkout v28.0
 	# TODO: tbc uses QRegExpValidator
 	# Needs work/splitting-up: 24798 hebasto/220406-qt6
 	# Needs review: 25191 hebasto/220523-qt6-mac
+	#29.xTODO# If needed? 30997 hebasto/240928-qt6
 	# ---- END qt6 SUPPORT ----
 	n/a   (delete_release_notes_fragments)
 @28.x-knotsfixes
@@ -251,6 +257,27 @@ checkout v28.0
 	# Needs (concept?) review? 30678 fjahr/2024-08-backup-best
 	# Needs work: 30679 tdb3/handle_invalid_rpcbind_port
 	# Needs review? 30684 furszy/2024_init_negated_args_err
+	30794 -  # interpreter: use int32_t instead of int type for risczero compile
+	30807 furszy/2024_net_assumeUTXO_service
+	# Needs review: 30844 furszy/2024_rpc_wallet_sffo_duplicates
+	# Needs review: 30866 achow101/multipath-spkm-fuzz-crash
+	Needs review? 30909 fjahr/2024-09-au-guess
+	Minimal: 30929 maflcko/2409-log-nl
+	30962 mzumsande/202409_assumeutxo_warning
+	Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
+	30979 fjahr/2024-09-asmap-seed-link
+	31013 laanwj/2024-10-mingw-posix-gcc
+		Backport in #31104
+	31064 TheCharlatan/patchCoinsDBCacheSizeInit
+	31096 instagibbs/2024-10-submitpackage-singleton
+	31097 dergoegge/2024-10-check2
+	Ensure alternate is supported: 31124 hodlinator/2024/10/rm_RandAddSeedPerfmon
+	31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
+	31166 theStack/202410-key-clear_out_secret_data_in_xprv_parser
+		Backport in #31104
+	Needs work? 31212 hodlinator/2024/11/invalid_args
+	Needs review? 31223 mzumsande/202410_portplus1
+	g836  pablomartin4btc-g/gui-fix-ipv6-proxy-display
 	-     fix_rpccookieperms_early
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	
@@ -319,6 +346,12 @@ checkout v28.0
 	# Needs review: 30610 sipa/202408_force_sync
 	# Needs review: 30611 andrewtoth/write-chainstate-every-hour
 	30675 -													last=03d49d0f25a  # http: set TCP_NODELAY when creating HTTP server
+	# Needs diff-minimise? 30884 sipa/202409_reduce_ftell_xor
+		# check if 30927 has anything important
+	# Needs diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
+	# Needs review: 31132 andrewtoth/threaded-inputs
+	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
+	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -665,11 +698,21 @@ checkout v28.0
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
 	Needs rewrite? 30635 Sjors/2024/08/waitforblock
+	31121 fanquake/cet_enabled
 	# Needs review: 30685 hebasto/240820-control-flow
 	Needs review? 30708 jamesob/2024-08-getdescriptoractivity
 	Needs review? 30713 tdb3/relevant_blocks_in_scanblocks_status
 	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
+	30793 tdb3/rpc_getorphantxs
+		+31043
+	30860 BrandonOdiwuor/bash-completion
+		TODO: use this when generating manpages
+	30886 instagibbs/2024-09-updateutxo_psbt
+	30930 jonatack/2023-05-add-peer-services-to-netinfo
+	31086 cdecker/202442-re-add-bitcoinstats-seed
+	31215 vasild/rpcthreads
+	Needs review? 31252 polespinasa/p2wsh_redeem or 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	TODO: Some RPC way to report if settings are default?
 	
 	#28.xTODO# Support for sending tx with TRUC version
@@ -767,9 +810,11 @@ checkout v28.0
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 	MERGED: Needs concept: 29523 -  # Wallet: Add max_tx_weight to transaction funding options (take 2)
 		# WAS (never in Knots): #29264 instagibbs/2024-01-max-tx-weight
+	Hidden-only? 30951 stratospher/v2-only-option
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
+	#29.xTODO# revert #31130+#31157+#31198? to restore miniupnpc support
 	n/a   restore_feefilter_opt					6c75f8d0f85
 	-     gui_payreq_textedit					f772370c57d
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
@@ -843,6 +888,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder
 		28.xTODO: revert macos ZIP only: #29733
 		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
+	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
 # Non-upstreamed policy options (default off):
 	28.xTODO: Try using #29086(MERGED)+#30232 to rebase policy options up here?
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
@@ -865,6 +911,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
 		# Rewrote unit test to be more comprehensive
+	TODO: #30964 & LR alternative options
 	# TODO: NO APPARENT USAGE: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
 	# TODO: CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666 - INSCRIPTION-WRAPPED: https://mempool.space/tx/130c79034450163f36fcde8e27f96904dc42e535f28aacd5af3b9a18d0b1c7f9
 	# TODO? All-ASCII data storage (inefficient)
@@ -891,6 +938,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	-     wallet_undeprecate_legacy-26			5190456efbb
 		# Effectively reverts #24505, #27869, #28597, and gui#764
 		#28.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
+		#29.xTODO# revert #31250  wallet: Disable creating and loading legacy wallets
 	14641 fundraw_min_conf_deprecated-25+knots	526d26b79b0	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			5be45ec7b3e
 	-     netperms_implicit_addr				1732b4783aa
@@ -951,7 +999,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 TODO: Ensure rest.cpp includes <string> or no longer needs it (removed when #26415 merged)
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20240902)			3164bc9d5cb
+	n/a  (bump_version=Knots:20241109)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits
@@ -974,5 +1022,5 @@ TODO: Ensure rest.cpp includes <string> or no longer needs it (removed when #264
 
 # TODO: @28.x-knots-android
 
-#@28.x-knots-extratests
-
+@28.x-knots-extratests
+	TODO: Do both: 30913 maflcko/2409-ci-m1

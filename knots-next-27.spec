@@ -1,7 +1,7 @@
-timestamp 2024-09-02 19:23:14
+timestamp 2024-11-09 18:54:46
 #lastapply no-merge
 
-#.. checked up to PR #30791 / gui #833
+#.. checked up to PR #31264 / gui #841
 
 checkout v27.1
 @27.x-syslibs
@@ -13,6 +13,11 @@ checkout v27.1
 	30283 upnp_228_compat-22					2d213fc7c89
 	30633 fanquake/gcc_15_fixup
 		# 27.x backport in #30558
+	Triage: g837 hebasto-g/240918-wallet-header
+	Triage: g838 hebasto-g/240929-qt6-locale
+	Triage: g839 hebasto-g/240929-qt6-test
+	Triage: g840 hebasto-g/241004-qanef
+	Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-26+knots					97b8727d34e	last=87e5c2dd815 sys_leveldb
 	5416  sys_libsecp256k1-27					5bb4fd232d3	last=4684e2971d0 sys_libsecp256k1
@@ -338,6 +343,24 @@ checkout v27.1
 	# Needs work: 30679 tdb3/handle_invalid_rpcbind_port
 	# Needs review? 30684 furszy/2024_init_negated_args_err
 	Maybe simple rewrite? 30697 ismaelsadeeq/08-2024-prevent-race-condition-in-wallet
+	30794 -  # interpreter: use int32_t instead of int type for risczero compile
+	# Needs review: 30844 furszy/2024_rpc_wallet_sffo_duplicates
+	# Needs review: 30866 achow101/multipath-spkm-fuzz-crash
+	Minimal: 30929 maflcko/2409-log-nl
+	Triage: 30952 achow101/fix-runcommand-test
+		NOTE: 28.x backport in #30959
+	Triage: Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
+	30979 fjahr/2024-09-asmap-seed-link
+	31096 instagibbs/2024-10-submitpackage-singleton
+	31097 dergoegge/2024-10-check2
+	Ensure alternate is supported: 31124 hodlinator/2024/10/rm_RandAddSeedPerfmon
+	31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
+	31166 theStack/202410-key-clear_out_secret_data_in_xprv_parser
+		Backport in #31104
+	Needs work? 31212 hodlinator/2024/11/invalid_args
+	g835  furszy-g/2024_gui_fix_wallet_close_crash
+		28.x backport in #30827
+	g836  pablomartin4btc-g/gui-fix-ipv6-proxy-display
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -429,6 +452,12 @@ checkout v27.1
 	# Needs review: 30610 sipa/202408_force_sync
 	# Needs review: 30611 andrewtoth/write-chainstate-every-hour
 	30675 -  # http: set TCP_NODELAY when creating HTTP server
+	# Needs diff-minimise? 30884 sipa/202409_reduce_ftell_xor
+		# check if 30927 has anything important
+	# Needs diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
+	# Needs review: 31132 andrewtoth/threaded-inputs
+	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
+	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -822,11 +851,21 @@ checkout v27.1
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
 	Needs rewrite? 30635 Sjors/2024/08/waitforblock
+	31121 fanquake/cet_enabled
 	# Needs review: 30685 hebasto/240820-control-flow
 	Needs review? 30708 jamesob/2024-08-getdescriptoractivity
 	Needs review? 30713 tdb3/relevant_blocks_in_scanblocks_status
 	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
+	30793 tdb3/rpc_getorphantxs
+		+31043
+	30860 BrandonOdiwuor/bash-completion
+		TODO: use this when generating manpages
+	30886 instagibbs/2024-09-updateutxo_psbt
+	30930 jonatack/2023-05-add-peer-services-to-netinfo
+	31086 cdecker/202442-re-add-bitcoinstats-seed
+	31215 vasild/rpcthreads
+	Needs review? 31252 polespinasa/p2wsh_redeem or 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	TODO: Some RPC way to report if settings are default?
 	
 	#28.xTODO# Support for sending tx with TRUC version
@@ -924,6 +963,7 @@ checkout v27.1
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 	Needs concept: 29523 -  # Wallet: Add max_tx_weight to transaction funding options (take 2)
 		# WAS (never in Knots): #29264 instagibbs/2024-01-max-tx-weight
+	Hidden-only? 30951 stratospher/v2-only-option
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
@@ -1103,7 +1143,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20240902)			3164bc9d5cb
+	n/a  (bump_version=Knots:20241109)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits

@@ -1,8 +1,8 @@
-timestamp 2024-08-28 17:07:23
+timestamp 2024-11-09 18:54:46
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #30791 / gui #833 for fixes
+#.. checked up to PR #31264 / gui #841 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -936,6 +936,22 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs work: 30679 tdb3/handle_invalid_rpcbind_port
 	Triage: Needs review? 30684 furszy/2024_init_negated_args_err
 	Triage: Maybe simple rewrite? 30697 ismaelsadeeq/08-2024-prevent-race-condition-in-wallet
+	Triage: 30794 -  # interpreter: use int32_t instead of int type for risczero compile
+	Triage: Needs review: 30844 furszy/2024_rpc_wallet_sffo_duplicates
+	Triage: Needs review: 30866 achow101/multipath-spkm-fuzz-crash
+	Triage: Needs review? 30909 fjahr/2024-09-au-guess
+	Triage: Minimal: 30929 maflcko/2409-log-nl
+	Triage: 30952 achow101/fix-runcommand-test
+		NOTE: 28.x backport in #30959
+	Triage: Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
+	Triage: 30979 fjahr/2024-09-asmap-seed-link
+	Triage: 31096 instagibbs/2024-10-submitpackage-singleton
+	Triage: 31097 dergoegge/2024-10-check2
+	Triage: Ensure alternate is supported: 31124 hodlinator/2024/10/rm_RandAddSeedPerfmon
+	Triage: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
+	Triage: 31166 theStack/202410-key-clear_out_secret_data_in_xprv_parser
+		Backport in #31104
+	Triage: Needs work? 31212 hodlinator/2024/11/invalid_args
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
 	TODO: Move deleted gitian docs back into this repo
