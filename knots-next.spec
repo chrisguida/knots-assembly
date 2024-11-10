@@ -280,7 +280,7 @@ checkout v28.0
 	#28.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@28.x-knots-lts-deps
-	30774 depends_qt_update-28								last=007c8ea6f39 fanquake/depends_qt_5_15_15
+	# Needs legal approval: 30774 depends_qt_update-28								last=007c8ea6f39 fanquake/depends_qt_5_15_15
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 	# Needs review: 30301 theuni/miniupnp-228-bump
@@ -338,7 +338,7 @@ checkout v28.0
 	# Needs diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
-	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue
+	31179 opti_rpc_uv_reserve-25							last=28e3392d113 ismaelsadeeq/10-2024-add-reserve-to-univalue
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork

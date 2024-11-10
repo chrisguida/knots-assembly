@@ -446,7 +446,7 @@ checkout v27.1
 	# Needs diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
-	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue
+	31179 opti_rpc_uv_reserve-25							last=28e3392d113 ismaelsadeeq/10-2024-add-reserve-to-univalue
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
