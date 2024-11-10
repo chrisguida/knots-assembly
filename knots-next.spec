@@ -255,10 +255,9 @@ checkout v28.0
 		# NOTE: Minimal, only to ensure new code backports correctly
 	# Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
 	30979 upd_asmap_uri-28
-	31013 laanwj/2024-10-mingw-posix-gcc
-		Backport in #31104
-	31064 TheCharlatan/patchCoinsDBCacheSizeInit
-	31096 instagibbs/2024-10-submitpackage-singleton
+	31013 depends_mingw_cc-23
+	31064 init_coins_cache_pr31064-25
+	31096 txpkg_sz_1-28										last=d120154d554 instagibbs/2024-10-submitpackage-singleton
 	31097 dergoegge/2024-10-check2
 	Ensure alternate is supported: 31124 hodlinator/2024/10/rm_RandAddSeedPerfmon
 	31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
