@@ -349,7 +349,7 @@ checkout v27.1
 	Needs work? 31212 hodlinator/2024/11/invalid_args
 	g835  furszy-g/2024_gui_fix_wallet_close_crash
 		28.x backport in #30827
-	g836  pablomartin4btc-g/gui-fix-ipv6-proxy-display
+	g836  fix_qt_opts_proxy_ipv6-24
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees

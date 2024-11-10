@@ -262,9 +262,9 @@ checkout v28.0
 	31124 disable_rand_perfmon-0.20
 	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
 	31166 cleanse_DecodeExtKey-0.17
-	Needs work? 31212 hodlinator/2024/11/invalid_args
-	Needs review? 31223 mzumsande/202410_portplus1
-	g836  pablomartin4btc-g/gui-fix-ipv6-proxy-display
+	# Needs work? 31212 hodlinator/2024/11/invalid_args
+	#28.xTODO# Needs review? 31223 mzumsande/202410_portplus1
+	g836  fix_qt_opts_proxy_ipv6-24
 	-     fix_rpccookieperms_early
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	
