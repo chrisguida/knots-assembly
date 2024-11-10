@@ -58,6 +58,7 @@ checkout v27.1
 	10731 log_more_uacomment-26					dc3babb6e24	last=1852b4b8910 log_more_uacomment
 	29614 bufferedfile_fclose					88984d839a5
 	14485 fadvise-27+knots						66a302ecfce	last=289e88b3133 fadvise
+	(CHECK-LAST)	last=2bc60a4acb7 fadvise-28+knots
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
@@ -344,8 +345,7 @@ checkout v27.1
 	31097 dergoegge/2024-10-check2
 	31124 disable_rand_perfmon-0.20
 	31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
-	31166 theStack/202410-key-clear_out_secret_data_in_xprv_parser
-		Backport in #31104
+	31166 cleanse_DecodeExtKey-0.17
 	Needs work? 31212 hodlinator/2024/11/invalid_args
 	g835  furszy-g/2024_gui_fix_wallet_close_crash
 		28.x backport in #30827

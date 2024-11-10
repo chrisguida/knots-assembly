@@ -135,6 +135,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	Triage: 29614 bufferedfile_fclose
 	14485 fadvise-0.20							ebbe8fe4097	last=a81aaba24db fadvise
 	(CHECK-LAST)	last=3f2c08b8202 fadvise-23
+	(CHECK-LAST)	last= fadvise-28+knots
 		# Was #12491
 	14501 fsync_dir								06128cecd60
 		# Was #12696
@@ -948,8 +949,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 31097 dergoegge/2024-10-check2
 	Triage: 31124 disable_rand_perfmon-0.20
 	Triage: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
-	Triage: 31166 theStack/202410-key-clear_out_secret_data_in_xprv_parser
-		Backport in #31104
+	Triage: 31166 cleanse_DecodeExtKey-0.17
 	Triage: Needs work? 31212 hodlinator/2024/11/invalid_args
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)

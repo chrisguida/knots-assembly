@@ -48,7 +48,7 @@ checkout v28.0
 	 9524  rpc_pruneblkchain0					62bc7893de2	last=88883ae13d
 	10731 log_more_uacomment					dc3babb6e24
 	29614 bufferedfile_fclose					88984d839a5
-	14485 fadvise-27+knots						66a302ecfce	last=289e88b3133 fadvise
+	14485 fadvise-28+knots						66a302ecfce	last=289e88b3133 fadvise
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
@@ -260,9 +260,8 @@ checkout v28.0
 	31096 txpkg_sz_1-28										last=d120154d554 instagibbs/2024-10-submitpackage-singleton
 	31097 scripterr_prefer_consensus-28
 	31124 disable_rand_perfmon-0.20
-	31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
-	31166 theStack/202410-key-clear_out_secret_data_in_xprv_parser
-		Backport in #31104
+	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
+	31166 cleanse_DecodeExtKey-0.17
 	Needs work? 31212 hodlinator/2024/11/invalid_args
 	Needs review? 31223 mzumsande/202410_portplus1
 	g836  pablomartin4btc-g/gui-fix-ipv6-proxy-display
