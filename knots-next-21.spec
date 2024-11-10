@@ -946,7 +946,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 30979 fjahr/2024-09-asmap-seed-link
 	Triage: 31096 instagibbs/2024-10-submitpackage-singleton
 	Triage: 31097 dergoegge/2024-10-check2
-	Triage: Ensure alternate is supported: 31124 hodlinator/2024/10/rm_RandAddSeedPerfmon
+	Triage: 31124 disable_rand_perfmon-0.20
 	Triage: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
 	Triage: 31166 theStack/202410-key-clear_out_secret_data_in_xprv_parser
 		Backport in #31104

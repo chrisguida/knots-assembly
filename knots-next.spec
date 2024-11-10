@@ -258,8 +258,8 @@ checkout v28.0
 	31013 depends_mingw_cc-23
 	31064 init_coins_cache_pr31064-25
 	31096 txpkg_sz_1-28										last=d120154d554 instagibbs/2024-10-submitpackage-singleton
-	31097 dergoegge/2024-10-check2
-	Ensure alternate is supported: 31124 hodlinator/2024/10/rm_RandAddSeedPerfmon
+	31097 scripterr_prefer_consensus-28
+	31124 disable_rand_perfmon-0.20
 	31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
 	31166 theStack/202410-key-clear_out_secret_data_in_xprv_parser
 		Backport in #31104
