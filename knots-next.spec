@@ -604,12 +604,10 @@ checkout v28.0
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
-	Maybe rebase? 26990 bcli_validation-24					9c3a202713a	last=3d63fc976d6
-		# Didn't bother rebasing for 755320f75f2...3d63fc976d6 trivial changes
+	26990 cli_mw_errormsgs_pr26990-24
 	27034 rpc_importaddr_for_descwallet-27+k	958c76fa136	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
-	MERGED: Needs API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
 	27216 rpc_getaddressinfo_isactive			0b57113f4c9	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-27+knots						8ab2add6de2	last=91771366a3d apoelstra/2023-03--codex32
@@ -918,6 +916,8 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	# TODO: Whitelisting model for non-SPK scripts
 	# TODO: -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 # Non-upstreamed Knots compatibility:
+	-     compat_jsonrpc_weirdversions
+	TODO: LND compatibility hack? https://github.com/lightningnetwork/lnd/issues/9053
 	-     rpccookieperms_octal_compat
 	-     zmq_ipc_uri_compat					af6f1fc637f	last=0b1762c90d1 origin-pull/28020/head
 		# Backward compatibility with #28020 URI format supported by Knots 25.1+
