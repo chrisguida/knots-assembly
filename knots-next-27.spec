@@ -577,7 +577,8 @@ checkout v27.1
 	(CHECK-LAST)	last=06a4368d844 rpcauthfile-28+knots
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
-	g149  intro_assumevalid						c665334d232	last=cf940f0e5f5
+	g149  intro_assumevalid-26					c665334d232	last=cf940f0e5f5
+	(CHECK-LAST)	last=2da00fd2bd6 intro_assumevalid
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	20702 rpc_getblocklocations					1e3ae5f0e5d	last=9b03c654eb3
