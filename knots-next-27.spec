@@ -604,7 +604,7 @@ checkout v27.1
 		# NOTE: Ensure default is actually true
 	# Needs work: 21312 -  # wallet: remove lock during `listaddressgroupings`
 	# Included in gui#662 above: g368  bugfix_gui_restored_columns_stretch	3b888b39d64
-	g230  gui_backup_formats					d86d4a6ee61
+	g230  gui_backup_formats-27					d86d4a6ee61	last=1bb949be278 gui_backup_formats
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 		# +27797 ?
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
@@ -654,7 +654,8 @@ checkout v27.1
 	# Needs review: 23624 -  # zmq: add rawmempooltx publisher
 	g473  rebroad-g/NonLinearTraffic			8a0ed84f1ae	last=ad431ff5d18
 	# Needs work: g484 rebroad-g/RetainNetworkGraphOnIntervalChange
-	g492  qt_traffic_tooltip					a15f3828cf4	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
+	g492  qt_traffic_tooltip-25					a15f3828cf4	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
+	(CHECK-LAST)	last=76646e6c31d qt_traffic_tooltip
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
 	g820  qt_fontsel_qrcodes-27+knots			0e14f93fd0c	last=b14c9d0572e qt_fontsel_qrcodes
