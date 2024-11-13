@@ -748,7 +748,8 @@ checkout v27.1
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	Needs API breakage considerations: 27101 pinheadmz/jsonrpc-2.0
-	27216 rpc_getaddressinfo_isactive			0b57113f4c9	last=85f83339dda pinheadmz/used-addr-ui
+	27216 rpc_getaddressinfo_isactive-27		0b57113f4c9	last=85f83339dda pinheadmz/used-addr-ui
+	(CHECK-LAST)	last=9c38c77c71e rpc_getaddressinfo_isactive
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-27+knots						8ab2add6de2	last=91771366a3d apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
