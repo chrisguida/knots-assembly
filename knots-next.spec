@@ -257,7 +257,7 @@ checkout v28.0
 	30979 upd_asmap_uri-28
 	31013 depends_mingw_cc-23
 	31064 init_coins_cache_pr31064-25
-	31096 txpkg_sz_1-28										last=d120154d554 instagibbs/2024-10-submitpackage-singleton
+	31096 txpkg_sz_1-28										last=d4fcca53231 instagibbs/2024-10-submitpackage-singleton
 	31097 scripterr_prefer_consensus-28
 	31124 disable_rand_perfmon-0.20
 	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
@@ -610,7 +610,7 @@ checkout v28.0
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	27216 rpc_getaddressinfo_isactive			0b57113f4c9	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
-	27351 codex32-27+knots						8ab2add6de2	last=91771366a3d apoelstra/2023-03--codex32
+	27351 codex32-28+knots						8ab2add6de2	last=91771366a3d apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs work: 27409 ryanofsky/pr/1data
 	# Needs review: g692 -  # Debug Console implementation of generate method

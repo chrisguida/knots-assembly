@@ -752,6 +752,7 @@ checkout v27.1
 	(CHECK-LAST)	last=9c38c77c71e rpc_getaddressinfo_isactive
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-27+knots						8ab2add6de2	last=91771366a3d apoelstra/2023-03--codex32
+	(CHECK-LAST)	last=de53d61a183 codex32-28+knots
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	27375 pinheadmz/tor-unix-domain-socket
 		+29649
