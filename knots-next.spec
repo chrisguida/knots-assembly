@@ -655,9 +655,6 @@ checkout v28.0
 	# Needs review: 29415 vasild/private_broadcast
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
-	29530 rpc_getpeerinfo_misbehaving_score-26	dbf55fb8c38	last=87efb6f0cfd
-		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
-			TODO: (Silently conflicts with f33cd8869dd (#27114 *NOW MERGED*): fix in 3a4ef30d880)
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
 	MERGED: 29585 manpage_see_also-23+knots				acb79094058	last=7c3ac598dd9 fanquake/list_other_pages_in_man
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
@@ -918,6 +915,9 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	# TODO: -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 # Non-upstreamed Knots compatibility:
 	-     compat_jsonrpc_weirdversions
+	29530 rpc_getpeerinfo_misbehaving_score-28	dbf55fb8c38	last=87efb6f0cfd
+		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
+		# Deprecated in Knots 28.0
 	TODO: LND compatibility hack? https://github.com/lightningnetwork/lnd/issues/9053
 	-     rpccookieperms_octal_compat
 	-     zmq_ipc_uri_compat					af6f1fc637f	last=0b1762c90d1 origin-pull/28020/head

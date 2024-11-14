@@ -812,6 +812,7 @@ checkout v27.1
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
 	# assumeutxo not supported: 29519 mzumsande/202202_fix_assumeutxo_block_download
 	29530 rpc_getpeerinfo_misbehaving_score-26	dbf55fb8c38	last=87efb6f0cfd
+	(CHECK-LAST)	last= rpc_getpeerinfo_misbehaving_score-28
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
 			# (Silently conflicts with f33cd8869dd (#27114): fix in 3a4ef30d880)
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
