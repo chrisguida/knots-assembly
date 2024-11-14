@@ -795,6 +795,7 @@ checkout v27.1
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
 	28979 rpc_sendall_ancestor_aware-27+knots	02b0ef1f9a7
 	29016 rpc_listmempooltxs-26+knots			2f5360dc558	last=07008477b81 niftynei/nifty/listmempoolentry
+	(CHECK-LAST)	last=a434ab05281 rpc_listmempooltxs-28+knots
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	29657 fix_netinfo_v2t_safety-27				f950b367506

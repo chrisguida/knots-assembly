@@ -642,7 +642,7 @@ checkout v28.0
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
-	29016 rpc_listmempooltxs-26+knots			2f5360dc558	last=07008477b81 niftynei/nifty/listmempoolentry
+	29016 rpc_listmempooltxs-28+knots			2f5360dc558	last=07008477b81 niftynei/nifty/listmempoolentry
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
