@@ -817,6 +817,7 @@ checkout v27.1
 			# (Silently conflicts with f33cd8869dd (#27114): fix in 3a4ef30d880)
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
 	29585 manpage_see_also-23+knots				acb79094058	last=7c3ac598dd9 fanquake/list_other_pages_in_man
+	(CHECK-LAST)	last=902b4a8edc3 manpages_seealso_notself
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	29686 manpage_desc-27+knots					d65d8d596c8	last=f6171a8f1da willcl-ark/manpage-desc

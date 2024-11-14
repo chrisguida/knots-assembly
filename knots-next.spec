@@ -656,8 +656,8 @@ checkout v28.0
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
-	MERGED: 29585 manpage_see_also-23+knots				acb79094058	last=7c3ac598dd9 fanquake/list_other_pages_in_man
-		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
+	-     manpages_seealso_notself
+		# Originally bundled into #29585
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	29686 manpage_desc-27+knots					d65d8d596c8	last=f6171a8f1da willcl-ark/manpage-desc
 		# Various fixups

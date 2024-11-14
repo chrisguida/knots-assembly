@@ -1372,6 +1372,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
 	Triage: 29585 fanquake/list_other_pages_in_man
+	(CHECK-LAST)	last=902b4a8edc3 manpages_seealso_notself
 	Triage: s/Core/Knots: 29686 willcl-ark/manpage-desc
 	Triage: Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	Triage: Needs review: 30685 hebasto/240820-control-flow
