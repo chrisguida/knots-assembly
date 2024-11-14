@@ -675,10 +675,10 @@ checkout v28.0
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	Needs rewrite? 30635 Sjors/2024/08/waitforblock
-	31121 fanquake/cet_enabled
+	#28.xTODO# Needs rewrite? 30635 Sjors/2024/08/waitforblock
+	31121 guix_glibc_cet-28
 	# Needs review: 30685 hebasto/240820-control-flow
-	Needs review? 30708 jamesob/2024-08-getdescriptoractivity
+	30708 rpc_getdescriptoractivity-28						last=f383db76ec3 jamesob/2024-08-getdescriptoractivity
 	Needs review? 30713 tdb3/relevant_blocks_in_scanblocks_status
 	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
