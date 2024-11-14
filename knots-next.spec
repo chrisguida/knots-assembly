@@ -53,6 +53,7 @@ checkout v28.0
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
 	-     rpcarg_type_per_name					7f56a80d34d
+	-     fix_rpc_arg_multiname
 	-     bugfix_rpc_getbalance_hacky			e9da9c1ce34
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
