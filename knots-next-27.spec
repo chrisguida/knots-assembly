@@ -821,6 +821,7 @@ checkout v27.1
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	29686 manpage_desc-27+knots					d65d8d596c8	last=f6171a8f1da willcl-ark/manpage-desc
+	(CHECK-LAST)	last= manpage_desc-28+knots
 		# Various fixups
 	29687 bcli_err_noconn_helphint-0.17			a67add604d4	last=69d6fd676e9 willcl-ark/improve-cli-error
 	29695 gcc_branch_protection_default-26		ecd2224cebc	last=7850c5fe20a fanquake/gcc_12_branch_protection_default

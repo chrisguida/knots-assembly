@@ -166,8 +166,6 @@ checkout v28.0
 	# Needs review: 27912 -  # net: run disconnect in I2P thread
 	# Needs work: 27973 maflcko/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
-	-     qt_ambig_uri_refs						aa00950ddee
-		# Prior to 27.x, part was included with gui#742 qt_err_fixg741_in_g742-21
 	28029 fix_zmq_errhandling_202307-mini		2c40a9537fb	last=07086589b27 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err		dd0993e91b7
@@ -659,7 +657,7 @@ checkout v28.0
 	-     manpages_seealso_notself
 		# Originally bundled into #29585
 	# Needs review & wallet compat check: 29675 achow101/musig2
-	29686 manpage_desc-27+knots					d65d8d596c8	last=f6171a8f1da willcl-ark/manpage-desc
+	29686 manpage_desc-28+knots					d65d8d596c8	last=47f50c7af55 willcl-ark/manpage-desc
 		# Various fixups
 	#28.xTODO# 29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
 		# Extend to other options?
