@@ -618,7 +618,7 @@ checkout v28.0
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
 		# Careful, could end up paying "added change" to a destination -.-
 	# Needs concept/review: g723 pinheadmz-g/used-addr-ui-gui
-	27600 p2p_forceinbound-27+knots				dbda0e998ab	last=8c2026848da pinheadmz/whitebind-evict
+	27600 p2p_forceinbound-28+knots				dbda0e998ab	last=8c2026848da pinheadmz/whitebind-evict
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
