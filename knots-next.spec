@@ -666,10 +666,7 @@ checkout v28.0
 		# Concept fixup: new RPC method entirely since they don't change often?
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	#28.xTODO# Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
-	MERGED: 30062 rpc_getrawaddrman_asmap-26			73c5cba850a	last=1e54d61c469 brunoerg/2024-04-asmap-getrawaddrman
-	(CHECK-LAST)	last=53f38f6fcee origin-pull/30183/head
-		# +#30183
-		#28.xTODO# Try backporting tests
+	30183 rpc_asmap_followup_pr30183-28
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
 	#28.xTODO# Needs concept? 30341 willcl-ark/psbt-strip-derivs-combine
