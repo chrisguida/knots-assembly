@@ -679,11 +679,11 @@ checkout v28.0
 	31121 guix_glibc_cet-28
 	# Needs review: 30685 hebasto/240820-control-flow
 	30708 rpc_getdescriptoractivity-28						last=f383db76ec3 jamesob/2024-08-getdescriptoractivity
-	Needs review? 30713 tdb3/relevant_blocks_in_scanblocks_status
+	30713 rpc_scanblocks_status_results-28					last=39ee30c31f5 tdb3/relevant_blocks_in_scanblocks_status
 	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
-	Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
-	30793 tdb3/rpc_getorphantxs
-		+31043
+	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
+	30793 rpc_getorphantxs-28+knots
+		#+31040+31043
 	30860 BrandonOdiwuor/bash-completion
 		TODO: use this when generating manpages
 	30886 instagibbs/2024-09-updateutxo_psbt
