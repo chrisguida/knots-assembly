@@ -509,8 +509,11 @@ checkout v28.0
 		# NOTE: Might require #28192
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							a0e3d0a51f4
-	24963 rpc_walletprocesspsbt_options-26		262df2a313e	last=f43f992b731 rpc_walletprocesspsbt_options
+	24963 rpc_walletprocesspsbt_options-26		262df2a313e	last=645d0418397 rpc_walletprocesspsbt_options
 		# Diff-minimised (and uses merge for rpcarg_type_per_name)
+		# Held back f43f992b731...645d0418397:
+			#* 0d09c945bcf (HEAD -> rpc_walletprocesspsbt_options) QA: rpc_psbt: Test that the wrong type cannot be given to named params
+			#* 450f5a108cd RPC: Strictly enforce the type of parameters passed by name
 	-     rpc_descriptorprocesspsbt_opts		e8be2a13403
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# TODO? 25621 -  # rpc/wallet: Add details and duplicate section for simulaterawtransaction
@@ -684,8 +687,8 @@ checkout v28.0
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	30793 rpc_getorphantxs-28+knots
 		#+31040+31043
-	30860 BrandonOdiwuor/bash-completion
-		TODO: use this when generating manpages
+	30860 bashcomp_bcli_generate-28							last=7c8b021fee3 BrandonOdiwuor/bash-completion
+		# Bugfix + Left off re-generation until later
 	30886 instagibbs/2024-09-updateutxo_psbt
 	30930 jonatack/2023-05-add-peer-services-to-netinfo
 	31086 cdecker/202442-re-add-bitcoinstats-seed
@@ -998,7 +1001,7 @@ TODO: Ensure rest.cpp includes <string> or no longer needs it (removed when #264
 		# When re-added, #28824 notes in 9db5d23d559
 		#28.xTODO# (when assumeutxo supported) Include the deleted notes from 0bc1f4b5c7b
 	n/a  (cherrypick=540426ee9cc)				e933c45607c  # update manpages (build first)
-		# also example bitcoin.conf
+		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#28.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
