@@ -689,7 +689,7 @@ checkout v28.0
 		#+31040+31043
 	30860 bashcomp_bcli_generate-28							last=7c8b021fee3 BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
-	30886 instagibbs/2024-09-updateutxo_psbt
+	30886 rpc_descrprocesspsbt_prevtxs-28+knots				last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 	30930 jonatack/2023-05-add-peer-services-to-netinfo
 	31086 cdecker/202442-re-add-bitcoinstats-seed
 	31215 vasild/rpcthreads
