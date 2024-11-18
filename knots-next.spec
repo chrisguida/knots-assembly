@@ -509,11 +509,11 @@ checkout v28.0
 		# NOTE: Might require #28192
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							a0e3d0a51f4
-	24963 rpc_walletprocesspsbt_options-26		262df2a313e	last=645d0418397 rpc_walletprocesspsbt_options
+	24963 rpc_walletprocesspsbt_options-26		262df2a313e	last=40143bafb52 rpc_walletprocesspsbt_options
 		# Diff-minimised (and uses merge for rpcarg_type_per_name)
-		# Held back f43f992b731...645d0418397:
-			#* 0d09c945bcf (HEAD -> rpc_walletprocesspsbt_options) QA: rpc_psbt: Test that the wrong type cannot be given to named params
-			#* 450f5a108cd RPC: Strictly enforce the type of parameters passed by name
+		# Held back f43f992b731...40143bafb52:
+			#* 40143bafb52 QA: rpc_psbt: Test that the wrong type cannot be given to named params
+			#* 7cd0315bc40 RPC: Strictly enforce the type of parameters passed by name
 	-     rpc_descriptorprocesspsbt_opts		e8be2a13403
 	# Needs review: 22563 vasild/addrman_per_group_bucketing
 	# TODO? 25621 -  # rpc/wallet: Add details and duplicate section for simulaterawtransaction
