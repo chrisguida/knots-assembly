@@ -690,7 +690,7 @@ checkout v28.0
 	30860 bashcomp_bcli_generate-28							last=7c8b021fee3 BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots				last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
-	30930 jonatack/2023-05-add-peer-services-to-netinfo
+	30930 netinfo_svcs_outonly-28
 	31086 cdecker/202442-re-add-bitcoinstats-seed
 	31215 vasild/rpcthreads
 	Needs review? 31252 polespinasa/p2wsh_redeem or 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
@@ -831,6 +831,7 @@ checkout v28.0
 	5891  qt_console_history_persist			5da2e77fab2	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-27+knots						556b082f984	# Latest code now
 		28.xTODO: Revert #30594(partial) & #30592
+		Add [detached HEAD b5be02ccbe8] bitcoin-cli: Document RBF service bit in "serv" column
 	-     truc_opts-27+knots					52ebfb386c8
 		#28.xTODO# Check if default/interaction values ought to be changed
 	# TODO? -     net_identify_librerelay
