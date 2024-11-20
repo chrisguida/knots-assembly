@@ -681,7 +681,7 @@ checkout v28.0
 	#28.xTODO# Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28
 	# Needs review: 30685 hebasto/240820-control-flow
-	30708 rpc_getdescriptoractivity-28						last=f383db76ec3 jamesob/2024-08-getdescriptoractivity
+	30708 rpc_getdescriptoractivity-28						last=878b6c85466 jamesob/2024-08-getdescriptoractivity
 	30713 rpc_scanblocks_status_results-28					last=39ee30c31f5 tdb3/relevant_blocks_in_scanblocks_status
 	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
@@ -690,9 +690,11 @@ checkout v28.0
 	30860 bashcomp_bcli_generate-28							last=7c8b021fee3 BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots				last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
+		# Avoided doc-code move
 	30930 netinfo_svcs_outonly-28
-	31086 cdecker/202442-re-add-bitcoinstats-seed
-	31215 vasild/rpcthreads
+	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
+	31215 http_inc_thr16_wq64-27							last=e56fc7ce6a9 vasild/rpcthreads
+		# Rewrote as only changing defaults (no doc changes)
 	Needs review? 31252 polespinasa/p2wsh_redeem or 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	TODO: Some RPC way to report if settings are default?
 	
