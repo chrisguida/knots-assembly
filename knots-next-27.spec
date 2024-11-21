@@ -875,6 +875,7 @@ checkout v27.1
 	# TODO: IPv6 Pinholing (see #30005)
 # Non-progress functionality:
 	8751  sort-multisigs-26+knots				04a7c9549eb	last=e11cb50a09  # multisig sorting
+	(CHECK-LAST)	last=8da055be7b3 sort-multisigs-28+knots
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					5007845888e	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys							06f4c5e023e

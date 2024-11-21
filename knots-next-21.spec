@@ -1392,6 +1392,7 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=db2b618ec07 sort-multisigs-22
 	(CHECK-LAST)	last=8db63499737 sort-multisigs-23
 	(CHECK-LAST)	last=d353a124a49 sort-multisigs-25
+	(CHECK-LAST)	last= sort-multisigs-28+knots
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	9152  sweepprivkeys-0.21					2aeaeeb1ba1	last=724b597973c sweepprivkeys
 	(CHECK-LAST)	last=6fcb1e43426 sweepprivkeys-22
