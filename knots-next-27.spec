@@ -885,8 +885,10 @@ checkout v27.1
 	9245 ionice-27								79f8728ef74	last=d1238b077e7 ionice
 	-    ionice_win-27							449a1557c99	last=85521875728 ionice_win
 	8501  old_stats_rpc-27						c92a5fd01c1	last=7af0ea43b2
+	(CHECK-LAST)	last=f6654884f1d old_stats_rpc-28
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-27+knots					022054f96ee	last=63fb11652f
+	(CHECK-LAST)	last=14ce8e6ed04 old_stats_qt-28+knots
 		# Held back on old version due to conflict with RPC updates...
 	9504  rpc_dumpmasterprivkey					bfb11cd2b21	last=07fc81109a
 	g444  gui_netwatch-27+knots					764f2f765a6	 # Latest code now
