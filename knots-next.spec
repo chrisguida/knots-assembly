@@ -713,6 +713,8 @@ checkout v28.0
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
 	9245 ionice									79f8728ef74
+		# low prio: p2p requests, loading/verifying blocks on disk
+		# normal prio: connecting blocks, indexes, user requests
 	-    ionice_win								449a1557c99
 	8501  old_stats_rpc-27						c92a5fd01c1	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
