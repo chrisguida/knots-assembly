@@ -695,8 +695,9 @@ checkout v28.0
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
 	31215 http_inc_thr16_wq64-27							last=e56fc7ce6a9 vasild/rpcthreads
 		# Rewrote as only changing defaults (no doc changes)
-	Needs review? 31252 polespinasa/p2wsh_redeem or 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
-	TODO: Some RPC way to report if settings are default?
+	# Needs work? 31252 rpc_TxToUniv_witScript-28								last=4e128d4f9b2
+		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
+	# TODO: Some RPC way to report if settings are default?
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
