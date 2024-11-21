@@ -878,7 +878,8 @@ checkout v27.1
 	(CHECK-LAST)	last=8da055be7b3 sort-multisigs-28+knots
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					5007845888e	last=1898b9be12c Sjors/2021/05/versionbits_period_start
-	9152 sweepprivkeys							06f4c5e023e
+	9152 sweepprivkeys-27+knots					06f4c5e023e
+	(CHECK-LAST)	last=4f1c38d754a sweepprivkeys
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
 	9245 ionice									79f8728ef74
