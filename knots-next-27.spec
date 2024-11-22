@@ -891,7 +891,7 @@ checkout v27.1
 	(CHECK-LAST)	last=14ce8e6ed04 old_stats_qt-28+knots
 		# Held back on old version due to conflict with RPC updates...
 	9504  rpc_dumpmasterprivkey					bfb11cd2b21	last=07fc81109a
-	g444  gui_netwatch-27+knots					764f2f765a6	 # Latest code now
+	g444  gui_netwatch-27+knots					764f2f765a6	last=d9b736a5beb gui_netwatch-28+knots
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
 	10615 multiwallet_rpc-27+knots				aee9437f8ea  # latest code now
