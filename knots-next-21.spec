@@ -1424,7 +1424,8 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=9482300fab7 gui_netwatch-23+knots
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
-	10615 multiwallet_rpc-0.21+knots			bae1509a9d1	last=8ea217e7251 multiwallet_rpc-27+knots
+	10615 multiwallet_rpc-0.21+knots			bae1509a9d1	last=3aefa80ffc5 multiwallet_rpc-28+knots
+	(CHECK-LAST)	last=8ea217e7251 multiwallet_rpc-27+knots
 	(CHECK-LAST)	last=8ea217e7251 multiwallet_rpc-26+knots
 	(CHECK-LAST)	last=8ea217e7251 multiwallet_rpc-25+knots
 	(CHECK-LAST)	last=d927c064439 multiwallet_rpc-22+knots

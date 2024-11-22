@@ -894,7 +894,7 @@ checkout v27.1
 	g444  gui_netwatch-27+knots					764f2f765a6	last=d9b736a5beb gui_netwatch-28+knots
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
-	10615 multiwallet_rpc-27+knots				aee9437f8ea  # latest code now
+	10615 multiwallet_rpc-27+knots				aee9437f8ea	last=3aefa80ffc5 multiwallet_rpc-28+knots
 		# CAUTION: Be extra careful rebasing - diff/patch default context might accidentally move code around between different RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
