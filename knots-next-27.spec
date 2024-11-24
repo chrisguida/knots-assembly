@@ -900,6 +900,7 @@ checkout v27.1
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
 	10554 zmq_wtx-27+knots						ba89fef85d3	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	(CHECK-LAST)	last=b6a028ba507 zmq_wtx-28+knots
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					6f7962e8fe8
