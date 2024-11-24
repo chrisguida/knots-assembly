@@ -256,7 +256,7 @@ checkout v28.0
 	30979 upd_asmap_uri-28
 	31013 depends_mingw_cc-23
 	31064 init_coins_cache_pr31064-25
-	31096 txpkg_sz_1-28										last=d4fcca53231 instagibbs/2024-10-submitpackage-singleton
+	# WIP: 31096 txpkg_sz_1-28										last=d4fcca53231 instagibbs/2024-10-submitpackage-singleton
 	31097 scripterr_prefer_consensus-28
 	31124 disable_rand_perfmon-0.20
 	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
@@ -681,7 +681,7 @@ checkout v28.0
 	#28.xTODO# Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28
 	# Needs review: 30685 hebasto/240820-control-flow
-	30708 rpc_getdescriptoractivity-28						last=878b6c85466 jamesob/2024-08-getdescriptoractivity
+	30708 rpc_getdescriptoractivity-28						last=1ca5f7b998c jamesob/2024-08-getdescriptoractivity
 	30713 rpc_scanblocks_status_results-28					last=39ee30c31f5 tdb3/relevant_blocks_in_scanblocks_status
 	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
