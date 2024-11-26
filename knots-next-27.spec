@@ -903,10 +903,10 @@ checkout v27.1
 	(CHECK-LAST)	last=b6a028ba507 zmq_wtx-28+knots
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
-	20551 rpc_onetry_conntype					6f7962e8fe8
+	20551 rpc_onetry_conntype-27				6f7962e8fe8	last=a444354c8a1 rpc_onetry_conntype
 		# NOTE: Originally based on #12674
 		# REBASING NOTE: Ensure any new types get added ? (unless we want to deprecate this...)
-	10593 relax_invblk_punishment				a1ecd0bd017
+	10593 relax_invblk_punishment-27			a1ecd0bd017	last=1b1cb38f91d relax_invblk_punishment
 		# Squash "QA: Use addconnection rather than addnode onetry" ?
 		# FIXME: HandleFewUnconnectingHeaders sends getheaders _and_ disconnects??
 		# TODO: Consider rebasing on #29575 ?
