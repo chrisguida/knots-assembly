@@ -918,7 +918,8 @@ checkout v27.1
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	11750 coincontrol_multiselect				5fb23f0e254	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
-	11770 rest_fee								69067895110	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11770 rest_fee-27							69067895110	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	(CHECK-LAST)	last=e03d9827b7a rest_fee
 		# Fixed a minor bug in conf_target range check
 		# Added new tests in feature_fee_estimation
 		# Updated to match estimatesmartfee RPC changes
