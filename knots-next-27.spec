@@ -925,6 +925,7 @@ checkout v27.1
 		# Updated to match estimatesmartfee RPC changes
 	11803 bugfix_dumpwallet_hdkeypath			a2713e0eee2
 	12965 scriptthreads-27+knots				7a203a9fd17	last=dfab6c6866 jonasschnelli/2018/04/svt
+	(CHECK-LAST)	last=97b750ea860 scriptthreads-28+knots
 	13203 dsha256_power8-27						789dfcc340f	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 		#28.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
