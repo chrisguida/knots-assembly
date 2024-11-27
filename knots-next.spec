@@ -980,11 +980,13 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 		#28.xTODO# Review security policy
 		NOTE: Includes #30308 (MERGED)
 		#28.xTODO# remove "nsis-header.bmp: Generate from SVG" (moved to svg_icon)
+		TODO: Update install instructions
+		TODO: https://github.com/bitcoinknots/bitcoin/pull/84/files
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #28.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 # TODO: Check that we aren't deprecating anything in Core
-# TODO: verify src tarball includes rendered_icons incl nsis-header
+TODO: verify src tarball includes rendered_icons incl nsis-header and bitcoin_testnet.ico
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
