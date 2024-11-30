@@ -681,7 +681,7 @@ checkout v28.0
 	#28.xTODO# Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28
 	# Needs review: 30685 hebasto/240820-control-flow
-	30708 rpc_getdescriptoractivity-28						last=1ca5f7b998c jamesob/2024-08-getdescriptoractivity
+	30708 rpc_getdescriptoractivity-28						last=37a5c5d8366 jamesob/2024-08-getdescriptoractivity
 	30713 rpc_scanblocks_status_results-28					last=39ee30c31f5 tdb3/relevant_blocks_in_scanblocks_status
 	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
@@ -757,12 +757,11 @@ checkout v28.0
 		#28.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-27			82181fbc222
 	15218 andrewtoth/flush-after-ibd			06b45666f77	last=8887d28a014  # postibd_flush-27
-	15428 tor_gui_pairing-27+knots				dadc8ab723e	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
+	15428 tor_gui_pairing-28+knots				dadc8ab723e	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-	15421 tor_subprocess-27+knots				b9d6192ad19	# Latest code now
+	15421 tor_subprocess-28+knots				b9d6192ad19	# Latest code now
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
-		28.xTODO: Revert #29844 if still using boost::process?
 	# TODO: tor guix bundle!
 	#28.xTODO# 16490 maflcko/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise

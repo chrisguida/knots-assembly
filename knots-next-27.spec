@@ -919,7 +919,7 @@ checkout v27.1
 	11750 coincontrol_multiselect				5fb23f0e254	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
 	11770 rest_fee-27							69067895110	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
-	(CHECK-LAST)	last=e03d9827b7a rest_fee
+	(CHECK-LAST)	last=d6514b6b631 rest_fee
 		# Fixed a minor bug in conf_target range check
 		# Added new tests in feature_fee_estimation
 		# Updated to match estimatesmartfee RPC changes
@@ -932,8 +932,9 @@ checkout v27.1
 	-     dsha256_power8_asm_pragmas-27			82181fbc222
 	15218 postibd_flush-27						06b45666f77	last=8887d28a014
 	15428 tor_gui_pairing-27+knots				dadc8ab723e	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
+	(CHECK-LAST)	last= tor_gui_pairing-28+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-	15421 tor_subprocess-27+knots				b9d6192ad19	# Latest code now
+	15421 tor_subprocess-27+knots				b9d6192ad19	last= tor_subprocess-28+knots
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
 		#28.xTODO# Revert #29844 if still using boost::process?

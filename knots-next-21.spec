@@ -1474,10 +1474,10 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	(CHECK-LAST)	last=8faeb93d48d postibd_flush-22+knots
 	(CHECK-LAST)	last=6bd37fe1133 postibd_flush-23
 	(CHECK-LAST)	last=940eb7c7e81 postibd_flush-25
-	15428 tor_gui_pairing-0.21+knots			9b710f4ddfb	last=443570660ef tor_gui_pairing-25+knots
+	15428 tor_gui_pairing-0.21+knots			9b710f4ddfb	last=443570660ef tor_gui_pairing-28+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 16cb2ae1fe0)
 	(CHECK-LAST)	last=4a881554991 tor_gui_pairing-22+knots
-m	15421 tor_subprocess-0.21+knots				ccf77ea4de5	last=58c6cafd3a1 tor_subprocess
+m	15421 tor_subprocess-0.21+knots				ccf77ea4de5	last=58c6cafd3a1 tor_subprocess-28+knots
 	(CHECK-LAST)	last=1fae7eff568 tor_subprocess-22+knots
 		TODO: Add boost_171_177_workarounds
 			# NOTE: Originally part of #25111 hww_windows replaced by #25696 (merged)
