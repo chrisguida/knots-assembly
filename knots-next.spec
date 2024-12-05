@@ -310,7 +310,7 @@ checkout v28.0
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 -										a1f61b9ae79	last=42b25bbd939  # opti_merkle_mutation-0.17
-	28592 -										b072106d716 last=22c2b52c122  # txrelayrate_14txps-26
+	28592 txrelayrate_14txps-26					b072106d716 last=b81f37031c8
 		# TODO: Make configurable? Or is that even sane?
 	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
@@ -321,7 +321,8 @@ checkout v28.0
 	# Needs review: 29602 -  # refactor: Optimize IsSpace function for common non-whitespace characters
 	# TODO: Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
 	30059 dbfilesize_param						69e46c848f5
-	30039 dbfilesize_128						1011fa8e307	last=3e32d23c9e0
+	-     dbfilesize_64							1011fa8e307
+		# Was: #30039 (128 MiB originally, settled on 32 MiB)
 		# Note: Upstream PR uses std::max with LevelDB's current default, in case LevelDB changes theirs to larger
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
 	# Needs review: 30317 -  # WIP Simplify SipHash
