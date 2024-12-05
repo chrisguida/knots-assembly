@@ -1007,6 +1007,7 @@ TODO: Ensure rest.cpp includes <string> or no longer needs it (removed when #264
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		#28.xTODO# (when assumeutxo supported) Include the deleted notes from 0bc1f4b5c7b
+		TODO: document a546dfb3ba46cb72675ea95a718a8d5a248cf528
 	n/a  (cherrypick=540426ee9cc)				e933c45607c  # update manpages (build first)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#28.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update

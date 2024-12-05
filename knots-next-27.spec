@@ -944,7 +944,7 @@ checkout v27.1
 	#	TODO: Support TRUC & Knots policies
 	17795 gui_console_ctrl_d-26+knots			cbd76d41ddf
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
-	15861 restore_vbits_warning					02e002f2ca8
+	15861 restore_vbits_warning-26				02e002f2ca8	last=24462fde47f restore_vbits_warning
 	n/a   rpc_compat_error_index-25+knots		cf58d738eae
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	g537  gui_bech32_errpos						83275db302e
