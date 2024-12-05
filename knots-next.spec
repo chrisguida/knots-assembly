@@ -683,7 +683,7 @@ checkout v28.0
 	31121 guix_glibc_cet-28
 	# Needs review: 30685 hebasto/240820-control-flow
 	30708 rpc_getdescriptoractivity-28						last=37a5c5d8366 jamesob/2024-08-getdescriptoractivity
-	30713 rpc_scanblocks_status_results-28					last=39ee30c31f5 tdb3/relevant_blocks_in_scanblocks_status
+	30713 rpc_scanblocks_status_results-28					last=5b2d0216d87 tdb3/relevant_blocks_in_scanblocks_status
 	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	30793 rpc_getorphantxs-28+knots
