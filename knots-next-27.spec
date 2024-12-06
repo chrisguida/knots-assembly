@@ -957,8 +957,10 @@ checkout v27.1
 	18223 blockfilter_v0						9490b48a48c	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
-	19089 cli_getinfo_mwbalances				7c84b8de8eb	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+	19089 cli_getinfo_mwbalances-25				7c84b8de8eb	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+	(CHECK-LAST)	last=c4912dcf0f9 cli_getinfo_mwbalances-28+knots
 	19092 cli_getinfo_mw_total_balance-27+knots	b58c6254bc9	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+	(CHECK-LAST)	last=94d2266f013 cli_getinfo_mw_total_balance-28+knots
 	(CHECK-LAST)	last=71bfa1fb715 cli_getinfo_mw_total_balance-26
 	19117 rpc_getrpcwhitelist					19034491b1f
 		# NOTE: Was #18827 before any Knots merge
