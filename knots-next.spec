@@ -267,10 +267,11 @@ checkout v28.1
 	31275 fix_rpc_example_quoting_pr31275-24				last=1f3f5c049b4
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
 	31343 qa_dummy_proxy-21
-	Needs review? 31349 vasild/test_log_internet_traffic
+	31349 qafix_inet_access_pr31349-28+knots				last=bbfc58a0af8
+		# Left off CI regression test (needs work) and p2p_seednode test fix (not in 28.x)
 	# Maybe not relevant? 31346 Sjors/2024/11/init_m_tip_block
-	31374 furszy/2024_migration_watch-only_crash_fix
-	Review: 31376 darosior/2411_miner_never_timewarp
+	31374 fix_wallet_migrate_pr31374-27						last=cdd207c0e48 furszy/2024_migration_watch-only_crash_fix
+	31376 mining_curtime_avoid_timewarp-28					last=733fa0b0a14 darosior/2411_miner_never_timewarp
 	Review: 31378 furszy/2024_wallet_migration_multisig_crash
 	31383 maflcko/2411-test-mock
 	Review: 31384 ismaelsadeeq/11-2024-fix-duplicate-coinbase-reservation-bug
@@ -971,6 +972,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	# TODO: -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
 	TODO: allow txs from reorg'd-out blocks to bypass policy?
 	TODO: prioritise txs from reorg'd-out blocks?
+	TODO: some way to prioritise Lightning channel activity?
 # Non-upstreamed Knots compatibility:
 	-     compat_jsonrpc_weirdversions
 	29530 rpc_getpeerinfo_misbehaving_score-28	dbf55fb8c38	last=87efb6f0cfd
