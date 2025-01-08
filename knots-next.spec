@@ -32,7 +32,7 @@ checkout v28.1
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 	#28.xTODO# Triage: Revert #30487 ?
-	Minimised: 31408 maflcko/2412-test-log-err
+	31408 qafix_framework_pr31408-27
 # FIXES:
 	18818 guix_reltar_autogen_distclean			c94474f3235	last=b5a164d9155 fix_gitian_src_202004
 		#29.xTODO# Check GenerateBuildInfo.cmake ?

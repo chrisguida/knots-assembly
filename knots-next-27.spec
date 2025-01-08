@@ -42,7 +42,7 @@ checkout v27.1
 	#28.xTODO# Triage: Revert #30487 ?
 	30519 ci_tsan_pr30519-25					5b8466ae234  # ci: add _LIBCPP_REMOVE_TRANSITIVE_INCLUDES to TSAN (libc++) job
 	30552 qafix_msgtx_defarg-0.16				41dc1937283
-	Triage: Minimised: 31408 maflcko/2412-test-log-err
+	31408 qafix_framework_pr31408-27
 # FIXES:
 	18818 guix_reltar_autogen_distclean			c94474f3235	last=b5a164d9155 fix_gitian_src_202004
 	18902 fix_gitdir_again						9776ecce7e8
