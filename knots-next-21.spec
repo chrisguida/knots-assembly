@@ -283,6 +283,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	(CHECK-LAST)	last= subproc_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 		# NOTE: Workaround for boost bug included; see also #24523
+		FIXME: don't close dir handle while reading dir! (dbef8766084)
 	g379  qt_reset_bad_settingsjson-0.21		0952d0c615e
 	# FIXME: When upgrading any guix/gitian to GCC 9: Ensure #20005 "memcmp with constants that contain zero bytes are broken in GCC" gets addressed
 	22577 fix_race_pr22577-0.21.1				40a6192ef6c	last=05e84aa550c fix_race_pr22577-22
@@ -938,7 +939,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review? 30684 furszy/2024_init_negated_args_err
 	Triage: Maybe simple rewrite? 30697 ismaelsadeeq/08-2024-prevent-race-condition-in-wallet
 	Triage: 30794 -  # interpreter: use int32_t instead of int type for risczero compile
-	Triage as above: 31365 TheCharlatan/consensus_sighash_int_type
+		30794 SignatureHash_int32_hashtype						last=bc52cda1f3c
+			# +31365 TheCharlatan/consensus_sighash_int_type
 	Triage: Needs review: 30844 furszy/2024_rpc_wallet_sffo_duplicates
 	Triage: Needs review: 30866 achow101/multipath-spkm-fuzz-crash
 	Triage: Needs review? 30909 fjahr/2024-09-au-guess
@@ -958,6 +960,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		28.x backport in #30827
 	Triage: g836  fix_qt_opts_proxy_ipv6-24
 	Triage: Review: 31275 -  # doc: corrected lockunspent rpc quoting
+	31343 qa_dummy_proxy-21
 	Triage: 31349 vasild/test_log_internet_traffic
 	Triage: Maybe not relevant? 31346 Sjors/2024/11/init_m_tip_block
 	Triage: 31374 furszy/2024_migration_watch-only_crash_fix

@@ -104,6 +104,7 @@ checkout v27.1
 	(CHECK-LAST)	last= subproc_closefds
 		# NOTE: Need #ifdef BOOST_POSIX_API around includes because Win64 headers are b0rked
 		# NOTE: Currently uses ENABLE_EXTERNAL_SIGNER in place of USE_BOOST_PROCESS (not defined until #15421 merged)
+		FIXME: don't close dir handle while reading dir! (dbef8766084)
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				2721ee51431
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
@@ -333,7 +334,8 @@ checkout v27.1
 	# Needs work: 30679 tdb3/handle_invalid_rpcbind_port
 	# Needs review? 30684 furszy/2024_init_negated_args_err
 	Maybe simple rewrite? 30697 ismaelsadeeq/08-2024-prevent-race-condition-in-wallet
-	30794 -  # interpreter: use int32_t instead of int type for risczero compile
+	30794 SignatureHash_int32_hashtype						last=bc52cda1f3c
+		# +31365 TheCharlatan/consensus_sighash_int_type
 	31365 TheCharlatan/consensus_sighash_int_type
 	# Needs review: 30844 furszy/2024_rpc_wallet_sffo_duplicates
 	# Needs review: 30866 achow101/multipath-spkm-fuzz-crash
@@ -348,13 +350,14 @@ checkout v27.1
 	31124 disable_rand_perfmon-0.20
 	31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
 	31166 cleanse_DecodeExtKey-0.17
-	Needs work? 31212 hodlinator/2024/11/invalid_args
+	31212 hodlinator/2024/11/invalid_args
 		+#31433
 	g835  furszy-g/2024_gui_fix_wallet_close_crash
 		28.x backport in #30827
 	g836  fix_qt_opts_proxy_ipv6-24
-	Review: 31275 -  # doc: corrected lockunspent rpc quoting
+	31275 fix_rpc_example_quoting_pr31275-24				last=1f3f5c049b4
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
+	31343 qa_dummy_proxy-21
 	Triage: 31349 vasild/test_log_internet_traffic
 	# Maybe not relevant? 31346 Sjors/2024/11/init_m_tip_block
 	31374 furszy/2024_migration_watch-only_crash_fix

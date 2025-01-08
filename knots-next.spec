@@ -92,7 +92,6 @@ checkout v28.1
 	# Needs review: 22307 rebroad/DetectIngoredGetblocktxns
 	30756 subproc_closefds
 		# Replaces #22417 (Boost::Process variant)
-		FIXME: don't close dir handle while reading dir!
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				2721ee51431
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
@@ -247,11 +246,11 @@ checkout v28.1
 	# Needs (concept?) review? 30678 fjahr/2024-08-backup-best
 	# Needs work: 30679 tdb3/handle_invalid_rpcbind_port
 	# Needs review? 30684 furszy/2024_init_negated_args_err
-	30794 -													last=bc52cda1f3c  # interpreter: use int32_t instead of int type for risczero compile
-	31365 TheCharlatan/consensus_sighash_int_type
+	30794 SignatureHash_int32_hashtype						last=bc52cda1f3c
+		# +31365 TheCharlatan/consensus_sighash_int_type
 	# Needs review: 30844 furszy/2024_rpc_wallet_sffo_duplicates
 	# Needs review: 30866 achow101/multipath-spkm-fuzz-crash
-	30909 fix_GVP_assumeutxo_pr30909-28						last=da299bea49c fjahr/2024-09-au-guess
+	30909 fix_GVP_assumeutxo_pr30909-28						last=9d2d9f7ce29 fjahr/2024-09-au-guess
 		# NOTE: Just the bugfix for now
 	30929 log_enforce_newline-28							last=fa2b7d8d6b3 maflcko/2409-log-nl
 		# NOTE: Minimal, only to ensure new code backports correctly
@@ -262,12 +261,12 @@ checkout v28.1
 	31097 scripterr_prefer_consensus-28
 	31124 disable_rand_perfmon-0.20
 	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
-	# Needs work? 31212 hodlinator/2024/11/invalid_args
-		+#31433
+	31212 improve_args_pr31212-28
+		# +#31433
 	g836  fix_qt_opts_proxy_ipv6-24
-	Review: 31275 -  # doc: corrected lockunspent rpc quoting
+	31275 fix_rpc_example_quoting_pr31275-24				last=1f3f5c049b4
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
-	31343 theStack/202411-test-avoid_internet_connection_in_rpc_net
+	31343 qa_dummy_proxy-21
 	Needs review? 31349 vasild/test_log_internet_traffic
 	# Maybe not relevant? 31346 Sjors/2024/11/init_m_tip_block
 	31374 furszy/2024_migration_watch-only_crash_fix
