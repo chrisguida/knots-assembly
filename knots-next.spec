@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #31620 / gui #850
 
-checkout v28.1rc1
+checkout v28.1
 @28.x-syslibs
 # BUILD BUGS:
 	5872 subdir_incl_compat						f41289db2b9
@@ -264,7 +264,6 @@ checkout v28.1rc1
 	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
 	# Needs work? 31212 hodlinator/2024/11/invalid_args
 		+#31433
-	#28.xTODO# Needs review? 31223 mzumsande/202410_portplus1
 	g836  fix_qt_opts_proxy_ipv6-24
 	Review: 31275 -  # doc: corrected lockunspent rpc quoting
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
@@ -280,7 +279,7 @@ checkout v28.1rc1
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
 	# Needs review: 31405 mzumsande/202411_stricter_invalidblock_handling
 	Partial: 31416 maflcko/2412-doc-rpc
-	31419 0xB10C/2024-12-fix-MIN-macro-redefined
+	MERGED: 31419 0xB10C/2024-12-fix-MIN-macro-redefined
 		27.x backport in #31422
 		FIXME: also contrib/tracing/log_raw_p2p_msgs.py ?
 	Needs review: 31423 furszy/2024_migration_watch-only_migration
@@ -296,8 +295,6 @@ checkout v28.1rc1
 	Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	Triage: 31529 fanquake/glibc_2_31_latest
 	Triage: 31556 mzumsande/202412_assumeutxo_wallet
-	31563 maflcko/2412-generatetoaddress-missing-lock
-		28.x backport in #31594
 	Needs review: 31590 achow101/fix-constpubkey-xonly-getprivkey
 	# Needs work: 31603 brunoerg/2025-01-descriptor-pk
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
