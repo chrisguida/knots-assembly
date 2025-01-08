@@ -1,8 +1,8 @@
-timestamp 2024-11-09 18:54:46
+timestamp 2025-01-08 13:47:32
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #31264 / gui #841 for fixes
+#.. checked up to PR #31620 / gui #850 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -106,6 +106,7 @@ TM	22137 fix_fuzz_system_pr22137-0.21			b774212bc52
 	Triage: 29832 fanquake/revert_29788
 	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
 	Triage: 30552 mzumsande/202407_test_defaultarg
+	Triage: Minimised: 31408 maflcko/2412-test-log-err
 # FIXES:
 	# Only needed for focial gitian?? 22318 hebasto/210623-random								last=35aab4f0c0b aka depends_no_getrandom
 	18818 fix_gitian_src_202004-21				01cd0f44b87	last=345f0b2283e guix_reltar_autogen_distclean
@@ -937,6 +938,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review? 30684 furszy/2024_init_negated_args_err
 	Triage: Maybe simple rewrite? 30697 ismaelsadeeq/08-2024-prevent-race-condition-in-wallet
 	Triage: 30794 -  # interpreter: use int32_t instead of int type for risczero compile
+	Triage as above: 31365 TheCharlatan/consensus_sighash_int_type
 	Triage: Needs review: 30844 furszy/2024_rpc_wallet_sffo_duplicates
 	Triage: Needs review: 30866 achow101/multipath-spkm-fuzz-crash
 	Triage: Needs review? 30909 fjahr/2024-09-au-guess
@@ -951,6 +953,40 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
 	Triage: 31166 cleanse_DecodeExtKey-0.17
 	Triage: Needs work? 31212 hodlinator/2024/11/invalid_args
+		+#31212
+	Triage: g835  furszy-g/2024_gui_fix_wallet_close_crash
+		28.x backport in #30827
+	Triage: g836  fix_qt_opts_proxy_ipv6-24
+	Triage: Review: 31275 -  # doc: corrected lockunspent rpc quoting
+	Triage: 31349 vasild/test_log_internet_traffic
+	Triage: Maybe not relevant? 31346 Sjors/2024/11/init_m_tip_block
+	Triage: 31374 furszy/2024_migration_watch-only_crash_fix
+	Triage: Review: 31376 darosior/2411_miner_never_timewarp
+	Triage: Review: 31378 furszy/2024_wallet_migration_multisig_crash
+	Triage: Review: 31384 ismaelsadeeq/11-2024-fix-duplicate-coinbase-reservation-bug
+	Without C++20: Minimised: 31391 maflcko/2411-less-boost-time
+	Triage: Needs review: 31404 furszy/2024_descriptors_infer_multisig
+	Triage: Needs review: 31405 mzumsande/202411_stricter_invalidblock_handling
+	Triage: Partial: 31416 maflcko/2412-doc-rpc
+	Triage: Needs review: 31439 mzumsande/202412_reindex_interrupt
+	Triage: Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
+	31453 willcl-ark/macos-exfat
+		TODO: Check before leaving GUI firstrun screen
+	Triage: 31478 -  # docs: remove repetitive words
+	Triage: Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
+	Triage: 31493 maflcko/2412-gcc-workaround
+	Triage: Needs review: 31495 achow101/migrate-corner-case-scripts
+	Triage: Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
+	Triage: 31529 fanquake/glibc_2_31_latest
+	Triage: 31563 maflcko/2412-generatetoaddress-missing-lock
+		28.x backport in #31594
+	Triage: Needs review: 31590 achow101/fix-constpubkey-xonly-getprivkey
+	Triage: Needs work: 31603 brunoerg/2025-01-descriptor-pk
+	Triage: Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
+	Triage: Needs work: 31615 -  # Ensure assumevalid is always used during reindex
+	Triage: Test: 31617 hebasto/250107-db-tests
+	Triage: g850  achow101-g/gui-psbt-sighash-default
+	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
 	TODO: Move deleted gitian docs back into this repo
@@ -964,6 +1000,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	-     miniupnpc_2.0.20180503-21
 		TODO: bump
 	Add in: 30774 fanquake/depends_qt_5_15_15
+		NOTE: 5.15.16 Opensource released: https://lists.qt-project.org/pipermail/announce/2024-November/000526.html
 	-     qt_5.9.9-21
 		TODO: bump
 		FIXME: 404 Fetching qtwinextras-opensource-src-5.9.8.tar.xz from https://download.qt.io/archive/qt/5.9/5.9.8/submodules
@@ -1385,6 +1422,9 @@ m	21359 rpc_fundraw_includeunsafe-0.21+knots	78c5639bd85
 	Triage: g825  theStack-g/gui_show_maxmempoolsize
 	Triage: Needs review: 30433 fanquake/standard_branch_fedora
 	Triage: 30515 -  # rpc: add utxo's blockhash and number of confirmations to scantxoutset output
+	Triage: Review: 31407 achow101/macos-notarization
+	Triage: 31531 -  # rpc: Add signet_challenge field to getblockchaininfo and getmininginfo
+	Triage: 31534 l0rinc/l0rinc/warn-big-flush
 
 	#21.xTODO# Decide if above minor features need to wait for 21.3, or can go in 21.2.1
 # Non-progress functionality:
@@ -1729,4 +1769,5 @@ TODO: git grep noban_tx_relay (needs #27114; refactor to avoid is easy with extr
 	24797 -  # test: compare /chaininfo response with getblockchaininfo RPC
 	25733 fanquake/tidy_enable_bugprone_use_after_move
 	26519 -  # test: Add getpeerinfo test for missing version message
+	Triage: 31410 hebasto/241203-multiwallet
 # NOTE: use git diff --minimal for patches!
