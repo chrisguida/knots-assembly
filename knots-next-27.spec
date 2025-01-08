@@ -363,7 +363,6 @@ checkout v27.1
 	31374 fix_wallet_migrate_pr31374-27						last=cdd207c0e48 furszy/2024_migration_watch-only_crash_fix
 	Review: 31376 darosior/2411_miner_never_timewarp
 	Review: 31378 furszy/2024_wallet_migration_multisig_crash
-	31383 maflcko/2411-test-mock
 	Review: 31384 ismaelsadeeq/11-2024-fix-duplicate-coinbase-reservation-bug
 	Minimised: 31391 maflcko/2411-less-boost-time
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
