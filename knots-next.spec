@@ -274,18 +274,16 @@ checkout v28.1
 	31376 mining_curtime_avoid_timewarp-28					last=733fa0b0a14 darosior/2411_miner_never_timewarp
 	# Needs work: 31378 furszy/2024_wallet_migration_multisig_crash
 	31383 qafix_ibd_stalling_pr31383-28
-	Review: 31384 ismaelsadeeq/11-2024-fix-duplicate-coinbase-reservation-bug
-	Minimised: 31391 maflcko/2411-less-boost-time
+	# Needs work: 31384 ismaelsadeeq/11-2024-fix-duplicate-coinbase-reservation-bug
+	31391 custom_iso8601datetime-28+knots
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
 	# Needs review: 31405 mzumsande/202411_stricter_invalidblock_handling
-	Partial: 31416 maflcko/2412-doc-rpc
-	MERGED: 31419 0xB10C/2024-12-fix-MIN-macro-redefined
-		27.x backport in #31422
-		FIXME: also contrib/tracing/log_raw_p2p_msgs.py ?
-	Needs review: 31423 furszy/2024_migration_watch-only_migration
-	Needs review: 31439 mzumsande/202412_reindex_interrupt
+	31416 docfix_rpc_send_inputsobj-23						last=fad83e759a4 maflcko/2412-doc-rpc
+	# Needs review: 31623 tracing_MIN_macro_rename
+	# Needs review: 31423 furszy/2024_migration_watch-only_migration
+	# Needs review: 31439 mzumsande/202412_reindex_interrupt
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
-	Needs review? 31451 furszy/2024_migration_cleanup_after_error
+	31451 fix_wallet_migrate_wo_bdb-27						last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
 	31453 willcl-ark/macos-exfat
 		TODO: Check before leaving GUI firstrun screen
 	31478 -  # docs: remove repetitive words

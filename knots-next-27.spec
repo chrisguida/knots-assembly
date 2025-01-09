@@ -374,7 +374,7 @@ checkout v27.1
 	Needs review: 31423 furszy/2024_migration_watch-only_migration
 	Triage: Needs review: 31439 mzumsande/202412_reindex_interrupt
 	Triage: Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
-	Triage: Needs review? 31451 furszy/2024_migration_cleanup_after_error
+	Triage: 31451 fix_wallet_migrate_wo_bdb-27						last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
 	31453 willcl-ark/macos-exfat
 		TODO: Check before leaving GUI firstrun screen
 	31478 -  # docs: remove repetitive words
