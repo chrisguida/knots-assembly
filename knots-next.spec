@@ -291,12 +291,13 @@ checkout v28.1
 	# Needs review: 31495 achow101/migrate-corner-case-scripts
 	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	31529 upd_glibc_mte_strncmp-28							last=b8710201fbd fanquake/glibc_2_31_latest
-	Triage: 31556 mzumsande/202412_assumeutxo_wallet
-	Needs review: 31590 achow101/fix-constpubkey-xonly-getprivkey
+	# Complex Triage: 31556 mzumsande/202412_assumeutxo_wallet
+	# Needs review & backport work: 31590 achow101/fix-constpubkey-xonly-getprivkey
+		# Attempted backport in 74c7aa7133b
 	# Needs work: 31603 brunoerg/2025-01-descriptor-pk
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
-	Test: 31617 hebasto/250107-db-tests
+	31617 qafix_db_tests_wo_bdb-24
 	g850  achow101-g/gui-psbt-sighash-default
 	-     fix_rpccookieperms_early
 	-     qt_intro_nojumpy

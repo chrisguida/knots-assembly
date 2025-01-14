@@ -388,7 +388,7 @@ checkout v27.1
 	# Needs work: 31603 brunoerg/2025-01-descriptor-pk
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	Triage: Needs work: 31615 -  # Ensure assumevalid is always used during reindex
-	Test: 31617 hebasto/250107-db-tests
+	31617 qafix_db_tests_wo_bdb-24
 	g850  achow101-g/gui-psbt-sighash-default
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
