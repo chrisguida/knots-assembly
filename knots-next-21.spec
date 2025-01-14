@@ -991,7 +991,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 31622 achow101/psbt-sighashes
 	Triage: 31623 tracing_MIN_macro_rename
 	Triage: Approach NACK? 31629 mzumsande/202501_rescan_bestblock
-	Triage: Partial? 31655 maflcko/2501-less-ub
+	31655 fix_sha3_ub_pr31655-21
+		# Just the fix
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)

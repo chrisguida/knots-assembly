@@ -297,13 +297,14 @@ checkout v28.1
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
 	31617 qafix_db_tests_wo_bdb-24
-	g850  achow101-g/gui-psbt-sighash-default
+	g850  qt_psbt_sighash_default-28						last=3e97ff9c5ea achow101-g/gui-psbt-sighash-default
 	# Needs review: 31622 achow101/psbt-sighashes
 	31623 tracing_MIN_macro_rename
 	# Triggers rebuilds: 31627 hebasto/250109-gen_id
 	# Approach NACK? 31629 mzumsande/202501_rescan_bestblock
 	#29.xTODO# Triage: 28521 hodlinator/2024/12/disconnecting
-	Partial? 31655 maflcko/2501-less-ub
+	31655 fix_sha3_ub_pr31655-21
+		# Just the fix
 	-     fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)

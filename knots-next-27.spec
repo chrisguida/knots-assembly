@@ -395,7 +395,8 @@ checkout v27.1
 	31623 tracing_MIN_macro_rename
 	# Triggers rebuilds: 31627 hebasto/250109-gen_id
 	# Approach NACK? 31629 mzumsande/202501_rescan_bestblock
-	Partial? 31655 maflcko/2501-less-ub
+	31655 fix_sha3_ub_pr31655-21
+		# Just the fix
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
