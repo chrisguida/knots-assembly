@@ -358,8 +358,8 @@ checkout v27.1
 	31275 fix_rpc_example_quoting_pr31275-24				last=1f3f5c049b4
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
 	31343 qa_dummy_proxy-21
+	Triage: 31646 vasild/test_avoid_internet_traffic
 	Triage: 31349 vasild/test_log_internet_traffic
-		TODO: Pivot to #31646 vasild/test_avoid_internet_traffic
 	# Maybe not relevant? 31346 Sjors/2024/11/init_m_tip_block
 	31374 fix_wallet_migrate_pr31374-27						last=cdd207c0e48 furszy/2024_migration_watch-only_crash_fix
 	Review: 31376 darosior/2411_miner_never_timewarp

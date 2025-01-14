@@ -961,8 +961,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: g836  fix_qt_opts_proxy_ipv6-24
 	Triage: Review: 31275 -  # doc: corrected lockunspent rpc quoting
 	31343 qa_dummy_proxy-21
+	Triage: 31646 vasild/test_avoid_internet_traffic
 	Triage: 31349 vasild/test_log_internet_traffic
-		TODO: Pivot to #31646 vasild/test_avoid_internet_traffic
 	Triage: Maybe not relevant? 31346 Sjors/2024/11/init_m_tip_block
 	Triage: 31374 furszy/2024_migration_watch-only_crash_fix
 	Triage: Review: 31376 darosior/2411_miner_never_timewarp
