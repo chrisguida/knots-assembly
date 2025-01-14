@@ -289,8 +289,8 @@ checkout v28.1
 		# Added warning before leaving GUI firstrun screen
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
 	# Needs review: 31495 achow101/migrate-corner-case-scripts
-	Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
-	Triage: 31529 fanquake/glibc_2_31_latest
+	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
+	31529 upd_glibc_mte_strncmp-28							last=b8710201fbd fanquake/glibc_2_31_latest
 	Triage: 31556 mzumsande/202412_assumeutxo_wallet
 	Needs review: 31590 achow101/fix-constpubkey-xonly-getprivkey
 	# Needs work: 31603 brunoerg/2025-01-descriptor-pk
