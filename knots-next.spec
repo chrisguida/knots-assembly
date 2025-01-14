@@ -1,7 +1,7 @@
-timestamp 2025-01-08 13:47:32
+timestamp 2025-01-14 22:41:40
 lastapply no-merge
 
-#.. checked up to PR #31620 / gui #850
+#.. checked up to PR #31656 / gui #850
 
 checkout v28.1
 @28.x-syslibs
@@ -268,6 +268,7 @@ checkout v28.1
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
 	31343 qa_dummy_proxy-21
 	31349 qafix_inet_access_pr31349-28+knots				last=bbfc58a0af8
+		TODO: Pivot to #31646 vasild/test_avoid_internet_traffic
 		# Left off CI regression test (needs work) and p2p_seednode test fix (not in 28.x)
 	# Maybe not relevant? 31346 Sjors/2024/11/init_m_tip_block
 	31374 fix_wallet_migrate_pr31374-27						last=cdd207c0e48 furszy/2024_migration_watch-only_crash_fix
@@ -279,7 +280,6 @@ checkout v28.1
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
 	# Needs review: 31405 mzumsande/202411_stricter_invalidblock_handling
 	31416 docfix_rpc_send_inputsobj-23						last=fad83e759a4 maflcko/2412-doc-rpc
-	# Needs review: 31623 tracing_MIN_macro_rename
 	# Needs review: 31423 furszy/2024_migration_watch-only_migration
 	# Needs review: 31439 mzumsande/202412_reindex_interrupt
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
@@ -299,6 +299,12 @@ checkout v28.1
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
 	31617 qafix_db_tests_wo_bdb-24
 	g850  achow101-g/gui-psbt-sighash-default
+	# Needs review: 31622 achow101/psbt-sighashes
+	31623 tracing_MIN_macro_rename
+	# Triggers rebuilds: 31627 hebasto/250109-gen_id
+	# Approach NACK? 31629 mzumsande/202501_rescan_bestblock
+	#29.xTODO# Triage: 28521 hodlinator/2024/12/disconnecting
+	Partial? 31655 maflcko/2501-less-ub
 	-     fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
@@ -381,6 +387,8 @@ checkout v28.1
 	31364 -  # Fix remaining clang-tidy performance-unnecessary-copy-initialization errors
 	# Needs review: 31490 l0rinc/l0rinc/undo
 	# Needs review: 31539 l0rinc/l0rinc/buffered-block-read-write OR 31551 l0rinc/l0rinc/bulk-block-read-write
+	31645 l0rinc/l0rinc/utxo-dump-batching
+		# TODO: Test even higher or incrementing-as-we-flush
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -487,6 +495,7 @@ checkout v28.1
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
 	19873 mempressure							46c62580a75
+		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
 	# Needs review/testing: - maxmem_coins_cache
 		# TODO: Some way to override... see #26471 discussion
 	# Needs work: g86   hebasto-g/200902-tor
@@ -1006,6 +1015,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	-     bloom_default-27						d67b05096ff
 	-     wallet_avoid_newerchange				13f9c5d6772
 	-     enforce_checkpoints					d3abd2373ec
+		#29.xTODO# Revert #31649
 	n/a   checkpoint_update-27					1c1a32354d5
 		#28.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	10282 timebomb_knots						6deb5987eb8
@@ -1054,7 +1064,7 @@ TODO: verify src tarball includes rendered_icons incl nsis-header and bitcoin_te
 TODO: Ensure rest.cpp includes <string> or no longer needs it (removed when #26415 merged)
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250108)			3164bc9d5cb
+	n/a  (bump_version=Knots:20250114)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits

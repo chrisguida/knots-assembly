@@ -1,7 +1,7 @@
-timestamp 2025-01-08 13:47:32
+timestamp 2025-01-14 22:41:40
 #lastapply no-merge
 
-#.. checked up to PR #31620 / gui #850
+#.. checked up to PR #31656 / gui #850
 
 checkout v27.1
 @27.x-syslibs
@@ -359,6 +359,7 @@ checkout v27.1
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
 	31343 qa_dummy_proxy-21
 	Triage: 31349 vasild/test_log_internet_traffic
+		TODO: Pivot to #31646 vasild/test_avoid_internet_traffic
 	# Maybe not relevant? 31346 Sjors/2024/11/init_m_tip_block
 	31374 fix_wallet_migrate_pr31374-27						last=cdd207c0e48 furszy/2024_migration_watch-only_crash_fix
 	Review: 31376 darosior/2411_miner_never_timewarp
@@ -390,6 +391,11 @@ checkout v27.1
 	Triage: Needs work: 31615 -  # Ensure assumevalid is always used during reindex
 	31617 qafix_db_tests_wo_bdb-24
 	g850  achow101-g/gui-psbt-sighash-default
+	# Needs review: 31622 achow101/psbt-sighashes
+	31623 tracing_MIN_macro_rename
+	# Triggers rebuilds: 31627 hebasto/250109-gen_id
+	# Approach NACK? 31629 mzumsande/202501_rescan_bestblock
+	Partial? 31655 maflcko/2501-less-ub
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
@@ -1217,7 +1223,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250108)			3164bc9d5cb
+	n/a  (bump_version=Knots:20250114)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits

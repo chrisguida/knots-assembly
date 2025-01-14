@@ -1,8 +1,8 @@
-timestamp 2025-01-08 13:47:32
+timestamp 2025-01-14 22:41:40
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #31620 / gui #850 for fixes
+#.. checked up to PR #31656 / gui #850 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -962,6 +962,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Review: 31275 -  # doc: corrected lockunspent rpc quoting
 	31343 qa_dummy_proxy-21
 	Triage: 31349 vasild/test_log_internet_traffic
+		TODO: Pivot to #31646 vasild/test_avoid_internet_traffic
 	Triage: Maybe not relevant? 31346 Sjors/2024/11/init_m_tip_block
 	Triage: 31374 furszy/2024_migration_watch-only_crash_fix
 	Triage: Review: 31376 darosior/2411_miner_never_timewarp
@@ -987,6 +988,10 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs work: 31615 -  # Ensure assumevalid is always used during reindex
 	Triage: Test: 31617 hebasto/250107-db-tests
 	Triage: g850  achow101-g/gui-psbt-sighash-default
+	Triage: Needs review: 31622 achow101/psbt-sighashes
+	Triage: 31623 tracing_MIN_macro_rename
+	Triage: Approach NACK? 31629 mzumsande/202501_rescan_bestblock
+	Triage: Partial? 31655 maflcko/2501-less-ub
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
