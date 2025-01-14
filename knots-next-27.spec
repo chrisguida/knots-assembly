@@ -377,9 +377,7 @@ checkout v27.1
 	Triage: 31451 fix_wallet_migrate_wo_bdb-27						last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
 	31453 willcl-ark/macos-exfat
 		TODO: Check before leaving GUI firstrun screen
-	31478 -  # docs: remove repetitive words
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
-	31493 maflcko/2412-gcc-workaround
 	# Needs review: 31495 achow101/migrate-corner-case-scripts
 	Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	Triage: 31529 fanquake/glibc_2_31_latest
@@ -866,6 +864,7 @@ checkout v27.1
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
 			# (Silently conflicts with f33cd8869dd (#27114): fix in 3a4ef30d880)
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
+		# +31478
 	29585 manpage_see_also-23+knots				acb79094058	last=7c3ac598dd9 fanquake/list_other_pages_in_man
 	(CHECK-LAST)	last=902b4a8edc3 manpages_seealso_notself
 		# Added fix so manpages don't "see also" themselves (diff-minimised from what posted to the PR)

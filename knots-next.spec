@@ -287,9 +287,7 @@ checkout v28.1
 	31453 macos_exfat_warning-28+knots						last=ee05e730466 willcl-ark/macos-exfat
 		# Dropped doc change (links to Core github)
 		# Added warning before leaving GUI firstrun screen
-	31478 -  # docs: remove repetitive words
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
-	31493 maflcko/2412-gcc-workaround
 	# Needs review: 31495 achow101/migrate-corner-case-scripts
 	Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	Triage: 31529 fanquake/glibc_2_31_latest
@@ -702,6 +700,7 @@ checkout v28.1
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
 	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
+		# +31478
 	-     manpages_seealso_notself
 		# Originally bundled into #29585
 	# Needs review & wallet compat check: 29675 achow101/musig2

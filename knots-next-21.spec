@@ -975,9 +975,7 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	31453 willcl-ark/macos-exfat
 		TODO: Check before leaving GUI firstrun screen
-	Triage: 31478 -  # docs: remove repetitive words
 	Triage: Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
-	Triage: 31493 maflcko/2412-gcc-workaround
 	Triage: Needs review: 31495 achow101/migrate-corner-case-scripts
 	Triage: Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	Triage: 31529 fanquake/glibc_2_31_latest
