@@ -284,8 +284,9 @@ checkout v28.1
 	# Needs review: 31439 mzumsande/202412_reindex_interrupt
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	31451 fix_wallet_migrate_wo_bdb-27						last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
-	31453 willcl-ark/macos-exfat
-		TODO: Check before leaving GUI firstrun screen
+	31453 macos_exfat_warning-28+knots						last=ee05e730466 willcl-ark/macos-exfat
+		# Dropped doc change (links to Core github)
+		# Added warning before leaving GUI firstrun screen
 	31478 -  # docs: remove repetitive words
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
 	31493 maflcko/2412-gcc-workaround
@@ -300,6 +301,7 @@ checkout v28.1
 	Test: 31617 hebasto/250107-db-tests
 	g850  achow101-g/gui-psbt-sighash-default
 	-     fix_rpccookieperms_early
+	-     qt_intro_nojumpy
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
