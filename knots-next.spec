@@ -509,7 +509,7 @@ checkout v28.1
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-28+knots				5df7a9c1191	last=1002e2d0d7f jonatack/setfeerate
-	OR (evaluate): 31278 -  # wallet, rpc: Settxfeerate
+	# OR (evaluate): 31278 -  # wallet, rpc: Settxfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 		# TODO? Reduce internal changes and move to Knots compat??
