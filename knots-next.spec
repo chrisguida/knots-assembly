@@ -757,9 +757,10 @@ checkout v28.1
 		# Left out output renames
 		# Left out Windows changes
 	31531 rpc_signet_info-28
-	31534 l0rinc/l0rinc/warn-big-flush
-	Part of? 31560 theStack/202412-dumptxoutset-allow_write_to_named_pipe
-	Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
+	31534 log_big_utxo_flush-26
+	31560 rpc_dumptxoutset_fifo-23							last=59df8480be7 theStack/202412-dumptxoutset-allow_write_to_named_pipe
+		# Only the FIFO capability, left out the bundled scripts
+	# Too convoluted/pointless? Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
