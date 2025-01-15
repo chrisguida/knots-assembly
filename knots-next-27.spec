@@ -502,6 +502,8 @@ checkout v27.1
 	31364 -  # Fix remaining clang-tidy performance-unnecessary-copy-initialization errors
 	# Needs review: 31490 l0rinc/l0rinc/undo
 	# Needs review: 31539 l0rinc/l0rinc/buffered-block-read-write OR 31551 l0rinc/l0rinc/bulk-block-read-write
+	31645 opti_dbbatchsize_64-0.15							last=d249a353be5 l0rinc/l0rinc/utxo-dump-batching
+		# TODO: Test even higher or incrementing-as-we-flush
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork

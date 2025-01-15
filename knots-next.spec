@@ -383,11 +383,11 @@ checkout v28.1
 	# Needs diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
-	31179 opti_rpc_uv_reserve-25							last=28e3392d113 ismaelsadeeq/10-2024-add-reserve-to-univalue
-	31364 -  # Fix remaining clang-tidy performance-unnecessary-copy-initialization errors
+	31179 opti_rpc_uv_reserve-25							last=ea62aaed3b1 ismaelsadeeq/10-2024-add-reserve-to-univalue
+	31364 opti_no_copy_pr31364-28
 	# Needs review: 31490 l0rinc/l0rinc/undo
 	# Needs review: 31539 l0rinc/l0rinc/buffered-block-read-write OR 31551 l0rinc/l0rinc/bulk-block-read-write
-	31645 l0rinc/l0rinc/utxo-dump-batching
+	31645 opti_dbbatchsize_64-0.15							last=d249a353be5 l0rinc/l0rinc/utxo-dump-batching
 		# TODO: Test even higher or incrementing-as-we-flush
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
@@ -509,7 +509,7 @@ checkout v28.1
 	# Needs review: 20331 -  # allow -loadblock blocks to be unsorted
 	# Needs work/concept/review: 20361 -  # load wallets from entropy (as BIP39)
 	20391 rpc_setfeerate-28+knots				5df7a9c1191	last=1002e2d0d7f jonatack/setfeerate
-	OR (evaluate): 20391 -  # wallet, rpc: Settxfeerate
+	OR (evaluate): 31278 -  # wallet, rpc: Settxfeerate
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 		# TODO? Reduce internal changes and move to Knots compat??
