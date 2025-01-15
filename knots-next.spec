@@ -741,7 +741,7 @@ checkout v28.1
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	30793 rpc_getorphantxs-28+knots
 		#+31040+31043
-	30860 bashcomp_bcli_generate-28							last=7c8b021fee3 BrandonOdiwuor/bash-completion
+	30860 bashcomp_bcli_generate-28							last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots				last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
@@ -753,13 +753,17 @@ checkout v28.1
 		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
 	# Needs concept ACK: 31397 glozow/2024-11-multi-orphan
-	Review: 31407 achow101/macos-notarization
-	31531 -  # rpc: Add signet_challenge field to getblockchaininfo and getmininginfo
+	31407 macos_notarization-28								last=ba67aa681e9 achow101/macos-notarization
+		# Left out output renames
+		# Left out Windows changes
+	31531 rpc_signet_info-28
 	31534 l0rinc/l0rinc/warn-big-flush
 	Part of? 31560 theStack/202412-dumptxoutset-allow_write_to_named_pipe
 	Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
+	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
+	# TODO: higher prune setting during IBD?
 	
 	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
