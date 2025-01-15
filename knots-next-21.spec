@@ -1583,7 +1583,8 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	19117 rpc_getrpcwhitelist-21				f005cd98854	last=d87cd4f47ed rpc_getrpcwhitelist
 	(CHECK-LAST)	last=3a5869713b4 rpc_getrpcwhitelist-22
 		# NOTE: Was #18827 before any Knots merge
-	-     getrpcwhitelist_wallets-0.21+knots	e2bae466a89	last=e58e7666948 getrpcwhitelist_wallets-27+knots
+	-     getrpcwhitelist_wallets-0.21+knots	e2bae466a89	last=e58e7666948 getrpcwhitelist_wallets-28+knots
+	(CHECK-LAST)	last=e58e7666948 getrpcwhitelist_wallets-27+knots
 	(CHECK-LAST)	last=e58e7666948 getrpcwhitelist_wallets-25+knots
 	(CHECK-LAST)	last=1e1d1e2e62c getrpcwhitelist_wallets-22+knots
 	(CHECK-LAST)	last=fad1716d500 getrpcwhitelist_wallets-23+knots

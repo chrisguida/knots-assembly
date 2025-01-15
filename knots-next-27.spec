@@ -1030,6 +1030,7 @@ checkout v27.1
 	19117 rpc_getrpcwhitelist					19034491b1f
 		# NOTE: Was #18827 before any Knots merge
 	-     getrpcwhitelist_wallets-27+knots		56c7ddf0543
+	(CHECK-LAST)	last=8de2839b5e5 getrpcwhitelist_wallets-28+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	-     wallettool_dump_warning-27+knots		8a9a3fba770
