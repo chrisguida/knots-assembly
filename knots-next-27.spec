@@ -766,6 +766,7 @@ checkout v27.1
 	# Needs review (or leave external?): 26052 -  # contrib: Add script to colorize logs
 	28167 rpccookieperms-27+knots				c7b352f872e	last=73f0a6cbd0b willcl-ark/2023-07-rpccookie-perms
 	(CHECK-LAST)	last= fix_rpccookieperms_early
+	(CHECK-LAST)	last= fix_rpccookieperms_early-28+knots
 	(CHECK-LAST)	last= rpccookieperms_log_improvements-28+k
 	(CHECK-LAST)	last= rpccookieperms_octal_compat
 		# Held back most of 9617e42a7b1..73f0a6cbd0b (func renames, refactoring; default to no-change/rely on umask)

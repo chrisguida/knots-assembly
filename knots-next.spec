@@ -305,7 +305,7 @@ checkout v28.1
 	#29.xTODO# Triage: 28521 hodlinator/2024/12/disconnecting
 	31655 fix_sha3_ub_pr31655-21
 		# Just the fix
-	-     fix_rpccookieperms_early
+	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
@@ -323,8 +323,8 @@ checkout v28.1
 	#28.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@28.x-knots-lts-deps
-	# Needs legal approval: 30774 depends_qt_update-28								last=007c8ea6f39 fanquake/depends_qt_5_15_15
-		NOTE: 5.15.16 Opensource released: https://lists.qt-project.org/pipermail/announce/2024-November/000526.html
+	-     upd_qt5-28
+		# Opensource released: https://lists.qt-project.org/pipermail/announce/2024-November/000526.html
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 	# Needs review: 30301 theuni/miniupnp-228-bump
@@ -869,7 +869,7 @@ checkout v28.1
 	-     walletnotify_w_win-27+knots			da83b15cf1c	# Latest code now
 	14137 win_taskbar_progress-27.1+knots		1b8c3e5b8e4	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
-		FIXME: Qt 5.15.15 bump
+		FIXME: Qt 5.15.16 bump
 	-     restore_blockmaxsize					eb03b17cdaf
 	7107  qtnetworkport-27+knots				6987290598f	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force-27+knots				af9a606041c last=2627c0937f8 sendraw_force
