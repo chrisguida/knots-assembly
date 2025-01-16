@@ -854,15 +854,14 @@ checkout v28.1
 	-     getrpcwhitelist_wallets-28+knots		56c7ddf0543
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
-	-     wallettool_dump_warning-27+knots		8a9a3fba770
+	-     wallettool_dump_warning-28+knots		8a9a3fba770
 	# Needs work: 22708 hebasto:210815-wayland
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	MERGED: Needs concept: 29523 -  # Wallet: Add max_tx_weight to transaction funding options (take 2)
-		# WAS (never in Knots): #29264 instagibbs/2024-01-max-tx-weight
-	Hidden-only? 30951 stratospher/v2-only-option
+	30951 v2onlyclearnet-28+knots							last=b434583fbbd
+	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)

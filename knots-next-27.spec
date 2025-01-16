@@ -1033,7 +1033,7 @@ checkout v27.1
 	(CHECK-LAST)	last=8de2839b5e5 getrpcwhitelist_wallets-28+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
-	-     wallettool_dump_warning-27+knots		8a9a3fba770
+	-     wallettool_dump_warning-27+knots		8a9a3fba770	last=da983d89ac4 wallettool_dump_warning-28+knots
 	# Needs work: 22708 hebasto:210815-wayland
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
