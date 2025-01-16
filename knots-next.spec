@@ -221,7 +221,7 @@ checkout v28.1
 	-     fix_rpc_warnings_all-28				11d38164bdf
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
 	# Needs review: 29913 furszy/2024_fix_reconsiderblock_bestheader
-	g815  fix_qt_privacy_before_open-23			1f4dee95456	last=260d6eb9272
+	g815  fix_qt_privacy_before_open-23			1f4dee95456	last=0dc337f73d0
 		# Rewrote myself due to overcomplication and race bug in PR
 	# Not worth it? 29963 hebasto/240425-guess-cc
 	# Needs review: 30065 sr-gi/2024-05-fdcount
@@ -387,7 +387,7 @@ checkout v28.1
 	31364 opti_no_copy_pr31364-28
 	# Needs review: 31490 l0rinc/l0rinc/undo
 	# Needs review: 31539 l0rinc/l0rinc/buffered-block-read-write OR 31551 l0rinc/l0rinc/bulk-block-read-write
-	31645 opti_dbbatchsize_64-0.15							last=d249a353be5 l0rinc/l0rinc/utxo-dump-batching
+	31645 opti_dbbatchsize_64-0.15							last=868413340f8 l0rinc/l0rinc/utxo-dump-batching
 		# TODO: Test even higher or incrementing-as-we-flush
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
@@ -871,9 +871,8 @@ checkout v28.1
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				7deffea9f09
 	-     walletnotify_w_win-27+knots			da83b15cf1c	# Latest code now
-	14137 win_taskbar_progress-27.1+knots		1b8c3e5b8e4	last=18eb4dbb8a
+	14137 win_taskbar_progress-28+knots			1b8c3e5b8e4	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
-		FIXME: Qt 5.15.16 bump
 	-     restore_blockmaxsize					eb03b17cdaf
 	7107  qtnetworkport-27+knots				6987290598f	last=1f37c87d8f2 origin-pull/7107/head
 	7533  sendraw_force-27+knots				af9a606041c last=2627c0937f8 sendraw_force
