@@ -1622,6 +1622,7 @@ m	18570 wallet_rpc_lastprocessedblock-0.21+k	75d59808743	last=1e868bbbb1b
 	7107  qtnetworkport-21						1c31de03b71	last=1f37c87 origin-pull/7107/head
 	(CHECK-LAST)	last=061cd3f46cf qtnetworkport-23+knots
 	(CHECK-LAST)	last=0f776fd3d7b qtnetworkport-26+knots
+	(CHECK-LAST)	last=0f776fd3d7b qtnetworkport-28+knots
 m	7533  sendraw_force-21+knots				84c7abed1ab	last=8b4a4f9b2b4 sendraw_force
 	(CHECK-LAST)	last=074e22628db sendraw_force-22
 	(CHECK-LAST)	last=??? sendraw_force-25+knots  # equal to 2627c0937f8 sendraw_force ?

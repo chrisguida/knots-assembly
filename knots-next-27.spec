@@ -1053,8 +1053,9 @@ checkout v27.1
 	14137 win_taskbar_progress-27.1+knots		1b8c3e5b8e4	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 		FIXME: Qt 5.15.15 bump
-	-     restore_blockmaxsize					eb03b17cdaf
+	-     restore_blockmaxsize-27				eb03b17cdaf	last=8a8120844ff restore_blockmaxsize
 	7107  qtnetworkport-27+knots				6987290598f	last=1f37c87d8f2 origin-pull/7107/head
+	(CHECK-LAST)	last=07e7cb053d4 qtnetworkport-28+knots
 	29306 truc_sibling_eviction-27+knots		d458a48294a	last=1342a31f3ab glozow/2024-01-sibling-eviction
 	29873 truc_10k_vsize_limit-27+knots			8ae5943ccb5	last=154b2b2296e glozow/2024-04-truc-25k
 	7533  sendraw_force-27+knots				af9a606041c last=2627c0937f8 sendraw_force

@@ -874,7 +874,8 @@ checkout v28.1
 	14137 win_taskbar_progress-28+knots			1b8c3e5b8e4	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					eb03b17cdaf
-	7107  qtnetworkport-27+knots				6987290598f	last=1f37c87d8f2 origin-pull/7107/head
+	7107  qtnetworkport-28+knots				6987290598f	last=1f37c87d8f2 origin-pull/7107/head
+		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-27+knots				af9a606041c last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
