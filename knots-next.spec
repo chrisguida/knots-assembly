@@ -283,7 +283,7 @@ checkout v28.1
 	# Needs review: 31439 mzumsande/202412_reindex_interrupt
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	31451 fix_wallet_migrate_wo_bdb-27						last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
-	31453 macos_exfat_warning-28+knots						last=ee05e730466 willcl-ark/macos-exfat
+	31453 macos_exfat_warning-28+knots						last=df1ba101419 willcl-ark/macos-exfat
 		# Dropped doc change (links to Core github)
 		# Added warning before leaving GUI firstrun screen
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
@@ -383,7 +383,7 @@ checkout v28.1
 	# Needs diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
-	31179 opti_rpc_uv_reserve-25							last=ea62aaed3b1 ismaelsadeeq/10-2024-add-reserve-to-univalue
+	31179 opti_rpc_uv_reserve-25							last=5d82d92aff7 ismaelsadeeq/10-2024-add-reserve-to-univalue
 	31364 opti_no_copy_pr31364-28
 	# Needs review: 31490 l0rinc/l0rinc/undo
 	# Needs review: 31539 l0rinc/l0rinc/buffered-block-read-write OR 31551 l0rinc/l0rinc/bulk-block-read-write
@@ -758,7 +758,7 @@ checkout v28.1
 		# Left out Windows changes
 	31531 rpc_signet_info-28
 	31534 log_big_utxo_flush-26
-	31560 rpc_dumptxoutset_fifo-23							last=59df8480be7 theStack/202412-dumptxoutset-allow_write_to_named_pipe
+	31560 rpc_dumptxoutset_fifo-23							last=53217bd33ac theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Too convoluted/pointless? Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
 	# TODO: Some RPC way to report if settings are default?
