@@ -1,8 +1,8 @@
-timestamp 2025-01-14 22:41:40
+timestamp 2025-01-23 15:48:53
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #31656 / gui #850 for fixes
+#.. checked up to PR #31726 / gui #850 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -993,6 +993,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Approach NACK? 31629 mzumsande/202501_rescan_bestblock
 	31655 fix_sha3_ub_pr31655-21
 		# Just the fix
+	Triage: Just the fix from: 31671 fanquake/update_leveldb_subtree
+	Triage: Diff-minimise: 31674 theuni/lock-blocksdir
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)

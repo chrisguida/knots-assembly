@@ -1,7 +1,7 @@
-timestamp 2025-01-14 22:41:40
+timestamp 2025-01-23 15:48:53
 lastapply no-merge
 
-#.. checked up to PR #31656 / gui #850
+#.. checked up to PR #31726 / gui #850
 
 checkout v28.1
 @28.x-syslibs
@@ -305,6 +305,9 @@ checkout v28.1
 	#29.xTODO# Triage: 28521 hodlinator/2024/12/disconnecting
 	31655 fix_sha3_ub_pr31655-21
 		# Just the fix
+	31661 hebasto/250115-dep-build-type
+	Just the fix from: 31671 fanquake/update_leveldb_subtree
+	Diff-minimise: 31674 theuni/lock-blocksdir
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
@@ -389,6 +392,8 @@ checkout v28.1
 	# Needs review: 31539 l0rinc/l0rinc/buffered-block-read-write OR 31551 l0rinc/l0rinc/bulk-block-read-write
 	31645 opti_dbbatchsize_64-0.15							last=868413340f8 l0rinc/l0rinc/utxo-dump-batching
 		# TODO: Test even higher or incrementing-as-we-flush
+	# Needs review: 31682 l0rinc/l0rinc/optimize-CheckBlock-input-duplicate-check
+	Review? 31714 mzumsande/202501_simpler_segwit_check
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -753,6 +758,7 @@ checkout v28.1
 		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
 	# Needs concept ACK: 31397 glozow/2024-11-multi-orphan
+		#+31666
 	31407 macos_notarization-28								last=ba67aa681e9 achow101/macos-notarization
 		# Left out output renames
 		# Left out Windows changes
@@ -761,6 +767,8 @@ checkout v28.1
 	31560 rpc_dumptxoutset_fifo-23							last=53217bd33ac theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Too convoluted/pointless? Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
+	# Needs work? 31668 -  # Added rescan option for import descriptors
+	Needs review? 31672 vasild/peer_cpu_load
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
@@ -1068,7 +1076,7 @@ TODO: verify src tarball includes rendered_icons incl nsis-header and bitcoin_te
 TODO: Ensure rest.cpp includes <string> or no longer needs it (removed when #26415 merged)
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250114)			3164bc9d5cb
+	n/a  (bump_version=Knots:20250123)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits
