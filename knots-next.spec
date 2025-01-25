@@ -395,7 +395,7 @@ checkout v28.1
 	31645 opti_dbbatchsize_64-0.15							last=868413340f8 l0rinc/l0rinc/utxo-dump-batching
 		# TODO: Test even higher or incrementing-as-we-flush
 	# Needs review: 31682 l0rinc/l0rinc/optimize-CheckBlock-input-duplicate-check
-	Review? 31714 mzumsande/202501_simpler_segwit_check
+	# Needs Review? 31714 mzumsande/202501_simpler_segwit_check
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -770,7 +770,7 @@ checkout v28.1
 		# Only the FIFO capability, left out the bundled scripts
 	# Too convoluted/pointless? Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
 	# Needs work? 31668 -  # Added rescan option for import descriptors
-	Needs review? 31672 vasild/peer_cpu_load
+	31672 peer_cpu_load-28+knots							last=9febeb13b1f vasild/peer_cpu_load
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
