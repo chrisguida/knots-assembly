@@ -305,9 +305,11 @@ checkout v28.1
 	#29.xTODO# Triage: 28521 hodlinator/2024/12/disconnecting
 	31655 fix_sha3_ub_pr31655-21
 		# Just the fix
-	31661 hebasto/250115-dep-build-type
-	Just the fix from: 31671 fanquake/update_leveldb_subtree
-	Diff-minimise: 31674 theuni/lock-blocksdir
+	31661 fix_deps_libevent_build_type-28
+	31671 fix_leveldb_ptrarith_pr31671-0.9
+		# Just the fix
+	31674 lock_blocksdir-28
+		# Diff-minimised
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
