@@ -770,7 +770,7 @@ checkout v28.1
 		# Only the FIFO capability, left out the bundled scripts
 	# Too convoluted/pointless? Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
 	# Needs work? 31668 -  # Added rescan option for import descriptors
-	31672 peer_cpu_load-28+knots							last=9febeb13b1f vasild/peer_cpu_load
+	31672 peer_cpu_load-28+knots							last=0f68c47e931 vasild/peer_cpu_load
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
@@ -870,7 +870,8 @@ checkout v28.1
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	30951 v2onlyclearnet-28+knots							last=b434583fbbd
+	30951 v2onlyclearnet-28+knots							last=4d4f80940ca
+		# Held back trivial changes waiting for another revision
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
@@ -892,7 +893,7 @@ checkout v28.1
 	11082 rwconf-27+knots						e93252ffc47 # Latest code now
 		#28.xTODO# Squash fixes
 		#28.xTODO# Deprecate with settings.json better?
-	7510  rwconf_gui-27+knots					dc0d41683c3
+	7510  rwconf_gui-28+knots					dc0d41683c3
 		#28.xTODO# Squash fixes
 		#28.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		FIXME: turning on peerblockfilters after pruning has begun prevents starting at relaunch

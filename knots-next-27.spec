@@ -1071,7 +1071,7 @@ checkout v27.1
 	11082 rwconf-27+knots						e93252ffc47 # Latest code now
 		#28.xTODO# Squash fixes
 		#28.xTODO# Deprecate with settings.json better?
-	7510  rwconf_gui-27+knots					dc0d41683c3
+	7510  rwconf_gui-27+knots					dc0d41683c3	last=c089a0d22f4 rwconf_gui-28+knots
 		#28.xTODO# Squash fixes
 		#28.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		FIXME: turning on peerblockfilters after pruning has begun prevents starting at relaunch
