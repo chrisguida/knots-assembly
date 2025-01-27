@@ -896,9 +896,9 @@ checkout v28.1
 	7510  rwconf_gui-28+knots					dc0d41683c3
 		#28.xTODO# Squash fixes
 		#28.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
-		FIXME: turning on peerblockfilters after pruning has begun prevents starting at relaunch
+		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
 	559   accept_nonstdtxn						e023124323e
-		#28.xTODO# Revert or redefine #29843 if it got merged
+		#29.xTODO# Revert or redefine #29843 if it got merged
 	 929 tbc									24523ecf145
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 		# TODO: Qt6 drops QRegExpValidator
