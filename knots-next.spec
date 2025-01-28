@@ -911,8 +911,7 @@ checkout v28.1
 	5891  qt_console_history_persist			5da2e77fab2	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-28+knots						556b082f984	# Latest code now
 		#29.xTODO: Revert #30592
-	-     truc_opts-27+knots					52ebfb386c8
-		#28.xTODO# Check if default/interaction values ought to be changed
+	-     truc_opts-28+knots					52ebfb386c8
 	# TODO? -     net_identify_librerelay
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
@@ -1041,6 +1040,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 		#28.xTODO# QTreeWidget or similar for GUI Options dialog?
 		28.xTODO: Revert #30352 + #30562 ?
 		28.xTODO: Core policy mempoolfullrbf 0->1
+		28.xTODO: Check if trucpolicy default/interaction values ought to be changed
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
