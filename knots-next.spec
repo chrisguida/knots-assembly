@@ -870,8 +870,7 @@ checkout v28.1
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	30951 v2onlyclearnet-28+knots							last=4d4f80940ca
-		# Held back trivial changes waiting for another revision
+	30951 v2onlyclearnet-28+knots							last=5e3fa6758ba
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
@@ -910,9 +909,8 @@ checkout v28.1
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 	5861 gui_restore_addresses					d23e2a5ce91
 	5891  qt_console_history_persist			5da2e77fab2	last=0cd5fc301d6 qt_console_history_persist
-	7219  rbf_opts-27+knots						556b082f984	# Latest code now
-		28.xTODO: Revert #30594(partial) & #30592
-		Add [detached HEAD b5be02ccbe8] bitcoin-cli: Document RBF service bit in "serv" column
+	7219  rbf_opts-28+knots						556b082f984	# Latest code now
+		#29.xTODO: Revert #30592
 	-     truc_opts-27+knots					52ebfb386c8
 		#28.xTODO# Check if default/interaction values ought to be changed
 	# TODO? -     net_identify_librerelay
@@ -1042,6 +1040,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#28.xTODO# QTreeWidget or similar for GUI Options dialog?
 		28.xTODO: Revert #30352 + #30562 ?
+		28.xTODO: Core policy mempoolfullrbf 0->1
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv

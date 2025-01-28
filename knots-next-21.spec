@@ -1662,6 +1662,7 @@ m	7219  rbf_opts-0.21+knots					6b8135375e9	last=eb6bb1e3528 fullrbf # missing 9
 	(CHECK-LAST)	last=8db545872f6 fullrbf-22+knots
 	(CHECK-LAST)	last=149b286b44e fullrbf-23+knots
 	(CHECK-LAST)	last=475d87b5342 mempoolreplacement_2022
+	(CHECK-LAST)	last=149b286b44e rpc_opts-28+knots
 		# NOTE: Held back "clean mempool" from b81235ee156 (not needed in 21.x?)
 		# NOTE: Re-PR'd as #25373
 		# NOTE: Compatibility with #25353 -mempoolfullrbf option is in rwconf_policy

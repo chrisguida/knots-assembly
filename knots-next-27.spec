@@ -1087,7 +1087,7 @@ checkout v27.1
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 	5861 gui_restore_addresses					d23e2a5ce91
 	5891  qt_console_history_persist			5da2e77fab2	last=0cd5fc301d6 qt_console_history_persist
-	7219  rbf_opts-27+knots						556b082f984	# Latest code now
+	7219  rbf_opts-27+knots						556b082f984	last=3e26172cf05 rbf_opts-28+knots
 		#28.xTODO# Revert #30594(partial) & #30592
 	-     truc_opts-27+knots					52ebfb386c8
 		#28.xTODO# Check if default/interaction values ought to be changed
