@@ -1088,25 +1088,26 @@ checkout v27.1
 	5861 gui_restore_addresses					d23e2a5ce91
 	5891  qt_console_history_persist			5da2e77fab2	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-27+knots						556b082f984	last=38efff984cb rbf_opts-28+knots
+		# NOTE: Upstream has different default
 		#28.xTODO# Revert #30594(partial) & #30592
 	-     truc_opts-27+knots					52ebfb386c8 last=84545f0ee93 truc_opts-28+knots
+		# NOTE: Upstream has different default
 		#28.xTODO# Check if default/interaction values ought to be changed
 	# TODO? -     net_identify_librerelay
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
-	12146 opt_wallet_segwit2					40002696e50
+	12146 opt_wallet_segwit2-27					40002696e50	last=8fa6f072739 opt_wallet_segwit2
 		# TODO: Split out legacy address preference to be more explicit
-		#28.xTODO# Revert gui#808 ??
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
-	-     gui_wallet_displayname-0.19+knots		5b04307a1e5	# Latest code now
+	-     gui_wallet_displayname-0.19+knots		5b04307a1e5	last=dfe27405237 gui_wallet_displayname_wo_dat
 	-     gui_request_payment_label-0.19		85139adb973
 	-     gui_peers_sort_network-23				97e0290e085
 	-     gui_peers_no_net_column				dc2d891dc28
 	22439 guix_in_gitian-23+knots				2014b1271e3	last=ebda0463748 achow101/guix-in-gitian
 	-     rpc_getblockfrompeer_future			7745976d104
 		# Revert of #23927
-	-     rpc_getblockfrompeer_wo_header		bb0b7bc1289
+	-     rpc_getblockfrompeer_wo_header-26+k	bb0b7bc1289	last=ce3641a0e59 rpc_getblockfrompeer_wo_header
 		# Prior Knots bundled this in with #20295
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x

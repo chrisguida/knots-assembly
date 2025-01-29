@@ -917,10 +917,9 @@ checkout v28.1
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					40002696e50
 		# TODO: Split out legacy address preference to be more explicit
-		28.xTODO: Revert gui#808 ??
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
-	-     gui_wallet_displayname-0.19+knots		5b04307a1e5	# Latest code now
+	-     gui_wallet_displayname_wo_dat			5b04307a1e5	# Latest code now
 	-     gui_request_payment_label-0.19		85139adb973
 	-     gui_peers_sort_network-23				97e0290e085
 	-     gui_peers_no_net_column				dc2d891dc28
