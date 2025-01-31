@@ -1112,7 +1112,7 @@ checkout v27.1
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
-	-     gbt_rpc_options-27+knots				99864fe613b
+	-     gbt_rpc_options-27+knots				99864fe613b	last=7a3ccbf5386 gbt_rpc_options-28+knots
 	TODO: pre-cache GBT call after new block?
 	TODO: RPC to get/set policy configs
 	-     miningcbtag-27+knots
