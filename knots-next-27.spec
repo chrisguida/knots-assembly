@@ -1116,12 +1116,11 @@ checkout v27.1
 	TODO: pre-cache GBT call after new block?
 	TODO: RPC to get/set policy configs
 	-     miningcbtag-27+knots
-	-     blockview-27+knots
+	-     blockview-27+knots								last=3f078e7c471 blockview-28.1+knots
 NM	-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
 	#27.xTODO# Look into making the patches tarball in guix
-	-     undeprecate_libconsensus-27			d12a94481fb
-		#28.xTODO# Restore libbitcoinconsensus? #29748 #29787 #29797 #29648 #30590
+	-     undeprecate_libconsensus-27			d12a94481fb	last=e95eebd5c07 restore_libconsensus-28+knots
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 	n/a   macos_dmg-27							d26ae740b99
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder

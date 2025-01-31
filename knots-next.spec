@@ -935,14 +935,12 @@ checkout v28.1
 		#29.xTODO# Ensure BlockAssembler::Options::operator== is updated to include any new settings
 	# TODO: pre-cache GBT call after new block?
 	#28.xTODO# RPC to get/set policy configs
-	-     miningcbtag-27+knots
-	-     blockview-27+knots
-NM	-     mapport_default_on-27+knots			a32f282230d
+	#29.xTODO# -     miningcbtag-27+knots
+	-     blockview-28.1+knots
+	#-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
 	#28.xTODO# Look into making the patches tarball in guix
-	-     undeprecate_libconsensus-27			d12a94481fb
-		28.xTODO: Restore libbitcoinconsensus? #29748 #29787 #29797 #29648 #30590
-			Also needs part of sys_secp256k1
+	-     restore_libconsensus-28+knots			d12a94481fb
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 	-     rpccookieperms_log_improvements-28+k
 	n/a   macos_dmg-27							d26ae740b99
