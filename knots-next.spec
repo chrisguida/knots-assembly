@@ -943,19 +943,19 @@ checkout v28.1
 	-     restore_libconsensus-28+knots			d12a94481fb
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 	-     rpccookieperms_log_improvements-28+k
-	n/a   macos_dmg-27							d26ae740b99
+	# Needs work: n/a   macos_dmg-27							d26ae740b99
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder
-		28.xTODO: revert macos ZIP only: #29733
+		# 28.xTODO: revert macos ZIP only: #29733
 		# TODO: Investigate if we can compress again by reverting #24031 using patches in https://bugzilla.mozilla.org/show_bug.cgi?id=935237
+		# FIXME: Probably incompatible with #31407 macos_notarization ?
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
 # Non-upstreamed policy options (default off):
-	28.xTODO: Try using #29086(MERGED)+#30232 to rebase policy options up here?
+	30232 refactor_isstandardtx_mpopts-28+knots
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
-	29309 permitbarepubkey-27+knots				e4a6d730757	last=1dfe27e49ab
-	-     bytespersigopstrict-27+knots			f99d9396f6e
-	9749  unique_spk_mempool-27+knots			04c00f7019d
-	-     dustdynamic-27+knots					f50f599fb42
-		FIXME: docs say multiplier is 3000
+	29309 permitbarepubkey-28+knots				e4a6d730757	last=1dfe27e49ab
+	-     bytespersigopstrict-28+knots			f99d9396f6e
+	9749  unique_spk_mempool-28+knots			04c00f7019d
+	-     dustdynamic-28+knots					f50f599fb42
 	28408 match_more_datacarrier-27+knots		8998d6dbd8d	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# Revise byte counting to consider input/output waste

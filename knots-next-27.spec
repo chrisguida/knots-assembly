@@ -1130,9 +1130,10 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	#28.xTODO# Try using #29086(MERGED)+#30232 to rebase policy options up here?
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-27+knots				e4a6d730757	last=1dfe27e49ab
-	-     bytespersigopstrict-27+knots			f99d9396f6e
-	9749  unique_spk_mempool-27+knots			04c00f7019d
-	-     dustdynamic-27+knots					f50f599fb42
+	(CHECK-LAST)	last=d7e71868900 permitbarepubkey-28+knots
+	-     bytespersigopstrict-27+knots			f99d9396f6e	last=3e98ed31d26 bytespersigopstrict-28+knots
+	9749  unique_spk_mempool-27+knots			04c00f7019d	last=be351e77a91 unique_spk_mempool-28+knots
+	-     dustdynamic-27+knots					f50f599fb42	last=bf2366252b9 dustdynamic-28+knots
 		FIXME: docs say multiplier is 3000
 	28408 match_more_datacarrier-27+knots		8998d6dbd8d	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
