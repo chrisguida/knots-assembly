@@ -956,32 +956,32 @@ checkout v28.1
 	-     bytespersigopstrict-28+knots			f99d9396f6e
 	9749  unique_spk_mempool-28+knots			04c00f7019d
 	-     dustdynamic-28+knots					f50f599fb42
-	28408 match_more_datacarrier-27+knots		8998d6dbd8d	last=4d2ec0671a3 match_more_datacarrier
+	28408 match_more_datacarrier-28+knots		8998d6dbd8d	last=4d2ec0671a3 match_more_datacarrier
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
-		# Revise byte counting to consider input/output waste
-	-     datacarriercost-27+knots				bce9d9cd75d
+		# TODO? Revise byte counting to consider input/output waste
+	-     datacarriercost-28+knots				bce9d9cd75d
 		#28.xTODO# Add tests and make sure boundaries are correct
 	# TODO: Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	# TODO: Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
-	-     acceptnonstddatacarrier-27+knots		0dd43ab9460
-	-     rejecttokens-27+knots					d823de4ed7e
+	-     acceptnonstddatacarrier-28+knots		0dd43ab9460
+	-     rejecttokens-28+knots					d823de4ed7e
 		# Currently filters just Runes
-	k78   rejectparasites-27+knots				78086c1a806	last=d978324923a
+	k78   rejectparasites-28+knots				78086c1a806	last=d978324923a
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
 		# Rewrote unit test to be more comprehensive
-	TODO: #30964 & LR alternative options
+	# TODO: #30964 & LR alternative options
 	# TODO: NO APPARENT USAGE: filter HG: https://pbs.twimg.com/media/GDV-H8UWkAAsckl?format=jpg&name=large
 	# TODO: CBRC-20 https://twitter.com/bitoordileone/status/1734654996539457666 - INSCRIPTION-WRAPPED: https://mempool.space/tx/130c79034450163f36fcde8e27f96904dc42e535f28aacd5af3b9a18d0b1c7f9
 	# TODO? All-ASCII data storage (inefficient)
 	# TODO? If any input is dust, limit output count to < input count? (or lower?)
 	# TODO: Stacks (OP_RETURN X2... - most are 80 bytes long, some 55, few 19)
-	TODO: "OLGA" file storage: https://github.com/mikeinspace/stamps/blob/main/OLGA.md https://github.com/CounterpartyXCP/Forum/blob/1e362f7f8668654d0241fe5b1f1c1c330a8b4368/cip-0033.md
+	# TODO: "OLGA" file storage: https://github.com/mikeinspace/stamps/blob/main/OLGA.md https://github.com/CounterpartyXCP/Forum/blob/1e362f7f8668654d0241fe5b1f1c1c330a8b4368/cip-0033.md
 	# TODO? Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
-	-     maxscriptsize-27+knots				9b6c9313f78
+	-     maxscriptsize-28+knots				9b6c9313f78
 		# Alternate to(?) #29769
 	# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
@@ -989,9 +989,9 @@ checkout v28.1
 	# TODO? Spam filter for stuff like https://mempool.space/tx/4ec38548aa67f6a2efbbc3cf34ab49dc5c275d9701ab0b58696baee9f555c45a
 	# TODO: Whitelisting model for non-SPK scripts
 	# TODO: -blockpreference=smaller|larger,lessdata|moredata (or match our own policies?)
-	TODO: allow txs from reorg'd-out blocks to bypass policy?
-	TODO: prioritise txs from reorg'd-out blocks?
-	TODO: some way to prioritise Lightning channel activity?
+	# TODO: allow txs from reorg'd-out blocks to bypass policy?
+	# TODO: prioritise txs from reorg'd-out blocks?
+	# TODO: some way to prioritise Lightning channel activity?
 # Non-upstreamed Knots compatibility:
 	-     compat_jsonrpc_weirdversions
 	29530 rpc_getpeerinfo_misbehaving_score-28	dbf55fb8c38	last=87efb6f0cfd

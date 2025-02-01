@@ -1136,17 +1136,19 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	-     dustdynamic-27+knots					f50f599fb42	last=bf2366252b9 dustdynamic-28+knots
 		FIXME: docs say multiplier is 3000
 	28408 match_more_datacarrier-27+knots		8998d6dbd8d	last=4d2ec0671a3 match_more_datacarrier
+	(CHECK-LAST)	last=594dce924e4 match_more_datacarrier-28+knots
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# Revise byte counting to consider input/output waste
-	-     datacarriercost-27+knots				bce9d9cd75d
+	-     datacarriercost-27+knots				bce9d9cd75d	last=60eccf6de3f datacarriercost-28+knots
 		#27.xTODO# Add tests and make sure boundaries are correct
 	# TODO: Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	# TODO: Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
-	-     acceptnonstddatacarrier-27+knots		0dd43ab9460
-	-     rejecttokens-27+knots					d823de4ed7e
+	-     acceptnonstddatacarrier-27+knots		0dd43ab9460	last=2d6674ae2f0 acceptnonstddatacarrier-28+knots
+	-     rejecttokens-27+knots					d823de4ed7e	last=92fdfe81d4d rejecttokens-28+knots
 		# Currently filters just Runes
 	k78   rejectparasites-27+knots				78086c1a806	last=d978324923a
+	(CHECK-LAST)	last=4a0fa722223 rejectparasites-28+knots
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
 		# Rewrote unit test to be more comprehensive
@@ -1158,7 +1160,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	# TODO? Procedural approve/deny/discount/penalize policy scripting?
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
-	-     maxscriptsize-27+knots				9b6c9313f78
+	-     maxscriptsize-27+knots				9b6c9313f78	last=2afe5f03e42 maxscriptsize-28+knots
 		# Alternate to(?) #29769
 	# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
