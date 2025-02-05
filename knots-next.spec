@@ -1,7 +1,7 @@
-timestamp 2025-01-23 15:48:53
+timestamp 2025-02-05 04:16:22
 lastapply no-merge
 
-#.. checked up to PR #31726 / gui #850
+#.. checked up to PR #31794 / gui #852
 
 checkout v28.1
 @28.x-syslibs
@@ -310,6 +310,13 @@ checkout v28.1
 		# Just the fix
 	31674 lock_blocksdir-28
 		# Diff-minimised
+	# Needs review? 31727 darosior/2501_miniscript_nonfatal
+	# Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
+	# Needs review? 31767 -  # Ensure -debug=0/none behaves consistently with -nodebug
+	# Needs review? 31774 -  # crypto: Use secure_allocator for AES256_ctx
+	# Needs work & importance: 31775 -  # rpc: collect transaction fees on generateblock
+	# Needs review: 31785 Sjors/2025/02/create_new_block
+	# Needs review: 31794 furszy/2025_wallet_abandon_coinbase_during_startup
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
@@ -1072,7 +1079,7 @@ TODO: verify src tarball includes rendered_icons incl nsis-header and bitcoin_te
 TODO: Ensure rest.cpp includes <string> or no longer needs it (removed when #26415 merged)
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250123)			3164bc9d5cb
+	n/a  (bump_version=Knots:20250205)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits

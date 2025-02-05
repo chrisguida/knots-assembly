@@ -1,7 +1,7 @@
-timestamp 2025-01-23 15:48:53
+timestamp 2025-02-05 04:16:22
 #lastapply no-merge
 
-#.. checked up to PR #31726 / gui #850
+#.. checked up to PR #31794 / gui #852
 
 checkout v27.1
 @27.x-syslibs
@@ -399,6 +399,13 @@ checkout v27.1
 		# Just the fix
 	Just the fix from: 31671 fanquake/update_leveldb_subtree
 	Diff-minimise: 31674 theuni/lock-blocksdir
+	Triage: Needs review? 31727 darosior/2501_miniscript_nonfatal
+	Triage: Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
+	Triage: Needs review? 31767 -  # Ensure -debug=0/none behaves consistently with -nodebug
+	Triage: Needs review? 31774 -  # crypto: Use secure_allocator for AES256_ctx
+	Triage: Needs work & importance: 31775 -  # rpc: collect transaction fees on generateblock
+	Triage: Needs review: 31785 Sjors/2025/02/create_new_block
+	Triage: Needs review: 31794 furszy/2025_wallet_abandon_coinbase_during_startup
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
@@ -1238,7 +1245,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250123)			3164bc9d5cb
+	n/a  (bump_version=Knots:20250205)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits

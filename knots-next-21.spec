@@ -1,8 +1,8 @@
-timestamp 2025-01-23 15:48:53
+timestamp 2025-02-05 04:16:22
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #31726 / gui #850 for fixes
+#.. checked up to PR #31794 / gui #852 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -995,6 +995,13 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 		# Just the fix
 	Triage: Just the fix from: 31671 fanquake/update_leveldb_subtree
 	Triage: Diff-minimise: 31674 theuni/lock-blocksdir
+	Triage: Needs review? 31727 darosior/2501_miniscript_nonfatal
+	Triage: Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
+	Triage: Needs review? 31767 -  # Ensure -debug=0/none behaves consistently with -nodebug
+	Triage: Needs review? 31774 -  # crypto: Use secure_allocator for AES256_ctx
+	Triage: Needs work & importance: 31775 -  # rpc: collect transaction fees on generateblock
+	Triage: Needs review: 31785 Sjors/2025/02/create_new_block
+	Triage: Needs review: 31794 furszy/2025_wallet_abandon_coinbase_during_startup
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
