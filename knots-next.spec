@@ -936,6 +936,7 @@ checkout v28.1
 	# TODO: pre-cache GBT call after new block?
 	#28.xTODO# RPC to get/set policy configs
 	#29.xTODO# -     miningcbtag-27+knots
+		# TODO: add to rwconf_policy: 4b38a3031ab GUI/Options: Add miningcbtag via settings
 	-     blockview-28.1+knots
 	#-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
@@ -992,20 +993,20 @@ checkout v28.1
 	# TODO: allow txs from reorg'd-out blocks to bypass policy?
 	# TODO: prioritise txs from reorg'd-out blocks?
 	# TODO: some way to prioritise Lightning channel activity?
+	#28.xTODO# Make P2A (#30352 + #30562) optional
 # Non-upstreamed Knots compatibility:
 	-     compat_jsonrpc_weirdversions
 	29530 rpc_getpeerinfo_misbehaving_score-28	dbf55fb8c38	last=87efb6f0cfd
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
 		# Deprecated in Knots 28.0
-	TODO: LND compatibility hack? https://github.com/lightningnetwork/lnd/issues/9053
-	-     rpccookieperms_octal_compat
+	-     rpccookieperms_octal_compat-28+knots
 	-     zmq_ipc_uri_compat					af6f1fc637f	last=0b1762c90d1 origin-pull/28020/head
 		# Backward compatibility with #28020 URI format supported by Knots 25.1+
-	#28.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
+	#29.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			5190456efbb
 		# Effectively reverts #24505, #27869, #28597, and gui#764
-		#28.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
+		#29.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
 		#29.xTODO# revert #31250  wallet: Disable creating and loading legacy wallets
 	14641 fundraw_min_conf_deprecated-25+knots	526d26b79b0	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			5be45ec7b3e
@@ -1026,19 +1027,14 @@ checkout v28.1
 	-     wallet_avoid_newerchange				13f9c5d6772
 	-     enforce_checkpoints					d3abd2373ec
 		#29.xTODO# Revert #31649
-	n/a   checkpoint_update-27					1c1a32354d5
-		#28.xTODO# Revert #25725 (Remove mainnet checkpoints)
+	n/a   checkpoint_update-28					1c1a32354d5
+		#29.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	10282 timebomb_knots						6deb5987eb8
-		TODO: avoid holidays
-		TODO: 25.x was only 13 months - add a year?
-	-     rwconf_policy-27+knots				cbc0b4b258b
+	-     rwconf_policy-28+knots				cbc0b4b258b
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#28.xTODO# QTreeWidget or similar for GUI Options dialog?
-		28.xTODO: Revert #30352 + #30562 ?
-		28.xTODO: Core policy mempoolfullrbf 0->1
-		28.xTODO: Check if trucpolicy default/interaction values ought to be changed
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv

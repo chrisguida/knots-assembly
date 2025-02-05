@@ -774,7 +774,7 @@ checkout v27.1
 	(CHECK-LAST)	last= fix_rpccookieperms_early
 	(CHECK-LAST)	last= fix_rpccookieperms_early-28+knots
 	(CHECK-LAST)	last= rpccookieperms_log_improvements-28+k
-	(CHECK-LAST)	last= rpccookieperms_octal_compat
+	(CHECK-LAST)	last= rpccookieperms_octal_compat-28+knots
 		# Held back most of 9617e42a7b1..73f0a6cbd0b (func renames, refactoring; default to no-change/rely on umask)
 		# Was #26088 (not in a Knots release)
 		# Removed doc change
@@ -1193,13 +1193,12 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	-     bloom_default-27						d67b05096ff
 	-     wallet_avoid_newerchange				13f9c5d6772
-	-     enforce_checkpoints					d3abd2373ec
-	n/a   checkpoint_update-27					1c1a32354d5
-		#28.xTODO# Revert #25725 (Remove mainnet checkpoints)
-	10282 timebomb_knots						6deb5987eb8
+	-     enforce_checkpoints-26				d3abd2373ec	last=0fcc5ed47de enforce_checkpoints
+	n/a   checkpoint_update-27					1c1a32354d5	last=da0dc986b67 checkpoint_update-28
+	10282 timebomb_knots-27						6deb5987eb8	last= timebomb_knots
 		TODO: avoid holidays
 		TODO: 25.x was only 13 months - add a year?
-	-     rwconf_policy-27+knots				cbc0b4b258b
+	-     rwconf_policy-27+knots				cbc0b4b258b	last= rwconf_policy-28+knots
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
