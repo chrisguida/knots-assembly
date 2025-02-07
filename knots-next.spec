@@ -1053,30 +1053,24 @@ checkout v28.1
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)
-	7483  svg_icon-27+knots						b1b7aca6b04
+	7483  svg_icon-28+knots						b1b7aca6b04
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
-	n/a   tbc_font-27+knots						cdac8494921
+	n/a   tbc_font-28+knots						cdac8494921
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/ But depends on the build-for-release-source code from svg_icon...
 # BRANDING:
-	TODO: update copyright year
-		Perhaps based on #31611
-	n/a   knots_branding-27						fcc7fb5df1b
+	n/a   copyright_2025-28
+	n/a   knots_branding-28						fcc7fb5df1b
 		#28.xTODO# Review security policy
-		NOTE: Includes #30308 (MERGED)
 		#28.xTODO# remove "nsis-header.bmp: Generate from SVG" (moved to svg_icon)
-		TODO: Update install instructions
-		TODO: https://github.com/bitcoinknots/bitcoin/pull/84/files
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #28.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 # TODO: Check that we aren't deprecating anything in Core
-TODO: verify src tarball includes rendered_icons incl nsis-header and bitcoin_testnet.ico
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Check #26039 doesn't break anything
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
-TODO: Ensure rest.cpp includes <string> or no longer needs it (removed when #26415 merged)
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=Knots:20250205)			3164bc9d5cb

@@ -1222,15 +1222,15 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)
-	7483  svg_icon-27+knots						b1b7aca6b04
+	7483  svg_icon-27+knots						b1b7aca6b04	last=09bbed8ab16 svg_icon-28+knots
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
-	n/a   tbc_font-27+knots						cdac8494921
+	n/a   tbc_font-27+knots						cdac8494921	last=de33d56794b tbc_font-28+knots
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/ But depends on the build-for-release-source code from svg_icon...
 # BRANDING:
 	TODO: update copyright year
 		Perhaps based on #31611
-	n/a   knots_branding-27						fcc7fb5df1b
+	n/a   knots_branding-27						fcc7fb5df1b	last=e5e1b3eb21a knots_branding-28
 		#27.xTODO# Review security policy
 		# NOTE: Includes #30308
 		#28.xTODO# remove "nsis-header.bmp: Generate from SVG" (moved to svg_icon)
