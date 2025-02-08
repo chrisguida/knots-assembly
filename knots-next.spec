@@ -15,7 +15,7 @@ checkout v28.1
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
-	#28.xTODO# sys_libminisketch
+	#29.xTODO# sys_libminisketch
 	13789 bugfix_asm_pragmas					2dc1722f600
 	15155 test_external_bcli					37442ac71a2
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
@@ -31,7 +31,6 @@ checkout v28.1
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
-	#28.xTODO# Triage: Revert #30487 ?
 	31408 qafix_framework_pr31408-27
 # FIXES:
 	18818 guix_reltar_autogen_distclean			c94474f3235	last=b5a164d9155 fix_gitian_src_202004
@@ -119,7 +118,7 @@ checkout v28.1
 	-   gui_psbt_error_msgbox
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
-			#28.xTODO# Update with other commits that are beneficial
+			#TsTODO# Update with other commit (unit translations) when translations supported again
 	29868 hww_windows-28									last=5541ef02f71 hebasto/240414-win-subprocess
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
@@ -177,6 +176,7 @@ checkout v28.1
 	# Triage #28248
 	28345 fix_bytespersigop_checks-mini			f3f4732db4a	last=6f627727739 fix_bytespersigop_checks
 		#28.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done; known issues: stash 172d7d7a9
+		# Related bug in #18479
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	#28.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
 	#28.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
@@ -756,6 +756,7 @@ checkout v28.1
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	30793 rpc_getorphantxs-28+knots
 		#+31040+31043
+		# Includes warning about (unfixable) broken vsize field (abb1cc09785)
 	30860 bashcomp_bcli_generate-28							last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots				last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt

@@ -39,7 +39,6 @@ checkout v27.1
 	# Triage: 29832 fanquake/revert_29788
 	# Triage: 30193 -  # ci: move ASAN job to GitHub Actions from Cirrus CI
 	-     ci_i686mp_clang15						955f1eeed99
-	#28.xTODO# Triage: Revert #30487 ?
 	30519 ci_tsan_pr30519-25					5b8466ae234  # ci: add _LIBCPP_REMOVE_TRANSITIVE_INCLUDES to TSAN (libc++) job
 	30552 qafix_msgtx_defarg-0.16				41dc1937283
 	31408 qafix_framework_pr31408-27
