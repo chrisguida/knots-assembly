@@ -755,6 +755,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: 28609 achow101/reload-all-migrated
 	Triage: Needs review? 28610 achow101/migrate-avoidreuse
 	Triage: #26.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
+	-     qt_recomm_confirms-0.9
+		TODO: Un-hardcoding 6 taken care of in assumeutxo_unconfirmed_ux in Knots 28+ (956546a1f2f)
 	Triage: Needs review? 28649 vasild/reliable_socks5_handshake
 	Triage: 28672 fanquake/move_stack_reuse_core_flags
 	Triage: g765  furszy-g/2023_gui_fix_crash_wallet_list

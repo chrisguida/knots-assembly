@@ -183,7 +183,10 @@ checkout v28.1
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main					2c54011535c
-	#28.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
+	28616 assumeutxo_unconfirmed_ux_Sjors-28				last=3e281590c7d Sjors/2023/10/assume-unconfirmed
+	-     assumeutxo_unconfirmed_ux
+	-     qt_recomm_confirms-0.9
+		# NOTE: Un-hardcoding 6 already taken care of in assumeutxo_unconfirmed_ux above (956546a1f2f)
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	# Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
@@ -1085,7 +1088,8 @@ checkout v28.1
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
-		#28.xTODO# (when assumeutxo supported) Include the deleted notes from 0bc1f4b5c7b
+		TODO: assumeutxo: Include the deleted notes from 0bc1f4b5c7b
+		TODO: assumeutxo: blockchain RPCs don't care about assumeutxo for blocks (only txs)
 		TODO: document a546dfb3ba46cb72675ea95a718a8d5a248cf528
 	n/a  (cherrypick=540426ee9cc)				e933c45607c  # update manpages (build first)
 		# also example bitcoin.conf and bitcoin-cli bash-completion

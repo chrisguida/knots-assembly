@@ -218,6 +218,8 @@ checkout v27.1
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main					2c54011535c
 	#28.xTODO# Needs review and relevance: 28616 Sjors/2023/10/assume-unconfirmed
+	-     qt_recomm_confirms-0.9
+		TODO: Un-hardcoding 6 taken care of in assumeutxo_unconfirmed_ux in Knots 28+ (956546a1f2f)
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	# Needs review: 28724 achow101/cleanup-accidental-watchonly-mkeys
 	# Needs review: 28776 BrandonOdiwuor/gui_overview_page_add_used_balance
