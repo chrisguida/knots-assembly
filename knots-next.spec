@@ -175,11 +175,11 @@ checkout v28.1
 	# 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	# Triage #28248
 	28345 fix_bytespersigop_checks-mini			f3f4732db4a	last=6f627727739 fix_bytespersigop_checks
-		#28.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done; known issues: stash 172d7d7a9
+		#29.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done; known issues: stash 172d7d7a9
 		# Related bug in #18479
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
-	#28.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
-	#28.xTODO# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
+	#29.xTODO# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
+	# Needs concept ACK (even if merged): 28538 mzumsande/202309_fullob_to_blocksonly
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main					2c54011535c
@@ -195,12 +195,11 @@ checkout v28.1
 		# FIXME: disambiguate opcodes too?
 	28944 ishaanam/sendall_anti_fee_sniping		b2de75c9a45	last=b11d00d54ed  # rpc_sendall_anti_fee_sniping-27
 	29141 fix_rpcauth_blank						ea301cd9260
-		#28.xTODO# reconcile with #30401
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
-		#28.xTODO# but windows has lots of problems with existing style...
-		#28.xTODO# but deviating from Core signing may reduce participants?
+		#29.xTODO# but windows has lots of problems with existing style...
+		#29.xTODO# but deviating from Core signing may reduce participants?
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29175 -										732060336d2	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
@@ -228,7 +227,7 @@ checkout v28.1
 	#28.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
 	-     jonatack/2024-05-fix-cjdns-detection-in-AddNode	285a22a37a7	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode  # fix_cjdns_addnode_detect2-27+knots
 	# Needs review: 30155 mzumsande/202405_replay_blocks
-	#28.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
+	#29.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
 	# Needs work: g823 -  # wallet: Improve error log color in the console
@@ -238,8 +237,7 @@ checkout v28.1
 	# Needs review: 30465 hebasto/240716-deps-cmake
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 	# Needs review: 30479 mzumsande/202407_fix_resetfailure
-	#28.xTODO# Triage: 30508 hebasto/240723-zmq-pc
-	#28.xTODO# If assumeutxo supported: 30516 fjahr/2024-07-au-blockheight-san
+	30508 hebasto/240723-zmq-pc
 	# Needs review: 30529 ryanofsky/pr/listset
 	# If needed? 30489 theuni/depends-zmq-patch
 	# Needs review: 30666 mzumsande/202404_invalidblock
@@ -320,7 +318,7 @@ checkout v28.1
 	# Needs review: 31807 theuni/fix-dupe-kernel-symbols
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
-	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
+	TODO: Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -632,7 +630,7 @@ checkout v28.1
 	# Needs work: 24952 -  # rpc: Add sqlite format option for dumptxoutset
 	# Concept NACK? 25026 -  # rpc: Make pruneblockchain fetch old blocks if height is lower than pruned height
 	# Needs triage & review: 25038 glozow/package-rbf
-	#28.xTODO# Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
+	# TODO? Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku ???
 	25183 rpc_fundraw_segwitonly				1d474ea54b7	last=9e7fd5c0fe3
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
@@ -731,18 +729,18 @@ checkout v28.1
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	29686 manpage_desc-28+knots					d65d8d596c8	last=47f50c7af55 willcl-ark/manpage-desc
 		# Various fixups
-	#28.xTODO# 29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
-		# Extend to other options?
-		# TODO: Fix datacarriersize description
+	29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
+		TODO: Fix datacarriersize description
+	TODO: Extend 29954 to other options
 		# TODO:  b02aab950af RPC/Mempool: getmempoolinfo: Return many more mempool options
-		# Concept fixup: new RPC method entirely since they don't change often?
+		# Concept fixup: new RPC method entirely since they don't change often? -- No, because it's possible they become dynamic in the future (see dustrelayfee)
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
-	#28.xTODO# Needs review and split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
+	#28.xTODO# Split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
 	30183 rpc_asmap_followup_pr30183-28
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
-	#28.xTODO# Needs concept? 30341 willcl-ark/psbt-strip-derivs-combine
-	#28.xTODO# Needs concept? 30381 willcl-ark/addnode-failure
+	#29.xTODO# Needs concept? 30341 willcl-ark/psbt-strip-derivs-combine
+	#29.xTODO# Needs concept? 30381 willcl-ark/addnode-failure
 	# Needs review: 30433 fanquake/standard_branch_fedora
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
@@ -752,7 +750,7 @@ checkout v28.1
 	# Needs review: 30685 hebasto/240820-control-flow
 	30708 rpc_getdescriptoractivity-28						last=37a5c5d8366 jamesob/2024-08-getdescriptoractivity
 	30713 rpc_scanblocks_status_results-28					last=5b2d0216d87 tdb3/relevant_blocks_in_scanblocks_status
-	#28.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
+	#29.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	30793 rpc_getorphantxs-28+knots
 		#+31040+31043
@@ -785,7 +783,7 @@ checkout v28.1
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
 	# TODO: higher prune setting during IBD?
 	
-	#28.xTODO# Support for sending tx with TRUC version
+	#29.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
 	# TODO: Extend IsUnspendable safely
@@ -849,7 +847,7 @@ checkout v28.1
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
 	# TODO: tor guix bundle!
-	#28.xTODO# 16490 maflcko/1907-rpcMempoolWhyReplacable
+	#29.xTODO# 16490 maflcko/1907-rpcMempoolWhyReplacable
 	#	TODO: Diff-minimise
 	#	TODO: Support TRUC & Knots policies
 	17795 gui_console_ctrl_d-26+knots			cbd76d41ddf
@@ -899,11 +897,11 @@ checkout v28.1
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 	11082 rwconf-27+knots						e93252ffc47 # Latest code now
-		#28.xTODO# Squash fixes
+		#29.xTODO# Squash fixes
 		#28.xTODO# Deprecate with settings.json better?
 	7510  rwconf_gui-28+knots					dc0d41683c3
-		#28.xTODO# Squash fixes
-		#28.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
+		#29.xTODO# Squash fixes
+		#29.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
 	559   accept_nonstdtxn						e023124323e
 		#29.xTODO# Revert or redefine #29843 if it got merged
@@ -1002,7 +1000,7 @@ checkout v28.1
 	# TODO: allow txs from reorg'd-out blocks to bypass policy?
 	# TODO: prioritise txs from reorg'd-out blocks?
 	# TODO: some way to prioritise Lightning channel activity?
-	#28.xTODO# Make P2A (#30352 + #30562) optional
+	TODO: Make P2A (#30352 + #30562) optional
 # Non-upstreamed Knots compatibility:
 	-     compat_jsonrpc_weirdversions
 	29530 rpc_getpeerinfo_misbehaving_score-28	dbf55fb8c38	last=87efb6f0cfd
@@ -1024,7 +1022,7 @@ checkout v28.1
 	-     rpc_getblockfrompeer_nodeid_compat	a4904d8b06e
 	# TODO: add a bitcoinknots.conf ?
 	n/a   gui_peers_bump_setting_keys-25+k		9ce7e391094
-		#28.xTODO# Each release, see if we need to bump setting names for GUI states
+		#29.xTODO# Each release, see if we need to bump setting names for GUI states
 		# git grep 'alue(.*State\|toByteArray\|saveState'
 		# Window position/size: leave alone
 		# Splitter position: leave alone? but syncronise with header columns appropriately
@@ -1043,7 +1041,7 @@ checkout v28.1
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
-		#28.xTODO# QTreeWidget or similar for GUI Options dialog?
+		#29.xTODO# QTreeWidget or similar for GUI Options dialog?
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
@@ -1064,7 +1062,6 @@ checkout v28.1
 	n/a   copyright_2025-28
 	n/a   knots_branding-28						fcc7fb5df1b
 		#28.xTODO# Review security policy
-		#28.xTODO# remove "nsis-header.bmp: Generate from SVG" (moved to svg_icon)
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #28.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
@@ -1092,7 +1089,7 @@ checkout v28.1
 		TODO: document a546dfb3ba46cb72675ea95a718a8d5a248cf528
 	n/a  (cherrypick=540426ee9cc)				e933c45607c  # update manpages (build first)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
-	#28.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
+	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
