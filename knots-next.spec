@@ -210,8 +210,6 @@ checkout v28.1
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	29480 -										63f3808fc0d	last=88468a8afcd  # log_rand_during_init-0.20
 		# Needs careful backport (basically rewritten)
-	-     rpc_loadtxoutset_hide-26				0989753653e
-		#28.xTODO# This should probably be removed if assumeutxo is supported on mainnet
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	#28.xTODO# Needs review? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
 	#28.xTODO# Needs review: 29652 ryanofsky/pr/noloc
@@ -276,6 +274,7 @@ checkout v28.1
 	# Needs work: 31378 furszy/2024_wallet_migration_multisig_crash
 	31383 qafix_ibd_stalling_pr31383-28
 	# Needs work: 31384 ismaelsadeeq/11-2024-fix-duplicate-coinbase-reservation-bug
+		# NOTE: Not so high a priority when blocks are already too big
 	31391 custom_iso8601datetime-28+knots
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
 	# Needs review: 31405 mzumsande/202411_stricter_invalidblock_handling
@@ -322,7 +321,7 @@ checkout v28.1
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	TODO: Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
-	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
+	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown)
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
@@ -612,8 +611,10 @@ checkout v28.1
 	g820  qt_fontsel_qrcodes-27+knots			0e14f93fd0c	last=b14c9d0572e qt_fontsel_qrcodes
 	# TODO: qt_fontsel_console
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
-	#28.xTODO?# Needs review & BIP changes: 24058 kallewoof/202201-bip322
-		# TODO: Revert gui#819
+	-     verifymsg_bip137_and_electrum
+		# NOTE: Fully reverts gui#819 in anticipation of #24058
+	24058 bip322-28+knots									last=29b28d07fa9 kallewoof/202201-bip322
+		# gui#819 fully reverted above in anticipation of this
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
 	24162 rpc_deriveaddr_wo_checksum-26			afdbf00e02c	last=97a69e232be
@@ -725,7 +726,7 @@ checkout v28.1
 	# Needs review: 29415 vasild/private_broadcast
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
-	# Needs work: 29553 fjahr/2024-03-dumptxoutset-height
+	# TODO: 29553 fjahr/2024-03-dumptxoutset-height
 		# +31478
 	-     manpages_seealso_notself
 		# Originally bundled into #29585
@@ -781,10 +782,10 @@ checkout v28.1
 	# Too convoluted/pointless? Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-28+knots							last=0f68c47e931 vasild/peer_cpu_load
+	31845 pruneduringinit-28+knots							last=d4a3abf6d43 pruneduringinit
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
-	# TODO: higher prune setting during IBD?
 	
 	#29.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
