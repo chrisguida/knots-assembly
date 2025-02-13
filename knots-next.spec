@@ -842,7 +842,7 @@ checkout v28.1
 	12965 scriptthreads-28+knots				7a203a9fd17	last=dfab6c6866 jonasschnelli/2018/04/svt
 	13203 dsha256_power8-27						789dfcc340f	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
-		#28.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
+		#29.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-27			82181fbc222
 	15218 andrewtoth/flush-after-ibd			06b45666f77	last=8887d28a014  # postibd_flush-27
 	15428 tor_gui_pairing-28+knots				dadc8ab723e	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
@@ -1004,7 +1004,6 @@ checkout v28.1
 	# TODO: allow txs from reorg'd-out blocks to bypass policy?
 	# TODO: prioritise txs from reorg'd-out blocks?
 	# TODO: some way to prioritise Lightning channel activity?
-	TODO: Make P2A (#30352 + #30562) optional
 # Non-upstreamed Knots compatibility:
 	-     compat_jsonrpc_weirdversions
 	29530 rpc_getpeerinfo_misbehaving_score-28	dbf55fb8c38	last=87efb6f0cfd

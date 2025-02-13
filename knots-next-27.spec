@@ -947,6 +947,7 @@ checkout v27.1
 	Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
 	Needs work? 31668 -  # Added rescan option for import descriptors
 	Needs review? 31672 vasild/peer_cpu_load
+	31845 pruneduringinit-28+knots							last=d4a3abf6d43 pruneduringinit
 	TODO: Some RPC way to report if settings are default?
 	TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	
