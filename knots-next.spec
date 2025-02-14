@@ -1,7 +1,7 @@
-timestamp 2025-02-08 03:50:37
+timestamp 2025-02-14 19:58:41
 lastapply no-merge
 
-#.. checked up to PR #31823 / gui #852
+#.. checked up to PR #31872 / gui #852
 
 checkout v28.1
 @28.x-syslibs
@@ -318,6 +318,8 @@ checkout v28.1
 	# Needs review: 31785 Sjors/2025/02/create_new_block
 	# Needs review: 31794 furszy/2025_wallet_abandon_coinbase_during_startup
 	# Needs review: 31807 theuni/fix-dupe-kernel-symbols
+	31826 -  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
+	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	TODO: Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
@@ -1075,7 +1077,7 @@ checkout v28.1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250208)			3164bc9d5cb
+	n/a  (bump_version=Knots:20250214)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits
