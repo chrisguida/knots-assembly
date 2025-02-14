@@ -184,7 +184,7 @@ checkout v28.1
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main					2c54011535c
 	28616 assumeutxo_unconfirmed_ux_Sjors-28				last=3e281590c7d Sjors/2023/10/assume-unconfirmed
-	-     assumeutxo_unconfirmed_ux
+	-     assumeutxo_unconfirmed_ux-28
 	-     qt_recomm_confirms-0.9
 		# NOTE: Un-hardcoding 6 already taken care of in assumeutxo_unconfirmed_ux above (956546a1f2f)
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
@@ -238,7 +238,7 @@ checkout v28.1
 	# Needs review: 30465 hebasto/240716-deps-cmake
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 	# Needs review: 30479 mzumsande/202407_fix_resetfailure
-	30508 hebasto/240723-zmq-pc
+	30508 fix_depends_zmq_cmake_pc-28
 	# Needs review: 30529 ryanofsky/pr/listset
 	# If needed? 30489 theuni/depends-zmq-patch
 	# Needs review: 30666 mzumsande/202404_invalidblock
@@ -318,11 +318,11 @@ checkout v28.1
 	# Needs review: 31785 Sjors/2025/02/create_new_block
 	# Needs review: 31794 furszy/2025_wallet_abandon_coinbase_during_startup
 	# Needs review: 31807 theuni/fix-dupe-kernel-symbols
-	31826 -  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
+	31826 workaround_buggy_rndrrs-28						last=585aba6eec8  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
 	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
-	TODO: Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
+	-     restore_guix_ppc64le-28
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -736,11 +736,8 @@ checkout v28.1
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	29686 manpage_desc-28+knots					d65d8d596c8	last=47f50c7af55 willcl-ark/manpage-desc
 		# Various fixups
-	29954 kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
-		TODO: Fix datacarriersize description
-	TODO: Extend 29954 to other options
-		# TODO:  b02aab950af RPC/Mempool: getmempoolinfo: Return many more mempool options
-		# Concept fixup: new RPC method entirely since they don't change often? -- No, because it's possible they become dynamic in the future (see dustrelayfee)
+	29954 rpc_getmpinfo_policy_pr29954-28+knots				last=d165ac8779b kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
+	-     rpc_getmpinfo_policy_coreetc-28+knots
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	#28.xTODO# Split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
 	30183 rpc_asmap_followup_pr30183-28
@@ -968,21 +965,28 @@ checkout v28.1
 	30232 refactor_isstandardtx_mpopts-28+knots
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-28+knots				e4a6d730757	last=1dfe27e49ab
+		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     bytespersigopstrict-28+knots			f99d9396f6e
+		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	9749  unique_spk_mempool-28+knots			04c00f7019d
 	-     dustdynamic-28+knots					f50f599fb42
 	28408 match_more_datacarrier-28+knots		8998d6dbd8d	last=4d2ec0671a3 match_more_datacarrier
+		TODO: Delete TBD "maxdatacarriersize" from #29954 (see b02aab950af) (or at least fix the description)
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# TODO? Revise byte counting to consider input/output waste
 	-     datacarriercost-28+knots				bce9d9cd75d
+		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		#28.xTODO# Add tests and make sure boundaries are correct
 	# TODO: Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	# TODO: Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     acceptnonstddatacarrier-28+knots		0dd43ab9460
+		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     rejecttokens-28+knots					d823de4ed7e
+		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just Runes
 	k78   rejectparasites-28+knots				78086c1a806	last=d978324923a
+		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
 		# Rewrote unit test to be more comprehensive

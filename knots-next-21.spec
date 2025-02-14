@@ -1113,6 +1113,7 @@ m	14641 fundraw_minconf-21+knots				b097763986a	last=55a0b4c0f90 promag/2018-11-
 		# NOTE: Backported #25375 (minus sendall RPC, not in Knots 21.x) in b289e97b8f0
 	12677 listunspent_ancestorinfo-21.1+knots	b0bd7118765	last=6cb60f3e6d6 listunspent_ancestorinfo
 	18479 rpc_sign_show_fees-21					9f357b09916	last=47b2ba29df2 !origin-pull/12911/head
+	(CHECK-LAST)	last= rpc_sign_show_fees
 		# NOTE: Originally #12911
 		TODO: "feerate" fails to account for sigops (see 21d85b5c0e)
 	(CHECK-LAST)	last=ac2d457500e rpc_sign_show_fees
