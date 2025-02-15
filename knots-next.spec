@@ -736,8 +736,9 @@ checkout v28.1
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	29686 manpage_desc-28+knots					d65d8d596c8	last=47f50c7af55 willcl-ark/manpage-desc
 		# Various fixups
-	29954 rpc_getmpinfo_policy_pr29954-28+knots				last=d165ac8779b kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
-	-     rpc_getmpinfo_policy_coreetc-28+knots
+	#29.xTODO# 29954 rpc_getmpinfo_policy_pr29954-28+knots				last=d165ac8779b kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
+		# Or maybe this is unnecessary with a get/set policy RPC method?
+	#29.xTODO# -     rpc_getmpinfo_policy_coreetc-28+knots
 	# TODO: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	#28.xTODO# Split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
 	30183 rpc_asmap_followup_pr30183-28
@@ -966,29 +967,29 @@ checkout v28.1
 	30232 refactor_isstandardtx_mpopts-28+knots
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-28+knots				e4a6d730757	last=1dfe27e49ab
-		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
+		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     bytespersigopstrict-28+knots			f99d9396f6e
-		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
+		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	9749  unique_spk_mempool-28+knots			04c00f7019d
-		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
+		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     dustdynamic-28+knots					f50f599fb42
 	28408 match_more_datacarrier-28+knots		8998d6dbd8d	last=4d2ec0671a3 match_more_datacarrier
-		TODO: Delete TBD "maxdatacarriersize" from #29954 (see b02aab950af) (or at least fix the description)
+		#29.xTODO# TODO: Delete TBD "maxdatacarriersize" from #29954 (see b02aab950af) (or at least fix the description)
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# TODO? Revise byte counting to consider input/output waste
 	-     datacarriercost-28+knots				bce9d9cd75d
-		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
+		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		#28.xTODO# Add tests and make sure boundaries are correct
 	# TODO: Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	# TODO: Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     acceptnonstddatacarrier-28+knots		0dd43ab9460
-		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
+		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     rejecttokens-28+knots					d823de4ed7e
-		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
+		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just Runes
 	k78   rejectparasites-28+knots				78086c1a806	last=d978324923a
-		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
+		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
 		# Rewrote unit test to be more comprehensive
@@ -1003,7 +1004,7 @@ checkout v28.1
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-28+knots				9b6c9313f78
-		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
+		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Alternate to(?) #29769
 	# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
