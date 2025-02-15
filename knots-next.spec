@@ -772,9 +772,10 @@ checkout v28.1
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
 	# Needs concept ACK: 31397 glozow/2024-11-multi-orphan
 		#+31666
-	31407 macos_notarization-28								last=ba67aa681e9 achow101/macos-notarization
+	31407 macos_notarization-28								last=096525e92cc achow101/macos-notarization
 		# Left out output renames
 		# Left out Windows changes
+		# Left off (signer-specific) doc update
 	31531 rpc_signet_info-28
 	31534 log_big_utxo_flush-26
 	31560 rpc_dumptxoutset_fifo-23							last=53217bd33ac theStack/202412-dumptxoutset-allow_write_to_named_pipe
@@ -969,6 +970,7 @@ checkout v28.1
 	-     bytespersigopstrict-28+knots			f99d9396f6e
 		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	9749  unique_spk_mempool-28+knots			04c00f7019d
+		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     dustdynamic-28+knots					f50f599fb42
 	28408 match_more_datacarrier-28+knots		8998d6dbd8d	last=4d2ec0671a3 match_more_datacarrier
 		TODO: Delete TBD "maxdatacarriersize" from #29954 (see b02aab950af) (or at least fix the description)
@@ -1001,6 +1003,7 @@ checkout v28.1
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-28+knots				9b6c9313f78
+		TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Alternate to(?) #29769
 	# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
 	# Needs concept & impl: Policy: limit any witness stack items to N elements (like MAX_STANDARD_P2WSH_STACK_ITEMS)
