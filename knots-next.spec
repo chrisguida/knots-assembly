@@ -25,7 +25,7 @@ checkout v28.1
 # TESTS:
 	# If needed: -     ci_knots-26							e2099d64846
 	# If needed: -     lint_relaxer-26+knots					6db3eb08b9d
-	# If needed: -     nowarn_unreachable-code				51bbc98f621
+	-     nowarn_unreachable-code				51bbc98f621
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
@@ -318,7 +318,8 @@ checkout v28.1
 	# Needs review: 31785 Sjors/2025/02/create_new_block
 	# Needs review: 31794 furszy/2025_wallet_abandon_coinbase_during_startup
 	# Needs review: 31807 theuni/fix-dupe-kernel-symbols
-	31826 workaround_buggy_rndrrs-28						last=585aba6eec8  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
+	31826 workaround_buggy_rndrrs-28						last=09b150bb8ad  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
+		# Held back 585aba6eec8..09b150bb8ad (2x diff for basically the same thing)
 	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
@@ -779,7 +780,7 @@ checkout v28.1
 		# Left off (signer-specific) doc update
 	31531 rpc_signet_info-28
 	31534 log_big_utxo_flush-26
-	31560 rpc_dumptxoutset_fifo-23							last=53217bd33ac theStack/202412-dumptxoutset-allow_write_to_named_pipe
+	31560 rpc_dumptxoutset_fifo-23							last=4c8e9b4f35b theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Too convoluted/pointless? Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
 	# Needs work? 31668 -  # Added rescan option for import descriptors
@@ -1083,7 +1084,7 @@ checkout v28.1
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
-	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
+	n/a   (cherrypick=7b9bbc798e6)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=Knots:20250214)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2

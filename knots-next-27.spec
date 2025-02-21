@@ -29,7 +29,7 @@ checkout v27.1
 # TESTS:
 	-     ci_knots-26							e2099d64846
 	-     lint_relaxer-26+knots					6db3eb08b9d
-	-     nowarn_unreachable-code				51bbc98f621
+	-     nowarn_unreachable-code-27			51bbc98f621
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
