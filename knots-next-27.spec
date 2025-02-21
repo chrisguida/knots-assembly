@@ -843,6 +843,7 @@ checkout v27.1
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
 	27770 rpc_getblockfileinfo-26+knots			98725af3571	last=5090771f326 furszy/2023_rpc_getblockfileinfo
+	(CHECK-LAST)	last=b5764509d07 rpc_getblockfileinfo-28+knots
 	#27.xTODO# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 		# Note alternative (approach NACK'd) in #28453
@@ -1204,7 +1205,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 # POLICY:
 	-    1day_default_conftarget				71a27f0a62c
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	-     bloom_default-27						d67b05096ff
+	-     bloom_default-27						d67b05096ff	last=d354ea94d62 bloom_default-28+knots
 	-     wallet_avoid_newerchange				13f9c5d6772
 	-     enforce_checkpoints-26				d3abd2373ec	last=0fcc5ed47de enforce_checkpoints
 	n/a   checkpoint_update-27					1c1a32354d5	last=da0dc986b67 checkpoint_update-28

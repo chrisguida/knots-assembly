@@ -24,8 +24,10 @@ checkout v28.1
 @28.x-knotsfixes
 # TESTS:
 	# If needed: -     ci_knots-26							e2099d64846
-	# If needed: -     lint_relaxer-26+knots					6db3eb08b9d
+	-     lint_relaxer-28+knots					6db3eb08b9d
+		# Currently unused: b83763a4d90 QA: Allow test_runner to pass without full RPC coverage
 	-     nowarn_unreachable-code				51bbc98f621
+	-     nowarn_unused-function
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
@@ -262,6 +264,7 @@ checkout v28.1
 	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
 	31212 improve_args_pr31212-28
 		# +#31433
+		# Excluded due to newer Python requirement: 1ab3d515af9 refactor test: Cleaner combine_logs.py logic
 	g836  fix_qt_opts_proxy_ipv6-24
 	31275 fix_rpc_example_quoting_pr31275-24				last=1f3f5c049b4
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
@@ -306,7 +309,7 @@ checkout v28.1
 	31655 fix_sha3_ub_pr31655-21
 		# Just the fix
 	31661 fix_deps_libevent_build_type-28
-	31671 fix_leveldb_ptrarith_pr31671-0.9
+	31671 fix_leveldb_ptrarith_pr31671-28
 		# Just the fix
 	31674 lock_blocksdir-28
 		# Diff-minimised
@@ -697,7 +700,7 @@ checkout v28.1
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
-	27770 rpc_getblockfileinfo-26+knots			98725af3571	last=5090771f326 furszy/2023_rpc_getblockfileinfo
+	27770 rpc_getblockfileinfo-28+knots			98725af3571	last=5090771f326 furszy/2023_rpc_getblockfileinfo
 	#28.xTODO# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 		# Note alternative (approach NACK'd) in #28453
@@ -847,7 +850,7 @@ checkout v28.1
 		# NOTE: Stripped out benchmark change
 		#29.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-27			82181fbc222
-	15218 andrewtoth/flush-after-ibd			06b45666f77	last=8887d28a014  # postibd_flush-27
+	15218 postibd_flush-28						06b45666f77	last=8887d28a014  andrewtoth/flush-after-ibd
 	15428 tor_gui_pairing-28+knots				dadc8ab723e	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
 	15421 tor_subprocess-28+knots				b9d6192ad19	# Latest code now
@@ -903,6 +906,8 @@ checkout v28.1
 	7533  sendraw_force-28+knots				af9a606041c last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
+		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
+			# error message change impacts a bunch of functional tests; and submitpackage currently lacks support for ignore_rejects anyway
 	11082 rwconf-27+knots						e93252ffc47 # Latest code now
 		#29.xTODO# Squash fixes
 		#28.xTODO# Deprecate with settings.json better?
@@ -1045,7 +1050,7 @@ checkout v28.1
 # POLICY:
 	-    1day_default_conftarget				71a27f0a62c
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	-     bloom_default-27						d67b05096ff
+	-     bloom_default-28+knots				d67b05096ff
 	-     wallet_avoid_newerchange				13f9c5d6772
 	-     enforce_checkpoints					d3abd2373ec
 		#29.xTODO# Revert #31649
