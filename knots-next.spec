@@ -777,7 +777,7 @@ checkout v28.1
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
 	# Needs concept ACK: 31397 glozow/2024-11-multi-orphan
 		#+31666
-	31407 macos_notarization-28								last=096525e92cc achow101/macos-notarization
+	31407 macos_notarization-28								last=e181bda061c achow101/macos-notarization
 		# Left out output renames
 		# Left out Windows changes
 		# Left off (signer-specific) doc update
