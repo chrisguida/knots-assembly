@@ -157,7 +157,9 @@ checkout v28.1
 		# When restoring, revert part of bfab6ac4791 in relnotes
 	# Needs review: 27601 furszy/2023_wallet_double_change_output
 	#28.xTODO# Needs review: 26732 furszy/2022_wallet_do_not_select_utxo_from_the_tx_being_replaced
+	-     qafix_assert_debug_log_create
 	-     acceptstalefeeestimates_mainnet_opt	bbb9bb4db98
+		# Currently (28.1) needs qafix_assert_debug_log_create
 	# Needs review: 27684 hebasto/230516-punish OR ???
 	#28.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	# Needs review: 27804 -  # init: deduplicate added connections
@@ -286,6 +288,7 @@ checkout v28.1
 	# Needs review: 31439 mzumsande/202412_reindex_interrupt
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	31451 fix_wallet_migrate_wo_bdb-27						last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
+		# First half of commit silently assumes wallet is unloaded before migration (from #31248 in 29.x)
 	31453 macos_exfat_warning-28+knots						last=df1ba101419 willcl-ark/macos-exfat
 		# Dropped doc change (links to Core github)
 		# Added warning before leaving GUI firstrun screen
@@ -943,6 +946,7 @@ checkout v28.1
 	-     gui_peers_sort_network-23				97e0290e085
 	-     gui_peers_no_net_column				dc2d891dc28
 	22439 guix_in_gitian-23+knots				2014b1271e3	last=ebda0463748 achow101/guix-in-gitian
+		#29.xTODO# Test that this still works
 	-     rpc_getblockfrompeer_future			7745976d104
 		# Revert of #23927
 	-     rpc_getblockfrompeer_wo_header		bb0b7bc1289
