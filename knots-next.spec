@@ -25,7 +25,6 @@ checkout v28.1
 # TESTS:
 	# If needed: -     ci_knots-26							e2099d64846
 	-     lint_relaxer-28+knots					6db3eb08b9d
-		# Currently unused: b83763a4d90 QA: Allow test_runner to pass without full RPC coverage
 	-     nowarn_unreachable-code				51bbc98f621
 	-     nowarn_unused-function
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
