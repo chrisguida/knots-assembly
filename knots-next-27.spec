@@ -1,7 +1,7 @@
-timestamp 2025-02-14 19:58:41
+timestamp 2025-02-26 00:33:14
 #lastapply no-merge
 
-#.. checked up to PR #31872 / gui #852
+#.. checked up to PR #31955 / gui #854
 
 checkout v27.1
 @27.x-syslibs
@@ -408,8 +408,10 @@ checkout v27.1
 	Triage: Needs review: 31785 Sjors/2025/02/create_new_block
 	Triage: Needs review: 31794 furszy/2025_wallet_abandon_coinbase_during_startup
 	Triage: Needs review: 31807 theuni/fix-dupe-kernel-symbols
-	Triage: 31826 -  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
+	Triage: 31912 -  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
 	Triage: Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
+	Triage: Needs work: 31888 midnightmagic/fix-linearize-gjpyn
+	Triage: Needs review: 31929 hodlinator/2025/02/stop_http_robust
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
@@ -519,6 +521,7 @@ checkout v27.1
 		# TODO: Test even higher or incrementing-as-we-flush
 	# Needs review: 31682 l0rinc/l0rinc/optimize-CheckBlock-input-duplicate-check
 	Review? 31714 mzumsande/202501_simpler_segwit_check
+	# Needs review: 31875 l0rinc/l0rinc/sorted-BatchWrite
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -952,10 +955,12 @@ checkout v27.1
 	Needs work? 31668 -  # Added rescan option for import descriptors
 	Needs review? 31672 vasild/peer_cpu_load
 	31845 pruneduringinit-28+knots							last=d4a3abf6d43 pruneduringinit
+	31886 jonatack/2025-02-netinfo-services
+	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
+	# Needs review & fullrbf-enabled check: 31953 maflcko/2502-fullrbf-follow-up
 	TODO: Some RPC way to report if settings are default?
 	TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	
-	#28.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
 	# TODO: Extend IsUnspendable safely
@@ -1252,7 +1257,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250214)			3164bc9d5cb
+	n/a  (bump_version=Knots:20250226)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits

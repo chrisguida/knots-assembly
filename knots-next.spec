@@ -1,7 +1,7 @@
-timestamp 2025-02-14 19:58:41
+timestamp 2025-02-26 00:33:14
 lastapply no-merge
 
-#.. checked up to PR #31872 / gui #852
+#.. checked up to PR #31955 / gui #854
 
 checkout v28.1
 @28.x-syslibs
@@ -323,9 +323,11 @@ checkout v28.1
 	# Needs review: 31785 Sjors/2025/02/create_new_block
 	# Needs review: 31794 furszy/2025_wallet_abandon_coinbase_during_startup
 	# Needs review: 31807 theuni/fix-dupe-kernel-symbols
-	31826 workaround_buggy_rndrrs-28						last=09b150bb8ad  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
+	31912 workaround_buggy_rndrrs-28						last=09b150bb8ad  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
 		# Held back 585aba6eec8..09b150bb8ad (2x diff for basically the same thing)
 	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
+	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
+	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	-     restore_guix_ppc64le-28
@@ -413,6 +415,7 @@ checkout v28.1
 		# TODO: Test even higher or incrementing-as-we-flush
 	# Needs review: 31682 l0rinc/l0rinc/optimize-CheckBlock-input-duplicate-check
 	# Needs Review? 31714 mzumsande/202501_simpler_segwit_check
+	# Needs review: 31875 l0rinc/l0rinc/sorted-BatchWrite
 # SOFTFORK:
 	# TODO: 21702 CheckTemplateVerify
 	# TODO: 28550 jamesob/2023-09-covtools-softfork
@@ -791,11 +794,13 @@ checkout v28.1
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-28+knots							last=0f68c47e931 vasild/peer_cpu_load
 	31845 pruneduringinit-28+knots							last=d4a3abf6d43 pruneduringinit
+	31886 jonatack/2025-02-netinfo-services
+	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
+	# Needs review & fullrbf-enabled check: 31953 maflcko/2502-fullrbf-follow-up
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
 	
-	#29.xTODO# Support for sending tx with TRUC version
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
 	# TODO: Extend IsUnspendable safely
@@ -894,7 +899,7 @@ checkout v28.1
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
-	#29.xTODO# revert #31130+#31157+#31198? to restore miniupnpc support
+	#29.xTODO# revert #31130+#31157+#31198?+#31916? to restore miniupnpc support
 	n/a   restore_feefilter_opt					6c75f8d0f85
 	-     gui_payreq_textedit					f772370c57d
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
@@ -960,6 +965,7 @@ checkout v28.1
 	#29.xTODO# -     miningcbtag-27+knots
 		# TODO: add to rwconf_policy: 4b38a3031ab GUI/Options: Add miningcbtag via settings
 	-     blockview-28.1+knots
+		# NOTE: if #31897 is merged, need to revert or find alternative source for fee info
 	#-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
 	#28.xTODO# Look into making the patches tarball in guix
@@ -1058,6 +1064,7 @@ checkout v28.1
 	-     enforce_checkpoints					d3abd2373ec
 		#29.xTODO# Revert #31649
 	n/a   checkpoint_update-28					1c1a32354d5
+		TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#29.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	10282 timebomb_knots						6deb5987eb8
 	-     rwconf_policy-28+knots				cbc0b4b258b
@@ -1094,7 +1101,7 @@ checkout v28.1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=7b9bbc798e6)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250214)			3164bc9d5cb
+	n/a  (bump_version=Knots:20250226)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits
