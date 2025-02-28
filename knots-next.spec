@@ -34,7 +34,6 @@ checkout v28.1
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 	31408 qafix_framework_pr31408-27
-	-     ci_no_kernel
 # FIXES:
 	18818 guix_reltar_autogen_distclean			c94474f3235	last=b5a164d9155 fix_gitian_src_202004
 		#29.xTODO# Check GenerateBuildInfo.cmake ?
@@ -269,7 +268,7 @@ checkout v28.1
 		# +#31433
 		# Excluded due to newer Python requirement: 1ab3d515af9 refactor test: Cleaner combine_logs.py logic
 	g836  fix_qt_opts_proxy_ipv6-24
-	31275 fix_rpc_example_quoting_pr31275-24				last=1f3f5c049b4
+	31275 fix_rpc_example_quoting_pr31275-24				last=49ffbc6077d
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
 	31343 qa_dummy_proxy-21
 	31646 qafix_inet_access_pr31646-28						last=2ed161c5ce6 vasild/test_avoid_internet_traffic
@@ -430,7 +429,9 @@ checkout v28.1
 	# TODO: 29280 -  # Implement OP_CHECKTEMPLATEVERIFY
 	# TODO? 30018 -  # Implement BIP 118 validation (SIGHASH_ANYPREVOUT)
 # FUNCTIONALITY:
-	# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
+	-     rm_kernel_lib
+		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
+			# When restoring libbitcoinkernel support, adjust libbitcoinconsensus reverts to make it interact with --with-libs (see 7ad32d39d76)
 	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
 		# test2: export of symbol _IO_stdin_used not allowed!
 		# test2: libutil.so.1 is not in ALLOWED_LIBRARIES!
