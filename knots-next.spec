@@ -1,7 +1,7 @@
-timestamp 2025-02-26 00:33:14
+timestamp 2025-03-01 16:06:07
 lastapply no-merge
 
-#.. checked up to PR #31955 / gui #854
+#.. checked up to PR #31969 / gui #855
 
 checkout v28.1
 @28.x-syslibs
@@ -329,6 +329,7 @@ checkout v28.1
 	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
+	# Needs review: 31958 -  # rpc: add cli examples, update docs
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	-     restore_guix_ppc64le-28
@@ -1070,6 +1071,7 @@ checkout v28.1
 	n/a   checkpoint_update-28					1c1a32354d5
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#29.xTODO# Revert #25725 (Remove mainnet checkpoints)
+	#28.xTODO# Needs review: 31969 Sjors/2025/03/utxo-880000
 	10282 timebomb_knots						6deb5987eb8
 	-     rwconf_policy-28+knots				cbc0b4b258b
 		# Includes Knots policy changes for simplification of final rebase process
@@ -1105,7 +1107,7 @@ checkout v28.1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=7b9bbc798e6)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250226)			3164bc9d5cb
+	n/a  (bump_version=Knots:20250301)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=39d26c1c002)				247c167f3d5  # release notes: write/update, including change log and credits

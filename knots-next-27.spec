@@ -1,7 +1,7 @@
-timestamp 2025-02-26 00:33:14
+timestamp 2025-03-01 16:06:07
 #lastapply no-merge
 
-#.. checked up to PR #31955 / gui #854
+#.. checked up to PR #31969 / gui #855
 
 checkout v27.1
 @27.x-syslibs
@@ -412,6 +412,7 @@ checkout v27.1
 	Triage: Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	Triage: Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	Triage: Needs review: 31929 hodlinator/2025/02/stop_http_robust
+	Triage: Needs review: 31958 -  # rpc: add cli examples, update docs
 	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
@@ -1257,7 +1258,7 @@ NM	-     mapport_default_on-27+knots			a32f282230d
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6e49826402a)				a1c656a5082	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250226)			3164bc9d5cb
+	n/a  (bump_version=Knots:20250301)			3164bc9d5cb
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		c00938c3909
 	n/a   (cherrypick=bd18588c33a)				247c167f3d5  # release notes: write/update, including change log and credits
