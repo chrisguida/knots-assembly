@@ -1,8 +1,8 @@
-timestamp 2025-03-01 16:06:07
+timestamp 2025-03-05 03:27:08
 #lastapply no-merge
 
 #.. checked up to PR #22369 / gui #375 for features
-#.. checked up to PR #31969 / gui #855 for fixes
+#.. checked up to PR #31992 / gui #855 for fixes
 TODO: Still need to look at PRs merged from #26649/gui#684 until #27489/gui#723 for fixes: is:pr is:merged created:<2023-04-19
 
 TODO: Make sure latest branches are checked in here
@@ -1009,7 +1009,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	Triage: Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	Triage: Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	Triage: Needs review: 31929 hodlinator/2025/02/stop_http_robust
-	Triage: Needs review: 31958 -  # rpc: add cli examples, update docs
+	Triage: 31958 -  # rpc: add cli examples, update docs
+	Triage: 31979 -  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
 	TODO: contrib/macdeploy/gen-sdk fixes for determinism (and add hash to docs)
@@ -1080,7 +1081,8 @@ TM	g280  gui_urihandler_nophishing-0.20		0db675f8e90
 	22016 rpc_gbci_period_start-0.21.1+knots	b19116ccf14	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	(CHECK-LAST)	last=5e04731447b rpc_gbci_period_start
 	(CHECK-LAST)	last=d6d1a1b47eb rpc_gbci_period_start-22+knots
-	# TODO: 21702 CheckTemplateVerify
+	# TODO: 31989 CheckTemplateVerify
+		# Was #21702 (never in Knots)
 	Triage: TODO: 28550 jamesob/2023-09-covtools-softfork
 	Triage: TODO: 29050 stevenroose/txhash
 	Triage: TODO: 29198 reardencode/lnhance
