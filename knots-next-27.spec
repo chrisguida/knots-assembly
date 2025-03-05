@@ -414,7 +414,7 @@ checkout v27.1
 	Triage: Needs review: 31929 hodlinator/2025/02/stop_http_robust
 	Triage: 31958 -  # rpc: add cli examples, update docs
 	31979 -  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds
-	#28.xTODO# Revert 10d56530e097cbf70f7ecbc464550d89b4d91b87 (disables ppc64le)
+	-     qt_dialogs_less_modal
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason
 	
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
@@ -1127,6 +1127,7 @@ checkout v27.1
 	-     gui_peers_sort_network-23				97e0290e085
 	-     gui_peers_no_net_column				dc2d891dc28
 	22439 guix_in_gitian-23+knots				2014b1271e3	last=ebda0463748 achow101/guix-in-gitian
+		FIXME: test that this still works (WIP fixes in stash fa8517a9112 but need rebase too)
 	-     rpc_getblockfrompeer_future			7745976d104
 		# Revert of #23927
 	-     rpc_getblockfrompeer_wo_header-26+k	bb0b7bc1289	last=ce3641a0e59 rpc_getblockfrompeer_wo_header

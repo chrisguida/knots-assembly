@@ -334,6 +334,7 @@ checkout v28.1
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	-     restore_guix_ppc64le-28
+	-     qt_dialogs_less_modal
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -956,8 +957,8 @@ checkout v28.1
 	-     gui_request_payment_label-0.19		85139adb973
 	-     gui_peers_sort_network-23				97e0290e085
 	-     gui_peers_no_net_column				dc2d891dc28
-	22439 guix_in_gitian-23+knots				2014b1271e3	last=ebda0463748 achow101/guix-in-gitian
-		#29.xTODO# Test that this still works
+	# 22439 guix_in_gitian-23+knots				2014b1271e3	last=ebda0463748 achow101/guix-in-gitian
+		# FIXME: If restoring, test that this still works (WIP fixes in stash fa8517a9112 but need rebase too)
 	-     rpc_getblockfrompeer_future			7745976d104
 		# Revert of #23927
 	-     rpc_getblockfrompeer_wo_header		bb0b7bc1289
