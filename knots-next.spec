@@ -330,7 +330,7 @@ checkout v28.1
 	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
 	31958 docfix_rpc_wallet_cf_psbt-24						last=0ad066c85a4  # rpc: add cli examples, update docs
-	31979 tor_backoff_max-26								last=fb9fbdc4a1b  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds
+	31979 tor_backoff_max-26								last=f708498293c  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	-     restore_guix_ppc64le-28
