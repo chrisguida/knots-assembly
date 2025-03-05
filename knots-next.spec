@@ -329,8 +329,8 @@ checkout v28.1
 	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
-	31958 -  # rpc: add cli examples, update docs
-	31979 -  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds
+	31958 docfix_rpc_wallet_cf_psbt-24						last=0ad066c85a4  # rpc: add cli examples, update docs
+	31979 tor_backoff_max-26								last=fb9fbdc4a1b  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds
 	-     fix_rpccookieperms_early-28+knots					last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy
 	-     restore_guix_ppc64le-28
@@ -1073,7 +1073,7 @@ checkout v28.1
 	n/a   checkpoint_update-28					1c1a32354d5
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#29.xTODO# Revert #25725 (Remove mainnet checkpoints)
-	31969 Sjors/2025/03/utxo-880000
+	31969 assumeutxo_update-28								last=14f16748557 Sjors/2025/03/utxo-880000
 	10282 timebomb_knots						6deb5987eb8
 	-     rwconf_policy-28+knots				cbc0b4b258b
 		# Includes Knots policy changes for simplification of final rebase process
