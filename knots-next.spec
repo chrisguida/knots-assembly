@@ -297,8 +297,9 @@ checkout v28.1
 	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	31529 upd_glibc_mte_strncmp-28				eedd55a773d	last=b8710201fbd fanquake/glibc_2_31_latest
 	# Complex Triage: 31556 mzumsande/202412_assumeutxo_wallet
-	# Needs review & backport work: 31590 achow101/fix-constpubkey-xonly-getprivkey
+	# Needs backport work: 31590 achow101/fix-constpubkey-xonly-getprivkey
 		# Attempted backport in 74c7aa7133b
+		# Fixes Knots issue 98
 	# Needs work: 31603 brunoerg/2025-01-descriptor-pk
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
@@ -792,6 +793,7 @@ checkout v28.1
 		#+31666
 	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/macos-notarization
 		# Left out output renames
+			FIXME: This causes unsigned and signed to have the same filename! Backport c214e5268fa and d9d49cd533b or some equivalent
 		# Left out Windows changes
 		# Left off (signer-specific) doc update
 	31531 rpc_signet_info-28					fc177a6170d
