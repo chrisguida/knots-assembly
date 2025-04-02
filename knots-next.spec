@@ -186,7 +186,7 @@ checkout v29.0rc3
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main					86c5ef3785b
-	28616 assumeutxo_unconfirmed_ux_Sjors-28	f7e50a7e3f3	last=3e281590c7d Sjors/2023/10/assume-unconfirmed
+	28616 Sjors/2023/10/assume-unconfirmed		f7e50a7e3f3	last=3e281590c7d  # assumeutxo_unconfirmed_ux_Sjors-28
 	-     assumeutxo_unconfirmed_ux-28			46c7684bc14
 	-     qt_recomm_confirms-0.9				3a77d04cbd5
 		# NOTE: Un-hardcoding 6 already taken care of in assumeutxo_unconfirmed_ux above (956546a1f2f)
@@ -240,7 +240,7 @@ checkout v29.0rc3
 	# If needed? 30489 theuni/depends-zmq-patch
 	# Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
 	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
-	31275 fix_rpc_example_quoting_pr31275-24	ad6c4570514	last=49ffbc6077d
+	31275 -										ad6c4570514	last=49ffbc6077d  # fix_rpc_example_quoting_pr31275-24
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
 	# Needs work: 31349 vasild:test_log_internet_traffic
 	# Needs work: 31378 furszy/2024_wallet_migration_multisig_crash
@@ -269,8 +269,8 @@ checkout v29.0rc3
 	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
-	31958 docfix_rpc_wallet_cf_psbt-24			ee76cf26ae7	last=0ad066c85a4  # rpc: add cli examples, update docs
-	31979 tor_backoff_max-26					056c95b3ff8	last=f708498293c  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds
+	31958 -										ee76cf26ae7	last=0ad066c85a4  # rpc: add cli examples, update docs  # docfix_rpc_wallet_cf_psbt-24
+	31979 -										056c95b3ff8	last=f708498293c  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds  # tor_backoff_max-26
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=74cc11bbde3 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -322,7 +322,7 @@ checkout v29.0rc3
 		MERGED: Inspired by MERGED #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 -										5b3fb3eeb0f	last=42b25bbd939  # opti_merkle_mutation-0.17
-	28592 txrelayrate_14txps-26					88f7b4153a1 last=b81f37031c8
+	28592 -										88f7b4153a1 last=b81f37031c8  # txrelayrate_14txps-26
 		# TODO: Make configurable? Or is that even sane?
 	# MSVC: Needs review: 29036 theuni/msvc_fast_byteswap
 	# Needs review?? 29159 -  # Update net.h bigger TCP socket using larger buffer
@@ -345,9 +345,9 @@ checkout v29.0rc3
 	# Needs diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
-	31179 opti_rpc_uv_reserve-25				fd9df84d86b	last=5d82d92aff7 ismaelsadeeq/10-2024-add-reserve-to-univalue
+	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue	fd9df84d86b	last=5d82d92aff7  # opti_rpc_uv_reserve-25
 	# Needs review: 31539 l0rinc/l0rinc/buffered-block-read-write OR 31551 l0rinc/l0rinc/bulk-block-read-write
-	31645 opti_dbbatchsize_64-0.15				ef2cf259a11	last=868413340f8 l0rinc/l0rinc/utxo-dump-batching
+	31645 l0rinc/l0rinc/utxo-dump-batching		ef2cf259a11	last=868413340f8  # opti_dbbatchsize_64-0.15
 		# TODO: Test even higher or incrementing-as-we-flush
 	# Needs review: 31682 l0rinc/l0rinc/optimize-CheckBlock-input-duplicate-check
 	# Needs Review? 31714 mzumsande/202501_simpler_segwit_check
@@ -695,7 +695,7 @@ checkout v29.0rc3
 		# Was #21224
 	#28.xTODO# Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	# Needs review: 30685 hebasto/240820-control-flow
-	30713 rpc_scanblocks_status_results-28		15e73d0eb8f	last=5b2d0216d87 tdb3/relevant_blocks_in_scanblocks_status
+	30713 tdb3/relevant_blocks_in_scanblocks_status	15e73d0eb8f	last=5b2d0216d87  # rpc_scanblocks_status_results-28
 	#29.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	MERGED: 30793 rpc_getorphantxs-28+knots				ad863b5a7ba
@@ -715,8 +715,9 @@ checkout v29.0rc3
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-28+knots				dee920da09d	last=0f68c47e931 vasild/peer_cpu_load
+		TODO: consider rebasing to PR branch
 	31845 pruneduringinit-28+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
-	31886 netinfo_local_svcs-28+knots			bed89007671	last=724546e28a5 jonatack/2025-02-netinfo-services
+	31886 jonatack/2025-02-netinfo-services		bed89007671	last=724546e28a5  # netinfo_local_svcs-28+knots
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	# Needs review & fullrbf-enabled check: 31953 maflcko/2502-fullrbf-follow-up
 	# TODO: Some RPC way to report if settings are default?
