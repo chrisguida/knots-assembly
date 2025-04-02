@@ -6,10 +6,10 @@ lastapply no-merge
 checkout v29.0rc3
 @28.x-syslibs
 # BUILD BUGS:
-	5872 subdir_incl_compat						b7dd5799936
 	#29.xTODO# Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
 	#29.xTODO# If needed? 30997 hebasto/240928-qt6
-# SYSLIBS: (and old build bugs)
+	13789 bugfix_asm_pragmas					22df203e4cd
+# SYSLIBS:
 	2241  sys_leveldb							91af8d0c4ea
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
 	5416  sys_libsecp256k1						3d441102525
@@ -17,7 +17,6 @@ checkout v29.0rc3
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
 	#29.xTODO# sys_libminisketch
-	13789 bugfix_asm_pragmas					22df203e4cd
 	15155 test_external_bcli					7d6366b5659
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
