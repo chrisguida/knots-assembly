@@ -11,12 +11,13 @@ checkout v29.0rc3
 	13789 bugfix_asm_pragmas					22df203e4cd
 # SYSLIBS:
 	2241  sys_leveldb							91af8d0c4ea
-		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
 	5416  sys_libsecp256k1						3d441102525
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
-	#29.xTODO# sys_libminisketch
+	n/a   rm_minisketch-29+syslibs				723ceffb7b7
+		# Implicitly includes most of #18818
+		#30.xTODO# sys_libminisketch
 	15155 test_external_bcli					7d6366b5659
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
@@ -33,10 +34,10 @@ checkout v29.0rc3
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 # FIXES:
-	18818 guix_reltar_autogen_distclean			5bd6cb2eb0a	last=b5a164d9155 fix_gitian_src_202004
-		#29.xTODO# Check GenerateBuildInfo.cmake ?
-	18902 fix_gitdir_again						506a39d8934
-		# NOTE: based directly on #18818
+	32217 fix_gitdir_foreign
+		# Was part of #18902
+	-     relsrc_embed_tagname-29+knots
+		# Was part of #18902
 	18427 2020mingwthrd-mini					da1e5f9ffae	last=df5ece3e064 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				d2d3b434b08
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
@@ -296,7 +297,6 @@ checkout v29.0rc3
 	# Needs review: 30301 theuni/miniupnp-228-bump
 @28.x-knots
 # PERFORMANCE:
-	n/a   rm_minisketch-28+k					723ceffb7b7
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations

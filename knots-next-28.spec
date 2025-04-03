@@ -10,9 +10,9 @@ checkout v28.1
 	#29.xTODO# Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
 	#29.xTODO# If needed? 30997 hebasto/240928-qt6
 # SYSLIBS: (and old build bugs)
-	2241  sys_leveldb							91af8d0c4ea
+	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
-	5416  sys_libsecp256k1						3d441102525
+	5416  sys_libsecp256k1-28					3d441102525	last=5acc3a1c534 sys_libsecp256k1
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
@@ -36,8 +36,11 @@ checkout v28.1
 	31408 qafix_framework_pr31408-27			8d7611a7eca
 # FIXES:
 	18818 guix_reltar_autogen_distclean			5bd6cb2eb0a	last=b5a164d9155 fix_gitian_src_202004
+	(CHECK-LAST)	last=3efb06b858b rm_minisketch-29+syslibs
 		#29.xTODO# Check GenerateBuildInfo.cmake ?
 	18902 fix_gitdir_again						506a39d8934
+	(CHECK-LAST)	last=903fc971ed6 fix_gitdir_foreign
+	(CHECK-LAST)	last=69066e2af56 relsrc_embed_tagname-29+knots
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini					da1e5f9ffae	last=df5ece3e064 2020mingwthrd
 	18490 bugfix_symcheck_pe_case				d2d3b434b08
@@ -358,7 +361,7 @@ checkout v28.1
 	# Needs review: 30301 theuni/miniupnp-228-bump
 @28.x-knots
 # PERFORMANCE:
-	n/a   rm_minisketch-28+k					723ceffb7b7
+	n/a   rm_minisketch-28+k					723ceffb7b7	last=3efb06b858b rm_minisketch-29+syslibs
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
