@@ -207,7 +207,7 @@ checkout v28.1
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
 	28944 ishaanam/sendall_anti_fee_sniping		25117369373	last=b11d00d54ed  # rpc_sendall_anti_fee_sniping-27
-	29141 fix_rpcauth_blank						3ad996f41bb
+	29141 fix_rpcauth_blank-24					3ad996f41bb	last=51588287fb5 fix_rpcauth_blank
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
@@ -217,6 +217,7 @@ checkout v28.1
 	29175 -										5f08e7fee5b	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	29307 AutoFile_error_check-28				17291246d08	last=dba78353868 vasild/AutoFile_error_check
+	(CHECK-LAST)	last=72d5b71c196 AutoFile_error_check-29
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	29480 -										91fbf239a90	last=88468a8afcd  # log_rand_during_init-0.20
 		# Needs careful backport (basically rewritten)

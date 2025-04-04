@@ -206,7 +206,7 @@ checkout v29.0rc3
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29175 -										5f08e7fee5b	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
-	29307 AutoFile_error_check-28				17291246d08	last=dba78353868 vasild/AutoFile_error_check
+	29307 AutoFile_error_check-29				17291246d08	last=dba78353868 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	29480 -										91fbf239a90	last=88468a8afcd  # log_rand_during_init-0.20
 		# Needs careful backport (basically rewritten)
