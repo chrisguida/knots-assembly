@@ -45,7 +45,7 @@ checkout v29.0rc3
 		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
 	14968 http_bind_error						def0d7f8f83	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					d0f65e2f2e4
-		# NOTE: libevent-copied code up to date as of 2023-11-22 cfb2b89a1d0642abd6389913e237f49c662502e4
+		# NOTE: libevent-copied code more-or-less up to date as of 2025-04-04 112421c8fa4840acd73502f2ab6a674fc025de37 (upstream has added more portable TCP keepalive, setting keepalive interval to 5min, failure if setting keepalive or reusable fail, and merged 1a6dd1ff1b8 but not e8461128b8d,5a067073d77,45dd91f71f4)
 	 9524  rpc_pruneblkchain0					85dc1e1fc32	last=88883ae13d
 	10731 log_more_uacomment					cbfa6e5b9be
 	29614 bufferedfile_fclose					4be2187282d
