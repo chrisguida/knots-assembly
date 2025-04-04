@@ -169,13 +169,14 @@ checkout v28.1
 	#28.xTODO# Configure-time checks? Needs review: 27731 fjahr/2023-05-fd-exhaust
 	# Needs review: 27804 -  # init: deduplicate added connections
 	27814 -										387a5cf295c	last=bfc2bb6a270  # forbid_nohelp-0.19
+	(CHECK-LAST)	last=916c1b855ec forbid_nohelp-29
 	27815 -										838b286095e	last=244e6c8db81  # cli_forbid_multihelper-22
 	# Needs review: 27820 -  # Sanitizing ports of -rpcconnect and -rpcport.
 	# Needs concept/review: 27830 -  # Supporting parameter "h" and "?" in -netinfo.
 	# Needs review: 27912 -  # net: run disconnect in I2P thread
 	# Needs work: 27973 maflcko/2306-byte-span-
 	# Needs work: 27991 fanquake/instrument_libsecp
-	28029 fix_zmq_errhandling_202307-mini		24565dab864	last=07086589b27 fix_zmq_errhandling_202307
+	28029 fix_zmq_errhandling_202307-mini-26	24565dab864	last=ba28af94bd5 fix_zmq_errhandling_202307
 		# Just diff-minimised
 	28055 fix_getblockfrompeer_rereq_err		52de30f4845
 	# Needs review: 28126 furszy/2023_bugfix_wallet_importaddress
@@ -193,7 +194,7 @@ checkout v28.1
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28564 fix_conf_fuzzbin_main					86c5ef3785b
 	28616 assumeutxo_unconfirmed_ux_Sjors-28	f7e50a7e3f3	last=3e281590c7d Sjors/2023/10/assume-unconfirmed
-	-     assumeutxo_unconfirmed_ux-28			46c7684bc14
+	-     assumeutxo_unconfirmed_ux-28			46c7684bc14	last=7a832effaa6 assumeutxo_unconfirmed_ux-29
 	-     qt_recomm_confirms-0.9				3a77d04cbd5
 		# NOTE: Un-hardcoding 6 already taken care of in assumeutxo_unconfirmed_ux above (956546a1f2f)
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
