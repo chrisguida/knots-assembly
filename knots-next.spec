@@ -8,7 +8,6 @@ checkout v29.0rc3
 # BUILD BUGS:
 	#29.xTODO# Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
 	#29.xTODO# If needed? 30997 hebasto/240928-qt6
-	13789 bugfix_asm_pragmas					22df203e4cd
 # SYSLIBS:
 	2241  sys_leveldb							91af8d0c4ea
 	5416  sys_libsecp256k1						3d441102525
@@ -25,20 +24,21 @@ checkout v29.0rc3
 @28.x-knotsfixes
 # TESTS:
 	# If needed: -     ci_knots-26							e2099d64846
-	-     lint_relaxer-28+knots					efeece9f031
-	-     nowarn_unreachable-code				ad6a12d7bbc
-	-     nowarn_unused-function				45a2e5951ce
+	# If needed: -     lint_relaxer-28+knots					efeece9f031
+	# If needed: -     nowarn_unreachable-code				ad6a12d7bbc
+	# If needed: -     nowarn_unused-function				45a2e5951ce
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 # FIXES:
+	13789 asm_bypass_cxxflags					22df203e4cd
 	32217 fix_gitdir_foreign
 		# Was part of #18902
 	-     relsrc_embed_tagname-29+knots
 		# Was part of #18902
-	18427 2020mingwthrd-mini					da1e5f9ffae	last=df5ece3e064 2020mingwthrd
+	18427 2020mingwthrd-mini					da1e5f9ffae	 # Latest code now
 	18490 bugfix_symcheck_pe_case				d2d3b434b08
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
@@ -820,6 +820,7 @@ checkout v29.0rc3
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
+	TODO: 366c9c53308 build: Exclude CI from release tarball
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	29.xTODO: Restore NAT-PMP/UPNP removed in MERGED #30043 ?
 	29.xTODO# revert #31130+#31157+#31198?+#31916? to restore miniupnpc support

@@ -17,7 +17,7 @@ checkout v28.1
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
 	#29.xTODO# sys_libminisketch
-	13789 bugfix_asm_pragmas					22df203e4cd
+	13789 bugfix_asm_pragmas-26					22df203e4cd	last=4d9aff4d0b2 asm_bypass_cxxflags
 	15155 test_external_bcli					7d6366b5659
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
@@ -42,7 +42,7 @@ checkout v28.1
 	(CHECK-LAST)	last=903fc971ed6 fix_gitdir_foreign
 	(CHECK-LAST)	last=69066e2af56 relsrc_embed_tagname-29+knots
 		# NOTE: based directly on #18818
-	18427 2020mingwthrd-mini					da1e5f9ffae	last=df5ece3e064 2020mingwthrd
+	18427 2020mingwthrd-mini-23					da1e5f9ffae	last=63768965f1c 2020mingwthrd-mini
 	18490 bugfix_symcheck_pe_case				d2d3b434b08
 	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
