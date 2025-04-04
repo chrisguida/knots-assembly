@@ -246,7 +246,7 @@ checkout v29.0rc3
 	# Needs review: 31405 mzumsande/202411_stricter_invalidblock_handling
 	# Needs review: 31423 furszy/2024_migration_watch-only_migration
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
-	31453 macos_exfat_warning-28+knots			25f0359c100	last=df1ba101419 willcl-ark/macos-exfat
+	31453 macos_exfat_warning-29+knots			25f0359c100	last=df1ba101419 willcl-ark/macos-exfat
 		# Dropped doc change (links to Core github)
 		# Added warning before leaving GUI firstrun screen
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set

@@ -243,7 +243,7 @@ checkout v28.1
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
 	# Needs work: g823 -  # wallet: Improve error log color in the console
-	-     detect_clang_bug96267					6da92446b43
+	-     detect_clang_bug96267-28				6da92446b43	last=159eef5ccb2 detect_clang_bug96267
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30410 mzumsande/202407_getblock_error
 	# Needs review: 30465 hebasto/240716-deps-cmake
@@ -297,6 +297,7 @@ checkout v28.1
 	31451 fix_wallet_migrate_wo_bdb-27			f187eddc341	last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
 		# First half of commit silently assumes wallet is unloaded before migration (from #31248 in 29.x)
 	31453 macos_exfat_warning-28+knots			25f0359c100	last=df1ba101419 willcl-ark/macos-exfat
+	(CHECK-LAST)	last=bd2e2e1cc2c macos_exfat_warning-29+knots
 		# Dropped doc change (links to Core github)
 		# Added warning before leaving GUI firstrun screen
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
