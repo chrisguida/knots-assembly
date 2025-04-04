@@ -208,8 +208,6 @@ checkout v29.0rc3
 	# Needs review: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	29307 AutoFile_error_check-29				17291246d08	last=dba78353868 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
-	29480 -										91fbf239a90	last=88468a8afcd  # log_rand_during_init-0.20
-		# Needs careful backport (basically rewritten)
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	#28.xTODO# Needs review? 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
 	#28.xTODO# Needs review: 29652 ryanofsky/pr/noloc
