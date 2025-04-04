@@ -49,7 +49,7 @@ checkout v29.0rc3
 	 9524  rpc_pruneblkchain0					85dc1e1fc32	last=88883ae13d
 	10731 log_more_uacomment					cbfa6e5b9be
 	29614 bufferedfile_fclose					4be2187282d
-	14485 fadvise-28+knots						efcc7b7a087	last=289e88b3133 fadvise
+	14485 fadvise-29+knots						efcc7b7a087  # Latest code now
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
@@ -120,7 +120,7 @@ checkout v29.0rc3
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#TsTODO# Update with other commit (unit translations) when translations supported again
-	29868 hww_windows-28						301886f3d0e	last=5541ef02f71 hebasto/240414-win-subprocess
+	29868 hww_windows-29						301886f3d0e	last=5541ef02f71 hebasto/240414-win-subprocess
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
 	# TODO: 25136 -  # Checks -torcontrol for a valid host:port string
