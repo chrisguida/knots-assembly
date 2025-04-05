@@ -309,8 +309,7 @@ checkout v29.0rc3
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
-	-     dbcache_1TB-0.13						2ed340330f1
-		MERGED: Inspired by MERGED #28358 Sjors/2023/08/double-your-coins---cache (needs work)
+	-     dbcache_1TB-29						2ed340330f1
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 -										5b3fb3eeb0f	last=42b25bbd939  # opti_merkle_mutation-0.17
 	28592 -										88f7b4153a1 last=b81f37031c8  # txrelayrate_14txps-26
@@ -322,10 +321,8 @@ checkout v29.0rc3
 	# Needs review: 29578 brunoerg/2024-03-addrman-getaddr
 	# Needs review: 29602 -  # refactor: Optimize IsSpace function for common non-whitespace characters
 	# TODO: Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
-	30059 dbfilesize_param						add2386fdc7
-	-     dbfilesize_64							6d097aed47f
-		MERGED: Was: MERGED #30039 (128 MiB originally, settled on 32 MiB)
-		# Note: Upstream PR uses std::max with LevelDB's current default, in case LevelDB changes theirs to larger
+	30059 dbfilesize_param-29+knots				add2386fdc7	last=c283a572145 dbfilesize_param
+	-     dbfilesize_64-29+knots				6d097aed47f
 	# Needs review: 30317 -  # WIP Simplify SipHash
 	# Needs review: 30325 -  # optimization: Switch CTxMemPool::CalculateDescendants from set to vector to reduce transaction hash calculations
 	# Needs review: 30370 fjahr/2024-07-pr28945

@@ -388,7 +388,8 @@ checkout v28.1
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
-	-     dbcache_1TB-0.13						2ed340330f1
+	-     dbcache_1TB-0.13						2ed340330f1	last= dbcache_1TB-29
+		TODO: increase 32-bit limit to 3000 MiB if we want to match 29.x ?
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 -										5b3fb3eeb0f	last=42b25bbd939  # opti_merkle_mutation-0.17
@@ -402,8 +403,9 @@ checkout v28.1
 	# Needs review: 29578 brunoerg/2024-03-addrman-getaddr
 	# Needs review: 29602 -  # refactor: Optimize IsSpace function for common non-whitespace characters
 	# TODO: Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
-	30059 dbfilesize_param						add2386fdc7
-	-     dbfilesize_64							6d097aed47f
+	30059 dbfilesize_param-26					add2386fdc7	last=1c2c840aff9 dbfilesize_param
+	(CHECK-LAST)	last=ecc7ba40daa dbfilesize_param-29+knots
+	-     dbfilesize_64-26						6d097aed47f	last= dbfilesize_64-29+knots
 		# Was: #30039 (128 MiB originally, settled on 32 MiB)
 		# Note: Upstream PR uses std::max with LevelDB's current default, in case LevelDB changes theirs to larger
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
