@@ -353,7 +353,7 @@ checkout v29.0rc3
 	# TODO: 29280 -  # Implement OP_CHECKTEMPLATEVERIFY
 	# TODO? 30018 -  # Implement BIP 118 validation (SIGHASH_ANYPREVOUT)
 # FUNCTIONALITY:
-	-     rm_kernel_lib							84b7c6adf43
+	#-     rm_kernel_lib							84b7c6adf43
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
 			# When restoring libbitcoinkernel support, adjust libbitcoinconsensus reverts to make it interact with --with-libs (see 7ad32d39d76)
 	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
@@ -884,6 +884,7 @@ checkout v29.0rc3
 		# Re-disabled in light of continued security issues
 	#28.xTODO# Look into making the patches tarball in guix
 	-     restore_libconsensus-28+knots			57d68d7c5cb
+		TODO: When restoring libbitcoinkernel support, adjust libbitcoinconsensus reverts to make it interact with --with-libs (see 7ad32d39d76)
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 	-     rpccookieperms_log_improvements-28+k	ec34bd875d1
 	# Needs work: n/a   macos_dmg-27							d26ae740b99

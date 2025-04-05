@@ -468,7 +468,8 @@ checkout v28.1
 	# TODO: MAYBE OPTIONAL 12578 promag:2018-03-fee-transaction-record
 	# TODO: 12705 kallewoof/importmulti-wif-support
 	# TODO ? 12792 w/ renamed param
-	18479 rpc_sign_show_fees					0a4470afd87	last=47b2ba29df2 !origin-pull/12911/head
+	18479 rpc_sign_show_fees-28					0a4470afd87	last=47b2ba29df2 !origin-pull/12911/head
+	(CHECK-LAST)	last=8bf1fed8415 rpc_sign_show_fees
 		# Dropped rel notes file
 		# NOTE: Originally #12911
 		#28.xTODO# FIXME: "feerate" fails to account for sigops (see 21d85b5c0e); most of a fix in stash 835c2d3afba
