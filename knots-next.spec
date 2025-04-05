@@ -253,7 +253,6 @@ checkout v29.0rc3
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
 	# Needs review: 31622 achow101/psbt-sighashes
-	MERGED: Approach NACK? 31629 mzumsande/202501_rescan_bestblock
 	# Needs review? 31727 darosior/2501_miniscript_nonfatal
 	# Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
 	# Needs review? 31774 -  # crypto: Use secure_allocator for AES256_ctx
@@ -265,9 +264,9 @@ checkout v29.0rc3
 	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
-	31958 -										ee76cf26ae7	last=0ad066c85a4  # rpc: add cli examples, update docs  # docfix_rpc_wallet_cf_psbt-24
+	31958 -										ee76cf26ae7	last=32dcec269bf  # rpc: add cli examples, update docs  # docfix_rpc_wallet_cf_psbt-24
 	31979 -										056c95b3ff8	last=f708498293c  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds  # tor_backoff_max-26
-	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=74cc11bbde3 fix_rpccookieperms_early
+	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
 	-     qt_dialogs_less_modal					2822662e04d
@@ -287,10 +286,7 @@ checkout v29.0rc3
 	#28.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@28.x-knots-lts-deps
-	-     upd_qt5-28							1774fb76e0e
-		# Opensource released: https://lists.qt-project.org/pipermail/announce/2024-November/000526.html
 	#28.xTODO# FIXME -     depends_qt5kde
-	# Needs review: 30301 theuni/miniupnp-228-bump
 @28.x-knots
 # PERFORMANCE:
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
@@ -820,6 +816,7 @@ checkout v29.0rc3
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	29.xTODO: Restore NAT-PMP/UPNP removed in MERGED #30043 ?
 	29.xTODO# revert #31130+#31157+#31198?+#31916? to restore miniupnpc support
+		TODO? Needs review: 30301 theuni/miniupnp-228-bump
 	n/a   restore_feefilter_opt					cf49d58bff4
 	-     gui_payreq_textedit					b487f357bb4
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(

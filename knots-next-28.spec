@@ -339,7 +339,7 @@ checkout v28.1
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
 	31958 docfix_rpc_wallet_cf_psbt-24			ee76cf26ae7	last=0ad066c85a4  # rpc: add cli examples, update docs
 	31979 tor_backoff_max-26					056c95b3ff8	last=f708498293c  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds
-	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=74cc11bbde3 fix_rpccookieperms_early
+	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
 	-     qt_dialogs_less_modal					2822662e04d
@@ -360,6 +360,7 @@ checkout v28.1
 	n/a   (delete_release_notes_fragments)
 #@28.x-knots-lts-deps
 	-     upd_qt5-28							1774fb76e0e
+		FIXME: Check #30774 for updated patch?
 		# Opensource released: https://lists.qt-project.org/pipermail/announce/2024-November/000526.html
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
