@@ -947,6 +947,8 @@ checkout v29.0rc3
 	# TODO: some way to prioritise Lightning channel activity?
 	TODO? https://github.com/petertodd/bitcoin/commit/04c8e449a34e74e048bf5751d13592a22763ff7e (see email dated 2025-03-19 8:27pm)
 # Non-upstreamed Knots compatibility:
+	-     compat_rpc_dumptxoutset_hr
+		TODO: Compatibility with Knots 0.20.0-28.1 positional params
 	-     compat_jsonrpc_weirdversions			d50d30bf835
 	29530 rpc_getpeerinfo_misbehaving_score-28	66b8c669e38	last=87efb6f0cfd
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots

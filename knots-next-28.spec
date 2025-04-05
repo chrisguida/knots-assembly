@@ -492,8 +492,9 @@ checkout v28.1
 	# Needs review: 15502 ajtowns:201902-trytoavoiddns
 	# Needs review/concept ACK: 15572 Add auto select custom fee when smart fee not initialized.
 	# Needs review: 19116 pstratem:2020-05-29-generate-pubkeys
-	15836 fee_histogram+pr15836_api				b891a04599d	last=b94292a7cb jonasschnelli/2019/04/feeinfo
+	15836 fee_histogram+pr15836_api-28			b891a04599d	last=b94292a7cb jonasschnelli/2019/04/feeinfo
 	(CHECK-LAST)	last=c5e53d0d21f origin-pull/21422/head
+	(CHECK-LAST)	last=f818d33bd5b fee_histogram+pr15836_api
 		# NOTE: Now rebased on top of #21422 (but keeping API from #15836 & prior Knots)
 		# NOTE: Added extra tests for compatibility with old Knots
 		# TODO: Replace with #21422 API ? (or not, since it's been abandoned...)
@@ -522,8 +523,10 @@ checkout v28.1
 	# Needs work/review/completion: 18242 jonasschnelli/2020/03/net_v2
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
-	24202 rpc_dumptxoutset_hr					3f3877f4745	last=1053636ddd9
+	24202 rpc_dumptxoutset_hr-28				3f3877f4745	last=1053636ddd9
 	(CHECK-LAST)	last=65d0697fe34 origin-pull/18689/head
+	(CHECK-LAST)	last= rpc_dumptxoutset_hr
+	(CHECK-LAST)	last= compat_rpc_dumptxoutset_hr
 		# Diff-minimised
 		# NOTE: Was #18689
 		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202#discussion_r801191486
