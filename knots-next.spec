@@ -508,7 +508,6 @@ checkout v29.0rc3
 	22072 autoreindex							6e151c3f60d	last=602f4da9178
 	(CHECK-LAST)	last=6d7052863a5 origin-pull/26674/head
 		# TODO: Migrate to #26674 (basically identical logic as of 6d7052863a5) ?
-	22159 conf_append_cxxflags-23				a060ae018ee	last=fa14c6818f4
 	# Not useful: g358  jarolrod-g/themedlabel-forms
 	g307  gui_peers_rowcolouropt				86efc23e6b0	last=fdf80937d1c hebasto-g/210501-stripes
 		# Dropped formatting changes and avoided conflict with g216(optional_font)
@@ -552,7 +551,7 @@ checkout v29.0rc3
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
 	-     verifymsg_bip137_and_electrum			07d4bdba104
 		# NOTE: Fully reverts gui#819 in anticipation of #24058
-	24058 bip322-28+knots						c7dd00c6de5	last=29b28d07fa9 kallewoof/202201-bip322
+	24058 bip322-29+knots						c7dd00c6de5	last=29b28d07fa9 kallewoof/202201-bip322
 		# gui#819 fully reverted above in anticipation of this
 	TODO: signmessagewithprivkey updates for BIP137+Electrum+BIP322
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux

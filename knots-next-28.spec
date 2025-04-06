@@ -602,8 +602,9 @@ checkout v28.1
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
-	22072 autoreindex							6e151c3f60d	last=602f4da9178
+	22072 autoreindex-28						6e151c3f60d	last=602f4da9178
 	(CHECK-LAST)	last=6d7052863a5 origin-pull/26674/head
+	(CHECK-LAST)	last=aaa366361f7 autoreindex
 		# TODO: Migrate to #26674 (basically identical logic as of 6d7052863a5) ?
 	22159 conf_append_cxxflags-23				a060ae018ee	last=fa14c6818f4
 	# Not useful: g358  jarolrod-g/themedlabel-forms
@@ -630,7 +631,8 @@ checkout v28.1
 	# Needs review: 23035 jonatack:getnodeaddresses-tried-and-reference_count
 	# Needs work: g410  benthecarman/uppercase-uri
 	# Needs API review: 23330 JeremyRubin/header-fetch
-	23362 importfromcoldcard					98b55ac8e6d	last=8076f8d4c2a hebasto/211025-cc
+	23362 importfromcoldcard-25					98b55ac8e6d	last=8076f8d4c2a hebasto/211025-cc
+	(CHECK-LAST)	last=0b7664c0380 importfromcoldcard
 		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
 	23387 rpc_savefeeestimates					f20be3bb5b5	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
@@ -642,15 +644,17 @@ checkout v28.1
 	# Needs review: 23624 -  # zmq: add rawmempooltx publisher
 	g473  rebroad-g/NonLinearTraffic			3b46e6081b7	last=ad431ff5d18
 	# Needs work: g484 rebroad-g/RetainNetworkGraphOnIntervalChange
-	g492  qt_traffic_tooltip					1b0204cba37	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
+	g492  qt_traffic_tooltip-28					1b0204cba37	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
+	(CHECK-LAST)	last= qt_traffic_tooltip
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
 	g820  qt_fontsel_qrcodes-27+knots			ce838070845	last=b14c9d0572e qt_fontsel_qrcodes
 	# TODO: qt_fontsel_console
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
-	-     verifymsg_bip137_and_electrum			07d4bdba104
+	-     verifymsg_bip137_and_electrum=28		07d4bdba104	last=567a2962f38 verifymsg_bip137_and_electrum
 		# NOTE: Fully reverts gui#819 in anticipation of #24058
 	24058 bip322-28+knots						c7dd00c6de5	last=29b28d07fa9 kallewoof/202201-bip322
+	(CHECK-LAST)	last=61526466dd1 bip322-29+knots
 		# gui#819 fully reverted above in anticipation of this
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
