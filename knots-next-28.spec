@@ -532,11 +532,11 @@ checkout v28.1
 		# FIXME: blockhash+header line is weird https://github.com/bitcoin/bitcoin/pull/24202#discussion_r801191486
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
-	19242 uaappend								4d64e9e4a9d
+	19242 uaappend-28							4d64e9e4a9d	last=b6ca5e9f0c9 uaappend
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 		# w/ 22807 ?
-	19463 prune_locks							d8114ff1102
+	19463 prune_locks-28						d8114ff1102	last=162f0dba2f2 prune_locks
 	# Needs review: 18000 -  # Coin Statistics Index
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
@@ -544,7 +544,7 @@ checkout v28.1
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	# Needs review: 19860 -  # Improve diversification of new connections: privacy and stability
-	19873 mempressure							2fc6668792f
+	19873 mempressure-27						2fc6668792f	last=0802d0b4dc1 mempressure
 		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
 	# Needs review/testing: - maxmem_coins_cache
 		# TODO: Some way to override... see #26471 discussion
@@ -564,9 +564,10 @@ checkout v28.1
 		# NOTE: Held back refactoring & unrelated changes
 		# TODO? Reduce internal changes and move to Knots compat??
 	20407 rpcauthfile-28+knots					59ccec74959	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
+	(CHECK-LAST)	last=a5e24757585 rpcauthfile-29+knots
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
-	g149  intro_assumevalid						1a80144445f	last=cf940f0e5f5
+	g149  intro_assumevalid-28					1a80144445f	last= intro_assumevalid
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
 	20702 rpc_getblocklocations					34b69da3162	last=9b03c654eb3
@@ -596,7 +597,8 @@ checkout v28.1
 	# Needs Concept ACK & review: 21515 naumenkogs:2021-03-erlay
 		# +27797 ?
 	# Needs review: 21618 rebroad:MinRelayFeeReductionChanges
-	21780 rpc_maxmempool						97b67babbee	last=040b280c661 rebroad/MaxMempoolRPC
+	21780 rpc_maxmempool-28						97b67babbee	last=040b280c661 rebroad/MaxMempoolRPC
+	(CHECK-LAST)	last=771e99c7466 rpc_maxmempool
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter

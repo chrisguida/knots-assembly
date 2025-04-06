@@ -468,7 +468,7 @@ checkout v29.0rc3
 		# NOTE: Minimised tests to only add new ones
 		# NOTE: Held back refactoring & unrelated changes
 		# TODO? Reduce internal changes and move to Knots compat??
-	20407 rpcauthfile-28+knots					59ccec74959	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
+	20407 rpcauthfile-29+knots					59ccec74959	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
 	g149  intro_assumevalid						1a80144445f	last=cf940f0e5f5
