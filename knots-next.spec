@@ -685,22 +685,19 @@ checkout v29.0rc3
 	30713 tdb3/relevant_blocks_in_scanblocks_status	15e73d0eb8f	last=5b2d0216d87  # rpc_scanblocks_status_results-28
 	#29.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
-	30860 bashcomp_bcli_generate-28				7a279182b1f	last=abf6ad42bdb BrandonOdiwuor/bash-completion
+	30860 bashcomp_bcli_generate-29				7a279182b1f	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
-	MERGED: 31215 http_inc_thr16_wq64-27				d54c2bacb8f	last=e56fc7ce6a9 vasild/rpcthreads
-		# Rewrote as only changing defaults (no doc changes)
 	# Needs work? 31252 rpc_TxToUniv_witScript-28								last=4e128d4f9b2
 		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
-	31560 rpc_dumptxoutset_fifo-23				27874e8290b	last=4c8e9b4f35b theStack/202412-dumptxoutset-allow_write_to_named_pipe
+	31560 rpc_dumptxoutset_fifo-29+knots		27874e8290b	last=4c8e9b4f35b theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
-	31672 peer_cpu_load-28+knots				dee920da09d	last=0f68c47e931 vasild/peer_cpu_load
-		TODO: consider rebasing to PR branch
-	31845 pruneduringinit-28+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
+	31672 peer_cpu_load-29+knots				dee920da09d	last=0f68c47e931 vasild/peer_cpu_load
+	31845 pruneduringinit-29+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
 	31886 jonatack/2025-02-netinfo-services		bed89007671	last=724546e28a5  # netinfo_local_svcs-28+knots
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	# Needs review & fullrbf-enabled check: 31953 maflcko/2502-fullrbf-follow-up

@@ -803,6 +803,7 @@ checkout v28.1
 		#+31040+31043
 		# Includes warning about (unfixable) broken vsize field (abb1cc09785)
 	30860 bashcomp_bcli_generate-28				7a279182b1f	last=abf6ad42bdb BrandonOdiwuor/bash-completion
+	(CHECK-LAST)	last=af6f73734e2 bashcomp_bcli_generate-29
 		# Bugfix + Left off re-generation until later
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
@@ -822,11 +823,14 @@ checkout v28.1
 	31531 rpc_signet_info-28					fc177a6170d
 	31534 log_big_utxo_flush-26					8de796420d4
 	31560 rpc_dumptxoutset_fifo-23				27874e8290b	last=4c8e9b4f35b theStack/202412-dumptxoutset-allow_write_to_named_pipe
+	(CHECK-LAST)	last=f9b2197e7df rpc_dumptxoutset_fifo-29+knots
 		# Only the FIFO capability, left out the bundled scripts
 	# Too convoluted/pointless? Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-28+knots				dee920da09d	last=0f68c47e931 vasild/peer_cpu_load
+	(CHECK-LAST)	last=77473c2e166 peer_cpu_load-29+knots
 	31845 pruneduringinit-28+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
+	(CHECK-LAST)	last=ef00b4adfaa pruneduringinit-29+knots
 	31886 netinfo_local_svcs-28+knots			bed89007671	last=724546e28a5 jonatack/2025-02-netinfo-services
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	# Needs review & fullrbf-enabled check: 31953 maflcko/2502-fullrbf-follow-up
