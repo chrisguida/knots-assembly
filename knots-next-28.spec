@@ -853,10 +853,12 @@ checkout v28.1
 	9245 ionice-28								20f5b5a0563	last=4a7ed04bd31 ionice
 		# low prio: p2p requests, loading/verifying blocks on disk
 		# normal prio: connecting blocks, indexes, user requests
-	-    ionice_win								990ff83c56d
+	-    ionice_win-28							990ff83c56d	last=930bb1f2fd0 ionice_win
 	8501  old_stats_rpc-28						8646f7adcf9	last=7af0ea43b2
+	(CHECK-LAST)	last=904b263379c old_stats_rpc-29
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-28+knots					2872a2809b7	last=63fb11652f
+	(CHECK-LAST)	last=7bc611f349b old_stats_qt-29+knots
 		# Held back on old version due to conflict with RPC updates...
 	9504  rpc_dumpmasterprivkey					66ac57716a1	last=07fc81109a
 	g444  gui_netwatch-28+knots					9feaec422dd	 # Latest code now
