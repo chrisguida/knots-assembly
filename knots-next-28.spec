@@ -847,10 +847,10 @@ checkout v28.1
 	8751  sort-multisigs-28+knots				ffec05ceed7	last=e11cb50a09  # multisig sorting
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					17e4ef3f960	last=1898b9be12c Sjors/2021/05/versionbits_period_start
-	9152 sweepprivkeys							647dcf1fe7c
+	9152 sweepprivkeys-28+knots					647dcf1fe7c	last=0aa860b1252 sweepprivkeys-29+knots
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
-	9245 ionice									20f5b5a0563
+	9245 ionice-28								20f5b5a0563	last=4a7ed04bd31 ionice
 		# low prio: p2p requests, loading/verifying blocks on disk
 		# normal prio: connecting blocks, indexes, user requests
 	-    ionice_win								990ff83c56d
