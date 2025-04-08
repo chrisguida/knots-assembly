@@ -659,6 +659,7 @@ checkout v28.1
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
 	24162 rpc_deriveaddr_wo_checksum-26			d9cb2a45b96	last=97a69e232be
+	(CHECK-LAST)	last=f8424c940cc rpc_deriveaddr_wo_checksum-29
 		# +RPC doc fix
 	# Needs work/diff-minimisation: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
 	# Needs work: g533  -  # gui: add more detailed address error message
@@ -721,9 +722,11 @@ checkout v28.1
 	27034 rpc_importaddr_for_descwallet-27+k	3422369f448	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
-	27216 rpc_getaddressinfo_isactive			707ebbb6788	last=85f83339dda pinheadmz/used-addr-ui
+	27216 rpc_getaddressinfo_isactive-28		707ebbb6788	last=85f83339dda pinheadmz/used-addr-ui
+	(CHECK-LAST)	last=8eb77c47421 rpc_getaddressinfo_isactive
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-28+knots						64f3666c9e7	last=91771366a3d apoelstra/2023-03--codex32
+	(CHECK-LAST)	last=b34e02d766a codex32-29+knots
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs work: 27409 ryanofsky/pr/1data
 	# Needs review: g692 -  # Debug Console implementation of generate method
@@ -755,6 +758,7 @@ checkout v28.1
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
 	29016 rpc_listmempooltxs-28+knots			8bc551ae426	last=07008477b81 niftynei/nifty/listmempoolentry
+	(CHECK-LAST)	last=f7066357360 rpc_listmempooltxs-29+knots
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter

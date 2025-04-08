@@ -270,6 +270,8 @@ checkout v29.0rc3
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
 	-     qt_dialogs_less_modal					2822662e04d
+	-     docfix_getorphantxs_vsize
+		# Originally bundled in Knots with #30793 rpc_getorphantxs
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -553,10 +555,10 @@ checkout v29.0rc3
 		# NOTE: Fully reverts gui#819 in anticipation of #24058
 	24058 bip322-29+knots						c7dd00c6de5	last=29b28d07fa9 kallewoof/202201-bip322
 		# gui#819 fully reverted above in anticipation of this
-	TODO: signmessagewithprivkey updates for BIP137+Electrum+BIP322
+	#29.xTODO# signmessagewithprivkey updates for BIP137+Electrum+BIP322
 	# Needs work: 24123 fanquake/mbranch_protection_aarch64_linux
 	# Needs review: 24128 -  # wallet: BIP 326 sequence based anti-fee-snipe for taproot inputs
-	24162 rpc_deriveaddr_wo_checksum-26			d9cb2a45b96	last=97a69e232be
+	24162 rpc_deriveaddr_wo_checksum-29			d9cb2a45b96	last=97a69e232be
 		# +RPC doc fix
 	# Needs work/diff-minimisation: 24170 -  # p2p, rpc: Manual block-relay-only connections with addnode
 	# Needs work: g533  -  # gui: add more detailed address error message
@@ -620,7 +622,7 @@ checkout v29.0rc3
 	# Needs review: 27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
 	27216 rpc_getaddressinfo_isactive			707ebbb6788	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
-	27351 codex32-28+knots						64f3666c9e7	last=91771366a3d apoelstra/2023-03--codex32
+	27351 codex32-29+knots						64f3666c9e7	last=91771366a3d apoelstra/2023-03--codex32
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs work: 27409 ryanofsky/pr/1data
 	# Needs review: g692 -  # Debug Console implementation of generate method
@@ -651,7 +653,7 @@ checkout v29.0rc3
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
-	29016 rpc_listmempooltxs-28+knots			8bc551ae426	last=07008477b81 niftynei/nifty/listmempoolentry
+	29016 rpc_listmempooltxs-29+knots			8bc551ae426	last=07008477b81 niftynei/nifty/listmempoolentry
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
@@ -667,8 +669,6 @@ checkout v29.0rc3
 	-     manpages_seealso_notself				b4f685cd288
 		# Originally bundled into #29585
 	# Needs review & wallet compat check: 29675 achow101/musig2
-	MERGED: 29686 manpage_desc-28+knots					6fee3558663	last=47f50c7af55 willcl-ark/manpage-desc
-		# Various fixups
 	#29.xTODO# 29954 rpc_getmpinfo_policy_pr29954-28+knots				last=d165ac8779b kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
 		# Or maybe this is unnecessary with a get/set policy RPC method?
 	#29.xTODO# -     rpc_getmpinfo_policy_coreetc-28+knots
@@ -685,9 +685,6 @@ checkout v29.0rc3
 	30713 tdb3/relevant_blocks_in_scanblocks_status	15e73d0eb8f	last=5b2d0216d87  # rpc_scanblocks_status_results-28
 	#29.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
-	MERGED: 30793 rpc_getorphantxs-28+knots				ad863b5a7ba
-		BOTH MERGED: +31040+31043
-		# Includes warning about (unfixable) broken vsize field (abb1cc09785)
 	30860 bashcomp_bcli_generate-28				7a279182b1f	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
@@ -841,6 +838,7 @@ checkout v29.0rc3
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 		# TODO: Qt6 drops QRegExpValidator
 	 553 bugfix_qt_uri_amount_parser			55e55d6819c
+		 TODO: Merge in 561be93aad0 GUI: Mention BIP 20 URI support in command-line options (earlier versions included with #29686, now merged) - ensure knots-next-28.spec gets a check-last too
 	-     mining_priority						07464b13214	# Latest code now
 		#28.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 		#28.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
