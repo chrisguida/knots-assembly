@@ -864,18 +864,19 @@ checkout v28.1
 	g444  gui_netwatch-28+knots					9feaec422dd	last=91ef160f2f8 gui_netwatch-29+knots
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
-	10615 multiwallet_rpc-28+knots				962511f17b4  # latest code now
+	10615 multiwallet_rpc-28+knots				962511f17b4	last=ebaa07fa9c9 multiwallet_rpc-29+knots
 		# CAUTION: Be extra careful rebasing - diff/patch default context might accidentally move code around between different RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet to wallet-restricted users for now
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
 	10554 zmq_wtx-28+knots						560ef5631a7	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
+	(CHECK-LAST)	last=4a41f9baa29 zmq_wtx-29+knots
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					fbc15697b73
 		# NOTE: Originally based on #12674
 		# REBASING NOTE: Ensure any new types get added ? (unless we want to deprecate this...)
-	10593 relax_invblk_punishment				79e3ebd76a0
+	10593 relax_invblk_punishment-28			79e3ebd76a0	last=aba8cb28cba relax_invblk_punishment
 		# Squash "QA: Use addconnection rather than addnode onetry" ?
 		# FIXME: HandleFewUnconnectingHeaders sends getheaders _and_ disconnects??
 		# TODO: Consider rebasing on #29575 (NOW MERGED) ?
@@ -886,7 +887,8 @@ checkout v28.1
 	# script debugger needs major reworking: n/a   script_debugger-mini					f6d5379567	last=1d3ed0c48a script_debugger
 	11750 coincontrol_multiselect				5182926cb3a	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
-	11770 rest_fee								e74bda85570	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	11770 rest_fee-28							e74bda85570	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
+	(CHECK-LAST)	last=7d96e99c40e rest_fee
 		# Fixed a minor bug in conf_target range check
 		# Added new tests in feature_fee_estimation
 		# Updated to match estimatesmartfee RPC changes
