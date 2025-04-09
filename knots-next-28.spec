@@ -901,9 +901,9 @@ checkout v28.1
 		#29.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-27			9a6be594a70
 	15218 postibd_flush-28						f6400ffc581	last=8887d28a014  andrewtoth/flush-after-ibd
-	15428 tor_gui_pairing-28+knots				ea31fd84e38	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
+	15428 tor_gui_pairing-28+knots				ea31fd84e38	last=0fbe6e9c46b tor_gui_pairing-29+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-	15421 tor_subprocess-28+knots				0ef06937110	# Latest code now
+	15421 tor_subprocess-28+knots				0ef06937110	last=1c95be5e3ab tor_subprocess-29+knots
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
 	# TODO: tor guix bundle!
@@ -912,9 +912,7 @@ checkout v28.1
 	#	TODO: Support TRUC & Knots policies
 	17795 gui_console_ctrl_d-26+knots			114b7254d11
 		# NOTE: Completely rewrote to work on all platforms, in addition to Ctrl-W
-	15861 restore_vbits_warning					637b1c54da5
-	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
-		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
+	15861 restore_vbits_warning-28				637b1c54da5	last=c17e9d41d51 restore_vbits_warning
 	g537  gui_bech32_errpos						a574710c9f4
 	17636 guisettings-0.21						c9fcd4a9cf5	last=187f9684e03 emilengler/2019-11-guisettings
 		# Held back 5266efa964b..187f9684e03 (too strict error checking?)
@@ -924,11 +922,12 @@ checkout v28.1
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
 	19089 cli_getinfo_mwbalances-28+knots		e937882a240	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+	(CHECK-LAST)	last=ddd1c027a26 cli_getinfo_mwbalances-29
 	19092 cli_getinfo_mw_total_balance-28+knots	0e6607f372d	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
-	(CHECK-LAST)	last=71bfa1fb715 cli_getinfo_mw_total_balance-26
+	(CHECK-LAST)	last=fb17d9a2515 cli_getinfo_mw_total_balance-29+knots
 	19117 rpc_getrpcwhitelist					fcb36072f90
 		# NOTE: Was #18827 before any Knots merge
-	-     getrpcwhitelist_wallets-28+knots		a7aa33ccc74
+	-     getrpcwhitelist_wallets-28+knots		a7aa33ccc74	last=14bda42efd0 getrpcwhitelist_wallets-28+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	-     wallettool_dump_warning-28+knots		8f9f124c11f
@@ -938,6 +937,7 @@ checkout v28.1
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 	30951 v2onlyclearnet-28+knots				8bcb122421f	last=5e3fa6758ba
+	(CHECK-LAST)	last= v2onlyclearnet-29+knots
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
@@ -1074,6 +1074,8 @@ checkout v28.1
 	# TODO: prioritise txs from reorg'd-out blocks?
 	# TODO: some way to prioritise Lightning channel activity?
 # Non-upstreamed Knots compatibility:
+	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
+		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	-     compat_jsonrpc_weirdversions			d50d30bf835
 	29530 rpc_getpeerinfo_misbehaving_score-28	66b8c669e38	last=87efb6f0cfd
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots

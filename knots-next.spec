@@ -11,6 +11,7 @@ checkout v29.0rc3
 # SYSLIBS:
 	2241  sys_leveldb							91af8d0c4ea
 	5416  sys_libsecp256k1						3d441102525
+		#29.xTODO# FIXME: module checks aren't cached
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
@@ -739,6 +740,7 @@ checkout v29.0rc3
 		# NOTE: Temporarily(?) squashed to obfuscate security fixes (2023-07-28)
 	10554 zmq_wtx-29+knots						560ef5631a7	last=ed4fd266f7  # ZMQ: add publishers for wallet transactions.
 		# Extended doc/zmq a bit to match additions from #14060 and #23471
+		#29.xTODO# Stop using boost signals!
 	# needs concept compat with above & review: 17878 promag:2019-01-zmqpubwallettx
 	20551 rpc_onetry_conntype					fbc15697b73
 		# NOTE: Originally based on #12674
@@ -764,9 +766,9 @@ checkout v29.0rc3
 		# NOTE: Stripped out benchmark change
 		#29.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	15218 postibd_flush-28						f6400ffc581	last=8887d28a014  andrewtoth/flush-after-ibd
-	15428 tor_gui_pairing-28+knots				ea31fd84e38	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
+	15428 tor_gui_pairing-29+knots				ea31fd84e38	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-	15421 tor_subprocess-28+knots				0ef06937110	# Latest code now
+	15421 tor_subprocess-29+knots				0ef06937110	# Latest code now
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
 	# TODO: tor guix bundle!
@@ -786,12 +788,12 @@ checkout v29.0rc3
 	18223 blockfilter_v0						9468bae9ef4	last=5561e7a0c79
 		# NOTE: Don't enable with -blockfilterindex=1
 		# NOTE: Diff-minimised
-	19089 cli_getinfo_mwbalances-28+knots		e937882a240	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
-	19092 cli_getinfo_mw_total_balance-28+knots	0e6607f372d	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
+	19089 cli_getinfo_mwbalances-29				e937882a240	last=865d2c32d5a jonatack/cli-getinfo-multiwallet-follow-ups
+	19092 cli_getinfo_mw_total_balance-29+knots	0e6607f372d	last=08ac1abc583 jonatack/cli-getinfo-multiwallet-total-balance
 	(CHECK-LAST)	last=71bfa1fb715 cli_getinfo_mw_total_balance-26
 	19117 rpc_getrpcwhitelist					fcb36072f90
 		# NOTE: Was #18827 before any Knots merge
-	-     getrpcwhitelist_wallets-28+knots		a7aa33ccc74
+	-     getrpcwhitelist_wallets-29+knots		a7aa33ccc74
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
 	-     wallettool_dump_warning-28+knots		8f9f124c11f
@@ -800,7 +802,7 @@ checkout v29.0rc3
 	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	30951 v2onlyclearnet-28+knots				8bcb122421f	last=5e3fa6758ba
+	30951 v2onlyclearnet-29+knots				8bcb122421f	last=27e90008835
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
