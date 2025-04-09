@@ -34,6 +34,7 @@ checkout v29.0rc3
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 # FIXES:
 	13789 asm_bypass_cxxflags					22df203e4cd
+		#29.xTODO# Does this actually do anything now? Seems like CXXFLAGS might be ordered right (at least in POWER8 testing)
 	32217 fix_gitdir_foreign
 		# Was part of #18902
 	-     relsrc_embed_tagname-29+knots
@@ -337,7 +338,8 @@ checkout v29.0rc3
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
 	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue	fd9df84d86b	last=5d82d92aff7  # opti_rpc_uv_reserve-25
 	# Needs review: 31539 l0rinc/l0rinc/buffered-block-read-write OR 31551 l0rinc/l0rinc/bulk-block-read-write
-	31645 l0rinc/l0rinc/utxo-dump-batching		ef2cf259a11	last=868413340f8  # opti_dbbatchsize_64-0.15
+	31645 opti_dbbatchsize_64-29				ef2cf259a11	last=c7d329cb11f l0rinc/l0rinc/utxo-dump-batching
+		# Held back dynamic-dbbatchsize 868413340f8...c7d329cb11f (potentially problematic with infinite dbcache)
 		# TODO: Test even higher or incrementing-as-we-flush
 	# Needs review: 31682 l0rinc/l0rinc/optimize-CheckBlock-input-duplicate-check
 	# Needs Review? 31714 mzumsande/202501_simpler_segwit_check
@@ -758,10 +760,9 @@ checkout v29.0rc3
 		# Updated to match estimatesmartfee RPC changes
 	11803 bugfix_dumpwallet_hdkeypath			5f71b8ff12b
 	12965 scriptthreads-29+knots				44636605244	last=dfab6c6866 jonasschnelli/2018/04/svt
-	13203 dsha256_power8-27						f79f994ac5c	last=3b402e0738 TheBlueMatt/2018-05-asm
+	13203 dsha256_power8-29						f79f994ac5c	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
 		#29.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
-	-     dsha256_power8_asm_pragmas-27			9a6be594a70
 	15218 postibd_flush-28						f6400ffc581	last=8887d28a014  andrewtoth/flush-after-ibd
 	15428 tor_gui_pairing-28+knots				ea31fd84e38	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)

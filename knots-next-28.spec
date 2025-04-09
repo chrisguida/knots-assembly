@@ -896,6 +896,7 @@ checkout v28.1
 	12965 scriptthreads-28+knots				44636605244	last=dfab6c6866 jonasschnelli/2018/04/svt
 	(CHECK-LAST)	last=2fc8f747b66 scriptthreads-29+knots
 	13203 dsha256_power8-27						f79f994ac5c	last=3b402e0738 TheBlueMatt/2018-05-asm
+	(CHECK-LAST)	last= dsha256_power8-29
 		# NOTE: Stripped out benchmark change
 		#29.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	-     dsha256_power8_asm_pragmas-27			9a6be594a70
