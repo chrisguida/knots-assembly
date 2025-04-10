@@ -1,14 +1,14 @@
-timestamp 2025-03-05 03:27:08
+timestamp 2025-04-10 05:01:53
 lastapply no-merge
 
-#.. checked up to PR #31992 / gui #855
+#.. checked up to PR #32243 / gui #866
 
 checkout v28.1
 @28.x-syslibs
 # BUILD BUGS:
 	5872 subdir_incl_compat						b7dd5799936
 	#29.xTODO# Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
-	#29.xTODO# If needed? 30997 hebasto/240928-qt6
+	#29.xTODO# If needed? 30997 hebasto/240928-qt6 and/or g861 whitslack/qt6
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -339,6 +339,18 @@ checkout v28.1
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
 	31958 docfix_rpc_wallet_cf_psbt-24			ee76cf26ae7	last=0ad066c85a4  # rpc: add cli examples, update docs
 	31979 tor_backoff_max-26					056c95b3ff8	last=f708498293c  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds
+	Triage: 32049 -  # contrib: Fix gen-bitcoin-conf.sh
+	# Needs review: 32051 jonatack/2025-03-addnode-p2p
+	32073 hodlinator/2025/02/avoid_reconnect
+	# Needs concept & review: 32123 -  # wallet: make coinbase that will mature on the next block available for selection
+	# Needs review: 32143 -  # Fix 11-year-old mis-categorized error code in OP_IF evaluation
+	32176 laanwj/2025-03-tor-stream-isolation
+	# Needs review: 32180 mzumsande/202403_ibd_lastcommonblock
+	Just the fix from: 32185 l0rinc/l0rinc/cdbatch-size-estimation
+	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
+	32187 maflcko/2504-refactor-virtual
+	# Needs review: 32199 maflcko/2504-time
+	g864 furszy/2025_gui_fix_crash_numBlocksChanged
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -430,7 +442,11 @@ checkout v28.1
 		# TODO: Test even higher or incrementing-as-we-flush
 	# Needs review: 31682 l0rinc/l0rinc/optimize-CheckBlock-input-duplicate-check
 	# Needs Review? 31714 mzumsande/202501_simpler_segwit_check
+	# Needs reivew: 31868 l0rinc/lorinc/block-serialization-optimizations
 	# Needs review: 31875 l0rinc/l0rinc/sorted-BatchWrite
+	# Needs work: 32023 -  # wallet: removed duplicate call to GetDescriptorScriptPubKeyMan
+	# Needs review: 32128 -  # Draft: CCoinMap Experiments
+	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -443,6 +459,7 @@ checkout v28.1
 	# TODO: 29270 -  # Implement OP_CHECKSIGFROMSTACK(VERIFY)
 	# TODO: 29280 -  # Implement OP_CHECKTEMPLATEVERIFY
 	# TODO? 30018 -  # Implement BIP 118 validation (SIGHASH_ANYPREVOUT)
+	# TODO? 32080 -  # OP_CHECKCONTRACTVERIFY
 # FUNCTIONALITY:
 	-     rm_kernel_lib							84b7c6adf43
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
@@ -834,6 +851,8 @@ checkout v28.1
 	31886 netinfo_local_svcs-28+knots			bed89007671	last=724546e28a5 jonatack/2025-02-netinfo-services
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	# Needs review & fullrbf-enabled check: 31953 maflcko/2502-fullrbf-follow-up
+	32200 laanwj/2025-03-tor-extended-error-codes
+	Review: g866 rebroad/trafficgraphwidget-rebased
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
@@ -938,6 +957,7 @@ checkout v28.1
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 	30951 v2onlyclearnet-28+knots				8bcb122421f	last=5e3fa6758ba
 	(CHECK-LAST)	last= v2onlyclearnet-29+knots
+	# Needs review: 32065 vasild/i2p_early_create_session
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
@@ -966,6 +986,7 @@ checkout v28.1
 		#29.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
 	559   accept_nonstdtxn						e72688bf354
+		TODO: revert #28354 ?
 		#29.xTODO# Revert or redefine #29843 if it got merged
 	 929 tbc									fe176fa7028
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
@@ -1147,7 +1168,7 @@ checkout v28.1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250305)			ba223403bbc
+	n/a  (bump_version=Knots:20250410)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
