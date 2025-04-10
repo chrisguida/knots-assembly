@@ -341,10 +341,11 @@ checkout v28.1
 	31979 tor_backoff_max-26					056c95b3ff8	last=f708498293c  # torcontrol: Limit reconnect timeout to max seconds and log delay in whole seconds
 	Triage: 32049 -  # contrib: Fix gen-bitcoin-conf.sh
 	# Needs review: 32051 jonatack/2025-03-addnode-p2p
-	32073 hodlinator/2025/02/avoid_reconnect
+	32073 netinactive_dont_downgrade-26
 	# Needs concept & review: 32123 -  # wallet: make coinbase that will mature on the next block available for selection
 	# Needs review: 32143 -  # Fix 11-year-old mis-categorized error code in OP_IF evaluation
-	32176 laanwj/2025-03-tor-stream-isolation
+	32176 tor_rnd_stream_isolation-28
+		# Omitted renaming variable
 	# Needs review: 32180 mzumsande/202403_ibd_lastcommonblock
 	Just the fix from: 32185 l0rinc/l0rinc/cdbatch-size-estimation
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
