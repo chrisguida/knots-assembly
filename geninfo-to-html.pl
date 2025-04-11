@@ -62,6 +62,43 @@ sub wc_l {
 	1 + ($_[0] =~ tr/\n//)
 }
 
+sub github_fetch_prinfo {
+	my ($prspec) = @_;
+	$prspec =~ m[([gk]?)(.*)] or die;
+	my ($is_gui, $prnum) = @{^CAPTURE};
+	
+	my $j;
+	if (-e "$cachedir/$prspec") {
+		open my $f, "<$cachedir/$prspec";
+		my $content;
+		{
+			local $/ = undef;
+			$content = <$f>;
+		}
+		close $f;
+		$j = decode_json $content;
+	} else {
+		my $repo;
+		if ("g" eq $is_gui) {
+			$repo = "bitcoin-core/gui";
+		} elsif ("k" eq $is_gui) {
+			$repo = "bitcoinknots/bitcoin";
+		} else {
+			$repo = "bitcoin/bitcoin";
+		}
+		my $req = HTTP::Request->new(GET => "https://api.github.com/repos/$repo/pulls/$prnum");
+		$req->authorization_basic(@github_auth);
+		my $content = LWP::UserAgent->new->request($req)->content;
+		$j = decode_json $content;
+		die $content unless $j->{title};
+
+		open my $f, ">$cachedir/$prspec";
+		print $f $content;
+		close $f;
+	}
+	$j
+}
+
 my @to_process;
 
 my $base;
@@ -109,37 +146,10 @@ sub prep_html {
 	while ($_ = shift @to_process) {
 		my $line = $_;
 		push @threads, async {
-			if (s/^PR (([gk]?)(.*))//) {
-				my ($prspec, $is_gui, $prnum) = @{^CAPTURE};
+			if (s/^PR ([gk]?.*)//) {
+				my ($prspec) = @{^CAPTURE};
 				my $j;
-				if (-e "$cachedir/$prspec") {
-					open my $f, "<$cachedir/$prspec";
-					my $content;
-					{
-						local $/ = undef;
-						$content = <$f>;
-					}
-					close $f;
-					$j = decode_json $content;
-				} else {
-					my $repo;
-					if ("g" eq $is_gui) {
-						$repo = "bitcoin-core/gui";
-					} elsif ("k" eq $is_gui) {
-						$repo = "bitcoinknots/bitcoin";
-					} else {
-						$repo = "bitcoin/bitcoin";
-					}
-					my $req = HTTP::Request->new(GET => "https://api.github.com/repos/$repo/pulls/$prnum");
-					$req->authorization_basic(@github_auth);
-					my $content = LWP::UserAgent->new->request($req)->content;
-					$j = decode_json $content;
-					die $content unless $j->{title};
-					
-					open my $f, ">$cachedir/$prspec";
-					print $f $content;
-					close $f;
-				}
+				$j = github_fetch_prinfo($prspec);
 				$_ = "<a";
 				$_ .= " class=\"merged\"" if $j->{merged};
 				my $subject = preptitle($j->{title});
