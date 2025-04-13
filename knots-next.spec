@@ -7,11 +7,9 @@ checkout v29.0rc3
 @28.x-syslibs
 # BUILD BUGS:
 	#29.xTODO# Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
-	TODO: 30997 hebasto/240928-qt6 and/or g861 whitslack/qt6
 # SYSLIBS:
 	2241  sys_leveldb							91af8d0c4ea
 	5416  sys_libsecp256k1						3d441102525
-		TODO: FIXME: module checks aren't cached
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
@@ -19,6 +17,8 @@ checkout v29.0rc3
 		# Implicitly includes most of #18818
 		#30.xTODO# sys_libminisketch
 	15155 test_external_bcli					7d6366b5659
+	30997 qt5qt6-29
+		# Includes parts of gui#861 whitslack/qt6
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	n/a   (delete_release_notes_fragments)
@@ -100,7 +100,7 @@ checkout v29.0rc3
 		# NOTE: If we're sending to someone else who is paying the tx fee, it actually makes sense?
 	g506  qt_qrcode_sizefixes					36c41fed21b
 	# Needs review: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
-	24066 whitslack/openrc-daemonwait
+	24066 -													last=89cb2b6d91e  # contrib/init: (OpenRC) use -daemonwait to wait for startup completion
 	TODO: other OpenRC updates from Gentoo:
 		Gentoo layout backward compat
 		syntax for defaults

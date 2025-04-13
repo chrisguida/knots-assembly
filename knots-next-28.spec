@@ -102,7 +102,7 @@ checkout v28.1
 		# NOTE: If we're sending to someone else who is paying the tx fee, it actually makes sense?
 	g506  qt_qrcode_sizefixes					36c41fed21b
 	# Needs review: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
-	24066 whitslack/openrc-daemonwait
+	24066 -  # contrib/init: (OpenRC) use -daemonwait to wait for startup completion
 	TODO: other OpenRC updates from Gentoo:
 		Gentoo layout backward compat
 		syntax for defaults
