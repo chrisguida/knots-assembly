@@ -1,7 +1,7 @@
-timestamp 2025-04-10 05:01:53
+timestamp 2025-04-13 03:03:51
 lastapply no-merge
 
-#.. checked up to PR #32243 / gui #866
+#.. checked up to PR #32256 / gui #866
 
 checkout v29.0rc3
 @28.x-syslibs
@@ -252,13 +252,15 @@ checkout v29.0rc3
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
 	# Needs review: 31622 achow101/psbt-sighashes
 	31727 darosior/2501_miniscript_nonfatal
+		+ 32255
 	# Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
 	# Needs review? 31774 -  # crypto: Use secure_allocator for AES256_ctx
 	# Needs work & importance: 31775 -  # rpc: collect transaction fees on generateblock
 	# Needs review: 31785 Sjors/2025/02/create_new_block
 	# Needs review: 31807 theuni/fix-dupe-kernel-symbols
-	31912 workaround_buggy_rndrrs-28			36e11bb93cc	last=2498dd8dbd5  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
+	# 31912 workaround_buggy_rndrrs-28			36e11bb93cc	last=2498dd8dbd5  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
 		# Held back 585aba6eec8..2498dd8dbd5 (2x diff for basically the same thing)
+	32248 laanwj/2025-04-remove-arm64-rndr
 	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
@@ -370,6 +372,7 @@ checkout v29.0rc3
 	# TODO: 29280 -  # Implement OP_CHECKTEMPLATEVERIFY
 	# TODO? 30018 -  # Implement BIP 118 validation (SIGHASH_ANYPREVOUT)
 	# TODO? 32080 -  # OP_CHECKCONTRACTVERIFY
+	# TODO? 32247 jamesob/2025-04-csfs
 # FUNCTIONALITY:
 	#-     rm_kernel_lib							84b7c6adf43
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
@@ -1021,7 +1024,7 @@ checkout v29.0rc3
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250410)			ba223403bbc
+	n/a  (bump_version=Knots:20250413)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
