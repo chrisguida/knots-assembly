@@ -631,7 +631,7 @@ checkout v28.1
 	# Needs review: 22919 -  # fees: skip pointless fee parameter calculation during IBD
 	# Needs work: 23019 -  # rpc, wallet: Add listaddresses RPC
 	# Needs review: 23035 jonatack:getnodeaddresses-tried-and-reference_count
-	# Needs review: g410  benthecarman/uppercase-uri
+	# Needs review: g410  benthecarman-g/uppercase-uri
 	23362 importfromcoldcard-25					98b55ac8e6d	last=8076f8d4c2a hebasto/211025-cc
 	(CHECK-LAST)	last=0b7664c0380 importfromcoldcard
 		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
@@ -650,6 +650,7 @@ checkout v28.1
 	(CHECK-LAST)	last= qt_traffic_tooltip
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
+	# Needs work: g866 rebroad-g/trafficgraphwidget-rebased
 	g820  qt_fontsel_qrcodes-27+knots			ce838070845	last=b14c9d0572e qt_fontsel_qrcodes
 	# TODO: qt_fontsel_console
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
@@ -718,7 +719,8 @@ checkout v28.1
 	26990 cli_mw_errormsgs_pr26990-24			73a8f2cce9a
 	27034 rpc_importaddr_for_descwallet-27+k	3422369f448	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 LarryRuane/2023-02-getpeerinfo (maybe GUI port too?)
+	27052 27052 rpc_getpeerinfo_lastblockann-28					last=559b0913bfa LarryRuane/2023-02-getpeerinfo
+		# Avoided changing internal data structures
 	27216 rpc_getaddressinfo_isactive-28		707ebbb6788	last=85f83339dda pinheadmz/used-addr-ui
 	(CHECK-LAST)	last=8eb77c47421 rpc_getaddressinfo_isactive
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
@@ -833,7 +835,6 @@ checkout v28.1
 	Needs review & fullrbf-enabled check: 31953 maflcko/2502-fullrbf-follow-up
 		See also: 26454 petertodd/2022-feebump-without-optin
 	32200 laanwj/2025-03-tor-extended-error-codes
-	Review: g866 rebroad/trafficgraphwidget-rebased
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
@@ -931,7 +932,7 @@ checkout v28.1
 	-     wallettool_dump_warning-28+knots		8f9f124c11f
 	# Needs work: 22708 hebasto:210815-wayland
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
-	# Needs work/review: g539  RandyMcMillan/1643263956-network-graph-issue-532
+	# Needs work/review: g539  RandyMcMillan-g/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 	30951 v2onlyclearnet-28+knots				8bcb122421f	last=5e3fa6758ba
