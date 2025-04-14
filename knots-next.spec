@@ -459,7 +459,7 @@ checkout v29.0rc3
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
-	19873 mempressure							2fc6668792f
+	19873 mempressure-29+knots					2fc6668792f	last=5b43cc77824 mempressure
 		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
 	# Needs review/testing: - maxmem_coins_cache
 		# TODO: Some way to override... see #26471 discussion
@@ -542,7 +542,7 @@ checkout v29.0rc3
 	23362 importfromcoldcard					98b55ac8e6d	last=8076f8d4c2a hebasto/211025-cc
 		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 rpc_savefeeestimates					f20be3bb5b5	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
+	23387 rpc_savefeeestimates-29+knots			f20be3bb5b5	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
 		# NOTE: Carries lock annotation fix aa096ebfb06 (FlushFeeEstimates lock on m_cs_fee_estimator)
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work/review: 23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection

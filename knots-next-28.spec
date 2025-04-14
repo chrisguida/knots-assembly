@@ -636,7 +636,8 @@ checkout v28.1
 	(CHECK-LAST)	last=0b7664c0380 importfromcoldcard
 		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 rpc_savefeeestimates					f20be3bb5b5	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
+	23387 rpc_savefeeestimates-28				f20be3bb5b5	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
+	(CHECK-LAST)	last=b196c063427 rpc_savefeeestimates-29+knots
 		# NOTE: Carries lock annotation fix aa096ebfb06 (FlushFeeEstimates lock on m_cs_fee_estimator)
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work/review: 23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection
