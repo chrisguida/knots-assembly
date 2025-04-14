@@ -198,7 +198,7 @@ checkout v29.0rc3
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29175 -										5f08e7fee5b	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs work: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
-	29307 AutoFile_error_check-29				17291246d08	last=dba78353868 vasild/AutoFile_error_check
+	29307 AutoFile_error_check-29				17291246d08	last=89399474499 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	29640 fix_tiebreak_on_disk-26
@@ -344,9 +344,9 @@ checkout v29.0rc3
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
 	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue	fd9df84d86b	last=5d82d92aff7  # opti_rpc_uv_reserve-25
-	31551 l0rinc/l0rinc/bulk-block-read-write
-	31645 opti_dbbatchsize_64-29				ef2cf259a11	last=c7d329cb11f l0rinc/l0rinc/utxo-dump-batching
-		# Held back dynamic-dbbatchsize 868413340f8...c7d329cb11f (potentially problematic with infinite dbcache)
+	#29.xTODO# 31551 l0rinc/l0rinc/bulk-block-read-write
+	31645 opti_dbbatchsize_64-29				ef2cf259a11	last=31f8394f6d5 l0rinc/l0rinc/utxo-dump-batching
+		# Held back dynamic-dbbatchsize 868413340f8...31f8394f6d5 (potentially problematic with infinite dbcache)
 		# TODO: Test even higher or incrementing-as-we-flush
 	# Needs review: 31682 l0rinc/l0rinc/optimize-CheckBlock-input-duplicate-check
 	# Needs Review? 31714 mzumsande/202501_simpler_segwit_check
