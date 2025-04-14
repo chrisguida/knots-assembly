@@ -274,7 +274,7 @@ checkout v29.0rc3
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
-	g864  fix_qt_shutdowncrash_g864-24						last=b9700128117 furszy/2025_gui_fix_crash_numBlocksChanged
+	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -329,7 +329,7 @@ checkout v29.0rc3
 	# Needs review: 29473 -  # optimization: Speed up Base58 encoding by 400% by 64-bit preliminary byte packing
 	# Needs review: 29491 fjahr/2024-02-batch-validation-updated
 	# Needs review: 29578 brunoerg/2024-03-addrman-getaddr
-	29602 -  # refactor: Optimize IsSpace function for common non-whitespace characters
+	29602 opti_IsSpace_pr29602-29
 	# TODO: Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
 	30059 dbfilesize_param-29+knots				add2386fdc7	last=c283a572145 dbfilesize_param
 	-     dbfilesize_64-29+knots				6d097aed47f
@@ -339,7 +339,7 @@ checkout v29.0rc3
 		# Was (never in Knots) #28945
 	# Needs review? 30442 paplorinc/paplorinc/siphash
 	# Needs review: 30610 sipa/202408_force_sync
-	30611 andrewtoth/write-chainstate-every-hour
+	30611 chainstate_write_hourly-29						last=b7f3b6fd96c andrewtoth/write-chainstate-every-hour
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor

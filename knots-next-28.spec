@@ -343,7 +343,7 @@ checkout v28.1
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
-	g864  fix_qt_shutdowncrash_g864-24						last=b9700128117 furszy/2025_gui_fix_crash_numBlocksChanged
+	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
