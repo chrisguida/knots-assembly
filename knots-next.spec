@@ -101,16 +101,11 @@ checkout v29.0rc3
 	g506  qt_qrcode_sizefixes					36c41fed21b
 	# Needs review: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	24066 -													last=89cb2b6d91e  # contrib/init: (OpenRC) use -daemonwait to wait for startup completion
-	TODO: other OpenRC updates from Gentoo:
-		Gentoo layout backward compat
-		syntax for defaults
-		PIDDIR in /run instead of /var/run
-		LOGDIR var added (default, checkpath, usage)
-		checkpath syntax/quoting/order changed
-		`checkconfig` rv checked
-		no "in background" message
-		cookie group-readable (chmod, but Knots has better)
-		checkconfig no longer requires rpcpassword (unless rpcuser specified for some reason)
+	-     openrc_from_gentoo
+		# Other OpenRC updates from Gentoo:
+		# - PIDDIR in /run instead of /var/run
+		# - LOGDIR var added
+		# - RPC cookie group-readable
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049 / now #27386
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24479 bugfix_settings_numberval				7dc92f9cc9f
@@ -206,7 +201,7 @@ checkout v29.0rc3
 	29307 AutoFile_error_check-29				17291246d08	last=dba78353868 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
-	Partial: 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
+	29640 fix_tiebreak_on_disk-26
 	#28.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	#28.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	29678 fix_init_lowdisk_warning_reqd^		8c4f8f40807	last=c452d6c1efe fix_init_lowdisk_warning_reqd
@@ -251,8 +246,8 @@ checkout v29.0rc3
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
 	# Needs review: 31622 achow101/psbt-sighashes
-	31727 darosior/2501_miniscript_nonfatal
-		+ 32255
+	31727 miniscript_nonfatal_pr31727-29					last=3693e4d6ee0 !hodlinator/2025/04/31727_followup
+		# Includes fixes from #32255
 	# Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
 	# Needs review? 31774 -  # crypto: Use secure_allocator for AES256_ctx
 	# Needs work & importance: 31775 -  # rpc: collect transaction fees on generateblock
@@ -260,7 +255,7 @@ checkout v29.0rc3
 	# Needs review: 31807 theuni/fix-dupe-kernel-symbols
 	# 31912 workaround_buggy_rndrrs-28			36e11bb93cc	last=2498dd8dbd5  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
 		# Held back 585aba6eec8..2498dd8dbd5 (2x diff for basically the same thing)
-	32248 laanwj/2025-04-remove-arm64-rndr
+	32248 rm_amd64_rndr-29									last=7749d929a0d laanwj/2025-04-remove-arm64-rndr
 	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
@@ -274,11 +269,12 @@ checkout v29.0rc3
 	32176 tor_rnd_stream_isolation-28
 		# Omitted renaming variable
 	# Needs review: 32180 mzumsande/202403_ibd_lastcommonblock
-	Just the fix from: 32185 l0rinc/l0rinc/cdbatch-size-estimation
+	32185 fix_dbwrapper_batch_header_size-26
+		# Only the fix, without the bumped LevelDB version dep
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
-	32187 maflcko/2504-refactor-virtual
+	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
-	g864 furszy/2025_gui_fix_crash_numBlocksChanged
+	g864  fix_qt_shutdowncrash_g864-24						last=b9700128117 furszy/2025_gui_fix_crash_numBlocksChanged
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327

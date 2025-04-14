@@ -103,16 +103,11 @@ checkout v28.1
 	g506  qt_qrcode_sizefixes					36c41fed21b
 	# Needs review: 24034 -  # p2p: delete anchors.dat after trying to connect to that peers
 	24066 -  # contrib/init: (OpenRC) use -daemonwait to wait for startup completion
-	TODO: other OpenRC updates from Gentoo:
-		Gentoo layout backward compat
-		syntax for defaults
-		PIDDIR in /run instead of /var/run
-		LOGDIR var added (default, checkpath, usage)
-		checkpath syntax/quoting/order changed
-		`checkconfig` rv checked
-		no "in background" message
-		cookie group-readable (chmod, but Knots has better)
-		checkconfig no longer requires rpcpassword (unless rpcuser specified for some reason)
+	-     openrc_from_gentoo
+		# Other OpenRC updates from Gentoo:
+		# - PIDDIR in /run instead of /var/run
+		# - LOGDIR var added
+		# - RPC cookie group-readable
 	# Needs review: 24090 RandyMcMillan/1642450390-issue-24049 / now #27386
 	# TODO: Actual fix for: 24432 -  # test: Check error for non-existent directory symlink
 	24479 bugfix_settings_numberval				7dc92f9cc9f
@@ -216,7 +211,7 @@ checkout v28.1
 	29480 -										91fbf239a90	last=88468a8afcd  # log_rand_during_init-0.20
 		# Needs careful backport (basically rewritten)
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
-	Partial: 29640 -  # Fix tiebreak when loading blocks from disk (and add tests for comparing chain ties)
+	29640 fix_tiebreak_on_disk-26
 	#28.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	#28.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	29678 fix_init_lowdisk_warning_reqd^		8c4f8f40807	last=c452d6c1efe fix_init_lowdisk_warning_reqd
@@ -343,11 +338,12 @@ checkout v28.1
 	32176 tor_rnd_stream_isolation-28
 		# Omitted renaming variable
 	# Needs review: 32180 mzumsande/202403_ibd_lastcommonblock
-	Just the fix from: 32185 l0rinc/l0rinc/cdbatch-size-estimation
+	32185 fix_dbwrapper_batch_header_size-26
+		# Only the fix, without the bumped LevelDB version dep
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
-	32187 maflcko/2504-refactor-virtual
+	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
-	g864 furszy/2025_gui_fix_crash_numBlocksChanged
+	g864  fix_qt_shutdowncrash_g864-24						last=b9700128117 furszy/2025_gui_fix_crash_numBlocksChanged
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
