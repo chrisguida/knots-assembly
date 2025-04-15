@@ -651,7 +651,7 @@ checkout v29.0rc3
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
-	Review/test: g777 -  # gui: getrawtransaction implementation
+	# Needs concept/review: g777 -  # gui: getrawtransaction implementation
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
 	29016 rpc_listmempooltxs-29+knots			8bc551ae426	last=07008477b81 niftynei/nifty/listmempoolentry
@@ -704,8 +704,8 @@ checkout v29.0rc3
 	31845 pruneduringinit-29+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
 	31886 jonatack/2025-02-netinfo-services		bed89007671	last=724546e28a5  # netinfo_local_svcs-28+knots
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
-	Needs review & fullrbf-enabled check: 31953 maflcko/2502-fullrbf-follow-up
-		See also: 26454 petertodd/2022-feebump-without-optin
+	31953 maflcko/2502-fullrbf-follow-up					last=fa16051eac9
+		# Was: 26454 petertodd/2022-feebump-without-optin
 	32200 laanwj/2025-03-tor-extended-error-codes
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
@@ -852,6 +852,7 @@ checkout v29.0rc3
 	5891  qt_console_history_persist			76638518995	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-28+knots						a1e42756c14	# Latest code now
 		29.xTODO: Revert #30592
+		TODO: Adapt #31953
 	-     truc_opts-28+knots					7b898f1d017
 	# TODO? -     net_identify_librerelay
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
