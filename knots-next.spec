@@ -804,11 +804,12 @@ checkout v29.0rc3
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 	30951 v2onlyclearnet-29+knots				8bcb122421f	last=27e90008835
+		# Made a hidden option
 	# Needs review: 32065 vasild/i2p_early_create_session
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
-	TODO: 366c9c53308 build: Exclude CI from release tarball
+	-     rm_tarball_ci-29+knots
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	29.xTODO: Restore NAT-PMP/UPNP removed in MERGED #30043 ?
 	29.xTODO# revert #31130+#31157+#31198?+#31916? to restore miniupnpc support

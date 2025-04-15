@@ -936,6 +936,7 @@ checkout v28.1
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
 	30951 v2onlyclearnet-28+knots				8bcb122421f	last=5e3fa6758ba
+		# Made a hidden option
 	(CHECK-LAST)	last= v2onlyclearnet-29+knots
 	# Needs review: 32065 vasild/i2p_early_create_session
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
