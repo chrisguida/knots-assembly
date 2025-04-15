@@ -706,7 +706,7 @@ checkout v29.0rc3
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	31953 maflcko/2502-fullrbf-follow-up					last=fa16051eac9
 		# Was: 26454 petertodd/2022-feebump-without-optin
-	32200 laanwj/2025-03-tor-extended-error-codes
+	32200 socks_tor_error_codes-0.18
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
