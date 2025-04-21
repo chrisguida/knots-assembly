@@ -1,7 +1,7 @@
-timestamp 2025-04-13 03:03:51
+timestamp 2025-04-21 23:09:10
 lastapply no-merge
 
-#.. checked up to PR #32256 / gui #866
+#.. checked up to PR #32318 / gui #866
 
 checkout v29.0rc3
 @28.x-syslibs
@@ -275,6 +275,9 @@ checkout v29.0rc3
 	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
 	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
+	# Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
+	32300 sipa/202504_feefrac_div_fix
+	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -355,6 +358,7 @@ checkout v29.0rc3
 	# Needs work: 32023 -  # wallet: removed duplicate call to GetDescriptorScriptPubKeyMan
 	# Needs review: 32128 -  # Draft: CCoinMap Experiments
 	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
+	32279 l0rinc/l0rinc/prevector-size
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -707,6 +711,7 @@ checkout v29.0rc3
 	31953 maflcko/2502-fullrbf-follow-up					last=fa16051eac9
 		# Was: 26454 petertodd/2022-feebump-without-optin
 	32200 socks_tor_error_codes-0.18
+	# Needs work? 32297 ryanofsky/pr/ipc-cli
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
@@ -1023,7 +1028,7 @@ checkout v29.0rc3
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250413)			ba223403bbc
+	n/a  (bump_version=Knots:20250421)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
@@ -1046,6 +1051,7 @@ checkout v29.0rc3
 TODO: Close Knots issue 98
 
 # TODO: @28.x-knots-android
+	# 32262 hebasto/250413-android
 
 @28.x-knots-extratests
 	31367 dergoegge/2024-11-ci-ulimit-s
