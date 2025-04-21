@@ -369,7 +369,7 @@ checkout v28.1
 		# Opensource released: https://lists.qt-project.org/pipermail/announce/2024-November/000526.html
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
-	# Needs review: 30301 theuni/miniupnp-228-bump
+	30301 theuni/miniupnp-228-bump
 @28.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-28+k					723ceffb7b7	last=3efb06b858b rm_minisketch-29+syslibs

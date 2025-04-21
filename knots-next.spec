@@ -811,9 +811,8 @@ checkout v29.0rc3
 # Non-upstreamed functionality:
 	-     rm_tarball_ci-29+knots
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
-	29.xTODO: Restore NAT-PMP/UPNP removed in MERGED #30043 ?
-	29.xTODO# revert #31130+#31157+#31198?+#31916? to restore miniupnpc support
-		TODO? Needs review: 30301 theuni/miniupnp-228-bump
+	-     restore_upnp-29+knots
+		# NOTE: Includes #30301 theuni/miniupnp-228-bump
 	n/a   restore_feefilter_opt					cf49d58bff4
 	-     gui_payreq_textedit					b487f357bb4
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
@@ -916,6 +915,7 @@ checkout v29.0rc3
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		#28.xTODO# Add tests and make sure boundaries are correct
 	TODO: Ephemeral anchors alternative to dust / make Ephemeral optional
+		NOTE: Ensure anchors aren't valid w/o other outputs
 		# Needs review/concept: 29001 instagibbs/2023-12-ephemeral-anchors
 		# Problematic: 26403 instagibbs/ephemeral-anchors
 	# TODO: Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
