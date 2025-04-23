@@ -705,11 +705,11 @@ checkout v29.0rc3
 	31560 rpc_dumptxoutset_fifo-29+knots		27874e8290b	last=4c8e9b4f35b theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
-	31672 peer_cpu_load-29+knots				dee920da09d	last=0f68c47e931 vasild/peer_cpu_load
+	31672 peer_cpu_load-29+knots				dee920da09d	last=19c8336d970 vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
 	31886 jonatack/2025-02-netinfo-services		bed89007671	last=724546e28a5  # netinfo_local_svcs-28+knots
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
-	31953 maflcko/2502-fullrbf-follow-up					last=fa16051eac9
+	31953 maflcko/2502-fullrbf-follow-up					last=fa86190e6ed
 		# Was: 26454 petertodd/2022-feebump-without-optin
 	32200 socks_tor_error_codes-0.18
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
@@ -729,10 +729,10 @@ checkout v29.0rc3
 	9152 sweepprivkeys-29+knots					647dcf1fe7c
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
-	9245 ionice									20f5b5a0563
+	9245 ionice-29+knots						20f5b5a0563
 		# low prio: p2p requests, loading/verifying blocks on disk
 		# normal prio: connecting blocks, indexes, user requests
-	-    ionice_win								990ff83c56d
+	-    ionice_win-29+knots					990ff83c56d
 	8501  old_stats_rpc-29						8646f7adcf9	last=7af0ea43b2
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-29+knots					2872a2809b7	last=63fb11652f
