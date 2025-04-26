@@ -122,7 +122,7 @@ checkout v29.0rc3
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#TsTODO# Update with other commit (unit translations) when translations supported again
-	29868 hww_windows-29						301886f3d0e	last=86c7c65e2fe hebasto/240414-win-subprocess
+	29868 hww_windows-29						301886f3d0e	last=f9e26d7d74b hebasto/240414-win-subprocess
 		# NOTE: Retained `ENABLE_EXTERNAL_SIGNER` cmake option
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
@@ -277,9 +277,10 @@ checkout v29.0rc3
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
-	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
+	g864  fix_qt_shutdowncrash_g864-24						last=71656bdfaa6 furszy/2025_gui_fix_crash_numBlocksChanged
 	# Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
+	32355 fix_block_full_enough
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -359,7 +360,7 @@ checkout v29.0rc3
 	# Needs work: 32023 -  # wallet: removed duplicate call to GetDescriptorScriptPubKeyMan
 	# Needs review: 32128 -  # Draft: CCoinMap Experiments
 	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
-	32279 opti_script_inline_36b-29							last=1abeadee083 l0rinc/l0rinc/prevector-size
+	32279 opti_script_inline_36b-29							last=306c89f725e l0rinc/l0rinc/prevector-size
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -824,9 +825,10 @@ checkout v29.0rc3
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				2e8254fc98f
 	-     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
-	14137 win_taskbar_progress-28+knots			87fe75f61fc	last=18eb4dbb8a
+	14137 win_taskbar_progress					87fe75f61fc	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					a0a7a60212a
+		# TODO?? blockreservedsize option
 	7107  qtnetworkport-28+knots				77f2e52bf26	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-28+knots				9d121259d75 last=2627c0937f8 sendraw_force
