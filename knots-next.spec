@@ -831,20 +831,19 @@ checkout v29.0rc3
 		# TODO?? blockreservedsize option
 	7107  qtnetworkport-29+knots				77f2e52bf26	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
-	7533  sendraw_force-28+knots				9d121259d75 last=2627c0937f8 sendraw_force
+	7533  sendraw_force-29+knots				9d121259d75 last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
 			# error message change impacts a bunch of functional tests; and submitpackage currently lacks support for ignore_rejects anyway
-	11082 rwconf-27+knots						c90495c624f # Latest code now
+	11082 rwconf-29+knots						c90495c624f # Latest code now
 		#29.xTODO# Squash fixes
 		#28.xTODO# Deprecate with settings.json better?
-	7510  rwconf_gui-28+knots					3c18bc835f5
+	7510  rwconf_gui-29+knots					3c18bc835f5
 		#29.xTODO# Squash fixes
 		#29.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
 	559   accept_nonstdtxn						e72688bf354
-		TODO: revert #28354 ?
 		#29.xTODO# Revert or redefine #29843 if it got merged
 	 929 tbc									fe176fa7028
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
@@ -860,6 +859,7 @@ checkout v29.0rc3
 	5891  qt_console_history_persist			76638518995	last=0cd5fc301d6 qt_console_history_persist
 	7219  rbf_opts-28+knots						a1e42756c14	# Latest code now
 		29.xTODO: Revert #30592
+		TODO: Need to migrate RBF ignore_rejects from 9ebc373637b
 		TODO: Adapt #31953
 	-     truc_opts-28+knots					7b898f1d017
 	# TODO? -     net_identify_librerelay
@@ -998,6 +998,7 @@ checkout v29.0rc3
 		#30.xTODO# Revert #31649
 	n/a   checkpoint_update-28					41c985132c9
 		#29.xTODO# Revert #25725 (Remove mainnet checkpoints)
+	TODO: revert #28354 ?
 	10282 timebomb_knots						40f673fe63e
 	-     rwconf_policy-28+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process

@@ -964,19 +964,19 @@ checkout v28.1
 	(CHECK-LAST)	last= qtnetworkport-29+knots
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-28+knots				9d121259d75 last=2627c0937f8 sendraw_force
+	(CHECK-LAST)	last= sendraw_force-29+knots
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
 			# error message change impacts a bunch of functional tests; and submitpackage currently lacks support for ignore_rejects anyway
-	11082 rwconf-27+knots						c90495c624f # Latest code now
+	11082 rwconf-27+knots						c90495c624f last=130902c94df rwconf-29+knots
 		#29.xTODO# Squash fixes
 		#28.xTODO# Deprecate with settings.json better?
 	7510  rwconf_gui-28+knots					3c18bc835f5
 		#29.xTODO# Squash fixes
 		#29.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
-	559   accept_nonstdtxn						e72688bf354
-		TODO: revert #28354 ?
+	559   accept_nonstdtxn-26					e72688bf354	last=2e2f48f871c accept_nonstdtxn
 		#29.xTODO# Revert or redefine #29843 if it got merged
 	 929 tbc									fe176fa7028
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
@@ -1126,6 +1126,7 @@ checkout v28.1
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#29.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
+	TODO: revert #28354 ?
 	10282 timebomb_knots						40f673fe63e
 	-     rwconf_policy-28+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
