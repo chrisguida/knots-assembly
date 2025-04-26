@@ -829,7 +829,7 @@ checkout v29.0rc3
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					a0a7a60212a
 		# TODO?? blockreservedsize option
-	7107  qtnetworkport-28+knots				77f2e52bf26	last=1f37c87d8f2 origin-pull/7107/head
+	7107  qtnetworkport-29+knots				77f2e52bf26	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-28+knots				9d121259d75 last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
