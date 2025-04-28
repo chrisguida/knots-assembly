@@ -977,8 +977,7 @@ checkout v28.1
 		#29.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
 	559   accept_nonstdtxn-26					e72688bf354	last=2e2f48f871c accept_nonstdtxn
-		#29.xTODO# Revert or redefine #29843 if it got merged
-	 929 tbc									fe176fa7028
+	 929 tbc-25									fe176fa7028	last=32c37e2d493 tbc
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 		# TODO: Qt6 drops QRegExpValidator
 	 553 bugfix_qt_uri_amount_parser			55e55d6819c

@@ -287,6 +287,7 @@ checkout v29.0rc3
 	-     qt_dialogs_less_modal					2822662e04d
 	-     docfix_getorphantxs_vsize
 		# Originally bundled in Knots with #30793 rpc_getorphantxs
+	-     fix_guix_boost_mirror-29
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -844,10 +845,9 @@ checkout v29.0rc3
 		#29.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
 	559   accept_nonstdtxn						e72688bf354
-		#29.xTODO# Revert or redefine #29843 if it got merged
+		#30.xTODO# Revert or redefine #29843 if it got merged
 	 929 tbc									fe176fa7028
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
-		# TODO: Qt6 drops QRegExpValidator
 	 553 bugfix_qt_uri_amount_parser			55e55d6819c
 		 TODO: Merge in 561be93aad0 GUI: Mention BIP 20 URI support in command-line options (earlier versions included with #29686, now merged) - ensure knots-next-28.spec gets a check-last too
 	-     mining_priority						07464b13214	# Latest code now
