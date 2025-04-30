@@ -122,7 +122,8 @@ checkout v29.0rc3
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#TsTODO# Update with other commit (unit translations) when translations supported again
-	29868 hww_windows-29						301886f3d0e	last=f9e26d7d74b hebasto/240414-win-subprocess
+	29868 hww_windows-29						301886f3d0e	last=7806529dd47 hebasto/240414-win-subprocess
+		#29.xTODO# Check on https://github.com/bitcoin/bitcoin/pull/29868#issuecomment-2823736638
 		# NOTE: Retained `ENABLE_EXTERNAL_SIGNER` cmake option
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
@@ -364,7 +365,7 @@ checkout v29.0rc3
 	# Needs work: 32023 -  # wallet: removed duplicate call to GetDescriptorScriptPubKeyMan
 	# Needs review: 32128 -  # Draft: CCoinMap Experiments
 	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
-	32279 opti_script_inline_36b-29							last=306c89f725e l0rinc/l0rinc/prevector-size
+	32279 opti_script_inline_36b-29							last=3170e2c1626 l0rinc/l0rinc/prevector-size
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -631,7 +632,7 @@ checkout v29.0rc3
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	27034 rpc_importaddr_for_descwallet-27+k	3422369f448	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 rpc_getpeerinfo_lastblockann-28					last=559b0913bfa LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28					last=5bcf8491d15 LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
 	27216 rpc_getaddressinfo_isactive			707ebbb6788	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
@@ -855,7 +856,6 @@ checkout v29.0rc3
 	n/a   tbc_font								458c5339ceb
 		# Includes ff7b90dc729 Embedded font: Rename to avoid confusion in font selector  (fix_qt_fontsel_confusion)
 	 553 bugfix_qt_uri_amount_parser			55e55d6819c
-		 TODO: Merge in 561be93aad0 GUI: Mention BIP 20 URI support in command-line options (earlier versions included with #29686, now merged) - ensure knots-next-28.spec gets a check-last too
 	-     mining_priority						07464b13214	# Latest code now
 		#28.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 		#28.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??

@@ -984,7 +984,7 @@ checkout v28.1
 	 929 tbc-25									fe176fa7028	last=32c37e2d493 tbc
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 		# TODO: Qt6 drops QRegExpValidator
-	 553 bugfix_qt_uri_amount_parser			55e55d6819c
+	 553 bugfix_qt_uri_amount_parser-25			55e55d6819c	last=9ada060a060 bugfix_qt_uri_amount_parser
 	-     mining_priority						07464b13214	# Latest code now
 		#28.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 		#28.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
