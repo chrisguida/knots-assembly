@@ -288,6 +288,9 @@ checkout v29.0rc3
 	-     docfix_getorphantxs_vsize
 		# Originally bundled in Knots with #30793 rpc_getorphantxs
 	-     fix_guix_boost_mirror-29
+	-     fix_raii_blockdb_interactive_reidx
+	-     fix_qt_startup_unknown_unit
+	-     fix_qt_psbtops_filename_amount
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -715,6 +718,7 @@ checkout v29.0rc3
 		# Was: 26454 petertodd/2022-feebump-without-optin
 	32200 socks_tor_error_codes-0.18
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
+	-     qt_createunsigned_use_psbtops
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
@@ -814,6 +818,7 @@ checkout v29.0rc3
 	30951 v2onlyclearnet-29+knots				8bcb122421f	last=27e90008835
 		# Made a hidden option
 	# Needs review: 32065 vasild/i2p_early_create_session
+	-     font_for_money_global
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
@@ -846,8 +851,9 @@ checkout v29.0rc3
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
 	559   accept_nonstdtxn						e72688bf354
 		#30.xTODO# Revert or redefine #29843 if it got merged
-	 929 tbc									fe176fa7028
-		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
+	929   tbc									fe176fa7028
+	n/a   tbc_font								458c5339ceb
+		# Includes ff7b90dc729 Embedded font: Rename to avoid confusion in font selector  (fix_qt_fontsel_confusion)
 	 553 bugfix_qt_uri_amount_parser			55e55d6819c
 		 TODO: Merge in 561be93aad0 GUI: Mention BIP 20 URI support in command-line options (earlier versions included with #29686, now merged) - ensure knots-next-28.spec gets a check-last too
 	-     mining_priority						07464b13214	# Latest code now
@@ -1016,9 +1022,6 @@ checkout v29.0rc3
 	n/a   (delete_release_notes_fragments)		d4c1e555559
 	7483  svg_icon-28+knots						5b18d9e534b
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
-	n/a   tbc_font-28+knots						458c5339ceb
-		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
-		# FIXME: Shouldn't be part of branding :/ But depends on the build-for-release-source code from svg_icon...
 # BRANDING:
 	n/a   copyright_2025-28						19e67dd9efa
 	n/a   knots_branding-28						f58950aab87

@@ -353,6 +353,8 @@ checkout v28.1
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
 	-     qt_dialogs_less_modal					2822662e04d
+	Triage: -     fix_qt_startup_unknown_unit
+	Triage: -     fix_qt_psbtops_filename_amount
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -842,6 +844,7 @@ checkout v28.1
 		# Was: 26454 petertodd/2022-feebump-without-optin
 	32200 socks_tor_error_codes-0.18
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
+	-     qt_createunsigned_use_psbtops
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
@@ -946,13 +949,14 @@ checkout v28.1
 		# Made a hidden option
 	(CHECK-LAST)	last= v2onlyclearnet-29+knots
 	# Needs review: 32065 vasild/i2p_early_create_session
+	-     font_for_money_global
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	#29.xTODO# revert #31130+#31157+#31198?+#31916? to restore miniupnpc support
 	n/a   restore_feefilter_opt					cf49d58bff4
-	-     gui_payreq_textedit					b487f357bb4
+	-     gui_payreq_textedit-25				b487f357bb4	last=bbd7c7122e3 gui_payreq_textedit
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				2e8254fc98f
 	-     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
@@ -1143,7 +1147,8 @@ checkout v28.1
 	n/a   (delete_release_notes_fragments)		d4c1e555559
 	7483  svg_icon-28+knots						5b18d9e534b
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
-	n/a   tbc_font-28+knots						458c5339ceb
+	n/a   tbc_font-28+knots						458c5339ceb	last= tbc_font
+		Triage: fix_qt_fontsel_confusion (bundled in 29.x tbc_font)
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal
 		# FIXME: Shouldn't be part of branding :/ But depends on the build-for-release-source code from svg_icon...
 # BRANDING:
