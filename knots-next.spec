@@ -839,6 +839,7 @@ checkout v29.0rc3
 	7107  qtnetworkport-29+knots				77f2e52bf26	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-29+knots				9d121259d75 last=2627c0937f8 sendraw_force
+		#29.xTODO# Allow overriding upgradable stuff (to cleanup segwit abuse spam)
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
@@ -892,6 +893,7 @@ checkout v29.0rc3
 		#29.xTODO# Ensure BlockAssembler::Options::operator== is updated to include any new settings
 	# TODO: pre-cache GBT call after new block?
 	#28.xTODO# RPC to get/set policy configs
+		# https://github.com/bitcoinknots/bitcoin/issues/115
 	#29.xTODO# -     miningcbtag-27+knots
 		# TODO: add to rwconf_policy: 4b38a3031ab GUI/Options: Add miningcbtag via settings
 	-     blockview-28.1+knots					d69357dcf51
@@ -934,6 +936,7 @@ checkout v29.0rc3
 		# Problematic: 26403 instagibbs/ephemeral-anchors
 	# TODO: Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	# TODO: Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
+		# https://github.com/bitcoinknots/bitcoin/issues/113
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     acceptnonstddatacarrier-28+knots		48c848e044a
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
@@ -953,6 +956,7 @@ checkout v29.0rc3
 	# TODO: Stacks (OP_RETURN X2... - most are 80 bytes long, some 55, few 19)
 	# TODO: "OLGA" file storage: https://github.com/mikeinspace/stamps/blob/main/OLGA.md https://github.com/CounterpartyXCP/Forum/blob/1e362f7f8668654d0241fe5b1f1c1c330a8b4368/cip-0033.md
 	# TODO? Procedural approve/deny/discount/penalize policy scripting?
+		# https://github.com/bitcoinknots/bitcoin/issues/61
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-28+knots				574d3ab59c1
@@ -968,6 +972,7 @@ checkout v29.0rc3
 	# TODO: prioritise txs from reorg'd-out blocks?
 	# TODO: some way to prioritise Lightning channel activity?
 	TODO? https://github.com/petertodd/bitcoin/commit/04c8e449a34e74e048bf5751d13592a22763ff7e (see email dated 2025-03-19 8:27pm)
+	TODO? Option to reduce effective fee by dust for each anchor/op_ret
 # Non-upstreamed Knots compatibility:
 	-     compat_rpc_dumptxoutset_hr
 		TODO: Compatibility with Knots 0.20.0-28.1 positional params
