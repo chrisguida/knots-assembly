@@ -859,19 +859,10 @@ checkout v29.0rc3
 	n/a   tbc_font								458c5339ceb
 		# Includes ff7b90dc729 Embedded font: Rename to avoid confusion in font selector  (fix_qt_fontsel_confusion)
 	 553 bugfix_qt_uri_amount_parser			55e55d6819c
-	-     mining_priority						07464b13214	# Latest code now
-		#28.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
-		#28.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
-		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
-		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 	5861 gui_restore_addresses					39668f36473
 	5891  qt_console_history_persist			76638518995	last=0cd5fc301d6 qt_console_history_persist
-	7219  rbf_opts-28+knots						a1e42756c14	# Latest code now
-		29.xTODO: Revert #30592
-		TODO: Need to migrate RBF ignore_rejects from 9ebc373637b
-		TODO: Adapt #31953
-	-     truc_opts-28+knots					7b898f1d017
 	# TODO? -     net_identify_librerelay
+		TODO: Decipher NODE_LIBRE service bit in GUI/RPC/CLI
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					b7643238b1f
@@ -915,8 +906,17 @@ checkout v29.0rc3
 		# FIXME: Probably incompatible with MERGED #31407 macos_notarization ?
 		# TODO? 17311 RandyMcMillan:fix-background-svg
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
-	TODO: Decipher NODE_LIBRE service bit in GUI/RPC/CLI
 # Non-upstreamed policy options (default off):
+	-     mining_priority						07464b13214	# Latest code now
+		#28.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
+		#28.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
+		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
+		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
+	7219  rbf_opts-28+knots						a1e42756c14	# Latest code now
+		29.xTODO: Revert #30592
+		TODO: Need to migrate RBF ignore_rejects from 9ebc373637b
+		TODO: Adapt #31953
+	-     truc_opts-28+knots					7b898f1d017
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-28+knots				22193cca113	last=1dfe27e49ab

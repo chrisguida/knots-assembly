@@ -1000,6 +1000,7 @@ checkout v28.1
 		TODO: Adapt #31953
 	-     truc_opts-28+knots					7b898f1d017
 	# TODO? -     net_identify_librerelay
+		TODO: Decipher NODE_LIBRE service bit in GUI/RPC/CLI
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					b7643238b1f
@@ -1041,7 +1042,6 @@ checkout v28.1
 		# FIXME: Probably incompatible with #31407 macos_notarization ?
 		# TODO? 17311 RandyMcMillan:fix-background-svg
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
-	TODO: Decipher NODE_LIBRE service bit in GUI/RPC/CLI
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
