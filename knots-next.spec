@@ -295,6 +295,8 @@ checkout v29.0rc3
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
+	FIXME: No sync ETA in no-wallet builds
+	FIXME: "16 years etc behind" status bar message overflows width allowed
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
 		# See * c2436937613 Bugfix: GUI/Wallet: Decompose watch-only flag for each logical transaction
@@ -913,6 +915,7 @@ checkout v29.0rc3
 		# FIXME: Probably incompatible with MERGED #31407 macos_notarization ?
 		# TODO? 17311 RandyMcMillan:fix-background-svg
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
+	TODO: Decipher NODE_LIBRE service bit in GUI/RPC/CLI
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
@@ -940,6 +943,7 @@ checkout v29.0rc3
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
 	-     acceptnonstddatacarrier-28+knots		48c848e044a
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
+		FIXME: Data before OP_RETURN (and non-push opcodes??) should count the data as non-standard
 	-     rejecttokens-28+knots					39ec1308346
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just Runes
@@ -973,6 +977,7 @@ checkout v29.0rc3
 	# TODO: some way to prioritise Lightning channel activity?
 	TODO? https://github.com/petertodd/bitcoin/commit/04c8e449a34e74e048bf5751d13592a22763ff7e (see email dated 2025-03-19 8:27pm)
 	TODO? Option to reduce effective fee by dust for each anchor/op_ret
+	TODO? Option to disallow inputs less than N blocks old
 # Non-upstreamed Knots compatibility:
 	-     compat_rpc_dumptxoutset_hr
 		TODO: Compatibility with Knots 0.20.0-28.1 positional params
