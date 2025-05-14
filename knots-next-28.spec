@@ -1,7 +1,7 @@
-timestamp 2025-04-21 23:09:10
+timestamp 2025-05-14 12:28:28
 lastapply no-merge
 
-#.. checked up to PR #32318 / gui #866
+#.. checked up to PR #32496 / gui #872
 
 checkout v28.1
 @28.x-syslibs
@@ -10,9 +10,13 @@ checkout v28.1
 	5872 subdir_incl_compat						b7dd5799936
 	#29.xTODO# Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
 	#29.xTODO# If needed? 30997 hebasto/240928-qt6 and/or g861 whitslack/qt6
+	32437 fanquake/extend_asan_sse4
+	Triage: 32484 fanquake/28_suppress_unterm_string_init
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
+		# Related: #32447
+		# If https://github.com/bitcoin-core/leveldb-subtree/pull/52 is merged, this should possibly be adapted
 	5416  sys_libsecp256k1-28					3d441102525	last=5acc3a1c534 sys_libsecp256k1
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
@@ -91,7 +95,8 @@ checkout v28.1
 	# Needs review & bug fixes: 21106 pstratem/2021-02-07-isinitialblockdownload-timeout
 	g236  gui_init_walleterror_cont				d40c1220043
 	-     rpc_addconnection_mainnet				72ac99f48a5
-	30756 subproc_closefds						fd30be38f53
+	32343 subproc_closefds						fd30be38f53
+		# Was #30756
 		# Replaces #22417 (Boost::Process variant)
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				159d9c36b05
@@ -127,6 +132,7 @@ checkout v28.1
 			#TsTODO# Update with other commit (unit translations) when translations supported again
 	29868 hww_windows-28						301886f3d0e	last=86c7c65e2fe hebasto/240414-win-subprocess
 	(CHECK-LAST)	last=0d687e37252 hww_windows-29
+		TODO: add #32358
 		# NOTE: Retained `ENABLE_EXTERNAL_SIGNER` cmake option
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
@@ -348,7 +354,15 @@ checkout v28.1
 	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
 	# Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
+	32333 -  # doc: add missing top-level description to pruneblockchain RPC
+	32342 -  # Fix missing error check in set_clo_on_exec for FD_CLOEXEC handling
+	32344 -  # Wallet: Fix Non-Ranged Descriptors with Range [0,0] Trigger Unexpected Wallet Errors in AddWalletDescriptor
+	Fix only? 32351 l0rinc/l0rinc/FindChallenges
 	32355 fix_block_full_enough
+	# Needs review: 32367 hebasto/250428-enable-lang
+	Diff-minimised? 32383 hebasto/250429-fs-error
+	Review: 32414 andrewtoth/reindex-flush
+	# Needs review: 32490 maflcko/2505-less-UB
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -446,9 +460,12 @@ checkout v28.1
 	# Needs reivew: 31868 l0rinc/lorinc/block-serialization-optimizations
 	# Needs review: 31875 l0rinc/l0rinc/sorted-BatchWrite
 	# Needs work: 32023 -  # wallet: removed duplicate call to GetDescriptorScriptPubKeyMan
+		# +#32475
 	# Needs review: 32128 -  # Draft: CCoinMap Experiments
 	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
 	32279 l0rinc/l0rinc/prevector-size
+	# Needs careful review: 32473 sipa/202504_sighash_cache
+	# Needs review: 32487 l0rinc/l0rinc/optimize-readblock-hash-check
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -846,6 +863,14 @@ checkout v28.1
 		# Was: 26454 petertodd/2022-feebump-without-optin
 	32200 socks_tor_error_codes-0.18
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
+	32423 laanwj/2025-05-remove-rpcpassword-deprecation
+	Review: 32425 vasild/proxy_per_network
+	32429 w0xlt/keypoolrefill_docs
+	# Needs work: 32468 -  # rpc: generatetomany
+	# Needs concept & review: 32471 -  # Fix listdescriptors true fails with 'Can't get descriptor string' in non-watch-only descriptor wallet
+	# Needs review; 32489 achow101/export-watchonly-wallet
+	# Needs review: g872 achow101-g/export-watchonly-wallet-gui
+	# Needs work: g870 -  # Expose AssumeUTXO Load Snapshot Functionality To The GUI
 	-     qt_createunsigned_use_psbtops
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
@@ -1103,6 +1128,7 @@ checkout v28.1
 	TODO? https://github.com/petertodd/bitcoin/commit/04c8e449a34e74e048bf5751d13592a22763ff7e (see email dated 2025-03-19 8:27pm)
 	TODO? Option to reduce effective fee by dust for each anchor/op_ret
 	TODO? Option to disallow inputs less than N blocks old
+	Needs review? 32453 JeremyRubin/unsigned_annex
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
@@ -1142,6 +1168,7 @@ checkout v28.1
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
 	TODO: revert #28354 ?
 	10282 timebomb_knots						40f673fe63e
+	TODO? bump up blockreconstructionextratxn higher?
 	-     rwconf_policy-28+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
@@ -1175,7 +1202,7 @@ checkout v28.1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250421)			ba223403bbc
+	n/a  (bump_version=Knots:20250514)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
