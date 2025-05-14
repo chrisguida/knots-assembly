@@ -3,14 +3,13 @@ lastapply no-merge
 
 #.. checked up to PR #32496 / gui #872
 
-checkout v29.0rc3
+checkout v29.0
 @28.x-syslibs
 # BUILD BUGS:
 	#29.xTODO# Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
-	32356 hebasto/250426-var-override
-	32437 fanquake/extend_asan_sse4
-	32469 hebasto/250511-dbus
-	Triage: 32484 fanquake/28_suppress_unterm_string_init
+	32356 fix_cmake_usercxxflags_pr32356-29
+	32437 sse4_sha256_asan_clang_pr32437-28
+	32469 qt_dbus_nonlinux-29
 # SYSLIBS:
 	2241  sys_leveldb							91af8d0c4ea
 		# Related: #32447
