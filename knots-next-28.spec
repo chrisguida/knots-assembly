@@ -678,6 +678,7 @@ checkout v28.1
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
 	# Needs work: g866 rebroad-g/trafficgraphwidget-rebased
+		# knots#104 related?
 	g820  qt_fontsel_qrcodes-27+knots			ce838070845	last=b14c9d0572e qt_fontsel_qrcodes
 	# TODO: qt_fontsel_console
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
@@ -1111,6 +1112,9 @@ checkout v28.1
 	# TODO: "OLGA" file storage: https://github.com/mikeinspace/stamps/blob/main/OLGA.md https://github.com/CounterpartyXCP/Forum/blob/1e362f7f8668654d0241fe5b1f1c1c330a8b4368/cip-0033.md
 	# TODO? Procedural approve/deny/discount/penalize policy scripting?
 		# https://github.com/bitcoinknots/bitcoin/issues/61
+	TODO: k119  Draft: Add support for Lua-based TX filtering
+		# Classifier scripts; could be set for valid (dangerous), track for fee estimation, relay, mine, etc
+	# Needs concept ACK and review: k107 Retropex/maxfee
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-28+knots				574d3ab59c1

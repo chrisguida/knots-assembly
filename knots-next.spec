@@ -128,8 +128,8 @@ checkout v29.0
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#TsTODO# Update with other commit (unit translations) when translations supported again
-	32358 hebasto/250427-subprocess-backports
-	29868 hww_windows-29						301886f3d0e	last=7806529dd47 hebasto/240414-win-subprocess
+	32358 fix_subprocess_pr32358-28
+	29868 hww_windows-29						301886f3d0e	last=3a18075aedd hebasto/240414-win-subprocess
 		#29.xTODO# Check on https://github.com/bitcoin/bitcoin/pull/29868#issuecomment-2823736638
 		# NOTE: Retained `ENABLE_EXTERNAL_SIGNER` cmake option
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
@@ -209,7 +209,7 @@ checkout v29.0
 	# Needs work: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	31551 bulk_block_rw-29+knots
 		# Optimisation, not fix - but simplifies #29307
-	29307 AutoFile_error_check-29+knots			17291246d08	last=c52b673bf85 vasild/AutoFile_error_check
+	29307 AutoFile_error_check-29+knots			17291246d08	last=9057ab8b801 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	29640 fix_tiebreak_on_disk-26
@@ -988,6 +988,9 @@ checkout v29.0
 	# TODO: "OLGA" file storage: https://github.com/mikeinspace/stamps/blob/main/OLGA.md https://github.com/CounterpartyXCP/Forum/blob/1e362f7f8668654d0241fe5b1f1c1c330a8b4368/cip-0033.md
 	# TODO? Procedural approve/deny/discount/penalize policy scripting?
 		# https://github.com/bitcoinknots/bitcoin/issues/61
+	TODO: k119  Draft: Add support for Lua-based TX filtering
+		# Classifier scripts; could be set for valid (dangerous), track for fee estimation, relay, mine, etc
+	# Needs concept ACK and review: k107 Retropex/maxfee
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
 	-     maxscriptsize-28+knots				574d3ab59c1
