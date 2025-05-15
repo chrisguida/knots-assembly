@@ -288,14 +288,17 @@ checkout v29.0
 	g864  fix_qt_shutdowncrash_g864-24						last=71656bdfaa6 furszy/2025_gui_fix_crash_numBlocksChanged
 	# Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
-	32333 -  # doc: add missing top-level description to pruneblockchain RPC
-	32342 -  # Fix missing error check in set_clo_on_exec for FD_CLOEXEC handling
-	32344 -  # Wallet: Fix Non-Ranged Descriptors with Range [0,0] Trigger Unexpected Wallet Errors in AddWalletDescriptor
-	Fix only? 32351 l0rinc/l0rinc/FindChallenges
+	32333 doc_rpc_pruneblockchain_top-21					last=fa5ed189468
+	32344 fix_wallet_nonranged_pr32344-22					last=97d383af6d5
+	32351 qafix_nonrecurs_FindChallenges-28
+		# Fix only
 	32355 fix_block_full_enough
 	# Needs review: 32367 hebasto/250428-enable-lang
-	Diff-minimised? 32383 hebasto/250429-fs-error
-	Review: 32414 andrewtoth/reindex-flush
+	-     fix_fs_error_utf8-23
+		# Alternative to core#32383 hebasto/250429-fs-error
+	32414 fix_reidxcs_periodic-25							last=c1e554d3e58 andrewtoth/reindex-flush
+		# Fix only
+		# TODO: consider performance refactor?
 	# Needs review: 32490 maflcko/2505-less-UB
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
@@ -307,11 +310,10 @@ checkout v29.0
 	-     fix_raii_blockdb_interactive_reidx
 	-     fix_qt_startup_unknown_unit
 	-     fix_qt_psbtops_filename_amount
+	k126  fix_qt_progressbar_fittext
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
-	FIXME: No sync ETA in no-wallet builds
-	FIXME: "16 years etc behind" status bar message overflows width allowed
 	# FIXME: How to unify listtransactions and GUI tx list? GUI has net changes, while RPC just has positive fees
 	# FIXME: watchonly indicator is confusing.
 		# See * c2436937613 Bugfix: GUI/Wallet: Decompose watch-only flag for each logical transaction
@@ -368,6 +370,8 @@ checkout v29.0
 	# Needs review? 30442 paplorinc/paplorinc/siphash
 	# Needs review: 30610 sipa/202408_force_sync
 	30611 chainstate_write_hourly-29						last=b7f3b6fd96c andrewtoth/write-chainstate-every-hour
+		TODO: #32414 has new tests on top of #30611
+		TODO: Make interval configurable
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
