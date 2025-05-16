@@ -354,7 +354,7 @@ checkout v28.1
 	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
 	# Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
-	32333 doc_rpc_pruneblockchain_top-21					last=fa5ed189468
+	32333 doc_rpc_pruneblockchain_top-21					last=135a0f0aa71
 	32342 -  # Fix missing error check in set_clo_on_exec for FD_CLOEXEC handling
 	32344 fix_wallet_nonranged_pr32344-22					last=97d383af6d5
 	32351 qafix_nonrecurs_FindChallenges-28
@@ -751,7 +751,7 @@ checkout v28.1
 	26990 cli_mw_errormsgs_pr26990-24			73a8f2cce9a
 	27034 rpc_importaddr_for_descwallet-27+k	3422369f448	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 27052 rpc_getpeerinfo_lastblockann-28					last=559b0913bfa LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28					last=f7788f66b41 LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
 	27216 rpc_getaddressinfo_isactive-28		707ebbb6788	last=85f83339dda pinheadmz/used-addr-ui
 	(CHECK-LAST)	last=8eb77c47421 rpc_getaddressinfo_isactive

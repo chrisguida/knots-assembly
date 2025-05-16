@@ -288,7 +288,7 @@ checkout v29.0
 	g864  fix_qt_shutdowncrash_g864-24						last=71656bdfaa6 furszy/2025_gui_fix_crash_numBlocksChanged
 	# Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
-	32333 doc_rpc_pruneblockchain_top-21					last=fa5ed189468
+	32333 doc_rpc_pruneblockchain_top-21					last=135a0f0aa71
 	32344 fix_wallet_nonranged_pr32344-22					last=97d383af6d5
 	32351 qafix_nonrecurs_FindChallenges-28
 		# Fix only
@@ -369,9 +369,9 @@ checkout v29.0
 		# Was (never in Knots) #28945
 	# Needs review? 30442 paplorinc/paplorinc/siphash
 	# Needs review: 30610 sipa/202408_force_sync
-	30611 chainstate_write_hourly-29						last=b7f3b6fd96c andrewtoth/write-chainstate-every-hour
+	30611 chainstate_write_hourly-29+knots					last=e976bd30450 andrewtoth/write-chainstate-every-hour
 		# Includes new tests from core#32414
-		TODO: Make interval configurable
+		# TODO: Make interval configurable
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
@@ -656,7 +656,7 @@ checkout v29.0
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	27034 rpc_importaddr_for_descwallet-27+k	3422369f448	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 rpc_getpeerinfo_lastblockann-28					last=5bcf8491d15 LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28					last=f7788f66b41 LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
 	27216 rpc_getaddressinfo_isactive			707ebbb6788	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
@@ -735,7 +735,7 @@ checkout v29.0
 	31560 rpc_dumptxoutset_fifo-29+knots		27874e8290b	last=4c8e9b4f35b theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
-	31672 peer_cpu_load-29+knots				dee920da09d	last=19c8336d970 vasild/peer_cpu_load
+	31672 peer_cpu_load-29+knots				dee920da09d	last=8b8b8543465 vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
 	31886 jonatack/2025-02-netinfo-services		bed89007671	last=724546e28a5  # netinfo_local_svcs-28+knots
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
@@ -743,7 +743,8 @@ checkout v29.0
 		# Was: 26454 petertodd/2022-feebump-without-optin
 	32200 socks_tor_error_codes-0.18
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
-	32423 laanwj/2025-05-remove-rpcpassword-deprecation
+	32423 hash_rpcuserpass-29								last=e49a7274a21 laanwj/2025-05-remove-rpcpassword-deprecation
+		# Left out refactoring
 	Review: 32425 vasild/proxy_per_network
 	32429 w0xlt/keypoolrefill_docs
 	# Needs work: 32468 -  # rpc: generatetomany
