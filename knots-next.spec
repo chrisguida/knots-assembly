@@ -370,7 +370,7 @@ checkout v29.0
 	# Needs review? 30442 paplorinc/paplorinc/siphash
 	# Needs review: 30610 sipa/202408_force_sync
 	30611 chainstate_write_hourly-29						last=b7f3b6fd96c andrewtoth/write-chainstate-every-hour
-		TODO: #32414 has new tests on top of #30611
+		# Includes new tests from core#32414
 		TODO: Make interval configurable
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
@@ -993,7 +993,7 @@ checkout v29.0
 	# TODO? Procedural approve/deny/discount/penalize policy scripting?
 		# https://github.com/bitcoinknots/bitcoin/issues/61
 	TODO: k119  Draft: Add support for Lua-based TX filtering
-		# Classifier scripts; could be set for valid (dangerous), track for fee estimation, relay, mine, etc
+		# Classifier scripts; could be set for valid (dangerous), track for fee estimation, relay, mine [decided at mine-time so multiple policies possible?], etc
 	# Needs concept ACK and review: k107 Retropex/maxfee
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
