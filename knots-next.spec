@@ -743,9 +743,12 @@ checkout v29.0
 		# Was: 26454 petertodd/2022-feebump-without-optin
 	32200 socks_tor_error_codes-0.18
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
-	32423 hash_rpcuserpass-29								last=e49a7274a21 laanwj/2025-05-remove-rpcpassword-deprecation
+	32423 hash_rpcuserpass-29^								last=e49a7274a21 laanwj/2025-05-remove-rpcpassword-deprecation
 		# Left out refactoring
-	Review: 32425 vasild/proxy_per_network
+	n/a   hash_rpcuserpass-29
+		# Diff-minimising needs a separate merge for some reason
+	32425 proxy_per_net-29									last=e98c51fcce9 vasild/proxy_per_network
+		# Left out doc updates/reformatting
 	32429 w0xlt/keypoolrefill_docs
 	# Needs work: 32468 -  # rpc: generatetomany
 	# Needs concept & review: 32471 -  # Fix listdescriptors true fails with 'Can't get descriptor string' in non-watch-only descriptor wallet
@@ -994,7 +997,7 @@ checkout v29.0
 	# TODO? Procedural approve/deny/discount/penalize policy scripting?
 		# https://github.com/bitcoinknots/bitcoin/issues/61
 	TODO: k119  Draft: Add support for Lua-based TX filtering
-		# Classifier scripts; could be set for valid (dangerous), track for fee estimation, relay, mine [decided at mine-time so multiple policies possible?], etc
+		# Classifier scripts; could be set for valid (dangerous), track for fee estimation, relay, mine [decided at mine-time so multiple policies possible?; at a lower priority?], etc
 	# Needs concept ACK and review: k107 Retropex/maxfee
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
