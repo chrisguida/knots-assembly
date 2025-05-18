@@ -240,7 +240,7 @@ checkout v29.0
 	# Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
 		# was: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
-	31275 -										ad6c4570514	last=49ffbc6077d  # fix_rpc_example_quoting_pr31275-24
+	31275 fix_rpc_example_quoting_pr31275-24	ad6c4570514	last=7e93e292598
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
 	# Needs work: 31349 vasild:test_log_internet_traffic
 	# Needs work: 31378 furszy/2024_wallet_migration_multisig_crash
@@ -743,13 +743,11 @@ checkout v29.0
 		# Was: 26454 petertodd/2022-feebump-without-optin
 	32200 socks_tor_error_codes-0.18
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
-	32423 hash_rpcuserpass-29^								last=e49a7274a21 laanwj/2025-05-remove-rpcpassword-deprecation
+	32423 hash_rpcuserpass-29+knots							last=e49a7274a21 laanwj/2025-05-remove-rpcpassword-deprecation
 		# Left out refactoring
-	n/a   hash_rpcuserpass-29
-		# Diff-minimising needs a separate merge for some reason
 	32425 proxy_per_net-29									last=e98c51fcce9 vasild/proxy_per_network
 		# Left out doc updates/reformatting
-	32429 w0xlt/keypoolrefill_docs
+	32429 doc_rpc_keypoolrefill_pr32429-23
 	# Needs work: 32468 -  # rpc: generatetomany
 	# Needs concept & review: 32471 -  # Fix listdescriptors true fails with 'Can't get descriptor string' in non-watch-only descriptor wallet
 	# Needs review; 32489 achow101/export-watchonly-wallet
@@ -895,8 +893,7 @@ checkout v29.0
 	 553 bugfix_qt_uri_amount_parser			55e55d6819c
 	5861 gui_restore_addresses					39668f36473
 	5891  qt_console_history_persist			76638518995	last=0cd5fc301d6 qt_console_history_persist
-	# TODO? -     net_identify_librerelay
-		TODO: Decipher NODE_LIBRE service bit in GUI/RPC/CLI
+	-     net_identify_librerelay
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					b7643238b1f
@@ -916,7 +913,8 @@ checkout v29.0
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
-	-     gbt_rpc_options-28+knots				dc8fc35fc01
+	32547 mining_avoid_block_copy-29+knots					last=7b1a1f17b1d mining_avoid_block_copy
+	-     gbt_rpc_options-29+knots				dc8fc35fc01
 		#29.xTODO# Ensure BlockAssembler::Options::operator== is updated to include any new settings
 	# TODO: pre-cache GBT call after new block?
 	#28.xTODO# RPC to get/set policy configs
@@ -1058,6 +1056,7 @@ checkout v29.0
 	TODO: revert #28354 ?
 	TODO? bump up blockreconstructionextratxn higher?
 	10282 timebomb_knots						40f673fe63e
+		TODO: disable mining; add alert in advance
 	-     rwconf_policy-28+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?

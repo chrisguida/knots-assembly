@@ -870,7 +870,7 @@ checkout v28.1
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
 	32423 laanwj/2025-05-remove-rpcpassword-deprecation
 	Review: 32425 vasild/proxy_per_network
-	32429 w0xlt/keypoolrefill_docs
+	32429 doc_rpc_keypoolrefill_pr32429-23
 	# Needs work: 32468 -  # rpc: generatetomany
 	# Needs concept & review: 32471 -  # Fix listdescriptors true fails with 'Can't get descriptor string' in non-watch-only descriptor wallet
 	# Needs review; 32489 achow101/export-watchonly-wallet
@@ -1033,7 +1033,7 @@ checkout v28.1
 		TODO: Decipher NODE_LIBRE service bit in GUI/RPC/CLI
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
-	12146 opt_wallet_segwit2					b7643238b1f
+	12146 opt_wallet_segwit2-28					b7643238b1f	last=2733d2c4ce7 opt_wallet_segwit2
 		# TODO: Split out legacy address preference to be more explicit
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
@@ -1051,6 +1051,8 @@ checkout v28.1
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
 	-     gbt_rpc_options-28+knots				dc8fc35fc01
+	(CHECK-LAST)	last= mining_avoid_block_copy  # core#32547 is included here in 28.x
+	(CHECK-LAST)	last= gbt_rpc_options-29+knots
 		#29.xTODO# Ensure BlockAssembler::Options::operator== is updated to include any new settings
 	# TODO: pre-cache GBT call after new block?
 	#28.xTODO# RPC to get/set policy configs
@@ -1175,8 +1177,9 @@ checkout v28.1
 		#29.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
 	TODO: revert #28354 ?
-	10282 timebomb_knots						40f673fe63e
 	TODO? bump up blockreconstructionextratxn higher?
+	10282 timebomb_knots						40f673fe63e
+		TODO: disable mining; add alert in advance
 	-     rwconf_policy-28+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
