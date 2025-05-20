@@ -1,7 +1,7 @@
-timestamp 2025-05-14 12:28:28
+timestamp 2025-05-20 06:29:52
 lastapply no-merge
 
-#.. checked up to PR #32496 / gui #872
+#.. checked up to PR #32572 / gui #875
 
 checkout v29.0
 @28.x-syslibs
@@ -10,6 +10,7 @@ checkout v29.0
 	32356 fix_cmake_usercxxflags_pr32356-29
 	32437 sse4_sha256_asan_clang_pr32437-28
 	32469 qt_dbus_nonlinux-29
+	Part of? 32551 hebasto/250518-crypto-macros
 # SYSLIBS:
 	2241  sys_leveldb							91af8d0c4ea
 		# Related: #32447
@@ -129,6 +130,7 @@ checkout v29.0
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#TsTODO# Update with other commit (unit translations) when translations supported again
 	32358 fix_subprocess_pr32358-28
+	32567 hebasto/250520-subprocess-backports
 	29868 hww_windows-29						301886f3d0e	last=3a18075aedd hebasto/240414-win-subprocess
 		#29.xTODO# Check on https://github.com/bitcoin/bitcoin/pull/29868#issuecomment-2823736638
 		# NOTE: Retained `ENABLE_EXTERNAL_SIGNER` cmake option
@@ -300,6 +302,10 @@ checkout v29.0
 		# Fix only
 		# TODO: consider performance refactor?
 	# Needs review: 32490 maflcko/2505-less-UB
+	# Simplified rewrite of? 32528 maflcko/2505-1
+	Review: 32530 darosior/2505_limit_mempool_32bit
+	Needs review: 32589 pinheadmz/rpcallowip-rfc4193
+	32553 achow101/wallet-log-minversion
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -390,6 +396,8 @@ checkout v29.0
 	32279 opti_script_inline_36b-29							last=3170e2c1626 l0rinc/l0rinc/prevector-size
 	# Needs careful review: 32473 sipa/202504_sighash_cache
 	# Needs review: 32487 l0rinc/l0rinc/optimize-readblock-hash-check
+	Test: 32497 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
+	# Needs careful review: 32532 l0rinc/l0rinc/short-circuit-known-script-types
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -753,6 +761,10 @@ checkout v29.0
 	# Needs review; 32489 achow101/export-watchonly-wallet
 	# Needs review: g872 achow101-g/export-watchonly-wallet-gui
 	# Needs work: g870 -  # Expose AssumeUTXO Load Snapshot Functionality To The GUI
+	# Needs concept & work: 32501 BrandonOdiwuor/removeprunedfunds-array
+	# Needs review: 32517 pinheadmz/wallet-gettransaction-ischange
+	Review: 32540 -  # rest: fetch spent transaction outputs by blockhash
+	Concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	-     qt_createunsigned_use_psbtops
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
@@ -861,6 +873,7 @@ checkout v29.0
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	-     restore_upnp-29+knots
 		# NOTE: Includes #30301 theuni/miniupnp-228-bump
+		#30.xTODO# Revert #32500
 	n/a   restore_feefilter_opt					cf49d58bff4
 	-     gui_payreq_textedit					b487f357bb4
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
@@ -938,6 +951,7 @@ checkout v29.0
 		# TODO? 17311 RandyMcMillan:fix-background-svg
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
 	#30.xTODO# Revert #32450 ?
+	#30.xTODO# Revert #32510 or replace extratxn pool
 # Non-upstreamed policy options (default off):
 	-     mining_priority						07464b13214	# Latest code now
 		#28.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
@@ -1015,6 +1029,7 @@ checkout v29.0
 	TODO? Option to disallow inputs less than N blocks old
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
 	Needs review? 32453 JeremyRubin/unsigned_annex
+	Needs option & review: 32521 darosior/2503_nonstd_tx_sigops
 # Non-upstreamed Knots compatibility:
 	-     compat_rpc_dumptxoutset_hr
 		TODO: Compatibility with Knots 0.20.0-28.1 positional params
@@ -1029,7 +1044,7 @@ checkout v29.0
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			dd9a275a37b
 		# Effectively reverts #24505, #27869, #28597, and gui#764
-		#29.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481
+		#29.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569
 		#29.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
 		#29.xTODO# revert #31250  wallet: Disable creating and loading legacy wallets
 	14641 fundraw_min_conf_deprecated-25+knots	9e0533bb2c0	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
@@ -1080,13 +1095,14 @@ checkout v29.0
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #29.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
+#30.xTODO# Ensure #32514 is applied to Knots changes
 # TODO: Check that we aren't deprecating anything in Core
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250514)			ba223403bbc
+	n/a  (bump_version=Knots:20250520)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits

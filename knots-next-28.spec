@@ -1,7 +1,7 @@
-timestamp 2025-05-14 12:28:28
-lastapply no-merge
+timestamp 2025-05-20 06:29:52
+#lastapply no-merge
 
-#.. checked up to PR #32496 / gui #872
+#.. checked up to PR #32572 / gui #875
 
 checkout v28.1
 @28.x-syslibs
@@ -12,6 +12,7 @@ checkout v28.1
 	#29.xTODO# If needed? 30997 hebasto/240928-qt6 and/or g861 whitslack/qt6
 	32437 fanquake/extend_asan_sse4
 	Triage: 32484 fanquake/28_suppress_unterm_string_init
+	Triage: Part of? 32551 hebasto/250518-crypto-macros
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -132,7 +133,7 @@ checkout v28.1
 			#TsTODO# Update with other commit (unit translations) when translations supported again
 	29868 hww_windows-28						301886f3d0e	last=86c7c65e2fe hebasto/240414-win-subprocess
 	(CHECK-LAST)	last=0d687e37252 hww_windows-29
-		TODO: add #32358
+		TODO: add #32358 & #32567
 		# NOTE: Retained `ENABLE_EXTERNAL_SIGNER` cmake option
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
@@ -366,6 +367,10 @@ checkout v28.1
 		# Fix only
 		# TODO: consider performance refactor?
 	# Needs review: 32490 maflcko/2505-less-UB
+	# Simplified rewrite of? 32528 maflcko/2505-1
+	Review: 32530 darosior/2505_limit_mempool_32bit
+	Needs review: 32589 pinheadmz/rpcallowip-rfc4193
+	32553 achow101/wallet-log-minversion
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -470,6 +475,8 @@ checkout v28.1
 	32279 l0rinc/l0rinc/prevector-size
 	# Needs careful review: 32473 sipa/202504_sighash_cache
 	# Needs review: 32487 l0rinc/l0rinc/optimize-readblock-hash-check
+	Test: 32497 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
+	# Needs careful review: 32532 l0rinc/l0rinc/short-circuit-known-script-types
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -851,6 +858,7 @@ checkout v28.1
 		# Left out output renames
 		# Left out Windows changes
 		# Left off (signer-specific) doc update
+		NOTE: Core backport in #32563
 	31531 rpc_signet_info-28					fc177a6170d
 	31534 log_big_utxo_flush-26					8de796420d4
 	31560 rpc_dumptxoutset_fifo-23				27874e8290b	last=4c8e9b4f35b theStack/202412-dumptxoutset-allow_write_to_named_pipe
@@ -876,6 +884,10 @@ checkout v28.1
 	# Needs review; 32489 achow101/export-watchonly-wallet
 	# Needs review: g872 achow101-g/export-watchonly-wallet-gui
 	# Needs work: g870 -  # Expose AssumeUTXO Load Snapshot Functionality To The GUI
+	# Needs concept & work: 32501 BrandonOdiwuor/removeprunedfunds-array
+	# Needs review: 32517 pinheadmz/wallet-gettransaction-ischange
+	Review: 32540 -  # rest: fetch spent transaction outputs by blockhash
+	Concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	-     qt_createunsigned_use_psbtops
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
@@ -1138,6 +1150,7 @@ checkout v28.1
 	TODO? Option to reduce effective fee by dust for each anchor/op_ret
 	TODO? Option to disallow inputs less than N blocks old
 	Needs review? 32453 JeremyRubin/unsigned_annex
+	Needs option & review: 32521 darosior/2503_nonstd_tx_sigops
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
@@ -1213,7 +1226,7 @@ checkout v28.1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250514)			ba223403bbc
+	n/a  (bump_version=Knots:20250520)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
