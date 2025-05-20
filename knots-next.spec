@@ -913,9 +913,8 @@ checkout v29.0
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
-	32547 mining_avoid_block_copy-29+knots					last=7b1a1f17b1d mining_avoid_block_copy
+	32547 mining_avoid_block_copy-29+knots					last=39a3b5be3d1 mining_avoid_block_copy
 	-     gbt_rpc_options-29+knots				dc8fc35fc01
-		#29.xTODO# Ensure BlockAssembler::Options::operator== is updated to include any new settings
 	# TODO: pre-cache GBT call after new block?
 	#28.xTODO# RPC to get/set policy configs
 		# https://github.com/bitcoinknots/bitcoin/issues/115
@@ -1057,6 +1056,7 @@ checkout v29.0
 	TODO? bump up blockreconstructionextratxn higher?
 	10282 timebomb_knots						40f673fe63e
 		TODO: disable mining; add alert in advance
+		TODO: mention in -help / GUI about ?
 	-     rwconf_policy-28+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?

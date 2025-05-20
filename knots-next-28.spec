@@ -1053,7 +1053,6 @@ checkout v28.1
 	-     gbt_rpc_options-28+knots				dc8fc35fc01
 	(CHECK-LAST)	last= mining_avoid_block_copy  # core#32547 is included here in 28.x
 	(CHECK-LAST)	last= gbt_rpc_options-29+knots
-		#29.xTODO# Ensure BlockAssembler::Options::operator== is updated to include any new settings
 	# TODO: pre-cache GBT call after new block?
 	#28.xTODO# RPC to get/set policy configs
 		# https://github.com/bitcoinknots/bitcoin/issues/115
@@ -1180,6 +1179,7 @@ checkout v28.1
 	TODO? bump up blockreconstructionextratxn higher?
 	10282 timebomb_knots						40f673fe63e
 		TODO: disable mining; add alert in advance
+		TODO: mention in -help / GUI about ?
 	-     rwconf_policy-28+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
 		#TODO: Add segwit wallet stuff?
