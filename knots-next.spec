@@ -10,7 +10,8 @@ checkout v29.0
 	32356 fix_cmake_usercxxflags_pr32356-29
 	32437 sse4_sha256_asan_clang_pr32437-28
 	32469 qt_dbus_nonlinux-29
-	Part of? 32551 hebasto/250518-crypto-macros
+	32550 fix_missing_sse41_cxxflags-29						last=800b7cc42ca !hebasto/250518-crypto-macros
+		# Actually pulling commit from #32551 tip
 # SYSLIBS:
 	2241  sys_leveldb							91af8d0c4ea
 		# Related: #32447
@@ -130,7 +131,7 @@ checkout v29.0
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#TsTODO# Update with other commit (unit translations) when translations supported again
 	32358 fix_subprocess_pr32358-28
-	32567 hebasto/250520-subprocess-backports
+	32567 fix_subprocess_pr32567-28									last=e63a7034f03 hebasto/250520-subprocess-backports
 	29868 hww_windows-29						301886f3d0e	last=3a18075aedd hebasto/240414-win-subprocess
 		#29.xTODO# Check on https://github.com/bitcoin/bitcoin/pull/29868#issuecomment-2823736638
 		# NOTE: Retained `ENABLE_EXTERNAL_SIGNER` cmake option
@@ -303,7 +304,7 @@ checkout v29.0
 		# TODO: consider performance refactor?
 	# Needs review: 32490 maflcko/2505-less-UB
 	# Simplified rewrite of? 32528 maflcko/2505-1
-	Review: 32530 darosior/2505_limit_mempool_32bit
+	# Needs concept: 32530 darosior/2505_limit_mempool_32bit
 	Needs review: 32589 pinheadmz/rpcallowip-rfc4193
 	32553 achow101/wallet-log-minversion
 	-     fix_rpccookieperms_early				dec38cfcc7b

@@ -368,7 +368,7 @@ checkout v28.1
 		# TODO: consider performance refactor?
 	# Needs review: 32490 maflcko/2505-less-UB
 	# Simplified rewrite of? 32528 maflcko/2505-1
-	Review: 32530 darosior/2505_limit_mempool_32bit
+	# Needs concept: 32530 darosior/2505_limit_mempool_32bit
 	Needs review: 32589 pinheadmz/rpcallowip-rfc4193
 	32553 achow101/wallet-log-minversion
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
