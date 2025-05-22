@@ -369,7 +369,7 @@ checkout v28.1
 	# Needs review: 32490 maflcko/2505-less-UB
 	# Simplified rewrite of? 32528 maflcko/2505-1
 	# Needs concept: 32530 darosior/2505_limit_mempool_32bit
-	Needs review: 32589 pinheadmz/rpcallowip-rfc4193
+	Needs review: 32539 pinheadmz/rpcallowip-rfc4193
 	32553 achow101/wallet-log-minversion
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
@@ -475,7 +475,7 @@ checkout v28.1
 	32279 l0rinc/l0rinc/prevector-size
 	# Needs careful review: 32473 sipa/202504_sighash_cache
 	# Needs review: 32487 l0rinc/l0rinc/optimize-readblock-hash-check
-	Test: 32497 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
+	# Needs review: 32497 opti_merkle_reserves-21							last=39b6c139bd6 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
 	# Needs careful review: 32532 l0rinc/l0rinc/short-circuit-known-script-types
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -886,8 +886,8 @@ checkout v28.1
 	# Needs work: g870 -  # Expose AssumeUTXO Load Snapshot Functionality To The GUI
 	# Needs concept & work: 32501 BrandonOdiwuor/removeprunedfunds-array
 	# Needs review: 32517 pinheadmz/wallet-gettransaction-ischange
-	Review: 32540 -  # rest: fetch spent transaction outputs by blockhash
-	Concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
+	# Needs concept & review: 32540 -  # rest: fetch spent transaction outputs by blockhash
+	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	-     qt_createunsigned_use_psbtops
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
@@ -1070,7 +1070,7 @@ checkout v28.1
 		# https://github.com/bitcoinknots/bitcoin/issues/115
 	#29.xTODO# -     miningcbtag-27+knots
 		# TODO: add to rwconf_policy: 4b38a3031ab GUI/Options: Add miningcbtag via settings
-	-     blockview-28.1+knots					d69357dcf51
+	-     blockview-28.1+knots					d69357dcf51	last= blockview-29+knots
 	#-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
 	#28.xTODO# Look into making the patches tarball in guix

@@ -305,8 +305,8 @@ checkout v29.0
 	# Needs review: 32490 maflcko/2505-less-UB
 	# Simplified rewrite of? 32528 maflcko/2505-1
 	# Needs concept: 32530 darosior/2505_limit_mempool_32bit
-	Needs review: 32589 pinheadmz/rpcallowip-rfc4193
-	32553 achow101/wallet-log-minversion
+	32539 fix_rpcallowip_cjdns-29							last=12ff4be9c72 pinheadmz/rpcallowip-rfc4193
+	32553 fix_wallet_log_ver-26
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -397,7 +397,7 @@ checkout v29.0
 	32279 opti_script_inline_36b-29							last=3170e2c1626 l0rinc/l0rinc/prevector-size
 	# Needs careful review: 32473 sipa/202504_sighash_cache
 	# Needs review: 32487 l0rinc/l0rinc/optimize-readblock-hash-check
-	Test: 32497 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
+	# Needs review: 32497 opti_merkle_reserves-21							last=39b6c139bd6 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
 	# Needs careful review: 32532 l0rinc/l0rinc/short-circuit-known-script-types
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -764,8 +764,8 @@ checkout v29.0
 	# Needs work: g870 -  # Expose AssumeUTXO Load Snapshot Functionality To The GUI
 	# Needs concept & work: 32501 BrandonOdiwuor/removeprunedfunds-array
 	# Needs review: 32517 pinheadmz/wallet-gettransaction-ischange
-	Review: 32540 -  # rest: fetch spent transaction outputs by blockhash
-	Concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
+	# Needs concept & review: 32540 -  # rest: fetch spent transaction outputs by blockhash
+	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	-     qt_createunsigned_use_psbtops
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
@@ -927,14 +927,14 @@ checkout v29.0
 	# TODO? * 4b6813a95bd wallet: trigger MaybeResendWalletTxs() at startup (+ 1 second)
 		# See #25922, backported with this in 21.x
 	# Needs concept acceptance: 26469 -  # rpc: getblock: implement with block height as input parameter.
-	32547 mining_avoid_block_copy-29+knots					last=39a3b5be3d1 mining_avoid_block_copy
+	32547 mining_avoid_block_copy-29+knots					last=7d05ec01d4e mining_avoid_block_copy
 	-     gbt_rpc_options-29+knots				dc8fc35fc01
 	# TODO: pre-cache GBT call after new block?
 	#28.xTODO# RPC to get/set policy configs
 		# https://github.com/bitcoinknots/bitcoin/issues/115
 	#29.xTODO# -     miningcbtag-27+knots
 		# TODO: add to rwconf_policy: 4b38a3031ab GUI/Options: Add miningcbtag via settings
-	-     blockview-28.1+knots					d69357dcf51
+	-     blockview-29+knots					d69357dcf51
 		#30.xTODO# need to revert or find alternative source for fee info
 	#-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
@@ -1097,6 +1097,7 @@ checkout v29.0
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #29.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #30.xTODO# Ensure #32514 is applied to Knots changes
+TODO: Ensure no #include <config/bitcoin-config.h>
 # TODO: Check that we aren't deprecating anything in Core
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
