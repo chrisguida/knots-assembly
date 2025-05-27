@@ -568,7 +568,7 @@ checkout v28.1
 	# Needs work? 18611 -  # cli: show default values in config args log
 	24202 rpc_dumptxoutset_hr-28				3f3877f4745	last=1053636ddd9
 	(CHECK-LAST)	last=65d0697fe34 origin-pull/18689/head
-	(CHECK-LAST)	last= rpc_dumptxoutset_hr
+	(CHECK-LAST)	last= rpc_dumptxoutset_hr-29+knots
 	(CHECK-LAST)	last= compat_rpc_dumptxoutset_hr
 		# Diff-minimised
 		# NOTE: Was #18689
@@ -1030,7 +1030,7 @@ checkout v28.1
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
 		# TODO: Qt6 drops QRegExpValidator
 	 553 bugfix_qt_uri_amount_parser-25			55e55d6819c	last=9ada060a060 bugfix_qt_uri_amount_parser
-	-     mining_priority						07464b13214	# Latest code now
+	-     mining_priority-28					07464b13214	last= mining_priority
 		#28.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 		#28.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
@@ -1074,10 +1074,11 @@ checkout v28.1
 	#-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
 	#28.xTODO# Look into making the patches tarball in guix
-	-     restore_libconsensus-28+knots			57d68d7c5cb
+	-     restore_libconsensus-28+knots			57d68d7c5cb	last= restore_libconsensus
 		# +Needs review: 24994 hebasto/220426-consensus
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
-	-     rpccookieperms_log_improvements-28+k	ec34bd875d1
+		# https://github.com/bitcoinknots/bitcoin/issues/70
+	-     rpccookieperms_log_improvements-28+k	ec34bd875d1	last=198466d5d3e rpccookieperms_log_improvements-29+k
 	# Needs work: n/a   macos_dmg-27							d26ae740b99
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder
 		# 28.xTODO: revert macos ZIP only: #29733

@@ -212,7 +212,7 @@ checkout v29.0
 	# Needs work: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	31551 bulk_block_rw-29+knots
 		# Optimisation, not fix - but simplifies #29307
-	29307 AutoFile_error_check-29+knots			17291246d08	last=9057ab8b801 vasild/AutoFile_error_check
+	29307 AutoFile_error_check-29+knots			17291246d08	last=c7b68dceb29 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	29640 fix_tiebreak_on_disk-26
@@ -486,7 +486,7 @@ checkout v29.0
 		# NOTE: Dropped benchmarks & diff-minimised
 	# Needs work: 18421 -  # Periodically update DNS caches for better privacy of non-reachable nodes
 	# Needs work? 18611 -  # cli: show default values in config args log
-	24202 rpc_dumptxoutset_hr					3f3877f4745	last=1053636ddd9
+	24202 rpc_dumptxoutset_hr-29+knots			3f3877f4745	last=1053636ddd9
 	(CHECK-LAST)	last=65d0697fe34 origin-pull/18689/head
 		# Diff-minimised
 		# NOTE: Was #18689
@@ -939,11 +939,11 @@ checkout v29.0
 	#-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
 	#28.xTODO# Look into making the patches tarball in guix
-	-     restore_libconsensus-28+knots			57d68d7c5cb
-		TODO: When restoring libbitcoinkernel support, adjust libbitcoinconsensus reverts to make it interact with --with-libs (see 7ad32d39d76)
+	-     restore_libconsensus					57d68d7c5cb
 		# +Needs review: 24994 hebasto/220426-consensus
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
-	-     rpccookieperms_log_improvements-28+k	ec34bd875d1
+		# https://github.com/bitcoinknots/bitcoin/issues/70
+	-     rpccookieperms_log_improvements-29+k	ec34bd875d1
 	# Needs work: n/a   macos_dmg-27							d26ae740b99
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder
 		# 28.xTODO: revert macos ZIP only: #29733
@@ -959,6 +959,7 @@ checkout v29.0
 		#28.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
+		# Reverts (needed for lock logic): 192dac1d337 [refactor] Cleanup BlockAssembler mempool usage
 	7219  rbf_opts-28+knots						a1e42756c14	# Latest code now
 		29.xTODO: Revert #30592
 		TODO: Need to migrate RBF ignore_rejects from 9ebc373637b
@@ -982,6 +983,7 @@ checkout v29.0
 		#28.xTODO# Add tests and make sure boundaries are correct
 	TODO: Ephemeral anchors alternative to dust / make Ephemeral optional
 		NOTE: Ensure anchors aren't valid w/o other outputs
+		FIXME: prioritisetransaction shouldn't block dust txs
 		# Needs review/concept: 29001 instagibbs/2023-12-ephemeral-anchors
 		# Problematic: 26403 instagibbs/ephemeral-anchors
 	# TODO: Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
