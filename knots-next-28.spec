@@ -1,7 +1,7 @@
-timestamp 2025-05-20 06:29:52
+timestamp 2025-05-27 17:45:18
 #lastapply no-merge
 
-#.. checked up to PR #32572 / gui #875
+#.. checked up to PR #32624 / gui #877
 
 checkout v28.1
 @28.x-syslibs
@@ -50,7 +50,8 @@ checkout v28.1
 		# NOTE: based directly on #18818
 	18427 2020mingwthrd-mini-23					da1e5f9ffae	last=63768965f1c 2020mingwthrd-mini
 	18490 bugfix_symcheck_pe_case				d2d3b434b08
-	# Maybe disabled by default? 21603 dergoegge:log_ratelimiting
+	# Maybe disabled by default? 32604 Crypt-iQ/log_ratelimiting_05192025
+		# Formerly: 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
 	14968 http_bind_error-26					def0d7f8f83	last=7b5e4001f9 laanwj/2018_12_http_bind_error
@@ -239,6 +240,7 @@ checkout v28.1
 	# Needs review: 30155 mzumsande/202405_replay_blocks
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
+		# +#32580 ?
 	# Needs work: g823 -  # wallet: Improve error log color in the console
 	-     detect_clang_bug96267-28				6da92446b43	last=159eef5ccb2 detect_clang_bug96267
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
@@ -371,6 +373,9 @@ checkout v28.1
 	# Needs concept: 32530 darosior/2505_limit_mempool_32bit
 	Needs review: 32539 pinheadmz/rpcallowip-rfc4193
 	32553 achow101/wallet-log-minversion
+	# Needs work: 32577 hebasto/250521-subprocess-split
+		# FIXME: Ensure this gets resolved before #32566 is merged
+	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
