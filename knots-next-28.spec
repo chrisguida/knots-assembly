@@ -878,6 +878,7 @@ checkout v28.1
 	31886 netinfo_local_svcs-28+knots			bed89007671	last=724546e28a5 jonatack/2025-02-netinfo-services
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	31953 maflcko/2502-fullrbf-follow-up
+		TODO: bumpfee_full_rbf-29+knots has some changes for better compatibility
 		# Was: 26454 petertodd/2022-feebump-without-optin
 	32200 socks_tor_error_codes-0.18
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
@@ -1042,7 +1043,7 @@ checkout v28.1
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 	5861 gui_restore_addresses					39668f36473
 	5891  qt_console_history_persist			76638518995	last=0cd5fc301d6 qt_console_history_persist
-	7219  rbf_opts-28+knots						a1e42756c14	# Latest code now
+	7219  rbf_opts-28+knots						a1e42756c14	last= rbf_opts-29+knots
 		#29.xTODO: Revert #30592
 		TODO: Adapt #31953
 	-     truc_opts-28+knots					7b898f1d017

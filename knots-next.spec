@@ -753,8 +753,9 @@ checkout v29.0
 	31845 pruneduringinit-29+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
 	31886 jonatack/2025-02-netinfo-services		bed89007671	last=724546e28a5  # netinfo_local_svcs-28+knots
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
-	31953 maflcko/2502-fullrbf-follow-up					last=fa86190e6ed
+	31953 bumpfee_full_rbf-29+knots							last=fa86190e6ed maflcko/2502-fullrbf-follow-up
 		# Was: 26454 petertodd/2022-feebump-without-optin
+		# NOTE: Added warning to GUI and made RPC behaviour change optional
 	32200 socks_tor_error_codes-0.18
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
 	32423 hash_rpcuserpass-29+knots							last=e49a7274a21 laanwj/2025-05-remove-rpcpassword-deprecation
@@ -965,10 +966,7 @@ checkout v29.0
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 		# Reverts (needed for lock logic): 192dac1d337 [refactor] Cleanup BlockAssembler mempool usage
-	7219  rbf_opts-28+knots						a1e42756c14	# Latest code now
-		29.xTODO: Revert #30592
-		TODO: Need to migrate RBF ignore_rejects from 9ebc373637b
-		TODO: Adapt #31953
+	7219  rbf_opts-29+knots						a1e42756c14	# Latest code now
 	-     truc_opts-28+knots					7b898f1d017
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
@@ -1039,6 +1037,12 @@ checkout v29.0
 	Needs review? 32453 JeremyRubin/unsigned_annex
 	Needs option & review: 32521 darosior/2503_nonstd_tx_sigops
 # Non-upstreamed Knots compatibility:
+	#30.xTODO# -     compat_bumpfee_require_replacable
+		# 5777b0d6319 RPC/Wallet: bumpfee: Default require_replacable=true if local mempool policy is not full RBF
+		# e32b75202da RPC/Wallet: Check deprecatedrpc=require_replacable in bumpfee method, to match previous behaviour
+		# 386e285943d (rebase on c79ee09a786 needed)
+		# c79ee09a786 RPC/Wallet: Add "require_replacable" option to bumpfee method, to match previous behaviour
+		# 1f1259d318d GUI/Wallet: Warn if bumping the fee on a non-BIP125 transaction
 	-     compat_rpc_dumptxoutset_hr
 		TODO: Compatibility with Knots 0.20.0-28.1 positional params
 	-     compat_jsonrpc_weirdversions			d50d30bf835
