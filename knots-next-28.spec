@@ -1046,7 +1046,7 @@ checkout v28.1
 	7219  rbf_opts-28+knots						a1e42756c14	last= rbf_opts-29+knots
 		#29.xTODO: Revert #30592
 		TODO: Adapt #31953
-	-     truc_opts-28+knots					7b898f1d017
+	-     truc_opts-28+knots					7b898f1d017	last=590417252ab truc_opts-29+knots
 	# TODO? -     net_identify_librerelay
 		TODO: Decipher NODE_LIBRE service bit in GUI/RPC/CLI
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
@@ -1093,11 +1093,12 @@ checkout v28.1
 		# TODO? 17311 RandyMcMillan:fix-background-svg
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
 # Non-upstreamed policy options (default off):
-	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07
+	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-28+knots				22193cca113	last=1dfe27e49ab
+	(CHECK-LAST)	last=4eb6d39d7cd permitbarepubkey-29+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-	-     bytespersigopstrict-28+knots			9d18c6ea473
+	-     bytespersigopstrict-28+knots			9d18c6ea473	last=c86d95dc343 bytespersigopstrict-29+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	9749  unique_spk_mempool-28+knots			84eff5944da
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)

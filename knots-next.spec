@@ -960,6 +960,7 @@ checkout v29.0
 	#30.xTODO# Revert #32450 ?
 	#30.xTODO# Revert #32510 or replace extratxn pool
 # Non-upstreamed policy options (default off):
+	30232 refactor_isstandardtx_mpopts-29+knots	5ba611afd07
 	-     mining_priority						07464b13214	# Latest code now
 		#28.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 		#28.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
@@ -967,12 +968,11 @@ checkout v29.0
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 		# Reverts (needed for lock logic): 192dac1d337 [refactor] Cleanup BlockAssembler mempool usage
 	7219  rbf_opts-29+knots						a1e42756c14	# Latest code now
-	-     truc_opts-28+knots					7b898f1d017
-	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07
+	-     truc_opts-29+knots					7b898f1d017
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
-	29309 permitbarepubkey-28+knots				22193cca113	last=1dfe27e49ab
+	29309 permitbarepubkey-29+knots				22193cca113	last=1dfe27e49ab
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-	-     bytespersigopstrict-28+knots			9d18c6ea473
+	-     bytespersigopstrict-29+knots			9d18c6ea473
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	9749  unique_spk_mempool-28+knots			84eff5944da
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
