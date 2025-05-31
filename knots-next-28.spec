@@ -895,6 +895,7 @@ checkout v28.1
 	# Needs concept & review: 32540 -  # rest: fetch spent transaction outputs by blockhash
 	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	-     qt_createunsigned_use_psbtops
+		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
@@ -1100,14 +1101,15 @@ checkout v28.1
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     bytespersigopstrict-28+knots			9d18c6ea473	last=c86d95dc343 bytespersigopstrict-29+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-	9749  unique_spk_mempool-28+knots			84eff5944da
+	9749  unique_spk_mempool-28+knots			84eff5944da	last=b1b8f27e75f unique_spk_mempool-29+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-	-     dustdynamic-28+knots					5dd1f1ee25e
+	-     dustdynamic-28+knots					5dd1f1ee25e	last=f10a0071c95 dustdynamic-29+knots
 	28408 match_more_datacarrier-28+knots		570cb5cb1dc	last=4d2ec0671a3 match_more_datacarrier
+	(CHECK-LAST)	last= match_more_datacarrier-29+knots
 		#29.xTODO# TODO: Delete TBD "maxdatacarriersize" from #29954 (see b02aab950af) (or at least fix the description)
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# TODO? Revise byte counting to consider input/output waste
-	-     datacarriercost-28+knots				42ecf3bfb75
+	-     datacarriercost-28+knots				42ecf3bfb75	last= datacarriercost-29+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		#28.xTODO# Add tests and make sure boundaries are correct
 	TODO: Ephemeral anchors alternative to dust / make Ephemeral optional
