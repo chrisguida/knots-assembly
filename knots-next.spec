@@ -962,6 +962,7 @@ checkout v29.0
 	#30.xTODO# Revert #32510 or replace extratxn pool
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	5ba611afd07
+	-     pol_acceptunknownwitness
 	-     mining_priority						07464b13214	# Latest code now
 		#28.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 		#28.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
@@ -985,11 +986,9 @@ checkout v29.0
 	-     datacarriercost-29+knots				42ecf3bfb75
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		#28.xTODO# Add tests and make sure boundaries are correct
-	TODO: Ephemeral anchors alternative to dust / make Ephemeral optional
-		NOTE: Ensure anchors aren't valid w/o other outputs
-		FIXME: prioritisetransaction shouldn't block dust txs
-		# Needs review/concept: 29001 instagibbs/2023-12-ephemeral-anchors
-		# Problematic: 26403 instagibbs/ephemeral-anchors
+	k136  pol_permitephemeral
+		# Also includes permitbare{anchor,datacarrier} options
+		# FIXME: prioritisetransaction shouldn't block dust txs (but also shouldn't blindly bypass policy by promoting ephemeral to non-ephemeral!)
 	# TODO: Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	# TODO: Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 		# https://github.com/bitcoinknots/bitcoin/issues/113

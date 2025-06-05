@@ -1095,6 +1095,7 @@ checkout v28.1
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
+	-     pol_acceptunknownwitness
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-28+knots				22193cca113	last=1dfe27e49ab
 	(CHECK-LAST)	last=4eb6d39d7cd permitbarepubkey-29+knots
@@ -1112,9 +1113,9 @@ checkout v28.1
 	-     datacarriercost-28+knots				42ecf3bfb75	last= datacarriercost-29+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		#28.xTODO# Add tests and make sure boundaries are correct
-	TODO: Ephemeral anchors alternative to dust / make Ephemeral optional
-		# Needs review/concept: 29001 instagibbs/2023-12-ephemeral-anchors
-		# Problematic: 26403 instagibbs/ephemeral-anchors
+	k136  pol_permitephemeral
+		# Also includes permitbare{anchor,datacarrier} options
+		# FIXME: prioritisetransaction shouldn't block dust txs (but also shouldn't blindly bypass policy by promoting ephemeral to non-ephemeral!)
 	# TODO: Filter for output value < tx fee * N - https://twitter.com/DoctorBuzz1/status/1741622696327205176
 	# TODO: Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 		# https://github.com/bitcoinknots/bitcoin/issues/113
