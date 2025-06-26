@@ -3,7 +3,7 @@ timestamp 2025-06-26 21:39:47
 
 #.. checked up to PR #32819 / gui #878
 
-checkout v28.1
+checkout v28.2
 @28.x-syslibs
 # BUILD BUGS:
 	TODO: #32299
@@ -13,7 +13,6 @@ checkout v28.1
 	32437 fanquake/extend_asan_sse4
 	Triage: 32484 fanquake/28_suppress_unterm_string_init
 	Triage: Part of? 32551 hebasto/250518-crypto-macros
-	32439 fanquake/28_backport_32439
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -314,8 +313,7 @@ checkout v28.1
 	31617 qafix_db_tests_wo_bdb-24				6a03f82b3fb
 	g850  qt_psbt_sighash_default-28			ff9c8155fd4	last=3e97ff9c5ea achow101-g/gui-psbt-sighash-default
 	# Needs review: 31622 achow101/psbt-sighashes
-	31623 tracing_MIN_macro_rename				f7ec451c999
-	# Triggers rebuilds: 31627 hebasto/250109-gen_id
+NM	31623 tracing_MIN_macro_rename				f7ec451c999
 	# Approach NACK? 31629 mzumsande/202501_rescan_bestblock
 	#29.xTODO# Triage: 28521 hodlinator/2024/12/disconnecting
 	31655 fix_sha3_ub_pr31655-21				19ca155a548
@@ -353,7 +351,7 @@ checkout v28.1
 	32185 fix_dbwrapper_batch_header_size-26
 		# Only the fix, without the bumped LevelDB version dep
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
-	32187 zmq_devirtual_destructor-0.12
+NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
 	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
 	# Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
@@ -383,7 +381,6 @@ checkout v28.1
 	Triage: 32646 instagibbs/2025-05-fillblock-mutated
 	Simplified: 32682 Sjors/2025/06/external-signer-error
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
-	# depends-only: 32693 josibake/depends-specify-cmake-min-version-for-freetype
 	Part of: 32708 -  # rpc, doc: update listdescriptors RCP help
 	32736 hodlinator/2025/06/wallet_dir_iter
 	# Needs review: 32757 -  # net: Fix Discover() not running when using -bind=0.0.0.0:port
@@ -886,7 +883,7 @@ checkout v28.1
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
 	# Needs concept ACK: 31397 glozow/2024-11-multi-orphan
 		#+31666
-	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/macos-notarization
+MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/macos-notarization
 		# Left out output renames
 		# Left out Windows changes
 		# Left off (signer-specific) doc update

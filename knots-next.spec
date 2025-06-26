@@ -1094,9 +1094,9 @@ checkout v29.0
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			dd9a275a37b
 		# Effectively reverts #24505, #27869, #28597, and gui#764
-		#29.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768?
-		#29.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
-		#29.xTODO# revert #31250  wallet: Disable creating and loading legacy wallets
+		#30.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768?
+		#30.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
+		#30.xTODO# revert #31250  wallet: Disable creating and loading legacy wallets
 	14641 fundraw_min_conf_deprecated-25+knots	9e0533bb2c0	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			74f7c944e91
 	-     netperms_implicit_addr				9ffb23bb848
