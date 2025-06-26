@@ -1,7 +1,7 @@
-timestamp 2025-05-27 17:45:18
+timestamp 2025-06-26 21:39:47
 #lastapply no-merge
 
-#.. checked up to PR #32624 / gui #877
+#.. checked up to PR #32819 / gui #878
 
 checkout v28.1
 @28.x-syslibs
@@ -13,6 +13,7 @@ checkout v28.1
 	32437 fanquake/extend_asan_sse4
 	Triage: 32484 fanquake/28_suppress_unterm_string_init
 	Triage: Part of? 32551 hebasto/250518-crypto-macros
+	32439 fanquake/28_backport_32439
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -251,7 +252,7 @@ checkout v28.1
 	30508 fix_depends_zmq_cmake_pc-28			155737973b5
 	# Needs review: 30529 ryanofsky/pr/listset
 	# If needed? 30489 theuni/depends-zmq-patch
-	# Needs review: 30666 mzumsande/202404_invalidblock
+	30666 mzumsande/202404_invalidblock
 	# Needs (concept?) review? 30678 fjahr/2024-08-backup-best
 	# Needs work: 30679 tdb3/handle_invalid_rpcbind_port
 	# Needs review? 30684 furszy/2024_init_negated_args_err
@@ -371,11 +372,24 @@ checkout v28.1
 	# Needs review: 32490 maflcko/2505-less-UB
 	# Simplified rewrite of? 32528 maflcko/2505-1
 	# Needs concept: 32530 darosior/2505_limit_mempool_32bit
+		# NOTE: 29.x backport in #32810
+		# NOTE: release note in #32819
 	Needs review: 32539 pinheadmz/rpcallowip-rfc4193
 	32553 achow101/wallet-log-minversion
 	# Needs work: 32577 hebasto/250521-subprocess-split
 		# FIXME: Ensure this gets resolved before #32566 is merged
 	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
+	# Needs review and simplification? 32636 davidgumberg/5-27-2025-create-refactor
+	Triage: 32646 instagibbs/2025-05-fillblock-mutated
+	Simplified: 32682 Sjors/2025/06/external-signer-error
+	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
+	# depends-only: 32693 josibake/depends-specify-cmake-min-version-for-freetype
+	Part of: 32708 -  # rpc, doc: update listdescriptors RCP help
+	32736 hodlinator/2025/06/wallet_dir_iter
+	# Needs review: 32757 -  # net: Fix Discover() not running when using -bind=0.0.0.0:port
+	# Needs review: 32773 hebasto/250618-mkdir
+	# Needs concept & review: 32788 achow101/desc-allow-H
+		# Check for this impacting other Knots merges
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -399,12 +413,16 @@ checkout v28.1
 	#28.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@28.x-knots-lts-deps
+	TODO: Qt 5.15.17 ?
 	-     upd_qt5-28							1774fb76e0e
 		FIXME: Check #30774 for updated patch?
 		# Opensource released: https://lists.qt-project.org/pipermail/announce/2024-November/000526.html
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 	30301 theuni/miniupnp-228-bump
+	TODO: bump to 2.3.3 in restore_upnp-29+knots
+	# Needs review: 32655 fanquake/sqlite_3_50_0
+	# Needs review: 32665 fanquake/boost_shrink
 @28.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-28+k					723ceffb7b7	last=3efb06b858b rm_minisketch-29+syslibs
@@ -416,7 +434,8 @@ checkout v28.1
 	# Needs review: 24926 -  # mempool: use mapNextTx.lower_bound in removeRecursive
 	# Needs review: 25236 -  # wallet: use vector instead of list for transactions
 	# Needs review & diff-minimising: 25297 -  # wallet: speedup transactions sync, rescan and load not flushing to db constantly
-	# Needs review: 25968 sipa/202208_headerssync_optimize
+	# Needs review: 32740 danielabrozzoni/upforgrabs/25968
+		# Was (not in Knots): 25968 sipa/202208_headerssync_optimize
 	# Unclear benefit: 26375 zmq_optimise_duplread-27+k			3f9e56d77af	last=7b631dc9b19 andrewtoth/no-read-zmq
 		# Several improvements in Knots branch
 		# Post-#26415(merged), it's unclear if this is an improvement or potentially a performance loss: we either readback raw (from OS cache), or serialize CBlock
@@ -479,9 +498,13 @@ checkout v28.1
 	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
 	32279 l0rinc/l0rinc/prevector-size
 	# Needs careful review: 32473 sipa/202504_sighash_cache
-	# Needs review: 32487 l0rinc/l0rinc/optimize-readblock-hash-check
+	32487 l0rinc/l0rinc/optimize-readblock-hash-check
 	# Needs review: 32497 opti_merkle_reserves-21							last=39b6c139bd6 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
 	# Needs careful review: 32532 l0rinc/l0rinc/short-circuit-known-script-types
+	32645 theStack/202505-fs-use_ftruncate_on_openbsd
+	# Needs work: 32692 -  # TODO: Dynamic scriptcheck thread count
+	# Needs review: 32730 furszy/2025_net_avoid_traversing_block_twice
+	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -770,6 +793,7 @@ checkout v28.1
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-28+knots						64f3666c9e7	last=91771366a3d apoelstra/2023-03--codex32
 	(CHECK-LAST)	last=b34e02d766a codex32-29+knots
+		# See #32652 if #29136 is merged
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs work: 27409 ryanofsky/pr/1data
 	# Needs review: g692 -  # Debug Console implementation of generate method
@@ -804,6 +828,7 @@ checkout v28.1
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
 	# Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
+		# See #32652 if merged
 	# Needs final interface: 29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
 	# or (newer): 29163 rpc_helpdetail-24									last=56830469303 LarryRuane/2024-01-help-detailed
 		# Left off top commit changing rpc_help test behaviour
@@ -819,6 +844,8 @@ checkout v28.1
 		# +31478
 	-     manpages_seealso_notself				b4f685cd288
 		# Originally bundled into #29585
+	# Needs review & wallet compat check: 31244 achow101/musig2-desc
+	# Needs review: 32724 w0xlt/musig2_tests
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	29686 manpage_desc-28+knots					6fee3558663	last=47f50c7af55 willcl-ark/manpage-desc
 		# Various fixups
@@ -864,6 +891,7 @@ checkout v28.1
 		# Left out Windows changes
 		# Left off (signer-specific) doc update
 		NOTE: Core backport in #32563
+		TODO? +#32735
 	31531 rpc_signet_info-28					fc177a6170d
 	31534 log_big_utxo_flush-26					8de796420d4
 	31560 rpc_dumptxoutset_fifo-23				27874e8290b	last=4c8e9b4f35b theStack/202412-dumptxoutset-allow_write_to_named_pipe
@@ -884,6 +912,7 @@ checkout v28.1
 	# Needs work? 32297 ryanofsky/pr/ipc-cli
 	32423 laanwj/2025-05-remove-rpcpassword-deprecation
 	Review: 32425 vasild/proxy_per_network
+		Release notes in #32727
 	32429 doc_rpc_keypoolrefill_pr32429-23
 	# Needs work: 32468 -  # rpc: generatetomany
 	# Needs concept & review: 32471 -  # Fix listdescriptors true fails with 'Can't get descriptor string' in non-watch-only descriptor wallet
@@ -894,11 +923,15 @@ checkout v28.1
 	# Needs review: 32517 pinheadmz/wallet-gettransaction-ischange
 	# Needs concept & review: 32540 -  # rest: fetch spent transaction outputs by blockhash
 	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
+	# Needs review: 32638 l0rinc/l0rinc/read-block-hash-check
+	32741 -  # rpc: add optional nodeid param to filter getpeerinfo
+	Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
+	TODO: gettxoutproof for wtxid (needed by Electrum for Lightning???)
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
@@ -1000,6 +1033,7 @@ checkout v28.1
 		# Made a hidden option
 	(CHECK-LAST)	last= v2onlyclearnet-29+knots
 	# Needs review: 32065 vasild/i2p_early_create_session
+	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces
 	-     font_for_money_global
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
@@ -1085,6 +1119,7 @@ checkout v28.1
 		# +Needs review: 24994 hebasto/220426-consensus
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 		# https://github.com/bitcoinknots/bitcoin/issues/70
+	TODO: GUI & first run dbcache setup?
 	-     rpccookieperms_log_improvements-28+k	ec34bd875d1	last=198466d5d3e rpccookieperms_log_improvements-29+k
 	# Needs work: n/a   macos_dmg-27							d26ae740b99
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder
@@ -1237,7 +1272,7 @@ checkout v28.1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250520)			ba223403bbc
+	n/a  (bump_version=Knots:20250626)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
@@ -1250,6 +1285,7 @@ checkout v28.1
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
+		32425 release notes in #32727
 	n/a  (cherrypick=20338f1e833)				5f8256608fc  # update manpages (build first)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
