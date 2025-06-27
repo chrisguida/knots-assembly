@@ -12,9 +12,8 @@ checkout v29.0
 	32469 qt_dbus_nonlinux-29
 	32550 fix_missing_sse41_cxxflags-29						last=800b7cc42ca !hebasto/250518-crypto-macros
 		# Actually pulling commit from #32551 tip
-	32439 fanquake/28_backport_32439
-	32805 hebasto/250624-qrencode
-		NOTE: 29.x backport in #32810
+	32439 guix_codeberg-29
+	32805 fix_cmake_qrencode_hints-29
 # SYSLIBS:
 	2241  sys_leveldb							91af8d0c4ea
 		# Related: #32447
@@ -204,7 +203,7 @@ checkout v29.0
 		# Originally part of #28784, but regressed in d95dde9441f...7cb9367157e
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
-	28944 ishaanam/sendall_anti_fee_sniping		25117369373	last=b11d00d54ed  # rpc_sendall_anti_fee_sniping-27
+	28944 rpc_sendall_anti_fee_sniping-28		25117369373	last=aac0b6dd79b ishaanam/sendall_anti_fee_sniping
 	29141 fix_rpcauth_blank						3ad996f41bb
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
@@ -216,7 +215,7 @@ checkout v29.0
 	# Needs work: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	31551 bulk_block_rw-29+knots
 		# Optimisation, not fix - but simplifies #29307
-	29307 AutoFile_error_check-29+knots			17291246d08	last=c7b68dceb29 vasild/AutoFile_error_check
+	29307 AutoFile_error_check-29+knots			17291246d08	last=c10e382d2a3 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	29640 fix_tiebreak_on_disk-26
@@ -256,8 +255,9 @@ checkout v29.0
 	# Needs review: 31405 mzumsande/202411_stricter_invalidblock_handling
 	# Needs review: 31423 furszy/2024_migration_watch-only_migration
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
-	31453 macos_exfat_warning-29+knots			25f0359c100	last=df1ba101419 willcl-ark/macos-exfat
-		# Dropped doc change (links to Core github)
+	31453 macos_exfat_warning-29+knots			25f0359c100	last=2ad18fc9784 willcl-ark/macos-exfat
+		# Checking blocksdir unconditionally in case it's a mountpoint
+		# Dropped doc change
 		# Added warning before leaving GUI firstrun screen
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
 	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors

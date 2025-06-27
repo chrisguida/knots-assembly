@@ -205,7 +205,7 @@ checkout v28.2
 		# Originally part of #28784, but regressed in d95dde9441f...7cb9367157e
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
-	28944 ishaanam/sendall_anti_fee_sniping		25117369373	last=b11d00d54ed  # rpc_sendall_anti_fee_sniping-27
+	28944 rpc_sendall_anti_fee_sniping-28		25117369373	last=b11d00d54ed ishaanam/sendall_anti_fee_sniping
 	29141 fix_rpcauth_blank-24					3ad996f41bb	last=51588287fb5 fix_rpcauth_blank
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
