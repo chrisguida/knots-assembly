@@ -379,10 +379,11 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
 	# Needs review and simplification? 32636 davidgumberg/5-27-2025-create-refactor
 	Triage: 32646 instagibbs/2025-05-fillblock-mutated
-	Simplified: 32682 Sjors/2025/06/external-signer-error
+	32682 fix_wallet_fillpsbt_nothrow-28
+		# Diff-minimised only
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
-	Part of: 32708 -  # rpc, doc: update listdescriptors RCP help
-	32736 hodlinator/2025/06/wallet_dir_iter
+	32708 docfix_listdescriptors_nonimported-23
+	32736 fix_listwalletdir_err-23
 	# Needs review: 32757 -  # net: Fix Discover() not running when using -bind=0.0.0.0:port
 	# Needs review: 32773 hebasto/250618-mkdir
 	# Needs concept & review: 32788 achow101/desc-allow-H
@@ -645,6 +646,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 		# WHEN REMOVING/MERGED UPSTREAM: Reverted 51708c4516c (from gui#543) - also preserve for Knots
 		# TODO: Should align the direction column on the right side, but Qt ignores alignment for icons :/
+		FIXME: dfaf5c9e216 Bugfix: GUI: Peers: A single "x" was insufficient for byte-size widths
 	# Needs work: 15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724

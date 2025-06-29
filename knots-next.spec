@@ -310,7 +310,7 @@ checkout v29.0
 	# Needs review: 32490 maflcko/2505-less-UB
 	# Simplified rewrite of? 32528 maflcko/2505-1
 	# Needs concept: 32530 darosior/2505_limit_mempool_32bit
-		NOTE: 29.x backport in #32810
+		# NOTE: 29.x backport in #32810 - consider reverting
 		# NOTE: release note in #32819
 	32539 fix_rpcallowip_cjdns-29							last=12ff4be9c72 pinheadmz/rpcallowip-rfc4193
 	32553 fix_wallet_log_ver-26
@@ -318,12 +318,13 @@ checkout v29.0
 		# FIXME: Ensure this gets resolved before #32566 is merged
 	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
 	# Needs review and simplification? 32636 davidgumberg/5-27-2025-create-refactor
-	Triage: 32646 instagibbs/2025-05-fillblock-mutated
-	Simplified: 32682 Sjors/2025/06/external-signer-error
+	# Needs careful review: 32646 instagibbs/2025-05-fillblock-mutated
+	32682 fix_wallet_fillpsbt_nothrow-28
+		# Diff-minimised only
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
 	# depends-only: 32693 josibake/depends-specify-cmake-min-version-for-freetype
-	Part of: 32708 -  # rpc, doc: update listdescriptors RCP help
-	32736 hodlinator/2025/06/wallet_dir_iter
+	32708 docfix_listdescriptors_nonimported-23
+	32736 fix_listwalletdir_err-23
 	# Needs review: 32757 -  # net: Fix Discover() not running when using -bind=0.0.0.0:port
 	# Needs review: 32773 hebasto/250618-mkdir
 	# Needs concept & review: 32788 achow101/desc-allow-H
@@ -567,6 +568,7 @@ checkout v29.0
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 		# WHEN REMOVING/MERGED UPSTREAM: Reverted 51708c4516c (from gui#543) - also preserve for Knots
 		# TODO: Should align the direction column on the right side, but Qt ignores alignment for icons :/
+		FIXME: dfaf5c9e216 Bugfix: GUI: Peers: A single "x" was insufficient for byte-size widths
 	# Needs work: 15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
