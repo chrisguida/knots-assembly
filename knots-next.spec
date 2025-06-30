@@ -357,7 +357,10 @@ checkout v29.0
 	#28.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@28.x-knots-lts-deps
-	TODO: Qt 5.15.17 ?
+	-     upd_qt5-29							1774fb76e0e
+		# 5.15.17 Opensource released: https://lists.qt-project.org/pipermail/announce/2025-May/000557.html
+		# Includes patch for CVE-2025-4211 (not upstream; simpler and safer)
+		# 5.15.19 (not available) fixes other bugs, but no CVEs that affect us (unless we start using Qt for XML or HTTP2)
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink

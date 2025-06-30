@@ -411,10 +411,11 @@ NM	32187 zmq_devirtual_destructor-0.12
 	#28.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@28.x-knots-lts-deps
-	TODO: Qt 5.15.17 ?
 	-     upd_qt5-28							1774fb76e0e
 		FIXME: Check #30774 for updated patch?
 		# Opensource released: https://lists.qt-project.org/pipermail/announce/2024-November/000526.html
+		TODO: Qt 5.15.17 + CVE-2025-4211
+		# 5.15.19 (not available) fixes other bugs, but no CVEs that affect us (unless we start using Qt for XML or HTTP2)
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 	30301 theuni/miniupnp-228-bump
