@@ -426,10 +426,12 @@ checkout v29.0
 	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
 	32279 opti_script_inline_36b-29							last=3170e2c1626 l0rinc/l0rinc/prevector-size
 	# Needs careful review: 32473 sipa/202504_sighash_cache
-	32487 l0rinc/l0rinc/optimize-readblock-hash-check
+	32487 opti_readblock_hash_once-29
+	-     netproc_check_blockhash
 	# Needs review: 32497 opti_merkle_reserves-21							last=39b6c139bd6 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
 	# Needs careful review: 32532 l0rinc/l0rinc/short-circuit-known-script-types
-	32645 theStack/202505-fs-use_ftruncate_on_openbsd
+	# Needs review: 32645 theStack/202505-fs-use_ftruncate_on_openbsd
+		# NOTE: ftruncate does not guarantee allocation normally?
 	# Needs work: 32692 -  # TODO: Dynamic scriptcheck thread count
 	# Needs review: 32730 furszy/2025_net_avoid_traversing_block_twice
 	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
@@ -571,7 +573,6 @@ checkout v29.0
 		# WHEN REMOVING/MERGED UPSTREAM: Table column widths change removed in upstream PR; preserve it for Knots somewhere
 		# WHEN REMOVING/MERGED UPSTREAM: Reverted 51708c4516c (from gui#543) - also preserve for Knots
 		# TODO: Should align the direction column on the right side, but Qt ignores alignment for icons :/
-		FIXME: dfaf5c9e216 Bugfix: GUI: Peers: A single "x" was insufficient for byte-size widths
 	# Needs work: 15129 remove_watch_only_address-22			423fd4425f4	last=b8eb5880693 benthecarman/remove_watch_only_address
 		# Was included in 0.21.1 broken(!)
 		# See https://github.com/bitcoin/bitcoin/pull/15129#discussion_r733010724
@@ -783,7 +784,7 @@ checkout v29.0
 	31560 rpc_dumptxoutset_fifo-29+knots		27874e8290b	last=4c8e9b4f35b theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
-	31672 peer_cpu_load-29+knots				dee920da09d	last=8b8b8543465 vasild/peer_cpu_load
+	31672 peer_cpu_load-29+knots				dee920da09d	last=b25b40ebd5f vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
 	31886 jonatack/2025-02-netinfo-services		bed89007671	last=724546e28a5  # netinfo_local_svcs-28+knots
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
@@ -807,14 +808,14 @@ checkout v29.0
 	# Needs concept & review: 32540 -  # rest: fetch spent transaction outputs by blockhash
 	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	# Needs review: 32638 l0rinc/l0rinc/read-block-hash-check
-	32741 -  # rpc: add optional nodeid param to filter getpeerinfo
-	Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
+	32741 rpc_getpeerinfo_nodeid-28							last=af1c1df25a0
+	# TODO: Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
+	# Needs work: 32844 rpc_gettxoutproof_segwit
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
-	TODO: gettxoutproof for wtxid (needed by Electrum for Lightning???)
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)

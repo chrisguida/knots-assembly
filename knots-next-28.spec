@@ -498,6 +498,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	32279 l0rinc/l0rinc/prevector-size
 	# Needs careful review: 32473 sipa/202504_sighash_cache
 	32487 l0rinc/l0rinc/optimize-readblock-hash-check
+	-     netproc_check_blockhash
 	# Needs review: 32497 opti_merkle_reserves-21							last=39b6c139bd6 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
 	# Needs careful review: 32532 l0rinc/l0rinc/short-circuit-known-script-types
 	32645 theStack/202505-fs-use_ftruncate_on_openbsd
@@ -924,14 +925,14 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs concept & review: 32540 -  # rest: fetch spent transaction outputs by blockhash
 	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	# Needs review: 32638 l0rinc/l0rinc/read-block-hash-check
-	32741 -  # rpc: add optional nodeid param to filter getpeerinfo
+	32741 rpc_getpeerinfo_nodeid-28							last=af1c1df25a0
 	Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
+	# Needs work: 32844 rpc_gettxoutproof_segwit
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
 	# TODO: sats/vB feerate in GUI: https://x.com/billsmith4lyfe/status/1869097896823713819?t=DH2Z02nl6V_nTQp5znmbgA&s=09
 	# TODO: "I have a UPS" mode to avoid flushing frequently even while pruning
-	TODO: gettxoutproof for wtxid (needed by Electrum for Lightning???)
 	
 	# TODO: GUI block template view
 	# TODO: Build next-block template from mempool + N MB txs (to replace empty blocks for local miner)
