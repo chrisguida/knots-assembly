@@ -991,7 +991,7 @@ checkout v29.0
 		# +Needs review: 24994 hebasto/220426-consensus
 	# TODO: bump dbcache to 1 TB on systems we can detect memory pressure! - after testing
 		# https://github.com/bitcoinknots/bitcoin/issues/70
-	TODO: GUI & first run dbcache setup?
+	# TODO: GUI & first run dbcache setup?
 	-     rpccookieperms_log_improvements-29+k	ec34bd875d1
 	# Needs work: n/a   macos_dmg-27							d26ae740b99
 		# Reverts #28432, #28932, and #28973, and includes fix_dmg_openfinder

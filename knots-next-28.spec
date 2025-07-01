@@ -1094,7 +1094,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-     gui_wallet_displayname_wo_dat			1d45ac88ee0	# Latest code now
 	-     gui_request_payment_label-0.19		11a5aae7341
 	-     gui_peers_sort_network-23				d69b756c939
-	-     gui_peers_no_net_column				56925da3aeb
+	-     gui_peers_no_net_column-28			56925da3aeb	last=df6a2e1a9b5 gui_peers_no_net_column
 	# 22439 guix_in_gitian-23+knots				2014b1271e3	last=ebda0463748 achow101/guix-in-gitian
 		# FIXME: If restoring, test that this still works (WIP fixes in stash fa8517a9112 but need rebase too)
 	-     rpc_getblockfrompeer_future			e7c08467524
