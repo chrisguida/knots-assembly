@@ -1035,13 +1035,13 @@ checkout v29.0
 	# TODO: Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 		# https://github.com/bitcoinknots/bitcoin/issues/113
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
-	-     acceptnonstddatacarrier-28+knots		48c848e044a
+	-     acceptnonstddatacarrier-29+knots		48c848e044a
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-		FIXME: Data before OP_RETURN (and non-push opcodes??) should count the data as non-standard
-	-     rejecttokens-28+knots					39ec1308346
+		# FIXME: Data before OP_RETURN (and non-push opcodes??) should count the data as non-standard (but can't predict everything, so wait until there's a need? 75f1652b447)
+	-     rejecttokens-29+knots					39ec1308346
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just Runes
-	k78   rejectparasites-28+knots				6c5ca3ed56c	last=d978324923a
+	k78   rejectparasites-29+knots				6c5ca3ed56c	last=d978324923a
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
@@ -1055,12 +1055,12 @@ checkout v29.0
 	# TODO: "OLGA" file storage: https://github.com/mikeinspace/stamps/blob/main/OLGA.md https://github.com/CounterpartyXCP/Forum/blob/1e362f7f8668654d0241fe5b1f1c1c330a8b4368/cip-0033.md
 	# TODO? Procedural approve/deny/discount/penalize policy scripting?
 		# https://github.com/bitcoinknots/bitcoin/issues/61
-	TODO: k119  Draft: Add support for Lua-based TX filtering
+	# TODO: k119  Draft: Add support for Lua-based TX filtering
 		# Classifier scripts; could be set for valid (dangerous), track for fee estimation, relay, mine [decided at mine-time so multiple policies possible?; at a lower priority?], etc
 	# Needs concept ACK and review: k107 Retropex/maxfee
 	# Needs concept ACK: 29843 ajtowns/202303-acceptnonstdscript  # allow using upgradable nops
 	# Leaving out #27261 (Ignore datacarrier limits for dataless OP_RETURN outputs) because same behaviour already exists for -datacarriersize=1 and this adds corepoicy complexity - REVISIT IF PR is changed to allow only necessary outputs (value burnt or lone output)
-	-     maxscriptsize-28+knots				574d3ab59c1
+	-     maxscriptsize-29+knots				574d3ab59c1
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Alternate to(?) #29769
 	# Needs concept & impl: Policy: limit script sigops to N (default to MAX_OPS_PER_SCRIPT which is consensus pre-taproot)
@@ -1072,7 +1072,7 @@ checkout v29.0
 	# TODO: allow txs from reorg'd-out blocks to bypass policy?
 	# TODO: prioritise txs from reorg'd-out blocks?
 	# TODO: some way to prioritise Lightning channel activity?
-	TODO? https://github.com/petertodd/bitcoin/commit/04c8e449a34e74e048bf5751d13592a22763ff7e (see email dated 2025-03-19 8:27pm)
+	# TODO? Https://Github.Com/Petertodd/Bitcoin/Commit/04c8e449a34e74e048bf5751d13592a22763ff7e (see email dated 2025-03-19 8:27pm) [bitcoindev] Standard Unstructured Annex
 	TODO? Option to reduce effective fee by dust for each anchor/op_ret
 	TODO? Option to disallow inputs less than N blocks old
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
