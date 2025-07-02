@@ -701,7 +701,7 @@ checkout v29.0
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	27034 rpc_importaddr_for_descwallet-27+k	3422369f448	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 rpc_getpeerinfo_lastblockann-28					last=f7788f66b41 LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28					last=cbe4603a902 LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
 	27216 rpc_getaddressinfo_isactive			707ebbb6788	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
@@ -1073,12 +1073,13 @@ checkout v29.0
 	# TODO: prioritise txs from reorg'd-out blocks?
 	# TODO: some way to prioritise Lightning channel activity?
 	# TODO? Https://Github.Com/Petertodd/Bitcoin/Commit/04c8e449a34e74e048bf5751d13592a22763ff7e (see email dated 2025-03-19 8:27pm) [bitcoindev] Standard Unstructured Annex
-	TODO? Option to reduce effective fee by dust for each anchor/op_ret
-	TODO? Option to disallow inputs less than N blocks old
+	# TODO? k146 Option to reduce effective fee by dust for each anchor/op_ret
+	k148  minrelaymaturity-29+knots
+	# TODO? k147 Option to factor coin-age priority into vsize
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
 		#30.xTODO# Ensure #32790 doesn't break
-	Needs review? 32453 JeremyRubin/unsigned_annex
-	Needs option & review: 32521 darosior/2503_nonstd_tx_sigops
+	# Needs review? 32453 JeremyRubin/unsigned_annex
+	32521 pol_maxtxlegacysigops-29+knots					last=b1f59e8897d darosior/2503_nonstd_tx_sigops
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #32721 achow101:remove-deprecated-balances
 	#30.xTODO# -     compat_bumpfee_require_replacable
