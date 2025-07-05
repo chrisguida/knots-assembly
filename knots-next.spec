@@ -341,6 +341,7 @@ checkout v29.0
 	-     fix_qt_startup_unknown_unit
 	-     fix_qt_psbtops_filename_amount
 	k126  fix_qt_progressbar_fittext
+	k150  fix_rpc_mixed_params_edgecases
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -781,7 +782,7 @@ checkout v29.0
 	# Needs work? 31252 rpc_TxToUniv_witScript-28								last=4e128d4f9b2
 		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
-	31560 rpc_dumptxoutset_fifo-29+knots		27874e8290b	last=4c8e9b4f35b theStack/202412-dumptxoutset-allow_write_to_named_pipe
+	31560 rpc_dumptxoutset_fifo-29+knots		27874e8290b	last=145dc34dc05 theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				dee920da09d	last=b25b40ebd5f vasild/peer_cpu_load
@@ -808,7 +809,7 @@ checkout v29.0
 	# Needs concept & review: 32540 -  # rest: fetch spent transaction outputs by blockhash
 	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	# Needs review: 32638 l0rinc/l0rinc/read-block-hash-check
-	32741 rpc_getpeerinfo_nodeid-28							last=af1c1df25a0
+	32741 rpc_getpeerinfo_nodeid-28							last=9393b33325e
 	# TODO: Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
 	# Needs work: 32844 rpc_gettxoutproof_segwit
 	-     qt_createunsigned_use_psbtops
@@ -1079,7 +1080,7 @@ checkout v29.0
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
 		#30.xTODO# Ensure #32790 doesn't break
 	# Needs review? 32453 JeremyRubin/unsigned_annex
-	32521 pol_maxtxlegacysigops-29+knots					last=b1f59e8897d darosior/2503_nonstd_tx_sigops
+	32521 pol_maxtxlegacysigops-29+knots					last=b60f598b135 darosior/2503_nonstd_tx_sigops
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #32721 achow101:remove-deprecated-balances
 	#30.xTODO# -     compat_bumpfee_require_replacable
@@ -1089,7 +1090,6 @@ checkout v29.0
 		# c79ee09a786 RPC/Wallet: Add "require_replacable" option to bumpfee method, to match previous behaviour
 		# 1f1259d318d GUI/Wallet: Warn if bumping the fee on a non-BIP125 transaction
 	-     compat_rpc_dumptxoutset_hr
-		TODO: Compatibility with Knots 0.20.0-28.1 positional params
 	-     compat_jsonrpc_weirdversions			d50d30bf835
 	29530 rpc_getpeerinfo_misbehaving_score-28	66b8c669e38	last=87efb6f0cfd
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots

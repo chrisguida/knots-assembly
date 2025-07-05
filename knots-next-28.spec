@@ -395,6 +395,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: -     fix_qt_startup_unknown_unit
 	Triage: -     fix_qt_psbtops_filename_amount
 	k126  fix_qt_progressbar_fittext
+	k150  fix_rpc_mixed_params_edgecases
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -925,7 +926,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs concept & review: 32540 -  # rest: fetch spent transaction outputs by blockhash
 	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	# Needs review: 32638 l0rinc/l0rinc/read-block-hash-check
-	32741 rpc_getpeerinfo_nodeid-28							last=af1c1df25a0
+	32741 rpc_getpeerinfo_nodeid-28							last=9393b33325e
 	Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
 	# Needs work: 32844 rpc_gettxoutproof_segwit
 	-     qt_createunsigned_use_psbtops
