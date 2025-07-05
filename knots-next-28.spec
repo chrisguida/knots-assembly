@@ -1203,7 +1203,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
-	-     compat_jsonrpc_weirdversions			d50d30bf835
+	-     compat_jsonrpc_weirdversions-28		d50d30bf835	last=6cada87972f
 	29530 rpc_getpeerinfo_misbehaving_score-28	66b8c669e38	last=87efb6f0cfd
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
 		# Deprecated in Knots 28.0
