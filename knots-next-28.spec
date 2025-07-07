@@ -1208,15 +1208,14 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	(CHECK-LAST)	last=e3760287b4c rpc_getpeerinfo_misbehaving_score-29+k
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
 		# Deprecated in Knots 28.1
-	-     rpccookieperms_octal_compat-28+knots	cbd3aa51b74
-	-     zmq_ipc_uri_compat					85f09aa4af0	last=0b1762c90d1 origin-pull/28020/head
+	-     rpccookieperms_octal_compat-28+knots	cbd3aa51b74	last=ce23e2a55e8 rpccookieperms_octal_compat-29+knots
+	-     zmq_ipc_uri_compat-28					85f09aa4af0	last=0b1762c90d1 origin-pull/28020/head
+	(CHECK-LAST)	last=be5ba1bc7e7 zmq_ipc_uri_compat
 		# Backward compatibility with #28020 URI format supported by Knots 25.1+
 	#29.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
-	-     wallet_undeprecate_legacy-26			dd9a275a37b
+	-     wallet_undeprecate_legacy-26			dd9a275a37b	last=c6757a7d431 wallet_undeprecate_legacy-29
 		# Effectively reverts #24505, #27869, #28597, and gui#764
-		#29.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
-		#29.xTODO# revert #31250  wallet: Disable creating and loading legacy wallets
 	14641 fundraw_min_conf_deprecated-25+knots	9e0533bb2c0	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			74f7c944e91
 	-     netperms_implicit_addr				9ffb23bb848
@@ -1231,7 +1230,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # POLICY:
 	-    1day_default_conftarget				c189a5677d3
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	-     bloom_default-28+knots				401f2f03e86
+	-     bloom_default-28+knots				401f2f03e86	last=b688158e06d bloom_default-29+knots
 	-     wallet_avoid_newerchange				5962a67e5f5
 	-     enforce_checkpoints					254fabebf5a
 	n/a   checkpoint_update-28					41c985132c9

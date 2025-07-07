@@ -1094,12 +1094,12 @@ checkout v29.0
 	29530 rpc_getpeerinfo_misbehaving_score-29+k	66b8c669e38	last=87efb6f0cfd
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
 		# Deprecated in Knots 28.1
-	-     rpccookieperms_octal_compat-28+knots	cbd3aa51b74
+	-     rpccookieperms_octal_compat-29+knots	cbd3aa51b74
 	-     zmq_ipc_uri_compat					85f09aa4af0	last=0b1762c90d1 origin-pull/28020/head
 		# Backward compatibility with #28020 URI format supported by Knots 25.1+
 	#29.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
-	-     wallet_undeprecate_legacy-26			dd9a275a37b
+	-     wallet_undeprecate_legacy-29			dd9a275a37b
 		# Effectively reverts #24505, #27869, #28597, and gui#764
 		#30.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768?
 		#30.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
@@ -1118,7 +1118,7 @@ checkout v29.0
 # POLICY:
 	-    1day_default_conftarget				c189a5677d3
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	-     bloom_default-28+knots				401f2f03e86
+	-     bloom_default-29+knots				401f2f03e86
 	-     wallet_avoid_newerchange				5962a67e5f5
 	-     enforce_checkpoints					254fabebf5a
 		#30.xTODO# Revert #31649
