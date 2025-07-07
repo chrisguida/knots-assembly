@@ -1205,8 +1205,9 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
 	-     compat_jsonrpc_weirdversions-28		d50d30bf835	last=6cada87972f
 	29530 rpc_getpeerinfo_misbehaving_score-28	66b8c669e38	last=87efb6f0cfd
+	(CHECK-LAST)	last=e3760287b4c rpc_getpeerinfo_misbehaving_score-29+k
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
-		# Deprecated in Knots 28.0
+		# Deprecated in Knots 28.1
 	-     rpccookieperms_octal_compat-28+knots	cbd3aa51b74
 	-     zmq_ipc_uri_compat					85f09aa4af0	last=0b1762c90d1 origin-pull/28020/head
 		# Backward compatibility with #28020 URI format supported by Knots 25.1+
