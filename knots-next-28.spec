@@ -1,7 +1,7 @@
-timestamp 2025-06-26 21:39:47
+timestamp 2025-07-07 21:35:17
 #lastapply no-merge
 
-#.. checked up to PR #32819 / gui #878
+#.. checked up to PR #32898 / gui #878
 
 checkout v28.2
 @28.x-syslibs
@@ -206,6 +206,7 @@ checkout v28.2
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
 	28944 rpc_sendall_anti_fee_sniping-28		25117369373	last=b11d00d54ed ishaanam/sendall_anti_fee_sniping
+		TODO: Consider #32892
 	29141 fix_rpcauth_blank-24					3ad996f41bb	last=51588287fb5 fix_rpcauth_blank
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
@@ -290,6 +291,7 @@ checkout v28.2
 	31391 custom_iso8601datetime-28+knots		7fbcebdee49
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
 	# Needs review: 31405 mzumsande/202411_stricter_invalidblock_handling
+		#+32843
 	31416 docfix_rpc_send_inputsobj-23			4df3333de0f	last=fad83e759a4 maflcko/2412-doc-rpc
 	# Needs review: 31423 furszy/2024_migration_watch-only_migration
 	# Needs review: 31439 mzumsande/202412_reindex_interrupt
@@ -388,6 +390,12 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32773 hebasto/250618-mkdir
 	# Needs concept & review: 32788 achow101/desc-allow-H
 		# Check for this impacting other Knots merges
+	32826 jlopp/addBadPorts
+		# 29.x backport in #32863
+	# depends-only, needs work: 32837 fanquake/fix_libevent_mingw_w64_13
+	Needs review? 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
+	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
+	# Needs review: 32878 HowHsu/rewind
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -506,6 +514,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 32692 -  # TODO: Dynamic scriptcheck thread count
 	# Needs review: 32730 furszy/2025_net_avoid_traversing_block_twice
 	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
+	Review: 32827 l0rinc/l0rinc/empty-mempool-IBD
+	Review: 32885 pstratem/2025-07-05-lockless-isibd
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -831,6 +841,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
 	# Needs review or minimal impact: 29136 achow101/sethdseed-void-descriptor
 		# See #32652 if merged
+		# Also #32861 ??
 	# Needs final interface: 29163 rpc_help_detail-22								last=c6b68c29707 LarryRuane/2024-01-help-detailed
 	# or (newer): 29163 rpc_helpdetail-24									last=56830469303 LarryRuane/2024-01-help-detailed
 		# Left off top commit changing rpc_help test behaviour
@@ -923,12 +934,15 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs work: g870 -  # Expose AssumeUTXO Load Snapshot Functionality To The GUI
 	# Needs concept & work: 32501 BrandonOdiwuor/removeprunedfunds-array
 	# Needs review: 32517 pinheadmz/wallet-gettransaction-ischange
-	# Needs concept & review: 32540 -  # rest: fetch spent transaction outputs by blockhash
+	32540 -  # rest: fetch spent transaction outputs by blockhash
+		+32842 ?
 	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	# Needs review: 32638 l0rinc/l0rinc/read-block-hash-check
 	32741 rpc_getpeerinfo_nodeid-28							last=9393b33325e
 	Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
-	# Needs work: 32844 rpc_gettxoutproof_segwit
+	Needs work: 32844 rpc_gettxoutproof_segwit
+	# WIP: 32857 Sjors/2025/07/no_script_path
+	# Needs review: 32896 ishaanam/wallet_v3_txs
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
