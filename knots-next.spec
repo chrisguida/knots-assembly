@@ -825,7 +825,7 @@ checkout v29.0
 	# Needs review: 32638 l0rinc/l0rinc/read-block-hash-check
 	32741 rpc_getpeerinfo_nodeid-28							last=9393b33325e
 	# TODO: Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
-	32844 rpc_gettxoutproof_segwit
+	32844 rpc_gettxoutproof_segwit-27+knots					last=23edd3db4f1 rpc_gettxoutproof_segwit
 	# WIP: 32857 Sjors/2025/07/no_script_path
 	# Needs review: 32896 ishaanam/wallet_v3_txs
 	-     qt_createunsigned_use_psbtops
