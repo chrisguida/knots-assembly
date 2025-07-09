@@ -35,7 +35,7 @@ checkout v29.0
 # TESTS:
 	# If needed: -     ci_knots-26							e2099d64846
 	# If needed: -     lint_relaxer-28+knots					efeece9f031
-	# If needed: -     nowarn_unreachable-code				ad6a12d7bbc
+	-     nowarn_unreachable-code				ad6a12d7bbc
 	# If needed: -     nowarn_unused-function				45a2e5951ce
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
@@ -352,6 +352,7 @@ checkout v29.0
 	-     fix_qt_psbtops_filename_amount
 	k126  fix_qt_progressbar_fittext
 	k150  fix_rpc_mixed_params_edgecases
+		# Held back (4d24d60836f) support for positional options + named params (breaks tests)
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -594,7 +595,7 @@ checkout v29.0
 		# TODO: Code review & make sure no wallet db changes (if it does, store in RAM for Knots for now?)
 	# TODO: 21283 achow101/psbt2
 		# TODO: diff-minimise??
-	21260 rpcwallet_tx_in_mempool-28+knots		3be97e6ce15	last=46bf0b7b5d8
+	21260 rpcwallet_tx_in_mempool-29+knots		3be97e6ce15	last=46bf0b7b5d8
 		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
@@ -920,7 +921,7 @@ checkout v29.0
 	-     getrpcwhitelist_wallets-29+knots		a7aa33ccc74
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
-	-     wallettool_dump_warning-28+knots		8f9f124c11f
+	-     wallettool_dump_warning-29+knots		8f9f124c11f
 	# Needs work: 22708 hebasto:210815-wayland
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan-g/1643263956-network-graph-issue-532
@@ -1125,7 +1126,7 @@ checkout v29.0
 	-     netperms_implicit_addr				9ffb23bb848
 	-     rpc_getblockfrompeer_nodeid_compat	925240d6f71
 	# TODO: add a bitcoinknots.conf ?
-	n/a   gui_peers_bump_setting_keys-25+k		05258006a0a
+	n/a   gui_peers_bump_setting_keys-29+k		05258006a0a
 		#29.xTODO# Each release, see if we need to bump setting names for GUI states
 		# git grep 'alue(.*State\|toByteArray\|saveState'
 		# Window position/size: leave alone

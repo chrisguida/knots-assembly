@@ -32,7 +32,7 @@ checkout v28.2
 # TESTS:
 	# If needed: -     ci_knots-26							e2099d64846
 	-     lint_relaxer-28+knots					efeece9f031
-	-     nowarn_unreachable-code				ad6a12d7bbc
+	-     nowarn_unreachable-code-28			ad6a12d7bbc	last=1f0489e215f nowarn_unreachable-code
 	-     nowarn_unused-function				45a2e5951ce
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
@@ -670,6 +670,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# TODO: 21283 achow101/psbt2
 		# TODO: diff-minimise??
 	21260 rpcwallet_tx_in_mempool-28+knots		3be97e6ce15	last=46bf0b7b5d8
+	(CHECK-LAST)	last=86f76777c6b rpcwallet_tx_in_mempool-29+knots
 		# Includes squashed fixes for RPC doc
 	# Needs API work: 21284 -  # rpc: add the add_inputs option to bumpfee/psbtbumpfee
 		# NOTE: Ensure default is actually true
@@ -1040,7 +1041,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-     getrpcwhitelist_wallets-28+knots		a7aa33ccc74	last=14bda42efd0 getrpcwhitelist_wallets-28+knots
 		# NOTE: when #19118..#19120 get merged, add 71294ee9799
 	# Needs purpose: 21815 prayank23:max-out-full-relay
-	-     wallettool_dump_warning-28+knots		8f9f124c11f
+	-     wallettool_dump_warning-28+knots		8f9f124c11f	last=afd2785f2c4 wallettool_dump_warning-29+knots
 	# Needs work: 22708 hebasto:210815-wayland
 	# Needs concept review: 24121 -  # wallet: treat P2TR address with invalid x-only pubkey as invalid
 	# Needs work/review: g539  RandyMcMillan-g/1643263956-network-graph-issue-532
@@ -1236,7 +1237,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-     netperms_implicit_addr				9ffb23bb848
 	-     rpc_getblockfrompeer_nodeid_compat	925240d6f71
 	# TODO: add a bitcoinknots.conf ?
-	n/a   gui_peers_bump_setting_keys-25+k		05258006a0a
+	n/a   gui_peers_bump_setting_keys-25+k		05258006a0a	last=9ceafb77b48 gui_peers_bump_setting_keys-29+k
 		#29.xTODO# Each release, see if we need to bump setting names for GUI states
 		# git grep 'alue(.*State\|toByteArray\|saveState'
 		# Window position/size: leave alone
@@ -1254,7 +1255,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
 	TODO: revert #28354 ?
 	TODO? bump up blockreconstructionextratxn higher?
-	10282 timebomb_knots						40f673fe63e
+	10282 timebomb_knots-28						40f673fe63e	last=84572a8ec93 timebomb_knots
 		TODO: disable mining; add alert in advance
 		TODO: mention in -help / GUI about ?
 	-     rwconf_policy-28+knots				6fd67aa463d
