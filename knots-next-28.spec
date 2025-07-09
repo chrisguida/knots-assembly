@@ -206,7 +206,9 @@ checkout v28.2
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
 	28944 rpc_sendall_anti_fee_sniping-28		25117369373	last=b11d00d54ed ishaanam/sendall_anti_fee_sniping
-		TODO: Consider #32892
+	-     rpc_walletcfpsbt_antifeesniping-28+k
+	(CHECK-LAST)	last=113ba106273 Sjors/2025/07/locktime
+		# Includes tests from #32892
 	29141 fix_rpcauth_blank-24					3ad996f41bb	last=51588287fb5 fix_rpcauth_blank
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
@@ -390,8 +392,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32773 hebasto/250618-mkdir
 	# Needs concept & review: 32788 achow101/desc-allow-H
 		# Check for this impacting other Knots merges
-	32826 jlopp/addBadPorts
-		# 29.x backport in #32863
+	32826 p2p_badports_dbm_rdp_vnc-23
 	# depends-only, needs work: 32837 fanquake/fix_libevent_mingw_w64_13
 	Needs review? 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
@@ -514,7 +515,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 32692 -  # TODO: Dynamic scriptcheck thread count
 	# Needs review: 32730 furszy/2025_net_avoid_traversing_block_twice
 	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
-	Review: 32827 l0rinc/l0rinc/empty-mempool-IBD
+	32827 opti_removeForBlock_empty-28						last=54f9cb85c4b l0rinc/l0rinc/empty-mempool-IBD
 	Review: 32885 pstratem/2025-07-05-lockless-isibd
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -934,13 +935,13 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs work: g870 -  # Expose AssumeUTXO Load Snapshot Functionality To The GUI
 	# Needs concept & work: 32501 BrandonOdiwuor/removeprunedfunds-array
 	# Needs review: 32517 pinheadmz/wallet-gettransaction-ischange
-	32540 -  # rest: fetch spent transaction outputs by blockhash
-		+32842 ?
+	32540 rest_spenttxouts-26
+		# +32842
 	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	# Needs review: 32638 l0rinc/l0rinc/read-block-hash-check
 	32741 rpc_getpeerinfo_nodeid-28							last=9393b33325e
 	Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
-	Needs work: 32844 rpc_gettxoutproof_segwit
+	32844 rpc_gettxoutproof_segwit
 	# WIP: 32857 Sjors/2025/07/no_script_path
 	# Needs review: 32896 ishaanam/wallet_v3_txs
 	-     qt_createunsigned_use_psbtops
