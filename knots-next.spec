@@ -1098,6 +1098,7 @@ checkout v29.0
 		#30.xTODO# Ensure #32790 doesn't break
 	# Needs review? 32453 JeremyRubin/unsigned_annex
 	32521 pol_maxtxlegacysigops-29+knots					last=2c2acb37ecd darosior/2503_nonstd_tx_sigops
+	-     blockreconstructionextratxnsize
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #32721 achow101:remove-deprecated-balances
 	#30.xTODO# -     compat_bumpfee_require_replacable
@@ -1142,13 +1143,13 @@ checkout v29.0
 	n/a   checkpoint_update-29					41c985132c9
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
-	TODO: revert #28354 ?
-	TODO? bump up blockreconstructionextratxn higher?
+	# TODO: revert #28354 ?
 	10282 timebomb_knots						40f673fe63e
 		TODO: disable mining; add alert in advance
 		TODO: mention in -help / GUI about ?
 	-     rwconf_policy-28+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
+		TODO? bump up blockreconstructionextratxn higher? and set a sane blockreconstructionextratxnsize default
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#29.xTODO# QTreeWidget or similar for GUI Options dialog?

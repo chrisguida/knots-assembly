@@ -1216,6 +1216,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	TODO? Option to disallow inputs less than N blocks old
 	Needs review? 32453 JeremyRubin/unsigned_annex
 	Needs option & review: 32521 darosior/2503_nonstd_tx_sigops
+	-     blockreconstructionextratxnsize
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
@@ -1252,13 +1253,13 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	n/a   checkpoint_update-28					41c985132c9	last= checkpoint_update-29
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
-	TODO: revert #28354 ?
-	TODO? bump up blockreconstructionextratxn higher?
+	# TODO: revert #28354 ?
 	10282 timebomb_knots-28						40f673fe63e	last=84572a8ec93 timebomb_knots
 		TODO: disable mining; add alert in advance
 		TODO: mention in -help / GUI about ?
 	-     rwconf_policy-28+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
+		TODO? bump up blockreconstructionextratxn higher? and set a sane blockreconstructionextratxnsize default
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#29.xTODO# QTreeWidget or similar for GUI Options dialog?
