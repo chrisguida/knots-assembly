@@ -1249,9 +1249,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-     bloom_default-28+knots				401f2f03e86	last=b688158e06d bloom_default-29+knots
 	-     wallet_avoid_newerchange				5962a67e5f5
 	-     enforce_checkpoints					254fabebf5a
-	n/a   checkpoint_update-28					41c985132c9
+	n/a   checkpoint_update-28					41c985132c9	last= checkpoint_update-29
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
-		#29.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
 	TODO: revert #28354 ?
 	TODO? bump up blockreconstructionextratxn higher?

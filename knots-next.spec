@@ -1097,7 +1097,7 @@ checkout v29.0
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
 		#30.xTODO# Ensure #32790 doesn't break
 	# Needs review? 32453 JeremyRubin/unsigned_annex
-	32521 pol_maxtxlegacysigops-29+knots					last=b60f598b135 darosior/2503_nonstd_tx_sigops
+	32521 pol_maxtxlegacysigops-29+knots					last=2c2acb37ecd darosior/2503_nonstd_tx_sigops
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #32721 achow101:remove-deprecated-balances
 	#30.xTODO# -     compat_bumpfee_require_replacable
@@ -1139,8 +1139,9 @@ checkout v29.0
 	-     wallet_avoid_newerchange				5962a67e5f5
 	-     enforce_checkpoints					254fabebf5a
 		#30.xTODO# Revert #31649
-	n/a   checkpoint_update-28					41c985132c9
-		#29.xTODO# Revert #25725 (Remove mainnet checkpoints)
+	n/a   checkpoint_update-29					41c985132c9
+		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
+		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	TODO: revert #28354 ?
 	TODO? bump up blockreconstructionextratxn higher?
 	10282 timebomb_knots						40f673fe63e
