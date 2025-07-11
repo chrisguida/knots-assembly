@@ -405,6 +405,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: -     fix_qt_psbtops_filename_amount
 	k126  fix_qt_progressbar_fittext
 	k150  fix_rpc_mixed_params_edgecases
+		# Held back (4d24d60836f) support for positional options + named params (breaks tests)
+	-     qt_nowalletpage_alerts-23
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1229,7 +1231,6 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-     zmq_ipc_uri_compat-28					85f09aa4af0	last=0b1762c90d1 origin-pull/28020/head
 	(CHECK-LAST)	last=be5ba1bc7e7 zmq_ipc_uri_compat
 		# Backward compatibility with #28020 URI format supported by Knots 25.1+
-	#29.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-26			dd9a275a37b	last=c6757a7d431 wallet_undeprecate_legacy-29
 		# Effectively reverts #24505, #27869, #28597, and gui#764

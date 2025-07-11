@@ -353,6 +353,7 @@ checkout v29.0
 	k126  fix_qt_progressbar_fittext
 	k150  fix_rpc_mixed_params_edgecases
 		# Held back (4d24d60836f) support for positional options + named params (breaks tests)
+	-     qt_nowalletpage_alerts-23
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1099,6 +1100,7 @@ checkout v29.0
 	# Needs review? 32453 JeremyRubin/unsigned_annex
 	32521 pol_maxtxlegacysigops-29+knots					last=2c2acb37ecd darosior/2503_nonstd_tx_sigops
 	-     blockreconstructionextratxnsize
+		#29.xTODO# TEST
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #32721 achow101:remove-deprecated-balances
 	#30.xTODO# -     compat_bumpfee_require_replacable
@@ -1115,7 +1117,7 @@ checkout v29.0
 	-     rpccookieperms_octal_compat-29+knots	cbd3aa51b74
 	-     zmq_ipc_uri_compat					85f09aa4af0	last=0b1762c90d1 origin-pull/28020/head
 		# Backward compatibility with #28020 URI format supported by Knots 25.1+
-	#29.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
+	#30.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-29			dd9a275a37b
 		# Effectively reverts #24505, #27869, #28597, and gui#764
@@ -1145,8 +1147,6 @@ checkout v29.0
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
 	10282 timebomb_knots						40f673fe63e
-		TODO: disable mining; add alert in advance
-		TODO: mention in -help / GUI about ?
 	-     rwconf_policy-28+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
 		TODO? bump up blockreconstructionextratxn higher? and set a sane blockreconstructionextratxnsize default
