@@ -883,7 +883,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	#28.xTODO# Needs rewrite? 30635 Sjors/2024/08/waitforblock
+	Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28						44b12da4bd8
 	# Needs review: 30685 hebasto/240820-control-flow
 	30708 rpc_getdescriptoractivity-28			9165f95006a	last=37a5c5d8366 jamesob/2024-08-getdescriptoractivity
