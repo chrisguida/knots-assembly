@@ -1,7 +1,7 @@
-timestamp 2025-07-07 21:35:17
+timestamp 2025-07-15 03:36:42
 #lastapply no-merge
 
-#.. checked up to PR #32898 / gui #878
+#.. checked up to PR #32973 / gui #879
 
 checkout v28.2
 @28.x-syslibs
@@ -104,7 +104,8 @@ checkout v28.2
 	23027 bugfix_util_test_config				159d9c36b05
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review & concept check: 23074 Package-aware fee estimation
-	# Needs work: 26573 darosior/taproot_over_dont_under_estimate
+	# Needs work: 32964 w0xlt/r_26573
+		# Was #26573 darosior/taproot_over_dont_under_estimate
 		# Was #23502 achow101/tr-low-fee-est
 	# Needs work: 23534 achow101/no-change-fee-w-sffo
 		# NOTE: If we're sending to someone else who is paying the tx fee, it actually makes sense?
@@ -397,6 +398,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review? 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
 	# Needs review: 32878 HowHsu/rewind
+	32943 hebasto/250710-package-registry
+		# 28.x backport in #32969
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -824,6 +827,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	#28.xTODO# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 		# Note alternative (approach NACK'd) in #28453
+		# OR #32966 Eunovo:2025-implement-bip352-receiving
 	# Needs review & BIP finality: 27827 josibake/silent-payments-base-pr-slim-down
 	# Needs review & concept: 28241 Sjors/2023/08/silent-index
 	# Needs review: 27837 furszy/2023_introduce_block_request_tracker
@@ -943,6 +947,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	# Needs review: 32638 l0rinc/l0rinc/read-block-hash-check
 	32741 rpc_getpeerinfo_nodeid-28							last=9393b33325e
+		# OR #32972 ?
 	Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
 	32844 rpc_gettxoutproof_segwit-27+knots					last=23edd3db4f1 rpc_gettxoutproof_segwit
 	# WIP: 32857 Sjors/2025/07/no_script_path
@@ -1293,7 +1298,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250626)			ba223403bbc
+	n/a  (bump_version=Knots:20250715)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
