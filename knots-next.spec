@@ -43,7 +43,6 @@ checkout v29.0
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 # FIXES:
 	13789 asm_bypass_cxxflags					22df203e4cd
-		#29.xTODO# Does this actually do anything now? Seems like CXXFLAGS might be ordered right (at least in POWER8 testing)
 	32217 fix_gitdir_foreign
 		# Was part of #18902
 	#30.xTODO# Revert #32220 (cmake: Get rid of undocumented BITCOIN_GENBUILD_NO_GIT environment variable)
@@ -210,8 +209,8 @@ checkout v29.0
 	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
-		#29.xTODO# but windows has lots of problems with existing style...
-		#29.xTODO# but deviating from Core signing may reduce participants?
+		#30.xTODO# but windows has lots of problems with existing style...
+		#30.xTODO# but deviating from Core signing may reduce participants?
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29175 -										5f08e7fee5b	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
 	# Needs work: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
@@ -367,7 +366,7 @@ checkout v29.0
 		# weird bitcoin.conf results in:
 		#	ASSERT failure in QList<T>::operator[]: "index out of range", file /bitcoin/depends/x86_64-w64-mingw32/include/QtCore/qlist.h, line 575
 	# TODO: ensure that rejecting a tx also rejects dependents in the orphan pool
-	#29.xTODO# Review security report(s)
+	#30.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@28.x-knots-lts-deps
 	-     upd_qt5-29							1774fb76e0e
@@ -1026,7 +1025,6 @@ checkout v29.0
 	30232 refactor_isstandardtx_mpopts-29+knots	5ba611afd07
 	-     pol_acceptunknownwitness
 	-     mining_priority						07464b13214	# Latest code now
-		#29.xTODO# FIXME: Lots of lock warnings from clang! (did I already fix these?)
 		#30.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
@@ -1169,7 +1167,7 @@ checkout v29.0
 # BRANDING:
 	n/a   copyright_2025-28						19e67dd9efa
 	n/a   knots_branding-28						f58950aab87
-		#29.xTODO# Review security policy
+		#30.xTODO# Review security policy
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #29.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
