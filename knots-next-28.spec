@@ -1258,9 +1258,10 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	10282 timebomb_knots-28						40f673fe63e	last=84572a8ec93 timebomb_knots
 		TODO: disable mining; add alert in advance
 		TODO: mention in -help / GUI about ?
-	-     rwconf_policy-28+knots				6fd67aa463d
+	-     rwconf_policy-28+knots				6fd67aa463d	last=86056333700 rwconf_policy-29+knots
 		# Includes Knots policy changes for simplification of final rebase process
 		TODO? bump up blockreconstructionextratxn higher? and set a sane blockreconstructionextratxnsize default
+		FIXME: LimitOrphanTxSize needs to set m_opts.max_orphan_txs too! (this changed again in 29.x...)
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#29.xTODO# QTreeWidget or similar for GUI Options dialog?

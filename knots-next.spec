@@ -1147,9 +1147,11 @@ checkout v29.0
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
 	10282 timebomb_knots						40f673fe63e
-	-     rwconf_policy-28+knots				6fd67aa463d
+	-     rwconf_policy-29+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
-		TODO? bump up blockreconstructionextratxn higher? and set a sane blockreconstructionextratxnsize default
+		TODO: GUI settings for new stuff
+		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
+		#30.xTODO# Check on block assembly GetArgs like blockmintxfee/etc
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#29.xTODO# QTreeWidget or similar for GUI Options dialog?
