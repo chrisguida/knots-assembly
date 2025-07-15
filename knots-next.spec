@@ -4,7 +4,7 @@ lastapply no-merge
 #.. checked up to PR #32973 / gui #879
 
 checkout v29.0
-@28.x-syslibs
+@29.x-syslibs
 # BUILD BUGS:
 	32356 fix_cmake_usercxxflags_pr32356-29
 	32437 sse4_sha256_asan_clang_pr32437-28
@@ -30,7 +30,7 @@ checkout v29.0
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	n/a   (delete_release_notes_fragments)
-@28.x-knotsfixes
+@29.x-knotsfixes
 # TESTS:
 	# If needed: -     ci_knots-26							e2099d64846
 	# If needed: -     lint_relaxer-28+knots					efeece9f031
@@ -368,7 +368,7 @@ checkout v29.0
 	# TODO: ensure that rejecting a tx also rejects dependents in the orphan pool
 	#30.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
-#@28.x-knots-lts-deps
+#@29.x-knots-lts-deps
 	-     upd_qt5-29							1774fb76e0e
 		# 5.15.17 Opensource released: https://lists.qt-project.org/pipermail/announce/2025-May/000557.html
 		# Includes patch for CVE-2025-4211 (not upstream; simpler and safer)
@@ -376,7 +376,7 @@ checkout v29.0
 	#29.xTODO# FIXME -     depends_qt5kde
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
-@28.x-knots
+@29.x-knots
 # PERFORMANCE:
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
@@ -1202,9 +1202,9 @@ TODO: Ensure no #include <config/bitcoin-config.h>
 
 TODO: Close Knots issue 98
 
-# TODO: @28.x-knots-android
+# TODO: @29.x-knots-android
 	# 32262 hebasto/250413-android
 
-@28.x-knots-extratests
+@29.x-knots-extratests
 	31367 dergoegge/2024-11-ci-ulimit-s
 	31410 hebasto/241203-multiwallet
