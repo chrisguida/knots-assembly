@@ -6,7 +6,6 @@ lastapply no-merge
 checkout v29.0
 @28.x-syslibs
 # BUILD BUGS:
-	#29.xTODO# Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
 	32356 fix_cmake_usercxxflags_pr32356-29
 	32437 sse4_sha256_asan_clang_pr32437-28
 	32469 qt_dbus_nonlinux-29
@@ -341,8 +340,7 @@ checkout v29.0
 	# Needs review: 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
 	# Needs review: 32878 HowHsu/rewind
-	32943 hebasto/250710-package-registry
-		# 29.x backport in #32863
+	32943 fix_deps_cmake_no_exportpkg-28
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -1160,7 +1158,7 @@ checkout v29.0
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#29.xTODO# QTreeWidget or similar for GUI Options dialog?
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
-	Needs review/argument/optional? 22779 darosior:taproot_dust_limit
+	#29.xTODO# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
 	# Needs review/options: 23121 glozow:ancestorscore-remove-bip1252
 	# Needs review/options: 26348 -  # Make P2SH redeem script "IF .. PUSH <x> ELSE ... PUSH <y> ENDIF CHECKMULTISIG .. " standard

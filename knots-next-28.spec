@@ -8,7 +8,7 @@ checkout v28.2
 # BUILD BUGS:
 	TODO: #32299
 	5872 subdir_incl_compat						b7dd5799936
-	#29.xTODO# Triage: g841 furszy-g/2024_gui_rpconsole_walletmodel_dependency
+	# For Qt6: g837
 	#29.xTODO# If needed? 30997 hebasto/240928-qt6 and/or g861 whitslack/qt6
 	32437 fanquake/extend_asan_sse4
 	Triage: 32484 fanquake/28_suppress_unterm_string_init
@@ -398,8 +398,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review? 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
 	# Needs review: 32878 HowHsu/rewind
-	32943 hebasto/250710-package-registry
-		# 28.x backport in #32969
+	32943 fix_deps_cmake_no_exportpkg-28
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
