@@ -447,7 +447,7 @@ checkout v29.0
 	# Needs work: 32692 -  # TODO: Dynamic scriptcheck thread count
 	# Needs review: 32730 furszy/2025_net_avoid_traversing_block_twice
 	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
-	32827 opti_removeForBlock_empty-28						last=54f9cb85c4b l0rinc/l0rinc/empty-mempool-IBD
+	32827 opti_removeForBlock_empty-28						last=249889bee6b l0rinc/l0rinc/empty-mempool-IBD
 	# Needs work/review: 32885 pstratem/2025-07-05-lockless-isibd
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1097,7 +1097,8 @@ checkout v29.0
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
 		#30.xTODO# Ensure #32790 doesn't break
 	# Needs review? 32453 JeremyRubin/unsigned_annex
-	32521 pol_maxtxlegacysigops-29+knots					last=2c2acb37ecd darosior/2503_nonstd_tx_sigops
+	32521 pol_maxtxlegacysigops-29+knots
+		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize
 		#29.xTODO# TEST
 # Non-upstreamed Knots compatibility:
@@ -1165,8 +1166,8 @@ checkout v29.0
 	7483  svg_icon-29+knots						5b18d9e534b
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
-	n/a   copyright_2025-28						19e67dd9efa
-	n/a   knots_branding-28						f58950aab87
+	# n/a   copyright_2025-28						19e67dd9efa
+	n/a   knots_branding-29						f58950aab87
 		#30.xTODO# Review security policy
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
