@@ -1278,8 +1278,9 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		d4c1e555559
-	7483  svg_icon-28+knots						5b18d9e534b
+	7483  svg_icon-28+knots						5b18d9e534b	last=cd64df8af62 svg_icon-29+knots
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
+		FIXME: nsis looks for rendered_icons in srcdir
 	n/a   tbc_font-28+knots						458c5339ceb	last= tbc_font
 		Triage: fix_qt_fontsel_confusion (bundled in 29.x tbc_font)
 		# TODO: Apply font to _all_ amounts when displaying TBC if default font doesn't support Tonal

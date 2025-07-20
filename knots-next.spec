@@ -784,7 +784,7 @@ checkout v29.0
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	Needs rewrite? 30635 Sjors/2024/08/waitforblock
+	30635 rpc_waitfornewblock_tip_param-29					last=c6e2c31c551 Sjors/2024/08/waitforblock
 	# Needs review: 30685 hebasto/240820-control-flow
 	30713 tdb3/relevant_blocks_in_scanblocks_status	15e73d0eb8f	last=5b2d0216d87  # rpc_scanblocks_status_results-28
 	#30.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
@@ -825,7 +825,7 @@ checkout v29.0
 		# +32842
 	# Needs concept review: 32541 -  # index: store per-block transaction locations for efficient lookups
 	# Needs review: 32638 l0rinc/l0rinc/read-block-hash-check
-	32741 rpc_getpeerinfo_nodeid-28							last=9393b33325e
+	# WIP: 32741 rpc_getpeerinfo_nodeid-28							last=9393b33325e
 		# OR #32972 ?
 	# TODO: Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
 	32844 rpc_gettxoutproof_segwit-27+knots					last=23edd3db4f1 rpc_gettxoutproof_segwit
@@ -1162,7 +1162,7 @@ checkout v29.0
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		d4c1e555559
-	7483  svg_icon-28+knots						5b18d9e534b
+	7483  svg_icon-29+knots						5b18d9e534b
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	n/a   copyright_2025-28						19e67dd9efa
