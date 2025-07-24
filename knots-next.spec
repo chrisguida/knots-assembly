@@ -436,7 +436,7 @@ checkout v29.0
 		# +#32475
 	# Needs review: 32128 -  # Draft: CCoinMap Experiments
 	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
-	32279 opti_script_inline_36b-29							last=3170e2c1626 l0rinc/l0rinc/prevector-size
+	32279 opti_script_inline_36b-29							last=f7d9f4510d5 l0rinc/l0rinc/prevector-size
 	# Needs careful review: 32473 sipa/202504_sighash_cache
 	32487 opti_readblock_hash_once-29
 	-     netproc_check_blockhash
