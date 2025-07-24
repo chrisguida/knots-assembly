@@ -33,7 +33,7 @@ checkout v29.0
 @29.x-knotsfixes
 # TESTS:
 	# If needed: -     ci_knots-26							e2099d64846
-	# If needed: -     lint_relaxer-28+knots					efeece9f031
+	-     lint_relaxer-29+knots					efeece9f031
 	-     nowarn_unreachable-code				ad6a12d7bbc
 	# If needed: -     nowarn_unused-function				45a2e5951ce
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
@@ -467,6 +467,8 @@ checkout v29.0
 	#-     rm_kernel_lib							84b7c6adf43
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
 			# When restoring libbitcoinkernel support, adjust libbitcoinconsensus reverts to make it interact with --with-libs (see 7ad32d39d76)
+	-     rm_multiprocess
+		# TODO: Support libmultiprocess
 	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
 		# test2: export of symbol _IO_stdin_used not allowed!
 		# test2: libutil.so.1 is not in ALLOWED_LIBRARIES!
@@ -1173,7 +1175,7 @@ checkout v29.0
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #29.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #30.xTODO# Ensure #32514 is applied to Knots changes
-TODO: Ensure no #include <config/bitcoin-config.h>
+# TODO: Ensure no #include <config/bitcoin-config.h>
 # TODO: Check that we aren't deprecating anything in Core
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
