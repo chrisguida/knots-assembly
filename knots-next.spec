@@ -436,7 +436,7 @@ checkout v29.0
 		# +#32475
 	# Needs review: 32128 -  # Draft: CCoinMap Experiments
 	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
-	32279 opti_script_inline_36b-29							last=f7d9f4510d5 l0rinc/l0rinc/prevector-size
+	32279 opti_script_inline_36b-29							last=d5104cfbaeb l0rinc/l0rinc/prevector-size
 	# Needs careful review: 32473 sipa/202504_sighash_cache
 	32487 opti_readblock_hash_once-29
 	-     netproc_check_blockhash
@@ -804,7 +804,7 @@ checkout v29.0
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				dee920da09d	last=b25b40ebd5f vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
-	31886 jonatack/2025-02-netinfo-services		bed89007671	last=724546e28a5  # netinfo_local_svcs-28+knots
+	31886 netinfo_local_svcs-29+knots			bed89007671	last=943ee6768d9 jonatack/2025-02-netinfo-services
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	31953 bumpfee_full_rbf-29+knots							last=fa86190e6ed maflcko/2502-fullrbf-follow-up
 		# Was: 26454 petertodd/2022-feebump-without-optin
@@ -1182,7 +1182,7 @@ checkout v29.0
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250715)			ba223403bbc
+	n/a  (bump_version=knots20250715)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits

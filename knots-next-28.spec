@@ -924,6 +924,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	31845 pruneduringinit-28+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
 	(CHECK-LAST)	last=ef00b4adfaa pruneduringinit-29+knots
 	31886 netinfo_local_svcs-28+knots			bed89007671	last=724546e28a5 jonatack/2025-02-netinfo-services
+	(CHECK-LAST)	last= netinfo_local_svcs-29+knots
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	31953 maflcko/2502-fullrbf-follow-up
 		TODO: bumpfee_full_rbf-29+knots has some changes for better compatibility
