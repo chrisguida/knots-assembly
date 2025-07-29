@@ -381,7 +381,6 @@ checkout v29.1rc1
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
-	-     dbcache_1TB-29						2ed340330f1
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 -										5b3fb3eeb0f	last=42b25bbd939  # opti_merkle_mutation-0.17
 	28592 -										88f7b4153a1 last=b81f37031c8  # txrelayrate_14txps-26
@@ -393,8 +392,8 @@ checkout v29.1rc1
 	# Needs review: 29578 brunoerg/2024-03-addrman-getaddr
 	29602 opti_IsSpace_pr29602-29
 	# TODO: Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
-	30059 dbfilesize_param-29+knots				add2386fdc7	last=c283a572145 dbfilesize_param
-	-     dbfilesize_64-29+knots				6d097aed47f
+	30059 dbfilesize_param-29.1					add2386fdc7	last=c283a572145 dbfilesize_param
+	-     dbfilesize_64-29.1+knots				6d097aed47f
 	# Needs review: 30317 -  # WIP Simplify SipHash
 	# Needs review: 30325 -  # optimization: Switch CTxMemPool::CalculateDescendants from set to vector to reduce transaction hash calculations
 	# Needs review: 30370 fjahr/2024-07-pr28945
@@ -595,7 +594,7 @@ checkout v29.1rc1
 		# + bugfix and applying limit immediately
 	# Needs review: 21827 rebroad/SplashLoadBlockProgress
 	# Needs review: 21841 rebroad/SteadierFeefilter
-	22072 autoreindex							6e151c3f60d	last=602f4da9178
+	22072 autoreindex-29+knots					6e151c3f60d	last=602f4da9178
 	(CHECK-LAST)	last=6d7052863a5 origin-pull/26674/head
 		# TODO: Migrate to #26674 (basically identical logic as of 6d7052863a5) ?
 	# Not useful: g358  jarolrod-g/themedlabel-forms
@@ -790,7 +789,7 @@ checkout v29.1rc1
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				dee920da09d	last=b25b40ebd5f vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
-	31886 netinfo_local_svcs-29+knots			bed89007671	last=943ee6768d9 jonatack/2025-02-netinfo-services
+	31886 netinfo_local_svcs-29+knots			bed89007671	last=caea5f0bbf6 jonatack/2025-02-netinfo-services
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	31953 bumpfee_full_rbf-29+knots							last=fa86190e6ed maflcko/2502-fullrbf-follow-up
 		# Was: 26454 petertodd/2022-feebump-without-optin
@@ -819,7 +818,7 @@ checkout v29.1rc1
 	32844 rpc_gettxoutproof_segwit-27+knots					last=23edd3db4f1 rpc_gettxoutproof_segwit
 	# WIP: 32857 Sjors/2025/07/no_script_path
 	# Needs review: 32896 ishaanam/wallet_v3_txs
-	33004 darosior/2507_natpmp_on_default
+	33004 def_natpmp_true-29
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	#30.xTODO# Revert #33069 (wallet: Add Support for BIP-353 DNS-Based Bitcoin Address via External Resolver) ?
 	-     qt_createunsigned_use_psbtops
@@ -1114,6 +1113,7 @@ checkout v29.1rc1
 	#30.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-29			dd9a275a37b
+		TODO: consider deprecating it
 		# Effectively reverts #24505, #27869, #28597, and gui#764
 		#30.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768? #32944? #32977?(might need #33041 to replace it?) #32990? #33032? (replace #33064->#27593??) #33075 #33082?
 		#30.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
@@ -1189,6 +1189,7 @@ checkout v29.1rc1
 		# When re-added, #28824 notes in 9db5d23d559
 		32425 release notes in #32727
 		32521 release notes in #33037 (but not Knots-specific)
+		33004 release note in b2d07f872c5
 	n/a  (cherrypick=20338f1e833)				5f8256608fc  # update manpages (build first)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update

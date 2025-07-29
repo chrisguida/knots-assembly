@@ -465,8 +465,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs concept/review: 27050 -  # p2p, validation: Don't download witnesses for assumed-valid blocks when running in prune mode
 	# Needs review: 27427 -  # validation: Replace MinBIP9WarningHeight with MinBIP9WarningStartTime
 	# Needs review? Part of? 28226 martinus:2023-08-more-CBufferedFile
-	-     dbcache_1TB-0.13						2ed340330f1	last= dbcache_1TB-29
-		TODO: increase 32-bit limit to 3000 MiB if we want to match 29.x ?
+	-     dbcache_1TB-0.13						2ed340330f1	last= (upstream)
 		# Inspired by #28358 Sjors/2023/08/double-your-coins---cache (needs work)
 	# Needs review: 28400 -  # Make provably unsignable standard P2PK and P2MS outpoints unspendable.
 	28430 -										5b3fb3eeb0f	last=42b25bbd939  # opti_merkle_mutation-0.17
@@ -482,7 +481,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# TODO: Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
 	30059 dbfilesize_param-26					add2386fdc7	last=1c2c840aff9 dbfilesize_param
 	(CHECK-LAST)	last=ecc7ba40daa dbfilesize_param-29+knots
-	-     dbfilesize_64-26						6d097aed47f	last= dbfilesize_64-29+knots
+	(CHECK-LAST)	last=ecc7ba40daa dbfilesize_param-29.1
+	-     dbfilesize_64-26						6d097aed47f	last= dbfilesize_64-29.1+knots
+	(CHECK-LAST)	last= dbfilesize_64-29+knots
 		# Was: #30039 (128 MiB originally, settled on 32 MiB)
 		# Note: Upstream PR uses std::max with LevelDB's current default, in case LevelDB changes theirs to larger
 	# Needs review: 30093 -  # refactor: reserve memory allocation for transaction outputs
@@ -698,7 +699,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 21841 rebroad/SteadierFeefilter
 	22072 autoreindex-28						6e151c3f60d	last=602f4da9178
 	(CHECK-LAST)	last=6d7052863a5 origin-pull/26674/head
-	(CHECK-LAST)	last=aaa366361f7 autoreindex
+	(CHECK-LAST)	last=aaa366361f7 autoreindex-29
+	(CHECK-LAST)	last=aaa366361f7 autoreindex-29+knots
 		# TODO: Migrate to #26674 (basically identical logic as of 6d7052863a5) ?
 	22159 conf_append_cxxflags-23				a060ae018ee	last=fa14c6818f4
 	# Not useful: g358  jarolrod-g/themedlabel-forms
@@ -1017,7 +1019,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	11750 coincontrol_multiselect				5182926cb3a	last=7cec76f81b # Multiselect in coincontrol treewidget and display selected count
 		# NOTE: deviated from PR
 	11770 rest_fee-28							e74bda85570	last=eff1b3e201  # [REST] add a rest endpoint for estimatesmartfee, docs, and test
-	(CHECK-LAST)	last=7d96e99c40e rest_fee
+	(CHECK-LAST)	last=d3e8c5826df rest_fee
 		# Fixed a minor bug in conf_target range check
 		# Added new tests in feature_fee_estimation
 		# Updated to match estimatesmartfee RPC changes
