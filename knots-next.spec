@@ -3,16 +3,10 @@ lastapply no-merge
 
 #.. checked up to PR #33083 / gui #881
 
-checkout v29.0
+checkout v29.1rc1
 @29.x-syslibs
 # BUILD BUGS:
-	32356 fix_cmake_usercxxflags_pr32356-29
-	32437 sse4_sha256_asan_clang_pr32437-28
-	32469 qt_dbus_nonlinux-29
-	32550 fix_missing_sse41_cxxflags-29						last=800b7cc42ca !hebasto/250518-crypto-macros
-		# Actually pulling commit from #32551 tip
-	32439 guix_codeberg-29
-	32805 fix_cmake_qrencode_hints-29
+	# None!
 # SYSLIBS:
 	2241  sys_leveldb							91af8d0c4ea
 		# Related: #32447
@@ -279,7 +273,6 @@ checkout v29.0
 	# Needs review: 31807 theuni/fix-dupe-kernel-symbols
 	# 31912 workaround_buggy_rndrrs-28			36e11bb93cc	last=2498dd8dbd5  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
 		# Held back 585aba6eec8..2498dd8dbd5 (2x diff for basically the same thing)
-	32248 rm_amd64_rndr-29									last=7749d929a0d laanwj/2025-04-remove-arm64-rndr
 	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
@@ -296,12 +289,9 @@ checkout v29.0
 	32185 fix_dbwrapper_batch_header_size-26
 		# Only the fix, without the bumped LevelDB version dep
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
-	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
-	g864  fix_qt_shutdowncrash_g864-24						last=71656bdfaa6 furszy/2025_gui_fix_crash_numBlocksChanged
 	# Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
-	32333 doc_rpc_pruneblockchain_top-21					last=135a0f0aa71
 	32344 fix_wallet_nonranged_pr32344-22					last=97d383af6d5
 	32351 qafix_nonrecurs_FindChallenges-28
 		# Fix only
@@ -314,11 +304,7 @@ checkout v29.0
 		# TODO: consider performance refactor?
 	# Needs review: 32490 maflcko/2505-less-UB
 	# Simplified rewrite of? 32528 maflcko/2505-1
-	# Needs concept: 32530 darosior/2505_limit_mempool_32bit
-		# NOTE: 29.x backport in #32810 - consider reverting
-		# NOTE: release note in #32819
 	32539 fix_rpcallowip_cjdns-29							last=12ff4be9c72 pinheadmz/rpcallowip-rfc4193
-	32553 fix_wallet_log_ver-26
 	# Needs work: 32577 hebasto/250521-subprocess-split
 		# FIXME: Ensure this gets resolved before #32566 is merged
 	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
@@ -327,25 +313,18 @@ checkout v29.0
 	32682 fix_wallet_fillpsbt_nothrow-28
 		# Diff-minimised only
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
-	# depends-only: 32693 josibake/depends-specify-cmake-min-version-for-freetype
-	32708 docfix_listdescriptors_nonimported-23
+	TODO: semi-revert #32708 to docfix_listdescriptors_nonimported-23
 	32736 fix_listwalletdir_err-23
 	# Needs review: 32757 -  # net: Fix Discover() not running when using -bind=0.0.0.0:port
 	# Needs review: 32773 hebasto/250618-mkdir
 	# Needs concept & review: 32788 achow101/desc-allow-H
 		# Check for this impacting other Knots merges
-	# depends-only & needs better review: 32798 willcl-ark/nix-cmake-fix
 	#30.xTODO# Needs review: 32821 -  # rpc: Handle -named argument parsing where '=' character is used
-	32826 p2p_badports_dbm_rdp_vnc-23
-	# depends-only, needs work: 32837 fanquake/fix_libevent_mingw_w64_13
 	# Needs review: 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
 	# Needs review: 32878 HowHsu/rewind
-	32943 fix_deps_cmake_no_exportpkg-28
 	CAREFUL: 32984 achow101/migratewallet-dont-set-name-on-failed
 	32987 maflcko/2507-less-ub
-	Minimal: 33001 maflcko:2507-test-actually-fail-on-failure
-		29.x backport in #33046
 	# Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
 	-     fix_rpccookieperms_early				dec38cfcc7b
@@ -1116,7 +1095,7 @@ checkout v29.0
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
 		#30.xTODO# Ensure #32790 doesn't break
 	# Needs review? 32453 JeremyRubin/unsigned_annex
-	32521 pol_maxtxlegacysigops-29+knots
+	MERGED 32521 pol_maxtxlegacysigops-29+knots
 		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize
 		#29.xTODO# TEST
