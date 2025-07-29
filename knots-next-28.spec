@@ -1237,7 +1237,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	TODO? Option to reduce effective fee by dust for each anchor/op_ret
 	k148  minrelaymaturity-29.1+knots
 	Needs review? 32453 JeremyRubin/unsigned_annex
-	Needs option & review: 32521 darosior/2503_nonstd_tx_sigops
+	32521 darosior/2503_nonstd_tx_sigops
+		29.x has part in sendraw_force-29.1+knots, rest in pol_maxtxlegacysigops-29.1+knots
 	-     blockreconstructionextratxnsize
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3

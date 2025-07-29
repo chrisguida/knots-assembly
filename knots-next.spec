@@ -945,7 +945,7 @@ checkout v29.1rc1
 	#30.xTODO# Revert #32654 (deprecate blockmaxweight)
 	7107  qtnetworkport-29.1+knots				77f2e52bf26	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
-	7533  sendraw_force-29+knots				9d121259d75 last=2627c0937f8 sendraw_force
+	7533  sendraw_force-29.1+knots				9d121259d75 last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
@@ -1090,7 +1090,7 @@ checkout v29.1rc1
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
 		#30.xTODO# Ensure #32790 doesn't break
 	# Needs review? 32453 JeremyRubin/unsigned_annex
-	MERGED 32521 pol_maxtxlegacysigops-29+knots
+	-     pol_maxtxlegacysigops-29.1+knots
 		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize
 		#29.xTODO# TEST
@@ -1113,7 +1113,7 @@ checkout v29.1rc1
 	#30.xTODO# Check on #29942 removal of -datacarrier, possibly revert?
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-29			dd9a275a37b
-		TODO: consider deprecating it
+		#30.xTODO# consider deprecating it
 		# Effectively reverts #24505, #27869, #28597, and gui#764
 		#30.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768? #32944? #32977?(might need #33041 to replace it?) #32990? #33032? (replace #33064->#27593??) #33075 #33082?
 		#30.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
@@ -1141,7 +1141,7 @@ checkout v29.1rc1
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
 	10282 timebomb_knots						40f673fe63e
-	-     rwconf_policy-29+knots				6fd67aa463d
+	-     rwconf_policy-29.1+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
 		#30.xTODO# Check on block assembly GetArgs like blockmintxfee/etc
