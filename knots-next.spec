@@ -1,7 +1,7 @@
-timestamp 2025-07-15 03:36:42
+timestamp 2025-07-29 05:47:26
 lastapply no-merge
 
-#.. checked up to PR #32973 / gui #879
+#.. checked up to PR #33083 / gui #881
 
 checkout v29.0
 @29.x-syslibs
@@ -51,6 +51,7 @@ checkout v29.0
 	18427 2020mingwthrd-mini					da1e5f9ffae	 # Latest code now
 	18490 bugfix_symcheck_pe_case				d2d3b434b08
 	# Maybe disabled by default? 32604 Crypt-iQ/log_ratelimiting_05192025
+		# +#33011 ?
 		# Formerly: 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
@@ -99,6 +100,7 @@ checkout v29.0
 	32343 subproc_closefds						fd30be38f53
 		# Was #30756
 		# Replaces #22417 (Boost::Process variant)
+		FIXME: address #33063
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				159d9c36b05
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
@@ -267,6 +269,7 @@ checkout v29.0
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
 	# Needs review: 31622 achow101/psbt-sighashes
+	31629 mzumsande/202501_rescan_bestblock
 	31727 miniscript_nonfatal_pr31727-29					last=3693e4d6ee0 !hodlinator/2025/04/31727_followup
 		# Includes fixes from #32255
 	# Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
@@ -339,6 +342,12 @@ checkout v29.0
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
 	# Needs review: 32878 HowHsu/rewind
 	32943 fix_deps_cmake_no_exportpkg-28
+	CAREFUL: 32984 achow101/migratewallet-dont-set-name-on-failed
+	32987 maflcko/2507-less-ub
+	Minimal: 33001 maflcko:2507-test-actually-fail-on-failure
+		29.x backport in #33046
+	# Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
+	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -346,7 +355,6 @@ checkout v29.0
 	-     docfix_getorphantxs_vsize
 		# Originally bundled in Knots with #30793 rpc_getorphantxs
 	-     fix_guix_boost_mirror-29
-	-     fix_raii_blockdb_interactive_reidx
 	-     fix_qt_startup_unknown_unit
 	-     fix_qt_psbtops_filename_amount
 	k126  fix_qt_progressbar_fittext
@@ -449,6 +457,7 @@ checkout v29.0
 	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
 	32827 opti_removeForBlock_empty-28						last=249889bee6b l0rinc/l0rinc/empty-mempool-IBD
 	# Needs work/review: 32885 pstratem/2025-07-05-lockless-isibd
+	# Needs review: 33031 achow101/lasthardened-cache-migratewallet
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -724,6 +733,7 @@ checkout v29.0
 	27351 codex32-29+knots						64f3666c9e7	last=91771366a3d apoelstra/2023-03--codex32
 		# See #32652 if #29136 is merged
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
+	# Needs concept & review: 33043 w0xlt/codex32
 	# Needs work: 27409 ryanofsky/pr/1data
 	# Needs review: g692 -  # Debug Console implementation of generate method
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
@@ -740,6 +750,7 @@ checkout v29.0
 		# OR #32966 Eunovo:2025-implement-bip352-receiving
 	# Needs review & BIP finality: 27827 josibake/silent-payments-base-pr-slim-down
 	# Needs review & concept: 28241 Sjors/2023/08/silent-index
+	# NOTE: If adding new output types (eg, Silent Payments?), need #33065 (rpc, wallet: replace remaining hardcoded output types with FormatAllOutputTypes)
 	# Needs review: 27837 furszy/2023_introduce_block_request_tracker
 		# Prior work & maybe has an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
 	# Needs work: 27854 -  # [WIP] add a stratum v2 template provider
@@ -833,6 +844,9 @@ checkout v29.0
 	32844 rpc_gettxoutproof_segwit-27+knots					last=23edd3db4f1 rpc_gettxoutproof_segwit
 	# WIP: 32857 Sjors/2025/07/no_script_path
 	# Needs review: 32896 ishaanam/wallet_v3_txs
+	33004 darosior/2507_natpmp_on_default
+	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
+	#30.xTODO# Revert #33069 (wallet: Add Support for BIP-353 DNS-Based Bitcoin Address via External Resolver) ?
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -935,6 +949,7 @@ checkout v29.0
 		# Made a hidden option
 	# Needs review: 32065 vasild/i2p_early_create_session
 	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces
+	# Needs review: 33044 fanquake/19513_rebased
 	-     font_for_money_global
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
@@ -1021,8 +1036,10 @@ checkout v29.0
 		# FIXME: Probably incompatible with MERGED #31407 macos_notarization ?
 		# TODO? 17311 RandyMcMillan:fix-background-svg
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
+	Review: 33023 bigshiny90/compactblocks-extratxs-tests-core
 	#30.xTODO# Revert #32450 ?
 	#30.xTODO# Revert #32510 or replace extratxn pool
+	#30.xTODO# Consider reverting #33050 ?
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	5ba611afd07
 	-     pol_acceptunknownwitness
@@ -1123,7 +1140,7 @@ checkout v29.0
 	# TODO: -netinfo and other version checks might need to be more flexible?
 	-     wallet_undeprecate_legacy-29			dd9a275a37b
 		# Effectively reverts #24505, #27869, #28597, and gui#764
-		#30.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768? #32944?
+		#30.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768? #32944? #32977?(might need #33041 to replace it?) #32990? #33032? (replace #33064->#27593??) #33075 #33082?
 		#30.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
 		#30.xTODO# revert #31250  wallet: Disable creating and loading legacy wallets
 	14641 fundraw_min_conf_deprecated-25+knots	9e0533bb2c0	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
@@ -1182,7 +1199,7 @@ checkout v29.0
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250715)			ba223403bbc
+	n/a  (bump_version=knots20250729)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
@@ -1196,6 +1213,7 @@ checkout v29.0
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		32425 release notes in #32727
+		32521 release notes in #33037 (but not Knots-specific)
 	n/a  (cherrypick=20338f1e833)				5f8256608fc  # update manpages (build first)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update

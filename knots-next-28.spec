@@ -1,7 +1,7 @@
-timestamp 2025-07-15 03:36:42
+timestamp 2025-07-29 05:47:26
 #lastapply no-merge
 
-#.. checked up to PR #32973 / gui #879
+#.. checked up to PR #33083 / gui #881
 
 checkout v28.2
 @28.x-syslibs
@@ -100,6 +100,7 @@ checkout v28.2
 	32343 subproc_closefds						fd30be38f53
 		# Was #30756
 		# Replaces #22417 (Boost::Process variant)
+		FIXME: address #33063
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				159d9c36b05
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
@@ -328,6 +329,7 @@ NM	31623 tracing_MIN_macro_rename				f7ec451c999
 		# Just the fix
 	31674 lock_blocksdir-28						ff1b8720f3e
 		# Diff-minimised
+	Triage: 31629 mzumsande/202501_rescan_bestblock
 	31727 darosior/2501_miniscript_nonfatal
 		+ 32255
 	# Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
@@ -399,6 +401,11 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
 	# Needs review: 32878 HowHsu/rewind
 	32943 fix_deps_cmake_no_exportpkg-28
+	CAREFUL: 32984 achow101/migratewallet-dont-set-name-on-failed
+	Triage/Minimal: 33001 maflcko:2507-test-actually-fail-on-failure
+		28.x backport in #33076
+	Triage: Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
+	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -521,6 +528,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
 	32827 opti_removeForBlock_empty-28						last=54f9cb85c4b l0rinc/l0rinc/empty-mempool-IBD
 	Review: 32885 pstratem/2025-07-05-lockless-isibd
+	# Needs review: 33031 achow101/lasthardened-cache-migratewallet
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -813,6 +821,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	(CHECK-LAST)	last=b34e02d766a codex32-29+knots
 		# See #32652 if #29136 is merged
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
+	# Needs concept & review: 33043 w0xlt/codex32
 	# Needs work: 27409 ryanofsky/pr/1data
 	# Needs review: g692 -  # Debug Console implementation of generate method
 	# Needs work: g700 achow101-g/bumpfee-choose-reduce-output
@@ -829,6 +838,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# OR #32966 Eunovo:2025-implement-bip352-receiving
 	# Needs review & BIP finality: 27827 josibake/silent-payments-base-pr-slim-down
 	# Needs review & concept: 28241 Sjors/2023/08/silent-index
+	# NOTE: If adding new output types (eg, Silent Payments?), need #33065 (rpc, wallet: replace remaining hardcoded output types with FormatAllOutputTypes)
 	# Needs review: 27837 furszy/2023_introduce_block_request_tracker
 		# Prior work & maybe has an anti-feature?: 27836 furszy/2023_rpc_fetchblock_improvements
 	# Needs work: 27854 -  # [WIP] add a stratum v2 template provider
@@ -952,6 +962,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	32844 rpc_gettxoutproof_segwit-27+knots					last=23edd3db4f1 rpc_gettxoutproof_segwit
 	# WIP: 32857 Sjors/2025/07/no_script_path
 	# Needs review: 32896 ishaanam/wallet_v3_txs
+	33004 darosior/2507_natpmp_on_default
+	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1059,6 +1071,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	(CHECK-LAST)	last= v2onlyclearnet-29+knots
 	# Needs review: 32065 vasild/i2p_early_create_session
 	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces
+	# Needs review: 33044 fanquake/19513_rebased
 	-     font_for_money_global
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
@@ -1153,6 +1166,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# FIXME: Probably incompatible with #31407 macos_notarization ?
 		# TODO? 17311 RandyMcMillan:fix-background-svg
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
+	33023 bigshiny90/compactblocks-extratxs-tests-core
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness
@@ -1299,7 +1313,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250715)			ba223403bbc
+	n/a  (bump_version=Knots:20250729)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
@@ -1313,6 +1327,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		32425 release notes in #32727
+		32521 release notes in #33037 (but not Knots-specific)
 	n/a  (cherrypick=20338f1e833)				5f8256608fc  # update manpages (build first)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
