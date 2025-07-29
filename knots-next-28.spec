@@ -439,7 +439,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 	30301 theuni/miniupnp-228-bump
-	TODO: bump to 2.3.3 in restore_upnp-29+knots
+	TODO: bump to 2.3.3 in restore_upnp-29.1+knots
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
 @28.x-knots
@@ -1089,7 +1089,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize-28				a0a7a60212a	last= restore_blockmaxsize
 	7107  qtnetworkport-28+knots				77f2e52bf26	last=1f37c87d8f2 origin-pull/7107/head
-	(CHECK-LAST)	last= qtnetworkport-29+knots
+	(CHECK-LAST)	last= qtnetworkport-29.1+knots
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-28+knots				9d121259d75 last=2627c0937f8 sendraw_force
 	(CHECK-LAST)	last= sendraw_force-29+knots
@@ -1101,7 +1101,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	11082 rwconf-27+knots						c90495c624f last=130902c94df rwconf-29+knots
 		#29.xTODO# Squash fixes
 		#28.xTODO# Deprecate with settings.json better?
-	7510  rwconf_gui-28+knots					3c18bc835f5
+	7510  rwconf_gui-28+knots					3c18bc835f5	last= rwconf_gui-29.1+knots
 		#29.xTODO# Squash fixes
 		#29.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
@@ -1179,7 +1179,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	9749  unique_spk_mempool-28+knots			84eff5944da	last=b1b8f27e75f unique_spk_mempool-29+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-	-     dustdynamic-28+knots					5dd1f1ee25e	last=f10a0071c95 dustdynamic-29+knots
+	-     dustdynamic-28+knots					5dd1f1ee25e	last=f10a0071c95 dustdynamic-29.1+knots
 	28408 match_more_datacarrier-28+knots		570cb5cb1dc	last=4d2ec0671a3 match_more_datacarrier
 	(CHECK-LAST)	last= match_more_datacarrier-29+knots
 		#29.xTODO# TODO: Delete TBD "maxdatacarriersize" from #29954 (see b02aab950af) (or at least fix the description)
@@ -1198,11 +1198,11 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-     acceptnonstddatacarrier-28+knots		48c848e044a	last=6a2d5400ee6 acceptnonstddatacarrier-29+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# FIXME: Data before OP_RETURN (and non-push opcodes??) should count the data as non-standard (but can't predict everything, so wait until there's a need? 75f1652b447)
-	-     rejecttokens-28+knots					39ec1308346	last=99cde86f433 rejecttokens-29+knots
+	-     rejecttokens-28+knots					39ec1308346	last=99cde86f433 rejecttokens-29.1+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just Runes
 	k78   rejectparasites-28+knots				6c5ca3ed56c	last=d978324923a
-	(CHECK-LAST)	last=11bb4add0bc rejectparasites-29+knots
+	(CHECK-LAST)	last=11bb4add0bc rejectparasites-29.1+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
@@ -1235,7 +1235,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# TODO: some way to prioritise Lightning channel activity?
 	# TODO? Https://Github.Com/Petertodd/Bitcoin/Commit/04c8e449a34e74e048bf5751d13592a22763ff7e (see email dated 2025-03-19 8:27pm) [bitcoindev] Standard Unstructured Annex
 	TODO? Option to reduce effective fee by dust for each anchor/op_ret
-	TODO? Option to disallow inputs less than N blocks old
+	k148  minrelaymaturity-29.1+knots
 	Needs review? 32453 JeremyRubin/unsigned_annex
 	Needs option & review: 32521 darosior/2503_nonstd_tx_sigops
 	-     blockreconstructionextratxnsize

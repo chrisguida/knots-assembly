@@ -930,7 +930,7 @@ checkout v29.1rc1
 # Non-upstreamed functionality:
 	-     rm_tarball_ci-29+knots
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
-	-     restore_upnp-29+knots
+	-     restore_upnp-29.1+knots
 		# NOTE: Includes #30301 theuni/miniupnp-228-bump
 		#30.xTODO# Revert #32500
 	n/a   restore_feefilter_opt					cf49d58bff4
@@ -943,7 +943,7 @@ checkout v29.1rc1
 	-     restore_blockmaxsize					a0a7a60212a
 		# TODO?? blockreservedsize option
 	#30.xTODO# Revert #32654 (deprecate blockmaxweight)
-	7107  qtnetworkport-29+knots				77f2e52bf26	last=1f37c87d8f2 origin-pull/7107/head
+	7107  qtnetworkport-29.1+knots				77f2e52bf26	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-29+knots				9d121259d75 last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
@@ -953,7 +953,7 @@ checkout v29.1rc1
 	11082 rwconf-29+knots						c90495c624f # Latest code now
 		#30.xTODO# Squash fixes
 		#30.xTODO# Deprecate with settings.json better?
-	7510  rwconf_gui-29+knots					3c18bc835f5
+	7510  rwconf_gui-29.1+knots					3c18bc835f5
 		#30.xTODO# Squash fixes
 		#30.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
@@ -1010,7 +1010,7 @@ checkout v29.1rc1
 		# FIXME: Probably incompatible with MERGED #31407 macos_notarization ?
 		# TODO? 17311 RandyMcMillan:fix-background-svg
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
-	Review: 33023 bigshiny90/compactblocks-extratxs-tests-core
+	33023 qa_cb_extratxs-25									last=4985235dd29 bigshiny90/compactblocks-extratxs-tests-core
 	#30.xTODO# Revert #32450 ?
 	#30.xTODO# Revert #32510 or replace extratxn pool
 	#30.xTODO# Consider reverting #33050 ?
@@ -1031,7 +1031,7 @@ checkout v29.1rc1
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	9749  unique_spk_mempool-29+knots			84eff5944da
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-	-     dustdynamic-29+knots					5dd1f1ee25e
+	-     dustdynamic-29.1+knots				5dd1f1ee25e
 	28408 match_more_datacarrier-29+knots		570cb5cb1dc	last=4d2ec0671a3 match_more_datacarrier
 		#30.xTODO# TODO: Delete TBD "maxdatacarriersize" from #29954 (see b02aab950af) (or at least fix the description)
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
@@ -1049,10 +1049,10 @@ checkout v29.1rc1
 	-     acceptnonstddatacarrier-29+knots		48c848e044a
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# FIXME: Data before OP_RETURN (and non-push opcodes??) should count the data as non-standard (but can't predict everything, so wait until there's a need? 75f1652b447)
-	-     rejecttokens-29+knots					39ec1308346
+	-     rejecttokens-29.1+knots				39ec1308346
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just Runes
-	k78   rejectparasites-29+knots				6c5ca3ed56c	last=d978324923a
+	k78   rejectparasites-29.1+knots			6c5ca3ed56c	last=d978324923a
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just CAT-21
 		# GUI component & default-on moved into rwconf_policy below
@@ -1085,7 +1085,7 @@ checkout v29.1rc1
 	# TODO: some way to prioritise Lightning channel activity?
 	# TODO? Https://Github.Com/Petertodd/Bitcoin/Commit/04c8e449a34e74e048bf5751d13592a22763ff7e (see email dated 2025-03-19 8:27pm) [bitcoindev] Standard Unstructured Annex
 	# TODO? k146 Option to reduce effective fee by dust for each anchor/op_ret
-	k148  minrelaymaturity-29+knots
+	k148  minrelaymaturity-29.1+knots
 	# TODO? k147 Option to factor coin-age priority into vsize
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
 		#30.xTODO# Ensure #32790 doesn't break
