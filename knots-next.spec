@@ -94,7 +94,6 @@ checkout v29.1rc1
 	32343 subproc_closefds						fd30be38f53
 		# Was #30756
 		# Replaces #22417 (Boost::Process variant)
-		FIXME: address #33063
 	# Needs review: 22665 darosior:rbf_optin_nomempool
 	23027 bugfix_util_test_config				159d9c36b05
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
@@ -263,7 +262,6 @@ checkout v29.1rc1
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
 	# Needs review: 31622 achow101/psbt-sighashes
-	31629 mzumsande/202501_rescan_bestblock
 	31727 miniscript_nonfatal_pr31727-29					last=3693e4d6ee0 !hodlinator/2025/04/31727_followup
 		# Includes fixes from #32255
 	# Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
@@ -313,7 +311,6 @@ checkout v29.1rc1
 	32682 fix_wallet_fillpsbt_nothrow-28
 		# Diff-minimised only
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
-	TODO: semi-revert #32708 to docfix_listdescriptors_nonimported-23
 	32736 fix_listwalletdir_err-23
 	# Needs review: 32757 -  # net: Fix Discover() not running when using -bind=0.0.0.0:port
 	# Needs review: 32773 hebasto/250618-mkdir
@@ -323,8 +320,7 @@ checkout v29.1rc1
 	# Needs review: 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
 	# Needs review: 32878 HowHsu/rewind
-	CAREFUL: 32984 achow101/migratewallet-dont-set-name-on-failed
-	32987 maflcko/2507-less-ub
+	32987 fix_gui_reindex-29
 	# Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
 	-     fix_rpccookieperms_early				dec38cfcc7b

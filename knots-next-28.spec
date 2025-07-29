@@ -97,7 +97,7 @@ checkout v28.2
 	# Needs review & bug fixes: 21106 pstratem/2021-02-07-isinitialblockdownload-timeout
 	g236  gui_init_walleterror_cont				d40c1220043
 	-     rpc_addconnection_mainnet				72ac99f48a5
-	32343 subproc_closefds						fd30be38f53
+	32343 subproc_closefds-28					fd30be38f53	last=4f79dfd99f6 subproc_closefds
 		# Was #30756
 		# Replaces #22417 (Boost::Process variant)
 		FIXME: address #33063
@@ -130,7 +130,7 @@ checkout v28.2
 	# Needs review: 24972 hebasto/220425-no-libtool
 	g595  qt_handle_autostart_errors-0.15		3da9f0c4b0b	last=d932157eb79
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
-	-   gui_psbt_error_msgbox					5a1384386db
+	-   gui_psbt_error_msgbox-28				5a1384386db	last=a3eec5c3f70 gui_psbt_error_msgbox
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#TsTODO# Update with other commit (unit translations) when translations supported again
@@ -401,7 +401,6 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
 	# Needs review: 32878 HowHsu/rewind
 	32943 fix_deps_cmake_no_exportpkg-28
-	CAREFUL: 32984 achow101/migratewallet-dont-set-name-on-failed
 	Triage/Minimal: 33001 maflcko:2507-test-actually-fail-on-failure
 		28.x backport in #33076
 	Triage: Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
