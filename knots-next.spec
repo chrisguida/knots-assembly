@@ -214,7 +214,7 @@ checkout v29.1rc1
 	29307 AutoFile_error_check-29+knots			17291246d08	last=c10e382d2a3 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
-	29640 fix_tiebreak_on_disk-26
+	29640 fix_tiebreak_on_disk-26							last=177d07f6591 sr-gi/202403-block-tiebreak
 	#30.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	#30.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	29678 fix_init_lowdisk_warning_reqd^		8c4f8f40807	last=c452d6c1efe fix_init_lowdisk_warning_reqd
@@ -1157,7 +1157,7 @@ checkout v29.1rc1
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		d4c1e555559
-	7483  svg_icon-29+knots						5b18d9e534b
+	7483  svg_icon-29.1+knots					5b18d9e534b
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	# n/a   copyright_2025-28						19e67dd9efa
