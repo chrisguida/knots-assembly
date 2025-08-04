@@ -214,7 +214,9 @@ checkout v29.1rc1
 	29307 AutoFile_error_check-29+knots			17291246d08	last=c10e382d2a3 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
-	29640 fix_tiebreak_on_disk-26							last=177d07f6591 sr-gi/202403-block-tiebreak
+	29640 fix_tiebreak_on_disk-26							last=0465574c127 sr-gi/202403-block-tiebreak
+		# IMPORTANT: Adds a UB bugfix
+		# left off doc change (4caa38600e6)
 	#30.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	#30.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	29678 fix_init_lowdisk_warning_reqd^		8c4f8f40807	last=c452d6c1efe fix_init_lowdisk_warning_reqd
@@ -1010,7 +1012,7 @@ checkout v29.1rc1
 		# FIXME: Probably incompatible with MERGED #31407 macos_notarization ?
 		# TODO? 17311 RandyMcMillan:fix-background-svg
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
-	33023 qa_cb_extratxs-25									last=4985235dd29 bigshiny90/compactblocks-extratxs-tests-core
+	33023 qa_cb_extratxs-25									last=bd1c6b4ea9b bigshiny90/compactblocks-extratxs-tests-core
 	#30.xTODO# Revert #32450 ?
 	#30.xTODO# Revert #32510 or replace extratxn pool
 	#30.xTODO# Consider reverting #33050 ?
