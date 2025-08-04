@@ -1163,6 +1163,7 @@ checkout v29.1rc1
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	# n/a   copyright_2025-28						19e67dd9efa
+	n/a   font_ocrbitcoin
 	n/a   knots_branding-29						f58950aab87
 		#30.xTODO# Review security policy
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases

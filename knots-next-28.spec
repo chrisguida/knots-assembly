@@ -1306,6 +1306,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# FIXME: Shouldn't be part of branding :/ But depends on the build-for-release-source code from svg_icon...
 # BRANDING:
 	n/a   copyright_2025-28						19e67dd9efa
+	n/a   font_ocrbitcoin
 	n/a   knots_branding-28						f58950aab87	last=3263c5ee896 knots_branding-29
 		#28.xTODO# Review security policy
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
