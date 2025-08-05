@@ -409,7 +409,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
 	Review: 33119 -  # rpc: Fix 'getdescriptoractivity' RPCHelpMan, add test to verify fix
 	# Needs concept/work: 33127 Ataraxia009/launch-crash-failure
-	Review: 33133 0xB10C/2025-08-fix-getpeerinfo-ping-docs
+	33133 docfix_getpeerinfo_ping_secs-25					last=1252eeb997d 0xB10C/2025-08-fix-getpeerinfo-ping-docs
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327

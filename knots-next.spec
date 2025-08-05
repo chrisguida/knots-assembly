@@ -254,7 +254,7 @@ checkout v29.1rc1
 		#+32843
 	# Needs review: 31423 furszy/2024_migration_watch-only_migration
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
-	31453 macos_exfat_warning-29+knots			25f0359c100	last=2ad18fc9784 willcl-ark/macos-exfat
+	31453 macos_exfat_warning-29+knots			25f0359c100	last=eb68bb48ab2 willcl-ark/macos-exfat
 		# Checking blocksdir unconditionally in case it's a mountpoint
 		# Dropped doc change
 		# Added warning before leaving GUI firstrun screen
@@ -326,11 +326,11 @@ checkout v29.1rc1
 	# Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
 	# Part of, if translations are important: 33115 hebasto/250801-ts-files
-	Review: 33119 -  # rpc: Fix 'getdescriptoractivity' RPCHelpMan, add test to verify fix
+	33119 docfix_getdescactivity_spendvin-29				last=3543bfdfec3
 	# Needs work: 33126 Ataraxia009/multi-client-support
 		# NOTE: Rewrote in knots_branding
 	# Needs concept/work: 33127 Ataraxia009/launch-crash-failure
-	Review: 33133 0xB10C/2025-08-fix-getpeerinfo-ping-docs
+	33133 docfix_getpeerinfo_ping_secs-25					last=1252eeb997d 0xB10C/2025-08-fix-getpeerinfo-ping-docs
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -415,7 +415,7 @@ checkout v29.1rc1
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
 	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue	fd9df84d86b	last=5d82d92aff7  # opti_rpc_uv_reserve-25
-	31645 opti_dbbatchsize_64-29				ef2cf259a11	last=8fd522b223f l0rinc/l0rinc/utxo-dump-batching
+	31645 opti_dbbatchsize_64-29				ef2cf259a11	last=af653f321b1 l0rinc/l0rinc/utxo-dump-batching
 		# Held back dynamic-dbbatchsize 868413340f8...8fd522b223f (potentially problematic with infinite dbcache)
 		# TODO: Test even higher or incrementing-as-we-flush
 	# Needs review: 31682 l0rinc/l0rinc/optimize-CheckBlock-input-duplicate-check
@@ -798,7 +798,7 @@ checkout v29.1rc1
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				dee920da09d	last=b25b40ebd5f vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
-	31886 netinfo_local_svcs-29+knots			bed89007671	last=caea5f0bbf6 jonatack/2025-02-netinfo-services
+	31886 netinfo_local_svcs-29+knots			bed89007671	last=721a051320f jonatack/2025-02-netinfo-services
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	31953 bumpfee_full_rbf-29+knots							last=fa86190e6ed maflcko/2502-fullrbf-follow-up
 		# Was: 26454 petertodd/2022-feebump-without-optin
