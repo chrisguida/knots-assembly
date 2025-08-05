@@ -1102,7 +1102,6 @@ checkout v29.1rc1
 	-     pol_maxtxlegacysigops-29.1+knots
 		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize
-		#29.xTODO# TEST
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #32721 achow101:remove-deprecated-balances
 	#30.xTODO# -     compat_bumpfee_require_replacable
@@ -1176,7 +1175,7 @@ checkout v29.1rc1
 		#30.xTODO# Review security policy
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
-#29.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
+#30.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
 #30.xTODO# Ensure #32514 is applied to Knots changes
 # TODO: Ensure no #include <config/bitcoin-config.h>
 # TODO: Check that we aren't deprecating anything in Core
@@ -1198,8 +1197,8 @@ checkout v29.1rc1
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
-	n/a  (cherrypick=20338f1e833)				5f8256608fc  # update manpages (build first)
-		TODO: check all applicable build options are enabled (see also #33085)
+	n/a  (cherrypick=51269a73a01)				5f8256608fc  # update manpages (build first)
+		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
