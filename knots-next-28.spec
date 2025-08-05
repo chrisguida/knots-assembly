@@ -1,7 +1,7 @@
-timestamp 2025-07-29 05:47:26
+timestamp 2025-08-05 02:17:54
 #lastapply no-merge
 
-#.. checked up to PR #33083 / gui #881
+#.. checked up to PR #33134 / gui #882
 
 checkout v28.2
 @28.x-syslibs
@@ -407,6 +407,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 		28.x backport in #33076
 	Triage: Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
+	Review: 33119 -  # rpc: Fix 'getdescriptoractivity' RPCHelpMan, add test to verify fix
+	# Needs concept/work: 33127 Ataraxia009/launch-crash-failure
+	Review: 33133 0xB10C/2025-08-fix-getpeerinfo-ping-docs
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -878,6 +881,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	-     manpages_seealso_notself				b4f685cd288
 		# Originally bundled into #29585
 	# Needs review & wallet compat check: 31244 achow101/musig2-desc
+		# Needs #3313 too?
 	# Needs review: 32724 w0xlt/musig2_tests
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	29686 manpage_desc-28+knots					6fee3558663	last=47f50c7af55 willcl-ark/manpage-desc
@@ -1318,7 +1322,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250729)			ba223403bbc
+	n/a  (bump_version=Knots:20250805)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits

@@ -1,7 +1,7 @@
-timestamp 2025-07-29 05:47:26
+timestamp 2025-08-05 02:17:54
 lastapply no-merge
 
-#.. checked up to PR #33083 / gui #881
+#.. checked up to PR #33134 / gui #882
 
 checkout v29.1rc1
 @29.x-syslibs
@@ -325,6 +325,12 @@ checkout v29.1rc1
 	32987 fix_gui_reindex-29
 	# Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
+	# Part of, if translations are important: 33115 hebasto/250801-ts-files
+	Review: 33119 -  # rpc: Fix 'getdescriptoractivity' RPCHelpMan, add test to verify fix
+	# Needs work: 33126 Ataraxia009/multi-client-support
+		# NOTE: Rewrote in knots_branding
+	# Needs concept/work: 33127 Ataraxia009/launch-crash-failure
+	Review: 33133 0xB10C/2025-08-fix-getpeerinfo-ping-docs
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -760,6 +766,7 @@ checkout v29.1rc1
 	-     manpages_seealso_notself				b4f685cd288
 		# Originally bundled into #29585
 	# Needs review & wallet compat check: 31244 achow101/musig2-desc
+		# Needs #3313 too?
 	# Needs review: 32724 w0xlt/musig2_tests
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	#30.xTODO# 29954 rpc_getmpinfo_policy_pr29954-28+knots				last=d165ac8779b kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
@@ -1145,6 +1152,7 @@ checkout v29.1rc1
 	10282 timebomb_knots						40f673fe63e
 	-     rwconf_policy-29.1+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
+		#30.xTODO# Revert #33106 (reduced relay fees)
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
 		#30.xTODO# Check on block assembly GetArgs like blockmintxfee/etc
 		#TODO: Add segwit wallet stuff?
@@ -1177,7 +1185,7 @@ checkout v29.1rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250729)			ba223403bbc
+	n/a  (bump_version=knots20250805)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
@@ -1193,7 +1201,9 @@ checkout v29.1rc1
 		32425 release notes in #32727
 		32521 release notes in #33037 (but not Knots-specific)
 		33004 release note in b2d07f872c5
+		dumptxoutset release notes in #33103
 	n/a  (cherrypick=20338f1e833)				5f8256608fc  # update manpages (build first)
+		TODO: check all applicable build options are enabled (see also #33085)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
