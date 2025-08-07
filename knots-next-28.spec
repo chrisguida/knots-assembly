@@ -1127,8 +1127,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		#29.xTODO: Revert #30592
 		TODO: Adapt #31953
 	-     truc_opts-28+knots					7b898f1d017	last=590417252ab truc_opts-29+knots
-	# TODO? -     net_identify_librerelay
-		TODO: Decipher NODE_LIBRE service bit in GUI/RPC/CLI
+	-     net_identify_librerelay
+	-     net_identify_utreexo
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2-28					b7643238b1f	last=2733d2c4ce7 opt_wallet_segwit2

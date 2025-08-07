@@ -975,6 +975,7 @@ checkout v29.1rc1
 	5861 gui_restore_addresses					39668f36473
 	5891  qt_console_history_persist			76638518995	last=0cd5fc301d6 qt_console_history_persist
 	-     net_identify_librerelay
+	-     net_identify_utreexo
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					b7643238b1f
