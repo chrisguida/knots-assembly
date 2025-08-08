@@ -1,7 +1,7 @@
-timestamp 2025-08-05 02:17:54
+timestamp 2025-08-08 15:42:30
 lastapply no-merge
 
-#.. checked up to PR #33134 / gui #882
+#.. checked up to PR #33157 / gui #882
 
 checkout v29.1rc1
 @29.x-syslibs
@@ -331,6 +331,7 @@ checkout v29.1rc1
 		# NOTE: Rewrote in knots_branding
 	# Needs concept/work: 33127 Ataraxia009/launch-crash-failure
 	33133 docfix_getpeerinfo_ping_secs-25					last=1252eeb997d 0xB10C/2025-08-fix-getpeerinfo-ping-docs
+	# Needs review: 33135 Sjors/2025/08/older-safety
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -1188,10 +1189,10 @@ checkout v29.1rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250805)			ba223403bbc
+	n/a  (bump_version=knots20250808)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
-	n/a   (cherrypick=0254215071e)				df2512ca90f  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=e95f755271d)				df2512ca90f  # release notes: write/update, including change log and credits
 		# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R

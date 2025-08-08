@@ -1,7 +1,7 @@
-timestamp 2025-08-05 02:17:54
+timestamp 2025-08-08 15:42:30
 #lastapply no-merge
 
-#.. checked up to PR #33134 / gui #882
+#.. checked up to PR #33157 / gui #882
 
 checkout v28.2
 @28.x-syslibs
@@ -410,6 +410,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Review: 33119 -  # rpc: Fix 'getdescriptoractivity' RPCHelpMan, add test to verify fix
 	# Needs concept/work: 33127 Ataraxia009/launch-crash-failure
 	33133 docfix_getpeerinfo_ping_secs-25					last=1252eeb997d 0xB10C/2025-08-fix-getpeerinfo-ping-docs
+	# Needs review: 33135 Sjors/2025/08/older-safety
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -1322,7 +1323,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250805)			ba223403bbc
+	n/a  (bump_version=Knots:20250808)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
