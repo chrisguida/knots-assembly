@@ -637,6 +637,7 @@ checkout v29.1rc1
 	# Needs review/deps: 23544 Sjors/2021/11/no_descriptors
 	# Needs review: 23624 -  # zmq: add rawmempooltx publisher
 	g473  rebroad-g/NonLinearTraffic			3b46e6081b7	last=ad431ff5d18
+		# TODO? change to logarithmic scale? 8398d247f4e
 	# Needs work: g484 rebroad-g/RetainNetworkGraphOnIntervalChange
 	g492  qt_traffic_tooltip					1b0204cba37	last=6c139ebf710 rebroad-g/NetworkGraphTooltip
 		# Left off top commit which breaks behaviour, fixed some nits
@@ -1042,6 +1043,7 @@ checkout v29.1rc1
 	9749  unique_spk_mempool-29+knots			84eff5944da
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     dustdynamic-29.1+knots				5dd1f1ee25e
+	# ---- BEGIN DATACARRIER ---- (OLGA not backported)
 	28408 match_more_datacarrier-29+knots		570cb5cb1dc	last=4d2ec0671a3 match_more_datacarrier
 		#30.xTODO# TODO: Delete TBD "maxdatacarriersize" from #29954 (see b02aab950af) (or at least fix the description)
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
@@ -1049,6 +1051,10 @@ checkout v29.1rc1
 	-     datacarriercost-29+knots				42ecf3bfb75
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		#30.xTODO# Add tests and make sure boundaries are correct
+	-     acceptnonstddatacarrier-29+knots		48c848e044a
+		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
+		# FIXME: Data before OP_RETURN (and non-push opcodes??) should count the data as non-standard (but can't predict everything, so wait until there's a need? 75f1652b447)
+	# ---- END DATACARRIER ----
 	k136  pol_permitephemeral
 		# Also includes permitbare{anchor,datacarrier} options
 		# FIXME: prioritisetransaction shouldn't block dust txs (but also shouldn't blindly bypass policy by promoting ephemeral to non-ephemeral!)
@@ -1056,9 +1062,6 @@ checkout v29.1rc1
 	# TODO: Impose accurately-calculated (not just guessing witness size) dust limit on Taproot _spends_ (only Taproot because there should be a more sensible spend path available in theory)
 		# https://github.com/bitcoinknots/bitcoin/issues/113
 	# TODO: #28400-based match_more_datacarrier? Needs work, but ee8e79a7455 limits to policy
-	-     acceptnonstddatacarrier-29+knots		48c848e044a
-		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-		# FIXME: Data before OP_RETURN (and non-push opcodes??) should count the data as non-standard (but can't predict everything, so wait until there's a need? 75f1652b447)
 	-     rejecttokens-29.1+knots				39ec1308346
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# Currently filters just Runes
@@ -1188,7 +1191,7 @@ checkout v29.1rc1
 	n/a  (bump_version=knots20250805)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
-	n/a   (cherrypick=e7bac684c2d)				df2512ca90f  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=0254215071e)				df2512ca90f  # release notes: write/update, including change log and credits
 		# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1198,7 +1201,7 @@ checkout v29.1rc1
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
-	n/a  (cherrypick=51269a73a01)				5f8256608fc  # update manpages (build first)
+	n/a  (cherrypick=bb399d59e90)				5f8256608fc  # update manpages (build first)
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
