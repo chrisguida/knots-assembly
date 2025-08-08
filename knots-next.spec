@@ -1202,7 +1202,7 @@ checkout v29.1rc1
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
-	n/a  (cherrypick=bb399d59e90)				5f8256608fc  # update manpages (build first)
+	n/a  (cherrypick=e50540edc51)				5f8256608fc  # update manpages (build first)
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
