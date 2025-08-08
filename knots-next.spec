@@ -254,7 +254,7 @@ checkout v29.1rc1
 		#+32843
 	# Needs review: 31423 furszy/2024_migration_watch-only_migration
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
-	31453 macos_exfat_warning-29+knots			25f0359c100	last=eb68bb48ab2 willcl-ark/macos-exfat
+	31453 macos_exfat_warning-29+knots			25f0359c100	last=504fe8a3e0a willcl-ark/macos-exfat
 		# Checking blocksdir unconditionally in case it's a mountpoint
 		# Dropped doc change
 		# Added warning before leaving GUI firstrun screen
@@ -415,8 +415,8 @@ checkout v29.1rc1
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
 	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue	fd9df84d86b	last=5d82d92aff7  # opti_rpc_uv_reserve-25
-	31645 opti_dbbatchsize_64-29				ef2cf259a11	last=af653f321b1 l0rinc/l0rinc/utxo-dump-batching
-		# Held back dynamic-dbbatchsize 868413340f8...8fd522b223f (potentially problematic with infinite dbcache)
+	31645 opti_dbbatchsize_64-29				ef2cf259a11	last=956a6b45470 l0rinc/l0rinc/utxo-dump-batching
+		# Held back dynamic-dbbatchsize 868413340f8...956a6b45470 (potentially problematic with infinite dbcache)
 		# TODO: Test even higher or incrementing-as-we-flush
 	# Needs review: 31682 l0rinc/l0rinc/optimize-CheckBlock-input-duplicate-check
 	# Needs Review? 31714 mzumsande/202501_simpler_segwit_check
