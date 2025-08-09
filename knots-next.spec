@@ -1,7 +1,7 @@
-timestamp 2025-08-08 15:42:30
+timestamp 2025-08-09 17:12:42
 lastapply no-merge
 
-#.. checked up to PR #33157 / gui #882
+#.. checked up to PR #33162 / gui #882
 
 checkout v29.1rc1
 @29.x-syslibs
@@ -254,7 +254,7 @@ checkout v29.1rc1
 		#+32843
 	# Needs review: 31423 furszy/2024_migration_watch-only_migration
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
-	31453 macos_exfat_warning-29+knots			25f0359c100	last=504fe8a3e0a willcl-ark/macos-exfat
+	31453 macos_exfat_warning-29+knots			25f0359c100	last=db3228042b2 willcl-ark/macos-exfat
 		# Checking blocksdir unconditionally in case it's a mountpoint
 		# Dropped doc change
 		# Added warning before leaving GUI firstrun screen
@@ -832,6 +832,7 @@ checkout v29.1rc1
 	33004 def_natpmp_true-29
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	#30.xTODO# Revert #33069 (wallet: Add Support for BIP-353 DNS-Based Bitcoin Address via External Resolver) ?
+	# Needs concept: g882 -  # qt: add shift key modifier to clear command history when clearing the console
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1129,7 +1130,7 @@ checkout v29.1rc1
 	-     wallet_undeprecate_legacy-29			dd9a275a37b
 		#30.xTODO# consider deprecating it
 		# Effectively reverts #24505, #27869, #28597, and gui#764
-		#30.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768? #32944? #32977?(might need #33041 to replace it?) #32990? #33032? (replace #33064->#27593??) #33075 #33082?
+		#30.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768? #32944? #32977?(might need #33041 to replace it?) #32990? #33032? (replace #33064->#27593??) #33075 #33082? #33161
 		#30.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
 		#30.xTODO# revert #31250  wallet: Disable creating and loading legacy wallets
 	14641 fundraw_min_conf_deprecated-25+knots	9e0533bb2c0	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
@@ -1190,7 +1191,7 @@ checkout v29.1rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250808)			ba223403bbc
+	n/a  (bump_version=knots20250809)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=e95f755271d)				df2512ca90f  # release notes: write/update, including change log and credits

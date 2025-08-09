@@ -1,7 +1,7 @@
-timestamp 2025-08-08 15:42:30
+timestamp 2025-08-09 17:12:42
 #lastapply no-merge
 
-#.. checked up to PR #33157 / gui #882
+#.. checked up to PR #33162 / gui #882
 
 checkout v28.2
 @28.x-syslibs
@@ -972,6 +972,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review: 32896 ishaanam/wallet_v3_txs
 	33004 darosior/2507_natpmp_on_default
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
+	# Needs concept: g882 -  # qt: add shift key modifier to clear command history when clearing the console
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1324,7 +1325,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250808)			ba223403bbc
+	n/a  (bump_version=Knots:20250809)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
