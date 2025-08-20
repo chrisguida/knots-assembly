@@ -255,10 +255,11 @@ checkout v29.1rc1
 		#+32843
 	# Needs review: 31423 furszy/2024_migration_watch-only_migration
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
-	31453 macos_exfat_warning-29+knots			25f0359c100	last=db3228042b2 willcl-ark/macos-exfat
+	# Unclear if applicable to Knots: 31453 macos_exfat_warning-29+knots			25f0359c100	last=db3228042b2 willcl-ark/macos-exfat
 		# Checking blocksdir unconditionally in case it's a mountpoint
 		# Dropped doc change
 		# Added warning before leaving GUI firstrun screen
+		# Knots gets rid of likely-buggy macOS-specific AllocateFileRange in fix_preallocate, so it's unclear if this is an issue for us
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
 	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	# Not strictly a bug? 31603 brunoerg/2025-01-descriptor-pk

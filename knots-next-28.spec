@@ -306,10 +306,11 @@ checkout v28.2
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	31451 fix_wallet_migrate_wo_bdb-27			f187eddc341	last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
 		# First half of commit silently assumes wallet is unloaded before migration (from #31248 in 29.x)
-	31453 macos_exfat_warning-28+knots			25f0359c100	last=df1ba101419 willcl-ark/macos-exfat
+	Unclear if applicable to Knots: 31453 macos_exfat_warning-28+knots			25f0359c100	last=df1ba101419 willcl-ark/macos-exfat
 	(CHECK-LAST)	last=bd2e2e1cc2c macos_exfat_warning-29+knots
 		# Dropped doc change (links to Core github)
 		# Added warning before leaving GUI firstrun screen
+		TODO: Knots gets rid of likely-buggy macOS-specific AllocateFileRange in fix_preallocate, so it's unclear if this is an issue for us
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
 	# Needs review: 31495 achow101/migrate-corner-case-scripts
 	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
