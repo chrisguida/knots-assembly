@@ -451,7 +451,7 @@ checkout v29.1rc1
 	32827 opti_removeForBlock_empty-28						last=249889bee6b l0rinc/l0rinc/empty-mempool-IBD
 	# Needs work/review: 32885 pstratem/2025-07-05-lockless-isibd
 	# Needs review: 33031 achow101/lasthardened-cache-migratewallet
-	33217 rm_xinerama-23									last=e9623be19ad fanquake/drop_xinerama
+	# Needs Qt5 compat: 33217 rm_xinerama-23									last=e9623be19ad fanquake/drop_xinerama
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
