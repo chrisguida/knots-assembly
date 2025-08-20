@@ -416,11 +416,11 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33135 Sjors/2025/08/older-safety
 	# Needs review: 33164 hebasto/250809-fallback-fallocate
 		# NOT SUFFICIENT WITHOUT:
-	-     fix_preallocate
+	33228 fix_preallocate
 		# Includes less-than-ideal workaround for https://github.com/bitcoin/bitcoin/issues/33128#issuecomment-3203396013
 	Review: 33212 mzumsande/202508_index_nocommit
-	Review: 33215 hebasto/250819-debuglog
-	Review: g884 hebasto-g/250819-debuglog
+	33215 fix_debuglog_refs_hardcoded-28+knots
+		# Includes gui#884 hebasto-g/250819-debuglog
 	Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
