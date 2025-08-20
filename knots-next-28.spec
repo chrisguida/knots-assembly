@@ -411,7 +411,10 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs concept/work: 33127 Ataraxia009/launch-crash-failure
 	33133 docfix_getpeerinfo_ping_secs-25					last=1252eeb997d 0xB10C/2025-08-fix-getpeerinfo-ping-docs
 	# Needs review: 33135 Sjors/2025/08/older-safety
-	Needs review: 33164 hebasto/250809-fallback-fallocate
+	# Needs review: 33164 hebasto/250809-fallback-fallocate
+		# NOT SUFFICIENT WITHOUT:
+	-     fix_preallocate
+		# Includes less-than-ideal workaround for https://github.com/bitcoin/bitcoin/issues/33128#issuecomment-3203396013
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
