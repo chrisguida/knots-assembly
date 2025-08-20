@@ -1,7 +1,7 @@
-timestamp 2025-08-11 12:35:13
+timestamp 2025-08-20 14:08:30
 lastapply no-merge
 
-#.. checked up to PR #33169 / gui #882
+#.. checked up to PR #33226 / gui #884
 
 checkout v29.1rc1
 @29.x-syslibs
@@ -44,11 +44,12 @@ checkout v29.1rc1
 		# Was part of #18902
 	18427 2020mingwthrd-mini					da1e5f9ffae	 # Latest code now
 	18490 bugfix_symcheck_pe_case				d2d3b434b08
-	# Maybe disabled by default? 32604 Crypt-iQ/log_ratelimiting_05192025
-		# +#33011 ?
+	Maybe disabled by default? 32604 Crypt-iQ/log_ratelimiting_05192025
+		# +#33011 ? + #33211 ?
 		# Formerly: 21603 dergoegge:log_ratelimiting
 		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
 		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
+		# 29.x backport in #33225
 	14968 http_bind_error						def0d7f8f83	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					d0f65e2f2e4
 		# NOTE: libevent-copied code more-or-less up to date as of 2025-04-04 112421c8fa4840acd73502f2ab6a674fc025de37 (upstream has added more portable TCP keepalive, setting keepalive interval to 5min, failure if setting keepalive or reusable fail, and merged 1a6dd1ff1b8 but not e8461128b8d,5a067073d77,45dd91f71f4)
@@ -336,6 +337,10 @@ checkout v29.1rc1
 		# NOT SUFFICIENT WITHOUT:
 	-     fix_preallocate
 		# Includes less-than-ideal workaround for https://github.com/bitcoin/bitcoin/issues/33128#issuecomment-3203396013
+	Review: 33212 mzumsande/202508_index_nocommit
+	Review: 33215 hebasto/250819-debuglog
+	Review: g884 hebasto-g/250819-debuglog
+	Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -445,6 +450,7 @@ checkout v29.1rc1
 	32827 opti_removeForBlock_empty-28						last=249889bee6b l0rinc/l0rinc/empty-mempool-IBD
 	# Needs work/review: 32885 pstratem/2025-07-05-lockless-isibd
 	# Needs review: 33031 achow101/lasthardened-cache-migratewallet
+	33217 fanquake/drop_xinerama
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -838,6 +844,7 @@ checkout v29.1rc1
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	#30.xTODO# Revert #33069 (wallet: Add Support for BIP-353 DNS-Based Bitcoin Address via External Resolver) ?
 	# Needs concept: g882 -  # qt: add shift key modifier to clear command history when clearing the console
+	# Needs review: 33191 ajtowns/202508-sendtemplate1
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -989,6 +996,7 @@ checkout v29.1rc1
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					b7643238b1f
 		# TODO: Split out legacy address preference to be more explicit
+		# FIXME? descriptor wallet migration doesn't take this into account?
 	# TODO: Rework 17132 (update notification) over Tor for Knots only (and maybe generic alert instead of update-specific)
 	# TODO: Consider KUserFeedback telemetry?
 	-     gui_wallet_displayname_wo_dat			1d45ac88ee0	# Latest code now
@@ -1032,7 +1040,7 @@ checkout v29.1rc1
 	33023 qa_cb_extratxs-25									last=bd1c6b4ea9b bigshiny90/compactblocks-extratxs-tests-core
 	#30.xTODO# Revert #32450 ?
 	#30.xTODO# Revert #32510 or replace extratxn pool
-	#30.xTODO# Consider reverting #33050 ?
+	#30.xTODO# Consider reverting #33050 ? (and #33183?)
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	5ba611afd07
 	-     pol_acceptunknownwitness
@@ -1115,6 +1123,7 @@ checkout v29.1rc1
 		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize
 # Non-upstreamed Knots compatibility:
+	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
 	#30.xTODO# maybe revert #32721 achow101:remove-deprecated-balances
 	#30.xTODO# -     compat_bumpfee_require_replacable
 		# 5777b0d6319 RPC/Wallet: bumpfee: Default require_replacable=true if local mempool policy is not full RBF
@@ -1135,7 +1144,7 @@ checkout v29.1rc1
 	-     wallet_undeprecate_legacy-29			dd9a275a37b
 		#30.xTODO# consider deprecating it
 		# Effectively reverts #24505, #27869, #28597, and gui#764
-		#30.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768? #32944? #32977?(might need #33041 to replace it?) #32990? #33032? (replace #33064->#27593??) #33075 #33082? #33161
+		#30.xTODO# revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768? #32944? #32977?(might need #33041 to replace it?) #32990? #33032? (replace #33064->#27593??) #33075 #33082? #33161 #33179
 		#30.xTODO# revert #28710  Remove the legacy wallet and BDB dependency
 		#30.xTODO# revert #31250  wallet: Disable creating and loading legacy wallets
 	14641 fundraw_min_conf_deprecated-25+knots	9e0533bb2c0	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
@@ -1163,7 +1172,7 @@ checkout v29.1rc1
 	10282 timebomb_knots						40f673fe63e
 	-     rwconf_policy-29.1+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
-		#30.xTODO# Revert #33106 (reduced relay fees)
+		#29.xTODO# Revert #33106 (reduced relay fees) (and #33189? adapt #33199?) - backport risk in #33226
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
 		#30.xTODO# Check on block assembly GetArgs like blockmintxfee/etc
 		#TODO: Add segwit wallet stuff?
@@ -1196,7 +1205,7 @@ checkout v29.1rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250811)			ba223403bbc
+	n/a  (bump_version=knots20250820)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=d69f1f3ee07)				df2512ca90f  # release notes: write/update, including change log and credits
@@ -1209,6 +1218,7 @@ checkout v29.1rc1
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
+		TODO: update YYYYMMDD
 	n/a  (cherrypick=499049e90fe)				5f8256608fc  # update manpages (build first)
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
@@ -1225,3 +1235,4 @@ TODO: Close Knots issue 98
 @29.x-knots-extratests
 	31367 dergoegge/2024-11-ci-ulimit-s
 	31410 hebasto/241203-multiwallet
+	33180 fanquake/asan_strict_string
