@@ -341,7 +341,7 @@ checkout v29.1rc1
 	# Needs review: 33212 mzumsande/202508_index_nocommit
 	33215 fix_debuglog_refs_hardcoded-28+knots
 		# Includes gui#884 hebasto-g/250819-debuglog
-	Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
+	# Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -451,7 +451,7 @@ checkout v29.1rc1
 	32827 opti_removeForBlock_empty-28						last=249889bee6b l0rinc/l0rinc/empty-mempool-IBD
 	# Needs work/review: 32885 pstratem/2025-07-05-lockless-isibd
 	# Needs review: 33031 achow101/lasthardened-cache-migratewallet
-	33217 fanquake/drop_xinerama
+	33217 rm_xinerama-23									last=e9623be19ad fanquake/drop_xinerama
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -1209,7 +1209,7 @@ checkout v29.1rc1
 	n/a  (bump_version=knots20250820)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
-	n/a   (cherrypick=d69f1f3ee07)				df2512ca90f  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=a6bd67b80a2)				df2512ca90f  # release notes: write/update, including change log and credits
 		# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1219,8 +1219,8 @@ checkout v29.1rc1
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
-		TODO: update YYYYMMDD
-	n/a  (cherrypick=499049e90fe)				5f8256608fc  # update manpages (build first)
+	n/a  (cherrypick=8644fb0d683)	# bump to rc3 #29.xTODO# REMOVE
+	n/a  (cherrypick=1a6a78120f8)				5f8256608fc  # update manpages (build first)
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
