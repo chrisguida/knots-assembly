@@ -5,6 +5,10 @@ lastapply no-merge
 
 checkout v29.1rc1
 @29.x-syslibs
+	n/a   c5196bc9c44											last=c5196bc9c44 !core/29.x
+		#29.xTODO# Cleanup
+	n/a   glozow/2025-08-29.1rc2								last=0034dcfba9d glozow/2025-08-29.1rc2
+		#29.xTODO# Cleanup
 # BUILD BUGS:
 	# None!
 # SYSLIBS:
@@ -44,12 +48,6 @@ checkout v29.1rc1
 		# Was part of #18902
 	18427 2020mingwthrd-mini					da1e5f9ffae	 # Latest code now
 	18490 bugfix_symcheck_pe_case				d2d3b434b08
-	# Maybe disabled by default? 32604 Crypt-iQ/log_ratelimiting_05192025
-		# +#33011 ? + #33211 ?
-		# Formerly: 21603 dergoegge:log_ratelimiting
-		# NOTE: Formerly Needs review: 19995 practicalswift/mitigate-log-disk-filling-attacks
-		# OR Needs review (and set default OFF?): 21706  # log: Mitigate disk filling attacks by globally rate limiting LogPrintf(…)
-		# 29.x backport in #33225
 	14968 http_bind_error						def0d7f8f83	last=7b5e4001f9 laanwj/2018_12_http_bind_error
 	-     http_bind_error+extra					d0f65e2f2e4
 		# NOTE: libevent-copied code more-or-less up to date as of 2025-04-04 112421c8fa4840acd73502f2ab6a674fc025de37 (upstream has added more portable TCP keepalive, setting keepalive interval to 5min, failure if setting keepalive or reusable fail, and merged 1a6dd1ff1b8 but not e8461128b8d,5a067073d77,45dd91f71f4)
@@ -328,11 +326,9 @@ checkout v29.1rc1
 	# Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
 	# Part of, if translations are important: 33115 hebasto/250801-ts-files
-	33119 docfix_getdescactivity_spendvin-29				last=3543bfdfec3
 	# Needs work: 33126 Ataraxia009/multi-client-support
 		# NOTE: Rewrote in knots_branding
 	# Needs concept/work: 33127 Ataraxia009/launch-crash-failure
-	33133 docfix_getpeerinfo_ping_secs-25					last=1252eeb997d 0xB10C/2025-08-fix-getpeerinfo-ping-docs
 	# Needs review: 33135 Sjors/2025/08/older-safety
 	# Needs review: 33164 hebasto/250809-fallback-fallocate
 		# NOT SUFFICIENT WITHOUT:
