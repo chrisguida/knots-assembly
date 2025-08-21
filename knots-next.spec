@@ -3,12 +3,8 @@ lastapply no-merge
 
 #.. checked up to PR #33226 / gui #884
 
-checkout v29.1rc1
+checkout v29.1rc2
 @29.x-syslibs
-	n/a   c5196bc9c44											last=c5196bc9c44 !core/29.x
-		#29.xTODO# Cleanup
-	n/a   glozow/2025-08-29.1rc2								last=0034dcfba9d glozow/2025-08-29.1rc2
-		#29.xTODO# Cleanup
 # BUILD BUGS:
 	# None!
 # SYSLIBS:
@@ -1191,6 +1187,7 @@ checkout v29.1rc1
 	n/a   font_ocrbitcoin
 	n/a   knots_branding-29						f58950aab87
 		#30.xTODO# Review security policy
+		TODO: NSIS image check
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #30.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
@@ -1205,7 +1202,7 @@ checkout v29.1rc1
 	n/a  (bump_version=knots20250820)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
-	n/a   (cherrypick=a6bd67b80a2)				df2512ca90f  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=4519688cb92)				df2512ca90f  # release notes: write/update, including change log and credits
 		# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
