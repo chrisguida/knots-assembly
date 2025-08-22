@@ -436,7 +436,7 @@ checkout v29.1rc2
 	# Needs review: 32497 opti_merkle_reserves-21							last=39b6c139bd6 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
 	# Needs careful review: 32532 l0rinc/l0rinc/short-circuit-known-script-types
 	# Needs review: 32645 theStack/202505-fs-use_ftruncate_on_openbsd
-		# NOTE: ftruncate does not guarantee allocation normally?
+		# NOTE: ftruncate does not guarantee allocation normally? and we don't want to truncate!
 	# Needs work: 32692 -  # TODO: Dynamic scriptcheck thread count
 	# Needs review: 32730 furszy/2025_net_avoid_traversing_block_twice
 	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
@@ -1187,7 +1187,7 @@ checkout v29.1rc2
 	n/a   font_ocrbitcoin
 	n/a   knots_branding-29						f58950aab87
 		#30.xTODO# Review security policy
-		TODO: NSIS image check
+		# FIXME: Get NSIS using OCR-Bitcoin
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #30.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
@@ -1212,8 +1212,8 @@ checkout v29.1rc2
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
-	n/a  (cherrypick=8644fb0d683)	# bump to rc3 #29.xTODO# REMOVE
-	n/a  (cherrypick=1a6a78120f8)				5f8256608fc  # update manpages (build first)
+	n/a  (cherrypick=8d9f99bd962)	# bump to rc3 #29.xTODO# REMOVE
+	n/a  (cherrypick=0712c99f4b8)				5f8256608fc  # update manpages (build first)
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update

@@ -539,7 +539,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	-     netproc_check_blockhash
 	# Needs review: 32497 opti_merkle_reserves-21							last=39b6c139bd6 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
 	# Needs careful review: 32532 l0rinc/l0rinc/short-circuit-known-script-types
-	32645 theStack/202505-fs-use_ftruncate_on_openbsd
+	# Needs review: 32645 theStack/202505-fs-use_ftruncate_on_openbsd
+		# NOTE: ftruncate does not guarantee allocation normally? and we don't want to truncate!
 	# Needs work: 32692 -  # TODO: Dynamic scriptcheck thread count
 	# Needs review: 32730 furszy/2025_net_avoid_traversing_block_twice
 	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
