@@ -855,6 +855,7 @@ checkout v29.1rc2
 	22016 rpc_gbci_period_start					17e4ef3f960	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys-29+knots					647dcf1fe7c
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
+		# NOTE: Now also includes mintxfee in getwalletinfo for testing purposes
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
 	9245 ionice-29+knots						20f5b5a0563
 		# low prio: p2p requests, loading/verifying blocks on disk
