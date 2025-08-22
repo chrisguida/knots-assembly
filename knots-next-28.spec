@@ -1,7 +1,7 @@
-timestamp 2025-08-20 14:08:30
+timestamp 2025-08-22 17:29:41
 #lastapply no-merge
 
-#.. checked up to PR #33226 / gui #884
+#.. checked up to PR #33239 / gui #884
 
 checkout v28.2
 @28.x-syslibs
@@ -422,6 +422,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	33215 fix_debuglog_refs_hardcoded-28+knots
 		# Includes gui#884 hebasto-g/250819-debuglog
 	Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
+	# Needs work: 33231 w0xlt/mulitple_binds
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -548,6 +549,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Review: 32885 pstratem/2025-07-05-lockless-isibd
 	# Needs review: 33031 achow101/lasthardened-cache-migratewallet
 	33217 fanquake/drop_xinerama
+		# Broken backport to 29.x in #33238
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -988,6 +990,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	# Needs concept: g882 -  # qt: add shift key modifier to clear command history when clearing the console
 	# Needs review: 33191 ajtowns/202508-sendtemplate1
+	Minimised: 33230 achow101/cli-strong-or-json
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1340,7 +1343,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250820)			ba223403bbc
+	n/a  (bump_version=Knots:20250822)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
