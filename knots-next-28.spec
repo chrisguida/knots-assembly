@@ -1,7 +1,7 @@
 timestamp 2025-08-22 17:29:41
 #lastapply no-merge
 
-#.. checked up to PR #33239 / gui #884
+#.. checked up to PR #33239 / gui #884 / knots #
 
 checkout v28.2
 @28.x-syslibs
@@ -1267,6 +1267,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	32521 darosior/2503_nonstd_tx_sigops
 		29.x has part in sendraw_force-29.1+knots, rest in pol_maxtxlegacysigops-29.1+knots
 	-     blockreconstructionextratxnsize
+	k162  qt_bad_external_signer_msg-22							last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection

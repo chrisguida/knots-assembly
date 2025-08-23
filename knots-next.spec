@@ -1,7 +1,7 @@
 timestamp 2025-08-22 17:29:41
 lastapply no-merge
 
-#.. checked up to PR #33239 / gui #884
+#.. checked up to PR #33239 / gui #884 / knots #
 
 checkout v29.1rc2
 @29.x-syslibs
@@ -249,11 +249,12 @@ checkout v29.1rc2
 		#+32843
 	# Needs review: 31423 furszy/2024_migration_watch-only_migration
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
-	# Unclear if applicable to Knots: 31453 macos_exfat_warning-29+knots			25f0359c100	last=db3228042b2 willcl-ark/macos-exfat
+	#30.xTODO# Revert: Knots NOT AFFECTED: 31453 macos_exfat_warning-29+knots			25f0359c100	last=db3228042b2 willcl-ark/macos-exfat
 		# Checking blocksdir unconditionally in case it's a mountpoint
 		# Dropped doc change
 		# Added warning before leaving GUI firstrun screen
-		# Knots gets rid of likely-buggy macOS-specific AllocateFileRange in fix_preallocate, so it's unclear if this is an issue for us
+		# Only affects macOS 14.x (13.x and 15.x unaffected)
+		# Knots gets rid of likely-buggy macOS-specific AllocateFileRange in fix_preallocate, which fixed this
 	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
 	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	# Not strictly a bug? 31603 brunoerg/2025-01-descriptor-pk
@@ -544,6 +545,7 @@ checkout v29.1rc2
 	# Needs concept consideration: 18830 brakmic:getrpcinfo (security: potentially can decloak/aid in bypassing proxies?)
 	# Needs review: 18849 jb55:zeroalloc
 	19242 uaappend								4d64e9e4a9d
+		# ALSO: Fixes uacomment test, promotes uacomment to non-debug, and includes -uaspoof
 	# Needs review: 19271 andrewtoth:warm-coinscache
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 		# w/ 22807 ?
@@ -1120,6 +1122,7 @@ checkout v29.1rc2
 	-     pol_maxtxlegacysigops-29.1+knots
 		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize
+	k162  qt_bad_external_signer_msg-22							last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
 	#30.xTODO# maybe revert #32721 achow101:remove-deprecated-balances
