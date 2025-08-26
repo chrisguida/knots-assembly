@@ -963,6 +963,7 @@ checkout v29.1rc2
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				2e8254fc98f
 	-     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
+		FIXME: this is broken :(
 	14137 win_taskbar_progress					87fe75f61fc	last=18eb4dbb8a
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					a0a7a60212a
@@ -1162,7 +1163,8 @@ checkout v29.1rc2
 # POLICY:
 	-    1day_default_conftarget				c189a5677d3
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	-     bloom_default-29+knots				401f2f03e86
+	# Disabled just to be safe: -     bloom_default-29+knots				401f2f03e86
+	-     def_bloom_local_only
 	-     wallet_avoid_newerchange				5962a67e5f5
 	-     enforce_checkpoints					254fabebf5a
 		#30.xTODO# Revert #31649

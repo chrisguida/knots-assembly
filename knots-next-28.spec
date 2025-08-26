@@ -1111,6 +1111,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
 	-     rpc_mempoolentry_txhash				2e8254fc98f
 	-     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
+		FIXME: this is broken :(
 	14137 win_taskbar_progress-28+knots			87fe75f61fc	last=18eb4dbb8a
 	(CHECK-LAST)	last= win_taskbar_progress
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
@@ -1297,7 +1298,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # POLICY:
 	-    1day_default_conftarget				c189a5677d3
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
-	-     bloom_default-28+knots				401f2f03e86	last=b688158e06d bloom_default-29+knots
+	# Disabled just to be safe: -     bloom_default-28+knots				401f2f03e86	last=b688158e06d bloom_default-29+knots
+	-     def_bloom_local_only
 	-     wallet_avoid_newerchange				5962a67e5f5
 	-     enforce_checkpoints					254fabebf5a
 	n/a   checkpoint_update-28					41c985132c9	last= checkpoint_update-29
