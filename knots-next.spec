@@ -332,8 +332,7 @@ checkout v29.1rc2
 		# NOT SUFFICIENT WITHOUT:
 	33228 fix_preallocate
 		# Includes less-than-ideal workaround for https://github.com/bitcoin/bitcoin/issues/33128#issuecomment-3203396013
-	# Needs review: 33212 mzumsande/202508_index_nocommit
-		# NOTE: 29.x backport in #33251
+	33212 fjahr/29.x-backport-index-fix						last=fcac8022d83 !fjahr/29.x-backport-index-fix
 	33215 fix_debuglog_refs_hardcoded-28+knots
 		# Includes gui#884 hebasto-g/250819-debuglog
 	# Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
