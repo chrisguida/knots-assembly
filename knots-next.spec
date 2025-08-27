@@ -1,7 +1,7 @@
-timestamp 2025-08-22 17:29:41
+timestamp 2025-08-27 22:27:25
 lastapply no-merge
 
-#.. checked up to PR #33239 / gui #884 / knots #
+#.. checked up to PR #33263 / gui #884 / knots #160
 
 checkout v29.1rc2
 @29.x-syslibs
@@ -333,6 +333,7 @@ checkout v29.1rc2
 	33228 fix_preallocate
 		# Includes less-than-ideal workaround for https://github.com/bitcoin/bitcoin/issues/33128#issuecomment-3203396013
 	# Needs review: 33212 mzumsande/202508_index_nocommit
+		# NOTE: 29.x backport in #33251
 	33215 fix_debuglog_refs_hardcoded-28+knots
 		# Includes gui#884 hebasto-g/250819-debuglog
 	# Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
@@ -449,6 +450,7 @@ checkout v29.1rc2
 	# Needs review: 33031 achow101/lasthardened-cache-migratewallet
 	# Needs Qt5 compat: 33217 rm_xinerama-23									last=e9623be19ad fanquake/drop_xinerama
 		# Broken backport to 29.x in #33238
+	# Needs review: 33253 ajtowns/202508-cache-friendly-compactblock
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -846,6 +848,7 @@ checkout v29.1rc2
 	# Needs review: 33191 ajtowns/202508-sendtemplate1
 	33230 rpc_cli_hashorheight-29							last=aabf1f60938 achow101/cli-strong-or-json
 		# Left off test changes
+	33259 -  # rpc, logging: add backgroundvalidation to getblockchaininfo
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1214,7 +1217,7 @@ checkout v29.1rc2
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250822)			ba223403bbc
+	n/a  (bump_version=knots20250827)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=d44b6d296f1)				df2512ca90f  # release notes: write/update, including change log and credits
