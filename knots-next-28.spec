@@ -433,6 +433,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	k150  fix_rpc_mixed_params_edgecases
 		# Held back (4d24d60836f) support for positional options + named params (breaks tests)
 	-     qt_nowalletpage_alerts-23
+	-     fix_alertnotify_winquoting
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1101,6 +1102,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review: 33044 fanquake/19513_rebased
 	-     font_for_money_global
 	k157  qt_darkmode-29+knots								last=2c15a2071f6 bigshiny90/v29.1-knots-rc1-guifixes
+	(CHECK-LAST)	last=62bfaa5132b bigshiny90/gui-darkmode-updates  # knots#160
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
@@ -1299,7 +1301,9 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-    1day_default_conftarget				c189a5677d3
 	# Needs work/option: 24106 -  # policy: treat P2TR outputs with invalid x-only pubkey as non-standard
 	# Disabled just to be safe: -     bloom_default-28+knots				401f2f03e86	last=b688158e06d bloom_default-29+knots
+		# Take typo fix from def_bloom_local_only
 	-     def_bloom_local_only
+		# NOTE: Includes typo fix
 	-     wallet_avoid_newerchange				5962a67e5f5
 	-     enforce_checkpoints					254fabebf5a
 	n/a   checkpoint_update-28					41c985132c9	last= checkpoint_update-29
