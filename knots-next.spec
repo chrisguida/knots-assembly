@@ -1182,7 +1182,6 @@ checkout v29.1rc2
 	10282 softwareexpiry						40f673fe63e
 	-     rwconf_policy-29.1+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
-		#29.xTODO# Revert #33106 (reduced relay fees) (and #33189? adapt #33199?) - backport risk in #33226
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
 		#30.xTODO# Check on block assembly GetArgs like blockmintxfee/etc
 		#TODO: Add segwit wallet stuff?
@@ -1230,7 +1229,7 @@ checkout v29.1rc2
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 	n/a  (cherrypick=2c4f5f1fe9b)	# bump to rc4 #29.xTODO# REMOVE
-	n/a  (cherrypick=05b174fc3bd)				5f8256608fc  # update manpages (build first)
+	n/a  (cherrypick=d7d36c751fd)				5f8256608fc  # update manpages (build first)
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
