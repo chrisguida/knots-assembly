@@ -847,7 +847,7 @@ checkout v29.1rc2
 	# Needs review: 33191 ajtowns/202508-sendtemplate1
 	33230 rpc_cli_hashorheight-29							last=aabf1f60938 achow101/cli-strong-or-json
 		# Left off test changes
-	33259 -  # rpc, logging: add backgroundvalidation to getblockchaininfo
+	33259 rpc_getblockchaininfo_bgvalidation-26				last=c1f545248ea  # rpc, logging: add backgroundvalidation to getblockchaininfo
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1043,7 +1043,7 @@ checkout v29.1rc2
 		# FIXME: Probably incompatible with MERGED #31407 macos_notarization ?
 		# TODO? 17311 RandyMcMillan:fix-background-svg
 	# Needs review: 31065 danielabrozzoni/20241008_rest_broadcast
-	33023 qa_cb_extratxs-25									last=bd1c6b4ea9b bigshiny90/compactblocks-extratxs-tests-core
+	33023 qa_cb_extratxs-25									last=f9c6331cb26 bigshiny90/compactblocks-extratxs-tests-core
 	#30.xTODO# Revert #32450 ?
 	#30.xTODO# Revert #32510 or replace extratxn pool
 	#30.xTODO# Consider reverting #33050 ? (and #33183?)
@@ -1219,7 +1219,7 @@ checkout v29.1rc2
 	n/a  (bump_version=knots20250827)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
-	n/a   (cherrypick=d44b6d296f1)				df2512ca90f  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=32695dff9e6)				df2512ca90f  # release notes: write/update, including change log and credits
 		# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1229,7 +1229,7 @@ checkout v29.1rc2
 		# remove asterisk in changelog for what's been merged last-minute, update doc/files etc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
-	n/a  (cherrypick=8d9f99bd962)	# bump to rc3 #29.xTODO# REMOVE
+	n/a  (cherrypick=2c4f5f1fe9b)	# bump to rc4 #29.xTODO# REMOVE
 	n/a  (cherrypick=05b174fc3bd)				5f8256608fc  # update manpages (build first)
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
