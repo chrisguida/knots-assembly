@@ -1179,7 +1179,7 @@ checkout v29.1rc2
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
-	10282 timebomb_knots						40f673fe63e
+	10282 softwareexpiry						40f673fe63e
 	-     rwconf_policy-29.1+knots				6fd67aa463d
 		# Includes Knots policy changes for simplification of final rebase process
 		#29.xTODO# Revert #33106 (reduced relay fees) (and #33189? adapt #33199?) - backport risk in #33226

@@ -1313,7 +1313,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
 	# TODO: revert #28354 ?
-	10282 timebomb_knots-28						40f673fe63e	last=84572a8ec93 timebomb_knots
+	10282 timebomb_knots-28						40f673fe63e	last=84572a8ec93 softwareexpiry
+		TODO: rename branch?
 		TODO: disable mining; add alert in advance
 		TODO: mention in -help / GUI about ?
 	-     rwconf_policy-28+knots				6fd67aa463d	last=86056333700 rwconf_policy-29+knots
