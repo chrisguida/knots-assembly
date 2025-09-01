@@ -1,7 +1,7 @@
-timestamp 2025-08-27 22:27:25
+timestamp 2025-09-01 04:45:33
 lastapply no-merge
 
-#.. checked up to PR #33263 / gui #884 / knots #160
+#.. checked up to PR #33271 / gui #884 / knots #160
 
 checkout v29.1rc2
 @29.x-syslibs
@@ -337,6 +337,7 @@ checkout v29.1rc2
 		# Includes gui#884 hebasto-g/250819-debuglog
 	# Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	# Needs work: 33231 w0xlt/mulitple_binds
+	# Needs review: 33268 achow101/zero-value-from-me
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -450,6 +451,7 @@ checkout v29.1rc2
 	# Needs Qt5 compat: 33217 rm_xinerama-23									last=e9623be19ad fanquake/drop_xinerama
 		# Broken backport to 29.x in #33238
 	# Needs review: 33253 ajtowns/202508-cache-friendly-compactblock
+	#29.xTODO# 33264 kevkevinpal/reduceScopeOfGetBlockTemplateLock
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -1215,7 +1217,7 @@ checkout v29.1rc2
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250827)			ba223403bbc
+	n/a  (bump_version=knots20250901)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=32695dff9e6)				df2512ca90f  # release notes: write/update, including change log and credits
