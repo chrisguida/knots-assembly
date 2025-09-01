@@ -954,7 +954,7 @@ checkout v29.1rc2
 	# Needs review: 33044 fanquake/19513_rebased
 	-     font_for_money_global
 	k157  qt_darkmode-29+knots								last=2c15a2071f6 bigshiny90/v29.1-knots-rc1-guifixes
-	(CHECK-LAST)	last=62bfaa5132b bigshiny90/gui-darkmode-updates  # knots#160
+	(CHECK-LAST)	last=aa6b9665628 bigshiny90/gui-darkmode-updates  # knots#160
 	# TODO: validaterawtransaction with UTXO lookup (and fee calc) ?
 	# TODO: Guix: When glibc 2.36+ is required, use -Wl,-z,pack-relative-relocs
 # Non-upstreamed functionality:
