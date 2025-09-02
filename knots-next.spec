@@ -129,7 +129,7 @@ checkout v29.1rc2
 		# NOTE: Retained `ENABLE_EXTERNAL_SIGNER` cmake option
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
-	# Check on #25561
+	# Check on #25561 (nonsense signed int overflow in leveldb?)
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	g633  -										2b6dec6757f	last=5fde8fbe085  # qt: Fix shortcut ambiguities
@@ -197,7 +197,6 @@ checkout v29.1rc2
 	(CHECK-LAST)	last=113ba106273 Sjors/2025/07/locktime
 		# Includes tests from #32892
 	29141 fix_rpcauth_blank						3ad996f41bb
-	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
 		#30.xTODO# but windows has lots of problems with existing style...
@@ -236,19 +235,18 @@ checkout v29.1rc2
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 		# Was: 26426 fjahr/202210-coinstatsindex-overflow
-	# Needs review: 30479 mzumsande/202407_fix_resetfailure
+	# Needs careful review: 30479 mzumsande/202407_fix_resetfailure
 	# If needed? 30489 theuni/depends-zmq-patch
 	# Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
 		# was: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
-	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
 	31275 fix_rpc_example_quoting_pr31275-24	ad6c4570514	last=7e93e292598
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
 	# Needs work: 31349 vasild:test_log_internet_traffic
 	# Needs work: 31378 furszy/2024_wallet_migration_multisig_crash
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
-	# Needs review: 31405 mzumsande/202411_stricter_invalidblock_handling
+	# Needs careful review: 31405 mzumsande/202411_stricter_invalidblock_handling
 		#+32843
-	# Needs review: 31423 furszy/2024_migration_watch-only_migration
+	31423 furszy/2024_migration_watch-only_migration
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	#30.xTODO# Revert: Knots NOT AFFECTED: 31453 macos_exfat_warning-29+knots			25f0359c100	last=db3228042b2 willcl-ark/macos-exfat
 		# Checking blocksdir unconditionally in case it's a mountpoint
@@ -256,12 +254,11 @@ checkout v29.1rc2
 		# Added warning before leaving GUI firstrun screen
 		# Only affects macOS 14.x (13.x and 15.x unaffected)
 		# Knots gets rid of likely-buggy macOS-specific AllocateFileRange in fix_preallocate, which fixed this
-	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
 	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	# Not strictly a bug? 31603 brunoerg/2025-01-descriptor-pk
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
-	# Needs review: 31622 achow101/psbt-sighashes
+	#29.xTODO# 31622 achow101/psbt-sighashes
 	31727 miniscript_nonfatal_pr31727-29					last=3693e4d6ee0 !hodlinator/2025/04/31727_followup
 		# Includes fixes from #32255
 	# Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
@@ -271,7 +268,7 @@ checkout v29.1rc2
 	# Needs review: 31807 theuni/fix-dupe-kernel-symbols
 	# 31912 workaround_buggy_rndrrs-28			36e11bb93cc	last=2498dd8dbd5  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
 		# Held back 585aba6eec8..2498dd8dbd5 (2x diff for basically the same thing)
-	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
+	# Needs review? 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
 	31958 -										ee76cf26ae7	last=32dcec269bf  # rpc: add cli examples, update docs  # docfix_rpc_wallet_cf_psbt-24
@@ -288,7 +285,7 @@ checkout v29.1rc2
 		# Only the fix, without the bumped LevelDB version dep
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	# Needs review: 32199 maflcko/2504-time
-	# Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
+	Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	32344 fix_wallet_nonranged_pr32344-22					last=97d383af6d5
 	32351 qafix_nonrecurs_FindChallenges-28
@@ -300,11 +297,12 @@ checkout v29.1rc2
 	32414 fix_reidxcs_periodic-25							last=c1e554d3e58 andrewtoth/reindex-flush
 		# Fix only
 		# TODO: consider performance refactor?
-	# Needs review: 32490 maflcko/2505-less-UB
 	# Simplified rewrite of? 32528 maflcko/2505-1
+		# Was (unreleased) #31135 jonatack/2024-10-verification-progress or #31177 polespinasa/verificationProgress
 	32539 fix_rpcallowip_cjdns-29							last=12ff4be9c72 pinheadmz/rpcallowip-rfc4193
 	# Needs work: 32577 hebasto/250521-subprocess-split
 		# FIXME: Ensure this gets resolved before #32566 is merged
+	#30.xTODO# If #32566 is merged, test extensively with Windows quoting nonsense
 	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
 	# Needs review and simplification? 32636 davidgumberg/5-27-2025-create-refactor
 	# Needs careful review: 32646 instagibbs/2025-05-fillblock-mutated
@@ -313,13 +311,14 @@ checkout v29.1rc2
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
 	32736 fix_listwalletdir_err-23
 	# Needs review: 32757 -  # net: Fix Discover() not running when using -bind=0.0.0.0:port
+		# Was #31492 (not in any release)
 	# Needs review: 32773 hebasto/250618-mkdir
 	# Needs concept & review: 32788 achow101/desc-allow-H
 		# Check for this impacting other Knots merges
 	#30.xTODO# Needs review: 32821 -  # rpc: Handle -named argument parsing where '=' character is used
-	# Needs review: 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
+	Triage: 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
-	# Needs review: 32878 HowHsu/rewind
+	32878 HowHsu/rewind
 	32987 fix_gui_reindex-29
 	# Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049

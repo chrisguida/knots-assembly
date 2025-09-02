@@ -142,7 +142,7 @@ checkout v28.2
 		# NOTE: Retained `ENABLE_EXTERNAL_SIGNER` cmake option
 		# Replaces: -     hww_windows-27						e1f9c1bbde8
 			# Reverts #29489 & #28967
-	# Check on #25561
+	# Check on #25561 (nonsense signed int overflow in leveldb?)
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	g633  -										2b6dec6757f	last=5fde8fbe085  # qt: Fix shortcut ambiguities
@@ -214,7 +214,6 @@ checkout v28.2
 	(CHECK-LAST)	last=113ba106273 Sjors/2025/07/locktime
 		# Includes tests from #32892
 	29141 fix_rpcauth_blank-24					3ad996f41bb	last=51588287fb5 fix_rpcauth_blank
-	# Needs review: 29124 achow101/fix-double-keypath
 	# Needs work: 29147 guix_attachable_sigs					ad4fe4b83a4
 		# GPG discourages clearsign signatures!
 		#29.xTODO# but windows has lots of problems with existing style...
@@ -256,7 +255,7 @@ checkout v28.2
 	# Needs review: 30410 mzumsande/202407_getblock_error
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 		# Was: 26426 fjahr/202210-coinstatsindex-overflow
-	# Needs review: 30479 mzumsande/202407_fix_resetfailure
+	# Needs careful review: 30479 mzumsande/202407_fix_resetfailure
 	30508 fix_depends_zmq_cmake_pc-28			155737973b5
 	# Needs review: 30529 ryanofsky/pr/listset
 	# If needed? 30489 theuni/depends-zmq-patch
@@ -279,7 +278,6 @@ checkout v28.2
 	# WIP: 31096 txpkg_sz_1-28										last=d4fcca53231 instagibbs/2024-10-submitpackage-singleton
 	31097 scripterr_prefer_consensus-28			ef80edf7c01
 	31124 disable_rand_perfmon-0.20				4e75910f284
-	# Needs review: 31135 jonatack/2024-10-verification-progress or 31177 polespinasa/verificationProgress
 	31212 improve_args_pr31212-28				771789a3001
 		# +#31433
 		# Excluded due to newer Python requirement: 1ab3d515af9 refactor test: Cleaner combine_logs.py logic
@@ -298,10 +296,10 @@ checkout v28.2
 		# NOTE: Not so high a priority when blocks are already too big
 	31391 custom_iso8601datetime-28+knots		7fbcebdee49
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
-	# Needs review: 31405 mzumsande/202411_stricter_invalidblock_handling
+	# Needs careful review: 31405 mzumsande/202411_stricter_invalidblock_handling
 		#+32843
 	31416 docfix_rpc_send_inputsobj-23			4df3333de0f	last=fad83e759a4 maflcko/2412-doc-rpc
-	# Needs review: 31423 furszy/2024_migration_watch-only_migration
+	31423 furszy/2024_migration_watch-only_migration
 	# Needs review: 31439 mzumsande/202412_reindex_interrupt
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	31451 fix_wallet_migrate_wo_bdb-27			f187eddc341	last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
@@ -311,7 +309,6 @@ checkout v28.2
 		# Dropped doc change (links to Core github)
 		# Added warning before leaving GUI firstrun screen
 		TODO: Knots gets rid of likely-buggy macOS-specific AllocateFileRange in fix_preallocate, so it's unclear if this is an issue for us
-	# Needs review: 31492 -  # Execute Discover() when bind=0.0.0.0 or :: is set
 	# Needs review: 31495 achow101/migrate-corner-case-scripts
 	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	31529 upd_glibc_mte_strncmp-28				eedd55a773d	last=b8710201fbd fanquake/glibc_2_31_latest
@@ -323,7 +320,7 @@ checkout v28.2
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
 	31617 qafix_db_tests_wo_bdb-24				6a03f82b3fb
 	g850  qt_psbt_sighash_default-28			ff9c8155fd4	last=3e97ff9c5ea achow101-g/gui-psbt-sighash-default
-	# Needs review: 31622 achow101/psbt-sighashes
+	31622 achow101/psbt-sighashes
 NM	31623 tracing_MIN_macro_rename				f7ec451c999
 	# Approach NACK? 31629 mzumsande/202501_rescan_bestblock
 	#29.xTODO# Triage: 28521 hodlinator/2024/12/disconnecting
@@ -347,7 +344,7 @@ NM	31623 tracing_MIN_macro_rename				f7ec451c999
 	# 31912 workaround_buggy_rndrrs-28			36e11bb93cc	last=2498dd8dbd5  # random: Check GetRNDRRS is supported in InitHardwareRand to avoid infinite loop
 		# Held back 585aba6eec8..2498dd8dbd5 (2x diff for basically the same thing)
 	32248 laanwj/2025-04-remove-arm64-rndr
-	# Needs review: 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
+	# Needs review? 31835 -  # validation: set BLOCK_FAILED_CHILD correctly
 	# Needs work: 31888 midnightmagic/fix-linearize-gjpyn
 	# Needs review: 31929 hodlinator/2025/02/stop_http_robust
 	31958 docfix_rpc_wallet_cf_psbt-24			ee76cf26ae7	last=0ad066c85a4  # rpc: add cli examples, update docs
@@ -366,7 +363,7 @@ NM	31623 tracing_MIN_macro_rename				f7ec451c999
 NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
 	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
-	# Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
+	Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	32333 doc_rpc_pruneblockchain_top-21					last=135a0f0aa71
 	32342 -  # Fix missing error check in set_clo_on_exec for FD_CLOEXEC handling
@@ -379,8 +376,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	32414 fix_reidxcs_periodic-25							last=c1e554d3e58 andrewtoth/reindex-flush
 		# Fix only
 		# TODO: consider performance refactor?
-	# Needs review: 32490 maflcko/2505-less-UB
 	# Simplified rewrite of? 32528 maflcko/2505-1
+		# Was (unreleased) #31135 jonatack/2024-10-verification-progress or #31177 polespinasa/verificationProgress
 	# Needs concept: 32530 darosior/2505_limit_mempool_32bit
 		# NOTE: 29.x backport in #32810
 		# NOTE: release note in #32819
@@ -397,14 +394,15 @@ NM	32187 zmq_devirtual_destructor-0.12
 	32708 docfix_listdescriptors_nonimported-23
 	32736 fix_listwalletdir_err-23
 	# Needs review: 32757 -  # net: Fix Discover() not running when using -bind=0.0.0.0:port
+		# Was #31492 (not in any release)
 	# Needs review: 32773 hebasto/250618-mkdir
 	# Needs concept & review: 32788 achow101/desc-allow-H
 		# Check for this impacting other Knots merges
 	32826 p2p_badports_dbm_rdp_vnc-23
 	# depends-only, needs work: 32837 fanquake/fix_libevent_mingw_w64_13
-	Needs review? 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
+	Triage: 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
-	# Needs review: 32878 HowHsu/rewind
+	32878 HowHsu/rewind
 	32943 fix_deps_cmake_no_exportpkg-28
 	Triage/Minimal: 33001 maflcko:2507-test-actually-fail-on-failure
 		28.x backport in #33076
