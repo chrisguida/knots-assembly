@@ -299,7 +299,7 @@ checkout v28.2
 	# Needs careful review: 31405 mzumsande/202411_stricter_invalidblock_handling
 		#+32843
 	31416 docfix_rpc_send_inputsobj-23			4df3333de0f	last=fad83e759a4 maflcko/2412-doc-rpc
-	31423 furszy/2024_migration_watch-only_migration
+	Needs backport work: 31423 wallet_migrate_watchonly_only-29
 	# Needs review: 31439 mzumsande/202412_reindex_interrupt
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	31451 fix_wallet_migrate_wo_bdb-27			f187eddc341	last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
@@ -363,7 +363,7 @@ NM	31623 tracing_MIN_macro_rename				f7ec451c999
 NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
 	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
-	Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
+	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	32333 doc_rpc_pruneblockchain_top-21					last=135a0f0aa71
 	32342 -  # Fix missing error check in set_clo_on_exec for FD_CLOEXEC handling

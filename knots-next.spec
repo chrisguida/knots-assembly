@@ -246,7 +246,7 @@ checkout v29.1rc2
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
 	# Needs careful review: 31405 mzumsande/202411_stricter_invalidblock_handling
 		#+32843
-	31423 furszy/2024_migration_watch-only_migration
+	# Needs backport work: 31423 wallet_migrate_watchonly_only-29
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	#30.xTODO# Revert: Knots NOT AFFECTED: 31453 macos_exfat_warning-29+knots			25f0359c100	last=db3228042b2 willcl-ark/macos-exfat
 		# Checking blocksdir unconditionally in case it's a mountpoint
@@ -285,7 +285,7 @@ checkout v29.1rc2
 		# Only the fix, without the bumped LevelDB version dep
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	# Needs review: 32199 maflcko/2504-time
-	Needs review/work: 32273 -  # wallet: Fix relative path backup during migration
+	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	32344 fix_wallet_nonranged_pr32344-22					last=97d383af6d5
 	32351 qafix_nonrecurs_FindChallenges-28
@@ -316,9 +316,10 @@ checkout v29.1rc2
 	# Needs concept & review: 32788 achow101/desc-allow-H
 		# Check for this impacting other Knots merges
 	#30.xTODO# Needs review: 32821 -  # rpc: Handle -named argument parsing where '=' character is used
-	Triage: 32845 pablomartin4btc/rpc-fix-unloadwallet-when-no-wallet-name-nor-context
+	32845 fix_rpc_nowallet_errors_pr32845-29
 	# Needs concept & review: 32869 instagibbs/2025-07-invalid-cb-stall
-	32878 HowHsu/rewind
+	32878 fix_index_rewind_badassert_pr32878-19
+		# Fix only; left off invasive test
 	32987 fix_gui_reindex-29
 	# Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
@@ -1231,6 +1232,7 @@ checkout v29.1rc2
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
+		relnotes for #32845 in PR
 	n/a  (cherrypick=1306d2ce6f6)				5f8256608fc  # update manpages (build first)
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
