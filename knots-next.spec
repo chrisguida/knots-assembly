@@ -1145,6 +1145,8 @@ checkout v29.1rc2
 		# c79ee09a786 RPC/Wallet: Add "require_replacable" option to bumpfee method, to match previous behaviour
 		# 1f1259d318d GUI/Wallet: Warn if bumping the fee on a non-BIP125 transaction
 	-     compat_rpc_dumptxoutset_hr
+		# FIXME: 'type' param attempts to parse as JSON ? (with 28.x bitcoin-cli tho)
+		# FIXME: 'rollback' param rejects height ?
 	-     compat_jsonrpc_weirdversions			d50d30bf835
 	29530 rpc_getpeerinfo_misbehaving_score-29+k	66b8c669e38	last=87efb6f0cfd
 		# NOTE: Held back 976d61c974e...87efb6f0cfd which degrades docs and adds a test incompatible with Knots
