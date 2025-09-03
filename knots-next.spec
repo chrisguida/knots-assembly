@@ -3,7 +3,7 @@ lastapply no-merge
 
 #.. checked up to PR #33296 / gui #884 / knots #160
 
-checkout v29.1rc2
+checkout v29.1
 @29.x-syslibs
 # BUILD BUGS:
 	# None!
@@ -332,7 +332,6 @@ checkout v29.1rc2
 		# NOT SUFFICIENT WITHOUT:
 	33228 fix_preallocate
 		# Includes less-than-ideal workaround for https://github.com/bitcoin/bitcoin/issues/33128#issuecomment-3203396013
-	33212 fjahr/29.x-backport-index-fix						last=fcac8022d83 !fjahr/29.x-backport-index-fix
 	33215 fix_debuglog_refs_hardcoded-28+knots
 		# Includes gui#884 hebasto-g/250819-debuglog
 	# Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
@@ -1226,7 +1225,7 @@ checkout v29.1rc2
 	n/a  (bump_version=knots20250903)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
-	n/a   (cherrypick=9b9c4978c0a)				df2512ca90f  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=ab2e9ce0575)				df2512ca90f  # release notes: write/update, including change log and credits
 		# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1237,7 +1236,8 @@ checkout v29.1rc2
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
-	n/a  (cherrypick=1306d2ce6f6)				5f8256608fc  # update manpages (build first)
+	n/a  (cherrypick=88a83c3f0f5)				5f8256608fc  # update manpages (build first)
+		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
