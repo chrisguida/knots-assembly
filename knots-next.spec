@@ -1,7 +1,7 @@
-timestamp 2025-09-01 04:45:33
+timestamp 2025-09-03 17:57:31
 lastapply no-merge
 
-#.. checked up to PR #33271 / gui #884 / knots #160
+#.. checked up to PR #33296 / gui #884 / knots #160
 
 checkout v29.1rc2
 @29.x-syslibs
@@ -338,6 +338,7 @@ checkout v29.1rc2
 	# Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	# Needs work: 33231 w0xlt/mulitple_binds
 	# Needs review: 33268 achow101/zero-value-from-me
+	# Needs review: 33296 Crypt-iQ/cmpctblock_assume_fix_09032025
 	-     fix_rpccookieperms_early				dec38cfcc7b
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -422,6 +423,7 @@ checkout v29.1rc2
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
+		# 29.x rebase (on old latest_knots) in 5ee1dbcb681
 	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue	fd9df84d86b	last=5d82d92aff7  # opti_rpc_uv_reserve-25
 	31645 opti_dbbatchsize_64-29				ef2cf259a11	last=b6f8c48946c l0rinc/l0rinc/utxo-dump-batching
 		# Held back 868413340f8...b6f8c48946c (reduce to 32 MiB) for now
@@ -850,6 +852,7 @@ checkout v29.1rc2
 	33230 rpc_cli_hashorheight-29							last=aabf1f60938 achow101/cli-strong-or-json
 		# Left off test changes
 	# Needs work? 33259 rpc_getblockchaininfo_bgvalidation-26				last=c1f545248ea  # rpc, logging: add backgroundvalidation to getblockchaininfo
+	#30.xTODO# 33290 Sjors/2025/08/missing_capnp
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1218,7 +1221,7 @@ checkout v29.1rc2
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250901)			ba223403bbc
+	n/a  (bump_version=knots20250903)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		45b084a111f
 	n/a   (cherrypick=e0ae86ad60a)				df2512ca90f  # release notes: write/update, including change log and credits
@@ -1232,7 +1235,6 @@ checkout v29.1rc2
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
-		relnotes for #32845 in PR
 	n/a  (cherrypick=1306d2ce6f6)				5f8256608fc  # update manpages (build first)
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion

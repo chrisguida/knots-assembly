@@ -1,7 +1,7 @@
-timestamp 2025-09-01 04:45:33
+timestamp 2025-09-03 17:57:31
 #lastapply no-merge
 
-#.. checked up to PR #33271 / gui #884 / knots #160
+#.. checked up to PR #33296 / gui #884 / knots #160
 
 checkout v28.2
 @28.x-syslibs
@@ -423,6 +423,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	# Needs work: 33231 w0xlt/mulitple_binds
 	# Needs review: 33268 achow101/zero-value-from-me
+	# Needs review: 33296 Crypt-iQ/cmpctblock_assume_fix_09032025
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -521,6 +522,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
+		# 29.x rebase (on old latest_knots) in 5ee1dbcb681
 	31179 opti_rpc_uv_reserve-25				fd9df84d86b	last=5d82d92aff7 ismaelsadeeq/10-2024-add-reserve-to-univalue
 	31364 opti_no_copy_pr31364-28				3614ce28149
 	# Needs review: 31490 l0rinc/l0rinc/undo
@@ -1354,7 +1356,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250901)			ba223403bbc
+	n/a  (bump_version=Knots:20250903)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
