@@ -13,6 +13,9 @@ checkout v28.2
 	32437 fanquake/extend_asan_sse4
 	Triage: 32484 fanquake/28_suppress_unterm_string_init
 	Triage: Part of? 32551 hebasto/250518-crypto-macros
+	# TODO: CMake 4 compat
+		# https://bugs.gentoo.org/show_bug.cgi?id=958361
+		# https://github.com/google/crc32c/commit/2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -424,6 +427,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 33231 w0xlt/mulitple_binds
 	# Needs review: 33268 achow101/zero-value-from-me
 	# Needs review: 33296 Crypt-iQ/cmpctblock_assume_fix_09032025
+	33310 wrkarnd_gcc_systemtap_ice
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -555,6 +559,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# Broken backport to 29.x in #33238
 	# Needs review: 33253 ajtowns/202508-cache-friendly-compactblock
 	#28.xTODO# 33264 kevkevinpal/reduceScopeOfGetBlockTemplateLock
+	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -566,6 +571,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# TODO: 29269 -  # Add OP_INTERNALKEY for Tapscript
 	# TODO: 29270 -  # Implement OP_CHECKSIGFROMSTACK(VERIFY)
 	# TODO: 29280 -  # Implement OP_CHECKTEMPLATEVERIFY
+	# TODO: https://github.com/jamesob/bitcoin/tree/2025-06-ctv-csfs CTV+CSFS combined
 	# TODO? 30018 -  # Implement BIP 118 validation (SIGHASH_ANYPREVOUT)
 	# TODO? 32080 -  # OP_CHECKCONTRACTVERIFY
 	# TODO? 32247 jamesob/2025-04-csfs

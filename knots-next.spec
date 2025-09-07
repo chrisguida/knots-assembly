@@ -6,7 +6,9 @@ lastapply no-merge
 checkout v29.1
 @29.x-syslibs
 # BUILD BUGS:
-	# None!
+	# TODO: CMake 4 compat
+		# https://bugs.gentoo.org/show_bug.cgi?id=958361
+		# https://github.com/google/crc32c/commit/2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07
 # SYSLIBS:
 	2241  sys_leveldb							a0ecf548285
 		# Related: #32447
@@ -338,6 +340,7 @@ checkout v29.1
 	# Needs work: 33231 w0xlt/mulitple_binds
 	# Needs review: 33268 achow101/zero-value-from-me
 	# Needs review: 33296 Crypt-iQ/cmpctblock_assume_fix_09032025
+	33310 wrkarnd_gcc_systemtap_ice
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -453,6 +456,7 @@ checkout v29.1
 		# Broken backport to 29.x in #33238
 	# Needs review: 33253 ajtowns/202508-cache-friendly-compactblock
 	#29.xTODO# 33264 kevkevinpal/reduceScopeOfGetBlockTemplateLock
+	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
 		# Was #21702 (never in Knots)
@@ -464,6 +468,7 @@ checkout v29.1
 	# TODO: 29269 -  # Add OP_INTERNALKEY for Tapscript
 	# TODO: 29270 -  # Implement OP_CHECKSIGFROMSTACK(VERIFY)
 	# TODO: 29280 -  # Implement OP_CHECKTEMPLATEVERIFY
+	# TODO: https://github.com/jamesob/bitcoin/tree/2025-06-ctv-csfs CTV+CSFS combined
 	# TODO? 30018 -  # Implement BIP 118 validation (SIGHASH_ANYPREVOUT)
 	# TODO? 32080 -  # OP_CHECKCONTRACTVERIFY
 	# TODO? 32247 jamesob/2025-04-csfs
