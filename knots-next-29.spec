@@ -10,18 +10,18 @@ checkout v29.1
 		# https://bugs.gentoo.org/show_bug.cgi?id=958361
 		# https://github.com/google/crc32c/commit/2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07
 # SYSLIBS:
-	2241  sys_leveldb							a0ecf548285
+	2241  sys_leveldb							a0ecf548285	last=9be22e8126a sys_leveldb-30
 		# Related: #32447
 		# If https://github.com/bitcoin-core/leveldb-subtree/pull/52 is merged, this should possibly be adapted
-	5416  sys_libsecp256k1						0de78dc8ead
+	5416  sys_libsecp256k1						0de78dc8ead	last=7fe13e05ee1 sys_libsecp256k1-30
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
-	n/a   rm_minisketch-29+syslibs				f6e0ddeab22
+	n/a   rm_minisketch-29+syslibs				f6e0ddeab22	last=0fd60441475 rm_minisketch-30+syslibs
 		# Implicitly includes most of #18818
 		#30.xTODO# sys_libminisketch
-	15155 test_external_bcli					a84a0a443b0
-	30997 qt5qt6-29								3872919744d
+	15155 test_external_bcli					a84a0a443b0	last=8f25a48c298 test_external_bcli-30
+	30997 qt5qt6-29								3872919744d	last=65319c41ff1 compat_qt5-30
 		# Includes parts of gui#861 whitslack/qt6
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
@@ -43,7 +43,7 @@ checkout v29.1
 	32217 fix_gitdir_foreign					829e7360c77
 		# Was part of #18902
 	#30.xTODO# Revert #32220 (cmake: Get rid of undocumented BITCOIN_GENBUILD_NO_GIT environment variable)
-	-     relsrc_embed_tagname-29+knots			52c08c64519
+	-     relsrc_embed_tagname-29+knots			52c08c64519	last=607a4fddf61 relsrc_embed_tagname-30+knots
 		# Was part of #18902
 	18427 2020mingwthrd-mini					52e30e24120	 # Latest code now
 	18490 bugfix_symcheck_pe_case				87c6edc40bb

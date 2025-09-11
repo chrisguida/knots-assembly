@@ -10,43 +10,41 @@ checkout v30.0rc1
 		# https://bugs.gentoo.org/show_bug.cgi?id=958361
 		# https://github.com/google/crc32c/commit/2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07
 # SYSLIBS:
-	2241  sys_leveldb							a0ecf548285
+	2241  sys_leveldb-30						a0ecf548285
 		# Related: #32447
 		# If https://github.com/bitcoin-core/leveldb-subtree/pull/52 is merged, this should possibly be adapted
-	5416  sys_libsecp256k1						0de78dc8ead
+	5416  sys_libsecp256k1-30					0de78dc8ead
+		#30.xTODO# test
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
-	n/a   rm_minisketch-29+syslibs				f6e0ddeab22
+	n/a   rm_minisketch-30+syslibs				f6e0ddeab22
 		# Implicitly includes most of #18818
 		#30.xTODO# sys_libminisketch
-	15155 test_external_bcli					a84a0a443b0
-	MERGED: 30997 qt5qt6-29								3872919744d
+	15155 test_external_bcli-30					a84a0a443b0
+	n/a   compat_qt5-30							3872919744d
 		# Includes parts of gui#861 whitslack/qt6
-		# NOTE: restore qt5 support?
-			MERGED: Needs Qt5 compat: 33217 rm_xinerama-23									last=e9623be19ad fanquake/drop_xinerama
-				# Broken backport to 30.x in #33238
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	n/a   (delete_release_notes_fragments)
 @30.x-knotsfixes
 # TESTS:
 	# If needed: -     ci_knots-26							e2099d64846
-	-     lint_relaxer-29+knots					1c6b5cf61c8
-	-     nowarn_unreachable-code				8db24138af3
+	# If needed: -     lint_relaxer-29+knots					1c6b5cf61c8
+	# If needed: -     nowarn_unreachable-code				8db24138af3
 	# If needed: -     nowarn_unused-function				45a2e5951ce
 	# TODO: 17402 travis_ppc64							95996ba42a0	last=1d684f05341 elichai/2019-11-powerpc64
 		# Cirrus WIP at 8e4fd3e729e, but it fails :/
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
-	-     ci_gha_makejobs_8						8cd076e06ab
+	# If needed: -     ci_gha_makejobs_8						8cd076e06ab
 # FIXES:
 	13789 asm_bypass_cxxflags					6ba82076749
 	32217 fix_gitdir_foreign					829e7360c77
 		# Was part of #18902
 	#30.xTODO# Revert #32220 (cmake: Get rid of undocumented BITCOIN_GENBUILD_NO_GIT environment variable)
-	-     relsrc_embed_tagname-29+knots			52c08c64519
+	-     relsrc_embed_tagname-30+knots			52c08c64519
 		# Was part of #18902
 	18427 2020mingwthrd-mini					52e30e24120	 # Latest code now
 	18490 bugfix_symcheck_pe_case				87c6edc40bb
