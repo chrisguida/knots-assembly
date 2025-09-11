@@ -3,8 +3,8 @@ lastapply no-merge
 
 #.. checked up to PR #33296 / gui #884 / knots #160
 
-checkout v29.1
-@29.x-syslibs
+checkout v30.0rc1
+@30.x-syslibs
 # BUILD BUGS:
 	# TODO: CMake 4 compat
 		# https://bugs.gentoo.org/show_bug.cgi?id=958361
@@ -26,7 +26,7 @@ checkout v29.1
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	n/a   (delete_release_notes_fragments)
-@29.x-knotsfixes
+@30.x-knotsfixes
 # TESTS:
 	# If needed: -     ci_knots-26							e2099d64846
 	-     lint_relaxer-29+knots					1c6b5cf61c8
@@ -260,7 +260,7 @@ checkout v29.1
 	# Not strictly a bug? 31603 brunoerg/2025-01-descriptor-pk
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
-	#29.xTODO# 31622 achow101/psbt-sighashes
+	#30.xTODO# 31622 achow101/psbt-sighashes
 	31727 miniscript_nonfatal_pr31727-29		5ec3ce0749b	last=3693e4d6ee0 !hodlinator/2025/04/31727_followup
 		# Includes fixes from #32255
 	# Needs review? 31734 -  # miniscript: account for all StringType variants in Miniscriptdescriptor::ToString()
@@ -370,15 +370,15 @@ checkout v29.1
 	# TODO: ensure that rejecting a tx also rejects dependents in the orphan pool
 	#30.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
-#@29.x-knots-lts-deps
+#@30.x-knots-lts-deps
 	-     upd_qt5-29							d77f9d28a5f
 		# 5.15.17 Opensource released: https://lists.qt-project.org/pipermail/announce/2025-May/000557.html
 		# Includes patch for CVE-2025-4211 (not upstream; simpler and safer)
 		# 5.15.19 (not available) fixes other bugs, but no CVEs that affect us (unless we start using Qt for XML or HTTP2)
-	#29.xTODO# FIXME -     depends_qt5kde
+	#30.xTODO# FIXME -     depends_qt5kde
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
-@29.x-knots
+@30.x-knots
 # PERFORMANCE:
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
@@ -425,7 +425,7 @@ checkout v29.1
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
-		# 29.x rebase (on old latest_knots) in 5ee1dbcb681
+		# 30.x rebase (on old latest_knots) in 5ee1dbcb681
 	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue	8d2b1b3f4c4	last=5d82d92aff7  # opti_rpc_uv_reserve-25
 	31645 opti_dbbatchsize_64-29				726390be112	last=b6f8c48946c l0rinc/l0rinc/utxo-dump-batching
 		# Held back 868413340f8...b6f8c48946c (reduce to 32 MiB) for now
@@ -453,9 +453,9 @@ checkout v29.1
 	# Needs work/review: 32885 pstratem/2025-07-05-lockless-isibd
 	# Needs review: 33031 achow101/lasthardened-cache-migratewallet
 	# Needs Qt5 compat: 33217 rm_xinerama-23									last=e9623be19ad fanquake/drop_xinerama
-		# Broken backport to 29.x in #33238
+		# Broken backport to 30.x in #33238
 	# Needs review: 33253 ajtowns/202508-cache-friendly-compactblock
-	#29.xTODO# 33264 kevkevinpal/reduceScopeOfGetBlockTemplateLock
+	#30.xTODO# 33264 kevkevinpal/reduceScopeOfGetBlockTemplateLock
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -502,7 +502,7 @@ checkout v29.1
 	18479 rpc_sign_show_fees					311e2a53cb3	last=47b2ba29df2 !origin-pull/12911/head
 		# Dropped rel notes file
 		# NOTE: Originally #12911
-		#29.xTODO# FIXME: "feerate" fails to account for sigops (see 21d85b5c0e); most of a fix in stash 835c2d3afba
+		#30.xTODO# FIXME: "feerate" fails to account for sigops (see 21d85b5c0e); most of a fix in stash 835c2d3afba
 	# Needs review and care (new index): 13014 jonasschnelli/2018/04/txindex_prune
 	# Needs work: 13947 Dandelion transaction relay (BIP 156)
 	# Needs work: 13989 add avx512 instrinsic
@@ -918,7 +918,7 @@ checkout v29.1
 	12965 scriptthreads-29+knots				c44ee00eacd	last=dfab6c6866 jonasschnelli/2018/04/svt
 	13203 dsha256_power8-29						61d7257f766	last=3b402e0738 TheBlueMatt/2018-05-asm
 		# NOTE: Stripped out benchmark change
-		#29.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
+		#30.xTODO# Watch for Makefile.am or other changes for shared libbitcoinkernel on Windows
 	15218 postibd_flush-28						aa4ebc8adc2	last=8887d28a014  andrewtoth/flush-after-ibd
 	15428 tor_gui_pairing-29+knots				8a117f403ab	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
@@ -1245,15 +1245,15 @@ checkout v29.1
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
-	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
+	#30.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
 		# TODO: git grep --perl-regexp '＆|％|&amp;amp;|&lt;(?:numerusform|source|translation)|&(?!(?:amp|lt|gt|quot|apos);)' src/qt/locale/*.ts
 # NOTE: use git diff --minimal for patches!
 
-# TODO: @29.x-knots-android
+# TODO: @30.x-knots-android
 	# 32262 hebasto/250413-android
 
-@29.x-knots-extratests
+@30.x-knots-extratests
 	31367 dergoegge/2024-11-ci-ulimit-s
 	31410 hebasto/241203-multiwallet
 	33180 fanquake/asan_strict_string
