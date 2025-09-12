@@ -73,7 +73,8 @@ checkout v30.0rc1
 	18194 bugfix_gui_edit_sendaddr-mini			52280b91301	last=0a44e08992f bugfix_gui_edit_sendaddr
 		# NOTE: -mini is just missing the last commit :)
 	# Needs re-concept: 19358 # net: Make sure we do not override proxy settings in hidden service.
-	19419 listwalletdir_skip_data				47502964b7e	last=3f9cc0cd736 Saibato/wallet_351
+	19419 listwalletdir_skip_data-30			47502964b7e	last=3f9cc0cd736 Saibato/wallet_351
+	(CHECK-LAST)	last=283cd1f0650 listwalletdir_skip_data
 		# NOTE: modified to use std::set and diff-minimise
 			# NOTE: fixed to include <set> instead of <algorithm>
 		# NOTE: added default "blocks" dir to exclusions
@@ -94,7 +95,7 @@ checkout v30.0rc1
 		# Was #30756
 		# Replaces #22417 (Boost::Process variant)
 	# Needs review: 22665 darosior:rbf_optin_nomempool
-	23027 bugfix_util_test_config				bb75733ea11
+	# TODO: test/functional/tool_utils.py should run if ANY of the tools are available, not just if ALL of them are; see bugfix_util_test_config (#23027) for prior fix
 	# Needs review: 22913 -  # Fix the case where the peer status is not updated
 	# Needs review & concept check: 23074 Package-aware fee estimation
 	# Needs work: 32964 w0xlt/r_26573
@@ -122,20 +123,16 @@ checkout v30.0rc1
 	# Needs review: 24972 hebasto/220425-no-libtool
 	g595  qt_handle_autostart_errors-0.15		f0647470a58	last=d932157eb79
 		# Upstream mruddy-g/issue_24953 repo got deleted :/
-	-   gui_psbt_error_msgbox					bd32acbd160
+	-   gui_psbt_error_msgbox-30				bd32acbd160	last=a3eec5c3f70 gui_psbt_error_msgbox
 		# WAS: g599  ts_20220515-partial-25				5191aa16ac2	last=d9411324066 ts_20220515
 			# NOTE: Partial backport of only beneficial fixes that don't require translators to do something further
 			#TsTODO# Update with other commit (unit translations) when translations supported again
-	MERGED: 29868 hww_windows-29						7a36f5685dc	last=3a18075aedd hebasto/240414-win-subprocess
-		# NOTE: Retained `ENABLE_EXTERNAL_SIGNER` cmake option
-		# Replaces: -     hww_windows-27						e1f9c1bbde8
-			# Reverts #29489 & #28967
 	# Check on #25561 (nonsense signed int overflow in leveldb?)
 	# Bad idea? 25688 fjahr/2022-07-torcontrol
 	# Needs review: 25690 fjahr/2022-07-localaddr
 	g633  -										af8adf57970	last=5fde8fbe085  # qt: Fix shortcut ambiguities
 	# Meh: 25854 -  # tracing.md trivial English fixes
-	g662  qt_fix_txview_202209					84c4612291e
+	g662  qt_fix_txview_202209-30				84c4612291e	last=1128a6bfffc qt_fix_txview_202209
 		# Includes gui#368
 	# Needs triage & review: g666 furszy-g/2022_gui_safe_connect_qtimer
 	# TODO: Needs review: 26260 -  # rpc: Set best header after reconsiderblock
@@ -145,7 +142,8 @@ checkout v30.0rc1
 	g677 fix_qt_peers_na						f059ea17b1c
 	# Needs work: 26534 -  # Fix macOS failing to flush blockfiles to disk for certain external drives
 	# Needs work: 26535 mruddy/issue_2039_readonly_finalized_blk_files
-	g684  qt_reqs_multiselect_pr684-28+knots	aa279928aad	last=a6f567590b7
+	g684  qt_reqs_multiselect_pr684-30+knots	aa279928aad	last=a6f567590b7
+	(CHECK-LAST)	last=4db2575d94e qt_reqs_multiselect_pr684
 	# Changes wallet format: Needs review? 26728 achow101/wallet-knows-master-key
 	# 27231 jonatack/2023-03-logging-fixes-and-test-coverage
 		# NOTE: 261b9b766a7 has diff minimisation of (non-refactored) EnableOrDisableLogCategories
@@ -174,7 +172,8 @@ checkout v30.0rc1
 	# Needs review: 28192 Sjors/2023/07/parse-hd-keypath
 	# Needs review: 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	# Needs review: 28248 jonatack/2023-08-network-diversity
-	28345 fix_bytespersigop_checks-mini			f832cbd25bd	last=6f627727739 fix_bytespersigop_checks
+	28345 fix_bytespersigop_checks-mini-30		f832cbd25bd	last=6f627727739 fix_bytespersigop_checks
+	(CHECK-LAST)	last=117fc4c6fed fix_bytespersigop_checks-mini
 		#30.xTODO# NOTE: Excludes removal of buggy wrapper for diff-minimisation; needs checking manually (to ensure wrapper doesn't get used even in final/complete merge of all PRs) when assembly done; known issues: stash 172d7d7a9 or 81541e24c01
 		# Related bug in #18479
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
