@@ -47,10 +47,10 @@ checkout v30.0rc1
 	-     relsrc_embed_tagname-30+knots			52c08c64519	last=49911af8dc6 relsrc_embed_tagname-29+knots
 		# Was part of #18902
 	18427 2020mingwthrd-mini					52e30e24120	 # Latest code now
-	18490 bugfix_symcheck_pe_case				87c6edc40bb
+	18490 bugfix_symcheck_pe_case-30			87c6edc40bb	last=84afd82ac5b bugfix_symcheck_pe_case
 	14968 http_bind_error						4c94a57b317	last=7b5e4001f9 laanwj/2018_12_http_bind_error
-	-     http_bind_error+extra					98902ee54f1
-		# NOTE: libevent-copied code more-or-less up to date as of 2025-04-04 112421c8fa4840acd73502f2ab6a674fc025de37 (upstream has added more portable TCP keepalive, setting keepalive interval to 5min, failure if setting keepalive or reusable fail, and merged 1a6dd1ff1b8 but not e8461128b8d,5a067073d77,45dd91f71f4)
+	-     http_bind_error+extra-30				98902ee54f1	last=fc1d58d4d03 http_bind_error+extra
+		# NOTE: libevent-copied code more-or-less up to date as of 2025-09-11 112421c8fa4840acd73502f2ab6a674fc025de37 (upstream has added more portable TCP keepalive, setting keepalive interval to 5min, failure if setting keepalive or reusable fail, and merged 1a6dd1ff1b8 but not e8461128b8d,5a067073d77,45dd91f71f4)
 	 9524  rpc_pruneblkchain0					4bf17a16144	last=88883ae13d
 	10731 log_more_uacomment					2e933c464e8
 	29614 bufferedfile_fclose					9d2ac4ddb66
