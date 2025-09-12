@@ -54,13 +54,13 @@ checkout v30.0rc1
 	 9524  rpc_pruneblkchain0					4bf17a16144	last=88883ae13d
 	10731 log_more_uacomment					2e933c464e8
 	29614 bufferedfile_fclose					9d2ac4ddb66
-	14485 fadvise-29+knots						bffc1241fd6  # Latest code now
+	14485 fadvise-30+knots						bffc1241fd6	last=553f6d8e22f fadvise-29+knots
 		# Was #12491
 	# Needs review: 21313 fsync_dir_pt2 after PR submitted & reviewed & tested
 	# Needs bugfix: -     fsync_dir_win
 	-     rpcarg_type_per_name					744ec512987
 	-     fix_rpc_arg_multiname					fb7b1a996ca
-	-     bugfix_rpc_getbalance_hacky			a8c0a9147ab
+	-     bugfix_rpc_getbalance_hacky-30		a8c0a9147ab	last=d4b5aa0f04a bugfix_rpc_getbalance_hacky
 	# FIX THE BELOW:
 	#14602 bugfix_rpc_getbalance_untrusted-0.17				last=cfa948da1c bugfix_rpc_getbalance_untrusted
 	#-     bugfix_rpc_getbalance_acctstar-0.17
@@ -1105,6 +1105,7 @@ checkout v30.0rc1
 		30.xTODO: MOST MERGED: revert? #32438 refactor: Removals after bdb removal ... #32440 #32448 #32449 #32452 #32459 #32476 #32481 #32511 #32459 #32523 #32569 #32596 #32618 #32619? #32620? #32758 #32768? #32944? #32977?(might need #33041 to replace it?) #32990? #33032? (replace #33064->#27593??) #33075 #33082? #33161 #33179
 		30.xTODO: revert #28710  Remove the legacy wallet and BDB dependency (MERGED)
 		30.xTODO: revert #31250  wallet: Disable creating and loading legacy wallets (MERGED)
+		30.xTODO: restore d5ac1a2b0b1...c404f4a7407
 	14641 fundraw_min_conf_deprecated-25+knots	3e7e0decffa	last=55a0b4c0f90 promag/2018-11-fundrawtransaction
 	-    preserve_unsupported_keyflags			9897db72251
 	-     netperms_implicit_addr				b4868055e38
