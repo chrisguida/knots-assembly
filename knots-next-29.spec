@@ -186,7 +186,8 @@ checkout v29.1
 	# Needs review: 28514 -  # wallet: Fix wallet directory initialization
 	# Needs concept review: g762 -  # Update about logo icon (colour) to denote the chain type of the QT instance in About/ Help Message Window/ Dialog
 	28616 Sjors/2023/10/assume-unconfirmed		3f131e38266	last=3e281590c7d  # assumeutxo_unconfirmed_ux_Sjors-28
-	-     assumeutxo_unconfirmed_ux-29			9c78260a377
+	(CHECK-LAST)	last=202163a6778 assumeutxo_unconfirmed_ux_Sjors-30
+	-     assumeutxo_unconfirmed_ux-29			9c78260a377	last=ee1bfd9dada assumeutxo_unconfirmed_ux-30
 	-     qt_recomm_confirms-0.9				9b7a9b39d9a
 		# NOTE: Un-hardcoding 6 already taken care of in assumeutxo_unconfirmed_ux above (956546a1f2f)
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
