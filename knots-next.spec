@@ -512,7 +512,7 @@ checkout v30.0rc1
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
-	19873 mempressure-29+knots					f74d806474e	last=5b43cc77824 mempressure
+	Prefer upstream? 19873 mempressure-29+knots					f74d806474e	last=5b43cc77824 mempressure
 		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
 	# Needs review/testing: - maxmem_coins_cache
 		# TODO: Some way to override... see #26471 discussion
@@ -579,7 +579,7 @@ checkout v30.0rc1
 		# NOTE: Might require #28192
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							05f22347c13
-	24963 rpc_walletprocesspsbt_options-26		8d7787aa571	last=40143bafb52 rpc_walletprocesspsbt_options
+	Prefer upstream? 24963 rpc_walletprocesspsbt_options-26		8d7787aa571	last=40143bafb52 rpc_walletprocesspsbt_options
 		# Diff-minimised (and uses merge for rpcarg_type_per_name)
 		# Held back f43f992b731...40143bafb52:
 			#* 40143bafb52 QA: rpc_psbt: Test that the wrong type cannot be given to named params
@@ -673,7 +673,7 @@ checkout v30.0rc1
 	# Waiting for #26626: 26627 achow101/migrate-nonhd-key-list
 	# Needs work: 26938 brunoerg/2023-01-avoid-as
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
-	27034 rpc_importaddr_for_descwallet-27+k	883f7d0d710	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
+	Prefer upstream? 27034 rpc_importaddr_for_descwallet-27+k	883f7d0d710	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
 	27052 rpc_getpeerinfo_lastblockann-28		07eabfbc28b	last=cbe4603a902 LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
@@ -692,7 +692,7 @@ checkout v30.0rc1
 		# Reverted forceinbound limit anti-feature (& rel notes)
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
-	27770 rpc_getblockfileinfo-28+knots			3a310d4bf24	last=5090771f326 furszy/2023_rpc_getblockfileinfo
+	Prefer upstream? 27770 rpc_getblockfileinfo-28+knots			3a310d4bf24	last=5090771f326 furszy/2023_rpc_getblockfileinfo
 	#30.xTODO# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 		# Note alternative (approach NACK'd) in #28453
@@ -751,9 +751,9 @@ checkout v30.0rc1
 	30713 tdb3/relevant_blocks_in_scanblocks_status	771f38d4a5c	last=5b2d0216d87  # rpc_scanblocks_status_results-28
 	#30.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
-	30860 bashcomp_bcli_generate-29				a29ec7810ef	last=abf6ad42bdb BrandonOdiwuor/bash-completion
+	Prefer upstream? 30860 bashcomp_bcli_generate-29				a29ec7810ef	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
-	30886 rpc_descrprocesspsbt_prevtxs-28+knots	0125b96f50a	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
+	Prefer upstream? 30886 rpc_descrprocesspsbt_prevtxs-28+knots	0125b96f50a	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
 	# Needs work? 31252 rpc_TxToUniv_witScript-28								last=4e128d4f9b2
@@ -781,7 +781,7 @@ checkout v30.0rc1
 	# WIP: 32741 rpc_getpeerinfo_nodeid-28							last=9393b33325e
 		# OR #32972 ?
 	# TODO: Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
-	32844 rpc_gettxoutproof_segwit-27+knots		1add226bf59	last=23edd3db4f1 rpc_gettxoutproof_segwit
+	Prefer upstream? 32844 rpc_gettxoutproof_segwit-27+knots		1add226bf59	last=23edd3db4f1 rpc_gettxoutproof_segwit
 	# WIP: 32857 Sjors/2025/07/no_script_path
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	#30.xTODO# Revert #33069 (wallet: Add Support for BIP-353 DNS-Based Bitcoin Address via External Resolver) ?
