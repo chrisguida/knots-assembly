@@ -237,11 +237,11 @@ checkout v29.1
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
 		# +#32580 ?
 	# Needs work: g823 -  # wallet: Improve error log color in the console
-	-     detect_clang_bug96267					ffd86470c7e
+	-     detect_clang_bug96267					ffd86470c7e	last=86583da74df detect_clang_bug96267-30
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 		# Was: 26426 fjahr/202210-coinstatsindex-overflow
-	# Needs careful review: 30479 mzumsande/202407_fix_resetfailure
+	30479 mzumsande/202407_fix_resetfailure
 	# If needed? 30489 theuni/depends-zmq-patch
 	# Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
 		# was: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*

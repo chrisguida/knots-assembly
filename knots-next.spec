@@ -225,9 +225,8 @@ checkout v30.0rc1
 	#30.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs work: g823 -  # wallet: Improve error log color in the console
-	-     detect_clang_bug96267					ffd86470c7e
+	-     detect_clang_bug96267-30				ffd86470c7e	last=8fbdf93878f detect_clang_bug96267
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
-	MERGED: Needs careful review: 30479 mzumsande/202407_fix_resetfailure
 	# If needed? 30489 theuni/depends-zmq-patch
 	# Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
 		# was: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*

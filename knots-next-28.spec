@@ -258,7 +258,7 @@ checkout v28.2
 	# Needs review: 30410 mzumsande/202407_getblock_error
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 		# Was: 26426 fjahr/202210-coinstatsindex-overflow
-	# Needs careful review: 30479 mzumsande/202407_fix_resetfailure
+	30479 mzumsande/202407_fix_resetfailure
 	30508 fix_depends_zmq_cmake_pc-28			155737973b5
 	# Needs review: 30529 ryanofsky/pr/listset
 	# If needed? 30489 theuni/depends-zmq-patch
