@@ -255,14 +255,10 @@ checkout v30.0rc1
 	# Needs concept & review: 32123 -  # wallet: make coinbase that will mature on the next block available for selection
 	# Needs review: 32143 -  # Fix 11-year-old mis-categorized error code in OP_IF evaluation
 	# Needs review: 32180 mzumsande/202403_ibd_lastcommonblock
-	MERGED: 32185 fix_dbwrapper_batch_header_size-26	9a3e987c02d
-		# Only the fix, without the bumped LevelDB version dep
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	# Needs review: 32199 maflcko/2504-time
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	# Needs review: 32367 hebasto/250428-enable-lang
-	-     fix_fs_error_utf8-23					c7c558250da
-		MERGED # Alternative to core#32383 hebasto/250429-fs-error
 	32414 fix_reidxcs_periodic-25				25587d794f9	last=c1e554d3e58 andrewtoth/reindex-flush
 		# Fix only
 		# TODO: consider performance refactor?
