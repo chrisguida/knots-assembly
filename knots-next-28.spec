@@ -919,6 +919,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	#29.xTODO# -     rpc_getmpinfo_policy_coreetc-28+knots
 	# Needs review: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	#28.xTODO# Split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
+		+#33311 laanwj/2025-10-pcp-logging
 	30183 rpc_asmap_followup_pr30183-28			5d05d456bab
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors

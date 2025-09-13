@@ -346,6 +346,7 @@ checkout v29.1
 	# Needs review: 33268 achow101/zero-value-from-me
 	# Needs review: 33296 Crypt-iQ/cmpctblock_assume_fix_09032025
 	33310 wrkarnd_gcc_systemtap_ice
+	33311 laanwj/2025-10-pcp-logging
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
