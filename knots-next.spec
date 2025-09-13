@@ -203,9 +203,6 @@ checkout v30.0rc1
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29175 fix_rpc_estmode_unset_case-30			30359d692f3	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive
 	# Needs work: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
-	MERGED: 31551 bulk_block_rw-29+knots				9c1b259c06b
-		# Optimisation, not fix - but simplifies #29307 (MERGED)
-	MERGED: 29307 AutoFile_error_check-29+knots			eef5c9b1e3a	last=c10e382d2a3 vasild/AutoFile_error_check
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	29640 fix_tiebreak_on_disk-26				176d6e2a7b1	last=0465574c127 sr-gi/202403-block-tiebreak
