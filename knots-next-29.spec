@@ -246,6 +246,7 @@ checkout v29.1
 	# Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
 		# was: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	31275 fix_rpc_example_quoting_pr31275-24	6b5aa2cd846	last=7e93e292598
+		FIXME: check upstream lockunspent applicability!
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
 	# Needs work: 31349 vasild:test_log_internet_traffic
 	# Needs work: 31378 furszy/2024_wallet_migration_multisig_crash
