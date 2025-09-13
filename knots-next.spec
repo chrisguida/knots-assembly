@@ -235,13 +235,9 @@ checkout v30.0rc1
 	# Needs work: 31349 vasild:test_log_internet_traffic
 	# Needs work: 31378 furszy/2024_wallet_migration_multisig_crash
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
-	MERGED: Needs careful review: 31405 mzumsande/202411_stricter_invalidblock_handling
-		+32843
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
-	Revert: Knots NOT AFFECTED: 31453 (MERGED) macos_exfat_warning-29+knots			25f0359c100	last=db3228042b2 willcl-ark/macos-exfat
-		# Checking blocksdir unconditionally in case it's a mountpoint
-		# Dropped doc change
-		# Added warning before leaving GUI firstrun screen
+	-     revert_macos_exfat_warning
+		# Knots 28 included GUI firstrun improvements beyond #31453
 		# Only affects macOS 14.x (13.x and 15.x unaffected)
 		# Knots gets rid of likely-buggy macOS-specific AllocateFileRange in fix_preallocate, which fixed this
 	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
