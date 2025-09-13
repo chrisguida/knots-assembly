@@ -193,12 +193,12 @@ checkout v29.1
 	# Needs review & triage: 28678 sipa/202310_miniscript_assume
 	# Needs review: g775 -  # gui: add used balance to overview page
 	# Needs review: 28780 -  # log: torcontrol opt checks
-	-     fix_keep_notmy_cookie					49ea6490746
+	-     fix_keep_notmy_cookie					49ea6490746	last=61678a031e1 fix_keep_notmy_cookie-30
 		# Originally part of #28784, but regressed in d95dde9441f...7cb9367157e
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
 	28944 rpc_sendall_anti_fee_sniping-28		ebf6bd332f0	last=aac0b6dd79b ishaanam/sendall_anti_fee_sniping
-	-     rpc_walletcfpsbt_antifeesniping-28+k	3d477da7b95
+	-     rpc_walletcfpsbt_antifeesniping-28+k	3d477da7b95	last=6fc07948bdd rpc_walletcfpsbt_antifeesniping-30+k
 	(CHECK-LAST)	last=113ba106273 Sjors/2025/07/locktime
 		# Includes tests from #32892
 	29141 fix_rpcauth_blank						07e7273ab2c
@@ -208,6 +208,7 @@ checkout v29.1
 		#30.xTODO# but deviating from Core signing may reduce participants?
 	# Needs review: 29155 -  # wallet: move lock at the top of ReleaseWallet
 	29175 -										30359d692f3	last=be8ae64b82e  # rpc: validate fee estimation mode case insensitive (fix_rpc_estmode_unset_case-24)
+	(CHECK-LAST)	last=4a833a7ae11 fix_rpc_estmode_unset_case-30
 	# Needs work: g786  -  # FIX:When opening or autoloading wallets there should be clear messages about rescanning in progress and wallets' names.
 	31551 bulk_block_rw-29+knots				9c1b259c06b
 		# Optimisation, not fix - but simplifies #29307
