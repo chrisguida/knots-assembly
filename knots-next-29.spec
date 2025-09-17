@@ -10,10 +10,10 @@ checkout v29.2rc1
 		# https://bugs.gentoo.org/show_bug.cgi?id=958361
 		# https://github.com/google/crc32c/commit/2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07
 # SYSLIBS:
-	2241  sys_leveldb							a0ecf548285	last=9be22e8126a sys_leveldb-30
+	2241  sys_leveldb							a0ecf548285	last=bd2be933f26 sys_leveldb-30
 		# Related: #32447
 		# If https://github.com/bitcoin-core/leveldb-subtree/pull/52 is merged, this should possibly be adapted
-	5416  sys_libsecp256k1						0de78dc8ead	last=7fe13e05ee1 sys_libsecp256k1-30
+	5416  sys_libsecp256k1						0de78dc8ead	last=0a4a73bb830 sys_libsecp256k1-30
 	# TODO: sys_crc32c ??
 	# Hopelessly diverged? -     sys_univalue					5a04090dfe1
 	# Hopelessly diverged? 7485  sys_univalue_def				30111aa138c
@@ -179,7 +179,7 @@ checkout v29.2rc1
 	# Needs review: 28235 -  # p2p: ensure mapBlockSource is removed from in ProcessBlock
 	# Needs review: 28248 jonatack/2023-08-network-diversity
 	28345 fix_bytespersigop_checks-mini			f832cbd25bd	last=6f627727739 fix_bytespersigop_checks
-	(CHECK-LAST)	last=147f35f32ee fix_bytespersigop_checks-mini-30
+	(CHECK-LAST)	last=cd8ab840ad6 fix_bytespersigop_checks-mini-30
 		# Related bug in #18479
 	# Needs review: 28395 furszy/2023_coinselection_fix_bnb_upper_bound
 	# Needs concept ACK (even if merged): 28488 naumenkogs/2023-9-evict-minfee
@@ -238,7 +238,7 @@ checkout v29.2rc1
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
 		# +#32580 ?
 	# Needs work: g823 -  # wallet: Improve error log color in the console
-	-     detect_clang_bug96267					ffd86470c7e	last=86583da74df detect_clang_bug96267-30
+	-     detect_clang_bug96267					ffd86470c7e	last=ea6ae8d271e detect_clang_bug96267-30
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 		# Was: 26426 fjahr/202210-coinstatsindex-overflow
