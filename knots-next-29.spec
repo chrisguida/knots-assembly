@@ -3,7 +3,7 @@ timestamp 2025-09-03 17:57:31
 
 #.. checked up to PR #33296 / gui #884 / knots #160
 
-checkout v29.1
+checkout v29.2rc1
 @29.x-syslibs
 # BUILD BUGS:
 	# TODO: CMake 4 compat
@@ -313,7 +313,6 @@ checkout v29.1
 	#30.xTODO# If #32566 is merged, test extensively with Windows quoting nonsense
 	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
 	# Needs review and simplification? 32636 davidgumberg/5-27-2025-create-refactor
-	# Needs careful review: 32646 instagibbs/2025-05-fillblock-mutated
 	32682 fix_wallet_fillpsbt_nothrow-28		e62a71bc283
 		# Diff-minimised only
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
@@ -345,8 +344,6 @@ checkout v29.1
 	# Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	# Needs work: 33231 w0xlt/mulitple_binds
 	# Needs review: 33268 achow101/zero-value-from-me
-	# Needs review: 33296 Crypt-iQ/cmpctblock_assume_fix_09032025
-	33310 wrkarnd_gcc_systemtap_ice
 	33311 laanwj/2025-10-pcp-logging
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
