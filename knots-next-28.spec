@@ -461,7 +461,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 	30301 theuni/miniupnp-228-bump
-	TODO: bump to 2.3.3 in restore_upnp-29.1+knots
+	TODO: bump to 2.3.3 in restore_upnp-29.2+knots
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
 @28.x-knots

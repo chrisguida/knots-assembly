@@ -240,12 +240,11 @@ checkout v29.2rc1
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
 	# Needs review: 30469 fjahr/2024-07-csi-overflow-2
 		# Was: 26426 fjahr/202210-coinstatsindex-overflow
-	30479 mzumsande/202407_fix_resetfailure
+	# Needs backport: 30479 mzumsande/202407_fix_resetfailure
 	# If needed? 30489 theuni/depends-zmq-patch
 	# Needs review: 30972 BrandonOdiwuor/wallet-listreceivedby-fix
 		# was: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	31275 fix_rpc_example_quoting_pr31275-24	6b5aa2cd846	last=7e93e292598
-		FIXME: check upstream lockunspent applicability!
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
 	# Needs work: 31349 vasild:test_log_internet_traffic
 	# Needs work: 31378 furszy/2024_wallet_migration_multisig_crash
@@ -342,7 +341,7 @@ checkout v29.2rc1
 	# Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	# Needs work: 33231 w0xlt/mulitple_binds
 	# Needs review: 33268 achow101/zero-value-from-me
-	33311 laanwj/2025-10-pcp-logging
+	33311 log_quiet_pcp_unsupported-29
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -971,7 +970,7 @@ checkout v29.2rc1
 # Non-upstreamed functionality:
 	-     rm_tarball_ci-29+knots				7c56cb2b99b
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
-	-     restore_upnp-29.1+knots				81360fdd41b
+m	-     restore_upnp-29.2+knots				81360fdd41b
 		# NOTE: Includes #30301 theuni/miniupnp-228-bump
 		#30.xTODO# Revert #32500
 	n/a   restore_feefilter_opt					22e9d95fd02

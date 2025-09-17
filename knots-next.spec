@@ -894,7 +894,7 @@ checkout v30.0rc1
 # Non-upstreamed functionality:
 	-     rm_tarball_ci-29+knots				7c56cb2b99b
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
-	-     restore_upnp-29.1+knots				81360fdd41b
+	-     restore_upnp-29.2+knots				81360fdd41b
 		# NOTE: Includes #30301 theuni/miniupnp-228-bump
 		30.xTODO: Revert #32500 (MERGED)
 	n/a   restore_feefilter_opt					22e9d95fd02
