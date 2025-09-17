@@ -13,9 +13,6 @@ checkout v28.2
 	32437 fanquake/extend_asan_sse4
 	Triage: 32484 fanquake/28_suppress_unterm_string_init
 	Triage: Part of? 32551 hebasto/250518-crypto-macros
-	# TODO: CMake 4 compat
-		# https://bugs.gentoo.org/show_bug.cgi?id=958361
-		# https://github.com/google/crc32c/commit/2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)

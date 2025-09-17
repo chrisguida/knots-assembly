@@ -6,9 +6,7 @@ timestamp 2025-09-03 17:57:31
 checkout v29.2rc1
 @29.x-syslibs
 # BUILD BUGS:
-	# TODO: CMake 4 compat
-		# https://bugs.gentoo.org/show_bug.cgi?id=958361
-		# https://github.com/google/crc32c/commit/2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07
+	# None!
 # SYSLIBS:
 	2241  sys_leveldb							a0ecf548285	last=bd2be933f26 sys_leveldb-30
 		# Related: #32447

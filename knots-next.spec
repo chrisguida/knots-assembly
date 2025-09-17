@@ -6,9 +6,7 @@ lastapply no-merge
 checkout v30.0rc1
 @30.x-syslibs
 # BUILD BUGS:
-	# TODO: CMake 4 compat
-		# https://bugs.gentoo.org/show_bug.cgi?id=958361
-		# https://github.com/google/crc32c/commit/2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07
+	# None!
 # SYSLIBS:
 	2241  sys_leveldb-30						a0ecf548285	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
