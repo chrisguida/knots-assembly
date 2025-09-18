@@ -1,7 +1,7 @@
-timestamp 2025-09-03 17:57:31
+timestamp 2025-09-18 23:31:34
 #lastapply no-merge
 
-#.. checked up to PR #33296 / gui #884 / knots #160
+#.. checked up to PR #33430 / gui #886 / knots #160
 
 checkout v28.2
 @28.x-syslibs
@@ -285,6 +285,7 @@ checkout v28.2
 	g836  fix_qt_opts_proxy_ipv6-24				88243053a15
 	31275 fix_rpc_example_quoting_pr31275-24	ad6c4570514	last=49ffbc6077d
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
+	# OR: Needs work: 33361 -  # Fix #25980: Validate transactions in combinerawtransaction
 	31343 qa_dummy_proxy-21						0247e6fe0b8
 	31646 qafix_inet_access_pr31646-28			bb9302e344a	last=2ed161c5ce6 vasild/test_avoid_internet_traffic
 	# Needs work: 31349 vasild:test_log_internet_traffic
@@ -389,6 +390,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
 	# Needs review and simplification? 32636 davidgumberg/5-27-2025-create-refactor
 	Triage: 32646 instagibbs/2025-05-fillblock-mutated
+		# 29.x backport in #33344
 	32682 fix_wallet_fillpsbt_nothrow-28
 		# Diff-minimised only
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
@@ -424,8 +426,20 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	# Needs work: 33231 w0xlt/mulitple_binds
 	# Needs review: 33268 achow101/zero-value-from-me
+		# 30.x backport in #33356
 	# Needs review: 33296 Crypt-iQ/cmpctblock_assume_fix_09032025
+		# 29.x backport in #33344
+	# Needs review: 33297 -  # cmake: Inherit WERROR setting for secp256k1 build
 	33310 wrkarnd_gcc_systemtap_ice
+	33340 hebasto/250908-fix-csv
+		# 28.x backport in #33415
+	# Needs review: 33358 -  # contrib: fix for macOS deployment build failing on Qt translations even though it is optional.
+	# Needs review: 33360 -  # rpc: Add validation for invalid taproot signatures in analyzepsbt
+	33395 mzumsande/202509_whitelist_onion
+		# 28.x backport in #33415
+	Review: 33427 john-moffett/rpc-submitpackage-reportall
+	# Needs review: 33430 john-moffett/rpc-addpeeraddress-error
+	g886  davidgumberg/2025-09-03-textedit-oom-fix
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -557,6 +571,14 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# Broken backport to 29.x in #33238
 	# Needs review: 33253 ajtowns/202508-cache-friendly-compactblock
 	#28.xTODO# 33264 kevkevinpal/reduceScopeOfGetBlockTemplateLock
+	33299 mzumsande/2025_wallet_log_less
+	33304 fanquake/strip_qt_bins
+	# Needs review: 33306 fjahr/2025-09-csi-compaction
+	# Conflicts with #18014? Needs review: 33325 Raimo33/siphash-write-chunked
+	# Needs review: 33328 -  # Mapping for Lockedpool
+	33332 fjahr/2025-09-trivial-copy
+	Review: 33334 Raimo33/index-work-comparator-branchless
+	Review: 33410 -  # coinstats: avoid unnecessary Coin copy in ApplyHash
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -918,6 +940,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 29959 laanwj/2024-04-qtsowrap-wayland (needs also #29923)
 	#28.xTODO# Split from NAT-PMP removal? 30043 laanwj/2024-05-pcp
 		+#33311 laanwj/2025-10-pcp-logging
+		+#33338 TheCharlatan/pcp_interrupt (diff-minimise)
 	30183 rpc_asmap_followup_pr30183-28			5d05d456bab
 	# Needs review: 30080 -  # wallet: add coin selection parameter add_excess_to_recipient_position for changeless txs with excess that would be added to fees
 	# Needs review & Core release (wallet format): 30243 -  # Tr partial descriptors
@@ -939,6 +962,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	30860 bashcomp_bcli_generate-28				7a279182b1f	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 	(CHECK-LAST)	last=af6f73734e2 bashcomp_bcli_generate-29
 		# Bugfix + Left off re-generation until later
+	# Needs work: 33402 -  # contrib: Add zsh completion scripts
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	30930 netinfo_svcs_outonly-28				c4dd1db3f36
@@ -1002,6 +1026,11 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review: 33191 ajtowns/202508-sendtemplate1
 	Minimised: 33230 achow101/cli-strong-or-json
 	# Needs work? 33259 rpc_getblockchaininfo_bgvalidation-26				last=c1f545248ea  # rpc, logging: add backgroundvalidation to getblockchaininfo
+	# Needs work: 33324 l0rinc/l0rinc/reobfuscate-blocks
+	# Needs review: 33336 l0rinc/l0rinc/log-initial-signature-verification-state
+	# Needs work? 33353 l0rinc/l0rinc/show-reindex-progress
+	# Needs concept & review: 33392 -  # wallet/rpc: add scan_utxoset option to getbalance(s) to verify wallet balance accuracy
+	# Needs review & JIT safety: 33414 vasild/tor_pow
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1362,7 +1391,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250903)			ba223403bbc
+	n/a  (bump_version=Knots:20250918)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits

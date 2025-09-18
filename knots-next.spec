@@ -1,7 +1,7 @@
-timestamp 2025-09-03 17:57:31
+timestamp 2025-09-18 23:31:34
 lastapply no-merge
 
-#.. checked up to PR #33296 / gui #884 / knots #160
+#.. checked up to PR #33430 / gui #886 / knots #160
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -231,6 +231,7 @@ checkout v30.0rc1
 		# was: 25973 -  # wallet: Filter-out "send" addresses from listreceivedby*
 	31275 -										6b5aa2cd846	last=7e93e292598	# fix_rpc_example_quoting_pr31275-24
 	# Needs work? (adds overhead) 31298 -  # rpc: combinerawtransaction now rejects unmergeable transactions
+	# OR: Needs work: 33361 -  # Fix #25980: Validate transactions in combinerawtransaction
 	# Needs work: 31349 vasild:test_log_internet_traffic
 	# Needs work: 31378 furszy/2024_wallet_migration_multisig_crash
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
@@ -290,8 +291,15 @@ checkout v30.0rc1
 	# Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	# Needs work: 33231 w0xlt/mulitple_binds
 	# Needs review: 33268 achow101/zero-value-from-me
+	# Needs review: 33297 -  # cmake: Inherit WERROR setting for secp256k1 build
 	33310 wrkarnd_gcc_systemtap_ice
 	33311 laanwj/2025-10-pcp-logging
+	Diff-minimise: 33338 TheCharlatan/pcp_interrupt
+	# Needs review: 33358 -  # contrib: fix for macOS deployment build failing on Qt translations even though it is optional.
+	# Needs review: 33360 -  # rpc: Add validation for invalid taproot signatures in analyzepsbt
+	Review: 33422 hodlinator/2025/09/32132_follow_up
+	Review: 33427 john-moffett/rpc-submitpackage-reportall
+	# Needs review: 33430 john-moffett/rpc-addpeeraddress-error
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -394,6 +402,14 @@ checkout v30.0rc1
 	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
 	# Needs work/review: 32885 pstratem/2025-07-05-lockless-isibd
 	# Needs review: 33031 achow101/lasthardened-cache-migratewallet
+	33299 mzumsande/2025_wallet_log_less
+	33304 fanquake/strip_qt_bins
+	# Needs review: 33306 fjahr/2025-09-csi-compaction
+	# Conflicts with #18014? Needs review: 33325 Raimo33/siphash-write-chunked
+	# Needs review: 33328 -  # Mapping for Lockedpool
+	33332 fjahr/2025-09-trivial-copy
+	Review: 33334 Raimo33/index-work-comparator-branchless
+	Review: 33410 -  # coinstats: avoid unnecessary Coin copy in ApplyHash
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -416,6 +432,7 @@ checkout v30.0rc1
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
 			# When restoring libbitcoinkernel support, adjust libbitcoinconsensus reverts to make it interact with --with-libs (see 7ad32d39d76)
 	-     rm_multiprocess						b7edbefc5be
+		TODO: delete embedded lib
 		# TODO: Support libmultiprocess
 	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
 		# test2: export of symbol _IO_stdin_used not allowed!
@@ -506,6 +523,7 @@ checkout v30.0rc1
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	Prefer upstream? 19873 mempressure-29+knots					f74d806474e	last=5b43cc77824 mempressure
 		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
+		#31.xTODO# Revert #33333 ? (mere warning for large dbcache)
 	# Needs review/testing: - maxmem_coins_cache
 		# TODO: Some way to override... see #26471 discussion
 	# Needs work: g86   hebasto-g/200902-tor
@@ -745,6 +763,7 @@ checkout v30.0rc1
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	Prefer upstream? 30860 bashcomp_bcli_generate-29				a29ec7810ef	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
+	# Needs work: 33402 -  # contrib: Add zsh completion scripts
 	Prefer upstream? 30886 rpc_descrprocesspsbt_prevtxs-28+knots	0125b96f50a	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
@@ -783,6 +802,11 @@ checkout v30.0rc1
 		# Left off test changes
 	# Needs work? 33259 rpc_getblockchaininfo_bgvalidation-26				last=c1f545248ea  # rpc, logging: add backgroundvalidation to getblockchaininfo
 	#30.xTODO# 33290 Sjors/2025/08/missing_capnp
+	# Needs work: 33324 l0rinc/l0rinc/reobfuscate-blocks
+	# Needs review: 33336 l0rinc/l0rinc/log-initial-signature-verification-state
+	# Needs work? 33353 l0rinc/l0rinc/show-reindex-progress
+	# Needs concept & review: 33392 -  # wallet/rpc: add scan_utxoset option to getbalance(s) to verify wallet balance accuracy
+	# Needs review & JIT safety: 33414 vasild/tor_pow
 	-     qt_createunsigned_use_psbtops			74d90403d5e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -897,6 +921,7 @@ checkout v30.0rc1
 	-     restore_upnp-29.2+knots				81360fdd41b
 		# NOTE: Includes #30301 theuni/miniupnp-228-bump
 		30.xTODO: Revert #32500 (MERGED)
+		31.xTODO: Check if we still need the vcpkg workarounds
 	n/a   restore_feefilter_opt					22e9d95fd02
 	-     gui_payreq_textedit					be2e1f1539a
 	# NOTE: Restoring BIP70 would require restoring OpenSSL, protobuf, and Qt's OpenSSL support :(
@@ -1154,7 +1179,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				da40d1a238d	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250903)			72b3991901d
+	n/a  (bump_version=knots20250918)			72b3991901d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
 	n/a   (cherrypick=ab2e9ce0575)				59dd80edc0c  # release notes: write/update, including change log and credits
