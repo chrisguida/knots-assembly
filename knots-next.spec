@@ -1205,7 +1205,7 @@ checkout v30.0rc1
 # TODO: @30.x-knots-android
 	# 32262 hebasto/250413-android
 
-@30.x-knots-extratests
-	31367 dergoegge/2024-11-ci-ulimit-s
-	31410 hebasto/241203-multiwallet
-	33180 fanquake/asan_strict_string
+# TODO: @30.x-knots-extratests
+	# TODO: 31367 dergoegge/2024-11-ci-ulimit-s
+	# TODO: 31410 hebasto/241203-multiwallet
+	# TODO: 33180 fanquake/asan_strict_string

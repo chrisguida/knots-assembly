@@ -1415,9 +1415,9 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 
 # TODO: @28.x-knots-android
 
-@28.x-knots-extratests
-	TODO: Do both: 30913 maflcko/2409-ci-m1
-	31367 dergoegge/2024-11-ci-ulimit-s
-	31406 brunoerg/2024-12-fix-test-p2pcompactblocks
-	31410 hebasto/241203-multiwallet
-	33180 fanquake/asan_strict_string
+# TODO: @28.x-knots-extratests
+	# TODO: Do both: 30913 maflcko/2409-ci-m1
+	# TODO: 31367 dergoegge/2024-11-ci-ulimit-s
+	# TODO: 31406 brunoerg/2024-12-fix-test-p2pcompactblocks
+	# TODO: 31410 hebasto/241203-multiwallet
+	# TODO: 33180 fanquake/asan_strict_string
