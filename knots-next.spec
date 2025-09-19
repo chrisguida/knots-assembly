@@ -298,7 +298,7 @@ checkout v30.0rc1
 	# Needs review: 33358 -  # contrib: fix for macOS deployment build failing on Qt translations even though it is optional.
 	# Needs review: 33360 -  # rpc: Add validation for invalid taproot signatures in analyzepsbt
 	Review: 33422 hodlinator/2025/09/32132_follow_up
-	Review: 33427 john-moffett/rpc-submitpackage-reportall
+	# Needs concept: 33427 john-moffett/rpc-submitpackage-reportall
 	# Needs review: 33430 john-moffett/rpc-addpeeraddress-error
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c

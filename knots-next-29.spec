@@ -345,12 +345,13 @@ checkout v29.2rc1
 		# 30.x backport in #33356
 	# Needs review: 33297 -  # cmake: Inherit WERROR setting for secp256k1 build
 	33311 log_quiet_pcp_unsupported-29
-	Diff-minimise: 33338 TheCharlatan/pcp_interrupt
+	33338 pcp_interrupt-29
+		# Diff-minimised
 	# Needs review: 33358 -  # contrib: fix for macOS deployment build failing on Qt translations even though it is optional.
 	# Needs review: 33360 -  # rpc: Add validation for invalid taproot signatures in analyzepsbt
-	Review: 33427 john-moffett/rpc-submitpackage-reportall
+	# Needs concept: 33427 john-moffett/rpc-submitpackage-reportall
 	# Needs review: 33430 john-moffett/rpc-addpeeraddress-error
-	g886  davidgumberg/2025-09-03-textedit-oom-fix
+	g886  wrkrnd_qt_textedit_oom-0.14
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -466,14 +467,14 @@ checkout v29.2rc1
 		# Broken backport to 29.x in #33238
 	# Needs review: 33253 ajtowns/202508-cache-friendly-compactblock
 	#29.xTODO# 33264 kevkevinpal/reduceScopeOfGetBlockTemplateLock
-	33299 mzumsande/2025_wallet_log_less
+	33299 wallet_sqlite_version_once-21						last=862faf3fa7a mzumsande/2025_wallet_log_less
 	#29.xTODO# After 29.2 (to avoid rebuilding Qt): 33304 fanquake/strip_qt_bins
 	# Needs review: 33306 fjahr/2025-09-csi-compaction
 	# Conflicts with #18014? Needs review: 33325 Raimo33/siphash-write-chunked
 	# Needs review: 33328 -  # Mapping for Lockedpool
-	33332 fjahr/2025-09-trivial-copy
-	Review: 33334 Raimo33/index-work-comparator-branchless
-	Review: 33410 -  # coinstats: avoid unnecessary Coin copy in ApplyHash
+	33332 opti_arith_uint256_trivialcopy-28
+	33334 opti_blkidx_comparator-26+knots					last=80ac0467ef4 Raimo33/index-work-comparator-branchless
+	33410 opti_coinstats_nocopy_pr33410-26					last=5a56203f4e4  # coinstats: avoid unnecessary Coin copy in ApplyHash
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -496,7 +497,6 @@ checkout v29.2rc1
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
 			# When restoring libbitcoinkernel support, adjust libbitcoinconsensus reverts to make it interact with --with-libs (see 7ad32d39d76)
 	-     rm_multiprocess						b7edbefc5be
-		TODO: delete embedded lib
 		# TODO: Support libmultiprocess
 	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
 		# test2: export of symbol _IO_stdin_used not allowed!

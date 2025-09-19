@@ -437,9 +437,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33360 -  # rpc: Add validation for invalid taproot signatures in analyzepsbt
 	33395 mzumsande/202509_whitelist_onion
 		# 28.x backport in #33415
-	Review: 33427 john-moffett/rpc-submitpackage-reportall
+	# Needs concept: 33427 john-moffett/rpc-submitpackage-reportall
 	# Needs review: 33430 john-moffett/rpc-addpeeraddress-error
-	g886  davidgumberg/2025-09-03-textedit-oom-fix
+	Triage: g886  wrkrnd_qt_textedit_oom-0.14
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
