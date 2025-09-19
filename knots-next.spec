@@ -38,7 +38,7 @@ checkout v30.0rc1
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 	# If needed: -     ci_gha_makejobs_8						8cd076e06ab
 # FIXES:
-	-     qafix_rpc_bind_nonloopback_unavail
+	33433 qafix_rpc_bind_nonloopback_unavail
 	13789 asm_bypass_cxxflags					6ba82076749
 	32217 fix_gitdir_foreign					829e7360c77
 		# Was part of #18902

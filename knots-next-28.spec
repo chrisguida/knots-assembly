@@ -41,7 +41,7 @@ checkout v28.2
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 	31408 qafix_framework_pr31408-27			8d7611a7eca
 # FIXES:
-	-     qafix_rpc_bind_nonloopback_unavail
+	33433 qafix_rpc_bind_nonloopback_unavail
 	18818 guix_reltar_autogen_distclean			5bd6cb2eb0a	last=b5a164d9155 fix_gitian_src_202004
 	(CHECK-LAST)	last=3efb06b858b rm_minisketch-29+syslibs
 		#29.xTODO# Check GenerateBuildInfo.cmake ?
