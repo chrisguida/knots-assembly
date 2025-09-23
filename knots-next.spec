@@ -302,7 +302,7 @@ checkout v30.0rc1
 	# Needs review: 33430 john-moffett/rpc-addpeeraddress-error
 	# Needs review: 33443 l0rinc/l0rinc/rate-limit-rolling-forward
 	# Needs review: 33444 -  # rpc: Fix dumptxoutset rollback with competing forks
-	Partial: 33446 Sjors/2025/09/getblock-target
+	33446 Sjors/2025/09/getblock-target
 	# Needs work? g895  benthecarman-g/fix-dark-mode
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
