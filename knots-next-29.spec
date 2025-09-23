@@ -467,7 +467,7 @@ checkout v29.2rc1
 		# Broken backport to 29.x in #33238
 	# Needs review: 33253 ajtowns/202508-cache-friendly-compactblock
 	#29.xTODO# 33264 kevkevinpal/reduceScopeOfGetBlockTemplateLock
-	33299 wallet_sqlite_version_once-21						last=862faf3fa7a mzumsande/2025_wallet_log_less
+	# Needs work? 33299 wallet_sqlite_version_once-21						last=862faf3fa7a mzumsande/2025_wallet_log_less
 	#29.xTODO# After 29.2 (to avoid rebuilding Qt): 33304 fanquake/strip_qt_bins
 	# Needs review: 33306 fjahr/2025-09-csi-compaction
 	# Conflicts with #18014? Needs review: 33325 Raimo33/siphash-write-chunked
@@ -1258,7 +1258,7 @@ m	-     restore_upnp-29.2+knots				81360fdd41b
 	n/a  (bump_version=knots20250918)			72b3991901d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
-	n/a   (cherrypick=1c5da867f1d)				59dd80edc0c  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=02b3d26201c)				59dd80edc0c  # release notes: write/update, including change log and credits
 		# check travis for misspellings
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R

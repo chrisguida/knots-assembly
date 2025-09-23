@@ -402,7 +402,7 @@ checkout v30.0rc1
 	# Needs review: 32791 -  # checkqueue: implement a new scriptcheck worker pool with atomic variables
 	# Needs work/review: 32885 pstratem/2025-07-05-lockless-isibd
 	# Needs review: 33031 achow101/lasthardened-cache-migratewallet
-	33299 mzumsande/2025_wallet_log_less
+	# Needs work? 33299 mzumsande/2025_wallet_log_less
 	33304 fanquake/strip_qt_bins
 	# Needs review: 33306 fjahr/2025-09-csi-compaction
 	# Conflicts with #18014? Needs review: 33325 Raimo33/siphash-write-chunked

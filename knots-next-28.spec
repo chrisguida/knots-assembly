@@ -571,7 +571,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# Broken backport to 29.x in #33238
 	# Needs review: 33253 ajtowns/202508-cache-friendly-compactblock
 	#28.xTODO# 33264 kevkevinpal/reduceScopeOfGetBlockTemplateLock
-	33299 mzumsande/2025_wallet_log_less
+	# Needs work? 33299 mzumsande/2025_wallet_log_less
 	33304 fanquake/strip_qt_bins
 	# Needs review: 33306 fjahr/2025-09-csi-compaction
 	# Conflicts with #18014? Needs review: 33325 Raimo33/siphash-write-chunked
