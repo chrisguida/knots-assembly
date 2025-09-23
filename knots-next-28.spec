@@ -1,7 +1,7 @@
 timestamp 2025-09-23 09:26:05
 #lastapply no-merge
 
-#.. checked up to PR #33461 / gui#895 / knots#160
+#.. checked up to PR #33461 / gui#895 / knots#190
 
 checkout v28.2
 @28.x-syslibs
@@ -1245,6 +1245,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	33023 bigshiny90/compactblocks-extratxs-tests-core
 	Needs backport: k171  Raimo33/add-dockerfile							last=4b778a21835
 	k187  Retropex/dnsseed-leo
+	# Needs work: k190 -  # Add zsh completion script generation support
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness

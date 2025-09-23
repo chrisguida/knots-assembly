@@ -1,7 +1,7 @@
 timestamp 2025-09-23 09:26:05
 lastapply no-merge
 
-#.. checked up to PR #33461 / gui#895 / knots#160
+#.. checked up to PR #33461 / gui#895 / knots#190
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -1015,6 +1015,7 @@ checkout v30.0rc1
 	30.xTODO: Consider reverting #33050 )MERGED) ? (and #33183? (MERGED))
 	k171  Raimo33/add-dockerfile							last=4b778a21835
 	k187  Retropex/dnsseed-leo
+	# Needs work: k190 -  # Add zsh completion script generation support
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	68c2d3d03fb
 	-     pol_acceptunknownwitness				e39fca20239

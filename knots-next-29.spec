@@ -1,7 +1,7 @@
 timestamp 2025-09-23 09:26:05
 #lastapply no-merge
 
-#.. checked up to PR #33461 / gui#895 / knots#160
+#.. checked up to PR #33461 / gui#895 / knots#190
 
 checkout v29.2rc1
 @29.x-syslibs
@@ -1090,6 +1090,7 @@ m	-     restore_upnp-29.2+knots				81360fdd41b
 	#30.xTODO# Consider reverting #33050 ? (and #33183?)
 	k171  Raimo33/add-dockerfile							last=4b778a21835
 	k187  Retropex/dnsseed-leo								last=68abc8a3262
+	# Needs work: k190 -  # Add zsh completion script generation support
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	68c2d3d03fb
 	-     pol_acceptunknownwitness				e39fca20239
