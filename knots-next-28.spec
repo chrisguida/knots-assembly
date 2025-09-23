@@ -1,7 +1,7 @@
-timestamp 2025-09-18 23:31:34
+timestamp 2025-09-23 09:26:05
 #lastapply no-merge
 
-#.. checked up to PR #33430 / gui #886 / knots #160
+#.. checked up to PR #33461 / gui#895 / knots#160
 
 checkout v28.2
 @28.x-syslibs
@@ -246,7 +246,7 @@ checkout v28.2
 	#28.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
 		# Was: 25380 darosior/fee_estimator_disable_cpfp
 	-     jonatack/2024-05-fix-cjdns-detection-in-AddNode	0a3e577e9e8	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode  # fix_cjdns_addnode_detect2-27+knots
-	# Needs review: 30155 mzumsande/202405_replay_blocks
+	# Needs review: 30155 mzumsande/202405_replay_blocks OR 33442 l0rinc/l0rinc/interrupt-rolling-forward
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
 		# +#32580 ?
@@ -440,6 +440,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs concept: 33427 john-moffett/rpc-submitpackage-reportall
 	# Needs review: 33430 john-moffett/rpc-addpeeraddress-error
 	Triage: g886  wrkrnd_qt_textedit_oom-0.14
+	# Needs review: 33443 l0rinc/l0rinc/rate-limit-rolling-forward
+	# Needs review: 33444 -  # rpc: Fix dumptxoutset rollback with competing forks
+	# Needs work? g895  benthecarman-g/fix-dark-mode
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -986,6 +989,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	(CHECK-LAST)	last=f9b2197e7df rpc_dumptxoutset_fifo-29+knots
 		# Only the FIFO capability, left out the bundled scripts
 	# Too convoluted/pointless? Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
+		# +33446 Sjors/2025/09/getblock-target
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-28+knots				dee920da09d	last=0f68c47e931 vasild/peer_cpu_load
 	(CHECK-LAST)	last=77473c2e166 peer_cpu_load-29+knots
@@ -1031,6 +1035,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs work? 33353 l0rinc/l0rinc/show-reindex-progress
 	# Needs concept & review: 33392 -  # wallet/rpc: add scan_utxoset option to getbalance(s) to verify wallet balance accuracy
 	# Needs review & JIT safety: 33414 vasild/tor_pow
+	# Needs review: 33448 ajtowns/202508-reportinvtosend
+	# Needs work (new doc only applies to guix bins) & backport: 33451 hebasto/250921-install-docs
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1392,7 +1398,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250918)			ba223403bbc
+	n/a  (bump_version=Knots:20250928)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits

@@ -1,7 +1,7 @@
-timestamp 2025-09-18 23:31:34
+timestamp 2025-09-23 09:26:05
 lastapply no-merge
 
-#.. checked up to PR #33430 / gui #886 / knots #160
+#.. checked up to PR #33461 / gui#895 / knots#160
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -220,7 +220,7 @@ checkout v30.0rc1
 	#30.xTODO# Needs review: 30079 ismaelsadeeq/05-2023-ignore-transactions-with-parents
 		# Was: 25380 darosior/fee_estimator_disable_cpfp
 	-     jonatack/2024-05-fix-cjdns-detection-in-AddNode	9058fb89db4	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode  # fix_cjdns_addnode_detect2-27+knots
-	# Needs review: 30155 mzumsande/202405_replay_blocks
+	# Needs review: 30155 mzumsande/202405_replay_blocks OR 33442 l0rinc/l0rinc/interrupt-rolling-forward
 	#30.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	# Needs work: g823 -  # wallet: Improve error log color in the console
@@ -300,6 +300,10 @@ checkout v30.0rc1
 	Review: 33422 hodlinator/2025/09/32132_follow_up
 	# Needs concept: 33427 john-moffett/rpc-submitpackage-reportall
 	# Needs review: 33430 john-moffett/rpc-addpeeraddress-error
+	# Needs review: 33443 l0rinc/l0rinc/rate-limit-rolling-forward
+	# Needs review: 33444 -  # rpc: Fix dumptxoutset rollback with competing forks
+	Partial: 33446 Sjors/2025/09/getblock-target
+	# Needs work? g895  benthecarman-g/fix-dark-mode
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -807,6 +811,8 @@ checkout v30.0rc1
 	# Needs work? 33353 l0rinc/l0rinc/show-reindex-progress
 	# Needs concept & review: 33392 -  # wallet/rpc: add scan_utxoset option to getbalance(s) to verify wallet balance accuracy
 	# Needs review & JIT safety: 33414 vasild/tor_pow
+	# Needs review: 33448 ajtowns/202508-reportinvtosend
+	# Needs work (new doc only applies to guix bins): 33451 hebasto/250921-install-docs
 	-     qt_createunsigned_use_psbtops			74d90403d5e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1181,7 +1187,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				da40d1a238d	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250918)			72b3991901d
+	n/a  (bump_version=knots20250923)			72b3991901d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
 	n/a   (cherrypick=ab2e9ce0575)				59dd80edc0c  # release notes: write/update, including change log and credits
