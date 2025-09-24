@@ -802,7 +802,7 @@ checkout v30.0rc1
 	#30.xTODO# Revert #33069 (wallet: Add Support for BIP-353 DNS-Based Bitcoin Address via External Resolver) ?
 	# Needs concept: g882 -  # qt: add shift key modifier to clear command history when clearing the console
 	# Needs review: 33191 ajtowns/202508-sendtemplate1
-	33230 rpc_cli_hashorheight-29				926e7b7e8a6	last=aabf1f60938 achow101/cli-strong-or-json
+	33230 rpc_cli_hashorheight-29				926e7b7e8a6	last=df67bb6fd84 achow101/cli-strong-or-json
 		# Left off test changes
 	# Needs work? 33259 rpc_getblockchaininfo_bgvalidation-26				last=c1f545248ea  # rpc, logging: add backgroundvalidation to getblockchaininfo
 	#30.xTODO# 33290 Sjors/2025/08/missing_capnp
