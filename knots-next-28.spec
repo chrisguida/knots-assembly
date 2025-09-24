@@ -966,6 +966,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	(CHECK-LAST)	last=af6f73734e2 bashcomp_bcli_generate-29
 		# Bugfix + Left off re-generation until later
 	k190  -														last=cfc9f871ca3  # Add zsh completion script generation support
+		TODO: Ensure added to distdir like in 30860
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	30930 netinfo_svcs_outonly-28				c4dd1db3f36
@@ -1414,6 +1415,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		32425 release notes in #32727
 		32521 release notes in #33037 (but not Knots-specific)
 	n/a  (cherrypick=20338f1e833)				5f8256608fc  # update manpages (build first)
+		# WARNING: Don't forget to add zsh completion!
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#29.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
