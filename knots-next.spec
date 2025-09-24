@@ -767,7 +767,7 @@ checkout v30.0rc1
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	Prefer upstream? 30860 bashcomp_bcli_generate-29				a29ec7810ef	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
-	# Needs work: 33402 -  # contrib: Add zsh completion scripts
+	k190  feat_zsh_completion-29							last=cfc9f871ca3  # Add zsh completion script generation support
 	Prefer upstream? 30886 rpc_descrprocesspsbt_prevtxs-28+knots	0125b96f50a	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
@@ -1015,7 +1015,6 @@ checkout v30.0rc1
 	30.xTODO: Consider reverting #33050 )MERGED) ? (and #33183? (MERGED))
 	k171  Raimo33/add-dockerfile							last=4b778a21835
 	k187  Retropex/dnsseed-leo
-	# Needs work: k190 -  # Add zsh completion script generation support
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	68c2d3d03fb
 	-     pol_acceptunknownwitness				e39fca20239

@@ -965,7 +965,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	30860 bashcomp_bcli_generate-28				7a279182b1f	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 	(CHECK-LAST)	last=af6f73734e2 bashcomp_bcli_generate-29
 		# Bugfix + Left off re-generation until later
-	# Needs work: 33402 -  # contrib: Add zsh completion scripts
+	k190  -														last=cfc9f871ca3  # Add zsh completion script generation support
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	30930 netinfo_svcs_outonly-28				c4dd1db3f36
@@ -1245,7 +1245,6 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	33023 bigshiny90/compactblocks-extratxs-tests-core
 	Needs backport: k171  Raimo33/add-dockerfile							last=4b778a21835
 	k187  Retropex/dnsseed-leo
-	# Needs work: k190 -  # Add zsh completion script generation support
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness
