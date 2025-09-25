@@ -831,7 +831,7 @@ checkout v29.2rc1
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	30860 bashcomp_bcli_generate-29				a29ec7810ef	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
-	k190  feat_zsh_completion-29							last=cfc9f871ca3  # Add zsh completion script generation support
+	k190  feat_zsh_completion-29							last=e3f6d308a97  # Add zsh completion script generation support
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	0125b96f50a	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
