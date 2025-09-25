@@ -3,7 +3,7 @@ timestamp 2025-09-23 09:26:05
 
 #.. checked up to PR #33461 / gui#895 / knots#190
 
-checkout v29.2rc1
+checkout core/29.x
 @29.x-syslibs
 # BUILD BUGS:
 	# None!
@@ -35,7 +35,7 @@ checkout v29.2rc1
 	# TODO: 25160 hebasto/220517-ci
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
-	-     ci_gha_makejobs_8						8cd076e06ab
+NM	-     ci_gha_makejobs_8						8cd076e06ab
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail
 	13789 asm_bypass_cxxflags					6ba82076749
