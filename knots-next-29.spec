@@ -360,6 +360,7 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	# Needs work? g895  benthecarman-g/fix-dark-mode
 	#29.xTODO# Needs review: Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
 	33475 fix_block_full_enough_underflow-29+k				last=b807dfcdc59 ismaelsadeeq/09-2025-miner-infinite-loop-fix
+		# 30.x backport in #33473
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
