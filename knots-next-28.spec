@@ -1,7 +1,7 @@
-timestamp 2025-09-23 09:26:05
+timestamp 2025-09-25 10:43:41
 #lastapply no-merge
 
-#.. checked up to PR #33461 / gui#895 / knots#190
+#.. checked up to PR #33477 / gui#896 / knots#190
 
 checkout v28.2
 @28.x-syslibs
@@ -442,7 +442,10 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: g886  wrkrnd_qt_textedit_oom-0.14
 	# Needs review: 33443 l0rinc/l0rinc/rate-limit-rolling-forward
 	# Needs review: 33444 -  # rpc: Fix dumptxoutset rollback with competing forks
+	# OR (preferable): 33477 fjahr/202509-better-rollback
 	# Needs work? g895  benthecarman-g/fix-dark-mode
+	#28.xTODO# Needs review: Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
+	33475 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -991,6 +994,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# Only the FIFO capability, left out the bundled scripts
 	# Too convoluted/pointless? Needs review? (Part of??) 31583 Sjors/2024/12/gettarget
 		# +33446 Sjors/2025/09/getblock-target
+			# 29.x backport in #33474
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-28+knots				dee920da09d	last=0f68c47e931 vasild/peer_cpu_load
 	(CHECK-LAST)	last=77473c2e166 peer_cpu_load-29+knots
@@ -1038,6 +1042,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review & JIT safety: 33414 vasild/tor_pow
 	# Needs review: 33448 ajtowns/202508-reportinvtosend
 	# Needs work (new doc only applies to guix bins) & backport: 33451 hebasto/250921-install-docs
+	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1364,6 +1369,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		TODO: mention in -help / GUI about ?
 	-     rwconf_policy-28+knots				6fd67aa463d	last=86056333700 rwconf_policy-29+knots
 		# Includes Knots policy changes for simplification of final rebase process
+		28.xTODO: revert #33106
 		TODO? bump up blockreconstructionextratxn higher? and set a sane blockreconstructionextratxnsize default
 		FIXME: LimitOrphanTxSize needs to set m_opts.max_orphan_txs too! (this changed again in 29.x...)
 		#TODO: Add segwit wallet stuff?
@@ -1399,7 +1405,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250928)			ba223403bbc
+	n/a  (bump_version=Knots:20250925)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits

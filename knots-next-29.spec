@@ -1,7 +1,7 @@
-timestamp 2025-09-23 09:26:05
+timestamp 2025-09-25 10:43:41
 #lastapply no-merge
 
-#.. checked up to PR #33461 / gui#895 / knots#190
+#.. checked up to PR #33477 / gui#896 / knots#190
 
 checkout core/29.x
 @29.x-syslibs
@@ -354,8 +354,12 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	g886  wrkrnd_qt_textedit_oom-0.14
 	# Needs review: 33443 l0rinc/l0rinc/rate-limit-rolling-forward
 	# Needs review: 33444 -  # rpc: Fix dumptxoutset rollback with competing forks
+	# OR (preferable): 33477 fjahr/202509-better-rollback
 	33446 fix_rpc_getblock_target-29						last=bf7996cbc3b Sjors/2025/09/getblock-target
+		# 29.x backport in #33474
 	# Needs work? g895  benthecarman-g/fix-dark-mode
+	#29.xTODO# Needs review: Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
+	33475 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -888,6 +892,7 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	# Needs review & JIT safety: 33414 vasild/tor_pow
 	# Needs review: 33448 ajtowns/202508-reportinvtosend
 	# Needs work (new doc only applies to guix bins) & backport: 33451 hebasto/250921-install-docs
+	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
 	-     qt_createunsigned_use_psbtops			74d90403d5e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1261,7 +1266,7 @@ m	-     restore_upnp-29.2+knots				81360fdd41b
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				da40d1a238d	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250923)			72b3991901d
+	n/a  (bump_version=knots20250925)			72b3991901d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
 	n/a   (cherrypick=2cdbe128d2b)				59dd80edc0c  # release notes: write/update, including change log and credits
