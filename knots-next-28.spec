@@ -445,7 +445,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# OR (preferable): 33477 fjahr/202509-better-rollback
 	# Needs work? g895  benthecarman-g/fix-dark-mode
 	#28.xTODO# Needs review: Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
-	33475 ismaelsadeeq/09-2025-miner-infinite-loop-fix
+	Triage: 33475 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
