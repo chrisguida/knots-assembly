@@ -773,6 +773,7 @@ checkout v30.0rc1
 	Prefer upstream? 30860 bashcomp_bcli_generate-29				a29ec7810ef	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	k190  feat_zsh_completion-29							last=e3f6d308a97  # Add zsh completion script generation support
+	Needs work: k198 mstampfer/integrate-zsh-completion-cmake
 	Prefer upstream? 30886 rpc_descrprocesspsbt_prevtxs-28+knots	0125b96f50a	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
@@ -1021,6 +1022,7 @@ checkout v30.0rc1
 	30.xTODO: Consider reverting #33050 )MERGED) ? (and #33183? (MERGED))
 	k171  Raimo33/add-dockerfile							last=4b778a21835
 	k187  Retropex/dnsseed-leo
+	Needs review? k197 qt_portmap_ux_underlisten
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	68c2d3d03fb
 	-     pol_acceptunknownwitness				e39fca20239
