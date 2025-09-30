@@ -1,7 +1,7 @@
 timestamp 2025-09-30 07:12:51
 lastapply no-merge
 
-#.. checked up to PR #33507 / gui#896 / knots#190
+#.. checked up to PR #33507 / gui#896 / knots#200
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -778,7 +778,7 @@ checkout v30.0rc1
 	Prefer upstream? 30860 bashcomp_bcli_generate-29				a29ec7810ef	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	k190  feat_zsh_completion-29							last=e3f6d308a97  # Add zsh completion script generation support
-	Needs work: k198 mstampfer/integrate-zsh-completion-cmake
+	Needs work: k199 mstampfer/cmake-zsh-completion-only
 	Prefer upstream? 30886 rpc_descrprocesspsbt_prevtxs-28+knots	0125b96f50a	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
@@ -938,7 +938,9 @@ checkout v30.0rc1
 	-     rm_tarball_ci-29+knots				7c56cb2b99b
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 	-     restore_upnp-29.2+knots				81360fdd41b
+	(CHECK-LAST)	last= origin-pull-k/196/head
 		# NOTE: Includes #30301 theuni/miniupnp-228-bump
+		TODO: Include knots#196
 		30.xTODO: Revert #32500 (MERGED)
 		31.xTODO: Check if we still need the vcpkg workarounds
 	n/a   restore_feefilter_opt					22e9d95fd02
@@ -1028,6 +1030,7 @@ checkout v30.0rc1
 	30.xTODO: Consider reverting #33050 )MERGED) ? (and #33183? (MERGED))
 	k171  Raimo33/add-dockerfile							last=4b778a21835
 	k187  Retropex/dnsseed-leo
+	Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	Needs review? k197 qt_portmap_ux_underlisten
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	68c2d3d03fb
@@ -1173,6 +1176,7 @@ checkout v30.0rc1
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#30.xTODO# QTreeWidget or similar for GUI Options dialog?
+		Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	#30.xTODO# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv

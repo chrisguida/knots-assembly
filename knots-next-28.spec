@@ -1,7 +1,7 @@
 timestamp 2025-09-30 07:12:51
 #lastapply no-merge
 
-#.. checked up to PR #33507 / gui#896 / knots#190
+#.. checked up to PR #33507 / gui#896 / knots#200
 
 checkout v28.2
 @28.x-syslibs
@@ -487,6 +487,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	#28.xTODO# FIXME -     depends_qt5kde
 	# Needs review & relevance: 29991 fanquake/sqlite_3_45_3
 	30301 theuni/miniupnp-228-bump
+	(CHECK-LAST)	last= origin-pull-k/196/head
+		TODO: Include knots#196
 	TODO: bump to 2.3.3 in restore_upnp-29.2+knots
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
@@ -976,7 +978,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# Bugfix + Left off re-generation until later
 	k190  -														last=cfc9f871ca3  # Add zsh completion script generation support
 		TODO: Ensure added to distdir like in 30860
-	Needs work: k198 mstampfer/integrate-zsh-completion-cmake
+	Needs work: k199 mstampfer/cmake-zsh-completion-only
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	30930 netinfo_svcs_outonly-28				c4dd1db3f36
@@ -1259,6 +1261,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	33023 bigshiny90/compactblocks-extratxs-tests-core
 	Needs backport: k171  Raimo33/add-dockerfile							last=4b778a21835
 	k187  Retropex/dnsseed-leo
+	Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	Needs review? k197 qt_portmap_ux_underlisten
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
@@ -1384,6 +1387,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#29.xTODO# QTreeWidget or similar for GUI Options dialog?
+		Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
