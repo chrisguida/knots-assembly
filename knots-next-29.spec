@@ -361,11 +361,11 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	#29.xTODO# Needs review: Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
 	33475 fix_block_full_enough_underflow-29+k				last=b807dfcdc59 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 		# 30.x backport in #33473
-	33484 theStack/202509-rpc-doc-fix_finalizepsbt_case_typo_scriptwitness
-		# 30.x backport in #33473
-	33494 hebasto/250929-qrencode
+	33484 docfix_rpc_finalizepsbt_pr33484-0.18
+	33494 urlupd_depends_qrencode-28						last=980e4987db0 hebasto/250929-qrencode
+		# NOTE: Held back 9dbfce7fc84...980e4987db0 (which drops package name from download filename) and addressed cache filename issue another way
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
-	Needs review? 33504 instagibbs/2025-09-truc-reorg-fix
+	33504 fix_truc_bypasslimits-29							last=06df14ba75b instagibbs/2025-09-truc-reorg-fix
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -900,7 +900,7 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	# Needs review: 33448 ajtowns/202508-reportinvtosend
 	# Needs work (new doc only applies to guix bins) & backport: 33451 hebasto/250921-install-docs
 	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
-	Review: 33507 -  # RPC: add sendrawtransactiontopeer
+	33507 rpc_sendrawtxtopeer-25							last=fca25c57efd
 	-     qt_createunsigned_use_psbtops			74d90403d5e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1014,7 +1014,7 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	-     rm_tarball_ci-29+knots				7c56cb2b99b
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
 m	-     restore_upnp-29.2+knots				81360fdd41b
-	(CHECK-LAST)	last= origin-pull-k/196/head
+	(CHECK-LAST)	last=07f0df46fba origin-pull-k/196/head
 		# NOTE: Includes knots#196
 		# NOTE: Includes #30301 theuni/miniupnp-228-bump
 		#30.xTODO# Revert #32500
@@ -1031,7 +1031,7 @@ m	-     restore_upnp-29.2+knots				81360fdd41b
 	#30.xTODO# Revert #32654 (deprecate blockmaxweight)
 	7107  qtnetworkport-29.1+knots				45316cf3d9f	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
-	7533  sendraw_force-29.1+knots				16e3faace5e last=2627c0937f8 sendraw_force
+m	7533  sendraw_force-29.1+knots				16e3faace5e last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
@@ -1116,7 +1116,7 @@ m	-     restore_upnp-29.2+knots				81360fdd41b
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 		# Reverts (needed for lock logic): 192dac1d337 [refactor] Cleanup BlockAssembler mempool usage
 	7219  rbf_opts-29+knots						108fd1105d0	# Latest code now
-	-     truc_opts-29+knots					df9aa98a121
+m	-     truc_opts-29.1+knots					df9aa98a121
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-29+knots				82bdecc6088	last=1dfe27e49ab
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)

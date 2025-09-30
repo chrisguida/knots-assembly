@@ -311,9 +311,10 @@ checkout v30.0rc1
 		# 30.x backport in #33473
 	33484 theStack/202509-rpc-doc-fix_finalizepsbt_case_typo_scriptwitness
 		# 30.x backport in #33473
-	33494 hebasto/250929-qrencode
+	33494 urlupd_depends_qrencode-28						last=980e4987db0 hebasto/250929-qrencode
+		# NOTE: Held back 9dbfce7fc84...980e4987db0 (which drops package name from download filename) and addressed cache filename issue another way
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
-	Needs review? 33504 instagibbs/2025-09-truc-reorg-fix
+	33504 fix_truc_bypasslimits-29							last=06df14ba75b instagibbs/2025-09-truc-reorg-fix
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -1041,7 +1042,7 @@ checkout v30.0rc1
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 		# Reverts (needed for lock logic): 192dac1d337 [refactor] Cleanup BlockAssembler mempool usage
 	7219  rbf_opts-29+knots						108fd1105d0	# Latest code now
-	-     truc_opts-29+knots					df9aa98a121
+	-     truc_opts-29.1+knots					df9aa98a121
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-29+knots				82bdecc6088	last=1dfe27e49ab
 		30.xTODO: TODO: Add to getmempoolinfo like #29954 (MERGED) (see b02aab950af)
