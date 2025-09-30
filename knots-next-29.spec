@@ -1282,7 +1282,7 @@ m	9749  unique_spk_mempool-29.1+knots			e3c98b32bfc
 	n/a  (bump_version=knots20250930)			72b3991901d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
-	n/a   (cherrypick=c35265a1e9e)				59dd80edc0c  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=a26114d47e7)				59dd80edc0c  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
