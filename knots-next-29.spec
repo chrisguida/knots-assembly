@@ -1,7 +1,7 @@
-timestamp 2025-09-25 10:43:41
+timestamp 2025-09-30 07:12:51
 #lastapply no-merge
 
-#.. checked up to PR #33477 / gui#896 / knots#190
+#.. checked up to PR #33507 / gui#896 / knots#190
 
 checkout core/29.x
 @29.x-syslibs
@@ -361,6 +361,11 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	#29.xTODO# Needs review: Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
 	33475 fix_block_full_enough_underflow-29+k				last=b807dfcdc59 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 		# 30.x backport in #33473
+	33484 theStack/202509-rpc-doc-fix_finalizepsbt_case_typo_scriptwitness
+		# 30.x backport in #33473
+	33494 hebasto/250929-qrencode
+	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
+	Needs review? 33504 instagibbs/2025-09-truc-reorg-fix
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -895,6 +900,7 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	# Needs review: 33448 ajtowns/202508-reportinvtosend
 	# Needs work (new doc only applies to guix bins) & backport: 33451 hebasto/250921-install-docs
 	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
+	Review: 33507 -  # RPC: add sendrawtransactiontopeer
 	-     qt_createunsigned_use_psbtops			74d90403d5e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1269,7 +1275,7 @@ m	-     restore_upnp-29.2+knots				81360fdd41b
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				da40d1a238d	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20250925)			72b3991901d
+	n/a  (bump_version=knots20250930)			72b3991901d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
 	n/a   (cherrypick=7ef9223e0ab)				59dd80edc0c  # release notes: write/update, including change log and credits
