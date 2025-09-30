@@ -1052,7 +1052,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review: 33448 ajtowns/202508-reportinvtosend
 	# Needs work (new doc only applies to guix bins) & backport: 33451 hebasto/250921-install-docs
 	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
-	Review: 33507 -  # RPC: add sendrawtransactiontopeer
+	Needs work: 33507 -  # RPC: add sendrawtransactiontopeer
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1272,7 +1272,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     bytespersigopstrict-28+knots			9d18c6ea473	last=c86d95dc343 bytespersigopstrict-29+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-	9749  unique_spk_mempool-28+knots			84eff5944da	last=b1b8f27e75f unique_spk_mempool-29+knots
+	9749  unique_spk_mempool-28+knots			84eff5944da	last=b1b8f27e75f unique_spk_mempool-29.1+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     dustdynamic-28+knots					5dd1f1ee25e	last=f10a0071c95 dustdynamic-29.1+knots
 	28408 match_more_datacarrier-28+knots		570cb5cb1dc	last=4d2ec0671a3 match_more_datacarrier

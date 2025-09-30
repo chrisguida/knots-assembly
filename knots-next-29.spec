@@ -900,7 +900,7 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	# Needs review: 33448 ajtowns/202508-reportinvtosend
 	# Needs work (new doc only applies to guix bins) & backport: 33451 hebasto/250921-install-docs
 	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
-	33507 rpc_sendrawtxtopeer-25							last=fca25c57efd
+	# Needs work: 33507 rpc_sendrawtxtopeer-25							last=fca25c57efd
 	-     qt_createunsigned_use_psbtops			74d90403d5e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1122,7 +1122,7 @@ m	-     truc_opts-29.1+knots					df9aa98a121
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     bytespersigopstrict-29+knots			fbd97489734
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-	9749  unique_spk_mempool-29+knots			e3c98b32bfc
+m	9749  unique_spk_mempool-29.1+knots			e3c98b32bfc
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     dustdynamic-29.1+knots				9d53339a24a
 	# ---- BEGIN DATACARRIER ---- (OLGA not backported)
@@ -1282,7 +1282,7 @@ m	-     truc_opts-29.1+knots					df9aa98a121
 	n/a  (bump_version=knots20250930)			72b3991901d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
-	n/a   (cherrypick=7ef9223e0ab)				59dd80edc0c  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=c35265a1e9e)				59dd80edc0c  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1293,7 +1293,7 @@ m	-     truc_opts-29.1+knots					df9aa98a121
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
-	n/a  (cherrypick=b4e22ffba2f)				271fd206893  # update manpages (build first)
+	n/a  (cherrypick=485e3ab146c)				271fd206893  # update manpages (build first)
 		# WARNING: Don't forget to add zsh completion!
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)

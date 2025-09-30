@@ -826,7 +826,7 @@ checkout v30.0rc1
 	# Needs review: 33448 ajtowns/202508-reportinvtosend
 	# Needs work (new doc only applies to guix bins): 33451 hebasto/250921-install-docs
 	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
-	Review: 33507 -  # RPC: add sendrawtransactiontopeer
+	Needs work: 33507 -  # RPC: add sendrawtransactiontopeer
 	-     qt_createunsigned_use_psbtops			74d90403d5e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1048,7 +1048,7 @@ checkout v30.0rc1
 		30.xTODO: TODO: Add to getmempoolinfo like #29954 (MERGED) (see b02aab950af)
 	-     bytespersigopstrict-29+knots			fbd97489734
 		30.xTODO: TODO: Add to getmempoolinfo like #29954 (MERGED) (see b02aab950af)
-	9749  unique_spk_mempool-29+knots			e3c98b32bfc
+	9749  unique_spk_mempool-29.1+knots			e3c98b32bfc
 		30.xTODO: TODO: Add to getmempoolinfo like #29954 (MERGED) (see b02aab950af)
 	-     dustdynamic-29.1+knots				9d53339a24a
 	# ---- BEGIN DATACARRIER ---- (OLGA not backported)
