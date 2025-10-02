@@ -552,8 +552,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# check if 30927 has anything important
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
-	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
-		# 29.x rebase (on old latest_knots) in 5ee1dbcb681
+	31144 l0rinc/l0rinc/optimize-xor
 	31179 opti_rpc_uv_reserve-25				fd9df84d86b	last=5d82d92aff7 ismaelsadeeq/10-2024-add-reserve-to-univalue
 	31364 opti_no_copy_pr31364-28				3614ce28149
 	# Needs review: 31490 l0rinc/l0rinc/undo

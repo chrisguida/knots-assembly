@@ -451,8 +451,7 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 		# TODO: Make interval configurable
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
-	# Needs review: 31144 l0rinc/l0rinc/optimize-xor
-		# 29.x rebase (on old latest_knots) in 5ee1dbcb681
+	31144 opti_multibyte_xor-29+knots
 	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue	8d2b1b3f4c4	last=5d82d92aff7  # opti_rpc_uv_reserve-25
 	31645 opti_dbbatchsize_64-29				726390be112	last=b6f8c48946c l0rinc/l0rinc/utxo-dump-batching
 		# Held back 868413340f8...b6f8c48946c (reduce to 32 MiB) for now
@@ -1286,7 +1285,7 @@ m	9749  unique_spk_mempool-29.1+knots			e3c98b32bfc
 	n/a  (bump_version=knots20251002)			72b3991901d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
-	n/a   (cherrypick=4fd730cb1c9)				59dd80edc0c  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=23a462ab522)				59dd80edc0c  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
