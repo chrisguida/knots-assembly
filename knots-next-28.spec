@@ -1,7 +1,7 @@
-timestamp 2025-09-30 07:12:51
+timestamp 2025-10-02 12:50:03
 #lastapply no-merge
 
-#.. checked up to PR #33507 / gui#896 / knots#200
+#.. checked up to PR #33519 / gui#896 / knots#205
 
 checkout v28.2
 @28.x-syslibs
@@ -1420,7 +1420,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20250930)			ba223403bbc
+	n/a  (bump_version=Knots:20251002)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
