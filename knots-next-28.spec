@@ -448,8 +448,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 33475 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 		# 30.x backport in #33473
 	33484 docfix_rpc_finalizepsbt_pr33484-0.18
-	33494 urlupd_depends_qrencode-28						last=980e4987db0 hebasto/250929-qrencode
-		# NOTE: Held back 9dbfce7fc84...980e4987db0 (which drops package name from download filename) and addressed cache filename issue another way
+	33494 urlupd_depends_qrencode-28						last=93a70a42d30 hebasto/250929-qrencode
+		# NOTE: Held back 9dbfce7fc84...93a70a42d30 (which drops package name from download filename) and addressed cache filename issue another way
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
 	Needs review? 33504 instagibbs/2025-09-truc-reorg-fix
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
@@ -1207,7 +1207,9 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 	5861 gui_restore_addresses					39668f36473
-	5891  qt_console_history_persist			76638518995	last=0cd5fc301d6 qt_console_history_persist
+	5891  qt_console_history_persist			76638518995	last=d7bc5138e19 qt_console_history_persist
+	(CHECK-LAST)	last=6a5537ab675 origin-pull-k/203/head
+		# Includes knots#203 (Add migratewallet RPC in historyFilter)
 	7219  rbf_opts-28+knots						a1e42756c14	last= rbf_opts-29+knots
 		#29.xTODO: Revert #30592
 		TODO: Adapt #31953
