@@ -315,7 +315,8 @@ checkout v30.0rc1
 		# NOTE: Held back 9dbfce7fc84...93a70a42d30 (which drops package name from download filename) and addressed cache filename issue another way
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
 	33504 fix_truc_bypasslimits-29							last=06df14ba75b instagibbs/2025-09-truc-reorg-fix
-	Just addition: 33511 ryanofsky/pr/sigwait
+	33511 fix_sigint_waitrpcs-29							last=68cad90dace ryanofsky/pr/sigwait
+		# Kept old notification to workaround GUI console regression
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -772,7 +773,7 @@ checkout v30.0rc1
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	MERGED: 30635 rpc_waitfornewblock_tip_param-29		99cdb3fa41f	last=c6e2c31c551 Sjors/2024/08/waitforblock
+	MERGED: 30635 rpc_waitfornewblock_tip_param-29+k	99cdb3fa41f	last=c6e2c31c551 Sjors/2024/08/waitforblock
 	# Needs review: 30685 hebasto/240820-control-flow
 	30713 tdb3/relevant_blocks_in_scanblocks_status	771f38d4a5c	last=5b2d0216d87  # rpc_scanblocks_status_results-28
 	#30.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
