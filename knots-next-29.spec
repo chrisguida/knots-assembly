@@ -1,7 +1,7 @@
-timestamp 2025-10-02 12:50:03
+timestamp 2025-10-03 10:14:12
 #lastapply no-merge
 
-#.. checked up to PR #33519 / gui#896 / knots#205
+#.. checked up to PR #33531 / gui#896 / knots#205
 
 checkout core/29.x
 @29.x-syslibs
@@ -368,6 +368,7 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	33504 fix_truc_bypasslimits-29							last=06df14ba75b instagibbs/2025-09-truc-reorg-fix
 	33511 fix_sigint_waitrpcs-29							last=68cad90dace ryanofsky/pr/sigwait
 		# Kept old notification to workaround GUI console regression
+	# Needs review: 33528 glozow/2025-09-send
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -902,6 +903,7 @@ m	30635 rpc_waitfornewblock_tip_param-29+k	99cdb3fa41f	last=c6e2c31c551 Sjors/20
 	# Needs work (new doc only applies to guix bins) & backport: 33451 hebasto/250921-install-docs
 	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
 	# Needs work: 33507 rpc_sendrawtxtopeer-25							last=fca25c57efd
+	# Needs concept & compat: 33531 w0xlt/multiple_utxos3
 	-     qt_createunsigned_use_psbtops			74d90403d5e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1282,7 +1284,7 @@ m	9749  unique_spk_mempool-29.1+knots			e3c98b32bfc
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				da40d1a238d	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20251002)			72b3991901d
+	n/a  (bump_version=knots20251003)			72b3991901d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
 	n/a   (cherrypick=23a462ab522)				59dd80edc0c  # release notes: write/update, including change log and credits
