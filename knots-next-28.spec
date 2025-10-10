@@ -1226,7 +1226,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	7219  rbf_opts-28+knots						a1e42756c14	last= rbf_opts-29+knots
 		#29.xTODO: Revert #30592
 		TODO: Adapt #31953
-	-     truc_opts-28+knots					7b898f1d017	last=590417252ab truc_opts-29.1+knots
+	-     truc_opts-28+knots					7b898f1d017	last=590417252ab truc_opts-29.2+knots
 	-     net_identify_librerelay
 	-     net_identify_utreexo
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
@@ -1288,7 +1288,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     bytespersigopstrict-28+knots			9d18c6ea473	last=c86d95dc343 bytespersigopstrict-29+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
-	9749  unique_spk_mempool-28+knots			84eff5944da	last=b1b8f27e75f unique_spk_mempool-29.1+knots
+	9749  unique_spk_mempool-28+knots			84eff5944da	last=b1b8f27e75f unique_spk_mempool-29.2+knots
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 	-     dustdynamic-28+knots					5dd1f1ee25e	last=f10a0071c95 dustdynamic-29.1+knots
 	28408 match_more_datacarrier-28+knots		570cb5cb1dc	last=4d2ec0671a3 match_more_datacarrier

@@ -971,7 +971,7 @@ checkout v30.0rc1
 	30.xTODO: Revert #32654 (deprecate blockmaxweight) (MERGED)
 	7107  qtnetworkport-29.1+knots				45316cf3d9f	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
-	7533  sendraw_force-29.1+knots				16e3faace5e last=2627c0937f8 sendraw_force
+	7533  sendraw_force-29.2+knots				16e3faace5e last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
@@ -1059,13 +1059,13 @@ checkout v30.0rc1
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 		# Reverts (needed for lock logic): 192dac1d337 [refactor] Cleanup BlockAssembler mempool usage
 	7219  rbf_opts-29+knots						108fd1105d0	# Latest code now
-	-     truc_opts-29.1+knots					df9aa98a121
+	-     truc_opts-29.2+knots					df9aa98a121
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-29+knots				82bdecc6088	last=1dfe27e49ab
 		30.xTODO: TODO: Add to getmempoolinfo like #29954 (MERGED) (see b02aab950af)
 	-     bytespersigopstrict-29+knots			fbd97489734
 		30.xTODO: TODO: Add to getmempoolinfo like #29954 (MERGED) (see b02aab950af)
-	9749  unique_spk_mempool-29.1+knots			e3c98b32bfc
+	9749  unique_spk_mempool-29.2+knots			e3c98b32bfc
 		30.xTODO: TODO: Add to getmempoolinfo like #29954 (MERGED) (see b02aab950af)
 	-     dustdynamic-29.1+knots				9d53339a24a
 	# ---- BEGIN DATACARRIER ---- (OLGA not backported)
