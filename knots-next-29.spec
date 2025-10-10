@@ -3,7 +3,7 @@ timestamp 2025-10-10 13:44:36
 
 #.. checked up to PR #33598 / gui#899 / knots#211
 
-checkout v29.2rc2
+checkout v29.2
 @29.x-syslibs
 # BUILD BUGS:
 	# Needs review: 33550 ryanofsky/pr/winstream
@@ -370,8 +370,6 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 		# Held back 68cad90dace...c25a5e670b2 pending more review
 		# Kept old notification to workaround GUI console regression
 	# Needs review: 33528 glozow/2025-09-send
-	# 33563 fanquake/fix_qt_urls								last=abf4a6eeaee
-		# Currently included in win_taskbar_progress later
 	33580 fix_depends_fallback_filename-0.13				last=671b774d1b5 achow101/depends-fallback-name
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
@@ -405,7 +403,7 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	#30.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@29.x-knots-lts-deps
-	-     upd_qt5-29							d77f9d28a5f
+m	-     upd_qt5-29.2							d77f9d28a5f
 		# 5.15.17 Opensource released: https://lists.qt-project.org/pipermail/announce/2025-May/000557.html
 		# Includes patch for CVE-2025-4211 (not upstream; simpler and safer)
 		# 5.15.19 (not available) fixes other bugs, but no CVEs that affect us (unless we start using Qt for XML or HTTP2)
@@ -1274,7 +1272,7 @@ m	9749  unique_spk_mempool-29.2+knots			e3c98b32bfc
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		7a98c804c5c
-	7483  svg_icon-29.1+knots					4a62c5cbdfa
+m	7483  svg_icon-29.2+knots					4a62c5cbdfa
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	# n/a   copyright_2025-28						19e67dd9efa
@@ -1296,10 +1294,9 @@ m	9749  unique_spk_mempool-29.2+knots			e3c98b32bfc
 	n/a   (cherrypick=6ee0b3ec0fc)				da40d1a238d	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=knots20251010)			72b3991901d
-	n/a  (cherrypick=57d61089539)	# remove RC flag (make final)
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
-	n/a   (cherrypick=4a6f7d86acf)				59dd80edc0c  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=1314102baef)				59dd80edc0c  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1310,7 +1307,7 @@ m	9749  unique_spk_mempool-29.2+knots			e3c98b32bfc
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
-	n/a  (cherrypick=7f4cd7e2f38)				271fd206893  # update manpages (build first)
+	n/a  (cherrypick=8236fd755e1)				271fd206893  # update manpages (build first)
 		# WARNING: Don't forget to add zsh completion!
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)

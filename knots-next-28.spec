@@ -490,7 +490,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	#28.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@28.x-knots-lts-deps
-	-     upd_qt5-28							1774fb76e0e
+	-     upd_qt5-28							1774fb76e0e	last= upd_qt5-29.2
 		FIXME: Check #30774 for updated patch?
 		# Opensource released: https://lists.qt-project.org/pipermail/announce/2024-November/000526.html
 		TODO: Qt 5.15.17 + CVE-2025-4211
@@ -1414,7 +1414,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		d4c1e555559
-	7483  svg_icon-28+knots						5b18d9e534b	last=cd64df8af62 svg_icon-29+knots
+	7483  svg_icon-28+knots						5b18d9e534b	last=cd64df8af62 svg_icon-29.2+knots
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 		FIXME: nsis looks for rendered_icons in srcdir
 	n/a   tbc_font-28+knots						458c5339ceb	last= tbc_font

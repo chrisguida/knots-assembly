@@ -356,7 +356,7 @@ checkout v30.0rc1
 	#30.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@30.x-knots-lts-deps
-	-     upd_qt5-29							d77f9d28a5f
+	-     upd_qt5-29.2							d77f9d28a5f
 		# 5.15.17 Opensource released: https://lists.qt-project.org/pipermail/announce/2025-May/000557.html
 		# Includes patch for CVE-2025-4211 (not upstream; simpler and safer)
 		# 5.15.19 (not available) fixes other bugs, but no CVEs that affect us (unless we start using Qt for XML or HTTP2)
@@ -1205,7 +1205,7 @@ checkout v30.0rc1
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		7a98c804c5c
-	7483  svg_icon-29.1+knots					4a62c5cbdfa
+	7483  svg_icon-29.2+knots					4a62c5cbdfa
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	# n/a   copyright_2025-28						19e67dd9efa
