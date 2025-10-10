@@ -1,12 +1,15 @@
-timestamp 2025-10-03 10:14:12
+timestamp 2025-10-10 13:44:36
 lastapply no-merge
 
-#.. checked up to PR #33531 / gui#896 / knots#205
+#.. checked up to PR #33598 / gui#899 / knots#211
 
 checkout v30.0rc1
 @30.x-syslibs
 # BUILD BUGS:
-	# None!
+	# Needs review: 33550 ryanofsky/pr/winstream
+	# Needs review: 33569 l0rinc/l0rinc/throw-by-value
+	# Needs review: 33570 l0rinc/l0rinc/environ-mingw
+	Needs review: g899 hebasto-g/251008-deprecated
 # SYSLIBS:
 	2241  sys_leveldb-30						a0ecf548285	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -37,6 +40,7 @@ checkout v30.0rc1
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 	# If needed: -     ci_gha_makejobs_8						8cd076e06ab
+	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail
 	13789 asm_bypass_cxxflags					6ba82076749
@@ -313,11 +317,13 @@ checkout v30.0rc1
 		# 30.x backport in #33473
 	33494 urlupd_depends_qrencode-28						last=93a70a42d30 hebasto/250929-qrencode
 		# NOTE: Held back 9dbfce7fc84...93a70a42d30 (which drops package name from download filename) and addressed cache filename issue another way
+		FIXME: Check relevance of #33577, #33580
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
 	33504 fix_truc_bypasslimits-29							last=06df14ba75b instagibbs/2025-09-truc-reorg-fix
 	33511 fix_sigint_waitrpcs-29							last=68cad90dace ryanofsky/pr/sigwait
 		# Kept old notification to workaround GUI console regression
 	Needs review: 33528 glozow/2025-09-send
+	Needs review: 33566 Sjors/2025/10/wait-empty-mempool
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
@@ -831,6 +837,8 @@ checkout v30.0rc1
 	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
 	Needs work: 33507 -  # RPC: add sendrawtransactiontopeer
 	# Needs concept & compat: 33531 w0xlt/multiple_utxos3
+	Needs review: 33540 pablomartin4btc/argsman-GNU-style-command-line-option-parsing
+	Needs work: g898 apogio-g/feature-utxo-viewer
 	-     qt_createunsigned_use_psbtops			74d90403d5e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1039,6 +1047,7 @@ checkout v30.0rc1
 	k187  Retropex/dnsseed-leo
 	Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	Needs review? k197 qt_portmap_ux_underlisten
+	Needs work: k208 1440000bytes/sendtx-ui
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	68c2d3d03fb
 	-     pol_acceptunknownwitness				e39fca20239
@@ -1121,7 +1130,7 @@ checkout v30.0rc1
 		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize		5dd73cb17a3
 	k162  qt_bad_external_signer_msg-22			c90ba30538e	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
-	#31.xTODO# Consider reverting parts of #33489 (build: Drop support for EOL macOS 13)
+	#31.xTODO# Consider reverting parts of #33489 (build: Drop support for EOL macOS 13) and #33573
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
 	30.xTODO: maybe revert #32721 (MERGED) achow101:remove-deprecated-balances
@@ -1202,6 +1211,7 @@ checkout v30.0rc1
 		# NOTE: Includes #33422 to clean up "(64-bit)" leftovers
 		#30.xTODO# Review security policy
 		# FIXME: Get NSIS using OCR-Bitcoin
+		FIXME: Add knots#211
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #30.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
@@ -1213,7 +1223,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				da40d1a238d	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20251003)			72b3991901d
+	n/a  (bump_version=knots20251010)			72b3991901d
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		26504f6ba0d
 	n/a   (cherrypick=ab2e9ce0575)				59dd80edc0c  # release notes: write/update, including change log and credits

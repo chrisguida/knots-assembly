@@ -1,7 +1,7 @@
-timestamp 2025-10-03 10:14:12
+timestamp 2025-10-10 13:44:36
 #lastapply no-merge
 
-#.. checked up to PR #33531 / gui#896 / knots#205
+#.. checked up to PR #33598 / gui#899 / knots#211
 
 checkout v28.2
 @28.x-syslibs
@@ -13,6 +13,9 @@ checkout v28.2
 	32437 fanquake/extend_asan_sse4
 	Triage: 32484 fanquake/28_suppress_unterm_string_init
 	Triage: Part of? 32551 hebasto/250518-crypto-macros
+	Triage: Needs review: 33550 ryanofsky/pr/winstream
+	Triage: Needs review: 33569 l0rinc/l0rinc/throw-by-value
+	Triage: Needs review: 33570 l0rinc/l0rinc/environ-mingw
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -40,6 +43,7 @@ checkout v28.2
 	# Needs review: 26693 -  # build: special instruction check script (checks for non-portable asm in startup code)
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 	31408 qafix_framework_pr31408-27			8d7611a7eca
+	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail
 	18818 guix_reltar_autogen_distclean			5bd6cb2eb0a	last=b5a164d9155 fix_gitian_src_202004
@@ -451,9 +455,12 @@ NM	32187 zmq_devirtual_destructor-0.12
 	33484 docfix_rpc_finalizepsbt_pr33484-0.18
 	33494 urlupd_depends_qrencode-28						last=93a70a42d30 hebasto/250929-qrencode
 		# NOTE: Held back 9dbfce7fc84...93a70a42d30 (which drops package name from download filename) and addressed cache filename issue another way
+		FIXME: Check relevance of #33577, #33580
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
-	Needs review? 33504 instagibbs/2025-09-truc-reorg-fix
+	33504 instagibbs/2025-09-truc-reorg-fix
+		28.x backport in #33535
 	Needs review: 33528 glozow/2025-09-send
+	33563 fanquake/fix_qt_urls
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -1055,6 +1062,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
 	Needs work: 33507 -  # RPC: add sendrawtransactiontopeer
 	# Needs concept & compat: 33531 w0xlt/multiple_utxos3
+	Needs review: 33540 pablomartin4btc/argsman-GNU-style-command-line-option-parsing
+	Needs work: g898 apogio-g/feature-utxo-viewer
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1267,6 +1276,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	k187  Retropex/dnsseed-leo
 	Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	Needs review? k197 qt_portmap_ux_underlisten
+	Needs work: k208 1440000bytes/sendtx-ui
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness
@@ -1413,6 +1423,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	n/a   font_ocrbitcoin
 	n/a   knots_branding-28						f58950aab87	last=3263c5ee896 knots_branding-29
 		#28.xTODO# Review security policy
+		FIXME: Add knots#211
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #29.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
@@ -1422,7 +1433,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20251003)			ba223403bbc
+	n/a  (bump_version=Knots:20251010)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
