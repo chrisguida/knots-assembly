@@ -1213,7 +1213,7 @@ checkout v30.0rc1
 		# NOTE: Includes #33422 to clean up "(64-bit)" leftovers
 		#30.xTODO# Review security policy
 		# FIXME: Get NSIS using OCR-Bitcoin
-		FIXME: Add knots#211
+		# NOTE: Includes knots#211
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #30.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
