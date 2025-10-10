@@ -3,7 +3,7 @@ timestamp 2025-10-10 13:44:36
 
 #.. checked up to PR #33598 / gui#899 / knots#211
 
-checkout core/29.x
+checkout v29.2rc2
 @29.x-syslibs
 # BUILD BUGS:
 	# Needs review: 33550 ryanofsky/pr/winstream
@@ -359,18 +359,14 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	# Needs review: 33443 l0rinc/l0rinc/rate-limit-rolling-forward
 	# Needs review: 33444 -  # rpc: Fix dumptxoutset rollback with competing forks
 	# OR (preferable): 33477 fjahr/202509-better-rollback
-	33446 fix_rpc_getblock_target-29						last=bf7996cbc3b Sjors/2025/09/getblock-target
-		# 29.x backport in #33474
 	# Needs work? g895  benthecarman-g/fix-dark-mode
 	#29.xTODO# Needs review: Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
 	33475 fix_block_full_enough_underflow-29+k				last=b807dfcdc59 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 		# 30.x backport in #33473
-	33484 docfix_rpc_finalizepsbt_pr33484-0.18
 	33494 urlupd_depends_qrencode-28						last=93a70a42d30 hebasto/250929-qrencode
 		# NOTE: Held back 9dbfce7fc84...93a70a42d30 (which drops package name from download filename) and addressed cache filename issue another way
 		FIXME: Check relevance of #33577, #33580
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
-	33504 fix_truc_bypasslimits-29							last=06df14ba75b instagibbs/2025-09-truc-reorg-fix
 	33511 fix_sigint_waitrpcs-29							last=68cad90dace ryanofsky/pr/sigwait
 		# Kept old notification to workaround GUI console regression
 	# Needs review: 33528 glozow/2025-09-send
