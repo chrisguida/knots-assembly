@@ -449,18 +449,18 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33444 -  # rpc: Fix dumptxoutset rollback with competing forks
 	# OR (preferable): 33477 fjahr/202509-better-rollback
 	# Needs work? g895  benthecarman-g/fix-dark-mode
-	#28.xTODO# Needs review: Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
+	33464 net_timers_for_inbound_inv-29
 	Triage: 33475 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 		# 30.x backport in #33473
 	33484 docfix_rpc_finalizepsbt_pr33484-0.18
 	33494 urlupd_depends_qrencode-28						last=93a70a42d30 hebasto/250929-qrencode
 		# NOTE: Held back 9dbfce7fc84...93a70a42d30 (which drops package name from download filename) and addressed cache filename issue another way
-		FIXME: Check relevance of #33577, #33580
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
 	33504 instagibbs/2025-09-truc-reorg-fix
 		28.x backport in #33535
 	Needs review: 33528 glozow/2025-09-send
 	33563 fanquake/fix_qt_urls
+	33580 achow101/depends-fallback-name
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327

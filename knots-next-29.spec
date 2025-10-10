@@ -360,17 +360,17 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	# Needs review: 33444 -  # rpc: Fix dumptxoutset rollback with competing forks
 	# OR (preferable): 33477 fjahr/202509-better-rollback
 	# Needs work? g895  benthecarman-g/fix-dark-mode
-	Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
+	33464 net_timers_for_inbound_inv-29
 	33475 fix_block_full_enough_underflow-29+k				last=b807dfcdc59 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 		# 30.x backport in #33473
 	33494 urlupd_depends_qrencode-28						last=93a70a42d30 hebasto/250929-qrencode
 		# NOTE: Held back 9dbfce7fc84...93a70a42d30 (which drops package name from download filename) and addressed cache filename issue another way
-		FIXME: Check relevance of #33577, #33580
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
 	33511 fix_sigint_waitrpcs-29							last=68cad90dace ryanofsky/pr/sigwait
 		# Kept old notification to workaround GUI console regression
 	# Needs review: 33528 glozow/2025-09-send
 	33563 fanquake/fix_qt_urls
+	33580 achow101/depends-fallback-name
 	-     fix_rpccookieperms_early				672a509ad20
 	-     qt_intro_nojumpy						0395e3d216c
 	-     restore_guix_ppc64le-28				5d9e7c64669
