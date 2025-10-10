@@ -360,7 +360,7 @@ NM	-     ci_gha_makejobs_8						8cd076e06ab
 	# Needs review: 33444 -  # rpc: Fix dumptxoutset rollback with competing forks
 	# OR (preferable): 33477 fjahr/202509-better-rollback
 	# Needs work? g895  benthecarman-g/fix-dark-mode
-	#29.xTODO# Needs review: Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
+	Diff-minimise: 33464 mzumsande/202509_inv_inbound_per_network
 	33475 fix_block_full_enough_underflow-29+k				last=b807dfcdc59 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 		# 30.x backport in #33473
 	33494 urlupd_depends_qrencode-28						last=93a70a42d30 hebasto/250929-qrencode
