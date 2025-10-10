@@ -1133,6 +1133,7 @@ checkout v30.0rc1
 	-     blockreconstructionextratxnsize		5dd73cb17a3
 	k162  qt_bad_external_signer_msg-22			c90ba30538e	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 	#31.xTODO# Consider reverting parts of #33489 (build: Drop support for EOL macOS 13) and #33573
+	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
 	30.xTODO: maybe revert #32721 (MERGED) achow101:remove-deprecated-balances

@@ -1203,6 +1203,7 @@ m	9749  unique_spk_mempool-29.2+knots			e3c98b32bfc
 		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize		5dd73cb17a3
 	k162  qt_bad_external_signer_msg-22			c90ba30538e	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
+	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
 	#30.xTODO# maybe revert #32721 achow101:remove-deprecated-balances

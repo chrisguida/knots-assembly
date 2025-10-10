@@ -1352,6 +1352,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		29.x has part in sendraw_force-29.1+knots, rest in pol_maxtxlegacysigops-29.1+knots
 	-     blockreconstructionextratxnsize
 	k162  qt_bad_external_signer_msg-22							last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
+	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
 		# Compatibility with 0.19.0-0.21.0 bech32_error_detection
