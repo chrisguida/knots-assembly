@@ -857,7 +857,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs work? 31252 rpc_TxToUniv_witScript-28								last=4e128d4f9b2
 		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
-	31560 rpc_dumptxoutset_fifo-29+knots		816104a3629	last=145dc34dc05 theStack/202412-dumptxoutset-allow_write_to_named_pipe
+	31560 rpc_dumptxoutset_fifo-29+knots		816104a3629	last=ed02f67c583 theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				4160fffe565	last=b25b40ebd5f vasild/peer_cpu_load
@@ -955,7 +955,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	20551 rpc_onetry_conntype					0adc07dfa22
 		# NOTE: Originally based on #12674
 		# REBASING NOTE: Ensure any new types get added ? (unless we want to deprecate this...)
-	10593 relax_invblk_punishment				4b6b42668dd
+m	10593 relax_invblk_punishment-29.1+knots	4b6b42668dd
 		# Squash "QA: Use addconnection rather than addnode onetry" ?
 		# FIXME: HandleFewUnconnectingHeaders sends getheaders _and_ disconnects??
 	10350 filtered_witblock-28				158f9d59e8b	last=3f388ddcd3 CodeShark/MFWB_no_bump_2
@@ -1042,7 +1042,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	#30.xTODO# Revert #32654 (deprecate blockmaxweight)
 	7107  qtnetworkport-29.1+knots				e86a192db59	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
-	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
+m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
