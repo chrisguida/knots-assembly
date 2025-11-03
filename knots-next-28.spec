@@ -416,6 +416,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 		28.x backport in #33076
 	Triage: Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
+	33105 cve2025_46598_pt1-29.1
+	32473 cve2025_46598_pt2-29.1
+	33050 cve2025_46598_pt3-29.1
 	Review: 33119 -  # rpc: Fix 'getdescriptoractivity' RPCHelpMan, add test to verify fix
 	# Needs concept/work: 33127 Ataraxia009/launch-crash-failure
 	33133 docfix_getpeerinfo_ping_secs-25					last=1252eeb997d 0xB10C/2025-08-fix-getpeerinfo-ping-docs
@@ -578,7 +581,6 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32128 -  # Draft: CCoinMap Experiments
 	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
 	32279 l0rinc/l0rinc/prevector-size
-	# Needs careful review: 32473 sipa/202504_sighash_cache
 	32487 l0rinc/l0rinc/optimize-readblock-hash-check
 	-     netproc_check_blockhash
 	# Needs review: 32497 opti_merkle_reserves-21							last=39b6c139bd6 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max

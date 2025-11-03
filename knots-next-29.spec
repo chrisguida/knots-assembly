@@ -332,6 +332,9 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	32987 fix_gui_reindex-29					5d13618e836
 	# Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
+	33105 cve2025_46598_pt1-29.1
+	32473 cve2025_46598_pt2-29.1
+	33050 cve2025_46598_pt3-29.1
 	# Part of, if translations are important: 33115 hebasto/250801-ts-files
 	# Needs work: 33126 Ataraxia009/multi-client-support
 		# NOTE: Rewrote in knots_branding
@@ -470,7 +473,6 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: 32128 -  # Draft: CCoinMap Experiments
 	# Needs review: 32150 murchandamus/2025-03-rewrite-BnB
 	32279 opti_script_inline_36b-29				f1983f18627	last=d5104cfbaeb l0rinc/l0rinc/prevector-size
-	# Needs careful review: 32473 sipa/202504_sighash_cache
 	32487 opti_readblock_hash_once-29			30732916634
 	-     netproc_check_blockhash				7ed1773dd7d
 	# Needs review: 32497 opti_merkle_reserves-21							last=39b6c139bd6 l0rinc/l0rinc/pre‑reserve-merkle-leaves-to-max
@@ -1113,7 +1115,6 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# Held back f9c6331cb26...841b3c2e966 for now
 	#30.xTODO# Revert #32450 ?
 	#30.xTODO# Revert #32510 or replace extratxn pool
-	#30.xTODO# Consider reverting #33050 ? (and #33183?)
 	k171  Raimo33/add-dockerfile				555818a43a1	last=4b778a21835
 	k187  Retropex/dnsseed-leo					cc1d0a84ab3	last=68abc8a3262
 	# Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
