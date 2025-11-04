@@ -1,7 +1,7 @@
-timestamp 2025-10-10 13:44:36
+timestamp 2025-11-04 01:39:01
 #lastapply no-merge
 
-#.. checked up to PR #33598 / gui#899 / knots#211
+#.. checked up to PR #33772 / gui#908 / knots#228
 
 checkout v29.2
 @29.x-syslibs
@@ -40,6 +40,7 @@ checkout v29.2
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
+	33639 maflcko/2510-ci-rework-cache-providers
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	6b3aa212298
 	13789 asm_bypass_cxxflags					9de0f072503
@@ -264,7 +265,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# Added warning before leaving GUI firstrun screen
 		# Only affects macOS 14.x (13.x and 15.x unaffected)
 		# Knots gets rid of likely-buggy macOS-specific AllocateFileRange in fix_preallocate, which fixed this
-	# Needs review: 31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
+	31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
 	# Not strictly a bug? 31603 brunoerg/2025-01-descriptor-pk
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
@@ -374,6 +375,19 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# Kept old notification to workaround GUI console regression
 	# Needs review: 33528 glozow/2025-09-send
 	33580 fix_depends_fallback_filename-0.13	5299fc8950b	last=671b774d1b5 achow101/depends-fallback-name
+	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
+	# Needs review: 33616 instagibbs/2025-10-bypass_checkephemeral
+	# Needs review: 33646 -  # log: check fclose() results and report safely in logging.cpp
+	# Needs review: 33663 -  # addrman, net: Filter during address selection via AddrPolicy to avoid underfill
+	# IPC-specific: 33676 ismaelsadeeq/10-2025-add-interruptWaitNext
+	33698 maflcko/2510-test-cli-timeout-same
+	# Needs review: 33699 0xB10C/2025-10-addr-token-bucket-start-5
+	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
+	# IPC-specific: 33745 Sjors/2025/10/submit-solution-doc
+	Triage: g901 -  # Add createwallet, createwalletdescriptor, and migratewallet to history filter
+	Needs review: g904 diegoviola-g/fix-qt-wayland-rendering-issue
+	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
+	Triage: Needs review: g908 john-moffett-g/update-blank-wallet-tooltip
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -386,6 +400,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	k126  fix_qt_progressbar_fittext			09ad9b31507
 	k150  fix_rpc_mixed_params_edgecases		9afea118086
 		# Held back (4d24d60836f) support for positional options + named params (breaks tests)
+	# Needs work: k228 1440000bytes/fix-corruptwallet-crash
 	-     qt_nowalletpage_alerts-23				2eb43494221
 	-     fix_alertnotify_winquoting			108e6f088c5
 	-     torcontrol_avoid_bindany_connect		3b3e298f984
@@ -453,7 +468,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: 30370 fjahr/2024-07-pr28945
 		# Was (never in Knots) #28945
 	# Needs review? 30442 paplorinc/paplorinc/siphash
-	# Needs review: 30610 sipa/202408_force_sync
+	# Needs review: 30610 sipa/202408_force_sync OR 33680 l0rinc/l0rinc/force-sync
 	30611 chainstate_write_hourly-29+knots		400da718054	last=e976bd30450 andrewtoth/write-chainstate-every-hour
 		# Includes new tests from core#32414
 		# TODO: Make interval configurable
@@ -497,6 +512,12 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	33332 opti_arith_uint256_trivialcopy-28		6ec473b8a99
 	33334 opti_blkidx_comparator-26+knots		f3b0c131368	last=80ac0467ef4 Raimo33/index-work-comparator-branchless
 	33410 opti_coinstats_nocopy_pr33410-26		a35ca3225d7	last=5a56203f4e4  # coinstats: avoid unnecessary Coin copy in ApplyHash
+	# Needs review? 33602 l0rinc/l0rinc/BatchWrite-lookup-optimization
+	# Needs review: 33637 l0rinc/l0rinc/block_index_comparators
+	# Needs review: 33645 Raimo33/optimize-tx-policy-verification
+	# Needs review: 33665 rkrux/musig-sighash
+	Review: Partial: 33738 l0rinc/l0rinc/debug-log-serialization
+	# Needs review: 33757 l0rinc/l0rinc/solutions-vector-optional
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -514,11 +535,13 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# TODO? 32080 -  # OP_CHECKCONTRACTVERIFY
 	# TODO? 32247 jamesob/2025-04-csfs
 	# Needs community support: 33163 -  # BIP360 quantum
+	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
 # FUNCTIONALITY:
 	#-     rm_kernel_lib							84b7c6adf43
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
 			# When restoring libbitcoinkernel support, adjust libbitcoinconsensus reverts to make it interact with --with-libs (see 7ad32d39d76)
 	-     rm_multiprocess						e3dc3323e3d
+		TODO: delete doc/dependencies.md content
 		# TODO: Support libmultiprocess
 	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
 		# test2: export of symbol _IO_stdin_used not allowed!
@@ -608,6 +631,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	19873 mempressure-29+knots					72cab2e8e31	last=5b43cc77824 mempressure
+		TODO: knots#219
 		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
 	# Needs review/testing: - maxmem_coins_cache
 		# TODO: Some way to override... see #26471 discussion
@@ -912,6 +936,11 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs concept & compat: 33531 w0xlt/multiple_utxos3
 	# Needs review: 33540 pablomartin4btc/argsman-GNU-style-command-line-option-parsing
 	# Needs work: g898 apogio-g/feature-utxo-viewer
+	# Needs review/concept: 33631 fjahr/202510-asmap-arg-split OR 33632 fjahr/202510-asmap-arg-improve
+	# Needs concept EVEN IF MERGED: 33657 -  # rest: allow reading partial block data from storage
+	# Needs concept & review: 33671 ajtowns/202510-wallet-unconf-bal
+	# Needs review: 33752 -  # rest: Query predecessor headers using negative count param
+	# Needs review: g902 prusnak-g/desktop-file
 	-     qt_createunsigned_use_psbtops			a800d52314e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -936,6 +965,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# normal prio: connecting blocks, indexes, user requests
 	-    ionice_win-29+knots					c424b55ed99
 	8501  old_stats_rpc-29						a49391df3dc	last=7af0ea43b2
+		TODO: knots#226
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-29+knots					13cc089e1b5	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
@@ -1036,6 +1066,7 @@ m	10593 relax_invblk_punishment-29.1+knots	4b6b42668dd
 	# FIXME: -     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
 		# FIXME: this is broken :(
 	14137 win_taskbar_progress					6c8a4b3405b	last=18eb4dbb8a
+		Review: k215 (Qt6 port)
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					c611addce62
 		# TODO?? blockreservedsize option
@@ -1064,6 +1095,7 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 	5891  qt_console_history_persist			24d53a5989e	last=d7bc5138e19 qt_console_history_persist
 	(CHECK-LAST)	last=6a5537ab675 origin-pull-k/203/head
 		# Includes knots#203 (Add migratewallet RPC in historyFilter)
+	Review: k214 kwsantiago/kwsantiago/204-clearhistory
 	-     net_identify_librerelay				cb379d75c76
 	-     net_identify_utreexo					9fb683d48a2
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
@@ -1094,7 +1126,7 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 	#30.xTODO# -     miningcbtag-27+knots
 		# TODO: add to rwconf_policy: 4b38a3031ab GUI/Options: Add miningcbtag via settings
 	-     blockview-29+knots					26510297777
-		#30.xTODO# need to revert or find alternative source for fee info
+	Needs review? k225  1440000bytes/blockview-txid
 	#-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
 	#30.xTODO# Look into making the patches tarball in guix
@@ -1198,9 +1230,15 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
 		#30.xTODO# Ensure #32790 doesn't break
 	# Needs review? 32453 JeremyRubin/unsigned_annex
+	Needs review: 33682 -  # More comprehensive datacarrier configuration
+		See also #33690
+	# Needs review: 33759 roconnor-blockstream/bip143-standardness-2025-10
 	-     pol_maxtxlegacysigops-29.1+knots		6bada6bb4bb
 		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize		e1375d6a063
+		Consider knots#218
+	# Needs review? k221 1440000bytes/getextrapoolinfo-rpc
+	# Needs work: k227 1440000bytes/remove-minedtxs-extrapool
 	k162  qt_bad_external_signer_msg-22			f1b1cdf9d4e	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
@@ -1271,6 +1309,7 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 	# Needs review/options: 26348 -  # Make P2SH redeem script "IF .. PUSH <x> ELSE ... PUSH <y> ENDIF CHECKMULTISIG .. " standard
 	# Needs refactoring to only happen for -acceptnonstdtxn(?): 26398 instagibbs/relax_too_small_tx_equality
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
+	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		6b5354d10d6
 	7483  svg_icon-29.2+knots					093b55fc9ce
@@ -1294,7 +1333,7 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20251010)			d5593bea7a1
+	n/a  (bump_version=knots20251104)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits
