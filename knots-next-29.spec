@@ -385,9 +385,8 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
 	# IPC-specific: 33745 Sjors/2025/10/submit-solution-doc
 	g901 fix_qt_rpchistoryfilter_pr_g901-28
-	Needs review: g904 diegoviola-g/fix-qt-wayland-rendering-issue
+	# Needs review: g904 diegoviola-g/fix-qt-wayland-rendering-issue
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
-	Triage: Needs review: g908 john-moffett-g/update-blank-wallet-tooltip
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -516,7 +515,8 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: 33637 l0rinc/l0rinc/block_index_comparators
 	# Needs review: 33645 Raimo33/optimize-tx-policy-verification
 	# Needs review: 33665 rkrux/musig-sighash
-	Review: Partial: 33738 l0rinc/l0rinc/debug-log-serialization
+	33738 opti_cmpctblocks_nolog_skip_hash-29				last=10e0e96e703 l0rinc/l0rinc/debug-log-serialization
+		# Very partial
 	# Needs review: 33757 l0rinc/l0rinc/solutions-vector-optional
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
