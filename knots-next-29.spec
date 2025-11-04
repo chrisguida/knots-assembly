@@ -40,7 +40,7 @@ checkout v29.2
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
-	33639 maflcko/2510-ci-rework-cache-providers
+	33639 docker_no_cache_gha-29.2
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	6b3aa212298
 	13789 asm_bypass_cxxflags					9de0f072503
@@ -265,7 +265,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# Added warning before leaving GUI firstrun screen
 		# Only affects macOS 14.x (13.x and 15.x unaffected)
 		# Knots gets rid of likely-buggy macOS-specific AllocateFileRange in fix_preallocate, which fixed this
-	31514 -  # wallet: allow lable for external descriptor & disallow label for ranged descriptors
+	31514 fix_wallet_rpc_ranged_pr31514-29
 	# Not strictly a bug? 31603 brunoerg/2025-01-descriptor-pk
 	# Needs work? 31610 l0rinc/l0rinc/gettransaction-rpc-doc
 	# Needs work: 31615 -  # Ensure assumevalid is always used during reindex
@@ -380,11 +380,11 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: 33646 -  # log: check fclose() results and report safely in logging.cpp
 	# Needs review: 33663 -  # addrman, net: Filter during address selection via AddrPolicy to avoid underfill
 	# IPC-specific: 33676 ismaelsadeeq/10-2025-add-interruptWaitNext
-	33698 maflcko/2510-test-cli-timeout-same
+	33698 fix_qa_rpctimeout_pr33698-27
 	# Needs review: 33699 0xB10C/2025-10-addr-token-bucket-start-5
 	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
 	# IPC-specific: 33745 Sjors/2025/10/submit-solution-doc
-	Triage: g901 -  # Add createwallet, createwalletdescriptor, and migratewallet to history filter
+	g901 fix_qt_rpchistoryfilter_pr_g901-28
 	Needs review: g904 diegoviola-g/fix-qt-wayland-rendering-issue
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
 	Triage: Needs review: g908 john-moffett-g/update-blank-wallet-tooltip
@@ -1302,6 +1302,7 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#30.xTODO# QTreeWidget or similar for GUI Options dialog?
 		# Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
+		TODO: Increase datacarriersize default
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	#30.xTODO# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv

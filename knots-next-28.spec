@@ -469,10 +469,10 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33616 instagibbs/2025-10-bypass_checkephemeral
 	# Needs review: 33646 -  # log: check fclose() results and report safely in logging.cpp
 	# Needs review: 33663 -  # addrman, net: Filter during address selection via AddrPolicy to avoid underfill
-	33698 maflcko/2510-test-cli-timeout-same
+	33698 fix_qa_rpctimeout_pr33698-27
 	# Needs review: 33699 0xB10C/2025-10-addr-token-bucket-start-5
 	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
-	Triage: g901 -  # Add createwallet, createwalletdescriptor, and migratewallet to history filter
+	g901 fix_qt_rpchistoryfilter_pr_g901-28
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
 	Triage: Needs review: g908 john-moffett-g/update-blank-wallet-tooltip
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
@@ -1441,6 +1441,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#29.xTODO# QTreeWidget or similar for GUI Options dialog?
 		Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
+		TODO: Increase datacarriersize default
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
