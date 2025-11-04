@@ -735,6 +735,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	19873 mempressure-27						2fc6668792f	last=0802d0b4dc1 mempressure
+		BROKEN: Linux available memory detection no longer correct; we have different kinds of flushes now; and we need to ensure the OS can actually reclaim the freed memory
 		TODO: knots#219
 		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
 	# Needs review/testing: - maxmem_coins_cache

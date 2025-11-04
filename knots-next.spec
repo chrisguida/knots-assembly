@@ -574,7 +574,8 @@ checkout v30.0rc1
 		# NOTE: Included in Android fork below?
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
-	Prefer upstream? 19873 mempressure-29+knots					72cab2e8e31	last=5b43cc77824 mempressure
+	# Prefer upstream? 19873 mempressure-29+knots					72cab2e8e31	last=5b43cc77824 mempressure
+		# BROKEN: Linux available memory detection no longer correct; we have different kinds of flushes now; and we need to ensure the OS can actually reclaim the freed memory
 		TODO: knots#219
 		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
 		#31.xTODO# Revert #33333 ? (mere warning for large dbcache)
@@ -1025,7 +1026,7 @@ checkout v30.0rc1
 		# Includes ff7b90dc729 Embedded font: Rename to avoid confusion in font selector  (fix_qt_fontsel_confusion)
 	 553 bugfix_qt_uri_amount_parser			503fb1afd27
 	5861 gui_restore_addresses					87feae1d73b
-	5891  qt_console_history_persist			24d53a5989e	last=d7bc5138e19 qt_console_history_persist
+	5891  qt_console_history_persist			24d53a5989e	last=2e1d9cb3466 qt_console_history_persist
 	(CHECK-LAST)	last=6a5537ab675 origin-pull-k/203/head
 		# Includes knots#203 (Add migratewallet RPC in historyFilter)
 	Review: k214 kwsantiago/kwsantiago/204-clearhistory
@@ -1239,7 +1240,6 @@ checkout v30.0rc1
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#30.xTODO# QTreeWidget or similar for GUI Options dialog?
 		Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
-		TODO: Increase datacarriersize default
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	#30.xTODO# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv

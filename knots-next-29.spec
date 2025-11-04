@@ -541,7 +541,6 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
 			# When restoring libbitcoinkernel support, adjust libbitcoinconsensus reverts to make it interact with --with-libs (see 7ad32d39d76)
 	-     rm_multiprocess						e3dc3323e3d
-		TODO: delete doc/dependencies.md content
 		# TODO: Support libmultiprocess
 	# Broken: 24448 guix_linux_i686_compat				e8a7da94969	last=c76ac9d57f2 guix_linux_i686
 		# test2: export of symbol _IO_stdin_used not allowed!
@@ -631,7 +630,8 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	19873 mempressure-29+knots					72cab2e8e31	last=5b43cc77824 mempressure
-		TODO: knots#219
+		# BROKEN: Linux available memory detection no longer correct; we have different kinds of flushes now; and we need to ensure the OS can actually reclaim the freed memory
+		# TODO: knots#219
 		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
 	# Needs review/testing: - maxmem_coins_cache
 		# TODO: Some way to override... see #26471 discussion
@@ -965,7 +965,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# normal prio: connecting blocks, indexes, user requests
 	-    ionice_win-29+knots					c424b55ed99
 	8501  old_stats_rpc-29						a49391df3dc	last=7af0ea43b2
-		TODO: knots#226
+		# Many fixes (incl knots#226)
 		# Held back on old version due to conflict with GUI updates...
 	8550  old_stats_qt-29+knots					13cc089e1b5	last=63fb11652f
 		# Held back on old version due to conflict with RPC updates...
@@ -1066,7 +1066,7 @@ m	10593 relax_invblk_punishment-29.1+knots	4b6b42668dd
 	# FIXME: -     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
 		# FIXME: this is broken :(
 	14137 win_taskbar_progress					6c8a4b3405b	last=18eb4dbb8a
-		Review: k215 (Qt6 port)
+		# TODO: Review: k215 (Qt6 port)
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					c611addce62
 		# TODO?? blockreservedsize option
@@ -1092,10 +1092,10 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 		# Includes ff7b90dc729 Embedded font: Rename to avoid confusion in font selector  (fix_qt_fontsel_confusion)
 	 553 bugfix_qt_uri_amount_parser			503fb1afd27
 	5861 gui_restore_addresses					87feae1d73b
-	5891  qt_console_history_persist			24d53a5989e	last=d7bc5138e19 qt_console_history_persist
+	5891  qt_console_history_persist			24d53a5989e	last=2e1d9cb3466 qt_console_history_persist
 	(CHECK-LAST)	last=6a5537ab675 origin-pull-k/203/head
 		# Includes knots#203 (Add migratewallet RPC in historyFilter)
-	Review: k214 kwsantiago/kwsantiago/204-clearhistory
+	# Needs work: k214 kwsantiago/kwsantiago/204-clearhistory
 	-     net_identify_librerelay				cb379d75c76
 	-     net_identify_utreexo					9fb683d48a2
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
@@ -1126,7 +1126,7 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 	#30.xTODO# -     miningcbtag-27+knots
 		# TODO: add to rwconf_policy: 4b38a3031ab GUI/Options: Add miningcbtag via settings
 	-     blockview-29+knots					26510297777
-	Needs review? k225  1440000bytes/blockview-txid
+	# Needs work: k225  1440000bytes/blockview-txid
 	#-     mapport_default_on-27+knots			a32f282230d
 		# Re-disabled in light of continued security issues
 	#30.xTODO# Look into making the patches tarball in guix
@@ -1230,13 +1230,13 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 	#30.xTODO# Revert or make optional changes to OP_RETURN policies like #32359,#32381,#32406
 		#30.xTODO# Ensure #32790 doesn't break
 	# Needs review? 32453 JeremyRubin/unsigned_annex
-	Needs review: 33682 -  # More comprehensive datacarrier configuration
-		See also #33690
+	# Needs review: 33682 -  # More comprehensive datacarrier configuration
+		# See also #33690
 	# Needs review: 33759 roconnor-blockstream/bip143-standardness-2025-10
 	-     pol_maxtxlegacysigops-29.1+knots		6bada6bb4bb
 		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize		e1375d6a063
-		Consider knots#218
+		# TODO: Consider knots#218
 	# Needs review? k221 1440000bytes/getextrapoolinfo-rpc
 	# Needs work: k227 1440000bytes/remove-minedtxs-extrapool
 	k162  qt_bad_external_signer_msg-22			f1b1cdf9d4e	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
@@ -1302,7 +1302,6 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#30.xTODO# QTreeWidget or similar for GUI Options dialog?
 		# Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
-		TODO: Increase datacarriersize default
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	#30.xTODO# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
