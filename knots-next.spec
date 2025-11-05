@@ -815,7 +815,7 @@ checkout v30.0rc1
 	TODO: 30595 + 33791
 	MERGED: 30635 rpc_waitfornewblock_tip_param-29+k	6b961962f3a	last=c6e2c31c551 Sjors/2024/08/waitforblock
 	# Needs review: 30685 hebasto/240820-control-flow
-	30713 tdb3/relevant_blocks_in_scanblocks_status	5d6dccd8485	last=5b2d0216d87  # rpc_scanblocks_status_results-28
+	30713 -										5d6dccd8485	last=5b2d0216d87  # rpc_scanblocks_status_results-28
 	#30.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	Prefer upstream? 30860 bashcomp_bcli_generate-29				92e9b91b676	last=abf6ad42bdb BrandonOdiwuor/bash-completion

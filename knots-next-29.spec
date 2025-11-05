@@ -475,7 +475,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	31144 opti_multibyte_xor-29+knots			a0a7ced8815
-	31179 ismaelsadeeq/10-2024-add-reserve-to-univalue	844ab49b1b1	last=5d82d92aff7  # opti_rpc_uv_reserve-25
+	31179 -										844ab49b1b1	last=5d82d92aff7  # opti_rpc_uv_reserve-25
 	31645 opti_dbbatchsize_64-29				a18c844d4d7	last=b6f8c48946c l0rinc/l0rinc/utxo-dump-batching
 		# Held back 868413340f8...b6f8c48946c (reduce to 32 MiB) for now
 		# TODO: Test even higher or incrementing-as-we-flush
@@ -870,7 +870,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	#29.xTODO# 30595 + 33791
 	30635 rpc_waitfornewblock_tip_param-29+k	6b961962f3a	last=c6e2c31c551 Sjors/2024/08/waitforblock
 	# Needs review: 30685 hebasto/240820-control-flow
-	30713 tdb3/relevant_blocks_in_scanblocks_status	5d6dccd8485	last=5b2d0216d87  # rpc_scanblocks_status_results-28
+	30713 -										5d6dccd8485	last=5b2d0216d87  # rpc_scanblocks_status_results-28
 	#30.xTODO# Mitigate #30717 breaking compatibility with no-longer-debug opts
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	30860 bashcomp_bcli_generate-29				92e9b91b676	last=abf6ad42bdb BrandonOdiwuor/bash-completion

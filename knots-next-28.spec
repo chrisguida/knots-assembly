@@ -578,7 +578,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs Knots review & diff-minimise: 30987 davidgumberg/zero_after_free_allocator_change
 	# Needs review: 31132 andrewtoth/threaded-inputs
 	31144 l0rinc/l0rinc/optimize-xor
-	31179 opti_rpc_uv_reserve-25				fd9df84d86b	last=5d82d92aff7 ismaelsadeeq/10-2024-add-reserve-to-univalue
+	31179 opti_rpc_uv_reserve-25				fd9df84d86b	last=5d82d92aff7
 	31364 opti_no_copy_pr31364-28				3614ce28149
 	# Needs review: 31490 l0rinc/l0rinc/undo
 	31551 l0rinc/l0rinc/bulk-block-read-write
@@ -1002,7 +1002,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	31121 guix_glibc_cet-28						44b12da4bd8
 	# Needs review: 30685 hebasto/240820-control-flow
 	30708 rpc_getdescriptoractivity-28			9165f95006a	last=37a5c5d8366 jamesob/2024-08-getdescriptoractivity
-	30713 rpc_scanblocks_status_results-28		15e73d0eb8f	last=5b2d0216d87 tdb3/relevant_blocks_in_scanblocks_status
+	30713 rpc_scanblocks_status_results-28		15e73d0eb8f	last=5b2d0216d87
 	# Needs work? 30727 jonatack/2024-08-add-address-type-to-getaddressinfo
 	30793 rpc_getorphantxs-28+knots				ad863b5a7ba
 		#+31040+31043
