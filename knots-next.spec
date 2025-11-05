@@ -1,7 +1,7 @@
-timestamp 2025-11-04 01:39:01
+timestamp 2025-11-05 16:01:08
 lastapply no-merge
 
-#.. checked up to PR #33772 / gui#908 / knots#228
+#.. checked up to PR #33793 / gui#908 / knots#228
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -11,6 +11,7 @@ checkout v30.0rc1
 	# Needs review: 33570 l0rinc/l0rinc/environ-mingw
 	Needs review: g899 hebasto-g/251008-deprecated
 	#31.xTODO# Revert #33714 for #33570 (more portable) ?
+	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -811,6 +812,7 @@ checkout v30.0rc1
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
+	TODO: 30595 + 33791
 	MERGED: 30635 rpc_waitfornewblock_tip_param-29+k	6b961962f3a	last=c6e2c31c551 Sjors/2024/08/waitforblock
 	# Needs review: 30685 hebasto/240820-control-flow
 	30713 tdb3/relevant_blocks_in_scanblocks_status	5d6dccd8485	last=5b2d0216d87  # rpc_scanblocks_status_results-28
@@ -1272,7 +1274,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20251104)			d5593bea7a1
+	n/a  (bump_version=knots20251105)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits

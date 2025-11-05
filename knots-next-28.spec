@@ -1,7 +1,7 @@
-timestamp 2025-11-04 01:39:01
+timestamp 2025-11-05 16:01:08
 #lastapply no-merge
 
-#.. checked up to PR #33772 / gui#908 / knots#228
+#.. checked up to PR #33793 / gui#908 / knots#228
 
 checkout v28.2
 @28.x-syslibs
@@ -16,6 +16,7 @@ checkout v28.2
 	Triage: Needs review: 33550 ryanofsky/pr/winstream
 	Triage: Needs review: 33569 l0rinc/l0rinc/throw-by-value
 	Triage: Needs review: 33570 l0rinc/l0rinc/environ-mingw
+	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -996,6 +997,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
+	TODO: 30595 + 33791
 	Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28						44b12da4bd8
 	# Needs review: 30685 hebasto/240820-control-flow
@@ -1474,7 +1476,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20251104)			ba223403bbc
+	n/a  (bump_version=Knots:20251105)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits
