@@ -1,7 +1,7 @@
-timestamp 2025-11-05 16:01:08
+timestamp 2025-11-07 16:35:55
 #lastapply no-merge
 
-#.. checked up to PR #33793 / gui#908 / knots#228
+#.. checked up to PR #33819 / gui#910 / knots#228
 
 checkout v28.2
 @28.x-syslibs
@@ -475,6 +475,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
 	g901 fix_qt_rpchistoryfilter_pr_g901-28
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
+	33813 Ataraxia009/rpc-bind-warning
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -623,6 +624,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33665 rkrux/musig-sighash
 	Review: Partial: 33738 l0rinc/l0rinc/debug-log-serialization
 	# Needs review: 33757 l0rinc/l0rinc/solutions-vector-optional
+	# Needs concept (even if merged) & review: 33817 l0rinc/l0rinc/bip30-bloom-filter-removal
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -997,7 +999,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	TODO: 30595 + 33791
+	TODO: 30595 + 33791 + 33796  libbitcoinkernel C API
 	Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28						44b12da4bd8
 	# Needs review: 30685 hebasto/240820-control-flow
@@ -1095,6 +1097,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs concept & review: 33671 ajtowns/202510-wallet-unconf-bal
 	# Needs review: 33752 -  # rest: Query predecessor headers using negative count param
 	# Needs review: g902 prusnak-g/desktop-file
+	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1476,7 +1479,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20251105)			ba223403bbc
+	n/a  (bump_version=Knots:20251107)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	n/a   (cherrypick=b5bdee81b14)				df2512ca90f  # release notes: write/update, including change log and credits

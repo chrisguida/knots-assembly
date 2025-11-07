@@ -1,7 +1,7 @@
-timestamp 2025-11-05 16:01:08
+timestamp 2025-11-07 16:35:55
 lastapply no-merge
 
-#.. checked up to PR #33793 / gui#908 / knots#228
+#.. checked up to PR #33819 / gui#910 / knots#228
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -340,6 +340,7 @@ checkout v30.0rc1
 	Triage: g901 -  # Add createwallet, createwalletdescriptor, and migratewallet to history filter
 	Needs review: g904 diegoviola-g/fix-qt-wayland-rendering-issue
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
+	33813 Ataraxia009/rpc-bind-warning
 	Triage: Needs review: g908 john-moffett-g/update-blank-wallet-tooltip
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
@@ -462,6 +463,7 @@ checkout v30.0rc1
 	# Needs review: 33665 rkrux/musig-sighash
 	Review: Partial: 33738 l0rinc/l0rinc/debug-log-serialization
 	# Needs review: 33757 l0rinc/l0rinc/solutions-vector-optional
+	# Needs concept (even if merged) & review: 33817 l0rinc/l0rinc/bip30-bloom-filter-removal
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -812,7 +814,7 @@ checkout v30.0rc1
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	TODO: 30595 + 33791
+	TODO: 30595 + 33791 + 33796  libbitcoinkernel C API
 	MERGED: 30635 rpc_waitfornewblock_tip_param-29+k	6b961962f3a	last=c6e2c31c551 Sjors/2024/08/waitforblock
 	# Needs review: 30685 hebasto/240820-control-flow
 	30713 -										5d6dccd8485	last=5b2d0216d87  # rpc_scanblocks_status_results-28
@@ -877,6 +879,7 @@ checkout v30.0rc1
 	# Needs concept & review: 33671 ajtowns/202510-wallet-unconf-bal
 	# Needs review: 33752 -  # rest: Query predecessor headers using negative count param
 	# Needs review: g902 prusnak-g/desktop-file
+	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
 	-     qt_createunsigned_use_psbtops			a800d52314e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1274,7 +1277,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20251105)			d5593bea7a1
+	n/a  (bump_version=knots20251107)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits
