@@ -388,7 +388,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	g901 fix_qt_rpchistoryfilter_pr_g901-28
 	# Needs review: g904 diegoviola-g/fix-qt-wayland-rendering-issue
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
-	33813 Ataraxia009/rpc-bind-warning
+	33813 warn_for_rpcbind_ignored-29						last=0cca5b772a9 Ataraxia009/rpc-bind-warning
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -1336,12 +1336,12 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
-	n/a   (cherrypick=589ddc812a8)				7367bb04b08	# doc/{bips,files}
+	n/a   (cherrypick=7367bb04b08)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=knots20251107)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
-	n/a   (cherrypick=1b5001287c1)				8a0a4c31679  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=d415ac81e6d)				8a0a4c31679  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1352,8 +1352,8 @@ m	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
-	n/a  (cherrypick=cf092c0ff56)	# bump to rc1 #29.xTODO# REMOVE
-	n/a  (cherrypick=7d946bfca7b)				eeb9cc11206  # update manpages (build first)
+	n/a  (cherrypick=1405b05ae82)	# bump to rc1 #29.xTODO# REMOVE
+	n/a  (cherrypick=959f7580b24)				eeb9cc11206  # update manpages (build first)
 		# WARNING: Don't forget to add zsh completion!
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
 		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
