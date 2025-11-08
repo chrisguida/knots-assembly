@@ -1,7 +1,7 @@
 timestamp 2025-11-07 16:35:55
 lastapply no-merge
 
-#.. checked up to PR #33819 / gui#910 / knots#228
+#.. checked up to PR #33825 / gui#910 / knots#228
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -814,7 +814,7 @@ checkout v30.0rc1
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	TODO: 30595 + 33791 + 33796  libbitcoinkernel C API
+	TODO: 30595 + 33791 + 33796 + 33822 + 33825  libbitcoinkernel C API
 	MERGED: 30635 rpc_waitfornewblock_tip_param-29+k	6b961962f3a	last=c6e2c31c551 Sjors/2024/08/waitforblock
 	# Needs review: 30685 hebasto/240820-control-flow
 	30713 -										5d6dccd8485	last=5b2d0216d87  # rpc_scanblocks_status_results-28

@@ -1,7 +1,7 @@
 timestamp 2025-11-07 16:35:55
 #lastapply no-merge
 
-#.. checked up to PR #33819 / gui#910 / knots#228
+#.. checked up to PR #33825 / gui#910 / knots#228
 
 checkout v28.2
 @28.x-syslibs
@@ -999,7 +999,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	TODO: 30595 + 33791 + 33796  libbitcoinkernel C API
+	TODO: 30595 + 33791 + 33796 + 33822 + 33825  libbitcoinkernel C API
 	Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28						44b12da4bd8
 	# Needs review: 30685 hebasto/240820-control-flow
