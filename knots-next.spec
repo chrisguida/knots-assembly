@@ -1,7 +1,7 @@
-timestamp 2025-11-07 16:35:55
+timestamp 2025-11-10 01:20:55
 lastapply no-merge
 
-#.. checked up to PR #33825 / gui#910 / knots#228
+#.. checked up to PR #33828 / gui#910 / knots#228
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -1277,7 +1277,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20251107)			d5593bea7a1
+	n/a  (bump_version=knots20251110)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits
