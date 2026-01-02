@@ -424,6 +424,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 #@29.x-knots-lts-deps
 	-     upd_qt5-29.2							8ea175db02c
 		# 5.15.17 Opensource released: https://lists.qt-project.org/pipermail/announce/2025-May/000557.html
+		TODO: 5.15.18: https://lists.qt-project.org/pipermail/announce/2025-October/000592.html
 		# Includes patch for CVE-2025-4211 (not upstream; simpler and safer)
 		# 5.15.19 (not available) fixes other bugs, but no CVEs that affect us (unless we start using Qt for XML or HTTP2)
 	#29.xTODO# FIXME -     depends_qt5kde
