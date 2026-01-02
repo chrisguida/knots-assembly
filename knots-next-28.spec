@@ -464,9 +464,14 @@ NM	32187 zmq_devirtual_destructor-0.12
 	33504 instagibbs/2025-09-truc-reorg-fix
 		28.x backport in #33535
 	Needs review: 33528 glozow/2025-09-send
+		30.x backport in #33997
 	33563 fanquake/fix_qt_urls
+	Triage: 33566 Sjors/2025/10/wait-empty-mempool
+		30.x backport in #33609
 	33580 achow101/depends-fallback-name
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
+	Triage: 33612 Crypt-iQ/log_ratelimit_functional_backport_10132025
+		30.x backport in #33609
 	# Needs review: 33616 instagibbs/2025-10-bypass_checkephemeral
 	# Needs review: 33646 -  # log: check fclose() results and report safely in logging.cpp
 	# Needs review: 33663 -  # addrman, net: Filter during address selection via AddrPolicy to avoid underfill

@@ -25,6 +25,8 @@ checkout v29.2
 	15155 test_external_bcli					efac13289ec	last=8f25a48c298 test_external_bcli-30
 	30997 qt5qt6-29								06e7268e389	last=65319c41ff1 compat_qt5-30
 		# Includes parts of gui#861 whitslack/qt6
+		+gui#899 (careful with compat)
+			(30.x backport in #33609)
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	n/a   (delete_release_notes_fragments)
@@ -374,9 +376,14 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	33511 fix_sigint_waitrpcs-29				0242a55d6f3	last=c25a5e670b2 ryanofsky/pr/sigwait
 		# Held back 68cad90dace...c25a5e670b2 pending more review
 		# Kept old notification to workaround GUI console regression
-	# Needs review: 33528 glozow/2025-09-send
+	Needs review: 33528 glozow/2025-09-send
+		30.x backport in #33997
+	Triage: 33566 Sjors/2025/10/wait-empty-mempool
+		30.x backport in #33609
 	33580 fix_depends_fallback_filename-0.13	d52d4ae06cd	last=671b774d1b5 achow101/depends-fallback-name
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
+	33612 Crypt-iQ/log_ratelimit_functional_backport_10132025
+		30.x backport in #33609
 	# Needs review: 33616 instagibbs/2025-10-bypass_checkephemeral
 	# Needs review: 33646 -  # log: check fclose() results and report safely in logging.cpp
 	# Needs review: 33663 -  # addrman, net: Filter during address selection via AddrPolicy to avoid underfill
@@ -427,6 +434,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		TODO: 5.15.18: https://lists.qt-project.org/pipermail/announce/2025-October/000592.html
 		# Includes patch for CVE-2025-4211 (not upstream; simpler and safer)
 		# 5.15.19 (not available) fixes other bugs, but no CVEs that affect us (unless we start using Qt for XML or HTTP2)
+		# TODO for 6.x: +#33906 (30.x backport in #33609)
 	#29.xTODO# FIXME -     depends_qt5kde
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
