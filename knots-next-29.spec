@@ -300,6 +300,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	# Needs review: 32199 maflcko/2504-time
 	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
+		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	32344 fix_wallet_nonranged_pr32344-22		ebfa2e38e92	last=97d383af6d5
 	32351 qafix_nonrecurs_FindChallenges-28		5aa7dcd899e

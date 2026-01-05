@@ -373,6 +373,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
 	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
 	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
+		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	32333 doc_rpc_pruneblockchain_top-21					last=135a0f0aa71
 	32342 -  # Fix missing error check in set_clo_on_exec for FD_CLOEXEC handling

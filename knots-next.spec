@@ -359,6 +359,7 @@ checkout v30.0rc1
 	-     fix_alertnotify_winquoting			108e6f088c5
 	-     torcontrol_avoid_bindany_connect		3b3e298f984
 	-     fix_tor_common_bind-29.2				5c116044d54
+	FIXME: DO NOT RELEASE WITHOUT FIXING WALLET DELETION BUG
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
