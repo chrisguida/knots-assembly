@@ -397,6 +397,10 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: g904 diegoviola-g/fix-qt-wayland-rendering-issue
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
 	33813 warn_for_rpcbind_ignored-29			2ad140000ff	last=0cca5b772a9 Ataraxia009/rpc-bind-warning
+	Review: 34156 furszy/2025_wallet_migration_jinglewreck
+		Ensure /wallet.dat doesn't rm /
+		Ensure user-made files in wallet dir survive
+	Review: 34215 achow101/createfromdump-deletion
 	-     fix_rpccookieperms_early				b9b9649a035
 	-     qt_intro_nojumpy						5bd49893678
 	-     restore_guix_ppc64le-28				e9df5c314a6
@@ -414,6 +418,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	-     fix_alertnotify_winquoting			e443160390a
 	-     torcontrol_avoid_bindany_connect		a8bf4520b20
 	-     fix_tor_common_bind-29.2				6b48bae2f3c
+	Needs review: k242 fix_bdb_edge_cases_202601
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -549,6 +554,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# TODO? 32247 jamesob/2025-04-csfs
 	# Needs community support: 33163 -  # BIP360 quantum
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
+	# Needs review & consensus: k238 -  # Reduced Data Temporary Softfork
 # FUNCTIONALITY:
 	#-     rm_kernel_lib							84b7c6adf43
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
