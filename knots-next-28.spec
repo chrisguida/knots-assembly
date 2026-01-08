@@ -308,6 +308,7 @@ checkout v28.2
 		#+32843
 	31416 docfix_rpc_send_inputsobj-23			4df3333de0f	last=fad83e759a4 maflcko/2412-doc-rpc
 	Needs backport work: 31423 wallet_migrate_watchonly_only-29
+		Partial 29.x backport in #34222
 	# Needs review: 31439 mzumsande/202412_reindex_interrupt
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	31451 fix_wallet_migrate_wo_bdb-27			f187eddc341	last=589ed1a8eaf furszy/2024_migration_cleanup_after_error
@@ -486,6 +487,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
 	Review: 34215 achow101/createfromdump-deletion
+		29.x backport in #34222
+	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327

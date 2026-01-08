@@ -362,6 +362,7 @@ checkout v30.0rc1
 	FIXME: DO NOT RELEASE WITHOUT FIXING WALLET DELETION BUG
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
+	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
 	Needs review: k242 fix_bdb_edge_cases_202601
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)

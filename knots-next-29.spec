@@ -261,6 +261,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs careful review: 31405 mzumsande/202411_stricter_invalidblock_handling
 		#+32843
 	# Needs backport work: 31423 wallet_migrate_watchonly_only-29
+		Partial 29.x backport in #34222
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	#30.xTODO# Revert: Knots NOT AFFECTED: 31453 macos_exfat_warning-29+knots			25f0359c100	last=db3228042b2 willcl-ark/macos-exfat
 		# Checking blocksdir unconditionally in case it's a mountpoint
@@ -401,6 +402,8 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
 	Review: 34215 achow101/createfromdump-deletion
+		29.x backport in #34222
+	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
 	-     fix_rpccookieperms_early				b9b9649a035
 	-     qt_intro_nojumpy						5bd49893678
 	-     restore_guix_ppc64le-28				e9df5c314a6
