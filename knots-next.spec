@@ -14,7 +14,6 @@ checkout v30.0rc1
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 	Triage: 33972 hebasto/251130-kernel-test
 	Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
-	TODO: Address https://github.com/bitcoin/bitcoin/issues/34101 properly
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447

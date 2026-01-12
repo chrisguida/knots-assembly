@@ -17,7 +17,6 @@ checkout v28.2
 	Triage: Needs review: 33569 l0rinc/l0rinc/throw-by-value
 	Triage: Needs review: 33570 l0rinc/l0rinc/environ-mingw
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
-	Triage: 33972 hebasto/251130-kernel-test
 	Triage: Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
 	TODO: Address https://github.com/bitcoin/bitcoin/issues/34101 properly
 # SYSLIBS: (and old build bugs)
