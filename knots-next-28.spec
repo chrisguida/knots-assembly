@@ -48,7 +48,7 @@ checkout v28.2
 	31408 qafix_framework_pr31408-27			8d7611a7eca
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
 	TRIAGE: 33639 maflcko/2510-ci-rework-cache-providers
-	Review: 33990 theStack/202512-test-announced_starting_height
+	33990 qa_rpc_startingheight-28							last=52f96cc235d theStack/202512-test-announced_starting_height
 	Triage: 34185 brunoerg/2025-12-test-pruning-wout-wallet
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail

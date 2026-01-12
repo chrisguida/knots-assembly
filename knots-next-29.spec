@@ -46,8 +46,8 @@ checkout v29.2
 NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
 	33639 docker_no_cache_gha-29.2				0c1f5ccf6d1
-	Review: 33990 theStack/202512-test-announced_starting_height
-	Triage: 34185 brunoerg/2025-12-test-pruning-wout-wallet
+	33990 qa_rpc_startingheight-28							last=52f96cc235d theStack/202512-test-announced_starting_height
+	34185 qafix_pruning_wo_wallet-25						last=8fb5e5f41dd brunoerg/2025-12-test-pruning-wout-wallet
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	40c60c46755
 	13789 asm_bypass_cxxflags					eda9424e71d
@@ -1417,6 +1417,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
+TODO: test build with Boost 1.73
 	n/a   (cherrypick=7367bb04b08)				537ce939717	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=knots20260112)			28eccd9fdfe
