@@ -370,9 +370,11 @@ checkout v30.0rc1
 	Needs review: Partial: 34143 hebasto/251223-boost-layout
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
+	# ----- WALLET DELETION BUGFIXES -----
 	Triage: 34176 furszy/2025_wallet_check_db_permissions
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
+	# ----- END WALLET DELETION BUGFIXES -----
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
 	Needs review: 34213 brunoerg/2026-01-net-anchors-networkactive
 	Needs review: 34224 sedited/init_interrupt_zero

@@ -264,8 +264,6 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: 31404 furszy/2024_descriptors_infer_multisig
 	# Needs careful review: 31405 mzumsande/202411_stricter_invalidblock_handling
 		#+32843
-	# Needs backport work: 31423 wallet_migrate_watchonly_only-29
-		Partial 29.x backport in #34222
 	# Needs review/correctness per branch: Diff-minimise: 31449 -  # coins,refactor: Reduce getblockstats RPC UTXO overhead estimation
 	#30.xTODO# Revert: Knots NOT AFFECTED: 31453 macos_exfat_warning-29+knots			25f0359c100	last=db3228042b2 willcl-ark/macos-exfat
 		# Checking blocksdir unconditionally in case it's a mountpoint
@@ -304,8 +302,6 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# Only the fix, without the bumped LevelDB version dep
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	# Needs review: 32199 maflcko/2504-time
-	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
-		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
 	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	32344 fix_wallet_nonranged_pr32344-22		ebfa2e38e92	last=97d383af6d5
 	32351 qafix_nonrecurs_FindChallenges-28		5aa7dcd899e
@@ -422,6 +418,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	Triage: 34141 achow101/musig-miniscript
 	Triage: Needs review: Partial: 34143 hebasto/251223-boost-layout
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
+	# ----- WALLET DELETION BUGFIXES -----
 	Review: 34156 furszy/2025_wallet_migration_jinglewreck
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
@@ -433,6 +430,11 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	Triage: 34176 furszy/2025_wallet_check_db_permissions
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
+	# Needs backport work: 31423 wallet_migrate_watchonly_only-29
+		Partial 29.x backport in #34222
+	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
+		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
+	# ----- END WALLET DELETION BUGFIXES -----
 	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
 	34227 hebasto/260108-guix-osslsigncode
 		30.x backport in #34229
