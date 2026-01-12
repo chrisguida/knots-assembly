@@ -1,7 +1,7 @@
-timestamp 2025-11-10 01:20:55
+timestamp 2026-01-12 10:32:54
 lastapply no-merge
 
-#.. checked up to PR #33828 / gui#910 / knots#228
+#.. checked up to PR #34260 / gui#922 / knots#228
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -12,6 +12,9 @@ checkout v30.0rc1
 	Needs review: g899 hebasto-g/251008-deprecated
 	#31.xTODO# Revert #33714 for #33570 (more portable) ?
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
+	Triage: 33972 hebasto/251130-kernel-test
+	Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
+	TODO: Address https://github.com/bitcoin/bitcoin/issues/34101 properly
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -44,6 +47,8 @@ checkout v30.0rc1
 	# If needed: -     ci_gha_makejobs_8						8cd076e06ab
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
 	33639 maflcko/2510-ci-rework-cache-providers
+	Review: 33990 theStack/202512-test-announced_starting_height
+	Triage: 34185 brunoerg/2025-12-test-pruning-wout-wallet
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	6b3aa212298
 	13789 asm_bypass_cxxflags					9de0f072503
@@ -278,6 +283,7 @@ checkout v30.0rc1
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
 	# Needs review: 32757 -  # net: Fix Discover() not running when using -bind=0.0.0.0:port
 		# Was #31492 (not in any release)
+		# Or #33935
 	# Needs review: 32773 hebasto/250618-mkdir
 	# Needs concept & review: 32788 achow101/desc-allow-H
 		# Check for this impacting other Knots merges
@@ -324,24 +330,60 @@ checkout v30.0rc1
 	33504 fix_truc_bypasslimits-29							last=06df14ba75b instagibbs/2025-09-truc-reorg-fix
 	33511 fix_sigint_waitrpcs-29				b4915e93eb6	last=c25a5e670b2 ryanofsky/pr/sigwait
 		# Kept old notification to workaround GUI console regression
+		30.x backport in #34192
 	Needs review: 33528 glozow/2025-09-send
+		30.x backport in #33997
 	Needs review: 33566 Sjors/2025/10/wait-empty-mempool
 	33580 achow101/depends-fallback-name		5299fc8950b
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
 	# Needs review: 33616 instagibbs/2025-10-bypass_checkephemeral
 	# Needs review: 33646 -  # log: check fclose() results and report safely in logging.cpp
 	# Needs review: 33663 -  # addrman, net: Filter during address selection via AddrPolicy to avoid underfill
+		# Or #34162 fjahr/2025-12-33663-alt
 	# IPC-specific: 33676 ismaelsadeeq/10-2025-add-interruptWaitNext
 	33698 maflcko/2510-test-cli-timeout-same
 	# Needs review: 33699 0xB10C/2025-10-addr-token-bucket-start-5
 	#31.xTODO# Revert #33723
 	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
 	# IPC-specific: 33745 Sjors/2025/10/submit-solution-doc
+		# +#33880
 	Triage: g901 -  # Add createwallet, createwalletdescriptor, and migratewallet to history filter
 	Needs review: g904 diegoviola-g/fix-qt-wayland-rendering-issue
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
 	33813 Ataraxia009/rpc-bind-warning
 	Triage: Needs review: g908 john-moffett-g/update-blank-wallet-tooltip
+	Needs review: 33854 -  # fix assumevalid is ignored during reindex
+	Triage: 33865 hebasto/251112-plugin-path
+	Triage: 33918 hebasto/251120-qt-link
+	Triage: 33952 fanquake/close_out_29977
+	Triage: 33956 Crypt-iQ/11262025/asan_reconnections_fix
+	Triage: 33960 maflcko/2511-log
+	# IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
+	Triage: 33993 brunoerg/2025-12-init-stopatheight
+	34008 0xB10C/2025-12-dont-ratelimit-new-inbound-peer-connected-with-debug=net
+	Triage: 34010 rkrux/musig-key-fix
+	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
+	Needs review: 34028 -  # p2p: saturate LocalServiceInfo::nScore to prevent overflow
+	#31.xTODO# Revert/disable #34075 mempool-based fee estimator
+	Review: 34109 maflcko/2512-fix-u64
+	Triage: 34117 -  # multiple
+	Triage: 34141 achow101/musig-miniscript
+	Needs review: Partial: 34143 hebasto/251223-boost-layout
+	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
+	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
+	Triage: 34176 furszy/2025_wallet_check_db_permissions
+	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
+	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
+	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
+	Needs review: 34213 brunoerg/2026-01-net-anchors-networkactive
+	Needs review: 34224 sedited/init_interrupt_zero
+	Triage: 34235 glozow/2026-01-miniminer-fees
+	Review: Triage: 34238 instagibbs/2026-01-trucness_reorg
+	34252 theStack/2026-doc-bips-add-p2a
+	Triage (Qt6-only?) g914 hebasto/251121-wayland
+	Triage: Needs review: g915 -  # Defer transaction signing until user clicks Send
+	Needs review: g920  -  # Set peer version and subversion to N/A when not available or detecting
+	Needs review: g922  -  # gui: fix transactions disable problem
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -363,7 +405,10 @@ checkout v30.0rc1
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
 	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
+		30.x backport in #34229
+	Needs review: k237 privkeyio/159-build-checks
 	Needs review: k242 fix_bdb_edge_cases_202601
+	k244  fix_qt_amtfield_infinityevent
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -385,9 +430,12 @@ checkout v30.0rc1
 		# Includes patch for CVE-2025-4211 (not upstream; simpler and safer)
 		# 5.15.19 (not available) fixes other bugs, but no CVEs that affect us (unless we start using Qt for XML or HTTP2)
 	#30.xTODO# FIXME -     depends_qt5kde
-	# Needs review: 32655 fanquake/sqlite_3_50_0
+	Needs review: k231  privkeyio/kwsantiago/qt6-depends-upgrade
+	Needs review: 32655 fanquake/sqlite_3_50_0
+	Needs review: 33851 fanquake/xcb_util_updates
 @30.x-knots
 # PERFORMANCE:
+	33915 maflcko/2511-test-retry-prev-donwload
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
@@ -469,6 +517,12 @@ checkout v30.0rc1
 	Review: Partial: 33738 l0rinc/l0rinc/debug-log-serialization
 	# Needs review: 33757 l0rinc/l0rinc/solutions-vector-optional
 	# Needs concept (even if merged) & review: 33817 l0rinc/l0rinc/bip30-bloom-filter-removal
+	# Needs careful review: 34004 -  # Implementation of SwiftSync
+	Triage: 34025 ajtowns/202512-netsplit-opt
+	# Needs review: 34054 sedited/txdownloadman_ibd_check
+	# Needs review: 34083 theuni/chacha20-vectorized-initial
+	34088 maflcko/2512-log-func
+	Needs review: 34253 l0rinc/l0rinc/cache-ibd-status
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -486,6 +540,7 @@ checkout v30.0rc1
 	# TODO? 32080 -  # OP_CHECKCONTRACTVERIFY
 	# TODO? 32247 jamesob/2025-04-csfs
 	# Needs community support: 33163 -  # BIP360 quantum
+	# Triage: 34140 roconnor-blockstream/simplicity
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
 	# Needs review & consensus: k238 -  # Reduced Data Temporary Softfork
 # FUNCTIONALITY:
@@ -700,6 +755,7 @@ checkout v30.0rc1
 		# TODO: Maybe a button inside the lineedit to display the error message?
 	# OR: Needs work? g560 w0xlt-g/3_error_message_addr
 	# Needs review: 24539   # Add a "tx output spender" index
+	# Needs review: 33904 kevkevinpal/feat/rest-gettxspendingprevout
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
 	# Needs work: 24897 w0xlt/silent_payment_021
 	# Needs work: 24950 -  # Add config option to set max debug log size
@@ -781,6 +837,8 @@ checkout v30.0rc1
 	# Needs review: g753 -  # Add new "address type" column to the "receiving tab" address book page
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
+	# Needs review? 28792 (asmap)
+	# Needs review: 33920 fjahr/2025-11-asmap-export
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
 	# Needs concept/review: g777 -  # gui: getrawtransaction implementation
 	# Needs concept/review: 28930 -  # wallet: Add scan_utxo option to getbalances RPC
@@ -882,7 +940,9 @@ checkout v30.0rc1
 	Needs work: g898 apogio-g/feature-utxo-viewer
 	# Needs review/concept: 33631 fjahr/202510-asmap-arg-split OR 33632 fjahr/202510-asmap-arg-improve
 	# Needs concept EVEN IF MERGED: 33657 -  # rest: allow reading partial block data from storage - MAYBE REVERT
+		# +#34074
 	# Needs concept & review: 33671 ajtowns/202510-wallet-unconf-bal
+	# Needs concept & review: g911  ajtowns-g/202511-wallet-unconf-bal-gui
 	# Needs review: 33752 -  # rest: Query predecessor headers using negative count param
 	# Needs review: g902 prusnak-g/desktop-file
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
@@ -1011,7 +1071,7 @@ checkout v30.0rc1
 	# FIXME: -     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
 		# FIXME: this is broken :(
 	14137 win_taskbar_progress					6c8a4b3405b	last=18eb4dbb8a
-		Review: k215 (Qt6 port)
+		TODO: Needs review/testing: k215 privkeyio/kwsantiago/191-win-taskbar-progress-qt6
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					c611addce62
 		# TODO?? blockreservedsize option
@@ -1094,6 +1154,7 @@ checkout v30.0rc1
 	#30.xTODO# Revert #32450 ?
 	#30.xTODO# Revert #32510 or replace extratxn pool
 	30.xTODO: Consider reverting #33050 )MERGED) ? (and #33183? (MERGED))
+	30.xTODO: Restore -maxorphantx? (see #32941 and #33872)
 	k171  Raimo33/add-dockerfile				555818a43a1	last=4b778a21835
 	k187  Retropex/dnsseed-leo					cc1d0a84ab3	last=68abc8a3262
 	Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
@@ -1102,6 +1163,7 @@ checkout v30.0rc1
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	e11d54ee382
 	-     pol_acceptunknownwitness				6d158fd7fbd
+		TODO: knots#245
 	-     mining_priority						b2fc1c21f8b	# Latest code now
 		#30.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
@@ -1189,7 +1251,11 @@ checkout v30.0rc1
 	k162  qt_bad_external_signer_msg-22			f1b1cdf9d4e	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 	#31.xTODO# Consider reverting parts of #33489 (build: Drop support for EOL macOS 13) and #33573
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
+	30.xTODO: Consider #33892 policy: allow <minrelay txns in package context if paid for by cpfp
+	30.xTODO: Consider #33926 Align legacy script policy with P2SH policy in AreInputsStandard
 # Non-upstreamed Knots compatibility:
+	#31.xTODO# maybe revert #34197 rpc, net: deprecate startingheight field of getpeerinfo RPC
+		# ...and gui#921 (same)
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
 	30.xTODO: maybe revert #32721 (MERGED) achow101:remove-deprecated-balances
 	#30.xTODO# -     compat_bumpfee_require_replacable
@@ -1266,6 +1332,8 @@ checkout v30.0rc1
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	# n/a   copyright_2025-28						19e67dd9efa
+		TODO: +#34174
+			30.x backport in #34192
 	n/a   font_ocrbitcoin						68221e1221f
 	n/a   knots_branding-29						78ea02d8a58
 		# NOTE: Includes #33422 to clean up "(64-bit)" leftovers
@@ -1283,7 +1351,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20251110)			d5593bea7a1
+	n/a  (bump_version=knots20260112)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits
@@ -1300,7 +1368,7 @@ checkout v30.0rc1
 	n/a  (cherrypick=8236fd755e1)				eeb9cc11206  # update manpages (build first)
 		# WARNING: Don't forget to add zsh completion!
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
-		#30.xTODO# check all applicable build options are enabled (see also #33085, plus miniupnpc)
+		#30.xTODO# check all applicable build options are enabled (see also #33085 and #33828, plus miniupnpc)
 		# also example bitcoin.conf and bitcoin-cli bash-completion
 	#30.xTODO# n/a  (cherrypick=9b1226db50e)				a5eb5c7e301  # translation update
 		# TODO: Upload to Transifex with * d9411324066 (ts_20220515, origin-pull-g/599/head) GUI: Support translating Bitcoin units
@@ -1309,6 +1377,7 @@ checkout v30.0rc1
 
 # TODO: @30.x-knots-android
 	# 32262 hebasto/250413-android
+	# 34211 build: Alt restore cross-compilation for Android
 
 # TODO: @30.x-knots-extratests
 	# TODO: 31367 dergoegge/2024-11-ci-ulimit-s
