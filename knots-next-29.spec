@@ -404,6 +404,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	Review: 34215 achow101/createfromdump-deletion
 		29.x backport in #34222
 	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
+	34227 hebasto/260108-guix-osslsigncode
 	-     fix_rpccookieperms_early				b9b9649a035
 	-     qt_intro_nojumpy						5bd49893678
 	-     restore_guix_ppc64le-28				e9df5c314a6
@@ -1360,6 +1361,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	n/a  (bump_version=knots20251110)			28eccd9fdfe
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		983a13aec03
+	TODO: https://x.com/1440000bytes/status/2009692447040053320
 	n/a   (cherrypick=f7f99b3464c)				f7f99b3464c  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
