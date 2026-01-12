@@ -28,8 +28,7 @@ checkout v29.2
 	15155 test_external_bcli					efac13289ec	last=8f25a48c298 test_external_bcli-30
 	30997 qt5qt6-29								06e7268e389	last=65319c41ff1 compat_qt5-30
 		# Includes parts of gui#861 whitslack/qt6
-		+gui#899 (careful with compat)
-			(30.x backport in #33609)
+	g899  qt6compat_invalidateFilter-23
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	n/a   (delete_release_notes_fragments)
