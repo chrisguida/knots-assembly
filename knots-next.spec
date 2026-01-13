@@ -353,10 +353,10 @@ checkout v30.0rc1
 	Triage: 33865 hebasto/251112-plugin-path
 	Triage: 33918 hebasto/251120-qt-link
 	Triage: 33952 fanquake/close_out_29977
-	Triage: 33956 Crypt-iQ/11262025/asan_reconnections_fix
+	33956 fix_p2pv2_useafterfree_pr33956-26
 	Triage: 33960 maflcko/2511-log
 	# IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
-	Triage: 33993 brunoerg/2025-12-init-stopatheight
+	33993 doc_stopatheight_imprecise-21
 	34008 0xB10C/2025-12-dont-ratelimit-new-inbound-peer-connected-with-debug=net
 	Triage: 34010 rkrux/musig-key-fix
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization

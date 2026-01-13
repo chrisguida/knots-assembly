@@ -400,14 +400,14 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: g904 diegoviola-g/fix-qt-wayland-rendering-issue
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
 	33813 warn_for_rpcbind_ignored-29			2ad140000ff	last=335a05c69e1 Ataraxia009/rpc-bind-warning
-	Triage: Needs review: 33854 -  # fix assumevalid is ignored during reindex
-	Triage: 33865 hebasto/251112-plugin-path
-	Triage: 33918 hebasto/251120-qt-link
-	Triage: 33952 fanquake/close_out_29977
-	Triage: 33956 Crypt-iQ/11262025/asan_reconnections_fix
-	Triage: 33960 maflcko/2511-log
+	# Needs review: 33854 -  # fix assumevalid is ignored during reindex
+	# MSVC-specific: 33865 hebasto/251112-plugin-path
+	33956 fix_p2pv2_useafterfree_pr33956-26
+	33960 loglevel_corrections-29+knots
+		# NOTE: Silently dropped a change somewhat equivalent to #33813 (which is GUI-loud)
+	-     loglevel_corrections_bdb-29+knots
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
-	Triage: 33993 brunoerg/2025-12-init-stopatheight
+	33993 doc_stopatheight_imprecise-21
 	Triage: 34010 rkrux/musig-key-fix
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
 	Needs review: 34028 -  # p2p: saturate LocalServiceInfo::nScore to prevent overflow
@@ -482,6 +482,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	#30.xTODO# Review security report(s)
 	n/a   (delete_release_notes_fragments)
 #@29.x-knots-lts-deps
+	# No point (dynamic linked): 33952 fanquake/close_out_29977
 	-     upd_qt5-29.2							8ea175db02c
 		# 5.15.17 Opensource released: https://lists.qt-project.org/pipermail/announce/2025-May/000557.html
 		TODO: 5.15.18: https://lists.qt-project.org/pipermail/announce/2025-October/000592.html
@@ -491,6 +492,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	#29.xTODO# FIXME -     depends_qt5kde
 	With Qt6: 33906 hebasto/251118-patch-win11-plugin
 		30.x backport in #33609
+	With Qt6: 33918 hebasto/251120-qt-link
 	Needs review: k231  privkeyio/kwsantiago/qt6-depends-upgrade
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink

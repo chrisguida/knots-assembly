@@ -486,12 +486,11 @@ NM	32187 zmq_devirtual_destructor-0.12
 	33813 Ataraxia009/rpc-bind-warning
 	Triage: Needs review: 33854 -  # fix assumevalid is ignored during reindex
 	Triage: 33865 hebasto/251112-plugin-path
-	Triage: 33918 hebasto/251120-qt-link
 	Triage: 33952 fanquake/close_out_29977
-	Triage: 33956 Crypt-iQ/11262025/asan_reconnections_fix
+	33956 fix_p2pv2_useafterfree_pr33956-26
 	Triage: 33960 maflcko/2511-log
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
-	Triage: 33993 brunoerg/2025-12-init-stopatheight
+	33993 doc_stopatheight_imprecise-21
 	Triage: 34010 rkrux/musig-key-fix
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
 	Needs review: 34028 -  # p2p: saturate LocalServiceInfo::nScore to prevent overflow
