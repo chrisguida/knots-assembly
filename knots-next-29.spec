@@ -408,12 +408,9 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	-     loglevel_corrections_bdb-29+knots
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
 	33993 doc_stopatheight_imprecise-21
-	Triage: 34010 rkrux/musig-key-fix
-	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
 	Needs review: 34028 -  # p2p: saturate LocalServiceInfo::nScore to prevent overflow
 	Review: 34109 maflcko/2512-fix-u64
 	Triage: 34117 -  # multiple
-	Triage: 34141 achow101/musig-miniscript
 	Triage: Needs review: Partial: 34143 hebasto/251223-boost-layout
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 	# ----- WALLET DELETION BUGFIXES -----
@@ -584,7 +581,6 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review? 33602 l0rinc/l0rinc/BatchWrite-lookup-optimization
 	# Needs review: 33637 l0rinc/l0rinc/block_index_comparators
 	# Needs review: 33645 Raimo33/optimize-tx-policy-verification
-	# Needs review: 33665 rkrux/musig-sighash
 	33738 opti_cmpctblocks_nolog_skip_hash-29	6aba3a975dc	last=10e0e96e703 l0rinc/l0rinc/debug-log-serialization
 		# Very partial
 	# Needs review: 33757 l0rinc/l0rinc/solutions-vector-optional
@@ -932,10 +928,16 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs concept & work: 29468 -  # rpc: method removeprunedfunds should take an array of txids
 	-     manpages_seealso_notself				d4f4d97e160
 		# Originally bundled into #29585
+	# ----- MUSIG2 -----
+	# Needs review: 33665 rkrux/musig-sighash
 	# Needs review & wallet compat check: 31244 achow101/musig2-desc
 		# Needs #3313 too?
 	# Needs review: 32724 w0xlt/musig2_tests
 	# Needs review & wallet compat check: 29675 achow101/musig2
+	Triage: 34010 rkrux/musig-key-fix
+	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
+	Triage: 34141 achow101/musig-miniscript
+	# ----- END OF MUSIG2 -----
 	#30.xTODO# 29954 rpc_getmpinfo_policy_pr29954-28+knots				last=d165ac8779b kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
 		# Or maybe this is unnecessary with a get/set policy RPC method?
 	#30.xTODO# -     rpc_getmpinfo_policy_coreetc-28+knots
