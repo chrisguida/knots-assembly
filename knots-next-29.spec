@@ -408,7 +408,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	-     loglevel_corrections_bdb-29+knots
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
 	33993 doc_stopatheight_imprecise-21
-	Needs review: 34028 -  # p2p: saturate LocalServiceInfo::nScore to prevent overflow
+	34028 fix_seenlocal_max-26								last=a364f6303cb
 	Review: 34109 maflcko/2512-fix-u64
 	Triage: 34117 -  # multiple
 	Triage: Needs review: Partial: 34143 hebasto/251223-boost-layout

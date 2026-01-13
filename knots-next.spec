@@ -360,7 +360,7 @@ checkout v30.0rc1
 	34008 0xB10C/2025-12-dont-ratelimit-new-inbound-peer-connected-with-debug=net
 	Triage: 34010 rkrux/musig-key-fix
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
-	Needs review: 34028 -  # p2p: saturate LocalServiceInfo::nScore to prevent overflow
+	34028 fix_seenlocal_max-26								last=a364f6303cb
 	#31.xTODO# Revert/disable #34075 mempool-based fee estimator
 	Review: 34109 maflcko/2512-fix-u64
 	Triage: 34117 -  # multiple
