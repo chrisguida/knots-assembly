@@ -18,7 +18,8 @@ checkout v28.2
 	Triage: Needs review: 33570 l0rinc/l0rinc/environ-mingw
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 	Triage: Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
-	TODO: Address https://github.com/bitcoin/bitcoin/issues/34101 properly
+	k246  fix_boost1.73compat-29
+		# https://github.com/bitcoin/bitcoin/issues/34101
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)

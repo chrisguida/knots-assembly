@@ -12,7 +12,7 @@ checkout v29.2
 	# Needs review: g899 hebasto-g/251008-deprecated
 	# Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 	34093 fix_freebsd15_netlink_warn						last=be2a6248fbc vasild/fix_nlmsg_ok_compilation_fbsd15
-	-     fix_boost1.73compat-29
+	k246  fix_boost1.73compat-29
 		# https://github.com/bitcoin/bitcoin/issues/34101
 # SYSLIBS:
 	2241  sys_leveldb							a083281a33d	last=bd2be933f26 sys_leveldb-30
