@@ -330,7 +330,7 @@ checkout v30.0rc1
 	33511 fix_sigint_waitrpcs-29				b4915e93eb6	last=c25a5e670b2 ryanofsky/pr/sigwait
 		# Kept old notification to workaround GUI console regression
 		30.x backport in #34192
-	Needs review: 33566 Sjors/2025/10/wait-empty-mempool
+	# IPC-specific: 33566 Sjors/2025/10/wait-empty-mempool
 	33580 achow101/depends-fallback-name		5299fc8950b
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
 	# Needs review: 33616 instagibbs/2025-10-bypass_checkephemeral

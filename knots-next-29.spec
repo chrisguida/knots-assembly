@@ -380,8 +380,8 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# Held back 68cad90dace...c25a5e670b2 pending more review
 		# Kept old notification to workaround GUI console regression
 		# 30.x backport in #34192
-	Triage: 33566 Sjors/2025/10/wait-empty-mempool
-		30.x backport in #33609
+	# IPC-specific: 33566 Sjors/2025/10/wait-empty-mempool
+		# 30.x backport in #33609
 	33580 fix_depends_fallback_filename-0.13	d52d4ae06cd	last=671b774d1b5 achow101/depends-fallback-name
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
 	33612 Crypt-iQ/log_ratelimit_functional_backport_10132025
