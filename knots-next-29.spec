@@ -384,8 +384,8 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# 30.x backport in #33609
 	33580 fix_depends_fallback_filename-0.13	d52d4ae06cd	last=671b774d1b5 achow101/depends-fallback-name
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
-	33612 Crypt-iQ/log_ratelimit_functional_backport_10132025
-		30.x backport in #33609
+	# n/a until a test needs 29.1-29.99: 33612 Crypt-iQ/log_ratelimit_functional_backport_10132025
+		# 30.x backport in #33609
 	# Needs review: 33616 instagibbs/2025-10-bypass_checkephemeral
 	# Needs review: 33646 -  # log: check fclose() results and report safely in logging.cpp
 	# Needs review: 33663 -  # addrman, net: Filter during address selection via AddrPolicy to avoid underfill
@@ -399,7 +399,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	g901 fix_qt_rpchistoryfilter_pr_g901-28		5d4c04b7efc
 	# Needs review: g904 diegoviola-g/fix-qt-wayland-rendering-issue
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
-	33813 warn_for_rpcbind_ignored-29			2ad140000ff	last=0cca5b772a9 Ataraxia009/rpc-bind-warning
+	33813 warn_for_rpcbind_ignored-29			2ad140000ff	last=335a05c69e1 Ataraxia009/rpc-bind-warning
 	Triage: Needs review: 33854 -  # fix assumevalid is ignored during reindex
 	Triage: 33865 hebasto/251112-plugin-path
 	Triage: 33918 hebasto/251120-qt-link

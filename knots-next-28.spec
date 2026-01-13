@@ -471,8 +471,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# 30.x backport in #33609
 	33580 achow101/depends-fallback-name
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
-	Triage: 33612 Crypt-iQ/log_ratelimit_functional_backport_10132025
-		30.x backport in #33609
+	# n/a until a test needs 29.1-29.99: 33612 Crypt-iQ/log_ratelimit_functional_backport_10132025
+		# 30.x backport in #33609
 	# Needs review: 33616 instagibbs/2025-10-bypass_checkephemeral
 	# Needs review: 33646 -  # log: check fclose() results and report safely in logging.cpp
 	# Needs review: 33663 -  # addrman, net: Filter during address selection via AddrPolicy to avoid underfill
