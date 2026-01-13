@@ -330,8 +330,6 @@ checkout v30.0rc1
 	33511 fix_sigint_waitrpcs-29				b4915e93eb6	last=c25a5e670b2 ryanofsky/pr/sigwait
 		# Kept old notification to workaround GUI console regression
 		30.x backport in #34192
-	Needs review: 33528 glozow/2025-09-send
-		30.x backport in #33997
 	Needs review: 33566 Sjors/2025/10/wait-empty-mempool
 	33580 achow101/depends-fallback-name		5299fc8950b
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
@@ -919,6 +917,8 @@ checkout v30.0rc1
 	# TODO: Review ParseHDKeypath change: Part of: 32784 Sjors/2025/06/gethdkey
 	Prefer upstream? 32844 rpc_gettxoutproof_segwit-27+knots		cd053f34c8a	last=23edd3db4f1 rpc_gettxoutproof_segwit
 	# WIP: 32857 Sjors/2025/07/no_script_path
+	Needs review: 33528 glozow/2025-09-send
+		30.x backport in #33997
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	#30.xTODO# Revert #33069 (wallet: Add Support for BIP-353 DNS-Based Bitcoin Address via External Resolver) ?
 	# Needs concept: g882 -  # qt: add shift key modifier to clear command history when clearing the console

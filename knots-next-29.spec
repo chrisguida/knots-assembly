@@ -379,9 +379,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	33511 fix_sigint_waitrpcs-29				0242a55d6f3	last=c25a5e670b2 ryanofsky/pr/sigwait
 		# Held back 68cad90dace...c25a5e670b2 pending more review
 		# Kept old notification to workaround GUI console regression
-		30.x backport in #34192
-	Needs review: 33528 glozow/2025-09-send
-		30.x backport in #33997
+		# 30.x backport in #34192
 	Triage: 33566 Sjors/2025/10/wait-empty-mempool
 		30.x backport in #33609
 	33580 fix_depends_fallback_filename-0.13	d52d4ae06cd	last=671b774d1b5 achow101/depends-fallback-name
@@ -997,6 +995,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	32844 rpc_gettxoutproof_segwit-27+knots		1e1a4f4f690	last=23edd3db4f1 rpc_gettxoutproof_segwit
 	# WIP: 32857 Sjors/2025/07/no_script_path
 	# Needs review: 32896 ishaanam/wallet_v3_txs
+		# +#33528 glozow/2025-09-send (30.x backport in #33997)
 	33004 def_natpmp_true-29					567bd9795b7
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	#30.xTODO# Revert #33069 (wallet: Add Support for BIP-353 DNS-Based Bitcoin Address via External Resolver) ?

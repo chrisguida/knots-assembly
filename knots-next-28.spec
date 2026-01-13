@@ -466,8 +466,6 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
 	33504 instagibbs/2025-09-truc-reorg-fix
 		28.x backport in #33535
-	Needs review: 33528 glozow/2025-09-send
-		30.x backport in #33997
 	33563 fanquake/fix_qt_urls
 	Triage: 33566 Sjors/2025/10/wait-empty-mempool
 		30.x backport in #33609
@@ -1143,6 +1141,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	32844 rpc_gettxoutproof_segwit-27+knots					last=23edd3db4f1 rpc_gettxoutproof_segwit
 	# WIP: 32857 Sjors/2025/07/no_script_path
 	# Needs review: 32896 ishaanam/wallet_v3_txs
+		# +#33528 glozow/2025-09-send (30.x backport in #33997)
 	33004 darosior/2507_natpmp_on_default
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	# Needs concept: g882 -  # qt: add shift key modifier to clear command history when clearing the console
