@@ -376,6 +376,8 @@ checkout v30.0rc1
 	Triage: 34176 furszy/2025_wallet_check_db_permissions
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
+	Needs review: k242 fix_bdb_edge_cases_202601
+		TODO: Be firmer with BDB 4.8 version in CMakeLists.txt?
 	# ----- END WALLET DELETION BUGFIXES -----
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
 	Needs review: 34213 brunoerg/2026-01-net-anchors-networkactive
@@ -410,7 +412,6 @@ checkout v30.0rc1
 	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
 		30.x backport in #34229
 	Needs review: k237 privkeyio/159-build-checks
-	Needs review: k242 fix_bdb_edge_cases_202601
 	k244  fix_qt_amtfield_infinityevent
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)

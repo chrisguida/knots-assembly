@@ -516,6 +516,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 		Partial 28.x backport in #34223
 	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
 		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
+	Needs review: k242 fix_bdb_edge_cases_202601
+		TODO: Be firmer with BDB 4.8 version in CMakeLists.txt?
 	# ----- END WALLET DELETION BUGFIXES -----
 	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
 	34227 hebasto/260108-guix-osslsigncode
@@ -545,7 +547,6 @@ NM	32187 zmq_devirtual_destructor-0.12
 	-     torcontrol_avoid_bindany_connect
 	-     fix_tor_common_bind-29.2
 	Needs review: k237 privkeyio/159-build-checks
-	Needs review: k242 fix_bdb_edge_cases_202601
 	k244  fix_qt_amtfield_infinityevent
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)

@@ -428,6 +428,8 @@ TM	33050 cve2025_46598_pt3-29.1                            508b4977497
 		Partial 29.x backport in #34222 (MERGED)
 	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
 		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
+	Needs review: k242 fix_bdb_edge_cases_202601
+		TODO: Be firmer with BDB 4.8 version in CMakeLists.txt?
 	# ----- END WALLET DELETION BUGFIXES -----
 	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
 	34227 hebasto/260108-guix-osslsigncode
@@ -460,7 +462,6 @@ TM	33050 cve2025_46598_pt3-29.1                            508b4977497
 	-     torcontrol_avoid_bindany_connect		a8bf4520b20
 	-     fix_tor_common_bind-29.2				6b48bae2f3c
 	Needs review: k237 privkeyio/159-build-checks
-	Needs review: k242 fix_bdb_edge_cases_202601
 	k244  fix_qt_amtfield_infinityevent
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
@@ -1429,6 +1430,7 @@ TODO: test build with Boost 1.73
 	n/a   rm_historical_relnotes_from_dist		983a13aec03
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
 	TODO: https://github.com/bitcoinknots/bitcoin/pull/244#issuecomment-3733428811
+	TODO: document changing bdb version unsupported
 	n/a   (cherrypick=f7f99b3464c)				f7f99b3464c  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
