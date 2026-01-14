@@ -362,8 +362,12 @@ checkout v30.0rc1
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
 	34028 fix_seenlocal_max-26								last=a364f6303cb
 	#31.xTODO# Revert/disable #34075 mempool-based fee estimator
-	Review: 34109 maflcko/2512-fix-u64
-	Triage: 34117 -  # multiple
+	-     fix_feeest_read_rare_overflow-29
+		# Alternative to: 34109 maflcko/2512-fix-u64
+	-     pcp_dont_spam_unauth-29
+	(CHECK-LAST)	last=af5c2fcf144 origin-pull/34117/head
+		# Inspired by the first commit on #34117
+	# Needs concept/review: 34117-commit-2  net: fix CJDNS address discovery when -externalip is set
 	Triage: 34141 achow101/musig-miniscript
 	Needs review: Partial: 34143 hebasto/251223-boost-layout
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement

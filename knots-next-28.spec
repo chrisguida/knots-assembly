@@ -492,8 +492,12 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
 	33993 doc_stopatheight_imprecise-21
 	34028 fix_seenlocal_max-26								last=a364f6303cb
-	Review: 34109 maflcko/2512-fix-u64
-	Triage: 34117 -  # multiple
+	-     fix_feeest_read_rare_overflow-29
+		# Alternative to: 34109 maflcko/2512-fix-u64
+	-     pcp_dont_spam_unauth-29
+	(CHECK-LAST)	last=af5c2fcf144 origin-pull/34117/head
+		# Inspired by the first commit on #34117
+	# Needs concept/review: 34117-commit-2  net: fix CJDNS address discovery when -externalip is set
 	Triage: Needs review: Partial: 34143 hebasto/251223-boost-layout
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 	# ----- WALLET DELETION BUGFIXES -----
