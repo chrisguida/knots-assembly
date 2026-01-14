@@ -3,7 +3,7 @@ timestamp 2026-01-12 10:32:54
 
 #.. checked up to PR #34260 / gui#922 / knots#228
 
-checkout v29.2
+checkout core/29.x
 @29.x-syslibs
 # BUILD BUGS:
 	# Needs review: 33550 ryanofsky/pr/winstream
@@ -339,9 +339,9 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	32987 fix_gui_reindex-29					85f95c2ec40
 	# Needs review: 33014 b-l-u-e/fix-32849-descriptorprocesspsbt-internal-bug
 	# Needs review: 33072 b-l-u-e/p2p-fix-nscore-overflow-24049
-	33105 cve2025_46598_pt1-29.1				82067964ec1
-	32473 cve2025_46598_pt2-29.1				4eafe1a1eef
-	33050 cve2025_46598_pt3-29.1				508b4977497
+TM	33105 cve2025_46598_pt1-29.1                            82067964ec1
+TM	32473 cve2025_46598_pt2-29.1                            4eafe1a1eef
+TM	33050 cve2025_46598_pt3-29.1                            508b4977497
 	# Part of, if translations are important: 33115 hebasto/250801-ts-files
 	# Needs work: 33126 Ataraxia009/multi-client-support
 		# NOTE: Rewrote in knots_branding
@@ -384,8 +384,6 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 		# 30.x backport in #33609
 	33580 fix_depends_fallback_filename-0.13	d52d4ae06cd	last=671b774d1b5 achow101/depends-fallback-name
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
-	# n/a until a test needs 29.1-29.99: 33612 Crypt-iQ/log_ratelimit_functional_backport_10132025
-		# 30.x backport in #33609
 	# Needs review: 33616 instagibbs/2025-10-bypass_checkephemeral
 	# Needs review: 33646 -  # log: check fclose() results and report safely in logging.cpp
 	# Needs review: 33663 -  # addrman, net: Filter during address selection via AddrPolicy to avoid underfill
@@ -418,19 +416,16 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# IPC-specific: Needs review: Partial: 34143 hebasto/251223-boost-layout
 	# Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 	# ----- WALLET DELETION BUGFIXES -----
-	Review: 34156 furszy/2025_wallet_migration_jinglewreck
+	Review: MERGED 34156 furszy/2025_wallet_migration_jinglewreck
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
-		29.x backport in #34222
-	Review: 34215 achow101/createfromdump-deletion
-		29.x backport in #34222
-	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
-		29.x backport in #34222
+	Review: MERGED 34215 achow101/createfromdump-deletion
+	Review: MERGED 34226 davidgumberg/2026-01-07-relative-path-migration-failure
 	Triage: 34176 furszy/2025_wallet_check_db_permissions
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
 	# Needs backport work: 31423 wallet_migrate_watchonly_only-29
-		Partial 29.x backport in #34222
+		Partial 29.x backport in #34222 (MERGED)
 	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
 		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
 	# ----- END WALLET DELETION BUGFIXES -----
