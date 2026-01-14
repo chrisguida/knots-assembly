@@ -415,17 +415,17 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	(CHECK-LAST)	last=af5c2fcf144 origin-pull/34117/head
 		# Inspired by the first commit on #34117
 	# Needs concept/review: 34117-commit-2  net: fix CJDNS address discovery when -externalip is set
-	Triage: Needs review: Partial: 34143 hebasto/251223-boost-layout
-	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
+	# IPC-specific: Needs review: Partial: 34143 hebasto/251223-boost-layout
+	# Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 	# ----- WALLET DELETION BUGFIXES -----
 	Review: 34156 furszy/2025_wallet_migration_jinglewreck
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
-		30.x backport in #34209
+		29.x backport in #34222
 	Review: 34215 achow101/createfromdump-deletion
 		29.x backport in #34222
 	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
-		30.x backport in #34229
+		29.x backport in #34222
 	Triage: 34176 furszy/2025_wallet_check_db_permissions
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
