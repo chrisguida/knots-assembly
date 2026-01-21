@@ -373,6 +373,7 @@ checkout v30.0rc1
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
 	# ----- WALLET DELETION BUGFIXES -----
+	TODO: Ensure material changes from 76cdeb7b062 got forward ported
 	Triage: 34176 furszy/2025_wallet_check_db_permissions
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
@@ -389,6 +390,7 @@ checkout v30.0rc1
 	Triage: Needs review: g915 -  # Defer transaction signing until user clicks Send
 	Needs review: g920  -  # Set peer version and subversion to N/A when not available or detecting
 	Needs review: g922  -  # gui: fix transactions disable problem
+	Check on: 34293 fix_vermsg_missing_comma
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -409,6 +411,8 @@ checkout v30.0rc1
 	FIXME: DO NOT RELEASE WITHOUT FIXING WALLET DELETION BUG
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
+		test when wallet is loaded (or not) when migratewallet called
+		test if unloadwallet settles wallet file
 	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
 		30.x backport in #34229
 	Needs review: k237 privkeyio/159-build-checks

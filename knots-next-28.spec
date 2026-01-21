@@ -504,6 +504,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Review: 34156 furszy/2025_wallet_migration_jinglewreck
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
+		test when wallet is loaded (or not) when migratewallet called
+		test if unloadwallet settles wallet file
 		30.x backport in #34209
 	Review: 34215 achow101/createfromdump-deletion
 		28.x backport in #34223
@@ -514,6 +516,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
 	Needs backport work: 31423 wallet_migrate_watchonly_only-29
 		Partial 28.x backport in #34223
+		WARNING: Needs non-backported changes from #34156
 	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
 		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
 	Needs review: k242 fix_bdb_edge_cases_202601

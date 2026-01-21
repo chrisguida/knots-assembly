@@ -419,6 +419,8 @@ TM	33050 cve2025_46598_pt3-29.1                            508b4977497
 	Review: MERGED 34156 furszy/2025_wallet_migration_jinglewreck
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
+		test when wallet is loaded (or not) when migratewallet called
+		test if unloadwallet settles wallet file
 	Review: MERGED 34215 achow101/createfromdump-deletion
 	Review: MERGED 34226 davidgumberg/2026-01-07-relative-path-migration-failure
 	Triage: 34176 furszy/2025_wallet_check_db_permissions
@@ -426,6 +428,7 @@ TM	33050 cve2025_46598_pt3-29.1                            508b4977497
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
 	# Needs backport work: 31423 wallet_migrate_watchonly_only-29
 		Partial 29.x backport in #34222 (MERGED)
+		WARNING: Needs non-backported changes from #34156
 	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
 		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
 	Needs review: k242 fix_bdb_edge_cases_202601
@@ -444,6 +447,7 @@ TM	33050 cve2025_46598_pt3-29.1                            508b4977497
 	Triage: Needs review: g915 -  # Defer transaction signing until user clicks Send
 	Needs review: g920  -  # Set peer version and subversion to N/A when not available or detecting
 	Needs review: g922  -  # gui: fix transactions disable problem
+	Check on: 34293 fix_vermsg_missing_comma
 	-     fix_rpccookieperms_early				b9b9649a035
 	-     qt_intro_nojumpy						5bd49893678
 	-     restore_guix_ppc64le-28				e9df5c314a6
