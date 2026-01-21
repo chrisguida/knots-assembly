@@ -306,7 +306,7 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	32344 fix_wallet_nonranged_pr32344-22		ebfa2e38e92	last=97d383af6d5
 	32351 qafix_nonrecurs_FindChallenges-28		5aa7dcd899e
 		# Fix only
-	32355 fix_block_full_enough					33b8c314bff
+m	32355 fix_block_full_enough-29.3			33b8c314bff
 	# Needs review: 32367 hebasto/250428-enable-lang
 	-     fix_fs_error_utf8-23					339de5f8dc1
 		# Alternative to core#32383 hebasto/250429-fs-error
@@ -388,7 +388,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# IPC-specific: 33676 ismaelsadeeq/10-2025-add-interruptWaitNext
 	33698 fix_qa_rpctimeout_pr33698-27			6faebbaf239
 	# Needs review: 33699 0xB10C/2025-10-addr-token-bucket-start-5
-	Revert #33723
+	n/a   restore_dnsseed_luke-jr-29.3
+		# Reverts #33723
 	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
 	# IPC-specific: 33745 Sjors/2025/10/submit-solution-doc
 		# +#33880
@@ -414,13 +415,9 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# IPC-specific: Needs review: Partial: 34143 hebasto/251223-boost-layout
 	# Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 	# ----- WALLET DELETION BUGFIXES -----
-	Review: MERGED 34156 furszy/2025_wallet_migration_jinglewreck
-		Ensure /wallet.dat doesn't rm /
-		Ensure user-made files in wallet dir survive
-		test when wallet is loaded (or not) when migratewallet called
-		test if unloadwallet settles wallet file
-	Review: MERGED 34215 achow101/createfromdump-deletion
-	Review: MERGED 34226 davidgumberg/2026-01-07-relative-path-migration-failure
+	34370 fix_34222_backport
+	34372 qa_wallet_migration_tests_202601-29.3
+		# NOTE: Deferred "QA: wallet_migration: Test various other relative paths" for #32273 backport
 	Triage: 34176 furszy/2025_wallet_check_db_permissions
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
@@ -429,6 +426,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 		WARNING: Needs non-backported changes from #34156
 	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
 		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
+		# NOTE: Held back "wallet: migration: Make backup in walletdir" behaviour change
+		# NOTE: Includes "QA: wallet_migration: Test various other relative paths" from #34372
 	Needs review: k242 fix_bdb_edge_cases_202601
 		TODO: Be firmer with BDB 4.8 version in CMakeLists.txt?
 	# ----- END WALLET DELETION BUGFIXES -----

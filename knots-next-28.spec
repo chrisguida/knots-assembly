@@ -480,7 +480,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# Or #34162 fjahr/2025-12-33663-alt
 	33698 fix_qa_rpctimeout_pr33698-27
 	# Needs review: 33699 0xB10C/2025-10-addr-token-bucket-start-5
-	Triage: Revert #33723
+	Triage: n/a   restore_dnsseed_luke-jr-29.3
+		# Reverts #33723
 	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
 	g901 fix_qt_rpchistoryfilter_pr_g901-28
 	# Needs concept: g905 -  # Increase tooltip wrap threshold from 80 to 100 characters
@@ -512,6 +513,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 		28.x backport in #34223
 	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
 		30.x backport in #34229
+	34370 fix_34222_backport
+	34372 qa_wallet_migration_tests_202601-29.3
+		# NOTE: Deferred "QA: wallet_migration: Test various other relative paths" for #32273 backport
 	Triage: 34176 furszy/2025_wallet_check_db_permissions
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
@@ -520,6 +524,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 		WARNING: Needs non-backported changes from #34156
 	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
 		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
+		# NOTE: Held back "wallet: migration: Make backup in walletdir" behaviour change
+		# NOTE: Includes "QA: wallet_migration: Test various other relative paths" from #34372
 	Needs review: k242 fix_bdb_edge_cases_202601
 		TODO: Be firmer with BDB 4.8 version in CMakeLists.txt?
 	# ----- END WALLET DELETION BUGFIXES -----

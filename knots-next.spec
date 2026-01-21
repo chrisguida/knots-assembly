@@ -340,7 +340,8 @@ checkout v30.0rc1
 	# IPC-specific: 33676 ismaelsadeeq/10-2025-add-interruptWaitNext
 	33698 maflcko/2510-test-cli-timeout-same
 	# Needs review: 33699 0xB10C/2025-10-addr-token-bucket-start-5
-	Revert #33723
+	n/a   restore_dnsseed_luke-jr-29.3
+		# Reverts #33723
 	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
 	# IPC-specific: 33745 Sjors/2025/10/submit-solution-doc
 		# +#33880
@@ -374,6 +375,8 @@ checkout v30.0rc1
 	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
 	# ----- WALLET DELETION BUGFIXES -----
 	TODO: Ensure material changes from 76cdeb7b062 got forward ported
+	34370 fix_34222_backport
+	34372 qa_wallet_migration_tests_202601
 	Triage: 34176 furszy/2025_wallet_check_db_permissions
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
