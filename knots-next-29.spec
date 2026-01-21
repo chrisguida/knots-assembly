@@ -3,7 +3,7 @@ timestamp 2026-01-12 10:32:54
 
 #.. checked up to PR #34260 / gui#922 / knots#228
 
-checkout core/29.x
+checkout v29.3rc1
 @29.x-syslibs
 # BUILD BUGS:
 	# Needs review: 33550 ryanofsky/pr/winstream
@@ -355,8 +355,6 @@ TM	33050 cve2025_46598_pt3-29.1                            508b4977497
 		# Includes gui#884 hebasto-g/250819-debuglog
 	# Needs review? 33223 murchandamus/2025-08-tiebreak-SRD
 	# Needs work: 33231 w0xlt/mulitple_binds
-	# Needs review: 33268 achow101/zero-value-from-me
-		# 30.x backport in #33356
 	# Needs review: 33297 -  # cmake: Inherit WERROR setting for secp256k1 build
 	33311 log_quiet_pcp_unsupported-29			8b158054778
 	33338 pcp_interrupt-29						54378c6eafd
@@ -371,8 +369,7 @@ TM	33050 cve2025_46598_pt3-29.1                            508b4977497
 	# OR (preferable): 33477 fjahr/202509-better-rollback
 	# Needs work? g895  benthecarman-g/fix-dark-mode
 	33464 net_timers_for_inbound_inv-29			11d375abca5
-	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismaelsadeeq/09-2025-miner-infinite-loop-fix
-		# 30.x backport in #33473
+NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismaelsadeeq/09-2025-miner-infinite-loop-fix
 	33494 urlupd_depends_qrencode-28			45bae77e285	last=93a70a42d30 hebasto/250929-qrencode
 		# NOTE: Held back 9dbfce7fc84...93a70a42d30 (which drops package name from download filename) and addressed cache filename issue another way
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
@@ -391,6 +388,7 @@ TM	33050 cve2025_46598_pt3-29.1                            508b4977497
 	# IPC-specific: 33676 ismaelsadeeq/10-2025-add-interruptWaitNext
 	33698 fix_qa_rpctimeout_pr33698-27			6faebbaf239
 	# Needs review: 33699 0xB10C/2025-10-addr-token-bucket-start-5
+	Revert #33723
 	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
 	# IPC-specific: 33745 Sjors/2025/10/submit-solution-doc
 		# +#33880
@@ -435,8 +433,6 @@ TM	33050 cve2025_46598_pt3-29.1                            508b4977497
 		TODO: Be firmer with BDB 4.8 version in CMakeLists.txt?
 	# ----- END WALLET DELETION BUGFIXES -----
 	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
-	34227 hebasto/260108-guix-osslsigncode
-		30.x backport in #34229
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
 	Needs review: 34213 brunoerg/2026-01-net-anchors-networkactive
 	Needs review: 34224 sedited/init_interrupt_zero

@@ -340,7 +340,7 @@ checkout v30.0rc1
 	# IPC-specific: 33676 ismaelsadeeq/10-2025-add-interruptWaitNext
 	33698 maflcko/2510-test-cli-timeout-same
 	# Needs review: 33699 0xB10C/2025-10-addr-token-bucket-start-5
-	#31.xTODO# Revert #33723
+	Revert #33723
 	# Needs review: 33727 -  # zmq: Log bind error at Error level, abort startup on init error
 	# IPC-specific: 33745 Sjors/2025/10/submit-solution-doc
 		# +#33880
