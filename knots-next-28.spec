@@ -10,6 +10,8 @@ checkout v28.2
 	5872 subdir_incl_compat						b7dd5799936
 	# For Qt6: g837
 	#29.xTODO# If needed? 30997 hebasto/240928-qt6 and/or g861 whitslack/qt6
+	# Only needed with Qt6: -     qt_scope_bringToFront_workaround-28
+		# Related to gui#914 hebasto-g/251121-wayland
 	32437 fanquake/extend_asan_sse4
 	Triage: 32484 fanquake/28_suppress_unterm_string_init
 	Triage: Part of? 32551 hebasto/250518-crypto-macros
@@ -528,16 +530,14 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 34198 furszy/2026_wallet_migration_ancient_wallets
 	Needs review: k242 fix_bdb_edge_cases_202601-29
 	# ----- END WALLET DELETION BUGFIXES -----
-	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
+	34161 fix_distance_ub_pr34161-26						last=477c5504e05 l0rinc/l0rinc/pool-allocator-ub
 	34227 hebasto/260108-guix-osslsigncode
 		30.x backport in #34229
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
-	Needs review: 34213 brunoerg/2026-01-net-anchors-networkactive
-	Needs review: 34224 sedited/init_interrupt_zero
-	Triage: 34235 glozow/2026-01-miniminer-fees
-	Review: Triage: 34238 instagibbs/2026-01-trucness_reorg
-	34252 theStack/2026-doc-bips-add-p2a
-	Triage (Qt6-only?) g914 hebasto/251121-wayland
+	# Needs review/work: 34213 brunoerg/2026-01-net-anchors-networkactive
+	34224 fix_init_int_ec-27
+	34235 fix_miniminer_feeassert_pr34235-26
+	34252 doc_bips_add433-28
 	Triage: Needs review: g915 -  # Defer transaction signing until user clicks Send
 	Needs review: g920  -  # Set peer version and subversion to N/A when not available or detecting
 	Needs review: g922  -  # gui: fix transactions disable problem
@@ -1159,6 +1159,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# WIP: 32857 Sjors/2025/07/no_script_path
 	# Needs review: 32896 ishaanam/wallet_v3_txs
 		# +#33528 glozow/2025-09-send (30.x backport in #33997)
+		# +#34238 instagibbs/2026-01-trucness_reorg
 	33004 darosior/2507_natpmp_on_default
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	# Needs concept: g882 -  # qt: add shift key modifier to clear command history when clearing the console
@@ -1525,6 +1526,9 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		TODO: rename branch?
 		TODO: disable mining; add alert in advance
 		TODO: mention in -help / GUI about ?
+		TODO: "OK" is probably the wrong button to use for this
+		TODO? "Upgrade" button to open website - or even download+verify??
+			-DUPGRADE_COMMAND='...' for PPA/etc?
 	-     rwconf_policy-28+knots				6fd67aa463d	last=86056333700 rwconf_policy-29+knots
 		# Includes Knots policy changes for simplification of final rebase process
 		28.xTODO: revert #33106

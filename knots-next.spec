@@ -372,7 +372,7 @@ checkout v30.0rc1
 	Triage: 34141 achow101/musig-miniscript
 	Needs review: Partial: 34143 hebasto/251223-boost-layout
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
-	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
+	34161 fix_distance_ub_pr34161-26						last=477c5504e05 l0rinc/l0rinc/pool-allocator-ub
 	# ----- WALLET DELETION BUGFIXES -----
 	TODO: Ensure material changes from 76cdeb7b062 got forward ported
 	TODO: Ensure "Failed to load wallet '%s' after migration." wallet name fix is forward ported
@@ -386,12 +386,12 @@ checkout v30.0rc1
 	Needs review: k242 fix_bdb_edge_cases_202601-29
 	# ----- END WALLET DELETION BUGFIXES -----
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
-	Needs review: 34213 brunoerg/2026-01-net-anchors-networkactive
-	Needs review: 34224 sedited/init_interrupt_zero
-	Triage: 34235 glozow/2026-01-miniminer-fees
-	Review: Triage: 34238 instagibbs/2026-01-trucness_reorg
-	34252 theStack/2026-doc-bips-add-p2a
-	Triage (Qt6-only?) g914 hebasto/251121-wayland
+	# Needs review/work: 34213 brunoerg/2026-01-net-anchors-networkactive
+	34224 fix_init_int_ec-27
+	34235 fix_miniminer_feeassert_pr34235-26
+	34252 doc_bips_add433-28
+	-     qt_scope_bringToFront_workaround-28
+		# Related to gui#914 hebasto-g/251121-wayland
 	Triage: Needs review: g915 -  # Defer transaction signing until user clicks Send
 	Needs review: g920  -  # Set peer version and subversion to N/A when not available or detecting
 	Needs review: g922  -  # gui: fix transactions disable problem
@@ -934,6 +934,7 @@ checkout v30.0rc1
 	# WIP: 32857 Sjors/2025/07/no_script_path
 	Needs review: 33528 glozow/2025-09-send
 		30.x backport in #33997
+	Triage: 34238 instagibbs/2026-01-trucness_reorg
 	# Needs review & wallet format release: 33008 Sjors/2025/07/bip388-register
 	#30.xTODO# Revert #33069 (wallet: Add Support for BIP-353 DNS-Based Bitcoin Address via External Resolver) ?
 	# Needs concept: g882 -  # qt: add shift key modifier to clear command history when clearing the console
@@ -1325,6 +1326,9 @@ checkout v30.0rc1
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
 	10282 softwareexpiry						68991f278b5
+		TODO: "OK" is probably the wrong button to use for this
+		TODO? "Upgrade" button to open website - or even download+verify??
+			-DUPGRADE_COMMAND='...' for PPA/etc?
 	-     rwconf_policy-29.1+knots				91b5f982db8
 		# Includes Knots policy changes for simplification of final rebase process
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
