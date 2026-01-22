@@ -378,13 +378,12 @@ checkout v30.0rc1
 	TODO: Ensure "Failed to load wallet '%s' after migration." wallet name fix is forward ported
 	34370 fix_34222_backport
 	34372 qa_wallet_migration_tests_202601
-	34176 handle_wallet_dir_nonwritable-29.2				last=2ef6adde86f furszy/2025_wallet_check_db_permissions
+	34176 handle_wallet_dir_nonwritable-29.2				last=c22de0d82ed furszy/2025_wallet_check_db_permissions
 		# NOTE: added minor bugfix
 	-     handle_wallet_dir_nonwritable_bdb-29.2
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	# Needs review: 34198 furszy/2026_wallet_migration_ancient_wallets
-	Needs review: k242 fix_bdb_edge_cases_202601
-		TODO: Be firmer with BDB 4.8 version in CMakeLists.txt?
+	Needs review: k242 fix_bdb_edge_cases_202601-29
 	# ----- END WALLET DELETION BUGFIXES -----
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
 	Needs review: 34213 brunoerg/2026-01-net-anchors-networkactive
@@ -423,6 +422,7 @@ checkout v30.0rc1
 		30.x backport in #34229
 	Needs review: k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent
+	-     fix_win_exclopen-29.2
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	

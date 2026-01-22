@@ -420,7 +420,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	34370 fix_34222_backport
 	34372 qa_wallet_migration_tests_202601-29.3
 		# NOTE: Invisible dependencies on #32273 and #34370
-	34176 handle_wallet_dir_nonwritable-29.2				last=2ef6adde86f furszy/2025_wallet_check_db_permissions
+	34176 handle_wallet_dir_nonwritable-29.2				last=c22de0d82ed furszy/2025_wallet_check_db_permissions
 		# NOTE: added minor bugfix
 	-     handle_wallet_dir_nonwritable_bdb-29.2
 	31423 wallet_migrate_watchonly_only-29.3
@@ -428,8 +428,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Needs review: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 		# NOTE: Backport in 1f17fcee406
 	# Needs review: 34198 furszy/2026_wallet_migration_ancient_wallets
-	Needs review: k242 fix_bdb_edge_cases_202601
-		TODO: Be firmer with BDB 4.8 version in CMakeLists.txt?
+	Needs review: k242 fix_bdb_edge_cases_202601-29
 	# ----- END WALLET DELETION BUGFIXES -----
 	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
@@ -462,6 +461,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	-     fix_tor_common_bind-29.2				6b48bae2f3c
 	Needs review: k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent
+	-     fix_win_exclopen-29.2
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
