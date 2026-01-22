@@ -513,19 +513,19 @@ NM	32187 zmq_devirtual_destructor-0.12
 		28.x backport in #34223
 	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
 		30.x backport in #34229
-	34370 fix_34222_backport
-	34372 qa_wallet_migration_tests_202601-29.3
-		# NOTE: Deferred "QA: wallet_migration: Test various other relative paths" for #32273 backport
-	Triage: 34176 furszy/2025_wallet_check_db_permissions
-	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
-	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
-	Needs backport work: 31423 wallet_migrate_watchonly_only-29
-		Partial 28.x backport in #34223
-		WARNING: Needs non-backported changes from #34156
-	# Needs backport work: 32273 -  # wallet: Fix relative path backup during migration
+	32273 -  # wallet: Fix relative path backup during migration
 		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
 		# NOTE: Held back "wallet: migration: Make backup in walletdir" behaviour change
-		# NOTE: Includes "QA: wallet_migration: Test various other relative paths" from #34372
+	34370 fix_34222_backport
+	34372 qa_wallet_migration_tests_202601-29.3
+		# NOTE: Invisible dependencies on #32273 and #34370
+	Triage: 34176 handle_wallet_dir_nonwritable-29.2				last=2ef6adde86f furszy/2025_wallet_check_db_permissions
+		# NOTE: added minor bugfix
+	Triage: -     handle_wallet_dir_nonwritable_bdb-29.2
+	Triage: 31423 wallet_migrate_watchonly_only-29.3
+		# NOTE: Includes parts of #32984 and #34156
+	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
+	# Needs review: 34198 furszy/2026_wallet_migration_ancient_wallets
 	Needs review: k242 fix_bdb_edge_cases_202601
 		TODO: Be firmer with BDB 4.8 version in CMakeLists.txt?
 	# ----- END WALLET DELETION BUGFIXES -----

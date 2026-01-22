@@ -375,11 +375,14 @@ checkout v30.0rc1
 	Triage: 34161 l0rinc/l0rinc/pool-allocator-ub
 	# ----- WALLET DELETION BUGFIXES -----
 	TODO: Ensure material changes from 76cdeb7b062 got forward ported
+	TODO: Ensure "Failed to load wallet '%s' after migration." wallet name fix is forward ported
 	34370 fix_34222_backport
 	34372 qa_wallet_migration_tests_202601
-	Triage: 34176 furszy/2025_wallet_check_db_permissions
+	34176 handle_wallet_dir_nonwritable-29.2				last=2ef6adde86f furszy/2025_wallet_check_db_permissions
+		# NOTE: added minor bugfix
+	-     handle_wallet_dir_nonwritable_bdb-29.2
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
-	Triage: 34198 furszy/2026_wallet_migration_ancient_wallets
+	# Needs review: 34198 furszy/2026_wallet_migration_ancient_wallets
 	Needs review: k242 fix_bdb_edge_cases_202601
 		TODO: Be firmer with BDB 4.8 version in CMakeLists.txt?
 	# ----- END WALLET DELETION BUGFIXES -----
