@@ -539,8 +539,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 	34235 fix_miniminer_feeassert_pr34235-26
 	34252 doc_bips_add433-28
 	Triage: Needs review: g915 -  # Defer transaction signing until user clicks Send
-	Needs review: g920  -  # Set peer version and subversion to N/A when not available or detecting
-	Needs review: g922  -  # gui: fix transactions disable problem
+	# Redundant with gui#677 (which fixes more): g920  -  # Set peer version and subversion to N/A when not available or detecting
+	# Redundant with gui#815 (which fixes more): Needs review: g922  -  # gui: fix transactions disable problem
+	Triage: 34293 fix_vermsg_missing_comma-29+knots					last=ffd09f8a0d0 fix_vermsg_missing_comma
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327

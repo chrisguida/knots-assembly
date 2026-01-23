@@ -438,10 +438,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	34252 doc_bips_add433-28
 	-     qt_scope_bringToFront_workaround-28
 		# Related to gui#914 hebasto-g/251121-wayland
-	Triage: Needs review: g915 -  # Defer transaction signing until user clicks Send
-	Needs review: g920  -  # Set peer version and subversion to N/A when not available or detecting
-	Needs review: g922  -  # gui: fix transactions disable problem
-	Check on: 34293 fix_vermsg_missing_comma
+	# Needs review: g915 -  # Defer transaction signing until user clicks Send
+	# Redundant with gui#677 (which fixes more): g920  -  # Set peer version and subversion to N/A when not available or detecting
+	# Redundant with gui#815 (which fixes more): Needs review: g922  -  # gui: fix transactions disable problem
+	34293 fix_vermsg_missing_comma-29+knots					last=ffd09f8a0d0 fix_vermsg_missing_comma
 	-     fix_rpccookieperms_early				b9b9649a035
 	-     qt_intro_nojumpy						5bd49893678
 	-     restore_guix_ppc64le-28				e9df5c314a6

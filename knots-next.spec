@@ -392,9 +392,9 @@ checkout v30.0rc1
 	34252 doc_bips_add433-28
 	-     qt_scope_bringToFront_workaround-28
 		# Related to gui#914 hebasto-g/251121-wayland
-	Triage: Needs review: g915 -  # Defer transaction signing until user clicks Send
-	Needs review: g920  -  # Set peer version and subversion to N/A when not available or detecting
-	Needs review: g922  -  # gui: fix transactions disable problem
+	# Needs review: g915 -  # Defer transaction signing until user clicks Send
+	# Redundant with gui#677 (which fixes more): g920  -  # Set peer version and subversion to N/A when not available or detecting
+	# Redundant with gui#815 (which fixes more): Needs review: g922  -  # gui: fix transactions disable problem
 	Check on: 34293 fix_vermsg_missing_comma
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
