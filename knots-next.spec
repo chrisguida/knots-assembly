@@ -378,9 +378,9 @@ checkout v30.0rc1
 	TODO: Ensure "Failed to load wallet '%s' after migration." wallet name fix is forward ported
 	34370 fix_34222_backport
 	34372 qa_wallet_migration_tests_202601
-	34176 handle_wallet_dir_nonwritable-29.2				last=c22de0d82ed furszy/2025_wallet_check_db_permissions
-		# NOTE: added minor bugfix
-	-     handle_wallet_dir_nonwritable_bdb-29.2
+	34176 handle_wallet_dir_nonwritable-29.3				last=3e43bce7688 furszy/2025_wallet_check_db_permissions
+		# NOTE: temporarily restored `descriptors=True` in tests until bdb is updated to pass
+	-     handle_wallet_dir_nonwritable_bdb-29.3
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	# Needs review: 34198 furszy/2026_wallet_migration_ancient_wallets
 	Needs review: k242 fix_bdb_edge_cases_202601-29

@@ -521,9 +521,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 	34370 fix_34222_backport
 	34372 qa_wallet_migration_tests_202601-29.3
 		# NOTE: Invisible dependencies on #32273 and #34370
-	Triage: 34176 handle_wallet_dir_nonwritable-29.2				last=c22de0d82ed furszy/2025_wallet_check_db_permissions
-		# NOTE: added minor bugfix
-	Triage: -     handle_wallet_dir_nonwritable_bdb-29.2
+	Triage: 34176 handle_wallet_dir_nonwritable-29.3				last=3e43bce7688 furszy/2025_wallet_check_db_permissions
+		# NOTE: temporarily restored `descriptors=True` in tests until bdb is updated to pass
+	Triage: -     handle_wallet_dir_nonwritable_bdb-29.3
 	Triage: 31423 wallet_migrate_watchonly_only-29.3
 		# NOTE: Includes parts of #32984 and #34156
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
