@@ -461,7 +461,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	-     fix_tor_common_bind-29.2				6b48bae2f3c
 	# Needs work? k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent
-	-     fix_win_exclopen-29.2
+	-     fix_win_exclopen-29.3
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -480,16 +480,15 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 #@29.x-knots-lts-deps
 	# No point (dynamic linked): 33952 fanquake/close_out_29977
 	-     upd_qt5-29.2							8ea175db02c
-		# 5.15.17 Opensource released: https://lists.qt-project.org/pipermail/announce/2025-May/000557.html
-		TODO: 5.15.18: https://lists.qt-project.org/pipermail/announce/2025-October/000592.html
+		# 5.15.18 Opensource released: https://lists.qt-project.org/pipermail/announce/2025-October/000592.html
 		# Includes patch for CVE-2025-4211 (not upstream; simpler and safer)
 		# 5.15.19 (not available) fixes other bugs, but no CVEs that affect us (unless we start using Qt for XML or HTTP2)
-		# TODO for 6.x: +#33906 (30.x backport in #33609)
 	#29.xTODO# FIXME -     depends_qt5kde
-	With Qt6: 33906 hebasto/251118-patch-win11-plugin
-		30.x backport in #33609
-	With Qt6: 33918 hebasto/251120-qt-link
-	Needs review: k231  privkeyio/kwsantiago/qt6-depends-upgrade
+	# Needs review: k231  privkeyio/kwsantiago/qt6-depends-upgrade
+		# TODO for 6.x: +#33906 (30.x backport in #33609)
+		# With Qt6: 33906 hebasto/251118-patch-win11-plugin
+			# 30.x backport in #33609
+		# With Qt6: 33918 hebasto/251120-qt-link
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
 @29.x-knots

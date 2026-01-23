@@ -422,7 +422,7 @@ checkout v30.0rc1
 		30.x backport in #34229
 	Needs review: k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent
-	-     fix_win_exclopen-29.2
+	-     fix_win_exclopen-29.3
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
