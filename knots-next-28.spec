@@ -701,7 +701,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 34025 ajtowns/202512-netsplit-opt
 	# Needs review: 34054 sedited/txdownloadman_ibd_check
 	# Needs review: 34083 theuni/chacha20-vectorized-initial
-	Needs review: 34253 l0rinc/l0rinc/cache-ibd-status
+	Needs 28.x review: 34253 lockless_isibd-26+knots							last=557b41a38cc l0rinc/l0rinc/cache-ibd-status
+		# NOTE: diff-minimised, and did not backport refactor commits
+		# NOTE: various libbitcoinkernel changes needed, if libbitcoinkernel features (#30595 in particular) are backported
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify

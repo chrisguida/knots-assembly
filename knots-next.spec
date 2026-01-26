@@ -537,7 +537,9 @@ checkout v30.0rc1
 	# Needs review: 34054 sedited/txdownloadman_ibd_check
 	# Needs review: 34083 theuni/chacha20-vectorized-initial
 	34088 maflcko/2512-log-func
-	Needs review: 34253 l0rinc/l0rinc/cache-ibd-status
+	34253 lockless_isibd-26+knots							last=557b41a38cc l0rinc/l0rinc/cache-ibd-status
+		# NOTE: diff-minimised, and did not backport refactor commits
+		# NOTE: various libbitcoinkernel changes needed, if libbitcoinkernel features (#30595 in particular) are backported
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
