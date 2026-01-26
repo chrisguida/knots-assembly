@@ -362,6 +362,7 @@ checkout v30.0rc1
 	Triage: 34010 rkrux/musig-key-fix
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
 	34028 fix_seenlocal_max-26								last=a364f6303cb
+		# Includes bugfix fixup
 	#31.xTODO# Revert/disable #34075 mempool-based fee estimator
 	-     fix_feeest_read_rare_overflow-29
 		# Alternative to: 34109 maflcko/2512-fix-u64

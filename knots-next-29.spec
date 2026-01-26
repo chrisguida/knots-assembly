@@ -408,6 +408,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
 	33993 doc_stopatheight_imprecise-21
 	34028 fix_seenlocal_max-26								last=a364f6303cb
+		# Includes bugfix fixup
 	-     fix_feeest_read_rare_overflow-29
 		# Alternative to: 34109 maflcko/2512-fix-u64
 	-     pcp_dont_spam_unauth-29
@@ -791,7 +792,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	23362 importfromcoldcard					65dcd6e6e42	last=8076f8d4c2a hebasto/211025-cc
 		# THIS WAS BROKEN (affects MakeDatabase), NOW OMITTED: Instead of changing behaviour of wallettool's WalletCreate, just do the two lines inline (see diff-end of d70ada16a69)
 		# Added experimental warning
-	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
+m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddress/dump_fee_estimates  # savefeeestimates
 		# NOTE: Carries lock annotation fix aa096ebfb06 (FlushFeeEstimates lock on m_cs_fee_estimator)
 	# Needs fixes: g457 shaavan:peer-table-splitter
 	# Needs work/review: 23475 -  # wallet: add config to prioritize a solution that doesn't create change in coin selection
