@@ -50,6 +50,8 @@ checkout v28.2
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 	31408 qafix_framework_pr31408-27			8d7611a7eca
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
+	# Triage: Only if native Windows CI: 32219 -
+		# NOTE: incomplete backport at c939d74b244
 	TRIAGE: 33639 maflcko/2510-ci-rework-cache-providers
 	33990 qa_rpc_startingheight-28							last=52f96cc235d theStack/202512-test-announced_starting_height
 	Triage: 34185 brunoerg/2025-12-test-pruning-wout-wallet
@@ -591,7 +593,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 @28.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-28+k					723ceffb7b7	last=3efb06b858b rm_minisketch-29+syslibs
-	33915 maflcko/2511-test-retry-prev-donwload
+	33915 qa_getprevrel_retrydownload-28
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
@@ -687,7 +689,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33328 -  # Mapping for Lockedpool
 	33332 fjahr/2025-09-trivial-copy
 	Review: 33334 Raimo33/index-work-comparator-branchless
-	Review: 33410 -  # coinstats: avoid unnecessary Coin copy in ApplyHash
+	33410 opti_coinstats_nocopy_pr33410-26		30ada41e121	last=85d058dc537  # coinstats: avoid unnecessary Coin copy in ApplyHash
+		# Real last=5a56203f4e4 (branch messed up by author)
 	# Needs review? 33602 l0rinc/l0rinc/BatchWrite-lookup-optimization
 	# Needs review: 33637 l0rinc/l0rinc/block_index_comparators
 	# Needs review: 33645 Raimo33/optimize-tx-policy-verification

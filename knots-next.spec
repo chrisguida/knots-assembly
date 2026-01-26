@@ -521,7 +521,8 @@ checkout v30.0rc1
 	# Needs review: 33328 -  # Mapping for Lockedpool
 	33332 fjahr/2025-09-trivial-copy			6ec473b8a99
 	Review: 33334 Raimo33/index-work-comparator-branchless	f3b0c131368
-	Review: 33410 -	a35ca3225d7  # coinstats: avoid unnecessary Coin copy in ApplyHash
+	33410 opti_coinstats_nocopy_pr33410-26		30ada41e121	last=85d058dc537  # coinstats: avoid unnecessary Coin copy in ApplyHash
+		# Real last=5a56203f4e4 (branch messed up by author)
 	33630 glozow/2025-10-doc-submitpackage
 		30.x backport in #33609
 	# Needs review? 33602 l0rinc/l0rinc/BatchWrite-lookup-optimization
@@ -532,7 +533,7 @@ checkout v30.0rc1
 	# Needs review: 33757 l0rinc/l0rinc/solutions-vector-optional
 	# Needs concept (even if merged) & review: 33817 l0rinc/l0rinc/bip30-bloom-filter-removal
 	# Needs careful review: 34004 -  # Implementation of SwiftSync
-	Triage: 34025 ajtowns/202512-netsplit-opt
+	34025 cache_time_and_arg_pr34025-29
 	# Needs review: 34054 sedited/txdownloadman_ibd_check
 	# Needs review: 34083 theuni/chacha20-vectorized-initial
 	34088 maflcko/2512-log-func

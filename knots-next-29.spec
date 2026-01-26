@@ -45,6 +45,8 @@ checkout v29.3rc1
 	# If needed: -     ci_i686mp_clang15						955f1eeed99
 NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
+	# Only if native Windows CI: 32219 -
+		# NOTE: incomplete backport at c939d74b244
 	33639 docker_no_cache_gha-29.2				0c1f5ccf6d1
 	33990 qa_rpc_startingheight-28							last=52f96cc235d theStack/202512-test-announced_starting_height
 	34185 qafix_pruning_wo_wallet-25						last=8fb5e5f41dd brunoerg/2025-12-test-pruning-wout-wallet
@@ -493,7 +495,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Needs review: 32665 fanquake/boost_shrink
 @29.x-knots
 # PERFORMANCE:
-	33915 maflcko/2511-test-retry-prev-donwload
+	33915 qa_getprevrel_retrydownload-28
 	# Needs review: 24158 JeremyRubin/epoch-mempool-reorg-updates
 	# Needs review: 24589 -  # sha512.cpp improvements
 	# Probably a bad idea: 24712 -  # wallet: reduce coin selection iterations
@@ -575,16 +577,17 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Needs review: 33328 -  # Mapping for Lockedpool
 	33332 opti_arith_uint256_trivialcopy-28		faed6436465
 	33334 opti_blkidx_comparator-26+knots		e8cf08a3614	last=80ac0467ef4 Raimo33/index-work-comparator-branchless
-	33410 opti_coinstats_nocopy_pr33410-26		30ada41e121	last=5a56203f4e4  # coinstats: avoid unnecessary Coin copy in ApplyHash
+	33410 opti_coinstats_nocopy_pr33410-26		30ada41e121	last=85d058dc537  # coinstats: avoid unnecessary Coin copy in ApplyHash
+		# Real last=5a56203f4e4 (branch messed up by author)
 	# Needs review? 33602 l0rinc/l0rinc/BatchWrite-lookup-optimization
 	# Needs review: 33637 l0rinc/l0rinc/block_index_comparators
 	# Needs review: 33645 Raimo33/optimize-tx-policy-verification
-	33738 opti_cmpctblocks_nolog_skip_hash-29	6aba3a975dc	last=10e0e96e703 l0rinc/l0rinc/debug-log-serialization
+	33738 opti_cmpctblocks_nolog_skip_hash-29	6aba3a975dc	last=969c840db52 l0rinc/l0rinc/debug-log-serialization
 		# Very partial
 	# Needs review: 33757 l0rinc/l0rinc/solutions-vector-optional
 	# Needs concept (even if merged) & review: 33817 l0rinc/l0rinc/bip30-bloom-filter-removal
 	# Needs careful review: 34004 -  # Implementation of SwiftSync
-	Triage: 34025 ajtowns/202512-netsplit-opt
+	34025 cache_time_and_arg_pr34025-29
 	# Needs review: 34054 sedited/txdownloadman_ibd_check
 	# Needs review: 34083 theuni/chacha20-vectorized-initial
 	Needs review: 34253 l0rinc/l0rinc/cache-ibd-status
