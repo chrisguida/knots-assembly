@@ -1414,7 +1414,6 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness
-		TODO: knots#245
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-28+knots				22193cca113	last=1dfe27e49ab
 	(CHECK-LAST)	last=4eb6d39d7cd permitbarepubkey-29+knots
@@ -1548,6 +1547,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		#29.xTODO# QTreeWidget or similar for GUI Options dialog?
 		Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
 		TODO: Increase datacarriersize default
+		TODO: knots#245
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv

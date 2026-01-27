@@ -1252,7 +1252,6 @@ m	-     restore_upnp-29.2+knots				42ee4c0c8d1
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	21d7f48b148
 	-     pol_acceptunknownwitness				1a07b99635c
-		TODO: knots#245
 	-     mining_priority						2ba67b3c43e	# Latest code now
 		#30.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
@@ -1392,9 +1391,9 @@ m	-     restore_upnp-29.2+knots				42ee4c0c8d1
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
 	10282 softwareexpiry						f2dbe439966
-		TODO: "OK" is probably the wrong button to use for this
-		TODO? "Upgrade" button to open website - or even download+verify??
-			-DUPGRADE_COMMAND='...' for PPA/etc?
+		# TODO: "OK" is probably the wrong button to use for this
+		# TODO? "Upgrade" button to open website - or even download+verify??
+			# -DUPGRADE_COMMAND='...' for PPA/etc?
 	-     rwconf_policy-29.1+knots				3a35d0fe2aa
 		# Includes Knots policy changes for simplification of final rebase process
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
@@ -1403,6 +1402,7 @@ m	-     restore_upnp-29.2+knots				42ee4c0c8d1
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#30.xTODO# QTreeWidget or similar for GUI Options dialog?
 		# Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
+		TODO: knots#245
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	#30.xTODO# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv

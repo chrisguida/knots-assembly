@@ -1186,7 +1186,6 @@ checkout v30.0rc1
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	e11d54ee382
 	-     pol_acceptunknownwitness				6d158fd7fbd
-		TODO: knots#245
 	-     mining_priority						b2fc1c21f8b	# Latest code now
 		#30.xTODO# FIXME: Should blockmintxfee apply to blockprioritysize??
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
@@ -1343,6 +1342,7 @@ checkout v30.0rc1
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#30.xTODO# QTreeWidget or similar for GUI Options dialog?
 		Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
+		TODO: knots#245
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	#30.xTODO# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
