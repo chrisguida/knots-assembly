@@ -448,6 +448,7 @@ checkout v30.0rc1
 	Needs review: k231  privkeyio/kwsantiago/qt6-depends-upgrade
 	Needs review: 32655 fanquake/sqlite_3_50_0
 	Needs review: 33851 fanquake/xcb_util_updates
+	Triage: -     fix_secp256k1_bugs-29
 @30.x-knots
 # PERFORMANCE:
 	33915 maflcko/2511-test-retry-prev-donwload
@@ -1067,7 +1068,8 @@ checkout v30.0rc1
 	# Needs work/review: g539  RandyMcMillan-g/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	30951 v2onlyclearnet-29+knots				ba75af3f9b2	last=27e90008835
+	30951 v2onlyclearnet-29+knots				ba75af3f9b2	last=6b2796a7f76
+		# Held back 27e90008835...6b2796a7f76 (listen=0 forced antifeature, confusing help string, refactoring)
 		# Made a hidden option
 	# Needs review: 32065 vasild/i2p_early_create_session
 	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces

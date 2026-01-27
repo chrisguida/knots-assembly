@@ -591,6 +591,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	TODO: bump to 2.3.3 in restore_upnp-29.2+knots
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
+	Triage: -     fix_secp256k1_bugs-29
 @28.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-28+k					723ceffb7b7	last=3efb06b858b rm_minisketch-29+syslibs
@@ -1063,13 +1064,14 @@ NM	32187 zmq_devirtual_destructor-0.12
 	-     manpages_seealso_notself				b4f685cd288
 		# Originally bundled into #29585
 	# ----- MUSIG2 -----
+	# TODO: 31247 achow101/musig2-psbt
+		# +#34010 rkrux/musig-key-fix
+		# +Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
 	# Needs review: 33665 rkrux/musig-sighash
 	# Needs review & wallet compat check: 31244 achow101/musig2-desc
 		# Needs #3313 too?
 	# Needs review: 32724 w0xlt/musig2_tests
 	# Needs review & wallet compat check: 29675 achow101/musig2
-	Triage: 34010 rkrux/musig-key-fix
-	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
 	Triage: 34141 achow101/musig-miniscript
 	# ----- END OF MUSIG2 -----
 	29686 manpage_desc-28+knots					6fee3558663	last=47f50c7af55 willcl-ark/manpage-desc

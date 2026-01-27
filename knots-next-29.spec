@@ -494,6 +494,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 		# With Qt6: 33918 hebasto/251120-qt-link
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
+	-     fix_secp256k1_bugs-29
 @29.x-knots
 # PERFORMANCE:
 	33915 qa_getprevrel_retrydownload-28
@@ -933,14 +934,15 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 	-     manpages_seealso_notself				d4f4d97e160
 		# Originally bundled into #29585
 	# ----- MUSIG2 -----
+	# TODO: 31247 achow101/musig2-psbt
+		# +#34010 rkrux/musig-key-fix
+		# +Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
 	# Needs review: 33665 rkrux/musig-sighash
 	# Needs review & wallet compat check: 31244 achow101/musig2-desc
 		# Needs #3313 too?
 	# Needs review: 32724 w0xlt/musig2_tests
 	# Needs review & wallet compat check: 29675 achow101/musig2
-	Triage: 34010 rkrux/musig-key-fix
-	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
-	Triage: 34141 achow101/musig-miniscript
+	# Triage: 34141 achow101/musig-miniscript
 	# ----- END OF MUSIG2 -----
 	#30.xTODO# 29954 rpc_getmpinfo_policy_pr29954-28+knots				last=d165ac8779b kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
 		# Or maybe this is unnecessary with a get/set policy RPC method?
@@ -1053,7 +1055,7 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
 		# NOTE: Now also includes mintxfee in getwalletinfo for testing purposes
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
-	9245 ionice-29+knots						1bcbcb27a6f
+m	9245 ionice-29+knots						1bcbcb27a6f
 		# low prio: p2p requests, loading/verifying blocks on disk
 		# normal prio: connecting blocks, indexes, user requests
 	-    ionice_win-29+knots					a9cf2b3d4da
@@ -1066,7 +1068,7 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 	g444  gui_netwatch-29+knots					4d6341a21b9	 # Latest code now
 		# NOTE: Was #9849
 		# NOTE: Includes #25050
-	10615 multiwallet_rpc-29+knots				8ce7f6318be  # latest code now
+m	10615 multiwallet_rpc-29+knots				8ce7f6318be  # latest code now
 		# CAUTION: Be extra careful rebasing - diff/patch default context might accidentally move code around between different RPC methods!
 		# NOTE: 23.x added restorewallet to preexisting commit d927c064439->c706f7173ad
 		# NOTE: Denies backupwallet/dumpwallet/importwallet/loadwallet/dumptxoutset/migratewallet/etc to wallet-restricted users for now
@@ -1100,7 +1102,7 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 	15218 postibd_flush-28						ac354964bb9	last=8887d28a014  andrewtoth/flush-after-ibd
 	15428 tor_gui_pairing-29+knots				5b43a73c5f6	last=ab9ed21dc98 tor_gui_pairing-0.21+knots
 		# Implicitly relies on gui#506 for QR Code without text being centred (dropped buggy 4a881554991)
-	15421 tor_subprocess-29+knots				7f1d89276e4	# Latest code now
+m	15421 tor_subprocess-29+knots				7f1d89276e4	# Latest code now
 		# FIXME: fix automatic tor outbound using subprocess
 		# FIXME: -netinfo doesn't show tor if inbound-only?
 	# TODO: tor guix bundle!
@@ -1134,7 +1136,8 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 	# Needs work/review: g539  RandyMcMillan-g/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	30951 v2onlyclearnet-29+knots				76ae62fffed	last=27e90008835
+m	30951 v2onlyclearnet-29+knots				76ae62fffed	last=6b2796a7f76
+		# Held back 27e90008835...6b2796a7f76 (listen=0 forced antifeature, confusing help string, refactoring)
 		# Made a hidden option
 	# Needs review: 32065 vasild/i2p_early_create_session
 	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces
@@ -1147,10 +1150,11 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 # Non-upstreamed functionality:
 	-     rm_tarball_ci-29+knots				dba969af59c
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
-	-     restore_upnp-29.2+knots				42ee4c0c8d1
+m	-     restore_upnp-29.2+knots				42ee4c0c8d1
 	(CHECK-LAST)	last=07f0df46fba origin-pull-k/196/head
 		# NOTE: Includes knots#196
 		# NOTE: Includes #30301 theuni/miniupnp-228-bump
+		# CAUTION: Complex merge with pcp_dont_spam_unauth-29 to avoid enabling full PCP warnings when only UPnP is toggled
 		#30.xTODO# Revert #32500
 	n/a   restore_feefilter_opt					5e45ec35fc8
 	-     gui_payreq_textedit					ee38b647a5b
@@ -1159,7 +1163,7 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 	# FIXME: -     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
 		# FIXME: this is broken :(
 	14137 win_taskbar_progress					e72143a597b	last=18eb4dbb8a
-		TODO: Needs review/testing: k215 privkeyio/kwsantiago/191-win-taskbar-progress-qt6
+		# TODO: Needs review/testing: k215 privkeyio/kwsantiago/191-win-taskbar-progress-qt6
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					1c3d0ca43e3
 		# TODO?? blockreservedsize option
