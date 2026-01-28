@@ -1394,15 +1394,15 @@ m	-     restore_upnp-29.2+knots				42ee4c0c8d1
 		# TODO: "OK" is probably the wrong button to use for this
 		# TODO? "Upgrade" button to open website - or even download+verify??
 			# -DUPGRADE_COMMAND='...' for PPA/etc?
-	-     rwconf_policy-29.1+knots				3a35d0fe2aa
+m	-     rwconf_policy-29.3+knots				3a35d0fe2aa
+		# + knots#245
+		# + knots#197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
 		# Includes Knots policy changes for simplification of final rebase process
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
 		#30.xTODO# Check on block assembly GetArgs like blockmintxfee/etc
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#30.xTODO# QTreeWidget or similar for GUI Options dialog?
-		# Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
-		TODO: knots#245
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	#30.xTODO# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
@@ -1413,12 +1413,10 @@ m	-     restore_upnp-29.2+knots				42ee4c0c8d1
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		89b9e3080f7
-	7483  svg_icon-29.2+knots					709012ccf2f
+m	7483  svg_icon-29.2+knots					709012ccf2f
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
-	# n/a   copyright_2025-28						19e67dd9efa
-		TODO: +#34174
-			30.x backport in #34192
+	n/a   upd_copyrightyear-29
 	n/a   font_ocrbitcoin						5e0cafd0b85
 	n/a   knots_branding-29						fb598e62434
 		# NOTE: Includes #33422 to clean up "(64-bit)" leftovers
@@ -1434,8 +1432,8 @@ m	-     restore_upnp-29.2+knots				42ee4c0c8d1
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
-TODO: test build with Boost 1.73
-	n/a   (cherrypick=7367bb04b08)				537ce939717	# doc/{bips,files}
+# TODO: test build with Boost 1.73
+	n/a   (cherrypick=488640fe20b)				537ce939717	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=knots20260112)			28eccd9fdfe
 #	n/a  knots_historical_relnotes				61100a2

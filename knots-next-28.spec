@@ -1567,8 +1567,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# FIXME: Shouldn't be part of branding :/ But depends on the build-for-release-source code from svg_icon...
 # BRANDING:
 	n/a   copyright_2025-28						19e67dd9efa
-		TODO: +#34174
-			30.x backport in #34192
+		TODO: upd_copyrightyear-29
 	n/a   font_ocrbitcoin
 	n/a   knots_branding-28						f58950aab87	last=3263c5ee896 knots_branding-29
 		#28.xTODO# Review security policy

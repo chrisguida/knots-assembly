@@ -1335,14 +1335,14 @@ checkout v30.0rc1
 		TODO? "Upgrade" button to open website - or even download+verify??
 			-DUPGRADE_COMMAND='...' for PPA/etc?
 	-     rwconf_policy-29.1+knots				91b5f982db8
+		# + knots#245
+		# + knots#197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
 		# Includes Knots policy changes for simplification of final rebase process
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
 		#30.xTODO# Check on block assembly GetArgs like blockmintxfee/etc
 		#TODO: Add segwit wallet stuff?
 		#TODO: Get GUI settings for dustdynamic to select ratio box & focus text area when you click their labels
 		#30.xTODO# QTreeWidget or similar for GUI Options dialog?
-		Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
-		TODO: knots#245
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	#30.xTODO# Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
@@ -1357,9 +1357,7 @@ checkout v30.0rc1
 	7483  svg_icon-29.2+knots					093b55fc9ce
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
-	# n/a   copyright_2025-28						19e67dd9efa
-		TODO: +#34174
-			30.x backport in #34192
+	n/a   upd_copyrightyear-29
 	n/a   font_ocrbitcoin						68221e1221f
 	n/a   knots_branding-29						78ea02d8a58
 		# NOTE: Includes #33422 to clean up "(64-bit)" leftovers
