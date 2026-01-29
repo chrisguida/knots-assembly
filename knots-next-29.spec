@@ -458,18 +458,18 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	34282 qafix_win_log_skips_pr34282-24
 	# Duplicate of #29678: 34305 fanquake/fix_space_warning_log
 		# Consider CeilDiv from #34436
-	34328 l0rinc/l0rinc/uptime-monotonic
-		+ #34437
+	34328 monotonic_uptime-29								last=44cf02bea99 !l0rinc/l0rinc/fix-uptime-first-call-zero
+		# + #34437
 	# Needs review: 34348 -  # lib: call RandFailure() if RDRAND fails
 	# Needs review? And/or minimal fix instead? 34349 maflcko/2601-sp-popen-less
 	# Triage: Needs review? 34358 mzumsande/202601_importprunedfund_bug
-	34369 maflcko/2601-test-scale-close-timeout
+	34369 qa_timeout_factor_netshutdown-29
 	# Triage: Needs review: 34371 -  # wallet: allow importprunedfunds for spending transactions
 	# Needs review: 34379 rkrux/gethdkeys
 	# Needs review: 34381 brunoerg/2026-01-scriptnum
 	# Needs review: 34393 -  # rpc: Fix off-by-one error in getblockchaininfo help
 	# Triage: 34417 maflcko/2601-log-warn-sensitive
-	g924  achow101-g/gui-unnamed-restore-error-dialog
+	g924  fix_qt_restor_empty_walletname_msg-24
 	-     fix_rpccookieperms_early				b9b9649a035
 	-     qt_intro_nojumpy						5bd49893678
 	-     restore_guix_ppc64le-28				e9df5c314a6
@@ -552,7 +552,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Needs review: 29473 -  # optimization: Speed up Base58 encoding by 400% by 64-bit preliminary byte packing
 	# Needs review: 29491 fjahr/2024-02-batch-validation-updated
 	# Needs review: 29578 brunoerg/2024-03-addrman-getaddr
-	29602 opti_IsSpace_pr29602-29				0ab27fc79b8
+m	29602 opti_IsSpace_pr29602-29+knots			0ab27fc79b8
 	# TODO: Revert #29815 ? (ie, use OS provided optimised timingsafe_bcmp)
 	30059 dbfilesize_param-29.1					9e7096992e6	last=c283a572145 dbfilesize_param
 	-     dbfilesize_64-29.1+knots				90ce879fff2
@@ -1207,7 +1207,7 @@ m	-     restore_upnp-29.2+knots				42ee4c0c8d1
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
 			# error message change impacts a bunch of functional tests; and submitpackage currently lacks support for ignore_rejects anyway
-	11082 rwconf-29+knots						7bfaa3be4a3 # Latest code now
+m	11082 rwconf-29+knots						7bfaa3be4a3 # Latest code now
 		#30.xTODO# Squash fixes
 		#30.xTODO# Deprecate with settings.json better?
 	7510  rwconf_gui-29.1+knots					3e95289aac0
