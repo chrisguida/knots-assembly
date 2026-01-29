@@ -253,6 +253,7 @@ checkout v28.2
 	#28.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	#28.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	29678 fix_init_lowdisk_warning_reqd-28		8c4f8f40807	last=b1117e5a716 fix_init_lowdisk_warning_reqd
+	(CHECK-LAST)	last=58ceddd389e fix_init_lowdisk_warning_reqd-29
 		# Excluded dev doc update
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
