@@ -252,7 +252,8 @@ checkout v28.2
 		# left off doc change (4caa38600e6)
 	#28.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	#28.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
-	29678 fix_init_lowdisk_warning_reqd^		8c4f8f40807	last=c452d6c1efe fix_init_lowdisk_warning_reqd
+	29678 fix_init_lowdisk_warning_reqd-28		8c4f8f40807	last=b1117e5a716 fix_init_lowdisk_warning_reqd
+		# Excluded dev doc update
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
@@ -550,13 +551,11 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Redundant with gui#677 (which fixes more): g920  -  # Set peer version and subversion to N/A when not available or detecting
 	# Redundant with gui#815 (which fixes more): Needs review: g922  -  # gui: fix transactions disable problem
 	Triage: 34293 fix_vermsg_missing_comma-29+knots					last=ffd09f8a0d0 fix_vermsg_missing_comma
-	Triage: 34272 l0rinc/l0rincpsbt-bounds-assert
-		30.x backport in #34283
+	34272 fix_psbt_bounds_assert_pr34272-25
 	Triage: Needs followup work? 34281 maflcko/2601-build-fix-remove
 		30.x backport in #34283
 		+ #34413 (see also issue #34414)
-	Triage: 34282 hebasto/260114-win-skip-reason
-		30.x backport in #34283
+	34282 qafix_win_log_skips_pr34282-24
 	Triage: 34305 fanquake/fix_space_warning_log
 		Consider CeilDiv from #34436
 	Triage: 34328 l0rinc/l0rinc/uptime-monotonic
