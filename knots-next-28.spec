@@ -1,7 +1,7 @@
-timestamp 2026-01-12 10:32:54
+timestamp 2026-01-29 06:24:08
 #lastapply no-merge
 
-#.. checked up to PR #34260 / gui#922 / knots#228
+#.. checked up to PR #34439 / gui#924 / knots#228
 
 checkout v28.2
 @28.x-syslibs
@@ -36,6 +36,7 @@ checkout v28.2
 	15155 test_external_bcli					7d6366b5659
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
+	# Meh? 34390 fanquake/tar_override_get_prev
 	n/a   (delete_release_notes_fragments)
 @28.x-knotsfixes
 # TESTS:
@@ -55,6 +56,9 @@ checkout v28.2
 	TRIAGE: 33639 maflcko/2510-ci-rework-cache-providers
 	33990 qa_rpc_startingheight-28							last=52f96cc235d theStack/202512-test-announced_starting_height
 	Triage: 34185 brunoerg/2025-12-test-pruning-wout-wallet
+	# Only if native Windows CI? 34285 hebasto/260114-windows-pyzmq
+	# FreeBSD: 34346 w0xlt/freebsd_high_port_range-again
+	# Only if native Windows CI? 34418 hodlinator/2026/01/31409_fix
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail
 	18818 guix_reltar_autogen_distclean			5bd6cb2eb0a	last=b5a164d9155 fix_gitian_src_202004
@@ -507,6 +511,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs concept/review: 34117-commit-2  net: fix CJDNS address discovery when -externalip is set
 	Triage: Needs review: Partial: 34143 hebasto/251223-boost-layout
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
+		+ #34297 (p2p: add validation checks for initial self-announcement)
 	# ----- WALLET DELETION BUGFIXES -----
 	Review: 34156 furszy/2025_wallet_migration_jinglewreck
 		Ensure /wallet.dat doesn't rm /
@@ -535,7 +540,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# ----- END WALLET DELETION BUGFIXES -----
 	34161 fix_distance_ub_pr34161-26						last=477c5504e05 l0rinc/l0rinc/pool-allocator-ub
 	34227 hebasto/260108-guix-osslsigncode
-		30.x backport in #34229
+		28.x backport in #34270
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
 	# Needs review/work: 34213 brunoerg/2026-01-net-anchors-networkactive
 	34224 fix_init_int_ec-27
@@ -545,6 +550,27 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Redundant with gui#677 (which fixes more): g920  -  # Set peer version and subversion to N/A when not available or detecting
 	# Redundant with gui#815 (which fixes more): Needs review: g922  -  # gui: fix transactions disable problem
 	Triage: 34293 fix_vermsg_missing_comma-29+knots					last=ffd09f8a0d0 fix_vermsg_missing_comma
+	Triage: 34272 l0rinc/l0rincpsbt-bounds-assert
+		30.x backport in #34283
+	Triage: Needs followup work? 34281 maflcko/2601-build-fix-remove
+		30.x backport in #34283
+		+ #34413 (see also issue #34414)
+	Triage: 34282 hebasto/260114-win-skip-reason
+		30.x backport in #34283
+	Triage: 34305 fanquake/fix_space_warning_log
+		Consider CeilDiv from #34436
+	Triage: 34328 l0rinc/l0rinc/uptime-monotonic
+		+ #34437
+	Triage: Needs review: 34348 -  # lib: call RandFailure() if RDRAND fails
+	Triage: Needs review? And/or minimal fix instead? 34349 maflcko/2601-sp-popen-less
+	Triage: Needs review? 34358 mzumsande/202601_importprunedfund_bug
+	34369 maflcko/2601-test-scale-close-timeout
+	Triage: Needs review: 34371 -  # wallet: allow importprunedfunds for spending transactions
+	Triage: Needs review: 34379 rkrux/gethdkeys
+	Triage: Needs review: 34381 brunoerg/2026-01-scriptnum
+	Needs review: 34393 -  # rpc: Fix off-by-one error in getblockchaininfo help
+	Triage: 34417 maflcko/2601-log-warn-sensitive
+	g924  achow101-g/gui-unnamed-restore-error-dialog
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -706,6 +732,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs 28.x review: 34253 lockless_isibd-26+knots							last=557b41a38cc l0rinc/l0rinc/cache-ibd-status
 		# NOTE: diff-minimised, and did not backport refactor commits
 		# NOTE: various libbitcoinkernel changes needed, if libbitcoinkernel features (#30595 in particular) are backported
+	# Needs review: 34400 -  # wallet: parallel fast rescan (approx 5x speed up with 16 threads)
+	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
+	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -726,6 +755,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Triage: 34140 roconnor-blockstream/simplicity
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
 	# Needs review & consensus: k238 -  # Reduced Data Temporary Softfork
+	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 # FUNCTIONALITY:
 	-     rm_kernel_lib							84b7c6adf43
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
@@ -892,8 +922,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 	g307  gui_peers_rowcolouropt				86efc23e6b0	last=fdf80937d1c hebasto-g/210501-stripes
 		# Dropped formatting changes and avoided conflict with g216(optional_font)
 	# TODO: Change to have both? g305 rebroad-g/SendRecvSpeed-gui
-	# Too many TODOs: 22341 Sjors/2021/06/getxpub
-		# NOTE: Might require #28192
+	# Needs work? 34438 w0xlt/gethdkey
+		# WAS: Too many TODOs: 22341 Sjors/2021/06/getxpub
+			# NOTE: Might require #28192
 	# Needs work: 22350 -  # Log rotation
 	22372 multinotify							73691fbf13a
 	24963 rpc_walletprocesspsbt_options-26		7c2fb8de207	last=40143bafb52 rpc_walletprocesspsbt_options
@@ -962,7 +993,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# TODO: update without breaking compatibility? (new code looks buggy tho - needs rewrite?) (also, filtering by "input type" doesn't really make sense, though segwit filtering does)
 	# Needs concept: 25261 -  # rpc: fetch multiple headers in getblockheader()
 		# Was: Needs API review: 23330 JeremyRubin/header-fetch
-	#28.xTODO# 25269 -  # wallet: re-activate the not triggered "AmountWithFeeExceedsBalance" error
+	Needs review: 34299 -  # wallet: re-activate "AmountWithFeeExceedsBalance" error
+		# WAS (never in Knots): 25269 -  # wallet: re-activate the not triggered "AmountWithFeeExceedsBalance" error
 	# Needs concept review: 25271 jonatack/ConnectNode-say-which-peer-we-are-already-connected-to
 		# Concept unsure: Hides logline by default; but maybe we want that with more info included?
 	# Needs review: 25366 w0xlt/desc_rpc
@@ -1055,6 +1087,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ?
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
@@ -1092,7 +1125,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	TODO: 30595 + 33791 + 33796 + 33822 + 33825  libbitcoinkernel C API
+	TODO: 30595 + 33791 + 33796 + 33822 + 33825 + 34401  libbitcoinkernel C API
 	Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28						44b12da4bd8
 	# Needs review: 30685 hebasto/240820-control-flow
@@ -1581,7 +1614,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260112)			ba223403bbc
+	n/a  (bump_version=Knots:20260129)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
