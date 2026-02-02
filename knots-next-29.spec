@@ -3,7 +3,7 @@ timestamp 2026-01-29 06:24:08
 
 #.. checked up to PR #34439 / gui#924 / knots#228
 
-checkout v29.3rc1
+checkout v29.3rc2
 @29.x-syslibs
 # BUILD BUGS:
 	# Needs review: 33550 ryanofsky/pr/winstream
@@ -426,7 +426,6 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# ----- WALLET DELETION BUGFIXES -----
 	32273 fix_walletmigrate_relpaths-29.3
 		# NOTE: Held back "wallet: migration: Make backup in walletdir" behaviour change
-	34370 fix_34222_backport
 	34372 qa_wallet_migration_tests_202601-29.3
 		# NOTE: Invisible dependencies on #32273 and #34370
 	34176 handle_wallet_dir_nonwritable-29.3				last=3e43bce7688 furszy/2025_wallet_check_db_permissions
