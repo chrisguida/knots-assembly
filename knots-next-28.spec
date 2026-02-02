@@ -1,7 +1,7 @@
-timestamp 2026-01-29 06:24:08
+timestamp 2026-02-02 17:43:46
 #lastapply no-merge
 
-#.. checked up to PR #34439 / gui#924 / knots#228
+#.. checked up to PR #34485 / gui#925 / knots#228
 
 checkout v28.2
 @28.x-syslibs
@@ -22,6 +22,7 @@ checkout v28.2
 	Triage: Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
 	k246  fix_boost1.73compat-29
 		# https://github.com/bitcoin/bitcoin/issues/34101
+	Triage: 34462 hebasto/260130-sched-batch
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -556,6 +557,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: Needs followup work? 34281 maflcko/2601-build-fix-remove
 		30.x backport in #34283
 		+ #34413 (see also issue #34414)
+		+ #34468 ?
 	34282 qafix_win_log_skips_pr34282-24
 	Triage: 34305 fanquake/fix_space_warning_log
 		Consider CeilDiv from #34436
@@ -571,6 +573,13 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 34393 -  # rpc: Fix off-by-one error in getblockchaininfo help
 	Triage: 34417 maflcko/2601-log-warn-sensitive
 	g924  fix_qt_restor_empty_walletname_msg-24
+	Triage: 34451 w0xlt/i_34263
+	# Windows-only, doesn't affect us? 34454 avoid_winnt_delete_keyword_conflict-28
+	Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
+	Triage: Needs review: 34458 sedited/logips_self_discover
+	Triage: Needs review: 34467 -  # net: don't perform network activity when networkactive=0
+	Triage: 34470 maflcko/2602-ci-leveldb-ub
+	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -735,6 +744,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 34400 -  # wallet: parallel fast rescan (approx 5x speed up with 16 threads)
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
+	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1088,6 +1098,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
 		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ?
+	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
@@ -1228,6 +1239,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review: 33752 -  # rest: Query predecessor headers using negative count param
 	# Needs review: g902 prusnak-g/desktop-file
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
+	# Needs work: g925 w0xlt-g/hide_conflicted
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1614,7 +1626,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260129)			ba223403bbc
+	n/a  (bump_version=Knots:20260202)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320

@@ -1,7 +1,7 @@
-timestamp 2026-01-29 06:24:08
+timestamp 2026-02-02 17:43:46
 #lastapply no-merge
 
-#.. checked up to PR #34439 / gui#924 / knots#228
+#.. checked up to PR #34485 / gui#925 / knots#228
 
 checkout v29.3rc2
 @29.x-syslibs
@@ -14,6 +14,7 @@ checkout v29.3rc2
 	34093 fix_freebsd15_netlink_warn						last=be2a6248fbc vasild/fix_nlmsg_ok_compilation_fbsd15
 	k246  fix_boost1.73compat-29
 		# https://github.com/bitcoin/bitcoin/issues/34101
+	Triage: 34462 hebasto/260130-sched-batch
 # SYSLIBS:
 	2241  sys_leveldb							a083281a33d	last=bd2be933f26 sys_leveldb-30
 		# Related: #32447
@@ -454,6 +455,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Needs followup work? 34281 maflcko/2601-build-fix-remove
 		# 30.x backport in #34283
 		# + #34413 (see also issue #34414)
+		# + #34468 ?
 	34282 qafix_win_log_skips_pr34282-24
 	# Duplicate of #29678: 34305 fanquake/fix_space_warning_log
 		# Consider CeilDiv from #34436
@@ -469,6 +471,13 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Needs review: 34393 -  # rpc: Fix off-by-one error in getblockchaininfo help
 	# Triage: 34417 maflcko/2601-log-warn-sensitive
 	g924  fix_qt_restor_empty_walletname_msg-24
+	34451 w0xlt/i_34263
+	# Windows-only, doesn't affect us? 34454 avoid_winnt_delete_keyword_conflict-28
+	# Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
+	# Needs review: 34458 sedited/logips_self_discover
+	# Needs review: 34467 -  # net: don't perform network activity when networkactive=0
+	Triage: 34470 maflcko/2602-ci-leveldb-ub
+	# Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	-     fix_rpccookieperms_early				b9b9649a035
 	-     qt_intro_nojumpy						5bd49893678
 	-     restore_guix_ppc64le-28				e9df5c314a6
@@ -622,6 +631,7 @@ m	29602 opti_IsSpace_pr29602-29+knots			0ab27fc79b8
 	# Needs review: 34400 -  # wallet: parallel fast rescan (approx 5x speed up with 16 threads)
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
+	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -958,6 +968,7 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
 		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ?
+	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
@@ -1067,6 +1078,7 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 	# Needs review: 33752 -  # rest: Query predecessor headers using negative count param
 	# Needs review: g902 prusnak-g/desktop-file
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
+	# Needs work: g925 w0xlt-g/hide_conflicted
 	-     qt_createunsigned_use_psbtops			fc47bc4ba89
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1466,7 +1478,7 @@ m	7483  svg_icon-29.2+knots					709012ccf2f
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				537ce939717	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260129)			28eccd9fdfe
+	n/a  (bump_version=knots20260202)			28eccd9fdfe
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		983a13aec03
 	TODO: https://x.com/1440000bytes/status/2009692447040053320

@@ -1,7 +1,7 @@
-timestamp 2026-01-29 06:24:08
+timestamp 2026-02-02 17:43:46
 lastapply no-merge
 
-#.. checked up to PR #34439 / gui#924 / knots#228
+#.. checked up to PR #34485 / gui#925 / knots#228
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -14,6 +14,7 @@ checkout v30.0rc1
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 	Triage: 33972 hebasto/251130-kernel-test
 	Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
+	Triage: 34462 hebasto/260130-sched-batch
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -410,6 +411,7 @@ checkout v30.0rc1
 	Needs followup work? 34281 maflcko/2601-build-fix-remove
 		30.x backport in #34283
 		+ #34413 (see also issue #34414)
+		+ #34468 ?
 	Triage: 34282 hebasto/260114-win-skip-reason
 		30.x backport in #34283
 	34305 fanquake/fix_space_warning_log
@@ -426,6 +428,13 @@ checkout v30.0rc1
 	Needs review: 34393 -  # rpc: Fix off-by-one error in getblockchaininfo help
 	Triage: 34417 maflcko/2601-log-warn-sensitive
 	g924  achow101-g/gui-unnamed-restore-error-dialog
+	34451 w0xlt/i_34263
+	# Windows-only, doesn't affect us? 34454 avoid_winnt_delete_keyword_conflict-28
+	Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
+	Needs review: 34458 sedited/logips_self_discover
+	Needs review: 34467 -  # net: don't perform network activity when networkactive=0
+	34470 maflcko/2602-ci-leveldb-ub
+	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -574,6 +583,7 @@ checkout v30.0rc1
 	# Needs review: 34400 -  # wallet: parallel fast rescan (approx 5x speed up with 16 threads)
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
+	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -912,6 +922,7 @@ checkout v30.0rc1
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
 		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ?
+	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
 	# Buggy & maybe waste of RAM? Needs review?? 29418 vasild/getnetmsgstats
@@ -1004,6 +1015,7 @@ checkout v30.0rc1
 	# Needs review: 33752 -  # rest: Query predecessor headers using negative count param
 	# Needs review: g902 prusnak-g/desktop-file
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
+	# Needs work: g925 w0xlt-g/hide_conflicted
 	-     qt_createunsigned_use_psbtops			a800d52314e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1411,7 +1423,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260129)			d5593bea7a1
+	n/a  (bump_version=knots20260202)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits
