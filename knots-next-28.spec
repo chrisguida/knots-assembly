@@ -22,7 +22,7 @@ checkout v28.2
 	Triage: Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
 	k246  fix_boost1.73compat-29
 		# https://github.com/bitcoin/bitcoin/issues/34101
-	Triage: 34462 hebasto/260130-sched-batch
+	34462 fix_bsd_batchprio-26
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -573,12 +573,12 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 34393 -  # rpc: Fix off-by-one error in getblockchaininfo help
 	Triage: 34417 maflcko/2601-log-warn-sensitive
 	g924  fix_qt_restor_empty_walletname_msg-24
-	Triage: 34451 w0xlt/i_34263
+	Triage: Needs work: 34451 w0xlt/i_34263
 	# Windows-only, doesn't affect us? 34454 avoid_winnt_delete_keyword_conflict-28
 	Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
 	Triage: Needs review: 34458 sedited/logips_self_discover
 	Triage: Needs review: 34467 -  # net: don't perform network activity when networkactive=0
-	Triage: 34470 maflcko/2602-ci-leveldb-ub
+	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2

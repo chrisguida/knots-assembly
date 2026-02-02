@@ -14,7 +14,7 @@ checkout v29.3rc2
 	34093 fix_freebsd15_netlink_warn						last=be2a6248fbc vasild/fix_nlmsg_ok_compilation_fbsd15
 	k246  fix_boost1.73compat-29
 		# https://github.com/bitcoin/bitcoin/issues/34101
-	Triage: 34462 hebasto/260130-sched-batch
+	34462 fix_bsd_batchprio-26
 # SYSLIBS:
 	2241  sys_leveldb							a083281a33d	last=bd2be933f26 sys_leveldb-30
 		# Related: #32447
@@ -471,12 +471,12 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Needs review: 34393 -  # rpc: Fix off-by-one error in getblockchaininfo help
 	# Triage: 34417 maflcko/2601-log-warn-sensitive
 	g924  fix_qt_restor_empty_walletname_msg-24
-	34451 w0xlt/i_34263
+	# Needs work: 34451 w0xlt/i_34263
 	# Windows-only, doesn't affect us? 34454 avoid_winnt_delete_keyword_conflict-28
 	# Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
 	# Needs review: 34458 sedited/logips_self_discover
 	# Needs review: 34467 -  # net: don't perform network activity when networkactive=0
-	Triage: 34470 maflcko/2602-ci-leveldb-ub
+	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
 	# Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	-     fix_rpccookieperms_early				b9b9649a035
 	-     qt_intro_nojumpy						5bd49893678

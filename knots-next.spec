@@ -14,7 +14,7 @@ checkout v30.0rc1
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 	Triage: 33972 hebasto/251130-kernel-test
 	Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
-	Triage: 34462 hebasto/260130-sched-batch
+	34462 fix_bsd_batchprio-26
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -428,12 +428,12 @@ checkout v30.0rc1
 	Needs review: 34393 -  # rpc: Fix off-by-one error in getblockchaininfo help
 	Triage: 34417 maflcko/2601-log-warn-sensitive
 	g924  achow101-g/gui-unnamed-restore-error-dialog
-	34451 w0xlt/i_34263
+	# Needs work: 34451 w0xlt/i_34263
 	# Windows-only, doesn't affect us? 34454 avoid_winnt_delete_keyword_conflict-28
 	Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
 	Needs review: 34458 sedited/logips_self_discover
 	Needs review: 34467 -  # net: don't perform network activity when networkactive=0
-	34470 maflcko/2602-ci-leveldb-ub
+	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
