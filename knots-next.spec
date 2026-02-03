@@ -1,7 +1,7 @@
-timestamp 2026-02-02 17:43:46
+timestamp 2026-02-03 03:11:42
 lastapply no-merge
 
-#.. checked up to PR #34485 / gui#925 / knots#228
+#.. checked up to PR #34488 / gui#925 / knots#228
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -433,6 +433,7 @@ checkout v30.0rc1
 	Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
 	Needs review: 34458 sedited/logips_self_discover
 	Needs review: 34467 -  # net: don't perform network activity when networkactive=0
+		OR: 34486 willcl-ark/respect-networkactive
 	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	-     fix_rpccookieperms_early				91f5662ec3d
@@ -1423,7 +1424,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260202)			d5593bea7a1
+	n/a  (bump_version=knots20260203)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits

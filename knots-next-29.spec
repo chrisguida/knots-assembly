@@ -1,7 +1,7 @@
-timestamp 2026-02-02 17:43:46
+timestamp 2026-02-03 03:11:42
 #lastapply no-merge
 
-#.. checked up to PR #34485 / gui#925 / knots#228
+#.. checked up to PR #34488 / gui#925 / knots#228
 
 checkout v29.3rc2
 @29.x-syslibs
@@ -476,6 +476,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
 	# Needs review: 34458 sedited/logips_self_discover
 	# Needs review: 34467 -  # net: don't perform network activity when networkactive=0
+		# OR: 34486 willcl-ark/respect-networkactive
 	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
 	# Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	-     fix_rpccookieperms_early				b9b9649a035
@@ -1478,7 +1479,7 @@ m	7483  svg_icon-29.2+knots					709012ccf2f
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				537ce939717	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260202)			28eccd9fdfe
+	n/a  (bump_version=knots20260203)			28eccd9fdfe
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		983a13aec03
 	n/a   (cherrypick=ca124cf81b1)				f7f99b3464c  # release notes: write/update, including change log and credits

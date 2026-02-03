@@ -1,7 +1,7 @@
-timestamp 2026-02-02 17:43:46
+timestamp 2026-02-03 03:11:42
 #lastapply no-merge
 
-#.. checked up to PR #34485 / gui#925 / knots#228
+#.. checked up to PR #34488 / gui#925 / knots#228
 
 checkout v28.2
 @28.x-syslibs
@@ -578,6 +578,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
 	Triage: Needs review: 34458 sedited/logips_self_discover
 	Triage: Needs review: 34467 -  # net: don't perform network activity when networkactive=0
+		OR: 34486 willcl-ark/respect-networkactive
 	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
@@ -1626,7 +1627,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260202)			ba223403bbc
+	n/a  (bump_version=Knots:20260203)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
