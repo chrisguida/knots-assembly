@@ -1,7 +1,7 @@
-timestamp 2026-02-03 03:11:42
+timestamp 2026-02-05 16:43:26
 #lastapply no-merge
 
-#.. checked up to PR #34488 / gui#925 / knots#228
+#.. checked up to PR #34517 / gui#925 / knots#228
 
 checkout v29.3rc2
 @29.x-syslibs
@@ -329,6 +329,7 @@ m	32355 fix_block_full_enough-29.3			33b8c314bff
 	#30.xTODO# If #32566 is merged, test extensively with Windows quoting nonsense
 	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
 	# Needs review and simplification? 32636 davidgumberg/5-27-2025-create-refactor
+		# + fix from #34490
 	32682 fix_wallet_fillpsbt_nothrow-28		86feb7a1038
 		# Diff-minimised only
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
@@ -633,6 +634,7 @@ m	29602 opti_IsSpace_pr29602-29+knots			0ab27fc79b8
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
+	# Needs review: 34489 furszy/2026_index_batch_processing
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1080,6 +1082,7 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 	# Needs review: g902 prusnak-g/desktop-file
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
 	# Needs work: g925 w0xlt-g/hide_conflicted
+	Needs work: 34512 Sjors/2026/02/getblockfields
 	-     qt_createunsigned_use_psbtops			fc47bc4ba89
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1479,7 +1482,7 @@ m	7483  svg_icon-29.2+knots					709012ccf2f
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				537ce939717	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260203)			28eccd9fdfe
+	n/a  (bump_version=knots20260205)			28eccd9fdfe
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		983a13aec03
 	n/a   (cherrypick=d24e0fa10b0)				f7f99b3464c  # release notes: write/update, including change log and credits

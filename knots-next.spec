@@ -1,7 +1,7 @@
-timestamp 2026-02-03 03:11:42
+timestamp 2026-02-05 16:43:26
 lastapply no-merge
 
-#.. checked up to PR #34488 / gui#925 / knots#228
+#.. checked up to PR #34517 / gui#925 / knots#228
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -285,6 +285,7 @@ checkout v30.0rc1
 	#30.xTODO# If #32566 is merged, test extensively with Windows quoting nonsense
 	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
 	# Needs review and simplification? 32636 davidgumberg/5-27-2025-create-refactor
+		# + fix from #34490
 	MERGED: Needs careful review: 32646 instagibbs/2025-05-fillblock-mutated
 	# Needs review: 32685 -  # wallet: Allow read-only database access for info and dump commands
 	# Needs review: 32757 -  # net: Fix Discover() not running when using -bind=0.0.0.0:port
@@ -585,6 +586,7 @@ checkout v30.0rc1
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
+	# Needs review: 34489 furszy/2026_index_batch_processing
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1017,6 +1019,7 @@ checkout v30.0rc1
 	# Needs review: g902 prusnak-g/desktop-file
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
 	# Needs work: g925 w0xlt-g/hide_conflicted
+	Needs work: 34512 Sjors/2026/02/getblockfields
 	-     qt_createunsigned_use_psbtops			a800d52314e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1424,7 +1427,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260203)			d5593bea7a1
+	n/a  (bump_version=knots20260205)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits

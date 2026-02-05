@@ -1,7 +1,7 @@
-timestamp 2026-02-03 03:11:42
+timestamp 2026-02-05 16:43:26
 #lastapply no-merge
 
-#.. checked up to PR #34488 / gui#925 / knots#228
+#.. checked up to PR #34517 / gui#925 / knots#228
 
 checkout v28.2
 @28.x-syslibs
@@ -410,6 +410,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# FIXME: Ensure this gets resolved before #32566 is merged
 	# Needs review: 32606 davidgumberg/5-23-25-ignore-unsolicited
 	# Needs review and simplification? 32636 davidgumberg/5-27-2025-create-refactor
+		# + fix from #34490
 	Triage: 32646 instagibbs/2025-05-fillblock-mutated
 		# 29.x backport in #33344
 	32682 fix_wallet_fillpsbt_nothrow-28
@@ -746,6 +747,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
+	# Needs review: 34489 furszy/2026_index_batch_processing
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1241,6 +1243,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review: g902 prusnak-g/desktop-file
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
 	# Needs work: g925 w0xlt-g/hide_conflicted
+	Needs work: 34512 Sjors/2026/02/getblockfields
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1627,7 +1630,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260203)			ba223403bbc
+	n/a  (bump_version=Knots:20260205)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
