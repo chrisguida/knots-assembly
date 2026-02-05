@@ -1,4 +1,4 @@
-timestamp 2026-02-05 16:43:26
+timestamp 2026-02-03 03:11:42
 #lastapply no-merge
 
 #.. checked up to PR #34517 / gui#925 / knots#228
@@ -1082,7 +1082,7 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 	# Needs review: g902 prusnak-g/desktop-file
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
 	# Needs work: g925 w0xlt-g/hide_conflicted
-	Needs work: 34512 Sjors/2026/02/getblockfields
+	# Needs work: 34512 Sjors/2026/02/getblockfields
 	-     qt_createunsigned_use_psbtops			fc47bc4ba89
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1482,7 +1482,7 @@ m	7483  svg_icon-29.2+knots					709012ccf2f
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				537ce939717	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260205)			28eccd9fdfe
+	n/a  (bump_version=knots20260203)			28eccd9fdfe
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		983a13aec03
 	n/a   (cherrypick=d24e0fa10b0)				f7f99b3464c  # release notes: write/update, including change log and credits
