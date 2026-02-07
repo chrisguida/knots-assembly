@@ -416,8 +416,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	-     loglevel_corrections_bdb-29+knots
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
 	33993 doc_stopatheight_imprecise-21
-	34028 fix_seenlocal_max-26								last=a364f6303cb
-		# Includes bugfix fixup
+	34028 fix_seenlocal_max-26								last=10100f86f5f
 	-     fix_feeest_read_rare_overflow-29
 		# Alternative to: 34109 maflcko/2512-fix-u64
 	-     pcp_dont_spam_unauth-29
@@ -480,9 +479,9 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Needs review: 34458 sedited/logips_self_discover
 	# Needs review: 34467 -  # net: don't perform network activity when networkactive=0
 		# OR: 34486 willcl-ark/respect-networkactive
-	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
+	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=fad7d86d8d1 maflcko/2602-ci-leveldb-ub
 	# Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
-	34530 -  # wallet: guard against negative bump fee discount from mempool race
+	# Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	-     fix_rpccookieperms_early				b9b9649a035
 	-     qt_intro_nojumpy						5bd49893678
 	-     restore_guix_ppc64le-28				e9df5c314a6
@@ -1489,8 +1488,7 @@ m	7483  svg_icon-29.2+knots					709012ccf2f
 	n/a  (bump_version=knots20260207)			28eccd9fdfe
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		983a13aec03
-	TODO: credit Fonta1n3 for knots#252
-	n/a   (cherrypick=d24e0fa10b0)				f7f99b3464c  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=6823c11fceb)				f7f99b3464c  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1501,8 +1499,7 @@ m	7483  svg_icon-29.2+knots					709012ccf2f
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
-	n/a  (cherrypick=8034aaf7043)   # bump to rc1 #29.xTODO# REMOVE
-	n/a  (cherrypick=1d19f38ce7a)				7b009f5531b  # update manpages (build first)
+	n/a  (cherrypick=b8c7343224e)				7b009f5531b  # update manpages (build first)
 		# WARNING: Don't forget to add zsh completion!
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
 		#30.xTODO# check all applicable build options are enabled (see also #33085 and #33828, plus miniupnpc)

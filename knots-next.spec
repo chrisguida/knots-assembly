@@ -371,8 +371,7 @@ checkout v30.0rc1
 	34008 0xB10C/2025-12-dont-ratelimit-new-inbound-peer-connected-with-debug=net
 	Triage: 34010 rkrux/musig-key-fix
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
-	34028 fix_seenlocal_max-26								last=a364f6303cb
-		# Includes bugfix fixup
+	34028 fix_seenlocal_max-26								last=10100f86f5f
 	#31.xTODO# Revert/disable #34075 mempool-based fee estimator
 	-     fix_feeest_read_rare_overflow-29
 		# Alternative to: 34109 maflcko/2512-fix-u64
@@ -437,9 +436,9 @@ checkout v30.0rc1
 	Needs review: 34458 sedited/logips_self_discover
 	Needs review: 34467 -  # net: don't perform network activity when networkactive=0
 		OR: 34486 willcl-ark/respect-networkactive
-	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
+	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=fad7d86d8d1 maflcko/2602-ci-leveldb-ub
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
-	34530 -  # wallet: guard against negative bump fee discount from mempool race
+	Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2

@@ -507,8 +507,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 33960 maflcko/2511-log
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
 	33993 doc_stopatheight_imprecise-21
-	34028 fix_seenlocal_max-26								last=a364f6303cb
-		# Includes bugfix fixup
+	34028 fix_seenlocal_max-26								last=10100f86f5f
 	-     fix_feeest_read_rare_overflow-29
 		# Alternative to: 34109 maflcko/2512-fix-u64
 	-     pcp_dont_spam_unauth-29
@@ -582,9 +581,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: Needs review: 34458 sedited/logips_self_discover
 	Triage: Needs review: 34467 -  # net: don't perform network activity when networkactive=0
 		OR: 34486 willcl-ark/respect-networkactive
-	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
+	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=fad7d86d8d1 maflcko/2602-ci-leveldb-ub
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
-	Triage: 34530 -  # wallet: guard against negative bump fee discount from mempool race
+	Triage: Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
