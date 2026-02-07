@@ -500,6 +500,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 	# Needs work? k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent
 	-     fix_win_exclopen-29.3
+	k255  wlt_nonlegacy_change_if_no_leg_spkman
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1485,6 +1486,7 @@ m	7483  svg_icon-29.2+knots					709012ccf2f
 	n/a  (bump_version=knots20260203)			28eccd9fdfe
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		983a13aec03
+	TODO: credit Fonta1n3 for knots#252
 	n/a   (cherrypick=d24e0fa10b0)				f7f99b3464c  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
