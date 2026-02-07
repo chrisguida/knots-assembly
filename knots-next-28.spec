@@ -1,7 +1,7 @@
-timestamp 2026-02-05 16:43:26
+timestamp 2026-02-07 04:10:21
 #lastapply no-merge
 
-#.. checked up to PR #34517 / gui#925 / knots#228
+#.. checked up to PR #34532 / gui#925 / knots#228
 
 checkout v28.2
 @28.x-syslibs
@@ -249,8 +249,10 @@ checkout v28.2
 		# Needs careful backport (basically rewritten)
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	29640 fix_tiebreak_on_disk-26							last=177d07f6591 sr-gi/202403-block-tiebreak
+	(CHECK-LAST)	last=d97d221376c origin-pull/34521/head
 		# IMPORTANT: Adds a UB bugfix
 		# left off doc change (4caa38600e6)
+		TODO: + #34521 if ready (better UB fix? addresses assumeutxo?)
 	#28.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	#28.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	29678 fix_init_lowdisk_warning_reqd-28		8c4f8f40807	last=b1117e5a716 fix_init_lowdisk_warning_reqd
@@ -582,6 +584,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		OR: 34486 willcl-ark/respect-networkactive
 	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
+	Triage: 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -1631,7 +1634,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260205)			ba223403bbc
+	n/a  (bump_version=Knots:20260207)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320

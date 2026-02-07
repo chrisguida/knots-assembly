@@ -1,7 +1,7 @@
-timestamp 2026-02-03 03:11:42
+timestamp 2026-02-07 04:10:21
 #lastapply no-merge
 
-#.. checked up to PR #34517 / gui#925 / knots#228
+#.. checked up to PR #34532 / gui#925 / knots#228
 
 checkout v29.3rc2
 @29.x-syslibs
@@ -234,8 +234,10 @@ NM	-     ci_gha_makejobs_8						a7311cf6473
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	29640 fix_tiebreak_on_disk-26				e3a68624656	last=0465574c127 sr-gi/202403-block-tiebreak
+	(CHECK-LAST)	last=d97d221376c origin-pull/34521/head
 		# IMPORTANT: Adds a UB bugfix
 		# left off doc change (4caa38600e6)
+		# TODO: + #34521 if ready (better UB fix? addresses assumeutxo?)
 	#30.xTODO# Needs review: 29652 ryanofsky/pr/noloc
 	#30.xTODO# Needs review: 29664 mzumsande/202403_near_tip_stalling
 	29678 fix_init_lowdisk_warning_reqd-29		d5f4ee3e71c	last=b1117e5a716 fix_init_lowdisk_warning_reqd
@@ -480,6 +482,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 		# OR: 34486 willcl-ark/respect-networkactive
 	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=8b46845dcf0 maflcko/2602-ci-leveldb-ub
 	# Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
+	34530 -  # wallet: guard against negative bump fee discount from mempool race
 	-     fix_rpccookieperms_early				b9b9649a035
 	-     qt_intro_nojumpy						5bd49893678
 	-     restore_guix_ppc64le-28				e9df5c314a6
@@ -1483,7 +1486,7 @@ m	7483  svg_icon-29.2+knots					709012ccf2f
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				537ce939717	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260203)			28eccd9fdfe
+	n/a  (bump_version=knots20260207)			28eccd9fdfe
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		983a13aec03
 	TODO: credit Fonta1n3 for knots#252
