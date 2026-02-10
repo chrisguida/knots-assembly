@@ -1,7 +1,7 @@
-timestamp 2026-02-07 04:10:21
+timestamp 2026-02-10 02:26:19
 lastapply no-merge
 
-#.. checked up to PR #34532 / gui#925 / knots#228
+#.. checked up to PR #34544 / gui#925 / knots#228
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -439,6 +439,7 @@ checkout v30.0rc1
 	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=fad7d86d8d1 maflcko/2602-ci-leveldb-ub
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
+	Needs review/concept: 34538 willcl-ark/onlynet-advertisments
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -702,6 +703,7 @@ checkout v30.0rc1
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 		# w/ 22807 ?
 	19463 prune_locks							3263a47d7d5
+		# Consider accepting #34534's changes or rebasing on it
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
 		# NOTE: Included in Android fork below?
@@ -928,7 +930,7 @@ checkout v30.0rc1
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1332,6 +1334,7 @@ checkout v30.0rc1
 	30.xTODO: Consider #33892 policy: allow <minrelay txns in package context if paid for by cpfp
 	30.xTODO: Consider #33926 Align legacy script policy with P2SH policy in AreInputsStandard
 # Non-upstreamed Knots compatibility:
+	#31.xTODO# Consider reverting #34544 ? (disallow wallets with . or .. in path)
 	#31.xTODO# maybe revert #34197 rpc, net: deprecate startingheight field of getpeerinfo RPC
 		# ...and gui#921 (same)
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
@@ -1431,7 +1434,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260207)			d5593bea7a1
+	n/a  (bump_version=knots20260210)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits

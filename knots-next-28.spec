@@ -1,7 +1,7 @@
-timestamp 2026-02-07 04:10:21
+timestamp 2026-02-10 02:26:19
 #lastapply no-merge
 
-#.. checked up to PR #34532 / gui#925 / knots#228
+#.. checked up to PR #34544 / gui#925 / knots#228
 
 checkout v28.2
 @28.x-syslibs
@@ -584,6 +584,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	34470 leveldb_wrkrnd_uninit_debugsize-0.8				last=fad7d86d8d1 maflcko/2602-ci-leveldb-ub
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	Triage: Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
+	Triage: Needs review/concept: 34538 willcl-ark/onlynet-advertisments
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -862,6 +863,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# needs review: 19443 nextpagepointer & list ordering options for listtransactions
 		# w/ 22807 ?
 	19463 prune_locks-28						d8114ff1102	last=162f0dba2f2 prune_locks
+		# Consider accepting #34534's changes or rebasing on it
 	# Needs review & deo: 19792 -  # rpc: Add dumpcoinstats
 	# Needs work: g27   # top to bottom UI layout
 		# NOTE: Included in Android fork below?
@@ -1104,7 +1106,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1634,7 +1636,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260207)			ba223403bbc
+	n/a  (bump_version=Knots:20260210)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
