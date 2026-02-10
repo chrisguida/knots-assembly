@@ -658,6 +658,7 @@ m	29602 opti_IsSpace_pr29602-29+knots			0ab27fc79b8
 	# Triage: 34140 roconnor-blockstream/simplicity
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
 	# Needs review & consensus: k238 -  # Reduced Data Temporary Softfork
+		# + knots#256
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 # FUNCTIONALITY:
 	#-     rm_kernel_lib							84b7c6adf43

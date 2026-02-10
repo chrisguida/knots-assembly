@@ -771,6 +771,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Triage: 34140 roconnor-blockstream/simplicity
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
 	# Needs review & consensus: k238 -  # Reduced Data Temporary Softfork
+		# + knots#256
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 # FUNCTIONALITY:
 	-     rm_kernel_lib							84b7c6adf43
