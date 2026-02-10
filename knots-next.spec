@@ -389,7 +389,7 @@ checkout v30.0rc1
 	TODO: Ensure "Failed to load wallet '%s' after migration." wallet name fix is forward ported
 	34370 fix_34222_backport
 	34372 qa_wallet_migration_tests_202601
-	34176 handle_wallet_dir_nonwritable-29.3				last=3e43bce7688 furszy/2025_wallet_check_db_permissions
+	34176 handle_wallet_dir_nonwritable-29.3				last=271846280db furszy/2025_wallet_check_db_permissions
 		# NOTE: temporarily restored `descriptors=True` in tests until bdb is updated to pass
 	-     handle_wallet_dir_nonwritable_bdb-29.3
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
@@ -969,7 +969,7 @@ checkout v30.0rc1
 	# Needs work? 31252 rpc_TxToUniv_witScript-28								last=4e128d4f9b2
 		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
-	31560 rpc_dumptxoutset_fifo-29+knots		816104a3629	last=ed02f67c583 theStack/202412-dumptxoutset-allow_write_to_named_pipe
+	31560 rpc_dumptxoutset_fifo-29+knots		816104a3629	last=32ecef55a47 theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				4160fffe565	last=b25b40ebd5f vasild/peer_cpu_load

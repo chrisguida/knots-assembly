@@ -431,7 +431,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	dc8ce7dbd47	last=b807dfcdc59 ismae
 		# NOTE: Held back "wallet: migration: Make backup in walletdir" behaviour change
 	34372 qa_wallet_migration_tests_202601-29.3
 		# NOTE: Invisible dependencies on #32273 and #34370
-	34176 handle_wallet_dir_nonwritable-29.3				last=3e43bce7688 furszy/2025_wallet_check_db_permissions
+	34176 handle_wallet_dir_nonwritable-29.3				last=271846280db furszy/2025_wallet_check_db_permissions
 		# NOTE: temporarily restored `descriptors=True` in tests until bdb is updated to pass
 	-     handle_wallet_dir_nonwritable_bdb-29.3
 	31423 wallet_migrate_watchonly_only-29.3
@@ -1022,7 +1022,7 @@ m	23387 rpc_savefeeestimates-29+knots			0fad991f3de	last=d5b41e6b2ed greenaddres
 	# Needs work? 31252 rpc_TxToUniv_witScript-28								last=4e128d4f9b2
 		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
-	31560 rpc_dumptxoutset_fifo-29+knots		ce14de1a15a	last=ed02f67c583 theStack/202412-dumptxoutset-allow_write_to_named_pipe
+	31560 rpc_dumptxoutset_fifo-29+knots		ce14de1a15a	last=32ecef55a47 theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				8adbdf460de	last=b25b40ebd5f vasild/peer_cpu_load
