@@ -504,6 +504,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	k244  fix_qt_amtfield_infinityevent			59e258d1c5d
 	-     fix_win_exclopen-29.3					2f1d7350d5c
 	k255  wlt_nonlegacy_change_if_no_leg_spkman	dd83abd8be5
+	# n/a to Knots: -     depends_libevent_ignore_git_desc
+		# Only affects libevent builds when the bitcoin tag has 5 components
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1216,7 +1218,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# FIXME: -     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
 		# FIXME: this is broken :(
 	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
-		# TODO: Needs review/testing: k215 privkeyio/kwsantiago/191-win-taskbar-progress-qt6
+		TODO: Replace with: k215 privkeyio/kwsantiago/191-win-taskbar-progress-qt6
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					cf6ad5d350b
 		# TODO?? blockreservedsize option
@@ -1245,9 +1247,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	5891  qt_console_history_persist			a4708628eb2	last=2e1d9cb3466 qt_console_history_persist
 	(CHECK-LAST)	last=6a5537ab675 origin-pull-k/203/head
 		# Includes knots#203 (Add migratewallet RPC in historyFilter)
-	# Needs work: k214 kwsantiago/kwsantiago/204-clearhistory
+	Review: k214 kwsantiago/kwsantiago/204-clearhistory
 	-     net_identify_librerelay				56bf2a112be
 	-     net_identify_utreexo					b81ba8ddf46
+	-     net_identify_rdts
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					5ade3b9c56f
@@ -1440,6 +1443,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	-     enforce_checkpoints					8e1d8f424ba
 		#30.xTODO# Revert #31649
 	n/a   checkpoint_update-29					97f6c4e5b9f
+		TODO: update
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?

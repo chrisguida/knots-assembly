@@ -468,6 +468,8 @@ checkout v30.0rc1
 	k244  fix_qt_amtfield_infinityevent
 	-     fix_win_exclopen-29.3
 	k255  wlt_nonlegacy_change_if_no_leg_spkman
+	# n/a to Knots: -     depends_libevent_ignore_git_desc
+		# Only affects libevent builds when the bitcoin tag has 5 components
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1152,7 +1154,7 @@ checkout v30.0rc1
 	# FIXME: -     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
 		# FIXME: this is broken :(
 	14137 win_taskbar_progress					6c8a4b3405b	last=18eb4dbb8a
-		TODO: Needs review/testing: k215 privkeyio/kwsantiago/191-win-taskbar-progress-qt6
+		TODO: Replace with: k215 privkeyio/kwsantiago/191-win-taskbar-progress-qt6
 		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
 	-     restore_blockmaxsize					c611addce62
 		# TODO?? blockreservedsize option
@@ -1184,6 +1186,7 @@ checkout v30.0rc1
 	Review: k214 kwsantiago/kwsantiago/204-clearhistory
 	-     net_identify_librerelay				cb379d75c76
 	-     net_identify_utreexo					9fb683d48a2
+	-     net_identify_rdts
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2					752f58d2474
@@ -1386,6 +1389,7 @@ checkout v30.0rc1
 	-     enforce_checkpoints					21dbf96fd5f
 		30.xTODO: Revert #31649 (MERGED)
 	n/a   checkpoint_update-29					3b5ea232f72
+		TODO: update
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?

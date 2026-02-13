@@ -603,6 +603,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	k244  fix_qt_amtfield_infinityevent
 	-     fix_win_exclopen-29.3
 	k255  wlt_nonlegacy_change_if_no_leg_spkman
+	# n/a to Knots: -     depends_libevent_ignore_git_desc
+		# Only affects libevent builds when the bitcoin tag has 5 components
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1415,6 +1417,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-     truc_opts-28+knots					7b898f1d017	last=590417252ab truc_opts-29.2+knots
 	-     net_identify_librerelay
 	-     net_identify_utreexo
+	-     net_identify_rdts
 	# TODO? petertodd has a branch with 4 extra outgoing peers requiring RBF service flag
 	# TODO: some way to add UA comments via rwconf
 	12146 opt_wallet_segwit2-28					b7643238b1f	last=2733d2c4ce7 opt_wallet_segwit2
@@ -1582,6 +1585,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-     wallet_avoid_newerchange				5962a67e5f5
 	-     enforce_checkpoints					254fabebf5a
 	n/a   checkpoint_update-28					41c985132c9	last= checkpoint_update-29
+		TODO: update
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
 	# TODO: revert #28354 ?
