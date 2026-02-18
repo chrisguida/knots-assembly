@@ -1,7 +1,7 @@
-timestamp 2026-02-10 02:26:19
+timestamp 2026-02-18 23:01:35
 #lastapply no-merge
 
-#.. checked up to PR #34544 / gui#925 / knots#228
+#.. checked up to PR #34617 / gui#929 / knots#228
 
 checkout v28.2
 @28.x-syslibs
@@ -23,6 +23,7 @@ checkout v28.2
 	k246  fix_boost1.73compat-29
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26
+	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -512,9 +513,11 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# Alternative to: 34109 maflcko/2512-fix-u64
 	-     pcp_dont_spam_unauth-29
 	(CHECK-LAST)	last=af5c2fcf144 origin-pull/34117/head
+		# TODO: Consider replacement with #34549
 		# Inspired by the first commit on #34117
 	# Needs concept/review: 34117-commit-2  net: fix CJDNS address discovery when -externalip is set
 	Triage: Needs review: Partial: 34143 hebasto/251223-boost-layout
+		+ #34572 ?
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 		+ #34297 (p2p: add validation checks for initial self-announcement)
 	# ----- WALLET DELETION BUGFIXES -----
@@ -585,6 +588,12 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	Triage: Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	Triage: Needs review/concept: 34538 willcl-ark/onlynet-advertisments
+	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
+	Needs review: 34582 maflcko/2602-int-arg
+	34597 fix_SetStdinEcho_ub-0.20
+	34603 fix_win_IsSymlink-29.3							last=677297e8522
+	Needs review? 34614 maflcko/2602-ci-space
+	g929  hebasto-g/260217-translation-plurals
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -635,6 +644,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
 	Triage: -     fix_secp256k1_bugs-29
+		# bitcoin-core/secp256k1#1731,1749,1821 (diff-minimised and fix-only)
 @28.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-28+k					723ceffb7b7	last=3efb06b858b rm_minisketch-29+syslibs
@@ -754,6 +764,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# Needs review: 34489 furszy/2026_index_batch_processing
+	Triage: 34612 fanquake/unused_historgram
+	Needs review? 34613 -  # replace manual byte copies
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1252,6 +1264,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
 	# Needs work: g925 w0xlt-g/hide_conflicted
 	Needs work: 34512 Sjors/2026/02/getblockfields
+	Needs review: 34606 l0rinc/l0rinc/common-warn-high-swap-usage
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1640,7 +1653,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260210)			ba223403bbc
+	n/a  (bump_version=Knots:20260218)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320

@@ -1,7 +1,7 @@
-timestamp 2026-02-10 02:26:19
+timestamp 2026-02-18 23:01:35
 #lastapply no-merge
 
-#.. checked up to PR #34544 / gui#925 / knots#228
+#.. checked up to PR #34617 / gui#929 / knots#228
 
 checkout v29.3
 @29.x-syslibs
@@ -15,6 +15,7 @@ checkout v29.3
 	k246  fix_boost1.73compat-29				45ecb3a0a83
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26					cf8a2876f8c
+	# Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
 # SYSLIBS:
 	2241  sys_leveldb							8ed686b2e1a	last=bd2be933f26 sys_leveldb-30
 		# Related: #32447
@@ -421,9 +422,11 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# Alternative to: 34109 maflcko/2512-fix-u64
 	-     pcp_dont_spam_unauth-29				c306eb2e412
 	(CHECK-LAST)	last=af5c2fcf144 origin-pull/34117/head
+		# TODO: Consider replacement with #34549
 		# Inspired by the first commit on #34117
 	# Needs concept/review: 34117-commit-2  net: fix CJDNS address discovery when -externalip is set
 	# IPC-specific: Needs review: Partial: 34143 hebasto/251223-boost-layout
+		# + #34572 ?
 	# Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 		# + #34297 (p2p: add validation checks for initial self-announcement)
 	# ----- WALLET DELETION BUGFIXES -----
@@ -483,6 +486,12 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	# Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	# Needs review/concept: 34538 willcl-ark/onlynet-advertisments
+	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
+	# Needs review: 34582 maflcko/2602-int-arg
+	34597 fix_SetStdinEcho_ub-0.20
+	34603 fix_win_IsSymlink-29.3							last=677297e8522
+	# Needs review? 34614 maflcko/2602-ci-space
+	g929  hebasto-g/260217-translation-plurals
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
 	-     restore_guix_ppc64le-28				9688bc64ace
@@ -536,6 +545,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 32655 fanquake/sqlite_3_50_0
 	# Needs review: 32665 fanquake/boost_shrink
 	-     fix_secp256k1_bugs-29					236173e4746
+		# bitcoin-core/secp256k1#1731,1749,1821 (diff-minimised and fix-only)
 @29.x-knots
 # PERFORMANCE:
 	33915 qa_getprevrel_retrydownload-28		681f670c4d5
@@ -641,6 +651,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# Needs review: 34489 furszy/2026_index_batch_processing
+	34612 fanquake/unused_historgram
+	# Needs review? 34613 -  # replace manual byte copies
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1091,6 +1103,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
 	# Needs work: g925 w0xlt-g/hide_conflicted
 	# Needs work: 34512 Sjors/2026/02/getblockfields
+	# Needs review: 34606 l0rinc/l0rinc/common-warn-high-swap-usage
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1492,7 +1505,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260210)			931ea36c899
+	n/a  (bump_version=knots20260218)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=dce09dbcdc4)				dce09dbcdc4  # release notes: write/update, including change log and credits

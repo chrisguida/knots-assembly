@@ -1,7 +1,7 @@
-timestamp 2026-02-10 02:26:19
+timestamp 2026-02-18 23:01:35
 lastapply no-merge
 
-#.. checked up to PR #34544 / gui#925 / knots#228
+#.. checked up to PR #34617 / gui#929 / knots#228
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -15,6 +15,7 @@ checkout v30.0rc1
 	Triage: 33972 hebasto/251130-kernel-test
 	Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
 	34462 fix_bsd_batchprio-26
+	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -377,10 +378,12 @@ checkout v30.0rc1
 		# Alternative to: 34109 maflcko/2512-fix-u64
 	-     pcp_dont_spam_unauth-29
 	(CHECK-LAST)	last=af5c2fcf144 origin-pull/34117/head
+		# TODO: Consider replacement with #34549
 		# Inspired by the first commit on #34117
 	# Needs concept/review: 34117-commit-2  net: fix CJDNS address discovery when -externalip is set
 	Triage: 34141 achow101/musig-miniscript
 	Needs review: Partial: 34143 hebasto/251223-boost-layout
+		+ #34572 ?
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 		+ #34297 (p2p: add validation checks for initial self-announcement)
 	34161 fix_distance_ub_pr34161-26						last=477c5504e05 l0rinc/l0rinc/pool-allocator-ub
@@ -440,6 +443,12 @@ checkout v30.0rc1
 	Needs review: 34480 danielabrozzoni/issue/26527-dont-backtime-nlocktime-unconf
 	Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	Needs review/concept: 34538 willcl-ark/onlynet-advertisments
+	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
+	Needs review: 34582 maflcko/2602-int-arg
+	34597 fix_SetStdinEcho_ub-0.20
+	34603 fix_win_IsSymlink-29.3							last=677297e8522
+	Needs review? 34614 maflcko/2602-ci-space
+	g929  hebasto-g/260217-translation-plurals
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -495,6 +504,7 @@ checkout v30.0rc1
 	Needs review: 32655 fanquake/sqlite_3_50_0
 	Needs review: 33851 fanquake/xcb_util_updates
 	Triage: -     fix_secp256k1_bugs-29
+		# bitcoin-core/secp256k1#1731,1749,1821 (diff-minimised and fix-only)
 @30.x-knots
 # PERFORMANCE:
 	33915 maflcko/2511-test-retry-prev-donwload
@@ -593,6 +603,8 @@ checkout v30.0rc1
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# Needs review: 34489 furszy/2026_index_batch_processing
+	34612 fanquake/unused_historgram
+	Needs review? 34613 -  # replace manual byte copies
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1028,6 +1040,10 @@ checkout v30.0rc1
 	# Needs work: g909 waketraindev-g/2025-11-gui-comment-sensitive-commands
 	# Needs work: g925 w0xlt-g/hide_conflicted
 	Needs work: 34512 Sjors/2026/02/getblockfields
+	Needs review: 34606 l0rinc/l0rinc/common-warn-high-swap-usage
+	#31.xTODO# 34615 instagibbs/2026-02-disordered_mempool
+	g877  achow101-g/gui-migrate-path
+		+ gui#928
 	-     qt_createunsigned_use_psbtops			a800d52314e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1438,7 +1454,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260210)			d5593bea7a1
+	n/a  (bump_version=knots20260218)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits
