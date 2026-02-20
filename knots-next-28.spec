@@ -508,7 +508,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 33960 maflcko/2511-log
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
 	33993 doc_stopatheight_imprecise-21
-	34028 fix_seenlocal_max-26								last=10100f86f5f
+	34028 fix_seenlocal_max-26								last=3fc5948e1fe
 	-     fix_feeest_read_rare_overflow-29
 		# Alternative to: 34109 maflcko/2512-fix-u64
 	-     pcp_dont_spam_unauth-29
@@ -593,7 +593,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	34597 fix_SetStdinEcho_ub-0.20
 	34603 fix_win_IsSymlink-29.3							last=677297e8522
 	Needs review? 34614 maflcko/2602-ci-space
-	g929  hebasto-g/260217-translation-plurals
+	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327

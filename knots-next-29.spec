@@ -235,7 +235,7 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	29640 fix_tiebreak_on_disk-26				c9e88b9df07	last=0465574c127 sr-gi/202403-block-tiebreak
-	(CHECK-LAST)	last=d97d221376c origin-pull/34521/head
+	(CHECK-LAST)	last=9b07bd85064 origin-pull/34521/head
 		# IMPORTANT: Adds a UB bugfix
 		# left off doc change (4caa38600e6)
 		# TODO: + #34521 if ready (better UB fix? addresses assumeutxo?)
@@ -417,7 +417,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	-     loglevel_corrections_bdb-29+knots		fe8c669c098
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
 	33993 doc_stopatheight_imprecise-21			27cb63a3885
-	34028 fix_seenlocal_max-26					7d09741986f	last=10100f86f5f
+	34028 fix_seenlocal_max-26					7d09741986f	last=3fc5948e1fe
 	-     fix_feeest_read_rare_overflow-29		369f6ae848b
 		# Alternative to: 34109 maflcko/2512-fix-u64
 	-     pcp_dont_spam_unauth-29				c306eb2e412
@@ -491,7 +491,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34597 fix_SetStdinEcho_ub-0.20
 	34603 fix_win_IsSymlink-29.3							last=677297e8522
 	# Needs review? 34614 maflcko/2602-ci-space
-	g929  hebasto-g/260217-translation-plurals
+	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
 	-     restore_guix_ppc64le-28				9688bc64ace
@@ -651,7 +651,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# Needs review: 34489 furszy/2026_index_batch_processing
-	34612 fanquake/unused_historgram
+	34612 leveldb_slim_pr34612-29							last=eb1e404aacc fanquake/unused_historgram
 	# Needs review? 34613 -  # replace manual byte copies
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
@@ -937,7 +937,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	27034 rpc_importaddr_for_descwallet-27+k	ca660cb3801	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 rpc_getpeerinfo_lastblockann-28		2530450955b	last=cbe4603a902 LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28		2530450955b	last=95b673929b3 LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
 	27216 rpc_getaddressinfo_isactive			0cc4aef0bec	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.

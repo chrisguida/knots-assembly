@@ -372,7 +372,7 @@ checkout v30.0rc1
 	34008 0xB10C/2025-12-dont-ratelimit-new-inbound-peer-connected-with-debug=net
 	Triage: 34010 rkrux/musig-key-fix
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
-	34028 fix_seenlocal_max-26								last=10100f86f5f
+	34028 fix_seenlocal_max-26								last=3fc5948e1fe
 	#31.xTODO# Revert/disable #34075 mempool-based fee estimator
 	-     fix_feeest_read_rare_overflow-29
 		# Alternative to: 34109 maflcko/2512-fix-u64
@@ -448,7 +448,7 @@ checkout v30.0rc1
 	34597 fix_SetStdinEcho_ub-0.20
 	34603 fix_win_IsSymlink-29.3							last=677297e8522
 	Needs review? 34614 maflcko/2602-ci-space
-	g929  hebasto-g/260217-translation-plurals
+	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -603,7 +603,7 @@ checkout v30.0rc1
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# Needs review: 34489 furszy/2026_index_batch_processing
-	34612 fanquake/unused_historgram
+	34612 leveldb_slim_pr34612-29							last=eb1e404aacc fanquake/unused_historgram
 	Needs review? 34613 -  # replace manual byte copies
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
@@ -892,7 +892,7 @@ checkout v30.0rc1
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	Prefer upstream? 27034 rpc_importaddr_for_descwallet-27+k	8f24b3dc7a0	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 rpc_getpeerinfo_lastblockann-28		8cd4ac526fd	last=cbe4603a902 LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28		8cd4ac526fd	last=95b673929b3 LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
 	27216 rpc_getaddressinfo_isactive			afa55a8fdd6	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
