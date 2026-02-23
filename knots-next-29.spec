@@ -651,7 +651,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# Needs review: 34489 furszy/2026_index_batch_processing
-	34612 leveldb_slim_pr34612-29							last=eb1e404aacc fanquake/unused_historgram
+	34612 leveldb_slim_pr34612-29							last=3feabb203a6 fanquake/unused_historgram
 	# Needs review? 34613 -  # replace manual byte copies
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
@@ -1218,7 +1218,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 # Non-upstreamed functionality:
 	-     rm_tarball_ci-29+knots				9c15bd0764f
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
-	-     restore_upnp-29.2+knots				04768be5791
+m	-     restore_upnp-29.3+knots				04768be5791
 	(CHECK-LAST)	last=07f0df46fba origin-pull-k/196/head
 		# NOTE: Includes knots#196
 		# NOTE: Includes #30301 theuni/miniupnp-228-bump
@@ -1230,9 +1230,9 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	-     rpc_mempoolentry_txhash				8f7333f442f
 	# FIXME: -     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
 		# FIXME: this is broken :(
-	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
-		TODO: Replace with: k215 privkeyio/kwsantiago/191-win-taskbar-progress-qt6
-		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
+NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
+		# Replaced with:
+	k215  win_taskbar_progress_com-29						last=5f4e34a556d kwsantiago/kwsantiago/191-win-taskbar-progress-qt6
 	-     restore_blockmaxsize					cf6ad5d350b
 		# TODO?? blockreservedsize option
 	#30.xTODO# Revert #32654 (deprecate blockmaxweight)
@@ -1260,7 +1260,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	5891  qt_console_history_persist			a4708628eb2	last=2e1d9cb3466 qt_console_history_persist
 	(CHECK-LAST)	last=6a5537ab675 origin-pull-k/203/head
 		# Includes knots#203 (Add migratewallet RPC in historyFilter)
-	Review: k214 kwsantiago/kwsantiago/204-clearhistory
+	k214 qt_console_clearhistory-29+knots					last=d6ded3f4441 kwsantiago/kwsantiago/204-clearhistory
 	-     net_identify_librerelay				56bf2a112be
 	-     net_identify_utreexo					b81ba8ddf46
 	-     net_identify_rdts

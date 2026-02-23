@@ -603,7 +603,7 @@ checkout v30.0rc1
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# Needs review: 34489 furszy/2026_index_batch_processing
-	34612 leveldb_slim_pr34612-29							last=eb1e404aacc fanquake/unused_historgram
+	34612 leveldb_slim_pr34612-29							last=3feabb203a6 fanquake/unused_historgram
 	Needs review? 34613 -  # replace manual byte copies
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
@@ -1157,7 +1157,7 @@ checkout v30.0rc1
 # Non-upstreamed functionality:
 	-     rm_tarball_ci-29+knots				897f1488c3b
 	# TODO: Revert #25898 ? (Dropped WSL1 compatibility)
-	-     restore_upnp-29.2+knots				d7acc865091
+	-     restore_upnp-29.3+knots				d7acc865091
 	(CHECK-LAST)	last= origin-pull-k/196/head
 		# NOTE: Includes #30301 theuni/miniupnp-228-bump
 		TODO: Include knots#196
@@ -1169,9 +1169,8 @@ checkout v30.0rc1
 	-     rpc_mempoolentry_txhash				c8f8f4b5f26
 	# FIXME: -     walletnotify_w_win-27+knots			c892f8b6dbf	# Latest code now
 		# FIXME: this is broken :(
-	14137 win_taskbar_progress					6c8a4b3405b	last=18eb4dbb8a
-		TODO: Replace with: k215 privkeyio/kwsantiago/191-win-taskbar-progress-qt6
-		# NOTE: Could drop /official_releases/archive/ change, but keeping it ensures a conflict when the version gets bumped, so we can update the sha256 hash
+	k215  win_taskbar_progress_com-29						last=5f4e34a556d kwsantiago/kwsantiago/191-win-taskbar-progress-qt6
+		# NOTE: Replaced #14137
 	-     restore_blockmaxsize					c611addce62
 		# TODO?? blockreservedsize option
 	30.xTODO: Revert #32654 (deprecate blockmaxweight) (MERGED)
@@ -1199,7 +1198,7 @@ checkout v30.0rc1
 	5891  qt_console_history_persist			24d53a5989e	last=2e1d9cb3466 qt_console_history_persist
 	(CHECK-LAST)	last=6a5537ab675 origin-pull-k/203/head
 		# Includes knots#203 (Add migratewallet RPC in historyFilter)
-	Review: k214 kwsantiago/kwsantiago/204-clearhistory
+	k214 qt_console_clearhistory-29+knots					last=d6ded3f4441 kwsantiago/kwsantiago/204-clearhistory
 	-     net_identify_librerelay				cb379d75c76
 	-     net_identify_utreexo					9fb683d48a2
 	-     net_identify_rdts
