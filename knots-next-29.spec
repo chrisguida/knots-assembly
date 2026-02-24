@@ -1,7 +1,7 @@
 timestamp 2026-02-18 23:01:35
 #lastapply no-merge
 
-#.. checked up to PR #34617 / gui#929 / knots#228
+#.. checked up to PR #34617 / gui#929 / knots#268
 
 checkout v29.3
 @29.x-syslibs
@@ -443,6 +443,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: Backport in 1f17fcee406
 	# Needs review: 34198 furszy/2026_wallet_migration_ancient_wallets
 	k242 fix_bdb_edge_cases_202601-29			34fc73db868
+	TODO: consider knots#249 review comments
 	# ----- END WALLET DELETION BUGFIXES -----
 	34161 fix_distance_ub_pr34161-26			33685ceb76b	last=477c5504e05 l0rinc/l0rinc/pool-allocator-ub
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
@@ -504,17 +505,22 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	k126  fix_qt_progressbar_fittext			f5b92d92582
 	k150  fix_rpc_mixed_params_edgecases		2128ec3f557
 		# Held back (4d24d60836f) support for positional options + named params (breaks tests)
+	# Needs work: k182 proxy input validation fixes
 	# Needs work: k228 1440000bytes/fix-corruptwallet-crash
 	-     qt_nowalletpage_alerts-23				517388521b3
 	-     fix_alertnotify_winquoting			4d758179117
 	-     torcontrol_avoid_bindany_connect		0c4777cd590
 	-     fix_tor_common_bind-29.2				4e6f02a1a79
+	Needs review: k254 privkeyio/cmake-hardening-module
 	# Needs work? k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent			59e258d1c5d
 	-     fix_win_exclopen-29.3					2f1d7350d5c
 	k255  wlt_nonlegacy_change_if_no_leg_spkman	dd83abd8be5
 	# n/a to Knots: -     depends_libevent_ignore_git_desc
 		# Only affects libevent builds when the bitcoin tag has 5 components
+	Review: k263  privkeyio/fix-vsize-sigops-datacarrier
+	Review: k265  privkeyio/fix-socks5-credential-logging
+	Review: k266  privkeyio/fix-external-signer-fingerprint-validation
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -869,6 +875,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
 	# Needs work: g866 rebroad-g/trafficgraphwidget-rebased
+	# Needs work: k104 rebroad-g/ more traffic graph stuff
 	g820  qt_fontsel_qrcodes-27+knots			19cdec5505d	last=b14c9d0572e qt_fontsel_qrcodes
 	# TODO: qt_fontsel_console
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
@@ -942,6 +949,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	27216 rpc_getaddressinfo_isactive			0cc4aef0bec	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-29+knots						03b56c3bfe9	last=91771366a3d apoelstra/2023-03--codex32
+		TODO: Review knots#267
 		# See #32652 if #29136 is merged
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs concept & review: 33043 w0xlt/codex32
@@ -1041,6 +1049,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				667198ee800	last=b25b40ebd5f vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				3aefa8602c6	last=d4a3abf6d43 pruneduringinit
+		# aka knots#158
 	31886 netinfo_local_svcs-29+knots			c2c14dc8fc5	last=721a051320f jonatack/2025-02-netinfo-services
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	31953 bumpfee_full_rbf-29+knots				2e2d1f2e371	last=fa86190e6ed maflcko/2502-fullrbf-follow-up
@@ -1318,6 +1327,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	# Needs review? k197 qt_portmap_ux_underlisten
 	# Needs work: k208 1440000bytes/sendtx-ui
+	# Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	400f5f788a0
 	-     pol_acceptunknownwitness				fb6c14bcc0d
@@ -1342,6 +1352,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# TODO? Revise byte counting to consider input/output waste
 	-     datacarriercost-29+knots				8009ba5faaa
+		TODO: Review knots#268
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		#30.xTODO# Add tests and make sure boundaries are correct
 	-     acceptnonstddatacarrier-29+knots		22fd60450d3
@@ -1461,6 +1472,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
 	10282 softwareexpiry						969a756c1e4
+		# Needs work: + knots#247
 		# TODO: "OK" is probably the wrong button to use for this
 		# TODO? "Upgrade" button to open website - or even download+verify??
 			# -DUPGRADE_COMMAND='...' for PPA/etc?

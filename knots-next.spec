@@ -1,7 +1,7 @@
 timestamp 2026-02-18 23:01:35
 lastapply no-merge
 
-#.. checked up to PR #34617 / gui#929 / knots#228
+#.. checked up to PR #34617 / gui#929 / knots#268
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -398,6 +398,7 @@ checkout v30.0rc1
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	# Needs review: 34198 furszy/2026_wallet_migration_ancient_wallets
 	Needs review: k242 fix_bdb_edge_cases_202601-29
+	TODO: consider knots#249 review comments
 	# ----- END WALLET DELETION BUGFIXES -----
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
 	# Needs review/work: 34213 brunoerg/2026-01-net-anchors-networkactive
@@ -461,6 +462,7 @@ checkout v30.0rc1
 	k126  fix_qt_progressbar_fittext			09ad9b31507
 	k150  fix_rpc_mixed_params_edgecases		9afea118086
 		# Held back (4d24d60836f) support for positional options + named params (breaks tests)
+	Needs work: k182 proxy input validation fixes
 	# Needs work: k228 1440000bytes/fix-corruptwallet-crash
 	-     qt_nowalletpage_alerts-23				2eb43494221
 	-     fix_alertnotify_winquoting			108e6f088c5
@@ -473,12 +475,16 @@ checkout v30.0rc1
 		test if unloadwallet settles wallet file
 	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
 		30.x backport in #34229
+	Needs review: k254 privkeyio/cmake-hardening-module
 	Needs review: k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent
 	-     fix_win_exclopen-29.3
 	k255  wlt_nonlegacy_change_if_no_leg_spkman
 	# n/a to Knots: -     depends_libevent_ignore_git_desc
 		# Only affects libevent builds when the bitcoin tag has 5 components
+	Review: k263  privkeyio/fix-vsize-sigops-datacarrier
+	Review: k265  privkeyio/fix-socks5-credential-logging
+	Review: k266  privkeyio/fix-external-signer-fingerprint-validation
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -824,6 +830,7 @@ checkout v30.0rc1
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
 	# Needs work: g866 rebroad-g/trafficgraphwidget-rebased
+	# Needs work: k104 rebroad-g/ more traffic graph stuff
 	g820  qt_fontsel_qrcodes-27+knots			343fc1f25a5	last=b14c9d0572e qt_fontsel_qrcodes
 	# TODO: qt_fontsel_console
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
@@ -897,6 +904,7 @@ checkout v30.0rc1
 	27216 rpc_getaddressinfo_isactive			afa55a8fdd6	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-29+knots						ca0d001d976	last=91771366a3d apoelstra/2023-03--codex32
+		TODO: Review knots#267
 		# See #32652 if #29136 is merged
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs concept & review: 33043 w0xlt/codex32
@@ -988,6 +996,7 @@ checkout v30.0rc1
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				4160fffe565	last=b25b40ebd5f vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				2bd6819ef9f	last=d4a3abf6d43 pruneduringinit
+		# aka knots#158
 	MERGED: 31886 netinfo_local_svcs-29+knots			4ec453a3ad9	last=721a051320f jonatack/2025-02-netinfo-services
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	MERGED: 31953 bumpfee_full_rbf-29+knots				787b46e37b6	last=fa86190e6ed maflcko/2502-fullrbf-follow-up
@@ -1259,6 +1268,7 @@ checkout v30.0rc1
 	Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	Needs review? k197 qt_portmap_ux_underlisten
 	Needs work: k208 1440000bytes/sendtx-ui
+	Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	e11d54ee382
 	-     pol_acceptunknownwitness				6d158fd7fbd
@@ -1283,6 +1293,7 @@ checkout v30.0rc1
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# TODO? Revise byte counting to consider input/output waste
 	-     datacarriercost-29+knots				7b727bd1c8a
+		TODO: Review knots#268
 		30.xTODO: TODO: Add to getmempoolinfo like #29954 (MERGED) (see b02aab950af)
 		#30.xTODO# Add tests and make sure boundaries are correct
 	-     acceptnonstddatacarrier-29+knots		8a91d7f00f0
@@ -1409,6 +1420,7 @@ checkout v30.0rc1
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
 	10282 softwareexpiry						68991f278b5
+		Needs work: + knots#247
 		TODO: "OK" is probably the wrong button to use for this
 		TODO? "Upgrade" button to open website - or even download+verify??
 			-DUPGRADE_COMMAND='...' for PPA/etc?

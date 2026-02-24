@@ -1,7 +1,7 @@
 timestamp 2026-02-18 23:01:35
 #lastapply no-merge
 
-#.. checked up to PR #34617 / gui#929 / knots#228
+#.. checked up to PR #34617 / gui#929 / knots#268
 
 checkout v28.2
 @28.x-syslibs
@@ -545,6 +545,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	# Needs review: 34198 furszy/2026_wallet_migration_ancient_wallets
 	Needs review: k242 fix_bdb_edge_cases_202601-29
+	TODO: consider knots#249 review comments
 	# ----- END WALLET DELETION BUGFIXES -----
 	34161 fix_distance_ub_pr34161-26						last=477c5504e05 l0rinc/l0rinc/pool-allocator-ub
 	34227 hebasto/260108-guix-osslsigncode
@@ -603,17 +604,22 @@ NM	32187 zmq_devirtual_destructor-0.12
 	k126  fix_qt_progressbar_fittext
 	k150  fix_rpc_mixed_params_edgecases
 		# Held back (4d24d60836f) support for positional options + named params (breaks tests)
+	Needs work: k182 proxy input validation fixes
 	# Needs work: k228 1440000bytes/fix-corruptwallet-crash
 	-     qt_nowalletpage_alerts-23
 	-     fix_alertnotify_winquoting
 	-     torcontrol_avoid_bindany_connect
 	-     fix_tor_common_bind-29.2
+	Needs review: k254 privkeyio/cmake-hardening-module
 	Needs review: k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent
 	-     fix_win_exclopen-29.3
 	k255  wlt_nonlegacy_change_if_no_leg_spkman
 	# n/a to Knots: -     depends_libevent_ignore_git_desc
 		# Only affects libevent builds when the bitcoin tag has 5 components
+	Review: k263  privkeyio/fix-vsize-sigops-datacarrier
+	Review: k265  privkeyio/fix-socks5-credential-logging
+	Review: k266  privkeyio/fix-external-signer-fingerprint-validation
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -993,7 +999,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# Left off top commit which breaks behaviour, fixed some nits
 		# Rebased on top of gui#473
 	# Needs work: g866 rebroad-g/trafficgraphwidget-rebased
-		# knots#104 related?
+	# Needs work: k104 rebroad-g/ more traffic graph stuff
 	g820  qt_fontsel_qrcodes-27+knots			ce838070845	last=b14c9d0572e qt_fontsel_qrcodes
 	# TODO: qt_fontsel_console
 	# Needs review: 24007 -  # [mempool] allow tx replacement by smaller witness
@@ -1071,6 +1077,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-28+knots						64f3666c9e7	last=91771366a3d apoelstra/2023-03--codex32
 	(CHECK-LAST)	last=b34e02d766a codex32-29+knots
+		TODO: Review knots#267
 		# See #32652 if #29136 is merged
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs concept & review: 33043 w0xlt/codex32
@@ -1205,6 +1212,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	(CHECK-LAST)	last=77473c2e166 peer_cpu_load-29+knots
 	31845 pruneduringinit-28+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
 	(CHECK-LAST)	last=ef00b4adfaa pruneduringinit-29+knots
+		# aka knots#158
 	31886 netinfo_local_svcs-28+knots			bed89007671	last=724546e28a5 jonatack/2025-02-netinfo-services
 	(CHECK-LAST)	last= netinfo_local_svcs-29+knots
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
@@ -1482,6 +1490,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	Needs review? k197 qt_portmap_ux_underlisten
 	Needs work: k208 1440000bytes/sendtx-ui
+	Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness
@@ -1500,6 +1509,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# TODO? Revise byte counting to consider input/output waste
 	-     datacarriercost-28+knots				42ecf3bfb75	last= datacarriercost-29+knots
+		TODO: Review knots#268
 		#29.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		#28.xTODO# Add tests and make sure boundaries are correct
 	k136  pol_permitephemeral
@@ -1603,6 +1613,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
 	# TODO: revert #28354 ?
 	10282 timebomb_knots-28						40f673fe63e	last=84572a8ec93 softwareexpiry
+		Needs work: + knots#247
 		TODO: rename branch?
 		TODO: disable mining; add alert in advance
 		TODO: mention in -help / GUI about ?
