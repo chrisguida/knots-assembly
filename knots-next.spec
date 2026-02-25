@@ -397,7 +397,8 @@ checkout v30.0rc1
 	-     handle_wallet_dir_nonwritable_bdb-29.3
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
 	# Needs review: 34198 furszy/2026_wallet_migration_ancient_wallets
-	Needs review: k242 fix_bdb_edge_cases_202601-29
+	k242 fix_bdb_edge_cases_202601-29
+	k269 wlt_migrfail_cleanup_lognonempty-29.3
 	TODO: consider knots#249 review comments
 	# ----- END WALLET DELETION BUGFIXES -----
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
@@ -482,9 +483,9 @@ checkout v30.0rc1
 	k255  wlt_nonlegacy_change_if_no_leg_spkman
 	# n/a to Knots: -     depends_libevent_ignore_git_desc
 		# Only affects libevent builds when the bitcoin tag has 5 components
-	Review: k263  privkeyio/fix-vsize-sigops-datacarrier
-	Review: k265  privkeyio/fix-socks5-credential-logging
-	Review: k266  privkeyio/fix-external-signer-fingerprint-validation
+	Needs work: k263  privkeyio/fix-vsize-sigops-datacarrier
+	k265  privkeyio/fix-socks5-credential-logging
+	k266  privkeyio/fix-external-signer-fingerprint-validation
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -904,7 +905,7 @@ checkout v30.0rc1
 	27216 rpc_getaddressinfo_isactive			afa55a8fdd6	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-29+knots						ca0d001d976	last=91771366a3d apoelstra/2023-03--codex32
-		TODO: Review knots#267
+		TODO: + knots#267
 		# See #32652 if #29136 is merged
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs concept & review: 33043 w0xlt/codex32
