@@ -521,7 +521,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# Only affects libevent builds when the bitcoin tag has 5 components
 	# Needs work: k263  privkeyio/fix-vsize-sigops-datacarrier
 	k265  proxy_no_log_password-29							last=eb40ab7ff0f privkeyio/fix-socks5-credential-logging
-	k266  privkeyio/fix-external-signer-fingerprint-validation
+	k266  extsigner_sanitychk_fingerprint-26				last=acc78e798fa privkeyio/fix-external-signer-fingerprint-validation
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -950,7 +950,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	27216 rpc_getaddressinfo_isactive			0cc4aef0bec	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-29+knots						03b56c3bfe9	last=91771366a3d apoelstra/2023-03--codex32
-		TODO: + knots#267
+		# + knots#267
 		# See #32652 if #29136 is merged
 		# Diff-minimised, doc bug fixed & tweaked to avoid breaking #23362
 	# Needs concept & review: 33043 w0xlt/codex32
