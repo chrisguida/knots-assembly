@@ -235,7 +235,7 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	29640 fix_tiebreak_on_disk-26				c9e88b9df07	last=0465574c127 sr-gi/202403-block-tiebreak
-	(CHECK-LAST)	last=9b07bd85064 origin-pull/34521/head
+	(CHECK-LAST)	last=cd2d6529f49 origin-pull/34521/head
 		# IMPORTANT: Adds a UB bugfix
 		# left off doc change (4caa38600e6)
 		# TODO: + #34521 if ready (better UB fix? addresses assumeutxo?)
@@ -491,7 +491,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
 	# Needs review: 34582 maflcko/2602-int-arg
 	34597 fix_SetStdinEcho_ub-0.20
-	34603 fix_win_IsSymlink-29.3							last=677297e8522
+	34603 fix_win_IsSymlink-29.3							last=fda778d1cc3
 	# Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	-     fix_rpccookieperms_early				f59c23596f8
@@ -512,7 +512,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	-     fix_alertnotify_winquoting			4d758179117
 	-     torcontrol_avoid_bindany_connect		0c4777cd590
 	-     fix_tor_common_bind-29.2				4e6f02a1a79
-	Needs review: k254 privkeyio/cmake-hardening-module
+	# Needs review: k254 privkeyio/cmake-hardening-module
 	# Needs work? k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent			59e258d1c5d
 	-     fix_win_exclopen-29.3					2f1d7350d5c
@@ -520,7 +520,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# n/a to Knots: -     depends_libevent_ignore_git_desc
 		# Only affects libevent builds when the bitcoin tag has 5 components
 	# Needs work: k263  privkeyio/fix-vsize-sigops-datacarrier
-	k265  privkeyio/fix-socks5-credential-logging
+	k265  proxy_no_log_password-29							last=eb40ab7ff0f privkeyio/fix-socks5-credential-logging
 	k266  privkeyio/fix-external-signer-fingerprint-validation
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
