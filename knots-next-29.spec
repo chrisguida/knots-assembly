@@ -1,7 +1,7 @@
 timestamp 2026-02-18 23:01:35
 #lastapply no-merge
 
-#.. checked up to PR #34617 / gui#929 / knots#268
+#.. checked up to PR #34617 / gui#929 / knots#274
 
 checkout v29.3
 @29.x-syslibs
@@ -50,6 +50,7 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
 	# Only if native Windows CI: 32219 -
 		# NOTE: incomplete backport at c939d74b244
+	33118 ishaanam/sendall_locktime_off_by_one_fix
 	33639 docker_no_cache_gha-29.2				a357706e831
 	33990 qa_rpc_startingheight-28				b6acfb75300	last=52f96cc235d theStack/202512-test-announced_starting_height
 	34185 qafix_pruning_wo_wallet-25			33253ff1ee5	last=8fb5e5f41dd brunoerg/2025-12-test-pruning-wout-wallet
@@ -1249,6 +1250,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	7107  qtnetworkport-29.1+knots				640851ebdaf	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-29.2+knots				de9ba5f28f5 last=2627c0937f8 sendraw_force
+		FIXME: correct p2a detection to exclude witness data
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
@@ -1329,6 +1331,8 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs review? k197 qt_portmap_ux_underlisten
 	# Needs work: k208 1440000bytes/sendtx-ui
 	# Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
+	# Needs concept: k270 privkeyio/compile-tr-native
+	Review: k274  umop/toggle-banned-peers-visibility
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	400f5f788a0
 	-     pol_acceptunknownwitness				fb6c14bcc0d
@@ -1418,6 +1422,8 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs review? k221 1440000bytes/getextrapoolinfo-rpc
 	# Needs work: k227 1440000bytes/remove-minedtxs-extrapool
 	k162  qt_bad_external_signer_msg-22			b1bdf42d54d	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
+	# Needs work: k271  privkeyio/policy-tapscript-dust-limit
+	# Needs work: k272  privkeyio/policy-subdust-fee-penalty
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'

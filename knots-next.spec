@@ -1,7 +1,7 @@
 timestamp 2026-02-18 23:01:35
 lastapply no-merge
 
-#.. checked up to PR #34617 / gui#929 / knots#268
+#.. checked up to PR #34617 / gui#929 / knots#274
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -1187,6 +1187,7 @@ checkout v30.0rc1
 	7107  qtnetworkport-29.1+knots				e86a192db59	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
+		FIXME: correct p2a detection to exclude witness data
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks
@@ -1270,6 +1271,8 @@ checkout v30.0rc1
 	Needs review? k197 qt_portmap_ux_underlisten
 	Needs work: k208 1440000bytes/sendtx-ui
 	Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
+	Needs concept: k270 privkeyio/compile-tr-native
+	Review: k274  umop/toggle-banned-peers-visibility
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	e11d54ee382
 	-     pol_acceptunknownwitness				6d158fd7fbd
@@ -1359,6 +1362,8 @@ checkout v30.0rc1
 	# Needs review? k221 1440000bytes/getextrapoolinfo-rpc
 	# Needs work: k227 1440000bytes/remove-minedtxs-extrapool
 	k162  qt_bad_external_signer_msg-22			f1b1cdf9d4e	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
+	Needs work: k271  privkeyio/policy-tapscript-dust-limit
+	Needs work: k272  privkeyio/policy-subdust-fee-penalty
 	#31.xTODO# Consider reverting parts of #33489 (build: Drop support for EOL macOS 13) and #33573
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 	30.xTODO: Consider #33892 policy: allow <minrelay txns in package context if paid for by cpfp

@@ -1,7 +1,7 @@
 timestamp 2026-02-18 23:01:35
 #lastapply no-merge
 
-#.. checked up to PR #34617 / gui#929 / knots#268
+#.. checked up to PR #34617 / gui#929 / knots#274
 
 checkout v28.2
 @28.x-syslibs
@@ -55,6 +55,7 @@ checkout v28.2
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
 	# Triage: Only if native Windows CI: 32219 -
 		# NOTE: incomplete backport at c939d74b244
+	Triage: 33118 ishaanam/sendall_locktime_off_by_one_fix
 	TRIAGE: 33639 maflcko/2510-ci-rework-cache-providers
 	33990 qa_rpc_startingheight-28							last=52f96cc235d theStack/202512-test-announced_starting_height
 	Triage: 34185 brunoerg/2025-12-test-pruning-wout-wallet
@@ -1406,6 +1407,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-28+knots				9d121259d75 last=2627c0937f8 sendraw_force
 	(CHECK-LAST)	last= sendraw_force-29+knots
+		FIXME: correct p2a detection to exclude witness data
 		#28.xTODO# Allow overriding upgradable stuff (to cleanup segwit abuse spam)
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
@@ -1492,6 +1494,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs review? k197 qt_portmap_ux_underlisten
 	Needs work: k208 1440000bytes/sendtx-ui
 	Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
+	Needs concept: k270 privkeyio/compile-tr-native
+	Review: k274  umop/toggle-banned-peers-visibility
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness
@@ -1572,6 +1576,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review? k221 1440000bytes/getextrapoolinfo-rpc
 	# Needs work: k227 1440000bytes/remove-minedtxs-extrapool
 	k162  qt_bad_external_signer_msg-22							last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
+	Needs work: k271  privkeyio/policy-tapscript-dust-limit
+	Needs work: k272  privkeyio/policy-subdust-fee-penalty
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
