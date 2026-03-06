@@ -475,6 +475,7 @@ checkout v30.0rc1
 	Triage: 34702 nervana21/2026-02-getblock-fee-optional
 	Triage: Needs review: 34705 sedited/kernel_unicode_path_patch
 	Needs review: 34743 willcl-ark/protect-manual-evictions
+	34767 fix_qt_intro_chain_except
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2

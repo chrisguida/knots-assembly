@@ -512,6 +512,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	Triage: 34702 nervana21/2026-02-getblock-fee-optional
 	Triage: Needs review: 34705 sedited/kernel_unicode_path_patch
 	Needs review: 34743 willcl-ark/protect-manual-evictions
+	34767 fix_qt_intro_chain_except
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
 	-     restore_guix_ppc64le-28				9688bc64ace

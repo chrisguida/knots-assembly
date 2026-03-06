@@ -615,6 +615,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 34702 nervana21/2026-02-getblock-fee-optional
 	Triage: Needs review: 34705 sedited/kernel_unicode_path_patch
 	Needs review: 34743 willcl-ark/protect-manual-evictions
+	34767 fix_qt_intro_chain_except
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
