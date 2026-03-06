@@ -19,8 +19,8 @@ checkout v28.2
 	Triage: Needs review: 33569 l0rinc/l0rinc/throw-by-value
 	Triage: Needs review: 33570 l0rinc/l0rinc/environ-mingw
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
-	Triage: Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
-		NOTE: 29.x backport in #34680
+	Triage: 34093 fix_freebsd15_netlink_warn				last=c1361fc42dd vasild/fix_nlmsg_ok_compilation_fbsd15
+	(CHECK-LAST)	last=490cd874a40 origin-pull/34680/head^  # 29.x backport
 	k246  fix_boost1.73compat-29
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26
@@ -56,7 +56,6 @@ checkout v28.2
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
 	# Triage: Only if native Windows CI: 32219 -
 		# NOTE: incomplete backport at c939d74b244
-	Triage: 33118 ishaanam/sendall_locktime_off_by_one_fix
 	TRIAGE: 33639 maflcko/2510-ci-rework-cache-providers
 	33990 qa_rpc_startingheight-28							last=52f96cc235d theStack/202512-test-announced_starting_height
 	Triage: 34185 brunoerg/2025-12-test-pruning-wout-wallet
@@ -239,6 +238,7 @@ checkout v28.2
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
 	28944 rpc_sendall_anti_fee_sniping-28		25117369373	last=b11d00d54ed ishaanam/sendall_anti_fee_sniping
+		# + #33118
 	-     rpc_walletcfpsbt_antifeesniping-28+k
 	(CHECK-LAST)	last=113ba106273 Sjors/2025/07/locktime
 		# Includes tests from #32892
@@ -600,15 +600,13 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	Triage: Needs review/concept: 34538 willcl-ark/onlynet-advertisments
 	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
-		NOTE: 29.x backport in #34680
 	Needs review: 34582 maflcko/2602-int-arg
 	34597 fix_SetStdinEcho_ub-0.20
-		NOTE: 30.x backport in #34689
 	34603 fix_win_IsSymlink-29.3							last=677297e8522
 	Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	Triage: Needs review: 34628 ajtowns/202602-mempool-invtosend
-	Triage: 34642 achow101/failed-load-blockconnected-race
+	Triage: 34642 wallet_validqueue_drainforunload-28
 	Triage: 34655 l0rinc/l0rinc/coins_view_fuzzer_cleanup
 	Triage: IPC mining: 34661 ryanofsky/pr/waitmine
 	# Doc fix: 34671 maflcko/2602-doc-guix-less

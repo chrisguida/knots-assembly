@@ -11,8 +11,8 @@ checkout v29.3
 	# Needs review: 33570 l0rinc/l0rinc/environ-mingw
 	# Needs review: g899 hebasto-g/251008-deprecated
 	# Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
-	34093 fix_freebsd15_netlink_warn			29697950187	last=be2a6248fbc vasild/fix_nlmsg_ok_compilation_fbsd15
-		NOTE: 29.x backport in #34680
+	34093 fix_freebsd15_netlink_warn			29697950187	last=c1361fc42dd vasild/fix_nlmsg_ok_compilation_fbsd15
+	(CHECK-LAST)	last=490cd874a40 origin-pull/34680/head^  # 29.x backport
 	k246  fix_boost1.73compat-29				45ecb3a0a83
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26					cf8a2876f8c
@@ -51,7 +51,6 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# Needs review: k209 mstampfer/test-feature-block-bad-version-log
 	# Only if native Windows CI: 32219 -
 		# NOTE: incomplete backport at c939d74b244
-	33118 ishaanam/sendall_locktime_off_by_one_fix
 	33639 docker_no_cache_gha-29.2				a357706e831
 	33990 qa_rpc_startingheight-28				b6acfb75300	last=52f96cc235d theStack/202512-test-announced_starting_height
 	34185 qafix_pruning_wo_wallet-25			33253ff1ee5	last=8fb5e5f41dd brunoerg/2025-12-test-pruning-wout-wallet
@@ -224,6 +223,7 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# Needs review: 28824 fix_asm_nodecimals-23								last=fde11cb0fa3 willcl-ark/asm-full-hex
 		# FIXME: disambiguate opcodes too?
 	28944 rpc_sendall_anti_fee_sniping-28		8a8f5e640f5	last=aac0b6dd79b ishaanam/sendall_anti_fee_sniping
+		# + #33118
 	-     rpc_walletcfpsbt_antifeesniping-28+k	03af5cebcd8	last=6fc07948bdd rpc_walletcfpsbt_antifeesniping-30+k
 	(CHECK-LAST)	last=113ba106273 Sjors/2025/07/locktime
 		# Includes tests from #32892
@@ -242,7 +242,7 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# Needs work: g792 -  # Correct tooltip wording for watch-only wallets
 	# Nothing to fix? 29589 -  # tests: fix OP_1NEGATE handling in CScriptOp
 	29640 fix_tiebreak_on_disk-26				c9e88b9df07	last=0465574c127 sr-gi/202403-block-tiebreak
-	(CHECK-LAST)	last=cd2d6529f49 origin-pull/34521/head
+	(CHECK-LAST)	last=20ae9b98eab origin-pull/34521/head
 		# IMPORTANT: Adds a UB bugfix
 		# left off doc change (4caa38600e6)
 		# TODO: + #34521 if ready (better UB fix? addresses assumeutxo?)
@@ -497,15 +497,13 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	# Needs review/concept: 34538 willcl-ark/onlynet-advertisments
 	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
-		NOTE: 29.x backport in #34680
 	# Needs review: 34582 maflcko/2602-int-arg
 	34597 fix_SetStdinEcho_ub-0.20
-		NOTE: 30.x backport in #34689
 	34603 fix_win_IsSymlink-29.3							last=fda778d1cc3
 	# Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	# Needs review: 34628 ajtowns/202602-mempool-invtosend
-	34642 achow101/failed-load-blockconnected-race
+	34642 wallet_validqueue_drainforunload-28
 	Triage: 34655 l0rinc/l0rinc/coins_view_fuzzer_cleanup
 	# IPC mining: 34661 ryanofsky/pr/waitmine
 	# Doc fix: 34671 maflcko/2602-doc-guix-less

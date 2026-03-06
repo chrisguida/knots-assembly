@@ -13,7 +13,8 @@ checkout v30.0rc1
 	#31.xTODO# Revert #33714 for #33570 (more portable) ?
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 	Triage: 33972 hebasto/251130-kernel-test
-	Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
+	34093 fix_freebsd15_netlink_warn			29697950187	last=c1361fc42dd vasild/fix_nlmsg_ok_compilation_fbsd15
+	(CHECK-LAST)	last=490cd874a40 origin-pull/34680/head^  # 29.x backport
 		NOTE: 30.x backport in #34689
 	34462 fix_bsd_batchprio-26
 	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
@@ -464,7 +465,7 @@ checkout v30.0rc1
 	Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	Needs review: 34628 ajtowns/202602-mempool-invtosend
-	34642 achow101/failed-load-blockconnected-race
+	34642 wallet_validqueue_drainforunload-28
 	Triage: 34655 l0rinc/l0rinc/coins_view_fuzzer_cleanup
 	# IPC mining: 34661 ryanofsky/pr/waitmine
 	# Doc fix: 34671 maflcko/2602-doc-guix-less
