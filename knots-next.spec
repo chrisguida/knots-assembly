@@ -1,7 +1,7 @@
-timestamp 2026-02-18 23:01:35
+timestamp 2026-03-06 06:55:24
 lastapply no-merge
 
-#.. checked up to PR #34617 / gui#929 / knots#274
+#.. checked up to PR #34750 / gui#931 / knots#275
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -14,6 +14,7 @@ checkout v30.0rc1
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 	Triage: 33972 hebasto/251130-kernel-test
 	Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
+		NOTE: 30.x backport in #34689
 	34462 fix_bsd_batchprio-26
 	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
 # SYSLIBS:
@@ -56,6 +57,11 @@ checkout v30.0rc1
 	# Only if native Windows CI? 34285 hebasto/260114-windows-pyzmq
 	# FreeBSD: 34346 w0xlt/freebsd_high_port_range-again
 	# Only if native Windows CI? 34418 hodlinator/2026/01/31409_fix
+	34622 qafix_debuglog_races_pr34622-29.3+k
+		# NOTE: Excludes timeout relaxation
+	# If needed: 34690 maflcko/2602-test-zmq
+		# NOTE: 30.x backport in #34689
+	# If needed: 34728 maflcko/2603-test-wallet-assume-sync
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	6b3aa212298
 	13789 asm_bypass_cxxflags					9de0f072503
@@ -372,6 +378,7 @@ checkout v30.0rc1
 	34008 0xB10C/2025-12-dont-ratelimit-new-inbound-peer-connected-with-debug=net
 	Triage: 34010 rkrux/musig-key-fix
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
+		NOTE: 30.x backport in #34689
 	34028 fix_seenlocal_max-26								last=3fc5948e1fe
 	#31.xTODO# Revert/disable #34075 mempool-based fee estimator
 	-     fix_feeest_read_rare_overflow-29
@@ -386,6 +393,7 @@ checkout v30.0rc1
 		+ #34572 ?
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 		+ #34297 (p2p: add validation checks for initial self-announcement)
+		+ #34717 ?
 	34161 fix_distance_ub_pr34161-26						last=477c5504e05 l0rinc/l0rinc/pool-allocator-ub
 	# ----- WALLET DELETION BUGFIXES -----
 	TODO: Ensure material changes from 76cdeb7b062 got forward ported
@@ -404,6 +412,8 @@ checkout v30.0rc1
 	# IPC-specific: Triage: 34184 Sjors:2025/12/cool-down
 	# Needs review/work: 34213 brunoerg/2026-01-net-anchors-networkactive
 	34224 fix_init_int_ec-27
+	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
+		30.x backport in #34229
 	34235 fix_miniminer_feeassert_pr34235-26
 	34252 doc_bips_add433-28
 		30.x backport in #34283
@@ -446,11 +456,24 @@ checkout v30.0rc1
 	Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	Needs review/concept: 34538 willcl-ark/onlynet-advertisments
 	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
+		NOTE: 29.x backport in #34680
 	Needs review: 34582 maflcko/2602-int-arg
 	34597 fix_SetStdinEcho_ub-0.20
+		NOTE: 30.x backport in #34689
 	34603 fix_win_IsSymlink-29.3							last=677297e8522
 	Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
+	Needs review: 34628 ajtowns/202602-mempool-invtosend
+	34642 achow101/failed-load-blockconnected-race
+	Triage: 34655 l0rinc/l0rinc/coins_view_fuzzer_cleanup
+	# IPC mining: 34661 ryanofsky/pr/waitmine
+	# Doc fix: 34671 maflcko/2602-doc-guix-less
+		# NOTE: 29.x backport in #34680
+	Needs review: 34678 chriszeng1010/fix-accept-unknown-sockaddr
+	Needs review: 34697 shuv-amp/fix-musig-descriptor-dupkey
+	Triage: 34702 nervana21/2026-02-getblock-fee-optional
+	Triage: Needs review: 34705 sedited/kernel_unicode_path_patch
+	Needs review: 34743 willcl-ark/protect-manual-evictions
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -474,8 +497,6 @@ checkout v30.0rc1
 		Ensure user-made files in wallet dir survive
 		test when wallet is loaded (or not) when migratewallet called
 		test if unloadwallet settles wallet file
-	Review: 34226 davidgumberg/2026-01-07-relative-path-migration-failure
-		30.x backport in #34229
 	Needs review: k254 privkeyio/cmake-hardening-module
 	Needs review: k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent
@@ -606,12 +627,17 @@ checkout v30.0rc1
 		# NOTE: diff-minimised, and did not backport refactor commits
 		# NOTE: various libbitcoinkernel changes needed, if libbitcoinkernel features (#30595 in particular) are backported
 	# Needs review: 34400 -  # wallet: parallel fast rescan (approx 5x speed up with 16 threads)
+		# + #34667 ?
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# Needs review: 34489 furszy/2026_index_batch_processing
 	34612 leveldb_slim_pr34612-29							last=3feabb203a6 fanquake/unused_historgram
 	Needs review? 34613 -  # replace manual byte copies
+	Just removes a Guix dep: 34627 fanquake/replace_sponge
+	Review: 34641 l0rinc/l0rinc/dynamic-dbcache
+	OR: 34692 andrewtoth/bump_dbcache
+	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -633,6 +659,7 @@ checkout v30.0rc1
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
 	# Needs review & consensus: k238 -  # Reduced Data Temporary Softfork
 		# + knots#256
+		# + updated fixed seeds ?
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 # FUNCTIONALITY:
 	#-     rm_kernel_lib							84b7c6adf43
@@ -848,7 +875,10 @@ checkout v30.0rc1
 	# Needs work: g533  -  # gui: add more detailed address error message
 		# TODO: Maybe a button inside the lineedit to display the error message?
 	# OR: Needs work? g560 w0xlt-g/3_error_message_addr
-	# Needs review: 24539   # Add a "tx output spender" index
+	Needs review: 24539   # Add a "tx output spender" index (txospender)
+		# + #34635 ? + #34653 ? + #34747 ? + #34749 ?
+		# Check out #34637
+	Needs review: 34636 svanstaa/improve-index-cache-allocation
 	# Needs review: 33904 kevkevinpal/feat/rest-gettxspendingprevout
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
 	# Needs work: 24897 w0xlt/silent_payment_021
@@ -934,6 +964,7 @@ checkout v30.0rc1
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
 	# Needs review? 28792 (asmap)
+		# + update asmap data (see #34696)
 	# Needs review: 33920 fjahr/2025-11-asmap-export
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
 	# Needs concept/review: g777 -  # gui: getrawtransaction implementation
@@ -953,7 +984,7 @@ checkout v30.0rc1
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -986,6 +1017,7 @@ checkout v30.0rc1
 		# Bugfix + Left off re-generation until later
 	k190  feat_zsh_completion-29				c7603c2acd8	last=e3f6d308a97  # Add zsh completion script generation support
 	Needs work: k199 mstampfer/cmake-zsh-completion-only
+	Needs review: 34721 willcl-ark/cmake-shell-completions
 	Prefer upstream? 30886 rpc_descrprocesspsbt_prevtxs-28+knots	b77212d5ccf	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
@@ -1054,6 +1086,10 @@ checkout v30.0rc1
 	#31.xTODO# 34615 instagibbs/2026-02-disordered_mempool
 	g877  achow101-g/gui-migrate-path
 		+ gui#928
+	Needs review: 34640 davidgumberg/2026-02-20-send-minfee-msg
+	Needs review: 34683 willcl-ark/json-rpc-schema
+	# Not worth it? 34713 hebasto/260302-qt-mkdir
+		# NOTE: 30.x backport in #34689
 	-     qt_createunsigned_use_psbtops			a800d52314e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1364,6 +1400,7 @@ checkout v30.0rc1
 	k162  qt_bad_external_signer_msg-22			f1b1cdf9d4e	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 	Needs work: k271  privkeyio/policy-tapscript-dust-limit
 	Needs work: k272  privkeyio/policy-subdust-fee-penalty
+	Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	#31.xTODO# Consider reverting parts of #33489 (build: Drop support for EOL macOS 13) and #33573
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 	30.xTODO: Consider #33892 policy: allow <minrelay txns in package context if paid for by cpfp
@@ -1421,7 +1458,7 @@ checkout v30.0rc1
 	-     enforce_checkpoints					21dbf96fd5f
 		30.xTODO: Revert #31649 (MERGED)
 	n/a   checkpoint_update-29					3b5ea232f72
-		TODO: update
+		TODO: update (see #34677)
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
@@ -1471,7 +1508,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260218)			d5593bea7a1
+	n/a  (bump_version=knots20260306)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits
@@ -1503,3 +1540,5 @@ checkout v30.0rc1
 	# TODO: 31367 dergoegge/2024-11-ci-ulimit-s
 	# TODO: 31410 hebasto/241203-multiwallet
 	# TODO: 33180 fanquake/asan_strict_string
+	# TODO: 34709 rkrux/wallet-tests
+	# TODO: 34725 darosior/2603_psbt_roundtrip

@@ -1,7 +1,7 @@
-timestamp 2026-02-18 23:01:35
+timestamp 2026-03-06 06:55:24
 #lastapply no-merge
 
-#.. checked up to PR #34617 / gui#929 / knots#274
+#.. checked up to PR #34750 / gui#931 / knots#275
 
 checkout v29.3
 @29.x-syslibs
@@ -12,6 +12,7 @@ checkout v29.3
 	# Needs review: g899 hebasto-g/251008-deprecated
 	# Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 	34093 fix_freebsd15_netlink_warn			29697950187	last=be2a6248fbc vasild/fix_nlmsg_ok_compilation_fbsd15
+		NOTE: 29.x backport in #34680
 	k246  fix_boost1.73compat-29				45ecb3a0a83
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26					cf8a2876f8c
@@ -57,6 +58,11 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# Only if native Windows CI? 34285 hebasto/260114-windows-pyzmq
 	# FreeBSD: 34346 w0xlt/freebsd_high_port_range-again
 	# Only if native Windows CI? 34418 hodlinator/2026/01/31409_fix
+	34622 qafix_debuglog_races_pr34622-29.3+k
+		# NOTE: Excludes timeout relaxation
+	# If needed: 34690 maflcko/2602-test-zmq
+		# NOTE: 30.x backport in #34689
+	# If needed: 34728 maflcko/2603-test-wallet-assume-sync
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	18033f85c25
 	13789 asm_bypass_cxxflags					4e1c7852279
@@ -430,6 +436,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# + #34572 ?
 	# Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 		# + #34297 (p2p: add validation checks for initial self-announcement)
+		# + #34717 ?
 	# ----- WALLET DELETION BUGFIXES -----
 	32273 fix_walletmigrate_relpaths-29.3		6a56b1e3692
 		# NOTE: Held back "wallet: migration: Make backup in walletdir" behaviour change
@@ -490,11 +497,23 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	# Needs review/concept: 34538 willcl-ark/onlynet-advertisments
 	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
+		NOTE: 29.x backport in #34680
 	# Needs review: 34582 maflcko/2602-int-arg
 	34597 fix_SetStdinEcho_ub-0.20
+		NOTE: 30.x backport in #34689
 	34603 fix_win_IsSymlink-29.3							last=fda778d1cc3
 	# Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
+	# Needs review: 34628 ajtowns/202602-mempool-invtosend
+	34642 achow101/failed-load-blockconnected-race
+	Triage: 34655 l0rinc/l0rinc/coins_view_fuzzer_cleanup
+	# IPC mining: 34661 ryanofsky/pr/waitmine
+	# Doc fix: 34671 maflcko/2602-doc-guix-less
+		# NOTE: 29.x backport in #34680
+	Needs review: 34678 chriszeng1010/fix-accept-unknown-sockaddr
+	Triage: 34702 nervana21/2026-02-getblock-fee-optional
+	Triage: Needs review: 34705 sedited/kernel_unicode_path_patch
+	Needs review: 34743 willcl-ark/protect-manual-evictions
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
 	-     restore_guix_ppc64le-28				9688bc64ace
@@ -655,12 +674,17 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: diff-minimised, and did not backport refactor commits
 		# NOTE: various libbitcoinkernel changes needed, if libbitcoinkernel features (#30595 in particular) are backported
 	# Needs review: 34400 -  # wallet: parallel fast rescan (approx 5x speed up with 16 threads)
+		# + #34667 ?
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# Needs review: 34489 furszy/2026_index_batch_processing
 	34612 leveldb_slim_pr34612-29							last=3feabb203a6 fanquake/unused_historgram
 	# Needs review? 34613 -  # replace manual byte copies
+	# Just removes a Guix dep: 34627 fanquake/replace_sponge
+	Review: 34641 l0rinc/l0rinc/dynamic-dbcache
+	OR: 34692 andrewtoth/bump_dbcache
+	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -682,6 +706,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
 	# Needs review & consensus: k238 -  # Reduced Data Temporary Softfork
 		# + knots#256
+		# + updated fixed seeds ?
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 # FUNCTIONALITY:
 	#-     rm_kernel_lib							84b7c6adf43
@@ -894,7 +919,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work: g533  -  # gui: add more detailed address error message
 		# TODO: Maybe a button inside the lineedit to display the error message?
 	# OR: Needs work? g560 w0xlt-g/3_error_message_addr
-	# Needs review: 24539   # Add a "tx output spender" index
+	Needs review: 24539   # Add a "tx output spender" index (txospender)
+		# + #34635 ? + #34653 ? + #34747 ? + #34749 ?
+		# Check out #34637
+	Needs review: 34636 svanstaa/improve-index-cache-allocation
 	# Needs review: 33904 kevkevinpal/feat/rest-gettxspendingprevout
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
 	# Needs work: 24897 w0xlt/silent_payment_021
@@ -981,6 +1009,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
 	# Needs review? 28792 (asmap)
+		# + update asmap data (see #34696)
 	# Needs review: 33920 fjahr/2025-11-asmap-export
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
 	# Needs concept/review: g777 -  # gui: getrawtransaction implementation
@@ -1000,7 +1029,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1012,12 +1041,14 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# TODO: 31247 achow101/musig2-psbt
 		# +#34010 rkrux/musig-key-fix
 		# +Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
+			# NOTE: 30.x backport in #34689
 	# Needs review: 33665 rkrux/musig-sighash
 	# Needs review & wallet compat check: 31244 achow101/musig2-desc
 		# Needs #3313 too?
 	# Needs review: 32724 w0xlt/musig2_tests
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	# Triage: 34141 achow101/musig-miniscript
+	# Needs review: 34697 shuv-amp/fix-musig-descriptor-dupkey
 	# ----- END OF MUSIG2 -----
 	#30.xTODO# 29954 rpc_getmpinfo_policy_pr29954-28+knots				last=d165ac8779b kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
 		# Or maybe this is unnecessary with a get/set policy RPC method?
@@ -1039,7 +1070,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	30860 bashcomp_bcli_generate-29				a0910c67a78	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	k190  feat_zsh_completion-29				4baee3bd24f	last=e3f6d308a97  # Add zsh completion script generation support
-	# Needs work: k199 mstampfer/cmake-zsh-completion-only
+	Needs work: k199 mstampfer/cmake-zsh-completion-only
+	Needs review: 34721 willcl-ark/cmake-shell-completions
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	35f0e28f3e2	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
@@ -1115,6 +1147,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work: g925 w0xlt-g/hide_conflicted
 	# Needs work: 34512 Sjors/2026/02/getblockfields
 	# Needs review: 34606 l0rinc/l0rinc/common-warn-high-swap-usage
+	Needs review: 34640 davidgumberg/2026-02-20-send-minfee-msg
+	Needs review: 34683 willcl-ark/json-rpc-schema
+	# Not worth it? 34713 hebasto/260302-qt-mkdir
+		# NOTE: 30.x backport in #34689
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1424,6 +1460,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	k162  qt_bad_external_signer_msg-22			b1bdf42d54d	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 	# Needs work: k271  privkeyio/policy-tapscript-dust-limit
 	# Needs work: k272  privkeyio/policy-subdust-fee-penalty
+	Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
@@ -1474,7 +1511,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	-     enforce_checkpoints					8e1d8f424ba
 		#30.xTODO# Revert #31649
 	n/a   checkpoint_update-29					97f6c4e5b9f
-		TODO: update
+		TODO: update (see #34677)
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
@@ -1524,7 +1561,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260218)			931ea36c899
+	n/a  (bump_version=knots20260306)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=dce09dbcdc4)				dce09dbcdc4  # release notes: write/update, including change log and credits
@@ -1556,3 +1593,5 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# TODO: 31367 dergoegge/2024-11-ci-ulimit-s
 	# TODO: 31410 hebasto/241203-multiwallet
 	# TODO: 33180 fanquake/asan_strict_string
+	# TODO: 34709 rkrux/wallet-tests
+	# TODO: 34725 darosior/2603_psbt_roundtrip

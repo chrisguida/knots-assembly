@@ -1,7 +1,7 @@
-timestamp 2026-02-18 23:01:35
+timestamp 2026-03-06 06:55:24
 #lastapply no-merge
 
-#.. checked up to PR #34617 / gui#929 / knots#274
+#.. checked up to PR #34750 / gui#931 / knots#275
 
 checkout v28.2
 @28.x-syslibs
@@ -20,6 +20,7 @@ checkout v28.2
 	Triage: Needs review: 33570 l0rinc/l0rinc/environ-mingw
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 	Triage: Needs review: 34093 vasild/fix_nlmsg_ok_compilation_fbsd15
+		NOTE: 29.x backport in #34680
 	k246  fix_boost1.73compat-29
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26
@@ -62,6 +63,11 @@ checkout v28.2
 	# Only if native Windows CI? 34285 hebasto/260114-windows-pyzmq
 	# FreeBSD: 34346 w0xlt/freebsd_high_port_range-again
 	# Only if native Windows CI? 34418 hodlinator/2026/01/31409_fix
+	34622 qafix_debuglog_races_pr34622-29.3+k
+		# NOTE: Excludes timeout relaxation
+	# If needed: 34690 maflcko/2602-test-zmq
+		# NOTE: 30.x backport in #34689
+	Triage: If needed: 34728 maflcko/2603-test-wallet-assume-sync
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail
 	18818 guix_reltar_autogen_distclean			5bd6cb2eb0a	last=b5a164d9155 fix_gitian_src_202004
@@ -521,6 +527,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		+ #34572 ?
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 		+ #34297 (p2p: add validation checks for initial self-announcement)
+		+ #34717 ?
 	# ----- WALLET DELETION BUGFIXES -----
 	Review: 34156 furszy/2025_wallet_migration_jinglewreck
 		Ensure /wallet.dat doesn't rm /
@@ -536,6 +543,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# DO NOT MERGE WITHOUT FIXING WALLET DELETION BUG
 		# NOTE: Held back "wallet: migration: Make backup in walletdir" behaviour change
 	34370 fix_34222_backport
+		NOTE: 28.x backport in #34620
 	34372 qa_wallet_migration_tests_202601-29.3
 		# NOTE: Invisible dependencies on #32273 and #34370
 	Triage: 34176 handle_wallet_dir_nonwritable-29.3				last=271846280db furszy/2025_wallet_check_db_permissions
@@ -592,11 +600,23 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: Needs review (and AI removal?): 34530 -  # wallet: guard against negative bump fee discount from mempool race
 	Triage: Needs review/concept: 34538 willcl-ark/onlynet-advertisments
 	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
+		NOTE: 29.x backport in #34680
 	Needs review: 34582 maflcko/2602-int-arg
 	34597 fix_SetStdinEcho_ub-0.20
+		NOTE: 30.x backport in #34689
 	34603 fix_win_IsSymlink-29.3							last=677297e8522
 	Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
+	Triage: Needs review: 34628 ajtowns/202602-mempool-invtosend
+	Triage: 34642 achow101/failed-load-blockconnected-race
+	Triage: 34655 l0rinc/l0rinc/coins_view_fuzzer_cleanup
+	Triage: IPC mining: 34661 ryanofsky/pr/waitmine
+	# Doc fix: 34671 maflcko/2602-doc-guix-less
+		# NOTE: 29.x backport in #34680
+	Needs review: 34678 chriszeng1010/fix-accept-unknown-sockaddr
+	Triage: 34702 nervana21/2026-02-getblock-fee-optional
+	Triage: Needs review: 34705 sedited/kernel_unicode_path_patch
+	Needs review: 34743 willcl-ark/protect-manual-evictions
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -768,12 +788,17 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# NOTE: diff-minimised, and did not backport refactor commits
 		# NOTE: various libbitcoinkernel changes needed, if libbitcoinkernel features (#30595 in particular) are backported
 	# Needs review: 34400 -  # wallet: parallel fast rescan (approx 5x speed up with 16 threads)
+		# + #34667 ?
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
 	# Needs review: 34489 furszy/2026_index_batch_processing
 	Triage: 34612 fanquake/unused_historgram
 	Needs review? 34613 -  # replace manual byte copies
+	Just removes a Guix dep: 34627 fanquake/replace_sponge
+	Review: 34641 l0rinc/l0rinc/dynamic-dbcache
+	OR: 34692 andrewtoth/bump_dbcache
+	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -795,6 +820,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
 	# Needs review & consensus: k238 -  # Reduced Data Temporary Softfork
 		# + knots#256
+		# + updated fixed seeds ?
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 # FUNCTIONALITY:
 	-     rm_kernel_lib							84b7c6adf43
@@ -1019,7 +1045,10 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: g533  -  # gui: add more detailed address error message
 		# TODO: Maybe a button inside the lineedit to display the error message?
 	# OR: Needs work? g560 w0xlt-g/3_error_message_addr
-	# Needs review: 24539   # Add a "tx output spender" index
+	Needs review: 24539   # Add a "tx output spender" index (txospender)
+		# + #34635 ? + #34653 ? + #34747 ? + #34749 ?
+		# Check out #34637
+	Needs review: 34636 svanstaa/improve-index-cache-allocation
 	# Needs review: 33904 kevkevinpal/feat/rest-gettxspendingprevout
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
 	# Needs work: 24897 w0xlt/silent_payment_021
@@ -1109,6 +1138,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review and concept: 28463 mzumsande/202308_increase_block_relay
 		# Why not just increase inbound capacity to max anyway?
 	# Needs review? 28792 (asmap)
+		# + update asmap data (see #34696)
 	# Needs review: 33920 fjahr/2025-11-asmap-export
 	# Needs concept/review? 28806 ajtowns/202311-depinfo-scriptflags
 	# Needs concept/review: g777 -  # gui: getrawtransaction implementation
@@ -1129,7 +1159,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1143,12 +1173,14 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# TODO: 31247 achow101/musig2-psbt
 		# +#34010 rkrux/musig-key-fix
 		# +Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
+			# NOTE: 30.x backport in #34689
 	# Needs review: 33665 rkrux/musig-sighash
 	# Needs review & wallet compat check: 31244 achow101/musig2-desc
 		# Needs #3313 too?
 	# Needs review: 32724 w0xlt/musig2_tests
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	Triage: 34141 achow101/musig-miniscript
+	Needs review: 34697 shuv-amp/fix-musig-descriptor-dupkey
 	# ----- END OF MUSIG2 -----
 	29686 manpage_desc-28+knots					6fee3558663	last=47f50c7af55 willcl-ark/manpage-desc
 		# Various fixups
@@ -1184,6 +1216,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	k190  -														last=cfc9f871ca3  # Add zsh completion script generation support
 		TODO: Ensure added to distdir like in 30860
 	Needs work: k199 mstampfer/cmake-zsh-completion-only
+	Needs review: 34721 willcl-ark/cmake-shell-completions
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	30930 netinfo_svcs_outonly-28				c4dd1db3f36
@@ -1275,6 +1308,10 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs work: g925 w0xlt-g/hide_conflicted
 	Needs work: 34512 Sjors/2026/02/getblockfields
 	Needs review: 34606 l0rinc/l0rinc/common-warn-high-swap-usage
+	Triage: Needs review: 34640 davidgumberg/2026-02-20-send-minfee-msg
+	Needs review: 34683 willcl-ark/json-rpc-schema
+	# Not worth it? 34713 hebasto/260302-qt-mkdir
+		# NOTE: 30.x backport in #34689
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1578,6 +1615,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	k162  qt_bad_external_signer_msg-22							last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 	Needs work: k271  privkeyio/policy-tapscript-dust-limit
 	Needs work: k272  privkeyio/policy-subdust-fee-penalty
+	Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
@@ -1615,7 +1653,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-     wallet_avoid_newerchange				5962a67e5f5
 	-     enforce_checkpoints					254fabebf5a
 	n/a   checkpoint_update-28					41c985132c9	last= checkpoint_update-29
-		TODO: update
+		TODO: update (see #34677)
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
 	# TODO: revert #28354 ?
@@ -1671,7 +1709,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260218)			ba223403bbc
+	n/a  (bump_version=Knots:20260306)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
@@ -1703,3 +1741,5 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# TODO: 31406 brunoerg/2024-12-fix-test-p2pcompactblocks
 	# TODO: 31410 hebasto/241203-multiwallet
 	# TODO: 33180 fanquake/asan_strict_string
+	# TODO: 34709 rkrux/wallet-tests
+	# TODO: 34725 darosior/2603_psbt_roundtrip
