@@ -466,7 +466,7 @@ checkout v30.0rc1
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	Needs review: 34628 ajtowns/202602-mempool-invtosend
 	34642 wallet_validqueue_drainforunload-28
-	Triage: 34655 l0rinc/l0rinc/coins_view_fuzzer_cleanup
+	34702 docfix_getblock_txfee_condition-22				last=f580cc7e9f2
 	# IPC mining: 34661 ryanofsky/pr/waitmine
 	# Doc fix: 34671 maflcko/2602-doc-guix-less
 		# NOTE: 29.x backport in #34680
@@ -659,7 +659,7 @@ checkout v30.0rc1
 	# Needs community support: 33163 -  # BIP360 quantum
 	# Triage: 34140 roconnor-blockstream/simplicity
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
-	# Needs review & consensus: k238 -  # Reduced Data Temporary Softfork
+	# Needs review & consensus: k238 -	last=a8e9e0e44cf  # Reduced Data Temporary Softfork
 		# + knots#256
 		# + updated fixed seeds ?
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields

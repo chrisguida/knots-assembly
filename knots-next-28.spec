@@ -612,7 +612,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Doc fix: 34671 maflcko/2602-doc-guix-less
 		# NOTE: 29.x backport in #34680
 	Needs review: 34678 chriszeng1010/fix-accept-unknown-sockaddr
-	Triage: 34702 nervana21/2026-02-getblock-fee-optional
+	34702 docfix_getblock_txfee_condition-22				last=f580cc7e9f2
 	Triage: Needs review: 34705 sedited/kernel_unicode_path_patch
 	Needs review: 34743 willcl-ark/protect-manual-evictions
 	34767 fix_qt_intro_chain_except
@@ -817,7 +817,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs community support: 33163 -  # BIP360 quantum
 	# Triage: 34140 roconnor-blockstream/simplicity
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
-	# Needs review & consensus: k238 -  # Reduced Data Temporary Softfork
+	# Needs review & consensus: k238 -	last=a8e9e0e44cf  # Reduced Data Temporary Softfork
 		# + knots#256
 		# + updated fixed seeds ?
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
