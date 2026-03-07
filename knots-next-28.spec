@@ -613,7 +613,6 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# NOTE: 29.x backport in #34680
 	Needs review: 34678 chriszeng1010/fix-accept-unknown-sockaddr
 	34702 docfix_getblock_txfee_condition-22				last=f580cc7e9f2
-	Triage: Needs review: 34705 sedited/kernel_unicode_path_patch
 	Needs review: 34743 willcl-ark/protect-manual-evictions
 	34767 fix_qt_intro_chain_except
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
@@ -795,8 +794,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 34612 fanquake/unused_historgram
 	Needs review? 34613 -  # replace manual byte copies
 	Just removes a Guix dep: 34627 fanquake/replace_sponge
+	34692 andrewtoth/bump_dbcache
 	Review: 34641 l0rinc/l0rinc/dynamic-dbcache
-	OR: 34692 andrewtoth/bump_dbcache
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:

@@ -510,8 +510,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: 29.x backport in #34680
 	# Needs review: 34678 chriszeng1010/fix-accept-unknown-sockaddr
 	34702 docfix_getblock_txfee_condition-22				last=f580cc7e9f2
-	Triage: Needs review: 34705 sedited/kernel_unicode_path_patch
-	Needs review: 34743 willcl-ark/protect-manual-evictions
+	# Needs review: 34743 willcl-ark/protect-manual-evictions
 	34767 fix_qt_intro_chain_except
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
@@ -681,8 +680,9 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34612 leveldb_slim_pr34612-29							last=3feabb203a6 fanquake/unused_historgram
 	# Needs review? 34613 -  # replace manual byte copies
 	# Just removes a Guix dep: 34627 fanquake/replace_sponge
+	34692 dbcache_1GiB-29.1+knots							last=4ae9a10ada9 andrewtoth/bump_dbcache
+		# Excluded doc update & release notes
 	Review: 34641 l0rinc/l0rinc/dynamic-dbcache
-	OR: 34692 andrewtoth/bump_dbcache
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
@@ -1574,6 +1574,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
+		TODO: #34692 has release notes at tip
 	n/a  (cherrypick=a9aee730466)				a9aee730466  # update manpages (build first)
 		# WARNING: Don't forget to add zsh completion!
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
