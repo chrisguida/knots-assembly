@@ -799,7 +799,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# + #33435
 	34692 dbcache_1GiB-29.3+knots							last=4ae9a10ada9 andrewtoth/bump_dbcache
 		# Excluded doc update & release notes
-	34641 dbcache_dynamic-29.3+knots						last=363c043dd44 l0rinc/l0rinc/dynamic-dbcache
+	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
 	# ----- END OF DBCACHE DEFAULT/WARNING -----

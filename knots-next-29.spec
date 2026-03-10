@@ -685,7 +685,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# + #33435
 	34692 dbcache_1GiB-29.3+knots							last=4ae9a10ada9 andrewtoth/bump_dbcache
 		# Excluded doc update & release notes
-	34641 dbcache_dynamic-29.3+knots						last=363c043dd44 l0rinc/l0rinc/dynamic-dbcache
+	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
@@ -924,7 +924,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work: g533  -  # gui: add more detailed address error message
 		# TODO: Maybe a button inside the lineedit to display the error message?
 	# OR: Needs work? g560 w0xlt-g/3_error_message_addr
-	Needs review: 24539   # Add a "tx output spender" index (txospender)
+	# Needs review: 24539   # Add a "tx output spender" index (txospender)
 		# + #34635 ? + #34653 ? + #34747 ? + #34749 ?
 		# Check out #34637
 	Needs review: 34636 svanstaa/improve-index-cache-allocation
