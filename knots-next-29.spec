@@ -680,9 +680,15 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34612 leveldb_slim_pr34612-29							last=3feabb203a6 fanquake/unused_historgram
 	# Needs review? 34613 -  # replace manual byte copies
 	# Just removes a Guix dep: 34627 fanquake/replace_sponge
-	34692 dbcache_1GiB-29.1+knots							last=4ae9a10ada9 andrewtoth/bump_dbcache
+	# ----- DBCACHE DEFAULT/WARNING -----
+	33333 dbcache_too_high_warning-29.3+knots
+		# + #33435
+	34692 dbcache_1GiB-29.3+knots							last=4ae9a10ada9 andrewtoth/bump_dbcache
 		# Excluded doc update & release notes
-	Review: 34641 l0rinc/l0rinc/dynamic-dbcache
+	34641 dbcache_dynamic-29.3+knots						last=363c043dd44 l0rinc/l0rinc/dynamic-dbcache
+		# + #34106 copyright notice + misc fixups
+		# Omitted refactors, doc changes & release notes
+	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
@@ -1574,7 +1580,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
-		TODO: #34692 has release notes at tip
+		TODO: #34692 and #34641 have release notes at tip
 	n/a  (cherrypick=a9aee730466)				a9aee730466  # update manpages (build first)
 		# WARNING: Don't forget to add zsh completion!
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config

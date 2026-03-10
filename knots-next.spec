@@ -637,9 +637,15 @@ checkout v30.0rc1
 	34612 leveldb_slim_pr34612-29							last=3feabb203a6 fanquake/unused_historgram
 	Needs review? 34613 -  # replace manual byte copies
 	Just removes a Guix dep: 34627 fanquake/replace_sponge
-	34692 dbcache_1GiB-29.1+knots							last=4ae9a10ada9 andrewtoth/bump_dbcache
+	# ----- DBCACHE DEFAULT/WARNING -----
+	33333 dbcache_too_high_warning-29.3+knots
+		# + #33435
+	34692 dbcache_1GiB-29.3+knots							last=4ae9a10ada9 andrewtoth/bump_dbcache
 		# Excluded doc update & release notes
-	Review: 34641 l0rinc/l0rinc/dynamic-dbcache
+	34641 dbcache_dynamic-29.3+knots						last=363c043dd44 l0rinc/l0rinc/dynamic-dbcache
+		# + #34106 copyright notice + misc fixups
+		# Omitted refactors, doc changes & release notes
+	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
