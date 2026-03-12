@@ -1083,7 +1083,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work? 31252 rpc_TxToUniv_witScript-28								last=4e128d4f9b2
 		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
-	31560 rpc_dumptxoutset_fifo-29+knots		ab9683b333a	last=509d871fc00 theStack/202412-dumptxoutset-allow_write_to_named_pipe
+	31560 rpc_dumptxoutset_fifo-29+knots		ab9683b333a	last=b19caeea098 theStack/202412-dumptxoutset-allow_write_to_named_pipe
+		# Held back 509d871fc00...b19caeea098 formatting changes
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				667198ee800	last=b25b40ebd5f vasild/peer_cpu_load
