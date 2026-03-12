@@ -887,7 +887,7 @@ checkout v30.0rc1
 	Needs review: 24539   # Add a "tx output spender" index (txospender)
 		# + #34635 ? + #34653 ? + #34747 ? + #34749 ?
 		# Check out #34637
-	Needs review: 34636 svanstaa/improve-index-cache-allocation
+	Needs conceptual review: 34636 svanstaa/improve-index-cache-allocation
 	# Needs review: 33904 kevkevinpal/feat/rest-gettxspendingprevout
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
 	# Needs work: 24897 w0xlt/silent_payment_021
@@ -1026,14 +1026,14 @@ checkout v30.0rc1
 		# Bugfix + Left off re-generation until later
 	k190  feat_zsh_completion-29				c7603c2acd8	last=e3f6d308a97  # Add zsh completion script generation support
 	Needs work: k199 mstampfer/cmake-zsh-completion-only
-	Needs review: 34721 willcl-ark/cmake-shell-completions
+	Needs Knots-specific work: 34721 willcl-ark/cmake-shell-completions
 	Prefer upstream? 30886 rpc_descrprocesspsbt_prevtxs-28+knots	b77212d5ccf	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
 	# Needs work? 31252 rpc_TxToUniv_witScript-28								last=4e128d4f9b2
 		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
 	# Needs concept ACK: 31353 jonatack/2024-11-total-wallet-balance
-	31560 rpc_dumptxoutset_fifo-29+knots		816104a3629	last=32ecef55a47 theStack/202412-dumptxoutset-allow_write_to_named_pipe
+	31560 rpc_dumptxoutset_fifo-29+knots		816104a3629	last=509d871fc00 theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				4160fffe565	last=b25b40ebd5f vasild/peer_cpu_load
@@ -1095,7 +1095,8 @@ checkout v30.0rc1
 	#31.xTODO# 34615 instagibbs/2026-02-disordered_mempool
 	g877  achow101-g/gui-migrate-path
 		+ gui#928
-	Needs review: 34640 davidgumberg/2026-02-20-send-minfee-msg
+	# Needs concept & review: 34640 davidgumberg/2026-02-20-send-minfee-msg
+		# last=b77555c8fba backported as 891343f1c57
 	Needs review: 34683 willcl-ark/json-rpc-schema
 	# Not worth it? 34713 hebasto/260302-qt-mkdir
 		# NOTE: 30.x backport in #34689
@@ -1232,7 +1233,7 @@ checkout v30.0rc1
 	7107  qtnetworkport-29.1+knots				e86a192db59	last=1f37c87d8f2 origin-pull/7107/head
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-29.2+knots				2004cab3982 last=2627c0937f8 sendraw_force
-		FIXME: correct p2a detection to exclude witness data
+		# NOTE: overriding anchor-not-empty does not require also overriding non-mandatory-script-verify-flag-upgradable-witness_program UNLESS RDTS is also merged
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
 		# TODO: 1d3fdc1adde Support ignoring various rejection reasons in PackageMempoolChecks

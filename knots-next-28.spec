@@ -1053,7 +1053,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 24539   # Add a "tx output spender" index (txospender)
 		# + #34635 ? + #34653 ? + #34747 ? + #34749 ?
 		# Check out #34637
-	Needs review: 34636 svanstaa/improve-index-cache-allocation
+	Needs conceptual review: 34636 svanstaa/improve-index-cache-allocation
 	# Needs review: 33904 kevkevinpal/feat/rest-gettxspendingprevout
 	# TODO? BIP 179 (tho... Lightning) - upstream first to get translations?
 	# Needs work: 24897 w0xlt/silent_payment_021
@@ -1221,7 +1221,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	k190  -														last=cfc9f871ca3  # Add zsh completion script generation support
 		TODO: Ensure added to distdir like in 30860
 	Needs work: k199 mstampfer/cmake-zsh-completion-only
-	Needs review: 34721 willcl-ark/cmake-shell-completions
+	Needs Knots-specific work: 34721 willcl-ark/cmake-shell-completions
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
 	30930 netinfo_svcs_outonly-28				c4dd1db3f36
@@ -1313,7 +1313,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs work: g925 w0xlt-g/hide_conflicted
 	Needs work: 34512 Sjors/2026/02/getblockfields
 	Needs review: 34606 l0rinc/l0rinc/common-warn-high-swap-usage
-	Triage: Needs review: 34640 davidgumberg/2026-02-20-send-minfee-msg
+	# Needs concept & review: 34640 davidgumberg/2026-02-20-send-minfee-msg
+		# last=b77555c8fba backported as 891343f1c57
 	Needs review: 34683 willcl-ark/json-rpc-schema
 	# Not worth it? 34713 hebasto/260302-qt-mkdir
 		# NOTE: 30.x backport in #34689
@@ -1449,7 +1450,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# FIXME: Unbind IPv6 on the other port, if its IPv4 bind failed
 	7533  sendraw_force-28+knots				9d121259d75 last=2627c0937f8 sendraw_force
 	(CHECK-LAST)	last= sendraw_force-29+knots
-		FIXME: correct p2a detection to exclude witness data
+		# NOTE: overriding anchor-not-empty does not require also overriding non-mandatory-script-verify-flag-upgradable-witness_program UNLESS RDTS is also merged
 		#28.xTODO# Allow overriding upgradable stuff (to cleanup segwit abuse spam)
 		# NOTE: partial re-PR in #20753 by Marco
 		# TODO: Compatibility with #25532,#29060 if merged
