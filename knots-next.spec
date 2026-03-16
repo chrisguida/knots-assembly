@@ -1,7 +1,7 @@
 timestamp 2026-03-16 14:27:54
 lastapply no-merge
 
-#.. checked up to PR #34832 / gui#933 / knots#275
+#.. checked up to PR #34832 / gui#933 / knots#286
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -653,10 +653,12 @@ checkout v30.0rc1
 	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
+	OR: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	Needs review: 34794 w0xlt/rest-cache-control-headers
+	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1261,6 +1263,7 @@ checkout v30.0rc1
 		#30.xTODO# Squash fixes
 		#30.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
+		TODO: + knots#281
 	559   accept_nonstdtxn						52ea2f1b79b
 		#30.xTODO# Revert or redefine #29843 if it got merged
 	929   tbc									f6f6bd0b253
@@ -1335,6 +1338,8 @@ checkout v30.0rc1
 	Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
 	Needs concept: k270 privkeyio/compile-tr-native
 	Review: k274  umop/toggle-banned-peers-visibility
+	Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
+	Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
 	TODO: Restore user-facing elision post-#34764
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	e11d54ee382
@@ -1428,6 +1433,8 @@ checkout v30.0rc1
 	Needs work: k271  privkeyio/policy-tapscript-dust-limit
 	Needs work: k272  privkeyio/policy-subdust-fee-penalty
 	Needs review: k275  privkeyio/feature-rbf-feerate-mode
+	Needs review: k280  privkeyio/feature-priority-vsize-discount
+	Needs work: k284  BitcoinMechanic/filter-new-parasite
 	#31.xTODO# Consider reverting parts of #33489 (build: Drop support for EOL macOS 13) and #33573
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 	30.xTODO: Consider #33892 policy: allow <minrelay txns in package context if paid for by cpfp

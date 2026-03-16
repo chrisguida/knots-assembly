@@ -1,7 +1,7 @@
 timestamp 2026-03-16 14:27:54
 #lastapply no-merge
 
-#.. checked up to PR #34832 / gui#933 / knots#275
+#.. checked up to PR #34832 / gui#933 / knots#286
 
 checkout v29.3
 @29.x-syslibs
@@ -696,10 +696,12 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
+	OR: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
+	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1321,6 +1323,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		#30.xTODO# Squash fixes
 		#30.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
+		TODO: + knots#281
 	559   accept_nonstdtxn						94748051f48
 		#30.xTODO# Revert or redefine #29843 if it got merged
 	929   tbc									648ac3fc0ac
@@ -1392,6 +1395,8 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
 	# Needs concept: k270 privkeyio/compile-tr-native
 	# Needs work: k274  umop/toggle-banned-peers-visibility
+	# Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
+	# Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	400f5f788a0
 	-     pol_acceptunknownwitness				fb6c14bcc0d
@@ -1484,6 +1489,8 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs work: k271  privkeyio/policy-tapscript-dust-limit
 	# Needs work: k272  privkeyio/policy-subdust-fee-penalty
 	Needs review: k275  privkeyio/feature-rbf-feerate-mode
+	Needs review: k280  privkeyio/feature-priority-vsize-discount
+	Needs work: k284  BitcoinMechanic/filter-new-parasite
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'

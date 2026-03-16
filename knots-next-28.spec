@@ -1,7 +1,7 @@
 timestamp 2026-03-16 14:27:54
 #lastapply no-merge
 
-#.. checked up to PR #34832 / gui#933 / knots#275
+#.. checked up to PR #34832 / gui#933 / knots#286
 
 checkout v28.2
 @28.x-syslibs
@@ -647,6 +647,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs work: k263  privkeyio/fix-vsize-sigops-datacarrier
 	k265  privkeyio/fix-socks5-credential-logging
 	k266  extsigner_sanitychk_fingerprint-26				last=acc78e798fa privkeyio/fix-external-signer-fingerprint-validation
+	Triage: Needs work: k277  Bortlesboat/fix-ban-table-refresh
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -810,10 +811,12 @@ NM	32187 zmq_devirtual_destructor-0.12
 	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
+	OR: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	Needs review: 34794 w0xlt/rest-cache-control-headers
+	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1479,6 +1482,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		#29.xTODO# Squash fixes
 		#29.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
+		TODO: + knots#281
 	559   accept_nonstdtxn-26					e72688bf354	last=2e2f48f871c accept_nonstdtxn
 	 929 tbc-25									fe176fa7028	last=32c37e2d493 tbc
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
@@ -1555,6 +1559,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
 	Needs concept: k270 privkeyio/compile-tr-native
 	Review: k274  umop/toggle-banned-peers-visibility
+	Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
+	Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness
@@ -1638,6 +1644,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs work: k271  privkeyio/policy-tapscript-dust-limit
 	Needs work: k272  privkeyio/policy-subdust-fee-penalty
 	Needs review: k275  privkeyio/feature-rbf-feerate-mode
+	Needs review: k280  privkeyio/feature-priority-vsize-discount
+	Needs work: k284  BitcoinMechanic/filter-new-parasite
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
