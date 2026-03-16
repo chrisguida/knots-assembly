@@ -1,7 +1,7 @@
-timestamp 2026-03-06 06:55:24
+timestamp 2026-03-16 14:27:54
 #lastapply no-merge
 
-#.. checked up to PR #34750 / gui#931 / knots#275
+#.. checked up to PR #34832 / gui#933 / knots#275
 
 checkout v29.3
 @29.x-syslibs
@@ -17,6 +17,7 @@ checkout v29.3
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26					cf8a2876f8c
 	# Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
+	34754 hebasto/260306-qt6-gcc16
 # SYSLIBS:
 	2241  sys_leveldb							8ed686b2e1a	last=bd2be933f26 sys_leveldb-30
 		# Related: #32447
@@ -62,6 +63,8 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# If needed: 34690 maflcko/2602-test-zmq
 		# NOTE: 30.x backport in #34689
 	# If needed: 34728 maflcko/2603-test-wallet-assume-sync
+	Triage: 34815 willcl-ark/bump-cirruslabs-actions
+	If needed: 34820 maflcko/2603-test-windows-revert
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	18033f85c25
 	13789 asm_bypass_cxxflags					4e1c7852279
@@ -512,6 +515,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34702 docfix_getblock_txfee_condition-22				last=f580cc7e9f2
 	# Needs review: 34743 willcl-ark/protect-manual-evictions
 	34767 fix_qt_intro_chain_except
+	# Triage: 34787 fanquake/ci_test_macos_codesigning
+		# NOTE: 31.x backport in #34800
+		# NOTE: 30.x backport in #34805
+	Triage: 34812 w0xlt/fix-33471-cjdns-externalip
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
 	-     restore_guix_ppc64le-28				9688bc64ace
@@ -571,6 +578,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 32665 fanquake/boost_shrink
 	-     fix_secp256k1_bugs-29					236173e4746
 		# bitcoin-core/secp256k1#1731,1749,1821 (diff-minimised and fix-only)
+	Triage: 34825 fanquake/capnp_1_4_0
 @29.x-knots
 # PERFORMANCE:
 	33915 qa_getprevrel_retrydownload-28		681f670c4d5
@@ -688,8 +696,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
+	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
+	# Needs review: 34794 w0xlt/rest-cache-control-headers
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -713,6 +723,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# + knots#256
 		# + updated fixed seeds ?
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
+	# Needs review & consensus: 34826 sashabeton/p2skh
 # FUNCTIONALITY:
 	#-     rm_kernel_lib							84b7c6adf43
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
@@ -1158,6 +1169,11 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34683 willcl-ark/json-rpc-schema
 	# Not worth it? 34713 hebasto/260302-qt-mkdir
 		# NOTE: 30.x backport in #34689
+	# Not worth it? 34759 theStack/202603-walletdb-clear_out_secret_data
+	# Needs review: 34765 overcookedpanda/fix-analyzepsbt-invalid-sig
+	34776 hodlinator/2026/03/guix_clean_destructive
+		NOTE: 31.x backport in #34800
+	Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1546,6 +1562,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		a819d4d6b4d
+	# Triage: 34808 hebasto/260311-qt-ts-source
 	7483  svg_icon-29.2+knots					2b6bfcfd7fe
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
@@ -1568,7 +1585,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260306)			931ea36c899
+	n/a  (bump_version=knots20260316)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=dce09dbcdc4)				dce09dbcdc4  # release notes: write/update, including change log and credits
@@ -1603,3 +1620,4 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# TODO: 33180 fanquake/asan_strict_string
 	# TODO: 34709 rkrux/wallet-tests
 	# TODO: 34725 darosior/2603_psbt_roundtrip
+	# TODO: 34813 davidgumberg/2026-03-11-txmempoolcslockorder

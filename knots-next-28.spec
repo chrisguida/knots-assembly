@@ -1,7 +1,7 @@
-timestamp 2026-03-06 06:55:24
+timestamp 2026-03-16 14:27:54
 #lastapply no-merge
 
-#.. checked up to PR #34750 / gui#931 / knots#275
+#.. checked up to PR #34832 / gui#933 / knots#275
 
 checkout v28.2
 @28.x-syslibs
@@ -25,6 +25,7 @@ checkout v28.2
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26
 	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
+	Triage: 34754 hebasto/260306-qt6-gcc16
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -67,6 +68,8 @@ checkout v28.2
 	# If needed: 34690 maflcko/2602-test-zmq
 		# NOTE: 30.x backport in #34689
 	Triage: If needed: 34728 maflcko/2603-test-wallet-assume-sync
+	Triage: 34815 willcl-ark/bump-cirruslabs-actions
+	If needed: 34820 maflcko/2603-test-windows-revert
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail
 	18818 guix_reltar_autogen_distclean			5bd6cb2eb0a	last=b5a164d9155 fix_gitian_src_202004
@@ -615,6 +618,10 @@ NM	32187 zmq_devirtual_destructor-0.12
 	34702 docfix_getblock_txfee_condition-22				last=f580cc7e9f2
 	Needs review: 34743 willcl-ark/protect-manual-evictions
 	34767 fix_qt_intro_chain_except
+	Triage: 34787 fanquake/ci_test_macos_codesigning
+		NOTE: 31.x backport in #34800
+		NOTE: 30.x backport in #34805
+	Triage: 34812 w0xlt/fix-33471-cjdns-externalip
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -671,6 +678,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32665 fanquake/boost_shrink
 	Triage: -     fix_secp256k1_bugs-29
 		# bitcoin-core/secp256k1#1731,1749,1821 (diff-minimised and fix-only)
+	Triage: 34825 fanquake/capnp_1_4_0
 @28.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-28+k					723ceffb7b7	last=3efb06b858b rm_minisketch-29+syslibs
@@ -802,8 +810,10 @@ NM	32187 zmq_devirtual_destructor-0.12
 	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
+	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
+	Needs review: 34794 w0xlt/rest-cache-control-headers
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -827,6 +837,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# + knots#256
 		# + updated fixed seeds ?
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
+	# Needs review & consensus: 34826 sashabeton/p2skh
 # FUNCTIONALITY:
 	-     rm_kernel_lib							84b7c6adf43
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
@@ -1318,6 +1329,11 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs review: 34683 willcl-ark/json-rpc-schema
 	# Not worth it? 34713 hebasto/260302-qt-mkdir
 		# NOTE: 30.x backport in #34689
+	# Not worth it? 34759 theStack/202603-walletdb-clear_out_secret_data
+	Needs review: 34765 overcookedpanda/fix-analyzepsbt-invalid-sig
+	34776 hodlinator/2026/03/guix_clean_destructive
+		NOTE: 31.x backport in #34800
+	Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1692,6 +1708,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		d4c1e555559
+	Triage: 34808 hebasto/260311-qt-ts-source
 	7483  svg_icon-28+knots						5b18d9e534b	last=cd64df8af62 svg_icon-29.2+knots
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 		FIXME: nsis looks for rendered_icons in srcdir
@@ -1715,7 +1732,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260306)			ba223403bbc
+	n/a  (bump_version=Knots:20260316)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
@@ -1749,3 +1766,4 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# TODO: 33180 fanquake/asan_strict_string
 	# TODO: 34709 rkrux/wallet-tests
 	# TODO: 34725 darosior/2603_psbt_roundtrip
+	# TODO: 34813 davidgumberg/2026-03-11-txmempoolcslockorder

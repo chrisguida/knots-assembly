@@ -1,7 +1,7 @@
-timestamp 2026-03-06 06:55:24
+timestamp 2026-03-16 14:27:54
 lastapply no-merge
 
-#.. checked up to PR #34750 / gui#931 / knots#275
+#.. checked up to PR #34832 / gui#933 / knots#275
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -18,6 +18,7 @@ checkout v30.0rc1
 		NOTE: 30.x backport in #34689
 	34462 fix_bsd_batchprio-26
 	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
+	34754 hebasto/260306-qt6-gcc16
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -63,6 +64,8 @@ checkout v30.0rc1
 	# If needed: 34690 maflcko/2602-test-zmq
 		# NOTE: 30.x backport in #34689
 	# If needed: 34728 maflcko/2603-test-wallet-assume-sync
+	Triage: 34815 willcl-ark/bump-cirruslabs-actions
+	If needed: 34820 maflcko/2603-test-windows-revert
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	6b3aa212298
 	13789 asm_bypass_cxxflags					9de0f072503
@@ -476,6 +479,10 @@ checkout v30.0rc1
 	Triage: Needs review: 34705 sedited/kernel_unicode_path_patch
 	Needs review: 34743 willcl-ark/protect-manual-evictions
 	34767 fix_qt_intro_chain_except
+	Triage: 34787 fanquake/ci_test_macos_codesigning
+		NOTE: 31.x backport in #34800
+		NOTE: 30.x backport in #34805
+	Triage: 34812 w0xlt/fix-33471-cjdns-externalip
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -535,6 +542,7 @@ checkout v30.0rc1
 	Needs review: 33851 fanquake/xcb_util_updates
 	Triage: -     fix_secp256k1_bugs-29
 		# bitcoin-core/secp256k1#1731,1749,1821 (diff-minimised and fix-only)
+	Triage: 34825 fanquake/capnp_1_4_0
 @30.x-knots
 # PERFORMANCE:
 	33915 maflcko/2511-test-retry-prev-donwload
@@ -645,8 +653,10 @@ checkout v30.0rc1
 	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
+	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
+	Needs review: 34794 w0xlt/rest-cache-control-headers
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -670,6 +680,7 @@ checkout v30.0rc1
 		# + knots#256
 		# + updated fixed seeds ?
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
+	# Needs review & consensus: 34826 sashabeton/p2skh
 # FUNCTIONALITY:
 	#-     rm_kernel_lib							84b7c6adf43
 		# TODO: Support libbitcoinkernel (see 9da0bc3eba7 history for incomplete attempt)
@@ -1100,6 +1111,11 @@ checkout v30.0rc1
 	Needs review: 34683 willcl-ark/json-rpc-schema
 	# Not worth it? 34713 hebasto/260302-qt-mkdir
 		# NOTE: 30.x backport in #34689
+	# Not worth it? 34759 theStack/202603-walletdb-clear_out_secret_data
+	Needs review: 34765 overcookedpanda/fix-analyzepsbt-invalid-sig
+	34776 hodlinator/2026/03/guix_clean_destructive
+		NOTE: 31.x backport in #34800
+	Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	-     qt_createunsigned_use_psbtops			a800d52314e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1319,6 +1335,7 @@ checkout v30.0rc1
 	Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
 	Needs concept: k270 privkeyio/compile-tr-native
 	Review: k274  umop/toggle-banned-peers-visibility
+	TODO: Restore user-facing elision post-#34764
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	e11d54ee382
 	-     pol_acceptunknownwitness				6d158fd7fbd
@@ -1418,7 +1435,7 @@ checkout v30.0rc1
 # Non-upstreamed Knots compatibility:
 	#31.xTODO# Consider reverting #34544 ? (disallow wallets with . or .. in path)
 	#31.xTODO# maybe revert #34197 rpc, net: deprecate startingheight field of getpeerinfo RPC
-		# ...and gui#921 (same)
+		# ...and gui#921 (same) and #24796
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
 	30.xTODO: maybe revert #32721 (MERGED) achow101:remove-deprecated-balances
 	#30.xTODO# -     compat_bumpfee_require_replacable
@@ -1497,6 +1514,7 @@ checkout v30.0rc1
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		6b5354d10d6
+	Triage: 34808 hebasto/260311-qt-ts-source
 	7483  svg_icon-29.2+knots					093b55fc9ce
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
@@ -1518,7 +1536,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260306)			d5593bea7a1
+	n/a  (bump_version=knots20260316)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits
@@ -1552,3 +1570,4 @@ checkout v30.0rc1
 	# TODO: 33180 fanquake/asan_strict_string
 	# TODO: 34709 rkrux/wallet-tests
 	# TODO: 34725 darosior/2603_psbt_roundtrip
+	# TODO: 34813 davidgumberg/2026-03-11-txmempoolcslockorder
