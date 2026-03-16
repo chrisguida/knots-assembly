@@ -499,7 +499,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
 	# Needs review: 34582 maflcko/2602-int-arg
 	34597 fix_SetStdinEcho_ub-0.20
-	34603 fix_win_IsSymlink-29.3							last=fda778d1cc3
+	34603 fix_win_IsSymlink-29.3							last=9333d26f670
 	# Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	# Needs review: 34628 ajtowns/202602-mempool-invtosend
@@ -1375,7 +1375,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs work: k208 1440000bytes/sendtx-ui
 	# Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
 	# Needs concept: k270 privkeyio/compile-tr-native
-	Review: k274  umop/toggle-banned-peers-visibility
+	# Needs work: k274  umop/toggle-banned-peers-visibility
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	400f5f788a0
 	-     pol_acceptunknownwitness				fb6c14bcc0d
