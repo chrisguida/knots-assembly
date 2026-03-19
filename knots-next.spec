@@ -64,8 +64,9 @@ checkout v30.0rc1
 	# If needed: 34690 maflcko/2602-test-zmq
 		# NOTE: 30.x backport in #34689
 	# If needed: 34728 maflcko/2603-test-wallet-assume-sync
-	Triage: 34815 willcl-ark/bump-cirruslabs-actions
-	If needed: 34820 maflcko/2603-test-windows-revert
+	# Needed in 2026 April: 34815 willcl-ark/bump-cirruslabs-actions
+		# See also: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+	# Needed in 2027 October (Python 3.16): 34820 maflcko/2603-test-windows-revert
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	6b3aa212298
 	13789 asm_bypass_cxxflags					9de0f072503
@@ -482,7 +483,7 @@ checkout v30.0rc1
 	Triage: 34787 fanquake/ci_test_macos_codesigning
 		NOTE: 31.x backport in #34800
 		NOTE: 30.x backport in #34805
-	Triage: 34812 w0xlt/fix-33471-cjdns-externalip
+	Needs concept & review: 34812 w0xlt/fix-33471-cjdns-externalip
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -542,7 +543,7 @@ checkout v30.0rc1
 	Needs review: 33851 fanquake/xcb_util_updates
 	Triage: -     fix_secp256k1_bugs-29
 		# bitcoin-core/secp256k1#1731,1749,1821 (diff-minimised and fix-only)
-	Triage: 34825 fanquake/capnp_1_4_0
+	Multiprocess-only: 34825 fanquake/capnp_1_4_0
 @30.x-knots
 # PERFORMANCE:
 	33915 maflcko/2511-test-retry-prev-donwload
@@ -653,7 +654,7 @@ checkout v30.0rc1
 	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
-	OR: k279  privkeyio/feature-autosize-dbcache
+	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
@@ -952,7 +953,7 @@ checkout v30.0rc1
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	Prefer upstream? 27034 rpc_importaddr_for_descwallet-27+k	8f24b3dc7a0	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 rpc_getpeerinfo_lastblockann-28		8cd4ac526fd	last=95b673929b3 LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28		8cd4ac526fd	last=d46a3a5cce4 LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
 	27216 rpc_getaddressinfo_isactive			afa55a8fdd6	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
@@ -1263,7 +1264,6 @@ checkout v30.0rc1
 		#30.xTODO# Squash fixes
 		#30.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
-		TODO: + knots#281
 	559   accept_nonstdtxn						52ea2f1b79b
 		#30.xTODO# Revert or redefine #29843 if it got merged
 	929   tbc									f6f6bd0b253
@@ -1502,6 +1502,7 @@ checkout v30.0rc1
 		TODO? "Upgrade" button to open website - or even download+verify??
 			-DUPGRADE_COMMAND='...' for PPA/etc?
 	-     rwconf_policy-29.1+knots				91b5f982db8
+		TODO: + knots#281
 		# + knots#245
 		# + knots#197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
 		# Includes Knots policy changes for simplification of final rebase process

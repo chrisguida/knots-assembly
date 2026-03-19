@@ -17,7 +17,6 @@ checkout v29.3
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26					cf8a2876f8c
 	# Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
-	34754 hebasto/260306-qt6-gcc16
 # SYSLIBS:
 	2241  sys_leveldb							8ed686b2e1a	last=bd2be933f26 sys_leveldb-30
 		# Related: #32447
@@ -63,8 +62,9 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# If needed: 34690 maflcko/2602-test-zmq
 		# NOTE: 30.x backport in #34689
 	# If needed: 34728 maflcko/2603-test-wallet-assume-sync
-	Triage: 34815 willcl-ark/bump-cirruslabs-actions
-	If needed: 34820 maflcko/2603-test-windows-revert
+	# Needed in 2026 April: 34815 willcl-ark/bump-cirruslabs-actions
+		# See also: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+	# Needed in 2027 October (Python 3.16): 34820 maflcko/2603-test-windows-revert
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	18033f85c25
 	13789 asm_bypass_cxxflags					4e1c7852279
@@ -514,11 +514,12 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34678 chriszeng1010/fix-accept-unknown-sockaddr
 	34702 docfix_getblock_txfee_condition-22				last=f580cc7e9f2
 	# Needs review: 34743 willcl-ark/protect-manual-evictions
+	# Only FindQt fix applicable, not worth it? 34754 hebasto/260306-qt6-gcc16
 	34767 fix_qt_intro_chain_except
 	# Triage: 34787 fanquake/ci_test_macos_codesigning
 		# NOTE: 31.x backport in #34800
 		# NOTE: 30.x backport in #34805
-	Triage: 34812 w0xlt/fix-33471-cjdns-externalip
+	# Needs concept & review: 34812 w0xlt/fix-33471-cjdns-externalip
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
 	-     restore_guix_ppc64le-28				9688bc64ace
@@ -578,7 +579,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 32665 fanquake/boost_shrink
 	-     fix_secp256k1_bugs-29					236173e4746
 		# bitcoin-core/secp256k1#1731,1749,1821 (diff-minimised and fix-only)
-	Triage: 34825 fanquake/capnp_1_4_0
+	# Multiprocess-only: 34825 fanquake/capnp_1_4_0
 @29.x-knots
 # PERFORMANCE:
 	33915 qa_getprevrel_retrydownload-28		681f670c4d5
@@ -696,12 +697,12 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
-	OR: k279  privkeyio/feature-autosize-dbcache
+	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
-	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
+	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -992,7 +993,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	27034 rpc_importaddr_for_descwallet-27+k	ca660cb3801	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 rpc_getpeerinfo_lastblockann-28		2530450955b	last=95b673929b3 LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28		2530450955b	last=d46a3a5cce4 LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
 	27216 rpc_getaddressinfo_isactive			0cc4aef0bec	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
@@ -1173,9 +1174,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: 30.x backport in #34689
 	# Not worth it? 34759 theStack/202603-walletdb-clear_out_secret_data
 	# Needs review: 34765 overcookedpanda/fix-analyzepsbt-invalid-sig
-	34776 hodlinator/2026/03/guix_clean_destructive
-		NOTE: 31.x backport in #34800
-	Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
+	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^
+	# Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1323,7 +1323,6 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		#30.xTODO# Squash fixes
 		#30.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
-		TODO: + knots#281
 	559   accept_nonstdtxn						94748051f48
 		#30.xTODO# Revert or redefine #29843 if it got merged
 	929   tbc									648ac3fc0ac
@@ -1551,6 +1550,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		# TODO? "Upgrade" button to open website - or even download+verify??
 			# -DUPGRADE_COMMAND='...' for PPA/etc?
 	-     rwconf_policy-29.3+knots				8b50da2a034
+		TODO: + knots#281
 		# + knots#245
 		# + knots#197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
 		# Includes Knots policy changes for simplification of final rebase process

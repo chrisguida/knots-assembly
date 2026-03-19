@@ -25,7 +25,6 @@ checkout v28.2
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26
 	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
-	Triage: 34754 hebasto/260306-qt6-gcc16
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -68,8 +67,9 @@ checkout v28.2
 	# If needed: 34690 maflcko/2602-test-zmq
 		# NOTE: 30.x backport in #34689
 	Triage: If needed: 34728 maflcko/2603-test-wallet-assume-sync
-	Triage: 34815 willcl-ark/bump-cirruslabs-actions
-	If needed: 34820 maflcko/2603-test-windows-revert
+	Triage: Needed in 2026 April: 34815 willcl-ark/bump-cirruslabs-actions
+		# See also: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+	# Needed in 2027 October (Python 3.16): 34820 maflcko/2603-test-windows-revert
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail
 	18818 guix_reltar_autogen_distclean			5bd6cb2eb0a	last=b5a164d9155 fix_gitian_src_202004
@@ -621,7 +621,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 34787 fanquake/ci_test_macos_codesigning
 		NOTE: 31.x backport in #34800
 		NOTE: 30.x backport in #34805
-	Triage: 34812 w0xlt/fix-33471-cjdns-externalip
+	Triage: Needs concept & review: 34812 w0xlt/fix-33471-cjdns-externalip
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -679,7 +679,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32665 fanquake/boost_shrink
 	Triage: -     fix_secp256k1_bugs-29
 		# bitcoin-core/secp256k1#1731,1749,1821 (diff-minimised and fix-only)
-	Triage: 34825 fanquake/capnp_1_4_0
+	Triage: Multiprocess-only: 34825 fanquake/capnp_1_4_0
 @28.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-28+k					723ceffb7b7	last=3efb06b858b rm_minisketch-29+syslibs
@@ -811,7 +811,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
-	OR: k279  privkeyio/feature-autosize-dbcache
+	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
@@ -1482,7 +1482,6 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		#29.xTODO# Squash fixes
 		#29.xTODO# Move blockreconstructionextratxn (and others?) from rwconf_policy?
 		# TODO: when we can enable block filters post-pruning, revert 81d696e132c
-		TODO: + knots#281
 	559   accept_nonstdtxn-26					e72688bf354	last=2e2f48f871c accept_nonstdtxn
 	 929 tbc-25									fe176fa7028	last=32c37e2d493 tbc
 		# TODO: Drop ᵇTBC and ˢTBC units for newbies who are getting TBC via tbc_font
@@ -1696,6 +1695,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		TODO? "Upgrade" button to open website - or even download+verify??
 			-DUPGRADE_COMMAND='...' for PPA/etc?
 	-     rwconf_policy-28+knots				6fd67aa463d	last=86056333700 rwconf_policy-29+knots
+		TODO: + knots#281
 		# Includes Knots policy changes for simplification of final rebase process
 		28.xTODO: revert #33106
 		TODO? bump up blockreconstructionextratxn higher? and set a sane blockreconstructionextratxnsize default
