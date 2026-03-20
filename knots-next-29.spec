@@ -520,8 +520,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: 31.x backport in #34800
 		# NOTE: 30.x backport in #34805
 	# Needs concept & review: 34812 w0xlt/fix-33471-cjdns-externalip
-	n/a   Typo fix from #33152
-	34870 furszy/2026_feebumper_crash_fix
+	n/a   fix_typos_from_pr33152-29
+	34870 fix_wallet_bump_fail_crash-29						last=6072a2a6a1f furszy/2026_feebumper_crash_fix
 	# Needs work: 34872 w0xlt/wallet-mixed-input-history-only
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c

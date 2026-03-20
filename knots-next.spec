@@ -484,8 +484,8 @@ checkout v30.0rc1
 		NOTE: 31.x backport in #34800
 		NOTE: 30.x backport in #34805
 	Needs concept & review: 34812 w0xlt/fix-33471-cjdns-externalip
-	n/a   Typo fix from #33152
-	34870 furszy/2026_feebumper_crash_fix
+	n/a   fix_typos_from_pr33152-29
+	34870 fix_wallet_bump_fail_crash-29						last=6072a2a6a1f furszy/2026_feebumper_crash_fix
 	Needs work: 34872 w0xlt/wallet-mixed-input-history-only
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
