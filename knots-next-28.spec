@@ -1,7 +1,7 @@
-timestamp 2026-03-16 14:27:54
+timestamp 2026-03-20 15:00:27
 #lastapply no-merge
 
-#.. checked up to PR #34832 / gui#933 / knots#286
+#.. checked up to PR #34879 / gui#933 / knots#288
 
 checkout v28.2
 @28.x-syslibs
@@ -622,6 +622,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 		NOTE: 31.x backport in #34800
 		NOTE: 30.x backport in #34805
 	Triage: Needs concept & review: 34812 w0xlt/fix-33471-cjdns-externalip
+	n/a   Typo fix from #33152
+	Triage: 34870 furszy/2026_feebumper_crash_fix
+	Needs work: 34872 w0xlt/wallet-mixed-input-history-only
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -817,6 +820,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	Needs review: 34794 w0xlt/rest-cache-control-headers
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
+	Needs work: k287 privkeyio/uncap-scriptcheck-threads
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1178,7 +1182,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1560,6 +1564,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Review: k274  umop/toggle-banned-peers-visibility
 	Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
+	k288 SpectrGen1/issue-177-better-progress-bar
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness
@@ -1740,7 +1745,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260316)			ba223403bbc
+	n/a  (bump_version=Knots:20260320)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320

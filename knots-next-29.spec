@@ -1,7 +1,7 @@
-timestamp 2026-03-16 14:27:54
+timestamp 2026-03-20 15:00:27
 #lastapply no-merge
 
-#.. checked up to PR #34832 / gui#933 / knots#286
+#.. checked up to PR #34879 / gui#933 / knots#288
 
 checkout v29.3
 @29.x-syslibs
@@ -520,6 +520,9 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: 31.x backport in #34800
 		# NOTE: 30.x backport in #34805
 	# Needs concept & review: 34812 w0xlt/fix-33471-cjdns-externalip
+	n/a   Typo fix from #33152
+	34870 furszy/2026_feebumper_crash_fix
+	# Needs work: 34872 w0xlt/wallet-mixed-input-history-only
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
 	-     restore_guix_ppc64le-28				9688bc64ace
@@ -703,6 +706,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
+	Needs work: k287 privkeyio/uncap-scriptcheck-threads
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1048,7 +1052,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1396,6 +1400,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs work: k274  umop/toggle-banned-peers-visibility
 	# Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	# Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
+	k288 SpectrGen1/issue-177-better-progress-bar
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	400f5f788a0
 	-     pol_acceptunknownwitness				fb6c14bcc0d
@@ -1592,7 +1597,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260316)			931ea36c899
+	n/a  (bump_version=knots20260320)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=dce09dbcdc4)				dce09dbcdc4  # release notes: write/update, including change log and credits
