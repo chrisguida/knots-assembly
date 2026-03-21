@@ -706,7 +706,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
-	Needs work: k287 privkeyio/uncap-scriptcheck-threads
+	k287 more_scriptcheck_threads-29						last=2644197eff8 privkeyio/uncap-scriptcheck-threads
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -726,6 +726,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs community support: 33163 -  # BIP360 quantum
 	# Triage: 34140 roconnor-blockstream/simplicity
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
+	k289  rdts_not_enforced_prompt
 	# Needs review & consensus: k238 -	last=a8e9e0e44cf  # Reduced Data Temporary Softfork
 		# + knots#256
 		# + updated fixed seeds ?
