@@ -1495,7 +1495,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	# Needs work: k272  privkeyio/policy-subdust-fee-penalty
 	# Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	# Needs review: k280  privkeyio/feature-priority-vsize-discount
-	Needs work: k284  BitcoinMechanic/filter-new-parasite
+	# Needs work: k284  BitcoinMechanic/filter-new-parasite
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
