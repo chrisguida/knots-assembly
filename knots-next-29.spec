@@ -1,7 +1,7 @@
-timestamp 2026-03-20 15:00:27
+timestamp 2026-03-23 09:04:26
 #lastapply no-merge
 
-#.. checked up to PR #34879 / gui#933 / knots#288
+#.. checked up to PR #34905 / gui#933 / knots#289
 
 checkout v29.3
 @29.x-syslibs
@@ -523,6 +523,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	n/a   fix_typos_from_pr33152-29
 	34870 fix_wallet_bump_fail_crash-29						last=6072a2a6a1f furszy/2026_feebumper_crash_fix
 	# Needs work: 34872 w0xlt/wallet-mixed-input-history-only
+	34888 furszy/2026_wallet_total_amount_bad_comparison
+	Review: 34893 w0xlt/psbt-proprietary-merge-fix
+	Review: 34897 mzumsande/202603_index_sync_dont_commit_ahead
+	# Needs review: 34903 HouseOfHufflepuff/wallet-importdescriptors-validate-before-rescan
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
 	-     restore_guix_ppc64le-28				9688bc64ace
@@ -541,6 +545,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	-     fix_alertnotify_winquoting			4d758179117
 	-     torcontrol_avoid_bindany_connect		0c4777cd590
 	-     fix_tor_common_bind-29.2				4e6f02a1a79
+		# Core duplicate: #34892
 	# Needs review: k254 privkeyio/cmake-hardening-module
 	# Needs work? k237 privkeyio/159-build-checks
 	k244  fix_qt_amtfield_infinityevent			59e258d1c5d
@@ -1599,7 +1604,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260320)			931ea36c899
+	n/a  (bump_version=knots20260323)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=dce09dbcdc4)				dce09dbcdc4  # release notes: write/update, including change log and credits

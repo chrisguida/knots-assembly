@@ -1,7 +1,7 @@
-timestamp 2026-03-20 15:00:27
+timestamp 2026-03-23 09:04:26
 lastapply no-merge
 
-#.. checked up to PR #34879 / gui#933 / knots#288
+#.. checked up to PR #34905 / gui#933 / knots#289
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -487,6 +487,10 @@ checkout v30.0rc1
 	n/a   fix_typos_from_pr33152-29
 	34870 fix_wallet_bump_fail_crash-29						last=6072a2a6a1f furszy/2026_feebumper_crash_fix
 	Needs work: 34872 w0xlt/wallet-mixed-input-history-only
+	34888 furszy/2026_wallet_total_amount_bad_comparison
+	Review: 34893 w0xlt/psbt-proprietary-merge-fix
+	Review: 34897 mzumsande/202603_index_sync_dont_commit_ahead
+	Needs review: 34903 HouseOfHufflepuff/wallet-importdescriptors-validate-before-rescan
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -505,6 +509,7 @@ checkout v30.0rc1
 	-     fix_alertnotify_winquoting			108e6f088c5
 	-     torcontrol_avoid_bindany_connect		3b3e298f984
 	-     fix_tor_common_bind-29.2				5c116044d54
+		# Core duplicate: #34892
 	FIXME: DO NOT RELEASE WITHOUT FIXING WALLET DELETION BUG
 		Ensure /wallet.dat doesn't rm /
 		Ensure user-made files in wallet dir survive
@@ -1549,7 +1554,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260320)			d5593bea7a1
+	n/a  (bump_version=knots20260323)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits
