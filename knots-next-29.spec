@@ -1179,7 +1179,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: 30.x backport in #34689
 	# Not worth it? 34759 theStack/202603-walletdb-clear_out_secret_data
 	# Needs review: 34765 overcookedpanda/fix-analyzepsbt-invalid-sig
-	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^
+	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^^^
 	# Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
@@ -1401,7 +1401,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs work: k274  umop/toggle-banned-peers-visibility
 	# Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	# Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
-	k288 SpectrGen1/issue-177-better-progress-bar
+	k288 qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	400f5f788a0
 	-     pol_acceptunknownwitness				fb6c14bcc0d

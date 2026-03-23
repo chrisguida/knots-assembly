@@ -1345,7 +1345,7 @@ checkout v30.0rc1
 	Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
 	TODO: Restore user-facing elision post-#34764
-	k288 SpectrGen1/issue-177-better-progress-bar
+	k288 qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	e11d54ee382
 	-     pol_acceptunknownwitness				6d158fd7fbd

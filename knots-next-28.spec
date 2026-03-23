@@ -1564,7 +1564,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Review: k274  umop/toggle-banned-peers-visibility
 	Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
-	k288 SpectrGen1/issue-177-better-progress-bar
+	k288 qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness
