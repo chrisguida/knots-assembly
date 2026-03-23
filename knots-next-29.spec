@@ -706,7 +706,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
-	k287 more_scriptcheck_threads-29						last=2644197eff8 privkeyio/uncap-scriptcheck-threads
+	k287 privkeyio/uncap-scriptcheck-threads				last=3876a4b3c72
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1179,7 +1179,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: 30.x backport in #34689
 	# Not worth it? 34759 theStack/202603-walletdb-clear_out_secret_data
 	# Needs review: 34765 overcookedpanda/fix-analyzepsbt-invalid-sig
-	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^^^
+	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^^^^^^^^^
 	# Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
@@ -1410,7 +1410,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		# If mempool-knots.dat is ever extended to store easily manipulatable data, port Xor stuff over
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 		# Reverts (needed for lock logic): 192dac1d337 [refactor] Cleanup BlockAssembler mempool usage
-	7219  rbf_opts-29+knots						1f726c1879c	# Latest code now
+m	7219  rbf_opts-29+knots						1f726c1879c	# Latest code now
 	-     truc_opts-29.2+knots					add0aa48043
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-29+knots				a90785e2832	last=1dfe27e49ab
@@ -1426,10 +1426,10 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		# Adds sendraw_force compat & config option to restore old behaviour (for -corepolicy later)
 		# TODO? Revise byte counting to consider input/output waste
 	-     datacarriercost-29+knots				8009ba5faaa
-		TODO: Review knots#268
+		# + knots#268 (partial; remaining in rwconf_policy)
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		#30.xTODO# Add tests and make sure boundaries are correct
-	-     acceptnonstddatacarrier-29+knots		22fd60450d3
+m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 		#30.xTODO# TODO: Add to getmempoolinfo like #29954 (see b02aab950af)
 		# FIXME: Data before OP_RETURN (and non-push opcodes??) should count the data as non-standard (but can't predict everything, so wait until there's a need? 75f1652b447)
 	# ---- END DATACARRIER ----
@@ -1493,8 +1493,8 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	k162  qt_bad_external_signer_msg-22			b1bdf42d54d	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 	# Needs work: k271  privkeyio/policy-tapscript-dust-limit
 	# Needs work: k272  privkeyio/policy-subdust-fee-penalty
-	Needs review: k275  privkeyio/feature-rbf-feerate-mode
-	Needs review: k280  privkeyio/feature-priority-vsize-discount
+	# Needs review: k275  privkeyio/feature-rbf-feerate-mode
+	# Needs review: k280  privkeyio/feature-priority-vsize-discount
 	Needs work: k284  BitcoinMechanic/filter-new-parasite
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
@@ -1556,6 +1556,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		# TODO? "Upgrade" button to open website - or even download+verify??
 			# -DUPGRADE_COMMAND='...' for PPA/etc?
 	-     rwconf_policy-29.3+knots				8b50da2a034
+		TODO: + knots#268 (partial; remaining in datacarriercost)
 		TODO: + knots#281
 		# + knots#245
 		# + knots#197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
