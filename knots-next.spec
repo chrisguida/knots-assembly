@@ -469,7 +469,8 @@ checkout v30.0rc1
 	Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	Needs review: 34628 ajtowns/202602-mempool-invtosend
-	34642 wallet_validqueue_drainforunload-28
+	34642 wallet_validqueue_drainforunload-29.3+knots
+		# NOTE: Subtly depends on #30221 (and the PRs bundled with it)
 	34702 docfix_getblock_txfee_condition-22				last=f580cc7e9f2
 	# IPC mining: 34661 ryanofsky/pr/waitmine
 	# Doc fix: 34671 maflcko/2602-doc-guix-less

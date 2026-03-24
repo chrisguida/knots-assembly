@@ -266,8 +266,8 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# Needs review: 30155 mzumsande/202405_replay_blocks OR 33442 l0rinc/l0rinc/interrupt-rolling-forward
 	#30.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
-	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
-		# +#32580 ?
+	30221 fix_wallet_bestblock-29.3
+		# +#32281 +#32580 +#32345
 	# Needs work: g823 -  # wallet: Improve error log color in the console
 	-     detect_clang_bug96267					02f938db653	last=ea6ae8d271e detect_clang_bug96267-30
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
@@ -506,7 +506,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	# Needs review: 34628 ajtowns/202602-mempool-invtosend
-	34642 wallet_validqueue_drainforunload-28
+	34642 wallet_validqueue_drainforunload-29.3+knots
+		# NOTE: Subtly depends on #30221 (and the PRs bundled with it)
 	# Triage: 34655 l0rinc/l0rinc/coins_view_fuzzer_cleanup
 	# IPC mining: 34661 ryanofsky/pr/waitmine
 	# Doc fix: 34671 maflcko/2602-doc-guix-less

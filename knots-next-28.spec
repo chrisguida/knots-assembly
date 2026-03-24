@@ -283,8 +283,8 @@ checkout v28.2
 	-     jonatack/2024-05-fix-cjdns-detection-in-AddNode	0a3e577e9e8	last=be4541abe59 jonatack/2024-05-fix-cjdns-detection-in-AddNode  # fix_cjdns_addnode_detect2-27+knots
 	# Needs review: 30155 mzumsande/202405_replay_blocks OR 33442 l0rinc/l0rinc/interrupt-rolling-forward
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
-	# Needs review & maybe wallet format finalization: 30221 achow101/wallet-no-chainstateflushed
-		# +#32580 ?
+	30221 fix_wallet_bestblock-29.3
+		# +#32281 +#32580 +#32345
 	# Needs work: g823 -  # wallet: Improve error log color in the console
 	-     detect_clang_bug96267-28				6da92446b43	last=159eef5ccb2 detect_clang_bug96267
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
@@ -609,7 +609,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	Triage: Needs review: 34628 ajtowns/202602-mempool-invtosend
-	Triage: 34642 wallet_validqueue_drainforunload-28
+	34642 wallet_validqueue_drainforunload-29.3+knots
+		# NOTE: Subtly depends on #30221 (and the PRs bundled with it)
 	Triage: 34655 l0rinc/l0rinc/coins_view_fuzzer_cleanup
 	Triage: IPC mining: 34661 ryanofsky/pr/waitmine
 	# Doc fix: 34671 maflcko/2602-doc-guix-less
