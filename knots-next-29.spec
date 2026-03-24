@@ -502,7 +502,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34561 docfix_rpcwallet_send_eg_pr34561-23				last=50cf6838e6a
 	# Needs review: 34582 maflcko/2602-int-arg
 	34597 fix_SetStdinEcho_ub-0.20
-	34603 fix_win_IsSymlink-29.3							last=9333d26f670
+	34603 fix_win_IsSymlink-29.3							last=0f3fcdfaba3
 	# Needs review? 34614 maflcko/2602-ci-space
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	# Needs review: 34628 ajtowns/202602-mempool-invtosend
@@ -523,9 +523,9 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	n/a   fix_typos_from_pr33152-29
 	34870 fix_wallet_bump_fail_crash-29						last=6072a2a6a1f furszy/2026_feebumper_crash_fix
 	# Needs work: 34872 w0xlt/wallet-mixed-input-history-only
-	34888 furszy/2026_wallet_total_amount_bad_comparison
-	Review: 34893 w0xlt/psbt-proprietary-merge-fix
-	Review: 34897 mzumsande/202603_index_sync_dont_commit_ahead
+	34888 fix_wallet_coinsel_pr34888-25						last=0026b330c4a furszy/2026_wallet_total_amount_bad_comparison
+	34893 fix_psbt_merge_proprietary-29						last=8cd41daf9a5 w0xlt/psbt-proprietary-merge-fix
+	# Needs review: 34897 mzumsande/202603_index_sync_dont_commit_ahead
 	# Needs review: 34903 HouseOfHufflepuff/wallet-importdescriptors-validate-before-rescan
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
