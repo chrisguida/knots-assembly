@@ -267,7 +267,9 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	#30.xTODO# Revert or semi-revert #30157 ?? (Mempool-influenced fee estimation)
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	30221 fix_wallet_bestblock-29.3
+		# aka knots#290
 		# +#32281 +#32580 +#32345
+		# Excluded 30a94b1ab9ae850d55cb9eb606a06890437bc75e (test removal) for diff-minimising
 	# Needs work: g823 -  # wallet: Improve error log color in the console
 	-     detect_clang_bug96267					02f938db653	last=ea6ae8d271e detect_clang_bug96267-30
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
@@ -1185,7 +1187,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: 30.x backport in #34689
 	# Not worth it? 34759 theStack/202603-walletdb-clear_out_secret_data
 	# Needs review: 34765 overcookedpanda/fix-analyzepsbt-invalid-sig
-	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^^^^^^^^^
+	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^^^^^^^^^^^^
 	# Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
@@ -1552,7 +1554,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	-     enforce_checkpoints					8e1d8f424ba
 		#30.xTODO# Revert #31649
 	n/a   checkpoint_update-29					97f6c4e5b9f
-		TODO: update (see #34677)
+		# TODO: update (see #34677 -> knots#291)
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?

@@ -284,7 +284,9 @@ checkout v28.2
 	# Needs review: 30155 mzumsande/202405_replay_blocks OR 33442 l0rinc/l0rinc/interrupt-rolling-forward
 	# Needs review & diff-minimising: 30207 mzumsande/202405_invalid_chains
 	30221 fix_wallet_bestblock-29.3
+		# aka knots#290
 		# +#32281 +#32580 +#32345
+		# Excluded 30a94b1ab9ae850d55cb9eb606a06890437bc75e (test removal) for diff-minimising
 	# Needs work: g823 -  # wallet: Improve error log color in the console
 	-     detect_clang_bug96267-28				6da92446b43	last=159eef5ccb2 detect_clang_bug96267
 	# Needs review: 30359 -  # Correct Error Code in OP_IF/OP_NOTIF Empty Stack Check
@@ -1693,7 +1695,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	-     wallet_avoid_newerchange				5962a67e5f5
 	-     enforce_checkpoints					254fabebf5a
 	n/a   checkpoint_update-28					41c985132c9	last= checkpoint_update-29
-		TODO: update (see #34677)
+		TODO: update (see #34677 -> knots#291)
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 	31969 assumeutxo_update-28					d011e71d99c	last=14f16748557 Sjors/2025/03/utxo-880000
 	# TODO: revert #28354 ?

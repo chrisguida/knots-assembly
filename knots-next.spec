@@ -470,7 +470,6 @@ checkout v30.0rc1
 	g929  qt_plurals_prg929-21								last=746d8cddc19 hebasto-g/260217-translation-plurals
 	Needs review: 34628 ajtowns/202602-mempool-invtosend
 	34642 wallet_validqueue_drainforunload-29.3+knots
-		# NOTE: Subtly depends on #30221 (and the PRs bundled with it)
 	34702 docfix_getblock_txfee_condition-22				last=f580cc7e9f2
 	# IPC mining: 34661 ryanofsky/pr/waitmine
 	# Doc fix: 34671 maflcko/2602-doc-guix-less
@@ -1503,7 +1502,7 @@ checkout v30.0rc1
 	-     enforce_checkpoints					21dbf96fd5f
 		30.xTODO: Revert #31649 (MERGED)
 	n/a   checkpoint_update-29					3b5ea232f72
-		TODO: update (see #34677)
+		TODO: update (see #34677 -> knots#291)
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
