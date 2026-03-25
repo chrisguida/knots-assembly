@@ -527,7 +527,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34870 fix_wallet_bump_fail_crash-29						last=6072a2a6a1f furszy/2026_feebumper_crash_fix
 	# Needs work: 34872 w0xlt/wallet-mixed-input-history-only
 	34888 fix_wallet_coinsel_pr34888-25						last=0026b330c4a furszy/2026_wallet_total_amount_bad_comparison
-	34893 fix_psbt_merge_proprietary-29						last=8cd41daf9a5 w0xlt/psbt-proprietary-merge-fix
+	34893 fix_psbt_merge_proprietary-29						last=eb76e953acc w0xlt/psbt-proprietary-merge-fix
 	# Needs review: 34897 mzumsande/202603_index_sync_dont_commit_ahead
 	# Needs review: 34903 HouseOfHufflepuff/wallet-importdescriptors-validate-before-rescan
 	-     fix_rpccookieperms_early				f59c23596f8
@@ -1187,7 +1187,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: 30.x backport in #34689
 	# Not worth it? 34759 theStack/202603-walletdb-clear_out_secret_data
 	# Needs review: 34765 overcookedpanda/fix-analyzepsbt-invalid-sig
-	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^^^^^^^^^^^^
+	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	# Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
@@ -1564,10 +1564,10 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 		# TODO? "Upgrade" button to open website - or even download+verify??
 			# -DUPGRADE_COMMAND='...' for PPA/etc?
 	-     rwconf_policy-29.3+knots				8b50da2a034
-		TODO: + knots#268 (partial; remaining in datacarriercost)
-		TODO: + knots#281
 		# + knots#245
 		# + knots#197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
+		# + knots#268 (partial; remaining in datacarriercost)
+		# TODO: + knots#281
 		# Includes Knots policy changes for simplification of final rebase process
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
 		#30.xTODO# Check on block assembly GetArgs like blockmintxfee/etc
@@ -1610,7 +1610,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	n/a  (bump_version=knots20260323)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
-	n/a   (cherrypick=dce09dbcdc4)				dce09dbcdc4  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=3efe2913089)				dce09dbcdc4  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1621,8 +1621,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
-		TODO: #34692 and #34641 have release notes at tip
-	n/a  (cherrypick=a9aee730466)				a9aee730466  # update manpages (build first)
+	n/a  (cherrypick=a2d6016ea20)				a9aee730466  # update manpages (build first)
 		# WARNING: Don't forget to add zsh completion!
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
 		#30.xTODO# check all applicable build options are enabled (see also #33085 and #33828, plus miniupnpc)

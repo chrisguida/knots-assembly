@@ -1708,7 +1708,6 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		TODO? "Upgrade" button to open website - or even download+verify??
 			-DUPGRADE_COMMAND='...' for PPA/etc?
 	-     rwconf_policy-28+knots				6fd67aa463d	last=86056333700 rwconf_policy-29+knots
-		TODO: + knots#281
 		# Includes Knots policy changes for simplification of final rebase process
 		28.xTODO: revert #33106
 		TODO? bump up blockreconstructionextratxn higher? and set a sane blockreconstructionextratxnsize default
@@ -1719,6 +1718,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		Needs review: k197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
 		TODO: Increase datacarriersize default
 		TODO: knots#245
+		TODO: + knots#281
 	# Needs review: 22698 mjdietzx:fix_bip125_inherited_signaling
 	Needs review/argument/optional? 22779 darosior:taproot_dust_limit
 	# Needs review: 22871 JeremyRubin:discourage-csv
