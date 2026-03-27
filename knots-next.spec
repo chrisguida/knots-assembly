@@ -1,7 +1,7 @@
-timestamp 2026-03-23 09:04:26
+timestamp 2026-03-27 14:36:13
 lastapply no-merge
 
-#.. checked up to PR #34905 / gui#933 / knots#289
+#.. checked up to PR #34938 / gui#934 / knots#292
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -19,6 +19,7 @@ checkout v30.0rc1
 	34462 fix_bsd_batchprio-26
 	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
 	34754 hebasto/260306-qt6-gcc16
+	Triage: 31.xTODO: Consider reverting #34923
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -67,6 +68,7 @@ checkout v30.0rc1
 	# Needed in 2026 April: 34815 willcl-ark/bump-cirruslabs-actions
 		# See also: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
 	# Needed in 2027 October (Python 3.16): 34820 maflcko/2603-test-windows-revert
+	# If needed: 34914 Sjors/2026/03/deep-sign (CI macOS codesigning)
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	6b3aa212298
 	13789 asm_bypass_cxxflags					9de0f072503
@@ -451,6 +453,7 @@ checkout v30.0rc1
 	Triage: 34417 maflcko/2601-log-warn-sensitive
 	g924  achow101-g/gui-unnamed-restore-error-dialog
 	# Needs work: 34451 w0xlt/i_34263
+		# +#34908 ?
 	# Windows-only, doesn't affect us? 34454 avoid_winnt_delete_keyword_conflict-28
 	Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
 	Needs review: 34458 sedited/logips_self_discover
@@ -491,6 +494,10 @@ checkout v30.0rc1
 	Review: 34893 w0xlt/psbt-proprietary-merge-fix
 	Review: 34897 mzumsande/202603_index_sync_dont_commit_ahead
 	Needs review: 34903 HouseOfHufflepuff/wallet-importdescriptors-validate-before-rescan
+	Needs review: 34916 Sjors/2026/03/manpages-locale
+	Needs review: 34931 furszy/2026_utxo_deser_error_divergence OR 34132?
+	Needs work: 34937 Sjors/2026/03/file-descriptor-limit
+	Review: g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
 	-     fix_rpccookieperms_early				91f5662ec3d
 	-     qt_intro_nojumpy						c3d5fbf0f2e
 	-     restore_guix_ppc64le-28				c1cdcf34ff2
@@ -646,7 +653,7 @@ checkout v30.0rc1
 		# NOTE: diff-minimised, and did not backport refactor commits
 		# NOTE: various libbitcoinkernel changes needed, if libbitcoinkernel features (#30595 in particular) are backported
 	# Needs review: 34400 -  # wallet: parallel fast rescan (approx 5x speed up with 16 threads)
-		# + #34667 ?
+		# + #34667 ? +#34907 ?
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
@@ -667,6 +674,7 @@ checkout v30.0rc1
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	Needs review: 34794 w0xlt/rest-cache-control-headers
+	Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	Needs work: k287 privkeyio/uncap-scriptcheck-threads
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -691,6 +699,7 @@ checkout v30.0rc1
 	# Needs review & consensus: k238 -	last=a8e9e0e44cf  # Reduced Data Temporary Softfork
 		# + knots#256
 		# + updated fixed seeds ?
+		# NOTE: Core PR in #24930
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 	# Needs review & consensus: 34826 sashabeton/p2skh
 # FUNCTIONALITY:
@@ -1048,6 +1057,7 @@ checkout v30.0rc1
 	Prefer upstream? 30860 bashcomp_bcli_generate-29				92e9b91b676	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	k190  feat_zsh_completion-29				c7603c2acd8	last=e3f6d308a97  # Add zsh completion script generation support
+		# NOTE: Core alternatives in #33402 and #34906
 	Needs work: k199 mstampfer/cmake-zsh-completion-only
 	Needs Knots-specific work: 34721 willcl-ark/cmake-shell-completions
 	Prefer upstream? 30886 rpc_descrprocesspsbt_prevtxs-28+knots	b77212d5ccf	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
@@ -1128,6 +1138,7 @@ checkout v30.0rc1
 	34776 hodlinator/2026/03/guix_clean_destructive
 		NOTE: 31.x backport in #34800
 	Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
+	Needs concept & review: 34933 davidgumberg/2026-03-26-dont-disconnect-unknown-block-hash-cfilters
 	-     qt_createunsigned_use_psbtops			a800d52314e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1360,6 +1371,7 @@ checkout v30.0rc1
 		# Reverts (needed and better performance & memusage): d0cd2e804ec [refactor] rewrite BlockAssembler inBlock and failedTx as sets of txids
 		# Reverts (needed for lock logic): 192dac1d337 [refactor] Cleanup BlockAssembler mempool usage
 	7219  rbf_opts-29+knots						7f4ab04e735	# Latest code now
+		#31.xTODO# Revert #34911,#34917 probably
 	-     truc_opts-29.2+knots					f15f7e9994a
 	#TODO/Needs work: 10823 greenaddress/replace-by-fee-old-transactions
 	29309 permitbarepubkey-29+knots				36725800750	last=1dfe27e49ab
@@ -1445,6 +1457,7 @@ checkout v30.0rc1
 	Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	Needs review: k280  privkeyio/feature-priority-vsize-discount
 	Needs work: k284  BitcoinMechanic/filter-new-parasite
+	OR: k292  Retropex/rework-opnet
 	#31.xTODO# Consider reverting parts of #33489 (build: Drop support for EOL macOS 13) and #33573
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 	30.xTODO: Consider #33892 policy: allow <minrelay txns in package context if paid for by cpfp
@@ -1554,7 +1567,7 @@ checkout v30.0rc1
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260323)			d5593bea7a1
+	n/a  (bump_version=knots20260327)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits

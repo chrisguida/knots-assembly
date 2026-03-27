@@ -1,7 +1,7 @@
-timestamp 2026-03-23 09:04:26
+timestamp 2026-03-27 14:36:13
 #lastapply no-merge
 
-#.. checked up to PR #34905 / gui#933 / knots#289
+#.. checked up to PR #34938 / gui#934 / knots#292
 
 checkout v29.3
 @29.x-syslibs
@@ -65,6 +65,7 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	# Needed in 2026 April: 34815 willcl-ark/bump-cirruslabs-actions
 		# See also: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
 	# Needed in 2027 October (Python 3.16): 34820 maflcko/2603-test-windows-revert
+	# If needed: 34914 Sjors/2026/03/deep-sign (CI macOS codesigning)
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	18033f85c25
 	13789 asm_bypass_cxxflags					4e1c7852279
@@ -492,6 +493,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Triage: 34417 maflcko/2601-log-warn-sensitive
 	g924  fix_qt_restor_empty_walletname_msg-24	ee40ff3546a
 	# Needs work: 34451 w0xlt/i_34263
+		# +#34908 ?
 	# Windows-only, doesn't affect us? 34454 avoid_winnt_delete_keyword_conflict-28
 	# Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
 	# Needs review: 34458 sedited/logips_self_discover
@@ -530,6 +532,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34893 fix_psbt_merge_proprietary-29						last=eb76e953acc w0xlt/psbt-proprietary-merge-fix
 	# Needs review: 34897 mzumsande/202603_index_sync_dont_commit_ahead
 	# Needs review: 34903 HouseOfHufflepuff/wallet-importdescriptors-validate-before-rescan
+	# Needs review: 34916 Sjors/2026/03/manpages-locale
+	# Needs review: 34931 furszy/2026_utxo_deser_error_divergence OR 34132?
+	Needs work: 34937 Sjors/2026/03/file-descriptor-limit
+	Review: g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
 	-     restore_guix_ppc64le-28				9688bc64ace
@@ -692,7 +698,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: diff-minimised, and did not backport refactor commits
 		# NOTE: various libbitcoinkernel changes needed, if libbitcoinkernel features (#30595 in particular) are backported
 	# Needs review: 34400 -  # wallet: parallel fast rescan (approx 5x speed up with 16 threads)
-		# + #34667 ?
+		# + #34667 ? +#34907 ?
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
@@ -713,6 +719,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
+	Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287 privkeyio/uncap-scriptcheck-threads				last=3876a4b3c72
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -738,6 +745,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review & consensus: k238 -	last=a8e9e0e44cf  # Reduced Data Temporary Softfork
 		# + knots#256
 		# + updated fixed seeds ?
+		# NOTE: Core PR in #24930
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 	# Needs review & consensus: 34826 sashabeton/p2skh
 # FUNCTIONALITY:
@@ -1102,6 +1110,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	30860 bashcomp_bcli_generate-29				a0910c67a78	last=abf6ad42bdb BrandonOdiwuor/bash-completion
 		# Bugfix + Left off re-generation until later
 	k190  feat_zsh_completion-29				4baee3bd24f	last=e3f6d308a97  # Add zsh completion script generation support
+		# NOTE: Core alternatives in #33402 and #34906
 	# Needs work: k199 mstampfer/cmake-zsh-completion-only
 	# Needs Knots-specific work: 34721 willcl-ark/cmake-shell-completions
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	35f0e28f3e2	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
@@ -1189,6 +1198,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34765 overcookedpanda/fix-analyzepsbt-invalid-sig
 	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	# Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
+	# Needs concept & review: 34933 davidgumberg/2026-03-26-dont-disconnect-unknown-block-hash-cfilters
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1504,6 +1514,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	# Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	# Needs review: k280  privkeyio/feature-priority-vsize-discount
 	# Needs work: k284  BitcoinMechanic/filter-new-parasite
+	OR: k292  Retropex/rework-opnet
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
@@ -1607,7 +1618,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 # TODO: test build with Boost 1.73
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260323)			931ea36c899
+	n/a  (bump_version=knots20260327)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=3efe2913089)				dce09dbcdc4  # release notes: write/update, including change log and credits

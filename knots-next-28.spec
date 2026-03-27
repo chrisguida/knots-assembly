@@ -1,7 +1,7 @@
-timestamp 2026-03-23 09:04:26
+timestamp 2026-03-27 14:36:13
 #lastapply no-merge
 
-#.. checked up to PR #34905 / gui#933 / knots#289
+#.. checked up to PR #34938 / gui#934 / knots#292
 
 checkout v28.2
 @28.x-syslibs
@@ -70,6 +70,7 @@ checkout v28.2
 	Triage: Needed in 2026 April: 34815 willcl-ark/bump-cirruslabs-actions
 		# See also: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
 	# Needed in 2027 October (Python 3.16): 34820 maflcko/2603-test-windows-revert
+	# If needed: 34914 Sjors/2026/03/deep-sign (CI macOS codesigning)
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail
 	18818 guix_reltar_autogen_distclean			5bd6cb2eb0a	last=b5a164d9155 fix_gitian_src_202004
@@ -595,6 +596,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 34417 maflcko/2601-log-warn-sensitive
 	g924  fix_qt_restor_empty_walletname_msg-24
 	Triage: Needs work: 34451 w0xlt/i_34263
+		# +#34908 ?
 	# Windows-only, doesn't affect us? 34454 avoid_winnt_delete_keyword_conflict-28
 	Triage/needs review: 34456 -  # p2p: assign separate network keys to outbound onion connections
 	Triage: Needs review: 34458 sedited/logips_self_discover
@@ -632,6 +634,10 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Review: 34893 w0xlt/psbt-proprietary-merge-fix
 	Review: 34897 mzumsande/202603_index_sync_dont_commit_ahead
 	Needs review: 34903 HouseOfHufflepuff/wallet-importdescriptors-validate-before-rescan
+	Needs review: 34916 Sjors/2026/03/manpages-locale
+	Needs review: 34931 furszy/2026_utxo_deser_error_divergence OR 34132?
+	Needs work: 34937 Sjors/2026/03/file-descriptor-limit
+	Review: g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -806,7 +812,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# NOTE: diff-minimised, and did not backport refactor commits
 		# NOTE: various libbitcoinkernel changes needed, if libbitcoinkernel features (#30595 in particular) are backported
 	# Needs review: 34400 -  # wallet: parallel fast rescan (approx 5x speed up with 16 threads)
-		# + #34667 ?
+		# + #34667 ? +#34907 ?
 	# Needs review: 34405 -  # wallet: skip APS when no partial spend exists
 	# Needs review: 34424 -  # [RFC] CChain Concurrency Improvement (Base + Tail Architecture)
 	# Needs review & worth-it evaluation: 34483 maflcko/2602-span-reader
@@ -827,6 +833,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	Needs review: 34794 w0xlt/rest-cache-control-headers
+	Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	Needs work: k287 privkeyio/uncap-scriptcheck-threads
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -851,6 +858,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review & consensus: k238 -	last=a8e9e0e44cf  # Reduced Data Temporary Softfork
 		# + knots#256
 		# + updated fixed seeds ?
+		# NOTE: Core PR in #24930
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 	# Needs review & consensus: 34826 sashabeton/p2skh
 # FUNCTIONALITY:
@@ -1246,6 +1254,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# Bugfix + Left off re-generation until later
 	k190  -														last=cfc9f871ca3  # Add zsh completion script generation support
 		TODO: Ensure added to distdir like in 30860
+		# NOTE: Core alternatives in #33402 and #34906
 	Needs work: k199 mstampfer/cmake-zsh-completion-only
 	Needs Knots-specific work: 34721 willcl-ark/cmake-shell-completions
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
@@ -1349,6 +1358,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	34776 hodlinator/2026/03/guix_clean_destructive
 		NOTE: 31.x backport in #34800
 	Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
+	Needs concept & review: 34933 davidgumberg/2026-03-26-dont-disconnect-unknown-block-hash-cfilters
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1658,6 +1668,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	Needs review: k280  privkeyio/feature-priority-vsize-discount
 	Needs work: k284  BitcoinMechanic/filter-new-parasite
+	OR: k292  Retropex/rework-opnet
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3
@@ -1753,7 +1764,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260323)			ba223403bbc
+	n/a  (bump_version=Knots:20260327)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
