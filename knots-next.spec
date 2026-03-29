@@ -676,7 +676,8 @@ checkout v30.0rc1
 	Needs review: 34794 w0xlt/rest-cache-control-headers
 	Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
-	Needs work: k287 privkeyio/uncap-scriptcheck-threads
+	# Needs concept: k287 privkeyio/uncap-scriptcheck-threads				last=3876a4b3c72
+		# https://github.com/bitcoin/bitcoin/pull/32692#issuecomment-3465177675
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1071,7 +1072,7 @@ checkout v30.0rc1
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				4160fffe565	last=b25b40ebd5f vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				2bd6819ef9f	last=d4a3abf6d43 pruneduringinit
-		# aka knots#158
+		# TODO: + knots#158 ?
 	MERGED: 31886 netinfo_local_svcs-29+knots			4ec453a3ad9	last=721a051320f jonatack/2025-02-netinfo-services
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	MERGED: 31953 bumpfee_full_rbf-29+knots				787b46e37b6	last=fa86190e6ed maflcko/2502-fullrbf-follow-up
@@ -1456,8 +1457,7 @@ checkout v30.0rc1
 	Needs work: k272  privkeyio/policy-subdust-fee-penalty
 	Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	Needs review: k280  privkeyio/feature-priority-vsize-discount
-	Needs work: k284  BitcoinMechanic/filter-new-parasite
-	OR: k292  Retropex/rework-opnet
+	k292  Retropex/rework-opnet
 	#31.xTODO# Consider reverting parts of #33489 (build: Drop support for EOL macOS 13) and #33573
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 	30.xTODO: Consider #33892 policy: allow <minrelay txns in package context if paid for by cpfp

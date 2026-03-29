@@ -835,7 +835,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 34794 w0xlt/rest-cache-control-headers
 	Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
-	Needs work: k287 privkeyio/uncap-scriptcheck-threads
+	# Needs concept: k287 privkeyio/uncap-scriptcheck-threads				last=3876a4b3c72
+		# https://github.com/bitcoin/bitcoin/pull/32692#issuecomment-3465177675
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1287,7 +1288,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	(CHECK-LAST)	last=77473c2e166 peer_cpu_load-29+knots
 	31845 pruneduringinit-28+knots				a219cacbf55	last=d4a3abf6d43 pruneduringinit
 	(CHECK-LAST)	last=ef00b4adfaa pruneduringinit-29+knots
-		# aka knots#158
+		# TODO: + knots#158 ?
 	31886 netinfo_local_svcs-28+knots			bed89007671	last=724546e28a5 jonatack/2025-02-netinfo-services
 	(CHECK-LAST)	last= netinfo_local_svcs-29+knots
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
@@ -1667,8 +1668,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs work: k272  privkeyio/policy-subdust-fee-penalty
 	Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	Needs review: k280  privkeyio/feature-priority-vsize-discount
-	Needs work: k284  BitcoinMechanic/filter-new-parasite
-	OR: k292  Retropex/rework-opnet
+	k292  Retropex/rework-opnet
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	n/a   rpc_compat_error_index-25+knots		1ebc7d004d3

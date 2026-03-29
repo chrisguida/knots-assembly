@@ -534,8 +534,9 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34903 HouseOfHufflepuff/wallet-importdescriptors-validate-before-rescan
 	# Needs review: 34916 Sjors/2026/03/manpages-locale
 	# Needs review: 34931 furszy/2026_utxo_deser_error_divergence OR 34132?
-	Needs work: 34937 Sjors/2026/03/file-descriptor-limit
-	Review: g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
+	34937 fix_rlim_infinity-29+knots						last=e48f6b7a8ac Sjors/2026/03/file-descriptor-limit
+		# NOTE: Lots of fixes
+	# Needs review (work?): g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
 	-     restore_guix_ppc64le-28				9688bc64ace
@@ -564,7 +565,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# Only affects libevent builds when the bitcoin tag has 5 components
 	# Needs work: k263  privkeyio/fix-vsize-sigops-datacarrier
 	k265  proxy_no_log_password-29							last=eb40ab7ff0f privkeyio/fix-socks5-credential-logging
-	k266  extsigner_sanitychk_fingerprint-26				last=acc78e798fa privkeyio/fix-external-signer-fingerprint-validation
+	k266  extsigner_sanitychk_fingerprint-26				last=304598b5cc5 privkeyio/fix-external-signer-fingerprint-validation
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -719,9 +720,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
-	Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
+	# Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
-	k287 privkeyio/uncap-scriptcheck-threads				last=3876a4b3c72
+	# Needs concept: k287 privkeyio/uncap-scriptcheck-threads				last=3876a4b3c72
+		# https://github.com/bitcoin/bitcoin/pull/32692#issuecomment-3465177675
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
@@ -1125,7 +1127,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work? 31668 -  # Added rescan option for import descriptors
 	31672 peer_cpu_load-29+knots				667198ee800	last=b25b40ebd5f vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				3aefa8602c6	last=d4a3abf6d43 pruneduringinit
-		# aka knots#158
+		# TODO: + knots#158 ?
 	31886 netinfo_local_svcs-29+knots			c2c14dc8fc5	last=721a051320f jonatack/2025-02-netinfo-services
 	# Needs work: 31936 -  # rpc: Support v3 raw transactions creation
 	31953 bumpfee_full_rbf-29+knots				2e2d1f2e371	last=fa86190e6ed maflcko/2502-fullrbf-follow-up
@@ -1513,8 +1515,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	# Needs work: k272  privkeyio/policy-subdust-fee-penalty
 	# Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	# Needs review: k280  privkeyio/feature-priority-vsize-discount
-	# Needs work: k284  BitcoinMechanic/filter-new-parasite
-	OR: k292  Retropex/rework-opnet
+	k292  datacarrier_opnet-29+knots						last=6938c68fe68 Retropex/rework-opnet
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
 	#30.xTODO# maybe revert #33214 rpc: require integer verbosity; remove boolean 'verbose'
