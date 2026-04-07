@@ -1580,7 +1580,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs work: k208 1440000bytes/sendtx-ui
 	Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
 	Needs concept: k270 privkeyio/compile-tr-native
-	Review: k274  umop/toggle-banned-peers-visibility
+	Needs work: k274  umop/toggle-banned-peers-visibility
+		# NOTE: 7c1a63c0b22 rebased/cleaned up in 31a011d9252, just has extra padding when no bans
 	Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
 	k288 qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar

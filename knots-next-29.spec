@@ -1419,6 +1419,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
 	# Needs concept: k270 privkeyio/compile-tr-native
 	# Needs work: k274  umop/toggle-banned-peers-visibility
+		# NOTE: 7c1a63c0b22 rebased/cleaned up in 31a011d9252, just has extra padding when no bans
 	# Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	# Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
 	k288 qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
@@ -1512,9 +1513,9 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	# Needs work: k227 1440000bytes/remove-minedtxs-extrapool
 	k162  qt_bad_external_signer_msg-22			b1bdf42d54d	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 	# Needs work: k271  privkeyio/policy-tapscript-dust-limit
-	# Needs work: k272  privkeyio/policy-subdust-fee-penalty
+	Review: k272  privkeyio/policy-subdust-fee-penalty
 	# Needs review: k275  privkeyio/feature-rbf-feerate-mode
-	# Needs review: k280  privkeyio/feature-priority-vsize-discount
+	Needs review: k280  privkeyio/feature-priority-vsize-discount
 	k292  datacarrier_opnet-29+knots						last=6938c68fe68 Retropex/rework-opnet
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
@@ -1566,7 +1567,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	-     enforce_checkpoints					8e1d8f424ba
 		#30.xTODO# Revert #31649
 	n/a   checkpoint_update-29					97f6c4e5b9f
-		# TODO: update (see #34677 -> knots#291)
+		TODO: update (see #34677 -> knots#291)
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
@@ -1579,7 +1580,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 		# + knots#245
 		# + knots#197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
 		# + knots#268 (partial; remaining in datacarriercost)
-		# TODO: + knots#281
+		TODO: + knots#281
 		# Includes Knots policy changes for simplification of final rebase process
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still
 		#30.xTODO# Check on block assembly GetArgs like blockmintxfee/etc
