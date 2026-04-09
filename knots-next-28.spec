@@ -1,7 +1,7 @@
-timestamp 2026-03-27 14:36:13
+timestamp 2026-04-09 17:17:38
 #lastapply no-merge
 
-#.. checked up to PR #34938 / gui#934 / knots#292
+#.. checked up to PR #35040 / gui#935 / knots#296
 
 checkout v28.2
 @28.x-syslibs
@@ -25,6 +25,7 @@ checkout v28.2
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26
 	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
+	Triage: Review: 34953 deadmanoz/fix/gcc-asan-sha256-sse4-only
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -243,6 +244,7 @@ checkout v28.2
 		# FIXME: disambiguate opcodes too?
 	28944 rpc_sendall_anti_fee_sniping-28		25117369373	last=b11d00d54ed ishaanam/sendall_anti_fee_sniping
 		# + #33118
+	Review: 35019 HouseOfHufflepuff/rpc/uniform-locktime-anti-fee-sniping
 	-     rpc_walletcfpsbt_antifeesniping-28+k
 	(CHECK-LAST)	last=113ba106273 Sjors/2025/07/locktime
 		# Includes tests from #32892
@@ -272,6 +274,7 @@ checkout v28.2
 		# Excluded dev doc update
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
+		# +#34991 ?
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
 	-     fix_rpc_warnings_all-28				6fb830e0d2d
 	# Needs review/concept: 29877 0xB10C/2024-04-tracing-cast-duration-to-µs
@@ -638,6 +641,19 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 34931 furszy/2026_utxo_deser_error_divergence OR 34132?
 	Needs work: 34937 Sjors/2026/03/file-descriptor-limit
 	Review: g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
+	Triage: Needs review: 34959 achow101/bdbro-cycle-detection
+		OR: 34946 instagibbs/2026-03-infinite_migrate
+	Triage: Needs review: 34962 cprkrn/test-feebumper-enormous-cluster
+	# Needs review: IPC only: 34978 enirox001/04-26-ipc-maxconnections
+	# Needs review: IPC only: 35037 enirox001/04-26-ipcbind-max-connections-draft
+	34982 alexanderwiederin/remove-non-null-block-validation
+	Triage: 34988 Crypt-iQ/04012026/currency_unit_fiasco
+	Needs review: 34993 davidgumberg/2026-04-02-notifycan
+	Needs review: 34997 danielabrozzoni/getaddr_feeler
+	Needs review: 35003 furszy/2026_abc_io_exception
+	Triage: Review: 35017 instagibbs/2026-04-remove_all_consensusscript
+	Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
+	Needs review: g935 arejula27-g/gui-ibd-fix-header-sync-percentage
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -665,6 +681,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	k265  privkeyio/fix-socks5-credential-logging
 	k266  extsigner_sanitychk_fingerprint-26				last=acc78e798fa privkeyio/fix-external-signer-fingerprint-validation
 	Triage: Needs work: k277  Bortlesboat/fix-ban-table-refresh
+	Review: k293  privkeyio/fix-availablecoins-null-deref
+	Review: k294  privkeyio/fix-getblockfileinfo-underflow
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -697,6 +715,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: -     fix_secp256k1_bugs-29
 		# bitcoin-core/secp256k1#1731,1749,1821 (diff-minimised and fix-only)
 	Triage: Multiprocess-only: 34825 fanquake/capnp_1_4_0
+	Triage: Multiprocess-only: 34952 ryanofsky/pr/subtree-9
+		+ #34977 ?
 @28.x-knots
 # PERFORMANCE:
 	n/a   rm_minisketch-28+k					723ceffb7b7	last=3efb06b858b rm_minisketch-29+syslibs
@@ -820,6 +840,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 34612 fanquake/unused_historgram
 	Needs review? 34613 -  # replace manual byte copies
 	Just removes a Guix dep: 34627 fanquake/replace_sponge
+		+ #34944 ?
 	# ----- DBCACHE DEFAULT/WARNING -----
 	33333 dbcache_too_high_warning-29.3+knots
 		# + #33435
@@ -960,6 +981,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	19873 mempressure-27						2fc6668792f	last=0802d0b4dc1 mempressure
 		BROKEN: Linux available memory detection no longer correct; we have different kinds of flushes now; and we need to ensure the OS can actually reclaim the freed memory
 		TODO: knots#219
+		TODO: knots#295
 		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
 	# Needs review/testing: - maxmem_coins_cache
 		# TODO: Some way to override... see #26471 discussion
@@ -1199,7 +1221,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1240,7 +1262,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	TODO: 30595 + 33791 + 33796 + 33822 + 33825 + 34401  libbitcoinkernel C API
+	TODO: 30595(+34986) + 33791 + 33796 + 33822 + 33825 + 34401  libbitcoinkernel C API
 	Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28						44b12da4bd8
 	# Needs review: 30685 hebasto/240820-control-flow
@@ -1360,6 +1382,10 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		NOTE: 31.x backport in #34800
 	Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	Needs concept & review: 34933 davidgumberg/2026-03-26-dont-disconnect-unknown-block-hash-cfilters
+	Needs review? 34992 bittoby/rpc-utxoupdatepsbt-add-prev-txs
+	Needs concept & review: 35004 HowHsu/usdt-txgraph-tracing-v2
+	Needs review: 35006 torkelrogstad/2026-04-05-request-id
+	Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1377,6 +1403,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	22016 rpc_gbci_period_start					17e4ef3f960	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys-28+knots					647dcf1fe7c	last=0aa860b1252 sweepprivkeys-29+knots
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
+		TODO: knots#296
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
 	9245 ionice-28								20f5b5a0563	last=4a7ed04bd31 ionice
 		# low prio: p2p requests, loading/verifying blocks on disk
@@ -1469,6 +1496,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review: 32065 vasild/i2p_early_create_session
 	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces
 	# Needs review: 33044 fanquake/19513_rebased
+	# Needs concept & review: 35027 8144225309/net-bind-outgoing
 	-     font_for_money_global
 	k157  qt_darkmode-29+knots								last=2c15a2071f6 bigshiny90/v29.1-knots-rc1-guifixes
 	(CHECK-LAST)	last=62bfaa5132b bigshiny90/gui-darkmode-updates  # knots#160
@@ -1765,7 +1793,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260327)			ba223403bbc
+	n/a  (bump_version=Knots:20260409)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
@@ -1800,3 +1828,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# TODO: 34709 rkrux/wallet-tests
 	# TODO: 34725 darosior/2603_psbt_roundtrip
 	# TODO: 34813 davidgumberg/2026-03-11-txmempoolcslockorder
+	# TODO: 34939 achow101/waste-fuzz-overflow
+		# 31.x backport in #34942
+	# TODO: 34958 theStack/202603-test-getblocktemplate-coinbasevalue_full_block_reward
+	# TODO: 34970 Sjors/2026/03/pause-mempool-load
