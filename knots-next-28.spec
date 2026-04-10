@@ -646,14 +646,14 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: Needs review: 34962 cprkrn/test-feebumper-enormous-cluster
 	# Needs review: IPC only: 34978 enirox001/04-26-ipc-maxconnections
 	# Needs review: IPC only: 35037 enirox001/04-26-ipcbind-max-connections-draft
-	34982 alexanderwiederin/remove-non-null-block-validation
-	Triage: 34988 Crypt-iQ/04012026/currency_unit_fiasco
+	34988 fix_init_fiasco_pr34988-28
 	Needs review: 34993 davidgumberg/2026-04-02-notifycan
 	Needs review: 34997 danielabrozzoni/getaddr_feeler
 	Needs review: 35003 furszy/2026_abc_io_exception
 	Triage: Review: 35017 instagibbs/2026-04-remove_all_consensusscript
 	Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
-	Needs review: g935 arejula27-g/gui-ibd-fix-header-sync-percentage
+	-     fix_qt_sync_pct_truncate-28						last=13b1c9dc4cf origin-pull-g/935/head
+		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
 	-     restore_guix_ppc64le-28				72fda2e9327
@@ -680,7 +680,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs work: k263  privkeyio/fix-vsize-sigops-datacarrier
 	k265  privkeyio/fix-socks5-credential-logging
 	k266  extsigner_sanitychk_fingerprint-26				last=acc78e798fa privkeyio/fix-external-signer-fingerprint-validation
-	Triage: Needs work: k277  Bortlesboat/fix-ban-table-refresh
+	k277  fix_qt_ban_expiry_update-28						last=60244b2f5cf Bortlesboat/fix-ban-table-refresh
 	Review: k293  privkeyio/fix-availablecoins-null-deref
 	Review: k294  privkeyio/fix-getblockfileinfo-underflow
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
@@ -1262,7 +1262,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	TODO: 30595(+34986) + 33791 + 33796 + 33822 + 33825 + 34401  libbitcoinkernel C API
+	TODO: 30595(+34986) + 33791 + 33796 + 33822 + 33825 + 34401 + 34982  libbitcoinkernel C API
 	Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28						44b12da4bd8
 	# Needs review: 30685 hebasto/240820-control-flow
