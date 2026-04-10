@@ -641,8 +641,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 34931 furszy/2026_utxo_deser_error_divergence OR 34132?
 	Needs work: 34937 Sjors/2026/03/file-descriptor-limit
 	Review: g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
-	Triage: Needs review: 34959 achow101/bdbro-cycle-detection
-		OR: 34946 instagibbs/2026-03-infinite_migrate
+	34959 bdbro_enforce_levels_sizes-28						last=6368100e978 achow101/bdbro-cycle-detection
+		# OR: 34946 instagibbs/2026-03-infinite_migrate
 	Triage: Needs review: 34962 cprkrn/test-feebumper-enormous-cluster
 	# Needs review: IPC only: 34978 enirox001/04-26-ipc-maxconnections
 	# Needs review: IPC only: 35037 enirox001/04-26-ipcbind-max-connections-draft
@@ -1791,6 +1791,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: Check net_permissions.h for overlapping NetPermissionFlags
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
+# TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=Knots:20260409)			ba223403bbc

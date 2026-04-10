@@ -539,8 +539,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34931 furszy/2026_utxo_deser_error_divergence OR 34132?
 	34937 fix_rlim_infinity-29+knots						last=101de678a8e Sjors/2026/03/file-descriptor-limit
 	# Needs review (work?): g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
-	Triage: Needs review: 34959 achow101/bdbro-cycle-detection
-		OR: 34946 instagibbs/2026-03-infinite_migrate
+	34959 bdbro_enforce_levels_sizes-28						last=6368100e978 achow101/bdbro-cycle-detection
+		# OR: 34946 instagibbs/2026-03-infinite_migrate
 	# Triage: Needs review: 34962 cprkrn/test-feebumper-enormous-cluster
 	# Needs review: IPC only: 34978 enirox001/04-26-ipc-maxconnections
 	# Needs review: IPC only: 35037 enirox001/04-26-ipcbind-max-connections-draft
@@ -1646,6 +1646,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 # TODO: Ensure 83aa95039d0 doesn't expose any new bugs
 # TODO: Check that no git Author lines are a mix due to GIT_AUTHOR_NAME no longer allowing emails: git log v27.1.. | grep '^Author.*luke-jr' | grep -v Dashjr
 # TODO: test build with Boost 1.73
+# TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
 	n/a  (bump_version=knots20260409)			931ea36c899
