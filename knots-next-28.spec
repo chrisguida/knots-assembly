@@ -681,8 +681,6 @@ NM	32187 zmq_devirtual_destructor-0.12
 	k265  privkeyio/fix-socks5-credential-logging
 	k266  extsigner_sanitychk_fingerprint-26				last=acc78e798fa privkeyio/fix-external-signer-fingerprint-validation
 	k277  fix_qt_ban_expiry_update-28						last=60244b2f5cf Bortlesboat/fix-ban-table-refresh
-	Review: k293  privkeyio/fix-availablecoins-null-deref
-	Review: k294  privkeyio/fix-getblockfileinfo-underflow
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1120,8 +1118,10 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# TODO? Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku ???
 	25183 rpc_fundraw_segwitonly				938e4a0ff02	last=9e7fd5c0fe3
+	(CHECK-LAST)	last=9128cc6f89f origin-pull-k/293/head
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
 		# Fixed tests with inspiration from 9e7fd5c0fe3
+		# + knots#293
 		# TODO: update without breaking compatibility? (new code looks buggy tho - needs rewrite?) (also, filtering by "input type" doesn't really make sense, though segwit filtering does)
 	# Needs concept: 25261 -  # rpc: fetch multiple headers in getblockheader()
 		# Was: Needs API review: 23330 JeremyRubin/header-fetch
@@ -1184,6 +1184,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# Moved ForceInbound permission flag to bit 10 to avoid conflict with neutrino whitelisting
 	# Needs work: 27638 -  # rpc: show P2(W)SH redeemScript in getrawtransaction
 	27770 rpc_getblockfileinfo-28+knots			a31727f8451	last=5090771f326 furszy/2023_rpc_getblockfileinfo
+	(CHECK-LAST)	last=1543c870273 origin-pull-k/294/head
+		# + knots#294
 	#28.xTODO# Needs review & BIP finality: 28201 josibake/implement-bip352-sending
 	# Needs review & BIP finality & might have wallet changes: 28202 josibake/implement-bip352-receiving
 		# Note alternative (approach NACK'd) in #28453
