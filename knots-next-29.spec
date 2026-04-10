@@ -17,7 +17,7 @@ checkout v29.3
 		# https://github.com/bitcoin/bitcoin/issues/34101
 	34462 fix_bsd_batchprio-26					cf8a2876f8c
 	# Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
-	Review: 34953 deadmanoz/fix/gcc-asan-sha256-sse4-only
+	# Needs review: 34953 sha256_sse4_nosanitize_pr34953-29.3				last=fedeff7f201 deadmanoz/fix/gcc-asan-sha256-sse4-only
 # SYSLIBS:
 	2241  sys_leveldb							8ed686b2e1a	last=bd2be933f26 sys_leveldb-30
 		# Related: #32447
@@ -229,7 +229,7 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 		# FIXME: disambiguate opcodes too?
 	28944 rpc_sendall_anti_fee_sniping-28		8a8f5e640f5	last=aac0b6dd79b ishaanam/sendall_anti_fee_sniping
 		# + #33118
-	Review: 35019 HouseOfHufflepuff/rpc/uniform-locktime-anti-fee-sniping
+	# Needs review: 35019 HouseOfHufflepuff/rpc/uniform-locktime-anti-fee-sniping
 	-     rpc_walletcfpsbt_antifeesniping-28+k	03af5cebcd8	last=6fc07948bdd rpc_walletcfpsbt_antifeesniping-30+k
 	(CHECK-LAST)	last=113ba106273 Sjors/2025/07/locktime
 		# Includes tests from #32892
@@ -537,8 +537,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34903 HouseOfHufflepuff/wallet-importdescriptors-validate-before-rescan
 	# Needs review: 34916 Sjors/2026/03/manpages-locale
 	# Needs review: 34931 furszy/2026_utxo_deser_error_divergence OR 34132?
-	34937 fix_rlim_infinity-29+knots						last=e48f6b7a8ac Sjors/2026/03/file-descriptor-limit
-		# NOTE: Lots of fixes
+	34937 fix_rlim_infinity-29+knots						last=101de678a8e Sjors/2026/03/file-descriptor-limit
 	# Needs review (work?): g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
 	Triage: Needs review: 34959 achow101/bdbro-cycle-detection
 		OR: 34946 instagibbs/2026-03-infinite_migrate
