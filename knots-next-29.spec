@@ -731,7 +731,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# + #33435
 	34692 dbcache_1GiB-29.3+knots							last=4ae9a10ada9 andrewtoth/bump_dbcache
 		# Excluded doc update & release notes
-	34641 dbcache_dynamic-29.3+knots						last=8ff5e8aa7b8 l0rinc/l0rinc/dynamic-dbcache
+	34641 dbcache_dynamic-29.3+knots						last=539a0f796ca l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
 	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
@@ -864,9 +864,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs concept ACK: 19635 -ephemeraltoronion
 	# Wait for Core? Or rework to use independent db... 19790 blkindex_scriptschecked_flag
 	19873 mempressure-29+knots					ffaa26bd736	last=5b43cc77824 mempressure
+	(CHECK-LAST)	last=922bc46001e origin-pull-k/295/head
 		# BROKEN: Linux available memory detection no longer correct; we have different kinds of flushes now; and we need to ensure the OS can actually reclaim the freed memory
+		# + knots#295
 		# TODO: knots#219
-		TODO: knots#295
 		# TODO: LevelDB flushing causes burst of memory usage; consider that here; see #31645
 	# Needs review/testing: - maxmem_coins_cache
 		# TODO: Some way to override... see #26471 discussion
