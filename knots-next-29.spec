@@ -995,7 +995,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# TODO? Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku ???
 	25183 rpc_fundraw_segwitonly				348386cd5c0	last=9e7fd5c0fe3
-	(CHECK-LAST)	last=f2fd806f412 origin-pull-k/293/head
+	(CHECK-LAST)	last=edf8e63393b origin-pull-k/293/head
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
 		# Fixed tests with inspiration from 9e7fd5c0fe3
 		# + knots#293
@@ -1332,8 +1332,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work/review: g539  RandyMcMillan-g/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	30951 v2onlyclearnet-29+knots				5e7b4d80ab9	last=6b2796a7f76
-		# Held back 27e90008835...6b2796a7f76 (listen=0 forced antifeature, confusing help string, refactoring)
+	30951 v2onlyclearnet-29+knots				5e7b4d80ab9	last=1e61206583d
+		# Held back 27e90008835...1e61206583d (listen=0 forced antifeature, confusing help string, refactoring)
 		# Made a hidden option
 	# Needs review: 32065 vasild/i2p_early_create_session
 	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces
@@ -1545,9 +1545,10 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	# Needs work: k227 1440000bytes/remove-minedtxs-extrapool
 	k162  qt_bad_external_signer_msg-22			b1bdf42d54d	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 	# Needs work: k271  privkeyio/policy-tapscript-dust-limit
-	Review: k272  privkeyio/policy-subdust-fee-penalty
+	k272  subdustfeepenalty-29.3+knots						last=af7d6f6adba privkeyio/policy-subdust-fee-penalty
+		# Partial: remaining in rwconf_policy
 	# Needs review: k275  privkeyio/feature-rbf-feerate-mode
-	Needs review: k280  privkeyio/feature-priority-vsize-discount
+	# Needs review: k280  privkeyio/feature-priority-vsize-discount
 	k292  datacarrier_opnet-29+knots						last=6938c68fe68 Retropex/rework-opnet
 	# TODO? Dust multiplier by # of outputs: https://x.com/snapolino/status/1976708308603224518
 # Non-upstreamed Knots compatibility:
@@ -1599,7 +1600,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	-     enforce_checkpoints					8e1d8f424ba
 		#30.xTODO# Revert #31649
 	n/a   checkpoint_update-29					97f6c4e5b9f
-		TODO: update (see #34677 -> knots#291)
+		# TODO: update (see #34677 -> knots#291)
 		# TODO: Do https://github.com/bitcoin/bitcoin/pull/31940/files ?
 		#30.xTODO# Revert #25725 (Remove mainnet checkpoints)
 	# TODO: revert #28354 ?
@@ -1612,6 +1613,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 		# + knots#245
 		# + knots#197 qt_portmap_ux_underlisten (ideally, move this to its own merge, but that requires CreateOptionUI etc split out of rwconf_policy)
 		# + knots#268 (partial; remaining in datacarriercost)
+		TODO: + knots#272
 		TODO: + knots#281
 		# Includes Knots policy changes for simplification of final rebase process
 		#30.xTODO# Ensure LimitOrphanTxSize sets everything needed still

@@ -952,7 +952,7 @@ checkout v30.0rc1
 	# TODO? Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku ???
 	25183 rpc_fundraw_segwitonly				9babd2d911b	last=9e7fd5c0fe3
-	(CHECK-LAST)	last=f2fd806f412 origin-pull-k/293/head
+	(CHECK-LAST)	last=edf8e63393b origin-pull-k/293/head
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
 		# Fixed tests with inspiration from 9e7fd5c0fe3
 		# + knots#293
@@ -1271,8 +1271,8 @@ checkout v30.0rc1
 	# Needs work/review: g539  RandyMcMillan-g/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	30951 v2onlyclearnet-29+knots				ba75af3f9b2	last=6b2796a7f76
-		# Held back 27e90008835...6b2796a7f76 (listen=0 forced antifeature, confusing help string, refactoring)
+	30951 v2onlyclearnet-29+knots				ba75af3f9b2	last=1e61206583d
+		# Held back 27e90008835...1e61206583d (listen=0 forced antifeature, confusing help string, refactoring)
 		# Made a hidden option
 	# Needs review: 32065 vasild/i2p_early_create_session
 	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces
@@ -1487,7 +1487,8 @@ checkout v30.0rc1
 	# Needs work: k227 1440000bytes/remove-minedtxs-extrapool
 	k162  qt_bad_external_signer_msg-22			f1b1cdf9d4e	last=111c401fc5a bigshiny90/fix-invalid-scriptsigner-errordialog
 	Needs work: k271  privkeyio/policy-tapscript-dust-limit
-	Needs work: k272  privkeyio/policy-subdust-fee-penalty
+	k272  subdustfeepenalty-29.3+knots						last=af7d6f6adba privkeyio/policy-subdust-fee-penalty
+		# Partial: remaining in rwconf_policy
 	Needs review: k275  privkeyio/feature-rbf-feerate-mode
 	Needs review: k280  privkeyio/feature-priority-vsize-discount
 	k292  Retropex/rework-opnet

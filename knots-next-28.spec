@@ -1118,7 +1118,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# TODO? Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku ???
 	25183 rpc_fundraw_segwitonly				938e4a0ff02	last=9e7fd5c0fe3
-	(CHECK-LAST)	last=f2fd806f412 origin-pull-k/293/head
+	(CHECK-LAST)	last=edf8e63393b origin-pull-k/293/head
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
 		# Fixed tests with inspiration from 9e7fd5c0fe3
 		# + knots#293
