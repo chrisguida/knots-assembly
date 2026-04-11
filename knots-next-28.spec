@@ -1118,7 +1118,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# TODO? Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku ???
 	25183 rpc_fundraw_segwitonly				938e4a0ff02	last=9e7fd5c0fe3
-	(CHECK-LAST)	last=9128cc6f89f origin-pull-k/293/head
+	(CHECK-LAST)	last=f2fd806f412 origin-pull-k/293/head
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
 		# Fixed tests with inspiration from 9e7fd5c0fe3
 		# + knots#293
@@ -1284,6 +1284,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs Knots-specific work: 34721 willcl-ark/cmake-shell-completions
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	1764e95f94c	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
+		Alternative: Needs review? 34992 bittoby/rpc-utxoupdatepsbt-add-prev-txs
 	30930 netinfo_svcs_outonly-28				c4dd1db3f36
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
 	31215 http_inc_thr16_wq64-27				d54c2bacb8f	last=e56fc7ce6a9 vasild/rpcthreads
@@ -1384,7 +1385,6 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		NOTE: 31.x backport in #34800
 	Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	Needs concept & review: 34933 davidgumberg/2026-03-26-dont-disconnect-unknown-block-hash-cfilters
-	Needs review? 34992 bittoby/rpc-utxoupdatepsbt-add-prev-txs
 	Needs concept & review: 35004 HowHsu/usdt-txgraph-tracing-v2
 	Needs review: 35006 torkelrogstad/2026-04-05-request-id
 	Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change

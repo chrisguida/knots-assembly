@@ -995,7 +995,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# TODO? Needs careful review? -     stratum_server	last=36bbfbc0e7b tradecraft/bitcoin-merge-mining-23
 		# Caution: Has a bug per call w/ maaku ???
 	25183 rpc_fundraw_segwitonly				348386cd5c0	last=9e7fd5c0fe3
-	(CHECK-LAST)	last=9128cc6f89f origin-pull-k/293/head
+	(CHECK-LAST)	last=f2fd806f412 origin-pull-k/293/head
 		# Currently just an old version for Knots 23.0 compatibility (held back 1c5cfd84b3d...9e7fd5c0fe3)
 		# Fixed tests with inspiration from 9e7fd5c0fe3
 		# + knots#293
@@ -1039,7 +1039,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	27034 rpc_importaddr_for_descwallet-27+k	ca660cb3801	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 rpc_getpeerinfo_lastblockann-28		2530450955b	last=d46a3a5cce4 LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28		2530450955b	last=036a87b8a99 LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
 	27216 rpc_getaddressinfo_isactive			0cc4aef0bec	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
@@ -1142,6 +1142,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs Knots-specific work: 34721 willcl-ark/cmake-shell-completions
 	30886 rpc_descrprocesspsbt_prevtxs-28+knots	35f0e28f3e2	last=87ceb610a72 instagibbs/2024-09-updateutxo_psbt
 		# Avoided doc-code move
+		# Alternative: Needs review? 34992 bittoby/rpc-utxoupdatepsbt-add-prev-txs
 	# Needs work: 31086 dnsseed_cdecker-28								last=5b823920836 cdecker/202442-re-add-bitcoinstats-seed
 	# Needs work? 31252 rpc_TxToUniv_witScript-28								last=4e128d4f9b2
 		# Alternative: 31256 naiyoma/feature/rpc-show-redeemscript-in-P2WSH-and-P2SH
@@ -1226,7 +1227,6 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34776 guix_clean_confirm-22								last=2724c392080 !origin-pull/34800/head^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	# Needs concept & review: 34829 chriszeng1010/rpc-getrawtransaction-wtxid
 	# Needs concept & review: 34933 davidgumberg/2026-03-26-dont-disconnect-unknown-block-hash-cfilters
-	Needs review? 34992 bittoby/rpc-utxoupdatepsbt-add-prev-txs
 	# Needs concept & review: 35004 HowHsu/usdt-txgraph-tracing-v2
 	# Needs review: 35006 torkelrogstad/2026-04-05-request-id
 	# Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
@@ -1246,9 +1246,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					5fd9d72f4c5	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys-29+knots					54671ba722a
+	(CHECK-LAST)	last=641c2231d37 641c2231d37
+		# + knots#296
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
 		# NOTE: Now also includes mintxfee in getwalletinfo for testing purposes
-		TODO: knots#296
 	# Needs work / rewrite to sweepprivkeys? g650 -  # qt, refactor: Add Import to Wallet GUI
 	9245 ionice-29+knots						f995646346a
 		# low prio: p2p requests, loading/verifying blocks on disk
