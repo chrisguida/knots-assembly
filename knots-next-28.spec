@@ -854,8 +854,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 34794 w0xlt/rest-cache-control-headers
 	Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
-	# Needs concept: k287 privkeyio/uncap-scriptcheck-threads				last=3876a4b3c72
-		# https://github.com/bitcoin/bitcoin/pull/32692#issuecomment-3465177675
+	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
 	# TODO: 31989 CheckTemplateVerify
