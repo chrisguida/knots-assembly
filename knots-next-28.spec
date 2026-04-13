@@ -630,7 +630,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		NOTE: 31.x backport in #34800
 		NOTE: 30.x backport in #34805
 	Triage: Needs concept & review: 34812 w0xlt/fix-33471-cjdns-externalip
-	n/a   fix_typos_from_pr33152-29
+	n/a   fix_typos_from_pr33152-29.3
 	Triage: 34870 furszy/2026_feebumper_crash_fix
 	Needs work: 34872 w0xlt/wallet-mixed-input-history-only
 	34888 furszy/2026_wallet_total_amount_bad_comparison

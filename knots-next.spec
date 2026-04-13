@@ -490,8 +490,8 @@ checkout v30.0rc1
 		NOTE: 31.x backport in #34800
 		NOTE: 30.x backport in #34805
 	Needs concept & review: 34812 w0xlt/fix-33471-cjdns-externalip
-	n/a   fix_typos_from_pr33152-29
-	34870 fix_wallet_bump_fail_crash-29						last=6072a2a6a1f furszy/2026_feebumper_crash_fix
+	n/a   fix_typos_from_pr33152-29.3
+	34870 fix_wallet_bump_fail_crash-29.3						last=6072a2a6a1f furszy/2026_feebumper_crash_fix
 	Needs work: 34872 w0xlt/wallet-mixed-input-history-only
 	34888 furszy/2026_wallet_total_amount_bad_comparison
 	Review: 34893 w0xlt/psbt-proprietary-merge-fix

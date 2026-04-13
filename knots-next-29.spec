@@ -528,8 +528,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# NOTE: 31.x backport in #34800
 		# NOTE: 30.x backport in #34805
 	# Needs concept & review: 34812 w0xlt/fix-33471-cjdns-externalip
-	n/a   fix_typos_from_pr33152-29
-	34870 fix_wallet_bump_fail_crash-29						last=6072a2a6a1f furszy/2026_feebumper_crash_fix
+	n/a   fix_typos_from_pr33152-29.3
+	34870 fix_wallet_bump_fail_crash-29.3					last=6072a2a6a1f furszy/2026_feebumper_crash_fix
 	# Needs work: 34872 w0xlt/wallet-mixed-input-history-only
 	34888 fix_wallet_coinsel_pr34888-25						last=0026b330c4a furszy/2026_wallet_total_amount_bad_comparison
 	34893 fix_psbt_merge_proprietary-29						last=eb76e953acc w0xlt/psbt-proprietary-merge-fix
@@ -741,7 +741,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
 	# Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
-	# Needs concept: k287 privkeyio/uncap-scriptcheck-threads				last=3876a4b3c72
+	Needs concept: k287 privkeyio/uncap-scriptcheck-threads				last=3876a4b3c72
 		# https://github.com/bitcoin/bitcoin/pull/32692#issuecomment-3465177675
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
 # SOFTFORK:
