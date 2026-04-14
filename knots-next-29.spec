@@ -1,7 +1,7 @@
-timestamp 2026-04-09 17:17:38
+timestamp 2026-04-14 18:22:44
 #lastapply no-merge
 
-#.. checked up to PR #35040 / gui#935 / knots#296
+#.. checked up to PR #35072 / gui#935 / knots#297
 
 checkout v29.3
 @29.x-syslibs
@@ -18,6 +18,7 @@ checkout v29.3
 	34462 fix_bsd_batchprio-26					cf8a2876f8c
 	# Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
 	# Needs review: 34953 sha256_sse4_nosanitize_pr34953-29.3				last=fedeff7f201 deadmanoz/fix/gcc-asan-sha256-sse4-only
+	# Triage: 35068 ryanofsky/pr/depfind
 # SYSLIBS:
 	2241  sys_leveldb							8ed686b2e1a	last=bd2be933f26 sys_leveldb-30
 		# Related: #32447
@@ -550,6 +551,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 35003 furszy/2026_abc_io_exception
 	# Needs review: 35017 instagibbs/2026-04-remove_all_consensusscript
 	# Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
+	# Needs review: 35070 stratospher/2026_04_m_blocks_unlinked_ub
+	# Needs review: 35071 pinheadmz/reindex-continue
 	-     fix_qt_sync_pct_truncate-28						last=13b1c9dc4cf origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early				f59c23596f8
@@ -740,6 +743,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
 	# Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
+	# Needs review: 35041 brunoerg/2026-04-descriptor
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -1095,7 +1099,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 (31.x backport in #35046) ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1338,6 +1342,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces
 	# Needs review: 33044 fanquake/19513_rebased
 	# Needs concept & review: 35027 8144225309/net-bind-outgoing
+	# Needs concept & review: 35054 fjahr/2026-02-utxo-set-share-safe-take-2
 	-     font_for_money_global					e323ce3f430
 	k157  qt_darkmode-29+knots					e343ed3f48d	last=2c15a2071f6 bigshiny90/v29.1-knots-rc1-guifixes
 	(CHECK-LAST)	last=aa6b9665628 bigshiny90/gui-darkmode-updates  # knots#160
@@ -1454,6 +1459,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	# Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
 	k288 qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
+	Review: k297 privkeyio/gui-sweep-privkey
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	400f5f788a0
 	-     pol_acceptunknownwitness				fb6c14bcc0d
@@ -1654,7 +1660,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260409)			931ea36c899
+	n/a  (bump_version=knots20260414)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=568df7aa2b1)				dce09dbcdc4  # release notes: write/update, including change log and credits

@@ -1,7 +1,7 @@
-timestamp 2026-04-09 17:17:38
+timestamp 2026-04-14 18:22:44
 lastapply no-merge
 
-#.. checked up to PR #35040 / gui#935 / knots#296
+#.. checked up to PR #35072 / gui#935 / knots#297
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -21,6 +21,7 @@ checkout v30.0rc1
 	34754 hebasto/260306-qt6-gcc16
 	Triage: 31.xTODO: Consider reverting #34923
 	Review: 34953 deadmanoz/fix/gcc-asan-sha256-sse4-only
+	Triage: 35068 ryanofsky/pr/depfind
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -512,6 +513,8 @@ checkout v30.0rc1
 	Needs review: 35003 furszy/2026_abc_io_exception
 	Triage: Review: 35017 instagibbs/2026-04-remove_all_consensusscript
 	Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
+	Needs review: 35070 stratospher/2026_04_m_blocks_unlinked_ub
+	Needs review: 35071 pinheadmz/reindex-continue
 	-     fix_qt_sync_pct_truncate-28						last=13b1c9dc4cf origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early				91f5662ec3d
@@ -695,6 +698,7 @@ checkout v30.0rc1
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	Needs review: 34794 w0xlt/rest-cache-control-headers
 	Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
+	Needs review: 35041 brunoerg/2026-04-descriptor
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -1051,7 +1055,7 @@ checkout v30.0rc1
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 (31.x backport in #35046) ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1276,6 +1280,7 @@ checkout v30.0rc1
 	# Needs review: 32065 vasild/i2p_early_create_session
 	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces
 	# Needs concept & review: 35027 8144225309/net-bind-outgoing
+	# Needs concept & review: 35054 fjahr/2026-02-utxo-set-share-safe-take-2
 	-     font_for_money_global					8d1b78f4838
 	k157  qt_darkmode-29+knots					3943fcce93e	last=2c15a2071f6 bigshiny90/v29.1-knots-rc1-guifixes
 	(CHECK-LAST)	last=aa6b9665628 bigshiny90/gui-darkmode-updates  # knots#160
@@ -1395,6 +1400,7 @@ checkout v30.0rc1
 	Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
 	TODO: Restore user-facing elision post-#34764
 	k288 qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
+	Review: k297 privkeyio/gui-sweep-privkey
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	e11d54ee382
 	-     pol_acceptunknownwitness				6d158fd7fbd
@@ -1601,7 +1607,7 @@ checkout v30.0rc1
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260409)			d5593bea7a1
+	n/a  (bump_version=knots20260414)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits

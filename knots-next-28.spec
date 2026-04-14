@@ -1,7 +1,7 @@
-timestamp 2026-04-09 17:17:38
+timestamp 2026-04-14 18:22:44
 #lastapply no-merge
 
-#.. checked up to PR #35040 / gui#935 / knots#296
+#.. checked up to PR #35072 / gui#935 / knots#297
 
 checkout v28.2
 @28.x-syslibs
@@ -26,6 +26,7 @@ checkout v28.2
 	34462 fix_bsd_batchprio-26
 	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
 	Triage: Review: 34953 deadmanoz/fix/gcc-asan-sha256-sse4-only
+	Triage: 35068 ryanofsky/pr/depfind
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -652,6 +653,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 35003 furszy/2026_abc_io_exception
 	Triage: Review: 35017 instagibbs/2026-04-remove_all_consensusscript
 	Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
+	Triage: Needs review: 35070 stratospher/2026_04_m_blocks_unlinked_ub
+	Needs review: 35071 pinheadmz/reindex-continue
 	-     fix_qt_sync_pct_truncate-28						last=13b1c9dc4cf origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
@@ -853,6 +856,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 34656 alexanderwiederin/blockmap-chain-concurrency
 	Needs review: 34794 w0xlt/rest-cache-control-headers
 	Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
+	Needs review: 35041 brunoerg/2026-04-descriptor
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -1222,7 +1226,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 (31.x backport in #35046) ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1498,6 +1502,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review & concept: 32726,32728 -  # Add initial OpenAPI/Swagger specification for Bitcoin Core RPC and REST interfaces
 	# Needs review: 33044 fanquake/19513_rebased
 	# Needs concept & review: 35027 8144225309/net-bind-outgoing
+	# Needs concept & review: 35054 fjahr/2026-02-utxo-set-share-safe-take-2
 	-     font_for_money_global
 	k157  qt_darkmode-29+knots								last=2c15a2071f6 bigshiny90/v29.1-knots-rc1-guifixes
 	(CHECK-LAST)	last=62bfaa5132b bigshiny90/gui-darkmode-updates  # knots#160
@@ -1614,6 +1619,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
 	k288 qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
+	Review: k297 privkeyio/gui-sweep-privkey
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness
@@ -1795,7 +1801,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260409)			ba223403bbc
+	n/a  (bump_version=Knots:20260414)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
