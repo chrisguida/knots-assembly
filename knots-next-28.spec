@@ -655,7 +655,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
 	Triage: Needs review: 35070 stratospher/2026_04_m_blocks_unlinked_ub
 	Needs review: 35071 pinheadmz/reindex-continue
-	-     fix_qt_sync_pct_truncate-28						last=13b1c9dc4cf origin-pull-g/935/head
+	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
 	-     qt_intro_nojumpy						4ee79cc6ff2
@@ -1618,8 +1618,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# NOTE: 7c1a63c0b22 rebased/cleaned up in 31a011d9252, just has extra padding when no bans
 	Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
-	k288 qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
-	Review: k297 privkeyio/gui-sweep-privkey
+	k288  qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
+	Review: k297  privkeyio/gui-sweep-privkey
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-28+knots	5ba611afd07	last=6ce4823452f refactor_isstandardtx_mpopts-29+knots
 	-     pol_acceptunknownwitness

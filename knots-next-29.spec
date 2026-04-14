@@ -553,7 +553,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
 	# Needs review: 35070 stratospher/2026_04_m_blocks_unlinked_ub
 	# Needs review: 35071 pinheadmz/reindex-continue
-	-     fix_qt_sync_pct_truncate-28						last=13b1c9dc4cf origin-pull-g/935/head
+	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early				f59c23596f8
 	-     qt_intro_nojumpy						bed32434b2c
@@ -1458,8 +1458,8 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 		# NOTE: 7c1a63c0b22 rebased/cleaned up in 31a011d9252, just has extra padding when no bans
 	# Needs concept & review: k283 cal-gooo/qt-theme-toggle-fusion
 	# Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
-	k288 qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
-	Review: k297 privkeyio/gui-sweep-privkey
+	k288  qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
+	k297  qt_sweepprivkeys-29								last=804d4d10f36 privkeyio/gui-sweep-privkey
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	400f5f788a0
 	-     pol_acceptunknownwitness				fb6c14bcc0d
