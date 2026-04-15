@@ -9,7 +9,8 @@ checkout v30.0rc1
 	# Needs review: 33550 ryanofsky/pr/winstream
 	# Needs review: 33569 l0rinc/l0rinc/throw-by-value
 	# Needs review: 33570 l0rinc/l0rinc/environ-mingw
-	Needs review: g899 hebasto-g/251008-deprecated
+	g899  qt6compat_invalidateFilter-23			b21aea0e857
+		# Expanded to cover watch-only filter
 	#31.xTODO# Revert #33714 for #33570 (more portable) ?
 	Triage: Partial: 33779 hebasto/251104-force-iwyu-kernel
 	Triage: 33972 hebasto/251130-kernel-test

@@ -34,6 +34,7 @@ checkout v29.3
 	30997 qt5qt6-29								dc7d2f93153	last=65319c41ff1 compat_qt5-30
 		# Includes parts of gui#861 whitslack/qt6
 	g899  qt6compat_invalidateFilter-23			b21aea0e857
+		# Expanded to cover watch-only filter
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	# Meh? 34390 fanquake/tar_override_get_prev
