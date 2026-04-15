@@ -765,11 +765,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs community support: 33163 -  # BIP360 quantum
 	# Triage: 34140 roconnor-blockstream/simplicity
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
-	k289  rdts_not_enforced_prompt
-	# Needs review & consensus: k238 -	last=a8e9e0e44cf  # Reduced Data Temporary Softfork
-		# + knots#256
-		# + updated fixed seeds ?
-		# NOTE: Core PR in #24930
+	# k289  rdts_not_enforced_prompt
+	# NOTE: knots#238 (RDTS) moved to end of branch assembly!
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 	# Needs review & consensus: 34826 sashabeton/p2skh
 # FUNCTIONALITY:
@@ -1634,6 +1631,12 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	# Needs refactoring to only happen for -acceptnonstdtxn(?): 26398 instagibbs/relax_too_small_tx_equality
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
+# SOFTFORK:
+	k238 rdts_combined-29+knots								last=f62f5fda667
+	(CHECK-LAST)	last=bc826d78499 rdts_consent_prompt
+		# + knots#256
+		# TODO: + updated fixed seeds ?
+		# NOTE: Core PR in #24930
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		a819d4d6b4d
 	# Triage: 34808 hebasto/260311-qt-ts-source
@@ -1660,10 +1663,10 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260414)			931ea36c899
+	n/a  (bump_version=knots20260415)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
-	n/a   (cherrypick=b5cd0823d09)				dce09dbcdc4  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=b7b24eebc7a)				dce09dbcdc4  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1674,7 +1677,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
-	n/a  (cherrypick=b1975aff889)				a9aee730466  # update manpages (build first)
+	n/a  (cherrypick=48160e19503)				a9aee730466  # update manpages (build first)
 		# WARNING: Don't forget to add zsh completion!
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
 		#30.xTODO# check all applicable build options are enabled (see also #33085 and #33828, plus miniupnpc)

@@ -878,10 +878,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs community support: 33163 -  # BIP360 quantum
 	# Triage: 34140 roconnor-blockstream/simplicity
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
-	# Needs review & consensus: k238 -	last=a8e9e0e44cf  # Reduced Data Temporary Softfork
-		# + knots#256
-		# + updated fixed seeds ?
-		# NOTE: Core PR in #24930
+	# k289  rdts_not_enforced_prompt
+	# NOTE: knots#238 (RDTS) moved to end of branch assembly!
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 	# Needs review & consensus: 34826 sashabeton/p2skh
 # FUNCTIONALITY:
@@ -1774,6 +1772,12 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs refactoring to only happen for -acceptnonstdtxn(?): 26398 instagibbs/relax_too_small_tx_equality
 	# Needs review & optionality: 26451 sdaftuar/2022-11-fixrbf
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
+# SOFTFORK:
+	k238 rdts_combined-29+knots								last=f62f5fda667
+	(CHECK-LAST)	last=bc826d78499 rdts_consent_prompt
+		# + knots#256
+		# TODO: + updated fixed seeds ?
+		# NOTE: Core PR in #24930
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		d4c1e555559
 	Triage: 34808 hebasto/260311-qt-ts-source
