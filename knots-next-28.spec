@@ -559,7 +559,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		NOTE: 28.x backport in #34620
 	34372 qa_wallet_migration_tests_202601-29.3
 		# NOTE: Invisible dependencies on #32273 and #34370
-	Triage: 34176 handle_wallet_dir_nonwritable-29.3				last=271846280db furszy/2025_wallet_check_db_permissions
+	Triage: 34176 handle_wallet_dir_nonwritable-29.3				last=5272012a938 furszy/2025_wallet_check_db_permissions
 		# NOTE: temporarily restored `descriptors=True` in tests until bdb is updated to pass
 	Triage: -     handle_wallet_dir_nonwritable_bdb-29.3
 	Triage: 31423 wallet_migrate_watchonly_only-29.3
@@ -1363,8 +1363,8 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs review: 33336 l0rinc/l0rinc/log-initial-signature-verification-state
 	# Needs work? 33353 l0rinc/l0rinc/show-reindex-progress
 	# Needs concept & review: 33392 -  # wallet/rpc: add scan_utxoset option to getbalance(s) to verify wallet balance accuracy
-	# Needs review & JIT safety: 33414 vasild/tor_pow
-		TODO: + #34158 top 2 commits
+	33414 tor_pow-29+knots
+		# + #34158 top 2 commits (see fix_torcontrol_maxlinelen-29+knots earlier)
 	# Needs review: 33448 ajtowns/202508-reportinvtosend
 	# Needs work (new doc only applies to guix bins) & backport: 33451 hebasto/250921-install-docs
 	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
@@ -1397,7 +1397,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs concept & review: 35004 HowHsu/usdt-txgraph-tracing-v2
 	Needs review: 35006 torkelrogstad/2026-04-05-request-id
 	Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
-	35076 -  # tooltip mentions of pruning affecting wallets/indexes
+	35076 doc_pruning_impact_pr35076-24						last=e0911c30fb0
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
