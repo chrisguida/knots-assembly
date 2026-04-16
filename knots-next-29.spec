@@ -1452,7 +1452,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	# Needs review? k197 qt_portmap_ux_underlisten
 	# Needs work: k208 1440000bytes/sendtx-ui
-	k262  privkeyio/fix/87-blockfilterindex-pruning-startup	last=4e348de9a10
+	k262  index_prune_error_suggestion-29					last=4e348de9a10 privkeyio/fix/87-blockfilterindex-pruning-startup
 	# Needs concept: k270 privkeyio/compile-tr-native
 	# Needs work: k274  umop/toggle-banned-peers-visibility
 		# NOTE: 7c1a63c0b22 rebased/cleaned up in 31a011d9252, just has extra padding when no bans
