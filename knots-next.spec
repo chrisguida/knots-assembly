@@ -63,6 +63,8 @@ checkout v30.0rc1
 	# Only if native Windows CI? 34285 hebasto/260114-windows-pyzmq
 	# FreeBSD: 34346 w0xlt/freebsd_high_port_range-again
 	# Only if native Windows CI? 34418 hodlinator/2026/01/31409_fix
+	n/a   fix_dbcrash_timeout_pr34589part-0.16
+		# Part of #34589
 	34622 qafix_debuglog_races_pr34622-29.3+k
 		# NOTE: Excludes timeout relaxation
 	# If needed: 34690 maflcko/2602-test-zmq
@@ -1391,7 +1393,7 @@ checkout v30.0rc1
 	Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	Needs review? k197 qt_portmap_ux_underlisten
 	Needs work: k208 1440000bytes/sendtx-ui
-	Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
+	k262  privkeyio/fix/87-blockfilterindex-pruning-startup	last=4e348de9a10
 	Needs concept: k270 privkeyio/compile-tr-native
 	Needs work: k274  umop/toggle-banned-peers-visibility
 		# NOTE: 7c1a63c0b22 rebased/cleaned up in 31a011d9252, just has extra padding when no bans
@@ -1399,7 +1401,7 @@ checkout v30.0rc1
 	Needs concept & review: k286 Bortlesboat/gui-warn-missing-config
 	TODO: Restore user-facing elision post-#34764
 	k288  qt_syncprogressbar_fullwidth-0.7					last=45e89eed5b9 SpectrGen1/issue-177-better-progress-bar
-	k297  qt_sweepprivkeys-29								last=804d4d10f36 privkeyio/gui-sweep-privkey
+	k297  qt_sweepprivkeys-29								last=2e165cdffc5 privkeyio/gui-sweep-privkey
 # Non-upstreamed policy options (default off):
 	30232 refactor_isstandardtx_mpopts-29+knots	e11d54ee382
 	-     pol_acceptunknownwitness				6d158fd7fbd

@@ -64,6 +64,8 @@ checkout v28.2
 	# Only if native Windows CI? 34285 hebasto/260114-windows-pyzmq
 	# FreeBSD: 34346 w0xlt/freebsd_high_port_range-again
 	# Only if native Windows CI? 34418 hodlinator/2026/01/31409_fix
+	n/a   fix_dbcrash_timeout_pr34589part-0.16
+		# Part of #34589
 	34622 qafix_debuglog_races_pr34622-29.3+k
 		# NOTE: Excludes timeout relaxation
 	# If needed: 34690 maflcko/2602-test-zmq
@@ -1610,7 +1612,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	Needs review? k197 qt_portmap_ux_underlisten
 	Needs work: k208 1440000bytes/sendtx-ui
-	Needs concept/work: k262 GUI prompt to disable out-of-sync index(es)
+	k262  privkeyio/fix/87-blockfilterindex-pruning-startup	last=4e348de9a10
 	Needs concept: k270 privkeyio/compile-tr-native
 	Needs work: k274  umop/toggle-banned-peers-visibility
 		# NOTE: 7c1a63c0b22 rebased/cleaned up in 31a011d9252, just has extra padding when no bans
