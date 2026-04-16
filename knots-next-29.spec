@@ -1,7 +1,7 @@
-timestamp 2026-04-14 18:22:44
+timestamp 2026-04-16 19:17:34
 #lastapply no-merge
 
-#.. checked up to PR #35072 / gui#935 / knots#297
+#.. checked up to PR #35092 / gui#935 / knots#297
 
 checkout v29.3
 @29.x-syslibs
@@ -38,6 +38,7 @@ checkout v29.3
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	# Meh? 34390 fanquake/tar_override_get_prev
+	# If needed: 35080 maflcko/2604-test-time-factor
 	n/a   (delete_release_notes_fragments)
 @29.x-knotsfixes
 # TESTS:
@@ -556,6 +557,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
 	# Needs review: 35070 stratospher/2026_04_m_blocks_unlinked_ub
 	# Needs review: 35071 pinheadmz/reindex-continue
+	35087 davidgumberg/2026-04-14-torcontrol-linelimit
+	# Needs review: 35092 -  # wallet: bound descriptor update work after high-index detection
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early				f59c23596f8
@@ -1099,7 +1102,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 (31.x backport in #35046) ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 (31.x backport in #35046) ? + #35090 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1233,6 +1236,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs concept & review: 35004 HowHsu/usdt-txgraph-tracing-v2
 	# Needs review: 35006 torkelrogstad/2026-04-05-request-id
 	# Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
+	35076 -  # tooltip mentions of pruning affecting wallets/indexes
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1666,10 +1670,10 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260415)			931ea36c899
+	n/a  (bump_version=knots20260416)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
-	n/a   (cherrypick=ff1c81b8038)				dce09dbcdc4  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=d26c9096fcc)				dce09dbcdc4  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R
@@ -1680,7 +1684,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 		# git diff|grep '^+.*`'|cut -d'`' -f2|while read c; do grep -q $c lol || echo $c; done
 		# When re-added, #28824 notes in 9db5d23d559
 		# When re-added, #33259 notes in 32695dff9e6
-	n/a  (cherrypick=1cb2b4f4b2f)				a9aee730466  # update manpages (build first)
+	n/a  (cherrypick=5fb87d68283)				a9aee730466  # update manpages (build first)
 		# WARNING: Don't forget to add zsh completion!
 		# WARNING: Need to build as CMAKE_BUILD_TYPE=Release to avoid 'lock' log level being in manpages/config
 		#30.xTODO# check all applicable build options are enabled (see also #33085 and #33828, plus miniupnpc)

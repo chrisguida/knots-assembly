@@ -1,7 +1,7 @@
-timestamp 2026-04-14 18:22:44
+timestamp 2026-04-16 19:17:34
 #lastapply no-merge
 
-#.. checked up to PR #35072 / gui#935 / knots#297
+#.. checked up to PR #35092 / gui#935 / knots#297
 
 checkout v28.2
 @28.x-syslibs
@@ -42,6 +42,7 @@ checkout v28.2
 	# Broken, and not worth the effort since a Tonal-capable font bundle is nice to have: g216  optional_font
 	#Maybe restore: 7339  opt_libevent
 	# Meh? 34390 fanquake/tar_override_get_prev
+	# If needed: 35080 maflcko/2604-test-time-factor
 	n/a   (delete_release_notes_fragments)
 @28.x-knotsfixes
 # TESTS:
@@ -657,6 +658,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
 	Triage: Needs review: 35070 stratospher/2026_04_m_blocks_unlinked_ub
 	Needs review: 35071 pinheadmz/reindex-continue
+	35087 davidgumberg/2026-04-14-torcontrol-linelimit
+	Needs review: 35092 -  # wallet: bound descriptor update work after high-index detection
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
@@ -1226,7 +1229,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 (31.x backport in #35046) ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 (31.x backport in #35046) ? + #35090 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1391,6 +1394,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs concept & review: 35004 HowHsu/usdt-txgraph-tracing-v2
 	Needs review: 35006 torkelrogstad/2026-04-05-request-id
 	Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
+	35076 -  # tooltip mentions of pruning affecting wallets/indexes
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1807,7 +1811,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260414)			ba223403bbc
+	n/a  (bump_version=Knots:20260416)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
