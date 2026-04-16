@@ -644,7 +644,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 34931 furszy/2026_utxo_deser_error_divergence OR 34132?
 	Needs work: 34937 Sjors/2026/03/file-descriptor-limit
 	Review: g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
-	34959 bdbro_enforce_levels_sizes-28						last=6368100e978 achow101/bdbro-cycle-detection
+	34959 bdbro_enforce_levels_sizes-28						last=b2de59d486d achow101/bdbro-cycle-detection
 		# OR: 34946 instagibbs/2026-03-infinite_migrate
 	Triage: Needs review: 34962 cprkrn/test-feebumper-enormous-cluster
 	# Needs review: IPC only: 34978 enirox001/04-26-ipc-maxconnections
@@ -1612,7 +1612,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	Needs review? k197 qt_portmap_ux_underlisten
 	Needs work: k208 1440000bytes/sendtx-ui
-	k262  privkeyio/fix/87-blockfilterindex-pruning-startup	last=4e348de9a10
+	k262  privkeyio/fix/87-blockfilterindex-pruning-startup	last=08574e0aa23
 	Needs concept: k270 privkeyio/compile-tr-native
 	Needs work: k274  umop/toggle-banned-peers-visibility
 		# NOTE: 7c1a63c0b22 rebased/cleaned up in 31a011d9252, just has extra padding when no bans

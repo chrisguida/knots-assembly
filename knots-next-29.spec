@@ -543,7 +543,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34931 furszy/2026_utxo_deser_error_divergence OR 34132?
 	34937 fix_rlim_infinity-29+knots						last=101de678a8e Sjors/2026/03/file-descriptor-limit
 	# Needs review (work?): g934 sbddesign-g/fix-151-issues-with-new-create-wallet-dialogue
-	34959 bdbro_enforce_levels_sizes-28						last=6368100e978 achow101/bdbro-cycle-detection
+	34959 bdbro_enforce_levels_sizes-28						last=b2de59d486d achow101/bdbro-cycle-detection
 		# OR: 34946 instagibbs/2026-03-infinite_migrate
 	# Triage: Needs review: 34962 cprkrn/test-feebumper-enormous-cluster
 	# Needs review: IPC only: 34978 enirox001/04-26-ipc-maxconnections
@@ -1452,7 +1452,7 @@ NM	14137 win_taskbar_progress					5ec83bf006e	last=18eb4dbb8a
 	# Needs work: k194 -  # gui: Implement two-row status bar with centered progress display
 	# Needs review? k197 qt_portmap_ux_underlisten
 	# Needs work: k208 1440000bytes/sendtx-ui
-	k262  index_prune_error_suggestion-29					last=4e348de9a10 privkeyio/fix/87-blockfilterindex-pruning-startup
+	k262  index_prune_error_suggestion-29					last=08574e0aa23 privkeyio/fix/87-blockfilterindex-pruning-startup
 	# Needs concept: k270 privkeyio/compile-tr-native
 	# Needs work: k274  umop/toggle-banned-peers-visibility
 		# NOTE: 7c1a63c0b22 rebased/cleaned up in 31a011d9252, just has extra padding when no bans
