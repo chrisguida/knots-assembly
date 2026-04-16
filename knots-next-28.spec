@@ -658,7 +658,9 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
 	Triage: Needs review: 35070 stratospher/2026_04_m_blocks_unlinked_ub
 	Needs review: 35071 pinheadmz/reindex-continue
-	35087 davidgumberg/2026-04-14-torcontrol-linelimit
+	-     fix_torcontrol_maxlinelen-29+knots
+		# Includes new tests (only) from #34158
+	35087 tocontrol_linelimit-29+knots						last=12cd60b05a9 davidgumberg/2026-04-14-torcontrol-linelimit
 	Needs review: 35092 -  # wallet: bound descriptor update work after high-index detection
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
@@ -1362,6 +1364,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs work? 33353 l0rinc/l0rinc/show-reindex-progress
 	# Needs concept & review: 33392 -  # wallet/rpc: add scan_utxoset option to getbalance(s) to verify wallet balance accuracy
 	# Needs review & JIT safety: 33414 vasild/tor_pow
+		TODO: + #34158 top 2 commits
 	# Needs review: 33448 ajtowns/202508-reportinvtosend
 	# Needs work (new doc only applies to guix bins) & backport: 33451 hebasto/250921-install-docs
 	# Don't care about signet: g896 -  # rpcconsole: display signet challenge
