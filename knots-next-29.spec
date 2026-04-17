@@ -1257,7 +1257,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# held back 50e2ff58f2..e11cb50a09 which turned options into a boolean directly
 	22016 rpc_gbci_period_start					5fd9d72f4c5	last=1898b9be12c Sjors/2021/05/versionbits_period_start
 	9152 sweepprivkeys-29+knots					54671ba722a
-	(CHECK-LAST)	last=641c2231d37 641c2231d37
+	(CHECK-LAST)	last=641c2231d37 origin-pull-k/296/head
 		# + knots#296
 		# NOTE: GetVirtualTransactionSize is safe here because we only support standard p2pk[h] anyway (see 21d85b5c0e)
 		# NOTE: Now also includes mintxfee in getwalletinfo for testing purposes
