@@ -660,7 +660,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 35071 pinheadmz/reindex-continue
 	-     fix_torcontrol_maxlinelen-29+knots
 		# Includes new tests (only) from #34158
-	35087 tocontrol_linelimit-29+knots						last=12cd60b05a9 davidgumberg/2026-04-14-torcontrol-linelimit
+	35087 torcontrol_linelimit-29+knots						last=8b3cdf3d8ac davidgumberg/2026-04-14-torcontrol-linelimit
 	Needs review: 35092 -  # wallet: bound descriptor update work after high-index detection
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
@@ -1218,6 +1218,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review and/or optionality: 28977 murchandamus/2023-11-gutter-guard-selector
 	29016 rpc_listmempooltxs-28+knots			8bc551ae426	last=07008477b81 niftynei/nifty/listmempoolentry
 	(CHECK-LAST)	last=f7066357360 rpc_listmempooltxs-29+knots
+		TODO: Add 29.x bugfix to handle parse error in REST code
 		# Includes typo fixup in comment that annoys linter
 	# Needs review? 29054 achow101/descriptor-sethdseed
 	# Needs concept + review: 29129 brunoerg/2023-12-externalsigner-account-parameter
