@@ -1,7 +1,7 @@
-timestamp 2026-04-16 19:17:34
+timestamp 2026-04-25 19:03:24
 #lastapply no-merge
 
-#.. checked up to PR #35092 / gui#935 / knots#297
+#.. checked up to PR #35158 / gui#935 / knots#301
 
 checkout v29.3
 @29.x-syslibs
@@ -557,10 +557,16 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Triage: Needs careful review: 35026 javierpmateos/fix-bip68-stale-lockpoints-clean
 	# Needs review: 35070 stratospher/2026_04_m_blocks_unlinked_ub
 	# Needs review: 35071 pinheadmz/reindex-continue
+	# Needs review: 35137 GerardoTaboada/wallet/document-maxconf-default
+	# Triage: Needs review: 35143 thomasbuilds/fix-btck-handle-self-move-assign
+	# Needs review: 35145 ViniciusCestarii/verifydb-cleanup
 	-     fix_torcontrol_maxlinelen-29+knots
 		# Includes new tests (only) from #34158
 	35087 torcontrol_linelimit-29+knots						last=8b3cdf3d8ac davidgumberg/2026-04-14-torcontrol-linelimit
 	# Needs review: 35092 -  # wallet: bound descriptor update work after high-index detection
+	# Needs review: 35100 nervana21/20260416_locktime
+	# Needs review: 35115 tony-ku/wallet-34599-abandon-confirmed-descendant
+	Review: 35117 takeshikurosawaa/i2p-session-create-redaction
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early				f59c23596f8
@@ -591,8 +597,11 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# Only affects libevent builds when the bitcoin tag has 5 components
 	# Needs work: k263  privkeyio/fix-vsize-sigops-datacarrier
 	k265  proxy_no_log_password-29							last=eb40ab7ff0f privkeyio/fix-socks5-credential-logging
+		Evaluate #35116
 	k266  extsigner_sanitychk_fingerprint-26				last=304598b5cc5 privkeyio/fix-external-signer-fingerprint-validation
 	k277  fix_qt_ban_expiry_update-28						last=60244b2f5cf Bortlesboat/fix-ban-table-refresh
+	# Needs review: k298 param_bounds_checks_202604
+	Needs review: k301 privkeyio/fix-warnings-no-wallet-tabs
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -745,6 +754,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34641 dbcache_dynamic-29.3+knots						last=539a0f796ca l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
+	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
+	35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
@@ -1105,7 +1116,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work: 29396 -  # rpc: getdescriptorinfo also returns normalized descriptor
 	# Needs review: 29415 vasild/private_broadcast
 		# TODO: Extend RPC to allow overriding private broadcast config option
-		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 (31.x backport in #35046) ? + #35090 ?
+		# + #34267 ? + #34271 ? + #34300 ? + #34322 ? + #34329 ? + #34533 ? + #34646 ? + #34707 ? + #34873 ? + #35016 ? + #35032 (31.x backport in #35046) ? + #35090 ? + #35129 ?
 	# Needs #29415 & review: 34457 w0xlt/wprv_29012
 	# Needs concept/review: 28926 willcl-ark/2023-07-getnetmsgstats (OR...)
 		# Was #27534 -  # rpc: add 'getnetmsgstats', new rpc to view network message statistics
@@ -1125,6 +1136,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review & wallet compat check: 29675 achow101/musig2
 	# Triage: 34141 achow101/musig-miniscript
 	# Needs review: 34697 shuv-amp/fix-musig-descriptor-dupkey
+	# Needs review: 35154 trail-of-forks/security/fix-signmusig2-psbt-assert
+	# Needs review: 35155 trail-of-forks/security/fix-setmusig2-secnonce-assert
 	# ----- END OF MUSIG2 -----
 	#30.xTODO# 29954 rpc_getmpinfo_policy_pr29954-28+knots				last=d165ac8779b kristapsk/getmempoolinfo-permitbaremultisig-maxdatacarriersize
 		# Or maybe this is unnecessary with a get/set policy RPC method?
@@ -1241,6 +1254,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 35006 torkelrogstad/2026-04-05-request-id
 	# Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
 	35076 doc_pruning_impact_pr35076-24						last=e0911c30fb0
+	# Needs work: 35113 optout21/block-dl
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1674,7 +1688,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260416)			931ea36c899
+	n/a  (bump_version=knots20260425)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=06a88fa7936)				dce09dbcdc4  # release notes: write/update, including change log and credits
