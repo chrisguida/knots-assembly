@@ -770,8 +770,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
 	# Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
 	# Needs review: 35041 brunoerg/2026-04-descriptor
-	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
-	35156 l0rinc/l0rinc/ScopedDataStreamUsage
+	# TODO: 35128 l0rinc/l0rinc/dbwrapper-key-spanreader
+	# TODO: 35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -1067,8 +1067,9 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	27034 rpc_importaddr_for_descwallet-27+k	ca660cb3801	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 rpc_getpeerinfo_lastblockann-28		2530450955b	last=036a87b8a99 LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28		2530450955b	last=136eed4a13c LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
+		# Held back test removal 036a87b8a99...136eed4a13c
 	27216 rpc_getaddressinfo_isactive			0cc4aef0bec	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-29+knots						03b56c3bfe9	last=91771366a3d apoelstra/2023-03--codex32
@@ -1262,7 +1263,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs concept & review: 35004 HowHsu/usdt-txgraph-tracing-v2
 	# Needs review: 35006 torkelrogstad/2026-04-05-request-id
 	# Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
-	35076 doc_pruning_impact_pr35076-24						last=e0911c30fb0
+	35076 doc_pruning_impact_pr35076-24						last=584f675abda
 	# Needs work: 35113 optout21/block-dl
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal

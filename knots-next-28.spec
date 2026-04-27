@@ -1418,7 +1418,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	Needs concept & review: 35004 HowHsu/usdt-txgraph-tracing-v2
 	Needs review: 35006 torkelrogstad/2026-04-05-request-id
 	Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
-	35076 doc_pruning_impact_pr35076-24						last=e0911c30fb0
+	35076 doc_pruning_impact_pr35076-24						last=584f675abda
 	Needs work: 35113 optout21/block-dl
 	-     qt_createunsigned_use_psbtops
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal

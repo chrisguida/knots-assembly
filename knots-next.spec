@@ -1025,8 +1025,9 @@ checkout v30.0rc1
 	# Needs review (and opt-in?): 26988 -  # cli: rework -addrinfo cli to use addresses which aren’t filtered for quality/recency
 	Prefer upstream? 27034 rpc_importaddr_for_descwallet-27+k	8f24b3dc7a0	last=be3ae51ece8 furszy/2022_rpc_importaddress_descriptors_compatible
 		# Diff-minimised & tweaked to avoid breaking #23362
-	27052 rpc_getpeerinfo_lastblockann-28		8cd4ac526fd	last=036a87b8a99 LarryRuane/2023-02-getpeerinfo
+	27052 rpc_getpeerinfo_lastblockann-28		8cd4ac526fd	last=136eed4a13c LarryRuane/2023-02-getpeerinfo
 		# Avoided changing internal data structures
+		# Held back test removal 036a87b8a99...136eed4a13c
 	27216 rpc_getaddressinfo_isactive			afa55a8fdd6	last=85f83339dda pinheadmz/used-addr-ui
 	# Needs work: 27260 -  # Enhanced error messages for invalid network prefix during address parsing.
 	27351 codex32-29+knots						ca0d001d976	last=91771366a3d apoelstra/2023-03--codex32
@@ -1201,7 +1202,7 @@ checkout v30.0rc1
 	Needs concept & review: 35004 HowHsu/usdt-txgraph-tracing-v2
 	Needs review: 35006 torkelrogstad/2026-04-05-request-id
 	Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
-	35076 doc_pruning_impact_pr35076-24						last=e0911c30fb0
+	35076 doc_pruning_impact_pr35076-24						last=584f675abda
 	Needs work: 35113 optout21/block-dl
 	-     qt_createunsigned_use_psbtops			a800d52314e
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
