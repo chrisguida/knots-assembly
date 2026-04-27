@@ -763,8 +763,6 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	34641 dbcache_dynamic-29.3+knots						last=c75a1c90ada l0rinc/l0rinc/dynamic-dbcache
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
-	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
-	35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
@@ -772,6 +770,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 34794 w0xlt/rest-cache-control-headers
 	# Needs concept & review: 34932 w0xlt/cmpctblock-shortid-collision-recovery
 	# Needs review: 35041 brunoerg/2026-04-descriptor
+	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
+	35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
