@@ -526,11 +526,12 @@ checkout v30.0rc1
 	Needs review: 35145 ViniciusCestarii/verifydb-cleanup
 	-     fix_torcontrol_maxlinelen-29+knots
 		# Includes new tests (only) from #34158
-	35087 torcontrol_linelimit-29+knots						last=8b3cdf3d8ac davidgumberg/2026-04-14-torcontrol-linelimit
+	35087 torcontrol_linelimit-29+knots						last=9fe5896a446 davidgumberg/2026-04-14-torcontrol-linelimit
 	Needs review: 35092 -  # wallet: bound descriptor update work after high-index detection
 	Needs review: 35100 nervana21/20260416_locktime
 	Needs review: 35115 tony-ku/wallet-34599-abandon-confirmed-descendant
-	Review: 35117 takeshikurosawaa/i2p-session-create-redaction
+	35116 socks5_redact_authinfo_log-28
+	35117 i2p_redact_privkey_in_log-22						last=cd2833e7436 takeshikurosawaa/i2p-session-create-redaction
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early				91f5662ec3d
@@ -565,8 +566,6 @@ checkout v30.0rc1
 	# n/a to Knots: -     depends_libevent_ignore_git_desc
 		# Only affects libevent builds when the bitcoin tag has 5 components
 	Needs work: k263  privkeyio/fix-vsize-sigops-datacarrier
-	k265  privkeyio/fix-socks5-credential-logging
-		Evaluate #35116
 	k266  extsigner_sanitychk_fingerprint-26				last=acc78e798fa privkeyio/fix-external-signer-fingerprint-validation
 	k277  fix_qt_ban_expiry_update-28						last=60244b2f5cf Bortlesboat/fix-ban-table-refresh
 	Needs review: k298 param_bounds_checks_202604
@@ -708,8 +707,8 @@ checkout v30.0rc1
 		# + #33435
 	34692 dbcache_1GiB-29.3+knots							last=4ae9a10ada9 andrewtoth/bump_dbcache
 		# Excluded doc update & release notes
-	34641 dbcache_dynamic-29.3+knots						last=539a0f796ca l0rinc/l0rinc/dynamic-dbcache
-		# + #34106 copyright notice + misc fixups
+	34641 dbcache_dynamic-29.3+knots						last=93c69d25519 l0rinc/l0rinc/dynamic-dbcache
+		# + #34435 (_GiB; partial) + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
 	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	35156 l0rinc/l0rinc/ScopedDataStreamUsage
