@@ -75,8 +75,9 @@ checkout v30.0rc1
 		# See also: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
 	# Needed in 2027 October (Python 3.16): 34820 maflcko/2603-test-windows-revert
 	# If needed: 34914 Sjors/2026/03/deep-sign (CI macOS codesigning)
-	Partial: 35161 l0rinc/l0rinc/doc-merkle-root-mutated
-	35164 musaHaruna/test/p2sh-sigop-counting
+	35161 qa_merkle_mutated_rv-0.19							last=f2dbc6a5fd5 l0rinc/l0rinc/doc-merkle-root-mutated
+		# Test only
+	35164 qa_p2sh_sigop_counting-21							last=f3f1a703137 musaHaruna/test/p2sh-sigop-counting
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	6b3aa212298
 	13789 asm_bypass_cxxflags					9de0f072503
@@ -416,7 +417,7 @@ checkout v30.0rc1
 	TODO: Ensure "Failed to load wallet '%s' after migration." wallet name fix is forward ported
 	34370 fix_34222_backport
 	34372 qa_wallet_migration_tests_202601
-	34176 handle_wallet_dir_nonwritable-29.3				last=5272012a938 furszy/2025_wallet_check_db_permissions
+	34176 handle_wallet_dir_nonwritable-29.3				last=08925d5ee75 furszy/2025_wallet_check_db_permissions
 		# NOTE: temporarily restored `descriptors=True` in tests until bdb is updated to pass
 	-     handle_wallet_dir_nonwritable_bdb-29.3
 	Triage: 34193 furszy/2026_wallet_safer_MigrateToSQLite
@@ -571,7 +572,7 @@ checkout v30.0rc1
 		# Only affects libevent builds when the bitcoin tag has 5 components
 	Needs work: k263  privkeyio/fix-vsize-sigops-datacarrier
 	k266  extsigner_sanitychk_fingerprint-26				last=acc78e798fa privkeyio/fix-external-signer-fingerprint-validation
-	k277  fix_qt_ban_expiry_update-28						last=60244b2f5cf Bortlesboat/fix-ban-table-refresh
+	k277  fix_qt_ban_expiry_update-28						last=87fca974185 Bortlesboat/fix-ban-table-refresh
 	Needs review: k298 param_bounds_checks_202604
 	Needs review: k301 privkeyio/fix-warnings-no-wallet-tabs
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
@@ -711,8 +712,11 @@ checkout v30.0rc1
 		# + #33435
 	34692 dbcache_1GiB-29.3+knots							last=4ae9a10ada9 andrewtoth/bump_dbcache
 		# Excluded doc update & release notes
-	34641 dbcache_dynamic-29.3+knots						last=93c69d25519 l0rinc/l0rinc/dynamic-dbcache
-		# + #34435 (_GiB; partial) + #34106 copyright notice + misc fixups
+	35097 byte_units_64bit_GiB-29.3+knots
+		# Partial; + #34435 (partial)
+		# Fixed missing header
+	34641 dbcache_dynamic-29.3+knots						last=c75a1c90ada l0rinc/l0rinc/dynamic-dbcache
+		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
 	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	35156 l0rinc/l0rinc/ScopedDataStreamUsage
