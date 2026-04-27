@@ -1,7 +1,7 @@
-timestamp 2026-04-25 19:03:24
+timestamp 2026-04-27 19:59:58
 #lastapply no-merge
 
-#.. checked up to PR #35158 / gui#935 / knots#301
+#.. checked up to PR #35168 / gui#935 / knots#301
 
 checkout v29.3
 @29.x-syslibs
@@ -72,6 +72,8 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 		# See also: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
 	# Needed in 2027 October (Python 3.16): 34820 maflcko/2603-test-windows-revert
 	# If needed: 34914 Sjors/2026/03/deep-sign (CI macOS codesigning)
+	Partial: 35161 l0rinc/l0rinc/doc-merkle-root-mutated
+	35164 musaHaruna/test/p2sh-sigop-counting
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	18033f85c25
 	13789 asm_bypass_cxxflags					4e1c7852279
@@ -447,7 +449,6 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# Inspired by the first commit on #34117
 	# Needs concept/review: 34117-commit-2  net: fix CJDNS address discovery when -externalip is set
 	# IPC-specific: Needs review: Partial: 34143 hebasto/251223-boost-layout
-		# + #34572 ?
 	# Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 		# + #34297 (p2p: add validation checks for initial self-announcement)
 		# + #34717 ?
@@ -568,8 +569,11 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 35092 -  # wallet: bound descriptor update work after high-index detection
 	# Needs review: 35100 nervana21/20260416_locktime
 	# Needs review: 35115 tony-ku/wallet-34599-abandon-confirmed-descendant
+	# OR: 34599 Luquitasjeffrey/issue34599
 	35116 socks5_redact_authinfo_log-28
 	35117 i2p_redact_privkey_in_log-22						last=cd2833e7436 takeshikurosawaa/i2p-session-create-redaction
+	# Needs review? 35166 asafmod/harden-prevector-change-capacity
+	# Needs review: 35168 marcofleon/2026/04/loadblockindex-unlinked-fix
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early				f59c23596f8
@@ -1689,7 +1693,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260425)			931ea36c899
+	n/a  (bump_version=knots20260427)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=06a88fa7936)				dce09dbcdc4  # release notes: write/update, including change log and credits

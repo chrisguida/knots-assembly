@@ -1,7 +1,7 @@
-timestamp 2026-04-25 19:03:24
+timestamp 2026-04-27 19:59:58
 #lastapply no-merge
 
-#.. checked up to PR #35158 / gui#935 / knots#301
+#.. checked up to PR #35168 / gui#935 / knots#301
 
 checkout v28.2
 @28.x-syslibs
@@ -76,6 +76,8 @@ checkout v28.2
 		# See also: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
 	# Needed in 2027 October (Python 3.16): 34820 maflcko/2603-test-windows-revert
 	# If needed: 34914 Sjors/2026/03/deep-sign (CI macOS codesigning)
+	Partial: 35161 l0rinc/l0rinc/doc-merkle-root-mutated
+	35164 musaHaruna/test/p2sh-sigop-counting
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail
 	18818 guix_reltar_autogen_distclean			5bd6cb2eb0a	last=b5a164d9155 fix_gitian_src_202004
@@ -537,7 +539,6 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# Inspired by the first commit on #34117
 	# Needs concept/review: 34117-commit-2  net: fix CJDNS address discovery when -externalip is set
 	Triage: Needs review: Partial: 34143 hebasto/251223-boost-layout
-		+ #34572 ?
 	Needs review: 34146 0xB10C/2025-12-separate-self-announcement
 		+ #34297 (p2p: add validation checks for initial self-announcement)
 		+ #34717 ?
@@ -667,8 +668,11 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 35092 -  # wallet: bound descriptor update work after high-index detection
 	Needs review: 35100 nervana21/20260416_locktime
 	Needs review: 35115 tony-ku/wallet-34599-abandon-confirmed-descendant
+	OR: 34599 Luquitasjeffrey/issue34599
 	35116 socks5_redact_authinfo_log-28
 	35117 i2p_redact_privkey_in_log-22						last=cd2833e7436 takeshikurosawaa/i2p-session-create-redaction
+	Needs review? 35166 asafmod/harden-prevector-change-capacity
+	Needs review: 35168 marcofleon/2026/04/loadblockindex-unlinked-fix
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
@@ -1828,7 +1832,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260425)			ba223403bbc
+	n/a  (bump_version=Knots:20260427)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
