@@ -441,7 +441,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	-     loglevel_corrections_bdb-29+knots		fe8c669c098
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
 	33993 doc_stopatheight_imprecise-21			27cb63a3885
-	34028 fix_seenlocal_max-26					7d09741986f	last=3fc5948e1fe
+	34028 fix_seenlocal_max-26					7d09741986f	last=39191c63085
+		# Held back pointless duplication 3fc5948e1fe...39191c63085
 	-     fix_feeest_read_rare_overflow-29		369f6ae848b
 		# Alternative to: 34109 maflcko/2512-fix-u64
 	-     pcp_dont_spam_unauth-29				c306eb2e412
@@ -760,9 +761,10 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	35097 byte_units_64bit_GiB-29.3+knots
 		# Partial; + #34435 (partial)
 		# Fixed missing header
-	34641 dbcache_dynamic-29.3+knots						last=c75a1c90ada l0rinc/l0rinc/dynamic-dbcache
+	34641 dbcache_dynamic-29.3+knots
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
+		# NOTE: last= removed because upstream branch destroyed
 	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
@@ -1183,7 +1185,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# Held back 509d871fc00...b19caeea098 formatting changes
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
-	31672 peer_cpu_load-29+knots				667198ee800	last=b25b40ebd5f vasild/peer_cpu_load
+	31672 peer_cpu_load-29+knots				667198ee800	last=52f1efc06af vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				3aefa8602c6	last=d4a3abf6d43 pruneduringinit
 		# TODO: + knots#158 ?
 	31886 netinfo_local_svcs-29+knots			c2c14dc8fc5	last=721a051320f jonatack/2025-02-netinfo-services
@@ -1367,7 +1369,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs work/review: g539  RandyMcMillan-g/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	30951 v2onlyclearnet-29+knots				5e7b4d80ab9	last=1e61206583d
+	30951 v2onlyclearnet-29+knots				5e7b4d80ab9	last=263c16b537e
 		# Held back 27e90008835...1e61206583d (listen=0 forced antifeature, confusing help string, refactoring)
 		# Made a hidden option
 	# Needs review: 32065 vasild/i2p_early_create_session
@@ -1668,14 +1670,14 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # SOFTFORK:
 	k238 rdts_combined-29+knots								last=f62f5fda667
-	(CHECK-LAST)	last=bc826d78499 rdts_consent_prompt
+	(CHECK-LAST)	last=ff453e5ec3f rdts_consent_prompt
 		# + knots#256
 		# TODO: + updated fixed seeds ?
 		# NOTE: Core PR in #24930
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		a819d4d6b4d
 	# Triage: 34808 hebasto/260311-qt-ts-source
-	7483  svg_icon-29.2+knots					2b6bfcfd7fe
+m	7483  svg_icon-29.3+knots					2b6bfcfd7fe
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	n/a   upd_copyrightyear-29					90141e91442
@@ -1701,7 +1703,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	n/a  (bump_version=knots20260427)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
-	n/a   (cherrypick=bdbfb19ab67)				dce09dbcdc4  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=79f6a030d0b)				dce09dbcdc4  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R

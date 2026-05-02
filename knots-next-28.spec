@@ -531,7 +531,8 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Triage: 33960 maflcko/2511-log
 	# Triage: IPC-specific: Needs review: 33965 Sjors/2025/11/ipc-reserve
 	33993 doc_stopatheight_imprecise-21
-	34028 fix_seenlocal_max-26								last=3fc5948e1fe
+	34028 fix_seenlocal_max-26								last=39191c63085
+		# Held back pointless duplication 3fc5948e1fe...39191c63085
 	-     fix_feeest_read_rare_overflow-29
 		# Alternative to: 34109 maflcko/2512-fix-u64
 	-     pcp_dont_spam_unauth-29
@@ -870,9 +871,10 @@ NM	32187 zmq_devirtual_destructor-0.12
 	35097 byte_units_64bit_GiB-29.3+knots
 		# Partial; + #34435 (partial)
 		# Fixed missing header
-	34641 dbcache_dynamic-29.3+knots						last=c75a1c90ada l0rinc/l0rinc/dynamic-dbcache
+	34641 dbcache_dynamic-29.3+knots
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
+		# NOTE: last= removed because upstream branch destroyed
 	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
@@ -1805,7 +1807,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # SOFTFORK:
 	k238 rdts_combined-29+knots								last=f62f5fda667
-	(CHECK-LAST)	last=bc826d78499 rdts_consent_prompt
+	(CHECK-LAST)	last=ff453e5ec3f rdts_consent_prompt
 		# + knots#256
 		# TODO: + updated fixed seeds ?
 		# NOTE: Core PR in #24930

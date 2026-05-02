@@ -397,7 +397,8 @@ checkout v30.0rc1
 	Triage: 34010 rkrux/musig-key-fix
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
 		NOTE: 30.x backport in #34689
-	34028 fix_seenlocal_max-26								last=3fc5948e1fe
+	34028 fix_seenlocal_max-26					7d09741986f	last=39191c63085
+		# Held back pointless duplication 3fc5948e1fe...39191c63085
 	#31.xTODO# Revert/disable #34075 mempool-based fee estimator
 	-     fix_feeest_read_rare_overflow-29
 		# Alternative to: 34109 maflcko/2512-fix-u64
@@ -715,9 +716,10 @@ checkout v30.0rc1
 	35097 byte_units_64bit_GiB-29.3+knots
 		# Partial; + #34435 (partial)
 		# Fixed missing header
-	34641 dbcache_dynamic-29.3+knots						last=c75a1c90ada l0rinc/l0rinc/dynamic-dbcache
+	34641 dbcache_dynamic-29.3+knots
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
+		# NOTE: last= removed because upstream branch destroyed
 	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
@@ -1128,7 +1130,7 @@ checkout v30.0rc1
 	31560 rpc_dumptxoutset_fifo-29+knots		816104a3629	last=509d871fc00 theStack/202412-dumptxoutset-allow_write_to_named_pipe
 		# Only the FIFO capability, left out the bundled scripts
 	# Needs work? 31668 -  # Added rescan option for import descriptors
-	31672 peer_cpu_load-29+knots				4160fffe565	last=b25b40ebd5f vasild/peer_cpu_load
+	31672 peer_cpu_load-29+knots				4160fffe565	last=52f1efc06af vasild/peer_cpu_load
 	31845 pruneduringinit-29+knots				2bd6819ef9f	last=d4a3abf6d43 pruneduringinit
 		# TODO: + knots#158 ?
 	MERGED: 31886 netinfo_local_svcs-29+knots			4ec453a3ad9	last=721a051320f jonatack/2025-02-netinfo-services
@@ -1305,7 +1307,7 @@ checkout v30.0rc1
 	# Needs work/review: g539  RandyMcMillan-g/1643263956-network-graph-issue-532
 	# Needs concept review: 26365 -  # wallet: GetEffectiveBalance
 	# Needs concept & review: Only when sending GETBLOCKTXN anyway? (more likely with Knots) 27086 -  # [WIP] p2p: Add random txn's from mempool to GETBLOCKTXN
-	30951 v2onlyclearnet-29+knots				ba75af3f9b2	last=1e61206583d
+	30951 v2onlyclearnet-29+knots				ba75af3f9b2	last=263c16b537e
 		# Held back 27e90008835...1e61206583d (listen=0 forced antifeature, confusing help string, refactoring)
 		# Made a hidden option
 	# Needs review: 32065 vasild/i2p_early_create_session
@@ -1615,14 +1617,14 @@ checkout v30.0rc1
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # SOFTFORK:
 	k238 rdts_combined-29+knots								last=f62f5fda667
-	(CHECK-LAST)	last=bc826d78499 rdts_consent_prompt
+	(CHECK-LAST)	last=ff453e5ec3f rdts_consent_prompt
 		# + knots#256
 		# TODO: + updated fixed seeds ?
 		# NOTE: Core PR in #24930
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
 	n/a   (delete_release_notes_fragments)		6b5354d10d6
 	Triage: 34808 hebasto/260311-qt-ts-source
-	7483  svg_icon-29.2+knots					093b55fc9ce
+	7483  svg_icon-29.3+knots					093b55fc9ce
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	n/a   upd_copyrightyear-29
