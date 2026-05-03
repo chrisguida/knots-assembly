@@ -1,7 +1,7 @@
-timestamp 2026-04-27 19:59:58
+timestamp 2026-05-03 00:16:37
 #lastapply no-merge
 
-#.. checked up to PR #35168 / gui#935 / knots#301
+#.. checked up to PR #35195 / gui#935 / knots#301
 
 checkout v29.3
 @29.x-syslibs
@@ -19,6 +19,8 @@ checkout v29.3
 	# Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
 	# Needs review: 34953 sha256_sse4_nosanitize_pr34953-29.3				last=fedeff7f201 deadmanoz/fix/gcc-asan-sha256-sse4-only
 	# Triage: 35068 ryanofsky/pr/depfind
+	35175 theuni/fix-boost-1.91
+		29.x backport in #34855
 # SYSLIBS:
 	2241  sys_leveldb							8ed686b2e1a	last=bd2be933f26 sys_leveldb-30
 		# Related: #32447
@@ -576,6 +578,11 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	35117 i2p_redact_privkey_in_log-22						last=cd2833e7436 takeshikurosawaa/i2p-session-create-redaction
 	# Needs review? 35166 asafmod/harden-prevector-change-capacity
 	# Needs review: 35168 marcofleon/2026/04/loadblockindex-unlinked-fix
+	# Needs review? 35173 l0rinc/l0rinc/thread-name-truncation
+	# Triage: Needs review: Or fix-only? 35177 AgusR7/test/getblockstats-gen-miniwallet
+	# Needs review: 35185 shuv-amp/fix-importdesc-timestamp-abort
+	# Needs review: 35191 ArtSabintsev/codex/fix-txdb-cursor-malformed-key
+	# Needs review & UPnP: 35193 vasild/avoid_internet_traffic_from_init_test
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early				f59c23596f8
@@ -608,7 +615,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	k266  extsigner_sanitychk_fingerprint-26				last=304598b5cc5 privkeyio/fix-external-signer-fingerprint-validation
 	k277  fix_qt_ban_expiry_update-28						last=87fca974185 Bortlesboat/fix-ban-table-refresh
 	# Needs review: k298 param_bounds_checks_202604
-	# Needs review: k301 privkeyio/fix-warnings-no-wallet-tabs
+	# Needs concept & review: k301 privkeyio/fix-warnings-no-wallet-tabs
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -774,6 +781,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 35041 brunoerg/2026-04-descriptor
 	# TODO: 35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	# TODO: 35156 l0rinc/l0rinc/ScopedDataStreamUsage
+	35195 l0rinc/l0rinc/noexcept-false
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -1162,7 +1170,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	#29.xTODO# 30595(+34986) + 33791 + 33796 + 33822 + 33825 + 34401 + 34982  libbitcoinkernel C API
+	#29.xTODO# 30595(+34986) + 33791 + 33796 + 33822 + 33825 + 34401 + 34982 + 35187 + 35189?  libbitcoinkernel C API
 	30635 rpc_waitfornewblock_tip_param-29+k	67b55cd2016	last=c6e2c31c551 Sjors/2024/08/waitforblock
 	# Needs review: 30685 hebasto/240820-control-flow
 	30713 -										46442a10b31	last=5b2d0216d87  # rpc_scanblocks_status_results-28
@@ -1700,7 +1708,7 @@ m	7483  svg_icon-29.3+knots					2b6bfcfd7fe
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260427)			931ea36c899
+	n/a  (bump_version=knots20260503)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=79f6a030d0b)				dce09dbcdc4  # release notes: write/update, including change log and credits
@@ -1740,3 +1748,5 @@ m	7483  svg_icon-29.3+knots					2b6bfcfd7fe
 		# 31.x backport in #34942
 	# TODO: 34958 theStack/202603-test-getblocktemplate-coinbasevalue_full_block_reward
 	# TODO: 34970 Sjors/2026/03/pause-mempool-load
+	# TODO: 35170 optout21/2604-parse-keypath-legacy
+	# TODO: 35179 polespinasa/2026-04-29-testaddimportdescriptorsrpccoverage

@@ -1,7 +1,7 @@
-timestamp 2026-04-27 19:59:58
+timestamp 2026-05-03 00:16:37
 #lastapply no-merge
 
-#.. checked up to PR #35168 / gui#935 / knots#301
+#.. checked up to PR #35195 / gui#935 / knots#301
 
 checkout v28.2
 @28.x-syslibs
@@ -27,6 +27,8 @@ checkout v28.2
 	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
 	Triage: Review: 34953 deadmanoz/fix/gcc-asan-sha256-sse4-only
 	Triage: 35068 ryanofsky/pr/depfind
+	Triage: 35175 theuni/fix-boost-1.91
+		29.x backport in #34855
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -675,6 +677,11 @@ NM	32187 zmq_devirtual_destructor-0.12
 	35117 i2p_redact_privkey_in_log-22						last=cd2833e7436 takeshikurosawaa/i2p-session-create-redaction
 	Needs review? 35166 asafmod/harden-prevector-change-capacity
 	Needs review: 35168 marcofleon/2026/04/loadblockindex-unlinked-fix
+	Needs review? 35173 l0rinc/l0rinc/thread-name-truncation
+	Triage: Needs review: Or fix-only? 35177 AgusR7/test/getblockstats-gen-miniwallet
+	Needs review: 35185 shuv-amp/fix-importdesc-timestamp-abort
+	Needs review: 35191 ArtSabintsev/codex/fix-txdb-cursor-malformed-key
+	Needs review & UPnP: 35193 vasild/avoid_internet_traffic_from_init_test
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early-28+knots		dec38cfcc7b	last=e49dfac3241 fix_rpccookieperms_early
@@ -704,7 +711,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	k266  extsigner_sanitychk_fingerprint-26				last=acc78e798fa privkeyio/fix-external-signer-fingerprint-validation
 	k277  fix_qt_ban_expiry_update-28						last=87fca974185 Bortlesboat/fix-ban-table-refresh
 	Needs review: k298 param_bounds_checks_202604
-	Needs review: k301 privkeyio/fix-warnings-no-wallet-tabs
+	Needs concept & review: k301 privkeyio/fix-warnings-no-wallet-tabs
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -884,6 +891,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 35041 brunoerg/2026-04-descriptor
 	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	35156 l0rinc/l0rinc/ScopedDataStreamUsage
+	35195 l0rinc/l0rinc/noexcept-false
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -1295,7 +1303,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	TODO: 30595(+34986) + 33791 + 33796 + 33822 + 33825 + 34401 + 34982  libbitcoinkernel C API
+	TODO: 30595(+34986) + 33791 + 33796 + 33822 + 33825 + 34401 + 34982 + 35187 + 35189?  libbitcoinkernel C API
 	Needs rewrite? 30635 Sjors/2024/08/waitforblock
 	31121 guix_glibc_cet-28						44b12da4bd8
 	# Needs review: 30685 hebasto/240820-control-flow
@@ -1838,7 +1846,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260427)			ba223403bbc
+	n/a  (bump_version=Knots:20260503)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320
@@ -1877,3 +1885,5 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 		# 31.x backport in #34942
 	# TODO: 34958 theStack/202603-test-getblocktemplate-coinbasevalue_full_block_reward
 	# TODO: 34970 Sjors/2026/03/pause-mempool-load
+	# TODO: 35170 optout21/2604-parse-keypath-legacy
+	# TODO: 35179 polespinasa/2026-04-29-testaddimportdescriptorsrpccoverage

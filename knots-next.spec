@@ -1,7 +1,7 @@
-timestamp 2026-04-27 19:59:58
+timestamp 2026-05-03 00:16:37
 lastapply no-merge
 
-#.. checked up to PR #35168 / gui#935 / knots#301
+#.. checked up to PR #35195 / gui#935 / knots#301
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -23,6 +23,8 @@ checkout v30.0rc1
 	Triage: 31.xTODO: Consider reverting #34923
 	Review: 34953 deadmanoz/fix/gcc-asan-sha256-sse4-only
 	Triage: 35068 ryanofsky/pr/depfind
+	35175 theuni/fix-boost-1.91
+		30.x backport in #35083
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -538,6 +540,11 @@ checkout v30.0rc1
 	35117 i2p_redact_privkey_in_log-22						last=cd2833e7436 takeshikurosawaa/i2p-session-create-redaction
 	Needs review? 35166 asafmod/harden-prevector-change-capacity
 	Needs review: 35168 marcofleon/2026/04/loadblockindex-unlinked-fix
+	Needs review? 35173 l0rinc/l0rinc/thread-name-truncation
+	Triage: Needs review: Or fix-only? 35177 AgusR7/test/getblockstats-gen-miniwallet
+	Needs review: 35185 shuv-amp/fix-importdesc-timestamp-abort
+	Needs review: 35191 ArtSabintsev/codex/fix-txdb-cursor-malformed-key
+	Needs review & UPnP: 35193 vasild/avoid_internet_traffic_from_init_test
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early				91f5662ec3d
@@ -575,7 +582,7 @@ checkout v30.0rc1
 	k266  extsigner_sanitychk_fingerprint-26				last=acc78e798fa privkeyio/fix-external-signer-fingerprint-validation
 	k277  fix_qt_ban_expiry_update-28						last=87fca974185 Bortlesboat/fix-ban-table-refresh
 	Needs review: k298 param_bounds_checks_202604
-	Needs review: k301 privkeyio/fix-warnings-no-wallet-tabs
+	Needs concept & review: k301 privkeyio/fix-warnings-no-wallet-tabs
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -729,6 +736,7 @@ checkout v30.0rc1
 	Needs review: 35041 brunoerg/2026-04-descriptor
 	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	35156 l0rinc/l0rinc/ScopedDataStreamUsage
+	35195 l0rinc/l0rinc/noexcept-false
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -1108,7 +1116,7 @@ checkout v30.0rc1
 	# Needs review? g832 -  # Improve user dialog when signing multisig psbts
 	# Needs review/optional? 30572 ariard/reject-unsolicited-txn
 		# Was #21224
-	TODO: 30595(+34986) + 33791 + 33796 + 33822 + 33825 + 34401 + 34982  libbitcoinkernel C API
+	TODO: 30595(+34986) + 33791 + 33796 + 33822 + 33825 + 34401 + 34982 + 35187 + 35189?  libbitcoinkernel C API
 	MERGED: 30635 rpc_waitfornewblock_tip_param-29+k	6b961962f3a	last=c6e2c31c551 Sjors/2024/08/waitforblock
 	# Needs review: 30685 hebasto/240820-control-flow
 	30713 -										5d6dccd8485	last=5b2d0216d87  # rpc_scanblocks_status_results-28
@@ -1646,7 +1654,7 @@ checkout v30.0rc1
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260427)			d5593bea7a1
+	n/a  (bump_version=knots20260503)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits
@@ -1685,3 +1693,5 @@ checkout v30.0rc1
 		# 31.x backport in #34942
 	# TODO: 34958 theStack/202603-test-getblocktemplate-coinbasevalue_full_block_reward
 	# TODO: 34970 Sjors/2026/03/pause-mempool-load
+	# TODO: 35170 optout21/2604-parse-keypath-legacy
+	# TODO: 35179 polespinasa/2026-04-29-testaddimportdescriptorsrpccoverage
