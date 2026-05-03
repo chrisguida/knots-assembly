@@ -27,8 +27,8 @@ checkout v28.2
 	Triage: Needs review: 34591 hebasto/260214-cmake-macos-cross
 	Triage: Review: 34953 deadmanoz/fix/gcc-asan-sha256-sse4-only
 	Triage: 35068 ryanofsky/pr/depfind
-	Triage: 35175 theuni/fix-boost-1.91
-		29.x backport in #34855
+	-     compatfix_boost_1.91-28
+		# Similar to #35175 (but without the regression)
 # SYSLIBS: (and old build bugs)
 	2241  sys_leveldb-28+knots					91af8d0c4ea	last=dd10cff7dd0 sys_leveldb
 		# WIP c8e8c03997a dbwrapper: Return util::Result for SanityCheck (only needed for libbitcoinkernel?)
@@ -891,7 +891,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	Needs review: 35041 brunoerg/2026-04-descriptor
 	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	35156 l0rinc/l0rinc/ScopedDataStreamUsage
-	35195 l0rinc/l0rinc/noexcept-false
+	35195 cache_outpoint_sethash-27							last=16e77fdf132 l0rinc/l0rinc/noexcept-false
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward

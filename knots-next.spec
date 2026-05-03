@@ -23,8 +23,8 @@ checkout v30.0rc1
 	Triage: 31.xTODO: Consider reverting #34923
 	Review: 34953 deadmanoz/fix/gcc-asan-sha256-sse4-only
 	Triage: 35068 ryanofsky/pr/depfind
-	35175 theuni/fix-boost-1.91
-		30.x backport in #35083
+	-     compatfix_boost_1.91-28
+		# Similar to #35175 (but without the regression)
 # SYSLIBS:
 	2241  sys_leveldb-30						a083281a33d	last=80cda0d5d6f sys_leveldb
 		# Related: #32447
@@ -736,7 +736,7 @@ checkout v30.0rc1
 	Needs review: 35041 brunoerg/2026-04-descriptor
 	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	35156 l0rinc/l0rinc/ScopedDataStreamUsage
-	35195 l0rinc/l0rinc/noexcept-false
+	35195 cache_outpoint_sethash-27							last=16e77fdf132 l0rinc/l0rinc/noexcept-false
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
