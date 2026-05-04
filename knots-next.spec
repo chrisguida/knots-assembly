@@ -1,7 +1,7 @@
-timestamp 2026-05-03 00:16:37
+timestamp 2026-05-04 05:42:35
 lastapply no-merge
 
-#.. checked up to PR #35195 / gui#935 / knots#301
+#.. checked up to PR #35204 / gui#935 / knots#301
 
 checkout v30.0rc1
 @30.x-syslibs
@@ -727,6 +727,7 @@ checkout v30.0rc1
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
 		# NOTE: last= removed because upstream branch destroyed
+	Needs review: 35200 l0rinc/l0rinc/smooth-dbcache-warnings
 	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
@@ -737,6 +738,7 @@ checkout v30.0rc1
 	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	35195 cache_outpoint_sethash-27							last=16e77fdf132 l0rinc/l0rinc/noexcept-false
+	35197 fanquake/lld_icf_safe
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -885,6 +887,7 @@ checkout v30.0rc1
 	20407 rpcauthfile-29+knots					9c53a144095	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
+	# Needs polishing?? 35198 arejula27/truncate_header_sync_percentage
 	g149  intro_assumevalid						0ba102de98c	last=cf940f0e5f5
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
@@ -1625,7 +1628,7 @@ checkout v30.0rc1
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # SOFTFORK:
 	k238 rdts_combined-29+knots								last=f62f5fda667
-	(CHECK-LAST)	last=ff453e5ec3f rdts_consent_prompt
+	(CHECK-LAST)	last=28187c41c8e rdts_consent_prompt
 		# + knots#256
 		# TODO: + updated fixed seeds ?
 		# NOTE: Core PR in #24930
@@ -1654,7 +1657,7 @@ checkout v30.0rc1
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=6ee0b3ec0fc)				7367bb04b08	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260503)			d5593bea7a1
+	n/a  (bump_version=knots20260504)			d5593bea7a1
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		5814d23b6ec
 	n/a   (cherrypick=1314102baef)				8a0a4c31679  # release notes: write/update, including change log and credits

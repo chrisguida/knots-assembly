@@ -1,7 +1,7 @@
-timestamp 2026-05-03 00:16:37
+timestamp 2026-05-04 05:42:35
 #lastapply no-merge
 
-#.. checked up to PR #35195 / gui#935 / knots#301
+#.. checked up to PR #35204 / gui#935 / knots#301
 
 checkout v28.2
 @28.x-syslibs
@@ -882,6 +882,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
 		# NOTE: last= removed because upstream branch destroyed
+	Needs review: 35200 l0rinc/l0rinc/smooth-dbcache-warnings
 	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
@@ -892,6 +893,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	35195 cache_outpoint_sethash-27							last=16e77fdf132 l0rinc/l0rinc/noexcept-false
+	35197 fanquake/lld_icf_safe
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -1038,6 +1040,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	(CHECK-LAST)	last=a5e24757585 rpcauthfile-29+knots
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
+	# Needs polishing?? 35198 arejula27/truncate_header_sync_percentage
 	g149  intro_assumevalid-28					1a80144445f	last= intro_assumevalid
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
@@ -1815,7 +1818,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # SOFTFORK:
 	k238 rdts_combined-29+knots								last=f62f5fda667
-	(CHECK-LAST)	last=ff453e5ec3f rdts_consent_prompt
+	(CHECK-LAST)	last=28187c41c8e rdts_consent_prompt
 		# + knots#256
 		# TODO: + updated fixed seeds ?
 		# NOTE: Core PR in #24930
@@ -1846,7 +1849,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=6ee0b3ec0fc)				db9ec3a8f5f	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=Knots:20260503)			ba223403bbc
+	n/a  (bump_version=Knots:20260504)			ba223403bbc
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist-28+k	45b084a111f	last=34ec626a4fd rm_historical_relnotes_from_dist
 	TODO: https://x.com/1440000bytes/status/2009692447040053320

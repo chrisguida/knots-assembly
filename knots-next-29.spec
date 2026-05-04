@@ -1,7 +1,7 @@
-timestamp 2026-05-03 00:16:37
+timestamp 2026-05-04 05:42:35
 #lastapply no-merge
 
-#.. checked up to PR #35195 / gui#935 / knots#301
+#.. checked up to PR #35204 / gui#935 / knots#301
 
 checkout v29.3
 @29.x-syslibs
@@ -772,6 +772,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# + #34106 copyright notice + misc fixups
 		# Omitted refactors, doc changes & release notes
 		# NOTE: last= removed because upstream branch destroyed
+	# Needs review: 35200 l0rinc/l0rinc/smooth-dbcache-warnings
 	# After working mempressure: k279  privkeyio/feature-autosize-dbcache
 	# TODO: cgroup-awareness as a default limit? (see also #34762)
 	# ----- END OF DBCACHE DEFAULT/WARNING -----
@@ -782,6 +783,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# TODO: 35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	# TODO: 35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	35195 cache_outpoint_sethash-27							last=16e77fdf132 l0rinc/l0rinc/noexcept-false
+	35197 fanquake/lld_icf_safe
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -927,6 +929,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	20407 rpcauthfile-29+knots					04af3aa5f2b	last=ff5d7fa1e4c promag/2020-11-rpcauthfile
 		# NOTE: fixed bugs, added multi-line support, and added tests
 	# Needs polishing: g135  -  # peers-tab: cleaner presentation - more info - functionality improvements
+	# Needs polishing?? 35198 arejula27/truncate_header_sync_percentage
 	g149  intro_assumevalid						1f5a2d1c45d	last=cf940f0e5f5
 		# NOTE: Added compatibility for older Qt versions
 	# Needs review: 20652 -  # Designer fees when coin control is enabled
@@ -1678,7 +1681,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # SOFTFORK:
 	k238 rdts_combined-29+knots								last=f62f5fda667
-	(CHECK-LAST)	last=ff453e5ec3f rdts_consent_prompt
+	(CHECK-LAST)	last=28187c41c8e rdts_consent_prompt
 		# + knots#256
 		# TODO: + updated fixed seeds ?
 		# NOTE: Core PR in #24930
@@ -1708,7 +1711,7 @@ m	7483  svg_icon-29.3+knots					2b6bfcfd7fe
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260503)			931ea36c899
+	n/a  (bump_version=knots20260504)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=3e10c4557ba)				dce09dbcdc4  # release notes: write/update, including change log and credits
