@@ -339,7 +339,7 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 		# Only the fix, without the bumped LevelDB version dep
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	# Needs review: 32199 maflcko/2504-time
-	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
+	32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	32344 fix_wallet_nonranged_pr32344-22		d09c2ee1066	last=97d383af6d5
 	32351 qafix_nonrecurs_FindChallenges-28		48120118957
 		# Fix only
@@ -415,6 +415,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# Held back 68cad90dace...c25a5e670b2 pending more review
 		# Kept old notification to workaround GUI console regression
 		# 30.x backport in #34192
+	33512 l0rinc/l0rinc/warn-dirty-coin-coint
 	# IPC-specific: 33566 Sjors/2025/10/wait-empty-mempool
 		# 30.x backport in #33609
 	33580 fix_depends_fallback_filename-0.13	e660d8cd954	last=671b774d1b5 achow101/depends-fallback-name
@@ -616,6 +617,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	k277  fix_qt_ban_expiry_update-28						last=87fca974185 Bortlesboat/fix-ban-table-refresh
 	# Needs review: k298 param_bounds_checks_202604
 	# Needs concept & review: k301 privkeyio/fix-warnings-no-wallet-tabs
+	k303 rm_dnsseed_pt
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1682,7 +1684,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 # SOFTFORK:
 	k238 rdts_combined-29+knots								last=f62f5fda667
 	(CHECK-LAST)	last=28187c41c8e rdts_consent_prompt
-		# + knots#256
+		# + knots#256 + maxstaleoutbound + maxstaleoutbound=8
 		# TODO: + updated fixed seeds ?
 		# NOTE: Core PR in #24930
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
@@ -1714,7 +1716,7 @@ m	7483  svg_icon-29.3+knots					2b6bfcfd7fe
 	n/a  (bump_version=knots20260504)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
-	n/a   (cherrypick=534f3dbdfc7)				dce09dbcdc4  # release notes: write/update, including change log and credits
+	n/a   (cherrypick=de410586e12)				dce09dbcdc4  # release notes: write/update, including change log and credits
 		# WHEN UPDATING: Remember to check for new authors/co-authors for credits
 		# git log --pretty=%s v0.20.0..v0.20.1.knots20200815 >lol && perl -nle 'm[^- #(\d+) (.*) \(.*?\)$] && print "$1 $2"' doc/release-notes.md | while read prnum subj; do grep "\\b$prnum\\b\|\\Q$prbody\\E" lol; done
 		# git log --pretty=%s v0.18.0..v0.17.1.knots20181229 >lol && lol v0.18.0..|while IFS= read -r g; do s=$(perl -nle 'm/^.*\*[ \\|]* ([\da-f]{10,})( \(.*?\))? (.*)$/ or exit; $_=$3;s/^(Merge [gk]?\d+ ).*/$1/;print' <<<"$g"); if [ "$s" = "" ]; then echo "$g"; elif fgrep -q "$s" lol; then echo "$g"; else echo $'\033'"[0;31m$g"$'\033'"[0m"; fi; done|less -R

@@ -415,7 +415,7 @@ NM	31623 tracing_MIN_macro_rename				f7ec451c999
 NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
 	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
-	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
+	32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	32333 doc_rpc_pruneblockchain_top-21					last=135a0f0aa71
 	32342 -  # Fix missing error check in set_clo_on_exec for FD_CLOEXEC handling
 	32344 fix_wallet_nonranged_pr32344-22					last=97d383af6d5
@@ -507,6 +507,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
 	33504 instagibbs/2025-09-truc-reorg-fix
 		28.x backport in #33535
+	33512 l0rinc/l0rinc/warn-dirty-coin-coint
 	33563 fanquake/fix_qt_urls
 	# IPC-specific: 33566 Sjors/2025/10/wait-empty-mempool
 		# 30.x backport in #33609
@@ -712,6 +713,7 @@ NM	32187 zmq_devirtual_destructor-0.12
 	k277  fix_qt_ban_expiry_update-28						last=87fca974185 Bortlesboat/fix-ban-table-refresh
 	Needs review: k298 param_bounds_checks_202604
 	Needs concept & review: k301 privkeyio/fix-warnings-no-wallet-tabs
+	k303 rm_dnsseed_pt
 	#28.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1819,7 +1821,7 @@ MERGED	31407 macos_notarization-28					530a83a27bf	last=e181bda061c achow101/mac
 # SOFTFORK:
 	k238 rdts_combined-29+knots								last=f62f5fda667
 	(CHECK-LAST)	last=28187c41c8e rdts_consent_prompt
-		# + knots#256
+		# + knots#256 + maxstaleoutbound + maxstaleoutbound=8
 		# TODO: + updated fixed seeds ?
 		# NOTE: Core PR in #24930
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)

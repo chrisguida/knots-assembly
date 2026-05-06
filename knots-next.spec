@@ -304,7 +304,7 @@ checkout v30.0rc1
 	# Needs review: 32180 mzumsande/202403_ibd_lastcommonblock
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	# Needs review: 32199 maflcko/2504-time
-	# Needs review: 32313 l0rinc/l0rinc/reenable-coins-sanitizers
+	32313 l0rinc/l0rinc/reenable-coins-sanitizers
 	# Needs review: 32367 hebasto/250428-enable-lang
 	32414 fix_reidxcs_periodic-25				c12353dff76	last=c1e554d3e58 andrewtoth/reindex-flush
 		# Fix only
@@ -367,6 +367,7 @@ checkout v30.0rc1
 	33511 fix_sigint_waitrpcs-29				b4915e93eb6	last=c25a5e670b2 ryanofsky/pr/sigwait
 		# Kept old notification to workaround GUI console regression
 		30.x backport in #34192
+	33512 l0rinc/l0rinc/warn-dirty-coin-coint
 	# IPC-specific: 33566 Sjors/2025/10/wait-empty-mempool
 	33580 achow101/depends-fallback-name		5299fc8950b
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation
@@ -583,6 +584,7 @@ checkout v30.0rc1
 	k277  fix_qt_ban_expiry_update-28						last=87fca974185 Bortlesboat/fix-ban-table-refresh
 	Needs review: k298 param_bounds_checks_202604
 	Needs concept & review: k301 privkeyio/fix-warnings-no-wallet-tabs
+	k303 rm_dnsseed_pt
 	#30.xTODO# "Knots feature request: system notification for a txn should show the net wallet balance delta assuming the txn confirms, not whatever it does now that gives me a heart attack every time I use a large-ish UTXO lol" -Jason (currently only the first send of a sendmany is shown) https://github.com/bitcoin-core/gui/issues/853
 	# TODO: prunenotify to run a command after each prune (eg, for fstrim or such)
 	
@@ -1629,7 +1631,7 @@ checkout v30.0rc1
 # SOFTFORK:
 	k238 rdts_combined-29+knots								last=f62f5fda667
 	(CHECK-LAST)	last=28187c41c8e rdts_consent_prompt
-		# + knots#256
+		# + knots#256 + maxstaleoutbound + maxstaleoutbound=8
 		# TODO: + updated fixed seeds ?
 		# NOTE: Core PR in #24930
 # Pre-BRANDING: (might need to be part of F patch to eliminate binary files)
