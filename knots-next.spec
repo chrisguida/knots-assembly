@@ -408,8 +408,8 @@ checkout v30.0rc1
 	Triage: 34010 rkrux/musig-key-fix
 	Triage: Needs review: 34219 -  # psbt: validate pubkeys in MuSig2 pubnonce/partial sig deserialization
 		NOTE: 30.x backport in #34689
-	34028 fix_seenlocal_max-26					7d09741986f	last=39191c63085
-		# Held back pointless duplication 3fc5948e1fe...39191c63085
+	34028 fix_seenlocal_max-26					7d09741986f	last=33103d5c4fe
+		# Held back pointless duplication 3fc5948e1fe...33103d5c4fe
 	#31.xTODO# Revert/disable #34075 mempool-based fee estimator
 	-     fix_feeest_read_rare_overflow-29
 		# Alternative to: 34109 maflcko/2512-fix-u64
@@ -748,7 +748,7 @@ checkout v30.0rc1
 	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	35195 cache_outpoint_sethash-27							last=16e77fdf132 l0rinc/l0rinc/noexcept-false
-	35197 lld_icf_safe-28									last=fa687bff9e1 fanquake/lld_icf_safe
+	35197 lld_icf_safe-28									last=5c6c4260948 fanquake/lld_icf_safe
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
