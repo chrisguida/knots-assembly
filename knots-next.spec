@@ -304,7 +304,16 @@ checkout v30.0rc1
 	# Needs review: 32180 mzumsande/202403_ibd_lastcommonblock
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	# Needs review: 32199 maflcko/2504-time
-	32313 l0rinc/l0rinc/reenable-coins-sanitizers
+	# ----- IN SEQUENCE, NEEDS BACKPORT REVIEW IN #35226 -----
+	Needs backport review: 32602  # fuzz: Add target for coins database
+		# Includes first commit of #32279 for #32313
+	Needs backport review: 32313  # coins: fix cachedCoinsUsage accounting in CCoinsViewCache
+	Needs backport review: 34207  # coins/refactor: enforce GetCoin() returns only unspent coins
+	Needs backport review: 34164  # validation: add reusable coins view for ConnectBlock
+	Needs backport review: 33512  # coins: use dirty entry count for flush warnings and disk space checks
+		# Adds a tag to the CoinsViewCacheCursor constructor to avoid silent conflicts
+		# Diff-minimises entire sequence
+	# ----- END SEQUENCE -----
 	# Needs review: 32367 hebasto/250428-enable-lang
 	32414 fix_reidxcs_periodic-25				c12353dff76	last=c1e554d3e58 andrewtoth/reindex-flush
 		# Fix only
@@ -367,7 +376,6 @@ checkout v30.0rc1
 	33511 fix_sigint_waitrpcs-29				b4915e93eb6	last=c25a5e670b2 ryanofsky/pr/sigwait
 		# Kept old notification to workaround GUI console regression
 		30.x backport in #34192
-	33512 l0rinc/l0rinc/warn-dirty-coin-coint
 	# IPC-specific: 33566 Sjors/2025/10/wait-empty-mempool
 	33580 achow101/depends-fallback-name		5299fc8950b
 	# Needs review: 33604 -  # p2p: Allow block downloads from peers without snapshot block after assumeutxo validation

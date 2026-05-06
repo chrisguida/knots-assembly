@@ -415,7 +415,16 @@ NM	31623 tracing_MIN_macro_rename				f7ec451c999
 NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 32199 maflcko/2504-time
 	g864  fix_qt_shutdowncrash_g864-24						last=c6f4b0d7960 furszy/2025_gui_fix_crash_numBlocksChanged
-	32313 l0rinc/l0rinc/reenable-coins-sanitizers
+	# ----- IN SEQUENCE, NEEDS BACKPORT REVIEW IN #35226 -----
+	Needs backport review: 32602  # fuzz: Add target for coins database
+		# Includes first commit of #32279 for #32313
+	Needs backport review: 32313  # coins: fix cachedCoinsUsage accounting in CCoinsViewCache
+	Needs backport review: 34207  # coins/refactor: enforce GetCoin() returns only unspent coins
+	Needs backport review: 34164  # validation: add reusable coins view for ConnectBlock
+	Needs backport review: 33512  # coins: use dirty entry count for flush warnings and disk space checks
+		# Adds a tag to the CoinsViewCacheCursor constructor to avoid silent conflicts
+		# Diff-minimises entire sequence
+	# ----- END SEQUENCE -----
 	32333 doc_rpc_pruneblockchain_top-21					last=135a0f0aa71
 	32342 -  # Fix missing error check in set_clo_on_exec for FD_CLOEXEC handling
 	32344 fix_wallet_nonranged_pr32344-22					last=97d383af6d5
@@ -507,7 +516,6 @@ NM	32187 zmq_devirtual_destructor-0.12
 	# Needs review: 33498 -  # p2p: Mitigate GETADDR fingerprinting by setting address timestamps to a fixed value
 	33504 instagibbs/2025-09-truc-reorg-fix
 		28.x backport in #33535
-	33512 l0rinc/l0rinc/warn-dirty-coin-coint
 	33563 fanquake/fix_qt_urls
 	# IPC-specific: 33566 Sjors/2025/10/wait-empty-mempool
 		# 30.x backport in #33609

@@ -339,7 +339,16 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 		# Only the fix, without the bumped LevelDB version dep
 	# Needs review: 32186 -  # descriptor: handle listdescriptors(private=true) for taproot descriptors having partial keys
 	# Needs review: 32199 maflcko/2504-time
-	32313 l0rinc/l0rinc/reenable-coins-sanitizers
+	# ----- IN SEQUENCE, NEEDS BACKPORT REVIEW IN #35226 -----
+	# Needs backport review: 32602  # fuzz: Add target for coins database
+		# Includes first commit of #32279 for #32313
+	# Needs backport review: 32313  # coins: fix cachedCoinsUsage accounting in CCoinsViewCache
+	# Needs backport review: 34207  # coins/refactor: enforce GetCoin() returns only unspent coins
+	# Needs backport review: 34164  # validation: add reusable coins view for ConnectBlock
+	# Needs backport review: 33512  # coins: use dirty entry count for flush warnings and disk space checks
+		# Adds a tag to the CoinsViewCacheCursor constructor to avoid silent conflicts
+		# Diff-minimises entire sequence
+	# ----- END SEQUENCE -----
 	32344 fix_wallet_nonranged_pr32344-22		d09c2ee1066	last=97d383af6d5
 	32351 qafix_nonrecurs_FindChallenges-28		48120118957
 		# Fix only
@@ -415,7 +424,6 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 		# Held back 68cad90dace...c25a5e670b2 pending more review
 		# Kept old notification to workaround GUI console regression
 		# 30.x backport in #34192
-	33512 l0rinc/l0rinc/warn-dirty-coin-coint
 	# IPC-specific: 33566 Sjors/2025/10/wait-empty-mempool
 		# 30.x backport in #33609
 	33580 fix_depends_fallback_filename-0.13	e660d8cd954	last=671b774d1b5 achow101/depends-fallback-name
