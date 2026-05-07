@@ -1,7 +1,7 @@
-timestamp 2026-05-04 05:42:35
+timestamp 2026-05-07 03:45:44
 #lastapply no-merge
 
-#.. checked up to PR #35204 / gui#935 / knots#301
+#.. checked up to PR #35239 / gui#936 / knots#303
 
 checkout v29.3
 @29.x-syslibs
@@ -77,6 +77,8 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 	35161 qa_merkle_mutated_rv-0.19							last=f2dbc6a5fd5 l0rinc/l0rinc/doc-merkle-root-mutated
 		# Test only
 	35164 qa_p2sh_sigop_counting-21							last=f3f1a703137 musaHaruna/test/p2sh-sigop-counting
+	# Needs concept & review: 35216 hebasto/260505-illumos-bind
+	35218 l0rinc/l0rinc/fix-coinscache-p2sh-script
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	18033f85c25
 	13789 asm_bypass_cxxflags					4e1c7852279
@@ -268,7 +270,7 @@ NM	-     ci_gha_makejobs_8						8d06fe9b489
 		# Excluded dev doc update
 	# Needs review: 29680 -  # wallet: fix unrelated parent conflict doesn't cause child tx to be marked as conflict
 	# Needs review: 29770 fjahr/2024-03-check-undo-index
-		# +#34991 ?
+		# +#34991 ? (31.x backport in #35231)
 	# Needs review: 29796 fanquake/depends_0g_debug_flags
 	-     fix_rpc_warnings_all-28				0b6513107c2
 	g815  fix_qt_privacy_before_open-23			12e7c434d1a	last=0dc337f73d0
@@ -592,6 +594,12 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs review: 35185 shuv-amp/fix-importdesc-timestamp-abort
 	# Needs review: 35191 ArtSabintsev/codex/fix-txdb-cursor-malformed-key
 	# Needs review & UPnP: 35193 vasild/avoid_internet_traffic_from_init_test
+	# Needs review: 35208 l0rinc/l0rinc/headerssync-future-mtp-cap
+	35209 darosior/2605_cleanup_CVE-2024-52911
+		NOTE: 29.x backport in #35212
+	# Needs review: 35217 -  # psbt: fix PSBTInput::Merge ignoring sighash_type field
+	35227 l0rinc/l0rinc/check-bdb-last-page-lsn
+	# Needs review? 35233 l0rinc/l0rinc/external-signer-skip-canceled-duplicates
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
 	-     fix_rpccookieperms_early				f59c23596f8
@@ -794,6 +802,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# TODO: 35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	35195 cache_outpoint_sethash-27							last=16e77fdf132 l0rinc/l0rinc/noexcept-false
 	35197 lld_icf_safe-28									last=5c6c4260948 fanquake/lld_icf_safe
+	# Needs review: 35215 l0rinc/l0rinc/siphash-jumbo
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
 	# TODO: dumptxoutset doesn't return until chain is rolled back forward
@@ -1288,6 +1297,8 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
 	35076 doc_pruning_impact_pr35076-24						last=584f675abda
 	# Needs work: 35113 optout21/block-dl
+	# Needs BIP & review: 35221 ajtowns/202604-bip434-support
+	# Needs concept & review: 35224 kevkevinpal/importDescriptorsPrintoutRequestOnFailure
 	-     qt_createunsigned_use_psbtops			f73d8ad23cb
 		# NOTE: invisible (unmerged) dependency on qt_dialogs_less_modal
 	# TODO: Some RPC way to report if settings are default?
@@ -1597,6 +1608,7 @@ m	-     acceptnonstddatacarrier-29+knots		22fd60450d3
 	# Needs review: 33682 -  # More comprehensive datacarrier configuration
 		# See also #33690
 	# Needs review: 33759 roconnor-blockstream/bip143-standardness-2025-10
+	# Needs review & optionality: 35225 pinheadmz/p2ms-nonstandard-nonminimal
 	-     pol_maxtxlegacysigops-29.1+knots		0c9d95af8e9
 		# Made user-configurable and overridable
 	-     blockreconstructionextratxnsize		56be60dea8f
@@ -1721,7 +1733,7 @@ m	7483  svg_icon-29.3+knots					2b6bfcfd7fe
 # TODO: test fuzzer with everything enabled
 	n/a   (cherrypick=488640fe20b)				2e044dabbf1	# doc/{bips,files}
 		# TODO: Update with bump_version below !!!!
-	n/a  (bump_version=knots20260504)			931ea36c899
+	n/a  (bump_version=knots20260507)			931ea36c899
 #	n/a  knots_historical_relnotes				61100a2
 	n/a   rm_historical_relnotes_from_dist		06757b4cabe
 	n/a   (cherrypick=4343015e420)				dce09dbcdc4  # release notes: write/update, including change log and credits
