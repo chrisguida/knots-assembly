@@ -81,7 +81,7 @@ checkout v30.0rc1
 		# Test only
 	35164 qa_p2sh_sigop_counting-21							last=f3f1a703137 musaHaruna/test/p2sh-sigop-counting
 	# Needs concept & review: 35216 hebasto/260505-illumos-bind
-	35218 l0rinc/l0rinc/fix-coinscache-p2sh-script
+	35218 qafix_fuzz_p2sh_offset_pr35218-25
 # FIXES:
 	33433 qafix_rpc_bind_nonloopback_unavail	6b3aa212298
 	13789 asm_bypass_cxxflags					9de0f072503
@@ -561,7 +561,7 @@ checkout v30.0rc1
 		NOTE: 31.x backport in #35210
 		NOTE: 30.x backport in #35211
 	# Needs review: 35217 -  # psbt: fix PSBTInput::Merge ignoring sighash_type field
-	35227 l0rinc/l0rinc/check-bdb-last-page-lsn
+	35227 fix_bdbro_check_lastpage_pr35227-28				last=e2b0984f995 l0rinc/l0rinc/check-bdb-last-page-lsn
 	Needs review? 35233 l0rinc/l0rinc/external-signer-skip-canceled-duplicates
 	-     fix_qt_sync_pct_truncate-28						last=a3dac13371c origin-pull-g/935/head
 		# Rewrote from gui#935 to avoid floating point rounding at any stage
@@ -1235,7 +1235,7 @@ checkout v30.0rc1
 	Needs concept & review: 35004 HowHsu/usdt-txgraph-tracing-v2
 	Needs review: 35006 torkelrogstad/2026-04-05-request-id
 	Needs concept & review: 35009 alfonsoromanz/wallet-listtransactions-include-change
-	35076 doc_pruning_impact_pr35076-24						last=584f675abda
+	35076 doc_pruning_impact_pr35076-24						last=51ee8ca1683
 	Needs work: 35113 optout21/block-dl
 	Needs BIP & review: 35221 ajtowns/202604-bip434-support
 	Needs concept & review: 35224 kevkevinpal/importDescriptorsPrintoutRequestOnFailure
