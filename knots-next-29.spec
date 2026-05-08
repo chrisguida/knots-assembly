@@ -800,7 +800,7 @@ NM	33475 fix_block_full_enough_underflow-29+k	652acad4d4c	last=b807dfcdc59 ismae
 	# TODO: 35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	# TODO: 35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	35195 cache_outpoint_sethash-27							last=16e77fdf132 l0rinc/l0rinc/noexcept-false
-	35197 lld_icf_safe-28									last=5c6c4260948 fanquake/lld_icf_safe
+	35197 lld_icf_safe-28									last=09de5363d36 fanquake/lld_icf_safe
 	# Needs review: 35215 l0rinc/l0rinc/siphash-jumbo
 	# Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
@@ -1713,13 +1713,13 @@ m	7483  svg_icon-29.3+knots					2b6bfcfd7fe
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	n/a   upd_copyrightyear-29					90141e91442
-		FIXME: contrib/debian/copyright
 	n/a   font_ocrbitcoin						df2cd76bc60
 	n/a   knots_branding-29						22510d388b6
 		# NOTE: Includes #33422 to clean up "(64-bit)" leftovers
 		#30.xTODO# Review security policy
 		# FIXME: Get NSIS using OCR-Bitcoin
 		# NOTE: Includes knots#211
+		FIXME: contrib/debian/copyright
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #30.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail

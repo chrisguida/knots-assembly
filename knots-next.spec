@@ -757,7 +757,7 @@ checkout v30.0rc1
 	35128 l0rinc/l0rinc/dbwrapper-key-spanreader
 	35156 l0rinc/l0rinc/ScopedDataStreamUsage
 	35195 cache_outpoint_sethash-27							last=16e77fdf132 l0rinc/l0rinc/noexcept-false
-	35197 lld_icf_safe-28									last=5c6c4260948 fanquake/lld_icf_safe
+	35197 lld_icf_safe-28									last=09de5363d36 fanquake/lld_icf_safe
 	Needs review: 35215 l0rinc/l0rinc/siphash-jumbo
 	Needs review: k278  privkeyio/feature-runtime-scriptcheck-calibration
 	k287  privkeyio/uncap-scriptcheck-threads				last=f23f08cb01f
@@ -1663,13 +1663,13 @@ checkout v30.0rc1
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	n/a   upd_copyrightyear-29
-		FIXME: contrib/debian/copyright
 	n/a   font_ocrbitcoin						68221e1221f
 	n/a   knots_branding-29						78ea02d8a58
 		# NOTE: Includes #33422 to clean up "(64-bit)" leftovers
 		Review security policy (revert #35219?)
 		# FIXME: Get NSIS using OCR-Bitcoin
 		# NOTE: Includes knots#211
+		FIXME: contrib/debian/copyright
 # FIXME: Avoid dupes of | * fee3f9ba248 (rpcarg_type_per_name) RPC: Support specifying different types for param aliases
 # FIXME: Check hidden_args has anything removed (possibly conditional)
 #30.xTODO# FIXME: Make sure there's no duplicate commits (eg, due to a +knots with stale merges): git log --pretty='%s' v0.19.0.1..|sort|uniq -c |sort -n|tail
