@@ -780,7 +780,6 @@ checkout v30.0rc1
 	# Needs community support: 33163 -  # BIP360 quantum
 	# Triage: 34140 roconnor-blockstream/simplicity
 	# TODO? k222  -  # taproot/script limits; default unknown-witness off; BIP8 stub
-	# k289  rdts_not_enforced_prompt
 	# NOTE: knots#238 (RDTS) moved to end of branch assembly!
 	# Needs review & consensus: 34419 Sjors/2026/01/bip-coinbase-fields
 	# Needs review & consensus: 34826 sashabeton/p2skh
@@ -1651,6 +1650,7 @@ checkout v30.0rc1
 	#31.xTODO# Revert #33755 (Relax standardness rules regarding CHECKMULTISIG)
 	# Needs concept & review: k217 1440000bytes/feefilter-extrapool
 # SOFTFORK:
+	# Disabled: k289  rdts_not_enforced_prompt
 	k238 rdts_combined-29+knots								last=f62f5fda667
 	(CHECK-LAST)	last=28187c41c8e rdts_consent_prompt
 		# + knots#256 + maxstaleoutbound + maxstaleoutbound=8
@@ -1663,6 +1663,7 @@ checkout v30.0rc1
 		# Consider: https://github.com/bitcoinknots/bitcoin/pull/54
 # BRANDING:
 	n/a   upd_copyrightyear-29
+		FIXME: contrib/debian/copyright
 	n/a   font_ocrbitcoin						68221e1221f
 	n/a   knots_branding-29						78ea02d8a58
 		# NOTE: Includes #33422 to clean up "(64-bit)" leftovers
