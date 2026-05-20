@@ -116,6 +116,17 @@ jobs:
           outspec="$GITHUB_WORKSPACE/out.spec"
           log="$GITHUB_WORKSPACE/logs/driver.log"
 
+          # TEST-ONLY: comment out (CHECK-LAST) trip-wires so historical
+          # upstream drift (force-pushes on PRs the spec references) does
+          # not block the run. Mirrors knots-knowledge 30-run-driver.sh's
+          # treatment. Production CI on ci-bootstrap deliberately leaves
+          # trip-wires live so drift surfaces as red.
+          runspec="$GITHUB_WORKSPACE/spec.stripped"
+          sed 's/^\(\s*(CHECK-LAST)\)/#\1/' "$spec" > "$runspec"
+          stripped=$(diff "$spec" "$runspec" | grep -c '^<' || true)
+          echo "Stripped $stripped CHECK-LAST lines from $KNOTS_SPEC"
+          spec="$runspec"
+
           # Safety mechanisms (knots-knowledge NOTES F16):
           #   yes 2         -> kill driver cleanly on any unhandled conflict
           #                    (else it spins forever on stdin)
