@@ -28,13 +28,28 @@ while (my $line = <>) {
     $line =~ s/\s*#.*//;
     next if $line =~ /^\s*$/;
 
-    # Match an active spec line. Driver recognises three forms (lines 1027, 1071, 1085):
+    my ($prnum, $branch);
+
+    # Match a (CHECK-LAST) trip-wire line first (more specific shape):
+    #   \t(CHECK-LAST) last=<sha> <branch>
+    # The driver will rev-parse <sha> against <branch>'s current tip; we
+    # need <branch> fetched so that comparison can evaluate (and so a
+    # genuine upstream-drift is the actual failure cause, not a fetch gap).
+    if ($line =~ /^\s*\(CHECK-LAST\)\s+last=\S+\s+(\S+)/) {
+        $branch = $1;
+    }
+    # Otherwise match an active merge line. Driver recognises three forms
+    # (assemble-knots.pl lines 1027, 1071, 1085):
     #   NM\t<prnum>\s+<branch>...              — null merge
     #   TM\t<prnum>\s+<branch>...              — tree merge
     #   [am]*\t<prnum>\s+<branch>...           — regular merge (flags: a, m, am, or empty)
-    next unless $line =~ /^(?:NM|TM|[am]*)\t\s*([a-z]?\d+|\-|n\/a)\s+(\S+)/;
-    my ($prnum, $branch) = ($1, $2);
-    next if $branch =~ /^\(/;   # directive like (cherrypick=...)
+    elsif ($line =~ /^(?:NM|TM|[am]*)\t\s*([a-z]?\d+|\-|n\/a)\s+(\S+)/) {
+        ($prnum, $branch) = ($1, $2);
+        next if $branch =~ /^\(/;   # directive like (cherrypick=...)
+    }
+    else {
+        next;
+    }
 
     # Strip trailing ^ characters. The spec may reference a branch with a
     # caret suffix (git's "parent-of" syntax) to pin a specific ancestor of
@@ -43,11 +58,12 @@ while (my $line = <>) {
     $branch =~ s/\^+$//;
 
     # Literal "-" in branch column means "use origin-pull/<prnum>/head".
+    # Only applies to merge lines (CHECK-LAST has no <prnum>).
     # Prefix letter in prnum picks the remote:
     #   plain digits -> origin-pull    (bitcoin/bitcoin)
     #   g<digits>    -> origin-pull-g  (bitcoin-core/gui)
     #   k<digits>    -> origin-pull-k  (bitcoinknots/bitcoin)
-    if ($branch eq "-") {
+    if (defined $prnum && $branch eq "-") {
         if ($prnum =~ /^(\d+)$/) {
             $branch = "origin-pull/$1/head";
         } elsif ($prnum =~ /^g(\d+)$/) {
