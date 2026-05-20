@@ -1,0 +1,160 @@
+name: assemble
+
+# Continuously validate that the Knots assembly spec still produces a
+# clean assembled tree. Runs the driver against knots-next-29.spec on
+# every push and fails red if the driver doesn't reach the end of the
+# spec (unhandled conflict, fetch failure, etc).
+#
+# Minimum-scope CI: no auto-`next` branch, no notifications, no
+# reproducibility regression test for released tags. Those are
+# follow-up changes.
+
+on:
+  push:
+    branches: [knots-spec, ci-bootstrap]
+  workflow_dispatch:
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TZ: UTC
+      GIT_TERMINAL_PROMPT: "0"
+      KNOTS_SPEC: knots-next-29.spec
+
+    steps:
+      - name: Checkout assembly repo (with assemble-knots submodule)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Toolchain check
+        run: |
+          perl --version | head -1
+          git --version
+          test -f assemble-knots/assemble-knots.pl
+          test -f "$KNOTS_SPEC"
+          test -d assemble-knots-resolutions
+
+      - name: Resolve base tag from spec
+        id: base
+        run: |
+          base=$(awk '/^checkout / {print $2; exit}' "$KNOTS_SPEC")
+          [ -n "$base" ] || { echo "no checkout line in $KNOTS_SPEC" >&2; exit 1; }
+          echo "tag=$base" >> "$GITHUB_OUTPUT"
+          echo "Base tag: $base"
+
+      - name: Clone bitcoinknots/bitcoin
+        run: |
+          git clone https://github.com/bitcoinknots/bitcoin.git bitcoin
+
+      - name: Configure remotes from spec
+        run: |
+          perl extract-remotes.pl < "$KNOTS_SPEC" > /tmp/remotes.tsv
+          n_remotes=$(awk -F'\t' '{print $1}' /tmp/remotes.tsv | sort -u | wc -l)
+          n_refspecs=$(wc -l < /tmp/remotes.tsv)
+          echo "Spec needs $n_remotes remotes, $n_refspecs refspecs"
+
+          # First pass: add (or update) each unique remote.
+          awk -F'\t' '!seen[$1]++ {print $1"\t"$2}' /tmp/remotes.tsv | \
+            while IFS=$'\t' read -r name url; do
+              if git -C bitcoin remote | grep -qxF "$name"; then
+                git -C bitcoin remote set-url "$name" "$url"
+              else
+                git -C bitcoin remote add "$name" "$url"
+              fi
+              git -C bitcoin config --unset-all "remote.$name.fetch" 2>/dev/null || true
+            done
+
+          # Second pass: append every refspec to its remote.
+          while IFS=$'\t' read -r name _ refspec; do
+            git -C bitcoin config --add "remote.$name.fetch" "$refspec"
+          done < /tmp/remotes.tsv
+
+          # Also need the base tag from upstream (extract-remotes.pl emits
+          # an `upstream` remote for master but not for the base tag).
+          git -C bitcoin config --add remote.upstream.fetch \
+            "+refs/tags/${{ steps.base.outputs.tag }}:refs/tags/${{ steps.base.outputs.tag }}"
+
+      - name: Fetch all configured remotes
+        run: |
+          remotes=$(git -C bitcoin remote | grep -vxF origin | tr '\n' ' ')
+          git -C bitcoin fetch --multiple --no-tags --prune -j8 $remotes
+
+      - name: Fetch base tag explicitly
+        run: |
+          base="${{ steps.base.outputs.tag }}"
+          git -C bitcoin fetch upstream "refs/tags/$base:refs/tags/$base"
+
+      - name: Create local master ref (driver's poison check needs it)
+        run: |
+          git -C bitcoin update-ref refs/heads/master \
+            "$(git -C bitcoin rev-parse upstream/master)"
+
+      - name: Create driver worktree at base tag
+        run: |
+          base="${{ steps.base.outputs.tag }}"
+          git -C bitcoin worktree add --detach \
+            "$GITHUB_WORKSPACE/bitcoin-repro" "$base"
+          ln -sfn "$GITHUB_WORKSPACE/assemble-knots-resolutions" \
+            "$GITHUB_WORKSPACE/bitcoin-repro/assemble-knots-resolutions"
+
+      - name: Configure worktree env (committer + diff3)
+        run: |
+          cd bitcoin-repro
+          git config user.email luke-jr+git@utopios.org
+          git config user.name merge-script
+          git config merge.conflictStyle diff3
+
+      - name: Run the assembly driver
+        id: driver
+        run: |
+          mkdir -p logs
+          cd bitcoin-repro
+          spec="$GITHUB_WORKSPACE/$KNOTS_SPEC"
+          outspec="$GITHUB_WORKSPACE/out.spec"
+          log="$GITHUB_WORKSPACE/logs/driver.log"
+
+          # Safety mechanisms (knots-knowledge NOTES F16):
+          #   yes 2         -> kill driver cleanly on any unhandled conflict
+          #                    (else it spins forever on stdin)
+          #   head -c 200M  -> cap log size against runaway output
+          #   timeout 30m   -> hard wall-clock limit
+          set +e
+          yes 2 | timeout 30m perl ../assemble-knots/assemble-knots.pl \
+              --skip-update-check \
+              -o "$outspec" \
+              "$spec" 2>&1 | head -c 200M | tee "$log"
+          ec="${PIPESTATUS[0]}"
+          set -e
+
+          echo "Driver exit code: $ec"
+          echo "Worktree HEAD: $(git rev-parse HEAD)"
+          if [ -s "$outspec" ]; then
+            echo "Outspec lines: $(wc -l < "$outspec")"
+            echo "Assembled first-parent count: $(git rev-list --first-parent --count HEAD)"
+          fi
+
+          # Success criteria:
+          #   - driver wrote a non-empty outspec
+          #   - exit code is 0 (clean) or 141 (SIGPIPE from `yes 2` being
+          #     closed after the driver finished reading; not a real failure)
+          if [ ! -s "$outspec" ]; then
+            echo "::error::Driver did not write a non-empty outspec" >&2
+            exit 1
+          fi
+          if [ "$ec" -ne 0 ] && [ "$ec" -ne 141 ]; then
+            echo "::error::Driver exited with status $ec" >&2
+            exit 1
+          fi
+
+      - name: Upload driver log + outspec
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: driver-output
+          path: |
+            logs/
+            out.spec
+          if-no-files-found: warn
