@@ -11,7 +11,7 @@ name: assemble
 
 on:
   push:
-    branches: [knots-spec, ci-bootstrap]
+    branches: [knots-spec, ci-bootstrap, ci-test-shipped]
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
     env:
       TZ: UTC
       GIT_TERMINAL_PROMPT: "0"
-      KNOTS_SPEC: knots-next-29.spec
+      KNOTS_SPEC: knots-29.3.knots20260210.spec
 
     steps:
       - name: Checkout assembly repo (with assemble-knots submodule)
