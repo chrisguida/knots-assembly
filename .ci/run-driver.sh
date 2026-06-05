@@ -51,21 +51,19 @@ git -C "$REPRO" config merge.conflictStyle diff3
 
 say "worktree git config: user.email=$(git -C "$REPRO" config user.email), user.name=$(git -C "$REPRO" config user.name), merge.conflictStyle=$(git -C "$REPRO" config merge.conflictStyle)"
 
-# Pre-process the spec. Two layers:
+# Pre-process the spec. Per-release fixups only: apply
+# .ci/overrides/$RELEASE_TAG.sed if present (below).
 #
-# (1) Blanket: comment out all (CHECK-LAST) lines.
-#     CHECK-LAST lines verify that a tracked upstream ref still matches a
-#     recorded SHA and die if not. They never modify the working tree or
-#     make commits. The driver's --skip-update-check flag suppresses the
-#     analogous check on regular merge lines but NOT CHECK-LAST. For
-#     reproducing an already-published release, every CHECK-LAST ref is by
-#     definition historical; commenting them out is semantically safe.
-#
-# (2) Per-release: apply .ci/overrides/$RELEASE_TAG.sed if present.
+# CHECK-LAST lines are left INTACT. They make no commits (pure assertions),
+# and the --skip-update-check we pass to the assembler below now suppresses
+# them (assemble-deriv PR #3, "Honor --skip-update-check for CHECK-LAST
+# lines"). Previously the assembler honored that flag for merge lines but NOT
+# CHECK-LAST, so this script blanket-commented every CHECK-LAST line to stop
+# historical reproduction aborting on an upstream that had since moved (or had
+# its recorded last= SHA orphaned by an upstream rebase). With the fix that
+# workaround is unnecessary -- this branch exists to prove it.
 say "pre-processing spec: $(basename "$SPEC") -> $(basename "$SPEC_IN")"
-sed 's/^\(\s*(CHECK-LAST)\)/#\1/' "$SPEC" > "$SPEC_IN"
-checklast_count=$(diff "$SPEC" "$SPEC_IN" | grep -c '^<' || true)
-say "  CHECK-LAST lines commented: $checklast_count"
+cp "$SPEC" "$SPEC_IN"
 
 # Auto-generated spec rewrites from synthesize-refs.sh: cherrypick-source
 # substitutions and `last=` pins for unpinned direct-remote merges.
