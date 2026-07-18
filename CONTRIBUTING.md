@@ -54,7 +54,10 @@ them. They are not style preferences.
   branch *into* your feature branch. The assembler marks the first base-relative
   upstream commit as "poison" and hard-rejects any branch that contains it
   (`Branch <x> is poisoned`). Keep your branch a clean stack of your own commits
-  on top of the base; when the base moves, `git rebase`, do not merge.
+  on top of the base; if you do need to move it, `git rebase`, do not merge.
+  Staleness alone is not a reason to move: the assembler only requires that your
+  branch still merges cleanly, so a branch pinned well behind the base is fine
+  as-is.
 - **Merge cleanly.** Every conflict your branch causes has to be resolved by hand
   and recorded as a `.diff` in [`assemble-knots-resolutions/`](assemble-knots-resolutions) so the build stays
   reproducible. A branch that applies clean is far more likely to be taken and
