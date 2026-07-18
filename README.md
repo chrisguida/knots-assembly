@@ -21,7 +21,7 @@ from these specs plus public upstream sources. The CI added in this
 branch verifies that derivation is **byte-exact** against the
 published release tag for the most recent dated release.
 
-[assemble-knots]: https://github.com/bitcoinknots/assemble-knots
+[assemble-knots]: https://github.com/bitcoinknots/assemble-deriv
 
 ---
 
@@ -197,7 +197,7 @@ pre-`v29` releases is handled offline and is out of CI scope for now.
 | Path | Purpose |
 |------|---------|
 | `knots-<version>.spec`, `knots-<version>.knots<date>.spec` | Per-release assembly specs |
-| `assemble-knots/` | Driver submodule ([`bitcoinknots/assemble-knots`][assemble-knots]) |
+| `assemble-knots/` | Driver submodule ([`bitcoinknots/assemble-deriv`][assemble-knots]) |
 | `assemble-knots-resolutions/` | Recorded conflict resolutions (`.diff` files keyed by `git patch-id`) |
 | `check-pr-updates.pl`, `check-pr-updates.sh` | Detect upstream PR drift since a recorded timestamp |
 | `extract-remotes.pl` | Spec → `(remote, url, refspec)` triples (used by CI) |
