@@ -43,10 +43,11 @@ short and the build is fast.
 ### Simplest case: reproduce garbageman
 
 garbageman is a filtering node that peers with libre-relay nodes. Its whole
-recipe is two lines:
+recipe is three lines:
 
 ```
 checkout v29.3.knots20260508
+timestamp 2026-05-07 03:45:44
 	n/a	chrisguida/garbageman-29.3	last=ccc7097e24 chrisguida/garbageman-29.3
 ```
 
@@ -73,6 +74,7 @@ as an example of stacking your own branches:
 
 ```
 checkout v29.3.knots20260508
+timestamp 2026-05-07 03:45:44
 	n/a	chrisguida/garbageman-29.3	last=ccc7097e24 chrisguida/garbageman-29.3
 	k319	origin-pull-k/319/head	last=3b776a4c6b origin-pull-k/319/head
 	k320	origin-pull-k/320/head	last=d97ca9de47 origin-pull-k/320/head
@@ -107,7 +109,8 @@ git remote add chrisguida https://github.com/chrisguida/bitcoin.git
 git remote add origin-pull-k https://github.com/bitcoinknots/bitcoin.git
 git fetch --all
 git fetch origin-pull-k '+refs/pull/*/head:refs/remotes/origin-pull-k/*/head'
-git branch -f master origin/master   # the assembler's poison check needs a local master
+git fetch https://github.com/bitcoin/bitcoin.git master
+git branch -f master FETCH_HEAD   # the assembler's poison check needs a local master (Core's)
 
 # 2. work from the base tag and run the assembler on your spec
 git worktree add --detach ../build v29.3.knots20260508
