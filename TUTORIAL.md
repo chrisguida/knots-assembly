@@ -118,6 +118,38 @@ perl ../knots-assembly/assemble-knots/assemble-knots.pl --skip-update-check ../m
 Run `extract-remotes.pl < my.spec` to print the exact remotes and refs a spec
 needs, then script the fetches from that.
 
+### When a merge conflicts
+
+Pick branches that touch the same lines and some merges will conflict. You resolve each conflict once, and the assembler reuses your fix on every later build.
+
+When a merge conflicts, the assembler hashes the conflicted diff with `git patch-id --stable` to get a conflict ID. If `assemble-knots-resolutions/<id>.diff` exists, it applies that file and moves on:
+
+```
+Conflict ID: <id> AUTOPATCHED with assemble-knots-resolutions/<id>.diff
+```
+
+If not, it shows the conflict and the file name to save a fix under, then asks:
+
+```
+Conflict ID: <id> (use assemble-knots-resolutions/<id>.diff)
+Conflict found: 1) Fix, 2) Abort, or 3) Tree-merge
+```
+
+Type `1` and the assembler suspends itself, leaving the conflicted merge in your tree. Resolve the files, save the fix, and resume:
+
+```bash
+git diff HEAD > assemble-knots-resolutions/<id>.diff
+fg
+```
+
+The next build hits the same conflict, gets the same ID, and applies your fix without asking. Commit the `.diff` files next to your spec so anyone can rebuild your mix. This folder is how the official specs merge hundreds of PRs and still rebuild unattended.
+
+The folder is looked up in the directory you run the assembler from, so in the setup above, link it into `../build` before you run:
+
+```bash
+ln -s ../knots-assembly/assemble-knots-resolutions .
+```
+
 ## Part 3: Compile
 
 Knots 29.3 adds the reduced-data softfork (RDTS, BIP110), so the build asks you
